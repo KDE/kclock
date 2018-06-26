@@ -1,0 +1,4 @@
+*.qmlc
+build/
+.kdev4/
+kirigamiclock.kdev4
