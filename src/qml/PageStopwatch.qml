@@ -15,15 +15,19 @@ Kirigami.Page {
     }
     
     mainAction: Kirigami.Action {
-        iconName: running ? "media-playback-stop" : "media-playback-start"
+        iconName: running ? "media-playback-pause" : "media-playback-start"
+        tooltip: running ? "Pause" : "Start"
         onTriggered: running = !running
     }
     
     rightAction: Kirigami.Action {
         iconName: "contact-new"
+        tooltip: "New round"
     }
     
     leftAction: Kirigami.Action {
-        iconName: "edit-delete"
+        iconName: "media-playback-stop"
+        tooltip: "Reset"
+        onTriggered: running = false
     }
 }

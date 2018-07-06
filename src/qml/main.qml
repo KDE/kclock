@@ -14,6 +14,7 @@ Kirigami.ApplicationWindow
         if(pagename == "clock") page = mainpage;
         else if(pagename == "timer") page = pagetimer;
         else if(pagename == "stopwatch") page = pagestopwatch;
+        else if(pagename == "alarm") page = pagealarm;
         else return;
         
         if(pageStack.depth > 1)
@@ -37,6 +38,10 @@ Kirigami.ApplicationWindow
             Kirigami.Action {
                 text: i18n("Stopwatch")
                 onTriggered: switchToPage("stopwatch")
+            },
+            Kirigami.Action {
+                text: "Alarm"
+                onTriggered: switchToPage("alarm")
             }
         ]
         modal: !wideScreen
@@ -55,5 +60,8 @@ Kirigami.ApplicationWindow
     PageStopwatch {
         id: pagestopwatch
         objectName: "stopwatch"
+    }
+    PageAlarm {
+        id: pagealarm
     }
 }

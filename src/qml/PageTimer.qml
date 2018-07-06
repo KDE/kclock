@@ -7,14 +7,11 @@ Kirigami.Page {
     title: "Timer"
     
     Label {
-        text: "Time"
+        text: "Timer"
     }
     
     mainAction: Kirigami.Action {
-        iconName: "edit"
-        onTriggered: {}
-    }
-    rightAction: Kirigami.Action {
+        iconName: "contact-new"
         onTriggered: {}
     }
 }

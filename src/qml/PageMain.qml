@@ -24,7 +24,14 @@ Kirigami.Page {
         }
     }
     
+    PageTimezoneSelect{
+        id: pagetimezone
+    }
+    
     mainAction: Kirigami.Action {
         iconName: "entry-edit"
+        onTriggered: {
+            pageStack.push(pagetimezone)
+        }
     }
 }
