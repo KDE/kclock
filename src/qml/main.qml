@@ -56,12 +56,15 @@ Kirigami.ApplicationWindow
     PageTimer {
         id:pagetimer
         objectName: "timer"
+        visible: false
     }
     PageStopwatch {
         id: pagestopwatch
         objectName: "stopwatch"
+        visible: false
     }
     PageAlarm {
         id: pagealarm
+        visible: false
     }
 }

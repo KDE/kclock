@@ -5,8 +5,6 @@
 #include <KLocalizedContext>
 #include <QCommandLineParser>
 #include <QMetaObject>
-#include <QTimeZone>
-#include<QDebug>
 
 QCommandLineParser* createParser()
 {
@@ -29,14 +27,5 @@ int main(int argc, char *argv[])
             QMetaObject::invokeMethod(rootObject, "switchToPage", Q_ARG(QVariant, parser->value("page")));
         }
     }
-    
-    QStringList list;
-    QList<QByteArray> ids = QTimeZone::availableTimeZoneIds();
-    foreach(QByteArray id, ids) {
-        list.append(QTimeZone(id).displayName(QDateTime()));
-    }
-    engine.rootContext()->setContextProperty("timezoneModel", QVariant::fromValue(list));
-    qDebug() << list;
-    
     return app.exec();
 }
