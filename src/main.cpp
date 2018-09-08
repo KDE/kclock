@@ -6,6 +6,8 @@
 #include <QCommandLineParser>
 #include <QMetaObject>
 
+#include "timezoneselectormodel.h"
+
 QCommandLineParser* createParser()
 {
     QCommandLineParser* parser = new QCommandLineParser;
@@ -16,6 +18,8 @@ QCommandLineParser* createParser()
 
 int main(int argc, char *argv[])
 {
+    qmlRegisterType<TimeZoneSelectorModel>("app.test", 1, 0, "TimeZoneSelectorModel");
+    qmlRegisterType<TimeZoneFilterModel>("app.test", 1, 0, "TimeZoneModel");
     QGuiApplication app(argc, argv);
     QQmlApplicationEngine engine(QUrl(QStringLiteral("qrc:/qml/main.qml")));
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
