@@ -7,25 +7,32 @@ import app.test 1.0
 Kirigami.Page {
 
     title: "Timezones"
-
-    ColumnLayout {
     
-    TextInput {
-
+    TextField {
+        id: timeZoneSearchInput
+        anchors.right: parent.right
+        anchors.left: parent.left
+        placeholderText: "Search"
+        onTextChanged: timeZones.setFilterFixedString(text)
     }
 
     ListView {
+        anchors.top: timeZoneSearchInput.bottom
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
+        anchors.topMargin: Kirigami.Units.smallSpacing * 2
+        clip: true
+        spacing: Kirigami.Units.smallSpacing
         model: timeZones
         delegate: Row {
             CheckBox {
                 checked: model.shown
-            }
-            Label {
                 text: model.name
             }
         }
     }
     TimeZoneModel {
         id: timeZones
-    }}
+    }
 }

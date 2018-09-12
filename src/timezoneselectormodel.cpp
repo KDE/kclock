@@ -52,5 +52,6 @@ bool TimeZoneSelectorModel::setData(const QModelIndex& index, const QVariant& va
 
 TimeZoneFilterModel::TimeZoneFilterModel(QObject *parent) : QSortFilterProxyModel (parent)
 {
-    setSourceModel(new TimeZoneSelectorModel);
+    setFilterCaseSensitivity(Qt::CaseInsensitive);
+    setSourceModel(new TimeZoneSelectorModel(this));
 }
