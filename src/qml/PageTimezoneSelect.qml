@@ -5,6 +5,8 @@ import org.kde.kirigami 2.2 as Kirigami
 import app.test 1.0
 
 Kirigami.Page {
+    
+    property TimeZoneModel timeZones
 
     title: "Timezones"
     
@@ -32,8 +34,5 @@ Kirigami.Page {
                 onClicked: model.shown = this.checked
             }
         }
-    }
-    TimeZoneModel {
-        id: timeZones
     }
 }
