@@ -29,6 +29,7 @@ Kirigami.Page {
             CheckBox {
                 checked: model.shown
                 text: model.name
+                onClicked: model.shown = this.checked
             }
         }
     }
