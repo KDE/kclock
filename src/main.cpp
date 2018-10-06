@@ -26,10 +26,15 @@ int main(int argc, char *argv[])
     KAboutData::setApplicationData(aboutData);
 
     QApplication app(argc, argv);
-    qmlRegisterType<TimeZoneSelectorModel>("app.test", 1, 0, "TimeZoneSelectorModel");
-    qmlRegisterType<TimeZoneFilterModel>("app.test", 1, 0, "TimeZoneModel");
     QQmlApplicationEngine engine(QUrl(QStringLiteral("qrc:/qml/main.qml")));
-    engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
+
+	auto *timeZoneModel = new TimeZoneSelectorModel();
+	auto *timeZoneViewModel = new TimeZoneViewModel(timeZoneModel);
+	auto *timeZoneFilterModel = new TimeZoneFilterModel(timeZoneModel);
+	engine.rootContext()->setContextProperty("timeZoneShowModel", timeZoneViewModel);
+	engine.rootContext()->setContextProperty("timeZoneFilterModel", timeZoneFilterModel);
+
+	engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
     {
         QScopedPointer<QCommandLineParser> parser(createParser());
         parser->process(app);

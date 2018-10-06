@@ -2,12 +2,9 @@ import QtQuick 2.11
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import org.kde.kirigami 2.2 as Kirigami
-import app.test 1.0
 
 Kirigami.Page {
     
-    property TimeZoneModel timeZones
-
     title: "Timezones"
     
     TextField {
@@ -15,7 +12,7 @@ Kirigami.Page {
         anchors.right: parent.right
         anchors.left: parent.left
         placeholderText: "Search"
-        onTextChanged: timeZones.setFilterFixedString(text)
+        onTextChanged: timeZoneFilterModel.setFilterFixedString(text)
     }
 
     ListView {
@@ -26,7 +23,7 @@ Kirigami.Page {
         anchors.topMargin: Kirigami.Units.smallSpacing * 2
         clip: true
         spacing: Kirigami.Units.smallSpacing
-        model: timeZones
+        model: timeZoneFilterModel
         delegate: Row {
             CheckBox {
                 checked: model.shown

@@ -1,7 +1,6 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.3
 import org.kde.kirigami 2.0 as Kirigami
-import app.test 1.0
 
 Kirigami.Page {
     
@@ -25,13 +24,8 @@ Kirigami.Page {
         }
     }
     
-    TimeZoneModel {
-        id: timeZoneModel
-    }
-    
     PageTimezoneSelect{
         id: pagetimezone
-        timeZones: timeZoneModel
     }
     
     mainAction: Kirigami.Action {

@@ -41,7 +41,15 @@ class TimeZoneFilterModel : public QSortFilterProxyModel
     Q_OBJECT
 
 public:
-    explicit TimeZoneFilterModel(QObject *parent = nullptr);
+    explicit TimeZoneFilterModel(TimeZoneSelectorModel *model, QObject *parent = nullptr);
+};
+
+class TimeZoneViewModel : public QSortFilterProxyModel
+{
+    Q_OBJECT
+
+public:
+    explicit TimeZoneViewModel(TimeZoneSelectorModel *model, QObject *parent = nullptr);
 };
 
 #endif
