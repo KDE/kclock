@@ -21,12 +21,13 @@ QCommandLineParser* createParser()
 
 int main(int argc, char *argv[])
 {
+    QApplication app(argc, argv);
+    QQmlApplicationEngine engine;
+
     KLocalizedString::setApplicationDomain("kirigamiclock");
+    engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
     KAboutData aboutData("kirigamiclock", "Clock", "0.1", "Clock for Plasma Mobile", KAboutLicense::GPL);
     KAboutData::setApplicationData(aboutData);
-
-    QApplication app(argc, argv);
-    QQmlApplicationEngine engine(QUrl(QStringLiteral("qrc:/qml/main.qml")));
 
 	auto *timeZoneModel = new TimeZoneSelectorModel();
 	auto *timeZoneViewModel = new TimeZoneViewModel(timeZoneModel);
@@ -34,7 +35,7 @@ int main(int argc, char *argv[])
 	engine.rootContext()->setContextProperty("timeZoneShowModel", timeZoneViewModel);
 	engine.rootContext()->setContextProperty("timeZoneFilterModel", timeZoneFilterModel);
 
-	engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
+    engine.load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
     {
         QScopedPointer<QCommandLineParser> parser(createParser());
         parser->process(app);

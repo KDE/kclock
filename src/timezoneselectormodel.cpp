@@ -59,4 +59,6 @@ TimeZoneFilterModel::TimeZoneFilterModel(TimeZoneSelectorModel *model, QObject *
 TimeZoneViewModel::TimeZoneViewModel(TimeZoneSelectorModel *model, QObject *parent) : QSortFilterProxyModel(parent)
 {
     setSourceModel(model);
+    setFilterRole(TimeZoneSelectorModel::ShownRole);
+    setFilterFixedString("true");
 }

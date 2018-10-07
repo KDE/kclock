@@ -45,6 +45,7 @@ Kirigami.ApplicationWindow
             }
         ]
         modal: !wideScreen
+        title: "Clock"
         width: 200
     }
     pageStack.initialPage: mainpage
