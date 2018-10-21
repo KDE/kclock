@@ -3,12 +3,11 @@ import QtQuick.Controls 2.0
 import org.kde.kirigami 2.0 as Kirigami
 
 Kirigami.Page {
+    id: stopwatchpage
     title: "Stopwatch"
     property bool running: false
-    property double startTime: currentTime
     property var rounds: []
-    property double currentTime: new Date().getTime()
-    property double elapsedTime: currentTime - startTime
+    property int elapsedTime: 0
     property double displayTime: elapsedTime
 
     Label {
@@ -25,7 +24,9 @@ Kirigami.Page {
         running: true
         repeat: true
         onTriggered: {
-            currentTime = new Date().getTime();
+            if(stopwatchpage.running) {
+                elapsedTime += 16;
+            }
         }
     }
     
@@ -34,9 +35,6 @@ Kirigami.Page {
         tooltip: running ? "Pause" : "Start"
         onTriggered: {
             running = !running
-            if(running) {
-                startTime = currentTime;
-            }
         }
     }
     
@@ -53,8 +51,7 @@ Kirigami.Page {
         tooltip: "Reset"
         onTriggered: {
             running = false;
-            startTime: currentTime;
-            timeLabel.text = 0
+            elapsedTime = 0
         }
     }
 }
