@@ -6,7 +6,6 @@ Kirigami.Page {
     id: stopwatchpage
     title: "Stopwatch"
     property bool running: false
-    property var rounds: []
     property int elapsedTime: 0
     property double displayTime: elapsedTime
 
@@ -18,16 +17,29 @@ Kirigami.Page {
         font.pointSize: 40
     }
 
+    ListView {
+        anchors.top: timeLabel.bottom
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
+        model: roundModel
+        delegate: Text {
+            text: "Round #" + model.index + ": " + model.time / 1000
+        }
+    }
+
     Timer {
         id: stopwatchTimer
         interval: 16
-        running: true
+        running: stopwatchpage.running
         repeat: true
         onTriggered: {
-            if(stopwatchpage.running) {
-                elapsedTime += 16;
-            }
+            elapsedTime += interval
         }
+    }
+
+    ListModel {
+        id: roundModel
     }
     
     mainAction: Kirigami.Action {
@@ -42,7 +54,7 @@ Kirigami.Page {
         iconName: "contact-new"
         tooltip: "New round"
         onTriggered: {
-            rounds.push(currentTime);
+            roundModel.append({ time: elapsedTime })
         }
     }
     
@@ -52,6 +64,7 @@ Kirigami.Page {
         onTriggered: {
             running = false;
             elapsedTime = 0
+            roundModel.clear()
         }
     }
 }
