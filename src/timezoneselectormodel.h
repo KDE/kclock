@@ -3,6 +3,7 @@
 
 #include <QAbstractListModel>
 #include <QSortFilterProxyModel>
+#include <QTimeZone>
 
 class TimeZoneSelectorModel : public QAbstractListModel
 {
@@ -10,16 +11,6 @@ class TimeZoneSelectorModel : public QAbstractListModel
     
 public:
     explicit TimeZoneSelectorModel(QObject *parent = nullptr);
-    
-    class TimeZoneData {
-    public:
-        TimeZoneData(QString name, bool shown) {
-            this->name = name;
-            this->shown = shown;
-        }
-        QString name;
-        bool shown;
-    };
     
     enum {
         NameRole = Qt::DisplayRole,
@@ -33,7 +24,7 @@ public:
     QHash<int, QByteArray> roleNames() const override;
     
 private:
-    QList<TimeZoneData> mList;
+    QList<std::tuple<QTimeZone, bool>> mList;
 };
 
 class TimeZoneFilterModel : public QSortFilterProxyModel

@@ -5,7 +5,7 @@
 TimeZoneSelectorModel::TimeZoneSelectorModel(QObject* parent) : QAbstractListModel(parent)
 {
     for (QByteArray id : QTimeZone::availableTimeZoneIds()) {
-        mList.append(TimeZoneData(id, false));
+        mList.append(std::make_tuple(QTimeZone(id), false));
     }
 }
 
@@ -21,9 +21,9 @@ QVariant TimeZoneSelectorModel::data(const QModelIndex& index, int role) const
     if(!index.isValid())
         return QVariant();
     if(role == NameRole)
-        return mList[index.row()].name;
+        return std::get<0>(mList[index.row()]).displayName(QDateTime());
     if(role == ShownRole)
-        return mList[index.row()].shown;
+        return std::get<1>(mList[index.row()]);
     return QVariant();
 }
 
@@ -43,7 +43,7 @@ Qt::ItemFlags TimeZoneSelectorModel::flags(const QModelIndex& index) const
 bool TimeZoneSelectorModel::setData(const QModelIndex& index, const QVariant& value, int role)
 {
     if(index.isValid() && role == ShownRole && value.type() == QVariant::Bool) {
-        mList[index.row()].shown = value.toBool();
+        std::get<1>(mList[index.row()]) = value.toBool();
         emit dataChanged(index, index, QVector<int> { ShownRole });
         return true;
     }
