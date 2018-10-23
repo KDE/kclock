@@ -20,11 +20,19 @@ QVariant TimeZoneSelectorModel::data(const QModelIndex& index, int role) const
 {
     if(!index.isValid())
         return QVariant();
-    if(role == NameRole)
-        return std::get<0>(mList[index.row()]).displayName(QDateTime());
-    if(role == ShownRole)
-        return std::get<1>(mList[index.row()]);
-    return QVariant();
+    auto tuple = mList[index.row()];
+    switch(role) {
+    case NameRole:
+        return std::get<0>(tuple).displayName(QDateTime::currentDateTime());
+    case ShownRole:
+        return std::get<1>(tuple);
+    case OffsetRole:
+        return std::get<0>(tuple).displayName(QDateTime::currentDateTime(), QTimeZone::OffsetName);
+    case ShortNameRole:
+        return std::get<0>(tuple).displayName(QDateTime::currentDateTime(), QTimeZone::ShortName);
+    default:
+        return QVariant();
+    }
 }
 
 QHash<int, QByteArray> TimeZoneSelectorModel::roleNames() const
@@ -32,6 +40,8 @@ QHash<int, QByteArray> TimeZoneSelectorModel::roleNames() const
     QHash<int, QByteArray> roles;
     roles[NameRole] = "name";
     roles[ShownRole] = "shown";
+    roles[OffsetRole] = "offsetName";
+    roles[ShortNameRole] = "shortName";
     return roles;
 }
 

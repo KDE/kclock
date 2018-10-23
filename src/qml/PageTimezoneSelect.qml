@@ -27,7 +27,7 @@ Kirigami.Page {
         delegate: Row {
             CheckBox {
                 checked: model.shown
-                text: model.name
+                text: model.name + model.offsetName + model.shortName
                 onClicked: model.shown = this.checked
             }
         }
