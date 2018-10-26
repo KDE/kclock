@@ -10,6 +10,7 @@
 #include <KConfig>
 
 #include "timezoneselectormodel.h"
+#include "alarmsmodel.h"
 
 QCommandLineParser* createParser()
 {
@@ -32,8 +33,10 @@ int main(int argc, char *argv[])
 	auto *timeZoneModel = new TimeZoneSelectorModel();
 	auto *timeZoneViewModel = new TimeZoneViewModel(timeZoneModel);
 	auto *timeZoneFilterModel = new TimeZoneFilterModel(timeZoneModel);
+    auto *alarmModel = new AlarmModel();
 	engine.rootContext()->setContextProperty("timeZoneShowModel", timeZoneViewModel);
 	engine.rootContext()->setContextProperty("timeZoneFilterModel", timeZoneFilterModel);
+    engine.rootContext()->setContextProperty("alarmModel", alarmModel);
 
     engine.load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
     {
