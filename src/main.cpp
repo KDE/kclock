@@ -31,7 +31,12 @@ int main(int argc, char *argv[])
     KAboutData::setApplicationData(aboutData);
 
 	auto *timeZoneModel = new TimeZoneSelectorModel();
-	auto *timeZoneViewModel = new TimeZoneViewModel(timeZoneModel);
+    //auto *timeZoneViewModel = new TimeZoneViewModel(timeZoneModel);
+    //timeZoneModel->connect(timeZoneModel, &TimeZoneSelectorModel::dataChanged, timeZoneViewModel, &TimeZoneViewModel::dataChanged);
+    auto *timeZoneViewModel = new QSortFilterProxyModel();
+    timeZoneViewModel->setFilterFixedString("true");
+    timeZoneViewModel->setSourceModel(timeZoneModel);
+    timeZoneViewModel->setFilterRole(TimeZoneSelectorModel::ShownRole);
 	auto *timeZoneFilterModel = new TimeZoneFilterModel(timeZoneModel);
     auto *alarmModel = new AlarmModel();
 	engine.rootContext()->setContextProperty("timeZoneShowModel", timeZoneViewModel);

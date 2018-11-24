@@ -4,6 +4,7 @@
 #include <QAbstractListModel>
 #include <QSortFilterProxyModel>
 #include <QTimeZone>
+#include <QTimer>
 
 class TimeZoneSelectorModel : public QAbstractListModel
 {
@@ -12,11 +13,12 @@ class TimeZoneSelectorModel : public QAbstractListModel
 public:
     explicit TimeZoneSelectorModel(QObject *parent = nullptr);
     
-    enum {
+    enum Roles {
         NameRole = Qt::DisplayRole,
         ShownRole = Qt::UserRole + 0,
         OffsetRole = Qt::UserRole + 1,
-        ShortNameRole = Qt::UserRole + 2
+        ShortNameRole = Qt::UserRole + 2,
+        TimeStringRole
     };
     
     int rowCount(const QModelIndex & parent) const override;
@@ -24,9 +26,13 @@ public:
     bool setData(const QModelIndex & index, const QVariant & value, int role) override;
     Qt::ItemFlags flags(const QModelIndex & index) const override;
     QHash<int, QByteArray> roleNames() const override;
+
+public slots:
+    void update();
     
 private:
     QList<std::tuple<QTimeZone, bool>> mList;
+    QTimer mTimer;
 };
 
 class TimeZoneFilterModel : public QSortFilterProxyModel

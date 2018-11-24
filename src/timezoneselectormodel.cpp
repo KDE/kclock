@@ -7,6 +7,9 @@ TimeZoneSelectorModel::TimeZoneSelectorModel(QObject* parent) : QAbstractListMod
     for (QByteArray id : QTimeZone::availableTimeZoneIds()) {
         mList.append(std::make_tuple(QTimeZone(id), false));
     }
+    mTimer.setInterval(1000);
+    connect(&mTimer, &QTimer::timeout, this, &TimeZoneSelectorModel::update);
+    mTimer.start(1000);
 }
 
 
@@ -27,12 +30,15 @@ QVariant TimeZoneSelectorModel::data(const QModelIndex& index, int role) const
     case ShownRole:
         return std::get<1>(tuple);
     case OffsetRole:
-        return std::get<0>(tuple).displayName(QDateTime::currentDateTime(), QTimeZone::OffsetName);
+        return std::get<0>(tuple).offsetFromUtc(QDateTime::currentDateTime());
     case ShortNameRole:
         return std::get<0>(tuple).displayName(QDateTime::currentDateTime(), QTimeZone::ShortName);
-    default:
-        return QVariant();
+    case TimeStringRole:
+        QDateTime time = QDateTime::currentDateTime();
+        time.toTimeZone(std::get<0>(tuple));
+        return time.time().toString("hh:mm:ss");
     }
+    return QVariant();
 }
 
 QHash<int, QByteArray> TimeZoneSelectorModel::roleNames() const
@@ -40,13 +46,21 @@ QHash<int, QByteArray> TimeZoneSelectorModel::roleNames() const
     QHash<int, QByteArray> roles;
     roles[NameRole] = "name";
     roles[ShownRole] = "shown";
-    roles[OffsetRole] = "offsetName";
+    roles[OffsetRole] = "offset";
     roles[ShortNameRole] = "shortName";
+    roles[TimeStringRole] = "timeString";
     return roles;
+}
+
+void TimeZoneSelectorModel::update()
+{
+    QVector<int> roles = { TimeStringRole };
+    emit dataChanged(index(0), index(mList.size() - 1), roles);
 }
 
 Qt::ItemFlags TimeZoneSelectorModel::flags(const QModelIndex& index) const
 {
+    Q_UNUSED(index)
     return Qt::ItemIsEditable;
 }
 
