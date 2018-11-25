@@ -35,7 +35,7 @@ QVariant TimeZoneSelectorModel::data(const QModelIndex& index, int role) const
         return std::get<0>(tuple).displayName(QDateTime::currentDateTime(), QTimeZone::ShortName);
     case TimeStringRole:
         QDateTime time = QDateTime::currentDateTime();
-        time.toTimeZone(std::get<0>(tuple));
+        time = time.toTimeZone(std::get<0>(tuple));
         return time.time().toString("hh:mm:ss");
     }
     return QVariant();

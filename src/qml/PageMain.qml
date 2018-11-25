@@ -30,8 +30,18 @@ Kirigami.Page {
         anchors.bottom: parent.bottom
         anchors.left: parent.left
         anchors.right: parent.right
+        clip: true
         delegate: Kirigami.Card {
-            Label { text: model.name }
+            Label {
+                text: model.name
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+            }
+            Label {
+                text: model.timeString
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+            }
         }
     }
     
