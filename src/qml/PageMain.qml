@@ -33,7 +33,7 @@ Kirigami.Page {
         clip: true
         delegate: Kirigami.Card {
             Label {
-                text: model.name
+                text: model.id
                 anchors.left: parent.left
                 anchors.verticalCenter: parent.verticalCenter
             }

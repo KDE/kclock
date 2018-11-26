@@ -29,8 +29,8 @@ QVariant TimeZoneSelectorModel::data(const QModelIndex& index, int role) const
         return std::get<0>(tuple).displayName(QDateTime::currentDateTime());
     case ShownRole:
         return std::get<1>(tuple);
-    case OffsetRole:
-        return std::get<0>(tuple).offsetFromUtc(QDateTime::currentDateTime());
+    case IDRole:
+        return std::get<0>(tuple).id();
     case ShortNameRole:
         return std::get<0>(tuple).displayName(QDateTime::currentDateTime(), QTimeZone::ShortName);
     case TimeStringRole:
@@ -49,6 +49,7 @@ QHash<int, QByteArray> TimeZoneSelectorModel::roleNames() const
     roles[OffsetRole] = "offset";
     roles[ShortNameRole] = "shortName";
     roles[TimeStringRole] = "timeString";
+    roles[IDRole] = "id";
     return roles;
 }
 
@@ -78,6 +79,7 @@ TimeZoneFilterModel::TimeZoneFilterModel(TimeZoneSelectorModel *model, QObject *
 {
     setFilterCaseSensitivity(Qt::CaseInsensitive);
     setSourceModel(model);
+    setFilterRole(TimeZoneSelectorModel::IDRole);
 }
 
 TimeZoneViewModel::TimeZoneViewModel(TimeZoneSelectorModel *model, QObject *parent) : QSortFilterProxyModel(parent)

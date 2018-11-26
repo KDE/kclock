@@ -18,7 +18,8 @@ public:
         ShownRole = Qt::UserRole + 0,
         OffsetRole = Qt::UserRole + 1,
         ShortNameRole = Qt::UserRole + 2,
-        TimeStringRole
+        TimeStringRole,
+        IDRole
     };
     
     int rowCount(const QModelIndex & parent) const override;
