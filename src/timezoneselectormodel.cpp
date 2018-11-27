@@ -1,11 +1,16 @@
 #include <QTimeZone>
 #include <QDebug>
+#include <KSharedConfig>
+#include <KConfigGroup>
 #include "timezoneselectormodel.h"
 
 TimeZoneSelectorModel::TimeZoneSelectorModel(QObject* parent) : QAbstractListModel(parent)
 {
+    auto config = KSharedConfig::openConfig();
+    KConfigGroup timezoneGroup = config->group("Timezones");
     for (QByteArray id : QTimeZone::availableTimeZoneIds()) {
-        mList.append(std::make_tuple(QTimeZone(id), false));
+        bool show = timezoneGroup.readEntry(id.data(), false);
+        mList.append(std::make_tuple(QTimeZone(id), show));
     }
     mTimer.setInterval(1000);
     connect(&mTimer, &QTimer::timeout, this, &TimeZoneSelectorModel::update);
@@ -69,6 +74,9 @@ bool TimeZoneSelectorModel::setData(const QModelIndex& index, const QVariant& va
 {
     if(index.isValid() && role == ShownRole && value.type() == QVariant::Bool) {
         std::get<1>(mList[index.row()]) = value.toBool();
+        auto config = KSharedConfig::openConfig();
+        KConfigGroup timezoneGroup = config->group("Timezones");
+        timezoneGroup.writeEntry(std::get<0>(mList[index.row()]).id().data(), value);
         emit dataChanged(index, index, QVector<int> { ShownRole });
         return true;
     }
