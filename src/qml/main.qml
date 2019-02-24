@@ -23,8 +23,6 @@ Kirigami.ApplicationWindow
             pageStack.push(page)
     }
     
-    header: Kirigami.ApplicationHeader { }
-    
     globalDrawer: Kirigami.GlobalDrawer {
         actions: [
             Kirigami.Action {

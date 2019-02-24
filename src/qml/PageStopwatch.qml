@@ -23,8 +23,8 @@ Kirigami.Page {
         anchors.right: parent.right
         anchors.bottom: parent.bottom
         model: roundModel
-        delegate: Text {
-            text: "Round #" + model.index + ": " + model.time / 1000
+        delegate: Kirigami.BasicListItem {
+            label: "Round #" + (model.index + 1) + ": " + model.time / 1000
         }
     }
 
