@@ -20,7 +20,8 @@
 
 import QtQuick 2.0
 import QtQuick.Controls 2.0
-import org.kde.kirigami 2.0 as Kirigami
+import QtQuick.Layouts 1.2
+import org.kde.kirigami 2.4 as Kirigami
 
 Kirigami.Page {
     id: stopwatchpage
@@ -43,8 +44,37 @@ Kirigami.Page {
         anchors.right: parent.right
         anchors.bottom: parent.bottom
         model: roundModel
+
         delegate: Kirigami.BasicListItem {
-            label: "Round #" + (model.index + 1) + ": " + model.time / 1000
+
+            activeBackgroundColor: "transparent" // Kirigami.Theme.backgroundColor
+            separatorVisible: false
+
+            contentItem: RowLayout {
+                Layout.alignment: Qt.AlignVCenter
+                Rectangle {
+                    width: 100
+                    Layout.fillHeight: true
+                    Layout.alignment: Qt.AlignLeft
+
+                    Text {
+                        text: "<b>#" + (model.index + 1) + "</b>"
+                    }
+                }
+
+                Rectangle {
+                    width: 100
+                    Layout.fillHeight: true
+                    Layout.alignment: Qt.AlignRight
+
+                    Text {
+                        text: parseFloat(model.time/1000).toFixed(2)
+                    }
+                }
+                Item {
+                    Layout.fillWidth: true
+                }
+            }
         }
     }
 
