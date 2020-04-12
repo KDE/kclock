@@ -21,10 +21,13 @@
 import QtQuick 2.11
 import QtQuick.Controls 2.4
 import org.kde.kirigami 2.4 as Kirigami
+import kirigamiclock 1.0
 
 Kirigami.Page {
     
     title: "Alarms"
+
+    property Alarm selectedAlarm: null
     
     mainAction: Kirigami.Action {
         onTriggered: alarmModel.addAlarm()
@@ -37,6 +40,26 @@ Kirigami.Page {
             CheckBox {
                 text: model.name
                 checked: model.enabled
+            }
+            onClicked: {
+                selectedAlarm = alarmModel.get(index)
+                pageStack.push(editPage)
+            }
+        }
+    }
+
+    Component {
+        id: editPage
+        Kirigami.Page {
+            Column {
+                CheckBox {
+                    checked: selectedAlarm.enabled
+                    text: "Enabled"
+                }
+                CheckBox {
+                    checked: selectedAlarm.repeated
+                    text: "Repeat"
+                }
             }
         }
     }

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=kirigamiclock
+Comment=My first Plasma Mobile App
+Version=1.0
+Exec=kirigamiclock
+MimeType=application/x-kirigamiclock;
+Icon=applications-development
+Type=Application
+Terminal=false
+Categories=Qt;KDE;

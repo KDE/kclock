@@ -24,6 +24,7 @@
 #include <QCommandLineParser>
 #include <QMetaObject>
 
+#include <QQmlDebuggingEnabler>
 #include <KLocalizedString>
 #include <KLocalizedContext>
 #include <KAboutData>
@@ -43,6 +44,7 @@ QCommandLineParser* createParser()
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
+    QQmlDebuggingEnabler enabler;
     QQmlApplicationEngine engine;
 
     KLocalizedString::setApplicationDomain("kirigamiclock");
@@ -59,9 +61,12 @@ int main(int argc, char *argv[])
     timeZoneViewModel->setFilterRole(TimeZoneSelectorModel::ShownRole);
 	auto *timeZoneFilterModel = new TimeZoneFilterModel(timeZoneModel);
     auto *alarmModel = new AlarmModel();
+    qmlRegisterType<Alarm>("kirigamiclock", 1, 0, "Alarm");
 	engine.rootContext()->setContextProperty("timeZoneShowModel", timeZoneViewModel);
 	engine.rootContext()->setContextProperty("timeZoneFilterModel", timeZoneFilterModel);
     engine.rootContext()->setContextProperty("alarmModel", alarmModel);
+    alarmModel->addAlarm();
+    alarmModel->load();
 
     engine.load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
     {

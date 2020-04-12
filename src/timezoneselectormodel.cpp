@@ -49,6 +49,7 @@ QVariant TimeZoneSelectorModel::data(const QModelIndex& index, int role) const
     if(!index.isValid())
         return QVariant();
     auto tuple = mList[index.row()];
+
     switch(role) {
     case NameRole:
         return std::get<0>(tuple).displayName(QDateTime::currentDateTime());

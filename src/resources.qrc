@@ -1,11 +1,10 @@
-<!DOCTYPE RCC><RCC version="1.0">
- <qresource>
-    <file>qml/main.qml</file>
-    <file>qml/PageMain.qml</file>
-    <file>qml/PageTimer.qml</file>
-    <file>qml/PageStopwatch.qml</file>
-    <file>qml/PageAlarm.qml</file>
-    <file>qml/PageTimezoneSelect.qml</file>
-    <file>qml/PageEditAlarm.qml</file>
- </qresource>
+<RCC>
+    <qresource prefix="/">
+        <file>qml/main.qml</file>
+        <file>qml/PageMain.qml</file>
+        <file>qml/PageTimer.qml</file>
+        <file>qml/PageStopwatch.qml</file>
+        <file>qml/PageAlarm.qml</file>
+        <file>qml/PageTimezoneSelect.qml</file>
+    </qresource>
 </RCC>

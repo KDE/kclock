@@ -3,3 +3,6 @@ build/
 .kdev4/
 kirigamiclock.kdev4
 CMakeLists.txt.user
+/cmake-build-debug
+/.idea
+/test.sh

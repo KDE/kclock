@@ -28,15 +28,12 @@ Kirigami.ApplicationWindow
     visible: true
     width: 600
     height: 440
+
+    title: "Clock"
+
+    pageStack.initialPage: mainpage
     
-    function switchToPage(pagename) {
-        var page;
-        if(pagename == "clock") page = mainpage;
-        else if(pagename == "timer") page = pagetimer;
-        else if(pagename == "stopwatch") page = pagestopwatch;
-        else if(pagename == "alarm") page = pagealarm;
-        else return;
-        
+    function switchToPage(page) {
         if(pageStack.depth > 1)
             pageStack.pop()
         if(page != mainpage)
@@ -44,29 +41,34 @@ Kirigami.ApplicationWindow
     }
     
     globalDrawer: Kirigami.GlobalDrawer {
+        title: "Clock"
+        modal: !wideScreen
+        bannerVisible: true
+        width: 200
+
         actions: [
             Kirigami.Action {
                 text: "Clock"
-                onTriggered: switchToPage("clock")
+                iconName: "clock"
+                onTriggered: switchToPage(mainpage)
             },
             Kirigami.Action {
                 text: i18n("Timer")
-                onTriggered: switchToPage("timer")
+                iconName: "notifications"
+                onTriggered: switchToPage(pagetimer)
             },
             Kirigami.Action {
                 text: i18n("Stopwatch")
-                onTriggered: switchToPage("stopwatch")
+                iconName: "player-time"
+                onTriggered: switchToPage(pagestopwatch)
             },
             Kirigami.Action {
                 text: "Alarm"
-                onTriggered: switchToPage("alarm")
+                iconName: "notifications"
+                onTriggered: switchToPage(pagealarm)
             }
         ]
-        modal: !wideScreen
-        title: "Clock"
-        width: 200
     }
-    pageStack.initialPage: mainpage
     
     PageMain {
         id: mainpage
@@ -84,6 +86,7 @@ Kirigami.ApplicationWindow
     }
     PageAlarm {
         id: pagealarm
+        objectName: "alarm"
         visible: false
     }
 }

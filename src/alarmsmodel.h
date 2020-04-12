@@ -22,27 +22,38 @@
 #define ALARMSMODEL_H
 
 #include <QAbstractListModel>
+#include <QUuid>
 
 class Alarm : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(QString name READ getName WRITE setName)
-    Q_PROPERTY(bool enabled READ getEnabled WRITE setEnabled)
-    Q_PROPERTY(bool repeated READ getRepeated WRITE setRepeated)
+    Q_PROPERTY(QString name READ getName WRITE setName NOTIFY onPropertyChanged)
+    Q_PROPERTY(bool enabled READ getEnabled WRITE setEnabled NOTIFY onPropertyChanged)
+    Q_PROPERTY(bool repeated READ getRepeated WRITE setRepeated NOTIFY onPropertyChanged)
 public:
     explicit Alarm(QObject* parent = nullptr);
 
     QString getName() const { return name; }
     bool getEnabled() const { return enabled; }
     bool getRepeated() const { return repeated; }
-    void setName(QString name) { this->name = name; }
-    void setRepeated(bool repeated) { this->repeated = repeated; }
-    void setEnabled(bool enabled) { this->enabled = enabled; }
+    QUuid getUuid() { return uuid; }
+    void setName(QString name) { this->name = name; changeProperty(); }
+    void setRepeated(bool repeated) { this->repeated = repeated; changeProperty(); }
+    void setEnabled(bool enabled) { this->enabled = enabled; changeProperty(); }
+    bool isDirty() { return dirty; }
+    QString getCronString();
+    
+signals:
+    void onPropertyChanged();
 
 private:
+    void changeProperty() { dirty = true; emit onPropertyChanged(); }
+    
     QString name;
     bool enabled;
     bool repeated;
+    bool dirty = false;
+    QUuid uuid;
 };
 
 class AlarmModel : public QAbstractListModel
@@ -62,7 +73,11 @@ public:
     bool setData(const QModelIndex & index, const QVariant & value, int role) override;
     Qt::ItemFlags flags(const QModelIndex & index) const override;
     QHash<int, QByteArray> roleNames() const override;
-    Q_INVOKABLE void addAlarm();
+    Q_INVOKABLE Alarm* get(int index) { return mList.at(index); }
+    Q_INVOKABLE Alarm* addAlarm();
+    bool load();
+    Q_INVOKABLE bool save();
+    QString getCrontabUpdate(const QString crontab);
 
 private:
     QList<Alarm*> mList;
