@@ -54,12 +54,12 @@ Kirigami.ApplicationWindow
             },
             Kirigami.Action {
                 text: i18n("Timer")
-                iconName: "notifications"
+                iconName: "player-time"
                 onTriggered: switchToPage(pagetimer)
             },
             Kirigami.Action {
                 text: i18n("Stopwatch")
-                iconName: "player-time"
+                iconName: "chronometer"
                 onTriggered: switchToPage(pagestopwatch)
             },
             Kirigami.Action {

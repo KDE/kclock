@@ -18,9 +18,10 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.0
-import QtQuick.Controls 2.0
+import QtQuick 2.12
+import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.2
+import QtQuick.Window 2.11
 import org.kde.kirigami 2.4 as Kirigami
 
 Kirigami.Page {
@@ -30,54 +31,126 @@ Kirigami.Page {
     property int elapsedTime: 0
     property double displayTime: elapsedTime
 
-    Label {
-        id: timeLabel
-        text: (displayTime / 1000).toFixed(3)
-        anchors.horizontalCenter: parent.horizontalCenter
-        color: Kirigami.Theme.highlightColor
-        font.pointSize: 40
+    function getElapsedHours() {
+        return ("0" + parseInt(elapsedTime / 1000 / 60 / 24).toFixed(0)).slice(-2);
+    }
+    function getElapsedMinutes() {
+        return ("0" + parseInt(elapsedTime / 1000 / 60 - 24*getElapsedHours())).slice(-2);
+    }
+    function getElapsedSeconds() {
+        return ("0" + parseInt(elapsedTime / 1000 - 60*getElapsedMinutes())).slice(-2);
+    }
+    function getElapsedSmall() {
+        return ("0" + parseInt(elapsedTime / 10 - (60*getElapsedSeconds())).toFixed(0)).slice(-2);
     }
 
+    // clock display
+    RowLayout {
+        id: timeLabels
+        anchors.horizontalCenter: parent.horizontalCenter
+
+        Label {
+            id: minutesText
+            text: getElapsedMinutes()
+            color: Kirigami.Theme.focusColor
+            font.pointSize: 40
+            font.kerning: false
+        }
+        Text {
+            text: ":"
+            color: Kirigami.Theme.textColor
+            font.pointSize: 40
+        }
+        Label {
+            text: getElapsedSeconds()
+            color: Kirigami.Theme.focusColor
+            font.pointSize: 40
+            font.kerning: false
+        }
+        Text {
+            text: "."
+            color: Kirigami.Theme.textColor
+            font.pointSize: 40
+        }
+        Rectangle {
+            height: minutesText.height / 2
+            width: 70
+            Text {
+                id: secondsText
+                text: getElapsedSmall()
+                color: Kirigami.Theme.focusColor
+                font.pointSize: 26
+                font.kerning: false
+            }
+        }
+    }
+
+    // start/pause and lap button
+    RowLayout {
+        id: buttons
+        anchors.top: timeLabels.bottom
+        anchors.left: parent.left
+        anchors.right: parent.right
+        Layout.alignment: Qt.AlignHCenter
+
+        ToolButton {
+            text: running ? "Pause" : "Start"
+            icon.name: running ? "chronometer-pause" : "chronometer-start"
+            onClicked: {
+                running = !running
+            }
+            Layout.alignment: Qt.AlignHCenter
+        }
+        ToolButton {
+            text: "Lap"
+            icon.name: "chronometer-lap"
+            onClicked: {
+                roundModel.insert(0, { time: elapsedTime })
+            }
+            Layout.alignment: Qt.AlignHCenter
+        }
+    }
+
+    // lap list display
     ListView {
-        anchors.top: timeLabel.bottom
+        anchors.top: buttons.bottom
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.bottom: parent.bottom
+        anchors.topMargin: 15;
         model: roundModel
+        spacing: 0
 
         delegate: Kirigami.BasicListItem {
-
             activeBackgroundColor: "transparent" // Kirigami.Theme.backgroundColor
-            separatorVisible: false
 
             contentItem: RowLayout {
-                Layout.alignment: Qt.AlignVCenter
                 Rectangle {
-                    width: 100
-                    Layout.fillHeight: true
-                    Layout.alignment: Qt.AlignLeft
-
-                    Text {
-                        text: "<b>#" + (model.index + 1) + "</b>"
-                    }
-                }
-
-                Rectangle {
-                    width: 100
                     Layout.fillHeight: true
                     Layout.alignment: Qt.AlignRight
-
                     Text {
-                        text: parseFloat(model.time/1000).toFixed(2)
+                        anchors.verticalCenter: parent.verticalCenter
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        text: "<b>#" + (roundModel.count - model.index) + "</b>"
                     }
                 }
-                Item {
-                    Layout.fillWidth: true
+                Rectangle {
+                    width: 1
+                }
+                Rectangle {
+                    Layout.fillHeight: true
+
+                    Text {
+                        anchors.verticalCenter: parent.verticalCenter
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        text: parseFloat(model.time/1000).toFixed(2)
+                    }
                 }
             }
         }
     }
 
+    // clock increment
     Timer {
         id: stopwatchTimer
         interval: 16
@@ -91,25 +164,11 @@ Kirigami.Page {
     ListModel {
         id: roundModel
     }
-    
+
+    // topbar action
     mainAction: Kirigami.Action {
-        iconName: running ? "media-playback-pause" : "media-playback-start"
-        tooltip: running ? "Pause" : "Start"
-        onTriggered: {
-            running = !running
-        }
-    }
-    
-    rightAction: Kirigami.Action {
-        iconName: "contact-new"
-        tooltip: "New round"
-        onTriggered: {
-            roundModel.append({ time: elapsedTime })
-        }
-    }
-    
-    leftAction: Kirigami.Action {
-        iconName: "media-playback-stop"
+        iconName: "chronometer-reset"
+        text: "Reset"
         tooltip: "Reset"
         onTriggered: {
             running = false;
