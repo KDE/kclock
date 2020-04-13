@@ -74,7 +74,7 @@ Kirigami.Page {
         }
         Rectangle {
             height: minutesText.height / 2
-            width: 70
+            width: 50
             Text {
                 id: secondsText
                 text: getElapsedSmall()
@@ -124,28 +124,28 @@ Kirigami.Page {
         delegate: Kirigami.BasicListItem {
             activeBackgroundColor: "transparent" // Kirigami.Theme.backgroundColor
 
-            contentItem: RowLayout {
-                Rectangle {
-                    Layout.fillHeight: true
-                    Layout.alignment: Qt.AlignRight
-                    Text {
-                        anchors.verticalCenter: parent.verticalCenter
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        text: "<b>#" + (roundModel.count - model.index) + "</b>"
+            contentItem: RowLayout { // TODO don't put layout as contentItem
+                    Rectangle {
+                        Layout.fillHeight: true
+                        Layout.alignment: Qt.AlignRight
+                        Text {
+                            anchors.verticalCenter: parent.verticalCenter
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            text: "<b>#" + (roundModel.count - model.index) + "</b>"
+                        }
                     }
-                }
-                Rectangle {
-                    width: 1
-                }
-                Rectangle {
-                    Layout.fillHeight: true
+                    Rectangle {
+                        width: 1
+                    }
+                    Rectangle {
+                        Layout.fillHeight: true
 
-                    Text {
-                        anchors.verticalCenter: parent.verticalCenter
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        text: parseFloat(model.time/1000).toFixed(2)
+                        Text {
+                            anchors.verticalCenter: parent.verticalCenter
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            text: parseFloat(model.time/1000).toFixed(2)
+                        }
                     }
-                }
             }
         }
     }

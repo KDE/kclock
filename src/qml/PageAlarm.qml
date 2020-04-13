@@ -20,30 +20,74 @@
 
 import QtQuick 2.11
 import QtQuick.Controls 2.4
+import QtQuick.Layouts 1.2
 import org.kde.kirigami 2.4 as Kirigami
 import kirigamiclock 1.0
 
 Kirigami.Page {
     
     title: "Alarms"
-
     property Alarm selectedAlarm: null
-    
-    mainAction: Kirigami.Action {
-        onTriggered: alarmModel.addAlarm()
+
+    PageNewAlarm {
+        id: pagenewalarm
+        objectName: "newalarm"
+        visible: false
     }
-    
+
+    mainAction: Kirigami.Action {
+        iconName: "list-add"
+        text: "New Alarm"
+//        onTriggered: alarmModel.addAlarm()
+        onTriggered: pageStack.push(pagenewalarm)
+    }
+
     Kirigami.CardsListView {
         model: alarmModel
         anchors.fill: parent
-        delegate: Kirigami.Card {
-            CheckBox {
-                text: model.name
-                checked: model.enabled
-            }
+
+        delegate: Kirigami.AbstractCard {
             onClicked: {
                 selectedAlarm = alarmModel.get(index)
                 pageStack.push(editPage)
+            }
+
+            contentItem: Item {
+                implicitWidth: delegateLayout.implicitWidth
+                implicitHeight: delegateLayout.implicitHeight
+                GridLayout {
+                    id: delegateLayout
+                    anchors {
+                        left: parent.left
+                        top: parent.top
+                        right: parent.right
+                    }
+
+                    rowSpacing: Kirigami.Units.smallSpacing
+                    columnSpacing: Kirigami.Units.smallSpacing
+                    columns: width > Kirigami.Units.gridUnit * 20 ? 4 : 2
+
+                    ColumnLayout {
+                        Kirigami.Heading {
+                            level: 2
+                            text: "<b>07:00 AM</b>"
+                        }
+                        Kirigami.Separator {
+                            Layout.fillWidth: true
+                        }
+                        Label {
+                            Layout.fillWidth: true
+                            wrapMode: Text.WordWrap
+                            text: model.name + " Tomorrow"
+                        }
+                    }
+
+                    CheckBox {
+                        Layout.alignment: Qt.AlignRight|Qt.AlignVCenter
+                        Layout.columnSpan: 1
+                        checked: model.enabled
+                    }
+                }
             }
         }
     }

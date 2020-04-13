@@ -6,5 +6,6 @@
         <file>qml/PageStopwatch.qml</file>
         <file>qml/PageAlarm.qml</file>
         <file>qml/PageTimezoneSelect.qml</file>
+        <file>qml/PageNewAlarm.qml</file>
     </qresource>
 </RCC>

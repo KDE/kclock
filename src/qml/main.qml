@@ -20,6 +20,7 @@
 
 import QtQuick 2.0
 import QtQuick.Controls 2.0
+import QtQuick.Layouts 1.2
 import org.kde.kirigami 2.4 as Kirigami
 
 Kirigami.ApplicationWindow
@@ -34,10 +35,8 @@ Kirigami.ApplicationWindow
     pageStack.initialPage: mainpage
     
     function switchToPage(page) {
-        if(pageStack.depth > 1)
-            pageStack.pop()
-        if(page != mainpage)
-            pageStack.push(page)
+        if (pageStack.depth > 1) pageStack.pop()
+        if (page != mainpage) pageStack.push(page)
     }
     
     globalDrawer: Kirigami.GlobalDrawer {
@@ -75,7 +74,7 @@ Kirigami.ApplicationWindow
         objectName: "time"
     }
     PageTimer {
-        id:pagetimer
+        id: pagetimer
         objectName: "timer"
         visible: false
     }
