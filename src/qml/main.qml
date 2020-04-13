@@ -30,13 +30,13 @@ Kirigami.ApplicationWindow
     width: 600
     height: 440
 
-    title: "Clock"
+    title: i18n("Clock")
 
     pageStack.initialPage: mainpage
     
     function switchToPage(page) {
-        if (pageStack.depth > 1) pageStack.pop()
-        if (page != mainpage) pageStack.push(page)
+        if (pageStack.depth > 0) pageStack.pop()
+        pageStack.push(page)
     }
     
     globalDrawer: Kirigami.GlobalDrawer {
@@ -67,6 +67,14 @@ Kirigami.ApplicationWindow
                 onTriggered: switchToPage(pagealarm)
             }
         ]
+
+        Connections {
+            target: pageStack
+            onCurrentIndexChanged: { // drop all sub pages
+                if (pageStack.currentIndex === 0)
+                    while (pageStack.depth > 1) pageStack.pop();
+            }
+        }
     }
     
     PageMain {

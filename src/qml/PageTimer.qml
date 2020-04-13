@@ -21,7 +21,7 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.2
-import org.kde.kirigami 2.2 as Kirigami
+import org.kde.kirigami 2.4 as Kirigami
 
 Kirigami.Page {
     
@@ -31,12 +31,6 @@ Kirigami.Page {
     property int timerDuration: 60
     property int elapsedTime: 0
     
-//    Label {
-//        text: (timerDuration - elapsedTime / 1000).toFixed(1)
-//        color: Kirigami.Theme.highlightColor
-//        font.pointSize: 40
-//    }
-
     Timer {
         interval: 16
         running: timerpage.running
@@ -48,11 +42,10 @@ Kirigami.Page {
 
     // topbar action
     mainAction: Kirigami.Action {
-        iconName: "chronometer"
-        text: "Edit"
-        tooltip: "Edit"
+        text: running ? "Pause" : "Start"
+        iconName: running ? "chronometer-pause" : "chronometer-start"
         onTriggered: {
-            timerEditSheet.open()
+            running = !running
         }
     }
 
@@ -77,7 +70,7 @@ Kirigami.Page {
         Label {
             id: hoursText
             text: getHours()
-            color: Kirigami.Theme.focusColor
+            color: Kirigami.Theme.highlightColor
             font.pointSize: 40
             font.kerning: false
         }
@@ -89,7 +82,7 @@ Kirigami.Page {
         Label {
             id: minutesText
             text: getMinutes()
-            color: Kirigami.Theme.focusColor
+            color: Kirigami.Theme.highlightColor
             font.pointSize: 40
             font.kerning: false
         }
@@ -100,7 +93,7 @@ Kirigami.Page {
         }
         Label {
             text: getSeconds()
-            color: Kirigami.Theme.focusColor
+            color: Kirigami.Theme.highlightColor
             font.pointSize: 40
             font.kerning: false
         }
@@ -116,10 +109,10 @@ Kirigami.Page {
         Layout.alignment: Qt.AlignHCenter
 
         ToolButton {
-            text: running ? "Pause" : "Start"
-            icon.name: running ? "chronometer-pause" : "chronometer-start"
+            icon.name: "chronometer"
+            text: "Edit"
             onClicked: {
-                running = !running
+                timerEditSheet.open()
             }
             Layout.alignment: Qt.AlignHCenter
         }
@@ -143,22 +136,28 @@ Kirigami.Page {
         standardButtons: Dialog.Close
         title: i18n("Change Timer Duration")
 
-        contentItem: Column {
-             Text {
-                 text: "Change timer duration"
-             }
-             Row {
+        contentItem: Kirigami.FormLayout {
+            Layout.fillWidth: true
+
+             RowLayout {
                  SpinBox {
                      id: spinBoxMinutes
                      onValueChanged: timerEditSheet.setDuration()
                      value: timerDuration / 60
                  }
-
+                 Text {
+                      color: Kirigami.Theme.textColor
+                      text: i18n("minutes")
+                 }
                  SpinBox {
                      id: spinBoxSeconds
                      to: 60
                      onValueChanged: timerEditSheet.setDuration()
                      value: timerDuration % 60
+                 }
+                 Text {
+                      color: Kirigami.Theme.textColor
+                      text: i18n("seconds")
                  }
              }
          }

@@ -25,7 +25,7 @@ import org.kde.kirigami 2.4 as Kirigami
 Kirigami.Page {
     
     title: "Time"
-    
+
     Label {
         id: timeText
         anchors.horizontalCenter: parent.horizontalCenter
@@ -65,7 +65,7 @@ Kirigami.Page {
         }
     }
     
-    PageTimezoneSelect{
+    PageTimezoneSelect {
         id: pagetimezone
     }
     

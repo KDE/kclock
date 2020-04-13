@@ -52,7 +52,7 @@ Kirigami.Page {
         Label {
             id: minutesText
             text: getElapsedMinutes()
-            color: Kirigami.Theme.focusColor
+            color: Kirigami.Theme.highlightColor
             font.pointSize: 40
             font.kerning: false
         }
@@ -63,7 +63,7 @@ Kirigami.Page {
         }
         Label {
             text: getElapsedSeconds()
-            color: Kirigami.Theme.focusColor
+            color: Kirigami.Theme.highlightColor
             font.pointSize: 40
             font.kerning: false
         }
@@ -75,10 +75,11 @@ Kirigami.Page {
         Rectangle {
             height: minutesText.height / 2
             width: 50
+            color: "transparent"
             Text {
                 id: secondsText
                 text: getElapsedSmall()
-                color: Kirigami.Theme.focusColor
+                color: Kirigami.Theme.highlightColor
                 font.pointSize: 26
                 font.kerning: false
             }
@@ -95,12 +96,14 @@ Kirigami.Page {
         Layout.alignment: Qt.AlignHCenter
 
         ToolButton {
-            text: running ? "Pause" : "Start"
-            icon.name: running ? "chronometer-pause" : "chronometer-start"
-            onClicked: {
-                running = !running
-            }
             Layout.alignment: Qt.AlignHCenter
+            icon.name: "chronometer-reset"
+            text: "Reset"
+            onClicked: {
+                running = false;
+                elapsedTime = 0
+                roundModel.clear()
+            }
         }
         ToolButton {
             text: "Lap"
@@ -132,6 +135,7 @@ Kirigami.Page {
                         Text {
                             anchors.verticalCenter: parent.verticalCenter
                             anchors.horizontalCenter: parent.horizontalCenter
+                            color: Kirigami.Theme.textColor
                             text: "<b>#" + (roundModel.count - model.index) + "</b>"
                         }
                     }
@@ -144,6 +148,7 @@ Kirigami.Page {
                         Text {
                             anchors.verticalCenter: parent.verticalCenter
                             anchors.horizontalCenter: parent.horizontalCenter
+                            color: Kirigami.Theme.textColor
                             text: parseFloat(model.time/1000).toFixed(2)
                         }
                     }
@@ -168,13 +173,11 @@ Kirigami.Page {
 
     // topbar action
     mainAction: Kirigami.Action {
-        iconName: "chronometer-reset"
-        text: "Reset"
-        tooltip: "Reset"
+        text: running ? "Pause" : "Start"
+        iconName: running ? "chronometer-pause" : "chronometer-start"
         onTriggered: {
-            running = false;
-            elapsedTime = 0
-            roundModel.clear()
+            running = !running
         }
+        Layout.alignment: Qt.AlignHCenter
     }
 }

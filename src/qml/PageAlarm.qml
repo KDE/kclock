@@ -21,7 +21,7 @@
 import QtQuick 2.11
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.2
-import org.kde.kirigami 2.4 as Kirigami
+import org.kde.kirigami 2.10 as Kirigami
 import kirigamiclock 1.0
 
 Kirigami.Page {
@@ -42,11 +42,12 @@ Kirigami.Page {
         onTriggered: pageStack.push(pagenewalarm)
     }
 
-    Kirigami.CardsListView {
+    ListView {
         model: alarmModel
         anchors.fill: parent
 
-        delegate: Kirigami.AbstractCard {
+        delegate: Kirigami.SwipeListItem {
+
             onClicked: {
                 selectedAlarm = alarmModel.get(index)
                 pageStack.push(editPage)
@@ -55,6 +56,7 @@ Kirigami.Page {
             contentItem: Item {
                 implicitWidth: delegateLayout.implicitWidth
                 implicitHeight: delegateLayout.implicitHeight
+
                 GridLayout {
                     id: delegateLayout
                     anchors {
@@ -72,13 +74,10 @@ Kirigami.Page {
                             level: 2
                             text: "<b>07:00 AM</b>"
                         }
-                        Kirigami.Separator {
-                            Layout.fillWidth: true
-                        }
                         Label {
                             Layout.fillWidth: true
                             wrapMode: Text.WordWrap
-                            text: model.name + " Tomorrow"
+                            text: model.name
                         }
                     }
 
