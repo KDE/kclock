@@ -26,36 +26,20 @@ import org.kde.kirigami 2.4 as Kirigami
 import kirigamiclock 1.0
 
 Kirigami.ScrollablePage {
-    title: "New Alarm"
+    title: i18n("New Alarm")
 
     actions {
         main: Kirigami.Action {
             iconName: "checkmark"
-            text: "Done"
+            text: i18n("Done")
             onTriggered: pageStack.pop()
         }
         right: Kirigami.Action {
             iconName: "dialog-cancel"
-            text: "Cancel"
+            text: i18n("Cancel")
             onTriggered: pageStack.pop()
         }
     }
-
-//    function formatText(count, modelData) {
-//        let data = count === 12 ? modelData + 1 : modelData;
-//        return data.toString().length < 2 ? "0" + data : data;
-//    }
-//
-//    Component {
-//        id: delegateComponent
-//
-//        Label {
-//            text: formatText(Tumbler.tumbler.count, modelData)
-//            opacity: 1.0 - Math.abs(Tumbler.displacement) / (Tumbler.tumbler.visibleItemCount / 2)
-//            horizontalAlignment: Text.AlignHCenter
-//            verticalAlignment: Text.AlignVCenter
-//        }
-//    }
 
     ColumnLayout {
         Kirigami.FormLayout {
@@ -63,15 +47,11 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
 
             RowLayout {
-                Kirigami.FormData.label: "Time:"
-//                Tumbler {
-//                    id: selectedHour
-//                    model: 12
-//                    delegate: delegateComponent
-//                }
+                Kirigami.FormData.label: i18n("Time") + ":"
                 SpinBox {
                     id: selectedHour
                     to: 12
+                    textFromValue: (value, locale) => ("0" + value).slice(-2)
                 }
                 Text {
                     text: ":"
@@ -79,23 +59,13 @@ Kirigami.ScrollablePage {
                 SpinBox {
                     id: selectedMinute
                     to: 59
+                    textFromValue: (value, locale) => ("0" + value).slice(-2)
                 }
                 ComboBox {
                     id: selectedAmPm
                     implicitWidth: 60
                     model: ["AM", "PM"]
                 }
-//                Tumbler {
-//                    id: selectedMinute
-//                    model: 60
-//                    delegate: delegateComponent
-//                }
-//
-//                Tumbler {
-//                    id: selectedAmPm
-//                    model: ["AM", "PM"]
-//                    delegate: delegateComponent
-//                }
             }
 
             Kirigami.Separator {
@@ -103,7 +73,7 @@ Kirigami.ScrollablePage {
             }
 
             Flow {
-                Kirigami.FormData.label: "Repeat:"
+                Kirigami.FormData.label: i18n("Repeat") + ":"
                 Button {
                     implicitWidth: 40
                     text: "S"
@@ -139,7 +109,8 @@ Kirigami.ScrollablePage {
             }
 
             TextField {
-                Kirigami.FormData.label: "Name (optional):"
+                Kirigami.FormData.label: i18n("Name") + " (" + i18n("optional") + "):"
+                placeholderText: i18n("Wake Up")
             }
 
         }

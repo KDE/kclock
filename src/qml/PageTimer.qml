@@ -18,8 +18,9 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.0
-import QtQuick.Controls 2.0
+import QtQuick 2.12
+import QtQuick.Controls 2.4
+import QtQuick.Layouts 1.2
 import org.kde.kirigami 2.2 as Kirigami
 
 Kirigami.Page {
@@ -30,67 +31,140 @@ Kirigami.Page {
     property int timerDuration: 60
     property int elapsedTime: 0
     
-    Label {
-        text: (timerDuration - elapsedTime / 1000).toFixed(1)
-        color: Kirigami.Theme.highlightColor
-        font.pointSize: 40
-    }
+//    Label {
+//        text: (timerDuration - elapsedTime / 1000).toFixed(1)
+//        color: Kirigami.Theme.highlightColor
+//        font.pointSize: 40
+//    }
 
     Timer {
-        interval: 100
+        interval: 16
         running: timerpage.running
         repeat: true
         onTriggered: {
             elapsedTime += interval
         }
     }
-    
+
+    // topbar action
     mainAction: Kirigami.Action {
-        iconName: running ? "media-playback-pause" : "media-playback-start"
-        onTriggered: {
-            running = !running
-        }
-    }
-
-    leftAction: Kirigami.Action {
-        iconName: "media-playback-stop"
-        onTriggered: {
-            elapsedTime = 0
-            running = false
-        }
-    }
-
-    Kirigami.OverlaySheet {
-        id: timerEditSheet
-
-        Column {
-            Text {
-                text: "Change timer duration"
-            }
-            Row {
-                SpinBox {
-                    id: spinBoxMinutes
-                    onValueChanged: timerEditSheet.setDuration()
-                    value: timerDuration / 60
-                }
-
-                SpinBox {
-                    id: spinBoxSeconds
-                    to: 60
-                    onValueChanged: timerEditSheet.setDuration()
-                    value: timerDuration % 60
-                }
-            }
-        }
-
-        function setDuration() {
-            timerDuration = spinBoxMinutes.value * 60 + spinBoxSeconds.value
-        }
-    }
-
-    rightAction: Kirigami.Action {
+        iconName: "chronometer"
+        text: "Edit"
+        tooltip: "Edit"
         onTriggered: {
             timerEditSheet.open()
         }
+    }
+
+    function getTimeLeft() {
+        return timerDuration*1000 - elapsedTime;
+    }
+    function getHours() {
+        return ("0" + parseInt(getTimeLeft() / 1000 / 60 / 24).toFixed(0)).slice(-2);
+    }
+    function getMinutes() {
+        return ("0" + parseInt(getTimeLeft() / 1000 / 60 - 24*getHours())).slice(-2);
+    }
+    function getSeconds() {
+        return ("0" + parseInt(getTimeLeft() / 1000 - 60*getMinutes())).slice(-2);
+    }
+
+    // clock display
+    RowLayout {
+        id: timeLabels
+        anchors.horizontalCenter: parent.horizontalCenter
+
+        Label {
+            id: hoursText
+            text: getHours()
+            color: Kirigami.Theme.focusColor
+            font.pointSize: 40
+            font.kerning: false
+        }
+        Text {
+            text: ":"
+            color: Kirigami.Theme.textColor
+            font.pointSize: 40
+        }
+        Label {
+            id: minutesText
+            text: getMinutes()
+            color: Kirigami.Theme.focusColor
+            font.pointSize: 40
+            font.kerning: false
+        }
+        Text {
+            text: ":"
+            color: Kirigami.Theme.textColor
+            font.pointSize: 40
+        }
+        Label {
+            text: getSeconds()
+            color: Kirigami.Theme.focusColor
+            font.pointSize: 40
+            font.kerning: false
+        }
+    }
+
+    // start/pause and lap button
+    RowLayout {
+        id: buttons
+        anchors.topMargin: 20;
+        anchors.top: timeLabels.bottom
+        anchors.left: parent.left
+        anchors.right: parent.right
+        Layout.alignment: Qt.AlignHCenter
+
+        ToolButton {
+            text: running ? "Pause" : "Start"
+            icon.name: running ? "chronometer-pause" : "chronometer-start"
+            onClicked: {
+                running = !running
+            }
+            Layout.alignment: Qt.AlignHCenter
+        }
+        ToolButton {
+            text: "Reset"
+            icon.name: "chronometer-reset"
+            onClicked: {
+                elapsedTime = 0
+                running = false
+            }
+            Layout.alignment: Qt.AlignHCenter
+        }
+    }
+
+    Dialog {
+        id: timerEditSheet
+        modal: true
+        focus: true
+        width: Math.min(appwindow.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 20)
+        height: Kirigami.Units.gridUnit * 20
+        standardButtons: Dialog.Close
+        title: i18n("Change Timer Duration")
+
+        contentItem: Column {
+             Text {
+                 text: "Change timer duration"
+             }
+             Row {
+                 SpinBox {
+                     id: spinBoxMinutes
+                     onValueChanged: timerEditSheet.setDuration()
+                     value: timerDuration / 60
+                 }
+
+                 SpinBox {
+                     id: spinBoxSeconds
+                     to: 60
+                     onValueChanged: timerEditSheet.setDuration()
+                     value: timerDuration % 60
+                 }
+             }
+         }
+
+         function setDuration() {
+             timerDuration = spinBoxMinutes.value * 60 + spinBoxSeconds.value
+         }
     }
 }

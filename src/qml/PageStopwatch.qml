@@ -88,6 +88,7 @@ Kirigami.Page {
     // start/pause and lap button
     RowLayout {
         id: buttons
+        anchors.topMargin: 20;
         anchors.top: timeLabels.bottom
         anchors.left: parent.left
         anchors.right: parent.right
