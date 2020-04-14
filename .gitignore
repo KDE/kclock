@@ -8,3 +8,4 @@ CMakeLists.txt.user
 /test.sh
 /flatpak-build-desktop
 /.flatpak-builder
+/mobiletest.sh

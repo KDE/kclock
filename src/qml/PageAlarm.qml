@@ -22,13 +22,14 @@
 import QtQuick 2.11
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.2
-import org.kde.kirigami 2.10 as Kirigami
+import org.kde.kirigami 2.12 as Kirigami
 import kirigamiclock 1.0
 
-Kirigami.Page {
+Kirigami.ScrollablePage {
     
     title: "Alarms"
     property Alarm selectedAlarm: null
+    property bool newAlarm: false
 
     PageNewAlarm {
         id: pagenewalarm
@@ -39,7 +40,10 @@ Kirigami.Page {
     mainAction: Kirigami.Action {
         iconName: "list-add"
         text: "New Alarm"
-        onTriggered: pageStack.push(pagenewalarm)
+        onTriggered: {
+            newAlarm = true;
+            pageStack.push(pagenewalarm);
+        }
     }
 
     ListView {
@@ -49,8 +53,9 @@ Kirigami.Page {
         delegate: Kirigami.SwipeListItem {
 
             onClicked: {
+                newAlarm = false
                 selectedAlarm = alarmModel.get(index)
-                // TODO pageStack.push(editPage)
+                pageStack.push(pagenewalarm)
             }
 
             contentItem: Item {
@@ -72,19 +77,19 @@ Kirigami.Page {
                     ColumnLayout {
                         Kirigami.Heading {
                             level: 2
-                            text: ("0" + model.object.hours).slice(-2) + ":" + ("0" + model.object.minutes).slice(-2)
+                            text: ("0" + model.hours).slice(-2) + ":" + ("0" + model.minutes).slice(-2)
                         }
                         Label {
                             Layout.fillWidth: true
                             wrapMode: Text.WordWrap
-                            text: model.object.name
+                            text: model.name
                         }
                     }
 
                     CheckBox {
                         Layout.alignment: Qt.AlignRight|Qt.AlignVCenter
                         Layout.columnSpan: 1
-                        checked: model.object.enabled
+                        checked: model.enabled
                     }
                 }
             }

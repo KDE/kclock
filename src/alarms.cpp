@@ -39,52 +39,54 @@ QString Alarm::getCronString()
             .arg(QCoreApplication::applicationFilePath(), uuid.toString());
 }
 
+/* ~ Alarm row data ~ */
+
+QHash<int, QByteArray> AlarmModel::roleNames() const {
+    return {
+            {HoursRole, "hours"},
+            {MinutesRole, "minutes"},
+            {NameRole, "name"},
+            {EnabledRole, "enabled"},
+    };
+}
+
+QVariant AlarmModel::data(const QModelIndex & index, int role) const
+{
+    if (!index.isValid() || index.row() >= alarmsList.length()) return QVariant();
+
+    auto* alarm = alarmsList[index.row()];
+    if (role == EnabledRole) return alarm->isEnabled();
+    else if (role == HoursRole) return alarm->getHours();
+    else if (role == MinutesRole) return alarm->getMinutes();
+    else if (role == NameRole) return alarm->getName();
+    else return QVariant();
+}
+
+bool AlarmModel::setData(const QModelIndex &index, const QVariant &value, int role)
+{
+    if (!index.isValid() || alarmsList.length() <= index.row()) return false;
+
+    auto* alarm = alarmsList[index.row()];
+    if (role == EnabledRole) alarm->setEnabled(value.toBool());
+    else if (role == HoursRole) alarm->setHours(value.toInt());
+    else if (role == MinutesRole) alarm->setMinutes(value.toInt());
+    else if (role == NameRole) alarm->setName(value.toString());
+    else return false;
+
+    emit dataChanged(index, index, QVector<int> { role });
+    return true;
+}
+
 int AlarmModel::rowCount(const QModelIndex & parent) const
 {
     Q_UNUSED(parent);
     return alarmsList.size();
 }
 
-QVariant AlarmModel::data(const QModelIndex & index, int role) const
-{
-    switch (role) {
-        case Qt::DisplayRole:
-            return QVariant::fromValue(alarmsList.at(index.row()));
-        case EnabledRole:
-            return alarmsList.at(index.row())->isEnabled();
-        default:
-            return QVariant();
-    }
-}
-
-bool AlarmModel::setData(const QModelIndex &index, const QVariant &value, int role)
-{
-    if (index.isValid()) {
-        switch (role) {
-            case EnabledRole:
-                if  (value.type() == QVariant::Bool) {
-                    alarmsList[index.row()]->setEnabled(value.toBool());
-                    emit dataChanged(index, index, QVector<int> { EnabledRole });
-                    return true;
-                }
-                break;
-        }
-    }
-    return false;
-}
-
 Qt::ItemFlags AlarmModel::flags(const QModelIndex &index) const
 {
     Q_UNUSED(index);
     return Qt::ItemIsEditable;
-}
-
-QHash<int, QByteArray> AlarmModel::roleNames() const
-{
-    auto roles = QHash<int, QByteArray>();
-    roles[EnabledRole] = "enabled";
-    roles[Qt::DisplayRole] = "object";
-    return roles;
 }
 
 Alarm* AlarmModel::addAlarm(QString name, int minutes, int hours, QString dayOfWeek)

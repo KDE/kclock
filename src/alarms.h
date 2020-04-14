@@ -36,8 +36,7 @@ class Alarm : public QObject
     Q_PROPERTY(QString dayOfWeek READ getDayOfWeek WRITE setDayOfWeek NOTIFY onPropertyChanged)
 
 public:
-//    explicit Alarm(QObject *parent = nullptr);
-    explicit Alarm(QObject *parent = nullptr, QString name = "test", int minutes = 0, int hours = 0, QString dayOfWeek = "");
+    explicit Alarm(QObject *parent = nullptr, QString name = "", int minutes = 0, int hours = 0, QString dayOfWeek = "*");
 
     QString getName() const { return name; }
     QUuid getUuid() const { return uuid; }
@@ -71,12 +70,15 @@ public:
     explicit AlarmModel(QObject *parent = nullptr) : QAbstractListModel (parent) { }
 
     enum {
-        EnabledRole = Qt::UserRole + 0,
+        EnabledRole = Qt::UserRole + 1,
+        HoursRole,
+        MinutesRole,
+        NameRole,
     };
 
-    int rowCount(const QModelIndex & parent) const override;
-    QVariant data(const QModelIndex & index, int role) const override;
-    bool setData(const QModelIndex & index, const QVariant & value, int role) override;
+    int rowCount(const QModelIndex& parent) const override;
+    QVariant data(const QModelIndex& index, int role) const override;
+    bool setData(const QModelIndex& index, const QVariant & value, int role) override;
     Qt::ItemFlags flags(const QModelIndex & index) const override;
     QHash<int, QByteArray> roleNames() const override;
 
