@@ -1,5 +1,6 @@
 /*
- * Copyright 2019  Nick Reitemeyer <nick.reitemeyer@web.de>
+ * Copyright 2019 Nick Reitemeyer <nick.reitemeyer@web.de>
+ *           2020 Devin Lin <espidev@gmail.com>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -38,7 +39,6 @@ Kirigami.Page {
     mainAction: Kirigami.Action {
         iconName: "list-add"
         text: "New Alarm"
-//        onTriggered: alarmModel.addAlarm()
         onTriggered: pageStack.push(pagenewalarm)
     }
 
@@ -50,7 +50,7 @@ Kirigami.Page {
 
             onClicked: {
                 selectedAlarm = alarmModel.get(index)
-                pageStack.push(editPage)
+                // TODO pageStack.push(editPage)
             }
 
             contentItem: Item {
@@ -72,36 +72,20 @@ Kirigami.Page {
                     ColumnLayout {
                         Kirigami.Heading {
                             level: 2
-                            text: "<b>07:00 AM</b>"
+                            text: ("0" + model.object.hours).slice(-2) + ":" + ("0" + model.object.minutes).slice(-2)
                         }
                         Label {
                             Layout.fillWidth: true
                             wrapMode: Text.WordWrap
-                            text: model.name
+                            text: model.object.name
                         }
                     }
 
                     CheckBox {
                         Layout.alignment: Qt.AlignRight|Qt.AlignVCenter
                         Layout.columnSpan: 1
-                        checked: model.enabled
+                        checked: model.object.enabled
                     }
-                }
-            }
-        }
-    }
-
-    Component {
-        id: editPage
-        Kirigami.Page {
-            Column {
-                CheckBox {
-                    checked: selectedAlarm.enabled
-                    text: "Enabled"
-                }
-                CheckBox {
-                    checked: selectedAlarm.repeated
-                    text: "Repeat"
                 }
             }
         }

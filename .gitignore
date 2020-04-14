@@ -6,3 +6,5 @@ CMakeLists.txt.user
 /cmake-build-debug
 /.idea
 /test.sh
+/flatpak-build-desktop
+/.flatpak-builder

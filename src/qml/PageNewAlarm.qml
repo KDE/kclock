@@ -32,7 +32,11 @@ Kirigami.ScrollablePage {
         main: Kirigami.Action {
             iconName: "checkmark"
             text: i18n("Done")
-            onTriggered: pageStack.pop()
+            onTriggered: {
+                console.log(selectedMinute.value + " " + selectedHour.value);
+                alarmModel.addAlarm(name.text, true, selectedMinute.value, selectedHour.value, "1,2");
+                pageStack.pop()
+            }
         }
         right: Kirigami.Action {
             iconName: "dialog-cancel"
@@ -109,6 +113,7 @@ Kirigami.ScrollablePage {
             }
 
             TextField {
+                id: name
                 Kirigami.FormData.label: i18n("Name") + " (" + i18n("optional") + "):"
                 placeholderText: i18n("Wake Up")
             }

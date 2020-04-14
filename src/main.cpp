@@ -1,5 +1,6 @@
 /*
- * Copyright 2019  Nick Reitemeyer <nick.reitemeyer@web.de>
+ * Copyright 2019 Nick Reitemeyer <nick.reitemeyer@web.de>
+ *           2020 Devin Lin <espidev@gmail.com>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -31,7 +32,7 @@
 #include <KConfig>
 
 #include "timezoneselectormodel.h"
-#include "alarmsmodel.h"
+#include "alarms.h"
 
 QCommandLineParser* createParser()
 {
@@ -52,23 +53,32 @@ int main(int argc, char *argv[])
     KAboutData aboutData("kirigamiclock", "Clock", "0.1", "Clock for Plasma Mobile", KAboutLicense::GPL);
     KAboutData::setApplicationData(aboutData);
 
+    // initialize models
 	auto *timeZoneModel = new TimeZoneSelectorModel();
-    //auto *timeZoneViewModel = new TimeZoneViewModel(timeZoneModel);
+
+	//auto *timeZoneViewModel = new TimeZoneViewModel(timeZoneModel);
     //timeZoneModel->connect(timeZoneModel, &TimeZoneSelectorModel::dataChanged, timeZoneViewModel, &TimeZoneViewModel::dataChanged);
+
     auto *timeZoneViewModel = new QSortFilterProxyModel();
     timeZoneViewModel->setFilterFixedString("true");
     timeZoneViewModel->setSourceModel(timeZoneModel);
     timeZoneViewModel->setFilterRole(TimeZoneSelectorModel::ShownRole);
-	auto *timeZoneFilterModel = new TimeZoneFilterModel(timeZoneModel);
+
+    auto *timeZoneFilterModel = new TimeZoneFilterModel(timeZoneModel);
     auto *alarmModel = new AlarmModel();
+
+    // register QML types
     qmlRegisterType<Alarm>("kirigamiclock", 1, 0, "Alarm");
+
+
 	engine.rootContext()->setContextProperty("timeZoneShowModel", timeZoneViewModel);
 	engine.rootContext()->setContextProperty("timeZoneFilterModel", timeZoneFilterModel);
     engine.rootContext()->setContextProperty("alarmModel", alarmModel);
-    alarmModel->addAlarm();
+//    alarmModel->addAlarm();
     alarmModel->load();
 
     engine.load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
+
     {
         QScopedPointer<QCommandLineParser> parser(createParser());
         parser->process(app);
@@ -77,5 +87,6 @@ int main(int argc, char *argv[])
             QMetaObject::invokeMethod(rootObject, "switchToPage", Q_ARG(QVariant, parser->value("page")));
         }
     }
+
     return app.exec();
 }

@@ -19,6 +19,8 @@
  */
 
 #include "alarmsmodel.h"
+#include "alarms.h"
+
 #include <QProcess>
 #include <QCoreApplication>
 #include <QDebug>

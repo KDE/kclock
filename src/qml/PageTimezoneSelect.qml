@@ -1,5 +1,6 @@
 /*
- * Copyright 2019  Nick Reitemeyer <nick.reitemeyer@web.de>
+ * Copyright 2019 Nick Reitemeyer <nick.reitemeyer@web.de>
+ *           2020 Devin Lin <espidev@gmail.com>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -21,7 +22,7 @@
 import QtQuick 2.11
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
-import org.kde.kirigami 2.2 as Kirigami
+import org.kde.kirigami 2.4 as Kirigami
 
 Kirigami.Page {
     
