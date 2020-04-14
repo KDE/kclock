@@ -34,19 +34,16 @@ Kirigami.ScrollablePage {
             text: i18n("Done")
             onTriggered: {
                 if (newAlarm) {
-                    alarmModel.addAlarm(name.text, selectedMinute.value, selectedHour.value, "1,2");
+                    selectedAlarm = alarmModel.insert(0, selectedAlarmName.text, selectedAlarmMinute.value, selectedAlarmHour.value, "1,2");
+                    newAlarm = false; // reset form
                 } else {
-                    selectedAlarm.name = name.text;
-                    selectedAlarm.minutes = selectedMinute.value;
-                    selectedAlarm.hours = selectedHour.value;
+                    selectedAlarm.name = selectedAlarmName.text;
+                    selectedAlarm.minutes = selectedAlarmMinute.value;
+                    selectedAlarm.hours = selectedAlarmHour.value;
                 }
+                newAlarm = true;
                 pageStack.pop()
             }
-        }
-        right: Kirigami.Action {
-            iconName: "dialog-cancel"
-            text: i18n("Cancel")
-            onTriggered: pageStack.pop()
         }
     }
 
@@ -58,7 +55,7 @@ Kirigami.ScrollablePage {
             RowLayout {
                 Kirigami.FormData.label: i18n("Time") + ":"
                 SpinBox {
-                    id: selectedHour
+                    id: selectedAlarmHour
                     to: 12
                     value: newAlarm ? 0 : selectedAlarm.hours
                     textFromValue: (value, locale) => ("0" + value).slice(-2)
@@ -67,13 +64,13 @@ Kirigami.ScrollablePage {
                     text: ":"
                 }
                 SpinBox {
-                    id: selectedMinute
+                    id: selectedAlarmMinute
                     to: 59
                     value: newAlarm ? 0 : selectedAlarm.minutes
                     textFromValue: (value, locale) => ("0" + value).slice(-2)
                 }
                 ComboBox {
-                    id: selectedAmPm
+                    id: selectedAlarmAmPm
                     implicitWidth: 60
                     model: ["AM", "PM"]
                 }
@@ -120,7 +117,7 @@ Kirigami.ScrollablePage {
             }
 
             TextField {
-                id: name
+                id: selectedAlarmName
                 Kirigami.FormData.label: i18n("Name") + " (" + i18n("optional") + "):"
                 placeholderText: i18n("Wake Up")
                 text: newAlarm ? "" : selectedAlarm.name

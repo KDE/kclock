@@ -29,11 +29,10 @@ Kirigami.ScrollablePage {
     
     title: "Alarms"
     property Alarm selectedAlarm: null
-    property bool newAlarm: false
+    property bool newAlarm: true
 
     PageNewAlarm {
         id: pagenewalarm
-        objectName: "newalarm"
         visible: false
     }
 
@@ -53,9 +52,9 @@ Kirigami.ScrollablePage {
         delegate: Kirigami.SwipeListItem {
 
             onClicked: {
-                newAlarm = false
-                selectedAlarm = alarmModel.get(index)
-                pageStack.push(pagenewalarm)
+                selectedAlarm = alarmModel.get(index);
+                newAlarm = false;
+                pageStack.push(pagenewalarm);
             }
 
             contentItem: Item {

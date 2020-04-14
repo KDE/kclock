@@ -70,11 +70,11 @@ int main(int argc, char *argv[])
     // register QML types
     qmlRegisterType<Alarm>("kirigamiclock", 1, 0, "Alarm");
 
-
+    // models
 	engine.rootContext()->setContextProperty("timeZoneShowModel", timeZoneViewModel);
 	engine.rootContext()->setContextProperty("timeZoneFilterModel", timeZoneFilterModel);
     engine.rootContext()->setContextProperty("alarmModel", alarmModel);
-//    alarmModel->addAlarm();
+
     alarmModel->load();
 
     engine.load(QUrl(QStringLiteral("qrc:/qml/main.qml")));

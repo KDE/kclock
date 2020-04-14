@@ -52,7 +52,7 @@ QHash<int, QByteArray> AlarmModel::roleNames() const {
 
 QVariant AlarmModel::data(const QModelIndex & index, int role) const
 {
-    if (!index.isValid() || index.row() >= alarmsList.length()) return QVariant();
+    if (!index.isValid() || index.row() >= alarmsList.count()) return QVariant();
 
     auto* alarm = alarmsList[index.row()];
     if (role == EnabledRole) return alarm->isEnabled();
@@ -71,9 +71,10 @@ bool AlarmModel::setData(const QModelIndex &index, const QVariant &value, int ro
     else if (role == HoursRole) alarm->setHours(value.toInt());
     else if (role == MinutesRole) alarm->setMinutes(value.toInt());
     else if (role == NameRole) alarm->setName(value.toString());
-    else return false;
+    else return false; 
 
-    emit dataChanged(index, index, QVector<int> { role });
+    printf("help");
+    emit dataChanged(index, index);
     return true;
 }
 
@@ -89,13 +90,28 @@ Qt::ItemFlags AlarmModel::flags(const QModelIndex &index) const
     return Qt::ItemIsEditable;
 }
 
-Alarm* AlarmModel::addAlarm(QString name, int minutes, int hours, QString dayOfWeek)
+Alarm* AlarmModel::insert(int index, QString name, int minutes, int hours, QString dayOfWeek)
 {
-    beginInsertRows(QModelIndex(), 0, 0);
+    if (index < 0 || index > alarmsList.count()) return new Alarm();
+    emit beginInsertRows(QModelIndex(), index, index);
     auto* alarm = new Alarm(this, name, minutes, hours, dayOfWeek);
-    alarmsList.prepend(alarm);
-    endInsertRows();
+    alarmsList.insert(index, alarm);
+    emit endInsertRows();
     return alarm;
+}
+
+void AlarmModel::remove(int index)
+{
+    if (index < 0 || index >= alarmsList.count()) return;
+    emit beginRemoveRows(QModelIndex(), index, index);
+    alarmsList.removeAt(index);
+    emit endRemoveRows();
+}
+
+Alarm* AlarmModel::get(int index)
+{
+    if (index < 0 || index >= alarmsList.count()) return new Alarm();
+    return alarmsList.at(index);
 }
 
 bool AlarmModel::load()

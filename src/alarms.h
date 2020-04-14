@@ -46,7 +46,7 @@ public:
     int getMinutes() const { return cronMinutes; }
     QString getDayOfWeek() const { return cronDayOfWeek; }
     QString getCronString();
-
+    
     void setName(QString name) { this->name = name; }
     void setEnabled(bool enabled) { this->enabled = enabled; }
     void setHours(int hours) { this->cronHours = hours; }
@@ -71,14 +71,14 @@ public:
 
     enum {
         EnabledRole = Qt::UserRole + 1,
-        HoursRole,
-        MinutesRole,
-        NameRole,
+        HoursRole = Qt::DisplayRole + 0,
+        MinutesRole = Qt::DisplayRole + 1,
+        NameRole = Qt::DisplayRole + 2,
     };
 
     int rowCount(const QModelIndex& parent) const override;
     QVariant data(const QModelIndex& index, int role) const override;
-    bool setData(const QModelIndex& index, const QVariant & value, int role) override;
+    bool setData(const QModelIndex& index, const QVariant& value, int role) override;
     Qt::ItemFlags flags(const QModelIndex & index) const override;
     QHash<int, QByteArray> roleNames() const override;
 
@@ -86,8 +86,9 @@ public:
     bool load();
 
     Q_INVOKABLE bool save();
-    Q_INVOKABLE Alarm* addAlarm(QString name, int minutes, int hours, QString dayOfWeek);
-    Q_INVOKABLE Alarm* get(int index) { return alarmsList.at(index); }
+    Q_INVOKABLE Alarm* insert(int index, QString name, int minutes, int hours, QString dayOfWeek);
+    Q_INVOKABLE void remove(int index);
+    Q_INVOKABLE Alarm* get(int index);
 
 private:
     QList<Alarm*> alarmsList;
