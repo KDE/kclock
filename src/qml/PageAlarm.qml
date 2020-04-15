@@ -28,8 +28,6 @@ import kirigamiclock 1.0
 Kirigami.ScrollablePage {
     
     title: "Alarms"
-    property Alarm selectedAlarm: null
-    property bool newAlarm: true
 
     PageNewAlarm {
         id: pagenewalarm
@@ -40,7 +38,7 @@ Kirigami.ScrollablePage {
         iconName: "list-add"
         text: "New Alarm"
         onTriggered: {
-            newAlarm = true;
+            pagenewalarm.init(null);
             pageStack.push(pagenewalarm);
         }
     }
@@ -52,10 +50,21 @@ Kirigami.ScrollablePage {
         delegate: Kirigami.SwipeListItem {
 
             onClicked: {
-                selectedAlarm = alarmModel.get(index);
-                newAlarm = false;
+                pagenewalarm.init(alarmModel.get(index));
                 pageStack.push(pagenewalarm);
             }
+            
+            actions: [
+                Kirigami.Action {
+                    iconName: "delete"
+                    text: "Delete"
+                    onTriggered: {
+                        showPassiveNotification("Deleted alarm " + alarmModel.get(index).name);
+                        alarmModel.remove(index);
+                        alarmModel.updateUi();
+                    }
+                }
+            ]
 
             contentItem: Item {
                 implicitWidth: delegateLayout.implicitWidth

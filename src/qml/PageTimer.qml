@@ -22,6 +22,7 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.2
+import QtQuick.Shapes 1.14
 import org.kde.kirigami 2.4 as Kirigami
 
 Kirigami.Page {
@@ -38,6 +39,27 @@ Kirigami.Page {
         repeat: true
         onTriggered: {
             elapsedTime += interval
+        }
+    }
+
+    Shape {
+        width: parent.width
+        height: parent.height
+//         anchors.centerIn: parent
+        layer.enabled: true
+        layer.samples: 40
+        
+        ShapePath {
+            strokeColor: "grey"
+            strokeWidth: 4
+            capStyle: ShapePath.FlatCap
+
+            PathAngleArc {
+                centerX: parent.width / 2; centerY: 95
+                radiusX: 90; radiusY: 90
+                startAngle: -180
+                sweepAngle: 360
+            }
         }
     }
 

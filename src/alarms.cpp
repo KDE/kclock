@@ -21,9 +21,10 @@
 #include <QtCore/QCoreApplication>
 #include <sstream>
 #include <QtCore/QProcess>
+#include <QDebug>
 #include "alarms.h"
 
-Alarm::Alarm(QObject *parent, QString name, int minutes, int hours, QString dayOfWeek) {
+Alarm::Alarm(QObject *parent, QString name, int minutes, int hours, int dayOfWeek) {
     enabled = true;
     uuid = QUuid::createUuid();
     this->name = name;
@@ -50,7 +51,7 @@ QHash<int, QByteArray> AlarmModel::roleNames() const {
     };
 }
 
-QVariant AlarmModel::data(const QModelIndex & index, int role) const
+QVariant AlarmModel::data(const QModelIndex& index, int role) const
 {
     if (!index.isValid() || index.row() >= alarmsList.count()) return QVariant();
 
@@ -62,7 +63,7 @@ QVariant AlarmModel::data(const QModelIndex & index, int role) const
     else return QVariant();
 }
 
-bool AlarmModel::setData(const QModelIndex &index, const QVariant &value, int role)
+bool AlarmModel::setData(const QModelIndex& index, const QVariant& value, int role)
 {
     if (!index.isValid() || alarmsList.length() <= index.row()) return false;
 
@@ -73,24 +74,23 @@ bool AlarmModel::setData(const QModelIndex &index, const QVariant &value, int ro
     else if (role == NameRole) alarm->setName(value.toString());
     else return false; 
 
-    printf("help");
     emit dataChanged(index, index);
     return true;
 }
 
-int AlarmModel::rowCount(const QModelIndex & parent) const
+int AlarmModel::rowCount(const QModelIndex& parent) const
 {
     Q_UNUSED(parent);
     return alarmsList.size();
 }
 
-Qt::ItemFlags AlarmModel::flags(const QModelIndex &index) const
+Qt::ItemFlags AlarmModel::flags(const QModelIndex& index) const
 {
     Q_UNUSED(index);
     return Qt::ItemIsEditable;
 }
 
-Alarm* AlarmModel::insert(int index, QString name, int minutes, int hours, QString dayOfWeek)
+Alarm* AlarmModel::insert(int index, QString name, int minutes, int hours, int dayOfWeek)
 {
     if (index < 0 || index > alarmsList.count()) return new Alarm();
     emit beginInsertRows(QModelIndex(), index, index);
@@ -112,6 +112,11 @@ Alarm* AlarmModel::get(int index)
 {
     if (index < 0 || index >= alarmsList.count()) return new Alarm();
     return alarmsList.at(index);
+}
+
+void AlarmModel::updateUi()
+{
+    emit dataChanged(createIndex(0, 0), createIndex(alarmsList.count()-1, 0));
 }
 
 bool AlarmModel::load()

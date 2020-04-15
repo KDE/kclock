@@ -33,10 +33,10 @@ class Alarm : public QObject
     Q_PROPERTY(bool enabled READ isEnabled WRITE setEnabled NOTIFY onPropertyChanged)
     Q_PROPERTY(int hours READ getHours WRITE setHours NOTIFY onPropertyChanged)
     Q_PROPERTY(int minutes READ getMinutes WRITE setMinutes NOTIFY onPropertyChanged)
-    Q_PROPERTY(QString dayOfWeek READ getDayOfWeek WRITE setDayOfWeek NOTIFY onPropertyChanged)
+    Q_PROPERTY(int dayOfWeek READ getDayOfWeek WRITE setDayOfWeek NOTIFY onPropertyChanged)
 
 public:
-    explicit Alarm(QObject *parent = nullptr, QString name = "", int minutes = 0, int hours = 0, QString dayOfWeek = "*");
+    explicit Alarm(QObject *parent = nullptr, QString name = "", int minutes = 0, int hours = 0, int dayOfWeek = 0);
 
     QString getName() const { return name; }
     QUuid getUuid() const { return uuid; }
@@ -44,23 +44,23 @@ public:
     bool isDirty() const { return dirty; }
     int getHours() const { return cronHours; }
     int getMinutes() const { return cronMinutes; }
-    QString getDayOfWeek() const { return cronDayOfWeek; }
+    int getDayOfWeek() const { return cronDayOfWeek; }
     QString getCronString();
     
     void setName(QString name) { this->name = name; }
     void setEnabled(bool enabled) { this->enabled = enabled; }
     void setHours(int hours) { this->cronHours = hours; }
     void setMinutes(int minutes) { this->cronMinutes = minutes; }
-    void setDayOfWeek(QString dayOfWeek) { this->cronDayOfWeek = dayOfWeek; }
+    void setDayOfWeek(int dayOfWeek) { this->cronDayOfWeek = dayOfWeek; }
 
 signals:
     void onPropertyChanged();
 
 private:
-    QString name, cronDayOfWeek;
+    QString name;
     QUuid uuid;
     bool enabled, dirty = false;
-    int cronHours, cronMinutes;
+    int cronHours, cronMinutes, cronDayOfWeek;
 };
 
 class AlarmModel : public QAbstractListModel
@@ -81,12 +81,14 @@ public:
     bool setData(const QModelIndex& index, const QVariant& value, int role) override;
     Qt::ItemFlags flags(const QModelIndex & index) const override;
     QHash<int, QByteArray> roleNames() const override;
+    
+    Q_INVOKABLE void updateUi();
 
     QString getCrontabUpdate(const QString crontab);
     bool load();
 
     Q_INVOKABLE bool save();
-    Q_INVOKABLE Alarm* insert(int index, QString name, int minutes, int hours, QString dayOfWeek);
+    Q_INVOKABLE Alarm* insert(int index, QString name, int minutes, int hours, int dayOfWeek);
     Q_INVOKABLE void remove(int index);
     Q_INVOKABLE Alarm* get(int index);
 

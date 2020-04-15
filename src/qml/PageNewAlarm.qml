@@ -28,102 +28,121 @@ import kirigamiclock 1.0
 Kirigami.ScrollablePage {
     title: newAlarm ? i18n("New Alarm") : i18n("Edit Alarm")
 
+    property Alarm selectedAlarm: null
+    property bool newAlarm: true
+    property int alarmDaysOfWeek: newAlarm ? 0 : selectedAlarm.dayOfWeek
+    
+    function init(alarm) {
+        if (alarm == null) {
+            newAlarm = true;
+            alarmDaysOfWeek = 0;
+        } else {
+            newAlarm = false;
+            alarmDaysOfWeek = alarm.dayOfWeek;
+        }
+        selectedAlarm = alarm;
+    }
+    
     actions {
         main: Kirigami.Action {
             iconName: "checkmark"
             text: i18n("Done")
             onTriggered: {
                 if (newAlarm) {
-                    selectedAlarm = alarmModel.insert(0, selectedAlarmName.text, selectedAlarmMinute.value, selectedAlarmHour.value, "1,2");
+                    selectedAlarm = alarmModel.insert(0, selectedAlarmName.text, selectedAlarmMinute.value, selectedAlarmHour.value, alarmDaysOfWeek);
                     newAlarm = false; // reset form
                 } else {
                     selectedAlarm.name = selectedAlarmName.text;
                     selectedAlarm.minutes = selectedAlarmMinute.value;
                     selectedAlarm.hours = selectedAlarmHour.value;
+                    selectedAlarm.dayOfWeek = alarmDaysOfWeek;
+                    
+                    // must manually update the UI
+                    alarmModel.updateUi();
                 }
+                // reset
+                alarmDaysOfWeek = 0;
                 newAlarm = true;
                 pageStack.pop()
             }
         }
     }
 
-    ColumnLayout {
-        Kirigami.FormLayout {
-            id: layout
-            Layout.fillWidth: true
+    Column {
+        id: layout
+        Layout.fillWidth: true
 
-            RowLayout {
-                Kirigami.FormData.label: i18n("Time") + ":"
-                SpinBox {
-                    id: selectedAlarmHour
-                    to: 12
-                    value: newAlarm ? 0 : selectedAlarm.hours
-                    textFromValue: (value, locale) => ("0" + value).slice(-2)
-                }
-                Text {
-                    text: ":"
-                }
-                SpinBox {
-                    id: selectedAlarmMinute
-                    to: 59
-                    value: newAlarm ? 0 : selectedAlarm.minutes
-                    textFromValue: (value, locale) => ("0" + value).slice(-2)
-                }
-                ComboBox {
-                    id: selectedAlarmAmPm
-                    implicitWidth: 60
-                    model: ["AM", "PM"]
-                }
-            }
-
-            Kirigami.Separator {
-                Kirigami.FormData.isSection: true
-            }
-
-            Flow {
-                Kirigami.FormData.label: i18n("Repeat") + ":"
-                Button {
-                    implicitWidth: 40
-                    text: "S"
-                }
-                Button {
-                    implicitWidth: 40
-                    text: "M"
-                }
-                Button {
-                    implicitWidth: 40
-                    text: "T"
-                }
-                Button {
-                    implicitWidth: 40
-                    text: "W"
-                }
-                Button {
-                    implicitWidth: 40
-                    text: "T"
-                }
-                Button {
-                    implicitWidth: 40
-                    text: "F"
-                }
-                Button {
-                    implicitWidth: 40
-                    text: "S"
-                }
-            }
-
-            Kirigami.Separator {
-                Kirigami.FormData.isSection: true
-            }
-
-            TextField {
-                id: selectedAlarmName
-                Kirigami.FormData.label: i18n("Name") + " (" + i18n("optional") + "):"
-                placeholderText: i18n("Wake Up")
-                text: newAlarm ? "" : selectedAlarm.name
-            }
-
+        Text {
+            text: i18n("Time") + ":"
         }
+        
+        RowLayout {
+            SpinBox {
+                id: selectedAlarmHour
+                to: 12
+                value: newAlarm ? 0 : selectedAlarm.hours
+                textFromValue: (value, locale) => ("0" + value).slice(-2)
+            }
+            Text {
+                text: ":"
+            }
+            SpinBox {
+                id: selectedAlarmMinute
+                to: 59
+                value: newAlarm ? 0 : selectedAlarm.minutes
+                textFromValue: (value, locale) => ("0" + value).slice(-2)
+            }
+            ComboBox {
+                id: selectedAlarmAmPm
+                implicitWidth: 60
+                model: ["AM", "PM"]
+            }
+        }
+
+        Text {
+            anchors.topMargin: 5
+            text: i18n("Repeat") + ":"
+        }
+
+        // days to repeat
+        Flow {
+            Repeater {
+                model: ListModel {
+                    id: selectedDays
+                    ListElement { displayText: "S"; dayFlag: 1 }
+                    ListElement { displayText: "M"; dayFlag: 2 }
+                    ListElement { displayText: "T"; dayFlag: 4 }
+                    ListElement { displayText: "W"; dayFlag: 8 }
+                    ListElement { displayText: "T"; dayFlag: 16 }
+                    ListElement { displayText: "F"; dayFlag: 32 }
+                    ListElement { displayText: "S"; dayFlag: 64 }
+                }
+                
+                Button {
+                    implicitWidth: 40
+                    text: displayText
+                    checkable: true
+                    checked: ((newAlarm ? alarmDaysOfWeek : selectedAlarm.dayOfWeek) & dayFlag) == dayFlag
+                    highlighted: false
+                    onClicked: {
+                        if (checked) alarmDaysOfWeek |= dayFlag;
+                        else alarmDaysOfWeek &= ~dayFlag;
+                    }
+                }
+            }
+        }
+
+        Text {
+            anchors.topMargin: 5
+            text: i18n("Name") + " (" + i18n("optional") + "):"
+        }
+
+        TextField {
+            id: selectedAlarmName
+            placeholderText: i18n("Wake Up")
+            text: newAlarm ? "" : selectedAlarm.name
+        }
+
     }
 
 }
