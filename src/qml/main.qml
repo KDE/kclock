@@ -78,6 +78,11 @@ Kirigami.ApplicationWindow
         }
     }
     
+    FontLoader {
+        id: clockFont;
+        source: "/assets/RedHatText-Regular.ttf"
+    }
+    
     PageMain {
         id: mainpage
         objectName: "time"

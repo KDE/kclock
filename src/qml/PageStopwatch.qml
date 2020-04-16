@@ -56,22 +56,26 @@ Kirigami.Page {
             color: Kirigami.Theme.highlightColor
             font.pointSize: 40
             font.kerning: false
+            font.family: clockFont.name
         }
         Text {
             text: ":"
             color: Kirigami.Theme.textColor
             font.pointSize: 40
+            font.family: clockFont.name
         }
         Label {
             text: getElapsedSeconds()
             color: Kirigami.Theme.highlightColor
             font.pointSize: 40
             font.kerning: false
+            font.family: clockFont.name
         }
         Text {
             text: "."
             color: Kirigami.Theme.textColor
             font.pointSize: 40
+            font.family: clockFont.name
         }
         Rectangle {
             height: minutesText.height / 2
@@ -83,6 +87,7 @@ Kirigami.Page {
                 color: Kirigami.Theme.highlightColor
                 font.pointSize: 26
                 font.kerning: false
+                font.family: clockFont.name
             }
         }
     }
@@ -127,9 +132,10 @@ Kirigami.Page {
         spacing: 0
 
         delegate: Kirigami.BasicListItem {
-            activeBackgroundColor: "transparent" // Kirigami.Theme.backgroundColor
+            activeBackgroundColor: "transparent"
 
-            contentItem: RowLayout { // TODO don't put layout as contentItem
+            contentItem: RowLayout {
+                    // round number
                     Rectangle {
                         Layout.fillHeight: true
                         Layout.alignment: Qt.AlignRight
@@ -143,14 +149,24 @@ Kirigami.Page {
                     Rectangle {
                         width: 1
                     }
+                    // time since beginning
                     Rectangle {
                         Layout.fillHeight: true
-
                         Text {
                             anchors.verticalCenter: parent.verticalCenter
                             anchors.horizontalCenter: parent.horizontalCenter
                             color: Kirigami.Theme.textColor
                             text: parseFloat(model.time/1000).toFixed(2)
+                        }
+                    }
+                    // time since last lap
+                    Rectangle {
+                        Layout.fillHeight: true
+                        Text {
+                            anchors.verticalCenter: parent.verticalCenter
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            color: Kirigami.Theme.textColor
+                            text: index == roundModel.count-1 ? parseFloat(model.time/1000).toFixed(2) : "+" + parseFloat((model.time - roundModel.get(index+1).time)/1000).toFixed(2)
                         }
                     }
             }

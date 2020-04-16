@@ -23,13 +23,15 @@ import QtQuick 2.12
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.2
 import QtQuick.Shapes 1.14
-import org.kde.kirigami 2.4 as Kirigami
+import org.kde.kirigami 2.12 as Kirigami
+import kirigamiclock 1.0
 
 Kirigami.Page {
     
     title: "Timer"
     id: timerpage
     property bool running: false
+    property bool finished: false
     property int timerDuration: 60
     property int elapsedTime: 0
     
@@ -39,28 +41,26 @@ Kirigami.Page {
         repeat: true
         onTriggered: {
             elapsedTime += interval
-        }
-    }
-
-    Shape {
-        width: parent.width
-        height: parent.height
-//         anchors.centerIn: parent
-        layer.enabled: true
-        layer.samples: 40
-        
-        ShapePath {
-            strokeColor: "grey"
-            strokeWidth: 4
-            capStyle: ShapePath.FlatCap
-
-            PathAngleArc {
-                centerX: parent.width / 2; centerY: 95
-                radiusX: 90; radiusY: 90
-                startAngle: -180
-                sweepAngle: 360
+            
+            // if timer finished
+            if (timerDuration * 1000 <= elapsedTime) {
+                finishedTimer();
             }
         }
+    }
+    
+    function finishedTimer() {
+        elapsedTime = timerDuration * 1000;
+        running = false;
+        finished = true;
+        
+        timerModel.timerFinished();
+    }
+    
+    function resetTimer() {
+        running = false;
+        finished = false;
+        elapsedTime = 0;
     }
 
     // topbar action
@@ -68,7 +68,64 @@ Kirigami.Page {
         text: running ? "Pause" : "Start"
         iconName: running ? "chronometer-pause" : "chronometer-start"
         onTriggered: {
-            running = !running
+            if (finished) resetTimer();
+            running = !running;
+        }
+    }
+    
+    // outside circle
+    Shape {
+        id: timerCircle
+        implicitWidth: parent.width
+        implicitHeight: timerCircleArc.radiusX*2+5
+        anchors.horizontalCenter: parent.horizontalCenter
+        layer.enabled: true
+        layer.samples: 40
+        
+        Kirigami.Theme.colorSet: Kirigami.Theme.Button
+        
+        // base circle
+        ShapePath {
+            id: timerCirclePath
+            strokeColor: "lightgrey"
+            fillColor: "transparent"
+            strokeWidth: 4
+            capStyle: ShapePath.FlatCap
+            PathAngleArc {
+                id: timerCircleArc
+                centerX: timerCircle.width / 2; centerY: timerCircle.height / 2;
+                radiusX: 110; radiusY: radiusX
+                startAngle: -180
+                sweepAngle: 360
+            }
+        }
+        
+        // progress circle
+        ShapePath {
+            strokeColor: Kirigami.Theme.highlightColor
+            fillColor: "transparent"
+            strokeWidth: 4
+            capStyle: ShapePath.FlatCap
+            PathAngleArc {
+                centerX: timerCircleArc.centerX; centerY: timerCircleArc.centerY
+                radiusX: timerCircleArc.radiusX; radiusY: timerCircleArc.radiusY
+                startAngle: -90
+                sweepAngle: 360 * (elapsedTime / 1000) / timerDuration
+            }
+        }
+        
+        // lapping circle
+        ShapePath {
+            strokeColor: running ? "white" : "transparent"
+            fillColor: "transparent"
+            strokeWidth: 4
+            capStyle: ShapePath.FlatCap
+            PathAngleArc {
+                centerX: timerCircleArc.centerX; centerY: timerCircleArc.centerY
+                radiusX: timerCircleArc.radiusX; radiusY: timerCircleArc.radiusY
+                startAngle: (-90 + 360 * (elapsedTime % 1000) / 1000) % 360
+                sweepAngle: 16
+            }
         }
     }
 
@@ -88,37 +145,42 @@ Kirigami.Page {
     // clock display
     RowLayout {
         id: timeLabels
-        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.centerIn: timerCircle
 
         Label {
             id: hoursText
             text: getHours()
             color: Kirigami.Theme.highlightColor
-            font.pointSize: 40
+            font.pointSize: 30
             font.kerning: false
+            font.family: clockFont.name
         }
         Text {
             text: ":"
             color: Kirigami.Theme.textColor
-            font.pointSize: 40
+            font.pointSize: 30
+            font.family: clockFont.name
         }
         Label {
             id: minutesText
             text: getMinutes()
             color: Kirigami.Theme.highlightColor
-            font.pointSize: 40
+            font.pointSize: 30
             font.kerning: false
+            font.family: clockFont.name
         }
         Text {
             text: ":"
             color: Kirigami.Theme.textColor
-            font.pointSize: 40
+            font.pointSize: 30
+            font.family: clockFont.name
         }
         Label {
             text: getSeconds()
             color: Kirigami.Theme.highlightColor
-            font.pointSize: 40
+            font.pointSize: 30
             font.kerning: false
+            font.family: clockFont.name
         }
     }
 
@@ -126,7 +188,7 @@ Kirigami.Page {
     RowLayout {
         id: buttons
         anchors.topMargin: 20;
-        anchors.top: timeLabels.bottom
+        anchors.top: timerCircle.bottom
         anchors.left: parent.left
         anchors.right: parent.right
         Layout.alignment: Qt.AlignHCenter
@@ -142,10 +204,7 @@ Kirigami.Page {
         ToolButton {
             text: "Reset"
             icon.name: "chronometer-reset"
-            onClicked: {
-                elapsedTime = 0
-                running = false
-            }
+            onClicked: resetTimer();
             Layout.alignment: Qt.AlignHCenter
         }
     }

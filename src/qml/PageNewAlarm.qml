@@ -68,81 +68,83 @@ Kirigami.ScrollablePage {
         }
     }
 
-    Column {
-        id: layout
-        Layout.fillWidth: true
+    ColumnLayout {
+        Kirigami.FormLayout {
+            id: layout
+            Layout.fillWidth: true
 
-        Text {
-            text: i18n("Time") + ":"
-        }
-        
-        RowLayout {
-            SpinBox {
-                id: selectedAlarmHour
-                to: 12
-                value: newAlarm ? 0 : selectedAlarm.hours
-                textFromValue: (value, locale) => ("0" + value).slice(-2)
+            Kirigami.Separator {
+                Kirigami.FormData.isSection: true
+                Kirigami.FormData.label: i18n("Time") + ":"
             }
-            Text {
-                text: ":"
-            }
-            SpinBox {
-                id: selectedAlarmMinute
-                to: 59
-                value: newAlarm ? 0 : selectedAlarm.minutes
-                textFromValue: (value, locale) => ("0" + value).slice(-2)
-            }
-            ComboBox {
-                id: selectedAlarmAmPm
-                implicitWidth: 60
-                model: ["AM", "PM"]
-            }
-        }
-
-        Text {
-            anchors.topMargin: 5
-            text: i18n("Repeat") + ":"
-        }
-
-        // days to repeat
-        Flow {
-            Repeater {
-                model: ListModel {
-                    id: selectedDays
-                    ListElement { displayText: "S"; dayFlag: 1 }
-                    ListElement { displayText: "M"; dayFlag: 2 }
-                    ListElement { displayText: "T"; dayFlag: 4 }
-                    ListElement { displayText: "W"; dayFlag: 8 }
-                    ListElement { displayText: "T"; dayFlag: 16 }
-                    ListElement { displayText: "F"; dayFlag: 32 }
-                    ListElement { displayText: "S"; dayFlag: 64 }
+            
+            RowLayout {
+                SpinBox {
+                    id: selectedAlarmHour
+                    to: 12
+                    value: newAlarm ? 0 : selectedAlarm.hours
+                    textFromValue: (value, locale) => ("0" + value).slice(-2)
                 }
-                
-                Button {
-                    implicitWidth: 40
-                    text: displayText
-                    checkable: true
-                    checked: ((newAlarm ? alarmDaysOfWeek : selectedAlarm.dayOfWeek) & dayFlag) == dayFlag
-                    highlighted: false
-                    onClicked: {
-                        if (checked) alarmDaysOfWeek |= dayFlag;
-                        else alarmDaysOfWeek &= ~dayFlag;
+                Text {
+                    text: ":"
+                }
+                SpinBox {
+                    id: selectedAlarmMinute
+                    to: 59
+                    value: newAlarm ? 0 : selectedAlarm.minutes
+                    textFromValue: (value, locale) => ("0" + value).slice(-2)
+                }
+                ComboBox {
+                    id: selectedAlarmAmPm
+                    implicitWidth: 90
+                    model: ["AM", "PM"]
+                }
+            }
+
+            Kirigami.Separator {
+                Kirigami.FormData.isSection: true
+                Kirigami.FormData.label: i18n("Days to Repeat") + ":"
+            }
+            
+            // days to repeat
+            Flow {
+                Repeater {
+                    model: ListModel {
+                        id: selectedDays
+                        ListElement { displayText: "S"; dayFlag: 1 }
+                        ListElement { displayText: "M"; dayFlag: 2 }
+                        ListElement { displayText: "T"; dayFlag: 4 }
+                        ListElement { displayText: "W"; dayFlag: 8 }
+                        ListElement { displayText: "T"; dayFlag: 16 }
+                        ListElement { displayText: "F"; dayFlag: 32 }
+                        ListElement { displayText: "S"; dayFlag: 64 }
+                    }
+                    
+                    Button {
+                        implicitWidth: 40
+                        text: displayText
+                        checkable: true
+                        checked: ((newAlarm ? alarmDaysOfWeek : selectedAlarm.dayOfWeek) & dayFlag) == dayFlag
+                        highlighted: false
+                        onClicked: {
+                            if (checked) alarmDaysOfWeek |= dayFlag;
+                            else alarmDaysOfWeek &= ~dayFlag;
+                        }
                     }
                 }
             }
-        }
 
-        Text {
-            anchors.topMargin: 5
-            text: i18n("Name") + " (" + i18n("optional") + "):"
+            Kirigami.Separator {
+                Kirigami.FormData.isSection: true
+                Kirigami.FormData.label: i18n("Name") + " (" + i18n("optional") + "):"
+            }
+            
+            TextField {
+                id: selectedAlarmName
+                placeholderText: i18n("Wake Up")
+                text: newAlarm ? "" : selectedAlarm.name
+            }
         }
-
-        TextField {
-            id: selectedAlarmName
-            placeholderText: i18n("Wake Up")
-            text: newAlarm ? "" : selectedAlarm.name
-        }
-
     }
 
 }
