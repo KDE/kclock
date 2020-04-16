@@ -33,6 +33,10 @@ find_package(KF5Kirigami2 ${KF5_MIN_VERSION})
 find_package(KF5I18n)
 find_package(KF5CoreAddons)
 find_package(KF5Config)
+find_package(KF5Notifications)
+
+################ Setup notifications ################
+install(FILES kirigamiclock.notifyrc DESTINATION ${KNOTIFYRC_INSTALL_DIR})
 
 ################# Enable C++11 features for clang and gcc #################
 

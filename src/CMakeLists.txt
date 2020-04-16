@@ -9,6 +9,7 @@ target_link_libraries(kirigamiclock
         KF5::I18n
         KF5::ConfigCore
         KF5::CoreAddons
+        KF5::Notifications
         )
 
 install(TARGETS kirigamiclock ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})

@@ -1,0 +1,7 @@
+[Global]
+Name=kirigamiclock
+
+[Event/timerFinished]
+Name=Timer finished
+Comment=Your timer has finished!
+Action=Sound|Popup

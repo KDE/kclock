@@ -21,9 +21,17 @@
 #ifndef KIRIGAMICLOCK_TIMERMODEL_H
 #define KIRIGAMICLOCK_TIMERMODEL_H
 
+#include <QObject>
+#include <QString>
 
-class timermodel {
-
+class TimerModel : public QObject
+{
+    Q_OBJECT
+    
+public:
+    explicit TimerModel(QObject* parent = nullptr);
+    
+    Q_INVOKABLE void timerFinished();
 };
 
 

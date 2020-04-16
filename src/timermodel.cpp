@@ -19,3 +19,21 @@
  */
 
 #include "timermodel.h"
+#include <KNotification>
+#include <QCoreApplication>
+#include <QDebug>
+#include <QtGlobal>
+#include <QApplication>
+
+TimerModel::TimerModel(QObject* parent) {}
+
+void TimerModel::timerFinished()
+{
+    qDebug("Timer finished, sending notification...");
+    KNotification* notification = new KNotification("timerFinished");
+    notification->setText("Your timer has finished!");
+    notification->sendEvent();
+    
+    KNotification::event("timerFinished", "Timer complete", "Your timer has finished!");
+    QApplication::beep(); // TODO remove
+}
