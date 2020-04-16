@@ -48,7 +48,7 @@ Kirigami.ApplicationWindow
 
         actions: [
             Kirigami.Action {
-                text: "Clock"
+                text: i18n("Clock")
                 iconName: "clock"
                 onTriggered: switchToPage(mainpage)
             },
@@ -63,12 +63,17 @@ Kirigami.ApplicationWindow
                 onTriggered: switchToPage(pagestopwatch)
             },
             Kirigami.Action {
-                text: "Alarm"
+                text: i18n("Alarm")
                 iconName: "notifications"
                 onTriggered: switchToPage(pagealarm)
+            },
+            Kirigami.Action {
+                text: i18n("Settings")
+                iconName: "settings-configure"
+                onTriggered: switchToPage(pagesettings)
             }
         ]
-
+        
         Connections {
             target: pageStack
             onCurrentIndexChanged: { // drop all sub pages
@@ -100,6 +105,11 @@ Kirigami.ApplicationWindow
     PageAlarm {
         id: pagealarm
         objectName: "alarm"
+        visible: false
+    }
+    PageSettings {
+        id: pagesettings
+        objectName: "settings"
         visible: false
     }
 }

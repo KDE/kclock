@@ -94,7 +94,7 @@ Kirigami.ScrollablePage {
                         }
                     }
 
-                    CheckBox {
+                    Switch {
                         Layout.alignment: Qt.AlignRight|Qt.AlignVCenter
                         Layout.columnSpan: 1
                         checked: model.enabled
