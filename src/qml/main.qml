@@ -22,7 +22,8 @@
 import QtQuick 2.11
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.2
-import org.kde.kirigami 2.12 as Kirigami
+import org.kde.kirigami 2.11 as Kirigami
+import Qt.labs.settings 1.0 as QtSettings
 
 Kirigami.ApplicationWindow
 {
@@ -33,6 +34,9 @@ Kirigami.ApplicationWindow
 
     title: i18n("Clock")
 
+    // settings object
+    property Settings settings: settings
+    
     pageStack.initialPage: mainpage
     
     function switchToPage(page) {
@@ -112,4 +116,8 @@ Kirigami.ApplicationWindow
         objectName: "settings"
         visible: false
     }
+    Settings {
+        id: settings
+    }
+
 }

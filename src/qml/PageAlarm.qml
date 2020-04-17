@@ -22,7 +22,7 @@
 import QtQuick 2.11
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.2
-import org.kde.kirigami 2.12 as Kirigami
+import org.kde.kirigami 2.11 as Kirigami
 import kirigamiclock 1.0
 
 Kirigami.ScrollablePage {

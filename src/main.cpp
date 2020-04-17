@@ -30,7 +30,6 @@
 #include <KLocalizedContext>
 #include <KAboutData>
 #include <KConfig>
-#include <QFontDatabase>
 
 #include "timezoneselectormodel.h"
 #include "alarms.h"

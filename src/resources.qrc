@@ -8,6 +8,7 @@
         <file>qml/PageTimezoneSelect.qml</file>
         <file>qml/PageNewAlarm.qml</file>
         <file>qml/PageSettings.qml</file>
+        <file>qml/Settings.qml</file>
         <file>assets/RedHatText-Regular.ttf</file>
     </qresource>
 </RCC>

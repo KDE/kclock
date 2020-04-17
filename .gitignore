@@ -9,3 +9,16 @@ CMakeLists.txt.user
 /flatpak-build-desktop
 /.flatpak-builder
 /mobiletest.sh
+kirigamiclock.cflags
+
+kirigamiclock.config
+
+kirigamiclock.creator
+
+kirigamiclock.creator.user
+
+kirigamiclock.cxxflags
+
+kirigamiclock.files
+
+kirigamiclock.includes

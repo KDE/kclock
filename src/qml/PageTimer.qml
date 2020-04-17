@@ -22,8 +22,8 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.2
-import QtQuick.Shapes 1.14
-import org.kde.kirigami 2.12 as Kirigami
+import QtQuick.Shapes 1.12
+import org.kde.kirigami 2.11 as Kirigami
 import kirigamiclock 1.0
 
 Kirigami.Page {
@@ -213,7 +213,9 @@ Kirigami.Page {
         id: timerEditSheet
         modal: true
         focus: true
-        width: Math.min(appwindow.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 20)
+        x: (pagetimer.width - width) / 2
+        y: pagetimer.height / 2 - height
+        width: Math.min(pagetimer.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 20)
         height: Kirigami.Units.gridUnit * 20
         standardButtons: Dialog.Close
         title: i18n("Change Timer Duration")
