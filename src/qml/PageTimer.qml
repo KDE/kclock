@@ -209,42 +209,34 @@ Kirigami.Page {
         }
     }
 
-    Dialog {
+    Kirigami.OverlaySheet {
         id: timerEditSheet
-        modal: true
-        focus: true
-        x: (pagetimer.width - width) / 2
-        y: pagetimer.height / 2 - height
-        width: Math.min(pagetimer.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 20)
-        height: Kirigami.Units.gridUnit * 20
-        standardButtons: Dialog.Close
-        title: i18n("Change Timer Duration")
+        header: Kirigami.Heading {
+            text: i18n("Change Timer Duration")
+        }
 
-        contentItem: Kirigami.FormLayout {
-            Layout.fillWidth: true
+        ColumnLayout {
+            spacing: Kirigami.Units.largeSpacing * 5
+            Layout.preferredWidth:  Kirigami.Units.gridUnit * 25
+            Kirigami.FormLayout {
+                Layout.fillWidth: true
 
-             RowLayout {
-                 SpinBox {
-                     id: spinBoxMinutes
-                     onValueChanged: timerEditSheet.setDuration()
-                     value: timerDuration / 60
-                 }
-                 Text {
-                      color: Kirigami.Theme.textColor
-                      text: i18n("minutes")
-                 }
-                 SpinBox {
-                     id: spinBoxSeconds
-                     to: 60
-                     onValueChanged: timerEditSheet.setDuration()
-                     value: timerDuration % 60
-                 }
-                 Text {
-                      color: Kirigami.Theme.textColor
-                      text: i18n("seconds")
-                 }
-             }
-         }
+                SpinBox {
+                    Kirigami.FormData.label: i18n("Minutes") + ":"
+                    id: spinBoxMinutes
+                    onValueChanged: timerEditSheet.setDuration()
+                    value: timerDuration / 60
+                }
+
+                SpinBox {
+                    Kirigami.FormData.label: i18n("Seconds") + ":"
+                    id: spinBoxSeconds
+                    to: 60
+                    onValueChanged: timerEditSheet.setDuration()
+                    value: timerDuration % 60
+                }
+            }
+        }
 
          function setDuration() {
              timerDuration = spinBoxMinutes.value * 60 + spinBoxSeconds.value
