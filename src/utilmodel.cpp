@@ -18,22 +18,13 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.11
-import Qt.labs.settings 1.0 as QtSettings
-import QtQuick.Controls 2.4
-import QtQuick.Layouts 1.2
-import org.kde.kirigami 2.11 as Kirigami
+#include <QTimeZone>
+#include <QString>
+#include "utilmodel.h"
 
-QtObject {
-    id: settings
-    
-    property bool use24HourTime: false
-    property string dayToStartWeekOn: "Sunday"
-    
-    // persist settings
-    property QtSettings.Settings _globalSettings: QtSettings.Settings {
-        category: "Global"
-        property alias use24HourTime: settings.use24HourTime
-        property alias dayToStartWeekOn: settings.dayToStartWeekOn
-    }
+UtilModel::UtilModel(QObject* parent) {}
+
+QString UtilModel::getCurrentTimeZoneName()
+{
+    return QTimeZone::systemTimeZoneId();
 }

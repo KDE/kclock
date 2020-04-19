@@ -34,6 +34,7 @@
 #include "timezoneselectormodel.h"
 #include "alarms.h"
 #include "timermodel.h"
+#include "utilmodel.h"
 
 QCommandLineParser* createParser()
 {
@@ -68,6 +69,7 @@ int main(int argc, char *argv[])
     auto *timeZoneFilterModel = new TimeZoneFilterModel(timeZoneModel);
     auto *alarmModel = new AlarmModel();
     auto *timerModel = new TimerModel();
+    auto *utilModel = new UtilModel();
 
     // register QML types
     qmlRegisterType<Alarm>("kirigamiclock", 1, 0, "Alarm");
@@ -77,6 +79,7 @@ int main(int argc, char *argv[])
 	engine.rootContext()->setContextProperty("timeZoneFilterModel", timeZoneFilterModel);
     engine.rootContext()->setContextProperty("alarmModel", alarmModel);
     engine.rootContext()->setContextProperty("timerModel", timerModel);
+    engine.rootContext()->setContextProperty("utilModel", utilModel);
     
     // load cron
     alarmModel->load();

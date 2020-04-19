@@ -39,6 +39,7 @@ public:
         OffsetRole = Qt::UserRole + 1,
         ShortNameRole = Qt::UserRole + 2,
         TimeStringRole,
+        RelativeTimeRole,
         IDRole
     };
     

@@ -23,6 +23,8 @@
 #include <KSharedConfig>
 #include <KConfigGroup>
 #include <QSettings>
+#include <KLocalizedString>
+
 #include "timezoneselectormodel.h"
 
 TimeZoneSelectorModel::TimeZoneSelectorModel(QObject* parent) : QAbstractListModel(parent)
@@ -64,14 +66,42 @@ QVariant TimeZoneSelectorModel::data(const QModelIndex& index, int role) const
         return std::get<0>(tuple).id();
     case ShortNameRole:
         return std::get<0>(tuple).displayName(QDateTime::currentDateTime(), QTimeZone::ShortName);
+    case RelativeTimeRole: 
+    {
+        int offset = std::get<0>(tuple).offsetFromUtc(QDateTime::currentDateTime()) - QTimeZone::systemTimeZone().offsetFromUtc(QDateTime::currentDateTime());
+        offset /= 60; // convert to minutes
+        
+        QString hour = abs(offset) / 60 == 1 ? i18n("hour") : i18n("hours");
+        
+        if (offset > 0) {
+            if (offset % 60) { // half an hour ahead
+                return QVariant(i18n("%1 and a half hours ahead", offset / 60, hour));
+            } else { // full hours ahead
+                return QVariant(i18n("%1 %2 ahead", offset / 60, hour));
+            }
+        } else if (offset < 0) {
+            offset = abs(offset);
+            if (offset % 60) { // half an hour behind
+                return QVariant(i18n("%1 and a half hours behind", offset / 60, hour));
+            } else { // full hours behind
+                return QVariant(i18n("%1 %2 behind", offset / 60, hour));
+            }
+        } else {
+            return QVariant(QDateTime::currentDateTime().toString("yyyy-mm-dd"));
+        }
+    }
     case TimeStringRole:
+    {
         QDateTime time = QDateTime::currentDateTime();
         time = time.toTimeZone(std::get<0>(tuple));
-        if (settings.value("use24HourTime").toBool()) {
+        
+        // apply 12 hour or 24 hour settings
+        if (settings.value("Global/use24HourTime").toBool()) {
             return time.time().toString("hh:mm");
         } else {
             return time.time().toString("h:mm ap");
         }
+    }
     }
     return QVariant();
 }
@@ -84,6 +114,7 @@ QHash<int, QByteArray> TimeZoneSelectorModel::roleNames() const
     roles[OffsetRole] = "offset";
     roles[ShortNameRole] = "shortName";
     roles[TimeStringRole] = "timeString";
+    roles[RelativeTimeRole] = "relativeTime";
     roles[IDRole] = "id";
     return roles;
 }

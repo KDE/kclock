@@ -30,7 +30,7 @@ Kirigami.ApplicationWindow
     id: appwindow
     visible: true
     width: 650
-    height: 440
+    height: 500
 
     title: i18n("Clock")
 
@@ -116,8 +116,23 @@ Kirigami.ApplicationWindow
         objectName: "settings"
         visible: false
     }
+    Kirigami.AboutPage {
+        id: pageabout
+        visible: false
+        aboutData: {
+            "displayName": "kirigamiclock",
+            "productName": "kirigami/clock",
+            "componentName": "kirigamiclock",
+            "shortDescription": "A mobile friendly clock app built with Kirigami.",
+            "homepage": "",
+            "bugAddress": "",
+            "version": "0.0.1",
+            "otherText": "",
+            "copyrightStatement": "© 2020 Plasma Development Team",
+            "desktopFileName": "org.kde.kirigamiclock",
+        }
+    }
     Settings {
         id: settings
     }
-
 }

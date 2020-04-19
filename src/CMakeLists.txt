@@ -1,6 +1,6 @@
 qt5_add_resources(kirigamiclock_SRCS resources.qrc)
 
-add_executable(kirigamiclock main.cpp timezoneselectormodel.cpp ${kirigamiclock_SRCS} alarms.cpp timermodel.cpp timermodel.h)
+add_executable(kirigamiclock main.cpp timezoneselectormodel.cpp ${kirigamiclock_SRCS} alarms.cpp timermodel.cpp utilmodel.cpp)
 target_link_libraries(kirigamiclock
         Qt5::Qml
         Qt5::Gui

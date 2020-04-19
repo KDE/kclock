@@ -45,12 +45,10 @@ Kirigami.SwipeListItem {
                 Label {
                     id: timeZoneId
                     font.weight: Font.Bold
-                    text: model.id
                 }
                 Label {
                     id: timeZoneRelative
                     font.weight: Font.Normal
-                    text: "12 hours ahead"
                 }
             }
             
@@ -59,7 +57,6 @@ Kirigami.SwipeListItem {
                 Layout.alignment: Qt.AlignRight|Qt.AlignVCenter
                 font.weight: Font.Light
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.25
-                text: model.timeString
             }
         }
     }

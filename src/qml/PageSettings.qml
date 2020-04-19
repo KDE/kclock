@@ -76,27 +76,15 @@ Kirigami.ScrollablePage {
         
         ItemDelegate {
             Layout.fillWidth: true
+            text: "<b>" + i18n("About") + "</b>"
             implicitHeight: Kirigami.Units.gridUnit * 3
-            onClicked: homeTimeZone.open()
-
-            ColumnLayout {
-                spacing: -5
-                anchors.leftMargin: Kirigami.Units.gridUnit
-                anchors.rightMargin: Kirigami.Units.gridUnit
-                anchors.fill: parent
-                
-                Label {
-                    text: i18n("<b>Home time zone</b>")
-                }
-                Label {
-                    text: settings.homeTimeZone
-                }
-            }
+            onClicked: pageStack.push(pageabout)
         }
         
         Kirigami.Separator {
             Layout.fillWidth: true
         }
+        
     }
     
     // day to start week on dialog
@@ -125,48 +113,6 @@ Kirigami.ScrollablePage {
                 }
             }
             Component.onCompleted: background.visible = true
-        }
-    }
-    
-    // home time zone dialog
-    Dialog {
-        id: homeTimeZone
-        modal: true
-        focus: true
-        x: (pagesettings.width - width) / 2
-        y: pagesettings.height / 2 - height + homeTimeZoneSearch.height
-        width: Math.min(pagesettings.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 20)
-        height: Kirigami.Units.gridUnit * 20
-        standardButtons: Dialog.Close
-        title: i18n("Select home time zone")
-
-        // reset filters when leaving dialog
-        onAccepted: timeZoneFilterModel.setFilterFixedString("")
-        onRejected: timeZoneFilterModel.setFilterFixedString("")
-        
-        TextField {
-            id: homeTimeZoneSearch
-            anchors.right: parent.right
-            anchors.left: parent.left
-            placeholderText: "Search"
-            onTextChanged: timeZoneFilterModel.setFilterFixedString(text)
-        }
-
-        contentItem: ScrollView {
-                ListView {
-                    anchors.top: homeTimeZoneSearch.bottom
-                    model: timeZoneFilterModel
-                    delegate: RadioDelegate {
-                        width: parent.width
-                        text: model.id + " " + model.shortName
-                        checked: settings.homeTimeZone == model.id
-                        onCheckedChanged: {
-                            if (checked)
-                                settings.homeTimeZone = model.id;
-                        }
-                    }
-                }
-                Component.onCompleted: background.visible = true
         }
     }
 }

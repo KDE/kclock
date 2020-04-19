@@ -19,7 +19,10 @@
  */
 
 #include "timermodel.h"
+
 #include <KNotification>
+#include <KLocalizedString>
+
 #include <QCoreApplication>
 #include <QDebug>
 #include <QtGlobal>
@@ -31,9 +34,16 @@ void TimerModel::timerFinished()
 {
     qDebug("Timer finished, sending notification...");
     KNotification* notification = new KNotification("timerFinished");
-    notification->setText("Your timer has finished!");
-    notification->sendEvent();
     
-    KNotification::event("timerFinished", "Timer complete", "Your timer has finished!");
-    QApplication::beep(); // TODO remove
+    notification->setIconName("kronometer");
+    notification->setTitle(i18n("Timer complete"));
+    notification->setText(i18n("Your timer has finished!"));
+    notification->setDefaultAction(i18n("View"));
+    notification->setUrgency(KNotification::HighUrgency);
+    notification->setFlags(KNotification::NotificationFlag::RaiseWidgetOnActivation | 
+                            KNotification::NotificationFlag::LoopSound | 
+                            KNotification::NotificationFlag::SkipGrouping |
+                            KNotification::NotificationFlag::CloseWhenWidgetActivated);
+
+    notification->sendEvent();
 }

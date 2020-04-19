@@ -37,9 +37,8 @@ Shape {
     // centre dot
     ShapePath {
         id: circleCentre
-        fillColor: "grey"
+        fillColor: "lightgrey"
         strokeColor: "grey"
-        strokeWidth: 0
         
         PathAngleArc {
             id: circleCentreArc

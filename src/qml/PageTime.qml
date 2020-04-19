@@ -63,7 +63,7 @@ Kirigami.Page {
             Text {
                 Layout.alignment: Qt.AlignRight
                 font.pointSize: 12
-                text: settings.homeTimeZone
+                text: utilModel.tzName
                 color: Kirigami.Theme.textColor
             }
         }
@@ -104,7 +104,7 @@ Kirigami.Page {
         id: timeZoneDelegate
         TimeZoneEntry {
             tzId: model.id
-            tzRelative: "12 hours ahead"
+            tzRelative: model.relativeTime
             tzTime: model.timeString
         }
     }
