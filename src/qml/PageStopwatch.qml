@@ -143,7 +143,8 @@ Kirigami.Page {
                             anchors.verticalCenter: parent.verticalCenter
                             anchors.horizontalCenter: parent.horizontalCenter
                             color: Kirigami.Theme.textColor
-                            text: "<b>#" + (roundModel.count - model.index) + "</b>"
+                            font.weight: Font.Bold
+                            text: i18n("Lap") + " " + (roundModel.count - model.index)
                         }
                     }
                     Rectangle {
@@ -165,7 +166,7 @@ Kirigami.Page {
                         Text {
                             anchors.verticalCenter: parent.verticalCenter
                             anchors.horizontalCenter: parent.horizontalCenter
-                            color: Kirigami.Theme.textColor
+                            color: Kirigami.Theme.focusColor
                             text: index == roundModel.count-1 ? parseFloat(model.time/1000).toFixed(2) : "+" + parseFloat((model.time - roundModel.get(index+1).time)/1000).toFixed(2)
                         }
                     }

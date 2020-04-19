@@ -22,12 +22,15 @@
 #include <QDebug>
 #include <KSharedConfig>
 #include <KConfigGroup>
+#include <QSettings>
 #include "timezoneselectormodel.h"
 
 TimeZoneSelectorModel::TimeZoneSelectorModel(QObject* parent) : QAbstractListModel(parent)
 {
     auto config = KSharedConfig::openConfig();
     KConfigGroup timezoneGroup = config->group("Timezones");
+    
+    // add other configured time zones
     for (QByteArray id : QTimeZone::availableTimeZoneIds()) {
         bool show = timezoneGroup.readEntry(id.data(), false);
         mList.append(std::make_tuple(QTimeZone(id), show));
@@ -50,6 +53,8 @@ QVariant TimeZoneSelectorModel::data(const QModelIndex& index, int role) const
         return QVariant();
     auto tuple = mList[index.row()];
 
+    QSettings settings;
+    
     switch(role) {
     case NameRole:
         return std::get<0>(tuple).displayName(QDateTime::currentDateTime());
@@ -62,7 +67,11 @@ QVariant TimeZoneSelectorModel::data(const QModelIndex& index, int role) const
     case TimeStringRole:
         QDateTime time = QDateTime::currentDateTime();
         time = time.toTimeZone(std::get<0>(tuple));
-        return time.time().toString("hh:mm:ss");
+        if (settings.value("use24HourTime").toBool()) {
+            return time.time().toString("hh:mm");
+        } else {
+            return time.time().toString("h:mm ap");
+        }
     }
     return QVariant();
 }
@@ -93,8 +102,9 @@ Qt::ItemFlags TimeZoneSelectorModel::flags(const QModelIndex& index) const
 
 bool TimeZoneSelectorModel::setData(const QModelIndex& index, const QVariant& value, int role)
 {
-    if(index.isValid() && role == ShownRole && value.type() == QVariant::Bool) {
+    if (index.isValid() && role == ShownRole && value.type() == QVariant::Bool) {
         std::get<1>(mList[index.row()]) = value.toBool();
+        
         auto config = KSharedConfig::openConfig();
         KConfigGroup timezoneGroup = config->group("Timezones");
         timezoneGroup.writeEntry(std::get<0>(mList[index.row()]).id().data(), value);
@@ -111,7 +121,7 @@ TimeZoneFilterModel::TimeZoneFilterModel(TimeZoneSelectorModel *model, QObject *
     setFilterRole(TimeZoneSelectorModel::IDRole);
 }
 
-TimeZoneViewModel::TimeZoneViewModel(TimeZoneSelectorModel *model, QObject *parent) : QSortFilterProxyModel(parent)
+TimeZoneViewModel::TimeZoneViewModel(TimeZoneSelectorModel *model, QObject *parent) : QSortFilterProxyModel (parent)
 {
     setSourceModel(model);
     setFilterRole(TimeZoneSelectorModel::ShownRole);

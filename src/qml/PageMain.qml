@@ -1,5 +1,5 @@
 /*
- * Copyright 2019  Nick Reitemeyer <nick.reitemeyer@web.de>
+ * Copyright 2019 Nick Reitemeyer <nick.reitemeyer@web.de>
  *           2020 Devin Lin <espidev@gmail.com>
  *
  * This program is free software; you can redistribute it and/or
@@ -21,18 +21,30 @@
 
 import QtQuick 2.0
 import QtQuick.Controls 2.3
+import QtQuick.Layouts 1.2
 import org.kde.kirigami 2.4 as Kirigami
 
 Kirigami.Page {
     
     title: "Time"
 
+//     Label {
+//         id: timeText
+//         anchors.horizontalCenter: parent.horizontalCenter
+//         
+//         color: Kirigami.Theme.highlightColor
+//         text: Qt.formatTime(new Date(), "hh:mm:ss")
+//         font.pointSize: 40
+//         font.family: clockFont.name
+//     }
+    
+    
+    
     Label {
         id: timeText
         anchors.horizontalCenter: parent.horizontalCenter
-        color: Kirigami.Theme.highlightColor
-        font.pointSize: 40
-        text: Qt.formatTime(new Date(), "hh:mm:ss")
+        
+        text: Qt.formatTime(new Date(), "hh:mm") + " " + settings.homeTimeZone
     }
     
     Timer {
@@ -41,37 +53,40 @@ Kirigami.Page {
         repeat: true
         running: true
         onTriggered: {
-            timeText.text = Qt.formatTime(new Date(), "hh:mm:ss")
+//             timeText.text = Qt.formatTime(new Date(), "hh:mm:ss")
+            timeText.text = Qt.formatTime(new Date(), "hh:mm") + " " + settings.homeTimeZone
         }
     }
-
-    Kirigami.CardsListView {
+    
+    // time zones
+    ListView {
         model: timeZoneShowModel
         anchors.top: timeText.bottom
         anchors.bottom: parent.bottom
         anchors.left: parent.left
         anchors.right: parent.right
         clip: true
-        delegate: Kirigami.Card {
-            Label {
-                text: model.id
-                anchors.left: parent.left
-                anchors.verticalCenter: parent.verticalCenter
-            }
-            Label {
-                text: model.timeString
-                anchors.right: parent.right
-                anchors.verticalCenter: parent.verticalCenter
-            }
-        }
+        
+        delegate: timeZoneDelegate
     }
     
     PageTimezoneSelect {
         id: pagetimezone
+        visible: false
+    }
+    
+    // time zone entry
+    Component {
+        id: timeZoneDelegate
+        TimeZoneEntry {
+            tzId: model.id
+            tzRelative: "12 hours ahead"
+            tzTime: model.timeString
+        }
     }
     
     mainAction: Kirigami.Action {
-        iconName: "entry-edit"
+        iconName: "globe"
         onTriggered: {
             pageStack.push(pagetimezone)
         }

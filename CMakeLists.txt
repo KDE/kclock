@@ -2,7 +2,7 @@ project(kirigamiclock)
 
 cmake_minimum_required(VERSION 3.0)
 set(KF5_MIN_VERSION "5.18.0")
-set(QT_MIN_VERSION "5.5.0")
+set(QT_MIN_VERSION "5.7.0")
 
 ################# Disallow in-source build #################
 
@@ -14,7 +14,7 @@ include(FeatureSummary)
 
 ################# set KDE specific information #################
 
-find_package(ECM 0.0.8 REQUIRED NO_MODULE)
+find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
 
 # where to look first for cmake modules, before ${CMAKE_ROOT}/Modules/ is checked
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
@@ -28,14 +28,18 @@ include(KDECompilerSettings NO_POLICY_SCOPE)
 
 ################# Find dependencies #################
 
-find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Core Quick Test Gui Svg QuickControls2)
-find_package(KF5Kirigami2 ${KF5_MIN_VERSION})
-find_package(KF5I18n)
-find_package(KF5CoreAddons)
-find_package(KF5Config)
-find_package(KF5Notifications)
+find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS DBus Core Quick Test Gui Svg QuickControls2 Test)
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
+    Config
+    Kirigami2
+    I18n
+    CoreAddons
+    Config
+    Notifications
+)
 
 ################ Setup notifications ################
+
 install(FILES kirigamiclock.notifyrc DESTINATION ${KNOTIFYRC_INSTALL_DIR})
 
 ################# Enable C++11 features for clang and gcc #################
