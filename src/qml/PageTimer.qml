@@ -152,7 +152,6 @@ Kirigami.Page {
             text: getHours()
             color: Kirigami.Theme.highlightColor
             font.pointSize: 30
-            font.kerning: false
             font.family: clockFont.name
         }
         Text {
@@ -166,7 +165,6 @@ Kirigami.Page {
             text: getMinutes()
             color: Kirigami.Theme.highlightColor
             font.pointSize: 30
-            font.kerning: false
             font.family: clockFont.name
         }
         Text {
@@ -179,7 +177,6 @@ Kirigami.Page {
             text: getSeconds()
             color: Kirigami.Theme.highlightColor
             font.pointSize: 30
-            font.kerning: false
             font.family: clockFont.name
         }
     }

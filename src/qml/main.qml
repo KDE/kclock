@@ -29,7 +29,7 @@ Kirigami.ApplicationWindow
 {
     id: appwindow
     visible: true
-    width: 600
+    width: 650
     height: 440
 
     title: i18n("Clock")
@@ -37,7 +37,7 @@ Kirigami.ApplicationWindow
     // settings object
     property Settings settings: settings
     
-    pageStack.initialPage: mainpage
+    pageStack.initialPage: timepage
     
     function switchToPage(page) {
         if (pageStack.depth > 0) pageStack.pop()
@@ -52,9 +52,9 @@ Kirigami.ApplicationWindow
 
         actions: [
             Kirigami.Action {
-                text: i18n("Clock")
+                text: i18n("Time")
                 iconName: "clock"
-                onTriggered: switchToPage(mainpage)
+                onTriggered: switchToPage(timepage)
             },
             Kirigami.Action {
                 text: i18n("Timer")
@@ -92,8 +92,8 @@ Kirigami.ApplicationWindow
         source: "/assets/RedHatText-Regular.ttf"
     }
     
-    PageMain {
-        id: mainpage
+    PageTime {
+        id: timepage
         objectName: "time"
     }
     PageTimer {

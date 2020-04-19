@@ -1,7 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>qml/main.qml</file>
-        <file>qml/PageMain.qml</file>
+        <file>qml/PageTime.qml</file>
         <file>qml/PageTimer.qml</file>
         <file>qml/PageStopwatch.qml</file>
         <file>qml/PageAlarm.qml</file>
@@ -10,6 +10,7 @@
         <file>qml/PageSettings.qml</file>
         <file>qml/Settings.qml</file>
         <file>qml/TimeZoneEntry.qml</file>
+        <file>qml/AnalogClock.qml</file>
         <file>assets/RedHatText-Regular.ttf</file>
     </qresource>
 </RCC>

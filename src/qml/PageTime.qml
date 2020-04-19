@@ -19,53 +19,77 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.0
-import QtQuick.Controls 2.3
+import QtQuick 2.12
+import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.2
+import QtQuick.Shapes 1.12
 import org.kde.kirigami 2.4 as Kirigami
 
 Kirigami.Page {
     
     title: "Time"
-
-//     Label {
-//         id: timeText
-//         anchors.horizontalCenter: parent.horizontalCenter
-//         
-//         color: Kirigami.Theme.highlightColor
-//         text: Qt.formatTime(new Date(), "hh:mm:ss")
-//         font.pointSize: 40
-//         font.family: clockFont.name
-//     }
     
+    property date currentDate: new Date()
     
-    
-    Label {
-        id: timeText
-        anchors.horizontalCenter: parent.horizontalCenter
+    RowLayout {
+        id: bigTimeDisplay
+        anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.right: parent.right
         
-        text: Qt.formatTime(new Date(), "hh:mm") + " " + settings.homeTimeZone
+        // left side - analog clock
+        Item {
+            Layout.alignment: Qt.AlignHCenter
+            width: 165
+            height: 190
+            AnalogClock {
+                id: analogClock
+                dateTime: currentDate 
+                clockRadius: 80
+            }
+        }
+        
+        // right side - digital clock + location
+        ColumnLayout {
+            Layout.alignment: Qt.AlignHCenter
+            Text {
+                Layout.alignment: Qt.AlignRight
+                id: timeText
+                font.pointSize: 30
+                font.family: clockFont.name
+                color: Kirigami.Theme.highlightColor
+                text: settings.use24HourTime ? Qt.formatTime(new Date(), "hh:mm") : Qt.formatTime(new Date(), "h:mm ap")
+            }
+            Text {
+                Layout.alignment: Qt.AlignRight
+                font.pointSize: 12
+                text: settings.homeTimeZone
+                color: Kirigami.Theme.textColor
+            }
+        }
     }
     
     Timer {
         id: timer
-        interval: 1000
+        interval: 100
         repeat: true
         running: true
         onTriggered: {
-//             timeText.text = Qt.formatTime(new Date(), "hh:mm:ss")
-            timeText.text = Qt.formatTime(new Date(), "hh:mm") + " " + settings.homeTimeZone
+            timeText.text = settings.use24HourTime ? Qt.formatTime(new Date(), "hh:mm") : Qt.formatTime(new Date(), "h:mm ap")
+            currentDate = new Date();
         }
     }
     
     // time zones
     ListView {
         model: timeZoneShowModel
-        anchors.top: timeText.bottom
+        anchors.top: bigTimeDisplay.bottom
         anchors.bottom: parent.bottom
         anchors.left: parent.left
         anchors.right: parent.right
         clip: true
+        
+        ScrollBar.vertical: ScrollBar {}
         
         delegate: timeZoneDelegate
     }

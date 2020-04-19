@@ -140,6 +140,10 @@ Kirigami.ScrollablePage {
         standardButtons: Dialog.Close
         title: i18n("Select home time zone")
 
+        // reset filters when leaving dialog
+        onAccepted: timeZoneFilterModel.setFilterFixedString("")
+        onRejected: timeZoneFilterModel.setFilterFixedString("")
+        
         TextField {
             id: homeTimeZoneSearch
             anchors.right: parent.right
