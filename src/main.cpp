@@ -81,9 +81,6 @@ int main(int argc, char *argv[])
     engine.rootContext()->setContextProperty("timerModel", timerModel);
     engine.rootContext()->setContextProperty("utilModel", utilModel);
     
-    // load cron
-    alarmModel->load();
-
     engine.load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
 
     {

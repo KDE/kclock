@@ -30,10 +30,11 @@ Kirigami.ScrollablePage {
     title: newAlarm ? i18n("New Alarm") : i18n("Edit Alarm")
 
     property Alarm selectedAlarm: null
+    property QtObject selectedAlarmModel: null // so that we call setData rather than the getters and setters
     property bool newAlarm: true
     property int alarmDaysOfWeek: newAlarm ? 0 : selectedAlarm.dayOfWeek
     
-    function init(alarm) {
+    function init(alarm, alarmModel) {
         if (alarm == null) {
             newAlarm = true;
             alarmDaysOfWeek = 0;
@@ -51,6 +52,7 @@ Kirigami.ScrollablePage {
             selectedAlarmTime.minutes = alarm.minutes;
         }
         selectedAlarm = alarm;
+        selectedAlarmModel = alarmModel;
     }
     
     actions {
@@ -58,19 +60,17 @@ Kirigami.ScrollablePage {
             iconName: "checkmark"
             text: i18n("Done")
             onTriggered: {
+                // save
                 let hours = selectedAlarmTime.hours + (selectedAlarmTime.pm ? 12 : 0);
                 let minutes = selectedAlarmTime.minutes;
                 if (newAlarm) {
                     selectedAlarm = alarmModel.insert(0, selectedAlarmName.text, minutes, hours, alarmDaysOfWeek);
                     newAlarm = false; // reset form
                 } else {
-                    selectedAlarm.name = selectedAlarmName.text;
-                    selectedAlarm.minutes = minutes;
-                    selectedAlarm.hours = hours;
-                    selectedAlarm.dayOfWeek = alarmDaysOfWeek;
-                    
-                    // must manually update the UI
-                    alarmModel.updateUi();
+                    selectedAlarmModel.name = selectedAlarmName.text;
+                    selectedAlarmModel.minutes = minutes;
+                    selectedAlarmModel.hours = hours;
+                    selectedAlarmModel.dayOfWeek = alarmDaysOfWeek;
                 }
                 // reset
                 alarmDaysOfWeek = 0;
@@ -80,23 +80,32 @@ Kirigami.ScrollablePage {
         }
     }
     
+    // form
     ColumnLayout {
         spacing: Kirigami.Units.largeSpacing
         
         // time picker
         DateAndTime.TimePicker {
-            Layout.alignment: Qt.AlignHCenter
             id: selectedAlarmTime
+            
+            Layout.alignment: Qt.AlignHCenter
+            Layout.preferredWidth: pagenewalarm.width
+            Layout.preferredHeight: Layout.preferredWidth
+            Layout.minimumWidth: 300
+            Layout.minimumHeight: Layout.minimumWidth
+            Layout.maximumWidth: 400
+            Layout.maximumHeight: Layout.maximumWidth
         }
         
         Kirigami.Separator {
+            anchors.top: selectedAlarmTime
             Layout.fillWidth: true
         }
         
         // repeat day picker
         Item {
             Layout.fillWidth: true
-            implicitHeight: Kirigami.Units.gridUnit * 3
+            implicitHeight: Kirigami.Units.gridUnit * 4
             
             ColumnLayout {
                 anchors.leftMargin: Kirigami.Units.gridUnit
@@ -121,7 +130,7 @@ Kirigami.ScrollablePage {
                             ListElement { displayText: "S"; dayFlag: 64 }
                         }
                         
-                        Button {
+                        ToolButton {
                             implicitWidth: 40
                             text: displayText
                             checkable: true

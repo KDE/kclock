@@ -94,7 +94,7 @@ Kirigami.Page {
             PathAngleArc {
                 id: timerCircleArc
                 centerX: timerCircle.width / 2; centerY: timerCircle.height / 2;
-                radiusX: 110; radiusY: radiusX
+                radiusX: Math.max(pagetimer.width * 0.25, timeLabels.width / 2 + 5); radiusY: radiusX
                 startAngle: -180
                 sweepAngle: 360
             }
@@ -151,32 +151,32 @@ Kirigami.Page {
             id: hoursText
             text: getHours()
             color: Kirigami.Theme.highlightColor
-            font.pointSize: 30
+            font.pointSize: Kirigami.Theme.defaultFont.pointSize*3
             font.family: clockFont.name
         }
-        Text {
+        Label {
             text: ":"
             color: Kirigami.Theme.textColor
-            font.pointSize: 30
+            font.pointSize: Kirigami.Theme.defaultFont.pointSize*3
             font.family: clockFont.name
         }
         Label {
             id: minutesText
             text: getMinutes()
             color: Kirigami.Theme.highlightColor
-            font.pointSize: 30
+            font.pointSize: Kirigami.Theme.defaultFont.pointSize*3
             font.family: clockFont.name
         }
-        Text {
+        Label {
             text: ":"
             color: Kirigami.Theme.textColor
-            font.pointSize: 30
+            font.pointSize: Kirigami.Theme.defaultFont.pointSize*3
             font.family: clockFont.name
         }
         Label {
             text: getSeconds()
             color: Kirigami.Theme.highlightColor
-            font.pointSize: 30
+            font.pointSize: Kirigami.Theme.defaultFont.pointSize*3
             font.family: clockFont.name
         }
     }

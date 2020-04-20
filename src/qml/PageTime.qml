@@ -52,7 +52,7 @@ Kirigami.Page {
         // right side - digital clock + location
         ColumnLayout {
             Layout.alignment: Qt.AlignHCenter
-            Text {
+            Label {
                 Layout.alignment: Qt.AlignRight
                 id: timeText
                 font.pointSize: 30
@@ -60,7 +60,7 @@ Kirigami.Page {
                 color: Kirigami.Theme.highlightColor
                 text: settings.use24HourTime ? Qt.formatTime(new Date(), "hh:mm") : Qt.formatTime(new Date(), "h:mm ap")
             }
-            Text {
+            Label {
                 Layout.alignment: Qt.AlignRight
                 font.pointSize: 12
                 text: utilModel.tzName

@@ -12,6 +12,5 @@
         <file>qml/TimeZoneEntry.qml</file>
         <file>qml/AnalogClock.qml</file>
         <file>assets/RedHatText-Regular.ttf</file>
-        <file>assets/tone.wav</file>
     </qresource>
 </RCC>

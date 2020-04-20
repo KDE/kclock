@@ -27,10 +27,12 @@
 
 #include "timezoneselectormodel.h"
 
+const QString TZ_CFG_GROUP = "Timezones";
+
 TimeZoneSelectorModel::TimeZoneSelectorModel(QObject* parent) : QAbstractListModel(parent)
 {
     auto config = KSharedConfig::openConfig();
-    KConfigGroup timezoneGroup = config->group("Timezones");
+    KConfigGroup timezoneGroup = config->group(TZ_CFG_GROUP);
     
     // add other configured time zones
     for (QByteArray id : QTimeZone::availableTimeZoneIds()) {
@@ -75,14 +77,14 @@ QVariant TimeZoneSelectorModel::data(const QModelIndex& index, int role) const
         
         if (offset > 0) {
             if (offset % 60) { // half an hour ahead
-                return QVariant(i18n("%1 and a half hours ahead", offset / 60, hour));
+                return QVariant(i18n("%1 and a half hours ahead", offset / 60));
             } else { // full hours ahead
                 return QVariant(i18n("%1 %2 ahead", offset / 60, hour));
             }
         } else if (offset < 0) {
             offset = abs(offset);
             if (offset % 60) { // half an hour behind
-                return QVariant(i18n("%1 and a half hours behind", offset / 60, hour));
+                return QVariant(i18n("%1 and a half hours behind", offset / 60));
             } else { // full hours behind
                 return QVariant(i18n("%1 %2 behind", offset / 60, hour));
             }
@@ -137,7 +139,7 @@ bool TimeZoneSelectorModel::setData(const QModelIndex& index, const QVariant& va
         std::get<1>(mList[index.row()]) = value.toBool();
         
         auto config = KSharedConfig::openConfig();
-        KConfigGroup timezoneGroup = config->group("Timezones");
+        KConfigGroup timezoneGroup = config->group(TZ_CFG_GROUP);
         timezoneGroup.writeEntry(std::get<0>(mList[index.row()]).id().data(), value);
         emit dataChanged(index, index, QVector<int> { ShownRole });
         return true;

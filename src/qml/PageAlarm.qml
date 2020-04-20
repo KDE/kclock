@@ -38,7 +38,7 @@ Kirigami.ScrollablePage {
         iconName: "list-add"
         text: "New Alarm"
         onTriggered: {
-            pagenewalarm.init(null);
+            pagenewalarm.init(null, null);
             pageStack.push(pagenewalarm);
         }
     }
@@ -90,7 +90,7 @@ Kirigami.ScrollablePage {
                     iconName: "entry-edit"
                     text: "Edit"
                     onTriggered: {
-                        pagenewalarm.init(alarmModel.get(index));
+                        pagenewalarm.init(alarmModel.get(index), model);
                         pageStack.push(pagenewalarm);
                     }
                 },

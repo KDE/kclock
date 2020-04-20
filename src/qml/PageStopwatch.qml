@@ -54,39 +54,36 @@ Kirigami.Page {
             id: minutesText
             text: getElapsedMinutes()
             color: Kirigami.Theme.highlightColor
-            font.pointSize: 40
-            font.kerning: false
+            font.pointSize: Kirigami.Theme.defaultFont.pointSize*4
             font.family: clockFont.name
         }
-        Text {
+        Label {
             text: ":"
             color: Kirigami.Theme.textColor
-            font.pointSize: 40
+            font.pointSize: Kirigami.Theme.defaultFont.pointSize*4
             font.family: clockFont.name
         }
         Label {
             text: getElapsedSeconds()
             color: Kirigami.Theme.highlightColor
-            font.pointSize: 40
-            font.kerning: false
+            font.pointSize: Kirigami.Theme.defaultFont.pointSize*4
             font.family: clockFont.name
         }
-        Text {
+        Label {
             text: "."
             color: Kirigami.Theme.textColor
-            font.pointSize: 40
+            font.pointSize: Kirigami.Theme.defaultFont.pointSize*4
             font.family: clockFont.name
         }
         Rectangle {
             height: minutesText.height / 2
-            width: 50
+            width: Kirigami.Theme.defaultFont.pointSize*5
             color: "transparent"
-            Text {
+            Label {
                 id: secondsText
                 text: getElapsedSmall()
                 color: Kirigami.Theme.highlightColor
-                font.pointSize: 26
-                font.kerning: false
+                font.pointSize: Kirigami.Theme.defaultFont.pointSize*2.6
                 font.family: clockFont.name
             }
         }
@@ -140,7 +137,7 @@ Kirigami.Page {
                     Rectangle {
                         Layout.fillHeight: true
                         Layout.alignment: Qt.AlignRight
-                        Text {
+                        Label {
                             anchors.verticalCenter: parent.verticalCenter
                             anchors.horizontalCenter: parent.horizontalCenter
                             color: Kirigami.Theme.textColor
@@ -154,7 +151,7 @@ Kirigami.Page {
                     // time since beginning
                     Rectangle {
                         Layout.fillHeight: true
-                        Text {
+                        Label {
                             anchors.verticalCenter: parent.verticalCenter
                             anchors.horizontalCenter: parent.horizontalCenter
                             color: Kirigami.Theme.textColor
@@ -164,7 +161,7 @@ Kirigami.Page {
                     // time since last lap
                     Rectangle {
                         Layout.fillHeight: true
-                        Text {
+                        Label {
                             anchors.verticalCenter: parent.verticalCenter
                             anchors.horizontalCenter: parent.horizontalCenter
                             color: Kirigami.Theme.focusColor
