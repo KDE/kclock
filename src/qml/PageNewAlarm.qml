@@ -167,7 +167,7 @@ Kirigami.ScrollablePage {
                     Layout.alignment: Qt.AlignHCenter
                     id: selectedAlarmName
                     placeholderText: i18n("Wake Up")
-                    text: newAlarm ? "" : selectedAlarm.name
+                    text: newAlarm ? "Alarm" : selectedAlarm.name
                 }
             }
         }

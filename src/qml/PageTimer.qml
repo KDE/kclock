@@ -133,13 +133,13 @@ Kirigami.Page {
         return timerDuration*1000 - elapsedTime;
     }
     function getHours() {
-        return ("0" + parseInt(getTimeLeft() / 1000 / 60 / 24).toFixed(0)).slice(-2);
+        return ("0" + parseInt(getTimeLeft() / 1000 / 60 / 60).toFixed(0)).slice(-2);
     }
     function getMinutes() {
-        return ("0" + parseInt(getTimeLeft() / 1000 / 60 - 24*getHours())).slice(-2);
+        return ("0" + parseInt(getTimeLeft() / 1000 / 60 - 60 * getHours())).slice(-2);
     }
     function getSeconds() {
-        return ("0" + parseInt(getTimeLeft() / 1000 - 60*getMinutes())).slice(-2);
+        return ("0" + parseInt(getTimeLeft() / 1000 - 60 * getMinutes())).slice(-2);
     }
 
     // clock display
@@ -219,10 +219,17 @@ Kirigami.Page {
                 Layout.fillWidth: true
 
                 SpinBox {
+                    Kirigami.FormData.label: i18n("Hours")
+                    id: spinBoxHours
+                    onValueChanged: timerEditSheet.setDuration()
+                    value: timerDuration / 60 / 60
+                }
+                
+                SpinBox {
                     Kirigami.FormData.label: i18n("Minutes")
                     id: spinBoxMinutes
                     onValueChanged: timerEditSheet.setDuration()
-                    value: timerDuration / 60
+                    value: timerDuration % (60*60) / 60
                 }
 
                 SpinBox {
@@ -236,7 +243,7 @@ Kirigami.Page {
         }
 
          function setDuration() {
-             timerDuration = spinBoxMinutes.value * 60 + spinBoxSeconds.value
+             timerDuration = spinBoxHours.value * 60 * 60 + spinBoxMinutes.value * 60 + spinBoxSeconds.value
          }
     }
 }
