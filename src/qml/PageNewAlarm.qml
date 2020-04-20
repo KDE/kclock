@@ -37,9 +37,18 @@ Kirigami.ScrollablePage {
         if (alarm == null) {
             newAlarm = true;
             alarmDaysOfWeek = 0;
+            // manually set because binding doesn't seem to work
+            let date = new Date();
+            selectedAlarmTime.pm = date.getHours() >= 12;
+            selectedAlarmTime.hours = date.getHours() >= 12 ? date.getHours() - 12 : date.getHours();
+            selectedAlarmTime.minutes = date.getMinutes();
         } else {
             newAlarm = false;
             alarmDaysOfWeek = alarm.dayOfWeek;
+            // manually set because binding doesn't seem to work
+            selectedAlarmTime.pm = alarm.hours > 12;
+            selectedAlarmTime.hours = alarm.hours >= 12 ? alarm.hours - 12 : alarm.hours;
+            selectedAlarmTime.minutes = alarm.minutes;
         }
         selectedAlarm = alarm;
     }
@@ -74,17 +83,17 @@ Kirigami.ScrollablePage {
     ColumnLayout {
         spacing: Kirigami.Units.largeSpacing
         
+        // time picker
         DateAndTime.TimePicker {
             Layout.alignment: Qt.AlignHCenter
             id: selectedAlarmTime
-            hours: newAlarm ? 0 : selectedAlarm.hours
-            minutes: newAlarm ? 0 : selectedAlarm.minutes
         }
         
         Kirigami.Separator {
             Layout.fillWidth: true
         }
         
+        // repeat day picker
         Item {
             Layout.fillWidth: true
             implicitHeight: Kirigami.Units.gridUnit * 3

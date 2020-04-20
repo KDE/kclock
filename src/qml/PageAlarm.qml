@@ -59,14 +59,22 @@ Kirigami.ScrollablePage {
     ListView {
         model: alarmModel
 
+        // each alarm
         delegate: Kirigami.SwipeListItem {
 
             onClicked: {
-                pagenewalarm.init(alarmModel.get(index));
-                pageStack.push(pagenewalarm);
+                model.enabled = !model.enabled
             }
             
             actions: [
+                Kirigami.Action {
+                    iconName: "entry-edit"
+                    text: "Edit"
+                    onTriggered: {
+                        pagenewalarm.init(alarmModel.get(index));
+                        pageStack.push(pagenewalarm);
+                    }
+                },
                 Kirigami.Action {
                     iconName: "delete"
                     text: "Delete"
@@ -78,6 +86,7 @@ Kirigami.ScrollablePage {
                 }
             ]
 
+            // alarm text
             contentItem: Item {
                 implicitWidth: delegateLayout.implicitWidth
                 implicitHeight: delegateLayout.implicitHeight
@@ -96,14 +105,20 @@ Kirigami.ScrollablePage {
 
                     ColumnLayout {
                         
-                        Kirigami.Heading {
-                            level: 2
+                        Label {
+                            font.weight: Font.Light
+                            font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.5
                             text: getTimeFormat(model.hours, model.minutes)
                         }
                         Label {
-                            Layout.fillWidth: true
-                            wrapMode: Text.WordWrap
+                            font.weight: Font.Bold
+                            color: model.enabled ? Kirigami.Theme.activeTextColor : Kirigami.Theme.disabledTextColor
+                            font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.15
                             text: model.name
+                        }
+                        Label {
+                            font.weight: Font.Normal
+                            text: "Only once"
                         }
                     }
 
