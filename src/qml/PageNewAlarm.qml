@@ -36,7 +36,6 @@ Kirigami.ScrollablePage {
     
     function init(alarm, alarmModel) {
         if (alarm == null) {
-            newAlarm = true;
             alarmDaysOfWeek = 0;
             // manually set because binding doesn't seem to work
             let date = new Date();
@@ -44,7 +43,6 @@ Kirigami.ScrollablePage {
             selectedAlarmTime.hours = date.getHours() >= 12 ? date.getHours() - 12 : date.getHours();
             selectedAlarmTime.minutes = date.getMinutes();
         } else {
-            newAlarm = false;
             alarmDaysOfWeek = alarm.dayOfWeek;
             // manually set because binding doesn't seem to work
             selectedAlarmTime.pm = alarm.hours > 12;
@@ -53,6 +51,7 @@ Kirigami.ScrollablePage {
         }
         selectedAlarm = alarm;
         selectedAlarmModel = alarmModel;
+        newAlarm = alarm == null;
     }
     
     actions {

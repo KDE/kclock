@@ -48,6 +48,7 @@ Kirigami.ScrollablePage {
             return ("0" + hours).slice(-2) + ":" + ("0" + minutes).slice(-2)
         } else {
             if (hours >= 12) { // pm
+                if (hours - 12 == 0) hours = 24;
                 return ("0" + (hours - 12)).slice(-2) + ":" + ("0" + minutes).slice(-2) + " PM";
             } else { // am
                 if (hours == 0) hours = 12;
