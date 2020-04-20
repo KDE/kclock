@@ -5,3 +5,4 @@ Name=kirigamiclock
 Name=Timer finished
 Comment=Your timer has finished!
 Action=Sound|Popup
+Sound=freedesktop/stereo/alarm-clock-elapsed.oga

@@ -130,6 +130,7 @@ Kirigami.Page {
         anchors.topMargin: 15;
         model: roundModel
         spacing: 0
+        ScrollBar.vertical: ScrollBar {}
 
         delegate: Kirigami.BasicListItem {
             activeBackgroundColor: "transparent"

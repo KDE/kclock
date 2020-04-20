@@ -6,6 +6,7 @@ target_link_libraries(kirigamiclock
         Qt5::Gui
         Qt5::QuickControls2
         Qt5::Widgets
+        Qt5::Multimedia
         KF5::I18n
         KF5::ConfigCore
         KF5::CoreAddons

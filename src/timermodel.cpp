@@ -33,17 +33,17 @@ TimerModel::TimerModel(QObject* parent) {}
 void TimerModel::timerFinished()
 {
     qDebug("Timer finished, sending notification...");
-    KNotification* notification = new KNotification("timerFinished");
-    
-    notification->setIconName("kronometer");
-    notification->setTitle(i18n("Timer complete"));
-    notification->setText(i18n("Your timer has finished!"));
-    notification->setDefaultAction(i18n("View"));
-    notification->setUrgency(KNotification::HighUrgency);
-    notification->setFlags(KNotification::NotificationFlag::RaiseWidgetOnActivation | 
+
+    KNotification* notif = new KNotification("timerFinished");
+    notif->setIconName("kronometer");
+    notif->setTitle(i18n("Timer complete"));
+    notif->setText(i18n("Your timer has finished!"));
+    notif->setDefaultAction(i18n("View"));
+    notif->setUrgency(KNotification::HighUrgency);
+    notif->setFlags(KNotification::NotificationFlag::RaiseWidgetOnActivation | 
                             KNotification::NotificationFlag::LoopSound | 
+                            KNotification::NotificationFlag::Persistent | 
                             KNotification::NotificationFlag::SkipGrouping |
                             KNotification::NotificationFlag::CloseWhenWidgetActivated);
-
-    notification->sendEvent();
+    notif->sendEvent();
 }
