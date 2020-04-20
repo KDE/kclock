@@ -42,10 +42,22 @@ Kirigami.ScrollablePage {
             pageStack.push(pagenewalarm);
         }
     }
+    
+    function getTimeFormat(hours, minutes) {
+        if (settings.use24HourTime) {
+            return ("0" + hours).slice(-2) + ":" + ("0" + minutes).slice(-2)
+        } else {
+            if (hours >= 12) { // pm
+                return ("0" + (hours - 12)).slice(-2) + ":" + ("0" + minutes).slice(-2) + " PM";
+            } else { // am
+                if (hours == 0) hours = 12;
+                return ("0" + hours).slice(-2) + ":" + ("0" + minutes).slice(-2) + " AM";
+            }
+        }
+    }
 
     ListView {
         model: alarmModel
-        anchors.fill: parent
 
         delegate: Kirigami.SwipeListItem {
 
@@ -83,9 +95,10 @@ Kirigami.ScrollablePage {
                     columns: width > Kirigami.Units.gridUnit * 20 ? 4 : 2
 
                     ColumnLayout {
+                        
                         Kirigami.Heading {
                             level: 2
-                            text: ("0" + model.hours).slice(-2) + ":" + ("0" + model.minutes).slice(-2)
+                            text: getTimeFormat(model.hours, model.minutes)
                         }
                         Label {
                             Layout.fillWidth: true

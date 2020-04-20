@@ -70,8 +70,8 @@ Shape {
     Rectangle {
         color: "black"
         width: 3; height: clockRadius * 0.7
-        x: circleCentreArc.centerX + Math.sin(minuteRotation.angle * Math.PI / 180) * width
-        y: circleCentreArc.centerY - height - Math.sin(minuteRotation.angle * Math.PI / 180) * width;
+        x: circleCentreArc.centerX + Math.sin((minuteRotation.angle-90) * Math.PI / 180) * width / 2
+        y: circleCentreArc.centerY - height - Math.sin(minuteRotation.angle * Math.PI / 180) * width / 2
         z: -1
         antialiasing: true
         transform: Rotation {
@@ -88,8 +88,8 @@ Shape {
     Rectangle {
         color: "black"
         width: 3; height: clockRadius * 0.4
-        x: circleCentreArc.centerX + Math.sin(hourRotation.angle * Math.PI / 180) * width
-        y: circleCentreArc.centerY - height - Math.sin(minuteRotation.angle * Math.PI / 180) * width;
+        x: circleCentreArc.centerX + Math.sin((hourRotation.angle-90) * Math.PI / 180) * width / 2
+        y: circleCentreArc.centerY - height - Math.sin(hourRotation.angle * Math.PI / 180) * width / 2
         z: -1
         antialiasing: true
         transform: Rotation {

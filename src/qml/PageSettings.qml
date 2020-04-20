@@ -77,6 +77,8 @@ Kirigami.ScrollablePage {
         ItemDelegate {
             Layout.fillWidth: true
             text: "<b>" + i18n("About") + "</b>"
+            leftPadding: Kirigami.Units.gridUnit
+            rightPadding: Kirigami.Units.gridUnit
             implicitHeight: Kirigami.Units.gridUnit * 3
             onClicked: pageStack.push(pageabout)
         }

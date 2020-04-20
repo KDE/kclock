@@ -12,5 +12,9 @@ target_link_libraries(kirigamiclock
         KF5::CoreAddons
         KF5::Notifications
         )
+        
+# Kirigami Addons (which is included as a binary since it isn't a package yet...)
+add_library(kirigami-addons STATIC ${CMAKE_SOURCE_DIR}/src/assets/libdateandtimeplugin.so)
+target_link_libraries(kirigamiclock kirigami-addons)
 
 install(TARGETS kirigamiclock ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})

@@ -87,7 +87,7 @@ QVariant TimeZoneSelectorModel::data(const QModelIndex& index, int role) const
                 return QVariant(i18n("%1 %2 behind", offset / 60, hour));
             }
         } else {
-            return QVariant(QDateTime::currentDateTime().toString("yyyy-mm-dd"));
+            return QVariant(i18n("Local time"));
         }
     }
     case TimeStringRole:

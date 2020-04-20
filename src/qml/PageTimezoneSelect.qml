@@ -42,6 +42,7 @@ Kirigami.Page {
         anchors.right: parent.right
         anchors.bottom: parent.bottom
         anchors.topMargin: Kirigami.Units.smallSpacing * 2
+        ScrollBar.vertical: ScrollBar {}
         clip: true
         spacing: Kirigami.Units.smallSpacing
         model: timeZoneFilterModel
