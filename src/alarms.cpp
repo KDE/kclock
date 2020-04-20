@@ -19,25 +19,68 @@
  */
 
 #include <QtCore/QCoreApplication>
-#include <sstream>
 #include <QtCore/QProcess>
 #include <QDebug>
+#include <QJsonObject>
+#include <QJsonDocument>
+
+#include <KSharedConfig>
+#include <KConfigGroup>
+
 #include "alarms.h"
 
-Alarm::Alarm(QObject *parent, QString name, int minutes, int hours, int dayOfWeek) {
+const QString ALARM_CFG_GROUP = "Alarms";
+
+Alarm::Alarm(QObject *parent, QString name, int minutes, int hours, int dayOfWeek) 
+{
     enabled = true;
     uuid = QUuid::createUuid();
     this->name = name;
-    this->cronMinutes = minutes;
-    this->cronHours = hours;
-    this->cronDayOfWeek = dayOfWeek;
+    this->minutes = minutes;
+    this->hours = hours;
+    this->dayOfWeek = dayOfWeek;
 }
 
-QString Alarm::getCronString()
+// alarm from json
+Alarm::Alarm(QString serialized)
 {
-    std::string s = std::to_string(getMinutes()) + " " + std::to_string(getHours()) + " * * * ";
-    return QString::fromStdString(s).append(getDayOfWeek())
-            .arg(QCoreApplication::applicationFilePath(), uuid.toString());
+    if (serialized == "") {
+        uuid = QUuid::createUuid();
+    } else {
+        QJsonDocument doc = QJsonDocument::fromJson(serialized.toUtf8());
+        QJsonObject obj = doc.object();
+        uuid = QUuid::fromString(obj["uuid"].toString());
+        name = obj["name"].toString();
+        minutes = obj["minutes"].toInt();
+        hours = obj["hours"].toInt();
+        dayOfWeek = obj["dayOfWeek"].toInt();
+        enabled = obj["enabled"].toBool();
+    }
+}
+
+// alarm to json
+QString Alarm::serialize()
+{
+    QJsonObject obj;
+    obj["uuid"] = this->uuid.toString();
+    obj["name"] = this->name;
+    obj["minutes"] = this->minutes;
+    obj["hours"] = this->hours;
+    obj["dayOfWeek"] = this->dayOfWeek;
+    obj["enabled"] = this->enabled;
+    return QString(QJsonDocument(obj).toJson(QJsonDocument::Compact));
+}
+
+AlarmModel::AlarmModel(QObject *parent)
+{
+    // add alarms from config
+    auto config = KSharedConfig::openConfig();
+    KConfigGroup group = config->group(ALARM_CFG_GROUP);
+    for (QString key : group.keyList()) {
+        QString json = group.readEntry(key, "");
+        if (json != "") 
+            alarmsList.append(new Alarm(json));
+    }
 }
 
 /* ~ Alarm row data ~ */
@@ -77,6 +120,10 @@ bool AlarmModel::setData(const QModelIndex& index, const QVariant& value, int ro
     else if (role == DayOfWeekRole) alarm->setDayOfWeek(value.toInt());
     else return false; 
 
+    auto config = KSharedConfig::openConfig();
+    KConfigGroup group = config->group(ALARM_CFG_GROUP);
+    group.writeEntry(alarm->getUuid().toString(), alarm->serialize());
+    
     emit dataChanged(index, index);
     return true;
 }
@@ -97,8 +144,15 @@ Alarm* AlarmModel::insert(int index, QString name, int minutes, int hours, int d
 {
     if (index < 0 || index > alarmsList.count()) return new Alarm();
     emit beginInsertRows(QModelIndex(), index, index);
+    
     auto* alarm = new Alarm(this, name, minutes, hours, dayOfWeek);
     alarmsList.insert(index, alarm);
+    
+    // write to config
+    auto config = KSharedConfig::openConfig();
+    KConfigGroup group = config->group(ALARM_CFG_GROUP);
+    group.writeEntry(alarm->getUuid().toString(), alarm->serialize());
+    
     emit endInsertRows();
     return alarm;
 }
@@ -107,7 +161,14 @@ void AlarmModel::remove(int index)
 {
     if (index < 0 || index >= alarmsList.count()) return;
     emit beginRemoveRows(QModelIndex(), index, index);
+    
+    // write to config
+    auto config = KSharedConfig::openConfig();
+    KConfigGroup group = config->group(ALARM_CFG_GROUP);
+    group.deleteEntry(alarmsList.at(index)->getUuid().toString());
+    
     alarmsList.removeAt(index);
+    
     emit endRemoveRows();
 }
 
@@ -122,68 +183,3 @@ void AlarmModel::updateUi()
     emit dataChanged(createIndex(0, 0), createIndex(alarmsList.count()-1, 0));
 }
 
-bool AlarmModel::load()
-{
-    QProcess crontab;
-    crontab.setProgram("crontab");
-    crontab.setArguments(QStringList() << "-l");
-    crontab.start();
-    crontab.waitForFinished();
-    QString arr = crontab.readAll();
-    return false;
-}
-
-bool AlarmModel::save()
-{
-    QProcess crontab;
-    crontab.setProgram("crontab");
-    crontab.setArguments(QStringList() << "-l");
-    crontab.start();
-    crontab.waitForFinished();
-    QString arr = crontab.readAll();
-    QStringList strarr = arr.split('\n');
-    QMutableListIterator<QString> iter(strarr);
-    while(iter.hasNext()) {
-        if(iter.next().contains("#kirigamiclock")) {
-            iter.remove();
-            iter.next();
-            iter.remove();
-        }
-    }
-
-    for(Alarm* a : alarmsList) {
-        strarr.append(QString("#kirigamiclock \"%1\"").arg(a->getName()));
-        strarr.append(QString("%1").arg(a->getCronString()));
-    }
-    QString out;
-    out = strarr.join('\n');
-
-    crontab.setArguments(QStringList() << "-");
-    crontab.start();
-    //crontab.write(out);
-    crontab.closeWriteChannel();
-    crontab.waitForFinished();
-
-    return false;
-}
-
-QString AlarmModel::getCrontabUpdate(const QString crontab)
-{
-    QStringList strarr = crontab.split('\n');
-    QMutableListIterator<QString> iter(strarr);
-    while(iter.hasNext()) {
-        if(iter.next().contains("#kirigamiclock")) {
-            iter.remove();
-            iter.next();
-            iter.remove();
-        }
-    }
-
-    for(Alarm* a : alarmsList) {
-        strarr.append(QString("#kirigamiclock \"%1\"").arg(a->getName()));
-        strarr.append(QString("%1").arg(a->getCronString()));
-    }
-    QString out;
-    out = strarr.join('\n');
-    return out;
-}

@@ -37,37 +37,38 @@ class Alarm : public QObject
 
 public:
     explicit Alarm(QObject *parent = nullptr, QString name = "", int minutes = 0, int hours = 0, int dayOfWeek = 0);
-
+    explicit Alarm(QString serialized);
+    
     QString getName() const { return name; }
     QUuid getUuid() const { return uuid; }
     bool isEnabled() const { return enabled; }
-    bool isDirty() const { return dirty; }
-    int getHours() const { return cronHours; }
-    int getMinutes() const { return cronMinutes; }
-    int getDayOfWeek() const { return cronDayOfWeek; }
-    QString getCronString();
+    int getHours() const { return hours; }
+    int getMinutes() const { return minutes; }
+    int getDayOfWeek() const { return dayOfWeek; }
     
     void setName(QString name) { this->name = name; }
     void setEnabled(bool enabled) { this->enabled = enabled; }
-    void setHours(int hours) { this->cronHours = hours; }
-    void setMinutes(int minutes) { this->cronMinutes = minutes; }
-    void setDayOfWeek(int dayOfWeek) { this->cronDayOfWeek = dayOfWeek; }
+    void setHours(int hours) { this->hours = hours; }
+    void setMinutes(int minutes) { this->minutes = minutes; }
+    void setDayOfWeek(int dayOfWeek) { this->dayOfWeek = dayOfWeek; }
 
+    QString serialize();
+    
 signals:
     void onPropertyChanged();
 
 private:
     QString name;
     QUuid uuid;
-    bool enabled, dirty = false;
-    int cronHours, cronMinutes, cronDayOfWeek;
+    bool enabled;
+    int hours, minutes, dayOfWeek;
 };
 
 class AlarmModel : public QAbstractListModel
 {
     Q_OBJECT
 public:
-    explicit AlarmModel(QObject *parent = nullptr) : QAbstractListModel (parent) { }
+    explicit AlarmModel(QObject *parent = nullptr);
 
     enum {
         EnabledRole = Qt::UserRole + 1,
@@ -85,10 +86,8 @@ public:
     
     Q_INVOKABLE void updateUi();
 
-    QString getCrontabUpdate(const QString crontab);
     bool load();
 
-    Q_INVOKABLE bool save();
     Q_INVOKABLE Alarm* insert(int index, QString name, int minutes, int hours, int dayOfWeek);
     Q_INVOKABLE void remove(int index);
     Q_INVOKABLE Alarm* get(int index);
