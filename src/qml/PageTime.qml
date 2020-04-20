@@ -111,6 +111,7 @@ Kirigami.Page {
     
     mainAction: Kirigami.Action {
         iconName: "globe"
+        text: i18n("Edit")
         onTriggered: {
             pageStack.push(pagetimezone)
         }
