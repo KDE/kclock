@@ -219,14 +219,14 @@ Kirigami.Page {
                 Layout.fillWidth: true
 
                 SpinBox {
-                    Kirigami.FormData.label: i18n("Minutes") + ":"
+                    Kirigami.FormData.label: i18n("Minutes")
                     id: spinBoxMinutes
                     onValueChanged: timerEditSheet.setDuration()
                     value: timerDuration / 60
                 }
 
                 SpinBox {
-                    Kirigami.FormData.label: i18n("Seconds") + ":"
+                    Kirigami.FormData.label: i18n("Seconds")
                     id: spinBoxSeconds
                     to: 60
                     onValueChanged: timerEditSheet.setDuration()

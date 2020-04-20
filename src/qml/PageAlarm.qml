@@ -55,6 +55,25 @@ Kirigami.ScrollablePage {
             }
         }
     }
+    
+    function getRepeatFormat(dayOfWeek) {
+        if (dayOfWeek == 0) {
+            return qsTr("Only once");
+        }
+        let sunday = 1 << 0, monday = 1 << 1, tuesday = 1 << 2, wednesday = 1 << 3, thursday = 1 << 4, friday = 1 << 5, saturday = 1 << 6;
+        if (dayOfWeek == sunday + monday + tuesday + wednesday + thursday + friday + saturday)
+            return qsTr("Everyday");
+        
+        let str = "";
+        if (dayOfWeek & sunday) str += "Sun., ";
+        if (dayOfWeek & monday) str += "Mon., ";
+        if (dayOfWeek & tuesday) str += "Tue., ";
+        if (dayOfWeek & wednesday) str += "Wed., ";
+        if (dayOfWeek & thursday) str += "Thu., ";
+        if (dayOfWeek & friday) str += "Fri., ";
+        if (dayOfWeek & saturday) str += "Sat., ";
+        return str.substring(0, str.length - 2);
+    }
 
     ListView {
         model: alarmModel
@@ -118,7 +137,7 @@ Kirigami.ScrollablePage {
                         }
                         Label {
                             font.weight: Font.Normal
-                            text: "Only once"
+                            text: getRepeatFormat(model.dayOfWeek)
                         }
                     }
 

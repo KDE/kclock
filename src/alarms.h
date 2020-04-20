@@ -74,6 +74,7 @@ public:
         HoursRole = Qt::DisplayRole + 0,
         MinutesRole = Qt::DisplayRole + 1,
         NameRole = Qt::DisplayRole + 2,
+        DayOfWeekRole = Qt::DisplayRole + 3,
     };
 
     int rowCount(const QModelIndex& parent) const override;

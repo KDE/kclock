@@ -48,6 +48,7 @@ QHash<int, QByteArray> AlarmModel::roleNames() const {
             {MinutesRole, "minutes"},
             {NameRole, "name"},
             {EnabledRole, "enabled"},
+            {DayOfWeekRole, "dayOfWeek"},
     };
 }
 
@@ -60,6 +61,7 @@ QVariant AlarmModel::data(const QModelIndex& index, int role) const
     else if (role == HoursRole) return alarm->getHours();
     else if (role == MinutesRole) return alarm->getMinutes();
     else if (role == NameRole) return alarm->getName();
+    else if (role == DayOfWeekRole) return alarm->getDayOfWeek();
     else return QVariant();
 }
 
@@ -72,6 +74,7 @@ bool AlarmModel::setData(const QModelIndex& index, const QVariant& value, int ro
     else if (role == HoursRole) alarm->setHours(value.toInt());
     else if (role == MinutesRole) alarm->setMinutes(value.toInt());
     else if (role == NameRole) alarm->setName(value.toString());
+    else if (role == DayOfWeekRole) alarm->setDayOfWeek(value.toInt());
     else return false; 
 
     emit dataChanged(index, index);

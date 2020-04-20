@@ -40,7 +40,7 @@ Kirigami.ApplicationWindow
     pageStack.initialPage: timepage
     
     function switchToPage(page) {
-        if (pageStack.depth > 0) pageStack.pop()
+        while (pageStack.depth > 0) pageStack.pop()
         pageStack.push(page)
     }
     
