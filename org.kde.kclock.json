@@ -1,9 +1,9 @@
 {
-    "id": "org.kde.kirigamiclock",
+    "id": "org.kde.kclock",
     "runtime": "org.kde.Platform",
     "runtime-version": "5.12",
     "sdk": "org.kde.Sdk",
-    "command": "kirigamiclock",
+    "command": "kclock",
     "tags": ["nightly"],
     "desktop-file-name-suffix": " (Nightly)",
     "finish-args": [
@@ -19,7 +19,7 @@
 
     "modules": [
         {
-            "name": "kirigamiclock",
+            "name": "kclock",
             "buildsystem": "cmake-ninja",
             "builddir": true,
             "sources": [ { "type": "dir", "path": ".", "skip": [".git"] } ]

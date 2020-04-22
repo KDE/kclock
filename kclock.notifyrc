@@ -1,5 +1,5 @@
 [Global]
-Name=kirigamiclock
+Name=Clock
 
 [Event/timerFinished]
 Name=Timer finished

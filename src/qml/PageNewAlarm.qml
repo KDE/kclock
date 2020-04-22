@@ -24,7 +24,7 @@ import QtQuick.Window 2.2
 import QtQuick.Layouts 1.2
 import org.kde.kirigami 2.11 as Kirigami
 import org.kde.kirigamiaddons.dateandtime 0.1 as DateAndTime
-import kirigamiclock 1.0
+import kclock 1.0
 
 Kirigami.ScrollablePage {
     title: newAlarm ? i18n("New Alarm") : i18n("Edit Alarm")

@@ -50,9 +50,9 @@ int main(int argc, char *argv[])
     QQmlDebuggingEnabler enabler;
     QQmlApplicationEngine engine;
 
-    KLocalizedString::setApplicationDomain("kirigamiclock");
+    KLocalizedString::setApplicationDomain("kclock");
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
-    KAboutData aboutData("kirigamiclock", "Clock", "0.1", "Clock for Plasma Mobile", KAboutLicense::GPL);
+    KAboutData aboutData("kclock", "Clock", "0.1", "Simple clock made in Kirigami", KAboutLicense::GPL);
     KAboutData::setApplicationData(aboutData);
 
     // initialize models
@@ -72,7 +72,7 @@ int main(int argc, char *argv[])
     auto *utilModel = new UtilModel();
 
     // register QML types
-    qmlRegisterType<Alarm>("kirigamiclock", 1, 0, "Alarm");
+    qmlRegisterType<Alarm>("kclock", 1, 0, "Alarm");
 
     // models
 	engine.rootContext()->setContextProperty("timeZoneShowModel", timeZoneViewModel);

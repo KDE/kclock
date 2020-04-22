@@ -1,4 +1,4 @@
-project(kirigamiclock)
+project(kclock)
 
 cmake_minimum_required(VERSION 3.0)
 set(KF5_MIN_VERSION "5.18.0")
@@ -26,6 +26,10 @@ include(KDECMakeSettings)
 include(ECMPoQmTools)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 
+# kirigami-addons (not a package yet, so this is a runtime dependency)
+include(ECMQMLModules)
+ecm_find_qmlmodule(org.kde.kirigamiaddons.dateandtime 0.1)
+
 ################# Find dependencies #################
 
 find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS DBus Core Quick Test Gui Svg QuickControls2 Multimedia Test)
@@ -40,7 +44,7 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
 
 ################ Setup notifications ################
 
-install(FILES kirigamiclock.notifyrc DESTINATION ${KNOTIFYRC_INSTALL_DIR})
+install(FILES kclock.notifyrc DESTINATION ${KNOTIFYRC_INSTALL_DIR})
 
 ################# Enable C++11 features for clang and gcc #################
 
@@ -51,7 +55,7 @@ endif()
 ################# build and install #################
 add_subdirectory(src)
 
-install(PROGRAMS org.kde.kirigamiclock.desktop DESTINATION ${KDE_INSTALL_APPDIR})
-install(FILES org.kde.kirigamiclock.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
+install(PROGRAMS org.kde.kclock.desktop DESTINATION ${KDE_INSTALL_APPDIR})
+install(FILES org.kde.kclock.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)

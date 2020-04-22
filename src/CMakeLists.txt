@@ -1,7 +1,7 @@
-qt5_add_resources(kirigamiclock_SRCS resources.qrc)
+qt5_add_resources(kclock_SRCS resources.qrc)
 
 add_executable(kirigamiclock main.cpp timezoneselectormodel.cpp ${kirigamiclock_SRCS} alarms.cpp timermodel.cpp utilmodel.cpp)
-target_link_libraries(kirigamiclock
+target_link_libraries(kclock
         Qt5::Qml
         Qt5::Gui
         Qt5::QuickControls2
@@ -13,8 +13,4 @@ target_link_libraries(kirigamiclock
         KF5::Notifications
         )
         
-# Kirigami Addons (which is included as a binary since it isn't a package yet...)
-add_library(kirigami-addons STATIC ${CMAKE_SOURCE_DIR}/src/assets/libdateandtimeplugin.so)
-target_link_libraries(kirigamiclock kirigami-addons)
-
-install(TARGETS kirigamiclock ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS kclock ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component type="desktop-application">
-  <id>org.kde.kirigamiclock</id>
-  <name>Kirigami Clock</name>
+  <id>org.kde.kclock</id>
+  <name>Clock</name>
   <summary>A simple all in one clock application.</summary>
   <metadata_license>A permissive license for this metadata, e.g. "FSFAP"</metadata_license>
   <project_license>GPL-2+</project_license>

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Clock
+Comment=A simple clock application in Kirigami.
+Version=1.0
+Exec=kclock
+MimeType=application/x-kclock;
+Icon=kronometer
+Type=Application
+Terminal=false
+Categories=Qt;KDE;

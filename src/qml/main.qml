@@ -120,16 +120,16 @@ Kirigami.ApplicationWindow
         id: pageabout
         visible: false
         aboutData: {
-            "displayName": "kirigamiclock",
+            "displayName": "Clock",
             "productName": "kirigami/clock",
-            "componentName": "kirigamiclock",
+            "componentName": "kclock",
             "shortDescription": "A mobile friendly clock app built with Kirigami.",
             "homepage": "",
             "bugAddress": "",
-            "version": "0.0.1",
+            "version": "0.1",
             "otherText": "",
             "copyrightStatement": "© 2020 Plasma Development Team",
-            "desktopFileName": "org.kde.kirigamiclock",
+            "desktopFileName": "org.kde.kclock",
         }
     }
     Settings {
