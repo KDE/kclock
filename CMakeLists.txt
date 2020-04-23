@@ -32,7 +32,7 @@ ecm_find_qmlmodule(org.kde.kirigamiaddons.dateandtime 0.1)
 
 ################# Find dependencies #################
 
-find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS DBus Core Quick Test Gui Svg QuickControls2 Multimedia Test)
+find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS DBus Core Quick Test Gui Svg QuickControls2 Test)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     Config
     Kirigami2
@@ -45,12 +45,6 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
 ################ Setup notifications ################
 
 install(FILES kclock.notifyrc DESTINATION ${KNOTIFYRC_INSTALL_DIR})
-
-################# Enable C++11 features for clang and gcc #################
-
-if(UNIX)
-   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -std=c++0x")
-endif()
 
 ################# build and install #################
 add_subdirectory(src)
