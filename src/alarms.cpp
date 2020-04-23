@@ -31,7 +31,8 @@
 
 const QString ALARM_CFG_GROUP = "Alarms";
 
-Alarm::Alarm(QObject *parent, QString name, int minutes, int hours, int dayOfWeek) 
+Alarm::Alarm(QObject *parent, QString name, int minutes, int hours, int dayOfWeek)
+    : QObject(parent)
 {
     enabled = true;
     uuid = QUuid::createUuid();
@@ -72,6 +73,7 @@ QString Alarm::serialize()
 }
 
 AlarmModel::AlarmModel(QObject *parent)
+    : QAbstractListModel(parent)
 {
     // add alarms from config
     auto config = KSharedConfig::openConfig();

@@ -31,7 +31,6 @@ class UtilModel : public QObject
     Q_PROPERTY(QString tzName READ getCurrentTimeZoneName)
     
 public:
-    explicit UtilModel(QObject *parent = nullptr);
     QString getCurrentTimeZoneName();
     
 };
