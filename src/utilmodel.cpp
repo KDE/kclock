@@ -18,9 +18,9 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include <QTimeZone>
-#include <QString>
 #include "utilmodel.h"
+#include <QString>
+#include <QTimeZone>
 
 QString UtilModel::getCurrentTimeZoneName()
 {

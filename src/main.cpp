@@ -20,25 +20,25 @@
  */
 
 #include <QApplication>
-#include <QQmlApplicationEngine>
-#include <QQmlContext>
 #include <QCommandLineParser>
 #include <QMetaObject>
+#include <QQmlApplicationEngine>
+#include <QQmlContext>
 
-#include <QQmlDebuggingEnabler>
-#include <KLocalizedString>
-#include <KLocalizedContext>
 #include <KAboutData>
 #include <KConfig>
+#include <KLocalizedContext>
+#include <KLocalizedString>
+#include <QQmlDebuggingEnabler>
 
-#include "timezoneselectormodel.h"
 #include "alarms.h"
 #include "timermodel.h"
+#include "timezoneselectormodel.h"
 #include "utilmodel.h"
 
-QCommandLineParser* createParser()
+QCommandLineParser *createParser()
 {
-    QCommandLineParser* parser = new QCommandLineParser;
+    QCommandLineParser *parser = new QCommandLineParser;
     parser->addOption(QCommandLineOption(QStringLiteral("page"), i18n("Select opened page"), QStringLiteral("page"), "main"));
     parser->addHelpOption();
     return parser;
@@ -56,10 +56,10 @@ int main(int argc, char *argv[])
     KAboutData::setApplicationData(aboutData);
 
     // initialize models
-	auto *timeZoneModel = new TimeZoneSelectorModel();
+    auto *timeZoneModel = new TimeZoneSelectorModel();
 
-	//auto *timeZoneViewModel = new TimeZoneViewModel(timeZoneModel);
-    //timeZoneModel->connect(timeZoneModel, &TimeZoneSelectorModel::dataChanged, timeZoneViewModel, &TimeZoneViewModel::dataChanged);
+    // auto *timeZoneViewModel = new TimeZoneViewModel(timeZoneModel);
+    // timeZoneModel->connect(timeZoneModel, &TimeZoneSelectorModel::dataChanged, timeZoneViewModel, &TimeZoneViewModel::dataChanged);
 
     auto *timeZoneViewModel = new QSortFilterProxyModel();
     timeZoneViewModel->setFilterFixedString("true");
@@ -75,19 +75,19 @@ int main(int argc, char *argv[])
     qmlRegisterType<Alarm>("kclock", 1, 0, "Alarm");
 
     // models
-	engine.rootContext()->setContextProperty("timeZoneShowModel", timeZoneViewModel);
-	engine.rootContext()->setContextProperty("timeZoneFilterModel", timeZoneFilterModel);
+    engine.rootContext()->setContextProperty("timeZoneShowModel", timeZoneViewModel);
+    engine.rootContext()->setContextProperty("timeZoneFilterModel", timeZoneFilterModel);
     engine.rootContext()->setContextProperty("alarmModel", alarmModel);
     engine.rootContext()->setContextProperty("timerModel", timerModel);
     engine.rootContext()->setContextProperty("utilModel", utilModel);
-    
+
     engine.load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
 
     {
         QScopedPointer<QCommandLineParser> parser(createParser());
         parser->process(app);
-        if(parser->isSet(QStringLiteral("page"))) {
-            QObject* rootObject = engine.rootObjects().first();
+        if (parser->isSet(QStringLiteral("page"))) {
+            QObject *rootObject = engine.rootObjects().first();
             QMetaObject::invokeMethod(rootObject, "switchToPage", Q_ARG(QVariant, parser->value("page")));
         }
     }

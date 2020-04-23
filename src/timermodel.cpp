@@ -20,30 +20,29 @@
 
 #include "timermodel.h"
 
-#include <KNotification>
 #include <KLocalizedString>
+#include <KNotification>
 
+#include <QApplication>
 #include <QCoreApplication>
 #include <QDebug>
 #include <QtGlobal>
-#include <QApplication>
 
-TimerModel::TimerModel(QObject* parent) {}
+TimerModel::TimerModel(QObject *parent)
+{
+}
 
 void TimerModel::timerFinished()
 {
     qDebug("Timer finished, sending notification...");
 
-    KNotification* notif = new KNotification("timerFinished");
+    KNotification *notif = new KNotification("timerFinished");
     notif->setIconName("kronometer");
     notif->setTitle(i18n("Timer complete"));
     notif->setText(i18n("Your timer has finished!"));
     notif->setDefaultAction(i18n("View"));
     notif->setUrgency(KNotification::HighUrgency);
-    notif->setFlags(KNotification::NotificationFlag::RaiseWidgetOnActivation | 
-                            KNotification::NotificationFlag::LoopSound | 
-                            KNotification::NotificationFlag::Persistent | 
-                            KNotification::NotificationFlag::SkipGrouping |
-                            KNotification::NotificationFlag::CloseWhenWidgetActivated);
+    notif->setFlags(KNotification::NotificationFlag::RaiseWidgetOnActivation | KNotification::NotificationFlag::LoopSound | KNotification::NotificationFlag::Persistent | KNotification::NotificationFlag::SkipGrouping |
+                    KNotification::NotificationFlag::CloseWhenWidgetActivated);
     notif->sendEvent();
 }

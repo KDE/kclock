@@ -18,14 +18,14 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+#include <QDebug>
+#include <QJsonDocument>
+#include <QJsonObject>
 #include <QtCore/QCoreApplication>
 #include <QtCore/QProcess>
-#include <QDebug>
-#include <QJsonObject>
-#include <QJsonDocument>
 
-#include <KSharedConfig>
 #include <KConfigGroup>
+#include <KSharedConfig>
 
 #include "alarms.h"
 
@@ -80,108 +80,125 @@ AlarmModel::AlarmModel(QObject *parent)
     KConfigGroup group = config->group(ALARM_CFG_GROUP);
     for (QString key : group.keyList()) {
         QString json = group.readEntry(key, "");
-        if (json != "") 
+        if (json != "")
             alarmsList.append(new Alarm(json));
     }
 }
 
 /* ~ Alarm row data ~ */
 
-QHash<int, QByteArray> AlarmModel::roleNames() const {
+QHash<int, QByteArray> AlarmModel::roleNames() const
+{
     return {
-            {HoursRole, "hours"},
-            {MinutesRole, "minutes"},
-            {NameRole, "name"},
-            {EnabledRole, "enabled"},
-            {DayOfWeekRole, "dayOfWeek"},
+        {HoursRole, "hours"},
+        {MinutesRole, "minutes"},
+        {NameRole, "name"},
+        {EnabledRole, "enabled"},
+        {DayOfWeekRole, "dayOfWeek"},
     };
 }
 
-QVariant AlarmModel::data(const QModelIndex& index, int role) const
+QVariant AlarmModel::data(const QModelIndex &index, int role) const
 {
-    if (!index.isValid() || index.row() >= alarmsList.count()) return QVariant();
+    if (!index.isValid() || index.row() >= alarmsList.count())
+        return QVariant();
 
-    auto* alarm = alarmsList[index.row()];
-    if (role == EnabledRole) return alarm->isEnabled();
-    else if (role == HoursRole) return alarm->getHours();
-    else if (role == MinutesRole) return alarm->getMinutes();
-    else if (role == NameRole) return alarm->getName();
-    else if (role == DayOfWeekRole) return alarm->getDayOfWeek();
-    else return QVariant();
+    auto *alarm = alarmsList[index.row()];
+    if (role == EnabledRole)
+        return alarm->isEnabled();
+    else if (role == HoursRole)
+        return alarm->getHours();
+    else if (role == MinutesRole)
+        return alarm->getMinutes();
+    else if (role == NameRole)
+        return alarm->getName();
+    else if (role == DayOfWeekRole)
+        return alarm->getDayOfWeek();
+    else
+        return QVariant();
 }
 
-bool AlarmModel::setData(const QModelIndex& index, const QVariant& value, int role)
+bool AlarmModel::setData(const QModelIndex &index, const QVariant &value, int role)
 {
-    if (!index.isValid() || alarmsList.length() <= index.row()) return false;
+    if (!index.isValid() || alarmsList.length() <= index.row())
+        return false;
 
-    auto* alarm = alarmsList[index.row()];
-    if (role == EnabledRole) alarm->setEnabled(value.toBool());
-    else if (role == HoursRole) alarm->setHours(value.toInt());
-    else if (role == MinutesRole) alarm->setMinutes(value.toInt());
-    else if (role == NameRole) alarm->setName(value.toString());
-    else if (role == DayOfWeekRole) alarm->setDayOfWeek(value.toInt());
-    else return false; 
+    auto *alarm = alarmsList[index.row()];
+    if (role == EnabledRole)
+        alarm->setEnabled(value.toBool());
+    else if (role == HoursRole)
+        alarm->setHours(value.toInt());
+    else if (role == MinutesRole)
+        alarm->setMinutes(value.toInt());
+    else if (role == NameRole)
+        alarm->setName(value.toString());
+    else if (role == DayOfWeekRole)
+        alarm->setDayOfWeek(value.toInt());
+    else
+        return false;
 
     auto config = KSharedConfig::openConfig();
     KConfigGroup group = config->group(ALARM_CFG_GROUP);
     group.writeEntry(alarm->getUuid().toString(), alarm->serialize());
-    
+
     emit dataChanged(index, index);
     return true;
 }
 
-int AlarmModel::rowCount(const QModelIndex& parent) const
+int AlarmModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
     return alarmsList.size();
 }
 
-Qt::ItemFlags AlarmModel::flags(const QModelIndex& index) const
+Qt::ItemFlags AlarmModel::flags(const QModelIndex &index) const
 {
     Q_UNUSED(index);
     return Qt::ItemIsEditable;
 }
 
-Alarm* AlarmModel::insert(int index, QString name, int minutes, int hours, int dayOfWeek)
+Alarm *AlarmModel::insert(int index, QString name, int minutes, int hours, int dayOfWeek)
 {
-    if (index < 0 || index > alarmsList.count()) return new Alarm();
+    if (index < 0 || index > alarmsList.count())
+        return new Alarm();
     emit beginInsertRows(QModelIndex(), index, index);
-    
-    auto* alarm = new Alarm(this, name, minutes, hours, dayOfWeek);
+
+    auto *alarm = new Alarm(this, name, minutes, hours, dayOfWeek);
     alarmsList.insert(index, alarm);
-    
+
     // write to config
     auto config = KSharedConfig::openConfig();
     KConfigGroup group = config->group(ALARM_CFG_GROUP);
     group.writeEntry(alarm->getUuid().toString(), alarm->serialize());
-    
+
     emit endInsertRows();
     return alarm;
 }
 
 void AlarmModel::remove(int index)
 {
-    if (index < 0 || index >= alarmsList.count()) return;
+    if (index < 0 || index >= alarmsList.count())
+        return;
     emit beginRemoveRows(QModelIndex(), index, index);
-    
+
     // write to config
     auto config = KSharedConfig::openConfig();
     KConfigGroup group = config->group(ALARM_CFG_GROUP);
     group.deleteEntry(alarmsList.at(index)->getUuid().toString());
-    
+
     alarmsList.removeAt(index);
-    
+
     emit endRemoveRows();
 }
 
-Alarm* AlarmModel::get(int index)
+Alarm *AlarmModel::get(int index)
 {
-    if (index < 0 || index >= alarmsList.count()) return new Alarm();
+    if (index < 0 || index >= alarmsList.count())
+        return new Alarm();
     return alarmsList.at(index);
 }
 
 void AlarmModel::updateUi()
 {
-    emit dataChanged(createIndex(0, 0), createIndex(alarmsList.count()-1, 0));
+    emit dataChanged(createIndex(0, 0), createIndex(alarmsList.count() - 1, 0));
 }
-
