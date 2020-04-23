@@ -18,22 +18,23 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include <QTimeZone>
-#include <QDebug>
-#include <KSharedConfig>
 #include <KConfigGroup>
-#include <QSettings>
 #include <KLocalizedString>
+#include <KSharedConfig>
+#include <QDebug>
+#include <QSettings>
+#include <QTimeZone>
 
 #include "timezoneselectormodel.h"
 
 const QString TZ_CFG_GROUP = "Timezones";
 
-TimeZoneSelectorModel::TimeZoneSelectorModel(QObject* parent) : QAbstractListModel(parent)
+TimeZoneSelectorModel::TimeZoneSelectorModel(QObject *parent)
+    : QAbstractListModel(parent)
 {
     auto config = KSharedConfig::openConfig();
     KConfigGroup timezoneGroup = config->group(TZ_CFG_GROUP);
-    
+
     // add other configured time zones
     for (QByteArray id : QTimeZone::availableTimeZoneIds()) {
         bool show = timezoneGroup.readEntry(id.data(), false);
@@ -44,22 +45,21 @@ TimeZoneSelectorModel::TimeZoneSelectorModel(QObject* parent) : QAbstractListMod
     mTimer.start(1000);
 }
 
-
 int TimeZoneSelectorModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
     return mList.count();
 }
 
-QVariant TimeZoneSelectorModel::data(const QModelIndex& index, int role) const
+QVariant TimeZoneSelectorModel::data(const QModelIndex &index, int role) const
 {
-    if(!index.isValid())
+    if (!index.isValid())
         return QVariant();
     auto tuple = mList[index.row()];
 
     QSettings settings;
-    
-    switch(role) {
+
+    switch (role) {
     case NameRole:
         return std::get<0>(tuple).displayName(QDateTime::currentDateTime());
     case ShownRole:
@@ -68,13 +68,12 @@ QVariant TimeZoneSelectorModel::data(const QModelIndex& index, int role) const
         return std::get<0>(tuple).id();
     case ShortNameRole:
         return std::get<0>(tuple).displayName(QDateTime::currentDateTime(), QTimeZone::ShortName);
-    case RelativeTimeRole: 
-    {
+    case RelativeTimeRole: {
         int offset = std::get<0>(tuple).offsetFromUtc(QDateTime::currentDateTime()) - QTimeZone::systemTimeZone().offsetFromUtc(QDateTime::currentDateTime());
         offset /= 60; // convert to minutes
-        
+
         QString hour = abs(offset) / 60 == 1 ? i18n("hour") : i18n("hours");
-        
+
         if (offset > 0) {
             if (offset % 60) { // half an hour ahead
                 return QVariant(i18n("%1 and a half hours ahead", offset / 60));
@@ -92,11 +91,10 @@ QVariant TimeZoneSelectorModel::data(const QModelIndex& index, int role) const
             return QVariant(i18n("Local time"));
         }
     }
-    case TimeStringRole:
-    {
+    case TimeStringRole: {
         QDateTime time = QDateTime::currentDateTime();
         time = time.toTimeZone(std::get<0>(tuple));
-        
+
         // apply 12 hour or 24 hour settings
         if (settings.value("Global/use24HourTime").toBool()) {
             return time.time().toString("hh:mm");
@@ -123,38 +121,40 @@ QHash<int, QByteArray> TimeZoneSelectorModel::roleNames() const
 
 void TimeZoneSelectorModel::update()
 {
-    QVector<int> roles = { TimeStringRole };
+    QVector<int> roles = {TimeStringRole};
     emit dataChanged(index(0), index(mList.size() - 1), roles);
 }
 
-Qt::ItemFlags TimeZoneSelectorModel::flags(const QModelIndex& index) const
+Qt::ItemFlags TimeZoneSelectorModel::flags(const QModelIndex &index) const
 {
     Q_UNUSED(index)
     return Qt::ItemIsEditable;
 }
 
-bool TimeZoneSelectorModel::setData(const QModelIndex& index, const QVariant& value, int role)
+bool TimeZoneSelectorModel::setData(const QModelIndex &index, const QVariant &value, int role)
 {
     if (index.isValid() && role == ShownRole && value.type() == QVariant::Bool) {
         std::get<1>(mList[index.row()]) = value.toBool();
-        
+
         auto config = KSharedConfig::openConfig();
         KConfigGroup timezoneGroup = config->group(TZ_CFG_GROUP);
         timezoneGroup.writeEntry(std::get<0>(mList[index.row()]).id().data(), value);
-        emit dataChanged(index, index, QVector<int> { ShownRole });
+        emit dataChanged(index, index, QVector<int> {ShownRole});
         return true;
     }
     return false;
 }
 
-TimeZoneFilterModel::TimeZoneFilterModel(TimeZoneSelectorModel *model, QObject *parent) : QSortFilterProxyModel (parent)
+TimeZoneFilterModel::TimeZoneFilterModel(TimeZoneSelectorModel *model, QObject *parent)
+    : QSortFilterProxyModel(parent)
 {
     setFilterCaseSensitivity(Qt::CaseInsensitive);
     setSourceModel(model);
     setFilterRole(TimeZoneSelectorModel::IDRole);
 }
 
-TimeZoneViewModel::TimeZoneViewModel(TimeZoneSelectorModel *model, QObject *parent) : QSortFilterProxyModel (parent)
+TimeZoneViewModel::TimeZoneViewModel(TimeZoneSelectorModel *model, QObject *parent)
+    : QSortFilterProxyModel(parent)
 {
     setSourceModel(model);
     setFilterRole(TimeZoneSelectorModel::ShownRole);

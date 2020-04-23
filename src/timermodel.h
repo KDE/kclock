@@ -27,12 +27,11 @@
 class TimerModel : public QObject
 {
     Q_OBJECT
-    
+
 public:
-    explicit TimerModel(QObject* parent = nullptr);
-    
+    explicit TimerModel(QObject *parent = nullptr);
+
     Q_INVOKABLE void timerFinished();
 };
 
-
-#endif //KIRIGAMICLOCK_TIMERMODEL_H
+#endif // KIRIGAMICLOCK_TIMERMODEL_H

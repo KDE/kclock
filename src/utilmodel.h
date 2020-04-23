@@ -27,12 +27,11 @@
 class UtilModel : public QObject
 {
     Q_OBJECT
-    
+
     Q_PROPERTY(QString tzName READ getCurrentTimeZoneName)
-    
+
 public:
     QString getCurrentTimeZoneName();
-    
 };
 
-#endif //KIRIGAMICLOCK_UTILMODEL_H
+#endif // KIRIGAMICLOCK_UTILMODEL_H

@@ -23,8 +23,8 @@
 
 #include <QObject>
 #include <QString>
-#include <QtCore/QUuid>
 #include <QtCore/QAbstractListModel>
+#include <QtCore/QUuid>
 
 class Alarm : public QObject
 {
@@ -38,22 +38,55 @@ class Alarm : public QObject
 public:
     explicit Alarm(QObject *parent = nullptr, QString name = "", int minutes = 0, int hours = 0, int dayOfWeek = 0);
     explicit Alarm(QString serialized);
-    
-    QString getName() const { return name; }
-    QUuid getUuid() const { return uuid; }
-    bool isEnabled() const { return enabled; }
-    int getHours() const { return hours; }
-    int getMinutes() const { return minutes; }
-    int getDayOfWeek() const { return dayOfWeek; }
-    
-    void setName(QString name) { this->name = name; }
-    void setEnabled(bool enabled) { this->enabled = enabled; }
-    void setHours(int hours) { this->hours = hours; }
-    void setMinutes(int minutes) { this->minutes = minutes; }
-    void setDayOfWeek(int dayOfWeek) { this->dayOfWeek = dayOfWeek; }
+
+    QString getName() const
+    {
+        return name;
+    }
+    QUuid getUuid() const
+    {
+        return uuid;
+    }
+    bool isEnabled() const
+    {
+        return enabled;
+    }
+    int getHours() const
+    {
+        return hours;
+    }
+    int getMinutes() const
+    {
+        return minutes;
+    }
+    int getDayOfWeek() const
+    {
+        return dayOfWeek;
+    }
+
+    void setName(QString name)
+    {
+        this->name = name;
+    }
+    void setEnabled(bool enabled)
+    {
+        this->enabled = enabled;
+    }
+    void setHours(int hours)
+    {
+        this->hours = hours;
+    }
+    void setMinutes(int minutes)
+    {
+        this->minutes = minutes;
+    }
+    void setDayOfWeek(int dayOfWeek)
+    {
+        this->dayOfWeek = dayOfWeek;
+    }
 
     QString serialize();
-    
+
 signals:
     void onPropertyChanged();
 
@@ -78,22 +111,22 @@ public:
         DayOfWeekRole = Qt::DisplayRole + 3,
     };
 
-    int rowCount(const QModelIndex& parent) const override;
-    QVariant data(const QModelIndex& index, int role) const override;
-    bool setData(const QModelIndex& index, const QVariant& value, int role) override;
-    Qt::ItemFlags flags(const QModelIndex & index) const override;
+    int rowCount(const QModelIndex &parent) const override;
+    QVariant data(const QModelIndex &index, int role) const override;
+    bool setData(const QModelIndex &index, const QVariant &value, int role) override;
+    Qt::ItemFlags flags(const QModelIndex &index) const override;
     QHash<int, QByteArray> roleNames() const override;
-    
+
     Q_INVOKABLE void updateUi();
 
     bool load();
 
-    Q_INVOKABLE Alarm* insert(int index, QString name, int minutes, int hours, int dayOfWeek);
+    Q_INVOKABLE Alarm *insert(int index, QString name, int minutes, int hours, int dayOfWeek);
     Q_INVOKABLE void remove(int index);
-    Q_INVOKABLE Alarm* get(int index);
+    Q_INVOKABLE Alarm *get(int index);
 
 private:
-    QList<Alarm*> alarmsList;
+    QList<Alarm *> alarmsList;
 };
 
-#endif //KIRIGAMICLOCK_ALARMS_H
+#endif // KIRIGAMICLOCK_ALARMS_H
