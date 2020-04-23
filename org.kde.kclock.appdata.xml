@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component type="desktop-application">
+  <id>org.kde.kclock</id>
+  <name>Clock</name>
+  <summary>A simple all in one clock application.</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2+</project_license>
+  <developer_name>KDE Community</developer_name>
+  <description>
+    <p>KClock is a mobile friendly clock application, including alarmy, timers and stopwatches</p>
+  </description>
+</component>
