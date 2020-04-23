@@ -22,8 +22,6 @@
 #include <QString>
 #include "utilmodel.h"
 
-UtilModel::UtilModel(QObject* parent) {}
-
 QString UtilModel::getCurrentTimeZoneName()
 {
     return QTimeZone::systemTimeZoneId();
