@@ -42,7 +42,6 @@ void TimerModel::timerFinished()
     notif->setText(i18n("Your timer has finished!"));
     notif->setDefaultAction(i18n("View"));
     notif->setUrgency(KNotification::HighUrgency);
-    notif->setFlags(KNotification::NotificationFlag::RaiseWidgetOnActivation | KNotification::NotificationFlag::LoopSound | KNotification::NotificationFlag::Persistent | KNotification::NotificationFlag::SkipGrouping |
-                    KNotification::NotificationFlag::CloseWhenWidgetActivated);
+    notif->setFlags(KNotification::NotificationFlag::LoopSound | KNotification::NotificationFlag::Persistent);
     notif->sendEvent();
 }
