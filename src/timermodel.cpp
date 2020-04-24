@@ -29,6 +29,7 @@
 #include <QtGlobal>
 
 TimerModel::TimerModel(QObject *parent)
+    : QObject(parent)
 {
 }
 
