@@ -17,3 +17,4 @@ kclock.creator.user
 kclock.cxxflags
 kclock.files
 kclock.includes
+.clang-format
