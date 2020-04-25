@@ -22,7 +22,7 @@
 import QtQuick 2.11
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.2
-import org.kde.kirigami 2.11 as Kirigami
+import org.kde.kirigami 2.12 as Kirigami
 import kclock 1.0
 
 Kirigami.ScrollablePage {
@@ -77,8 +77,20 @@ Kirigami.ScrollablePage {
     }
 
     ListView {
+        id: alarmsList
         model: alarmModel
 
+        // no alarms placeholder
+        Kirigami.PlaceholderMessage {
+            anchors.centerIn: parent
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.margins: Kirigami.Units.largeSpacing
+            visible: alarmsList.count == 0
+            text: "No alarms configured"
+            icon.name: "notifications"
+        }
+        
         // each alarm
         delegate: Kirigami.SwipeListItem {
 
