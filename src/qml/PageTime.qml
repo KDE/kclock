@@ -25,49 +25,12 @@ import QtQuick.Layouts 1.2
 import QtQuick.Shapes 1.12
 import org.kde.kirigami 2.4 as Kirigami
 
-Kirigami.Page {
+Kirigami.ScrollablePage {
     
     title: "Time"
     
     property date currentDate: new Date()
-    
-    RowLayout {
-        id: bigTimeDisplay
-        anchors.top: parent.top
-        anchors.left: parent.left
-        anchors.right: parent.right
-        
-        // left side - analog clock
-        Item {
-            Layout.alignment: Qt.AlignHCenter
-            width: 165
-            height: 190
-            AnalogClock {
-                id: analogClock
-                dateTime: currentDate 
-                clockRadius: 80
-            }
-        }
-        
-        // right side - digital clock + location
-        ColumnLayout {
-            Layout.alignment: Qt.AlignHCenter
-            Label {
-                Layout.alignment: Qt.AlignRight
-                id: timeText
-                font.pointSize: 30
-                font.family: clockFont.name
-                color: Kirigami.Theme.highlightColor
-                text: settings.use24HourTime ? Qt.formatTime(new Date(), "hh:mm") : Qt.formatTime(new Date(), "h:mm ap")
-            }
-            Label {
-                Layout.alignment: Qt.AlignRight
-                font.pointSize: 12
-                text: utilModel.tzName
-                color: Kirigami.Theme.textColor
-            }
-        }
-    }
+    property string timeText: settings.use24HourTime ? Qt.formatTime(new Date(), "hh:mm") : Qt.formatTime(new Date(), "h:mm ap")
     
     Timer {
         id: timer
@@ -83,11 +46,47 @@ Kirigami.Page {
     // time zones
     ListView {
         model: timeZoneShowModel
-        anchors.top: bigTimeDisplay.bottom
-        anchors.bottom: parent.bottom
-        anchors.left: parent.left
-        anchors.right: parent.right
-        clip: true
+        
+        
+        // analog clock header
+        headerPositioning: ListView.InlineHeader
+        header: RowLayout {
+            id: bigTimeDisplay
+            height: clockItem.height + Kirigami.Units.gridUnit
+            anchors.left: parent.left
+            anchors.right: parent.right
+            
+            // left side - analog clock
+            Item {
+                id: clockItem
+                Layout.alignment: Qt.AlignHCenter
+                width: analogClock.clockRadius * 2 + Kirigami.Units.gridUnit * 0.5
+                height: analogClock.clockRadius * 2 + Kirigami.Units.gridUnit
+                AnalogClock {
+                    id: analogClock
+                    dateTime: currentDate 
+                    clockRadius: Kirigami.Units.gridUnit * 4
+                }
+            }
+            
+            // right side - digital clock + location
+            ColumnLayout {
+                Layout.alignment: Qt.AlignHCenter
+                Label {
+                    Layout.alignment: Qt.AlignRight
+                    font.pointSize: Kirigami.Theme.defaultFont.pointSize * 3.0
+                    font.family: clockFont.name
+                    color: Kirigami.Theme.highlightColor
+                    text: timeText
+                }
+                Label {
+                    Layout.alignment: Qt.AlignRight
+                    font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.2
+                    text: utilModel.tzName
+                    color: Kirigami.Theme.textColor
+                }
+            }
+        }
         
         ScrollBar.vertical: ScrollBar {}
         
