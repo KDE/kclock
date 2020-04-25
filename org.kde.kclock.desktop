@@ -1,6 +1,18 @@
 [Desktop Entry]
 Name=Clock
+Name[ca]=Rellotge
+Name[et]=Kell
+Name[nl]=Klok
+Name[pt]=Relógio
+Name[uk]=Годинник
+Name[x-test]=xxClockxx
 Comment=A simple clock application in Kirigami.
+Comment[ca]=Una aplicació senzilla de rellotge en Kirigami.
+Comment[et]=Lihtne kellarakendus Kirigamis.
+Comment[nl]=Een eenvoudige kloktoepassing in Kirigami.
+Comment[pt]=Uma aplicação simples de relógio do Kirigami.
+Comment[uk]=Проста програма-годинник на Kirigami.
+Comment[x-test]=xxA simple clock application in Kirigami.xx
 Version=1.0
 Exec=kclock
 MimeType=application/x-kclock;

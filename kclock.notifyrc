@@ -1,8 +1,26 @@
 [Global]
 Name=Clock
+Name[ca]=Rellotge
+Name[et]=Kell
+Name[nl]=Klok
+Name[pt]=Relógio
+Name[uk]=Годинник
+Name[x-test]=xxClockxx
 
 [Event/timerFinished]
 Name=Timer finished
+Name[ca]=El temporitzador ha finalitzat
+Name[et]=Taimer lõpetas
+Name[nl]=Timer is geëindigd
+Name[pt]=Cronómetro terminado
+Name[uk]=Відлік завершено
+Name[x-test]=xxTimer finishedxx
 Comment=Your timer has finished!
+Comment[ca]=El temporitzador ha finalitzat!
+Comment[et]=Taimer lõpetas!
+Comment[nl]=Uw timer is geëindigd!
+Comment[pt]=O seu cronómetro terminou!
+Comment[uk]=Відлік за вашими таймером завершено!
+Comment[x-test]=xxYour timer has finished!xx
 Action=Sound|Popup
 Sound=freedesktop/stereo/alarm-clock-elapsed.oga
