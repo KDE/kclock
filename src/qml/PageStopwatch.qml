@@ -31,6 +31,8 @@ Kirigami.ScrollablePage {
     property bool running: false
     property int elapsedTime: 0
     property double displayTime: elapsedTime
+    
+    Layout.fillWidth: true
 
     function getElapsedHours() {
         return ("0" + parseInt(elapsedTime / 1000 / 60 / 24).toFixed(0)).slice(-2);

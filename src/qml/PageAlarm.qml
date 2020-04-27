@@ -62,8 +62,12 @@ Kirigami.ScrollablePage {
             return qsTr("Only once");
         }
         let sunday = 1 << 0, monday = 1 << 1, tuesday = 1 << 2, wednesday = 1 << 3, thursday = 1 << 4, friday = 1 << 5, saturday = 1 << 6;
+        
         if (dayOfWeek == sunday + monday + tuesday + wednesday + thursday + friday + saturday)
             return qsTr("Everyday");
+        
+        if (dayOfWeek == monday + tuesday + wednesday + thursday + friday)
+            return qsTr("Weekdays");
         
         let str = "";
         if (dayOfWeek & sunday) str += "Sun., ";
@@ -87,7 +91,7 @@ Kirigami.ScrollablePage {
             anchors.right: parent.right
             anchors.margins: Kirigami.Units.largeSpacing
             visible: alarmsList.count == 0
-            text: "No alarms configured"
+            text: qsTr("No alarms configured")
             icon.name: "notifications"
         }
         
