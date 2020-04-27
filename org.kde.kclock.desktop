@@ -21,4 +21,4 @@ MimeType=application/x-kclock;
 Icon=kronometer
 Type=Application
 Terminal=false
-Categories=Qt;KDE;
+Categories=Qt;KDE;Utilities;
