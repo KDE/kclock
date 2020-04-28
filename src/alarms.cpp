@@ -81,11 +81,9 @@ QString Alarm::serialize()
 
 void Alarm::save()
 {
-    qDebug() << "save";
     auto config = KSharedConfig::openConfig();
     KConfigGroup group = config->group(ALARM_CFG_GROUP);
     group.writeEntry(this->getUuid().toString(), this->serialize());
-    qDebug() << "success";
 }
 
 void Alarm::ring()

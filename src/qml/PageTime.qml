@@ -38,7 +38,7 @@ Kirigami.ScrollablePage {
         repeat: true
         running: true
         onTriggered: {
-            timeText.text = settings.use24HourTime ? Qt.formatTime(new Date(), "hh:mm") : Qt.formatTime(new Date(), "h:mm ap")
+            timeText = settings.use24HourTime ? Qt.formatTime(new Date(), "hh:mm") : Qt.formatTime(new Date(), "h:mm ap")
             currentDate = new Date();
         }
     }
