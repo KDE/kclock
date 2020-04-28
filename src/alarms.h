@@ -25,6 +25,7 @@
 #include <QString>
 #include <QtCore/QAbstractListModel>
 #include <QtCore/QUuid>
+#include <QTimer>
 
 class Alarm : public QObject
 {
@@ -63,6 +64,10 @@ public:
     {
         return dayOfWeek;
     }
+    qint64 getLastAlarm() const
+    {
+        return lastAlarm;
+    }
 
     void setName(QString name)
     {
@@ -84,9 +89,16 @@ public:
     {
         this->dayOfWeek = dayOfWeek;
     }
+    void setLastAlarm(qint64 lastAlarm)
+    {
+        this->lastAlarm = lastAlarm;
+    }
 
     QString serialize();
-
+    qint64 toPreviousAlarm(qint64 timestamp); // the last alarm (timestamp) that should have played
+    void ring(); // ring alarm
+    void save(); // serialize and save to config
+    
 signals:
     void onPropertyChanged();
 
@@ -95,6 +107,7 @@ private:
     QUuid uuid;
     bool enabled;
     int hours, minutes, dayOfWeek;
+    qint64 lastAlarm; // last time the alarm ran (unix timestamp)
 };
 
 class AlarmModel : public QAbstractListModel
@@ -120,6 +133,7 @@ public:
     Q_INVOKABLE void updateUi();
 
     bool load();
+    void checkAlarmsToRun();
 
     Q_INVOKABLE Alarm *insert(int index, QString name, int minutes, int hours, int dayOfWeek);
     Q_INVOKABLE void remove(int index);
@@ -127,6 +141,8 @@ public:
 
 private:
     QList<Alarm *> alarmsList;
+    
+    QTimer* timer;
 };
 
 #endif // KIRIGAMICLOCK_ALARMS_H

@@ -23,9 +23,13 @@
 #include <QJsonObject>
 #include <QtCore/QCoreApplication>
 #include <QtCore/QProcess>
+#include <QDateTime>
+#include <QTime>
 
 #include <KConfigGroup>
 #include <KSharedConfig>
+#include <KNotification>
+#include <KLocalizedString>
 
 #include "alarms.h"
 
@@ -40,6 +44,7 @@ Alarm::Alarm(QObject *parent, QString name, int minutes, int hours, int dayOfWee
     this->minutes = minutes;
     this->hours = hours;
     this->dayOfWeek = dayOfWeek;
+    this->lastAlarm = QDateTime::currentDateTimeUtc().toSecsSinceEpoch();
 }
 
 // alarm from json
@@ -56,6 +61,7 @@ Alarm::Alarm(QString serialized)
         hours = obj["hours"].toInt();
         dayOfWeek = obj["dayOfWeek"].toInt();
         enabled = obj["enabled"].toBool();
+        lastAlarm = obj["lastAlarm"].toInt();
     }
 }
 
@@ -69,8 +75,62 @@ QString Alarm::serialize()
     obj["hours"] = this->hours;
     obj["dayOfWeek"] = this->dayOfWeek;
     obj["enabled"] = this->enabled;
+    obj["lastAlarm"] = this->lastAlarm;
     return QString(QJsonDocument(obj).toJson(QJsonDocument::Compact));
 }
+
+void Alarm::save()
+{
+    qDebug() << "save";
+    auto config = KSharedConfig::openConfig();
+    KConfigGroup group = config->group(ALARM_CFG_GROUP);
+    group.writeEntry(this->getUuid().toString(), this->serialize());
+    qDebug() << "success";
+}
+
+void Alarm::ring()
+{
+    qDebug("Found alarm to run, sending notification...");
+
+    KNotification *notif = new KNotification("timerFinished");
+    notif->setIconName("kronometer");
+    notif->setTitle(this->getName());
+    notif->setText(QDateTime::currentDateTime().toLocalTime().toString()); // TODO
+    notif->setDefaultAction(i18n("View"));
+    notif->setUrgency(KNotification::HighUrgency);
+    notif->setFlags(KNotification::NotificationFlag::LoopSound | KNotification::NotificationFlag::Persistent);
+    notif->sendEvent();
+    // TODO snooze
+}
+
+qint64 Alarm::toPreviousAlarm(qint64 timestamp)
+{
+    QDateTime date = QDateTime::fromSecsSinceEpoch(timestamp).toLocalTime(); // local time
+    QTime alarmTime = QTime(this->getHours(), this->getMinutes());
+    
+    if (this->getDayOfWeek() == 0) { // no repeat alarm
+        if (alarmTime <= date.time()) { // current day
+            return QDateTime(date.date(), alarmTime).toSecsSinceEpoch();
+        } else { // previous day
+            return QDateTime(date.addDays(-1).date(), alarmTime).toSecsSinceEpoch();
+        }
+    } else { // repeat alarm
+        bool first = true;
+        
+        // keeping going back a day until the day of week is accepted
+        while (((this->getDayOfWeek() & (1 << (date.date().dayOfWeek() - 1))) == 0) // check day
+            || (first && (alarmTime > date.time()))) // check time on first day
+        {
+            date = date.addDays(-1); // go back a day
+            first = false;
+        }
+        
+        return QDateTime(date.date(), alarmTime).toSecsSinceEpoch();
+    
+    }
+}
+
+/* ~~~ Alarm Model ~~~ */
 
 AlarmModel::AlarmModel(QObject *parent)
     : QAbstractListModel(parent)
@@ -82,6 +142,35 @@ AlarmModel::AlarmModel(QObject *parent)
         QString json = group.readEntry(key, "");
         if (json != "")
             alarmsList.append(new Alarm(json));
+    }
+    
+    // start alarm timer
+    this->timer = new QTimer(this);
+    connect(timer, &QTimer::timeout, this, QOverload<>::of(&AlarmModel::checkAlarmsToRun));
+    timer->start(2000);
+}
+
+void AlarmModel::checkAlarmsToRun()
+{
+    qint64 curTime = QDateTime::currentDateTimeUtc().toSecsSinceEpoch();
+    
+    for (Alarm* alarm : alarmsList) {
+        // if it is time for alarm to ring
+        if (alarm->isEnabled() && 
+            alarm->toPreviousAlarm(alarm->getLastAlarm()) < alarm->toPreviousAlarm(curTime)) {
+            
+            // ring alarm and set last time the alarm rang
+            alarm->ring();
+            alarm->setLastAlarm(curTime);
+            
+            // disable alarm if run once
+            if (alarm->getDayOfWeek() == 0) 
+                alarm->setEnabled(false);
+            
+            // save alarm after run
+            alarm->save();
+            updateUi();
+        }
     }
 }
 
@@ -137,9 +226,7 @@ bool AlarmModel::setData(const QModelIndex &index, const QVariant &value, int ro
     else
         return false;
 
-    auto config = KSharedConfig::openConfig();
-    KConfigGroup group = config->group(ALARM_CFG_GROUP);
-    group.writeEntry(alarm->getUuid().toString(), alarm->serialize());
+    alarm->save();
 
     emit dataChanged(index, index);
     return true;
@@ -167,10 +254,8 @@ Alarm *AlarmModel::insert(int index, QString name, int minutes, int hours, int d
     alarmsList.insert(index, alarm);
 
     // write to config
-    auto config = KSharedConfig::openConfig();
-    KConfigGroup group = config->group(ALARM_CFG_GROUP);
-    group.writeEntry(alarm->getUuid().toString(), alarm->serialize());
-
+    alarm->save();
+    
     emit endInsertRows();
     return alarm;
 }

@@ -120,13 +120,13 @@ Kirigami.ScrollablePage {
                     Repeater {
                         model: ListModel {
                             id: selectedDays
-                            ListElement { displayText: "S"; dayFlag: 1 }
-                            ListElement { displayText: "M"; dayFlag: 2 }
-                            ListElement { displayText: "T"; dayFlag: 4 }
-                            ListElement { displayText: "W"; dayFlag: 8 }
-                            ListElement { displayText: "T"; dayFlag: 16 }
-                            ListElement { displayText: "F"; dayFlag: 32 }
                             ListElement { displayText: "S"; dayFlag: 64 }
+                            ListElement { displayText: "M"; dayFlag: 1 }
+                            ListElement { displayText: "T"; dayFlag: 2 }
+                            ListElement { displayText: "W"; dayFlag: 4 }
+                            ListElement { displayText: "T"; dayFlag: 8 }
+                            ListElement { displayText: "F"; dayFlag: 16 }
+                            ListElement { displayText: "S"; dayFlag: 32 }
                         }
                         
                         ToolButton {

@@ -61,22 +61,22 @@ Kirigami.ScrollablePage {
         if (dayOfWeek == 0) {
             return qsTr("Only once");
         }
-        let sunday = 1 << 0, monday = 1 << 1, tuesday = 1 << 2, wednesday = 1 << 3, thursday = 1 << 4, friday = 1 << 5, saturday = 1 << 6;
+        let monday = 1 << 0, tuesday = 1 << 1, wednesday = 1 << 2, thursday = 1 << 3, friday = 1 << 4, saturday = 1 << 5, sunday = 1 << 6;
         
-        if (dayOfWeek == sunday + monday + tuesday + wednesday + thursday + friday + saturday)
+        if (dayOfWeek == monday + tuesday + wednesday + thursday + friday + saturday + sunday)
             return qsTr("Everyday");
         
         if (dayOfWeek == monday + tuesday + wednesday + thursday + friday)
             return qsTr("Weekdays");
         
         let str = "";
-        if (dayOfWeek & sunday) str += "Sun., ";
         if (dayOfWeek & monday) str += "Mon., ";
         if (dayOfWeek & tuesday) str += "Tue., ";
         if (dayOfWeek & wednesday) str += "Wed., ";
         if (dayOfWeek & thursday) str += "Thu., ";
         if (dayOfWeek & friday) str += "Fri., ";
         if (dayOfWeek & saturday) str += "Sat., ";
+        if (dayOfWeek & sunday) str += "Sun., ";
         return str.substring(0, str.length - 2);
     }
 
@@ -98,9 +98,7 @@ Kirigami.ScrollablePage {
         // each alarm
         delegate: Kirigami.SwipeListItem {
 
-            onClicked: {
-                model.enabled = !model.enabled
-            }
+            onClicked: model.enabled = !model.enabled
             
             actions: [
                 Kirigami.Action {
@@ -147,6 +145,7 @@ Kirigami.ScrollablePage {
                             text: getTimeFormat(model.hours, model.minutes)
                         }
                         Label {
+                            id: alarmName
                             font.weight: Font.Bold
                             color: model.enabled ? Kirigami.Theme.activeTextColor : Kirigami.Theme.disabledTextColor
                             font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.15
@@ -162,6 +161,7 @@ Kirigami.ScrollablePage {
                         Layout.alignment: Qt.AlignRight|Qt.AlignVCenter
                         Layout.columnSpan: 1
                         checked: model.enabled
+                        onCheckedChanged: alarmName.color = checked ? Kirigami.Theme.activeTextColor : Kirigami.Theme.disabledTextColor
                     }
                 }
             }

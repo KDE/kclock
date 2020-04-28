@@ -27,3 +27,9 @@ Comment[uk]=Відлік за вашими таймером завершено!
 Comment[x-test]=xxYour timer has finished!xx
 Action=Sound|Popup
 Sound=freedesktop/stereo/alarm-clock-elapsed.oga
+
+[Event/alarm]
+Name=Alarm
+Action=Sound|Popup
+Sound=freedesktop/stereo/alarm-clock-elapsed.oga
+Urgency=Critical
