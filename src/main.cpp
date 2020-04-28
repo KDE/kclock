@@ -24,12 +24,13 @@
 #include <QMetaObject>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+#include <QQmlDebuggingEnabler>
+#include <QStringLiteral>
 
 #include <KAboutData>
 #include <KConfig>
 #include <KLocalizedContext>
 #include <KLocalizedString>
-#include <QQmlDebuggingEnabler>
 
 #include "alarms.h"
 #include "timermodel.h"
@@ -52,7 +53,8 @@ int main(int argc, char *argv[])
 
     KLocalizedString::setApplicationDomain("kclock");
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
-    KAboutData aboutData("kclock", "Clock", "0.1", "Simple clock made in Kirigami", KAboutLicense::GPL);
+    KAboutData aboutData("kclock", "Clock", "0.1", "Simple clock made in Kirigami", KAboutLicense::GPL, i18n("© 2020 KDE Community"));
+    aboutData.addAuthor(i18n("Devin Lin"), QString(), QStringLiteral("espidev@gmail.com"));
     KAboutData::setApplicationData(aboutData);
 
     // initialize models

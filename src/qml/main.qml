@@ -119,6 +119,7 @@ Kirigami.ApplicationWindow
         objectName: "settings"
         visible: false
     }
+    // TODO move to c++
     Kirigami.AboutPage {
         id: pageabout
         visible: false
@@ -133,6 +134,20 @@ Kirigami.ApplicationWindow
             "otherText": "",
             "copyrightStatement": "© 2020 Plasma Development Team",
             "desktopFileName": "org.kde.kclock",
+            "authors": [
+                {
+                    "name": "Devin Lin",
+                    "emailAddress": "espidev@gmail.com",
+                    "webAddress": "https://espi.dev",
+                }
+            ],
+            "licenses" : [
+                {
+                    "name" : "GPL v2",
+                    "text" : "long, boring, license text",
+                    "spdx" : "GPL-2.0",
+                }
+            ],
         }
     }
     
