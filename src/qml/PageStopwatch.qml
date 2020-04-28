@@ -117,6 +117,7 @@ Kirigami.ScrollablePage {
                         Layout.alignment: Qt.AlignHCenter
                         icon.name: "chronometer-reset"
                         text: "Reset"
+                        flat: false
                         onClicked: {
                             running = false;
                             elapsedTime = 0
@@ -124,12 +125,13 @@ Kirigami.ScrollablePage {
                         }
                     }
                     ToolButton {
-                        text: "Lap"
+                        Layout.alignment: Qt.AlignHCenter
                         icon.name: "chronometer-lap"
+                        text: "Lap"
+                        flat: false
                         onClicked: {
                             roundModel.insert(0, { time: elapsedTime })
                         }
-                        Layout.alignment: Qt.AlignHCenter
                     }
                 }
             }

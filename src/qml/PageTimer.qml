@@ -197,12 +197,14 @@ Kirigami.Page {
                 timerEditSheet.open()
             }
             Layout.alignment: Qt.AlignHCenter
+            flat: false
         }
         ToolButton {
             text: "Reset"
             icon.name: "chronometer-reset"
             onClicked: resetTimer();
             Layout.alignment: Qt.AlignHCenter
+            flat: false
         }
     }
 
