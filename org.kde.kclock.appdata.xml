@@ -29,7 +29,5 @@
   <developer_name xml:lang="x-test">xxKDE Communityxx</developer_name>
   <description>
     <p>KClock is a mobile friendly clock application, that includes a stopwatch, timer and alarms</p>
-    <p xml:lang="uk">KClock — програма-годинник для мобільних пристроїв, з будильниками, таймерами та секундомірами</p>
-    <p xml:lang="x-test">xxKClock is a mobile friendly clock application, including alarms, timers and stopwatchesxx</p>
   </description>
 </component>
