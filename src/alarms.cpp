@@ -154,7 +154,7 @@ void AlarmModel::checkAlarmsToRun()
     
     for (Alarm* alarm : alarmsList) {
         // if it is time for alarm to ring
-        if (alarm->isEnabled() && 
+        if (alarm != nullptr && alarm->isEnabled() && 
             alarm->toPreviousAlarm(alarm->getLastAlarm()) < alarm->toPreviousAlarm(curTime)) {
             
             // ring alarm and set last time the alarm rang
@@ -191,6 +191,7 @@ QVariant AlarmModel::data(const QModelIndex &index, int role) const
         return QVariant();
 
     auto *alarm = alarmsList[index.row()];
+    if (alarm == nullptr) return false;
     if (role == EnabledRole)
         return alarm->isEnabled();
     else if (role == HoursRole)
@@ -211,6 +212,7 @@ bool AlarmModel::setData(const QModelIndex &index, const QVariant &value, int ro
         return false;
 
     auto *alarm = alarmsList[index.row()];
+    if (alarm == nullptr) return false;
     if (role == EnabledRole)
         alarm->setEnabled(value.toBool());
     else if (role == HoursRole)
