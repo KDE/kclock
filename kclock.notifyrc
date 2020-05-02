@@ -30,6 +30,13 @@ Sound=freedesktop/stereo/alarm-clock-elapsed.oga
 
 [Event/alarm]
 Name=Alarm
+Name[ca]=Alarma
+Name[et]=Äratus
+Name[nl]=Wekker
+Name[pt]=Alarme
+Name[sv]=Alarm
+Name[uk]=Нагадування
+Name[x-test]=xxAlarmxx
 Action=Sound|Popup
 Sound=freedesktop/stereo/alarm-clock-elapsed.oga
 Urgency=Critical
