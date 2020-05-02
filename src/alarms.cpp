@@ -25,6 +25,7 @@
 #include <QtCore/QProcess>
 #include <QDateTime>
 #include <QTime>
+#include <QQmlEngine>
 
 #include <KConfigGroup>
 #include <KSharedConfig>
@@ -91,6 +92,7 @@ void Alarm::ring()
     qDebug("Found alarm to run, sending notification...");
 
     KNotification *notif = new KNotification("timerFinished");
+    notif->setActions(QStringList() << "Snooze" << "View");
     notif->setIconName("kronometer");
     notif->setTitle(this->getName());
     notif->setText(QDateTime::currentDateTime().toLocalTime().toString()); // TODO
@@ -251,6 +253,7 @@ Alarm *AlarmModel::insert(int index, QString name, int minutes, int hours, int d
     emit beginInsertRows(QModelIndex(), index, index);
 
     auto *alarm = new Alarm(this, name, minutes, hours, dayOfWeek);
+    QQmlEngine::setObjectOwnership(alarm, QQmlEngine::CppOwnership); // prevent segfaults from js garbage collecting 
     alarmsList.insert(index, alarm);
 
     // write to config
