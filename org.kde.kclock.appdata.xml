@@ -3,6 +3,8 @@
   <id>org.kde.kclock</id>
   <name>Clock</name>
   <name xml:lang="ca">Rellotge</name>
+  <name xml:lang="ca-valencia">Rellotge</name>
+  <name xml:lang="es">Reloj</name>
   <name xml:lang="et">Kell</name>
   <name xml:lang="nl">Klok</name>
   <name xml:lang="pt">Relógio</name>
@@ -11,6 +13,8 @@
   <name xml:lang="x-test">xxClockxx</name>
   <summary>A simple all in one clock application.</summary>
   <summary xml:lang="ca">Una aplicació senzilla de rellotge tot en un.</summary>
+  <summary xml:lang="ca-valencia">Una aplicació senzilla de rellotge tot en un.</summary>
+  <summary xml:lang="es">Sencilla aplicación de reloj todo en uno.</summary>
   <summary xml:lang="et">Lihtne kõik-ühes kellarakendus.</summary>
   <summary xml:lang="nl">Een eenvoudige alles-in-een kloktoepassing.</summary>
   <summary xml:lang="pt">Uma aplicação simples de relógio tudo-em-um.</summary>
@@ -21,6 +25,8 @@
   <project_license>GPL-2+</project_license>
   <developer_name>KDE Community</developer_name>
   <developer_name xml:lang="ca">La comunitat KDE</developer_name>
+  <developer_name xml:lang="ca-valencia">La comunitat KDE</developer_name>
+  <developer_name xml:lang="es">Comunidad KDE</developer_name>
   <developer_name xml:lang="et">KDE kogukond</developer_name>
   <developer_name xml:lang="nl">KDE gemeenschap</developer_name>
   <developer_name xml:lang="pt">Comunidade do KDE</developer_name>
@@ -30,6 +36,8 @@
   <description>
     <p>KClock is a mobile friendly clock application, that includes a stopwatch, timer and alarms</p>
     <p xml:lang="ca">El KClock és una aplicació fàcil d'usar de rellotge, que inclou un cronòmetre, temporitzador i alarmes.</p>
+    <p xml:lang="ca-valencia">El KClock és una aplicació fàcil d'usar de rellotge, que inclou un cronòmetre, temporitzador i alarmes.</p>
+    <p xml:lang="es">KClock es una aplicación de reloj para móviles que incluye un cronómetro, temporizador y alarmas</p>
     <p xml:lang="et">KClock on kasutajasõbralik kellarakendus mobiilile, mis pakub äratust, taimerit ja stopperit</p>
     <p xml:lang="nl">KClock is een mobielvriendelijke kloktoepassing, die een stopwatch, timer en wekker bevat</p>
     <p xml:lang="pt">O KClock é uma aplicação móvel e amigável de relógio, que inclui alarmes, cronómetros e temporizadores</p>
