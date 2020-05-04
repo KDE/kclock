@@ -1,6 +1,8 @@
 [Global]
 Name=Clock
 Name[ca]=Rellotge
+Name[ca@valencia]=Rellotge
+Name[es]=Reloj
 Name[et]=Kell
 Name[nl]=Klok
 Name[pt]=Relógio
@@ -11,6 +13,8 @@ Name[x-test]=xxClockxx
 [Event/timerFinished]
 Name=Timer finished
 Name[ca]=El temporitzador ha finalitzat
+Name[ca@valencia]=El temporitzador ha finalitzat
+Name[es]=Temporizador finalizado
 Name[et]=Taimer lõpetas
 Name[nl]=Timer is geëindigd
 Name[pt]=Cronómetro terminado
@@ -19,6 +23,8 @@ Name[uk]=Відлік завершено
 Name[x-test]=xxTimer finishedxx
 Comment=Your timer has finished!
 Comment[ca]=El temporitzador ha finalitzat!
+Comment[ca@valencia]=El temporitzador ha finalitzat!
+Comment[es]=El temporizador ha terminado
 Comment[et]=Taimer lõpetas!
 Comment[nl]=Uw timer is geëindigd!
 Comment[pt]=O seu cronómetro terminou!
@@ -31,6 +37,8 @@ Sound=freedesktop/stereo/alarm-clock-elapsed.oga
 [Event/alarm]
 Name=Alarm
 Name[ca]=Alarma
+Name[ca@valencia]=Alarma
+Name[es]=Alarma
 Name[et]=Äratus
 Name[nl]=Wekker
 Name[pt]=Alarme

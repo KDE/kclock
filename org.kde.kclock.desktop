@@ -1,6 +1,8 @@
 [Desktop Entry]
 Name=Clock
 Name[ca]=Rellotge
+Name[ca@valencia]=Rellotge
+Name[es]=Reloj
 Name[et]=Kell
 Name[nl]=Klok
 Name[pt]=Relógio
@@ -9,6 +11,8 @@ Name[uk]=Годинник
 Name[x-test]=xxClockxx
 Comment=A simple clock application in Kirigami.
 Comment[ca]=Una aplicació senzilla de rellotge en Kirigami.
+Comment[ca@valencia]=Una aplicació senzilla de rellotge en Kirigami.
+Comment[es]=Sencilla aplicación de reloj en Kirigami.
 Comment[et]=Lihtne kellarakendus Kirigamis.
 Comment[nl]=Een eenvoudige kloktoepassing in Kirigami.
 Comment[pt]=Uma aplicação simples de relógio do Kirigami.
