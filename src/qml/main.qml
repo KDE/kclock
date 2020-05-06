@@ -23,8 +23,6 @@ import QtQuick 2.11
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.2
 import org.kde.kirigami 2.11 as Kirigami
-import Qt.labs.settings 1.0 as QtSettings
-import Qt.labs.platform 1.1 as QtPlatform
 
 Kirigami.ApplicationWindow
 {
@@ -151,25 +149,25 @@ Kirigami.ApplicationWindow
         }
     }
     
-    // misc
-    QtPlatform.SystemTrayIcon {
-        visible: true
-        icon.name: "clock"
-        
-        onActivated: {
-            appwindow.show()
-            appwindow.raise()
-            appwindow.requestActivate()
-        }
-        
-        menu: QtPlatform.Menu {
-            visible: false
-            QtPlatform.MenuItem {
-                text: qsTr("Quit")
-                onTriggered: Qt.quit()
-            }
-        }
-    }
+    // tray icon
+//     QtPlatform.SystemTrayIcon {
+//         visible: true
+//         icon.name: "clock"
+//         
+//         onActivated: {
+//             appwindow.show()
+//             appwindow.raise()
+//             appwindow.requestActivate()
+//         }
+//         
+//         menu: QtPlatform.Menu {
+//             visible: false
+//             QtPlatform.MenuItem {
+//                 text: qsTr("Quit")
+//                 onTriggered: Qt.quit()
+//             }
+//         }
+//     }
     Settings {
         id: settings
     }

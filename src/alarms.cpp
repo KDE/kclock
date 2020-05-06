@@ -160,7 +160,8 @@ void AlarmModel::checkAlarmsToRun()
             alarm->toPreviousAlarm(alarm->getLastAlarm()) < alarm->toPreviousAlarm(curTime)) {
             
             // ring alarm and set last time the alarm rang
-            alarm->ring();
+            if (60 * 5 > curTime - alarm->toPreviousAlarm(alarm->getLastAlarm())) // only ring if it has been within 5 minutes of the alarm time
+                alarm->ring();
             alarm->setLastAlarm(curTime);
             
             // disable alarm if run once
