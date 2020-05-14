@@ -63,6 +63,8 @@ Alarm::Alarm(QString serialized)
         dayOfWeek = obj["dayOfWeek"].toInt();
         enabled = obj["enabled"].toBool();
         lastAlarm = obj["lastAlarm"].toInt();
+        snooze = obj["snooze"].toInt();
+        lastSnooze = obj["lastSnooze"].toInt();
     }
 }
 
@@ -77,6 +79,8 @@ QString Alarm::serialize()
     obj["dayOfWeek"] = this->dayOfWeek;
     obj["enabled"] = this->enabled;
     obj["lastAlarm"] = this->lastAlarm;
+    obj["snooze"] = this->snooze;
+    obj["lastSnooze"] = this->lastSnooze;
     return QString(QJsonDocument(obj).toJson(QJsonDocument::Compact));
 }
 
@@ -85,6 +89,7 @@ void Alarm::save()
     auto config = KSharedConfig::openConfig();
     KConfigGroup group = config->group(ALARM_CFG_GROUP);
     group.writeEntry(this->getUuid().toString(), this->serialize());
+    group.sync();
 }
 
 void Alarm::ring()
@@ -92,15 +97,36 @@ void Alarm::ring()
     qDebug("Found alarm to run, sending notification...");
 
     KNotification *notif = new KNotification("timerFinished");
-    notif->setActions(QStringList() << "Snooze" << "View");
+    notif->setActions(QStringList() << "Dismiss" << "Snooze");
     notif->setIconName("kronometer");
     notif->setTitle(this->getName());
-    notif->setText(QDateTime::currentDateTime().toLocalTime().toString()); // TODO
+    notif->setText(QDateTime::currentDateTime().toLocalTime().toString("hh:mm ap")); // TODO
     notif->setDefaultAction(i18n("View"));
     notif->setUrgency(KNotification::HighUrgency);
     notif->setFlags(KNotification::NotificationFlag::LoopSound | KNotification::NotificationFlag::Persistent);
+    
+    connect(notif, &KNotification::defaultActivated, this, &Alarm::handleDismiss);
+    connect(notif, &KNotification::action1Activated, this, &Alarm::handleDismiss);
+    connect(notif, &KNotification::action2Activated, this, &Alarm::handleSnooze);
+    
     notif->sendEvent();
-    // TODO snooze
+}
+
+void Alarm::handleDismiss()
+{
+    qDebug() << "Alarm dismissed";
+    this->setLastSnooze(0);
+    this->save();
+}
+
+void Alarm::handleSnooze()
+{
+    qDebug() << "Alarm snoozed (5 minutes)" << lastSnooze;
+    this->setSnooze(this->lastSnooze + 60 * 5); // snooze 5 minutes
+    this->setLastSnooze(this->snooze);
+    this->setEnabled(true);
+    this->save();
+    emit onPropertyChanged();
 }
 
 qint64 Alarm::toPreviousAlarm(qint64 timestamp)
@@ -155,13 +181,19 @@ void AlarmModel::checkAlarmsToRun()
     qint64 curTime = QDateTime::currentDateTimeUtc().toSecsSinceEpoch();
     
     for (Alarm* alarm : alarmsList) {
+        if (alarm == nullptr || !alarm->isEnabled()) continue;
+        
         // if it is time for alarm to ring
-        if (alarm != nullptr && alarm->isEnabled() && 
-            alarm->toPreviousAlarm(alarm->getLastAlarm()) < alarm->toPreviousAlarm(curTime)) {
+        if (alarm->toPreviousAlarm(alarm->getLastAlarm()) < alarm->toPreviousAlarm(curTime) || // is next cycle
+            (alarm->getSnooze() != 0 && alarm->toPreviousAlarm(alarm->getLastAlarm()) == alarm->toPreviousAlarm(curTime - alarm->getSnooze()))) // snooze
+        {
             
+            alarm->setSnooze(0);
+        
             // ring alarm and set last time the alarm rang
-            if (60 * 5 > curTime - alarm->toPreviousAlarm(alarm->getLastAlarm())) // only ring if it has been within 5 minutes of the alarm time
+            if (60 * 5 > curTime - alarm->toPreviousAlarm(curTime)) // only ring if it has been within 5 minutes of the alarm time
                 alarm->ring();
+            
             alarm->setLastAlarm(curTime);
             
             // disable alarm if run once

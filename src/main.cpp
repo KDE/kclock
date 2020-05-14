@@ -60,9 +60,6 @@ int main(int argc, char *argv[])
     // initialize models
     auto *timeZoneModel = new TimeZoneSelectorModel();
 
-    // auto *timeZoneViewModel = new TimeZoneViewModel(timeZoneModel);
-    // timeZoneModel->connect(timeZoneModel, &TimeZoneSelectorModel::dataChanged, timeZoneViewModel, &TimeZoneViewModel::dataChanged);
-
     auto *timeZoneViewModel = new QSortFilterProxyModel();
     timeZoneViewModel->setFilterFixedString("true");
     timeZoneViewModel->setSourceModel(timeZoneModel);

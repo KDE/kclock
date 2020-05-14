@@ -36,6 +36,10 @@ class Alarm : public QObject
     Q_PROPERTY(int minutes READ getMinutes WRITE setMinutes NOTIFY onPropertyChanged)
     Q_PROPERTY(int dayOfWeek READ getDayOfWeek WRITE setDayOfWeek NOTIFY onPropertyChanged)
 
+public slots:
+    void handleDismiss();
+    void handleSnooze();
+    
 public:
     explicit Alarm(QObject *parent = nullptr, QString name = "", int minutes = 0, int hours = 0, int dayOfWeek = 0);
     explicit Alarm(QString serialized);
@@ -68,6 +72,14 @@ public:
     {
         return lastAlarm;
     }
+    qint64 getSnooze() const
+    {
+        return snooze;
+    }
+    qint64 getLastSnooze() const
+    {
+        return lastSnooze;
+    }
 
     void setName(QString name)
     {
@@ -93,6 +105,14 @@ public:
     {
         this->lastAlarm = lastAlarm;
     }
+    void setSnooze(qint64 snooze)
+    {
+        this->snooze = snooze;
+    }
+    void setLastSnooze(qint64 lastSnooze)
+    {
+        this->lastSnooze = lastSnooze;
+    }
 
     QString serialize();
     qint64 toPreviousAlarm(qint64 timestamp); // the last alarm (timestamp) that should have played
@@ -107,7 +127,7 @@ private:
     QUuid uuid;
     bool enabled;
     int hours, minutes, dayOfWeek;
-    qint64 lastAlarm; // last time the alarm ran (unix timestamp)
+    qint64 lastAlarm, snooze, lastSnooze; // last time the alarm ran (unix timestamp)
 };
 
 class AlarmModel : public QAbstractListModel
