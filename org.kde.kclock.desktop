@@ -28,4 +28,4 @@ Exec=kclock
 Icon=kclock
 Type=Application
 Terminal=false
-Categories=Qt;KDE;Utilities;
+Categories=Qt;KDE;Utility;

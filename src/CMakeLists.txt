@@ -16,5 +16,25 @@ target_link_libraries(kclock
         KF5::CoreAddons
         KF5::Notifications
         )
+
+if (ANDROID)
+    kirigami_package_breeze_icons(ICONS
+        clock
+        player-time
+        chronometer
+        notifications
+        settings-configure
+        list-add
+        notifications
+        entry-edit
+        delete
+        checkmark
+        chronometer-reset
+        chronometer-lap
+        chronometer-pause
+        chronometer-start
+        globe
+    )
+endif()
         
 install(TARGETS kclock ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})

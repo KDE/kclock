@@ -1,8 +1,8 @@
 project(kclock)
 
 cmake_minimum_required(VERSION 3.0)
-set(KF5_MIN_VERSION "5.18.0")
-set(QT_MIN_VERSION "5.7.0")
+set(KF5_MIN_VERSION "5.60.0")
+set(QT_MIN_VERSION "5.12.0")
 
 ################# Disallow in-source build #################
 
