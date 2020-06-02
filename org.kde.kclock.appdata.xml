@@ -4,11 +4,13 @@
   <name>Clock</name>
   <name xml:lang="ca">Rellotge</name>
   <name xml:lang="ca-valencia">Rellotge</name>
+  <name xml:lang="cs">Hodiny</name>
   <name xml:lang="es">Reloj</name>
   <name xml:lang="et">Kell</name>
   <name xml:lang="fr">Horloge</name>
   <name xml:lang="it">Orologio</name>
   <name xml:lang="nl">Klok</name>
+  <name xml:lang="nn">Klokke</name>
   <name xml:lang="pt">Relógio</name>
   <name xml:lang="sv">Klocka</name>
   <name xml:lang="uk">Годинник</name>
@@ -30,11 +32,13 @@
   <developer_name>KDE Community</developer_name>
   <developer_name xml:lang="ca">La comunitat KDE</developer_name>
   <developer_name xml:lang="ca-valencia">La comunitat KDE</developer_name>
+  <developer_name xml:lang="cs">Komunita KDE</developer_name>
   <developer_name xml:lang="es">Comunidad KDE</developer_name>
   <developer_name xml:lang="et">KDE kogukond</developer_name>
   <developer_name xml:lang="fr">Communauté KDE</developer_name>
   <developer_name xml:lang="it">Comunità KDE</developer_name>
   <developer_name xml:lang="nl">KDE gemeenschap</developer_name>
+  <developer_name xml:lang="nn">KDE-fellesskapet</developer_name>
   <developer_name xml:lang="pt">Comunidade do KDE</developer_name>
   <developer_name xml:lang="sv">KDE-gemenskapen</developer_name>
   <developer_name xml:lang="uk">Спільнота KDE</developer_name>
