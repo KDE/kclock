@@ -15,6 +15,7 @@ target_link_libraries(kclock
         KF5::ConfigCore
         KF5::CoreAddons
         KF5::Notifications
+        KF5::DBusAddons
         )
 
 if (ANDROID)

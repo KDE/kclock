@@ -41,6 +41,7 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     CoreAddons
     Config
     Notifications
+    DBusAddons
 )
 
 ################ Setup notifications ################
