@@ -5,6 +5,7 @@
   <name xml:lang="ca">Rellotge</name>
   <name xml:lang="ca-valencia">Rellotge</name>
   <name xml:lang="cs">Hodiny</name>
+  <name xml:lang="el">Ρολόι</name>
   <name xml:lang="es">Reloj</name>
   <name xml:lang="et">Kell</name>
   <name xml:lang="fr">Horloge</name>
@@ -18,6 +19,7 @@
   <summary>A simple all in one clock application.</summary>
   <summary xml:lang="ca">Una aplicació senzilla de rellotge tot en un.</summary>
   <summary xml:lang="ca-valencia">Una aplicació senzilla de rellotge tot en un.</summary>
+  <summary xml:lang="el">Μια απλή και πλήρης εφαρμογή ρολογιού.</summary>
   <summary xml:lang="es">Sencilla aplicación de reloj todo en uno.</summary>
   <summary xml:lang="et">Lihtne kõik-ühes kellarakendus.</summary>
   <summary xml:lang="fr">Une application d'horloge, simple et tout-en-un.</summary>
@@ -33,6 +35,7 @@
   <developer_name xml:lang="ca">La comunitat KDE</developer_name>
   <developer_name xml:lang="ca-valencia">La comunitat KDE</developer_name>
   <developer_name xml:lang="cs">Komunita KDE</developer_name>
+  <developer_name xml:lang="el">Η κοινότητα του KDE</developer_name>
   <developer_name xml:lang="es">Comunidad KDE</developer_name>
   <developer_name xml:lang="et">KDE kogukond</developer_name>
   <developer_name xml:lang="fr">Communauté KDE</developer_name>
@@ -47,6 +50,7 @@
     <p>KClock is a mobile friendly clock application, that includes a stopwatch, timer and alarms</p>
     <p xml:lang="ca">El KClock és una aplicació fàcil d'usar de rellotge, que inclou un cronòmetre, temporitzador i alarmes.</p>
     <p xml:lang="ca-valencia">El KClock és una aplicació fàcil d'usar de rellotge, que inclou un cronòmetre, temporitzador i alarmes.</p>
+    <p xml:lang="el">Το KClock είναι μια φιλική σε κινητά εφαρμογή ρολογιού, η οποία περιλαμβάνει χρονοδιακόπτη, χρονόμετρο και συναγερμούς</p>
     <p xml:lang="es">KClock es una aplicación de reloj para móviles que incluye un cronómetro, temporizador y alarmas</p>
     <p xml:lang="et">KClock on kasutajasõbralik kellarakendus mobiilile, mis pakub äratust, taimerit ja stopperit</p>
     <p xml:lang="fr">KClock est une application nomade et agréable d'horloge, intégrant un chronomètre, des temporisations et des alarmes</p>
