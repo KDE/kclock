@@ -31,7 +31,10 @@
 #include <KConfig>
 #include <KLocalizedContext>
 #include <KLocalizedString>
+
+#ifndef Q_OS_ANRDOID
 #include <KDBusService>
+#endif
 
 #include "alarms.h"
 #include "timermodel.h"
@@ -58,8 +61,10 @@ int main(int argc, char *argv[])
     aboutData.addAuthor(i18n("Devin Lin"), QString(), QStringLiteral("espidev@gmail.com"));
     KAboutData::setApplicationData(aboutData);
 
+#ifndef Q_OS_ANRDOID
     // only allow one instance
     KDBusService service(KDBusService::Unique);
+#endif
     
     // initialize models
     auto *timeZoneModel = new TimeZoneSelectorModel();
