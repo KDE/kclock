@@ -45,6 +45,7 @@ QCommandLineParser *createParser()
 {
     QCommandLineParser *parser = new QCommandLineParser;
     parser->addOption(QCommandLineOption(QStringLiteral("page"), i18n("Select opened page"), QStringLiteral("page"), "main"));
+    parser->addOption(QCommandLineOption(QStringLiteral("daemon"), i18n("Run in background mode")));
     parser->addHelpOption();
     return parser;
 }
@@ -64,6 +65,8 @@ int main(int argc, char *argv[])
 #ifndef Q_OS_ANRDOID
     // only allow one instance
     KDBusService service(KDBusService::Unique);
+    // allow to stay running when last window is closed
+    app.setQuitOnLastWindowClosed(false);
 #endif
     
     // initialize models
@@ -94,10 +97,22 @@ int main(int argc, char *argv[])
     {
         QScopedPointer<QCommandLineParser> parser(createParser());
         parser->process(app);
+        QObject *rootObject = engine.rootObjects().first();
         if (parser->isSet(QStringLiteral("page"))) {
-            QObject *rootObject = engine.rootObjects().first();
             QMetaObject::invokeMethod(rootObject, "switchToPage", Q_ARG(QVariant, parser->value("page")));
         }
+
+#ifndef Q_OS_ANRDOID
+        if (!parser->isSet(QStringLiteral("daemon"))) {
+            QMetaObject::invokeMethod(rootObject, "show");
+        }
+        QObject::connect(&service, &KDBusService::activateRequested, rootObject, [=](const QStringList &arguments, const QString &workingDirectory) {
+            Q_UNUSED(workingDirectory)
+            QMetaObject::invokeMethod(rootObject, "show");
+        });
+#else
+        QMetaObject::invokeMethod(rootObject, "show");
+#endif
     }
 
     return app.exec();
