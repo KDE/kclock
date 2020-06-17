@@ -18,7 +18,6 @@ Name[sk]=Hodiny
 Name[sl]=Clock
 Name[sv]=Klocka
 Name[uk]=Годинник
-Name[x-test]=xxClockxx
 
 [Event/timerFinished]
 Name=Timer finished
@@ -40,7 +39,6 @@ Name[sk]=Časovač ukončený
 Name[sl]=Časomerilnik je končal
 Name[sv]=Tidtagning klar
 Name[uk]=Відлік завершено
-Name[x-test]=xxTimer finishedxx
 Comment=Your timer has finished!
 Comment[ca]=El temporitzador ha finalitzat!
 Comment[ca@valencia]=El temporitzador ha finalitzat!
@@ -60,7 +58,6 @@ Comment[sk]=Váš časovač sa skončil!
 Comment[sl]=Vaš časomerilnik je končal!
 Comment[sv]=Tidtagningen är klar.
 Comment[uk]=Відлік за вашими таймером завершено!
-Comment[x-test]=xxYour timer has finished!xx
 Action=Sound|Popup
 Sound=freedesktop/stereo/alarm-clock-elapsed.oga
 
@@ -84,7 +81,6 @@ Name[sk]=Budík
 Name[sl]=Alarm
 Name[sv]=Alarm
 Name[uk]=Нагадування
-Name[x-test]=xxAlarmxx
 Action=Sound|Popup
 Sound=freedesktop/stereo/alarm-clock-elapsed.oga
 Urgency=Critical
