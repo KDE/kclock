@@ -160,7 +160,8 @@ Kirigami.ScrollablePage {
                 
                 Label {
                     Layout.alignment: Qt.AlignHCenter
-                    text: "<b>" + i18n("Alarm Name") + "</b>"
+                    text: i18n("Alarm Name")
+                    font.weight: Font.Bold
                 }
                 TextField {
                     Layout.alignment: Qt.AlignHCenter

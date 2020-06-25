@@ -47,6 +47,13 @@ Kirigami.ScrollablePage {
         return ("0" + parseInt(elapsedTime / 10 - (60*getElapsedSeconds())).toFixed(0)).slice(-2);
     }
 
+    // start/pause button
+    mainAction: Kirigami.Action {
+        text: running ? "Pause" : "Start"
+        iconName: running ? "chronometer-pause" : "chronometer-start"
+        onTriggered: running = !running
+    }
+    
     // lap list display
     ListView {
         model: roundModel
@@ -198,13 +205,4 @@ Kirigami.ScrollablePage {
         id: roundModel
     }
 
-    // topbar action
-    mainAction: Kirigami.Action {
-        text: running ? "Pause" : "Start"
-        iconName: running ? "chronometer-pause" : "chronometer-start"
-        onTriggered: {
-            running = !running
-        }
-        Layout.alignment: Qt.AlignHCenter
-    }
 }
