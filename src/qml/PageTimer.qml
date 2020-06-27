@@ -34,14 +34,14 @@ Kirigami.Page {
     property bool finished: false
     property int timerDuration: 60
     property int elapsedTime: 0
-    
+    property real staticTimeLabelWidth: 0
     Timer {
         interval: 16
         running: timerpage.running
         repeat: true
         onTriggered: {
             elapsedTime += interval
-            
+
             // if timer finished
             if (timerDuration * 1000 <= elapsedTime) {
                 finishedTimer();
@@ -68,6 +68,7 @@ Kirigami.Page {
         text: running ? "Pause" : "Start"
         iconName: running ? "chronometer-pause" : "chronometer-start"
         onTriggered: {
+            staticTimeLabelWidth = timeLabels.width / 2 + 5;
             if (finished) resetTimer();
             running = !running;
         }
@@ -94,7 +95,7 @@ Kirigami.Page {
             PathAngleArc {
                 id: timerCircleArc
                 centerX: timerCircle.width / 2; centerY: timerCircle.height / 2;
-                radiusX: Math.max(pagetimer.width * 0.25, timeLabels.width / 2 + 5); radiusY: radiusX
+                radiusX: Math.max(pagetimer.width * 0.25, staticTimeLabelWidth); radiusY: radiusX
                 startAngle: -180
                 sweepAngle: 360
             }
