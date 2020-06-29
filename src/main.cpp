@@ -32,6 +32,10 @@
 #include <KLocalizedContext>
 #include <KLocalizedString>
 
+#ifndef Q_OS_ANRDOID
+#include <KDBusService>
+#endif
+
 #include "alarms.h"
 #include "timermodel.h"
 #include "timezoneselectormodel.h"
@@ -58,6 +62,13 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     aboutData.addAuthor(i18n("Devin Lin"), QString(), QStringLiteral("espidev@gmail.com"));
     KAboutData::setApplicationData(aboutData);
 
+#ifndef Q_OS_ANRDOID
+    // only allow one instance
+    KDBusService service(KDBusService::Unique);
+    // allow to stay running when last window is closed
+    app.setQuitOnLastWindowClosed(false);
+#endif
+    
     // initialize models
     auto *timeZoneModel = new TimeZoneSelectorModel();
 
@@ -90,6 +101,18 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
         if (parser->isSet(QStringLiteral("page"))) {
             QMetaObject::invokeMethod(rootObject, "switchToPage", Q_ARG(QVariant, parser->value("page")));
         }
+
+#ifndef Q_OS_ANRDOID
+        if (!parser->isSet(QStringLiteral("daemon"))) {
+            QMetaObject::invokeMethod(rootObject, "show");
+        }
+        QObject::connect(&service, &KDBusService::activateRequested, rootObject, [=](const QStringList &arguments, const QString &workingDirectory) {
+            Q_UNUSED(workingDirectory)
+            QMetaObject::invokeMethod(rootObject, "show");
+        });
+#else
+        QMetaObject::invokeMethod(rootObject, "show");
+#endif
     }
 
     return app.exec();
