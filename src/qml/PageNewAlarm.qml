@@ -171,5 +171,29 @@ Kirigami.ScrollablePage {
                 }
             }
         }
+
+        Kirigami.Separator {
+            Layout.fillWidth: true
+        }
+        ColumnLayout{
+            Layout.alignment: Qt.AlignHCenter
+            Label {
+                Layout.alignment: Qt.AlignHCenter
+                text: i18n("Ringtone")
+                font.weight: Font.Bold
+            }
+            Kirigami.ActionTextField {
+                id: selectAlarmField
+                //placeholderText: selectedAlarm.defaultRingtone
+                rightActions: [
+                    Kirigami.Action {
+                        iconName: "list-add"
+                        onTriggered: {
+                            selectedAlarm.selectRingtone();
+                        }
+                    }
+                ]
+            }
+        }
     }
 }

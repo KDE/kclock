@@ -23,10 +23,10 @@
 
 #include <QObject>
 #include <QString>
+#include <QTimer>
 #include <QtCore/QAbstractListModel>
 #include <QtCore/QUuid>
-#include <QTimer>
-
+class QMediaPlayer;
 class Alarm : public QObject
 {
     Q_OBJECT
@@ -39,11 +39,11 @@ class Alarm : public QObject
 public slots:
     void handleDismiss();
     void handleSnooze();
-    
+
 public:
     explicit Alarm(QObject *parent = nullptr, QString name = "", int minutes = 0, int hours = 0, int dayOfWeek = 0);
     explicit Alarm(QString serialized);
-
+    ~Alarm();
     QString getName() const
     {
         return name;
@@ -116,14 +116,16 @@ public:
 
     QString serialize();
     qint64 toPreviousAlarm(qint64 timestamp); // the last alarm (timestamp) that should have played
-    void ring(); // ring alarm
-    void save(); // serialize and save to config
-    
+    void ring();                              // ring alarm
+    void save();                              // serialize and save to config
+    Q_INVOKABLE bool selectRingtone();
+
 signals:
     void onPropertyChanged();
 
 private:
     QString name;
+    QMediaPlayer *ringtonePlayer;
     QUuid uuid;
     bool enabled;
     int hours, minutes, dayOfWeek;
@@ -161,8 +163,8 @@ public:
 
 private:
     QList<Alarm *> alarmsList;
-    
-    QTimer* timer;
+
+    QTimer *timer;
 };
 
 #endif // KIRIGAMICLOCK_ALARMS_H

@@ -27,7 +27,7 @@ import org.kde.kirigami 2.11 as Kirigami
 Kirigami.ApplicationWindow
 {
     id: appwindow
-    visible: false
+    visible: true
     width: 650
     height: 500
 
