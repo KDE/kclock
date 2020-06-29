@@ -38,7 +38,7 @@ Kirigami.ScrollablePage {
         iconName: "list-add"
         text: "New Alarm"
         onTriggered: {
-            pagenewalarm.init(null, null);
+            pagenewalarm.init(null, alarmModel);
             pageStack.push(pagenewalarm);
         }
     }

@@ -25,6 +25,7 @@
 #include <QJsonObject>
 #include <QMediaPlayer>
 #include <QQmlEngine>
+#include <QStandardPaths>
 #include <QTime>
 #include <QtCore/QCoreApplication>
 #include <QtCore/QProcess>
@@ -48,7 +49,14 @@ Alarm::Alarm(QObject *parent, QString name, int minutes, int hours, int dayOfWee
     this->hours = hours;
     this->dayOfWeek = dayOfWeek;
     this->lastAlarm = QDateTime::currentDateTimeUtc().toSecsSinceEpoch();
-    ringtonePlayer = new QMediaPlayer();
+    ringtonePlayer = new QMediaPlayer;
+    ringtonePlayer->setVolume(100);
+
+    // loop audio
+    connect(ringtonePlayer, &QMediaPlayer::stateChanged, [=](QMediaPlayer::State state) {
+        if (state == QMediaPlayer::StoppedState)
+            ringtonePlayer->play();
+    });
 }
 
 // alarm from json
@@ -99,26 +107,29 @@ void Alarm::ring()
 {
     qDebug("Found alarm to run, sending notification...");
 
-    //    KNotification *notif = new KNotification("timerFinished");
-    //    notif->setActions(QStringList() << "Dismiss"
-    //                                    << "Snooze");
-    //    notif->setIconName("kronometer");
-    //    notif->setTitle(this->getName());
-    //    notif->setText(QDateTime::currentDateTime().toLocalTime().toString("hh:mm ap")); // TODO
-    //    notif->setDefaultAction(i18n("View"));
-    //    notif->setUrgency(KNotification::HighUrgency);
-    //    notif->setFlags(KNotification::NotificationFlag::LoopSound | KNotification::NotificationFlag::Persistent);
+    KNotification *notif = new KNotification("timerFinished");
+    notif->setActions(QStringList() << "Dismiss"
+                                    << "Snooze");
+    notif->setIconName("kronometer");
+    notif->setTitle(this->getName());
+    notif->setText(QDateTime::currentDateTime().toLocalTime().toString("hh:mm ap")); // TODO
+    notif->setDefaultAction(i18n("View"));
+    notif->setUrgency(KNotification::HighUrgency);
+    notif->setFlags(KNotification::NotificationFlag::LoopSound | KNotification::NotificationFlag::Persistent);
 
-    //    connect(notif, &KNotification::defaultActivated, this, &Alarm::handleDismiss);
-    //    connect(notif, &KNotification::action1Activated, this, &Alarm::handleDismiss);
-    //    connect(notif, &KNotification::action2Activated, this, &Alarm::handleSnooze);
+    connect(notif, &KNotification::defaultActivated, this, &Alarm::handleDismiss);
+    connect(notif, &KNotification::action1Activated, this, &Alarm::handleDismiss);
+    connect(notif, &KNotification::action2Activated, this, &Alarm::handleSnooze);
 
-    //    notif->sendEvent();
+    notif->sendEvent();
+    ringtonePlayer->setMedia(audioPath);
+    ringtonePlayer->play();
 }
 
 void Alarm::handleDismiss()
 {
     qDebug() << "Alarm dismissed";
+    ringtonePlayer->stop();
     this->setLastSnooze(0);
     this->save();
 }
@@ -126,6 +137,7 @@ void Alarm::handleDismiss()
 void Alarm::handleSnooze()
 {
     qDebug() << "Alarm snoozed (5 minutes)" << lastSnooze;
+    ringtonePlayer->stop();
     this->setSnooze(this->lastSnooze + 60 * 5); // snooze 5 minutes
     this->setLastSnooze(this->snooze);
     this->setEnabled(true);
@@ -161,8 +173,15 @@ qint64 Alarm::toPreviousAlarm(qint64 timestamp)
 
 bool Alarm::selectRingtone()
 {
-    QFileDialog::getOpenFileName(nullptr, tr("Open Image"), "/home/jana", tr("Image Files (*.png *.jpg *.bmp)"));
-    return true;
+    auto tmp = QFileDialog::getOpenFileUrl(nullptr, tr("Select Ringtone"), QUrl("~/"), tr("Audio Files (*.wav *.mp3 *.opus *.aac *.ogg)"));
+    if (tmp.isEmpty())
+        return false;
+    else {
+        audioPath = tmp;
+        defaultRingtone_ = audioPath.fileName();
+        emit onPropertyChanged();
+        return true;
+    }
 }
 
 Alarm::~Alarm()

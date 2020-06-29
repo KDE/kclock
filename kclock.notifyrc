@@ -61,8 +61,8 @@ Comment[sl]=Vaš časomerilnik je končal!
 Comment[sv]=Tidtagningen är klar.
 Comment[uk]=Відлік за вашими таймером завершено!
 Comment[x-test]=xxYour timer has finished!xx
-Action=Sound|Popup
-Sound=freedesktop/stereo/alarm-clock-elapsed.oga
+Action=Popup
+
 
 [Event/alarm]
 Name=Alarm
@@ -85,6 +85,5 @@ Name[sl]=Alarm
 Name[sv]=Alarm
 Name[uk]=Нагадування
 Name[x-test]=xxAlarmxx
-Action=Sound|Popup
-Sound=freedesktop/stereo/alarm-clock-elapsed.oga
+Action=Popup
 Urgency=Critical

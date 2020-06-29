@@ -184,7 +184,7 @@ Kirigami.ScrollablePage {
             }
             Kirigami.ActionTextField {
                 id: selectAlarmField
-                //placeholderText: selectedAlarm.defaultRingtone
+                placeholderText: selectedAlarm.defaultRingtone
                 rightActions: [
                     Kirigami.Action {
                         iconName: "list-add"

@@ -24,8 +24,10 @@
 #include <QObject>
 #include <QString>
 #include <QTimer>
+#include <QUrl>
 #include <QtCore/QAbstractListModel>
 #include <QtCore/QUuid>
+
 class QMediaPlayer;
 class Alarm : public QObject
 {
@@ -35,6 +37,7 @@ class Alarm : public QObject
     Q_PROPERTY(int hours READ getHours WRITE setHours NOTIFY onPropertyChanged)
     Q_PROPERTY(int minutes READ getMinutes WRITE setMinutes NOTIFY onPropertyChanged)
     Q_PROPERTY(int dayOfWeek READ getDayOfWeek WRITE setDayOfWeek NOTIFY onPropertyChanged)
+    Q_PROPERTY(QString defaultRingtone READ defaultRingtone NOTIFY onPropertyChanged)
 
 public slots:
     void handleDismiss();
@@ -113,11 +116,14 @@ public:
     {
         this->lastSnooze = lastSnooze;
     }
-
     QString serialize();
     qint64 toPreviousAlarm(qint64 timestamp); // the last alarm (timestamp) that should have played
     void ring();                              // ring alarm
     void save();                              // serialize and save to config
+    inline QString defaultRingtone()
+    {
+        return defaultRingtone_;
+    };
     Q_INVOKABLE bool selectRingtone();
 
 signals:
@@ -125,6 +131,8 @@ signals:
 
 private:
     QString name;
+    QString defaultRingtone_ = "default";
+    QUrl audioPath = QUrl::fromLocalFile("/usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga");
     QMediaPlayer *ringtonePlayer;
     QUuid uuid;
     bool enabled;
