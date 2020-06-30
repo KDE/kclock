@@ -84,6 +84,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
     // register QML types
     qmlRegisterType<Alarm>("kclock", 1, 0, "Alarm");
+    qmlRegisterType<Timer>("kclock", 1, 0, "Timer");
 
     // models
     engine.rootContext()->setContextProperty("timeZoneShowModel", timeZoneViewModel);

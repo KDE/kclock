@@ -58,7 +58,7 @@ Kirigami.ApplicationWindow
             Kirigami.Action {
                 text: i18n("Timer")
                 iconName: "player-time"
-                onTriggered: switchToPage(timerPage)
+                onTriggered: switchToPage(timerListPage)
             },
             Kirigami.Action {
                 text: i18n("Stopwatch")
@@ -97,8 +97,8 @@ Kirigami.ApplicationWindow
         id: timePage
         objectName: "time"
     }
-    TimerPage {
-        id: timerPage
+    TimerListPage {
+        id: timerListPage
         objectName: "timer"
         visible: false
     }

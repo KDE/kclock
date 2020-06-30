@@ -31,14 +31,11 @@ Kirigami.Page {
     title: "Timer"
     id: timerpage
     
-    property Timer timer
-    
     property bool running: false
     property bool finished: false
     property int timerDuration: 60
     property int elapsedTime: 0
     property real staticTimeLabelWidth: 0
-
     Timer {
         interval: 16
         running: timerpage.running
