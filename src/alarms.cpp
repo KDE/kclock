@@ -316,13 +316,18 @@ void AlarmModel::newAlarm(QString name, int minutes, int hours, int dayOfWeek, Q
 {
     auto index = alarmsList.count();
     auto alarm = new Alarm(this, name, minutes, hours, dayOfWeek);
+    
     if (ringtone.isValid())
         alarm->setRingtone(ringtone.toLocalFile());
+    
     QQmlEngine::setObjectOwnership(alarm, QQmlEngine::CppOwnership); // prevent segfaults from js garbage collecting
+    
     emit beginInsertRows(QModelIndex(), index, index);
+    
     alarmsList.insert(index, alarm);
     // write to config
     alarm->save();
+    
     emit endInsertRows();
 }
 

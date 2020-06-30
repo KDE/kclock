@@ -29,8 +29,8 @@ Kirigami.ScrollablePage {
     
     title: "Alarms"
 
-    PageNewAlarm {
-        id: pagenewalarm
+    NewAlarmPage {
+        id: newAlarmPage
         visible: false
     }
 
@@ -39,7 +39,7 @@ Kirigami.ScrollablePage {
         text: "New Alarm"
         onTriggered: {
             pagenewalarm.init(null, null);
-            pageStack.push(pagenewalarm);
+            pageStack.push(newAlarmPage);
         }
     }
     
@@ -105,8 +105,8 @@ Kirigami.ScrollablePage {
                     iconName: "entry-edit"
                     text: "Edit"
                     onTriggered: {
-                        pagenewalarm.init(alarmModel.get(index), model);
-                        pageStack.push(pagenewalarm);
+                        newAlarmPage.init(alarmModel.get(index), model);
+                        pageStack.push(newAlarmPage);
                     }
                 },
                 Kirigami.Action {

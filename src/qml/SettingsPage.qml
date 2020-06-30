@@ -49,38 +49,15 @@ Kirigami.ScrollablePage {
         Kirigami.Separator {
             Layout.fillWidth: true
         }
-
-//         ItemDelegate {
-//             Layout.fillWidth: true
-//             implicitHeight: Kirigami.Units.gridUnit * 3
-//             onClicked: startWeekOn.open()
-//             
-//             ColumnLayout {
-//                 spacing: -5
-//                 anchors.leftMargin: Kirigami.Units.gridUnit
-//                 anchors.rightMargin: Kirigami.Units.gridUnit
-//                 anchors.fill: parent
-//                 
-//                 Label {
-//                     text: i18n("<b>Start week on</b>")
-//                 }
-//                 Label {
-//                     text: i18n(settings.dayToStartWeekOn)
-//                 }
-//             }
-//         }
-//         
-//         Kirigami.Separator {
-//             Layout.fillWidth: true
-//         }
         
         ItemDelegate {
             Layout.fillWidth: true
-            text: "<b>" + i18n("About") + "</b>"
+            font.bold: true
+            text: i18n("About")
             leftPadding: Kirigami.Units.gridUnit
             rightPadding: Kirigami.Units.gridUnit
             implicitHeight: Kirigami.Units.gridUnit * 3
-            onClicked: pageStack.push(pageabout)
+            onClicked: pageStack.push(aboutPage)
         }
         
         Kirigami.Separator {

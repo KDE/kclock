@@ -103,8 +103,8 @@ Kirigami.ScrollablePage {
         delegate: timeZoneDelegate
     }
     
-    PageTimezoneSelect {
-        id: pagetimezone
+    TimeZoneSelectPage {
+        id: pageTimezone
         visible: false
     }
     
@@ -122,7 +122,7 @@ Kirigami.ScrollablePage {
         iconName: "globe"
         text: i18n("Edit")
         onTriggered: {
-            pageStack.push(pagetimezone)
+            pageStack.push(pageTimezone)
         }
     }
 }

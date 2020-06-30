@@ -179,7 +179,7 @@ Kirigami.ScrollablePage {
         Kirigami.Separator {
             Layout.fillWidth: true
         }
-        ColumnLayout{
+        ColumnLayout {
             Layout.alignment: Qt.AlignHCenter
             Label {
                 Layout.alignment: Qt.AlignHCenter
@@ -194,7 +194,7 @@ Kirigami.ScrollablePage {
                         iconName: "list-add"
                         onTriggered: {
                             ringtonePath = alarmModel.selectRingtone();
-                            if(ringtonePath.toString().length != 0)
+                            if (ringtonePath.toString().length != 0)
                                 selectAlarmField.placeholderText = ringtonePath.toString().split('/').pop();
                         }
                     }

@@ -95,7 +95,7 @@ Kirigami.Page {
             PathAngleArc {
                 id: timerCircleArc
                 centerX: timerCircle.width / 2; centerY: timerCircle.height / 2;
-                radiusX: Math.max(pagetimer.width * 0.25, staticTimeLabelWidth); radiusY: radiusX
+                radiusX: Math.max(timerPage.width * 0.25, staticTimeLabelWidth); radiusY: radiusX
                 startAngle: -180
                 sweepAngle: 360
             }
