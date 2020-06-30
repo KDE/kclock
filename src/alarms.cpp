@@ -75,8 +75,16 @@ Alarm::Alarm(QString serialized)
         snooze = obj["snooze"].toInt();
         lastSnooze = obj["lastSnooze"].toInt();
         ringtoneName_ = obj["ringtoneName"].toString();
-        audioPath = QUrl(obj["audioPath"].toString());
+        audioPath = QUrl::fromLocalFile(obj["audioPath"].toString());
     }
+    ringtonePlayer = new QMediaPlayer;
+    ringtonePlayer->setVolume(100);
+
+    // loop audio
+    connect(ringtonePlayer, &QMediaPlayer::stateChanged, [=](QMediaPlayer::State state) {
+        if (state == QMediaPlayer::StoppedState)
+            ringtonePlayer->play();
+    });
 }
 
 // alarm to json
@@ -93,7 +101,7 @@ QString Alarm::serialize()
     obj["snooze"] = this->snooze;
     obj["lastSnooze"] = this->lastSnooze;
     obj["ringtoneName"] = this->ringtoneName_;
-    obj["audioPath"] = this->audioPath.toString();
+    obj["audioPath"] = this->audioPath.toLocalFile();
     return QString(QJsonDocument(obj).toJson(QJsonDocument::Compact));
 }
 
@@ -233,13 +241,12 @@ void AlarmModel::checkAlarmsToRun()
 
 QHash<int, QByteArray> AlarmModel::roleNames() const
 {
-    return {
-        {HoursRole, "hours"},
-        {MinutesRole, "minutes"},
-        {NameRole, "name"},
-        {EnabledRole, "enabled"},
-        {DayOfWeekRole, "dayOfWeek"},
-    };
+    return {{HoursRole, "hours"},
+            {MinutesRole, "minutes"},
+            {NameRole, "name"},
+            {EnabledRole, "enabled"},
+            {DayOfWeekRole, "dayOfWeek"},
+            {RingtonePathRole, "ringtonePath"}};
 }
 
 QVariant AlarmModel::data(const QModelIndex &index, int role) const
@@ -268,7 +275,7 @@ bool AlarmModel::setData(const QModelIndex &index, const QVariant &value, int ro
 {
     if (!index.isValid() || alarmsList.length() <= index.row())
         return false;
-
+    // to switch or not to switch?
     auto *alarm = alarmsList[index.row()];
     if (alarm == nullptr)
         return false;
@@ -282,6 +289,8 @@ bool AlarmModel::setData(const QModelIndex &index, const QVariant &value, int ro
         alarm->setName(value.toString());
     else if (role == DayOfWeekRole)
         alarm->setDayOfWeek(value.toInt());
+    else if (role == RingtonePathRole)
+        alarm->setRingtone(value.toString());
     else
         return false;
 
@@ -308,7 +317,7 @@ void AlarmModel::newAlarm(QString name, int minutes, int hours, int dayOfWeek, Q
     auto index = alarmsList.count();
     auto alarm = new Alarm(this, name, minutes, hours, dayOfWeek);
     if (ringtone.isValid())
-        alarm->setRingtone(ringtone);
+        alarm->setRingtone(ringtone.toLocalFile());
     QQmlEngine::setObjectOwnership(alarm, QQmlEngine::CppOwnership); // prevent segfaults from js garbage collecting
     emit beginInsertRows(QModelIndex(), index, index);
     alarmsList.insert(index, alarm);

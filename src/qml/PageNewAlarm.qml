@@ -33,7 +33,7 @@ Kirigami.ScrollablePage {
     property QtObject selectedAlarmModel: null // so that we call setData rather than the getters and setters
     property bool newAlarm: false
     property int alarmDaysOfWeek: newAlarm ? 0 : selectedAlarm.dayOfWeek
-    property url ringtonePath
+    property string ringtonePath
 
     function init(alarm, alarmModel) {
         if (alarm == null) {
@@ -72,8 +72,7 @@ Kirigami.ScrollablePage {
                     selectedAlarmModel.minutes = minutes;
                     selectedAlarmModel.hours = hours;
                     selectedAlarmModel.dayOfWeek = alarmDaysOfWeek;
-                    if(ringtonePath.toString().length != 0)
-                        selectedAlarmModel.ringtonePath = ringtonePath;
+                    selectedAlarmModel.ringtonePath = ringtonePath;
                 }
                 // reset
                 alarmDaysOfWeek = 0;

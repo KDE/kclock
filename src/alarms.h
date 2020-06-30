@@ -41,7 +41,7 @@ class Alarm : public QObject
     Q_PROPERTY(int minutes READ getMinutes WRITE setMinutes NOTIFY onPropertyChanged)
     Q_PROPERTY(int dayOfWeek READ getDayOfWeek WRITE setDayOfWeek NOTIFY onPropertyChanged)
     Q_PROPERTY(QString ringtoneName READ ringtoneName NOTIFY onPropertyChanged)
-    Q_PROPERTY(QUrl ringtonePath WRITE setRingtone NOTIFY onPropertyChanged)
+    Q_PROPERTY(QString ringtonePath WRITE setRingtone NOTIFY onPropertyChanged)
 
 public slots:
     void handleDismiss();
@@ -128,8 +128,9 @@ public:
     {
         return ringtoneName_;
     };
-    void setRingtone(QUrl url)
+    void setRingtone(QString urlStr)
     {
+        auto url = QUrl(urlStr);
         ringtoneName_ = url.fileName();
         audioPath = url;
     };
@@ -160,6 +161,7 @@ public:
         MinutesRole = Qt::DisplayRole + 1,
         NameRole = Qt::DisplayRole + 2,
         DayOfWeekRole = Qt::DisplayRole + 3,
+        RingtonePathRole = Qt::DisplayRole + 4,
     };
 
     int rowCount(const QModelIndex &parent) const override;
