@@ -35,7 +35,7 @@ Kirigami.ScrollablePage {
     property int alarmDaysOfWeek: newAlarm ? 0 : selectedAlarm.dayOfWeek
     property url ringtonePath
 
-    function init(alarm) {
+    function init(alarm, alarmModel) {
         if (alarm == null) {
             newAlarm = true;
             alarmDaysOfWeek = 0;
@@ -68,13 +68,12 @@ Kirigami.ScrollablePage {
                     alarmModel.newAlarm(selectedAlarmName.text, minutes, hours, alarmDaysOfWeek, ringtonePath);
                     newAlarm = false; // reset form
                 } else {
-                    selectedAlarm.name = selectedAlarmName.text;
-                    selectedAlarm.minutes = minutes;
-                    selectedAlarm.hours = hours;
-                    selectedAlarm.dayOfWeek = alarmDaysOfWeek;
+                    selectedAlarmModel.name = selectedAlarmName.text;
+                    selectedAlarmModel.minutes = minutes;
+                    selectedAlarmModel.hours = hours;
+                    selectedAlarmModel.dayOfWeek = alarmDaysOfWeek;
                     if(ringtonePath.toString().length != 0)
-                        selectedAlarm.ringtonePath = ringtonePath;
-                    console.log(selectedAlarm.minutes);
+                        selectedAlarmModel.ringtonePath = ringtonePath;
                 }
                 // reset
                 alarmDaysOfWeek = 0;

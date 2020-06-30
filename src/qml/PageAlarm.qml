@@ -105,7 +105,7 @@ Kirigami.ScrollablePage {
                     iconName: "entry-edit"
                     text: "Edit"
                     onTriggered: {
-                        pagenewalarm.init(alarmModel.get(index));
+                        pagenewalarm.init(alarmModel.get(index), model);
                         pageStack.push(pagenewalarm);
                     }
                 },
