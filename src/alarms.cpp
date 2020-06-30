@@ -20,12 +20,10 @@
 
 #include <QDateTime>
 #include <QDebug>
-#include <QFileDialog>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QMediaPlayer>
 #include <QQmlEngine>
-#include <QStandardPaths>
 #include <QTime>
 #include <QtCore/QCoreApplication>
 #include <QtCore/QProcess>
@@ -76,6 +74,8 @@ Alarm::Alarm(QString serialized)
         lastAlarm = obj["lastAlarm"].toInt();
         snooze = obj["snooze"].toInt();
         lastSnooze = obj["lastSnooze"].toInt();
+        ringtoneName_ = obj["ringtoneName"].toString();
+        audioPath = QUrl(obj["audioPath"].toString());
     }
 }
 
@@ -92,6 +92,8 @@ QString Alarm::serialize()
     obj["lastAlarm"] = this->lastAlarm;
     obj["snooze"] = this->snooze;
     obj["lastSnooze"] = this->lastSnooze;
+    obj["ringtoneName"] = this->ringtoneName_;
+    obj["audioPath"] = this->audioPath.toString();
     return QString(QJsonDocument(obj).toJson(QJsonDocument::Compact));
 }
 
@@ -168,19 +170,6 @@ qint64 Alarm::toPreviousAlarm(qint64 timestamp)
         }
 
         return QDateTime(date.date(), alarmTime).toSecsSinceEpoch();
-    }
-}
-
-bool Alarm::selectRingtone()
-{
-    auto tmp = QFileDialog::getOpenFileUrl(nullptr, tr("Select Ringtone"), QUrl("~/"), tr("Audio Files (*.wav *.mp3 *.opus *.aac *.ogg)"));
-    if (tmp.isEmpty())
-        return false;
-    else {
-        audioPath = tmp;
-        defaultRingtone_ = audioPath.fileName();
-        emit onPropertyChanged();
-        return true;
     }
 }
 
@@ -314,22 +303,36 @@ Qt::ItemFlags AlarmModel::flags(const QModelIndex &index) const
     return Qt::ItemIsEditable;
 }
 
-Alarm *AlarmModel::insert(int index, QString name, int minutes, int hours, int dayOfWeek)
+void AlarmModel::newAlarm(QString name, int minutes, int hours, int dayOfWeek, QUrl ringtone)
 {
-    if (index < 0 || index > alarmsList.count())
-        return new Alarm();
-    emit beginInsertRows(QModelIndex(), index, index);
-
-    auto *alarm = new Alarm(this, name, minutes, hours, dayOfWeek);
+    auto index = alarmsList.count();
+    auto alarm = new Alarm(this, name, minutes, hours, dayOfWeek);
+    if (ringtone.isValid())
+        alarm->setRingtone(ringtone);
     QQmlEngine::setObjectOwnership(alarm, QQmlEngine::CppOwnership); // prevent segfaults from js garbage collecting
+    emit beginInsertRows(QModelIndex(), index, index);
     alarmsList.insert(index, alarm);
-
     // write to config
     alarm->save();
-
     emit endInsertRows();
-    return alarm;
 }
+
+// Alarm *AlarmModel::insert(int index, QString name, int minutes, int hours, int dayOfWeek)
+//{
+//    if (index < 0 || index > alarmsList.count())
+//        return new Alarm();
+//    emit beginInsertRows(QModelIndex(), index, index);
+
+//    auto *alarm = new Alarm(this, name, minutes, hours, dayOfWeek);
+//    QQmlEngine::setObjectOwnership(alarm, QQmlEngine::CppOwnership); // prevent segfaults from js garbage collecting
+//    alarmsList.insert(index, alarm);
+
+//    // write to config
+//    alarm->save();
+
+//    emit endInsertRows();
+//    return alarm;
+//}
 
 void AlarmModel::remove(int index)
 {
@@ -341,7 +344,7 @@ void AlarmModel::remove(int index)
     auto config = KSharedConfig::openConfig();
     KConfigGroup group = config->group(ALARM_CFG_GROUP);
     group.deleteEntry(alarmsList.at(index)->getUuid().toString());
-
+    alarmsList[index]->deleteLater(); // delete object
     alarmsList.removeAt(index);
 
     emit endRemoveRows();

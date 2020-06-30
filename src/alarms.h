@@ -21,7 +21,10 @@
 #ifndef KIRIGAMICLOCK_ALARMS_H
 #define KIRIGAMICLOCK_ALARMS_H
 
+#include <QDebug>
+#include <QFileDialog>
 #include <QObject>
+#include <QStandardPaths>
 #include <QString>
 #include <QTimer>
 #include <QUrl>
@@ -37,7 +40,8 @@ class Alarm : public QObject
     Q_PROPERTY(int hours READ getHours WRITE setHours NOTIFY onPropertyChanged)
     Q_PROPERTY(int minutes READ getMinutes WRITE setMinutes NOTIFY onPropertyChanged)
     Q_PROPERTY(int dayOfWeek READ getDayOfWeek WRITE setDayOfWeek NOTIFY onPropertyChanged)
-    Q_PROPERTY(QString defaultRingtone READ defaultRingtone NOTIFY onPropertyChanged)
+    Q_PROPERTY(QString ringtoneName READ ringtoneName NOTIFY onPropertyChanged)
+    Q_PROPERTY(QUrl ringtonePath WRITE setRingtone NOTIFY onPropertyChanged)
 
 public slots:
     void handleDismiss();
@@ -120,18 +124,22 @@ public:
     qint64 toPreviousAlarm(qint64 timestamp); // the last alarm (timestamp) that should have played
     void ring();                              // ring alarm
     void save();                              // serialize and save to config
-    inline QString defaultRingtone()
+    inline QString ringtoneName()
     {
-        return defaultRingtone_;
+        return ringtoneName_;
     };
-    Q_INVOKABLE bool selectRingtone();
+    void setRingtone(QUrl url)
+    {
+        ringtoneName_ = url.fileName();
+        audioPath = url;
+    };
 
 signals:
     void onPropertyChanged();
 
 private:
     QString name;
-    QString defaultRingtone_ = "default";
+    QString ringtoneName_ = "default";
     QUrl audioPath = QUrl::fromLocalFile("/usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga");
     QMediaPlayer *ringtonePlayer;
     QUuid uuid;
@@ -165,7 +173,15 @@ public:
     bool load();
     void checkAlarmsToRun();
 
-    Q_INVOKABLE Alarm *insert(int index, QString name, int minutes, int hours, int dayOfWeek);
+    Q_INVOKABLE QUrl selectRingtone()
+    {
+        return QFileDialog::getOpenFileUrl(nullptr,
+                                           tr("Select Ringtone"),
+                                           QStandardPaths::writableLocation(QStandardPaths::DesktopLocation),
+                                           tr("Audio Files (*.wav *.mp3 *.opus *.aac *.ogg)"));
+    };
+    Q_INVOKABLE void newAlarm(QString name, int minutes, int hours, int dayOfWeek, QUrl ringtone = QUrl());
+    // Q_INVOKABLE Alarm *insert(int index, QString name, int minutes, int hours, int dayOfWeek);
     Q_INVOKABLE void remove(int index);
     Q_INVOKABLE Alarm *get(int index);
 

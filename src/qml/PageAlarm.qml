@@ -38,7 +38,7 @@ Kirigami.ScrollablePage {
         iconName: "list-add"
         text: "New Alarm"
         onTriggered: {
-            pagenewalarm.init(null, alarmModel);
+            pagenewalarm.init(null);
             pageStack.push(pagenewalarm);
         }
     }
@@ -91,7 +91,7 @@ Kirigami.ScrollablePage {
             anchors.right: parent.right
             anchors.margins: Kirigami.Units.largeSpacing
             visible: alarmsList.count == 0
-            text: qsTr("No alarms configured")
+            text: i18n("No alarms configured")
             icon.name: "notifications"
         }
         
@@ -105,7 +105,7 @@ Kirigami.ScrollablePage {
                     iconName: "entry-edit"
                     text: "Edit"
                     onTriggered: {
-                        pagenewalarm.init(alarmModel.get(index), model);
+                        pagenewalarm.init(alarmModel.get(index));
                         pageStack.push(pagenewalarm);
                     }
                 },

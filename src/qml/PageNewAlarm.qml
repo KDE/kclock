@@ -31,11 +31,13 @@ Kirigami.ScrollablePage {
 
     property Alarm selectedAlarm: null
     property QtObject selectedAlarmModel: null // so that we call setData rather than the getters and setters
-    property bool newAlarm: true
+    property bool newAlarm: false
     property int alarmDaysOfWeek: newAlarm ? 0 : selectedAlarm.dayOfWeek
-    
-    function init(alarm, alarmModel) {
+    property url ringtonePath
+
+    function init(alarm) {
         if (alarm == null) {
+            newAlarm = true;
             alarmDaysOfWeek = 0;
             // manually set because binding doesn't seem to work
             let date = new Date();
@@ -43,6 +45,7 @@ Kirigami.ScrollablePage {
             selectedAlarmTime.hours = date.getHours() >= 12 ? date.getHours() - 12 : date.getHours();
             selectedAlarmTime.minutes = date.getMinutes();
         } else {
+            newAlarm = false;
             alarmDaysOfWeek = alarm.dayOfWeek;
             // manually set because binding doesn't seem to work
             selectedAlarmTime.pm = alarm.hours > 12;
@@ -51,7 +54,6 @@ Kirigami.ScrollablePage {
         }
         selectedAlarm = alarm;
         selectedAlarmModel = alarmModel;
-        newAlarm = alarm == null;
     }
     
     actions {
@@ -63,13 +65,16 @@ Kirigami.ScrollablePage {
                 let hours = selectedAlarmTime.hours + (selectedAlarmTime.pm ? 12 : 0);
                 let minutes = selectedAlarmTime.minutes;
                 if (newAlarm) {
-                    selectedAlarm = alarmModel.insert(0, selectedAlarmName.text, minutes, hours, alarmDaysOfWeek);
+                    alarmModel.newAlarm(selectedAlarmName.text, minutes, hours, alarmDaysOfWeek, ringtonePath);
                     newAlarm = false; // reset form
                 } else {
-                    selectedAlarmModel.name = selectedAlarmName.text;
-                    selectedAlarmModel.minutes = minutes;
-                    selectedAlarmModel.hours = hours;
-                    selectedAlarmModel.dayOfWeek = alarmDaysOfWeek;
+                    selectedAlarm.name = selectedAlarmName.text;
+                    selectedAlarm.minutes = minutes;
+                    selectedAlarm.hours = hours;
+                    selectedAlarm.dayOfWeek = alarmDaysOfWeek;
+                    if(ringtonePath.toString().length != 0)
+                        selectedAlarm.ringtonePath = ringtonePath;
+                    console.log(selectedAlarm.minutes);
                 }
                 // reset
                 alarmDaysOfWeek = 0;
@@ -113,7 +118,8 @@ Kirigami.ScrollablePage {
                 
                 Label {
                     Layout.alignment: Qt.AlignHCenter
-                    text: "<b>" + i18n("Days to Repeat") + "</b>"
+                    text: i18n("Days to Repeat")
+                    font.weight: Font.Bold
                 }
                 Flow {
                     Layout.alignment: Qt.AlignHCenter
@@ -184,12 +190,14 @@ Kirigami.ScrollablePage {
             }
             Kirigami.ActionTextField {
                 id: selectAlarmField
-                placeholderText: selectedAlarm.defaultRingtone
+                placeholderText: newAlarm ? i18n("default") : selectedAlarm.ringtoneName
                 rightActions: [
                     Kirigami.Action {
                         iconName: "list-add"
                         onTriggered: {
-                            selectedAlarm.selectRingtone();
+                            ringtonePath = alarmModel.selectRingtone();
+                            if(ringtonePath.toString().length != 0)
+                                selectAlarmField.placeholderText = ringtonePath.toString().split('/').pop();
                         }
                     }
                 ]
