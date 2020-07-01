@@ -33,24 +33,126 @@ Kirigami.Page {
     id: timerpage
     title: timer.label
     
+    property bool justCreated: true
+    
     property int elapsed: timer == null ? 0 : timer.elapsed
     property int duration: timer == null ? 0 : timer.length / 1000
     property bool running: timer == null ? 0 : timer.running
-    
-    property real staticTimeLabelWidth: 0
 
     // topbar action
     mainAction: Kirigami.Action {
         text: running ? "Pause" : "Start"
         iconName: running ? "chronometer-pause" : "chronometer-start"
-        onTriggered: {
-            staticTimeLabelWidth = timeLabels.width / 2 + 5;
-            timer.toggleRunning();
-        }
+        onTriggered: timer.toggleRunning()
+        visible: !justCreated
     }
+
+    function getTimeLeft() {
+        return duration*1000 - elapsed;
+    }
+    function getHours() {
+        return ("0" + parseInt(getTimeLeft() / 1000 / 60 / 60).toFixed(0)).slice(-2);
+    }
+    function getMinutes() {
+        return ("0" + parseInt(getTimeLeft() / 1000 / 60 - 60 * getHours())).slice(-2);
+    }
+    function getSeconds() {
+        return ("0" + parseInt(getTimeLeft() / 1000 - 60 * getMinutes())).slice(-2);
+    }
+
+    // create new timer form
+    ColumnLayout {
+        spacing: Kirigami.Units.largeSpacing
+        visible: justCreated
+        anchors.left: parent.left
+        anchors.right: parent.right
+        
+        Kirigami.FormLayout {
+            id: form
+            Layout.fillWidth: true
+            
+            Item {
+                Kirigami.FormData.isSection: true
+                Kirigami.FormData.label: "Duration"
+            }
+            Kirigami.Separator {}
+            
+            RowLayout {
+                SpinBox {
+                    Layout.alignment: Qt.AlignVCenter
+                    id: spinBoxHours
+                    onValueChanged: form.setDuration()
+                    value: duration / 60 / 60
+                }
+                Label {
+                    Layout.alignment: Qt.AlignVCenter
+                    text: i18n("hours")
+                }
+            }
+            RowLayout {
+                SpinBox {
+                    Layout.alignment: Qt.AlignVCenter
+                    id: spinBoxMinutes
+                    onValueChanged: form.setDuration()
+                    value: duration % (60*60) / 60
+                }
+                Label {
+                    Layout.alignment: Qt.AlignVCenter
+                    text: i18n("minutes")
+                }
+            }
+            RowLayout {
+                SpinBox {
+                    Layout.alignment: Qt.AlignVCenter
+                    id: spinBoxSeconds
+                    to: 60
+                    onValueChanged: form.setDuration()
+                    value: duration % 60
+                }
+                Label {
+                    Layout.alignment: Qt.AlignVCenter
+                    text: i18n("seconds")
+                }
+            }
+            
+            function setDuration() {
+                timer.length = 1000 * (spinBoxHours.value * 60 * 60 + spinBoxMinutes.value * 60 + spinBoxSeconds.value)
+            }
+            
+            Item {
+                Kirigami.FormData.isSection: true
+                Kirigami.FormData.label: "Label (optional)"
+            }
+            
+            Kirigami.Separator {}
+            TextField {
+                text: timer.label
+                onTextChanged: timer.label = text
+            }
+            
+            Kirigami.Separator {}
+            ToolButton {
+                flat: false
+                icon.name: "chronometer-start"
+                text: "Start"
+                onClicked: {
+                    timer.toggleRunning();
+                    justCreated = false;
+                }
+            }
+        }   
+    }
+
     
-    // outside circle
+    
+    // ~ timer display ~
+    
+    // timer circle
     Shape {
+        visible: !justCreated
+        
+        anchors.centerIn: parent
+        
         id: timerCircle
         implicitWidth: parent.width
         implicitHeight: timerCircleArc.radiusX*2+5
@@ -70,7 +172,7 @@ Kirigami.Page {
             PathAngleArc {
                 id: timerCircleArc
                 centerX: timerCircle.width / 2; centerY: timerCircle.height / 2;
-                radiusX: Math.max(timerpage.width * 0.25, staticTimeLabelWidth); radiusY: radiusX
+                radiusX: Math.max(timerpage.width * 0.25, 1); radiusY: radiusX
                 startAngle: -180
                 sweepAngle: 360
             }
@@ -104,22 +206,10 @@ Kirigami.Page {
             }
         }
     }
-
-    function getTimeLeft() {
-        return duration*1000 - elapsed;
-    }
-    function getHours() {
-        return ("0" + parseInt(getTimeLeft() / 1000 / 60 / 60).toFixed(0)).slice(-2);
-    }
-    function getMinutes() {
-        return ("0" + parseInt(getTimeLeft() / 1000 / 60 - 60 * getHours())).slice(-2);
-    }
-    function getSeconds() {
-        return ("0" + parseInt(getTimeLeft() / 1000 - 60 * getMinutes())).slice(-2);
-    }
-
+    
     // clock display
     RowLayout {
+        visible: !justCreated
         id: timeLabels
         anchors.centerIn: timerCircle
 
@@ -129,12 +219,14 @@ Kirigami.Page {
             color: Kirigami.Theme.highlightColor
             font.pointSize: Kirigami.Theme.defaultFont.pointSize*3
             font.family: clockFont.name
+            visible: text != "00"
         }
         Label {
             text: ":"
             color: Kirigami.Theme.textColor
             font.pointSize: Kirigami.Theme.defaultFont.pointSize*3
             font.family: clockFont.name
+            visible: getHours() != "00"
         }
         Label {
             id: minutesText
@@ -157,71 +249,4 @@ Kirigami.Page {
         }
     }
 
-    // start/pause and lap button
-    RowLayout {
-        id: buttons
-        anchors.topMargin: 20;
-        anchors.top: timerCircle.bottom
-        anchors.left: parent.left
-        anchors.right: parent.right
-        Layout.alignment: Qt.AlignHCenter
-
-        ToolButton {
-            icon.name: "chronometer"
-            text: "Edit"
-            onClicked: {
-                timerEditSheet.open()
-            }
-            Layout.alignment: Qt.AlignHCenter
-            flat: false
-        }
-        ToolButton {
-            text: "Reset"
-            icon.name: "chronometer-reset"
-            onClicked: resetTimer();
-            Layout.alignment: Qt.AlignHCenter
-            flat: false
-        }
-    }
-
-    Kirigami.OverlaySheet {
-        id: timerEditSheet
-        header: Kirigami.Heading {
-            text: i18n("Change Timer Duration")
-        }
-
-        ColumnLayout {
-            spacing: Kirigami.Units.largeSpacing * 5
-            Layout.preferredWidth:  Kirigami.Units.gridUnit * 25
-            Kirigami.FormLayout {
-                Layout.fillWidth: true
-
-                SpinBox {
-                    Kirigami.FormData.label: i18n("Hours")
-                    id: spinBoxHours
-                    onValueChanged: timerEditSheet.setDuration()
-                    value: duration / 60 / 60
-                }
-                
-                SpinBox {
-                    Kirigami.FormData.label: i18n("Minutes")
-                    id: spinBoxMinutes
-                    onValueChanged: timerEditSheet.setDuration()
-                    value: duration % (60*60) / 60
-                }
-
-                SpinBox {
-                    Kirigami.FormData.label: i18n("Seconds")
-                    id: spinBoxSeconds
-                    to: 60
-                    onValueChanged: timerEditSheet.setDuration()
-                    value: duration % 60
-                }
-            }
-        }
-
-        function setDuration() {
-            timer.length = 1000 * (spinBoxHours.value * 60 * 60 + spinBoxMinutes.value * 60 + spinBoxSeconds.value)
-        }
-    }
 }

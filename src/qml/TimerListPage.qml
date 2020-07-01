@@ -73,7 +73,7 @@ Kirigami.ScrollablePage {
             
             showClickFeedback: true
             onClicked: pageStack.push(timerPage)
-            
+                
             contentItem: Item {
                 implicitWidth: delegateLayout.implicitWidth
                 implicitHeight: delegateLayout.implicitHeight
@@ -102,16 +102,41 @@ Kirigami.ScrollablePage {
                             level: 3
                             Layout.alignment: Qt.AlignLeft
                             text: timerDelegate.elapsedPretty
+                            color: timerDelegate.running ? Kirigami.Theme.activeTextColor : Kirigami.Theme.disabledTextColor
                         }
                         Kirigami.Heading {
                             level: 3
                             Layout.alignment: Qt.AlignRight
                             text: timerDelegate.lengthPretty
+                            color: timerDelegate.running ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
                         }
                     }
                     
-                    Label {
-                        text: timerDelegate.label
+                    RowLayout {
+                        anchors.left: parent.left
+                        anchors.right: parent.right
+                        Kirigami.Heading {
+                            level: 4
+                            Layout.alignment: Qt.AlignLeft
+                            text: timerDelegate.label
+                        }
+                        
+                        Row {
+                            Layout.alignment: Qt.AlignRight
+                            
+                            ToolButton {
+                                icon.name: timerDelegate.running ? "chronometer-pause" : "chronometer-start"
+                                onClicked: timerDelegate.toggleRunning()
+                            }
+                            ToolButton {
+                                icon.name: "chronometer-reset"
+                                onClicked: timerDelegate.reset();
+                            }
+                            ToolButton {
+                                icon.name: "delete"
+                                onClicked: timerModel.remove(index)
+                            }
+                        }
                     }
                 }
             }
