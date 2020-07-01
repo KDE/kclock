@@ -62,6 +62,7 @@ Kirigami.ScrollablePage {
             
             TimerPage {
                 id: timerPage
+                timerIndex: index
                 timer: timerDelegate
                 visible: false
             }
@@ -86,7 +87,7 @@ Kirigami.ScrollablePage {
                         right: parent.right
                     }
                     
-                    spacing: Kirigami.Units.largeSpacing
+                    spacing: Kirigami.Units.smallSpacing
                     
                     ProgressBar {
                         anchors.left: parent.left
