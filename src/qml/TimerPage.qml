@@ -29,6 +29,7 @@ import kclock 1.0
 Kirigami.Page {
     
     property Timer timer
+    property int timerIndex
     
     id: timerpage
     title: timer.label
@@ -133,12 +134,9 @@ Kirigami.Page {
             Kirigami.Separator {}
             ToolButton {
                 flat: false
-                icon.name: "chronometer-start"
-                text: "Start"
-                onClicked: {
-                    timer.toggleRunning();
-                    justCreated = false;
-                }
+                icon.name: "list-add"
+                text: "Create"
+                onClicked: justCreated = false;
             }
         }   
     }
@@ -146,6 +144,33 @@ Kirigami.Page {
     
     
     // ~ timer display ~
+    
+    Kirigami.ActionToolBar {
+        visible: !justCreated
+        anchors {
+            top: parent.top
+            left: parent.left
+            right: parent.right
+        }
+        alignment: Qt.AlignHCenter
+        actions: [
+            Action {
+                icon.name: "chronometer-reset"
+                text: "Reset"
+                onTriggered: timer.reset();
+            },
+            Action {
+                icon.name: "view-fullscreen"
+                text: "Fullscreen"
+                
+            },
+            Action {
+                icon.name: "delete"
+                text: "Delete"
+                onTriggered: timerModel.remove(timerIndex); 
+            }
+        ]
+    }
     
     // timer circle
     Shape {
