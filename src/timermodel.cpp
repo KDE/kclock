@@ -22,6 +22,8 @@
 
 #include <KLocalizedString>
 #include <KNotification>
+#include <KSharedConfig>
+#include <KConfigGroup>
 
 #include <QApplication>
 #include <QCoreApplication>
@@ -29,27 +31,43 @@
 #include <QObject>
 #include <QQmlEngine>
 #include <QtGlobal>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonArray>
 
 /* ~ Timer ~ */
 
-Timer::Timer(QObject *parent, qint64 length, qint64 elapsed, QString label, bool running)
+Timer::Timer(QObject *parent, int length, int elapsed, QString label, bool running)
 {
     length_ = length;
     elapsed_ = elapsed;
     label_ = label;
     running_ = running;
     finished_ = false;
+    
+    connect(this, &Timer::propertyChanged, this, []{TimerModel::inst()->save();}, Qt::UniqueConnection);
 }
 
-Timer::Timer(QString json)
+Timer::Timer(const QJsonObject &obj)
 {
-    // TODO
+    length_ = obj["length"].toInt();
+    elapsed_ = obj["elapsed"].toInt();
+    label_ = obj["label"].toString();
+    running_ = obj["running"].toBool();
+    finished_ = obj["finished"].toBool();
+    
+    connect(this, &Timer::propertyChanged, this, []{TimerModel::inst()->save();}, Qt::UniqueConnection);
 }
 
-QString Timer::serialize()
+QJsonObject Timer::serialize()
 {
-    // TODO
-    return "";
+    QJsonObject obj;
+    obj["length"] = length_;
+    obj["elapsed"] = elapsed_;
+    obj["label"] = label_;
+    obj["running"] = running_;
+    obj["finished"] = finished_;
+    return obj;
 }
 
 void Timer::updateTimer(qint64 duration)
@@ -102,6 +120,7 @@ void Timer::reset()
 
 /* ~ TimerModel ~ */
 const int TIMER_CHECK_LENGTH = 16; // milliseconds
+const QString TIMERS_CFG_GROUP = "Timers", TIMERS_CFG_KEY = "timersList";
 
 TimerModel::TimerModel(QObject *parent)
 {
@@ -114,12 +133,29 @@ TimerModel::TimerModel(QObject *parent)
 
 void TimerModel::load()
 {
-    // TODO
+    auto config = KSharedConfig::openConfig();
+    KConfigGroup group = config->group(TIMERS_CFG_GROUP);
+    QJsonDocument doc = QJsonDocument::fromJson(group.readEntry(TIMERS_CFG_KEY, "{}").toUtf8());
+    for (QJsonValueRef r : doc.array()) {
+        QJsonObject obj = r.toObject();
+        timerList.append(new Timer(obj));
+    }
 }
 
 void TimerModel::save()
 {
-    // TODO
+    QJsonArray arr;
+    for (auto timer : timerList) {
+        arr.push_back(timer->serialize());
+    }
+    QJsonObject obj;
+    obj["list"] = arr;
+    
+    auto config = KSharedConfig::openConfig();
+    KConfigGroup group = config->group(TIMERS_CFG_GROUP);
+    group.writeEntry(TIMERS_CFG_KEY, QString(QJsonDocument(arr).toJson(QJsonDocument::Compact)));
+    
+    group.sync();
 }
 
 void TimerModel::updateTimerLoop()
@@ -146,7 +182,7 @@ QVariant TimerModel::data(const QModelIndex &index, int role) const
 
 void TimerModel::addNew()
 {
-    insert(count(), new Timer());
+    insert(count(), new Timer(this));
 }
 
 void TimerModel::insert(int index, Timer *timer)
