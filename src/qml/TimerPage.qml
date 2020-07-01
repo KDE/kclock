@@ -28,44 +28,16 @@ import kclock 1.0
 
 Kirigami.Page {
     
-    title: "Timer"
-    id: timerpage
-    
     property Timer timer
     
-    property bool running: false
-    property bool finished: false
-    property int timerDuration: 60
-    property int elapsedTime: 0
+    id: timerpage
+    title: timer.label
+    
+    property int elapsed: timer == null ? 0 : timer.elapsed
+    property int duration: timer == null ? 0 : timer.length / 1000
+    property bool running: timer == null ? 0 : timer.running
+    
     property real staticTimeLabelWidth: 0
-
-    Timer {
-        interval: 16
-        running: timerpage.running
-        repeat: true
-        onTriggered: {
-            elapsedTime += interval
-
-            // if timer finished
-            if (timerDuration * 1000 <= elapsedTime) {
-                finishedTimer();
-            }
-        }
-    }
-    
-    function finishedTimer() {
-        elapsedTime = timerDuration * 1000;
-        running = false;
-        finished = true;
-        
-        timerModel.timerFinished();
-    }
-    
-    function resetTimer() {
-        running = false;
-        finished = false;
-        elapsedTime = 0;
-    }
 
     // topbar action
     mainAction: Kirigami.Action {
@@ -73,8 +45,7 @@ Kirigami.Page {
         iconName: running ? "chronometer-pause" : "chronometer-start"
         onTriggered: {
             staticTimeLabelWidth = timeLabels.width / 2 + 5;
-            if (finished) resetTimer();
-            running = !running;
+            timer.toggleRunning();
         }
     }
     
@@ -115,7 +86,7 @@ Kirigami.Page {
                 centerX: timerCircleArc.centerX; centerY: timerCircleArc.centerY
                 radiusX: timerCircleArc.radiusX; radiusY: timerCircleArc.radiusY
                 startAngle: -90
-                sweepAngle: 360 * (elapsedTime / 1000) / timerDuration
+                sweepAngle: 360 * (elapsed / 1000) / duration
             }
         }
         
@@ -128,14 +99,14 @@ Kirigami.Page {
             PathAngleArc {
                 centerX: timerCircleArc.centerX; centerY: timerCircleArc.centerY
                 radiusX: timerCircleArc.radiusX; radiusY: timerCircleArc.radiusY
-                startAngle: (-90 + 360 * (elapsedTime % 1000) / 1000) % 360
+                startAngle: (-90 + 360 * (elapsed % 1000) / 1000) % 360
                 sweepAngle: 16
             }
         }
     }
 
     function getTimeLeft() {
-        return timerDuration*1000 - elapsedTime;
+        return duration*1000 - elapsed;
     }
     function getHours() {
         return ("0" + parseInt(getTimeLeft() / 1000 / 60 / 60).toFixed(0)).slice(-2);
@@ -229,14 +200,14 @@ Kirigami.Page {
                     Kirigami.FormData.label: i18n("Hours")
                     id: spinBoxHours
                     onValueChanged: timerEditSheet.setDuration()
-                    value: timerDuration / 60 / 60
+                    value: duration / 60 / 60
                 }
                 
                 SpinBox {
                     Kirigami.FormData.label: i18n("Minutes")
                     id: spinBoxMinutes
                     onValueChanged: timerEditSheet.setDuration()
-                    value: timerDuration % (60*60) / 60
+                    value: duration % (60*60) / 60
                 }
 
                 SpinBox {
@@ -244,13 +215,13 @@ Kirigami.Page {
                     id: spinBoxSeconds
                     to: 60
                     onValueChanged: timerEditSheet.setDuration()
-                    value: timerDuration % 60
+                    value: duration % 60
                 }
             }
         }
 
-         function setDuration() {
-             timerDuration = spinBoxHours.value * 60 * 60 + spinBoxMinutes.value * 60 + spinBoxSeconds.value
-         }
+        function setDuration() {
+            timer.length = 1000 * (spinBoxHours.value * 60 * 60 + spinBoxMinutes.value * 60 + spinBoxSeconds.value)
+        }
     }
 }

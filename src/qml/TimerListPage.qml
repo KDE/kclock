@@ -29,16 +29,14 @@ Kirigami.ScrollablePage {
     
     title: "Timers"
     
-    TimerPage {
-        id: timerPage
-    }
+    property bool createdTimer: false
     
     mainAction: Kirigami.Action {
         iconName: "list-add"
         text: "New Timer"
         onTriggered: {
-            timerPage.addNew();
-            timerPage.timer = timerModel.at(timerModel.count()-1);
+            createdTimer = true
+            timerModel.addNew();
         }
     }
     
@@ -60,13 +58,28 @@ Kirigami.ScrollablePage {
         // each timer
         delegate: Kirigami.AbstractCard {
             
-            property Timer timer: timerModel.get(index)
+            property Timer timerDelegate: timerModel.get(index)
+            
+            TimerPage {
+                id: timerPage
+                timer: timerDelegate
+                visible: false
+            }
+            
+            Component.onCompleted: {
+                if (createdTimer)
+                    pageStack.push(timerPage)
+            }
+            
+            showClickFeedback: true
+            onClicked: pageStack.push(timerPage)
             
             contentItem: Item {
                 implicitWidth: delegateLayout.implicitWidth
                 implicitHeight: delegateLayout.implicitHeight
                 
-                ColumnLayout {
+                Column {
+                    id: delegateLayout
                     anchors {
                         left: parent.left
                         top: parent.top
@@ -76,25 +89,29 @@ Kirigami.ScrollablePage {
                     spacing: Kirigami.Units.largeSpacing
                     
                     ProgressBar {
-                        Layout.fillWidth: true
-                        value: 0.5
-                        enabled: true
+                        anchors.left: parent.left
+                        anchors.right: parent.right
+                        value: timerDelegate.elapsed / timerDelegate.length
+                        enabled: timerDelegate.running
                     }
                     
-                    Row {
-                        Layout.fillWidth: true
-                        Label {
+                    RowLayout {
+                        anchors.left: parent.left
+                        anchors.right: parent.right
+                        Kirigami.Heading {
+                            level: 3
                             Layout.alignment: Qt.AlignLeft
-                            text: "0:30:00"
+                            text: timerDelegate.elapsedPretty
                         }
-                        Label {
+                        Kirigami.Heading {
+                            level: 3
                             Layout.alignment: Qt.AlignRight
-                            text: "1:00:00"
+                            text: timerDelegate.lengthPretty
                         }
                     }
                     
                     Label {
-                        text: "Default Timer"
+                        text: timerDelegate.label
                     }
                 }
             }

@@ -71,9 +71,9 @@ Kirigami.ScrollablePage {
         id: startWeekOn
         modal: true
         focus: true
-        x: (pagesettings.width - width) / 2
-        y: pagesettings.height / 2 - height
-        width: Math.min(pagesettings.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 20)
+        x: (settingsPage.width - width) / 2
+        y: settingsPage.height / 2 - height
+        width: Math.min(settingsPage.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 20)
         height: Kirigami.Units.gridUnit * 20
         standardButtons: Dialog.Close
         title: i18n("Start week on")

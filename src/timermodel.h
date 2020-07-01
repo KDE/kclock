@@ -23,6 +23,7 @@
 
 #include <QObject>
 #include <QString>
+#include <QTimer>
 #include <QAbstractListModel>
 
 class Timer : public QObject
@@ -30,8 +31,11 @@ class Timer : public QObject
     Q_OBJECT
     Q_PROPERTY(qint64 length READ length WRITE setLength NOTIFY propertyChanged)
     Q_PROPERTY(qint64 elapsed READ elapsed WRITE setElapsed NOTIFY propertyChanged)
+    Q_PROPERTY(QString lengthPretty READ lengthPretty NOTIFY propertyChanged)
+    Q_PROPERTY(QString elapsedPretty READ elapsedPretty NOTIFY propertyChanged)
     Q_PROPERTY(QString label READ label WRITE setLabel NOTIFY propertyChanged)
-    Q_PROPERTY(bool running READ running WRITE setRunning NOTIFY propertyChanged)
+    Q_PROPERTY(bool running READ running NOTIFY propertyChanged)
+    Q_PROPERTY(bool finished READ finished NOTIFY propertyChanged)
     
 public:
     explicit Timer(QObject *parent = nullptr, qint64 length = 0, qint64 elapsed = 0, QString label = "", bool running = false);
@@ -43,6 +47,16 @@ public:
     Q_INVOKABLE void toggleRunning();
     Q_INVOKABLE void reset();
     
+    QString lengthPretty() const
+    {
+        qint64 len = length_ / 1000, hours = len / 60 / 60, minutes = len / 60 - hours * 60, seconds = len - hours * 60 * 60 - minutes * 60;
+        return QString::number(hours) + ":" + QString::number(minutes).rightJustified(2, '0') + ":" + QString::number(seconds).rightJustified(2, '0');
+    }
+    QString elapsedPretty() const
+    {
+        qint64 len = elapsed_ / 1000, hours = len / 60 / 60, minutes = len / 60 - hours * 60, seconds = len - hours * 60 * 60 - minutes * 60;
+        return QString::number(hours) + ":" + QString::number(minutes).rightJustified(2, '0') + ":" + QString::number(seconds).rightJustified(2, '0');
+    }
     qint64 length() const
     {
         return length_;
@@ -50,6 +64,7 @@ public:
     void setLength(qint64 length)
     {
         length_ = length;
+        emit propertyChanged();
     }
     qint64 elapsed() const
     {
@@ -58,6 +73,7 @@ public:
     void setElapsed(qint64 elapsed)
     {
         elapsed_ = elapsed;
+        emit propertyChanged();
     }
     QString label() const
     {
@@ -66,6 +82,7 @@ public:
     void setLabel(QString label)
     {
         label_ = label;
+        emit propertyChanged();
     }
     bool running() const
     {
@@ -74,15 +91,20 @@ public:
     void setRunning(bool running)
     {
         running_ = running;
+        emit propertyChanged();
+    }
+    bool finished() const
+    {
+        return finished_;
     }
     
 signals:
     void propertyChanged();
 
 private:
-    qint64 length_, elapsed_; // seconds
+    qint64 length_, elapsed_; // milliseconds
     QString label_;
-    bool running_;
+    bool running_, finished_;
 };
 
 class TimerModel : public QAbstractListModel
@@ -110,6 +132,7 @@ public:
     
 private:
     QList<Timer *> timerList;
+    QTimer *timer;
 };
 
 #endif // KIRIGAMICLOCK_TIMERMODEL_H

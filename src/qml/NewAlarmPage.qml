@@ -91,7 +91,7 @@ Kirigami.ScrollablePage {
             id: selectedAlarmTime
             
             Layout.alignment: Qt.AlignHCenter
-            Layout.preferredWidth: pagenewalarm.width
+            Layout.preferredWidth: newAlarmPage.width
             Layout.preferredHeight: Layout.preferredWidth
             Layout.minimumWidth: 300
             Layout.minimumHeight: Layout.minimumWidth

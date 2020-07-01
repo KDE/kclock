@@ -32,11 +32,13 @@
 
 /* ~ Timer ~ */
 
-Timer::Timer(QObject *parent, qint64 length, qint64 elapsed, QString label)
+Timer::Timer(QObject *parent, qint64 length, qint64 elapsed, QString label, bool running)
 {
     length_ = length;
     elapsed_ = elapsed;
     label_ = label;
+    running_ = running;
+    finished_ = false;
 }
 
 Timer::Timer(QString json)
@@ -52,24 +54,62 @@ QString Timer::serialize()
 
 void Timer::updateTimer(qint64 duration)
 {
-    
+    if (running_) {
+        elapsed_ += duration;
+        
+        // if the timer has finished
+        if (elapsed_ >= length_) {
+            elapsed_ = length_;
+            running_ = false;
+            finished_ = true;
+            
+            qDebug("Timer finished, sending notification...");
+
+            KNotification *notif = new KNotification("timerFinished");
+            notif->setIconName("kclock");
+            notif->setTitle(i18n("Timer complete"));
+            notif->setText(i18n("Your timer has finished!"));
+            notif->setDefaultAction(i18n("View"));
+            notif->setUrgency(KNotification::HighUrgency);
+            notif->setFlags(KNotification::NotificationFlag::LoopSound | KNotification::NotificationFlag::Persistent);
+            notif->sendEvent();
+        }
+        
+        emit propertyChanged();
+    }
 }
 
 void Timer::toggleRunning()
 {
+    if (finished_) {
+        elapsed_ = 0;
+        running_ = true;
+        finished_ = false;
+    } else {
+        running_ = !running_;
+    }
+    emit propertyChanged();
 }
 
 void Timer::reset()
 {
-    
+    finished_ = false;
+    running_ = false;
+    elapsed_ = 0;
+    emit propertyChanged();
 }
 
 
 /* ~ TimerModel ~ */
+const int TIMER_CHECK_LENGTH = 16; // milliseconds
 
 TimerModel::TimerModel(QObject *parent)
 {
     load();
+    
+    timer = new QTimer(this);
+    connect(timer, &QTimer::timeout, this, QOverload<>::of(&TimerModel::updateTimerLoop));
+    timer->start(TIMER_CHECK_LENGTH);
 }
 
 void TimerModel::load()
@@ -80,6 +120,12 @@ void TimerModel::load()
 void TimerModel::save()
 {
     // TODO
+}
+
+void TimerModel::updateTimerLoop()
+{
+    for (auto *timer : timerList) 
+        timer->updateTimer(TIMER_CHECK_LENGTH); 
 }
 
 int TimerModel::rowCount(const QModelIndex &parent) const
@@ -100,7 +146,7 @@ QVariant TimerModel::data(const QModelIndex &index, int role) const
 
 void TimerModel::addNew()
 {
-    insert(count()-1, new Timer());
+    insert(0, new Timer());
 }
 
 void TimerModel::insert(int index, Timer *timer)
@@ -132,7 +178,7 @@ void TimerModel::remove(int index)
 
 Timer *TimerModel::get(int index)
 {
-    if ((index < 0) || (index >= timerList.count()));
+    if ((index < 0) || (index >= timerList.count()))
         return {};
     
     return timerList.at(index);
