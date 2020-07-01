@@ -1,16 +1,18 @@
 <RCC>
     <qresource prefix="/">
         <file>qml/main.qml</file>
-        <file>qml/PageTime.qml</file>
-        <file>qml/PageTimer.qml</file>
-        <file>qml/PageStopwatch.qml</file>
-        <file>qml/PageAlarm.qml</file>
-        <file>qml/PageTimezoneSelect.qml</file>
-        <file>qml/PageNewAlarm.qml</file>
-        <file>qml/PageSettings.qml</file>
+        <file>qml/TimePage.qml</file>
+        <file>qml/TimerPage.qml</file>
+        <file>qml/TimerListPage.qml</file>
+        <file>qml/StopwatchPage.qml</file>
+        <file>qml/AlarmPage.qml</file>
+        <file>qml/TimeZoneSelectPage.qml</file>
+        <file>qml/NewAlarmPage.qml</file>
+        <file>qml/SettingsPage.qml</file>
         <file>qml/Settings.qml</file>
         <file>qml/TimeZoneEntry.qml</file>
         <file>qml/AnalogClock.qml</file>
+        <file>qml/TimerComponent.qml</file>
         <file>assets/RedHatText-Regular.ttf</file>
     </qresource>
 </RCC>

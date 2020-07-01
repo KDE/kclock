@@ -27,7 +27,7 @@ import org.kde.kirigami 2.11 as Kirigami
 Kirigami.ApplicationWindow
 {
     id: appwindow
-    visible: false
+    visible: true
     width: 650
     height: 500
 
@@ -36,7 +36,7 @@ Kirigami.ApplicationWindow
     // settings object
     property Settings settings: settings
     
-    pageStack.initialPage: timepage
+    pageStack.initialPage: timePage
     
     function switchToPage(page) {
         while (pageStack.depth > 0) pageStack.pop()
@@ -53,27 +53,27 @@ Kirigami.ApplicationWindow
             Kirigami.Action {
                 text: i18n("Time")
                 iconName: "clock"
-                onTriggered: switchToPage(timepage)
+                onTriggered: switchToPage(timePage)
             },
             Kirigami.Action {
                 text: i18n("Timer")
                 iconName: "player-time"
-                onTriggered: switchToPage(pagetimer)
+                onTriggered: switchToPage(timerListPage)
             },
             Kirigami.Action {
                 text: i18n("Stopwatch")
                 iconName: "chronometer"
-                onTriggered: switchToPage(pagestopwatch)
+                onTriggered: switchToPage(stopwatchPage)
             },
             Kirigami.Action {
                 text: i18n("Alarm")
                 iconName: "notifications"
-                onTriggered: switchToPage(pagealarm)
+                onTriggered: switchToPage(alarmPage)
             },
             Kirigami.Action {
                 text: i18n("Settings")
                 iconName: "settings-configure"
-                onTriggered: switchToPage(pagesettings)
+                onTriggered: switchToPage(settingsPage)
             }
         ]
         
@@ -93,33 +93,32 @@ Kirigami.ApplicationWindow
     }
     
     // pages
-    PageTime {
-        id: timepage
+    TimePage {
+        id: timePage
         objectName: "time"
     }
-    PageTimer {
-        id: pagetimer
+    TimerListPage {
+        id: timerListPage
         objectName: "timer"
         visible: false
     }
-    PageStopwatch {
-        id: pagestopwatch
+    StopwatchPage {
+        id: stopwatchPage
         objectName: "stopwatch"
         visible: false
     }
-    PageAlarm {
-        id: pagealarm
+    AlarmPage {
+        id: alarmPage
         objectName: "alarm"
         visible: false
     }
-    PageSettings {
-        id: pagesettings
+    SettingsPage {
+        id: settingsPage
         objectName: "settings"
         visible: false
     }
-    // TODO move to c++
     Kirigami.AboutPage {
-        id: pageabout
+        id: aboutPage
         visible: false
         aboutData: {
             "displayName": "Clock",

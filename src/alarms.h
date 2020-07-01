@@ -21,12 +21,17 @@
 #ifndef KIRIGAMICLOCK_ALARMS_H
 #define KIRIGAMICLOCK_ALARMS_H
 
+#include <QDebug>
+#include <QFileDialog>
 #include <QObject>
+#include <QStandardPaths>
 #include <QString>
+#include <QTimer>
+#include <QUrl>
 #include <QtCore/QAbstractListModel>
 #include <QtCore/QUuid>
-#include <QTimer>
 
+class QMediaPlayer;
 class Alarm : public QObject
 {
     Q_OBJECT
@@ -35,15 +40,17 @@ class Alarm : public QObject
     Q_PROPERTY(int hours READ getHours WRITE setHours NOTIFY onPropertyChanged)
     Q_PROPERTY(int minutes READ getMinutes WRITE setMinutes NOTIFY onPropertyChanged)
     Q_PROPERTY(int dayOfWeek READ getDayOfWeek WRITE setDayOfWeek NOTIFY onPropertyChanged)
+    Q_PROPERTY(QString ringtoneName READ ringtoneName NOTIFY onPropertyChanged)
+    Q_PROPERTY(QString ringtonePath WRITE setRingtone NOTIFY onPropertyChanged)
 
 public slots:
     void handleDismiss();
     void handleSnooze();
-    
+
 public:
     explicit Alarm(QObject *parent = nullptr, QString name = "", int minutes = 0, int hours = 0, int dayOfWeek = 0);
     explicit Alarm(QString serialized);
-
+    ~Alarm();
     QString getName() const
     {
         return name;
@@ -113,17 +120,29 @@ public:
     {
         this->lastSnooze = lastSnooze;
     }
-
     QString serialize();
     qint64 toPreviousAlarm(qint64 timestamp); // the last alarm (timestamp) that should have played
-    void ring(); // ring alarm
-    void save(); // serialize and save to config
-    
+    void ring();                              // ring alarm
+    void save();                              // serialize and save to config
+    inline QString ringtoneName()
+    {
+        return ringtoneName_;
+    };
+    void setRingtone(QString urlStr)
+    {
+        auto url = QUrl(urlStr);
+        ringtoneName_ = url.fileName();
+        audioPath = url;
+    };
+
 signals:
     void onPropertyChanged();
 
 private:
     QString name;
+    QString ringtoneName_ = "default";
+    QUrl audioPath = QUrl::fromLocalFile("/usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga");
+    QMediaPlayer *ringtonePlayer;
     QUuid uuid;
     bool enabled;
     int hours, minutes, dayOfWeek;
@@ -142,6 +161,7 @@ public:
         MinutesRole = Qt::DisplayRole + 1,
         NameRole = Qt::DisplayRole + 2,
         DayOfWeekRole = Qt::DisplayRole + 3,
+        RingtonePathRole = Qt::DisplayRole + 4,
     };
 
     int rowCount(const QModelIndex &parent) const override;
@@ -155,14 +175,22 @@ public:
     bool load();
     void checkAlarmsToRun();
 
-    Q_INVOKABLE Alarm *insert(int index, QString name, int minutes, int hours, int dayOfWeek);
+    Q_INVOKABLE QUrl selectRingtone()
+    {
+        return QFileDialog::getOpenFileUrl(nullptr,
+                                           tr("Select Ringtone"),
+                                           QStandardPaths::writableLocation(QStandardPaths::DesktopLocation),
+                                           tr("Audio Files (*.wav *.mp3 *.opus *.aac *.ogg)"));
+    };
+    Q_INVOKABLE void newAlarm(QString name, int minutes, int hours, int dayOfWeek, QUrl ringtone = QUrl());
+    // Q_INVOKABLE Alarm *insert(int index, QString name, int minutes, int hours, int dayOfWeek);
     Q_INVOKABLE void remove(int index);
     Q_INVOKABLE Alarm *get(int index);
 
 private:
     QList<Alarm *> alarmsList;
-    
-    QTimer* timer;
+
+    QTimer *timer;
 };
 
 #endif // KIRIGAMICLOCK_ALARMS_H
