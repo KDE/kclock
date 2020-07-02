@@ -1,6 +1,7 @@
 /*
  * Copyright 2019 Nick Reitemeyer <nick.reitemeyer@web.de>
  *           2020 Devin Lin <espidev@gmail.com>
+ *           2020 Nicolas Fella <nicolas.fella@gmx.de>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -22,34 +23,25 @@
 import QtQuick 2.11
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
-import org.kde.kirigami 2.4 as Kirigami
+import org.kde.kirigami 2.10 as Kirigami
 
-Kirigami.Page {
+Kirigami.ScrollablePage {
     
-    title: "Timezones"
-    
-    TextField {
-        id: timeZoneSearchInput
-        anchors.right: parent.right
-        anchors.left: parent.left
-        placeholderText: "Search"
-        onTextChanged: timeZoneFilterModel.setFilterFixedString(text)
-    }
+    title: i18n("Timezones")
 
     ListView {
-        anchors.top: timeZoneSearchInput.bottom
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.bottom: parent.bottom
-        anchors.topMargin: Kirigami.Units.smallSpacing * 2
-        ScrollBar.vertical: ScrollBar {}
+
+        header: Kirigami.SearchField {
+            width: parent.width
+            onTextChanged: timeZoneFilterModel.setFilterFixedString(text)
+        }
+
         clip: true
-        spacing: Kirigami.Units.largeSpacing
         model: timeZoneFilterModel
-        delegate: Row {
+        delegate: Kirigami.AbstractListItem {
             CheckBox {
                 checked: model.shown
-                text: model.id + " " + model.shortName
+                text: i18n("%1 %2", model.id, model.shortName)
                 onClicked: model.shown = this.checked
             }
         }
