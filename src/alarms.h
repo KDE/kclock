@@ -35,11 +35,11 @@ class QMediaPlayer;
 class Alarm : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(QString name READ getName WRITE setName NOTIFY onPropertyChanged)
-    Q_PROPERTY(bool enabled READ isEnabled WRITE setEnabled NOTIFY onPropertyChanged)
-    Q_PROPERTY(int hours READ getHours WRITE setHours NOTIFY onPropertyChanged)
-    Q_PROPERTY(int minutes READ getMinutes WRITE setMinutes NOTIFY onPropertyChanged)
-    Q_PROPERTY(int dayOfWeek READ getDayOfWeek WRITE setDayOfWeek NOTIFY onPropertyChanged)
+    Q_PROPERTY(QString name READ name WRITE setName NOTIFY onPropertyChanged)
+    Q_PROPERTY(bool enabled READ enabled WRITE setEnabled NOTIFY onPropertyChanged)
+    Q_PROPERTY(int hours READ hours WRITE setHours NOTIFY onPropertyChanged)
+    Q_PROPERTY(int minutes READ minutes WRITE setMinutes NOTIFY onPropertyChanged)
+    Q_PROPERTY(int daysOfWeek READ daysOfWeek WRITE setDaysOfWeek NOTIFY onPropertyChanged)
     Q_PROPERTY(QString ringtoneName READ ringtoneName NOTIFY onPropertyChanged)
     Q_PROPERTY(QString ringtonePath WRITE setRingtone NOTIFY onPropertyChanged)
 
@@ -48,82 +48,77 @@ public slots:
     void handleSnooze();
 
 public:
-    explicit Alarm(QObject *parent = nullptr, QString name = "", int minutes = 0, int hours = 0, int dayOfWeek = 0);
+    explicit Alarm(QObject *parent = nullptr, QString name = "", int minutes = 0, int hours = 0, int daysOfWeek = 0);
     explicit Alarm(QString serialized);
     ~Alarm();
-    QString getName() const
+    QString name() const
     {
-        return name;
+        return name_;
     }
-    QUuid getUuid() const
-    {
-        return uuid;
-    }
-    bool isEnabled() const
-    {
-        return enabled;
-    }
-    int getHours() const
-    {
-        return hours;
-    }
-    int getMinutes() const
-    {
-        return minutes;
-    }
-    int getDayOfWeek() const
-    {
-        return dayOfWeek;
-    }
-    qint64 getLastAlarm() const
-    {
-        return lastAlarm;
-    }
-    qint64 getSnooze() const
-    {
-        return snooze;
-    }
-    qint64 getLastSnooze() const
-    {
-        return lastSnooze;
-    }
-
     void setName(QString name)
     {
-        this->name = name;
+        this->name_ = name;
+    }
+    QUuid uuid() const
+    {
+        return uuid_;
+    }
+    bool enabled() const
+    {
+        return enabled_;
     }
     void setEnabled(bool enabled)
     {
-        this->enabled = enabled;
+        this->enabled_ = enabled;
+    }
+    int hours() const
+    {
+        return hours_;
     }
     void setHours(int hours)
     {
-        this->hours = hours;
+        this->hours_ = hours;
+    }
+    int minutes() const
+    {
+        return minutes_;
     }
     void setMinutes(int minutes)
     {
-        this->minutes = minutes;
+        this->minutes_ = minutes;
     }
-    void setDayOfWeek(int dayOfWeek)
+    int daysOfWeek() const
     {
-        this->dayOfWeek = dayOfWeek;
+        return daysOfWeek_;
+    }
+    void setDaysOfWeek(int daysOfWeek)
+    {
+        this->daysOfWeek_ = daysOfWeek;
+    }
+    qint64 lastAlarm() const
+    {
+        return lastAlarm_;
     }
     void setLastAlarm(qint64 lastAlarm)
     {
-        this->lastAlarm = lastAlarm;
+        this->lastAlarm_ = lastAlarm;
+    }
+    qint64 snooze() const
+    {
+        return snooze_;
     }
     void setSnooze(qint64 snooze)
     {
-        this->snooze = snooze;
+        this->snooze_ = snooze;
+    }
+    qint64 lastSnooze() const
+    {
+        return lastSnooze_;
     }
     void setLastSnooze(qint64 lastSnooze)
     {
-        this->lastSnooze = lastSnooze;
+        this->lastSnooze_ = lastSnooze;
     }
-    QString serialize();
-    qint64 toPreviousAlarm(qint64 timestamp); // the last alarm (timestamp) that should have played
-    void ring();                              // ring alarm
-    void save();                              // serialize and save to config
     inline QString ringtoneName()
     {
         return ringtoneName_;
@@ -134,19 +129,30 @@ public:
         ringtoneName_ = url.fileName();
         audioPath = url;
     };
+    QString serialize();
+    
+    qint64 toPreviousAlarm(qint64 timestamp); // the last alarm (timestamp) that should have played
+    void ring();                              // ring alarm
+    void save();                              // serialize and save to config
+    
+    void loopAlarmSound(); // called when alarm sound ends (whether or not to play it again)
 
 signals:
     void onPropertyChanged();
 
 private:
-    QString name;
-    QString ringtoneName_ = "default";
-    QUrl audioPath = QUrl::fromLocalFile("/usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga");
     QMediaPlayer *ringtonePlayer;
-    QUuid uuid;
-    bool enabled;
-    int hours, minutes, dayOfWeek;
-    qint64 lastAlarm, snooze, lastSnooze; // last time the alarm ran (unix timestamp)
+    
+    QUrl audioPath = QUrl::fromLocalFile("/usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga");
+    
+    QString name_;
+    QString ringtoneName_ = "default";
+    QUuid uuid_;
+    bool enabled_;
+    int hours_, minutes_, daysOfWeek_; 
+    qint64 lastAlarm_; // last time the alarm ran (unix timestamp)
+    qint64 snooze_; // current snooze length
+    qint64 lastSnooze_; // last snooze length (cache snooze_ since it is set to 0 when alarm rings)
 };
 
 class AlarmModel : public QAbstractListModel
@@ -160,7 +166,7 @@ public:
         HoursRole = Qt::DisplayRole + 0,
         MinutesRole = Qt::DisplayRole + 1,
         NameRole = Qt::DisplayRole + 2,
-        DayOfWeekRole = Qt::DisplayRole + 3,
+        DaysOfWeekRole = Qt::DisplayRole + 3,
         RingtonePathRole = Qt::DisplayRole + 4,
     };
 
@@ -182,7 +188,7 @@ public:
                                            QStandardPaths::writableLocation(QStandardPaths::DesktopLocation),
                                            tr("Audio Files (*.wav *.mp3 *.opus *.aac *.ogg)"));
     };
-    Q_INVOKABLE void newAlarm(QString name, int minutes, int hours, int dayOfWeek, QUrl ringtone = QUrl());
+    Q_INVOKABLE void newAlarm(QString name, int minutes, int hours, int daysOfWeek, QUrl ringtone = QUrl());
     // Q_INVOKABLE Alarm *insert(int index, QString name, int minutes, int hours, int dayOfWeek);
     Q_INVOKABLE void remove(int index);
     Q_INVOKABLE Alarm *get(int index);
