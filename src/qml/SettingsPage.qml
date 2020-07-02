@@ -123,8 +123,7 @@ Kirigami.ScrollablePage {
         id: silenceAlarmAfter
         modal: true
         focus: true
-        x: (settingsPage.width - width) / 2
-        y: settingsPage.height / 2 - height
+        anchors.centerIn: Overlay.overlay
         width: Math.min(settingsPage.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 20)
         height: Kirigami.Units.gridUnit * 20
         standardButtons: Dialog.Close
@@ -179,8 +178,7 @@ Kirigami.ScrollablePage {
         id: alarmSnoozeLength
         modal: true
         focus: true
-        x: (settingsPage.width - width) / 2
-        y: settingsPage.height / 2 - height
+        anchors.centerIn: Overlay.overlay
         width: Math.min(settingsPage.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 20)
         height: Kirigami.Units.gridUnit * 20
         standardButtons: Dialog.Close
