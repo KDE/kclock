@@ -153,7 +153,7 @@ Kirigami.ScrollablePage {
                         }
                         Label {
                             font.weight: Font.Normal
-                            text: getRepeatFormat(model.dayOfWeek)
+                            text: getRepeatFormat(model.daysOfWeek)
                         }
                     }
 

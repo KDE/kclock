@@ -26,22 +26,25 @@
 #include <QTimer>
 #include <QAbstractListModel>
 
+class TimerModel;
+
 class Timer : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(qint64 length READ length WRITE setLength NOTIFY propertyChanged)
-    Q_PROPERTY(qint64 elapsed READ elapsed WRITE setElapsed NOTIFY propertyChanged)
+    Q_PROPERTY(int length READ length WRITE setLength NOTIFY propertyChanged)
+    Q_PROPERTY(int elapsed READ elapsed WRITE setElapsed NOTIFY propertyChanged)
     Q_PROPERTY(QString lengthPretty READ lengthPretty NOTIFY propertyChanged)
     Q_PROPERTY(QString elapsedPretty READ elapsedPretty NOTIFY propertyChanged)
     Q_PROPERTY(QString label READ label WRITE setLabel NOTIFY propertyChanged)
     Q_PROPERTY(bool running READ running NOTIFY propertyChanged)
     Q_PROPERTY(bool finished READ finished NOTIFY propertyChanged)
+    Q_PROPERTY(bool justCreated READ justCreated WRITE setJustCreated NOTIFY propertyChanged)
     
 public:
-    explicit Timer(QObject *parent = nullptr, qint64 length = 0, qint64 elapsed = 0, QString label = "", bool running = false);
-    explicit Timer(QString json);
+    explicit Timer(QObject *parent = nullptr, int length = 0, int elapsed = 0, QString label = "", bool running = false);
+    explicit Timer(const QJsonObject &obj);
     
-    QString serialize();
+    QJsonObject serialize();
     
     void updateTimer(qint64 duration);
     Q_INVOKABLE void toggleRunning();
@@ -57,20 +60,20 @@ public:
         qint64 len = elapsed_ / 1000, hours = len / 60 / 60, minutes = len / 60 - hours * 60, seconds = len - hours * 60 * 60 - minutes * 60;
         return QString::number(hours) + ":" + QString::number(minutes).rightJustified(2, '0') + ":" + QString::number(seconds).rightJustified(2, '0');
     }
-    qint64 length() const
+    int length() const
     {
         return length_;
     }
-    void setLength(qint64 length)
+    void setLength(int length)
     {
         length_ = length;
         emit propertyChanged();
     }
-    qint64 elapsed() const
+    int elapsed() const
     {
         return elapsed_;
     }
-    void setElapsed(qint64 elapsed)
+    void setElapsed(int elapsed)
     {
         elapsed_ = elapsed;
         emit propertyChanged();
@@ -97,15 +100,26 @@ public:
     {
         return finished_;
     }
+    void setJustCreated(bool justCreated)
+    {
+        justCreated_ = justCreated;
+        emit propertyChanged();
+    }
+    bool justCreated() const
+    {
+        return justCreated_;
+    }
     
 signals:
     void propertyChanged();
 
 private:
-    qint64 length_, elapsed_; // milliseconds
+    int length_, elapsed_; // milliseconds
     QString label_;
-    bool running_, finished_;
+    bool running_, finished_, justCreated_;
 };
+
+static TimerModel* inst_;
 
 class TimerModel : public QAbstractListModel
 {
@@ -113,9 +127,18 @@ class TimerModel : public QAbstractListModel
 
 public:
     explicit TimerModel(QObject *parent = nullptr);
-
+    
     int rowCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role) const override;
+    
+    static void init()
+    {
+        inst_ = new TimerModel();
+    }
+    static TimerModel* inst()
+    {
+        return inst_;
+    }
     
     Q_INVOKABLE void timerFinished();
     
