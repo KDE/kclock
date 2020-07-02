@@ -27,7 +27,6 @@ import org.kde.kirigamiaddons.dateandtime 0.1 as DateAndTime
 import kclock 1.0
 
 Kirigami.ScrollablePage {
-    title: newAlarm ? i18n("New Alarm") : i18n("Edit Alarm")
 
     property Alarm selectedAlarm: null
     property QtObject selectedAlarmModel: null // so that we call setData rather than the getters and setters
@@ -35,6 +34,8 @@ Kirigami.ScrollablePage {
     property int alarmDaysOfWeek: newAlarm ? 0 : selectedAlarm.daysOfWeek
     property string ringtonePath
 
+    title: newAlarm ? i18n("New Alarm") : i18n("Edit") + " " + selectedAlarmModel.name
+    
     function init(alarm, alarmModel) {
         if (alarm == null) {
             newAlarm = true;

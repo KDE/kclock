@@ -39,7 +39,7 @@ Kirigami.ScrollablePage {
         text: "New Alarm"
         onTriggered: {
             newAlarmPage.init(null, null);
-            pageStack.push(newAlarmPage);
+            switchToPage(newAlarmPage, 1);
         }
     }
     
@@ -106,7 +106,7 @@ Kirigami.ScrollablePage {
                     text: "Edit"
                     onTriggered: {
                         newAlarmPage.init(alarmModel.get(index), model);
-                        pageStack.push(newAlarmPage);
+                        switchToPage(newAlarmPage, 1);
                     }
                 },
                 Kirigami.Action {

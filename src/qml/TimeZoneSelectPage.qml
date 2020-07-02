@@ -44,7 +44,7 @@ Kirigami.Page {
         anchors.topMargin: Kirigami.Units.smallSpacing * 2
         ScrollBar.vertical: ScrollBar {}
         clip: true
-        spacing: Kirigami.Units.smallSpacing
+        spacing: Kirigami.Units.largeSpacing
         model: timeZoneFilterModel
         delegate: Row {
             CheckBox {
