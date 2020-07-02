@@ -2,6 +2,7 @@ set(kclock_SRCS
     alarms.cpp
     timermodel.cpp
     utilmodel.cpp
+    settingsmodel.cpp
     resources.qrc
     )
 

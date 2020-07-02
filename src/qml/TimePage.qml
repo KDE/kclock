@@ -30,7 +30,7 @@ Kirigami.ScrollablePage {
     title: "Time"
     
     property date currentDate: new Date()
-    property string timeText: settings.use24HourTime ? Qt.formatTime(new Date(), "hh:mm") : Qt.formatTime(new Date(), "h:mm ap")
+    property string timeText: settingsModel.use24HourTime ? Qt.formatTime(new Date(), "hh:mm") : Qt.formatTime(new Date(), "h:mm ap")
     
     Timer {
         id: timer
@@ -38,7 +38,7 @@ Kirigami.ScrollablePage {
         repeat: true
         running: true
         onTriggered: {
-            timeText = settings.use24HourTime ? Qt.formatTime(new Date(), "hh:mm") : Qt.formatTime(new Date(), "h:mm ap")
+            timeText = settingsModel.use24HourTime ? Qt.formatTime(new Date(), "hh:mm") : Qt.formatTime(new Date(), "h:mm ap")
             currentDate = new Date();
         }
     }

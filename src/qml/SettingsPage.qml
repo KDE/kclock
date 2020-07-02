@@ -42,8 +42,60 @@ Kirigami.ScrollablePage {
             leftPadding: Kirigami.Units.gridUnit
             rightPadding: Kirigami.Units.gridUnit
             implicitHeight: Kirigami.Units.gridUnit * 2.5
-            checked: settings.use24HourTime
-            onCheckedChanged: settings.use24HourTime = checked
+            checked: settingsModel.use24HourTime
+            onCheckedChanged: settingsModel.use24HourTime = checked
+        }
+        
+        Kirigami.Separator {
+            Layout.fillWidth: true
+        }
+        
+        ItemDelegate {
+            Layout.fillWidth: true
+            implicitHeight: Kirigami.Units.gridUnit * 3
+
+            onClicked: silenceAlarmAfter.open()
+            
+            ColumnLayout {
+                spacing: -5
+                anchors.leftMargin: Kirigami.Units.gridUnit
+                anchors.rightMargin: Kirigami.Units.gridUnit
+                anchors.fill: parent
+                
+                Label {
+                    text: i18n("Silence Alarm After")
+                    font.weight: Font.Bold
+                }
+                Label {
+                    text: settingsModel.alarmSilenceAfterDisplay
+                }
+            }
+        }
+        
+        Kirigami.Separator {
+            Layout.fillWidth: true
+        }
+        
+        ItemDelegate {
+            Layout.fillWidth: true
+            implicitHeight: Kirigami.Units.gridUnit * 3
+
+            onClicked: alarmSnoozeLength.open()
+            
+            ColumnLayout {
+                spacing: -5
+                anchors.leftMargin: Kirigami.Units.gridUnit
+                anchors.rightMargin: Kirigami.Units.gridUnit
+                anchors.fill: parent
+                
+                Label {
+                    text: i18n("Alarm Snooze Length")
+                    font.weight: Font.Bold
+                }
+                Label {
+                    text: settingsModel.alarmSnoozeLengthDisplay
+                }
+            }
         }
         
         Kirigami.Separator {
@@ -66,9 +118,9 @@ Kirigami.ScrollablePage {
         
     }
     
-    // day to start week on dialog
+    // Silence alarm after dialog
     Dialog {
-        id: startWeekOn
+        id: silenceAlarmAfter
         modal: true
         focus: true
         x: (settingsPage.width - width) / 2
@@ -76,18 +128,109 @@ Kirigami.ScrollablePage {
         width: Math.min(settingsPage.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 20)
         height: Kirigami.Units.gridUnit * 20
         standardButtons: Dialog.Close
-        title: i18n("Start week on")
+        title: i18n("Silence Alarm After")
         
         contentItem: ScrollView {
             ListView {
-                model: ["Saturday", "Sunday", "Monday"]
+                model: ListModel {
+                    ListElement { 
+                        name: "30 seconds"
+                        value: 30
+                    }
+                    ListElement { 
+                        name: "1 minute"
+                        value: 60
+                    }
+                    ListElement { 
+                        name: "5 minutes"
+                        value: 300
+                    }
+                    ListElement { 
+                        name: "10 minutes"
+                        value: 600
+                    }
+                    ListElement { 
+                        name: "15 minutes"
+                        value: 900
+                    }
+                    ListElement {
+                        name: "Never"
+                        value: -1
+                    }
+                }
                 delegate: RadioDelegate {
                     width: parent.width
-                    text: i18n(modelData)
-                    checked: settings.dayToStartWeekOn == modelData
+                    text: i18n(name)
+                    checked: settingsModel.alarmSilenceAfter == value
                     onCheckedChanged: {
-                        if (checked) 
-                            settings.dayToStartWeekOn = modelData;
+                        if (checked) {
+                            settingsModel.alarmSilenceAfter = value;
+                            settingsModel.alarmSilenceAfterDisplay = name;
+                        }
+                    }
+                }
+            }
+            Component.onCompleted: background.visible = true
+        }
+    }
+    
+    // Alarm snooze length dialog
+    Dialog {
+        id: alarmSnoozeLength
+        modal: true
+        focus: true
+        x: (settingsPage.width - width) / 2
+        y: settingsPage.height / 2 - height
+        width: Math.min(settingsPage.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 20)
+        height: Kirigami.Units.gridUnit * 20
+        standardButtons: Dialog.Close
+        title: i18n("Alarm Snooze Length")
+        
+        contentItem: ScrollView {
+            ListView {
+                model: ListModel {
+                    ListElement { 
+                        name: "1 minute"
+                        value: 1
+                    }
+                    ListElement { 
+                        name: "2 minutes"
+                        value: 2
+                    }
+                    ListElement { 
+                        name: "3 minutes"
+                        value: 3
+                    }
+                    ListElement { 
+                        name: "4 minutes"
+                        value: 4
+                    }
+                    ListElement { 
+                        name: "5 minutes"
+                        value: 5
+                    }
+                    ListElement {
+                        name: "10 minutes"
+                        value: 10
+                    }
+                    ListElement {
+                        name: "30 minutes"
+                        value: 30
+                    }
+                    ListElement {
+                        name: "1 hour"
+                        value: 60
+                    }
+                }
+                delegate: RadioDelegate {
+                    width: parent.width
+                    text: i18n(name)
+                    checked: settingsModel.alarmSnoozeLength == value
+                    onCheckedChanged: {
+                        if (checked) {
+                            settingsModel.alarmSnoozeLength = value;
+                            settingsModel.alarmSnoozeLengthDisplay = name;
+                        }
                     }
                 }
             }

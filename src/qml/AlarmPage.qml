@@ -44,7 +44,7 @@ Kirigami.ScrollablePage {
     }
     
     function getTimeFormat(hours, minutes) {
-        if (settings.use24HourTime) {
+        if (settingsModel.use24HourTime) {
             return ("0" + hours).slice(-2) + ":" + ("0" + minutes).slice(-2)
         } else {
             if (hours >= 12) { // pm

@@ -33,9 +33,6 @@ Kirigami.ApplicationWindow
 
     title: i18n("Clock")
 
-    // settings object
-    property Settings settings: settings
-    
     pageStack.initialPage: timePage
     
     function switchToPage(page) {
@@ -167,7 +164,4 @@ Kirigami.ApplicationWindow
 //             }
 //         }
 //     }
-    Settings {
-        id: settings
-    }
 }

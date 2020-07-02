@@ -40,6 +40,7 @@
 #include "timermodel.h"
 #include "timezoneselectormodel.h"
 #include "utilmodel.h"
+#include "settingsmodel.h"
 
 QCommandLineParser *createParser()
 {
@@ -81,6 +82,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     auto *alarmModel = new AlarmModel();
     auto *utilModel = new UtilModel();
     TimerModel::init();
+    SettingsModel::init();
 
     // register QML types
     qmlRegisterType<Alarm>("kclock", 1, 0, "Alarm");
@@ -91,6 +93,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     engine.rootContext()->setContextProperty("timeZoneFilterModel", timeZoneFilterModel);
     engine.rootContext()->setContextProperty("alarmModel", alarmModel);
     engine.rootContext()->setContextProperty("timerModel", TimerModel::inst());
+    engine.rootContext()->setContextProperty("settingsModel", SettingsModel::inst());
     engine.rootContext()->setContextProperty("utilModel", utilModel);
 
     engine.load(QUrl(QStringLiteral("qrc:/qml/main.qml")));

@@ -119,7 +119,7 @@ private:
     bool running_, finished_, justCreated_;
 };
 
-static TimerModel* inst_;
+static TimerModel* timerInst_;
 
 class TimerModel : public QAbstractListModel
 {
@@ -133,11 +133,11 @@ public:
     
     static void init()
     {
-        inst_ = new TimerModel();
+        timerInst_ = new TimerModel();
     }
     static TimerModel* inst()
     {
-        return inst_;
+        return timerInst_;
     }
     
     Q_INVOKABLE void timerFinished();
