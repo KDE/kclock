@@ -38,6 +38,7 @@ class Timer : public QObject
     Q_PROPERTY(QString label READ label WRITE setLabel NOTIFY propertyChanged)
     Q_PROPERTY(bool running READ running NOTIFY propertyChanged)
     Q_PROPERTY(bool finished READ finished NOTIFY propertyChanged)
+    Q_PROPERTY(bool justCreated READ justCreated WRITE setJustCreated NOTIFY propertyChanged)
     
 public:
     explicit Timer(QObject *parent = nullptr, int length = 0, int elapsed = 0, QString label = "", bool running = false);
@@ -99,6 +100,15 @@ public:
     {
         return finished_;
     }
+    void setJustCreated(bool justCreated)
+    {
+        justCreated_ = justCreated;
+        emit propertyChanged();
+    }
+    bool justCreated() const
+    {
+        return justCreated_;
+    }
     
 signals:
     void propertyChanged();
@@ -106,7 +116,7 @@ signals:
 private:
     int length_, elapsed_; // milliseconds
     QString label_;
-    bool running_, finished_;
+    bool running_, finished_, justCreated_;
 };
 
 static TimerModel* inst_;

@@ -33,7 +33,7 @@ Kirigami.Page {
     id: timerpage
     title: timer.label
     
-    property bool justCreated: true
+    property bool justCreated: timer == null ? false : timer.justCreated
     property bool showFullscreen: false
     
     property int elapsed: timer == null ? 0 : timer.elapsed

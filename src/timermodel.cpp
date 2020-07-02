@@ -44,6 +44,7 @@ Timer::Timer(QObject *parent, int length, int elapsed, QString label, bool runni
     label_ = label;
     running_ = running;
     finished_ = false;
+    justCreated_ = true;
     
     connect(this, &Timer::propertyChanged, this, []{TimerModel::inst()->save();}, Qt::UniqueConnection);
 }
@@ -55,6 +56,7 @@ Timer::Timer(const QJsonObject &obj)
     label_ = obj["label"].toString();
     running_ = obj["running"].toBool();
     finished_ = obj["finished"].toBool();
+    justCreated_ = false;
     
     connect(this, &Timer::propertyChanged, this, []{TimerModel::inst()->save();}, Qt::UniqueConnection);
 }
