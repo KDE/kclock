@@ -48,14 +48,11 @@ Alarm::Alarm(QObject *parent, QString name, int minutes, int hours, int daysOfWe
     daysOfWeek_ = daysOfWeek;
     lastAlarm_ = QDateTime::currentDateTimeUtc().toSecsSinceEpoch();
     
-    ringtonePlayer = new QMediaPlayer;
+    ringtonePlayer = new QMediaPlayer(this, QMediaPlayer::LowLatency);
     ringtonePlayer->setVolume(100);
-
-    // loop audio
-    connect(ringtonePlayer, &QMediaPlayer::stateChanged, [=](QMediaPlayer::State state) {
-        if (state == QMediaPlayer::StoppedState)
-            ringtonePlayer->play();
-    });
+    connect(ringtonePlayer, &QMediaPlayer::stateChanged, this, &Alarm::loopAlarmSound);
+    
+    ringtonePlayer->setMedia(audioPath);
 }
 
 // alarm from json
@@ -80,14 +77,11 @@ Alarm::Alarm(QString serialized)
         audioPath = QUrl::fromLocalFile(obj["audioPath"].toString());
     }
     
-    ringtonePlayer = new QMediaPlayer;
+    ringtonePlayer = new QMediaPlayer(this, QMediaPlayer::LowLatency);
     ringtonePlayer->setVolume(100);
-
-    // loop audio
-    connect(ringtonePlayer, &QMediaPlayer::stateChanged, [=](QMediaPlayer::State state) {
-        if (state == QMediaPlayer::StoppedState)
-            ringtonePlayer->play();
-    });
+    connect(ringtonePlayer, &QMediaPlayer::stateChanged, this, &Alarm::loopAlarmSound);
+    
+    ringtonePlayer->setMedia(audioPath);
 }
 
 // alarm to json
@@ -134,12 +128,24 @@ void Alarm::ring()
     connect(notif, &KNotification::action2Activated, this, &Alarm::handleSnooze);
 
     notif->sendEvent();
-    ringtonePlayer->setMedia(audioPath);
+    
+    alarmNotifOpen = true;
+    // play sound (it will loop)
+    qDebug() << "Alarm sound: " << audioPath;
     ringtonePlayer->play();
+}
+
+void Alarm::loopAlarmSound(QMediaPlayer::State state)
+{
+    if (state == QMediaPlayer::StoppedState && alarmNotifOpen) {
+        ringtonePlayer->play();
+    }        
 }
 
 void Alarm::handleDismiss()
 {
+    alarmNotifOpen = false;
+    
     qDebug() << "Alarm dismissed";
     ringtonePlayer->stop();
     
@@ -149,6 +155,7 @@ void Alarm::handleDismiss()
 
 void Alarm::handleSnooze()
 {
+    alarmNotifOpen = false;
     qDebug() << "Alarm snoozed (5 minutes)" << lastSnooze();
     ringtonePlayer->stop();
     

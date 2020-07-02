@@ -72,7 +72,10 @@ Kirigami.ScrollablePage {
                     selectedAlarmModel.minutes = minutes;
                     selectedAlarmModel.hours = hours;
                     selectedAlarmModel.daysOfWeek = alarmDaysOfWeek;
-                    selectedAlarmModel.ringtonePath = ringtonePath;
+                    
+                    // if the user did not set a new ringtone path, ignore
+                    if (ringtonePath != "")
+                        selectedAlarmModel.ringtonePath = ringtonePath;
                 }
                 // reset
                 alarmDaysOfWeek = 0;
@@ -179,16 +182,20 @@ Kirigami.ScrollablePage {
         Kirigami.Separator {
             Layout.fillWidth: true
         }
+        
         ColumnLayout {
             Layout.alignment: Qt.AlignHCenter
+            
             Label {
                 Layout.alignment: Qt.AlignHCenter
                 text: i18n("Ringtone")
                 font.weight: Font.Bold
             }
+            
             Kirigami.ActionTextField {
                 id: selectAlarmField
                 placeholderText: newAlarm ? i18n("default") : selectedAlarm.ringtoneName
+                
                 rightActions: [
                     Kirigami.Action {
                         iconName: "list-add"
@@ -199,7 +206,9 @@ Kirigami.ScrollablePage {
                         }
                     }
                 ]
+                
             }
+            
         }
     }
 }

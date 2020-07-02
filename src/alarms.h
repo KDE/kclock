@@ -30,6 +30,7 @@
 #include <QUrl>
 #include <QtCore/QAbstractListModel>
 #include <QtCore/QUuid>
+#include <QMediaPlayer>
 
 class QMediaPlayer;
 class Alarm : public QObject
@@ -128,6 +129,10 @@ public:
         auto url = QUrl(urlStr);
         ringtoneName_ = url.fileName();
         audioPath = url;
+        
+        qDebug() << "RINGTONE SETTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"; // TODO
+        
+        ringtonePlayer->setMedia(audioPath);
     };
     QString serialize();
     
@@ -135,7 +140,7 @@ public:
     void ring();                              // ring alarm
     void save();                              // serialize and save to config
     
-    void loopAlarmSound(); // called when alarm sound ends (whether or not to play it again)
+    void loopAlarmSound(QMediaPlayer::State state); // called when alarm sound ends (whether or not to play it again)
 
 signals:
     void onPropertyChanged();
@@ -144,6 +149,7 @@ private:
     QMediaPlayer *ringtonePlayer;
     
     QUrl audioPath = QUrl::fromLocalFile("/usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga");
+    bool alarmNotifOpen = false; // if the alarm notification is open
     
     QString name_;
     QString ringtoneName_ = "default";
@@ -189,7 +195,6 @@ public:
                                            tr("Audio Files (*.wav *.mp3 *.opus *.aac *.ogg)"));
     };
     Q_INVOKABLE void newAlarm(QString name, int minutes, int hours, int daysOfWeek, QUrl ringtone = QUrl());
-    // Q_INVOKABLE Alarm *insert(int index, QString name, int minutes, int hours, int dayOfWeek);
     Q_INVOKABLE void remove(int index);
     Q_INVOKABLE Alarm *get(int index);
 
