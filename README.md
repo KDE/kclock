@@ -1,5 +1,5 @@
 # kclock
-A simple clock application in Kirigami for Plasma Mobile and desktop.
+A clock application in Kirigami for Plasma Mobile and desktop.
 
 ## Features
 * Alarm

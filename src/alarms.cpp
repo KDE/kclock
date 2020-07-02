@@ -140,7 +140,7 @@ void Alarm::ring()
 
 void Alarm::loopAlarmSound(QMediaPlayer::State state)
 {
-    if (state == QMediaPlayer::StoppedState && alarmNotifOpen && (QTime::currentTime().secsTo(alarmNotifOpenTime) <= SettingsModel::inst()->alarmSilenceAfter())) { 
+    if (state == QMediaPlayer::StoppedState && alarmNotifOpen && (alarmNotifOpenTime.secsTo(QTime::currentTime()) <= SettingsModel::inst()->alarmSilenceAfter())) {
         ringtonePlayer->play();
     }        
 }
