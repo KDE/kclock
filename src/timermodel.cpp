@@ -46,7 +46,7 @@ Timer::Timer(QObject *parent, int length, int elapsed, QString label, bool runni
     finished_ = false;
     justCreated_ = true;
     
-    connect(this, &Timer::propertyChanged, this, []{TimerModel::inst()->save();}, Qt::UniqueConnection);
+    connect(this, &Timer::propertyChanged, this, []{TimerModel::inst()->saveRequested = true;}, Qt::UniqueConnection);
 }
 
 Timer::Timer(const QJsonObject &obj)
@@ -58,7 +58,7 @@ Timer::Timer(const QJsonObject &obj)
     finished_ = obj["finished"].toBool();
     justCreated_ = false;
     
-    connect(this, &Timer::propertyChanged, this, []{TimerModel::inst()->save();}, Qt::UniqueConnection);
+    connect(this, &Timer::propertyChanged, this, []{TimerModel::inst()->saveRequested = true;}, Qt::UniqueConnection);
 }
 
 QJsonObject Timer::serialize()
@@ -131,6 +131,16 @@ TimerModel::TimerModel(QObject *parent)
     timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, QOverload<>::of(&TimerModel::updateTimerLoop));
     timer->start(TIMER_CHECK_LENGTH);
+    
+    // slow down saves to max once per second
+    saveTimer = new QTimer(this);
+    connect(saveTimer, &QTimer::timeout, this, [this]{
+        if (saveRequested) {
+            save();
+            saveRequested = false;
+        }
+    });
+    saveTimer->start(1000);
 }
 
 void TimerModel::load()
@@ -228,18 +238,4 @@ void TimerModel::move(int oldIndex, int newIndex)
         return;
     
     timerList.move(oldIndex, newIndex);
-}
-
-void TimerModel::timerFinished()
-{
-    qDebug("Timer finished, sending notification...");
-
-    KNotification *notif = new KNotification("timerFinished");
-    notif->setIconName("kronometer");
-    notif->setTitle(i18n("Timer complete"));
-    notif->setText(i18n("Your timer has finished!"));
-    notif->setDefaultAction(i18n("View"));
-    notif->setUrgency(KNotification::HighUrgency);
-    notif->setFlags(KNotification::NotificationFlag::LoopSound | KNotification::NotificationFlag::Persistent);
-    notif->sendEvent();
 }

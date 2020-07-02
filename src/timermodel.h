@@ -140,8 +140,6 @@ public:
         return timerInst_;
     }
     
-    Q_INVOKABLE void timerFinished();
-    
     void updateTimerLoop();
     
     void load();
@@ -153,9 +151,13 @@ public:
     Q_INVOKABLE int count();
     Q_INVOKABLE Timer *get(int index);
     
+    bool saveRequested = false;
+    
 private:
     QList<Timer *> timerList;
     QTimer *timer;
+    QTimer *saveTimer;
+    
 };
 
 #endif // KIRIGAMICLOCK_TIMERMODEL_H
