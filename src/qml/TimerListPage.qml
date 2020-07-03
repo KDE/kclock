@@ -69,11 +69,11 @@ Kirigami.ScrollablePage {
             
             Component.onCompleted: {
                 if (createdTimer)
-                    pageStack.push(timerPage)
+                    switchToPage(timerPage, 1)
             }
             
             showClickFeedback: true
-            onClicked: pageStack.push(timerPage)
+            onClicked: switchToPage(timerPage, 1)
                 
             contentItem: Item {
                 implicitWidth: delegateLayout.implicitWidth

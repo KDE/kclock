@@ -31,6 +31,7 @@
 #include <QtCore/QAbstractListModel>
 #include <QtCore/QUuid>
 #include <QMediaPlayer>
+#include <QTime>
 
 class QMediaPlayer;
 class Alarm : public QObject
@@ -130,8 +131,6 @@ public:
         ringtoneName_ = url.fileName();
         audioPath = url;
         
-        qDebug() << "RINGTONE SETTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"; // TODO
-        
         ringtonePlayer->setMedia(audioPath);
     };
     QString serialize();
@@ -150,6 +149,7 @@ private:
     
     QUrl audioPath = QUrl::fromLocalFile("/usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga");
     bool alarmNotifOpen = false; // if the alarm notification is open
+    QTime alarmNotifOpenTime; // time the alarm notification opened
     
     QString name_;
     QString ringtoneName_ = "default";

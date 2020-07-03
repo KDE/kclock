@@ -33,13 +33,10 @@ Kirigami.ApplicationWindow
 
     title: i18n("Clock")
 
-    // settings object
-    property Settings settings: settings
-    
     pageStack.initialPage: timePage
     
-    function switchToPage(page) {
-        while (pageStack.depth > 0) pageStack.pop()
+    function switchToPage(page, depth) {
+        while (pageStack.depth > depth) pageStack.pop()
         pageStack.push(page)
     }
     
@@ -53,37 +50,38 @@ Kirigami.ApplicationWindow
             Kirigami.Action {
                 text: i18n("Time")
                 iconName: "clock"
-                onTriggered: switchToPage(timePage)
+                onTriggered: switchToPage(timePage, 0)
             },
             Kirigami.Action {
                 text: i18n("Timer")
                 iconName: "player-time"
-                onTriggered: switchToPage(timerListPage)
+                onTriggered: switchToPage(timerListPage, 0)
             },
             Kirigami.Action {
                 text: i18n("Stopwatch")
                 iconName: "chronometer"
-                onTriggered: switchToPage(stopwatchPage)
+                onTriggered: switchToPage(stopwatchPage, 0)
             },
             Kirigami.Action {
                 text: i18n("Alarm")
                 iconName: "notifications"
-                onTriggered: switchToPage(alarmPage)
+                onTriggered: switchToPage(alarmPage, 0)
             },
             Kirigami.Action {
                 text: i18n("Settings")
                 iconName: "settings-configure"
-                onTriggered: switchToPage(settingsPage)
+                onTriggered: switchToPage(settingsPage, 0)
             }
         ]
         
+/*        
         Connections {
             target: pageStack
             onCurrentIndexChanged: { // drop all sub pages
                 if (pageStack.currentIndex === 0)
                     while (pageStack.depth > 1) pageStack.pop();
             }
-        }
+        }*/
     }
     
     // clock fonts
@@ -167,7 +165,4 @@ Kirigami.ApplicationWindow
 //             }
 //         }
 //     }
-    Settings {
-        id: settings
-    }
 }

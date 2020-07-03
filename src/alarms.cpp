@@ -34,9 +34,11 @@
 #include <KSharedConfig>
 
 #include "alarms.h"
+#include "settingsmodel.h"
 
 const QString ALARM_CFG_GROUP = "Alarms";
 
+// alarm created from UI
 Alarm::Alarm(QObject *parent, QString name, int minutes, int hours, int daysOfWeek)
     : QObject(parent)
 {
@@ -55,7 +57,7 @@ Alarm::Alarm(QObject *parent, QString name, int minutes, int hours, int daysOfWe
     ringtonePlayer->setMedia(audioPath);
 }
 
-// alarm from json
+// alarm from json (loaded from storage)
 Alarm::Alarm(QString serialized)
 {
     if (serialized == "") {
@@ -130,6 +132,7 @@ void Alarm::ring()
     notif->sendEvent();
     
     alarmNotifOpen = true;
+    alarmNotifOpenTime = QTime::currentTime();
     // play sound (it will loop)
     qDebug() << "Alarm sound: " << audioPath;
     ringtonePlayer->play();
@@ -137,7 +140,7 @@ void Alarm::ring()
 
 void Alarm::loopAlarmSound(QMediaPlayer::State state)
 {
-    if (state == QMediaPlayer::StoppedState && alarmNotifOpen) {
+    if (state == QMediaPlayer::StoppedState && alarmNotifOpen && (alarmNotifOpenTime.secsTo(QTime::currentTime()) <= SettingsModel::inst()->alarmSilenceAfter())) {
         ringtonePlayer->play();
     }        
 }
@@ -156,10 +159,10 @@ void Alarm::handleDismiss()
 void Alarm::handleSnooze()
 {
     alarmNotifOpen = false;
-    qDebug() << "Alarm snoozed (5 minutes)" << lastSnooze();
+    qDebug() << "Alarm snoozed (" << SettingsModel::inst()->alarmSnoozeLengthDisplay() << ")" << lastSnooze();
     ringtonePlayer->stop();
     
-    setSnooze(lastSnooze() + 60 * 5); // snooze 5 minutes
+    setSnooze(lastSnooze() + 60 * SettingsModel::inst()->alarmSnoozeLength()); // snooze 5 minutes
     setLastSnooze(snooze());
     setEnabled(true);
     save();
@@ -172,7 +175,7 @@ qint64 Alarm::toPreviousAlarm(qint64 timestamp)
     QDateTime date = QDateTime::fromSecsSinceEpoch(timestamp).toLocalTime(); // local time
     QTime alarmTime = QTime(hours(), minutes());
 
-    if (daysOfWeek() == 0) {    // no repeat alarm
+    if (daysOfWeek() == 0) { // no repeat of alarm
         if (alarmTime <= date.time()) { // current day
             return QDateTime(date.date(), alarmTime).toSecsSinceEpoch();
         } else { // previous day

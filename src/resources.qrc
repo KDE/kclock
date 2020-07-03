@@ -9,7 +9,6 @@
         <file>qml/TimeZoneSelectPage.qml</file>
         <file>qml/NewAlarmPage.qml</file>
         <file>qml/SettingsPage.qml</file>
-        <file>qml/Settings.qml</file>
         <file>qml/TimeZoneEntry.qml</file>
         <file>qml/AnalogClock.qml</file>
         <file>qml/TimerComponent.qml</file>
