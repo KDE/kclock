@@ -4,7 +4,7 @@
           android:versionName="0.1"
           android:versionCode="1589823072"
           android:installLocation="auto">
-    <application android:name="org.qtproject.qt5.android.bindings.QtApplication" android:label="KClock">
+    <application android:name="org.qtproject.qt5.android.bindings.QtApplication" android:label="KClock" android:icon="@drawable/kweather">
         <activity android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|layoutDirection|locale|fontScale|keyboard|keyboardHidden|navigation"
                   android:name="org.qtproject.qt5.android.bindings.QtActivity"
                   android:label="KClock"
