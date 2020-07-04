@@ -55,7 +55,7 @@ Kirigami.ScrollablePage {
             anchors.right: parent.right
             anchors.margins: Kirigami.Units.largeSpacing
             visible: zoneList.count == 0
-            text: qsTr("Add a timezone")
+            text: i18n("Add timezone")
         }
         
         // analog clock header

@@ -59,15 +59,15 @@ Kirigami.ScrollablePage {
     
     function getRepeatFormat(dayOfWeek) {
         if (dayOfWeek == 0) {
-            return qsTr("Only once");
+            return i18n("Only once");
         }
         let monday = 1 << 0, tuesday = 1 << 1, wednesday = 1 << 2, thursday = 1 << 3, friday = 1 << 4, saturday = 1 << 5, sunday = 1 << 6;
         
         if (dayOfWeek == monday + tuesday + wednesday + thursday + friday + saturday + sunday)
-            return qsTr("Everyday");
+            return i18n("Everyday");
         
         if (dayOfWeek == monday + tuesday + wednesday + thursday + friday)
-            return qsTr("Weekdays");
+            return i18n("Weekdays");
         
         let str = "";
         if (dayOfWeek & monday) str += "Mon., ";
