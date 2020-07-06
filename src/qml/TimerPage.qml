@@ -104,6 +104,7 @@ Kirigami.Page {
             }
             
             function setDuration() {
+                console.log(timer); // TODO
                 timer.length = 1000 * (spinBoxHours.value * 60 * 60 + spinBoxMinutes.value * 60 + spinBoxSeconds.value)
             }
             
@@ -146,12 +147,12 @@ Kirigami.Page {
                 text: "Reset"
                 onTriggered: timer.reset();
             },
-            Action {
-                icon.name: "view-fullscreen"
-                text: "Fullscreen"
-                onTriggered: showFullscreen = true;
-                
-            },
+//             Action {
+//                 icon.name: "view-fullscreen"
+//                 text: "Fullscreen"
+//                 onTriggered: showFullscreen = true;
+//                 
+//             },
             Action {
                 icon.name: "delete"
                 text: "Delete"

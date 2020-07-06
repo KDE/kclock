@@ -73,15 +73,6 @@ Kirigami.ApplicationWindow
                 onTriggered: switchToPage(settingsPage, 0)
             }
         ]
-        
-/*        
-        Connections {
-            target: pageStack
-            onCurrentIndexChanged: { // drop all sub pages
-                if (pageStack.currentIndex === 0)
-                    while (pageStack.depth > 1) pageStack.pop();
-            }
-        }*/
     }
     
     // clock fonts

@@ -195,6 +195,7 @@ QVariant TimerModel::data(const QModelIndex &index, int role) const
 void TimerModel::addNew()
 {
     insert(count(), new Timer(this));
+    qDebug() << "Added new timer " << timerList.at(count()-1); // TODO
 }
 
 void TimerModel::insert(int index, Timer *timer)
