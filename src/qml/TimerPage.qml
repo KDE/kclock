@@ -31,7 +31,7 @@ Kirigami.Page {
     property int timerIndex
     
     id: timerpage
-    title: timer.label
+    title: timer.label !== "" ? timer.label : i18n("New timer")
     
     property bool justCreated: timer == null ? false : timer.justCreated
     property bool showFullscreen: false
@@ -42,122 +42,106 @@ Kirigami.Page {
 
     // topbar action
     mainAction: Kirigami.Action {
-        text: running ? "Pause" : "Start"
+        text: running ? i18n("Pause") : i18n("Start")
         iconName: running ? "chronometer-pause" : "chronometer-start"
         onTriggered: timer.toggleRunning()
         visible: !justCreated
     }
 
-    // create new timer form
-    ColumnLayout {
-        spacing: Kirigami.Units.largeSpacing
-        visible: justCreated
-        anchors.left: parent.left
-        anchors.right: parent.right
-        
-        Kirigami.FormLayout {
-            id: form
-            Layout.fillWidth: true
-            
-            Item {
-                Kirigami.FormData.isSection: true
-                Kirigami.FormData.label: "Duration"
-            }
-            Kirigami.Separator {}
-            
-            RowLayout {
-                SpinBox {
-                    Layout.alignment: Qt.AlignVCenter
-                    id: spinBoxHours
-                    onValueChanged: form.setDuration()
-                    value: duration / 60 / 60
-                }
-                Label {
-                    Layout.alignment: Qt.AlignVCenter
-                    text: i18n("hours")
-                }
-            }
-            RowLayout {
-                SpinBox {
-                    Layout.alignment: Qt.AlignVCenter
-                    id: spinBoxMinutes
-                    onValueChanged: form.setDuration()
-                    value: duration % (60*60) / 60
-                }
-                Label {
-                    Layout.alignment: Qt.AlignVCenter
-                    text: i18n("minutes")
-                }
-            }
-            RowLayout {
-                SpinBox {
-                    Layout.alignment: Qt.AlignVCenter
-                    id: spinBoxSeconds
-                    to: 60
-                    onValueChanged: form.setDuration()
-                    value: duration % 60
-                }
-                Label {
-                    Layout.alignment: Qt.AlignVCenter
-                    text: i18n("seconds")
-                }
-            }
-            
-            function setDuration() {
-                timer.length = 1000 * (spinBoxHours.value * 60 * 60 + spinBoxMinutes.value * 60 + spinBoxSeconds.value)
-            }
-            
-            Item {
-                Kirigami.FormData.isSection: true
-                Kirigami.FormData.label: "Label (optional)"
-            }
-            
-            Kirigami.Separator {}
-            TextField {
-                text: timer.label
-                onTextChanged: timer.label = text
-            }
-            
-            Kirigami.Separator {}
-            ToolButton {
-                flat: false
-                icon.name: "list-add"
-                text: "Create"
-                onClicked: justCreated = false;
-            }
-        }   
-    }
-
-    
-    
-    // ~ timer display ~
-    
-    Kirigami.ActionToolBar {
-        visible: !justCreated
-        anchors {
-            top: parent.top
-            left: parent.left
-            right: parent.right
+    actions.contextualActions: [
+        Kirigami.Action {
+            visible: !justCreated
+            icon.name: "chronometer-reset"
+            text: i18n("Reset")
+            onTriggered: timer.reset();
+        },
+//         Kirigami.Action {
+//             visible: !justCreated
+//             icon.name: "view-fullscreen"
+//             text: i18n("Fullscreen")
+//             onTriggered: showFullscreen = true;
+//         },
+        Kirigami.Action {
+            visible: !justCreated
+            icon.name: "delete"
+            text: i18n("Delete")
+            onTriggered: timerModel.remove(timerIndex);
         }
-        alignment: Qt.AlignHCenter
-        actions: [
-            Action {
-                icon.name: "chronometer-reset"
-                text: "Reset"
-                onTriggered: timer.reset();
-            },
-//             Action {
-//                 icon.name: "view-fullscreen"
-//                 text: "Fullscreen"
-//                 onTriggered: showFullscreen = true;
-//                 
-//             },
-            Action {
-                icon.name: "delete"
-                text: "Delete"
-                onTriggered: timerModel.remove(timerIndex); 
+    ]
+
+    // create new timer form
+
+    Kirigami.FormLayout {
+        id: form
+        anchors.fill: parent
+        visible: justCreated
+
+        Item {
+            Kirigami.FormData.isSection: true
+            Kirigami.FormData.label: "Duration"
+        }
+        Kirigami.Separator {}
+
+        RowLayout {
+            SpinBox {
+                Layout.alignment: Qt.AlignVCenter
+                id: spinBoxHours
+                onValueChanged: form.setDuration()
+                value: duration / 60 / 60
             }
-        ]
+            Label {
+                Layout.alignment: Qt.AlignVCenter
+                text: i18n("hours")
+            }
+        }
+        RowLayout {
+            SpinBox {
+                Layout.alignment: Qt.AlignVCenter
+                id: spinBoxMinutes
+                onValueChanged: form.setDuration()
+                value: duration % (60*60) / 60
+            }
+            Label {
+                Layout.alignment: Qt.AlignVCenter
+                text: i18n("minutes")
+            }
+        }
+        RowLayout {
+            SpinBox {
+                Layout.alignment: Qt.AlignVCenter
+                id: spinBoxSeconds
+                to: 60
+                onValueChanged: form.setDuration()
+                value: duration % 60
+            }
+            Label {
+                Layout.alignment: Qt.AlignVCenter
+                text: i18n("seconds")
+            }
+        }
+
+        function setDuration() {
+            timer.length = 1000 * (spinBoxHours.value * 60 * 60 + spinBoxMinutes.value * 60 + spinBoxSeconds.value)
+        }
+
+        Item {
+            Kirigami.FormData.isSection: true
+            Kirigami.FormData.label: "Label (optional)"
+        }
+
+        Kirigami.Separator {}
+        TextField {
+            text: timer.label
+            onTextChanged: timer.label = text
+        }
+
+        Kirigami.Separator {}
+        ToolButton {
+            flat: false
+            icon.name: "list-add"
+            text: "Create"
+            onClicked: justCreated = false;
+        }
     }
 
     TimerComponent {
