@@ -38,14 +38,14 @@
 /* ~ Timer ~ */
 
 Timer::Timer(QObject *parent, int length, int elapsed, QString label, bool running)
+    : QObject(parent)
+    , length_(length)
+    , elapsed_(elapsed)
+    , label_(label)
+    , running_(running)
+    , finished_(false)
+    , justCreated_(true)
 {
-    length_ = length;
-    elapsed_ = elapsed;
-    label_ = label;
-    running_ = running;
-    finished_ = false;
-    justCreated_ = true;
-    
     connect(this, &Timer::propertyChanged, this, []{TimerModel::inst()->saveRequested = true;}, Qt::UniqueConnection);
 }
 
