@@ -64,7 +64,8 @@ Comment[sl]=Vaš časomerilnik je končal!
 Comment[sv]=Tidtagningen är klar.
 Comment[uk]=Відлік за вашими таймером завершено!
 Comment[x-test]=xxYour timer has finished!xx
-Action=Popup
+Action=Sound|Popup
+Sound=freedesktop/stereo/alarm-clock-elapsed.oga
 
 
 [Event/alarm]
