@@ -104,7 +104,6 @@ Kirigami.Page {
             }
             
             function setDuration() {
-                console.log(timer); // TODO
                 timer.length = 1000 * (spinBoxHours.value * 60 * 60 + spinBoxMinutes.value * 60 + spinBoxSeconds.value)
             }
             
