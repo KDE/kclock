@@ -93,6 +93,8 @@ void Timer::updateTimer(qint64 duration)
             notif->setUrgency(KNotification::HighUrgency);
             notif->setFlags(KNotification::NotificationFlag::LoopSound | KNotification::NotificationFlag::Persistent);
             notif->sendEvent();
+            
+            TimerModel::inst()->updateTimerStatus();
         }
         
         emit propertyChanged();
@@ -108,6 +110,9 @@ void Timer::toggleRunning()
     } else {
         running_ = !running_;
     }
+    
+    TimerModel::inst()->updateTimerStatus();
+    
     emit propertyChanged();
 }
 
@@ -116,6 +121,9 @@ void Timer::reset()
     finished_ = false;
     running_ = false;
     elapsed_ = 0;
+    
+    TimerModel::inst()->updateTimerStatus();
+    
     emit propertyChanged();
 }
 
@@ -130,7 +138,8 @@ TimerModel::TimerModel(QObject *parent)
     
     timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, QOverload<>::of(&TimerModel::updateTimerLoop));
-    timer->start(TIMER_CHECK_LENGTH);
+    timer->setInterval(TIMER_CHECK_LENGTH);
+    updateTimerStatus(); // start timer loop if necessary
     
     // slow down saves to max once per second
     saveTimer = new QTimer(this);
@@ -175,6 +184,28 @@ void TimerModel::updateTimerLoop()
     for (auto *timer : timerList) 
         timer->updateTimer(TIMER_CHECK_LENGTH); 
 }
+
+void TimerModel::updateTimerStatus()
+{
+    // stop timer if all timers are inactive
+    if (areTimersInactive() && timer->isActive()) {
+        timer->stop();
+    } else if (!timer->isActive()) {
+        timer->start();
+    }
+}
+
+
+bool TimerModel::areTimersInactive()
+{
+    for (auto *timer : timerList) {
+        if (timer->running()) {
+            return false;
+        }
+    }
+    return true;
+}
+
 
 int TimerModel::rowCount(const QModelIndex &parent) const
 {

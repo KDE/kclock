@@ -141,6 +141,8 @@ public:
     }
     
     void updateTimerLoop();
+    void updateTimerStatus(); // update qtimer to be on and off depending on if it is needed (for performance)
+    bool areTimersInactive(); // if all timers are inactive
     
     void load();
     void save();
@@ -157,7 +159,6 @@ private:
     QList<Timer *> timerList;
     QTimer *timer;
     QTimer *saveTimer;
-    
 };
 
 #endif // KIRIGAMICLOCK_TIMERMODEL_H
