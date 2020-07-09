@@ -23,21 +23,32 @@
 import QtQuick 2.11
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
-import org.kde.kirigami 2.10 as Kirigami
+import org.kde.kirigami 2.12 as Kirigami
 
 Kirigami.ScrollablePage {
     
     title: i18n("Timezones")
-
+    property string filterText: ""
+    
     ListView {
 
+        Kirigami.PlaceholderMessage {
+            anchors.centerIn: parent 
+            visible: parent.count == 0
+            text: i18n("Search for a city")
+            icon.name: "globe"
+        }
+        
         header: Kirigami.SearchField {
             width: parent.width
-            onTextChanged: timeZoneFilterModel.setFilterFixedString(text)
+            onTextChanged: {
+                timeZoneFilterModel.setFilterFixedString(text)
+                filterText = text
+            }
         }
 
         clip: true
-        model: timeZoneFilterModel
+        model: filterText == "" ? [] : timeZoneFilterModel // only display cities if there is a query (for performance)
         delegate: Kirigami.AbstractListItem {
             CheckBox {
                 checked: model.shown
