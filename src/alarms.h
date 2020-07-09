@@ -147,7 +147,7 @@ signals:
 private:
     QMediaPlayer *ringtonePlayer;
     
-    QUrl audioPath = QUrl::fromLocalFile("/usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga");
+    QUrl audioPath = QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "sounds/freedesktop/stereo/alarm-clock-elapsed.oga"));
     bool alarmNotifOpen = false; // if the alarm notification is open
     QTime alarmNotifOpenTime; // time the alarm notification opened
     
