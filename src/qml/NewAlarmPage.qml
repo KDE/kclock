@@ -86,130 +86,93 @@ Kirigami.ScrollablePage {
         }
     }
     
-    // form
-    ColumnLayout {
+    Column {
         spacing: Kirigami.Units.largeSpacing
         
         // time picker
         DateAndTime.TimePicker {
             id: selectedAlarmTime
-            
-            Layout.alignment: Qt.AlignHCenter
-            Layout.preferredWidth: newAlarmPage.width
-            Layout.preferredHeight: Layout.preferredWidth
-            Layout.minimumWidth: 300
-            Layout.minimumHeight: Layout.minimumWidth
-            Layout.maximumWidth: 400
-            Layout.maximumHeight: Layout.maximumWidth
+
+            height: 400
+            anchors.horizontalCenter: parent.horizontalCenter
+            width: Math.min(400, parent.width)
         }
         
         Kirigami.Separator {
-            anchors.top: selectedAlarmTime
-            Layout.fillWidth: true
+            width: parent.width
         }
-        
+
         // repeat day picker
-        Item {
-            Layout.fillWidth: true
-            implicitHeight: Kirigami.Units.gridUnit * 4
-            
-            ColumnLayout {
-                anchors.leftMargin: Kirigami.Units.gridUnit
-                anchors.rightMargin: Kirigami.Units.gridUnit
-                anchors.fill: parent
-                
-                Label {
-                    Layout.alignment: Qt.AlignHCenter
-                    text: i18n("Days to Repeat")
-                    font.weight: Font.Bold
+        Label {
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: i18n("Days to Repeat")
+            font.weight: Font.Bold
+        }
+
+        Flow {
+            anchors.horizontalCenter: parent.horizontalCenter
+            Repeater {
+                model: ListModel {
+                    id: selectedDays
+                    ListElement { displayText: "S"; dayFlag: 64 }
+                    ListElement { displayText: "M"; dayFlag: 1 }
+                    ListElement { displayText: "T"; dayFlag: 2 }
+                    ListElement { displayText: "W"; dayFlag: 4 }
+                    ListElement { displayText: "T"; dayFlag: 8 }
+                    ListElement { displayText: "F"; dayFlag: 16 }
+                    ListElement { displayText: "S"; dayFlag: 32 }
                 }
-                Flow {
-                    Layout.alignment: Qt.AlignHCenter
-                    Repeater {
-                        model: ListModel {
-                            id: selectedDays
-                            ListElement { displayText: "S"; dayFlag: 64 }
-                            ListElement { displayText: "M"; dayFlag: 1 }
-                            ListElement { displayText: "T"; dayFlag: 2 }
-                            ListElement { displayText: "W"; dayFlag: 4 }
-                            ListElement { displayText: "T"; dayFlag: 8 }
-                            ListElement { displayText: "F"; dayFlag: 16 }
-                            ListElement { displayText: "S"; dayFlag: 32 }
-                        }
-                        
-                        ToolButton {
-                            implicitWidth: 40
-                            text: displayText
-                            checkable: true
-                            checked: ((newAlarm ? alarmDaysOfWeek : selectedAlarm.daysOfWeek) & dayFlag) == dayFlag
-                            highlighted: false
-                            onClicked: {
-                                if (checked) alarmDaysOfWeek |= dayFlag;
-                                else alarmDaysOfWeek &= ~dayFlag;
-                            }
-                        }
+
+                ToolButton {
+                    implicitWidth: 40
+                    text: displayText
+                    checkable: true
+                    checked: ((newAlarm ? alarmDaysOfWeek : selectedAlarm.daysOfWeek) & dayFlag) == dayFlag
+                    highlighted: false
+                    onClicked: {
+                        if (checked) alarmDaysOfWeek |= dayFlag;
+                        else alarmDaysOfWeek &= ~dayFlag;
                     }
                 }
             }
         }
 
         Kirigami.Separator {
-            Layout.fillWidth: true
-        }
-        
-        Item {
-            Layout.fillWidth: true
-            implicitHeight: Kirigami.Units.gridUnit * 3
-            
-            ColumnLayout {
-                anchors.leftMargin: Kirigami.Units.gridUnit
-                anchors.rightMargin: Kirigami.Units.gridUnit
-                anchors.fill: parent
-                
-                Label {
-                    Layout.alignment: Qt.AlignHCenter
-                    text: i18n("Alarm Name")
-                    font.weight: Font.Bold
-                }
-                TextField {
-                    Layout.alignment: Qt.AlignHCenter
-                    id: selectedAlarmName
-                    placeholderText: i18n("Wake Up")
-                    text: newAlarm ? "Alarm" : selectedAlarm.name
-                }
-            }
+            width: parent.width
         }
 
-        Kirigami.Separator {
-            Layout.fillWidth: true
+        Label {
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: i18n("Alarm Name")
+            font.weight: Font.Bold
         }
-        
-        ColumnLayout {
-            Layout.alignment: Qt.AlignHCenter
-            
-            Label {
-                Layout.alignment: Qt.AlignHCenter
-                text: i18n("Ringtone")
-                font.weight: Font.Bold
-            }
-            
-            Kirigami.ActionTextField {
-                id: selectAlarmField
-                placeholderText: newAlarm ? i18n("default") : selectedAlarm.ringtoneName
-                
-                rightActions: [
-                    Kirigami.Action {
-                        iconName: "list-add"
-                        onTriggered: {
-                            ringtonePath = alarmModel.selectRingtone();
-                            if (ringtonePath.toString().length != 0)
-                                selectAlarmField.placeholderText = ringtonePath.toString().split('/').pop();
-                        }
+        TextField {
+            anchors.horizontalCenter: parent.horizontalCenter
+            id: selectedAlarmName
+            placeholderText: i18n("Wake Up")
+            text: newAlarm ? "Alarm" : selectedAlarm.name
+        }
+        Label {
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: i18n("Ringtone")
+            font.weight: Font.Bold
+        }
+
+        Kirigami.ActionTextField {
+            id: selectAlarmField
+            anchors.horizontalCenter: parent.horizontalCenter
+            placeholderText: newAlarm ? i18n("default") : selectedAlarm.ringtoneName
+
+            rightActions: [
+                Kirigami.Action {
+                    iconName: "list-add"
+                    onTriggered: {
+                        ringtonePath = alarmModel.selectRingtone();
+                        if (ringtonePath.toString().length != 0)
+                            selectAlarmField.placeholderText = ringtonePath.toString().split('/').pop();
                     }
-                ]
-                
-            }
-            
+                }
+            ]
         }
     }
 }
