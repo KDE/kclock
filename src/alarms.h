@@ -37,13 +37,13 @@ class QMediaPlayer;
 class Alarm : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(QString name READ name WRITE setName NOTIFY onPropertyChanged)
-    Q_PROPERTY(bool enabled READ enabled WRITE setEnabled NOTIFY onPropertyChanged)
-    Q_PROPERTY(int hours READ hours WRITE setHours NOTIFY onPropertyChanged)
-    Q_PROPERTY(int minutes READ minutes WRITE setMinutes NOTIFY onPropertyChanged)
-    Q_PROPERTY(int daysOfWeek READ daysOfWeek WRITE setDaysOfWeek NOTIFY onPropertyChanged)
-    Q_PROPERTY(QString ringtoneName READ ringtoneName NOTIFY onPropertyChanged)
-    Q_PROPERTY(QString ringtonePath WRITE setRingtone NOTIFY onPropertyChanged)
+    Q_PROPERTY(QString name READ name WRITE setName NOTIFY propertyChanged)
+    Q_PROPERTY(bool enabled READ enabled WRITE setEnabled NOTIFY propertyChanged)
+    Q_PROPERTY(int hours READ hours WRITE setHours NOTIFY propertyChanged)
+    Q_PROPERTY(int minutes READ minutes WRITE setMinutes NOTIFY propertyChanged)
+    Q_PROPERTY(int daysOfWeek READ daysOfWeek WRITE setDaysOfWeek NOTIFY propertyChanged)
+    Q_PROPERTY(QString ringtoneName READ ringtoneName NOTIFY propertyChanged)
+    Q_PROPERTY(QString ringtonePath WRITE setRingtone NOTIFY propertyChanged)
 
 public slots:
     void handleDismiss();
@@ -60,6 +60,7 @@ public:
     void setName(QString name)
     {
         this->name_ = name;
+        Q_EMIT propertyChanged();
     }
     QUuid uuid() const
     {
@@ -72,6 +73,7 @@ public:
     void setEnabled(bool enabled)
     {
         this->enabled_ = enabled;
+        Q_EMIT propertyChanged();
     }
     int hours() const
     {
@@ -80,6 +82,7 @@ public:
     void setHours(int hours)
     {
         this->hours_ = hours;
+        Q_EMIT propertyChanged();
     }
     int minutes() const
     {
@@ -88,6 +91,7 @@ public:
     void setMinutes(int minutes)
     {
         this->minutes_ = minutes;
+        Q_EMIT propertyChanged();
     }
     int daysOfWeek() const
     {
@@ -96,6 +100,7 @@ public:
     void setDaysOfWeek(int daysOfWeek)
     {
         this->daysOfWeek_ = daysOfWeek;
+        Q_EMIT propertyChanged();
     }
     qint64 lastAlarm() const
     {
@@ -104,6 +109,7 @@ public:
     void setLastAlarm(qint64 lastAlarm)
     {
         this->lastAlarm_ = lastAlarm;
+        Q_EMIT propertyChanged();
     }
     qint64 snooze() const
     {
@@ -112,6 +118,7 @@ public:
     void setSnooze(qint64 snooze)
     {
         this->snooze_ = snooze;
+        Q_EMIT propertyChanged();
     }
     qint64 lastSnooze() const
     {
@@ -120,6 +127,7 @@ public:
     void setLastSnooze(qint64 lastSnooze)
     {
         this->lastSnooze_ = lastSnooze;
+        Q_EMIT propertyChanged();
     }
     inline QString ringtoneName()
     {
@@ -132,6 +140,7 @@ public:
         audioPath = url;
         
         ringtonePlayer->setMedia(audioPath);
+        Q_EMIT propertyChanged();
     };
     QString serialize();
     
@@ -142,7 +151,7 @@ public:
     void loopAlarmSound(QMediaPlayer::State state); // called when alarm sound ends (whether or not to play it again)
 
 signals:
-    void onPropertyChanged();
+    void propertyChanged();
 
 private:
     QMediaPlayer *ringtonePlayer;
@@ -168,12 +177,13 @@ public:
     explicit AlarmModel(QObject *parent = nullptr);
 
     enum {
+        NameRole = Qt::DisplayRole,
         EnabledRole = Qt::UserRole + 1,
-        HoursRole = Qt::DisplayRole + 0,
-        MinutesRole = Qt::DisplayRole + 1,
-        NameRole = Qt::DisplayRole + 2,
-        DaysOfWeekRole = Qt::DisplayRole + 3,
-        RingtonePathRole = Qt::DisplayRole + 4,
+        HoursRole,
+        MinutesRole,
+        DaysOfWeekRole,
+        RingtonePathRole,
+        AlarmRole,
     };
 
     int rowCount(const QModelIndex &parent) const override;

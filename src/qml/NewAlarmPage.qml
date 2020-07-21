@@ -29,12 +29,10 @@ import kclock 1.0
 Kirigami.ScrollablePage {
 
     property Alarm selectedAlarm: null
-    property QtObject selectedAlarmModel: null // so that we call setData rather than the getters and setters
-    property bool newAlarm: false
-    property int alarmDaysOfWeek: newAlarm ? 0 : selectedAlarm.daysOfWeek
+    property int alarmDaysOfWeek: selectedAlarm ? selectedAlarm.daysOfWeek : 0
     property string ringtonePath
 
-    title: newAlarm ? i18n("New Alarm") : i18n("Edit") + " " + selectedAlarmModel.name
+    title: selectedAlarm ? i18n("Edit %1", selectedAlarm.name) : i18n("New Alarm")
     
     function init(alarm, alarmModel) {
         if (alarm == null) {
@@ -62,25 +60,22 @@ Kirigami.ScrollablePage {
             iconName: "checkmark"
             text: i18n("Done")
             onTriggered: {
-                // save
                 let hours = selectedAlarmTime.hours + (selectedAlarmTime.pm ? 12 : 0);
                 let minutes = selectedAlarmTime.minutes;
-                if (newAlarm) {
+
+                if (!selectedAlarm) {
                     alarmModel.newAlarm(selectedAlarmName.text, minutes, hours, alarmDaysOfWeek, ringtonePath);
-                    newAlarm = false; // reset form
                 } else {
-                    selectedAlarmModel.name = selectedAlarmName.text;
-                    selectedAlarmModel.minutes = minutes;
-                    selectedAlarmModel.hours = hours;
-                    selectedAlarmModel.daysOfWeek = alarmDaysOfWeek;
-                    
+                    selectedAlarm.hours = hours
+                    selectedAlarm.minutes = minutes
+                    selectedAlarm.daysOfWeek = alarmDaysOfWeek
+
                     // if the user did not set a new ringtone path, ignore
-                    if (ringtonePath != "")
-                        selectedAlarmModel.ringtonePath = ringtonePath;
+                    if (ringtonePath != "") {
+                        selectedAlarmModel.ringtonePath = ringtonePath
+                    }
                 }
-                // reset
-                alarmDaysOfWeek = 0;
-                newAlarm = true;
+
                 pageStack.pop()
             }
         }
@@ -92,6 +87,10 @@ Kirigami.ScrollablePage {
         // time picker
         DateAndTime.TimePicker {
             id: selectedAlarmTime
+
+            hours: selectedAlarm ? selectedAlarm.hours : 0
+            minutes: selectedAlarm ? selectedAlarm.minutes : 0
+            pm: selectedAlarm ? selectedAlarm.hours > 12 : 0
 
             height: 400
             anchors.horizontalCenter: parent.horizontalCenter
@@ -127,7 +126,7 @@ Kirigami.ScrollablePage {
                     implicitWidth: 40
                     text: displayText
                     checkable: true
-                    checked: ((newAlarm ? alarmDaysOfWeek : selectedAlarm.daysOfWeek) & dayFlag) == dayFlag
+                    checked: (alarmDaysOfWeek & dayFlag) == dayFlag
                     highlighted: false
                     onClicked: {
                         if (checked) alarmDaysOfWeek |= dayFlag;
@@ -150,7 +149,7 @@ Kirigami.ScrollablePage {
             anchors.horizontalCenter: parent.horizontalCenter
             id: selectedAlarmName
             placeholderText: i18n("Wake Up")
-            text: newAlarm ? "Alarm" : selectedAlarm.name
+            text: selectedAlarm ? selectedAlarm.name : i18n("Alarm")
         }
         Label {
             anchors.horizontalCenter: parent.horizontalCenter
@@ -161,7 +160,7 @@ Kirigami.ScrollablePage {
         Kirigami.ActionTextField {
             id: selectAlarmField
             anchors.horizontalCenter: parent.horizontalCenter
-            placeholderText: newAlarm ? i18n("default") : selectedAlarm.ringtoneName
+            placeholderText: selectedAlarm ? selectedAlarm.ringtoneName : i18n("default")
 
             rightActions: [
                 Kirigami.Action {

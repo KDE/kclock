@@ -27,20 +27,12 @@ import kclock 1.0
 
 Kirigami.ScrollablePage {
     
-    title: "Alarms"
-
-    NewAlarmPage {
-        id: newAlarmPage
-        visible: false
-    }
+    title: i18n("Alarms")
 
     mainAction: Kirigami.Action {
         iconName: "list-add"
         text: "New Alarm"
-        onTriggered: {
-            newAlarmPage.init(null, null);
-            switchToPage(newAlarmPage, 1);
-        }
+        onTriggered: pageStack.push(Qt.resolvedUrl("NewAlarmPage.qml"))
     }
     
     function getTimeFormat(hours, minutes) {
@@ -103,17 +95,14 @@ Kirigami.ScrollablePage {
             actions: [
                 Kirigami.Action {
                     iconName: "entry-edit"
-                    text: "Edit"
-                    onTriggered: {
-                        newAlarmPage.init(alarmModel.get(index), model);
-                        switchToPage(newAlarmPage, 1);
-                    }
+                    text: i18n("Edit")
+                    onTriggered: pageStack.push(Qt.resolvedUrl("NewAlarmPage.qml"), {selectedAlarm: model.alarm})
                 },
                 Kirigami.Action {
                     iconName: "delete"
-                    text: "Delete"
+                    text: i18n("Delete")
                     onTriggered: {
-                        showPassiveNotification("Deleted alarm " + alarmModel.get(index).name);
+                        showPassiveNotification(i18n("Deleted %1", model.name));
                         alarmModel.remove(index);
                         alarmModel.updateUi();
                     }
