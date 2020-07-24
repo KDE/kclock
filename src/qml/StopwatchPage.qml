@@ -136,6 +136,7 @@ Kirigami.ScrollablePage {
                         icon.name: "chronometer-lap"
                         text: "Lap"
                         flat: false
+                        enabled: running
                         onClicked: {
                             roundModel.insert(0, { time: elapsedTime })
                         }

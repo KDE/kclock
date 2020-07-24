@@ -27,13 +27,13 @@ import kclock 1.0
 
 Kirigami.ScrollablePage {
     
-    title: "Timers"
+    title: i18n("Timers")
     
     property bool createdTimer: false
     
     mainAction: Kirigami.Action {
         iconName: "list-add"
-        text: "New Timer"
+        text: i18n("New Timer")
         onTriggered: {
             createdTimer = true
             timerModel.addNew();
@@ -47,10 +47,7 @@ Kirigami.ScrollablePage {
         // no timer placeholder
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
-            anchors.left: parent.left
-            anchors.right: parent.right
-            anchors.margins: Kirigami.Units.largeSpacing
-            visible: timersList.count == 0
+            visible: timersList.count === 0
             text: i18n("Add a timer")
             icon.name: "player-time"
         }

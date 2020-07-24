@@ -103,11 +103,6 @@ Kirigami.ScrollablePage {
         delegate: timeZoneDelegate
     }
     
-    TimeZoneSelectPage {
-        id: pageTimezone
-        visible: false
-    }
-    
     // time zone entry
     Component {
         id: timeZoneDelegate
@@ -122,7 +117,7 @@ Kirigami.ScrollablePage {
         iconName: "globe"
         text: i18n("Edit")
         onTriggered: {
-            pageStack.push(pageTimezone)
+            pageStack.push("qrc:/qml/TimeZoneSelectPage.qml")
         }
     }
 }

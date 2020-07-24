@@ -128,6 +128,7 @@ void Alarm::ring()
     connect(notif, &KNotification::defaultActivated, this, &Alarm::handleDismiss);
     connect(notif, &KNotification::action1Activated, this, &Alarm::handleDismiss);
     connect(notif, &KNotification::action2Activated, this, &Alarm::handleSnooze);
+    connect(notif, &KNotification::closed, this, &Alarm::handleDismiss);
 
     notif->sendEvent();
     
@@ -167,7 +168,7 @@ void Alarm::handleSnooze()
     setEnabled(true);
     save();
     
-    emit onPropertyChanged();
+    emit propertyChanged();
 }
 
 qint64 Alarm::toPreviousAlarm(qint64 timestamp)
@@ -206,14 +207,25 @@ Alarm::~Alarm()
 AlarmModel::AlarmModel(QObject *parent)
     : QAbstractListModel(parent)
 {
+    beginResetModel();
+
     // add alarms from config
     auto config = KSharedConfig::openConfig();
     KConfigGroup group = config->group(ALARM_CFG_GROUP);
     for (QString key : group.keyList()) {
         QString json = group.readEntry(key, "");
-        if (json != "")
-            alarmsList.append(new Alarm(json));
+        if (!json.isEmpty()) {
+
+            Alarm *alarm = new Alarm(json);
+
+            const int index = alarmsList.count();
+            connect(alarm, &Alarm::propertyChanged, this, &AlarmModel::updateUi);
+
+            alarmsList.append(alarm);
+        }
     }
+
+    endResetModel();
 
     // start alarm timer
     this->timer = new QTimer(this);
@@ -261,13 +273,15 @@ QHash<int, QByteArray> AlarmModel::roleNames() const
             {NameRole, "name"},
             {EnabledRole, "enabled"},
             {DaysOfWeekRole, "daysOfWeek"},
-            {RingtonePathRole, "ringtonePath"}};
+            {RingtonePathRole, "ringtonePath"},
+            {AlarmRole, "alarm"}};
 }
 
 QVariant AlarmModel::data(const QModelIndex &index, int role) const
 {
-    if (!index.isValid() || index.row() >= alarmsList.count())
+    if (!index.isValid() || index.row() >= alarmsList.count()) {
         return QVariant();
+    }
 
     auto *alarm = alarmsList[index.row()];
     if (alarm == nullptr)
@@ -282,6 +296,8 @@ QVariant AlarmModel::data(const QModelIndex &index, int role) const
         return alarm->name();
     else if (role == DaysOfWeekRole)
         return alarm->daysOfWeek();
+    else if (role == AlarmRole)
+        return QVariant::fromValue(alarm);
     else
         return QVariant();
 }
@@ -332,18 +348,20 @@ void AlarmModel::newAlarm(QString name, int minutes, int hours, int daysOfWeek, 
     auto index = alarmsList.count();
     auto alarm = new Alarm(this, name, minutes, hours, daysOfWeek);
     
+    connect(alarm, &Alarm::propertyChanged, this, &AlarmModel::updateUi);
+
     if (ringtone.isValid())
         alarm->setRingtone(ringtone.toLocalFile());
     
     QQmlEngine::setObjectOwnership(alarm, QQmlEngine::CppOwnership); // prevent segfaults from js garbage collecting
     
-    emit beginInsertRows(QModelIndex(), index, index);
+    beginInsertRows(QModelIndex(), index, index);
     alarmsList.insert(index, alarm);
     
     // write to config
     alarm->save();
     
-    emit endInsertRows();
+    endInsertRows();
 }
 
 void AlarmModel::remove(int index)
@@ -358,6 +376,8 @@ void AlarmModel::remove(int index)
     group.deleteEntry(alarmsList.at(index)->uuid().toString());
     alarmsList[index]->deleteLater(); // delete object
     alarmsList.removeAt(index);
+
+    config->sync();
 
     emit endRemoveRows();
 }

@@ -27,7 +27,7 @@ import org.kde.kirigami 2.11 as Kirigami
 Kirigami.ApplicationWindow
 {
     id: appwindow
-    visible: true
+    visible: false // don't open in daemon mode
     width: 650
     height: 500
 
@@ -73,15 +73,6 @@ Kirigami.ApplicationWindow
                 onTriggered: switchToPage(settingsPage, 0)
             }
         ]
-        
-/*        
-        Connections {
-            target: pageStack
-            onCurrentIndexChanged: { // drop all sub pages
-                if (pageStack.currentIndex === 0)
-                    while (pageStack.depth > 1) pageStack.pop();
-            }
-        }*/
     }
     
     // clock fonts
