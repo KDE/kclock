@@ -3,6 +3,7 @@ set(kclock_SRCS
     timermodel.cpp
     utilmodel.cpp
     settingsmodel.cpp
+    stopwatchtimer.cpp
     resources.qrc
     )
 

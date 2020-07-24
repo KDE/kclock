@@ -37,10 +37,11 @@
 #endif
 
 #include "alarms.h"
+#include "settingsmodel.h"
+#include "stopwatchtimer.h"
 #include "timermodel.h"
 #include "timezoneselectormodel.h"
 #include "utilmodel.h"
-#include "settingsmodel.h"
 
 QCommandLineParser *createParser()
 {
@@ -69,7 +70,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     // allow to stay running when last window is closed
     app.setQuitOnLastWindowClosed(false);
 #endif
-    
+
     // initialize models
     auto *timeZoneModel = new TimeZoneSelectorModel();
 
@@ -81,6 +82,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     auto *timeZoneFilterModel = new TimeZoneFilterModel(timeZoneModel);
     auto *alarmModel = new AlarmModel();
     auto *utilModel = new UtilModel();
+    auto *stopwatchTimer = new StopwatchTimer();
     TimerModel::init();
     SettingsModel::init();
 
@@ -95,7 +97,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     engine.rootContext()->setContextProperty("timerModel", TimerModel::inst());
     engine.rootContext()->setContextProperty("settingsModel", SettingsModel::inst());
     engine.rootContext()->setContextProperty("utilModel", utilModel);
-
+    engine.rootContext()->setContextProperty("stopwatchTimer", stopwatchTimer);
     engine.load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
 
     {

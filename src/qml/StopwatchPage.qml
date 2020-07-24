@@ -29,16 +29,15 @@ Kirigami.ScrollablePage {
     id: stopwatchpage
     title: "Stopwatch"
     property bool running: false
-    property int elapsedTime: 0
-    property double displayTime: elapsedTime
+    property int elapsedTime: stopwatchTimer.elapsedTime
     
     Layout.fillWidth: true
 
     function getElapsedHours() {
-        return ("0" + parseInt(elapsedTime / 1000 / 60 / 24).toFixed(0)).slice(-2);
+        return ("0" + parseInt(elapsedTime / 1000 / 60 / 60).toFixed(0)).slice(-2);
     }
     function getElapsedMinutes() {
-        return ("0" + parseInt(elapsedTime / 1000 / 60 - 24*getElapsedHours())).slice(-2);
+        return ("0" + parseInt(elapsedTime / 1000 / 60 - 60*getElapsedHours())).slice(-2);
     }
     function getElapsedSeconds() {
         return ("0" + parseInt(elapsedTime / 1000 - 60*getElapsedMinutes())).slice(-2);
@@ -51,7 +50,10 @@ Kirigami.ScrollablePage {
     mainAction: Kirigami.Action {
         text: running ? "Pause" : "Start"
         iconName: running ? "chronometer-pause" : "chronometer-start"
-        onTriggered: running = !running
+        onTriggered: {
+            running = !running;
+            stopwatchTimer.toggle();
+        }
     }
     
     // lap list display
@@ -127,8 +129,8 @@ Kirigami.ScrollablePage {
                         flat: false
                         onClicked: {
                             running = false;
-                            elapsedTime = 0
-                            roundModel.clear()
+                            stopwatchTimer.reset();
+                            roundModel.clear();
                         }
                     }
                     ToolButton {
@@ -188,17 +190,6 @@ Kirigami.ScrollablePage {
                         }
                     }
             }
-        }
-    }
-
-    // clock increment
-    Timer {
-        id: stopwatchTimer
-        interval: 16
-        running: stopwatchpage.running
-        repeat: true
-        onTriggered: {
-            elapsedTime += interval
         }
     }
 
