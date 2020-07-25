@@ -33,19 +33,6 @@ Kirigami.ScrollablePage {
     
     Layout.fillWidth: true
 
-    function getElapsedHours() {
-        return ("0" + parseInt(elapsedTime / 1000 / 60 / 60).toFixed(0)).slice(-2);
-    }
-    function getElapsedMinutes() {
-        return ("0" + parseInt(elapsedTime / 1000 / 60 - 60*getElapsedHours())).slice(-2);
-    }
-    function getElapsedSeconds() {
-        return ("0" + parseInt(elapsedTime / 1000 - 60*getElapsedMinutes())).slice(-2);
-    }
-    function getElapsedSmall() {
-        return ("0" + parseInt(elapsedTime / 10 - (60*getElapsedSeconds())).toFixed(0)).slice(-2);
-    }
-
     // start/pause button
     mainAction: Kirigami.Action {
         text: running ? "Pause" : "Start"
@@ -78,7 +65,7 @@ Kirigami.ScrollablePage {
 
                     Label {
                         id: minutesText
-                        text: getElapsedMinutes()
+                        text: stopwatchTimer.minutes
                         color: Kirigami.Theme.highlightColor
                         font.pointSize: Kirigami.Theme.defaultFont.pointSize*4
                         font.family: clockFont.name
@@ -90,7 +77,7 @@ Kirigami.ScrollablePage {
                         font.family: clockFont.name
                     }
                     Label {
-                        text: getElapsedSeconds()
+                        text: stopwatchTimer.seconds
                         color: Kirigami.Theme.highlightColor
                         font.pointSize: Kirigami.Theme.defaultFont.pointSize*4
                         font.family: clockFont.name
@@ -107,7 +94,7 @@ Kirigami.ScrollablePage {
                         color: "transparent"
                         Label {
                             id: secondsText
-                            text: getElapsedSmall()
+                            text: stopwatchTimer.small
                             color: Kirigami.Theme.highlightColor
                             font.pointSize: Kirigami.Theme.defaultFont.pointSize*2.6
                             font.family: clockFont.name
