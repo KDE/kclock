@@ -32,44 +32,7 @@ Kirigami.ScrollablePage {
     mainAction: Kirigami.Action {
         iconName: "list-add"
         text: "New Alarm"
-        onTriggered: pageStack.push(Qt.resolvedUrl("NewAlarmPage.qml"))
-    }
-    
-    function getTimeFormat(hours, minutes) {
-        if (settingsModel.use24HourTime) {
-            return ("0" + hours).slice(-2) + ":" + ("0" + minutes).slice(-2)
-        } else {
-            if (hours >= 12) { // pm
-                if (hours - 12 == 0) hours = 24;
-                return ("0" + (hours - 12)).slice(-2) + ":" + ("0" + minutes).slice(-2) + " PM";
-            } else { // am
-                if (hours == 0) hours = 12;
-                return ("0" + hours).slice(-2) + ":" + ("0" + minutes).slice(-2) + " AM";
-            }
-        }
-    }
-    
-    function getRepeatFormat(dayOfWeek) {
-        if (dayOfWeek == 0) {
-            return i18n("Only once");
-        }
-        let monday = 1 << 0, tuesday = 1 << 1, wednesday = 1 << 2, thursday = 1 << 3, friday = 1 << 4, saturday = 1 << 5, sunday = 1 << 6;
-        
-        if (dayOfWeek == monday + tuesday + wednesday + thursday + friday + saturday + sunday)
-            return i18n("Everyday");
-        
-        if (dayOfWeek == monday + tuesday + wednesday + thursday + friday)
-            return i18n("Weekdays");
-        
-        let str = "";
-        if (dayOfWeek & monday) str += "Mon., ";
-        if (dayOfWeek & tuesday) str += "Tue., ";
-        if (dayOfWeek & wednesday) str += "Wed., ";
-        if (dayOfWeek & thursday) str += "Thu., ";
-        if (dayOfWeek & friday) str += "Fri., ";
-        if (dayOfWeek & saturday) str += "Sat., ";
-        if (dayOfWeek & sunday) str += "Sun., ";
-        return str.substring(0, str.length - 2);
+        onTriggered: pageStack.push(Qt.resolvedUrl("NewAlarmPage.qml"), {selectedAlarm: alarmModel.newAlarm(), newAlarm: true})
     }
 
     ListView {
@@ -96,7 +59,7 @@ Kirigami.ScrollablePage {
                 Kirigami.Action {
                     iconName: "entry-edit"
                     text: i18n("Edit")
-                    onTriggered: pageStack.push(Qt.resolvedUrl("NewAlarmPage.qml"), {selectedAlarm: model.alarm})
+                    onTriggered: pageStack.push(Qt.resolvedUrl("NewAlarmPage.qml"), {selectedAlarm: model.alarm, indexInList: index})
                 },
                 Kirigami.Action {
                     iconName: "delete"
@@ -155,5 +118,41 @@ Kirigami.ScrollablePage {
                 }
             }
         }
+    }
+    function getTimeFormat(hours, minutes) {
+        if (settingsModel.use24HourTime) {
+            return ("0" + hours).slice(-2) + ":" + ("0" + minutes).slice(-2)
+        } else {
+            if (hours >= 12) { // pm
+                if (hours - 12 == 0) hours = 24;
+                return ("0" + (hours - 12)).slice(-2) + ":" + ("0" + minutes).slice(-2) + " PM";
+            } else { // am
+                if (hours == 0) hours = 12;
+                return ("0" + hours).slice(-2) + ":" + ("0" + minutes).slice(-2) + " AM";
+            }
+        }
+    }
+
+    function getRepeatFormat(dayOfWeek) {
+        if (dayOfWeek == 0) {
+            return i18n("Only once");
+        }
+        let monday = 1 << 0, tuesday = 1 << 1, wednesday = 1 << 2, thursday = 1 << 3, friday = 1 << 4, saturday = 1 << 5, sunday = 1 << 6;
+
+        if (dayOfWeek == monday + tuesday + wednesday + thursday + friday + saturday + sunday)
+            return i18n("Everyday");
+
+        if (dayOfWeek == monday + tuesday + wednesday + thursday + friday)
+            return i18n("Weekdays");
+
+        let str = "";
+        if (dayOfWeek & monday) str += "Mon., ";
+        if (dayOfWeek & tuesday) str += "Tue., ";
+        if (dayOfWeek & wednesday) str += "Wed., ";
+        if (dayOfWeek & thursday) str += "Thu., ";
+        if (dayOfWeek & friday) str += "Fri., ";
+        if (dayOfWeek & saturday) str += "Sat., ";
+        if (dayOfWeek & sunday) str += "Sun., ";
+        return str.substring(0, str.length - 2);
     }
 }

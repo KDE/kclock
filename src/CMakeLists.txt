@@ -2,11 +2,10 @@ set(kclock_SRCS
     alarms.cpp
     timermodel.cpp
     utilmodel.cpp
-    settingsmodel.cpp
     stopwatchtimer.cpp
     resources.qrc
     )
-
+kconfig_add_kcfg_files(kclock_SRCS kclocksettings.kcfgc GENERATE_MOC)
 add_executable(kclock main.cpp timezoneselectormodel.cpp ${kclock_SRCS} )
 target_link_libraries(kclock
         Qt5::Qml
@@ -16,11 +15,11 @@ target_link_libraries(kclock
         Qt5::Multimedia
         KF5::I18n
         KF5::ConfigCore
+        KF5::ConfigGui
         KF5::CoreAddons
         KF5::Notifications
         KF5::DBusAddons
         )
-
 if (ANDROID)
     kirigami_package_breeze_icons(ICONS
         clock

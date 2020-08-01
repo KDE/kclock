@@ -37,7 +37,7 @@
 #endif
 
 #include "alarms.h"
-#include "settingsmodel.h"
+#include "kclocksettings.h"
 #include "stopwatchtimer.h"
 #include "timermodel.h"
 #include "timezoneselectormodel.h"
@@ -84,7 +84,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     auto *utilModel = new UtilModel();
     auto *stopwatchTimer = new StopwatchTimer();
     TimerModel::init();
-    SettingsModel::init();
+    KClockSettings settings;
 
     // register QML types
     qmlRegisterType<Alarm>("kclock", 1, 0, "Alarm");
@@ -95,7 +95,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     engine.rootContext()->setContextProperty("timeZoneFilterModel", timeZoneFilterModel);
     engine.rootContext()->setContextProperty("alarmModel", alarmModel);
     engine.rootContext()->setContextProperty("timerModel", TimerModel::inst());
-    engine.rootContext()->setContextProperty("settingsModel", SettingsModel::inst());
+    engine.rootContext()->setContextProperty("settingsModel", &settings);
     engine.rootContext()->setContextProperty("utilModel", utilModel);
     engine.rootContext()->setContextProperty("stopwatchTimer", stopwatchTimer);
     engine.load(QUrl(QStringLiteral("qrc:/qml/main.qml")));

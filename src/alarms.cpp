@@ -1,5 +1,6 @@
 /*
  * Copyright 2020 Devin Lin <espidev@gmail.com>
+ *                Han Young <hanyoung@protonmail.com>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -34,7 +35,7 @@
 #include <KSharedConfig>
 
 #include "alarms.h"
-#include "settingsmodel.h"
+#include "kclocksettings.h"
 
 const QString ALARM_CFG_GROUP = "Alarms";
 
@@ -49,12 +50,12 @@ Alarm::Alarm(QObject *parent, QString name, int minutes, int hours, int daysOfWe
     hours_ = hours;
     daysOfWeek_ = daysOfWeek;
     lastAlarm_ = QDateTime::currentDateTimeUtc().toSecsSinceEpoch();
-    
+
     ringtonePlayer = new QMediaPlayer(this, QMediaPlayer::LowLatency);
-    ringtonePlayer->setVolume(100);
+    ringtonePlayer->setVolume(volume_);
     connect(ringtonePlayer, &QMediaPlayer::stateChanged, this, &Alarm::loopAlarmSound);
-    
-    ringtonePlayer->setMedia(audioPath);
+
+    ringtonePlayer->setMedia(audioPath_);
 }
 
 // alarm from json (loaded from storage)
@@ -65,7 +66,7 @@ Alarm::Alarm(QString serialized)
     } else {
         QJsonDocument doc = QJsonDocument::fromJson(serialized.toUtf8());
         QJsonObject obj = doc.object();
-        
+
         uuid_ = QUuid::fromString(obj["uuid"].toString());
         name_ = obj["name"].toString();
         minutes_ = obj["minutes"].toInt();
@@ -76,14 +77,15 @@ Alarm::Alarm(QString serialized)
         snooze_ = obj["snooze"].toInt();
         lastSnooze_ = obj["lastSnooze"].toInt();
         ringtoneName_ = obj["ringtoneName"].toString();
-        audioPath = QUrl::fromLocalFile(obj["audioPath"].toString());
+        audioPath_ = QUrl::fromLocalFile(obj["audioPath"].toString());
+        volume_ = obj["volume"].toInt();
     }
-    
+
     ringtonePlayer = new QMediaPlayer(this, QMediaPlayer::LowLatency);
-    ringtonePlayer->setVolume(100);
+    ringtonePlayer->setVolume(volume_);
     connect(ringtonePlayer, &QMediaPlayer::stateChanged, this, &Alarm::loopAlarmSound);
-    
-    ringtonePlayer->setMedia(audioPath);
+
+    ringtonePlayer->setMedia(audioPath_);
 }
 
 // alarm to json
@@ -100,7 +102,8 @@ QString Alarm::serialize()
     obj["snooze"] = snooze();
     obj["lastSnooze"] = lastSnooze();
     obj["ringtoneName"] = ringtoneName();
-    obj["audioPath"] = audioPath.toLocalFile();
+    obj["audioPath"] = audioPath_.toLocalFile();
+    obj["volume"] = volume_;
     return QString(QJsonDocument(obj).toJson(QJsonDocument::Compact));
 }
 
@@ -117,7 +120,8 @@ void Alarm::ring()
     qDebug("Found alarm to run, sending notification...");
 
     KNotification *notif = new KNotification("timerFinished");
-    notif->setActions(QStringList() << "Dismiss" << "Snooze");
+    notif->setActions(QStringList() << "Dismiss"
+                                    << "Snooze");
     notif->setIconName("kclock");
     notif->setTitle(name());
     notif->setText(QDateTime::currentDateTime().toLocalTime().toString("hh:mm ap")); // TODO
@@ -131,43 +135,45 @@ void Alarm::ring()
     connect(notif, &KNotification::closed, this, &Alarm::handleDismiss);
 
     notif->sendEvent();
-    
+
     alarmNotifOpen = true;
     alarmNotifOpenTime = QTime::currentTime();
     // play sound (it will loop)
-    qDebug() << "Alarm sound: " << audioPath;
+    qDebug() << "Alarm sound: " << audioPath_;
     ringtonePlayer->play();
 }
 
 void Alarm::loopAlarmSound(QMediaPlayer::State state)
 {
-    if (state == QMediaPlayer::StoppedState && alarmNotifOpen && (alarmNotifOpenTime.secsTo(QTime::currentTime()) <= SettingsModel::inst()->alarmSilenceAfter())) {
+    KClockSettings settings;
+    if (state == QMediaPlayer::StoppedState && alarmNotifOpen && (alarmNotifOpenTime.secsTo(QTime::currentTime()) <= settings.alarmSilenceAfter())) {
         ringtonePlayer->play();
-    }        
+    }
 }
 
 void Alarm::handleDismiss()
 {
     alarmNotifOpen = false;
-    
+
     qDebug() << "Alarm dismissed";
     ringtonePlayer->stop();
-    
+
     setLastSnooze(0);
     save();
 }
 
 void Alarm::handleSnooze()
 {
+    KClockSettings settings;
     alarmNotifOpen = false;
-    qDebug() << "Alarm snoozed (" << SettingsModel::inst()->alarmSnoozeLengthDisplay() << ")" << lastSnooze();
+    qDebug() << "Alarm snoozed (" << settings.alarmSnoozeLengthDisplay() << ")" << lastSnooze();
     ringtonePlayer->stop();
-    
-    setSnooze(lastSnooze() + 60 * SettingsModel::inst()->alarmSnoozeLength()); // snooze 5 minutes
+
+    setSnooze(lastSnooze() + 60 * settings.alarmSnoozeLength()); // snooze 5 minutes
     setLastSnooze(snooze());
     setEnabled(true);
     save();
-    
+
     emit propertyChanged();
 }
 
@@ -176,7 +182,7 @@ qint64 Alarm::toPreviousAlarm(qint64 timestamp)
     QDateTime date = QDateTime::fromSecsSinceEpoch(timestamp).toLocalTime(); // local time
     QTime alarmTime = QTime(hours(), minutes());
 
-    if (daysOfWeek() == 0) { // no repeat of alarm
+    if (daysOfWeek() == 0) {            // no repeat of alarm
         if (alarmTime <= date.time()) { // current day
             return QDateTime(date.date(), alarmTime).toSecsSinceEpoch();
         } else { // previous day
@@ -187,7 +193,7 @@ qint64 Alarm::toPreviousAlarm(qint64 timestamp)
 
         // keeping looping back a single day until the day of week is accepted
         while (((daysOfWeek() & (1 << (date.date().dayOfWeek() - 1))) == 0) // check day
-               || (first && (alarmTime > date.time())))                             // check time on first day
+               || (first && (alarmTime > date.time())))                     // check time on first day
         {
             date = date.addDays(-1); // go back a day
             first = false;
@@ -215,10 +221,7 @@ AlarmModel::AlarmModel(QObject *parent)
     for (QString key : group.keyList()) {
         QString json = group.readEntry(key, "");
         if (!json.isEmpty()) {
-
             Alarm *alarm = new Alarm(json);
-
-            const int index = alarmsList.count();
             connect(alarm, &Alarm::propertyChanged, this, &AlarmModel::updateUi);
 
             alarmsList.append(alarm);
@@ -238,17 +241,17 @@ void AlarmModel::checkAlarmsToRun()
     qint64 curTime = QDateTime::currentDateTimeUtc().toSecsSinceEpoch();
 
     for (Alarm *alarm : alarmsList) {
-        if (alarm == nullptr || !alarm->enabled())
+        if (!alarm || !alarm->enabled())
             continue;
 
         // if it is time for alarm to ring
-        if (alarm->toPreviousAlarm(alarm->lastAlarm()) < alarm->toPreviousAlarm(curTime) ||                                                  // is next cycle
+        if (alarm->toPreviousAlarm(alarm->lastAlarm()) < alarm->toPreviousAlarm(curTime) ||                                            // is next cycle
             (alarm->snooze() != 0 && alarm->toPreviousAlarm(alarm->lastAlarm()) == alarm->toPreviousAlarm(curTime - alarm->snooze()))) // snooze
         {
             // ring alarm and set last time the alarm rang
             if (60 * 5 > (curTime - alarm->toPreviousAlarm(curTime) - alarm->snooze())) // only ring if it has been within 5 minutes of the alarm time
                 alarm->ring();
-            
+
             // reset snooze (stored in lastSnooze if the snooze button is clicked)
             alarm->setSnooze(0);
             alarm->setLastAlarm(curTime);
@@ -284,7 +287,7 @@ QVariant AlarmModel::data(const QModelIndex &index, int role) const
     }
 
     auto *alarm = alarmsList[index.row()];
-    if (alarm == nullptr)
+    if (!alarm)
         return false;
     if (role == EnabledRole)
         return alarm->enabled();
@@ -308,7 +311,7 @@ bool AlarmModel::setData(const QModelIndex &index, const QVariant &value, int ro
         return false;
     // to switch or not to switch?
     auto *alarm = alarmsList[index.row()];
-    if (alarm == nullptr)
+    if (!alarm)
         return false;
     if (role == EnabledRole)
         alarm->setEnabled(value.toBool());
@@ -343,27 +346,6 @@ Qt::ItemFlags AlarmModel::flags(const QModelIndex &index) const
     return Qt::ItemIsEditable;
 }
 
-void AlarmModel::newAlarm(QString name, int minutes, int hours, int daysOfWeek, QUrl ringtone)
-{
-    auto index = alarmsList.count();
-    auto alarm = new Alarm(this, name, minutes, hours, daysOfWeek);
-    
-    connect(alarm, &Alarm::propertyChanged, this, &AlarmModel::updateUi);
-
-    if (ringtone.isValid())
-        alarm->setRingtone(ringtone.toLocalFile());
-    
-    QQmlEngine::setObjectOwnership(alarm, QQmlEngine::CppOwnership); // prevent segfaults from js garbage collecting
-    
-    beginInsertRows(QModelIndex(), index, index);
-    alarmsList.insert(index, alarm);
-    
-    // write to config
-    alarm->save();
-    
-    endInsertRows();
-}
-
 void AlarmModel::remove(int index)
 {
     if (index < 0 || index >= alarmsList.count())
@@ -387,6 +369,24 @@ Alarm *AlarmModel::get(int index)
     if (index < 0 || index >= alarmsList.count())
         return new Alarm();
     return alarmsList.at(index);
+}
+
+Alarm *AlarmModel::newAlarm()
+{
+    if (!tmpAlarm_) {
+        tmpAlarm_ = new Alarm;
+        QQmlEngine::setObjectOwnership(tmpAlarm_, QQmlEngine::CppOwnership); // prevent segfaults from js garbage collecting
+    }
+    return tmpAlarm_;
+}
+void AlarmModel::addNewAlarm()
+{
+    if (tmpAlarm_) {
+        emit beginInsertRows(QModelIndex(), alarmsList.count(), alarmsList.count());
+        alarmsList.append(tmpAlarm_);
+        emit endInsertRows();
+        tmpAlarm_ = nullptr;
+    }
 }
 
 void AlarmModel::updateUi()

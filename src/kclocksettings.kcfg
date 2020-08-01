@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+      http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+  <kcfgfile name="kclockrc" />
+  <group name="Global">
+    <entry name="use24HourTime" type="Bool">
+      <label>use24HourTime</label>
+      <default>false</default>
+    </entry>
+    <entry name="alarmSilenceAfter" type="Int">
+      <label>alarmSilenceAfter</label>
+      <default>60</default>
+    </entry>
+    <entry name="alarmSilenceAfterDisplay" type="String">
+      <label>alarmSilenceAfterDisplay</label>
+      <default>1 minute</default>
+    </entry>
+    <entry name="alarmSnoozeLength" type="Int">
+      <label>alarmSnoozeLength</label>
+      <default>5</default>
+    </entry>
+    <entry name="alarmSnoozeLengthDisplay" type="String">
+      <label>alarmSnoozeLengthDisplay</label>
+      <default>5 minutes</default>
+    </entry>
+  </group>
+</kcfg>

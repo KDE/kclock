@@ -1,5 +1,6 @@
 /*
  * Copyright 2020 Devin Lin <espidev@gmail.com>
+ *                Han Young <hanyoung@protonmail.com>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -29,31 +30,12 @@ import kclock 1.0
 Kirigami.ScrollablePage {
 
     property Alarm selectedAlarm: null
-    property int alarmDaysOfWeek: selectedAlarm ? selectedAlarm.daysOfWeek : 0
-    property string ringtonePath
+    property int alarmDaysOfWeek: selectedAlarm.daysOfWeek
+    property int indexInList // index in alarm list
+    property bool newAlarm: false
+    property string ringtonePath: ""
 
-    title: selectedAlarm ? i18n("Edit %1", selectedAlarm.name) : i18n("New Alarm")
-    
-    function init(alarm, alarmModel) {
-        if (alarm == null) {
-            newAlarm = true;
-            alarmDaysOfWeek = 0;
-            // manually set because binding doesn't seem to work
-            let date = new Date();
-            selectedAlarmTime.pm = date.getHours() >= 12;
-            selectedAlarmTime.hours = date.getHours() >= 12 ? date.getHours() - 12 : date.getHours();
-            selectedAlarmTime.minutes = date.getMinutes();
-        } else {
-            newAlarm = false;
-            alarmDaysOfWeek = alarm.daysOfWeek;
-            // manually set because binding doesn't seem to work
-            selectedAlarmTime.pm = alarm.hours > 12;
-            selectedAlarmTime.hours = alarm.hours >= 12 ? alarm.hours - 12 : alarm.hours;
-            selectedAlarmTime.minutes = alarm.minutes;
-        }
-        selectedAlarm = alarm;
-        selectedAlarmModel = alarmModel;
-    }
+    title: selectedAlarm.name
     
     actions {
         main: Kirigami.Action {
@@ -62,41 +44,36 @@ Kirigami.ScrollablePage {
             onTriggered: {
                 let hours = selectedAlarmTime.hours + (selectedAlarmTime.pm ? 12 : 0);
                 let minutes = selectedAlarmTime.minutes;
-
-                if (!selectedAlarm) {
-                    alarmModel.newAlarm(selectedAlarmName.text, minutes, hours, alarmDaysOfWeek, ringtonePath);
-                } else {
-                    selectedAlarm.hours = hours
-                    selectedAlarm.minutes = minutes
-                    selectedAlarm.daysOfWeek = alarmDaysOfWeek
-
-                    // if the user did not set a new ringtone path, ignore
-                    if (ringtonePath != "") {
-                        selectedAlarmModel.ringtonePath = ringtonePath
-                    }
-                }
-
-                pageStack.pop()
+                selectedAlarm.hours = hours;
+                selectedAlarm.minutes = minutes;
+                selectedAlarm.daysOfWeek = alarmDaysOfWeek;
+                selectedAlarm.save();
+                if(newAlarm)
+                    alarmModel.addNewAlarm();
+                else
+                    alarmModel.dataChanged(indexInList, indexInList);
+                selectedAlarm.stop();
+                pageStack.pop();
             }
         }
     }
-    
+
     Column {
         spacing: Kirigami.Units.largeSpacing
-        
+
         // time picker
         DateAndTime.TimePicker {
             id: selectedAlarmTime
 
-            hours: selectedAlarm ? selectedAlarm.hours : 0
-            minutes: selectedAlarm ? selectedAlarm.minutes : 0
-            pm: selectedAlarm ? selectedAlarm.hours > 12 : 0
+            hours: hoursTo12(selectedAlarm.hours)
+            minutes: selectedAlarm.minutes
+            pm: selectedAlarm.hours > 12
 
             height: 400
             anchors.horizontalCenter: parent.horizontalCenter
             width: Math.min(400, parent.width)
         }
-        
+
         Kirigami.Separator {
             width: parent.width
         }
@@ -149,7 +126,8 @@ Kirigami.ScrollablePage {
             anchors.horizontalCenter: parent.horizontalCenter
             id: selectedAlarmName
             placeholderText: i18n("Wake Up")
-            text: selectedAlarm ? selectedAlarm.name : i18n("Alarm")
+            text: selectedAlarm.name
+            onTextChanged: selectedAlarm.name = this.text
         }
         Label {
             anchors.horizontalCenter: parent.horizontalCenter
@@ -160,18 +138,47 @@ Kirigami.ScrollablePage {
         Kirigami.ActionTextField {
             id: selectAlarmField
             anchors.horizontalCenter: parent.horizontalCenter
-            placeholderText: selectedAlarm ? selectedAlarm.ringtoneName : i18n("default")
+            placeholderText: selectedAlarm.ringtoneName
 
             rightActions: [
                 Kirigami.Action {
                     iconName: "list-add"
                     onTriggered: {
-                        ringtonePath = alarmModel.selectRingtone();
-                        if (ringtonePath.toString().length != 0)
-                            selectAlarmField.placeholderText = ringtonePath.toString().split('/').pop();
+                        ringtonePath = selectedAlarm.selectRingtone();
+                        if(ringtonePath != ""){
+                            selectedAlarm.ringtonePath = ringtonePath;
+                            selectedAlarm.ringtoneName = ringtonePath.toString().split('/').pop();
+                        }
                     }
                 }
             ]
         }
+
+        RowLayout {
+            anchors.horizontalCenter: parent.horizontalCenter
+            width: selectAlarmField.width
+            Text {
+                text: i18n("Volume: ")
+            }
+            Slider {
+                Layout.fillWidth: true
+                from: 0
+                to: 100
+                value: selectedAlarm.volume // this doesn't auto update Cpp value
+                onValueChanged: selectedAlarm.volume = value
+                onPressedChanged: {
+                    if(!pressed){
+                        selectedAlarm.play();
+                    }
+                }
+            }
+        }
+    }
+    function hoursTo12(hours){ // auxiliary function to convert 24hours to 12
+        if(hours >= 12)
+            return hours - 12;
+        else
+            return hours;
     }
 }
+
