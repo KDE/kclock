@@ -32,7 +32,7 @@ class UtilModel : public QObject
 
 public:
     QString getCurrentTimeZoneName();
-    
+
 signals:
     void propertyChanged();
 };

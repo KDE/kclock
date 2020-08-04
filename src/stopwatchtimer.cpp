@@ -20,8 +20,8 @@
  */
 
 #include "stopwatchtimer.h"
-#include <QTimer>
 #include <QDebug>
+#include <QTimer>
 
 StopwatchTimer::StopwatchTimer(QObject *parent)
     : QObject(parent)
@@ -40,16 +40,16 @@ void StopwatchTimer::toggle()
     if (stopped) { // start (from zero)
         stopped = false;
         paused = false;
-        
+
         timerStartStamp = QDateTime::currentMSecsSinceEpoch();
         pausedElapsed = 0;
-        
+
         timer_->start(interval_);
     } else if (paused) { // unpause
         paused = false;
-        
+
         pausedElapsed += QDateTime::currentMSecsSinceEpoch() - pausedStamp;
-        
+
         timer_->start(interval_);
     } else { // pause
         paused = true;
@@ -66,7 +66,6 @@ void StopwatchTimer::reset()
     paused = false;
     emit timeChanged();
 }
-
 
 long long StopwatchTimer::elapsedTime()
 {

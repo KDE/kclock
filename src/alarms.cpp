@@ -271,13 +271,7 @@ void AlarmModel::checkAlarmsToRun()
 
 QHash<int, QByteArray> AlarmModel::roleNames() const
 {
-    return {{HoursRole, "hours"},
-            {MinutesRole, "minutes"},
-            {NameRole, "name"},
-            {EnabledRole, "enabled"},
-            {DaysOfWeekRole, "daysOfWeek"},
-            {RingtonePathRole, "ringtonePath"},
-            {AlarmRole, "alarm"}};
+    return {{HoursRole, "hours"}, {MinutesRole, "minutes"}, {NameRole, "name"}, {EnabledRole, "enabled"}, {DaysOfWeekRole, "daysOfWeek"}, {RingtonePathRole, "ringtonePath"}, {AlarmRole, "alarm"}};
 }
 
 QVariant AlarmModel::data(const QModelIndex &index, int role) const

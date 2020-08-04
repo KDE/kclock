@@ -21,10 +21,10 @@
 #ifndef KIRIGAMICLOCK_TIMERMODEL_H
 #define KIRIGAMICLOCK_TIMERMODEL_H
 
+#include <QAbstractListModel>
 #include <QObject>
 #include <QString>
 #include <QTimer>
-#include <QAbstractListModel>
 
 class TimerModel;
 
@@ -39,17 +39,17 @@ class Timer : public QObject
     Q_PROPERTY(bool running READ running NOTIFY propertyChanged)
     Q_PROPERTY(bool finished READ finished NOTIFY propertyChanged)
     Q_PROPERTY(bool justCreated READ justCreated WRITE setJustCreated NOTIFY propertyChanged)
-    
+
 public:
     explicit Timer(QObject *parent = nullptr, int length = 0, int elapsed = 0, QString label = "", bool running = false);
     explicit Timer(const QJsonObject &obj);
-    
+
     QJsonObject serialize();
-    
+
     void updateTimer(qint64 duration);
     Q_INVOKABLE void toggleRunning();
     Q_INVOKABLE void reset();
-    
+
     QString lengthPretty() const
     {
         qint64 len = length_ / 1000, hours = len / 60 / 60, minutes = len / 60 - hours * 60, seconds = len - hours * 60 * 60 - minutes * 60;
@@ -109,7 +109,7 @@ public:
     {
         return justCreated_;
     }
-    
+
 signals:
     void propertyChanged();
 
@@ -119,7 +119,7 @@ private:
     bool running_, finished_, justCreated_;
 };
 
-static TimerModel* timerInst_;
+static TimerModel *timerInst_;
 
 class TimerModel : public QAbstractListModel
 {
@@ -127,23 +127,23 @@ class TimerModel : public QAbstractListModel
 
 public:
     explicit TimerModel(QObject *parent = nullptr);
-    
+
     int rowCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role) const override;
-    
+
     static void init()
     {
         timerInst_ = new TimerModel();
     }
-    static TimerModel* inst()
+    static TimerModel *inst()
     {
         return timerInst_;
     }
-    
+
     void updateTimerLoop();
     void updateTimerStatus(); // update qtimer to be on and off depending on if it is needed (for performance)
     bool areTimersInactive(); // if all timers are inactive
-    
+
     void load();
     void save();
     Q_INVOKABLE void addNew();
@@ -152,9 +152,9 @@ public:
     Q_INVOKABLE void move(int oldIndex, int newIndex);
     Q_INVOKABLE int count();
     Q_INVOKABLE Timer *get(int index);
-    
+
     bool saveRequested = false;
-    
+
 private:
     QList<Timer *> timerList;
     QTimer *timer;
