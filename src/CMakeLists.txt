@@ -1,5 +1,6 @@
 set(kclock_SRCS
     alarms.cpp
+    alarmmodel.cpp
     timermodel.cpp
     utilmodel.cpp
     stopwatchtimer.cpp

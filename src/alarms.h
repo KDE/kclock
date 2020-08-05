@@ -199,42 +199,4 @@ private:
     qint64 lastSnooze_; // last snooze length (cache snooze_ since it is set to 0 when alarm rings)
 };
 
-class AlarmModel : public QAbstractListModel
-{
-    Q_OBJECT
-public:
-    explicit AlarmModel(QObject *parent = nullptr);
-
-    enum {
-        NameRole = Qt::DisplayRole,
-        EnabledRole = Qt::UserRole + 1,
-        HoursRole,
-        MinutesRole,
-        DaysOfWeekRole,
-        RingtonePathRole,
-        AlarmRole,
-    };
-
-    int rowCount(const QModelIndex &parent) const override;
-    QVariant data(const QModelIndex &index, int role) const override;
-    bool setData(const QModelIndex &index, const QVariant &value, int role) override;
-    Qt::ItemFlags flags(const QModelIndex &index) const override;
-    QHash<int, QByteArray> roleNames() const override;
-
-    Q_INVOKABLE void updateUi();
-
-    bool load();
-    void checkAlarmsToRun();
-
-    Q_INVOKABLE Alarm *newAlarm();
-    Q_INVOKABLE void addNewAlarm();
-    Q_INVOKABLE void remove(int index);
-    Q_INVOKABLE Alarm *get(int index);
-
-private:
-    QList<Alarm *> alarmsList;
-    Alarm *tmpAlarm_ = nullptr; // tmp Alarm object used in creating alarm
-    QTimer *timer;
-};
-
 #endif // KIRIGAMICLOCK_ALARMS_H
