@@ -153,10 +153,15 @@ Qt::ItemFlags AlarmModel::flags(const QModelIndex &index) const
     return Qt::ItemIsEditable;
 }
 
-void AlarmModel::remove(int index)
+void AlarmModel::remove(QString uuid)
 {
-    if (index < 0 || index >= alarmsList.count())
-        return;
+    int index = 0;
+    for (auto id : alarmsList) {
+        if (id->uuid().toString() == uuid) {
+            break;
+        }
+        index++;
+    }
     emit beginRemoveRows(QModelIndex(), index, index);
 
     // write to config

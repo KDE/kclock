@@ -55,7 +55,7 @@ public:
 
     Q_INVOKABLE Alarm *newAlarm();
     Q_INVOKABLE void addNewAlarm();
-    Q_SCRIPTABLE Q_INVOKABLE void remove(int index);
+    Q_SCRIPTABLE Q_INVOKABLE void remove(QString uuid);
 
 signals:
     Q_SCRIPTABLE void alarmChanged();
