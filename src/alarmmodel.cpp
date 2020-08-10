@@ -156,12 +156,16 @@ Qt::ItemFlags AlarmModel::flags(const QModelIndex &index) const
 void AlarmModel::remove(QString uuid)
 {
     int index = 0;
+    bool found = false;
     for (auto id : alarmsList) {
         if (id->uuid().toString() == uuid) {
+            found = true;
             break;
         }
         index++;
     }
+    if (!found) // do nothing if not found
+        return;
     emit beginRemoveRows(QModelIndex(), index, index);
 
     // write to config
