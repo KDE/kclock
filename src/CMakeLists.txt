@@ -4,6 +4,7 @@ set(kclock_SRCS
     timermodel.cpp
     utilmodel.cpp
     stopwatchtimer.cpp
+    alarmwaitworker.cpp
     resources.qrc
     )
 kconfig_add_kcfg_files(kclock_SRCS kclocksettings.kcfgc GENERATE_MOC)
