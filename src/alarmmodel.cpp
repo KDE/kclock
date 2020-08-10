@@ -45,7 +45,7 @@ AlarmModel::AlarmModel(QObject *parent)
             Alarm *alarm = new Alarm(json, this);
 
             alarmsList.append(alarm);
-            QDBusConnection::sessionBus().registerObject("/alarms/" + QString::number(alarmsList.count()), alarm, SCRIPTANDPROPERTY);
+            QDBusConnection::sessionBus().registerObject("/alarms/" + alarm->uuid().toString(), alarm, SCRIPTANDPROPERTY);
         }
     }
 
@@ -198,7 +198,7 @@ void AlarmModel::addNewAlarm()
     }
 
     scheduleAlarm();
-    QDBusConnection::sessionBus().registerObject("/alarms/" + QString::number(alarmsList.count()), alarmsList.last(), SCRIPTANDPROPERTY);
+    QDBusConnection::sessionBus().registerObject("/alarms/" + alarmsList.last()->uuid().toString(), alarmsList.last(), SCRIPTANDPROPERTY);
 }
 
 void AlarmModel::updateUi()
@@ -212,5 +212,5 @@ void AlarmModel::addAlarm(int hours, int minutes, int daysOfWeek, QString name, 
     alarmsList.append(new Alarm(this, name, minutes, hours, daysOfWeek));
     emit endInsertRows();
     scheduleAlarm();
-    QDBusConnection::sessionBus().registerObject("/alarms/" + QString::number(alarmsList.count()), alarmsList.last(), SCRIPTANDPROPERTY);
+    QDBusConnection::sessionBus().registerObject("/alarms/" + alarmsList.last()->uuid().toString(), alarmsList.last(), SCRIPTANDPROPERTY);
 }
