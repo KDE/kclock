@@ -67,14 +67,14 @@ void AlarmModel::scheduleAlarm()
 {
     if (alarmsList.count() == 0) // no alarm, return
         return;
-    qint64 minTime = 0x7FFFFFFFFFFFFFFF;
+    qint64 minTime = std::numeric_limits<qint64>::max();
     for (auto alarm : alarmsList) {
         if (alarm->nextRingTime() > 0 && alarm->nextRingTime() < minTime) {
             alarmToBeRung = alarm;
             minTime = alarm->nextRingTime();
         }
     }
-    if (minTime != 0x7FFFFFFFFFFFFFFF) {
+    if (minTime != std::numeric_limits<qint64>::max()) {
         qDebug() << "scheduled" << QDateTime::fromSecsSinceEpoch(minTime).toLocalTime().toString();
         m_worker->setNewTime(minTime);
     }
