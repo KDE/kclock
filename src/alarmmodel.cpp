@@ -33,7 +33,7 @@ AlarmModel::AlarmModel(QObject *parent)
     : QAbstractListModel(parent)
 {
     // DBus
-    QDBusConnection::sessionBus().registerObject("/", this, QDBusConnection::ExportScriptableContents);
+    QDBusConnection::sessionBus().registerObject("/alarms", this, QDBusConnection::ExportScriptableContents);
 
     beginResetModel();
     // add alarms from config
