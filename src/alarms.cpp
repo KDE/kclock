@@ -24,42 +24,41 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QMediaPlayer>
-#include <QQmlEngine>
 #include <QTime>
-#include <QtCore/QCoreApplication>
-#include <QtCore/QProcess>
 
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KNotification>
 #include <KSharedConfig>
 
+#include "alarmmodel.h"
 #include "alarms.h"
+#include "alarmwaitworker.h"
 #include "kclocksettings.h"
 
 const QString ALARM_CFG_GROUP = "Alarms";
 
 // alarm created from UI
-Alarm::Alarm(QObject *parent, QString name, int minutes, int hours, int daysOfWeek)
+Alarm::Alarm(AlarmModel *parent, QString name, int minutes, int hours, int daysOfWeek)
     : QObject(parent)
+    , uuid_(QUuid::createUuid())
+    , enabled_(true)
+    , name_(name)
+    , minutes_(minutes)
+    , hours_(hours)
+    , daysOfWeek_(daysOfWeek)
+    , ringtonePlayer(new QMediaPlayer(this, QMediaPlayer::LowLatency))
 {
-    enabled_ = true;
-    uuid_ = QUuid::createUuid();
-    name_ = name;
-    minutes_ = minutes;
-    hours_ = hours;
-    daysOfWeek_ = daysOfWeek;
-    lastAlarm_ = QDateTime::currentDateTimeUtc().toSecsSinceEpoch();
-
-    ringtonePlayer = new QMediaPlayer(this, QMediaPlayer::LowLatency);
     ringtonePlayer->setVolume(volume_);
     connect(ringtonePlayer, &QMediaPlayer::stateChanged, this, &Alarm::loopAlarmSound);
-
     ringtonePlayer->setMedia(audioPath_);
+    if (parent)
+        connect(this, &Alarm::alarmChanged, parent, &AlarmModel::scheduleAlarm);
 }
 
 // alarm from json (loaded from storage)
-Alarm::Alarm(QString serialized)
+Alarm::Alarm(QString serialized, AlarmModel *parent)
+    : QObject(parent)
 {
     if (serialized == "") {
         uuid_ = QUuid::createUuid();
@@ -73,7 +72,6 @@ Alarm::Alarm(QString serialized)
         hours_ = obj["hours"].toInt();
         daysOfWeek_ = obj["daysOfWeek"].toInt();
         enabled_ = obj["enabled"].toBool();
-        lastAlarm_ = obj["lastAlarm"].toInt();
         snooze_ = obj["snooze"].toInt();
         lastSnooze_ = obj["lastSnooze"].toInt();
         ringtoneName_ = obj["ringtoneName"].toString();
@@ -86,6 +84,10 @@ Alarm::Alarm(QString serialized)
     connect(ringtonePlayer, &QMediaPlayer::stateChanged, this, &Alarm::loopAlarmSound);
 
     ringtonePlayer->setMedia(audioPath_);
+    if (parent) {
+        connect(this, &Alarm::propertyChanged, parent, &AlarmModel::updateUi);
+        connect(this, &Alarm::alarmChanged, parent, &AlarmModel::scheduleAlarm);
+    }
 }
 
 // alarm to json
@@ -177,30 +179,32 @@ void Alarm::handleSnooze()
     emit propertyChanged();
 }
 
-qint64 Alarm::toPreviousAlarm(qint64 timestamp)
+qint64 Alarm::nextRingTime()
 {
-    QDateTime date = QDateTime::fromSecsSinceEpoch(timestamp).toLocalTime(); // local time
-    QTime alarmTime = QTime(hours(), minutes());
+    if (!this->enabled_) // if not enabled, means this would never ring
+        return -1;
+    QDateTime date = QDateTime::currentDateTime(); // local time
+    QTime alarmTime = QTime(this->hours_, this->minutes_, this->snooze_);
 
-    if (daysOfWeek() == 0) {            // no repeat of alarm
-        if (alarmTime <= date.time()) { // current day
+    if (this->daysOfWeek_ == 0) {       // no repeat of alarm
+        if (alarmTime >= date.time()) { // current day
             return QDateTime(date.date(), alarmTime).toSecsSinceEpoch();
-        } else { // previous day
-            return QDateTime(date.addDays(-1).date(), alarmTime).toSecsSinceEpoch();
         }
     } else { // repeat alarm
         bool first = true;
 
         // keeping looping back a single day until the day of week is accepted
-        while (((daysOfWeek() & (1 << (date.date().dayOfWeek() - 1))) == 0) // check day
-               || (first && (alarmTime > date.time())))                     // check time on first day
+        while (((this->daysOfWeek_ & (1 << (date.date().dayOfWeek() - 1))) == 0) // check day
+               || (first && (alarmTime > date.time())))                          // check time on first day
         {
             date = date.addDays(-1); // go back a day
             first = false;
         }
-
         return QDateTime(date.date(), alarmTime).toSecsSinceEpoch();
     }
+
+    // if don't fall in the above circumstances, means it won't ring
+    return -1;
 }
 
 Alarm::~Alarm()

@@ -18,70 +18,65 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-
-#include "alarmmodel.h"
-
-#include <QQmlEngine>
-
 #include <KConfigGroup>
 #include <KSharedConfig>
+#include <QDBusConnection>
+#include <QQmlEngine>
+#include <QThread>
 
-const QString ALARM_CFG_GROUP = "Alarms";
+#include "alarmmodel.h"
+#include "alarms.h"
+#include "alarmwaitworker.h"
 
+#define SCRIPTANDPROPERTY QDBusConnection::ExportScriptableContents | QDBusConnection::ExportAllProperties
 AlarmModel::AlarmModel(QObject *parent)
     : QAbstractListModel(parent)
 {
-    beginResetModel();
+    // DBus
+    QDBusConnection::sessionBus().registerObject("/", this, QDBusConnection::ExportScriptableContents);
 
+    beginResetModel();
     // add alarms from config
     auto config = KSharedConfig::openConfig();
     KConfigGroup group = config->group(ALARM_CFG_GROUP);
     for (QString key : group.keyList()) {
         QString json = group.readEntry(key, "");
         if (!json.isEmpty()) {
-            Alarm *alarm = new Alarm(json);
-            connect(alarm, &Alarm::propertyChanged, this, &AlarmModel::updateUi);
+            Alarm *alarm = new Alarm(json, this);
 
             alarmsList.append(alarm);
+            QDBusConnection::sessionBus().registerObject("/alarms/" + QString::number(alarmsList.count()), alarm, SCRIPTANDPROPERTY);
         }
     }
 
     endResetModel();
 
-    // start alarm timer
-    this->timer = new QTimer(this);
-    connect(timer, &QTimer::timeout, this, QOverload<>::of(&AlarmModel::checkAlarmsToRun));
-    timer->start(2000);
+    m_timerThread = new QThread(this);
+    m_worker = new AlarmWaitWorker();
+    m_worker->moveToThread(m_timerThread);
+    connect(m_worker, &AlarmWaitWorker::finished, [this] {
+        qDebug() << "ring";
+        if (this->alarmToBeRung)
+            alarmToBeRung->ring();
+    });
+    m_timerThread->start();
+    scheduleAlarm();
 }
 
-void AlarmModel::checkAlarmsToRun()
+void AlarmModel::scheduleAlarm()
 {
-    qint64 curTime = QDateTime::currentDateTimeUtc().toSecsSinceEpoch();
-
-    for (Alarm *alarm : alarmsList) {
-        if (!alarm || !alarm->enabled())
-            continue;
-
-        // if it is time for alarm to ring
-        if (alarm->toPreviousAlarm(alarm->lastAlarm()) < alarm->toPreviousAlarm(curTime) ||                                            // is next cycle
-            (alarm->snooze() != 0 && alarm->toPreviousAlarm(alarm->lastAlarm()) == alarm->toPreviousAlarm(curTime - alarm->snooze()))) // snooze
-        {
-            // ring alarm and set last time the alarm rang
-            if (60 * 5 > (curTime - alarm->toPreviousAlarm(curTime) - alarm->snooze())) // only ring if it has been within 5 minutes of the alarm time
-                alarm->ring();
-
-            // reset snooze (stored in lastSnooze if the snooze button is clicked)
-            alarm->setSnooze(0);
-            alarm->setLastAlarm(curTime);
-
-            // disable alarm if run once
-            if (alarm->daysOfWeek() == 0)
-                alarm->setEnabled(false);
-
-            // save alarm after run
-            alarm->save();
-            updateUi();
+    if (alarmsList.count() == 0) // no alarm, return
+        return;
+    qint64 minTime = 0x7FFFFFFFFFFFFFFF;
+    for (auto alarm : alarmsList) {
+        if (alarm->nextRingTime() > 0 && alarm->nextRingTime() < minTime) {
+            alarmToBeRung = alarm;
+            minTime = alarm->nextRingTime();
         }
+    }
+    if (minTime != 0x7FFFFFFFFFFFFFFF) {
+        qDebug() << "scheduled" << QDateTime::fromSecsSinceEpoch(minTime).toLocalTime().toString();
+        m_worker->setNewTime(minTime);
     }
 }
 
@@ -176,13 +171,6 @@ void AlarmModel::remove(int index)
     emit endRemoveRows();
 }
 
-Alarm *AlarmModel::get(int index)
-{
-    if (index < 0 || index >= alarmsList.count())
-        return new Alarm();
-    return alarmsList.at(index);
-}
-
 Alarm *AlarmModel::newAlarm()
 {
     if (!tmpAlarm_) {
@@ -199,9 +187,21 @@ void AlarmModel::addNewAlarm()
         emit endInsertRows();
         tmpAlarm_ = nullptr;
     }
+
+    scheduleAlarm();
+    QDBusConnection::sessionBus().registerObject("/alarms/" + QString::number(alarmsList.count()), alarmsList.last(), SCRIPTANDPROPERTY);
 }
 
 void AlarmModel::updateUi()
 {
     emit dataChanged(createIndex(0, 0), createIndex(alarmsList.count() - 1, 0));
+}
+
+void AlarmModel::addAlarm(int hours, int minutes, int daysOfWeek, QString name, int ringTone)
+{
+    emit beginInsertRows(QModelIndex(), alarmsList.count(), alarmsList.count());
+    alarmsList.append(new Alarm(this, name, minutes, hours, daysOfWeek));
+    emit endInsertRows();
+    scheduleAlarm();
+    QDBusConnection::sessionBus().registerObject("/alarms/" + QString::number(alarmsList.count()), alarmsList.last(), SCRIPTANDPROPERTY);
 }
