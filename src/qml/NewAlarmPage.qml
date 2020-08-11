@@ -46,7 +46,6 @@ Kirigami.ScrollablePage {
                 selectedAlarm.hours = hours;
                 selectedAlarm.minutes = minutes;
                 selectedAlarm.daysOfWeek = alarmDaysOfWeek;
-                selectedAlarm.save();
                 if(newAlarm)
                     alarmModel.addNewAlarm();
                 else

@@ -50,6 +50,8 @@ Alarm::Alarm(AlarmModel *parent, QString name, int minutes, int hours, int daysO
     ringtonePlayer->setVolume(volume_);
     connect(ringtonePlayer, &QMediaPlayer::stateChanged, this, &Alarm::loopAlarmSound);
     ringtonePlayer->setMedia(audioPath_);
+
+    connect(this, &Alarm::alarmChanged, this, &Alarm::save);
     if (parent)
         connect(this, &Alarm::alarmChanged, parent, &AlarmModel::scheduleAlarm);
 }
@@ -82,6 +84,8 @@ Alarm::Alarm(QString serialized, AlarmModel *parent)
     connect(ringtonePlayer, &QMediaPlayer::stateChanged, this, &Alarm::loopAlarmSound);
 
     ringtonePlayer->setMedia(audioPath_);
+
+    connect(this, &Alarm::alarmChanged, this, &Alarm::save);
     if (parent) {
         connect(this, &Alarm::propertyChanged, parent, &AlarmModel::updateUi);
         connect(this, &Alarm::alarmChanged, parent, &AlarmModel::scheduleAlarm);
