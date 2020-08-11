@@ -86,7 +86,8 @@ void AlarmModel::scheduleAlarm()
         emit nextAlarm(minTime);
     } else {
         qDebug() << "no alarm to ring";
-        emit nextAlarm(-1);
+        nextAlarmTime = 0;
+        emit nextAlarm(0);
     }
 }
 
