@@ -113,7 +113,10 @@ Kirigami.ScrollablePage {
                         Layout.alignment: Qt.AlignRight|Qt.AlignVCenter
                         Layout.columnSpan: 1
                         checked: model.enabled
-                        onCheckedChanged: alarmName.color = checked ? Kirigami.Theme.activeTextColor : Kirigami.Theme.disabledTextColor
+                        onCheckedChanged: {
+                            model.enabled = checked;
+                            alarmName.color = checked ? Kirigami.Theme.activeTextColor : Kirigami.Theme.disabledTextColor;
+                        }
                     }
                 }
             }
