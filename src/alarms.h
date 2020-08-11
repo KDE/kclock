@@ -78,6 +78,7 @@ public:
     void setEnabled(bool enabled)
     {
         this->enabled_ = enabled;
+        emit alarmChanged(); // notify the AlarmModel to reschedule
         Q_EMIT propertyChanged();
     }
     int hours() const
@@ -158,9 +159,8 @@ public:
     };
     QString serialize();
 
-    qint64 nextRingTime();   // the next time this should ring, if this would never ring, return -1
-    void ring();             // ring alarm
-    Q_INVOKABLE void save(); // serialize and save to config
+    qint64 nextRingTime(); // the next time this should ring, if this would never ring, return -1
+    void ring();           // ring alarm
 
     inline qreal volume()
     {
@@ -176,7 +176,13 @@ public:
 signals:
     void propertyChanged();
     Q_SCRIPTABLE void alarmChanged();
-
+public slots:
+    Q_SCRIPTABLE QString getUUID()
+    {
+        return uuid_.toString();
+    }
+private slots:
+    void save(); // serialize and save to config
 private:
     QMediaPlayer *ringtonePlayer;
     bool alarmNotifOpen = false; // if the alarm notification is open

@@ -59,7 +59,7 @@ Kirigami.ScrollablePage {
                 Kirigami.Action {
                     iconName: "entry-edit"
                     text: i18n("Edit")
-                    onTriggered: pageStack.push(Qt.resolvedUrl("NewAlarmPage.qml"), {selectedAlarm: model.alarm, indexInList: index})
+                    onTriggered: pageStack.push(Qt.resolvedUrl("NewAlarmPage.qml"), {selectedAlarm: model.alarm})
                 },
                 Kirigami.Action {
                     iconName: "delete"
@@ -113,7 +113,10 @@ Kirigami.ScrollablePage {
                         Layout.alignment: Qt.AlignRight|Qt.AlignVCenter
                         Layout.columnSpan: 1
                         checked: model.enabled
-                        onCheckedChanged: alarmName.color = checked ? Kirigami.Theme.activeTextColor : Kirigami.Theme.disabledTextColor
+                        onCheckedChanged: {
+                            model.enabled = checked;
+                            alarmName.color = checked ? Kirigami.Theme.activeTextColor : Kirigami.Theme.disabledTextColor;
+                        }
                     }
                 }
             }

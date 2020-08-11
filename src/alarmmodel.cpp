@@ -45,7 +45,7 @@ AlarmModel::AlarmModel(QObject *parent)
             Alarm *alarm = new Alarm(json, this);
 
             alarmsList.append(alarm);
-            QDBusConnection::sessionBus().registerObject("/alarms/" + alarm->uuid().toString(), alarm, SCRIPTANDPROPERTY);
+            qDebug() << QDBusConnection::sessionBus().registerObject("/alarms/" + alarm->uuid().toString(QUuid::Id128), alarm, SCRIPTANDPROPERTY);
         }
     }
 
@@ -84,6 +84,10 @@ void AlarmModel::scheduleAlarm()
         nextAlarmTime = minTime;
         m_worker->setNewTime(minTime);
         emit nextAlarm(minTime);
+    } else {
+        qDebug() << "no alarm to ring";
+        nextAlarmTime = 0;
+        emit nextAlarm(0);
     }
 }
 
@@ -141,8 +145,6 @@ bool AlarmModel::setData(const QModelIndex &index, const QVariant &value, int ro
         alarm->setRingtone(value.toString());
     else
         return false;
-
-    alarm->save();
 
     emit dataChanged(index, index);
     return true;
@@ -205,7 +207,7 @@ void AlarmModel::addNewAlarm()
     }
 
     scheduleAlarm();
-    QDBusConnection::sessionBus().registerObject("/alarms/" + alarmsList.last()->uuid().toString(), alarmsList.last(), SCRIPTANDPROPERTY);
+    QDBusConnection::sessionBus().registerObject("/alarms/" + alarmsList.last()->uuid().toString(QUuid::Id128), alarmsList.last(), SCRIPTANDPROPERTY);
 }
 
 void AlarmModel::updateUi()
@@ -219,5 +221,5 @@ void AlarmModel::addAlarm(int hours, int minutes, int daysOfWeek, QString name, 
     alarmsList.append(new Alarm(this, name, minutes, hours, daysOfWeek));
     emit endInsertRows();
     scheduleAlarm();
-    QDBusConnection::sessionBus().registerObject("/alarms/" + alarmsList.last()->uuid().toString(), alarmsList.last(), SCRIPTANDPROPERTY);
+    QDBusConnection::sessionBus().registerObject("/alarms/" + alarmsList.last()->uuid().toString(QUuid::Id128), alarmsList.last(), SCRIPTANDPROPERTY);
 }

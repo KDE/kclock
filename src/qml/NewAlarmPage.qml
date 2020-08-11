@@ -31,7 +31,6 @@ Kirigami.ScrollablePage {
 
     property Alarm selectedAlarm: null
     property int alarmDaysOfWeek: selectedAlarm.daysOfWeek
-    property int indexInList // index in alarm list
     property bool newAlarm: false
     property string ringtonePath: ""
 
@@ -47,11 +46,10 @@ Kirigami.ScrollablePage {
                 selectedAlarm.hours = hours;
                 selectedAlarm.minutes = minutes;
                 selectedAlarm.daysOfWeek = alarmDaysOfWeek;
-                selectedAlarm.save();
                 if(newAlarm)
                     alarmModel.addNewAlarm();
                 else
-                    alarmModel.dataChanged(indexInList, indexInList);
+                    alarmModel.alarmChanged();
                 selectedAlarm.stop();
                 pageStack.pop();
             }
