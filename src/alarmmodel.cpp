@@ -189,37 +189,18 @@ void AlarmModel::remove(QString uuid)
     emit endRemoveRows();
 }
 
-Alarm *AlarmModel::newAlarm()
-{
-    if (!tmpAlarm_) {
-        tmpAlarm_ = new Alarm;
-        QQmlEngine::setObjectOwnership(tmpAlarm_, QQmlEngine::CppOwnership); // prevent segfaults from js garbage collecting
-    }
-    return tmpAlarm_;
-}
-void AlarmModel::addNewAlarm()
-{
-    if (tmpAlarm_) {
-        emit beginInsertRows(QModelIndex(), alarmsList.count(), alarmsList.count());
-        alarmsList.append(tmpAlarm_);
-        emit endInsertRows();
-        tmpAlarm_ = nullptr;
-    }
-
-    scheduleAlarm();
-    QDBusConnection::sessionBus().registerObject("/alarms/" + alarmsList.last()->uuid().toString(QUuid::Id128), alarmsList.last(), SCRIPTANDPROPERTY);
-}
-
 void AlarmModel::updateUi()
 {
     emit dataChanged(createIndex(0, 0), createIndex(alarmsList.count() - 1, 0));
 }
 
-void AlarmModel::addAlarm(int hours, int minutes, int daysOfWeek, QString name, int ringTone)
+void AlarmModel::addAlarm(int hours, int minutes, int daysOfWeek, QString name, QString ringtonePath)
 {
     emit beginInsertRows(QModelIndex(), alarmsList.count(), alarmsList.count());
-    alarmsList.append(new Alarm(this, name, minutes, hours, daysOfWeek));
+    Alarm *alarm = new Alarm(this, name, minutes, hours, daysOfWeek);
+    alarm->setRingtone(ringtonePath);
+    alarmsList.append(alarm);
     emit endInsertRows();
     scheduleAlarm();
-    QDBusConnection::sessionBus().registerObject("/alarms/" + alarmsList.last()->uuid().toString(QUuid::Id128), alarmsList.last(), SCRIPTANDPROPERTY);
+    QDBusConnection::sessionBus().registerObject("/alarms/" + alarm->uuid().toString(QUuid::Id128), alarm, SCRIPTANDPROPERTY);
 }

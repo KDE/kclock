@@ -30,11 +30,10 @@ import kclock 1.0
 Kirigami.ScrollablePage {
 
     property Alarm selectedAlarm: null
-    property int alarmDaysOfWeek: selectedAlarm.daysOfWeek
-    property bool newAlarm: false
+    property int alarmDaysOfWeek: selectedAlarm ? selectedAlarm.daysOfWeek : 0
     property string ringtonePath: ""
 
-    title: selectedAlarm.name
+    title: selectedAlarm ? selectedAlarm.name : i18n("New Alarm")
     
     actions {
         main: Kirigami.Action {
@@ -43,14 +42,17 @@ Kirigami.ScrollablePage {
             onTriggered: {
                 let hours = selectedAlarmTime.hours + (selectedAlarmTime.pm ? 12 : 0);
                 let minutes = selectedAlarmTime.minutes;
-                selectedAlarm.hours = hours;
-                selectedAlarm.minutes = minutes;
-                selectedAlarm.daysOfWeek = alarmDaysOfWeek;
-                if(newAlarm)
-                    alarmModel.addNewAlarm();
-                else
-                    alarmModel.alarmChanged();
-                selectedAlarm.stop();
+
+                if (selectedAlarm) {
+                    selectedAlarm.hours = hours;
+                    selectedAlarm.minutes = minutes;
+                    selectedAlarm.daysOfWeek = alarmDaysOfWeek;
+
+                    selectedAlarm.save();
+                } else {
+                    alarmModel.addAlarm(hours, minutes, alarmDaysOfWeek, selectedAlarmName.text);
+                }
+
                 pageStack.pop();
             }
         }
@@ -63,9 +65,9 @@ Kirigami.ScrollablePage {
         DateAndTime.TimePicker {
             id: selectedAlarmTime
 
-            hours: hoursTo12(selectedAlarm.hours)
-            minutes: selectedAlarm.minutes
-            pm: selectedAlarm.hours > 12
+            hours: selectedAlarm ? hoursTo12(selectedAlarm.hours) : 0
+            minutes: selectedAlarm ? selectedAlarm.minutes : 0
+            pm: selectedAlarm ? selectedAlarm.hours > 12 : false
 
             height: 400
             anchors.horizontalCenter: parent.horizontalCenter
@@ -124,8 +126,7 @@ Kirigami.ScrollablePage {
             anchors.horizontalCenter: parent.horizontalCenter
             id: selectedAlarmName
             placeholderText: i18n("Wake Up")
-            text: selectedAlarm.name
-            onTextChanged: selectedAlarm.name = this.text
+            text: selectedAlarm ? selectedAlarm.name : ""
         }
         Label {
             anchors.horizontalCenter: parent.horizontalCenter
@@ -136,7 +137,7 @@ Kirigami.ScrollablePage {
         Kirigami.ActionTextField {
             id: selectAlarmField
             anchors.horizontalCenter: parent.horizontalCenter
-            placeholderText: selectedAlarm.ringtoneName
+            placeholderText: selectedAlarm ? selectedAlarm.ringtoneName : ""
 
             rightActions: [
                 Kirigami.Action {
