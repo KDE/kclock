@@ -98,7 +98,6 @@ QString Alarm::serialize()
     obj["hours"] = hours();
     obj["daysOfWeek"] = daysOfWeek();
     obj["enabled"] = enabled();
-    obj["lastAlarm"] = lastAlarm();
     obj["snooze"] = snooze();
     obj["lastSnooze"] = lastSnooze();
     obj["ringtoneName"] = ringtoneName();
