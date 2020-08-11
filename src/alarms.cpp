@@ -162,7 +162,7 @@ void Alarm::handleDismiss()
     ringtonePlayer->stop();
 
     setLastSnooze(0);
-    save();
+    emit alarmChanged();
 }
 
 void Alarm::handleSnooze()
@@ -178,6 +178,7 @@ void Alarm::handleSnooze()
     save();
 
     emit propertyChanged();
+    emit alarmChanged();
 }
 
 qint64 Alarm::nextRingTime()
