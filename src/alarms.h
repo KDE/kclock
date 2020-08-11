@@ -176,6 +176,11 @@ public:
 signals:
     void propertyChanged();
     Q_SCRIPTABLE void alarmChanged();
+public slots:
+    Q_SCRIPTABLE QString getUUID()
+    {
+        return uuid_.toString();
+    }
 private slots:
     void save(); // serialize and save to config
 private:
