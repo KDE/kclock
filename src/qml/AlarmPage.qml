@@ -59,7 +59,7 @@ Kirigami.ScrollablePage {
                 Kirigami.Action {
                     iconName: "entry-edit"
                     text: i18n("Edit")
-                    onTriggered: pageStack.push(Qt.resolvedUrl("NewAlarmPage.qml"), {selectedAlarm: model.alarm, indexInList: index})
+                    onTriggered: pageStack.push(Qt.resolvedUrl("NewAlarmPage.qml"), {selectedAlarm: model.alarm})
                 },
                 Kirigami.Action {
                     iconName: "delete"
