@@ -142,8 +142,6 @@ bool AlarmModel::setData(const QModelIndex &index, const QVariant &value, int ro
     else
         return false;
 
-    alarm->save();
-
     emit dataChanged(index, index);
     return true;
 }
