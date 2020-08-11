@@ -29,15 +29,18 @@
 #include <QStandardPaths>
 #include <QString>
 #include <QTime>
-#include <QTimer>
 #include <QUrl>
-#include <QtCore/QAbstractListModel>
-#include <QtCore/QUuid>
+#include <QUuid>
 
 class QMediaPlayer;
+class QThread;
+class AlarmWaitWorker;
+class AlarmModel;
+const QString ALARM_CFG_GROUP = "Alarms";
 class Alarm : public QObject
 {
     Q_OBJECT
+    Q_CLASSINFO("D-Bus Interface", "org.kde.kclock.Alarm")
     Q_PROPERTY(QString name READ name WRITE setName NOTIFY propertyChanged)
     Q_PROPERTY(bool enabled READ enabled WRITE setEnabled NOTIFY propertyChanged)
     Q_PROPERTY(int hours READ hours WRITE setHours NOTIFY propertyChanged)
@@ -52,8 +55,8 @@ public slots:
     void handleSnooze();
 
 public:
-    explicit Alarm(QObject *parent = nullptr, QString name = "", int minutes = 0, int hours = 0, int daysOfWeek = 0);
-    explicit Alarm(QString serialized);
+    explicit Alarm(AlarmModel *parent = nullptr, QString name = "", int minutes = 0, int hours = 0, int daysOfWeek = 0);
+    explicit Alarm(QString serialized, AlarmModel *parent = nullptr);
     ~Alarm();
     QString name() const
     {
@@ -102,15 +105,6 @@ public:
     void setDaysOfWeek(int daysOfWeek)
     {
         this->daysOfWeek_ = daysOfWeek;
-        Q_EMIT propertyChanged();
-    }
-    qint64 lastAlarm() const
-    {
-        return lastAlarm_;
-    }
-    void setLastAlarm(qint64 lastAlarm)
-    {
-        this->lastAlarm_ = lastAlarm;
         Q_EMIT propertyChanged();
     }
     qint64 snooze() const
@@ -164,9 +158,9 @@ public:
     };
     QString serialize();
 
-    qint64 toPreviousAlarm(qint64 timestamp); // the last alarm (timestamp) that should have played
-    void ring();                              // ring alarm
-    Q_INVOKABLE void save();                  // serialize and save to config
+    qint64 nextRingTime();   // the next time this should ring, if this would never ring, return -1
+    void ring();             // ring alarm
+    Q_INVOKABLE void save(); // serialize and save to config
 
     inline qreal volume()
     {
@@ -181,6 +175,7 @@ public:
 
 signals:
     void propertyChanged();
+    Q_SCRIPTABLE void alarmChanged();
 
 private:
     QMediaPlayer *ringtonePlayer;
@@ -194,9 +189,8 @@ private:
     QUuid uuid_;
     bool enabled_;
     int hours_ = 0, minutes_ = 0, daysOfWeek_ = 0;
-    qint64 lastAlarm_;  // last time the alarm ran (unix timestamp)
-    qint64 snooze_;     // current snooze length
-    qint64 lastSnooze_; // last snooze length (cache snooze_ since it is set to 0 when alarm rings)
+    qint64 snooze_ = 0;     // current snooze length
+    qint64 lastSnooze_ = 0; // last snooze length (cache snooze_ since it is set to 0 when alarm rings)
 };
 
 #endif // KIRIGAMICLOCK_ALARMS_H

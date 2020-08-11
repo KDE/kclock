@@ -22,12 +22,14 @@
 #pragma once
 
 #include <QAbstractListModel>
+#include <QObject>
 
-#include "alarms.h"
-
+class Alarm;
+class AlarmWaitWorker;
 class AlarmModel : public QAbstractListModel
 {
     Q_OBJECT
+    Q_CLASSINFO("D-Bus Interface", "org.kde.kclock.AlarmModel")
 public:
     explicit AlarmModel(QObject *parent = nullptr);
 
@@ -50,15 +52,25 @@ public:
     Q_INVOKABLE void updateUi();
 
     bool load();
-    void checkAlarmsToRun();
 
     Q_INVOKABLE Alarm *newAlarm();
     Q_INVOKABLE void addNewAlarm();
-    Q_INVOKABLE void remove(int index);
-    Q_INVOKABLE Alarm *get(int index);
+    Q_SCRIPTABLE Q_INVOKABLE void remove(QString uuid);
 
+signals:
+    Q_SCRIPTABLE void alarmChanged();
+    Q_SCRIPTABLE void nextAlarm(quint64 nextAlarmTimeStampe);
+
+public slots:
+    Q_SCRIPTABLE quint64 getNextAlarm();
+    Q_SCRIPTABLE void scheduleAlarm();
+    Q_SCRIPTABLE void addAlarm(int hours, int minutes, int daysOfWeek, QString name, int ringTone = 0); // in 24 hours units, ringTone could be chosen from a list
 private:
+    quint64 nextAlarmTime = 0;
+    Alarm *alarmToBeRung = nullptr; // the alarm we currently waiting
+
     QList<Alarm *> alarmsList;
     Alarm *tmpAlarm_ = nullptr; // tmp Alarm object used in creating alarm
-    QTimer *timer;
+    QThread *m_timerThread;
+    AlarmWaitWorker *m_worker;
 };
