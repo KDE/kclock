@@ -160,6 +160,10 @@ void Alarm::handleDismiss()
 
     qDebug() << "Alarm dismissed";
     ringtonePlayer->stop();
+    
+    // disable alarm if set to run once
+    if (daysOfWeek() == 0)
+        setEnabled(false);
 
     setLastSnooze(0);
     emit alarmChanged();
