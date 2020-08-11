@@ -36,8 +36,6 @@
 #include "alarmwaitworker.h"
 #include "kclocksettings.h"
 
-const QString ALARM_CFG_GROUP = "Alarms";
-
 // alarm created from UI
 Alarm::Alarm(AlarmModel *parent, QString name, int minutes, int hours, int daysOfWeek)
     : QObject(parent)
