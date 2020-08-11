@@ -107,15 +107,6 @@ public:
         this->daysOfWeek_ = daysOfWeek;
         Q_EMIT propertyChanged();
     }
-    qint64 lastAlarm() const
-    {
-        return lastAlarm_;
-    }
-    void setLastAlarm(qint64 lastAlarm)
-    {
-        this->lastAlarm_ = lastAlarm;
-        Q_EMIT propertyChanged();
-    }
     qint64 snooze() const
     {
         return snooze_;
