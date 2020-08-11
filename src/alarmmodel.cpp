@@ -77,6 +77,7 @@ void AlarmModel::scheduleAlarm()
     if (minTime != std::numeric_limits<qint64>::max()) {
         qDebug() << "scheduled" << QDateTime::fromSecsSinceEpoch(minTime).toLocalTime().toString();
         m_worker->setNewTime(minTime);
+        emit nextAlarm(minTime);
     }
 }
 
