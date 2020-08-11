@@ -63,6 +63,11 @@ AlarmModel::AlarmModel(QObject *parent)
     scheduleAlarm();
 }
 
+quint64 AlarmModel::getNextAlarm()
+{
+    return nextAlarmTime;
+}
+
 void AlarmModel::scheduleAlarm()
 {
     if (alarmsList.count() == 0) // no alarm, return
@@ -76,6 +81,7 @@ void AlarmModel::scheduleAlarm()
     }
     if (minTime != std::numeric_limits<qint64>::max()) {
         qDebug() << "scheduled" << QDateTime::fromSecsSinceEpoch(minTime).toLocalTime().toString();
+        nextAlarmTime = minTime;
         m_worker->setNewTime(minTime);
         emit nextAlarm(minTime);
     }

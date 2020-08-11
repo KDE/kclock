@@ -62,9 +62,11 @@ signals:
     Q_SCRIPTABLE void nextAlarm(quint64 nextAlarmTimeStampe);
 
 public slots:
+    Q_SCRIPTABLE quint64 getNextAlarm();
     Q_SCRIPTABLE void scheduleAlarm();
     Q_SCRIPTABLE void addAlarm(int hours, int minutes, int daysOfWeek, QString name, int ringTone = 0); // in 24 hours units, ringTone could be chosen from a list
 private:
+    quint64 nextAlarmTime = 0;
     Alarm *alarmToBeRung = nullptr; // the alarm we currently waiting
 
     QList<Alarm *> alarmsList;
