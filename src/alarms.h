@@ -24,7 +24,6 @@
 
 #include <QDebug>
 #include <QFileDialog>
-#include <QMediaPlayer>
 #include <QObject>
 #include <QStandardPaths>
 #include <QString>
@@ -32,6 +31,7 @@
 #include <QUrl>
 #include <QUuid>
 
+#include "alarmplayer.h"
 class QMediaPlayer;
 class QThread;
 class AlarmWaitWorker;
@@ -47,8 +47,8 @@ class Alarm : public QObject
     Q_PROPERTY(int minutes READ minutes WRITE setMinutes NOTIFY propertyChanged)
     Q_PROPERTY(int daysOfWeek READ daysOfWeek WRITE setDaysOfWeek NOTIFY propertyChanged)
     Q_PROPERTY(QString ringtoneName READ ringtoneName WRITE setRingtoneName NOTIFY propertyChanged)
-    Q_PROPERTY(QString ringtonePath WRITE setRingtone NOTIFY propertyChanged)
-    Q_PROPERTY(qreal volume READ volume WRITE setVolume)
+    Q_PROPERTY(QString ringtonePath READ ringtonePath WRITE setRingtonePath NOTIFY propertyChanged)
+    Q_PROPERTY(qreal volume READ volume WRITE setVolume NOTIFY propertyChanged)
 
 public slots:
     void handleDismiss();
@@ -57,7 +57,6 @@ public slots:
 public:
     explicit Alarm(AlarmModel *parent = nullptr, QString name = "", int minutes = 0, int hours = 0, int daysOfWeek = 0);
     explicit Alarm(QString serialized, AlarmModel *parent = nullptr);
-    ~Alarm();
     QString name() const
     {
         return name_;
@@ -139,24 +138,16 @@ public:
     {
         auto url = QUrl(urlStr);
         audioPath_ = url;
-
-        ringtonePlayer->setMedia(audioPath_);
-        ringtonePlayer->play();
-        Q_EMIT propertyChanged();
     };
-
-    Q_INVOKABLE void play()
+    QString ringtonePath()
     {
-        ringtonePlayer->play();
-    }; // for testing volume
-    Q_INVOKABLE void stop()
-    {
-        ringtonePlayer->stop();
-    }; // stop volume testing when user done with alarm setting
-    Q_INVOKABLE QString selectRingtone()
-    {
-        return QFileDialog::getOpenFileUrl(nullptr, tr("Select Ringtone"), QStandardPaths::writableLocation(QStandardPaths::DesktopLocation), tr("Audio Files (*.wav *.mp3 *.opus *.aac *.ogg)")).toString();
+        return audioPath_.toString();
     };
+    void setRingtonePath(QString path)
+    {
+        audioPath_ = path;
+        emit propertyChanged();
+    }
     QString serialize();
 
     qint64 nextRingTime(); // the next time this should ring, if this would never ring, return -1
@@ -169,9 +160,8 @@ public:
     inline void setVolume(qreal volume)
     {
         volume_ = volume;
-        ringtonePlayer->setVolume(volume);
+        emit propertyChanged();
     };
-    void loopAlarmSound(QMediaPlayer::State state); // called when alarm sound ends (whether or not to play it again)
 
 signals:
     void propertyChanged();
@@ -184,7 +174,6 @@ public slots:
 private slots:
     void save(); // serialize and save to config
 private:
-    QMediaPlayer *ringtonePlayer;
     bool alarmNotifOpen = false; // if the alarm notification is open
     QTime alarmNotifOpenTime;    // time the alarm notification opened
 

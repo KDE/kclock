@@ -35,6 +35,7 @@
 #include <KDBusService>
 
 #include "alarmmodel.h"
+#include "alarmplayer.h"
 #include "alarms.h"
 #include "kclocksettings.h"
 #include "stopwatchtimer.h"
@@ -95,6 +96,7 @@ int main(int argc, char *argv[])
     engine.rootContext()->setContextProperty("settingsModel", &settings);
     engine.rootContext()->setContextProperty("utilModel", utilModel);
     engine.rootContext()->setContextProperty("stopwatchTimer", stopwatchTimer);
+    engine.rootContext()->setContextProperty("alarmPlayer", &AlarmPlayer::instance());
     engine.load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
 
     {

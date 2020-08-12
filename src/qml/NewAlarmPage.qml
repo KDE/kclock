@@ -23,6 +23,7 @@ import QtQuick 2.11
 import QtQuick.Controls 2.4
 import QtQuick.Window 2.2
 import QtQuick.Layouts 1.2
+import QtQuick.Dialogs 1.3
 import org.kde.kirigami 2.11 as Kirigami
 import org.kde.kirigamiaddons.dateandtime 0.1 as DateAndTime
 import kclock 1.0
@@ -31,8 +32,9 @@ Kirigami.ScrollablePage {
 
     property Alarm selectedAlarm: null
     property int alarmDaysOfWeek: selectedAlarm ? selectedAlarm.daysOfWeek : 0
-    property string ringtonePath: ""
+    property string ringtonePath: selectedAlarm ? selectedAlarm.ringtonePath : ""
 
+    id: newAlarmPageRoot
     title: selectedAlarm ? selectedAlarm.name : i18n("New Alarm")
     
     actions {
@@ -48,11 +50,11 @@ Kirigami.ScrollablePage {
                     selectedAlarm.minutes = minutes;
                     selectedAlarm.daysOfWeek = alarmDaysOfWeek;
 
-                    selectedAlarm.save();
+                    selectedAlarm.alarmChanged(); // emit this signal, auto save
                 } else {
                     alarmModel.addAlarm(hours, minutes, alarmDaysOfWeek, selectedAlarmName.text);
                 }
-
+                alarmPlayer.stop();
                 pageStack.pop();
             }
         }
@@ -138,16 +140,12 @@ Kirigami.ScrollablePage {
             id: selectAlarmField
             anchors.horizontalCenter: parent.horizontalCenter
             placeholderText: selectedAlarm ? selectedAlarm.ringtoneName : ""
-
+            width: newAlarmPageRoot.width * 0.8
             rightActions: [
                 Kirigami.Action {
                     iconName: "list-add"
                     onTriggered: {
-                        ringtonePath = selectedAlarm.selectRingtone();
-                        if(ringtonePath != ""){
-                            selectedAlarm.ringtonePath = ringtonePath;
-                            selectedAlarm.ringtoneName = ringtonePath.toString().split('/').pop();
-                        }
+                        fileDialog.open();
                     }
                 }
             ]
@@ -160,17 +158,41 @@ Kirigami.ScrollablePage {
                 text: i18n("Volume: ")
             }
             Slider {
+                id: volumeControl
                 Layout.fillWidth: true
                 from: 0
                 to: 100
-                value: selectedAlarm.volume // this doesn't auto update Cpp value
-                onValueChanged: selectedAlarm.volume = value
+                value: selectedAlarm ? selectedAlarm.volume : 100 // this doesn't auto update Cpp value
                 onPressedChanged: {
                     if(!pressed){
-                        selectedAlarm.play();
+                        alarmPlayer.setSource(ringtonePath);
+                        alarmPlayer.setVolume(volumeControl.value);
+                        alarmPlayer.play();
                     }
                 }
             }
+        }
+        FileDialog {
+            id: fileDialog
+            title: "Choose an audio"
+            folder: shortcuts.music
+            onAccepted: {
+                ringtonePath = fileDialog.fileUrl;
+                if(ringtonePath != ""){
+                    if(selectedAlarm){
+                        selectedAlarm.ringtonePath = ringtonePath;
+                        selectedAlarm.ringtoneName = ringtonePath.toString().split('/').pop();
+                    }
+                    alarmPlayer.setSource(ringtonePath);
+                    alarmPlayer.setVolume(volumeControl.value);
+                    alarmPlayer.play();
+                }
+                this.close();
+            }
+            onRejected: {
+                this.close();
+            }
+            nameFilters: [ "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)", "All files (*)" ]
         }
     }
     function hoursTo12(hours){ // auxiliary function to convert 24hours to 12

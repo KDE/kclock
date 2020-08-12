@@ -23,7 +23,6 @@
 #include <QDebug>
 #include <QJsonDocument>
 #include <QJsonObject>
-#include <QMediaPlayer>
 #include <QTime>
 
 #include <KConfigGroup>
@@ -32,6 +31,7 @@
 #include <KSharedConfig>
 
 #include "alarmmodel.h"
+#include "alarmplayer.h"
 #include "alarms.h"
 #include "alarmwaitworker.h"
 #include "kclocksettings.h"
@@ -45,12 +45,7 @@ Alarm::Alarm(AlarmModel *parent, QString name, int minutes, int hours, int daysO
     , minutes_(minutes)
     , hours_(hours)
     , daysOfWeek_(daysOfWeek)
-    , ringtonePlayer(new QMediaPlayer(this, QMediaPlayer::LowLatency))
 {
-    ringtonePlayer->setVolume(volume_);
-    connect(ringtonePlayer, &QMediaPlayer::stateChanged, this, &Alarm::loopAlarmSound);
-    ringtonePlayer->setMedia(audioPath_);
-
     connect(this, &Alarm::alarmChanged, this, &Alarm::save);
     if (parent)
         connect(this, &Alarm::alarmChanged, parent, &AlarmModel::scheduleAlarm);
@@ -78,13 +73,6 @@ Alarm::Alarm(QString serialized, AlarmModel *parent)
         audioPath_ = QUrl::fromLocalFile(obj["audioPath"].toString());
         volume_ = obj["volume"].toInt();
     }
-
-    ringtonePlayer = new QMediaPlayer(this, QMediaPlayer::LowLatency);
-    ringtonePlayer->setVolume(volume_);
-    connect(ringtonePlayer, &QMediaPlayer::stateChanged, this, &Alarm::loopAlarmSound);
-
-    ringtonePlayer->setMedia(audioPath_);
-
     connect(this, &Alarm::alarmChanged, this, &Alarm::save);
     if (parent) {
         connect(this, &Alarm::propertyChanged, parent, &AlarmModel::updateUi);
@@ -130,7 +118,7 @@ void Alarm::ring()
     notif->setText(QDateTime::currentDateTime().toLocalTime().toString("hh:mm ap")); // TODO
     notif->setDefaultAction(i18n("View"));
     notif->setUrgency(KNotification::HighUrgency);
-    notif->setFlags(KNotification::NotificationFlag::LoopSound | KNotification::NotificationFlag::Persistent);
+    notif->setFlags(KNotification::NotificationFlag::Persistent);
 
     connect(notif, &KNotification::defaultActivated, this, &Alarm::handleDismiss);
     connect(notif, &KNotification::action1Activated, this, &Alarm::handleDismiss);
@@ -143,15 +131,9 @@ void Alarm::ring()
     alarmNotifOpenTime = QTime::currentTime();
     // play sound (it will loop)
     qDebug() << "Alarm sound: " << audioPath_;
-    ringtonePlayer->play();
-}
-
-void Alarm::loopAlarmSound(QMediaPlayer::State state)
-{
-    KClockSettings settings;
-    if (state == QMediaPlayer::StoppedState && alarmNotifOpen && (alarmNotifOpenTime.secsTo(QTime::currentTime()) <= settings.alarmSilenceAfter())) {
-        ringtonePlayer->play();
-    }
+    AlarmPlayer::instance().setSource(this->audioPath_);
+    AlarmPlayer::instance().setVolume(this->volume_);
+    AlarmPlayer::instance().play();
 }
 
 void Alarm::handleDismiss()
@@ -159,8 +141,8 @@ void Alarm::handleDismiss()
     alarmNotifOpen = false;
 
     qDebug() << "Alarm dismissed";
-    ringtonePlayer->stop();
-    
+    AlarmPlayer::instance().stop();
+
     // disable alarm if set to run once
     if (daysOfWeek() == 0)
         setEnabled(false);
@@ -174,7 +156,7 @@ void Alarm::handleSnooze()
     KClockSettings settings;
     alarmNotifOpen = false;
     qDebug() << "Alarm snoozed (" << settings.alarmSnoozeLengthDisplay() << ")" << lastSnooze();
-    ringtonePlayer->stop();
+    AlarmPlayer::instance().stop();
 
     setSnooze(lastSnooze() + 60 * settings.alarmSnoozeLength()); // snooze 5 minutes
     setLastSnooze(snooze());
@@ -211,9 +193,4 @@ qint64 Alarm::nextRingTime()
 
     // if don't fall in the above circumstances, means it won't ring
     return -1;
-}
-
-Alarm::~Alarm()
-{
-    delete ringtonePlayer;
 }
