@@ -53,7 +53,8 @@ public:
 
     bool load();
 
-    Q_SCRIPTABLE Q_INVOKABLE void remove(QString uuid);
+    Q_SCRIPTABLE void remove(QString uuid);
+    Q_INVOKABLE void remove(int index);
 
 signals:
     Q_SCRIPTABLE void alarmChanged();

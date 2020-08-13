@@ -189,6 +189,25 @@ void AlarmModel::remove(QString uuid)
     emit endRemoveRows();
 }
 
+void AlarmModel::remove(int index)
+{
+    if (index < 0 || index >= this->rowCount({}))
+        return;
+
+    emit beginRemoveRows(QModelIndex(), index, index);
+
+    // write to config
+    auto config = KSharedConfig::openConfig();
+    KConfigGroup group = config->group(ALARM_CFG_GROUP);
+    group.deleteEntry(alarmsList.at(index)->uuid().toString());
+    alarmsList[index]->deleteLater(); // delete object
+    alarmsList.removeAt(index);
+
+    config->sync();
+
+    emit endRemoveRows();
+}
+
 void AlarmModel::updateUi()
 {
     emit dataChanged(createIndex(0, 0), createIndex(alarmsList.count() - 1, 0));
