@@ -108,6 +108,10 @@ void Alarm::save()
 
 void Alarm::ring()
 {
+    // if not enabled, don't ring
+    if (!this->enabled())
+        return;
+
     qDebug("Found alarm to run, sending notification...");
 
     KNotification *notif = new KNotification("timerFinished");

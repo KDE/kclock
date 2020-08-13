@@ -21,6 +21,8 @@
 #include <KConfigGroup>
 #include <KSharedConfig>
 #include <QDBusConnection>
+#include <QDBusInterface>
+#include <QDBusReply>
 #include <QQmlEngine>
 #include <QThread>
 
@@ -31,6 +33,7 @@
 #define SCRIPTANDPROPERTY QDBusConnection::ExportScriptableContents | QDBusConnection::ExportAllProperties
 AlarmModel::AlarmModel(QObject *parent)
     : QAbstractListModel(parent)
+    , m_interface(new QDBusInterface("org.kde.Solid.PowerManagement", "/org/kde/Solid/PowerManagement", "org.kde.Solid.PowerManagement"))
 {
     // DBus
     QDBusConnection::sessionBus().registerObject("/alarms", this, QDBusConnection::ExportScriptableContents);
@@ -48,18 +51,24 @@ AlarmModel::AlarmModel(QObject *parent)
             qDebug() << QDBusConnection::sessionBus().registerObject("/alarms/" + alarm->uuid().toString(QUuid::Id128), alarm, SCRIPTANDPROPERTY);
         }
     }
-
     endResetModel();
 
-    m_timerThread = new QThread(this);
-    m_worker = new AlarmWaitWorker();
-    m_worker->moveToThread(m_timerThread);
-    connect(m_worker, &AlarmWaitWorker::finished, [this] {
-        qDebug() << "ring";
-        if (this->alarmToBeRung)
-            alarmToBeRung->ring();
-    });
-    m_timerThread->start();
+    // if PowerDevil is present rely on PowerDevil to track time, otherwise we do it ourself
+    if (m_interface->isValid()) {
+        m_isPowerDevil = true;
+        QDBusConnection::sessionBus().registerObject("/alarms/", "org.kde.PowerManagement", this, QDBusConnection::ExportNonScriptableSlots);
+    } else {
+        m_isPowerDevil = false;
+        m_timerThread = new QThread(this);
+        m_worker = new AlarmWaitWorker();
+        m_worker->moveToThread(m_timerThread);
+        connect(m_worker, &AlarmWaitWorker::finished, [this] {
+            qDebug() << "ring";
+            if (this->alarmToBeRung)
+                alarmToBeRung->ring();
+        });
+        m_timerThread->start();
+    }
     scheduleAlarm();
 }
 
@@ -82,12 +91,40 @@ void AlarmModel::scheduleAlarm()
     if (minTime != std::numeric_limits<qint64>::max()) {
         qDebug() << "scheduled" << QDateTime::fromSecsSinceEpoch(minTime).toLocalTime().toString();
         nextAlarmTime = minTime;
-        m_worker->setNewTime(minTime);
+        if (m_isPowerDevil) {
+            // if we scheduled wakeup before, cancel it first
+            if (m_token > 0)
+                m_interface->call("clearWakeup", m_token);
+            // schedule wakeup and store token
+            QDBusReply<int> reply = m_interface->call("scheduleWakeup", "org.kde.kclock", "/alarms", minTime);
+            m_token = reply.value();
+        } else {
+            m_worker->setNewTime(minTime);
+        }
         emit nextAlarm(minTime);
     } else {
+        // this don't explicitly cancel the alarm currently waiting in m_worker if disabled by user
+        // because alarm->ring() will return immediatly if disabled
         qDebug() << "no alarm to ring";
         nextAlarmTime = 0;
+        alarmToBeRung = nullptr;
+        if (m_isPowerDevil)
+            m_interface->call("clearWakeup", m_token);
         emit nextAlarm(0);
+    }
+}
+
+void AlarmModel::wakeupCallback(int token)
+{
+    if (!(m_token == token))
+        return; // something muse be wrong here, return and do nothing
+
+    if (alarmToBeRung) {
+        // neutralise token
+        m_token = -1;
+
+        qDebug() << "ring";
+        alarmToBeRung->ring();
     }
 }
 

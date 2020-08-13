@@ -26,6 +26,7 @@
 
 class Alarm;
 class AlarmWaitWorker;
+class QDBusInterface;
 class AlarmModel : public QAbstractListModel
 {
     Q_OBJECT
@@ -61,14 +62,21 @@ signals:
     Q_SCRIPTABLE void nextAlarm(quint64 nextAlarmTimeStampe);
 
 public slots:
+    void wakeupCallback(int cookie); // PowerDevil callback function, not scriptable to distinguish from other slots
     Q_SCRIPTABLE quint64 getNextAlarm();
     Q_SCRIPTABLE void scheduleAlarm();
     Q_SCRIPTABLE void addAlarm(int hours, int minutes, int daysOfWeek, QString name, QString ringtonePath = 0); // in 24 hours units, ringTone could be chosen from a list
 private:
     quint64 nextAlarmTime = 0;
+    QDBusInterface *m_interface = nullptr;
+    int m_token = -1; // token for PowerDevil
+                      // https://invent.kde.org/plasma/powerdevil/-/merge_requests/13
+
+    bool m_isPowerDevil = false; // if PowerDevil present in system
+
     Alarm *alarmToBeRung = nullptr; // the alarm we currently waiting
 
     QList<Alarm *> alarmsList;
-    QThread *m_timerThread;
-    AlarmWaitWorker *m_worker;
+    QThread *m_timerThread = nullptr;
+    AlarmWaitWorker *m_worker = nullptr;
 };
