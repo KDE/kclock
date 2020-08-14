@@ -48,7 +48,7 @@ AlarmModel::AlarmModel(QObject *parent)
             Alarm *alarm = new Alarm(json, this);
 
             alarmsList.append(alarm);
-            qDebug() << QDBusConnection::sessionBus().registerObject("/alarms/" + alarm->uuid().toString(QUuid::Id128), alarm, SCRIPTANDPROPERTY);
+            QDBusConnection::sessionBus().registerObject("/alarms/" + alarm->uuid().toString(QUuid::Id128), alarm, SCRIPTANDPROPERTY);
         }
     }
     endResetModel();
@@ -62,15 +62,13 @@ AlarmModel::AlarmModel(QObject *parent)
             m_isPowerDevil = true;
             QDBusConnection::sessionBus().registerObject("/alarms/", "org.kde.PowerManagement", this, QDBusConnection::ExportNonScriptableSlots);
         } else {
-            qDebug() << "no PowerDevil";
             m_isPowerDevil = false;
         }
     } else {
         m_isPowerDevil = false;
     }
 
-    if (m_isPowerDevil) {
-        m_isPowerDevil = false;
+    if (!m_isPowerDevil) {
         m_timerThread = new QThread(this);
         m_worker = new AlarmWaitWorker();
         m_worker->moveToThread(m_timerThread);
