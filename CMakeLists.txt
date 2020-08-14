@@ -35,6 +35,7 @@ ecm_find_qmlmodule(org.kde.kirigamiaddons.dateandtime 0.1)
 
 find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS DBus Core Quick Test Gui Svg QuickControls2 Test Multimedia)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
+    Plasma
     Config
     Kirigami2
     I18n
