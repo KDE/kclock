@@ -55,9 +55,21 @@ AlarmModel::AlarmModel(QObject *parent)
 
     // if PowerDevil is present rely on PowerDevil to track time, otherwise we do it ourself
     if (m_interface->isValid()) {
-        m_isPowerDevil = true;
-        QDBusConnection::sessionBus().registerObject("/alarms/", "org.kde.PowerManagement", this, QDBusConnection::ExportNonScriptableSlots);
+        m_interface->call("wakeup"); // test Plasma 19.20 PowerDevil schedule wakeup feature
+
+        if (!m_interface->lastError().isValid()) // have this feature
+        {
+            m_isPowerDevil = true;
+            QDBusConnection::sessionBus().registerObject("/alarms/", "org.kde.PowerManagement", this, QDBusConnection::ExportNonScriptableSlots);
+        } else {
+            qDebug() << "no PowerDevil";
+            m_isPowerDevil = false;
+        }
     } else {
+        m_isPowerDevil = false;
+    }
+
+    if (m_isPowerDevil) {
         m_isPowerDevil = false;
         m_timerThread = new QThread(this);
         m_worker = new AlarmWaitWorker();
@@ -69,6 +81,7 @@ AlarmModel::AlarmModel(QObject *parent)
         });
         m_timerThread->start();
     }
+
     scheduleAlarm();
 }
 
