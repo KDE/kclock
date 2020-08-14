@@ -47,8 +47,16 @@ Alarm::Alarm(AlarmModel *parent, QString name, int minutes, int hours, int daysO
     , daysOfWeek_(daysOfWeek)
 {
     connect(this, &Alarm::alarmChanged, this, &Alarm::save);
-    if (parent)
-        connect(this, &Alarm::alarmChanged, parent, &AlarmModel::scheduleAlarm);
+    connect(this, &Alarm::alarmChanged, this, &Alarm::calculateNextRingTime); // the slots will be called according to
+                                                                              // the order they have been connected
+                                                                              // always connect this first than AlarmModel::scheduleAlarm
+
+    calculateNextRingTime();
+
+    if (parent) {
+        connect(this, &Alarm::propertyChanged, parent, &AlarmModel::updateUi);
+        connect(this, &Alarm::alarmChanged, parent, &AlarmModel::scheduleAlarm); // connect this last
+    }
 }
 
 // alarm from json (loaded from storage)
@@ -73,10 +81,17 @@ Alarm::Alarm(QString serialized, AlarmModel *parent)
         audioPath_ = QUrl::fromLocalFile(obj["audioPath"].toString());
         volume_ = obj["volume"].toInt();
     }
+
     connect(this, &Alarm::alarmChanged, this, &Alarm::save);
+    connect(this, &Alarm::alarmChanged, this, &Alarm::calculateNextRingTime); // the slots will be called according to
+                                                                              // the order they have been connected
+                                                                              // always connect this first than AlarmModel::scheduleAlarm
+
+    calculateNextRingTime();
+
     if (parent) {
         connect(this, &Alarm::propertyChanged, parent, &AlarmModel::updateUi);
-        connect(this, &Alarm::alarmChanged, parent, &AlarmModel::scheduleAlarm);
+        connect(this, &Alarm::alarmChanged, parent, &AlarmModel::scheduleAlarm); // connect this last
     }
 }
 
@@ -171,17 +186,23 @@ void Alarm::handleSnooze()
     emit alarmChanged();
 }
 
-qint64 Alarm::nextRingTime()
+void Alarm::calculateNextRingTime()
 {
-    if (!this->enabled_) // if not enabled, means this would never ring
-        return -1;
+    if (!this->enabled_) { // if not enabled, means this would never ring
+        m_nextRingTime = -1;
+        return;
+    }
+
     QDateTime date = QDateTime::currentDateTime(); // local time
     QTime alarmTime = QTime(this->hours_, this->minutes_, this->snooze_);
 
-    if (this->daysOfWeek_ == 0) {       // no repeat of alarm
+    if (this->daysOfWeek_ == 0) { // no repeat of alarm
+
         if (alarmTime >= date.time()) { // current day
-            return QDateTime(date.date(), alarmTime).toSecsSinceEpoch();
+            m_nextRingTime = QDateTime(date.date(), alarmTime).toSecsSinceEpoch();
+            return;
         }
+
     } else { // repeat alarm
         bool first = true;
 
@@ -192,9 +213,18 @@ qint64 Alarm::nextRingTime()
             date = date.addDays(-1); // go back a day
             first = false;
         }
-        return QDateTime(date.date(), alarmTime).toSecsSinceEpoch();
+
+        m_nextRingTime = QDateTime(date.date(), alarmTime).toSecsSinceEpoch();
+        return;
     }
 
-    // if don't fall in the above circumstances, means it won't ring
-    return -1;
+    m_nextRingTime = -1; // don't belong to any of them above, means would never ring
+}
+
+qint64 Alarm::nextRingTime()
+{
+    if (this->m_nextRingTime < QDateTime::currentSecsSinceEpoch()) // day changed, re-calculate
+        calculateNextRingTime();
+
+    return m_nextRingTime;
 }

@@ -174,6 +174,8 @@ public slots:
 private slots:
     void save(); // serialize and save to config
 private:
+    void calculateNextRingTime();
+
     bool alarmNotifOpen = false; // if the alarm notification is open
     QTime alarmNotifOpenTime;    // time the alarm notification opened
 
@@ -184,8 +186,9 @@ private:
     QUuid uuid_;
     bool enabled_;
     int hours_ = 0, minutes_ = 0, daysOfWeek_ = 0;
-    qint64 snooze_ = 0;     // current snooze length
-    qint64 lastSnooze_ = 0; // last snooze length (cache snooze_ since it is set to 0 when alarm rings)
+    qint64 snooze_ = 0;         // current snooze length
+    qint64 lastSnooze_ = 0;     // last snooze length (cache snooze_ since it is set to 0 when alarm rings)
+    qint64 m_nextRingTime = -1; // store calculated next ring time
 };
 
 #endif // KIRIGAMICLOCK_ALARMS_H
