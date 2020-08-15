@@ -80,14 +80,17 @@ AlarmModel::AlarmModel(QObject *parent)
         m_isPowerDevil = false;
     }
 
+    // if we do not have powerdevil, use a wait worker thread instead
     if (!m_isPowerDevil) {
         m_timerThread = new QThread(this);
         m_worker = new AlarmWaitWorker();
         m_worker->moveToThread(m_timerThread);
         connect(m_worker, &AlarmWaitWorker::finished, [this] {
-            qDebug() << "ring";
-            if (this->alarmToBeRung)
-                alarmToBeRung->ring();
+            // ring alarms that were scheduled for next wakeup
+            for (auto *alarm : this->alarmsToBeRung) {
+                qDebug() << "ringing alarm" << alarm->name();
+                alarm->ring();
+            }
         });
         m_timerThread->start();
     }
@@ -102,52 +105,74 @@ quint64 AlarmModel::getNextAlarm()
 
 void AlarmModel::scheduleAlarm()
 {
-    if (alarmsList.count() == 0) // no alarm, return
+    // if there are no alarms, return
+    if (alarmsList.count() == 0) {
         return;
+    }
+    
+    alarmsToBeRung.clear();
+    
+    // get the next minimum time for a wakeup (next alarm ring), and add alarms that will needed to be woken up to the list
     qint64 minTime = std::numeric_limits<qint64>::max();
-    for (auto alarm : alarmsList) {
-        if (alarm->nextRingTime() > 0 && alarm->nextRingTime() < minTime) {
-            alarmToBeRung = alarm;
-            minTime = alarm->nextRingTime();
+    for (auto *alarm : alarmsList) {
+        if (alarm->nextRingTime() > 0) {
+            if (alarm->nextRingTime() == minTime) {
+                alarmsToBeRung.append(alarm);
+            } else if (alarm->nextRingTime() < minTime) {
+                alarmsToBeRung.clear();
+                alarmsToBeRung.append(alarm);
+                minTime = alarm->nextRingTime();
+            }
         }
     }
+    
+    // if there is an alarm that needs to ring
     if (minTime != std::numeric_limits<qint64>::max()) {
-        qDebug() << "scheduled" << QDateTime::fromSecsSinceEpoch(minTime).toLocalTime().toString();
+        qDebug() << "scheduled wakeup" << QDateTime::fromSecsSinceEpoch(minTime).toString();
         nextAlarmTime = minTime;
+        
         if (m_isPowerDevil) {
             // if we scheduled wakeup before, cancel it first
-            if (m_token > 0)
+            if (m_token > 0) {
                 m_interface->call("clearWakeup", m_token);
+            }
+            
             // schedule wakeup and store token
             QDBusReply<int> reply = m_interface->call("scheduleWakeup", "org.kde.kclock", "/alarms", minTime);
             m_token = reply.value();
         } else {
             m_worker->setNewTime(minTime);
         }
-        emit nextAlarm(minTime);
     } else {
         // this don't explicitly cancel the alarm currently waiting in m_worker if disabled by user
-        // because alarm->ring() will return immediatly if disabled
+        // because alarm->ring() will return immediately if disabled
         qDebug() << "no alarm to ring";
+
         nextAlarmTime = 0;
-        alarmToBeRung = nullptr;
-        if (m_isPowerDevil)
+        if (m_isPowerDevil) {
             m_interface->call("clearWakeup", m_token);
-        emit nextAlarm(0);
+        }
     }
+    emit nextAlarm(nextAlarmTime);
 }
 
 void AlarmModel::wakeupCallback(int token)
 {
-    if (!(m_token == token))
-        return; // something muse be wrong here, return and do nothing
-
-    if (alarmToBeRung) {
+    qDebug() << "wakeup callback";
+    if (m_token != token) {
+        // something must be wrong here, return and do nothing
+        return;
+    }
+    
+    if (!alarmsToBeRung.empty()) {
         // neutralise token
         m_token = -1;
-
-        qDebug() << "ring";
-        alarmToBeRung->ring();
+        
+        // ring alarms that were scheduled for next wakeup
+        for (auto *alarm : alarmsToBeRung) {
+            qDebug() << "ringing alarm" << alarm->name();
+            alarm->ring();
+        }
     }
 }
 
@@ -224,6 +249,7 @@ Qt::ItemFlags AlarmModel::flags(const QModelIndex &index) const
 
 void AlarmModel::remove(QString uuid)
 {
+    // find alarm index
     int index = 0;
     bool found = false;
     for (auto id : alarmsList) {
@@ -233,20 +259,9 @@ void AlarmModel::remove(QString uuid)
         }
         index++;
     }
-    if (!found) // do nothing if not found
-        return;
-    emit beginRemoveRows(QModelIndex(), index, index);
-
-    // write to config
-    auto config = KSharedConfig::openConfig();
-    KConfigGroup group = config->group(ALARM_CFG_GROUP);
-    group.deleteEntry(alarmsList.at(index)->uuid().toString());
-    alarmsList[index]->deleteLater(); // delete object
-    alarmsList.removeAt(index);
-
-    config->sync();
-
-    emit endRemoveRows();
+    if (!found) return;
+    
+    this->remove(index);
 }
 
 void AlarmModel::remove(int index)
@@ -256,6 +271,16 @@ void AlarmModel::remove(int index)
 
     emit beginRemoveRows(QModelIndex(), index, index);
 
+    Alarm* alarmPointer = alarmsList[index];
+    
+    // remove from list of alarms to ring
+    for (int i = 0; i < alarmsToBeRung.size(); i++) {
+        if (alarmsToBeRung[i] == alarmPointer) {
+            alarmsToBeRung.removeAt(i);
+            i--;
+        }
+    }
+    
     // write to config
     auto config = KSharedConfig::openConfig();
     KConfigGroup group = config->group(ALARM_CFG_GROUP);
