@@ -20,11 +20,14 @@
  */
 #include <KConfigGroup>
 #include <KSharedConfig>
+#include <KStatusNotifierItem>
 #include <QDBusConnection>
 #include <QDBusInterface>
 #include <QDBusReply>
+#include <QLocale>
 #include <QQmlEngine>
 #include <QThread>
+#include <klocalizedstring.h>
 
 #include "alarmmodel.h"
 #include "alarms.h"
@@ -34,6 +37,7 @@
 AlarmModel::AlarmModel(QObject *parent)
     : QAbstractListModel(parent)
     , m_interface(new QDBusInterface("org.kde.Solid.PowerManagement", "/org/kde/Solid/PowerManagement", "org.kde.Solid.PowerManagement"))
+    , m_notifierItem(new KStatusNotifierItem(this))
 {
     // DBus
     QDBusConnection::sessionBus().registerObject("/alarms", this, QDBusConnection::ExportScriptableContents);
@@ -52,6 +56,12 @@ AlarmModel::AlarmModel(QObject *parent)
         }
     }
     endResetModel();
+
+    // update notify icon in systemtray
+    connect(this, &AlarmModel::nextAlarm, this, &AlarmModel::updateNotifierItem);
+    m_notifierItem->setIconByName(QStringLiteral("clock"));
+    m_notifierItem->setStandardActionsEnabled(false);
+    m_notifierItem->setAssociatedWidget(nullptr);
 
     // if PowerDevil is present rely on PowerDevil to track time, otherwise we do it ourself
     if (m_interface->isValid()) {
@@ -270,4 +280,15 @@ void AlarmModel::addAlarm(int hours, int minutes, int daysOfWeek, QString name, 
     emit endInsertRows();
     scheduleAlarm();
     QDBusConnection::sessionBus().registerObject("/alarms/" + alarm->uuid().toString(QUuid::Id128), alarm, SCRIPTANDPROPERTY);
+}
+
+void AlarmModel::updateNotifierItem(quint64 time)
+{
+    if (time == 0) {
+        m_notifierItem->setStatus(KStatusNotifierItem::Passive);
+        m_notifierItem->setToolTip(QStringLiteral("clock"), QStringLiteral("KClock"), QStringLiteral());
+    } else {
+        m_notifierItem->setStatus(KStatusNotifierItem::Active);
+        m_notifierItem->setToolTip(QStringLiteral("clock"), QStringLiteral("KClock"), xi18nc("@info", "Alarm: <shortcut>%1</shortcut>", QLocale::system().toString(QDateTime::fromSecsSinceEpoch(time).toLocalTime(), QLocale::ShortFormat)));
+    }
 }

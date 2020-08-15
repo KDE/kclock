@@ -27,6 +27,7 @@
 class Alarm;
 class AlarmWaitWorker;
 class QDBusInterface;
+class KStatusNotifierItem;
 class AlarmModel : public QAbstractListModel
 {
     Q_OBJECT
@@ -66,7 +67,11 @@ public slots:
     Q_SCRIPTABLE quint64 getNextAlarm();
     Q_SCRIPTABLE void scheduleAlarm();
     Q_SCRIPTABLE void addAlarm(int hours, int minutes, int daysOfWeek, QString name, QString ringtonePath = 0); // in 24 hours units, ringTone could be chosen from a list
+private slots:
+    void updateNotifierItem(quint64 time); // update notify icon in systemtray
+
 private:
+    KStatusNotifierItem *m_notifierItem = nullptr;
     quint64 nextAlarmTime = 0;
     QDBusInterface *m_interface = nullptr;
     int m_token = -1; // token for PowerDevil
