@@ -192,17 +192,18 @@ void Alarm::calculateNextRingTime()
         m_nextRingTime = -1;
         return;
     }
+    
+    // get the time that the alarm will ring on the day
+    QTime alarmTime = QTime(this->hours_, this->minutes_, 0).addSecs(this->snooze_);
+    
+    QDateTime date = QDateTime::currentDateTime();
 
-    QDateTime date = QDateTime::currentDateTime(); // local time
-    QTime alarmTime = QTime(this->hours_, this->minutes_, this->snooze_);
-
-    if (this->daysOfWeek_ == 0) { // no repeat of alarm
-
-        if (alarmTime >= date.time()) { // current day
+    if (this->daysOfWeek_ == 0) { // alarm does not repeat (no days of the week are specified)
+        if (alarmTime >= date.time()) { // alarm occurs later today
             m_nextRingTime = QDateTime(date.date(), alarmTime).toSecsSinceEpoch();
-            return;
+        } else { // alarm occurs on the next day
+            m_nextRingTime = QDateTime(date.date().addDays(1), alarmTime).toSecsSinceEpoch();
         }
-
     } else { // repeat alarm
         bool first = true;
 
@@ -215,16 +216,14 @@ void Alarm::calculateNextRingTime()
         }
 
         m_nextRingTime = QDateTime(date.date(), alarmTime).toSecsSinceEpoch();
-        return;
     }
-
-    m_nextRingTime = -1; // don't belong to any of them above, means would never ring
 }
 
 qint64 Alarm::nextRingTime()
 {
-    if (this->m_nextRingTime < QDateTime::currentSecsSinceEpoch()) // day changed, re-calculate
+    // day changed, re-calculate
+    if (this->m_nextRingTime < QDateTime::currentSecsSinceEpoch()) {
         calculateNextRingTime();
-
+    }
     return m_nextRingTime;
 }
