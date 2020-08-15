@@ -36,7 +36,7 @@
 #define SCRIPTANDPROPERTY QDBusConnection::ExportScriptableContents | QDBusConnection::ExportAllProperties
 AlarmModel::AlarmModel(QObject *parent)
     : QAbstractListModel(parent)
-    , m_interface(new QDBusInterface("org.kde.Solid.PowerManagement", "/org/kde/Solid/PowerManagement", "org.kde.Solid.PowerManagement"))
+    , m_interface(new QDBusInterface("org.kde.Solid.PowerManagement", "/org/kde/Solid/PowerManagement", "org.kde.Solid.PowerManagement", QDBusConnection::sessionBus(), this))
     , m_notifierItem(new KStatusNotifierItem(this))
 {
     // DBus
@@ -65,9 +65,11 @@ AlarmModel::AlarmModel(QObject *parent)
 
     // if PowerDevil is present rely on PowerDevil to track time, otherwise we do it ourself
     if (m_interface->isValid()) {
-        m_interface->call("wakeup"); // test Plasma 19.20 PowerDevil schedule wakeup feature
+        // test Plasma 5.20 PowerDevil schedule wakeup feature
+        QDBusMessage m = QDBusMessage::createMethodCall("org.kde.Solid.PowerManagement", "/org/kde/Solid/PowerManagement", "org.freedesktop.DBus.Introspectable", "Introspect");
+        QDBusReply<QString> result = QDBusConnection::sessionBus().call(m);
 
-        if (!m_interface->lastError().isValid()) // have this feature
+        if (result.isValid() && result.value().indexOf("scheduleWakeup")) // have this feature
         {
             m_isPowerDevil = true;
             QDBusConnection::sessionBus().registerObject("/alarms/", "org.kde.PowerManagement", this, QDBusConnection::ExportNonScriptableSlots);
