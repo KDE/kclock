@@ -7,7 +7,7 @@
   <group name="Global">
     <entry name="use24HourTime" type="Bool">
       <label>use24HourTime</label>
-      <default>!static_cast<bool>(QLocale::system().timeFormat(QLocale::ShortFormat).indexOf(QStringLiteral("AP")))</default>
+      <default>!QLocale::system().timeFormat(QLocale::ShortFormat).indexOf(QStringLiteral("AP"))</default>
     </entry>
     <entry name="alarmSilenceAfter" type="Int">
       <label>alarmSilenceAfter</label>
