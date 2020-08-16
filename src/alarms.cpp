@@ -76,7 +76,6 @@ Alarm::Alarm(QString serialized, AlarmModel *parent)
         daysOfWeek_ = obj["daysOfWeek"].toInt();
         enabled_ = obj["enabled"].toBool();
         snooze_ = obj["snooze"].toInt();
-        lastSnooze_ = obj["lastSnooze"].toInt();
         ringtoneName_ = obj["ringtoneName"].toString();
         audioPath_ = QUrl::fromLocalFile(obj["audioPath"].toString());
         volume_ = obj["volume"].toInt();
@@ -106,7 +105,6 @@ QString Alarm::serialize()
     obj["daysOfWeek"] = daysOfWeek();
     obj["enabled"] = enabled();
     obj["snooze"] = snooze();
-    obj["lastSnooze"] = lastSnooze();
     obj["ringtoneName"] = ringtoneName();
     obj["audioPath"] = audioPath_.toLocalFile();
     obj["volume"] = volume_;
@@ -148,6 +146,7 @@ void Alarm::ring()
 
     alarmNotifOpen = true;
     alarmNotifOpenTime = QTime::currentTime();
+    
     // play sound (it will loop)
     qDebug() << "Alarm sound: " << audioPath_;
     AlarmPlayer::instance().setSource(this->audioPath_);
@@ -162,26 +161,35 @@ void Alarm::handleDismiss()
     qDebug() << "Alarm dismissed";
     AlarmPlayer::instance().stop();
 
-    // disable alarm if set to run once
-    if (daysOfWeek() == 0)
-        setEnabled(false);
+    // ignore if the snooze button was pressed and dismiss is still called
+    if (!m_justSnoozed) {
+        // disable alarm if set to run once
+        if (daysOfWeek() == 0) {
+            setEnabled(false);
+        }
+    } else {
+        qDebug() << "Ignore dismiss (triggered by snooze)" << snooze_;
+    }
 
-    setLastSnooze(0);
+    m_justSnoozed = false;
+    
+    save();
     emit alarmChanged();
 }
 
 void Alarm::handleSnooze()
 {
+    m_justSnoozed = true;
+    
     KClockSettings settings;
     alarmNotifOpen = false;
-    qDebug() << "Alarm snoozed (" << settings.alarmSnoozeLengthDisplay() << ")" << lastSnooze();
+    qDebug() << "Alarm snoozed (" << settings.alarmSnoozeLengthDisplay() << ")";
     AlarmPlayer::instance().stop();
 
-    setSnooze(lastSnooze() + 60 * settings.alarmSnoozeLength()); // snooze 5 minutes
-    setLastSnooze(snooze());
-    setEnabled(true);
+    setSnooze(snooze() + 60 * settings.alarmSnoozeLength()); // snooze 5 minutes
+    enabled_ = true; // can't use setSnooze because it resets snooze time
     save();
-
+    
     emit propertyChanged();
     emit alarmChanged();
 }
@@ -207,11 +215,11 @@ void Alarm::calculateNextRingTime()
     } else { // repeat alarm
         bool first = true;
 
-        // keeping looping back a single day until the day of week is accepted
+        // keeping looping forward a single day until the day of week is accepted
         while (((this->daysOfWeek_ & (1 << (date.date().dayOfWeek() - 1))) == 0) // check day
-               || (first && (alarmTime > date.time())))                          // check time on first day
+               || (first && (alarmTime < date.time())))                          // check time if the current day is accepted (keep looping forward if alarmTime has passed)
         {
-            date = date.addDays(-1); // go back a day
+            date = date.addDays(1); // go forward a day
             first = false;
         }
 
