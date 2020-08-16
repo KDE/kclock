@@ -32,10 +32,10 @@ public:
 signals:
     void finished();
     void error();
-    void startWait();
+    void startWait(int waitId);
 
 protected slots:
-    void wait();
+    void wait(int waitId);
 
 private:
     int m_timerFd;

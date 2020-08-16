@@ -31,10 +31,8 @@ AlarmWaitWorker::AlarmWaitWorker(qint64 timestamp)
     connect(this, &AlarmWaitWorker::startWait, this, &AlarmWaitWorker::wait);
 }
 
-void AlarmWaitWorker::wait()
+void AlarmWaitWorker::wait(int waitId)
 {
-    int waitId = this->m_waitId;
-    
     if (m_waitEndTime < 0)
         return;
     struct itimerspec timerSpec;
@@ -80,5 +78,5 @@ void AlarmWaitWorker::setNewTime(qint64 timestamp)
 
     qDebug() << "start waiting, id:" << m_waitId;
 
-    emit startWait();
+    emit startWait(m_waitId);
 }
