@@ -275,11 +275,31 @@ void AlarmModel::updateUi()
 
 void AlarmModel::addAlarm(int hours, int minutes, int daysOfWeek, QString name, QString ringtonePath)
 {
-    emit beginInsertRows(QModelIndex(), alarmsList.count(), alarmsList.count());
     Alarm *alarm = new Alarm(this, name, minutes, hours, daysOfWeek);
+
+    // find the place to insert new alarm
+    int i = 0;
+    for (auto alarms : alarmsList) {
+        if (alarms->hours() < hours) {
+            i++;
+            continue;
+        } else if (alarms->hours() == hours) {
+            if (alarms->minutes() < minutes) {
+                i++;
+                break;
+            } else {
+                break;
+            }
+        } else {
+            break;
+        }
+    }
+    emit beginInsertRows(QModelIndex(), i, i);
+
     alarm->setRingtone(ringtonePath);
-    alarmsList.append(alarm);
+    alarmsList.insert(i, alarm);
     emit endInsertRows();
+
     scheduleAlarm();
     QDBusConnection::sessionBus().registerObject("/alarms/" + alarm->uuid().toString(QUuid::Id128), alarm, SCRIPTANDPROPERTY);
 }
