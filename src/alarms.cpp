@@ -127,7 +127,7 @@ void Alarm::ring()
 
     qDebug("Found alarm to run, sending notification...");
 
-    KNotification *notif = new KNotification("timerFinished");
+    KNotification *notif = new KNotification("alarm");
     notif->setActions(QStringList() << "Dismiss"
                                     << "Snooze");
     notif->setIconName("kclock");
@@ -158,7 +158,7 @@ void Alarm::handleDismiss()
 {
     alarmNotifOpen = false;
 
-    qDebug() << "Alarm dismissed";
+    qDebug() << "Alarm" << name_ << "dismissed";
     AlarmPlayer::instance().stop();
 
     // ignore if the snooze button was pressed and dismiss is still called
