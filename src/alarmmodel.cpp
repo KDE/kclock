@@ -43,7 +43,8 @@ AlarmModel::AlarmModel(QObject *parent)
     QDBusConnection::sessionBus().registerObject("/alarms", this, QDBusConnection::ExportScriptableContents);
 
     beginResetModel();
-    // add alarms from config
+    
+    // load alarms from config
     auto config = KSharedConfig::openConfig();
     KConfigGroup group = config->group(ALARM_CFG_GROUP);
     for (QString key : group.keyList()) {
@@ -55,6 +56,7 @@ AlarmModel::AlarmModel(QObject *parent)
             QDBusConnection::sessionBus().registerObject("/alarms/" + alarm->uuid().toString(QUuid::Id128), alarm, SCRIPTANDPROPERTY);
         }
     }
+    
     endResetModel();
 
     // update notify icon in systemtray
@@ -69,8 +71,7 @@ AlarmModel::AlarmModel(QObject *parent)
         QDBusMessage m = QDBusMessage::createMethodCall("org.kde.Solid.PowerManagement", "/org/kde/Solid/PowerManagement", "org.freedesktop.DBus.Introspectable", "Introspect");
         QDBusReply<QString> result = QDBusConnection::sessionBus().call(m);
 
-        if (result.isValid() && result.value().indexOf("scheduleWakeup")) // have this feature
-        {
+        if (result.isValid() && result.value().indexOf("scheduleWakeup")) { // have this feature
             m_isPowerDevil = true;
             QDBusConnection::sessionBus().registerObject("/alarms/", "org.kde.PowerManagement", this, QDBusConnection::ExportNonScriptableSlots);
         } else {
@@ -91,6 +92,7 @@ AlarmModel::AlarmModel(QObject *parent)
                 qDebug() << "ringing alarm" << alarm->name();
                 alarm->ring();
             }
+            this->alarmsToBeRung.clear();
         });
         m_timerThread->start();
     }
@@ -173,6 +175,7 @@ void AlarmModel::wakeupCallback(int token)
             qDebug() << "ringing alarm" << alarm->name();
             alarm->ring();
         }
+        alarmsToBeRung.clear();
     }
 }
 
@@ -302,7 +305,7 @@ void AlarmModel::addAlarm(int hours, int minutes, int daysOfWeek, QString name, 
 {
     Alarm *alarm = new Alarm(this, name, minutes, hours, daysOfWeek);
 
-    // find the place to insert new alarm
+    // insert new alarm in order by time of day
     int i = 0;
     for (auto alarms : alarmsList) {
         if (alarms->hours() < hours) {
