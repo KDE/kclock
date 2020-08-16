@@ -33,6 +33,8 @@ AlarmWaitWorker::AlarmWaitWorker(qint64 timestamp)
 
 void AlarmWaitWorker::wait()
 {
+    int waitId = this->m_waitId;
+    
     if (m_waitEndTime < 0)
         return;
     struct itimerspec timerSpec;
@@ -53,14 +55,21 @@ void AlarmWaitWorker::wait()
         emit error();
         return;
     }
+    // ensure that there is one wakeup and not multiple
+    if (waitId != this->m_waitId) {
+        qDebug() << "cancel old wakeup" << waitId;
+        return;
+    }
 
-    qDebug() << "waiting end";
+    qDebug() << "waiting end" << waitId;
 
     emit finished();
 }
 
 void AlarmWaitWorker::setNewTime(qint64 timestamp)
 {
+    m_waitId = std::rand();
+    
     m_waitEndTime = timestamp;
     struct itimerspec timerSpec;
     timerSpec.it_value.tv_sec = m_waitEndTime;
@@ -69,7 +78,7 @@ void AlarmWaitWorker::setNewTime(qint64 timestamp)
     timerSpec.it_interval.tv_nsec = 0;
     timerfd_settime(m_timerFd, TFD_TIMER_ABSTIME, &timerSpec, nullptr); // absolute time
 
-    qDebug() << "start waiting";
+    qDebug() << "start waiting, id:" << m_waitId;
 
     emit startWait();
 }

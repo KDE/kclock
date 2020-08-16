@@ -39,6 +39,7 @@ protected slots:
 
 private:
     int m_timerFd;
+    int m_waitId; // use only newest poll 
     qint64 m_waitEndTime;
     bool m_isFinished = true;
 };
