@@ -46,6 +46,7 @@ Kirigami.ScrollablePage {
                 let minutes = selectedAlarmTime.minutes;
 
                 if (selectedAlarm) {
+                    selectedAlarm.name = selectedAlarmName.text;
                     selectedAlarm.hours = hours;
                     selectedAlarm.minutes = minutes;
                     selectedAlarm.daysOfWeek = alarmDaysOfWeek;
@@ -128,7 +129,7 @@ Kirigami.ScrollablePage {
             anchors.horizontalCenter: parent.horizontalCenter
             id: selectedAlarmName
             placeholderText: i18n("Wake Up")
-            text: selectedAlarm ? selectedAlarm.name : ""
+            text: selectedAlarm ? selectedAlarm.name : "Alarm"
         }
         Label {
             anchors.horizontalCenter: parent.horizontalCenter
@@ -178,8 +179,8 @@ Kirigami.ScrollablePage {
             folder: shortcuts.music
             onAccepted: {
                 ringtonePath = fileDialog.fileUrl;
-                if(ringtonePath != ""){
-                    if(selectedAlarm){
+                if (ringtonePath != "") {
+                    if (selectedAlarm) {
                         selectedAlarm.ringtonePath = ringtonePath;
                         selectedAlarm.ringtoneName = ringtonePath.toString().split('/').pop();
                     }
