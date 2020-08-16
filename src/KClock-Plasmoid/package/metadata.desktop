@@ -1,6 +1,20 @@
 [Desktop Entry]
 Name=KClock
+Name[ca]=KClock
+Name[ca@valencia]=KClock
+Name[nl]=KClock
+Name[pt]=KClock
+Name[sv]=Klocka
+Name[uk]=KClock
+Name[x-test]=xxKClockxx
 Comment=KClock widget
+Comment[ca]=Estri del KClock
+Comment[ca@valencia]=Estri del KClock
+Comment[nl]=KClock-widget
+Comment[pt]=Item do KClock
+Comment[sv]=Grafisk klockkomponent
+Comment[uk]=Віджет KClock
+Comment[x-test]=xxKClock widgetxx
 
 
 Icon=kclock
