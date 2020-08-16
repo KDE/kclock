@@ -125,7 +125,7 @@ void Alarm::ring()
     if (!this->enabled())
         return;
 
-    qDebug("Found alarm to run, sending notification...");
+    qDebug() << "Ringing alarm" << name_ << "and sending notification...";
 
     KNotification *notif = new KNotification("alarm");
     notif->setActions(QStringList() << "Dismiss"

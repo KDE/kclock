@@ -65,6 +65,8 @@ AlarmModel::AlarmModel(QObject *parent)
     m_notifierItem->setStandardActionsEnabled(false);
     m_notifierItem->setAssociatedWidget(nullptr);
 
+    m_isPowerDevil = false;
+    
     // if PowerDevil is present rely on PowerDevil to track time, otherwise we do it ourself
     if (m_interface->isValid()) {
         // test Plasma 5.20 PowerDevil schedule wakeup feature
@@ -73,12 +75,8 @@ AlarmModel::AlarmModel(QObject *parent)
 
         if (result.isValid() && result.value().indexOf("scheduleWakeup")) { // have this feature
             m_isPowerDevil = true;
-            QDBusConnection::sessionBus().registerObject("/alarms/", "org.kde.PowerManagement", this, QDBusConnection::ExportNonScriptableSlots);
-        } else {
-            m_isPowerDevil = false;
+            QDBusConnection::sessionBus().registerObject("/alarms", "org.kde.PowerManagement", this, QDBusConnection::ExportNonScriptableSlots);
         }
-    } else {
-        m_isPowerDevil = false;
     }
 
     // if we do not have powerdevil, use a wait worker thread instead
@@ -89,12 +87,15 @@ AlarmModel::AlarmModel(QObject *parent)
         connect(m_worker, &AlarmWaitWorker::finished, [this] {
             // ring alarms that were scheduled for next wakeup
             for (auto *alarm : this->alarmsToBeRung) {
-                qDebug() << "ringing alarm" << alarm->name();
                 alarm->ring();
             }
             this->alarmsToBeRung.clear();
         });
         m_timerThread->start();
+        
+        qDebug() << "PowerDevil not found, using wait worker thread for alarm wakeup.";
+    } else {
+        qDebug() << "PowerDevil found, using it for alarm wakeup.";
     }
 
     scheduleAlarm();
@@ -135,13 +136,17 @@ void AlarmModel::scheduleAlarm()
         
         if (m_isPowerDevil) {
             // if we scheduled wakeup before, cancel it first
-            if (m_token > 0) {
-                m_interface->call("clearWakeup", m_token);
+            if (m_cookie > 0) {
+                m_interface->call("clearWakeup", m_cookie);
             }
             
-            // schedule wakeup and store token
+            // schedule wakeup and store cookie
             QDBusReply<int> reply = m_interface->call("scheduleWakeup", "org.kde.kclock", "/alarms", minTime);
-            m_token = reply.value();
+            m_cookie = reply.value();
+            
+            if (!reply.isValid()) {
+                qDebug() << "DBus error:" << reply.error();
+            }
         } else {
             m_worker->setNewTime(minTime);
         }
@@ -152,27 +157,26 @@ void AlarmModel::scheduleAlarm()
 
         nextAlarmTime = 0;
         if (m_isPowerDevil) {
-            m_interface->call("clearWakeup", m_token);
+            m_interface->call("clearWakeup", m_cookie);
         }
     }
     emit nextAlarm(nextAlarmTime);
 }
 
-void AlarmModel::wakeupCallback(int token)
+void AlarmModel::wakeupCallback(int cookie)
 {
     qDebug() << "wakeup callback";
-    if (m_token != token) {
+    if (m_cookie != cookie) {
         // something must be wrong here, return and do nothing
         return;
     }
     
     if (!alarmsToBeRung.empty()) {
         // neutralise token
-        m_token = -1;
+        m_cookie = -1;
         
         // ring alarms that were scheduled for next wakeup
         for (auto *alarm : alarmsToBeRung) {
-            qDebug() << "ringing alarm" << alarm->name();
             alarm->ring();
         }
         alarmsToBeRung.clear();

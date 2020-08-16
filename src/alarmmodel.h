@@ -74,7 +74,7 @@ private:
     KStatusNotifierItem *m_notifierItem = nullptr;
     quint64 nextAlarmTime = 0;
     QDBusInterface *m_interface = nullptr;
-    int m_token = -1; // token for PowerDevil: https://invent.kde.org/plasma/powerdevil/-/merge_requests/13
+    int m_cookie = -1; // token for PowerDevil: https://invent.kde.org/plasma/powerdevil/-/merge_requests/13
     bool m_isPowerDevil = false; // if PowerDevil present in system
 
     QList<Alarm *> alarmsToBeRung; // the alarms that will be rung on next wakeup
