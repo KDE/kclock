@@ -123,17 +123,8 @@ Kirigami.ScrollablePage {
         }
     }
     function getTimeFormat(hours, minutes) {
-        if (settingsModel.use24HourTime) {
-            return ("0" + hours).slice(-2) + ":" + ("0" + minutes).slice(-2)
-        } else {
-            if (hours >= 12) { // pm
-                if (hours - 12 == 0) hours = 24;
-                return ("0" + (hours - 12)).slice(-2) + ":" + ("0" + minutes).slice(-2) + " PM";
-            } else { // am
-                if (hours == 0) hours = 12;
-                return ("0" + hours).slice(-2) + ":" + ("0" + minutes).slice(-2) + " AM";
-            }
-        }
+        let date =  new Date(0, 0, 0, hours, minutes, 0);
+        return date.toLocaleTimeString([]); // no idea why we need to pass empty array to display short format, and other option is unimplemented
     }
 
     function getRepeatFormat(dayOfWeek) {
