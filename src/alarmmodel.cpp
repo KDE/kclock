@@ -286,7 +286,7 @@ void AlarmModel::addAlarm(int hours, int minutes, int daysOfWeek, QString name, 
         } else if (alarms->hours() == hours) {
             if (alarms->minutes() < minutes) {
                 i++;
-                break;
+                continue;
             } else {
                 break;
             }
