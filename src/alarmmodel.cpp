@@ -65,7 +65,7 @@ AlarmModel::AlarmModel(QObject *parent)
     m_notifierItem->setStandardActionsEnabled(false);
     m_notifierItem->setAssociatedWidget(nullptr);
 
-    m_isPowerDevil = false;
+    m_usePowerDevil = false;
     
     // if PowerDevil is present rely on PowerDevil to track time, otherwise we do it ourself
     if (m_interface->isValid()) {
@@ -74,13 +74,15 @@ AlarmModel::AlarmModel(QObject *parent)
         QDBusReply<QString> result = QDBusConnection::sessionBus().call(m);
 
         if (result.isValid() && result.value().indexOf("scheduleWakeup")) { // have this feature
-            m_isPowerDevil = true;
-            QDBusConnection::sessionBus().registerObject("/alarms", "org.kde.PowerManagement", this, QDBusConnection::ExportNonScriptableSlots);
+            m_usePowerDevil = true;
         }
     }
+}
 
+void AlarmModel::configureWakeups()
+{
     // if we do not have powerdevil, use a wait worker thread instead
-    if (!m_isPowerDevil) {
+    if (!m_usePowerDevil) {
         m_timerThread = new QThread(this);
         m_worker = new AlarmWaitWorker();
         m_worker->moveToThread(m_timerThread);
@@ -95,9 +97,11 @@ AlarmModel::AlarmModel(QObject *parent)
         
         qDebug() << "PowerDevil not found, using wait worker thread for alarm wakeup.";
     } else {
+        QDBusConnection::sessionBus().registerObject("/alarms", "org.kde.PowerManagement", this, QDBusConnection::ExportNonScriptableSlots);
         qDebug() << "PowerDevil found, using it for alarm wakeup.";
     }
-
+    
+    // start alarm polling
     scheduleAlarm();
 }
 
@@ -134,7 +138,7 @@ void AlarmModel::scheduleAlarm()
         qDebug() << "scheduled wakeup" << QDateTime::fromSecsSinceEpoch(minTime).toString();
         nextAlarmTime = minTime;
         
-        if (m_isPowerDevil) {
+        if (m_usePowerDevil) {
             // if we scheduled wakeup before, cancel it first
             if (m_cookie > 0) {
                 m_interface->call("clearWakeup", m_cookie);
@@ -156,7 +160,7 @@ void AlarmModel::scheduleAlarm()
         qDebug() << "no alarm to ring";
 
         nextAlarmTime = 0;
-        if (m_isPowerDevil) {
+        if (m_usePowerDevil) {
             m_interface->call("clearWakeup", m_cookie);
         }
     }
