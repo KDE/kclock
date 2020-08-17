@@ -84,6 +84,7 @@ int main(int argc, char *argv[])
     auto *utilModel = new UtilModel();
     auto *stopwatchTimer = new StopwatchTimer();
     auto *kclockFormat = new KclockFormat();
+    auto *weekModel = new WeekModel();
     TimerModel::init();
     KClockSettings settings;
 
@@ -101,6 +102,7 @@ int main(int argc, char *argv[])
     engine.rootContext()->setContextProperty("stopwatchTimer", stopwatchTimer);
     engine.rootContext()->setContextProperty("alarmPlayer", &AlarmPlayer::instance());
     engine.rootContext()->setContextProperty("kclockFormat", kclockFormat);
+    engine.rootContext()->setContextProperty("weekModel", weekModel);
     engine.load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
 
     {

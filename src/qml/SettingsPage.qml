@@ -36,16 +36,6 @@ Kirigami.ScrollablePage {
     ColumnLayout {
         spacing: 0
         
-        SwitchDelegate {
-            text: i18n("Use 24 Hour Time")
-            Layout.fillWidth: true
-            leftPadding: Kirigami.Units.gridUnit
-            rightPadding: Kirigami.Units.gridUnit
-            implicitHeight: Kirigami.Units.gridUnit * 2.5
-            checked: settingsModel.use24HourTime
-            onCheckedChanged: settingsModel.use24HourTime = checked
-        }
-        
         Kirigami.Separator {
             Layout.fillWidth: true
         }

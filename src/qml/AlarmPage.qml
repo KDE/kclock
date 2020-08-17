@@ -94,7 +94,7 @@ Kirigami.ScrollablePage {
                         Label {
                             font.weight: Font.Light
                             font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.5
-                            text: getTimeFormat(model.hours, model.minutes)
+                            text: kclockFormat.formatTimeString(model.hours, model.minutes)
                         }
                         Label {
                             visible: model.alarm.snoozedMinutes != 0
@@ -111,7 +111,7 @@ Kirigami.ScrollablePage {
                         }
                         Label {
                             font.weight: Font.Normal
-                            text: getRepeatFormat(model.daysOfWeek)
+                            text: getRepeatFormat(model.daysOfWeek) // related to UI improvements, leave it for now
                         }
                     }
 
@@ -127,10 +127,6 @@ Kirigami.ScrollablePage {
                 }
             }
         }
-    }
-    function getTimeFormat(hours, minutes) {
-        let date =  new Date(0, 0, 0, hours, minutes, 0);
-        return date.toLocaleTimeString([]); // no idea why we need to pass empty array to display short format, and other option is unimplemented
     }
 
     function getRepeatFormat(dayOfWeek) {

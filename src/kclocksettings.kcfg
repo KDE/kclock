@@ -5,10 +5,6 @@
       http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
   <kcfgfile name="kclockrc" />
   <group name="Global">
-    <entry name="use24HourTime" type="Bool">
-      <label>use24HourTime</label>
-      <default>!QLocale::system().timeFormat(QLocale::ShortFormat).indexOf(QStringLiteral("AP"))</default>
-    </entry>
     <entry name="alarmSilenceAfter" type="Int">
       <label>alarmSilenceAfter</label>
       <default>60</default>

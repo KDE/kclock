@@ -347,7 +347,8 @@ void AlarmModel::updateNotifierItem(quint64 time)
         m_notifierItem->setStatus(KStatusNotifierItem::Passive);
         m_notifierItem->setToolTip(QStringLiteral("clock"), QStringLiteral("KClock"), QStringLiteral());
     } else {
+        auto dateTime = QDateTime::fromSecsSinceEpoch(time).toLocalTime();
         m_notifierItem->setStatus(KStatusNotifierItem::Active);
-        m_notifierItem->setToolTip(QStringLiteral("clock"), QStringLiteral("KClock"), xi18nc("@info", "Alarm: <shortcut>%1</shortcut>", QLocale::system().toString(QDateTime::fromSecsSinceEpoch(time).toLocalTime(), QLocale::ShortFormat)));
+        m_notifierItem->setToolTip(QStringLiteral("clock"), QStringLiteral("KClock"), xi18nc("@info", "Alarm: <shortcut>%1</shortcut>", dateTime.toString("ddd ") + QLocale::system().toString(dateTime.time(), QLocale::ShortFormat)));
     }
 }
