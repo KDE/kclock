@@ -11,6 +11,9 @@ class KclockFormat : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QString currentTime READ currentTime NOTIFY timeChanged)
+    Q_PROPERTY(int seconds READ seconds NOTIFY secondChanged)
+    Q_PROPERTY(int minutes READ minutes NOTIFY timeChanged)
+    Q_PROPERTY(int hours READ hours NOTIFY hourChanged)
 public:
     explicit KclockFormat(QObject *parent = nullptr);
     Q_INVOKABLE QString formatTimeString(int hours, int minutes);
@@ -18,16 +21,29 @@ public:
     QString currentTime(){
         return m_currentTime;
     };
+    int seconds(){
+        return m_minutesCounter;
+    }
+    int minutes(){
+        return m_hoursCounter;
+    }
+    int hours(){
+        return m_hours;
+    }
 
 private slots:
     void updateTime();
 signals:
     void timeChanged();
     void startDayChanged();
+    void secondChanged();
+    void hourChanged();
 private:
     QTimer* m_timer;
     WeekModel* m_weekModel;
     QString m_currentTime;
+
+    int m_hours, m_hoursCounter = 0, m_minutesCounter = 0;
 };
 
 using weekListItem = std::array<std::tuple<QString, int>, 7>;

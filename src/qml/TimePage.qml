@@ -29,20 +29,6 @@ Kirigami.ScrollablePage {
     
     title: "Time"
     
-    property date currentDate: new Date()
-    property string timeText: settingsModel.use24HourTime ? Qt.formatTime(new Date(), "hh:mm") : Qt.formatTime(new Date(), "h:mm ap")
-    
-    Timer {
-        id: timer
-        interval: 100
-        repeat: true
-        running: true
-        onTriggered: {
-            timeText = settingsModel.use24HourTime ? Qt.formatTime(new Date(), "hh:mm") : Qt.formatTime(new Date(), "h:mm ap")
-            currentDate = new Date();
-        }
-    }
-    
     // time zones
     ListView {
         model: timeZoneShowModel
@@ -74,7 +60,6 @@ Kirigami.ScrollablePage {
                 height: analogClock.clockRadius * 2 + Kirigami.Units.gridUnit
                 AnalogClock {
                     id: analogClock
-                    dateTime: currentDate 
                     clockRadius: Kirigami.Units.gridUnit * 4
                 }
             }
@@ -87,7 +72,7 @@ Kirigami.ScrollablePage {
                     font.pointSize: Kirigami.Theme.defaultFont.pointSize * 3.0
                     font.family: clockFont.name
                     color: Kirigami.Theme.highlightColor
-                    text: timeText
+                    text: kclockFormat.currentTime
                 }
                 Label {
                     Layout.alignment: Qt.AlignRight

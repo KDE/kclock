@@ -25,7 +25,6 @@ import QtQuick.Shapes 1.12
 
 Shape {
     property int clockRadius: 80
-    property date dateTime: new Date()
     
     id: analogClock
     implicitWidth: clockRadius*2+5
@@ -59,7 +58,7 @@ Shape {
         antialiasing: true
         transform: Rotation {
             origin.x: 0; origin.y: clockRadius*0.8;
-            angle: (360 / 60) * dateTime.getSeconds()
+            angle: (360 / 60) * kclockFormat.seconds
             Behavior on angle {
                 SpringAnimation { spring: 2; damping: 0.2; modulus: 360 }
             }
@@ -77,7 +76,7 @@ Shape {
         transform: Rotation {
             id: minuteRotation
             origin.x: 0; origin.y: clockRadius * 0.7;
-            angle: (360 / 60) * dateTime.getMinutes() + (360 / 3600) * dateTime.getSeconds()
+            angle: (360 / 60) * kclockFormat.minutes + (360 / 3600) * kclockFormat.seconds
             Behavior on angle {
                 SpringAnimation { spring: 2; damping: 0.2; modulus: 360 }
             }
@@ -95,7 +94,7 @@ Shape {
         transform: Rotation {
             id: hourRotation
             origin.x: 0; origin.y: clockRadius * 0.4;
-            angle: (360 / 12) * dateTime.getHours() + (360 / (12*60)) * dateTime.getMinutes()
+            angle: (360 / 12) * kclockFormat.hours + (360 / (12*60)) * kclockFormat.minutes
             Behavior on angle {
                 SpringAnimation { spring: 2; damping: 0.2; modulus: 360 }
             }

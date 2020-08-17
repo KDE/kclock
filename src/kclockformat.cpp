@@ -1,5 +1,4 @@
 #include "kclockformat.h"
-#include <QDebug>
 #include <QLocale>
 #include <QTime>
 #include <QTimer>
@@ -7,24 +6,31 @@ KclockFormat::KclockFormat(QObject *parent)
     : QObject(parent)
     , m_timer(new QTimer(this))
 {
-    connect(m_timer, &QTimer::timeout, this, &KclockFormat::updateTime);
-    m_timer->setSingleShot(true);
+    m_currentTime = QLocale::system().toString(QTime::currentTime(), QLocale::ShortFormat);
+    m_hours = QTime::currentTime().hour() >= 12 ? QTime::currentTime().hour() - 12 : QTime::currentTime().hour();
 
-    // time to next minute
-    m_timer->start((60 - (QTime::currentTime().msecsSinceStartOfDay() / 1000) % 60) * 1000); // seconds to next minute
+    connect(m_timer, &QTimer::timeout, this, &KclockFormat::updateTime);
+
+    m_minutesCounter = (QTime::currentTime().msecsSinceStartOfDay() / 1000) % 60; // seconds to next minute
+    m_hoursCounter = QTime::currentTime().minute();
+    m_timer->start(1000);
 }
 
 void KclockFormat::updateTime()
 {
-    m_currentTime = QLocale::system().toString(QTime::currentTime(), QLocale::ShortFormat);
-    Q_EMIT timeChanged();
-    disconnect(m_timer, &QTimer::timeout, this, &KclockFormat::updateTime);
-    m_timer->setSingleShot(false);
-    connect(m_timer, &QTimer::timeout, [this] {
-        this->m_currentTime = QLocale::system().toString(QTime::currentTime(), QLocale::ShortFormat);
-        Q_EMIT this->timeChanged();
-    });
-    m_timer->start(60 * 1000);
+    if (m_minutesCounter == 60) {
+        m_currentTime = QLocale::system().toString(QTime::currentTime(), QLocale::ShortFormat);
+        Q_EMIT timeChanged();
+        m_minutesCounter = 0;
+        m_hoursCounter++;
+    }
+    if (m_hoursCounter == 60) {
+        m_hoursCounter = 0;
+        m_hours = QTime::currentTime().hour() >= 12 ? QTime::currentTime().hour() - 12 : QTime::currentTime().hour();
+        Q_EMIT hourChanged();
+    }
+    m_minutesCounter++;
+    Q_EMIT secondChanged();
 }
 
 QString KclockFormat::formatTimeString(int hours, int minutes)
