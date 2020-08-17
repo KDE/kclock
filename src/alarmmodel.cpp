@@ -97,8 +97,8 @@ void AlarmModel::configureWakeups()
 
         qDebug() << "PowerDevil not found, using wait worker thread for alarm wakeup.";
     } else {
-        QDBusConnection::sessionBus().registerObject("/alarms", "org.kde.PowerManagement", this, QDBusConnection::ExportNonScriptableSlots);
-        qDebug() << "PowerDevil found, using it for alarm wakeup.";
+        bool success = QDBusConnection::sessionBus().registerObject("/alarmswakeup", "org.kde.PowerManagement", this, QDBusConnection::ExportNonScriptableSlots);
+        qDebug() << "PowerDevil found, using it for alarm wakeup. Success:" << success;
     }
 
     // start alarm polling
@@ -145,7 +145,7 @@ void AlarmModel::scheduleAlarm()
             }
 
             // schedule wakeup and store cookie
-            QDBusReply<uint> reply = m_interface->call("scheduleWakeup", "org.kde.kclock", QDBusObjectPath("/alarms"), (qulonglong) minTime);
+            QDBusReply<uint> reply = m_interface->call("scheduleWakeup", "org.kde.kclock", QDBusObjectPath("/alarmswakeup"), (qulonglong) minTime);
             m_cookie = reply.value();
 
             if (!reply.isValid()) {
@@ -172,6 +172,7 @@ void AlarmModel::wakeupCallback(int cookie)
     qDebug() << "wakeup callback";
     if (m_cookie != cookie) {
         // something must be wrong here, return and do nothing
+        qDebug() << "callback ignored (wrong cookie)";
         return;
     }
 
