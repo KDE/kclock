@@ -37,6 +37,7 @@
 #include "alarmmodel.h"
 #include "alarmplayer.h"
 #include "alarms.h"
+#include "kclockformat.h"
 #include "kclocksettings.h"
 #include "stopwatchtimer.h"
 #include "timermodel.h"
@@ -82,6 +83,7 @@ int main(int argc, char *argv[])
     auto *alarmModel = new AlarmModel();
     auto *utilModel = new UtilModel();
     auto *stopwatchTimer = new StopwatchTimer();
+    auto *kclockFormat = new KclockFormat();
     TimerModel::init();
     KClockSettings settings;
 
@@ -98,6 +100,7 @@ int main(int argc, char *argv[])
     engine.rootContext()->setContextProperty("utilModel", utilModel);
     engine.rootContext()->setContextProperty("stopwatchTimer", stopwatchTimer);
     engine.rootContext()->setContextProperty("alarmPlayer", &AlarmPlayer::instance());
+    engine.rootContext()->setContextProperty("kclockFormat", kclockFormat);
     engine.load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
 
     {
@@ -119,7 +122,7 @@ int main(int argc, char *argv[])
             QMetaObject::invokeMethod(rootObject, "show");
         });
     }
-    
+
     // start alarm polling
     alarmModel->configureWakeups();
 

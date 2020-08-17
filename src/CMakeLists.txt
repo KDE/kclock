@@ -6,6 +6,7 @@ set(kclock_SRCS
     stopwatchtimer.cpp
     alarmwaitworker.cpp
     alarmplayer.cpp
+    kclockformat.cpp
     resources.qrc
     )
 kconfig_add_kcfg_files(kclock_SRCS kclocksettings.kcfgc GENERATE_MOC)

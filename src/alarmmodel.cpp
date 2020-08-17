@@ -43,7 +43,7 @@ AlarmModel::AlarmModel(QObject *parent)
     QDBusConnection::sessionBus().registerObject("/alarms", this, QDBusConnection::ExportScriptableContents);
 
     beginResetModel();
-    
+
     // load alarms from config
     auto config = KSharedConfig::openConfig();
     KConfigGroup group = config->group(ALARM_CFG_GROUP);
@@ -56,7 +56,7 @@ AlarmModel::AlarmModel(QObject *parent)
             QDBusConnection::sessionBus().registerObject("/alarms/" + alarm->uuid().toString(QUuid::Id128), alarm, SCRIPTANDPROPERTY);
         }
     }
-    
+
     endResetModel();
 
     // update notify icon in systemtray
@@ -66,14 +66,14 @@ AlarmModel::AlarmModel(QObject *parent)
     m_notifierItem->setAssociatedWidget(nullptr);
 
     m_usePowerDevil = false;
-    
+
     // if PowerDevil is present rely on PowerDevil to track time, otherwise we do it ourself
     if (m_interface->isValid()) {
         // test Plasma 5.20 PowerDevil schedule wakeup feature
         QDBusMessage m = QDBusMessage::createMethodCall("org.kde.Solid.PowerManagement", "/org/kde/Solid/PowerManagement", "org.freedesktop.DBus.Introspectable", "Introspect");
         QDBusReply<QString> result = QDBusConnection::sessionBus().call(m);
 
-        if (result.isValid() && result.value().indexOf("scheduleWakeup")) { // have this feature
+        if (result.isValid() && result.value().indexOf("scheduleWakeup") >= 0) { // have this feature
             m_usePowerDevil = true;
         }
     }
@@ -94,13 +94,13 @@ void AlarmModel::configureWakeups()
             this->alarmsToBeRung.clear();
         });
         m_timerThread->start();
-        
+
         qDebug() << "PowerDevil not found, using wait worker thread for alarm wakeup.";
     } else {
         QDBusConnection::sessionBus().registerObject("/alarms", "org.kde.PowerManagement", this, QDBusConnection::ExportNonScriptableSlots);
         qDebug() << "PowerDevil found, using it for alarm wakeup.";
     }
-    
+
     // start alarm polling
     scheduleAlarm();
 }
@@ -116,9 +116,9 @@ void AlarmModel::scheduleAlarm()
     if (alarmsList.count() == 0) {
         return;
     }
-    
+
     alarmsToBeRung.clear();
-    
+
     // get the next minimum time for a wakeup (next alarm ring), and add alarms that will needed to be woken up to the list
     qint64 minTime = std::numeric_limits<qint64>::max();
     for (auto *alarm : alarmsList) {
@@ -132,22 +132,22 @@ void AlarmModel::scheduleAlarm()
             }
         }
     }
-    
+
     // if there is an alarm that needs to ring
     if (minTime != std::numeric_limits<qint64>::max()) {
         qDebug() << "scheduled wakeup" << QDateTime::fromSecsSinceEpoch(minTime).toString();
         nextAlarmTime = minTime;
-        
+
         if (m_usePowerDevil) {
             // if we scheduled wakeup before, cancel it first
             if (m_cookie > 0) {
                 m_interface->call("clearWakeup", m_cookie);
             }
-            
+
             // schedule wakeup and store cookie
             QDBusReply<int> reply = m_interface->call("scheduleWakeup", "org.kde.kclock", "/alarms", minTime);
             m_cookie = reply.value();
-            
+
             if (!reply.isValid()) {
                 qDebug() << "DBus error:" << reply.error();
             }
@@ -174,11 +174,11 @@ void AlarmModel::wakeupCallback(int cookie)
         // something must be wrong here, return and do nothing
         return;
     }
-    
+
     if (!alarmsToBeRung.empty()) {
         // neutralise token
         m_cookie = -1;
-        
+
         // ring alarms that were scheduled for next wakeup
         for (auto *alarm : alarmsToBeRung) {
             alarm->ring();
@@ -270,8 +270,9 @@ void AlarmModel::remove(QString uuid)
         }
         index++;
     }
-    if (!found) return;
-    
+    if (!found)
+        return;
+
     this->remove(index);
 }
 
@@ -282,8 +283,8 @@ void AlarmModel::remove(int index)
 
     emit beginRemoveRows(QModelIndex(), index, index);
 
-    Alarm* alarmPointer = alarmsList[index];
-    
+    Alarm *alarmPointer = alarmsList[index];
+
     // remove from list of alarms to ring
     for (int i = 0; i < alarmsToBeRung.size(); i++) {
         if (alarmsToBeRung[i] == alarmPointer) {
@@ -291,7 +292,7 @@ void AlarmModel::remove(int index)
             i--;
         }
     }
-    
+
     // write to config
     auto config = KSharedConfig::openConfig();
     KConfigGroup group = config->group(ALARM_CFG_GROUP);
