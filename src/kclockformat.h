@@ -1,8 +1,27 @@
+/*
+ * Copyright 2020   Han Young <hanyoung@protonmail.com>
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation; either version 2 of
+ * the License or (at your option) version 3 or any later version
+ * accepted by the membership of KDE e.V. (or its successor approved
+ * by the membership of KDE e.V.), which shall act as a proxy
+ * defined in Section 14 of version 3 of the license.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
 #ifndef KCLOCKFORMAT_H
 #define KCLOCKFORMAT_H
 
-#include <QObject>
 #include <QAbstractListModel>
+#include <QObject>
 #include <array>
 #include <tuple>
 class QTimer;
@@ -18,16 +37,20 @@ public:
     explicit KclockFormat(QObject *parent = nullptr);
     Q_INVOKABLE QString formatTimeString(int hours, int minutes);
     Q_INVOKABLE bool isChecked(int dayIndex, int daysOfWeek);
-    QString currentTime(){
+    QString currentTime()
+    {
         return m_currentTime;
     };
-    int seconds(){
+    int seconds()
+    {
         return m_minutesCounter;
     }
-    int minutes(){
+    int minutes()
+    {
         return m_hoursCounter;
     }
-    int hours(){
+    int hours()
+    {
         return m_hours;
     }
 
@@ -38,9 +61,10 @@ signals:
     void startDayChanged();
     void secondChanged();
     void hourChanged();
+
 private:
-    QTimer* m_timer;
-    WeekModel* m_weekModel;
+    QTimer *m_timer;
+    WeekModel *m_weekModel;
     QString m_currentTime;
 
     int m_hours, m_hoursCounter = 0, m_minutesCounter = 0;
@@ -51,13 +75,12 @@ class WeekModel : public QAbstractListModel
 {
     Q_OBJECT
 public:
-    enum {
-        NameRole = Qt::DisplayRole,
-        FlagRole = Qt::UserRole + 1};
+    enum { NameRole = Qt::DisplayRole, FlagRole = Qt::UserRole + 1 };
     explicit WeekModel(QObject *parent = nullptr);
     int rowCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role) const override;
     QHash<int, QByteArray> roleNames() const override;
+
 private:
     weekListItem m_listItem;
 };
