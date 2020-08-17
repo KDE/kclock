@@ -18,7 +18,7 @@ KClock::KClock(QObject *parent, const QVariantList &args)
     connect(m_timer, &QTimer::timeout, this, &KClock::initialTimeUpdate);
     m_timer->setSingleShot(true);
     // initial interval is milliseconds to next minute
-    m_timer->start(QTime::currentTime().secsTo(QTime(QTime::currentTime().hour(), QTime::currentTime().minute() + 1)) * 1000);
+    m_timer->start((60 - (QTime::currentTime().msecsSinceStartOfDay() / 1000) % 60) * 1000); // seconds to next minute
 
     if (!QDBusConnection::sessionBus().connect("org.kde.kclock", "/alarms", "org.kde.kclock.AlarmModel", "nextAlarm", this, SLOT(updateAlarm(qulonglong))))
         m_string = "connect failed";
