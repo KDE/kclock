@@ -2,6 +2,7 @@
 Name=KClock
 Name[ca]=KClock
 Name[ca@valencia]=KClock
+Name[es]=KClock
 Name[nl]=KClock
 Name[pt]=KClock
 Name[sv]=Klocka
@@ -10,6 +11,7 @@ Name[x-test]=xxKClockxx
 Comment=KClock widget
 Comment[ca]=Estri del KClock
 Comment[ca@valencia]=Estri del KClock
+Comment[es]=Elemento gráfico KClock
 Comment[nl]=KClock-widget
 Comment[pt]=Item do KClock
 Comment[sv]=Grafisk klockkomponent
