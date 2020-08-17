@@ -46,6 +46,7 @@ class Alarm : public QObject
     Q_PROPERTY(int hours READ hours WRITE setHours NOTIFY propertyChanged)
     Q_PROPERTY(int minutes READ minutes WRITE setMinutes NOTIFY propertyChanged)
     Q_PROPERTY(int daysOfWeek READ daysOfWeek WRITE setDaysOfWeek NOTIFY propertyChanged)
+    Q_PROPERTY(int snoozedMinutes READ snoozedMinutes NOTIFY propertyChanged)
     Q_PROPERTY(QString ringtoneName READ ringtoneName WRITE setRingtoneName NOTIFY propertyChanged)
     Q_PROPERTY(QString ringtonePath READ ringtonePath WRITE setRingtonePath NOTIFY propertyChanged)
     Q_PROPERTY(qreal volume READ volume WRITE setVolume NOTIFY propertyChanged)
@@ -76,9 +77,14 @@ public:
     }
     void setEnabled(bool enabled)
     {
-        this->enabled_ = enabled;
-        emit alarmChanged(); // notify the AlarmModel to reschedule
-        Q_EMIT propertyChanged();
+        if (this->enabled_ != enabled) {
+            this->snooze_ = 0; // reset snooze value
+            this->m_nextRingTime = -1; // reset next ring time
+            
+            this->enabled_ = enabled;
+            emit alarmChanged(); // notify the AlarmModel to reschedule
+            Q_EMIT propertyChanged();
+        }
     }
     int hours() const
     {
@@ -107,6 +113,14 @@ public:
         this->daysOfWeek_ = daysOfWeek;
         Q_EMIT propertyChanged();
     }
+    int snoozedMinutes() const
+    {
+        if (snooze_ != 0 && enabled_) {
+            return snooze_ / 60;
+        } else {
+            return 0;
+        }
+    }
     qint64 snooze() const
     {
         return snooze_;
@@ -114,15 +128,6 @@ public:
     void setSnooze(qint64 snooze)
     {
         this->snooze_ = snooze;
-        Q_EMIT propertyChanged();
-    }
-    qint64 lastSnooze() const
-    {
-        return lastSnooze_;
-    }
-    void setLastSnooze(qint64 lastSnooze)
-    {
-        this->lastSnooze_ = lastSnooze;
         Q_EMIT propertyChanged();
     }
     inline QString ringtoneName()
@@ -185,9 +190,9 @@ private:
     QString ringtoneName_ = "default";
     QUuid uuid_;
     bool enabled_;
+    bool m_justSnoozed = false; // pressing snooze on the notification also triggers the dismiss event, so this is a helper for that
     int hours_ = 0, minutes_ = 0, daysOfWeek_ = 0;
     qint64 snooze_ = 0;         // current snooze length
-    qint64 lastSnooze_ = 0;     // last snooze length (cache snooze_ since it is set to 0 when alarm rings)
     qint64 m_nextRingTime = -1; // store calculated next ring time
 };
 

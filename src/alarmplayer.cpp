@@ -34,8 +34,10 @@ AlarmPlayer::AlarmPlayer(QObject *parent)
 void AlarmPlayer::loopAudio(QMediaPlayer::State state)
 {
     KClockSettings settings;
-    if (state == QMediaPlayer::StoppedState && !userStop && static_cast<int>(QDateTime::currentSecsSinceEpoch() - startPlayingTime) < settings.alarmSilenceAfter())
+    
+    if (!userStop && state == QMediaPlayer::StoppedState && static_cast<int>(QDateTime::currentSecsSinceEpoch() - startPlayingTime) < settings.alarmSilenceAfter()) {
         m_player->play();
+    }
 }
 
 void AlarmPlayer::play()

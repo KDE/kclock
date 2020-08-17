@@ -97,6 +97,12 @@ Kirigami.ScrollablePage {
                             text: getTimeFormat(model.hours, model.minutes)
                         }
                         Label {
+                            visible: model.alarm.snoozedMinutes != 0
+                            font.weight: Font.Bold
+                            color: Kirigami.Theme.disabledTextColor
+                            text: i18n("Snoozed ") + model.alarm.snoozedMinutes + i18n(" minutes")
+                        }
+                        Label {
                             id: alarmName
                             font.weight: Font.Bold
                             color: model.enabled ? Kirigami.Theme.activeTextColor : Kirigami.Theme.disabledTextColor

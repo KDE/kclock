@@ -34,7 +34,8 @@ class AlarmModel : public QAbstractListModel
     Q_CLASSINFO("D-Bus Interface", "org.kde.kclock.AlarmModel")
 public:
     explicit AlarmModel(QObject *parent = nullptr);
-
+    void configureWakeups(); // needs to be called to start worker thread, or configure powerdevil (called in main)
+    
     enum {
         NameRole = Qt::DisplayRole,
         EnabledRole = Qt::UserRole + 1,
@@ -58,6 +59,11 @@ public:
     Q_SCRIPTABLE void remove(QString uuid);
     Q_INVOKABLE void remove(int index);
 
+    void setUsePowerDevil(bool usePowerDevil) 
+    {
+        m_usePowerDevil = usePowerDevil;
+    }
+    
 signals:
     Q_SCRIPTABLE void alarmChanged();
     Q_SCRIPTABLE void nextAlarm(quint64 nextAlarmTimeStampe);
@@ -70,16 +76,14 @@ public slots:
 private slots:
     void updateNotifierItem(quint64 time); // update notify icon in systemtray
 
-private:
+private:    
     KStatusNotifierItem *m_notifierItem = nullptr;
     quint64 nextAlarmTime = 0;
     QDBusInterface *m_interface = nullptr;
-    int m_token = -1; // token for PowerDevil
-                      // https://invent.kde.org/plasma/powerdevil/-/merge_requests/13
+    int m_cookie = -1; // token for PowerDevil: https://invent.kde.org/plasma/powerdevil/-/merge_requests/13
+    bool m_usePowerDevil = false; // if PowerDevil present in system
 
-    bool m_isPowerDevil = false; // if PowerDevil present in system
-
-    Alarm *alarmToBeRung = nullptr; // the alarm we currently waiting
+    QList<Alarm *> alarmsToBeRung; // the alarms that will be rung on next wakeup
 
     QList<Alarm *> alarmsList;
     QThread *m_timerThread = nullptr;

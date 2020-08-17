@@ -32,13 +32,14 @@ public:
 signals:
     void finished();
     void error();
-    void startWait();
+    void startWait(int waitId);
 
 protected slots:
-    void wait();
+    void wait(int waitId);
 
 private:
     int m_timerFd;
+    int m_waitId; // use only newest poll 
     qint64 m_waitEndTime;
     bool m_isFinished = true;
 };

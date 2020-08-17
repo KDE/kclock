@@ -47,6 +47,7 @@ QCommandLineParser *createParser()
 {
     QCommandLineParser *parser = new QCommandLineParser;
     parser->addOption(QCommandLineOption(QStringLiteral("page"), i18n("Select opened page"), QStringLiteral("page"), "main"));
+    parser->addOption(QCommandLineOption(QStringLiteral("no-powerdevil"), i18n("Don't use PowerDevil for alarms if it is available")));
     parser->addOption(QCommandLineOption(QStringLiteral("daemon"), i18n("Run in background mode")));
     parser->addHelpOption();
     return parser;
@@ -106,7 +107,10 @@ int main(int argc, char *argv[])
         if (parser->isSet(QStringLiteral("page"))) {
             QMetaObject::invokeMethod(rootObject, "switchToPage", Q_ARG(QVariant, parser->value("page")));
         }
-
+        if (parser->isSet(QStringLiteral("no-powerdevil"))) {
+            qDebug() << "No PowerDevil option set, disabling PowerDevil usage";
+            alarmModel->setUsePowerDevil(false);
+        }
         if (!parser->isSet(QStringLiteral("daemon"))) {
             QMetaObject::invokeMethod(rootObject, "show");
         }
@@ -115,6 +119,9 @@ int main(int argc, char *argv[])
             QMetaObject::invokeMethod(rootObject, "show");
         });
     }
+    
+    // start alarm polling
+    alarmModel->configureWakeups();
 
     return app.exec();
 }

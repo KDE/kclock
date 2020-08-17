@@ -76,7 +76,6 @@ Alarm::Alarm(QString serialized, AlarmModel *parent)
         daysOfWeek_ = obj["daysOfWeek"].toInt();
         enabled_ = obj["enabled"].toBool();
         snooze_ = obj["snooze"].toInt();
-        lastSnooze_ = obj["lastSnooze"].toInt();
         ringtoneName_ = obj["ringtoneName"].toString();
         audioPath_ = QUrl::fromLocalFile(obj["audioPath"].toString());
         volume_ = obj["volume"].toInt();
@@ -106,7 +105,6 @@ QString Alarm::serialize()
     obj["daysOfWeek"] = daysOfWeek();
     obj["enabled"] = enabled();
     obj["snooze"] = snooze();
-    obj["lastSnooze"] = lastSnooze();
     obj["ringtoneName"] = ringtoneName();
     obj["audioPath"] = audioPath_.toLocalFile();
     obj["volume"] = volume_;
@@ -127,9 +125,9 @@ void Alarm::ring()
     if (!this->enabled())
         return;
 
-    qDebug("Found alarm to run, sending notification...");
+    qDebug() << "Ringing alarm" << name_ << "and sending notification...";
 
-    KNotification *notif = new KNotification("timerFinished");
+    KNotification *notif = new KNotification("alarm");
     notif->setActions(QStringList() << "Dismiss"
                                     << "Snooze");
     notif->setIconName("kclock");
@@ -148,6 +146,7 @@ void Alarm::ring()
 
     alarmNotifOpen = true;
     alarmNotifOpenTime = QTime::currentTime();
+    
     // play sound (it will loop)
     qDebug() << "Alarm sound: " << audioPath_;
     AlarmPlayer::instance().setSource(this->audioPath_);
@@ -159,29 +158,38 @@ void Alarm::handleDismiss()
 {
     alarmNotifOpen = false;
 
-    qDebug() << "Alarm dismissed";
+    qDebug() << "Alarm" << name_ << "dismissed";
     AlarmPlayer::instance().stop();
 
-    // disable alarm if set to run once
-    if (daysOfWeek() == 0)
-        setEnabled(false);
+    // ignore if the snooze button was pressed and dismiss is still called
+    if (!m_justSnoozed) {
+        // disable alarm if set to run once
+        if (daysOfWeek() == 0) {
+            setEnabled(false);
+        }
+    } else {
+        qDebug() << "Ignore dismiss (triggered by snooze)" << snooze_;
+    }
 
-    setLastSnooze(0);
+    m_justSnoozed = false;
+    
+    save();
     emit alarmChanged();
 }
 
 void Alarm::handleSnooze()
 {
+    m_justSnoozed = true;
+    
     KClockSettings settings;
     alarmNotifOpen = false;
-    qDebug() << "Alarm snoozed (" << settings.alarmSnoozeLengthDisplay() << ")" << lastSnooze();
+    qDebug() << "Alarm snoozed (" << settings.alarmSnoozeLengthDisplay() << ")";
     AlarmPlayer::instance().stop();
 
-    setSnooze(lastSnooze() + 60 * settings.alarmSnoozeLength()); // snooze 5 minutes
-    setLastSnooze(snooze());
-    setEnabled(true);
+    setSnooze(snooze() + 60 * settings.alarmSnoozeLength()); // snooze 5 minutes
+    enabled_ = true; // can't use setSnooze because it resets snooze time
     save();
-
+    
     emit propertyChanged();
     emit alarmChanged();
 }
@@ -192,39 +200,38 @@ void Alarm::calculateNextRingTime()
         m_nextRingTime = -1;
         return;
     }
+    
+    // get the time that the alarm will ring on the day
+    QTime alarmTime = QTime(this->hours_, this->minutes_, 0).addSecs(this->snooze_);
+    
+    QDateTime date = QDateTime::currentDateTime();
 
-    QDateTime date = QDateTime::currentDateTime(); // local time
-    QTime alarmTime = QTime(this->hours_, this->minutes_, this->snooze_);
-
-    if (this->daysOfWeek_ == 0) { // no repeat of alarm
-
-        if (alarmTime >= date.time()) { // current day
+    if (this->daysOfWeek_ == 0) { // alarm does not repeat (no days of the week are specified)
+        if (alarmTime >= date.time()) { // alarm occurs later today
             m_nextRingTime = QDateTime(date.date(), alarmTime).toSecsSinceEpoch();
-            return;
+        } else { // alarm occurs on the next day
+            m_nextRingTime = QDateTime(date.date().addDays(1), alarmTime).toSecsSinceEpoch();
         }
-
     } else { // repeat alarm
         bool first = true;
 
-        // keeping looping back a single day until the day of week is accepted
+        // keeping looping forward a single day until the day of week is accepted
         while (((this->daysOfWeek_ & (1 << (date.date().dayOfWeek() - 1))) == 0) // check day
-               || (first && (alarmTime > date.time())))                          // check time on first day
+               || (first && (alarmTime < date.time())))                          // check time if the current day is accepted (keep looping forward if alarmTime has passed)
         {
-            date = date.addDays(-1); // go back a day
+            date = date.addDays(1); // go forward a day
             first = false;
         }
 
         m_nextRingTime = QDateTime(date.date(), alarmTime).toSecsSinceEpoch();
-        return;
     }
-
-    m_nextRingTime = -1; // don't belong to any of them above, means would never ring
 }
 
 qint64 Alarm::nextRingTime()
 {
-    if (this->m_nextRingTime < QDateTime::currentSecsSinceEpoch()) // day changed, re-calculate
+    // day changed, re-calculate
+    if (this->m_nextRingTime < QDateTime::currentSecsSinceEpoch()) {
         calculateNextRingTime();
-
+    }
     return m_nextRingTime;
 }
