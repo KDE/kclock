@@ -145,7 +145,7 @@ void AlarmModel::scheduleAlarm()
             }
 
             // schedule wakeup and store cookie
-            QDBusReply<int> reply = m_interface->call("scheduleWakeup", "org.kde.kclock", "/alarms", minTime);
+            QDBusReply<uint> reply = m_interface->call("scheduleWakeup", "org.kde.kclock", QDBusObjectPath("/alarms"), (qulonglong) minTime);
             m_cookie = reply.value();
 
             if (!reply.isValid()) {
