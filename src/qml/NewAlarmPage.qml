@@ -70,7 +70,7 @@ Kirigami.ScrollablePage {
 
             hours: selectedAlarm ? hoursTo12(selectedAlarm.hours) : 0
             minutes: selectedAlarm ? selectedAlarm.minutes : 0
-            pm: selectedAlarm ? selectedAlarm.hours > 12 : false
+            pm: selectedAlarm ? selectedAlarm.hours >= 12 : false
 
             height: 400
             anchors.horizontalCenter: parent.horizontalCenter
