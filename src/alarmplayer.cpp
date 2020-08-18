@@ -19,6 +19,7 @@
  */
 #include "alarmplayer.h"
 #include "kclocksettings.h"
+#include <QDebug>
 AlarmPlayer &AlarmPlayer::instance()
 {
     static AlarmPlayer singleton;
@@ -28,13 +29,15 @@ AlarmPlayer::AlarmPlayer(QObject *parent)
     : QObject(parent)
     , m_player(new QMediaPlayer(this, QMediaPlayer::LowLatency))
 {
+    KClockSettings settings;
+    m_player->setVolume(settings.alarmVolume());
     connect(m_player, &QMediaPlayer::stateChanged, this, &AlarmPlayer::loopAudio);
 }
 
 void AlarmPlayer::loopAudio(QMediaPlayer::State state)
 {
     KClockSettings settings;
-    
+
     if (!userStop && state == QMediaPlayer::StoppedState && static_cast<int>(QDateTime::currentSecsSinceEpoch() - startPlayingTime) < settings.alarmSilenceAfter()) {
         m_player->play();
     }
@@ -45,10 +48,6 @@ void AlarmPlayer::play()
     if (m_player->state() == QMediaPlayer::PlayingState)
         return;
 
-    // if user set a invalid audio path or doesn't even specified a path, resort to default
-    if (!m_player->isAudioAvailable()) {
-        m_player->setMedia(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "sounds/freedesktop/stereo/alarm-clock-elapsed.oga")));
-    }
     startPlayingTime = QDateTime::currentSecsSinceEpoch();
     userStop = false;
     m_player->play();
@@ -62,10 +61,16 @@ void AlarmPlayer::stop()
 
 void AlarmPlayer::setVolume(int volume)
 {
+    KClockSettings settings;
+    settings.setAlarmVolume(volume);
     m_player->setVolume(volume);
+    Q_EMIT volumeChanged();
 }
 
 void AlarmPlayer::setSource(QUrl path)
 {
+    // if user set a invalid audio path or doesn't even specified a path, resort to default
+    if (!path.isLocalFile())
+        m_player->setMedia(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "sounds/freedesktop/stereo/alarm-clock-elapsed.oga")));
     m_player->setMedia(path);
 }

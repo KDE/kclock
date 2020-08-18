@@ -143,40 +143,19 @@ Kirigami.ScrollablePage {
             ]
         }
 
-        RowLayout {
-            anchors.horizontalCenter: parent.horizontalCenter
-            width: selectAlarmField.width
-            Text {
-                text: i18n("Volume: ")
-            }
-            Slider {
-                id: volumeControl
-                Layout.fillWidth: true
-                from: 0
-                to: 100
-                value: selectedAlarm ? selectedAlarm.volume : 100 // this doesn't auto update Cpp value
-                onPressedChanged: {
-                    if(!pressed){
-                        alarmPlayer.setSource(ringtonePath);
-                        alarmPlayer.setVolume(volumeControl.value);
-                        alarmPlayer.play();
-                    }
-                }
-            }
-        }
         FileDialog {
             id: fileDialog
             title: "Choose an audio"
             folder: shortcuts.music
             onAccepted: {
-                ringtonePath = fileDialog.fileUrl;
+                newAlarmPageRoot.ringtonePath = fileDialog.fileUrl;
                 if (ringtonePath != "") {
                     if (selectedAlarm) {
-                        selectedAlarm.ringtonePath = ringtonePath;
-                        selectedAlarm.ringtoneName = ringtonePath.toString().split('/').pop();
+                        selectedAlarm.ringtonePath = newAlarmPageRoot.ringtonePath;
+                        selectedAlarm.ringtoneName = newAlarmPageRoot.ringtonePath.toString().split('/').pop();
                     }
-                    alarmPlayer.setSource(ringtonePath);
-                    alarmPlayer.setVolume(volumeControl.value);
+                    console.log(newAlarmPageRoot.ringtonePath);
+                    alarmPlayer.setSource(newAlarmPageRoot.ringtonePath);
                     alarmPlayer.play();
                 }
                 this.close();

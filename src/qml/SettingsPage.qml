@@ -39,6 +39,28 @@ Kirigami.ScrollablePage {
         Kirigami.Separator {
             Layout.fillWidth: true
         }
+
+        ItemDelegate {
+            Layout.fillWidth: true
+            implicitHeight: Kirigami.Units.gridUnit * 3
+
+            onClicked: alarmVolumeDialog.open()
+
+            ColumnLayout {
+                spacing: -5
+                anchors.leftMargin: Kirigami.Units.gridUnit
+                anchors.rightMargin: Kirigami.Units.gridUnit
+                anchors.fill: parent
+
+                Label {
+                    text: i18n("Alarm Volume")
+                    font.weight: Font.Bold
+                }
+                Label {
+                    text: settingsModel.alarmVolume
+                }
+            }
+        }
         
         ItemDelegate {
             Layout.fillWidth: true
@@ -106,6 +128,39 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
         }
         
+    }
+
+    // alarm volume dialog
+    Dialog {
+        id: alarmVolumeDialog
+        modal: true
+        focus: true
+        anchors.centerIn: Overlay.overlay
+        width: Math.min(settingsPage.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 20)
+        height: Kirigami.Units.gridUnit * 8
+        standardButtons: Dialog.Close
+        title: i18n("Change Alarm Volume")
+        contentItem: RowLayout {
+            anchors.horizontalCenter: parent.horizontalCenter
+            width: parent.width
+            Text {
+                text: i18n("Volume: ")
+            }
+            Slider {
+                id: volumeControl
+                Layout.fillWidth: true
+                from: 0
+                to: 100
+                value: settingsModel.alarmVolume // this doesn't auto update Cpp value
+                onPressedChanged: {
+                    if(!pressed){
+                        alarmPlayer.setVolume(volumeControl.value);
+                        alarmPlayer.play();
+                    }
+                }
+            }
+        }
+        onClosed: alarmPlayer.stop()
     }
     
     // Silence alarm after dialog

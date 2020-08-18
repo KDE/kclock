@@ -49,7 +49,6 @@ class Alarm : public QObject
     Q_PROPERTY(int snoozedMinutes READ snoozedMinutes NOTIFY propertyChanged)
     Q_PROPERTY(QString ringtoneName READ ringtoneName WRITE setRingtoneName NOTIFY propertyChanged)
     Q_PROPERTY(QString ringtonePath READ ringtonePath WRITE setRingtonePath NOTIFY propertyChanged)
-    Q_PROPERTY(qreal volume READ volume WRITE setVolume NOTIFY propertyChanged)
 
 public slots:
     void handleDismiss();
@@ -78,9 +77,9 @@ public:
     void setEnabled(bool enabled)
     {
         if (this->enabled_ != enabled) {
-            this->snooze_ = 0; // reset snooze value
+            this->snooze_ = 0;         // reset snooze value
             this->m_nextRingTime = -1; // reset next ring time
-            
+
             this->enabled_ = enabled;
             emit alarmChanged(); // notify the AlarmModel to reschedule
             Q_EMIT propertyChanged();
@@ -158,16 +157,6 @@ public:
     qint64 nextRingTime(); // the next time this should ring, if this would never ring, return -1
     void ring();           // ring alarm
 
-    inline qreal volume()
-    {
-        return volume_;
-    };
-    inline void setVolume(qreal volume)
-    {
-        volume_ = volume;
-        emit propertyChanged();
-    };
-
 signals:
     void propertyChanged();
     Q_SCRIPTABLE void alarmChanged();
@@ -185,7 +174,6 @@ private:
     QTime alarmNotifOpenTime;    // time the alarm notification opened
 
     QUrl audioPath_ = QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "sounds/freedesktop/stereo/alarm-clock-elapsed.oga"));
-    qreal volume_ = 100;
     QString name_ = "New Alarm";
     QString ringtoneName_ = "default";
     QUuid uuid_;

@@ -21,5 +21,9 @@
       <label>alarmSnoozeLengthDisplay</label>
       <default>5 minutes</default>
     </entry>
+    <entry name="alarmVolume" type="Int">
+      <label>alarmVolume</label>
+      <default>100</default>
+    </entry>
   </group>
 </kcfg>

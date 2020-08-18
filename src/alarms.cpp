@@ -78,7 +78,6 @@ Alarm::Alarm(QString serialized, AlarmModel *parent)
         snooze_ = obj["snooze"].toInt();
         ringtoneName_ = obj["ringtoneName"].toString();
         audioPath_ = QUrl::fromLocalFile(obj["audioPath"].toString());
-        volume_ = obj["volume"].toInt();
     }
 
     connect(this, &Alarm::alarmChanged, this, &Alarm::save);
@@ -107,7 +106,6 @@ QString Alarm::serialize()
     obj["snooze"] = snooze();
     obj["ringtoneName"] = ringtoneName();
     obj["audioPath"] = audioPath_.toLocalFile();
-    obj["volume"] = volume_;
     return QString(QJsonDocument(obj).toJson(QJsonDocument::Compact));
 }
 
@@ -146,11 +144,10 @@ void Alarm::ring()
 
     alarmNotifOpen = true;
     alarmNotifOpenTime = QTime::currentTime();
-    
+
     // play sound (it will loop)
     qDebug() << "Alarm sound: " << audioPath_;
     AlarmPlayer::instance().setSource(this->audioPath_);
-    AlarmPlayer::instance().setVolume(this->volume_);
     AlarmPlayer::instance().play();
 }
 
@@ -172,7 +169,7 @@ void Alarm::handleDismiss()
     }
 
     m_justSnoozed = false;
-    
+
     save();
     emit alarmChanged();
 }
@@ -180,16 +177,16 @@ void Alarm::handleDismiss()
 void Alarm::handleSnooze()
 {
     m_justSnoozed = true;
-    
+
     KClockSettings settings;
     alarmNotifOpen = false;
     qDebug() << "Alarm snoozed (" << settings.alarmSnoozeLengthDisplay() << ")";
     AlarmPlayer::instance().stop();
 
     setSnooze(snooze() + 60 * settings.alarmSnoozeLength()); // snooze 5 minutes
-    enabled_ = true; // can't use setSnooze because it resets snooze time
+    enabled_ = true;                                         // can't use setSnooze because it resets snooze time
     save();
-    
+
     emit propertyChanged();
     emit alarmChanged();
 }
@@ -200,13 +197,13 @@ void Alarm::calculateNextRingTime()
         m_nextRingTime = -1;
         return;
     }
-    
+
     // get the time that the alarm will ring on the day
     QTime alarmTime = QTime(this->hours_, this->minutes_, 0).addSecs(this->snooze_);
-    
+
     QDateTime date = QDateTime::currentDateTime();
 
-    if (this->daysOfWeek_ == 0) { // alarm does not repeat (no days of the week are specified)
+    if (this->daysOfWeek_ == 0) {       // alarm does not repeat (no days of the week are specified)
         if (alarmTime >= date.time()) { // alarm occurs later today
             m_nextRingTime = QDateTime(date.date(), alarmTime).toSecsSinceEpoch();
         } else { // alarm occurs on the next day
