@@ -36,10 +36,6 @@ Kirigami.ScrollablePage {
     ColumnLayout {
         spacing: 0
         
-        Kirigami.Separator {
-            Layout.fillWidth: true
-        }
-
         ItemDelegate {
             Layout.fillWidth: true
             implicitHeight: Kirigami.Units.gridUnit * 3
@@ -60,6 +56,10 @@ Kirigami.ScrollablePage {
                     text: settingsModel.alarmVolume
                 }
             }
+        }
+        
+        Kirigami.Separator {
+            Layout.fillWidth: true
         }
         
         ItemDelegate {
