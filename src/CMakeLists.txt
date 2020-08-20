@@ -43,5 +43,5 @@ if (ANDROID)
         globe
     )
 endif()
-add_subdirectory(KClock-Plasmoid)        
+add_subdirectory(plasmoid)        
 install(TARGETS kclock ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})

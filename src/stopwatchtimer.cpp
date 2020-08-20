@@ -26,8 +26,8 @@
 StopwatchTimer::StopwatchTimer(QObject *parent)
     : QObject(parent)
 {
-    timer_ = new QTimer(this);
-    connect(timer_, &QTimer::timeout, this, &StopwatchTimer::updateTime);
+    m_timer = new QTimer(this);
+    connect(m_timer, &QTimer::timeout, this, &StopwatchTimer::updateTime);
 }
 
 void StopwatchTimer::updateTime()
@@ -44,23 +44,23 @@ void StopwatchTimer::toggle()
         timerStartStamp = QDateTime::currentMSecsSinceEpoch();
         pausedElapsed = 0;
 
-        timer_->start(interval_);
+        m_timer->start(m_interval);
     } else if (paused) { // unpause
         paused = false;
 
         pausedElapsed += QDateTime::currentMSecsSinceEpoch() - pausedStamp;
 
-        timer_->start(interval_);
+        m_timer->start(m_interval);
     } else { // pause
         paused = true;
         pausedStamp = QDateTime::currentMSecsSinceEpoch();
-        timer_->stop();
+        m_timer->stop();
     }
 }
 
 void StopwatchTimer::reset()
 {
-    timer_->stop();
+    m_timer->stop();
     pausedElapsed = 0;
     stopped = true;
     paused = false;

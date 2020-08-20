@@ -59,97 +59,97 @@ public:
     explicit Alarm(QString serialized, AlarmModel *parent = nullptr);
     QString name() const
     {
-        return name_;
+        return m_name;
     }
     void setName(QString name)
     {
-        this->name_ = name;
+        this->m_name = name;
         Q_EMIT propertyChanged();
     }
     QUuid uuid() const
     {
-        return uuid_;
+        return m_uuid;
     }
     bool enabled() const
     {
-        return enabled_;
+        return m_enabled;
     }
     void setEnabled(bool enabled)
     {
-        if (this->enabled_ != enabled) {
-            this->snooze_ = 0;         // reset snooze value
+        if (this->m_enabled != enabled) {
+            this->m_snooze = 0;         // reset snooze value
             this->m_nextRingTime = -1; // reset next ring time
 
-            this->enabled_ = enabled;
+            this->m_enabled = enabled;
             emit alarmChanged(); // notify the AlarmModel to reschedule
             Q_EMIT propertyChanged();
         }
     }
     int hours() const
     {
-        return hours_;
+        return m_hours;
     }
     void setHours(int hours)
     {
-        this->hours_ = hours;
+        this->m_hours = hours;
         Q_EMIT propertyChanged();
     }
     int minutes() const
     {
-        return minutes_;
+        return m_minutes;
     }
     void setMinutes(int minutes)
     {
-        this->minutes_ = minutes;
+        this->m_minutes = minutes;
         Q_EMIT propertyChanged();
     }
     int daysOfWeek() const
     {
-        return daysOfWeek_;
+        return m_daysOfWeek;
     }
     void setDaysOfWeek(int daysOfWeek)
     {
-        this->daysOfWeek_ = daysOfWeek;
+        this->m_daysOfWeek = daysOfWeek;
         Q_EMIT propertyChanged();
     }
     int snoozedMinutes() const
     {
-        if (snooze_ != 0 && enabled_) {
-            return snooze_ / 60;
+        if (m_snooze != 0 && m_enabled) {
+            return m_snooze / 60;
         } else {
             return 0;
         }
     }
     qint64 snooze() const
     {
-        return snooze_;
+        return m_snooze;
     }
     void setSnooze(qint64 snooze)
     {
-        this->snooze_ = snooze;
+        this->m_snooze = snooze;
         Q_EMIT propertyChanged();
     }
     inline QString ringtoneName()
     {
-        return ringtoneName_;
+        return m_ringtoneName;
     };
     inline void setRingtoneName(QString name)
     {
-        ringtoneName_ = name;
+        m_ringtoneName = name;
         emit propertyChanged();
     };
     void setRingtone(QString urlStr)
     {
         auto url = QUrl(urlStr);
-        audioPath_ = url;
+        m_audioPath = url;
     };
     QString ringtonePath()
     {
-        return audioPath_.toString();
+        return m_audioPath.toString();
     };
     void setRingtonePath(QString path)
     {
-        audioPath_ = path;
+        m_audioPath = path;
         emit propertyChanged();
     }
     QString serialize();
@@ -163,7 +163,7 @@ signals:
 public slots:
     Q_SCRIPTABLE QString getUUID()
     {
-        return uuid_.toString();
+        return m_uuid.toString();
     }
 private slots:
     void save(); // serialize and save to config
@@ -173,14 +173,14 @@ private:
     bool alarmNotifOpen = false; // if the alarm notification is open
     QTime alarmNotifOpenTime;    // time the alarm notification opened
 
-    QUrl audioPath_ = QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "sounds/freedesktop/stereo/alarm-clock-elapsed.oga"));
-    QString name_ = "New Alarm";
-    QString ringtoneName_ = "default";
-    QUuid uuid_;
-    bool enabled_;
+    QUrl m_audioPath = QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "sounds/freedesktop/stereo/alarm-clock-elapsed.oga"));
+    QString m_name = "New Alarm";
+    QString m_ringtoneName = "default";
+    QUuid m_uuid;
+    bool m_enabled;
     bool m_justSnoozed = false; // pressing snooze on the notification also triggers the dismiss event, so this is a helper for that
-    int hours_ = 0, minutes_ = 0, daysOfWeek_ = 0;
-    qint64 snooze_ = 0;         // current snooze length
+    int m_hours = 0, m_minutes = 0, m_daysOfWeek = 0;
+    qint64 m_snooze = 0;         // current snooze length
     qint64 m_nextRingTime = -1; // store calculated next ring time
 };
 

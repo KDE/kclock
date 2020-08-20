@@ -52,71 +52,71 @@ public:
 
     QString lengthPretty() const
     {
-        qint64 len = length_ / 1000, hours = len / 60 / 60, minutes = len / 60 - hours * 60, seconds = len - hours * 60 * 60 - minutes * 60;
+        qint64 len = m_length / 1000, hours = len / 60 / 60, minutes = len / 60 - hours * 60, seconds = len - hours * 60 * 60 - minutes * 60;
         return QString::number(hours) + ":" + QString::number(minutes).rightJustified(2, '0') + ":" + QString::number(seconds).rightJustified(2, '0');
     }
     QString elapsedPretty() const
     {
-        qint64 len = elapsed_ / 1000, hours = len / 60 / 60, minutes = len / 60 - hours * 60, seconds = len - hours * 60 * 60 - minutes * 60;
+        qint64 len = m_elapsed / 1000, hours = len / 60 / 60, minutes = len / 60 - hours * 60, seconds = len - hours * 60 * 60 - minutes * 60;
         return QString::number(hours) + ":" + QString::number(minutes).rightJustified(2, '0') + ":" + QString::number(seconds).rightJustified(2, '0');
     }
     int length() const
     {
-        return length_;
+        return m_length;
     }
     void setLength(int length)
     {
-        length_ = length;
+        m_length = length;
         emit propertyChanged();
     }
     int elapsed() const
     {
-        return elapsed_;
+        return m_elapsed;
     }
     void setElapsed(int elapsed)
     {
-        elapsed_ = elapsed;
+        m_elapsed = elapsed;
         emit propertyChanged();
     }
     QString label() const
     {
-        return label_;
+        return m_label;
     }
     void setLabel(QString label)
     {
-        label_ = label;
+        m_label = label;
         emit propertyChanged();
     }
     bool running() const
     {
-        return running_;
+        return m_running;
     }
     void setRunning(bool running)
     {
-        running_ = running;
+        m_running = running;
         emit propertyChanged();
     }
     bool finished() const
     {
-        return finished_;
+        return m_finished;
     }
     void setJustCreated(bool justCreated)
     {
-        justCreated_ = justCreated;
+        m_justCreated = justCreated;
         emit propertyChanged();
     }
     bool justCreated() const
     {
-        return justCreated_;
+        return m_justCreated;
     }
 
 signals:
     void propertyChanged();
 
 private:
-    int length_, elapsed_; // milliseconds
-    QString label_;
-    bool running_, finished_, justCreated_;
+    int m_length, m_elapsed; // milliseconds
+    QString m_label;
+    bool m_running, m_finished, m_justCreated;
 };
 
 static TimerModel *timerInst_;

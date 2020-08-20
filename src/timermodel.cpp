@@ -39,12 +39,12 @@
 
 Timer::Timer(QObject *parent, int length, int elapsed, QString label, bool running)
     : QObject(parent)
-    , length_(length)
-    , elapsed_(elapsed)
-    , label_(label)
-    , running_(running)
-    , finished_(false)
-    , justCreated_(true)
+    , m_length(length)
+    , m_elapsed(elapsed)
+    , m_label(label)
+    , m_running(running)
+    , m_finished(false)
+    , m_justCreated(true)
 {
     connect(
         this, &Timer::propertyChanged, this, [] { TimerModel::inst()->saveRequested = true; }, Qt::UniqueConnection);
@@ -52,12 +52,12 @@ Timer::Timer(QObject *parent, int length, int elapsed, QString label, bool runni
 
 Timer::Timer(const QJsonObject &obj)
 {
-    length_ = obj["length"].toInt();
-    elapsed_ = obj["elapsed"].toInt();
-    label_ = obj["label"].toString();
-    running_ = obj["running"].toBool();
-    finished_ = obj["finished"].toBool();
-    justCreated_ = false;
+    m_length = obj["length"].toInt();
+    m_elapsed = obj["elapsed"].toInt();
+    m_label = obj["label"].toString();
+    m_running = obj["running"].toBool();
+    m_finished = obj["finished"].toBool();
+    m_justCreated = false;
 
     connect(
         this, &Timer::propertyChanged, this, [] { TimerModel::inst()->saveRequested = true; }, Qt::UniqueConnection);
@@ -66,24 +66,24 @@ Timer::Timer(const QJsonObject &obj)
 QJsonObject Timer::serialize()
 {
     QJsonObject obj;
-    obj["length"] = length_;
-    obj["elapsed"] = elapsed_;
-    obj["label"] = label_;
-    obj["running"] = running_;
-    obj["finished"] = finished_;
+    obj["length"] = m_length;
+    obj["elapsed"] = m_elapsed;
+    obj["label"] = m_label;
+    obj["running"] = m_running;
+    obj["finished"] = m_finished;
     return obj;
 }
 
 void Timer::updateTimer(qint64 duration)
 {
-    if (running_) {
-        elapsed_ += duration;
+    if (m_running) {
+        m_elapsed += duration;
 
         // if the timer has finished
-        if (elapsed_ >= length_) {
-            elapsed_ = length_;
-            running_ = false;
-            finished_ = true;
+        if (m_elapsed >= m_length) {
+            m_elapsed = m_length;
+            m_running = false;
+            m_finished = true;
 
             qDebug("Timer finished, sending notification...");
 
@@ -105,12 +105,12 @@ void Timer::updateTimer(qint64 duration)
 
 void Timer::toggleRunning()
 {
-    if (finished_) {
-        elapsed_ = 0;
-        running_ = true;
-        finished_ = false;
+    if (m_finished) {
+        m_elapsed = 0;
+        m_running = true;
+        m_finished = false;
     } else {
-        running_ = !running_;
+        m_running = !m_running;
     }
 
     TimerModel::inst()->updateTimerStatus();
@@ -120,9 +120,9 @@ void Timer::toggleRunning()
 
 void Timer::reset()
 {
-    finished_ = false;
-    running_ = false;
-    elapsed_ = 0;
+    m_finished = false;
+    m_running = false;
+    m_elapsed = 0;
 
     TimerModel::inst()->updateTimerStatus();
 

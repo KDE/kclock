@@ -38,24 +38,24 @@ TimeZoneSelectorModel::TimeZoneSelectorModel(QObject *parent)
     // add other configured time zones
     for (QByteArray id : QTimeZone::availableTimeZoneIds()) {
         bool show = timezoneGroup.readEntry(id.data(), false);
-        mList.append(std::make_tuple(QTimeZone(id), show));
+        m_list.append(std::make_tuple(QTimeZone(id), show));
     }
-    mTimer.setInterval(1000);
-    connect(&mTimer, &QTimer::timeout, this, &TimeZoneSelectorModel::update);
-    mTimer.start(1000);
+    m_timer.setInterval(1000);
+    connect(&m_timer, &QTimer::timeout, this, &TimeZoneSelectorModel::update);
+    m_timer.start(1000);
 }
 
 int TimeZoneSelectorModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
-    return mList.count();
+    return m_list.count();
 }
 
 QVariant TimeZoneSelectorModel::data(const QModelIndex &index, int role) const
 {
     if (!index.isValid())
         return QVariant();
-    auto tuple = mList[index.row()];
+    auto tuple = m_list[index.row()];
 
     QSettings settings;
 
@@ -122,7 +122,7 @@ QHash<int, QByteArray> TimeZoneSelectorModel::roleNames() const
 void TimeZoneSelectorModel::update()
 {
     QVector<int> roles = {TimeStringRole};
-    emit dataChanged(index(0), index(mList.size() - 1), roles);
+    emit dataChanged(index(0), index(m_list.size() - 1), roles);
 }
 
 Qt::ItemFlags TimeZoneSelectorModel::flags(const QModelIndex &index) const
@@ -134,11 +134,11 @@ Qt::ItemFlags TimeZoneSelectorModel::flags(const QModelIndex &index) const
 bool TimeZoneSelectorModel::setData(const QModelIndex &index, const QVariant &value, int role)
 {
     if (index.isValid() && role == ShownRole && value.type() == QVariant::Bool) {
-        std::get<1>(mList[index.row()]) = value.toBool();
+        std::get<1>(m_list[index.row()]) = value.toBool();
 
         auto config = KSharedConfig::openConfig();
         KConfigGroup timezoneGroup = config->group(TZ_CFG_GROUP);
-        timezoneGroup.writeEntry(std::get<0>(mList[index.row()]).id().data(), value);
+        timezoneGroup.writeEntry(std::get<0>(m_list[index.row()]).id().data(), value);
         emit dataChanged(index, index, QVector<int> {ShownRole});
         return true;
     }

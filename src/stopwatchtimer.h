@@ -56,14 +56,14 @@ private slots:
     void updateTime();
 
 private:
-    const int interval_ = 41; // 24fps
+    const int m_interval = 41; // 24fps
 
     long long timerStartStamp = QDateTime::currentMSecsSinceEpoch();
     long long pausedStamp = QDateTime::currentMSecsSinceEpoch();
     long long pausedElapsed = 0;
 
     bool stopped = true, paused = false;
-    QTimer *timer_;
+    QTimer *m_timer;
 };
 
 #endif // STOPWATCHTIMER_H

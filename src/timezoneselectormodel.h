@@ -45,8 +45,8 @@ public slots:
     void update();
 
 private:
-    QList<std::tuple<QTimeZone, bool>> mList;
-    QTimer mTimer;
+    QList<std::tuple<QTimeZone, bool>> m_list;
+    QTimer m_timer;
 };
 
 class TimeZoneFilterModel : public QSortFilterProxyModel

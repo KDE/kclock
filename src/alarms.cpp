@@ -39,12 +39,12 @@
 // alarm created from UI
 Alarm::Alarm(AlarmModel *parent, QString name, int minutes, int hours, int daysOfWeek)
     : QObject(parent)
-    , uuid_(QUuid::createUuid())
-    , enabled_(true)
-    , name_(name)
-    , minutes_(minutes)
-    , hours_(hours)
-    , daysOfWeek_(daysOfWeek)
+    , m_uuid(QUuid::createUuid())
+    , m_enabled(true)
+    , m_name(name)
+    , m_minutes(minutes)
+    , m_hours(hours)
+    , m_daysOfWeek(daysOfWeek)
 {
     connect(this, &Alarm::alarmChanged, this, &Alarm::save);
     connect(this, &Alarm::alarmChanged, this, &Alarm::calculateNextRingTime); // the slots will be called according to
@@ -64,20 +64,20 @@ Alarm::Alarm(QString serialized, AlarmModel *parent)
     : QObject(parent)
 {
     if (serialized == "") {
-        uuid_ = QUuid::createUuid();
+        m_uuid = QUuid::createUuid();
     } else {
         QJsonDocument doc = QJsonDocument::fromJson(serialized.toUtf8());
         QJsonObject obj = doc.object();
 
-        uuid_ = QUuid::fromString(obj["uuid"].toString());
-        name_ = obj["name"].toString();
-        minutes_ = obj["minutes"].toInt();
-        hours_ = obj["hours"].toInt();
-        daysOfWeek_ = obj["daysOfWeek"].toInt();
-        enabled_ = obj["enabled"].toBool();
-        snooze_ = obj["snooze"].toInt();
-        ringtoneName_ = obj["ringtoneName"].toString();
-        audioPath_ = QUrl::fromLocalFile(obj["audioPath"].toString());
+        m_uuid = QUuid::fromString(obj["uuid"].toString());
+        m_name = obj["name"].toString();
+        m_minutes = obj["minutes"].toInt();
+        m_hours = obj["hours"].toInt();
+        m_daysOfWeek = obj["daysOfWeek"].toInt();
+        m_enabled = obj["enabled"].toBool();
+        m_snooze = obj["snooze"].toInt();
+        m_ringtoneName = obj["ringtoneName"].toString();
+        m_audioPath = QUrl::fromLocalFile(obj["audioPath"].toString());
     }
 
     connect(this, &Alarm::alarmChanged, this, &Alarm::save);
@@ -105,7 +105,7 @@ QString Alarm::serialize()
     obj["enabled"] = enabled();
     obj["snooze"] = snooze();
     obj["ringtoneName"] = ringtoneName();
-    obj["audioPath"] = audioPath_.toLocalFile();
+    obj["audioPath"] = m_audioPath.toLocalFile();
     return QString(QJsonDocument(obj).toJson(QJsonDocument::Compact));
 }
 
@@ -123,7 +123,7 @@ void Alarm::ring()
     if (!this->enabled())
         return;
 
-    qDebug() << "Ringing alarm" << name_ << "and sending notification...";
+    qDebug() << "Ringing alarm" << m_name << "and sending notification...";
 
     KNotification *notif = new KNotification("alarm");
     notif->setActions(QStringList() << "Dismiss"
@@ -146,8 +146,8 @@ void Alarm::ring()
     alarmNotifOpenTime = QTime::currentTime();
 
     // play sound (it will loop)
-    qDebug() << "Alarm sound: " << audioPath_;
-    AlarmPlayer::instance().setSource(this->audioPath_);
+    qDebug() << "Alarm sound: " << m_audioPath;
+    AlarmPlayer::instance().setSource(this->m_audioPath);
     AlarmPlayer::instance().play();
 }
 
@@ -155,7 +155,7 @@ void Alarm::handleDismiss()
 {
     alarmNotifOpen = false;
 
-    qDebug() << "Alarm" << name_ << "dismissed";
+    qDebug() << "Alarm" << m_name << "dismissed";
     AlarmPlayer::instance().stop();
 
     // ignore if the snooze button was pressed and dismiss is still called
@@ -165,7 +165,7 @@ void Alarm::handleDismiss()
             setEnabled(false);
         }
     } else {
-        qDebug() << "Ignore dismiss (triggered by snooze)" << snooze_;
+        qDebug() << "Ignore dismiss (triggered by snooze)" << m_snooze;
     }
 
     m_justSnoozed = false;
@@ -184,7 +184,7 @@ void Alarm::handleSnooze()
     AlarmPlayer::instance().stop();
 
     setSnooze(snooze() + 60 * settings.alarmSnoozeLength()); // snooze 5 minutes
-    enabled_ = true;                                         // can't use setSnooze because it resets snooze time
+    m_enabled = true;                                         // can't use setSnooze because it resets snooze time
     save();
 
     emit propertyChanged();
@@ -193,17 +193,17 @@ void Alarm::handleSnooze()
 
 void Alarm::calculateNextRingTime()
 {
-    if (!this->enabled_) { // if not enabled, means this would never ring
+    if (!this->m_enabled) { // if not enabled, means this would never ring
         m_nextRingTime = -1;
         return;
     }
 
     // get the time that the alarm will ring on the day
-    QTime alarmTime = QTime(this->hours_, this->minutes_, 0).addSecs(this->snooze_);
+    QTime alarmTime = QTime(this->m_hours, this->m_minutes, 0).addSecs(this->m_snooze);
 
     QDateTime date = QDateTime::currentDateTime();
 
-    if (this->daysOfWeek_ == 0) {       // alarm does not repeat (no days of the week are specified)
+    if (this->m_daysOfWeek == 0) {       // alarm does not repeat (no days of the week are specified)
         if (alarmTime >= date.time()) { // alarm occurs later today
             m_nextRingTime = QDateTime(date.date(), alarmTime).toSecsSinceEpoch();
         } else { // alarm occurs on the next day
@@ -213,7 +213,7 @@ void Alarm::calculateNextRingTime()
         bool first = true;
 
         // keeping looping forward a single day until the day of week is accepted
-        while (((this->daysOfWeek_ & (1 << (date.date().dayOfWeek() - 1))) == 0) // check day
+        while (((this->m_daysOfWeek & (1 << (date.date().dayOfWeek() - 1))) == 0) // check day
                || (first && (alarmTime < date.time())))                          // check time if the current day is accepted (keep looping forward if alarmTime has passed)
         {
             date = date.addDays(1); // go forward a day
