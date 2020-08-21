@@ -53,7 +53,7 @@ Kirigami.ScrollablePage {
                     font.weight: Font.Bold
                 }
                 Label {
-                    text: settingsModel.alarmVolume
+                    text: alarmPlayer.volume
                 }
             }
         }
