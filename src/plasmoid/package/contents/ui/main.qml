@@ -11,10 +11,9 @@ import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.kirigami 2.11 as Kirigami
 
 Item {
-    Plasmoid.backgroundHints: "NoBackground";
+    Plasmoid.backgroundHints: "ShadowBackground";
     Plasmoid.fullRepresentation: Item {
-        Layout.preferredHeight: Kirigami.Units.gridUnit * 7
-        Layout.preferredWidth: Kirigami.Units.gridUnit * 8
+        Layout.preferredWidth: alarmLabel.width
         MouseArea {
             anchors.fill: parent
             onClicked: plasmoid.nativeInterface.openKClock()
@@ -24,10 +23,11 @@ Item {
             PlasmaComponents.Label {
                 text: plasmoid.nativeInterface.time
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize * 3
-                color: Kirigami.Theme.textColor
+                color: "white"
                 Layout.alignment: Qt.AlignHCenter
             }
             RowLayout {
+                id: alarmLabel
                 visible: plasmoid.nativeInterface.hasAlarm
                 Layout.alignment: Qt.AlignHCenter
                 Kirigami.Icon {
@@ -39,7 +39,7 @@ Item {
                     id: alarmTime
                     Layout.alignment: Qt.AlignCenter
                     text: plasmoid.nativeInterface.alarmTime
-                    color: Kirigami.Theme.textColor
+                    color: "white"
                     font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.5
                 }
             }
