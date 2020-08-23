@@ -312,7 +312,7 @@ void AlarmModel::updateUi()
     emit dataChanged(createIndex(0, 0), createIndex(alarmsList.count() - 1, 0));
 }
 
-void AlarmModel::addAlarm(int hours, int minutes, int daysOfWeek, QString name, QString ringtonePath)
+Alarm *AlarmModel::addAlarm(int hours, int minutes, int daysOfWeek, QString name, QString ringtonePath)
 {
     Alarm *alarm = new Alarm(this, name, minutes, hours, daysOfWeek);
 
@@ -341,6 +341,7 @@ void AlarmModel::addAlarm(int hours, int minutes, int daysOfWeek, QString name, 
 
     scheduleAlarm();
     QDBusConnection::sessionBus().registerObject("/alarms/" + alarm->uuid().toString(QUuid::Id128), alarm, SCRIPTANDPROPERTY);
+    return alarm;
 }
 
 void AlarmModel::updateNotifierItem(quint64 time)

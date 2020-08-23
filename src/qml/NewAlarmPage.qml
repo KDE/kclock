@@ -53,10 +53,11 @@ Kirigami.ScrollablePage {
 
                     selectedAlarm.alarmChanged(); // emit this signal, auto save
                 } else {
-                    alarmModel.addAlarm(hours, minutes, alarmDaysOfWeek, selectedAlarmName.text);
+                    selectedAlarm = alarmModel.addAlarm(hours, minutes, alarmDaysOfWeek, selectedAlarmName.text);
                 }
                 alarmPlayer.stop();
                 pageStack.pop();
+                showPassiveNotification(selectedAlarm.timeToRingFormated());
             }
         }
     }

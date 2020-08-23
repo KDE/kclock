@@ -35,7 +35,7 @@ class AlarmModel : public QAbstractListModel
 public:
     explicit AlarmModel(QObject *parent = nullptr);
     void configureWakeups(); // needs to be called to start worker thread, or configure powerdevil (called in main)
-    
+
     enum {
         NameRole = Qt::DisplayRole,
         EnabledRole = Qt::UserRole + 1,
@@ -59,11 +59,11 @@ public:
     Q_SCRIPTABLE void remove(QString uuid);
     Q_INVOKABLE void remove(int index);
 
-    void setUsePowerDevil(bool usePowerDevil) 
+    void setUsePowerDevil(bool usePowerDevil)
     {
         m_usePowerDevil = usePowerDevil;
     }
-    
+    Q_INVOKABLE Alarm *addAlarm(int hours, int minutes, int daysOfWeek, QString name, QString ringtonePath = 0); // in 24 hours units, ringTone could be chosen from a list
 signals:
     Q_SCRIPTABLE void alarmChanged();
     Q_SCRIPTABLE void nextAlarm(quint64 nextAlarmTimeStampe);
@@ -72,15 +72,14 @@ public slots:
     void wakeupCallback(int cookie); // PowerDevil callback function, not scriptable to distinguish from other slots
     Q_SCRIPTABLE quint64 getNextAlarm();
     Q_SCRIPTABLE void scheduleAlarm();
-    Q_SCRIPTABLE void addAlarm(int hours, int minutes, int daysOfWeek, QString name, QString ringtonePath = 0); // in 24 hours units, ringTone could be chosen from a list
 private slots:
     void updateNotifierItem(quint64 time); // update notify icon in systemtray
 
-private:    
+private:
     KStatusNotifierItem *m_notifierItem = nullptr;
     quint64 nextAlarmTime = 0;
     QDBusInterface *m_interface = nullptr;
-    int m_cookie = -1; // token for PowerDevil: https://invent.kde.org/plasma/powerdevil/-/merge_requests/13
+    int m_cookie = -1;            // token for PowerDevil: https://invent.kde.org/plasma/powerdevil/-/merge_requests/13
     bool m_usePowerDevil = false; // if PowerDevil present in system
 
     QList<Alarm *> alarmsToBeRung; // the alarms that will be rung on next wakeup

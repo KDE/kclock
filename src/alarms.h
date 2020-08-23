@@ -77,7 +77,7 @@ public:
     void setEnabled(bool enabled)
     {
         if (this->m_enabled != enabled) {
-            this->m_snooze = 0;         // reset snooze value
+            this->m_snooze = 0;        // reset snooze value
             this->m_nextRingTime = -1; // reset next ring time
 
             this->m_enabled = enabled;
@@ -157,6 +157,7 @@ public:
     qint64 nextRingTime(); // the next time this should ring, if this would never ring, return -1
     void ring();           // ring alarm
 
+    Q_INVOKABLE QString timeToRingFormated();
 signals:
     void propertyChanged();
     Q_SCRIPTABLE void alarmChanged();
@@ -180,7 +181,7 @@ private:
     bool m_enabled;
     bool m_justSnoozed = false; // pressing snooze on the notification also triggers the dismiss event, so this is a helper for that
     int m_hours = 0, m_minutes = 0, m_daysOfWeek = 0;
-    qint64 m_snooze = 0;         // current snooze length
+    qint64 m_snooze = 0;        // current snooze length
     qint64 m_nextRingTime = -1; // store calculated next ring time
 };
 

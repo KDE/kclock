@@ -57,6 +57,8 @@ Alarm::Alarm(AlarmModel *parent, QString name, int minutes, int hours, int daysO
         connect(this, &Alarm::propertyChanged, parent, &AlarmModel::updateUi);
         connect(this, &Alarm::alarmChanged, parent, &AlarmModel::scheduleAlarm); // connect this last
     }
+
+    this->save();
 }
 
 // alarm from json (loaded from storage)
@@ -184,7 +186,7 @@ void Alarm::handleSnooze()
     AlarmPlayer::instance().stop();
 
     setSnooze(snooze() + 60 * settings.alarmSnoozeLength()); // snooze 5 minutes
-    m_enabled = true;                                         // can't use setSnooze because it resets snooze time
+    m_enabled = true;                                        // can't use setSnooze because it resets snooze time
     save();
 
     emit propertyChanged();
@@ -203,7 +205,7 @@ void Alarm::calculateNextRingTime()
 
     QDateTime date = QDateTime::currentDateTime();
 
-    if (this->m_daysOfWeek == 0) {       // alarm does not repeat (no days of the week are specified)
+    if (this->m_daysOfWeek == 0) {      // alarm does not repeat (no days of the week are specified)
         if (alarmTime >= date.time()) { // alarm occurs later today
             m_nextRingTime = QDateTime(date.date(), alarmTime).toSecsSinceEpoch();
         } else { // alarm occurs on the next day
@@ -214,7 +216,7 @@ void Alarm::calculateNextRingTime()
 
         // keeping looping forward a single day until the day of week is accepted
         while (((this->m_daysOfWeek & (1 << (date.date().dayOfWeek() - 1))) == 0) // check day
-               || (first && (alarmTime < date.time())))                          // check time if the current day is accepted (keep looping forward if alarmTime has passed)
+               || (first && (alarmTime < date.time())))                           // check time if the current day is accepted (keep looping forward if alarmTime has passed)
         {
             date = date.addDays(1); // go forward a day
             first = false;
@@ -231,4 +233,26 @@ qint64 Alarm::nextRingTime()
         calculateNextRingTime();
     }
     return m_nextRingTime;
+}
+
+QString Alarm::timeToRingFormated()
+{
+    auto remaining = this->nextRingTime() - QDateTime::currentSecsSinceEpoch();
+    int day = remaining / (24 * 3600);
+    int hour = remaining / 3600 - day * 24;
+    int minute = remaining / 60 - day * 24 - hour * 60;
+    QString arg;
+    if (day > 0) {
+        arg += QString::number(day);
+        arg += day > 1 ? i18n("days ") : i18n("day ");
+    }
+    if (hour > 0) {
+        arg += QString::number(hour);
+        arg += hour > 1 ? i18n("hours ") : i18n("hour ");
+    }
+    if (minute > 0) {
+        arg += QString::number(minute);
+        arg += minute > 1 ? i18n("minutes") : i18n("minute");
+    }
+    return i18n("Alarm will be ring after %1", arg);
 }
