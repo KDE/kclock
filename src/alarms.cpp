@@ -240,19 +240,27 @@ QString Alarm::timeToRingFormated()
     auto remaining = this->nextRingTime() - QDateTime::currentSecsSinceEpoch();
     int day = remaining / (24 * 3600);
     int hour = remaining / 3600 - day * 24;
-    int minute = remaining / 60 - day * 24 - hour * 60;
+    int minute = remaining / 60 - day * 24 * 60 - hour * 60;
     QString arg;
     if (day > 0) {
         arg += QString::number(day);
-        arg += day > 1 ? i18n("days ") : i18n("day ");
+        arg += day > 1 ? i18n(" days") : i18n(" day");
     }
     if (hour > 0) {
+        if (day > 0 && minute > 0) {
+            arg += i18n(", ");
+        } else if (day > 0) {
+            arg += i18n(" and ");
+        }
         arg += QString::number(hour);
-        arg += hour > 1 ? i18n("hours ") : i18n("hour ");
+        arg += hour > 1 ? i18n(" hours") : i18n(" hour");
     }
     if (minute > 0) {
+        if (day > 0 || hour > 0) {
+            arg += i18n(" and ");
+        }
         arg += QString::number(minute);
-        arg += minute > 1 ? i18n("minutes") : i18n("minute");
+        arg += minute > 1 ? i18n(" minutes") : i18n(" minute");
     }
-    return i18n("Alarm will be ring after %1", arg);
+    return i18n("Alarm will be rung after %1", arg);
 }
