@@ -262,5 +262,5 @@ QString Alarm::timeToRingFormated()
         arg += QString::number(minute);
         arg += minute > 1 ? i18n(" minutes") : i18n(" minute");
     }
-    return i18n("Alarm will be ring after %1", arg);
+    return i18n("Alarm will be rung after %1", arg);
 }
