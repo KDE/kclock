@@ -3,7 +3,7 @@
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
-#include "kclock.h"
+#include "kclock_1x2.h"
 #include <QDBusConnection>
 #include <QDBusInterface>
 #include <QDBusReply>
@@ -11,11 +11,11 @@
 #include <QTimer>
 #include <klocalizedstring.h>
 
-KClock::KClock(QObject *parent, const QVariantList &args)
+KClock_1x2::KClock_1x2(QObject *parent, const QVariantList &args)
     : Plasma::Applet(parent, args)
 {
     m_timer = new QTimer(this);
-    connect(m_timer, &QTimer::timeout, this, &KClock::initialTimeUpdate);
+    connect(m_timer, &QTimer::timeout, this, &KClock_1x2::initialTimeUpdate);
     m_timer->setSingleShot(true);
     // initial interval is milliseconds to next minute
     m_timer->start((60 - (QTime::currentTime().msecsSinceStartOfDay() / 1000) % 60) * 1000); // seconds to next minute
@@ -37,7 +37,7 @@ KClock::KClock(QObject *parent, const QVariantList &args)
     emit propertyChanged();
 }
 
-void KClock::updateAlarm(qulonglong time)
+void KClock_1x2::updateAlarm(qulonglong time)
 {
     auto dateTime = QDateTime::fromSecsSinceEpoch(time).toLocalTime();
     if (time > 0) {
@@ -48,27 +48,27 @@ void KClock::updateAlarm(qulonglong time)
     }
     emit propertyChanged();
 }
-void KClock::openKClock()
+void KClock_1x2::openKClock()
 {
     m_process = new QProcess(this);
     m_process->start("kclock", QStringList());
 }
-void KClock::initialTimeUpdate()
+void KClock_1x2::initialTimeUpdate()
 {
     emit timeChanged();
-    disconnect(m_timer, &QTimer::timeout, this, &KClock::initialTimeUpdate); // disconnect
+    disconnect(m_timer, &QTimer::timeout, this, &KClock_1x2::initialTimeUpdate); // disconnect
     m_timer->setSingleShot(false);
-    connect(m_timer, &QTimer::timeout, this, &KClock::timeChanged);
+    connect(m_timer, &QTimer::timeout, this, &KClock_1x2::timeChanged);
     m_timer->start(60000); // update every minute
 }
-QString KClock::time()
+QString KClock_1x2::time()
 {
     return m_local.toString(QTime::currentTime(), QLocale::ShortFormat);
 }
-KClock::~KClock()
+KClock_1x2::~KClock_1x2()
 {
 }
 
-K_EXPORT_PLASMA_APPLET_WITH_JSON(kclock, KClock, "metadata.json")
+K_EXPORT_PLASMA_APPLET_WITH_JSON(kclock_1x2, KClock_1x2, "metadata.json")
 
-#include "kclock.moc"
+#include "kclock_1x2.moc"

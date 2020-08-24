@@ -1,20 +1,2 @@
-# TODO: adapt "org.kde.plasma" here & elsewhere if needed (see README)
-add_definitions(-DTRANSLATION_DOMAIN=\"plasma_applet_org.kde.plasma.kclock\")
-
-set(kclock_SRCS
-    kclock.cpp
-)
-add_library(plasma_applet_kclock MODULE ${kclock_SRCS})
-
-kcoreaddons_desktop_to_json(plasma_applet_kclock package/metadata.desktop SERVICE_TYPES plasma-applet.desktop)
-
-target_link_libraries(plasma_applet_kclock
-                      Qt5::Gui
-                      Qt5::DBus
-                      KF5::Plasma
-                      KF5::I18n)
-
-
-install(TARGETS plasma_applet_kclock DESTINATION ${KDE_INSTALL_PLUGINDIR}/plasma/applets)
-
-plasma_install_package(package org.kde.plasma.kclock)
+add_subdirectory(KClock_1x2)
+add_subdirectory(KClock_KWeather_3x3)

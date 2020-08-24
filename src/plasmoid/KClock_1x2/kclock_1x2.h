@@ -2,14 +2,12 @@
     SPDX-FileCopyrightText: 2020 HanY <hanyoung@protonmail.com>
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
-
-#ifndef KCLOCK_H
-#define KCLOCK_H
+#pragma once
 #include <Plasma/Applet>
 #include <QLocale>
 class QProcess;
 class QTimer;
-class KClock : public Plasma::Applet
+class KClock_1x2 : public Plasma::Applet
 {
     Q_OBJECT
     Q_PROPERTY(QString time READ time NOTIFY timeChanged)
@@ -17,8 +15,8 @@ class KClock : public Plasma::Applet
     Q_PROPERTY(bool hasAlarm READ hasAlarm NOTIFY propertyChanged)
 
 public:
-    KClock(QObject *parent, const QVariantList &args);
-    ~KClock();
+    KClock_1x2(QObject *parent, const QVariantList &args);
+    ~KClock_1x2();
     QString time();
     QString alarmTime()
     {
@@ -43,5 +41,3 @@ private:
     QTimer *m_timer;
     QProcess *m_process;
 };
-
-#endif
