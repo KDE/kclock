@@ -1,14 +1,14 @@
 [Desktop Entry]
-Name=KClock_1x2
-Name[x-test]=xxKClock_1x2xx
-Comment=KClock widget (1x2)
-Comment[x-test]=xxKClock widget (1x2)xx
+Name=KClock_KWeather_3x3
+Name[x-test]=xxKClock_KWeather_3x3xx
+Comment=KClock widget (3x3 with Weather info)
+Comment[x-test]=xxKClock widget (3x3 with Weather info)xx
 
 
 Icon=kclock
 Type=Service
 X-KDE-ServiceTypes=Plasma/Applet
-X-KDE-Library=plasma_applet_kclock_1x2
+X-KDE-Library=plasma_applet_kclock_kweather_3x3
 
 X-Plasma-Provides=org.kde.plasma.time
 X-Plasma-DBusActivationService=org.kde.kclock.*
@@ -18,7 +18,7 @@ X-Plasma-NotificationAreaCategory=ApplicationStatus
 
 X-KDE-PluginInfo-Author=HanY
 X-KDE-PluginInfo-Email=hanyoung@protonmail.com
-X-KDE-PluginInfo-Name=org.kde.plasma.kclock_1x2
+X-KDE-PluginInfo-Name=org.kde.plasma.kclock_kweather_3x3
 X-KDE-PluginInfo-Version=1.0
 X-KDE-PluginInfo-Website=https://plasma.kde.org/
 X-KDE-PluginInfo-Category=Utilities
