@@ -133,7 +133,7 @@ QString KClock_KWeather_3x3::time()
     return m_local.toString(QTime::currentTime(), QLocale::ShortFormat);
 }
 QString KClock_KWeather_3x3::date(){
-    return m_local.standaloneDayName(QDate::currentDate().dayOfWeek()) + ", " + m_local.standaloneMonthName(QDate::currentDate().month(), QLocale::ShortFormat) + " " + QString::number(QDate::currentDate().daysInMonth());
+    return m_local.standaloneDayName(QDate::currentDate().dayOfWeek()) + ", " + m_local.standaloneMonthName(QDate::currentDate().month(), QLocale::ShortFormat) + " " + QString::number(QDate::currentDate().day());
 }
 KClock_KWeather_3x3::~KClock_KWeather_3x3()
 {
