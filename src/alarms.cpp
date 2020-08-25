@@ -243,8 +243,7 @@ QString Alarm::timeToRingFormated()
     int minute = remaining / 60 - day * 24 * 60 - hour * 60;
     QString arg;
     if (day > 0) {
-        arg += QString::number(day);
-        arg += day > 1 ? i18n(" days") : i18n(" day");
+        arg += i18np("%1 day", "%1 days", day);
     }
     if (hour > 0) {
         if (day > 0 && minute > 0) {
@@ -252,15 +251,13 @@ QString Alarm::timeToRingFormated()
         } else if (day > 0) {
             arg += i18n(" and ");
         }
-        arg += QString::number(hour);
-        arg += hour > 1 ? i18n(" hours") : i18n(" hour");
+        arg += i18np("%1 hour", "%1 hours", hour);
     }
     if (minute > 0) {
         if (day > 0 || hour > 0) {
             arg += i18n(" and ");
         }
-        arg += QString::number(minute);
-        arg += minute > 1 ? i18n(" minutes") : i18n(" minute");
+        arg += i18np("%1 minute", "%1 minutes", minute);
     }
     return i18n("Alarm will be rung after %1", arg);
 }
