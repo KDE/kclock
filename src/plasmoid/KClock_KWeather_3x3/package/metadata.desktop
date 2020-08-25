@@ -1,8 +1,6 @@
 [Desktop Entry]
 Name=KClock_KWeather_3x3
-Name[x-test]=xxKClock_KWeather_3x3xx
 Comment=KClock widget (3x3 with Weather info)
-Comment[x-test]=xxKClock widget (3x3 with Weather info)xx
 
 
 Icon=kclock
