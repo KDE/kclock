@@ -46,7 +46,14 @@
 #include "utilmodel.h"
 
 static QQmlApplicationEngine *engine = nullptr;
-static bool hasConstructed = false;
+
+static StopwatchTimer *stopwatchTimer = nullptr;
+static KclockFormat *kclockFormat = nullptr;
+static WeekModel *weekModel = nullptr;
+static QSortFilterProxyModel *timeZoneViewModel = nullptr;
+static KClockSettings *settingsModel = nullptr;
+static TimeZoneFilterModel *timeZoneFilterModel = nullptr;
+
 QCommandLineParser *createParser()
 {
     QCommandLineParser *parser = new QCommandLineParser;
@@ -57,49 +64,20 @@ QCommandLineParser *createParser()
     return parser;
 };
 
-QObject* initGui(AlarmModel* alarmModel){
-    static TimeZoneFilterModel*timeZoneFilterModel = nullptr;
-    static UtilModel * utilModel = nullptr;
-    static StopwatchTimer* stopwatchTimer = nullptr;
-    static KclockFormat* kclockFormat = nullptr;
-    static WeekModel* weekModel = nullptr;
-    static QSortFilterProxyModel* timeZoneViewModel = nullptr;
-    static KClockSettings* settings = nullptr;
+QObject* initGui() {
 
-    if(!engine){
+    if (!UtilModel::inst()->applicationLoaded()) {
         qDebug() << "construct QmlEngine";
         engine = new QQmlApplicationEngine();
-
-        if(!hasConstructed){
-            // initialize models
-            auto *timeZoneModel = new TimeZoneSelectorModel();
-
-            timeZoneViewModel = new QSortFilterProxyModel();
-            timeZoneViewModel->setFilterFixedString("true");
-            timeZoneViewModel->setSourceModel(timeZoneModel);
-            timeZoneViewModel->setFilterRole(TimeZoneSelectorModel::ShownRole);
-
-            timeZoneFilterModel = new TimeZoneFilterModel(timeZoneModel);
-            utilModel = new UtilModel();
-            stopwatchTimer = new StopwatchTimer();
-            kclockFormat = new KclockFormat();
-            weekModel = new WeekModel();
-            TimerModel::init();
-            settings = new KClockSettings();
-
-            // register QML types
-            qmlRegisterType<Alarm>("kclock", 1, 0, "Alarm");
-            qmlRegisterType<Timer>("kclock", 1, 0, "Timer");
-        }
-
+        UtilModel::inst()->setApplicationLoaded(true);
         engine->rootContext()->setContextObject(new KLocalizedContext(engine));
         // models
         engine->rootContext()->setContextProperty("timeZoneShowModel", timeZoneViewModel);
         engine->rootContext()->setContextProperty("timeZoneFilterModel", timeZoneFilterModel);
-        engine->rootContext()->setContextProperty("alarmModel", alarmModel);
+        engine->rootContext()->setContextProperty("alarmModel", AlarmModel::inst());
         engine->rootContext()->setContextProperty("timerModel", TimerModel::inst());
-        engine->rootContext()->setContextProperty("settingsModel", settings);
-        engine->rootContext()->setContextProperty("utilModel", utilModel);
+        engine->rootContext()->setContextProperty("settingsModel", settingsModel);
+        engine->rootContext()->setContextProperty("utilModel", UtilModel::inst());
         engine->rootContext()->setContextProperty("stopwatchTimer", stopwatchTimer);
         engine->rootContext()->setContextProperty("alarmPlayer", &AlarmPlayer::instance());
         engine->rootContext()->setContextProperty("kclockFormat", kclockFormat);
@@ -126,28 +104,46 @@ int main(int argc, char *argv[])
     app.setQuitOnLastWindowClosed(false);
 
     // initialize models
-    auto *alarmModel = new AlarmModel();
+    UtilModel::init();
+    AlarmModel::init();
+    TimerModel::init();
+    auto *timeZoneModel = new TimeZoneSelectorModel();
+
+    timeZoneViewModel = new QSortFilterProxyModel();
+    timeZoneViewModel->setFilterFixedString("true");
+    timeZoneViewModel->setSourceModel(timeZoneModel);
+    timeZoneViewModel->setFilterRole(TimeZoneSelectorModel::ShownRole);
+
+    timeZoneFilterModel = new TimeZoneFilterModel(timeZoneModel);
+    stopwatchTimer = new StopwatchTimer();
+    kclockFormat = new KclockFormat();
+    weekModel = new WeekModel();
+    settingsModel = new KClockSettings();
+
+    // register QML types
+    qmlRegisterType<Alarm>("kclock", 1, 0, "Alarm");
+    qmlRegisterType<Timer>("kclock", 1, 0, "Timer");
 
     {
         QScopedPointer<QCommandLineParser> parser(createParser());
         parser->process(app);
         if (parser->isSet(QStringLiteral("page"))) {
-            QMetaObject::invokeMethod(initGui(alarmModel), "switchToPage", Q_ARG(QVariant, parser->value("page")));
+            QMetaObject::invokeMethod(initGui(), "switchToPage", Q_ARG(QVariant, parser->value("page")));
         }
         if (parser->isSet(QStringLiteral("no-powerdevil"))) {
             qDebug() << "No PowerDevil option set, disabling PowerDevil usage";
-            alarmModel->setUsePowerDevil(false);
+            AlarmModel::inst()->setUsePowerDevil(false);
         }
         if (!parser->isSet(QStringLiteral("daemon"))) {
-            QMetaObject::invokeMethod(initGui(alarmModel), "show");
+            QMetaObject::invokeMethod(initGui(), "show");
 
-            QObject::connect(&service, &KDBusService::activateRequested, initGui(alarmModel), [=](const QStringList &arguments, const QString &workingDirectory) {
+            QObject::connect(&service, &KDBusService::activateRequested, initGui(), [=](const QStringList &arguments, const QString &workingDirectory) {
                 Q_UNUSED(workingDirectory)
-                QMetaObject::invokeMethod(initGui(alarmModel), "show");
+                QMetaObject::invokeMethod(initGui(), "show");
             });
         } else {
             QObject::connect(&service, &KDBusService::activateRequested, [=] {
-                QMetaObject::invokeMethod(initGui(alarmModel), "show");
+                QMetaObject::invokeMethod(initGui(), "show");
             });
         }
     }
@@ -155,12 +151,15 @@ int main(int argc, char *argv[])
     QObject::connect(&app, &QApplication::lastWindowClosed, [=]{
         if (engine) {
             qDebug() << "last window closed, delete QmlEngine";
+            UtilModel::inst()->setApplicationLoaded(false);
+            
+            engine->clearComponentCache();
             delete engine;
             engine = nullptr;
         }
     });
     // start alarm polling
-    alarmModel->configureWakeups();
+    AlarmModel::inst()->configureWakeups();
 
     return app.exec();
 }

@@ -28,12 +28,26 @@ class Alarm;
 class AlarmWaitWorker;
 class QDBusInterface;
 class KStatusNotifierItem;
+class AlarmModel;
+
+static AlarmModel *alarmInst_;
+
 class AlarmModel : public QAbstractListModel
 {
     Q_OBJECT
     Q_CLASSINFO("D-Bus Interface", "org.kde.kclock.AlarmModel")
 public:
     explicit AlarmModel(QObject *parent = nullptr);
+
+    static void init()
+    {
+        alarmInst_ = new AlarmModel();
+    }
+    static AlarmModel *inst()
+    {
+        return alarmInst_;
+    }
+
     void configureWakeups(); // needs to be called to start worker thread, or configure powerdevil (called in main)
 
     enum {

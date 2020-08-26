@@ -24,6 +24,9 @@
 #include <QObject>
 #include <QString>
 
+class UtilModel;
+static UtilModel *utilInst_;
+
 class UtilModel : public QObject
 {
     Q_OBJECT
@@ -31,10 +34,25 @@ class UtilModel : public QObject
     Q_PROPERTY(QString tzName READ getCurrentTimeZoneName NOTIFY propertyChanged)
 
 public:
+    static void init()
+    {
+        utilInst_ = new UtilModel();
+    }
+    static UtilModel *inst()
+    {
+        return utilInst_;
+    }
+    
     QString getCurrentTimeZoneName();
-
-signals:
+    bool applicationLoaded();
+    void setApplicationLoaded(bool applicationLoaded);
+    
+private:
+    bool m_applicationLoaded = false;
+    
+Q_SIGNALS:
     void propertyChanged();
+    void applicationLoadedChanged();
 };
 
 #endif // KIRIGAMICLOCK_UTILMODEL_H

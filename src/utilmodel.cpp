@@ -26,3 +26,17 @@ QString UtilModel::getCurrentTimeZoneName()
 {
     return QTimeZone::systemTimeZoneId();
 }
+
+bool UtilModel::applicationLoaded()
+{
+    return m_applicationLoaded;
+}
+
+void UtilModel::setApplicationLoaded(bool applicationLoaded)
+{
+    if (applicationLoaded != m_applicationLoaded) {
+        m_applicationLoaded = applicationLoaded;
+        Q_EMIT applicationLoadedChanged();
+    }
+}
+
