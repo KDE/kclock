@@ -47,7 +47,7 @@ Timer::Timer(QObject *parent, int length, int elapsed, QString label, bool runni
     , m_justCreated(true)
 {
     connect(
-        this, &Timer::propertyChanged, this, [] { TimerModel::inst()->saveRequested = true; }, Qt::UniqueConnection);
+        this, &Timer::propertyChanged, this, [] { TimerModel::inst()->requestSave(); }, Qt::UniqueConnection);
 }
 
 Timer::Timer(const QJsonObject &obj)
@@ -60,7 +60,7 @@ Timer::Timer(const QJsonObject &obj)
     m_justCreated = false;
 
     connect(
-        this, &Timer::propertyChanged, this, [] { TimerModel::inst()->saveRequested = true; }, Qt::UniqueConnection);
+        this, &Timer::propertyChanged, this, [] { TimerModel::inst()->requestSave(); }, Qt::UniqueConnection);
 }
 
 QJsonObject Timer::serialize()
@@ -144,13 +144,11 @@ TimerModel::TimerModel(QObject *parent)
 
     // slow down saves to max once per second
     saveTimer = new QTimer(this);
+    saveTimer->setSingleShot(true);
+    saveTimer->setInterval(1000);
     connect(saveTimer, &QTimer::timeout, this, [this] {
-        if (saveRequested) {
-            save();
-            saveRequested = false;
-        }
+        save();
     });
-    saveTimer->start(1000);
 }
 
 void TimerModel::load()
@@ -180,6 +178,13 @@ void TimerModel::save()
     group.sync();
 }
 
+void TimerModel::requestSave()
+{
+    if (!saveTimer->isActive()) {
+        saveTimer->start();
+    }
+}
+
 void TimerModel::updateTimerLoop()
 {
     for (auto *timer : timerList)
@@ -191,7 +196,7 @@ void TimerModel::updateTimerStatus()
     // stop timer if all timers are inactive
     if (areTimersInactive() && timer->isActive()) {
         timer->stop();
-    } else if (!timer->isActive()) {
+    } else if (!areTimersInactive() && !timer->isActive()) {
         timer->start();
     }
 }

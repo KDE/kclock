@@ -140,6 +140,7 @@ public:
         return timerInst_;
     }
 
+    void requestSave();
     void updateTimerLoop();
     void updateTimerStatus(); // update qtimer to be on and off depending on if it is needed (for performance)
     bool areTimersInactive(); // if all timers are inactive
@@ -152,8 +153,6 @@ public:
     Q_INVOKABLE void move(int oldIndex, int newIndex);
     Q_INVOKABLE int count();
     Q_INVOKABLE Timer *get(int index);
-
-    bool saveRequested = false;
 
 private:
     QList<Timer *> timerList;

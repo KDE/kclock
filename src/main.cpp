@@ -153,7 +153,7 @@ int main(int argc, char *argv[])
     }
 
     QObject::connect(&app, &QApplication::lastWindowClosed, [=]{
-        if(engine){
+        if (engine) {
             qDebug() << "last window closed, delete QmlEngine";
             delete engine;
             engine = nullptr;
