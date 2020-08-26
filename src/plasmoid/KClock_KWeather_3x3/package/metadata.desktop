@@ -1,6 +1,18 @@
 [Desktop Entry]
 Name=KClock_KWeather_3x3
+Name[ca]=KClock_KWeather_3x3
+Name[nl]=KClock_KWeather_3x3
+Name[pt]=KClock_KWeather_3x3
+Name[sv]=KClock_KWeather_3x3
+Name[uk]=KClock_KWeather_3x3
+Name[x-test]=xxKClock_KWeather_3x3xx
 Comment=KClock widget (3x3 with Weather info)
+Comment[ca]=Estri del KClock (3x3 amb informació meteorològica)
+Comment[nl]=KClock-widget (3x3 met weerinformatie)
+Comment[pt]=Elemento gráfico do KClock (3x3 com Dados Meteorológicos)
+Comment[sv]=KClock grafisk komponent (3 x 3 med väderinformation)
+Comment[uk]=Віджет KClock (3x3 із даними щодо погоди)
+Comment[x-test]=xxKClock widget (3x3 with Weather info)xx
 
 
 Icon=kclock
