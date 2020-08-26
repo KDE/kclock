@@ -136,16 +136,11 @@ int main(int argc, char *argv[])
         }
         if (!parser->isSet(QStringLiteral("daemon"))) {
             QMetaObject::invokeMethod(initGui(), "show");
-
-            QObject::connect(&service, &KDBusService::activateRequested, initGui(), [=](const QStringList &arguments, const QString &workingDirectory) {
-                Q_UNUSED(workingDirectory)
-                QMetaObject::invokeMethod(initGui(), "show");
-            });
-        } else {
-            QObject::connect(&service, &KDBusService::activateRequested, [=] {
-                QMetaObject::invokeMethod(initGui(), "show");
-            });
         }
+        
+        QObject::connect(&service, &KDBusService::activateRequested, [=] {
+            QMetaObject::invokeMethod(initGui(), "show");
+        });
     }
 
     QObject::connect(&app, &QApplication::lastWindowClosed, [=]{

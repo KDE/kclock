@@ -26,8 +26,6 @@ import org.kde.kirigami 2.11 as Kirigami
 
 Kirigami.ApplicationWindow
 {
-    Component.onCompleted: console.log("test")
-    
     id: appwindow
     visible: false // don't open in daemon mode
     width: 650
