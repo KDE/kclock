@@ -18,6 +18,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 #include "kclockformat.h"
+#include "utilmodel.h"
 #include <QLocale>
 #include <QTime>
 #include <QTimer>
@@ -25,14 +26,14 @@ KclockFormat::KclockFormat(QObject *parent)
     : QObject(parent)
     , m_timer(new QTimer(this))
 {
-    m_currentTime = QLocale::system().toString(QTime::currentTime(), QLocale::ShortFormat);
-    m_hours = QTime::currentTime().hour() >= 12 ? QTime::currentTime().hour() - 12 : QTime::currentTime().hour();
-
+    connect(UtilModel::instance(), &UtilModel::applicationLoadedChanged, this, [this]{
+        if(UtilModel::instance()->applicationLoaded()){
+            this->m_timer->stop();
+        } else {
+            this->startTimer();
+        }
+    });
     connect(m_timer, &QTimer::timeout, this, &KclockFormat::updateTime);
-
-    m_minutesCounter = (QTime::currentTime().msecsSinceStartOfDay() / 1000) % 60; // seconds to next minute
-    m_hoursCounter = QTime::currentTime().minute();
-    m_timer->start(1000);
 }
 
 void KclockFormat::updateTime()
@@ -67,6 +68,14 @@ bool KclockFormat::isChecked(int dayIndex, int daysOfWeek)
     int day = 1;
     day <<= dayIndex;
     return daysOfWeek & day;
+}
+
+void KclockFormat::startTimer(){
+    m_currentTime = QLocale::system().toString(QTime::currentTime(), QLocale::ShortFormat);
+    m_hours = QTime::currentTime().hour() >= 12 ? QTime::currentTime().hour() - 12 : QTime::currentTime().hour();
+    m_minutesCounter = (QTime::currentTime().msecsSinceStartOfDay() / 1000) % 60; // seconds to next minute
+    m_hoursCounter = QTime::currentTime().minute();
+    m_timer->start(1000);
 }
 
 WeekModel::WeekModel(QObject *parent)

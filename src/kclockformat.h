@@ -63,6 +63,8 @@ signals:
     void hourChanged();
 
 private:
+    void startTimer(); // basic settings for updating time display
+
     QTimer *m_timer;
     WeekModel *m_weekModel;
     QString m_currentTime;
