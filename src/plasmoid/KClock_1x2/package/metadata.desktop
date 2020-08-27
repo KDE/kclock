@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=KClock_1x2
 Name[ca]=KClock_1x2
+Name[ca@valencia]=KClock_1x2
 Name[nl]=KClock_1x2
 Name[pt]=KClock_1x2
 Name[sv]=KClock_1x2
@@ -8,6 +9,7 @@ Name[uk]=KClock_1x2
 Name[x-test]=xxKClock_1x2xx
 Comment=KClock widget (1x2)
 Comment[ca]=Estri del KClock (1x2)
+Comment[ca@valencia]=Estri del KClock (1x2)
 Comment[nl]=KClock-widget (1x2)
 Comment[pt]=Elemento gráfico do KClock (1x2)
 Comment[sv]=KClock grafisk komponent (1 x 2)
