@@ -47,7 +47,7 @@ Timer::Timer(QObject *parent, int length, int elapsed, QString label, bool runni
     , m_justCreated(true)
 {
     connect(
-        this, &Timer::propertyChanged, this, [] { TimerModel::inst()->requestSave(); }, Qt::UniqueConnection);
+        this, &Timer::propertyChanged, this, [] { TimerModel::instance()->requestSave(); }, Qt::UniqueConnection);
 }
 
 Timer::Timer(const QJsonObject &obj)
@@ -60,7 +60,7 @@ Timer::Timer(const QJsonObject &obj)
     m_justCreated = false;
 
     connect(
-        this, &Timer::propertyChanged, this, [] { TimerModel::inst()->requestSave(); }, Qt::UniqueConnection);
+        this, &Timer::propertyChanged, this, [] { TimerModel::instance()->requestSave(); }, Qt::UniqueConnection);
 }
 
 QJsonObject Timer::serialize()
@@ -96,7 +96,7 @@ void Timer::updateTimer(qint64 duration)
             notif->setFlags(KNotification::NotificationFlag::LoopSound | KNotification::NotificationFlag::Persistent);
             notif->sendEvent();
 
-            TimerModel::inst()->updateTimerStatus();
+            TimerModel::instance()->updateTimerStatus();
         }
 
         emit propertyChanged();
@@ -113,7 +113,7 @@ void Timer::toggleRunning()
         m_running = !m_running;
     }
 
-    TimerModel::inst()->updateTimerStatus();
+    TimerModel::instance()->updateTimerStatus();
 
     emit propertyChanged();
 }
@@ -124,7 +124,7 @@ void Timer::reset()
     m_running = false;
     m_elapsed = 0;
 
-    TimerModel::inst()->updateTimerStatus();
+    TimerModel::instance()->updateTimerStatus();
 
     emit propertyChanged();
 }

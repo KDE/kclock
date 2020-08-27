@@ -45,8 +45,8 @@ TimeZoneSelectorModel::TimeZoneSelectorModel(QObject *parent)
     connect(&m_timer, &QTimer::timeout, this, &TimeZoneSelectorModel::update);
     
     // turn off timer when the application is not loaded to save on cpu cycles
-    connect(UtilModel::inst(), &UtilModel::applicationLoadedChanged, this, [this] {
-        if (UtilModel::inst()->applicationLoaded()) {
+    connect(UtilModel::instance(), &UtilModel::applicationLoadedChanged, this, [this] {
+        if (UtilModel::instance()->applicationLoaded()) {
             m_timer.start(1000);
         } else {
             m_timer.stop();
