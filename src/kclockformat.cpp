@@ -28,9 +28,9 @@ KclockFormat::KclockFormat(QObject *parent)
 {
     connect(UtilModel::instance(), &UtilModel::applicationLoadedChanged, this, [this]{
         if(UtilModel::instance()->applicationLoaded()){
-            this->m_timer->stop();
-        } else {
             this->startTimer();
+        } else {
+            this->m_timer->stop();
         }
     });
     connect(m_timer, &QTimer::timeout, this, &KclockFormat::updateTime);
