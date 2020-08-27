@@ -28,24 +28,15 @@ class Alarm;
 class AlarmWaitWorker;
 class QDBusInterface;
 class KStatusNotifierItem;
-class AlarmModel;
-
-static AlarmModel *alarmInst_;
-
 class AlarmModel : public QAbstractListModel
 {
     Q_OBJECT
     Q_CLASSINFO("D-Bus Interface", "org.kde.kclock.AlarmModel")
 public:
-    explicit AlarmModel(QObject *parent = nullptr);
-
-    static void init()
+    static AlarmModel *instance()
     {
-        alarmInst_ = new AlarmModel();
-    }
-    static AlarmModel *inst()
-    {
-        return alarmInst_;
+        static AlarmModel* singleton = new AlarmModel();
+        return singleton;
     }
 
     void configureWakeups(); // needs to be called to start worker thread, or configure powerdevil (called in main)
@@ -90,6 +81,8 @@ private slots:
     void updateNotifierItem(quint64 time); // update notify icon in systemtray
 
 private:
+    explicit AlarmModel(QObject *parent = nullptr);
+
     KStatusNotifierItem *m_notifierItem = nullptr;
     quint64 nextAlarmTime = 0;
     QDBusInterface *m_interface = nullptr;

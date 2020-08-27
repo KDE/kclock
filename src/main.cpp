@@ -66,18 +66,18 @@ QCommandLineParser *createParser()
 
 QObject* initGui() {
 
-    if (!UtilModel::inst()->applicationLoaded()) {
+    if (!UtilModel::instance()->applicationLoaded()) {
         qDebug() << "construct QmlEngine";
         engine = new QQmlApplicationEngine();
-        UtilModel::inst()->setApplicationLoaded(true);
+        UtilModel::instance()->setApplicationLoaded(true);
         engine->rootContext()->setContextObject(new KLocalizedContext(engine));
         // models
         engine->rootContext()->setContextProperty("timeZoneShowModel", timeZoneViewModel);
         engine->rootContext()->setContextProperty("timeZoneFilterModel", timeZoneFilterModel);
-        engine->rootContext()->setContextProperty("alarmModel", AlarmModel::inst());
-        engine->rootContext()->setContextProperty("timerModel", TimerModel::inst());
+        engine->rootContext()->setContextProperty("alarmModel", AlarmModel::instance());
+        engine->rootContext()->setContextProperty("timerModel", TimerModel::instance());
         engine->rootContext()->setContextProperty("settingsModel", settingsModel);
-        engine->rootContext()->setContextProperty("utilModel", UtilModel::inst());
+        engine->rootContext()->setContextProperty("utilModel", UtilModel::instance());
         engine->rootContext()->setContextProperty("stopwatchTimer", stopwatchTimer);
         engine->rootContext()->setContextProperty("alarmPlayer", &AlarmPlayer::instance());
         engine->rootContext()->setContextProperty("kclockFormat", kclockFormat);
@@ -104,9 +104,6 @@ int main(int argc, char *argv[])
     app.setQuitOnLastWindowClosed(false);
 
     // initialize models
-    UtilModel::init();
-    AlarmModel::init();
-    TimerModel::init();
     auto *timeZoneModel = new TimeZoneSelectorModel();
 
     timeZoneViewModel = new QSortFilterProxyModel();
@@ -132,7 +129,7 @@ int main(int argc, char *argv[])
         }
         if (parser->isSet(QStringLiteral("no-powerdevil"))) {
             qDebug() << "No PowerDevil option set, disabling PowerDevil usage";
-            AlarmModel::inst()->setUsePowerDevil(false);
+            AlarmModel::instance()->setUsePowerDevil(false);
         }
         if (!parser->isSet(QStringLiteral("daemon"))) {
             QMetaObject::invokeMethod(initGui(), "show");
@@ -146,7 +143,7 @@ int main(int argc, char *argv[])
     QObject::connect(&app, &QApplication::lastWindowClosed, [=]{
         if (engine) {
             qDebug() << "last window closed, delete QmlEngine";
-            UtilModel::inst()->setApplicationLoaded(false);
+            UtilModel::instance()->setApplicationLoaded(false);
             
             engine->clearComponentCache();
             delete engine;
@@ -154,7 +151,7 @@ int main(int argc, char *argv[])
         }
     });
     // start alarm polling
-    AlarmModel::inst()->configureWakeups();
+    AlarmModel::instance()->configureWakeups();
 
     return app.exec();
 }

@@ -25,8 +25,6 @@
 #include <QString>
 
 class UtilModel;
-static UtilModel *utilInst_;
-
 class UtilModel : public QObject
 {
     Q_OBJECT
@@ -34,13 +32,10 @@ class UtilModel : public QObject
     Q_PROPERTY(QString tzName READ getCurrentTimeZoneName NOTIFY propertyChanged)
 
 public:
-    static void init()
+    static UtilModel *instance()
     {
-        utilInst_ = new UtilModel();
-    }
-    static UtilModel *inst()
-    {
-        return utilInst_;
+        static UtilModel * singleton = new UtilModel;
+        return singleton;
     }
     
     QString getCurrentTimeZoneName();
@@ -48,6 +43,7 @@ public:
     void setApplicationLoaded(bool applicationLoaded);
     
 private:
+    UtilModel(){}; // explicitly declare it private
     bool m_applicationLoaded = false;
     
 Q_SIGNALS:

@@ -119,25 +119,18 @@ private:
     bool m_running, m_finished, m_justCreated;
 };
 
-static TimerModel *timerInst_;
-
 class TimerModel : public QAbstractListModel
 {
     Q_OBJECT
 
 public:
-    explicit TimerModel(QObject *parent = nullptr);
-
     int rowCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role) const override;
 
-    static void init()
+    static TimerModel *instance()
     {
-        timerInst_ = new TimerModel();
-    }
-    static TimerModel *inst()
-    {
-        return timerInst_;
+        static TimerModel* singleton = new TimerModel();
+        return singleton;
     }
 
     void requestSave();
@@ -155,6 +148,7 @@ public:
     Q_INVOKABLE Timer *get(int index);
 
 private:
+    explicit TimerModel(QObject *parent = nullptr);
     QList<Timer *> timerList;
     QTimer *timer;
     QTimer *saveTimer;
