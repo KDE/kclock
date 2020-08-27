@@ -121,39 +121,45 @@ Kirigami.ApplicationWindow
             "copyrightStatement": "© 2020 Plasma Development Team",
             "desktopFileName": "org.kde.kclock",
             "authors": [
-                {
-                    "name": "Devin Lin",
-                    "emailAddress": "espidev@gmail.com",
-                    "webAddress": "https://espi.dev",
-                }
-            ],
+                        {
+                            "name": "Devin Lin",
+                            "emailAddress": "espidev@gmail.com",
+                            "webAddress": "https://espi.dev",
+                        },
+                        {
+                            "name": "Han Young",
+                            "emailAddress": "hanyoung@protonmail.com",
+                            "webAddress": "https://han-y.gitlab.io",
+                        },
+
+                    ],
             "licenses" : [
-                {
-                    "name" : "GPL v2",
-                    "text" : "long, boring, license text",
-                    "spdx" : "GPL-2.0",
-                }
-            ],
+                        {
+                            "name" : "GPL v2",
+                            "text" : "long, boring, license text",
+                            "spdx" : "GPL-2.0",
+                        }
+                    ],
         }
     }
     
     // tray icon
-//     QtPlatform.SystemTrayIcon {
-//         visible: true
-//         icon.name: "clock"
-//         
-//         onActivated: {
-//             appwindow.show()
-//             appwindow.raise()
-//             appwindow.requestActivate()
-//         }
-//         
-//         menu: QtPlatform.Menu {
-//             visible: false
-//             QtPlatform.MenuItem {
-//                 text: qsTr("Quit")
-//                 onTriggered: Qt.quit()
-//             }
-//         }
-//     }
+    //     QtPlatform.SystemTrayIcon {
+    //         visible: true
+    //         icon.name: "clock"
+    //
+    //         onActivated: {
+    //             appwindow.show()
+    //             appwindow.raise()
+    //             appwindow.requestActivate()
+    //         }
+    //
+    //         menu: QtPlatform.Menu {
+    //             visible: false
+    //             QtPlatform.MenuItem {
+    //                 text: qsTr("Quit")
+    //                 onTriggered: Qt.quit()
+    //             }
+    //         }
+    //     }
 }
