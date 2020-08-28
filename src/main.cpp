@@ -19,6 +19,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+#include <malloc.h>
 
 #include <QApplication>
 #include <QCommandLineParser>
@@ -148,8 +149,10 @@ int main(int argc, char *argv[])
             UtilModel::instance()->setApplicationLoaded(false);
             
             engine->clearComponentCache();
+            engine->collectGarbage();
             delete engine;
             engine = nullptr;
+            malloc_trim(0);
         }
     });
     // start alarm polling
