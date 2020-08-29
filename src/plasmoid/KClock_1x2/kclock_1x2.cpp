@@ -29,7 +29,7 @@ KClock_1x2::KClock_1x2(QObject *parent, const QVariantList &args)
         auto alarmTime = reply.value();
         if (alarmTime > 0) {
             auto dateTime = QDateTime::fromSecsSinceEpoch(alarmTime).toLocalTime();
-            m_string = dateTime.toString("ddd ") + m_local.toString(dateTime.time(), QLocale::ShortFormat);
+            m_string = m_local.standaloneDayName(dateTime.date().dayOfWeek()) + m_local.toString(dateTime.time(), QLocale::ShortFormat);
             m_hasAlarm = true;
         } else
             m_hasAlarm = false;
