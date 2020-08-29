@@ -24,24 +24,6 @@ target_link_libraries(kclock
         KF5::Notifications
         KF5::DBusAddons
         )
-if (ANDROID)
-    kirigami_package_breeze_icons(ICONS
-        clock
-        player-time
-        chronometer
-        notifications
-        settings-configure
-        list-add
-        notifications
-        entry-edit
-        delete
-        checkmark
-        chronometer-reset
-        chronometer-lap
-        chronometer-pause
-        chronometer-start
-        globe
-    )
-endif()
-add_subdirectory(plasmoid)        
+add_subdirectory(plasmoid)
+add_subdirectory(kclockd)
 install(TARGETS kclock ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
