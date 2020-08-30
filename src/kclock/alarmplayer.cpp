@@ -18,8 +18,8 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 #include "alarmplayer.h"
-#include "kclocksettings.h"
-#include <QDebug>
+#include <QDateTime>
+#include <QStandardPaths>
 AlarmPlayer &AlarmPlayer::instance()
 {
     static AlarmPlayer singleton;
@@ -29,16 +29,13 @@ AlarmPlayer::AlarmPlayer(QObject *parent)
     : QObject(parent)
     , m_player(new QMediaPlayer(this, QMediaPlayer::LowLatency))
 {
-    KClockSettings settings;
-    m_player->setVolume(settings.alarmVolume());
+    // m_player->setVolume(settings.alarmVolume());
     connect(m_player, &QMediaPlayer::stateChanged, this, &AlarmPlayer::loopAudio);
 }
 
 void AlarmPlayer::loopAudio(QMediaPlayer::State state)
 {
-    KClockSettings settings;
-
-    if (!userStop && state == QMediaPlayer::StoppedState && static_cast<int>(QDateTime::currentSecsSinceEpoch() - startPlayingTime) < settings.alarmSilenceAfter()) {
+    if (!userStop && state == QMediaPlayer::StoppedState /* && static_cast<int>(QDateTime::currentSecsSinceEpoch() - startPlayingTime) < settings.alarmSilenceAfter()*/) {
         m_player->play();
     }
 }
@@ -61,8 +58,7 @@ void AlarmPlayer::stop()
 
 void AlarmPlayer::setVolume(int volume)
 {
-    KClockSettings settings;
-    settings.setAlarmVolume(volume);
+    // settings.setAlarmVolume(volume);
     m_player->setVolume(volume);
     Q_EMIT volumeChanged();
 }

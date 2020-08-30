@@ -4,12 +4,10 @@ set(kclock_SRCS
     timermodel.cpp
     utilmodel.cpp
     stopwatchtimer.cpp
-    alarmwaitworker.cpp
     alarmplayer.cpp
     kclockformat.cpp
     resources.qrc
     )
-kconfig_add_kcfg_files(kclock_SRCS kclocksettings.kcfgc GENERATE_MOC)
 set(DBusXML ${CMAKE_CURRENT_BINARY_DIR}/../org.kde.kclockd.xml)
 qt5_add_dbus_interface(kclock_SRCS ${DBusXML} KClockdDBusInterface )
 add_executable(kclock main.cpp timezoneselectormodel.cpp ${kclock_SRCS} )

@@ -34,7 +34,6 @@
 #include "alarmplayer.h"
 #include "alarms.h"
 #include "alarmwaitworker.h"
-#include "kclocksettings.h"
 
 // alarm created from UI
 Alarm::Alarm(AlarmModel *parent, QString name, int minutes, int hours, int daysOfWeek)
@@ -55,7 +54,6 @@ Alarm::Alarm(AlarmModel *parent, QString name, int minutes, int hours, int daysO
 
     if (parent) {
         connect(this, &Alarm::propertyChanged, parent, &AlarmModel::updateUi);
-        connect(this, &Alarm::alarmChanged, parent, &AlarmModel::scheduleAlarm); // connect this last
     }
 
     this->save();
@@ -91,7 +89,6 @@ Alarm::Alarm(QString serialized, AlarmModel *parent)
 
     if (parent) {
         connect(this, &Alarm::propertyChanged, parent, &AlarmModel::updateUi);
-        connect(this, &Alarm::alarmChanged, parent, &AlarmModel::scheduleAlarm); // connect this last
     }
 }
 
@@ -180,13 +177,13 @@ void Alarm::handleSnooze()
 {
     m_justSnoozed = true;
 
-    KClockSettings settings;
+    // KClockSettings settings;
     alarmNotifOpen = false;
-    qDebug() << "Alarm snoozed (" << settings.alarmSnoozeLengthDisplay() << ")";
+    // qDebug() << "Alarm snoozed (" << settings.alarmSnoozeLengthDisplay() << ")";
     AlarmPlayer::instance().stop();
 
-    setSnooze(snooze() + 60 * settings.alarmSnoozeLength()); // snooze 5 minutes
-    m_enabled = true;                                        // can't use setSnooze because it resets snooze time
+    // setSnooze(snooze() + 60 * settings.alarmSnoozeLength()); // snooze 5 minutes
+    m_enabled = true; // can't use setSnooze because it resets snooze time
     save();
 
     emit propertyChanged();
