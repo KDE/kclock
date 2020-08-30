@@ -2,6 +2,7 @@
 Name=KClock_1x2
 Name[ca]=KClock_1x2
 Name[ca@valencia]=KClock_1x2
+Name[es]=KClock_1x2
 Name[fr]=KClock_1x2
 Name[nl]=KClock_1x2
 Name[pt]=KClock_1x2
@@ -13,6 +14,7 @@ Name[x-test]=xxKClock_1x2xx
 Comment=KClock widget (1x2)
 Comment[ca]=Estri del KClock (1x2)
 Comment[ca@valencia]=Estri del KClock (1x2)
+Comment[es]=Widget de KClock (1x2)
 Comment[fr]=Composant graphique « KClock » (1x2)
 Comment[nl]=KClock-widget (1x2)
 Comment[pt]=Elemento gráfico do KClock (1x2)
