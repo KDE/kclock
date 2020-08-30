@@ -17,7 +17,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-#pragma once
+#ifndef ALARMWAITWORKER_H
+#define ALARMWAITWORKER_H
 
 #include <QObject>
 
@@ -42,3 +43,5 @@ private:
     qint64 m_waitEndTime;
     bool m_isFinished = true;
 };
+
+#endif // ALARMWAITWORKER_H

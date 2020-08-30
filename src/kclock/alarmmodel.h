@@ -20,13 +20,15 @@
  */
 
 #pragma once
+
+#include <QAbstractListModel>
 #include <QObject>
 
 class Alarm;
 class AlarmWaitWorker;
 class QDBusInterface;
 class KStatusNotifierItem;
-class AlarmModel : public QObject
+class AlarmModel : public QAbstractListModel
 {
     Q_OBJECT
     Q_CLASSINFO("D-Bus Interface", "org.kde.kclock.AlarmModel")
@@ -39,17 +41,36 @@ public:
 
     void configureWakeups(); // needs to be called to start worker thread, or configure powerdevil (called in main)
 
+    enum {
+        NameRole = Qt::DisplayRole,
+        EnabledRole = Qt::UserRole + 1,
+        HoursRole,
+        MinutesRole,
+        DaysOfWeekRole,
+        RingtonePathRole,
+        AlarmRole,
+    };
+
+    int rowCount(const QModelIndex &parent) const override;
+    QVariant data(const QModelIndex &index, int role) const override;
+    bool setData(const QModelIndex &index, const QVariant &value, int role) override;
+    Qt::ItemFlags flags(const QModelIndex &index) const override;
+    QHash<int, QByteArray> roleNames() const override;
+
+    Q_INVOKABLE void updateUi();
+
+    bool load();
+
     Q_SCRIPTABLE void remove(QString uuid);
+    Q_INVOKABLE void remove(int index);
 
     void setUsePowerDevil(bool usePowerDevil)
     {
         m_usePowerDevil = usePowerDevil;
     }
-    Q_SCRIPTABLE void addAlarm(int hours, int minutes, int daysOfWeek, QString name, QString ringtonePath); // in 24 hours units
-
+    Q_INVOKABLE Alarm *addAlarm(int hours, int minutes, int daysOfWeek, QString name, QString ringtonePath = 0); // in 24 hours units, ringTone could be chosen from a list
 signals:
-    Q_SCRIPTABLE void alarmAdded(QString uuid);
-    Q_SCRIPTABLE void alarmRemoved(QString uuid);
+    Q_SCRIPTABLE void alarmChanged();
     Q_SCRIPTABLE void nextAlarm(quint64 nextAlarmTimeStampe);
 
 public slots:
@@ -60,19 +81,17 @@ private slots:
     void updateNotifierItem(quint64 time); // update notify icon in systemtray
 
 private:
-    void remove(int index);
-
     explicit AlarmModel(QObject *parent = nullptr);
 
     KStatusNotifierItem *m_notifierItem = nullptr;
-    quint64 m_nextAlarmTime = 0;
+    quint64 nextAlarmTime = 0;
     QDBusInterface *m_interface = nullptr;
     int m_cookie = -1;            // token for PowerDevil: https://invent.kde.org/plasma/powerdevil/-/merge_requests/13
     bool m_usePowerDevil = false; // if PowerDevil present in system
 
     QList<Alarm *> alarmsToBeRung; // the alarms that will be rung on next wakeup
 
-    QList<Alarm *> m_alarmsList;
+    QList<Alarm *> alarmsList;
     QThread *m_timerThread = nullptr;
     AlarmWaitWorker *m_worker = nullptr;
 };

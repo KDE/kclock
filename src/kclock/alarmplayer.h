@@ -17,7 +17,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-#pragma once
+#ifndef ALARMPLAYER_H
+#define ALARMPLAYER_H
 
 #include <QMediaPlayer>
 #include <QObject>
@@ -50,3 +51,5 @@ private:
 private slots:
     void loopAudio(QMediaPlayer::State state);
 };
+
+#endif // ALARMPLAYER_H

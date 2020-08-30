@@ -25,7 +25,6 @@
 #include <QDBusInterface>
 #include <QDBusReply>
 #include <QLocale>
-#include <QQmlEngine>
 #include <QThread>
 #include <klocalizedstring.h>
 
@@ -35,29 +34,25 @@
 
 #define SCRIPTANDPROPERTY QDBusConnection::ExportScriptableContents | QDBusConnection::ExportAllProperties
 AlarmModel::AlarmModel(QObject *parent)
-    : QAbstractListModel(parent)
-    , m_interface(new QDBusInterface("org.kde.Solid.PowerManagement", "/org/kde/Solid/PowerManagement", "org.kde.Solid.PowerManagement", QDBusConnection::sessionBus(), this))
+    : QObject(parent)
+    , m_interface(new QDBusInterface(QStringLiteral("org.kde.Solid.PowerManagement"), QStringLiteral("/org/kde/Solid/PowerManagement"), QStringLiteral("org.kde.Solid.PowerManagement"), QDBusConnection::sessionBus(), this))
     , m_notifierItem(new KStatusNotifierItem(this))
 {
     // DBus
-    QDBusConnection::sessionBus().registerObject("/alarms", this, QDBusConnection::ExportScriptableContents);
-
-    beginResetModel();
+    QDBusConnection::sessionBus().registerObject(QStringLiteral("/alarms"), this, QDBusConnection::ExportScriptableContents);
 
     // load alarms from config
     auto config = KSharedConfig::openConfig();
     KConfigGroup group = config->group(ALARM_CFG_GROUP);
     for (QString key : group.keyList()) {
-        QString json = group.readEntry(key, "");
+        QString json = group.readEntry(key, QStringLiteral());
         if (!json.isEmpty()) {
             Alarm *alarm = new Alarm(json, this);
 
-            alarmsList.append(alarm);
-            QDBusConnection::sessionBus().registerObject("/alarms/" + alarm->uuid().toString(QUuid::Id128), alarm, SCRIPTANDPROPERTY);
+            m_alarmsList.append(alarm);
+            QDBusConnection::sessionBus().registerObject(QStringLiteral("/alarms/") + alarm->uuid().toString(QUuid::Id128), alarm, SCRIPTANDPROPERTY);
         }
     }
-
-    endResetModel();
 
     // update notify icon in systemtray
     connect(this, &AlarmModel::nextAlarm, this, &AlarmModel::updateNotifierItem);
@@ -70,10 +65,10 @@ AlarmModel::AlarmModel(QObject *parent)
     // if PowerDevil is present rely on PowerDevil to track time, otherwise we do it ourself
     if (m_interface->isValid()) {
         // test Plasma 5.20 PowerDevil schedule wakeup feature
-        QDBusMessage m = QDBusMessage::createMethodCall("org.kde.Solid.PowerManagement", "/org/kde/Solid/PowerManagement", "org.freedesktop.DBus.Introspectable", "Introspect");
+        QDBusMessage m = QDBusMessage::createMethodCall(QStringLiteral("org.kde.Solid.PowerManagement"), QStringLiteral("/org/kde/Solid/PowerManagement"), QStringLiteral("org.freedesktop.DBus.Introspectable"), QStringLiteral("Introspect"));
         QDBusReply<QString> result = QDBusConnection::sessionBus().call(m);
 
-        if (result.isValid() && result.value().indexOf("scheduleWakeup") >= 0) { // have this feature
+        if (result.isValid() && result.value().indexOf(QStringLiteral("scheduleWakeup")) >= 0) { // have this feature
             m_usePowerDevil = true;
         }
     }
@@ -97,7 +92,7 @@ void AlarmModel::configureWakeups()
 
         qDebug() << "PowerDevil not found, using wait worker thread for alarm wakeup.";
     } else {
-        bool success = QDBusConnection::sessionBus().registerObject("/alarmswakeup", "org.kde.PowerManagement", this, QDBusConnection::ExportNonScriptableSlots);
+        bool success = QDBusConnection::sessionBus().registerObject(QStringLiteral("/alarmswakeup"), QStringLiteral("org.kde.PowerManagement"), this, QDBusConnection::ExportNonScriptableSlots);
         qDebug() << "PowerDevil found, using it for alarm wakeup. Success:" << success;
     }
 
@@ -107,13 +102,13 @@ void AlarmModel::configureWakeups()
 
 quint64 AlarmModel::getNextAlarm()
 {
-    return nextAlarmTime;
+    return m_nextAlarmTime;
 }
 
 void AlarmModel::scheduleAlarm()
 {
     // if there are no alarms, return
-    if (alarmsList.count() == 0) {
+    if (m_alarmsList.count() == 0) {
         return;
     }
 
@@ -121,7 +116,7 @@ void AlarmModel::scheduleAlarm()
 
     // get the next minimum time for a wakeup (next alarm ring), and add alarms that will needed to be woken up to the list
     qint64 minTime = std::numeric_limits<qint64>::max();
-    for (auto *alarm : alarmsList) {
+    for (auto *alarm : m_alarmsList) {
         if (alarm->nextRingTime() > 0) {
             if (alarm->nextRingTime() == minTime) {
                 alarmsToBeRung.append(alarm);
@@ -136,16 +131,16 @@ void AlarmModel::scheduleAlarm()
     // if there is an alarm that needs to ring
     if (minTime != std::numeric_limits<qint64>::max()) {
         qDebug() << "scheduled wakeup" << QDateTime::fromSecsSinceEpoch(minTime).toString();
-        nextAlarmTime = minTime;
+        m_nextAlarmTime = minTime;
 
         if (m_usePowerDevil) {
             // if we scheduled wakeup before, cancel it first
             if (m_cookie > 0) {
-                m_interface->call("clearWakeup", m_cookie);
+                m_interface->call(QStringLiteral("clearWakeup"), m_cookie);
             }
 
             // schedule wakeup and store cookie
-            QDBusReply<uint> reply = m_interface->call("scheduleWakeup", "org.kde.kclock", QDBusObjectPath("/alarmswakeup"), (qulonglong)minTime);
+            QDBusReply<uint> reply = m_interface->call(QStringLiteral("scheduleWakeup"), QStringLiteral("org.kde.kclock"), QDBusObjectPath("/alarmswakeup"), (qulonglong)minTime);
             m_cookie = reply.value();
 
             if (!reply.isValid()) {
@@ -159,12 +154,12 @@ void AlarmModel::scheduleAlarm()
         // because alarm->ring() will return immediately if disabled
         qDebug() << "no alarm to ring";
 
-        nextAlarmTime = 0;
+        m_nextAlarmTime = 0;
         if (m_usePowerDevil) {
-            m_interface->call("clearWakeup", m_cookie);
+            m_interface->call(QStringLiteral("clearWakeup"), m_cookie);
         }
     }
-    emit nextAlarm(nextAlarmTime);
+    emit nextAlarm(m_nextAlarmTime);
 }
 
 void AlarmModel::wakeupCallback(int cookie)
@@ -188,83 +183,12 @@ void AlarmModel::wakeupCallback(int cookie)
     }
 }
 
-/* ~ Alarm row data ~ */
-
-QHash<int, QByteArray> AlarmModel::roleNames() const
-{
-    return {{HoursRole, "hours"}, {MinutesRole, "minutes"}, {NameRole, "name"}, {EnabledRole, "enabled"}, {DaysOfWeekRole, "daysOfWeek"}, {RingtonePathRole, "ringtonePath"}, {AlarmRole, "alarm"}};
-}
-
-QVariant AlarmModel::data(const QModelIndex &index, int role) const
-{
-    if (!index.isValid() || index.row() >= alarmsList.count()) {
-        return QVariant();
-    }
-
-    auto *alarm = alarmsList[index.row()];
-    if (!alarm)
-        return false;
-    if (role == EnabledRole)
-        return alarm->enabled();
-    else if (role == HoursRole)
-        return alarm->hours();
-    else if (role == MinutesRole)
-        return alarm->minutes();
-    else if (role == NameRole)
-        return alarm->name();
-    else if (role == DaysOfWeekRole)
-        return alarm->daysOfWeek();
-    else if (role == AlarmRole)
-        return QVariant::fromValue(alarm);
-    else
-        return QVariant();
-}
-
-bool AlarmModel::setData(const QModelIndex &index, const QVariant &value, int role)
-{
-    if (!index.isValid() || alarmsList.length() <= index.row())
-        return false;
-    // to switch or not to switch?
-    auto *alarm = alarmsList[index.row()];
-    if (!alarm)
-        return false;
-    if (role == EnabledRole)
-        alarm->setEnabled(value.toBool());
-    else if (role == HoursRole)
-        alarm->setHours(value.toInt());
-    else if (role == MinutesRole)
-        alarm->setMinutes(value.toInt());
-    else if (role == NameRole)
-        alarm->setName(value.toString());
-    else if (role == DaysOfWeekRole)
-        alarm->setDaysOfWeek(value.toInt());
-    else if (role == RingtonePathRole)
-        alarm->setRingtone(value.toString());
-    else
-        return false;
-
-    emit dataChanged(index, index);
-    return true;
-}
-
-int AlarmModel::rowCount(const QModelIndex &parent) const
-{
-    Q_UNUSED(parent);
-    return alarmsList.size();
-}
-
-Qt::ItemFlags AlarmModel::flags(const QModelIndex &index) const
-{
-    Q_UNUSED(index);
-    return Qt::ItemIsEditable;
-}
-
 void AlarmModel::remove(QString uuid)
 {
     // find alarm index
     int index = 0;
     bool found = false;
-    for (auto id : alarmsList) {
+    for (auto id : m_alarmsList) {
         if (id->uuid().toString() == uuid) {
             found = true;
             break;
@@ -279,16 +203,16 @@ void AlarmModel::remove(QString uuid)
 
 void AlarmModel::remove(int index)
 {
-    if (index < 0 || index >= this->rowCount({}))
+    if (index < 0 || index >= this->m_alarmsList.size())
         return;
 
-    emit beginRemoveRows(QModelIndex(), index, index);
+    Q_EMIT alarmRemoved(m_alarmsList.at(index)->uuid().toString());
 
-    Alarm *alarmPointer = alarmsList[index];
+    Alarm *alarmPointer = m_alarmsList.at(index);
 
     // remove from list of alarms to ring
     for (int i = 0; i < alarmsToBeRung.size(); i++) {
-        if (alarmsToBeRung[i] == alarmPointer) {
+        if (alarmsToBeRung.at(i) == alarmPointer) {
             alarmsToBeRung.removeAt(i);
             i--;
         }
@@ -297,28 +221,21 @@ void AlarmModel::remove(int index)
     // write to config
     auto config = KSharedConfig::openConfig();
     KConfigGroup group = config->group(ALARM_CFG_GROUP);
-    group.deleteEntry(alarmsList.at(index)->uuid().toString());
-    alarmsList[index]->deleteLater(); // delete object
-    alarmsList.removeAt(index);
+    group.deleteEntry(m_alarmsList.at(index)->uuid().toString());
+    m_alarmsList.at(index)->deleteLater(); // delete object
+    m_alarmsList.removeAt(index);
 
     config->sync();
-
-    emit endRemoveRows();
     scheduleAlarm();
 }
 
-void AlarmModel::updateUi()
-{
-    emit dataChanged(createIndex(0, 0), createIndex(alarmsList.count() - 1, 0));
-}
-
-Alarm *AlarmModel::addAlarm(int hours, int minutes, int daysOfWeek, QString name, QString ringtonePath)
+void AlarmModel::addAlarm(int hours, int minutes, int daysOfWeek, QString name, QString ringtonePath)
 {
     Alarm *alarm = new Alarm(this, name, minutes, hours, daysOfWeek);
 
     // insert new alarm in order by time of day
     int i = 0;
-    for (auto alarms : alarmsList) {
+    for (auto alarms : m_alarmsList) {
         if (alarms->hours() < hours) {
             i++;
             continue;
@@ -333,15 +250,13 @@ Alarm *AlarmModel::addAlarm(int hours, int minutes, int daysOfWeek, QString name
             break;
         }
     }
-    emit beginInsertRows(QModelIndex(), i, i);
 
-    alarm->setRingtone(ringtonePath);
-    alarmsList.insert(i, alarm);
-    emit endInsertRows();
+    m_alarmsList.insert(i, alarm);
 
     scheduleAlarm();
-    QDBusConnection::sessionBus().registerObject("/alarms/" + alarm->uuid().toString(QUuid::Id128), alarm, SCRIPTANDPROPERTY);
-    return alarm;
+    QDBusConnection::sessionBus().registerObject(QStringLiteral("/alarms/") + alarm->uuid().toString(QUuid::Id128), alarm, SCRIPTANDPROPERTY);
+
+    Q_EMIT alarmAdded(alarm->uuid().toString());
 }
 
 void AlarmModel::updateNotifierItem(quint64 time)
@@ -352,6 +267,6 @@ void AlarmModel::updateNotifierItem(quint64 time)
     } else {
         auto dateTime = QDateTime::fromSecsSinceEpoch(time).toLocalTime();
         m_notifierItem->setStatus(KStatusNotifierItem::Active);
-        m_notifierItem->setToolTip(QStringLiteral("clock"), QStringLiteral("KClock"), xi18nc("@info", "Alarm: <shortcut>%1</shortcut>", dateTime.toString("ddd ") + QLocale::system().toString(dateTime.time(), QLocale::ShortFormat)));
+        m_notifierItem->setToolTip(QStringLiteral("clock"), QStringLiteral("KClock"), xi18nc("@info", "Alarm: <shortcut>%1</shortcut>", QLocale::system().standaloneDayName(dateTime.date().dayOfWeek()) + QLocale::system().toString(dateTime.time(), QLocale::ShortFormat)));
     }
 }

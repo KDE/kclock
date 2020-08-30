@@ -19,7 +19,8 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#pragma once
+#ifndef KIRIGAMICLOCK_ALARMS_H
+#define KIRIGAMICLOCK_ALARMS_H
 
 #include <QDebug>
 #include <QFileDialog>
@@ -40,13 +41,14 @@ class Alarm : public QObject
 {
     Q_OBJECT
     Q_CLASSINFO("D-Bus Interface", "org.kde.kclock.Alarm")
-    Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
-    Q_PROPERTY(bool enabled READ enabled WRITE setEnabled NOTIFY enabledChanged)
-    Q_PROPERTY(int hours READ hours WRITE setHours NOTIFY hoursChanged)
-    Q_PROPERTY(int minutes READ minutes WRITE setMinutes NOTIFY minutesChanged)
-    Q_PROPERTY(int daysOfWeek READ daysOfWeek WRITE setDaysOfWeek NOTIFY daysOfWeekChanged)
-    Q_PROPERTY(int snoozedMinutes READ snoozedMinutes NOTIFY snoozedMinutesChanged)
-    Q_PROPERTY(QString ringtonePath READ ringtonePath WRITE setRingtonePath NOTIFY ringtonePathChanged)
+    Q_PROPERTY(QString name READ name WRITE setName NOTIFY propertyChanged)
+    Q_PROPERTY(bool enabled READ enabled WRITE setEnabled NOTIFY propertyChanged)
+    Q_PROPERTY(int hours READ hours WRITE setHours NOTIFY propertyChanged)
+    Q_PROPERTY(int minutes READ minutes WRITE setMinutes NOTIFY propertyChanged)
+    Q_PROPERTY(int daysOfWeek READ daysOfWeek WRITE setDaysOfWeek NOTIFY propertyChanged)
+    Q_PROPERTY(int snoozedMinutes READ snoozedMinutes NOTIFY propertyChanged)
+    Q_PROPERTY(QString ringtoneName READ ringtoneName WRITE setRingtoneName NOTIFY propertyChanged)
+    Q_PROPERTY(QString ringtonePath READ ringtonePath WRITE setRingtonePath NOTIFY propertyChanged)
 
 public slots:
     void handleDismiss();
@@ -62,8 +64,7 @@ public:
     void setName(QString name)
     {
         this->m_name = name;
-        Q_EMIT nameChanged();
-        Q_EMIT propertyChanged("name");
+        Q_EMIT propertyChanged();
     }
     QUuid uuid() const
     {
@@ -81,8 +82,7 @@ public:
 
             this->m_enabled = enabled;
             emit alarmChanged(); // notify the AlarmModel to reschedule
-            Q_EMIT enabledChanged();
-            Q_EMIT propertyChanged("enabled");
+            Q_EMIT propertyChanged();
         }
     }
     int hours() const
@@ -92,8 +92,7 @@ public:
     void setHours(int hours)
     {
         this->m_hours = hours;
-        Q_EMIT hoursChanged();
-        Q_EMIT propertyChanged("hours");
+        Q_EMIT propertyChanged();
     }
     int minutes() const
     {
@@ -102,8 +101,7 @@ public:
     void setMinutes(int minutes)
     {
         this->m_minutes = minutes;
-        Q_EMIT minutesChanged();
-        Q_EMIT propertyChanged("minutes");
+        Q_EMIT propertyChanged();
     }
     int daysOfWeek() const
     {
@@ -112,8 +110,7 @@ public:
     void setDaysOfWeek(int daysOfWeek)
     {
         this->m_daysOfWeek = daysOfWeek;
-        Q_EMIT daysOfWeekChanged();
-        Q_EMIT propertyChanged("daysOfWeek");
+        Q_EMIT propertyChanged();
     }
     int snoozedMinutes() const
     {
@@ -130,33 +127,39 @@ public:
     void setSnooze(qint64 snooze)
     {
         this->m_snooze = snooze;
-        Q_EMIT snoozedMinutesChanged();
-        Q_EMIT propertyChanged("snoozedMinutes");
+        Q_EMIT propertyChanged();
     }
-    QString ringtonePath() const
+    inline QString ringtoneName()
+    {
+        return m_ringtoneName;
+    };
+    inline void setRingtoneName(QString name)
+    {
+        m_ringtoneName = name;
+        emit propertyChanged();
+    };
+    void setRingtone(QString urlStr)
+    {
+        auto url = QUrl(urlStr);
+        m_audioPath = url;
+    };
+    QString ringtonePath()
     {
         return m_audioPath.toString();
     };
     void setRingtonePath(QString path)
     {
         m_audioPath = path;
-        Q_EMIT ringtonePathChanged();
-        Q_EMIT propertyChanged("ringtonePath");
+        emit propertyChanged();
     }
     QString serialize();
 
-    Q_SCRIPTABLE qint64 nextRingTime(); // the next time this should ring, if this would never ring, return -1
+    qint64 nextRingTime(); // the next time this should ring, if this would never ring, return -1
     void ring();           // ring alarm
 
+    Q_INVOKABLE QString timeToRingFormated();
 signals:
-    void nameChanged();
-    void enabledChanged();
-    void hoursChanged();
-    void minutesChanged();
-    void daysOfWeekChanged();
-    void snoozedMinutesChanged();
-    void ringtonePathChanged();
-    Q_SCRIPTABLE void propertyChanged(QString property);
+    void propertyChanged();
     Q_SCRIPTABLE void alarmChanged();
 public slots:
     Q_SCRIPTABLE QString getUUID()
@@ -173,11 +176,13 @@ private:
 
     QUrl m_audioPath = QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "sounds/freedesktop/stereo/alarm-clock-elapsed.oga"));
     QString m_name = "New Alarm";
+    QString m_ringtoneName = "default";
     QUuid m_uuid;
-    bool m_enabled = true;
+    bool m_enabled;
     bool m_justSnoozed = false; // pressing snooze on the notification also triggers the dismiss event, so this is a helper for that
     int m_hours = 0, m_minutes = 0, m_daysOfWeek = 0;
     qint64 m_snooze = 0;        // current snooze length
     qint64 m_nextRingTime = -1; // store calculated next ring time
 };
 
+#endif // KIRIGAMICLOCK_ALARMS_H
