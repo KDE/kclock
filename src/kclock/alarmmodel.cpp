@@ -174,5 +174,19 @@ void AlarmModel::addAlarm(QString uuid)
 
 void AlarmModel::removeAlarm(QString uuid)
 {
-    m_interface->remove(uuid);
+    auto index = 0;
+    for (auto alarm : alarmsList) {
+        if (alarm->uuid().toString() == uuid) {
+            break;
+        }
+        ++index;
+    }
+
+    auto ptr = alarmsList.at(index);
+
+    emit beginRemoveRows(QModelIndex(), index, index);
+    alarmsList.removeAt(index);
+    emit endRemoveRows();
+
+    ptr->deleteLater();
 }
