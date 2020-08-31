@@ -13,9 +13,9 @@ set(DBusXML ${CMAKE_CURRENT_BINARY_DIR}/../org.kde.kclockd.KClockSettings.xml)
 set(AlarmXML ${CMAKE_CURRENT_BINARY_DIR}/../org.kde.kclockd.Alarm.xml)
 set(AlarmModelXML ${CMAKE_CURRENT_BINARY_DIR}/../org.kde.kclockd.AlarmModel.xml)
 
-qt5_add_dbus_interface(kclock_SRCS ${DBusXML} KClockSettingsDBusInterface )
-qt5_add_dbus_interface(kclock_SRCS ${AlarmXML} AlarmInterface )
-qt5_add_dbus_interface(kclock_SRCS ${AlarmModelXML} AlarmModelInterface )
+qt5_add_dbus_interface(kclock_SRCS ${DBusXML} kclocksettingsinterface )
+qt5_add_dbus_interface(kclock_SRCS ${AlarmXML} alarminterface )
+qt5_add_dbus_interface(kclock_SRCS ${AlarmModelXML} alarmmodelinterface )
 
 add_executable(kclock main.cpp timezoneselectormodel.cpp ${kclock_SRCS} )
 target_link_libraries(kclock

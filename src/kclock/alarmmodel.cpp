@@ -25,24 +25,44 @@
 #include <QDBusInterface>
 #include <QDBusReply>
 #include <QLocale>
-#include <QQmlEngine>
 #include <QThread>
+#include <QXmlStreamReader>
+
 #include <klocalizedstring.h>
 
 #include "alarmmodel.h"
 #include "alarms.h"
 #include "alarmwaitworker.h"
 
-#define SCRIPTANDPROPERTY QDBusConnection::ExportScriptableContents | QDBusConnection::ExportAllProperties
 AlarmModel::AlarmModel(QObject *parent)
     : QAbstractListModel(parent)
+    , m_interface(new org::kde::kclock::AlarmModel(QStringLiteral("org.kde.kclockd"), QStringLiteral("/alarms"), QDBusConnection::sessionBus(), this))
 {
+    if (m_interface->isValid()) {
+        connect(m_interface, SIGNAL(alarmAdded(QString)), this, SLOT(addAlarm(QString)));
+        connect(m_interface, SIGNAL(alarmRemoved(QString)), this, SLOT(removeAlarm(QString)));
+    }
+    QDBusInterface *interface = new QDBusInterface("org.kde.kclockd", "/alarms", "org.freedesktop.DBus.Introspectable", QDBusConnection::sessionBus(), this);
+    QDBusReply<QString> reply = interface->call("Introspect");
+    if (reply.isValid()) {
+        auto xmlMsg = reply.value();
+        QXmlStreamReader xml(xmlMsg);
+        while (!xml.atEnd()) {
+            xml.readNext();
+            if (xml.name() == "node" && xml.attributes().hasAttribute("name")) {
+                if (xml.attributes().value("name").toString().indexOf(QStringLiteral("org")) == -1) {
+                    this->addAlarm(xml.attributes().value("name").toString());
+                }
+            }
+        }
+    }
+    interface->deleteLater();
 }
 /* ~ Alarm row data ~ */
 
 QHash<int, QByteArray> AlarmModel::roleNames() const
 {
-    return {{HoursRole, "hours"}, {MinutesRole, "minutes"}, {NameRole, "name"}, {EnabledRole, "enabled"}, {DaysOfWeekRole, "daysOfWeek"}, {RingtonePathRole, "ringtonePath"}, {AlarmRole, "alarm"}};
+    return {{HoursRole, "hours"}, {MinutesRole, "minutes"}, {NameRole, "name"}, {EnabledRole, "enabled"}, {DaysOfWeekRole, "daysOfWeek"}, {AlarmRole, "alarm"}};
 }
 
 QVariant AlarmModel::data(const QModelIndex &index, int role) const
@@ -88,8 +108,6 @@ bool AlarmModel::setData(const QModelIndex &index, const QVariant &value, int ro
         alarm->setName(value.toString());
     else if (role == DaysOfWeekRole)
         alarm->setDaysOfWeek(value.toInt());
-    else if (role == RingtonePathRole)
-        alarm->setRingtone(value.toString());
     else
         return false;
 
@@ -116,16 +134,7 @@ void AlarmModel::remove(int index)
 
     emit beginRemoveRows(QModelIndex(), index, index);
 
-    // write to config
-    auto config = KSharedConfig::openConfig();
-    KConfigGroup group = config->group(ALARM_CFG_GROUP);
-    group.deleteEntry(alarmsList.at(index)->uuid().toString());
-    alarmsList[index]->deleteLater(); // delete object
-    alarmsList.removeAt(index);
-
     // TODO: remove remote alarm
-
-    config->sync();
 
     emit endRemoveRows();
 }
@@ -137,30 +146,6 @@ void AlarmModel::updateUi()
 
 Alarm *AlarmModel::addAlarm(int hours, int minutes, int daysOfWeek, QString name, QString ringtonePath)
 {
-    Alarm *alarm = new Alarm(this, name, minutes, hours, daysOfWeek);
-    alarm->setRingtone(ringtonePath);
-
-    // insert new alarm in order by time of day
-    int i = 0;
-    for (auto alarms : alarmsList) {
-        if (alarms->hours() < hours) {
-            i++;
-            continue;
-        } else if (alarms->hours() == hours) {
-            if (alarms->minutes() < minutes) {
-                i++;
-                continue;
-            } else {
-                break;
-            }
-        } else {
-            break;
-        }
-    }
-    emit beginInsertRows(QModelIndex(), i, i);
-    alarmsList.insert(i, alarm);
-    emit endInsertRows();
-
     // TODO: add alarm to remote
-    return alarm;
+    return {};
 }

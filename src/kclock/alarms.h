@@ -22,49 +22,33 @@
 #ifndef KIRIGAMICLOCK_ALARMS_H
 #define KIRIGAMICLOCK_ALARMS_H
 
-#include <QDebug>
 #include <QFileDialog>
 #include <QObject>
 #include <QStandardPaths>
 #include <QString>
-#include <QTime>
 #include <QUrl>
 #include <QUuid>
 
-#include "alarmplayer.h"
-class QMediaPlayer;
-class QThread;
-class AlarmWaitWorker;
-class AlarmModel;
-const QString ALARM_CFG_GROUP = "Alarms";
+#include "alarminterface.h"
 class Alarm : public QObject
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "org.kde.kclock.Alarm")
     Q_PROPERTY(QString name READ name WRITE setName NOTIFY propertyChanged)
     Q_PROPERTY(bool enabled READ enabled WRITE setEnabled NOTIFY propertyChanged)
     Q_PROPERTY(int hours READ hours WRITE setHours NOTIFY propertyChanged)
     Q_PROPERTY(int minutes READ minutes WRITE setMinutes NOTIFY propertyChanged)
     Q_PROPERTY(int daysOfWeek READ daysOfWeek WRITE setDaysOfWeek NOTIFY propertyChanged)
     Q_PROPERTY(int snoozedMinutes READ snoozedMinutes NOTIFY propertyChanged)
-    Q_PROPERTY(QString ringtoneName READ ringtoneName WRITE setRingtoneName NOTIFY propertyChanged)
     Q_PROPERTY(QString ringtonePath READ ringtonePath WRITE setRingtonePath NOTIFY propertyChanged)
-
-public slots:
-    void handleDismiss();
-    void handleSnooze();
-
 public:
-    explicit Alarm(AlarmModel *parent = nullptr, QString name = "", int minutes = 0, int hours = 0, int daysOfWeek = 0);
-    explicit Alarm(QString serialized, AlarmModel *parent = nullptr);
+    explicit Alarm(QString uuid);
     QString name() const
     {
         return m_name;
     }
     void setName(QString name)
     {
-        this->m_name = name;
-        Q_EMIT propertyChanged();
+        m_interface->setProperty("name", name);
     }
     QUuid uuid() const
     {
@@ -76,14 +60,7 @@ public:
     }
     void setEnabled(bool enabled)
     {
-        if (this->m_enabled != enabled) {
-            this->m_snooze = 0;        // reset snooze value
-            this->m_nextRingTime = -1; // reset next ring time
-
-            this->m_enabled = enabled;
-            emit alarmChanged(); // notify the AlarmModel to reschedule
-            Q_EMIT propertyChanged();
-        }
+        m_interface->setProperty("enabled", enabled);
     }
     int hours() const
     {
@@ -91,8 +68,7 @@ public:
     }
     void setHours(int hours)
     {
-        this->m_hours = hours;
-        Q_EMIT propertyChanged();
+        m_interface->setProperty("hours", hours);
     }
     int minutes() const
     {
@@ -100,8 +76,7 @@ public:
     }
     void setMinutes(int minutes)
     {
-        this->m_minutes = minutes;
-        Q_EMIT propertyChanged();
+        m_interface->setProperty("minutes", minutes);
     }
     int daysOfWeek() const
     {
@@ -109,80 +84,54 @@ public:
     }
     void setDaysOfWeek(int daysOfWeek)
     {
-        this->m_daysOfWeek = daysOfWeek;
-        Q_EMIT propertyChanged();
+        m_interface->setProperty("daysOfWeek", daysOfWeek);
     }
     int snoozedMinutes() const
     {
-        if (m_snooze != 0 && m_enabled) {
-            return m_snooze / 60;
-        } else {
-            return 0;
-        }
+        return m_snooze / 60;
     }
-    qint64 snooze() const
+    QString ringtonePath() const
     {
-        return m_snooze;
-    }
-    void setSnooze(qint64 snooze)
-    {
-        this->m_snooze = snooze;
-        Q_EMIT propertyChanged();
-    }
-    inline QString ringtoneName()
-    {
-        return m_ringtoneName;
-    };
-    inline void setRingtoneName(QString name)
-    {
-        m_ringtoneName = name;
-        emit propertyChanged();
-    };
-    void setRingtone(QString urlStr)
-    {
-        auto url = QUrl(urlStr);
-        m_audioPath = url;
-    };
-    QString ringtonePath()
-    {
-        return m_audioPath.toString();
+        return m_ringtonePath;
     };
     void setRingtonePath(QString path)
     {
-        m_audioPath = path;
-        emit propertyChanged();
+        m_interface->setProperty("ringtonePath", path);
     }
-    QString serialize();
 
-    qint64 nextRingTime(); // the next time this should ring, if this would never ring, return -1
-    void ring();           // ring alarm
+    Q_INVOKABLE QString timeToRingFormated() const;
 
-    Q_INVOKABLE QString timeToRingFormated();
+    bool isValid()
+    {
+        return m_isValid;
+    };
+
+    void save()
+    {
+        m_interface->alarmChanged();
+    };
 signals:
     void propertyChanged();
-    Q_SCRIPTABLE void alarmChanged();
-public slots:
-    Q_SCRIPTABLE QString getUUID()
-    {
-        return m_uuid.toString();
-    }
 private slots:
-    void save(); // serialize and save to config
+    void updateProperty(QString property);
+
 private:
-    void calculateNextRingTime();
+    qint64 nextRingTime() const
+    {
+        return m_nextRingTime;
+    };
 
-    bool alarmNotifOpen = false; // if the alarm notification is open
-    QTime alarmNotifOpenTime;    // time the alarm notification opened
+    org::kde::kclock::Alarm *m_interface;
 
-    QUrl m_audioPath = QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "sounds/freedesktop/stereo/alarm-clock-elapsed.oga"));
-    QString m_name = "New Alarm";
-    QString m_ringtoneName = "default";
+    QString m_ringtonePath;
+    QString m_name;
     QUuid m_uuid;
     bool m_enabled;
-    bool m_justSnoozed = false; // pressing snooze on the notification also triggers the dismiss event, so this is a helper for that
-    int m_hours = 0, m_minutes = 0, m_daysOfWeek = 0;
-    qint64 m_snooze = 0;        // current snooze length
-    qint64 m_nextRingTime = -1; // store calculated next ring time
+    int m_hours, m_minutes, m_daysOfWeek;
+    qint64 m_snooze;
+    qint64 m_nextRingTime;
+
+    bool m_isValid = true;
 };
 
 #endif // KIRIGAMICLOCK_ALARMS_H

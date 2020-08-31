@@ -24,14 +24,11 @@
 #include <QAbstractListModel>
 #include <QObject>
 
+#include "alarmmodelinterface.h"
 class Alarm;
-class AlarmWaitWorker;
-class QDBusInterface;
-class KStatusNotifierItem;
 class AlarmModel : public QAbstractListModel
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "org.kde.kclock.AlarmModel")
 public:
     static AlarmModel *instance()
     {
@@ -45,7 +42,6 @@ public:
         HoursRole,
         MinutesRole,
         DaysOfWeekRole,
-        RingtonePathRole,
         AlarmRole,
     };
 
@@ -61,7 +57,13 @@ public:
 
     Q_INVOKABLE Alarm *addAlarm(int hours, int minutes, int daysOfWeek, QString name, QString ringtonePath = 0); // in 24 hours units, ringTone could be chosen from a list
 
+private slots:
+    void addAlarm(QString uuid);
+    void removeAlarm(QString uuid);
+
 private:
+    org::kde::kclock::AlarmModel *m_interface;
+
     explicit AlarmModel(QObject *parent = nullptr);
     QList<Alarm *> alarmsList;
 };
