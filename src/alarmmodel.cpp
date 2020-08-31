@@ -110,6 +110,7 @@ void AlarmModel::scheduleAlarm()
 {
     // if there are no alarms, return
     if (m_alarmsList.count() == 0) {
+        m_nextAlarmTime = 0;
         Q_EMIT nextAlarm(0);
         return;
     }
