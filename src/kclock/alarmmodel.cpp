@@ -42,16 +42,16 @@ AlarmModel::AlarmModel(QObject *parent)
         connect(m_interface, SIGNAL(alarmAdded(QString)), this, SLOT(addAlarm(QString)));
         connect(m_interface, SIGNAL(alarmRemoved(QString)), this, SLOT(removeAlarm(QString)));
     }
-    QDBusInterface *interface = new QDBusInterface("org.kde.kclockd", "/alarms", "org.freedesktop.DBus.Introspectable", QDBusConnection::sessionBus(), this);
-    QDBusReply<QString> reply = interface->call("Introspect");
+    QDBusInterface *interface = new QDBusInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/alarms"), QStringLiteral("org.freedesktop.DBus.Introspectable"), QDBusConnection::sessionBus(), this);
+    QDBusReply<QString> reply = interface->call(QStringLiteral("Introspect"));
     if (reply.isValid()) {
         auto xmlMsg = reply.value();
         QXmlStreamReader xml(xmlMsg);
         while (!xml.atEnd()) {
             xml.readNext();
-            if (xml.name() == "node" && xml.attributes().hasAttribute("name")) {
-                if (xml.attributes().value("name").toString().indexOf(QStringLiteral("org")) == -1) {
-                    this->addAlarm(xml.attributes().value("name").toString());
+            if (xml.name() == QStringLiteral("node") && xml.attributes().hasAttribute(QStringLiteral("name"))) {
+                if (xml.attributes().value(QStringLiteral("name")).toString().indexOf(QStringLiteral("org")) == -1) {
+                    this->addAlarm(xml.attributes().value(QStringLiteral("name")).toString());
                 }
             }
         }
