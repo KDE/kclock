@@ -29,6 +29,7 @@
 #include <klocalizedstring.h>
 
 #include "alarmmodel.h"
+#include "alarmmodeladaptor.h"
 #include "alarms.h"
 #include "alarmwaitworker.h"
 
@@ -39,7 +40,8 @@ AlarmModel::AlarmModel(QObject *parent)
     , m_notifierItem(new KStatusNotifierItem(this))
 {
     // DBus
-    QDBusConnection::sessionBus().registerObject(QStringLiteral("/alarms"), this, QDBusConnection::ExportScriptableContents);
+    new AlarmModelAdaptor(this);
+    QDBusConnection::sessionBus().registerObject(QStringLiteral("/alarms"), this);
 
     // load alarms from config
     auto config = KSharedConfig::openConfig();
@@ -50,7 +52,6 @@ AlarmModel::AlarmModel(QObject *parent)
             Alarm *alarm = new Alarm(json, this);
 
             m_alarmsList.append(alarm);
-            QDBusConnection::sessionBus().registerObject(QStringLiteral("/alarms/") + alarm->uuid().toString(QUuid::Id128), alarm, SCRIPTANDPROPERTY);
         }
     }
 
@@ -109,6 +110,7 @@ void AlarmModel::scheduleAlarm()
 {
     // if there are no alarms, return
     if (m_alarmsList.count() == 0) {
+        Q_EMIT nextAlarm(0);
         return;
     }
 
@@ -159,7 +161,7 @@ void AlarmModel::scheduleAlarm()
             m_interface->call(QStringLiteral("clearWakeup"), m_cookie);
         }
     }
-    emit nextAlarm(m_nextAlarmTime);
+    Q_EMIT nextAlarm(m_nextAlarmTime);
 }
 
 void AlarmModel::wakeupCallback(int cookie)
@@ -254,7 +256,6 @@ void AlarmModel::addAlarm(int hours, int minutes, int daysOfWeek, QString name, 
     m_alarmsList.insert(i, alarm);
 
     scheduleAlarm();
-    QDBusConnection::sessionBus().registerObject(QStringLiteral("/alarms/") + alarm->uuid().toString(QUuid::Id128), alarm, SCRIPTANDPROPERTY);
 
     Q_EMIT alarmAdded(alarm->uuid().toString());
 }
@@ -267,6 +268,8 @@ void AlarmModel::updateNotifierItem(quint64 time)
     } else {
         auto dateTime = QDateTime::fromSecsSinceEpoch(time).toLocalTime();
         m_notifierItem->setStatus(KStatusNotifierItem::Active);
-        m_notifierItem->setToolTip(QStringLiteral("clock"), QStringLiteral("KClock"), xi18nc("@info", "Alarm: <shortcut>%1</shortcut>", QLocale::system().standaloneDayName(dateTime.date().dayOfWeek()) + QLocale::system().toString(dateTime.time(), QLocale::ShortFormat)));
+        m_notifierItem->setToolTip(QStringLiteral("clock"),
+                                   QStringLiteral("KClock"),
+                                   xi18nc("@info", "Alarm: <shortcut>%1</shortcut>", QLocale::system().standaloneDayName(dateTime.date().dayOfWeek()) + QLocale::system().toString(dateTime.time(), QLocale::ShortFormat)));
     }
 }

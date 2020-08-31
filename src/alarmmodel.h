@@ -33,7 +33,7 @@ class AlarmModel : public QObject
 public:
     static AlarmModel *instance()
     {
-        static AlarmModel* singleton = new AlarmModel();
+        static AlarmModel *singleton = new AlarmModel();
         return singleton;
     }
 
@@ -53,9 +53,9 @@ signals:
     Q_SCRIPTABLE void nextAlarm(quint64 nextAlarmTimeStampe);
 
 public slots:
-    void wakeupCallback(int cookie); // PowerDevil callback function, not scriptable to distinguish from other slots
+    void wakeupCallback(int cookie); // PowerDevil callback function
     Q_SCRIPTABLE quint64 getNextAlarm();
-    Q_SCRIPTABLE void scheduleAlarm();
+    void scheduleAlarm();
 private slots:
     void updateNotifierItem(quint64 time); // update notify icon in systemtray
 

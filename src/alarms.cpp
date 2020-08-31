@@ -19,6 +19,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+#include <QDBusConnection>
 #include <QDateTime>
 #include <QDebug>
 #include <QJsonDocument>
@@ -30,6 +31,7 @@
 #include <KNotification>
 #include <KSharedConfig>
 
+#include "alarmadaptor.h"
 #include "alarmmodel.h"
 #include "alarmplayer.h"
 #include "alarms.h"
@@ -57,6 +59,11 @@ Alarm::Alarm(AlarmModel *parent, QString name, int minutes, int hours, int daysO
     }
 
     this->save();
+
+    // DBus
+    new AlarmAdaptor(this);
+    QDBusConnection::sessionBus().registerObject(QStringLiteral("/alarms/") + this->uuid().toString(QUuid::Id128), this);
+    connect(this, &QObject::destroyed, [this] { QDBusConnection::sessionBus().unregisterObject(QStringLiteral("/alarms/") + this->uuid().toString(QUuid::Id128), QDBusConnection::UnregisterNode); });
 }
 
 // alarm from json (loaded from storage)
@@ -89,6 +96,11 @@ Alarm::Alarm(QString serialized, AlarmModel *parent)
     if (parent) {
         connect(this, &Alarm::alarmChanged, parent, &AlarmModel::scheduleAlarm); // connect this last
     }
+
+    // DBus
+    new AlarmAdaptor(this);
+    QDBusConnection::sessionBus().registerObject(QStringLiteral("/alarms/") + this->uuid().toString(QUuid::Id128), this);
+    connect(this, &QObject::destroyed, [this] { QDBusConnection::sessionBus().unregisterObject(QStringLiteral("/alarms/") + this->uuid().toString(QUuid::Id128), QDBusConnection::UnregisterNode); });
 }
 
 // alarm to json
@@ -123,8 +135,7 @@ void Alarm::ring()
     qDebug() << "Ringing alarm" << m_name << "and sending notification...";
 
     KNotification *notif = new KNotification(QStringLiteral("alarm"));
-    notif->setActions(QStringList() << QStringLiteral("Dismiss")
-                                    << QStringLiteral("Snooze"));
+    notif->setActions(QStringList() << QStringLiteral("Dismiss") << QStringLiteral("Snooze"));
     notif->setIconName(QStringLiteral("kclock"));
     notif->setTitle(name());
     notif->setText(QLocale::system().toString(QTime::currentTime(), QLocale::ShortFormat)); // TODO
@@ -176,11 +187,11 @@ void Alarm::handleSnooze()
     m_justSnoozed = true;
 
     alarmNotifOpen = false;
-    qDebug() << "Alarm snoozed (" << /*settings.alarmSnoozeLengthDisplay() << */")";
+    qDebug() << "Alarm snoozed (" << /*settings.alarmSnoozeLengthDisplay() << */ ")";
     AlarmPlayer::instance().stop();
 
-    setSnooze(snooze()/* + 60 * settings.alarmSnoozeLength()*/); // snooze 5 minutes
-    m_enabled = true;                                        // can't use setSnooze because it resets snooze time
+    setSnooze(snooze() /* + 60 * settings.alarmSnoozeLength()*/); // snooze 5 minutes
+    m_enabled = true;                                             // can't use setSnooze because it resets snooze time
     save();
     Q_EMIT alarmChanged();
 }

@@ -80,7 +80,7 @@ public:
             this->m_nextRingTime = -1; // reset next ring time
 
             this->m_enabled = enabled;
-            emit alarmChanged(); // notify the AlarmModel to reschedule
+            Q_EMIT alarmChanged(); // notify the AlarmModel to reschedule
             Q_EMIT enabledChanged();
             Q_EMIT propertyChanged("enabled");
         }
@@ -146,8 +146,11 @@ public:
     QString serialize();
 
     Q_SCRIPTABLE qint64 nextRingTime(); // the next time this should ring, if this would never ring, return -1
-    void ring();           // ring alarm
-
+    void ring();                        // ring alarm
+    Q_SCRIPTABLE QString getUUID()
+    {
+        return m_uuid.toString();
+    }
 signals:
     void nameChanged();
     void enabledChanged();
@@ -158,11 +161,6 @@ signals:
     void ringtonePathChanged();
     Q_SCRIPTABLE void propertyChanged(QString property);
     Q_SCRIPTABLE void alarmChanged();
-public slots:
-    Q_SCRIPTABLE QString getUUID()
-    {
-        return m_uuid.toString();
-    }
 private slots:
     void save(); // serialize and save to config
 private:
@@ -180,4 +178,3 @@ private:
     qint64 m_snooze = 0;        // current snooze length
     qint64 m_nextRingTime = -1; // store calculated next ring time
 };
-

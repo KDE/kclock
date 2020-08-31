@@ -31,8 +31,8 @@
 #include <KDBusService>
 
 #include "alarmmodel.h"
-#include "kclockdadaptor.h"
 #include "kclockdsettings.h"
+#include "kclocksettingsadaptor.h"
 QCommandLineParser *createParser()
 {
     QCommandLineParser *parser = new QCommandLineParser;
