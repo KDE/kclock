@@ -41,6 +41,7 @@ class Alarm : public QObject
     Q_PROPERTY(int snoozedMinutes READ snoozedMinutes NOTIFY propertyChanged)
     Q_PROPERTY(QString ringtonePath READ ringtonePath WRITE setRingtonePath NOTIFY propertyChanged)
 public:
+    explicit Alarm();
     explicit Alarm(QString uuid);
     QString name() const
     {

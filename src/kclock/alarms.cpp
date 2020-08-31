@@ -26,6 +26,7 @@
 
 #include "alarmmodel.h"
 #include "alarms.h"
+Alarm::Alarm() {};
 Alarm::Alarm(QString uuid)
     : m_uuid(uuid)
 {

@@ -6,6 +6,7 @@ set(kclock_SRCS
     stopwatchtimer.cpp
     alarmplayer.cpp
     kclockformat.cpp
+    kclock_algorithm.hpp
     resources.qrc
     )
 

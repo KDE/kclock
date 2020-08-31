@@ -32,7 +32,7 @@
 
 #include "alarmmodel.h"
 #include "alarms.h"
-#include "alarmwaitworker.h"
+#include "kclock_algorithm.hpp"
 
 AlarmModel::AlarmModel(QObject *parent)
     : QAbstractListModel(parent)
@@ -132,11 +132,14 @@ void AlarmModel::remove(int index)
     if (index < 0 || index >= this->rowCount({}))
         return;
 
+    m_interface->remove(alarmsList.at(index)->uuid().toString());
+    auto ptr = alarmsList.at(index);
+
     emit beginRemoveRows(QModelIndex(), index, index);
-
-    // TODO: remove remote alarm
-
+    alarmsList.removeAt(index);
     emit endRemoveRows();
+
+    ptr->deleteLater();
 }
 
 void AlarmModel::updateUi()
@@ -148,4 +151,28 @@ Alarm *AlarmModel::addAlarm(int hours, int minutes, int daysOfWeek, QString name
 {
     // TODO: add alarm to remote
     return {};
+}
+
+void AlarmModel::addAlarm(QString uuid)
+{
+    auto alarm = new Alarm(uuid.remove(QRegularExpression(QStringLiteral("[{}-]"))));
+    auto index = KClock::insert_index(alarm, alarmsList, [](Alarm *const &left, Alarm *const &right) {
+        if (left->hours() < right->hours())
+            return true;
+        else if (left->hours() > right->hours())
+            return false;
+        else if (left->minutes() <= right->minutes())
+            return true;
+        else
+            return false;
+    });
+
+    Q_EMIT beginInsertRows(QModelIndex(), index, index);
+    alarmsList.insert(index, alarm);
+    Q_EMIT endInsertRows();
+}
+
+void AlarmModel::removeAlarm(QString uuid)
+{
+    m_interface->remove(uuid);
 }
