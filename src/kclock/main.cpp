@@ -41,6 +41,7 @@
 #include "alarmplayer.h"
 #include "alarms.h"
 #include "kclockformat.h"
+#include "kclocksettings.h"
 #include "stopwatchtimer.h"
 #include "timermodel.h"
 #include "timezoneselectormodel.h"
@@ -98,6 +99,7 @@ int main(int argc, char *argv[])
     engine->rootContext()->setContextProperty("alarmPlayer", &AlarmPlayer::instance());
     engine->rootContext()->setContextProperty("kclockFormat", kclockFormat);
     engine->rootContext()->setContextProperty("weekModel", weekModel);
+    engine->rootContext()->setContextProperty("settingsModel", &KClockSettings::instance());
 
     engine->load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
 
