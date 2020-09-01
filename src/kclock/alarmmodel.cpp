@@ -129,8 +129,10 @@ Qt::ItemFlags AlarmModel::flags(const QModelIndex &index) const
 
 void AlarmModel::remove(int index)
 {
-    if (index < 0 || index >= this->rowCount({}))
+    if (index < 0 || index >= this->alarmsList.size())
         return;
+
+    qDebug() << alarmsList.at(index)->uuid().toString();
 
     m_interface->remove(alarmsList.at(index)->uuid().toString());
     auto ptr = alarmsList.at(index);
@@ -147,10 +149,14 @@ void AlarmModel::updateUi()
     emit dataChanged(createIndex(0, 0), createIndex(alarmsList.count() - 1, 0));
 }
 
-Alarm *AlarmModel::addAlarm(int hours, int minutes, int daysOfWeek, QString name, QString ringtonePath)
+void AlarmModel::addAlarm(int hours, int minutes, int daysOfWeek, QString name, QString ringtonePath)
 {
-    // TODO: add alarm to remote
-    return {};
+    m_interface->addAlarm(hours, minutes, daysOfWeek, name, ringtonePath);
+}
+
+QString AlarmModel::timeToRingFormated(int hours, int minutes, int daysOfWeek)
+{
+    return KClock::timeToRingFormatedPrivate(KClock::calculateNextRingTimePrivate(hours, minutes, daysOfWeek));
 }
 
 void AlarmModel::addAlarm(QString uuid)
@@ -182,6 +188,9 @@ void AlarmModel::removeAlarm(QString uuid)
         }
         ++index;
     }
+
+    if (index >= this->alarmsList.size())
+        return;
 
     auto ptr = alarmsList.at(index);
 

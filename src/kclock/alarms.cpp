@@ -27,7 +27,6 @@
 #include "alarms.h"
 Alarm::Alarm() {};
 Alarm::Alarm(QString uuid)
-    : m_uuid(uuid)
 {
     m_interface = new org::kde::kclock::Alarm(QStringLiteral("org.kde.kclockd"), QStringLiteral("/alarms/") + uuid, QDBusConnection::sessionBus(), this);
 
@@ -35,6 +34,7 @@ Alarm::Alarm(QString uuid)
         connect(m_interface, &OrgKdeKclockAlarmInterface::propertyChanged, this, &Alarm::updateProperty);
         connect(m_interface, &OrgKdeKclockAlarmInterface::alarmChanged, [this] { m_nextRingTime = m_interface->nextRingTime(); });
 
+        m_uuid = QUuid(m_interface->getUUID());
         m_name = m_interface->name();
         m_enabled = m_interface->enabled();
         m_hours = m_interface->hours();
