@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
     KAboutData::setApplicationData(aboutData);
 
     // only allow one instance
-    KDBusService service(KDBusService::Unique);
+    // KDBusService service(KDBusService::Unique);
 
     // initialize models
     auto *timeZoneModel = new TimeZoneSelectorModel();

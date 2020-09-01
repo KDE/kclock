@@ -51,7 +51,7 @@ Kirigami.ScrollablePage {
                     selectedAlarm.minutes = minutes;
                     selectedAlarm.daysOfWeek = alarmDaysOfWeek;
 
-                    selectedAlarm.alarmChanged(); // emit this signal, auto save
+                    selectedAlarm.save(); // remote save
                 } else {
                     selectedAlarm = alarmModel.addAlarm(hours, minutes, alarmDaysOfWeek, selectedAlarmName.text);
                 }

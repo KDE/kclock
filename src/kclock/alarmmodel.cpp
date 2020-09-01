@@ -156,6 +156,7 @@ Alarm *AlarmModel::addAlarm(int hours, int minutes, int daysOfWeek, QString name
 void AlarmModel::addAlarm(QString uuid)
 {
     auto alarm = new Alarm(uuid.remove(QRegularExpression(QStringLiteral("[{}-]"))));
+    connect(alarm, &Alarm::propertyChanged, this, &AlarmModel::updateUi);
     auto index = KClock::insert_index(alarm, alarmsList, [](Alarm *const &left, Alarm *const &right) {
         if (left->hours() < right->hours())
             return true;

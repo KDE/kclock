@@ -43,7 +43,7 @@ class Alarm : public QObject
 public:
     explicit Alarm();
     explicit Alarm(QString uuid);
-    QString name() const
+    const QString &name() const
     {
         return m_name;
     }
@@ -51,11 +51,11 @@ public:
     {
         m_interface->setProperty("name", name);
     }
-    QUuid uuid() const
+    const QUuid &uuid() const
     {
         return m_uuid;
     }
-    bool enabled() const
+    const bool &enabled() const
     {
         return m_enabled;
     }
@@ -63,7 +63,7 @@ public:
     {
         m_interface->setProperty("enabled", enabled);
     }
-    int hours() const
+    const int &hours() const
     {
         return m_hours;
     }
@@ -71,7 +71,7 @@ public:
     {
         m_interface->setProperty("hours", hours);
     }
-    int minutes() const
+    const int &minutes() const
     {
         return m_minutes;
     }
@@ -79,7 +79,7 @@ public:
     {
         m_interface->setProperty("minutes", minutes);
     }
-    int daysOfWeek() const
+    const int &daysOfWeek() const
     {
         return m_daysOfWeek;
     }
@@ -91,7 +91,7 @@ public:
     {
         return m_snooze / 60;
     }
-    QString ringtonePath() const
+    const QString &ringtonePath() const
     {
         return m_ringtonePath;
     };
@@ -100,14 +100,14 @@ public:
         m_interface->setProperty("ringtonePath", path);
     }
 
-    Q_INVOKABLE QString timeToRingFormated() const;
-
     bool isValid()
     {
         return m_isValid;
     };
 
-    void save()
+    Q_INVOKABLE QString timeToRingFormated();
+
+    Q_INVOKABLE void save()
     {
         m_interface->alarmChanged();
     };
@@ -117,10 +117,12 @@ private slots:
     void updateProperty(QString property);
 
 private:
-    qint64 nextRingTime() const
+    const qint64 &nextRingTime() const
     {
         return m_nextRingTime;
     };
+
+    void calculateNextRingTime();
 
     org::kde::kclock::Alarm *m_interface;
 

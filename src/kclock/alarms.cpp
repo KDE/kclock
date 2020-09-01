@@ -20,7 +20,6 @@
  */
 
 #include <QDateTime>
-#include <QDebug>
 
 #include <KLocalizedString>
 
@@ -33,7 +32,8 @@ Alarm::Alarm(QString uuid)
     m_interface = new org::kde::kclock::Alarm(QStringLiteral("org.kde.kclockd"), QStringLiteral("/alarms/") + uuid, QDBusConnection::sessionBus(), this);
 
     if (m_interface->isValid()) {
-        connect(m_interface, SIGNAL(propertyChanged(QString)), this, SLOT(updateProperty(QString)));
+        connect(m_interface, &OrgKdeKclockAlarmInterface::propertyChanged, this, &Alarm::updateProperty);
+        connect(m_interface, &OrgKdeKclockAlarmInterface::alarmChanged, [this] { m_nextRingTime = m_interface->nextRingTime(); });
 
         m_name = m_interface->name();
         m_enabled = m_interface->enabled();
@@ -48,8 +48,10 @@ Alarm::Alarm(QString uuid)
     }
 }
 
-QString Alarm::timeToRingFormated() const
+QString Alarm::timeToRingFormated()
 {
+    this->calculateNextRingTime();
+
     auto remaining = this->nextRingTime() - QDateTime::currentSecsSinceEpoch();
     int day = remaining / (24 * 3600);
     int hour = remaining / 3600 - day * 24;
@@ -77,5 +79,52 @@ QString Alarm::timeToRingFormated() const
 
 void Alarm::updateProperty(QString property)
 {
-    this->setProperty(property.toUtf8(), m_interface->property(property.toUtf8()));
+    if (property == QStringLiteral("name"))
+        this->m_name = m_interface->property("name").toString();
+    else if (property == QStringLiteral("enabled"))
+        this->m_enabled = m_interface->property("enabled").toBool();
+    else if (property == QStringLiteral("hours"))
+        this->m_hours = m_interface->property("hours").toInt();
+    else if (property == QStringLiteral("minutes"))
+        this->m_minutes = m_interface->property("minutes").toInt();
+    else if (property == QStringLiteral("daysOfWeek"))
+        this->m_daysOfWeek = m_interface->property("daysOfWeek").toInt();
+    else if (property == QStringLiteral("snoozedMinutes"))
+        this->m_snooze = m_interface->property("snoozedMinutes").toInt() * 60;
+    else if (property == QStringLiteral("ringtonePath"))
+        this->m_ringtonePath = m_interface->property("ringtonePath").toBool();
+    Q_EMIT propertyChanged();
+}
+
+void Alarm::calculateNextRingTime()
+{
+    if (!this->m_enabled) { // if not enabled, means this would never ring
+        m_nextRingTime = -1;
+        return;
+    }
+
+    // get the time that the alarm will ring on the day
+    QTime alarmTime = QTime(this->m_hours, this->m_minutes, 0).addSecs(this->m_snooze);
+
+    QDateTime date = QDateTime::currentDateTime();
+
+    if (this->m_daysOfWeek == 0) {      // alarm does not repeat (no days of the week are specified)
+        if (alarmTime >= date.time()) { // alarm occurs later today
+            m_nextRingTime = QDateTime(date.date(), alarmTime).toSecsSinceEpoch();
+        } else { // alarm occurs on the next day
+            m_nextRingTime = QDateTime(date.date().addDays(1), alarmTime).toSecsSinceEpoch();
+        }
+    } else { // repeat alarm
+        bool first = true;
+
+        // keeping looping forward a single day until the day of week is accepted
+        while (((this->m_daysOfWeek & (1 << (date.date().dayOfWeek() - 1))) == 0) // check day
+               || (first && (alarmTime < date.time())))                           // check time if the current day is accepted (keep looping forward if alarmTime has passed)
+        {
+            date = date.addDays(1); // go forward a day
+            first = false;
+        }
+
+        m_nextRingTime = QDateTime(date.date(), alarmTime).toSecsSinceEpoch();
+    }
 }
