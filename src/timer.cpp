@@ -35,7 +35,7 @@ Timer::Timer(const QJsonObject &obj)
 QJsonObject Timer::serialize()
 {
     QJsonObject obj;
-    obj[QStringLiteral("length")] = QString::number(m_length);
+    obj[QStringLiteral("length")] = m_length;
     obj[QStringLiteral("label")] = m_label;
     obj[QStringLiteral("uuid")] = m_uuid.toString();
     return obj;
@@ -97,7 +97,7 @@ void Timer::sendNotification()
     KNotification *notif = new KNotification("timerFinished");
     notif->setIconName("kclock");
     notif->setTitle(i18n("Timer complete"));
-    notif->setText(i18n("Your timer has finished!"));
+    notif->setText(i18n("Your timer %1 has finished!", this->label()));
     notif->setDefaultAction(i18n("View"));
     notif->setUrgency(KNotification::HighUrgency);
     notif->setFlags(KNotification::NotificationFlag::LoopSound | KNotification::NotificationFlag::Persistent);

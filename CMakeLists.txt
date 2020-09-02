@@ -47,7 +47,7 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
 
 ################ Setup notifications ################
 
-install(FILES kclock.notifyrc DESTINATION ${KNOTIFYRC_INSTALL_DIR})
+install(FILES kclockd.notifyrc DESTINATION ${KNOTIFYRC_INSTALL_DIR})
 
 ################# build and install #################
 add_subdirectory(src)
