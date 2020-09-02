@@ -1,8 +1,11 @@
 set(kclockd_SRCS
+    utilities.cpp
     alarms.cpp
     alarmmodel.cpp
     alarmwaitworker.cpp
     alarmplayer.cpp
+    timermodel.cpp
+    timer.cpp
     )
 # generate KConfig class from xml
 kconfig_add_kcfg_files(kclockd_SRCS kclockdsettings.kcfgc GENERATE_MOC)
