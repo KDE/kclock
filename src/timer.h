@@ -1,82 +1,66 @@
 #pragma once
 
+#include <QDateTime>
 #include <QObject>
-
 class Timer : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(quint64 length READ length WRITE setLength NOTIFY propertyChanged)
-    Q_PROPERTY(quint64 elapsed READ elapsed WRITE setElapsed NOTIFY propertyChanged)
-    Q_PROPERTY(QString label READ label WRITE setLabel NOTIFY propertyChanged)
-    Q_PROPERTY(bool running READ running NOTIFY propertyChanged)
-    Q_PROPERTY(bool finished READ finished NOTIFY propertyChanged)
-    Q_PROPERTY(bool justCreated READ justCreated WRITE setJustCreated NOTIFY propertyChanged)
+    Q_PROPERTY(int length READ length WRITE setLength NOTIFY lengthChanged)
+    Q_PROPERTY(QString label READ label WRITE setLabel NOTIFY labelChanged)
+    Q_PROPERTY(bool running READ running NOTIFY runningChanged)
 
 public:
-    explicit Timer(QObject *parent = nullptr, int length = 0, int elapsed = 0, QString label = QStringLiteral(), bool running = false);
+    explicit Timer(int length = 0, QString label = QStringLiteral(), bool running = false);
     explicit Timer(const QJsonObject &obj);
 
     QJsonObject serialize();
 
-    void updateTimer(qint64 duration);
-    Q_INVOKABLE void toggleRunning();
-    Q_INVOKABLE void reset();
-
-    const quint64& length() const
+    Q_SCRIPTABLE void toggleRunning();
+    Q_SCRIPTABLE void reset();
+    Q_SCRIPTABLE int elapsed() const
+    {
+        if (running())
+            return QDateTime::currentSecsSinceEpoch() - m_startTime;
+        else
+            return m_hasElapsed;
+    }
+    const int &length() const
     {
         return m_length;
     }
     void setLength(int length)
     {
         m_length = length;
-        Q_EMIT propertyChanged();
+        Q_EMIT lengthChanged();
     }
-    const quint64& elapsed() const
-    {
-        return m_elapsed;
-    }
-    void setElapsed(int elapsed)
-    {
-        m_elapsed = elapsed;
-        Q_EMIT propertyChanged();
-    }
-    const QString& label() const
+    const QString &label() const
     {
         return m_label;
     }
     void setLabel(QString label)
     {
         m_label = label;
-        Q_EMIT propertyChanged();
+        Q_EMIT labelChanged();
     }
-    const bool& running() const
+    const bool &running() const
     {
         return m_running;
     }
-    void setRunning(bool running)
-    {
-        m_running = running;
-        Q_EMIT propertyChanged();
-    }
-    const bool& finished() const
-    {
-        return m_finished;
-    }
-    void setJustCreated(bool justCreated)
-    {
-        m_justCreated = justCreated;
-        Q_EMIT propertyChanged();
-    }
-    const bool& justCreated() const
-    {
-        return m_justCreated;
-    }
 
 signals:
-    void propertyChanged();
+    void lengthChanged();
+    void labelChanged();
+    void runningChanged();
+private slots:
+    void timeUp(int cookie);
 
 private:
-    unsigned long long m_length, m_elapsed = 0; // milliseconds
+    void setRunning(bool running);
+    void sendNotification();
+
+    int m_length, m_startTime = 0; // seconds
+    int m_hasElapsed = 0;          // time has elapsed till stop, only be updated if stopped or finished
+    int m_cookie = -1;
     QString m_label;
-    bool m_running, m_finished, m_justCreated;
+    bool m_running;
 };

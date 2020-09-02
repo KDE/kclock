@@ -23,8 +23,6 @@
 #include <QObject>
 
 class Alarm;
-class AlarmWaitWorker;
-class QDBusInterface;
 class KStatusNotifierItem;
 class AlarmModel : public QObject
 {
@@ -41,10 +39,6 @@ public:
 
     Q_SCRIPTABLE void remove(QString uuid);
 
-    void setUsePowerDevil(bool usePowerDevil)
-    {
-        m_usePowerDevil = usePowerDevil;
-    }
     Q_SCRIPTABLE void addAlarm(int hours, int minutes, int daysOfWeek, QString name, QString ringtonePath); // in 24 hours units
 
 signals:
@@ -53,7 +47,6 @@ signals:
     Q_SCRIPTABLE void nextAlarm(quint64 nextAlarmTimeStampe);
 
 public slots:
-    void wakeupCallback(int cookie); // PowerDevil callback function
     Q_SCRIPTABLE quint64 getNextAlarm();
     void scheduleAlarm();
 private slots:
@@ -66,13 +59,9 @@ private:
 
     KStatusNotifierItem *m_notifierItem = nullptr;
     quint64 m_nextAlarmTime = 0;
-    QDBusInterface *m_interface = nullptr;
-    int m_cookie = -1;            // token for PowerDevil: https://invent.kde.org/plasma/powerdevil/-/merge_requests/13
-    bool m_usePowerDevil = false; // if PowerDevil present in system
+    int m_cookie = -1; // token for wakeup call auth
 
     QList<Alarm *> alarmsToBeRung; // the alarms that will be rung on next wakeup
 
     QList<Alarm *> m_alarmsList;
-    QThread *m_timerThread = nullptr;
-    AlarmWaitWorker *m_worker = nullptr;
 };

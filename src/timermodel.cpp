@@ -26,7 +26,6 @@
 #include <KSharedConfig>
 
 #include <QApplication>
-#include <QCoreApplication>
 #include <QDebug>
 #include <QJsonArray>
 #include <QJsonDocument>
@@ -36,23 +35,11 @@
 
 #include "timer.h"
 /* ~ TimerModel ~ */
-const int TIMER_CHECK_LENGTH = 16; // milliseconds
-const QString TIMERS_CFG_GROUP = "Timers", TIMERS_CFG_KEY = "timersList";
+const QString TIMERS_CFG_GROUP = QStringLiteral("Timers"), TIMERS_CFG_KEY = QStringLiteral("timersList");
 
-TimerModel::TimerModel(QObject *parent)
+TimerModel::TimerModel()
 {
     load();
-
-    timer = new QTimer(this);
-    connect(timer, &QTimer::timeout, this, QOverload<>::of(&TimerModel::updateTimerLoop));
-    timer->setInterval(TIMER_CHECK_LENGTH);
-    updateTimerStatus(); // start timer loop if necessary
-
-    // slow down saves to max once per second
-    saveTimer = new QTimer(this);
-    saveTimer->setSingleShot(true);
-    saveTimer->setInterval(1000);
-    connect(saveTimer, &QTimer::timeout, this, [this] { save(); });
 }
 
 void TimerModel::load()
@@ -62,18 +49,18 @@ void TimerModel::load()
     QJsonDocument doc = QJsonDocument::fromJson(group.readEntry(TIMERS_CFG_KEY, "{}").toUtf8());
     for (QJsonValueRef r : doc.array()) {
         QJsonObject obj = r.toObject();
-        timerList.append(new Timer(obj));
+        m_timerList.append(new Timer(obj));
     }
 }
 
 void TimerModel::save()
 {
     QJsonArray arr;
-    for (auto timer : timerList) {
+    for (auto timer : m_timerList) {
         arr.push_back(timer->serialize());
     }
     QJsonObject obj;
-    obj["list"] = arr;
+    obj[QStringLiteral("list")] = arr;
 
     auto config = KSharedConfig::openConfig();
     KConfigGroup group = config->group(TIMERS_CFG_GROUP);
@@ -82,63 +69,23 @@ void TimerModel::save()
     group.sync();
 }
 
-void TimerModel::requestSave()
+void TimerModel::add(int length, QString label, bool running)
 {
-    if (!saveTimer->isActive()) {
-        saveTimer->start();
-    }
-}
-
-void TimerModel::updateTimerLoop()
-{
-    for (auto *timer : timerList)
-        timer->updateTimer(TIMER_CHECK_LENGTH);
-}
-
-void TimerModel::updateTimerStatus()
-{
-    // stop timer if all timers are inactive
-    if (areTimersInactive() && timer->isActive()) {
-        timer->stop();
-    } else if (!areTimersInactive() && !timer->isActive()) {
-        timer->start();
-    }
-}
-
-bool TimerModel::areTimersInactive()
-{
-    for (auto *timer : timerList) {
-        if (timer->running()) {
-            return false;
-        }
-    }
-    return true;
+    m_timerList.append(new Timer(length, label, running));
+    Q_EMIT timerAdded(label);
 }
 
 void TimerModel::remove(int index)
 {
-    if ((index < 0) || (index >= timerList.count()))
+    if ((index < 0) || (index >= m_timerList.count()))
         return;
 
-    auto timer = timerList.at(index);
-    timerList.removeAt(index);
-    delete timer;
+    auto timer = m_timerList.at(index);
+
+    Q_EMIT timerRemoved(timer->label());
+
+    m_timerList.removeAt(index);
+    timer->deleteLater();
 
     save();
-}
-
-Timer *TimerModel::get(int index)
-{
-    if ((index < 0) || (index >= timerList.count()))
-        return {};
-
-    return timerList.at(index);
-}
-
-void TimerModel::move(int oldIndex, int newIndex)
-{
-    if (oldIndex < 0 || oldIndex >= timerList.count() || newIndex < 0 || newIndex >= timerList.count())
-        return;
-
-    timerList.move(oldIndex, newIndex);
 }

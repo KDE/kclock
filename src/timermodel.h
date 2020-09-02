@@ -22,8 +22,6 @@
 #define KIRIGAMICLOCK_TIMERMODEL_H
 
 #include <QObject>
-#include <QString>
-#include <QTimer>
 
 class Timer;
 
@@ -34,27 +32,24 @@ class TimerModel : public QObject
 public:
     static TimerModel *instance()
     {
-        static TimerModel* singleton = new TimerModel();
+        static TimerModel *singleton = new TimerModel();
         return singleton;
     }
 
-    void requestSave();
-    void updateTimerLoop();
-    void updateTimerStatus(); // update qtimer to be on and off depending on if it is needed (for performance)
-    bool areTimersInactive(); // if all timers are inactive
-
     void load();
     void save();
-    Q_INVOKABLE void remove(int index);
-    Q_INVOKABLE void move(int oldIndex, int newIndex);
-    Q_INVOKABLE int count();
-    Q_INVOKABLE Timer *get(int index);
+    Q_SCRIPTABLE void add(int length, QString label, bool running);
+    Q_SCRIPTABLE void remove(QString label);
+signals:
+    void timerAdded(QString);
+    void timerRemoved(QString);
 
 private:
-    explicit TimerModel(QObject *parent = nullptr);
-    QList<Timer *> timerList;
-    QTimer *timer;
-    QTimer *saveTimer;
+    void remove(int index);
+
+    explicit TimerModel();
+
+    QList<Timer *> m_timerList;
 };
 
 #endif // KIRIGAMICLOCK_TIMERMODEL_H
