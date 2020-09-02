@@ -1,6 +1,7 @@
 #include <KLocalizedString>
 #include <KNotification>
 
+#include <QDBusConnection>
 #include <QJsonObject>
 
 #include "timer.h"
@@ -10,17 +11,25 @@
 Timer::Timer(int length, QString label, bool running)
     : m_length(length)
     , m_label(label)
-    , m_running(running)
+    , m_uuid(QUuid::createUuid())
 {
     connect(&Utilities::instance(), &Utilities::wakeup, this, &Timer::timeUp);
+    QDBusConnection::sessionBus().registerObject(QStringLiteral("/Timers/") + this->m_uuid.toString(QUuid::Id128), this, QDBusConnection::ExportScriptableContents | QDBusConnection::ExportAllProperties);
+    connect(this, &QObject::destroyed, [this] { QDBusConnection::sessionBus().unregisterObject(QStringLiteral("/Timers/") + this->m_uuid.toString(QUuid::Id128), QDBusConnection::UnregisterNode); });
+
+    if (running)
+        this->toggleRunning();
 }
 
 Timer::Timer(const QJsonObject &obj)
 {
     m_length = obj[QStringLiteral("length")].toInt();
     m_label = obj[QStringLiteral("label")].toString();
+    m_uuid = QUuid(obj[QStringLiteral("uuid")].toString());
 
     connect(&Utilities::instance(), &Utilities::wakeup, this, &Timer::timeUp);
+    QDBusConnection::sessionBus().registerObject(QStringLiteral("/Timers/") + this->m_uuid.toString(QUuid::Id128), this, QDBusConnection::ExportScriptableContents | QDBusConnection::ExportAllProperties);
+    connect(this, &QObject::destroyed, [this] { QDBusConnection::sessionBus().unregisterObject(QStringLiteral("/Timers/") + this->m_uuid.toString(QUuid::Id128), QDBusConnection::UnregisterNode); });
 }
 
 QJsonObject Timer::serialize()
@@ -28,6 +37,7 @@ QJsonObject Timer::serialize()
     QJsonObject obj;
     obj[QStringLiteral("length")] = QString::number(m_length);
     obj[QStringLiteral("label")] = m_label;
+    obj[QStringLiteral("uuid")] = m_uuid.toString();
     return obj;
 }
 

@@ -33,6 +33,7 @@
 #include "alarmmodel.h"
 #include "kclockdsettings.h"
 #include "kclocksettingsadaptor.h"
+#include "timermodel.h"
 QCommandLineParser *createParser()
 {
     QCommandLineParser *parser = new QCommandLineParser;
@@ -62,6 +63,7 @@ int main(int argc, char *argv[])
 
     // start alarm polling
     AlarmModel::instance()->configureWakeups();
+    TimerModel::instance();
 
     return app.exec();
 }

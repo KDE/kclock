@@ -28,7 +28,7 @@ class Timer;
 class TimerModel : public QObject
 {
     Q_OBJECT
-
+    Q_CLASSINFO("D-Bus Interface", "org.kde.kclock.TimerModel")
 public:
     static TimerModel *instance()
     {
@@ -38,11 +38,11 @@ public:
 
     void load();
     void save();
-    Q_SCRIPTABLE void add(int length, QString label, bool running);
-    Q_SCRIPTABLE void remove(QString label);
+    Q_SCRIPTABLE void addTimer(int length, QString label, bool running);
+    Q_SCRIPTABLE void remove(QString uuid);
 signals:
-    void timerAdded(QString);
-    void timerRemoved(QString);
+    Q_SCRIPTABLE void timerAdded(QString);
+    Q_SCRIPTABLE void timerRemoved(QString);
 
 private:
     void remove(int index);

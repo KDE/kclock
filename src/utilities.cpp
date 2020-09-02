@@ -94,7 +94,7 @@ void Utilities::schedule()
     auto minTime = std::numeric_limits<long long>::max();
 
     for (auto tuple : m_list) {
-        if (minTime < std::get<1>(tuple)) {
+        if (minTime > std::get<1>(tuple)) {
             minTime = std::get<1>(tuple);
             m_currentCookie = std::get<0>(tuple);
         }

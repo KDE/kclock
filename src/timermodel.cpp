@@ -25,13 +25,11 @@
 #include <KNotification>
 #include <KSharedConfig>
 
-#include <QApplication>
-#include <QDebug>
+#include <QDBusConnection>
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QObject>
-#include <QtGlobal>
 
 #include "timer.h"
 /* ~ TimerModel ~ */
@@ -40,6 +38,7 @@ const QString TIMERS_CFG_GROUP = QStringLiteral("Timers"), TIMERS_CFG_KEY = QStr
 TimerModel::TimerModel()
 {
     load();
+    QDBusConnection::sessionBus().registerObject(QStringLiteral("/Timers"), this, QDBusConnection::ExportScriptableContents);
 }
 
 void TimerModel::load()
@@ -69,10 +68,25 @@ void TimerModel::save()
     group.sync();
 }
 
-void TimerModel::add(int length, QString label, bool running)
+void TimerModel::addTimer(int length, QString label, bool running)
 {
-    m_timerList.append(new Timer(length, label, running));
-    Q_EMIT timerAdded(label);
+    auto *timer = new Timer(length, label, running);
+    m_timerList.append(timer);
+
+    save();
+
+    Q_EMIT timerAdded(timer->uuid().toString());
+}
+
+void TimerModel::remove(QString uuid)
+{
+    int i = 0;
+    for (auto timer : m_timerList) {
+        if (timer->uuid().toString() == uuid)
+            break;
+        ++i;
+    }
+    this->remove(i);
 }
 
 void TimerModel::remove(int index)
@@ -82,7 +96,7 @@ void TimerModel::remove(int index)
 
     auto timer = m_timerList.at(index);
 
-    Q_EMIT timerRemoved(timer->label());
+    Q_EMIT timerRemoved(timer->uuid().toString());
 
     m_timerList.removeAt(index);
     timer->deleteLater();

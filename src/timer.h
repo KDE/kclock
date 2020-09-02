@@ -2,9 +2,11 @@
 
 #include <QDateTime>
 #include <QObject>
+#include <QUuid>
 class Timer : public QObject
 {
     Q_OBJECT
+    Q_CLASSINFO("D-Bus Interface", "org.kde.kclock.Timer")
     Q_PROPERTY(int length READ length WRITE setLength NOTIFY lengthChanged)
     Q_PROPERTY(QString label READ label WRITE setLabel NOTIFY labelChanged)
     Q_PROPERTY(bool running READ running NOTIFY runningChanged)
@@ -24,6 +26,14 @@ public:
         else
             return m_hasElapsed;
     }
+    Q_SCRIPTABLE QString getUUID()
+    {
+        return m_uuid.toString();
+    }
+    const QUuid &uuid() const
+    {
+        return m_uuid;
+    };
     const int &length() const
     {
         return m_length;
@@ -58,9 +68,10 @@ private:
     void setRunning(bool running);
     void sendNotification();
 
+    QUuid m_uuid;
     int m_length, m_startTime = 0; // seconds
     int m_hasElapsed = 0;          // time has elapsed till stop, only be updated if stopped or finished
     int m_cookie = -1;
     QString m_label;
-    bool m_running;
+    bool m_running = false;
 };
