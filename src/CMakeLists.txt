@@ -31,7 +31,17 @@ qt5_generate_dbus_interface(
     org.kde.kclockd.AlarmModel.xml
     OPTIONS -s -m
 )
+qt5_generate_dbus_interface(
+    ${CMAKE_CURRENT_SOURCE_DIR}/timermodel.h
+    org.kde.kclockd.TimerModel.xml
+    OPTIONS -s -m -p
+)
 
+qt5_generate_dbus_interface(
+    ${CMAKE_CURRENT_SOURCE_DIR}/timer.h
+    org.kde.kclockd.Timer.xml
+    OPTIONS -s -m -P
+)
 # use generated DBus adapator xml to generate adaptor source code
 qt5_add_dbus_adaptor(kclockd_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.KClockSettings.xml
                      ${CMAKE_CURRENT_BINARY_DIR}/kclockdsettings.h KClockSettings)
@@ -39,6 +49,10 @@ qt5_add_dbus_adaptor(kclockd_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.Al
                      ${CMAKE_CURRENT_SOURCE_DIR}/alarms.h Alarm)
 qt5_add_dbus_adaptor(kclockd_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.AlarmModel.xml
                      ${CMAKE_CURRENT_SOURCE_DIR}/alarmmodel.h AlarmModel)
+qt5_add_dbus_adaptor(kclockd_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.TimerModel.xml
+                     ${CMAKE_CURRENT_SOURCE_DIR}/timermodel.h TimerModel)
+qt5_add_dbus_adaptor(kclockd_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.Timer.xml
+                     ${CMAKE_CURRENT_SOURCE_DIR}/timer.h Timer)
 
 # install DBus interface xml to dbus interface directory
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.KClockSettings.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR})

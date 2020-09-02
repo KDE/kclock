@@ -58,9 +58,9 @@ public:
     }
 
 signals:
-    void lengthChanged();
-    void labelChanged();
-    void runningChanged();
+    Q_SCRIPTABLE void lengthChanged();
+    Q_SCRIPTABLE void labelChanged();
+    Q_SCRIPTABLE void runningChanged();
 private slots:
     void timeUp(int cookie);
 

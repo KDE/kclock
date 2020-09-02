@@ -33,16 +33,16 @@ Rectangle {
     color: "transparent"
     
     function getTimeLeft() {
-        return timerDuration*1000 - timerElapsed;
+        return timerDuration - timerElapsed;
     }
     function getHours() {
-        return ("0" + parseInt(getTimeLeft() / 1000 / 60 / 60).toFixed(0)).slice(-2);
+        return ("0" + parseInt(getTimeLeft() / 60 / 60).toFixed(0)).slice(-2);
     }
     function getMinutes() {
-        return ("0" + parseInt(getTimeLeft() / 1000 / 60 - 60 * getHours())).slice(-2);
+        return ("0" + parseInt(getTimeLeft() / 60 - 60 * getHours())).slice(-2);
     }
     function getSeconds() {
-        return ("0" + parseInt(getTimeLeft() / 1000 - 60 * getMinutes())).slice(-2);
+        return ("0" + parseInt(getTimeLeft() - 60 * getMinutes())).slice(-2);
     }
     
     // timer circle
