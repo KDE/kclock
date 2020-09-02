@@ -53,7 +53,7 @@ install(FILES kclockd.notifyrc DESTINATION ${KNOTIFYRC_INSTALL_DIR})
 add_subdirectory(src)
 
 install(PROGRAMS org.kde.kclock.desktop DESTINATION ${KDE_INSTALL_APPDIR})
-install(PROGRAMS org.kde.kclock-autostart.desktop DESTINATION ${KDE_INSTALL_AUTOSTARTDIR})
+install(PROGRAMS org.kde.kclockd-autostart.desktop DESTINATION ${KDE_INSTALL_AUTOSTARTDIR})
 install(FILES org.kde.kclock.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 install(FILES kclock.svg DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/scalable/apps/)
 
