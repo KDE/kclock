@@ -5,7 +5,6 @@
 #include <QJsonObject>
 
 #include "timer.h"
-#include "timermodel.h"
 #include "utilities.h"
 /* ~ Timer ~ */
 

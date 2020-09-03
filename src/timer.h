@@ -3,6 +3,8 @@
 #include <QDateTime>
 #include <QObject>
 #include <QUuid>
+
+#include "timermodel.h"
 class Timer : public QObject
 {
     Q_OBJECT
