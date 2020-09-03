@@ -36,6 +36,7 @@
 #include "alarmplayer.h"
 #include "alarms.h"
 #include "alarmwaitworker.h"
+#include "kclockdsettings.h"
 
 // alarm created from UI
 Alarm::Alarm(AlarmModel *parent, QString name, int minutes, int hours, int daysOfWeek)
@@ -135,7 +136,7 @@ void Alarm::ring()
     qDebug() << "Ringing alarm" << m_name << "and sending notification...";
 
     KNotification *notif = new KNotification(QStringLiteral("alarm"));
-    notif->setActions(QStringList() << QStringLiteral("Dismiss") << QStringLiteral("Snooze"));
+    notif->setActions(QStringList {i18n("Dismiss"), i18n("Snooze")});
     notif->setIconName(QStringLiteral("kclock"));
     notif->setTitle(name());
     notif->setText(QLocale::system().toString(QTime::currentTime(), QLocale::ShortFormat)); // TODO
@@ -187,11 +188,11 @@ void Alarm::handleSnooze()
     m_justSnoozed = true;
 
     alarmNotifOpen = false;
-    qDebug() << "Alarm snoozed (" << /*settings.alarmSnoozeLengthDisplay() << */ ")";
+    qDebug() << "Alarm snoozed (" << KClockSettings::self()->alarmSnoozeLength() << ")";
     AlarmPlayer::instance().stop();
 
-    setSnooze(snooze() /* + 60 * settings.alarmSnoozeLength()*/); // snooze 5 minutes
-    m_enabled = true;                                             // can't use setSnooze because it resets snooze time
+    setSnooze(snooze() + 60 * KClockSettings::self()->alarmSnoozeLength()); // snooze 5 minutes
+    m_enabled = true;                                                       // can't use setSnooze because it resets snooze time
     save();
     Q_EMIT alarmChanged();
 }

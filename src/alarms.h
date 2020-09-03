@@ -92,6 +92,7 @@ public:
     void setHours(int hours)
     {
         this->m_hours = hours;
+        Q_EMIT alarmChanged();
         Q_EMIT hoursChanged();
         Q_EMIT propertyChanged("hours");
     }
@@ -102,6 +103,7 @@ public:
     void setMinutes(int minutes)
     {
         this->m_minutes = minutes;
+        Q_EMIT alarmChanged();
         Q_EMIT minutesChanged();
         Q_EMIT propertyChanged("minutes");
     }
@@ -112,6 +114,7 @@ public:
     void setDaysOfWeek(int daysOfWeek)
     {
         this->m_daysOfWeek = daysOfWeek;
+        Q_EMIT alarmChanged();
         Q_EMIT daysOfWeekChanged();
         Q_EMIT propertyChanged("daysOfWeek");
     }
@@ -139,7 +142,7 @@ public:
     };
     void setRingtonePath(QString path)
     {
-        m_audioPath = path;
+        m_audioPath = QUrl(path);
         Q_EMIT ringtonePathChanged();
         Q_EMIT propertyChanged("ringtonePath");
     }

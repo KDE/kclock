@@ -59,8 +59,8 @@ AlarmModel::AlarmModel(QObject *parent)
     m_notifierItem->setAssociatedWidget(nullptr);
 
     connect(&Utilities::instance(), &Utilities::wakeup, [this](int cookie) {
-        if (m_cookie == cookie) {
-            for (auto alarm : alarmsToBeRung) {
+        if (this->m_cookie == cookie) {
+            for (auto alarm : this->alarmsToBeRung) {
                 alarm->ring();
             }
             this->scheduleAlarm();

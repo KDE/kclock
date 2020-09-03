@@ -88,7 +88,15 @@ int main(int argc, char *argv[])
     qmlRegisterType<Timer>("kclock", 1, 0, "Timer");
 
     QQmlApplicationEngine *engine = new QQmlApplicationEngine();
+
     UtilModel::instance()->setApplicationLoaded(true);
+    QObject::connect(&app, &QApplication::applicationStateChanged, [](Qt::ApplicationStates state) {
+        if (state == Qt::ApplicationActive)
+            UtilModel::instance()->setApplicationLoaded(true);
+        else
+            UtilModel::instance()->setApplicationLoaded(false);
+    });
+
     engine->rootContext()->setContextObject(new KLocalizedContext(engine));
     // models
     engine->rootContext()->setContextProperty("timeZoneShowModel", timeZoneViewModel);

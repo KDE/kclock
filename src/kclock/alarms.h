@@ -70,6 +70,7 @@ public:
     }
     void setHours(int hours)
     {
+        m_hours = hours;
         m_interface->setProperty("hours", hours);
     }
     const int &minutes() const
@@ -78,6 +79,7 @@ public:
     }
     void setMinutes(int minutes)
     {
+        m_minutes = minutes;
         m_interface->setProperty("minutes", minutes);
     }
     const int &daysOfWeek() const
@@ -86,6 +88,7 @@ public:
     }
     void setDaysOfWeek(int daysOfWeek)
     {
+        m_daysOfWeek = daysOfWeek;
         m_interface->setProperty("daysOfWeek", daysOfWeek);
     }
     int snoozedMinutes() const
