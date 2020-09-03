@@ -75,6 +75,15 @@ Kirigami.ScrollablePage {
             hours: selectedAlarm ? hoursTo12(selectedAlarm.hours) : 0
             minutes: selectedAlarm ? selectedAlarm.minutes : 0
             pm: selectedAlarm ? selectedAlarm.hours >= 12 : false
+            
+            Component.onCompleted: {
+                if (!selectedAlarm) { // new alarm
+                    let date = new Date();
+                    hours = date.getHours() >= 12 ? date.getHours() - 12 : date.getHours();
+                    minutes = date.getMinutes();
+                    pm = date.getHours() >= 12;
+                }
+            }
 
             height: 400
             anchors.horizontalCenter: parent.horizontalCenter
