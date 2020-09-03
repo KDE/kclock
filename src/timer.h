@@ -42,6 +42,7 @@ public:
     {
         m_length = length;
         Q_EMIT lengthChanged();
+        TimerModel::instance()->save();
     }
     const QString &label() const
     {
@@ -51,6 +52,7 @@ public:
     {
         m_label = label;
         Q_EMIT labelChanged();
+        TimerModel::instance()->save();
     }
     const bool &running() const
     {
