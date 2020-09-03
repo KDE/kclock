@@ -37,7 +37,7 @@ Kirigami.Page {
     property bool showFullscreen: false
     
     property int elapsed: timer == null ? 0 : timer.elapsed
-    property int duration: timer == null ? 0 : timer.length / 1000
+    property int duration: timer == null ? 0 : timer.length
     property bool running: timer == null ? 0 : timer.running
 
     // topbar action
@@ -115,7 +115,7 @@ Kirigami.Page {
         }
 
         function setDuration() {
-            timer.length = 1000 * (spinBoxHours.value * 60 * 60 + spinBoxMinutes.value * 60 + spinBoxSeconds.value)
+            timer.length = spinBoxHours.value * 60 * 60 + spinBoxMinutes.value * 60 + spinBoxSeconds.value
         }
 
         Item {

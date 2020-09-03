@@ -49,11 +49,12 @@ public:
     Q_INVOKABLE int count();
     Q_INVOKABLE Timer *get(int index);
 private slots:
-    void addTimer(QString uuid);
+    void addTimer(QString uuid); // remote add, always justCreated
     void removeTimer(QString uuid);
 
 private:
     void addTimer(int length = 300, QString label = i18n("New timer"), bool running = false);
+    void addTimer(QString uuid, bool justCreated);
 
     explicit TimerModel(QObject *parent = nullptr);
     QList<Timer *> m_timerList;

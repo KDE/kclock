@@ -36,7 +36,7 @@ TimerModel::TimerModel(QObject *parent)
         connect(m_interface, SIGNAL(timerAdded(QString)), this, SLOT(addTimer(QString)));
         connect(m_interface, SIGNAL(timerRemoved(QString)), this, SLOT(removeTimer(QString)));
     }
-    QDBusInterface *interface = new QDBusInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/alarms"), QStringLiteral("org.freedesktop.DBus.Introspectable"), QDBusConnection::sessionBus(), this);
+    QDBusInterface *interface = new QDBusInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Timers"), QStringLiteral("org.freedesktop.DBus.Introspectable"), QDBusConnection::sessionBus(), this);
     QDBusReply<QString> reply = interface->call(QStringLiteral("Introspect"));
     if (reply.isValid()) {
         auto xmlMsg = reply.value();
@@ -45,7 +45,8 @@ TimerModel::TimerModel(QObject *parent)
             xml.readNext();
             if (xml.name() == QStringLiteral("node") && xml.attributes().hasAttribute(QStringLiteral("name"))) {
                 if (xml.attributes().value(QStringLiteral("name")).toString().indexOf(QStringLiteral("org")) == -1) {
-                    this->addTimer(xml.attributes().value(QStringLiteral("name")).toString());
+                    // already existed on kclock launch, not justCreated
+                    this->addTimer(xml.attributes().value(QStringLiteral("name")).toString(), false);
                 }
             }
         }
@@ -79,13 +80,12 @@ void TimerModel::remove(int index)
     if (index < 0 || index >= m_timerList.size())
         return;
 
-    auto ptr = m_timerList.at(index);
+    m_interface->remove(m_timerList.at(index)->uuid().toString());
+    m_timerList.at(index)->deleteLater();
 
     Q_EMIT beginRemoveRows(QModelIndex(), index, index);
     m_timerList.removeAt(index);
     Q_EMIT endRemoveRows();
-
-    ptr->deleteLater();
 }
 
 Timer *TimerModel::get(int index)
@@ -98,7 +98,12 @@ Timer *TimerModel::get(int index)
 
 void TimerModel::addTimer(QString uuid)
 {
-    auto *timer = new Timer(uuid.remove(QRegularExpression(QStringLiteral("[{}-]"))));
+    this->addTimer(uuid, true);
+}
+
+void TimerModel::addTimer(QString uuid, bool justCreated)
+{
+    auto *timer = new Timer(uuid.remove(QRegularExpression(QStringLiteral("[{}-]"))), justCreated);
 
     Q_EMIT beginInsertRows(QModelIndex(), 0, 0);
     m_timerList.insert(0, timer);
@@ -115,14 +120,6 @@ void TimerModel::removeTimer(QString uuid)
         ++index;
     }
 
-    if (index >= this->m_timerList.size())
-        return;
-
-    auto ptr = m_timerList.at(index);
-
-    Q_EMIT beginRemoveRows(QModelIndex(), index, index);
-    m_timerList.removeAt(index);
-    Q_EMIT endRemoveRows();
-
-    ptr->deleteLater();
+    // don't need to check index out of bound, remove(index) takes care of that
+    remove(index);
 }
