@@ -54,7 +54,9 @@ Kirigami.ScrollablePage {
                     selectedAlarm.save(); // remote save
                     alarmPlayer.stop();
                     pageStack.pop();
-                    showPassiveNotification(selectedAlarm.timeToRingFormated());
+                    if (selectedAlarm.enabled) {
+                        showPassiveNotification(selectedAlarm.timeToRingFormated());
+                    }
                 } else {
                     alarmModel.addAlarm(hours, minutes, alarmDaysOfWeek, selectedAlarmName.text);
                     alarmPlayer.stop();

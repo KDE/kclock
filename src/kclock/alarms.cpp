@@ -25,6 +25,8 @@
 
 #include "alarmmodel.h"
 #include "alarms.h"
+#include "utilmodel.h"
+
 Alarm::Alarm() {};
 Alarm::Alarm(QString uuid)
 {
@@ -52,29 +54,7 @@ QString Alarm::timeToRingFormated()
 {
     this->calculateNextRingTime();
 
-    auto remaining = this->nextRingTime() - QDateTime::currentSecsSinceEpoch();
-    int day = remaining / (24 * 3600);
-    int hour = remaining / 3600 - day * 24;
-    int minute = remaining / 60 - day * 24 * 60 - hour * 60;
-    QString arg;
-    if (day > 0) {
-        arg += i18np("%1 day", "%1 days", day);
-    }
-    if (hour > 0) {
-        if (day > 0 && minute > 0) {
-            arg += i18n(", ");
-        } else if (day > 0) {
-            arg += i18n(" and ");
-        }
-        arg += i18np("%1 hour", "%1 hours", hour);
-    }
-    if (minute > 0) {
-        if (day > 0 || hour > 0) {
-            arg += i18n(" and ");
-        }
-        arg += i18np("%1 minute", "%1 minutes", minute);
-    }
-    return i18n("Alarm will be rung after %1", arg);
+    return UtilModel::instance()->timeToRingFormatted(this->nextRingTime());
 }
 
 void Alarm::updateProperty(QString property)
@@ -102,29 +82,6 @@ void Alarm::calculateNextRingTime()
         m_nextRingTime = -1;
         return;
     }
-
-    // get the time that the alarm will ring on the day
-    QTime alarmTime = QTime(this->m_hours, this->m_minutes, 0).addSecs(this->m_snooze);
-
-    QDateTime date = QDateTime::currentDateTime();
-
-    if (this->m_daysOfWeek == 0) {      // alarm does not repeat (no days of the week are specified)
-        if (alarmTime >= date.time()) { // alarm occurs later today
-            m_nextRingTime = QDateTime(date.date(), alarmTime).toSecsSinceEpoch();
-        } else { // alarm occurs on the next day
-            m_nextRingTime = QDateTime(date.date().addDays(1), alarmTime).toSecsSinceEpoch();
-        }
-    } else { // repeat alarm
-        bool first = true;
-
-        // keeping looping forward a single day until the day of week is accepted
-        while (((this->m_daysOfWeek & (1 << (date.date().dayOfWeek() - 1))) == 0) // check day
-               || (first && (alarmTime < date.time())))                           // check time if the current day is accepted (keep looping forward if alarmTime has passed)
-        {
-            date = date.addDays(1); // go forward a day
-            first = false;
-        }
-
-        m_nextRingTime = QDateTime(date.date(), alarmTime).toSecsSinceEpoch();
-    }
+    
+    m_nextRingTime = UtilModel::instance()->calculateNextRingTime(this->m_hours, this->m_minutes, this->m_daysOfWeek, this->m_snooze);
 }

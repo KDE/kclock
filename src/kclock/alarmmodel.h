@@ -58,7 +58,7 @@ public:
     Q_INVOKABLE void addAlarm(int hours, int minutes, int daysOfWeek, QString name, QString ringtonePath = 0); // in 24 hours units, ringTone could be chosen from a list
 
     Q_INVOKABLE QString timeToRingFormated(int hours, int minutes, int daysOfWeek); // for new alarm use
-private slots:
+private Q_SLOTS:
     void addAlarm(QString uuid);
     void removeAlarm(QString uuid);
 

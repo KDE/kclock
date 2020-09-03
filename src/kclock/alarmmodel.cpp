@@ -32,6 +32,7 @@
 
 #include "alarmmodel.h"
 #include "alarms.h"
+#include "utilmodel.h"
 #include "kclock_algorithm.hpp"
 
 AlarmModel::AlarmModel(QObject *parent)
@@ -156,7 +157,7 @@ void AlarmModel::addAlarm(int hours, int minutes, int daysOfWeek, QString name, 
 
 QString AlarmModel::timeToRingFormated(int hours, int minutes, int daysOfWeek)
 {
-    return KClock::timeToRingFormatedPrivate(KClock::calculateNextRingTimePrivate(hours, minutes, daysOfWeek));
+    return UtilModel::instance()->timeToRingFormatted(UtilModel::instance()->calculateNextRingTime(hours, minutes, daysOfWeek));
 }
 
 void AlarmModel::addAlarm(QString uuid)
