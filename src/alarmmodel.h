@@ -57,9 +57,9 @@ private:
     explicit AlarmModel(QObject *parent = nullptr);
 
     KStatusNotifierItem *m_notifierItem = nullptr;
+    
     quint64 m_nextAlarmTime = 0;
     int m_cookie = -1; // token for wakeup call auth
-
     QList<Alarm *> alarmsToBeRung; // the alarms that will be rung on next wakeup
 
     QList<Alarm *> m_alarmsList;

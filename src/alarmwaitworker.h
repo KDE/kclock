@@ -28,12 +28,12 @@ public:
     explicit AlarmWaitWorker(qint64 timestamp = -1);
 
     void setNewTime(qint64 timestamp); // set new wait time, if is currently waiting
-signals:
+Q_SIGNALS:
     void finished();
     void error();
     void startWait(int waitId);
 
-protected slots:
+protected Q_SLOTS:
     void wait(int waitId);
 
 private:

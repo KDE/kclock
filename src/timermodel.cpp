@@ -78,15 +78,18 @@ void TimerModel::addTimer(int length, QString label, bool running)
     Q_EMIT timerAdded(timer->uuid().toString());
 }
 
-void TimerModel::remove(QString uuid)
+void TimerModel::removeTimer(QString uuid)
 {
-    int i = 0;
-    for (auto timer : m_timerList) {
-        if (timer->uuid().toString() == uuid)
+    int ind = -1;
+    for (int i = 0; i < m_timerList.size(); i++) {
+        if (m_timerList[i]->uuid().toString() == uuid) {
+            ind = i;
             break;
-        ++i;
+        }
     }
-    this->remove(i);
+    if (ind != -1) {
+        this->remove(ind);
+    }
 }
 
 void TimerModel::remove(int index)

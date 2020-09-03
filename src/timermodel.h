@@ -39,8 +39,8 @@ public:
     void load();
     void save();
     Q_SCRIPTABLE void addTimer(int length, QString label, bool running);
-    Q_SCRIPTABLE void remove(QString uuid);
-signals:
+    Q_SCRIPTABLE void removeTimer(QString uuid);
+Q_SIGNALS:
     Q_SCRIPTABLE void timerAdded(QString);
     Q_SCRIPTABLE void timerRemoved(QString);
 

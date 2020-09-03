@@ -58,6 +58,7 @@ AlarmModel::AlarmModel(QObject *parent)
     m_notifierItem->setStandardActionsEnabled(false);
     m_notifierItem->setAssociatedWidget(nullptr);
 
+    // alarm wakeup behaviour
     connect(&Utilities::instance(), &Utilities::wakeup, [this](int cookie) {
         if (this->m_cookie == cookie) {
             for (auto alarm : this->alarmsToBeRung) {
@@ -104,19 +105,19 @@ void AlarmModel::scheduleAlarm()
         }
     }
 
-    // if there is an alarm that needs to ring
+    // if there is an alarm that needs to rung
     if (minTime != std::numeric_limits<qint64>::max()) {
         qDebug() << "scheduled wakeup" << QDateTime::fromSecsSinceEpoch(minTime).toString();
         m_nextAlarmTime = minTime;
 
-        // if we scheduled wakeup before, cancel it first
+        // if we scheduled a wakeup before, cancel it first
         if (m_cookie > 0) {
             Utilities::instance().clearWakeup(m_cookie);
         }
 
         m_cookie = Utilities::instance().scheduleWakeup(minTime);
     } else {
-        // this don't explicitly cancel the alarm currently waiting in m_worker if disabled by user
+        // this doesn't explicitly cancel the alarm currently waiting in m_worker if disabled by user
         // because alarm->ring() will return immediately if disabled
         qDebug() << "no alarm to ring";
 
@@ -129,20 +130,17 @@ void AlarmModel::scheduleAlarm()
 
 void AlarmModel::removeAlarm(QString uuid)
 {
-    // find alarm index
-    int index = 0;
-    bool found = false;
-    for (auto id : m_alarmsList) {
-        if (id->uuid().toString() == uuid) {
-            found = true;
+    // find index of alarm
+    int index = -1;
+    for (int i = 0; i < m_alarmsList.size(); i++) {
+        if (m_alarmsList[i]->uuid().toString() == uuid) {
+            index = i;
             break;
         }
-        index++;
     }
-    if (!found)
-        return;
-
-    this->removeAlarm(index);
+    if (index != -1) {
+        this->removeAlarm(index);
+    }
 }
 
 void AlarmModel::removeAlarm(int index)

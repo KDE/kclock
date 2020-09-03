@@ -80,7 +80,7 @@ void TimerModel::remove(int index)
     if (index < 0 || index >= m_timerList.size())
         return;
 
-    m_interface->remove(m_timerList.at(index)->uuid().toString());
+    m_interface->removeTimer(m_timerList.at(index)->uuid().toString());
     m_timerList.at(index)->deleteLater();
 
     Q_EMIT beginRemoveRows(QModelIndex(), index, index);

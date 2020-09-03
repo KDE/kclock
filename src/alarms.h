@@ -48,7 +48,7 @@ class Alarm : public QObject
     Q_PROPERTY(int snoozedMinutes READ snoozedMinutes NOTIFY snoozedMinutesChanged)
     Q_PROPERTY(QString ringtonePath READ ringtonePath WRITE setRingtonePath NOTIFY ringtonePathChanged)
 
-public slots:
+public Q_SLOTS:
     void handleDismiss();
     void handleSnooze();
 
@@ -154,7 +154,7 @@ public:
     {
         return m_uuid.toString();
     }
-signals:
+Q_SIGNALS:
     void nameChanged();
     void enabledChanged();
     void hoursChanged();
@@ -164,9 +164,10 @@ signals:
     void ringtonePathChanged();
     Q_SCRIPTABLE void propertyChanged(QString property);
     Q_SCRIPTABLE void alarmChanged();
-private slots:
+private Q_SLOTS:
     void save(); // serialize and save to config
 private:
+    void initialize(AlarmModel *parent); // called after object construction
     void calculateNextRingTime();
 
     bool alarmNotifOpen = false; // if the alarm notification is open

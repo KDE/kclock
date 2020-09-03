@@ -48,23 +48,7 @@ Alarm::Alarm(AlarmModel *parent, QString name, int minutes, int hours, int daysO
     , m_hours(hours)
     , m_daysOfWeek(daysOfWeek)
 {
-    connect(this, &Alarm::alarmChanged, this, &Alarm::save);
-    connect(this, &Alarm::alarmChanged, this, &Alarm::calculateNextRingTime); // the slots will be called according to
-                                                                              // the order they have been connected
-                                                                              // always connect this first than AlarmModel::scheduleAlarm
-
-    calculateNextRingTime();
-
-    if (parent) {
-        connect(this, &Alarm::alarmChanged, parent, &AlarmModel::scheduleAlarm); // connect this last
-    }
-
-    this->save();
-
-    // DBus
-    new AlarmAdaptor(this);
-    QDBusConnection::sessionBus().registerObject(QStringLiteral("/alarms/") + this->uuid().toString(QUuid::Id128), this);
-    connect(this, &QObject::destroyed, [this] { QDBusConnection::sessionBus().unregisterObject(QStringLiteral("/alarms/") + this->uuid().toString(QUuid::Id128), QDBusConnection::UnregisterNode); });
+    initialize(parent);
 }
 
 // alarm from json (loaded from storage)
@@ -86,11 +70,14 @@ Alarm::Alarm(QString serialized, AlarmModel *parent)
         m_snooze = obj[QStringLiteral("snooze")].toInt();
         m_audioPath = QUrl::fromLocalFile(obj[QStringLiteral("audioPath")].toString());
     }
+    initialize(parent);
+}
 
+void Alarm::initialize(AlarmModel *parent)
+{
     connect(this, &Alarm::alarmChanged, this, &Alarm::save);
-    connect(this, &Alarm::alarmChanged, this, &Alarm::calculateNextRingTime); // the slots will be called according to
-                                                                              // the order they have been connected
-                                                                              // always connect this first than AlarmModel::scheduleAlarm
+    connect(this, &Alarm::alarmChanged, this, &Alarm::calculateNextRingTime); // the slots will be called according to the order they have been connected.
+                                                                              // always connect this before calling AlarmModel::scheduleAlarm
 
     calculateNextRingTime();
 
