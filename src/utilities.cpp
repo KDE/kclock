@@ -29,7 +29,7 @@ Utilities::Utilities(QObject *parent)
         m_worker->moveToThread(m_timerThread);
         connect(m_worker, &AlarmWaitWorker::finished, [this] {
             // notify time is up
-            Q_EMIT wakeup(m_currentCookie);
+            Q_EMIT this->wakeup(m_currentCookie);
             this->unregiser(m_currentCookie);
         });
         m_timerThread->start();
