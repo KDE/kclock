@@ -37,23 +37,22 @@ public:
 
     void configureWakeups(); // needs to be called to start worker thread, or configure powerdevil (called in main)
 
-    Q_SCRIPTABLE void remove(QString uuid);
-
+    Q_SCRIPTABLE void removeAlarm(QString uuid);
     Q_SCRIPTABLE void addAlarm(int hours, int minutes, int daysOfWeek, QString name, QString ringtonePath); // in 24 hours units
 
-signals:
+Q_SIGNALS:
     Q_SCRIPTABLE void alarmAdded(QString uuid);
     Q_SCRIPTABLE void alarmRemoved(QString uuid);
-    Q_SCRIPTABLE void nextAlarm(quint64 nextAlarmTimeStampe);
+    Q_SCRIPTABLE void nextAlarm(quint64 nextAlarmTimeStamp); // next alarm wakeup timestamp, or 0 if there are none
 
-public slots:
+public Q_SLOTS:
     Q_SCRIPTABLE quint64 getNextAlarm();
     void scheduleAlarm();
-private slots:
+private Q_SLOTS:
     void updateNotifierItem(quint64 time); // update notify icon in systemtray
 
 private:
-    void remove(int index);
+    void removeAlarm(int index);
 
     explicit AlarmModel(QObject *parent = nullptr);
 

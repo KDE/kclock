@@ -111,23 +111,23 @@ void AlarmModel::scheduleAlarm()
 
         // if we scheduled wakeup before, cancel it first
         if (m_cookie > 0) {
-            Utilities::instance().unregiser(m_cookie);
+            Utilities::instance().clearWakeup(m_cookie);
         }
 
-        m_cookie = Utilities::instance().regiser(minTime);
+        m_cookie = Utilities::instance().scheduleWakeup(minTime);
     } else {
         // this don't explicitly cancel the alarm currently waiting in m_worker if disabled by user
         // because alarm->ring() will return immediately if disabled
         qDebug() << "no alarm to ring";
 
         m_nextAlarmTime = 0;
-        Utilities::instance().unregiser(m_cookie);
+        Utilities::instance().clearWakeup(m_cookie);
         m_cookie = -1;
     }
     Q_EMIT nextAlarm(m_nextAlarmTime);
 }
 
-void AlarmModel::remove(QString uuid)
+void AlarmModel::removeAlarm(QString uuid)
 {
     // find alarm index
     int index = 0;
@@ -142,10 +142,10 @@ void AlarmModel::remove(QString uuid)
     if (!found)
         return;
 
-    this->remove(index);
+    this->removeAlarm(index);
 }
 
-void AlarmModel::remove(int index)
+void AlarmModel::removeAlarm(int index)
 {
     if (index < 0 || index >= this->m_alarmsList.size())
         return;

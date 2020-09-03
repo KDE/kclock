@@ -76,12 +76,12 @@ void Timer::setRunning(bool running)
     if (m_running) {
         m_hasElapsed = QDateTime::currentSecsSinceEpoch() - m_startTime;
         if (m_cookie > 0) {
-            Utilities::instance().unregiser(m_cookie);
+            Utilities::instance().clearWakeup(m_cookie);
             m_cookie = -1;
         }
     } else {
         m_startTime = QDateTime::currentSecsSinceEpoch();
-        m_cookie = Utilities::instance().regiser(m_startTime + m_length);
+        m_cookie = Utilities::instance().scheduleWakeup(m_startTime + m_length);
     }
 
     m_running = running;

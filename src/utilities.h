@@ -20,11 +20,11 @@ public:
         return m_hasPowerDevil;
     };
 
-    int regiser(qint64 timestamp);
-    void unregiser(int cookie);
-signals:
+    int scheduleWakeup(qint64 timestamp);
+    void clearWakeup(int cookie);
+Q_SIGNALS:
     void wakeup(int cookie);
-public slots:
+public Q_SLOTS:
     void wakeupCallback(int cookie);
 
 private:

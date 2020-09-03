@@ -134,7 +134,7 @@ void AlarmModel::remove(int index)
 
     qDebug() << alarmsList.at(index)->uuid().toString();
 
-    m_interface->remove(alarmsList.at(index)->uuid().toString());
+    m_interface->removeAlarm(alarmsList.at(index)->uuid().toString());
     auto ptr = alarmsList.at(index);
 
     emit beginRemoveRows(QModelIndex(), index, index);

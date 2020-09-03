@@ -9,7 +9,7 @@ Utilities::Utilities(QObject *parent)
     : QObject(parent)
     , m_interface(new QDBusInterface(QStringLiteral("org.kde.Solid.PowerManagement"), QStringLiteral("/org/kde/Solid/PowerManagement"), QStringLiteral("org.kde.Solid.PowerManagement"), QDBusConnection::sessionBus(), this))
 {
-    // if PowerDevil is present rely on PowerDevil to track time, otherwise we do it ourself
+    // if PowerDevil is present, we can rely on PowerDevil to track time, otherwise we do it ourself
     if (m_interface->isValid()) {
         // test Plasma 5.20 PowerDevil schedule wakeup feature
         QDBusMessage m = QDBusMessage::createMethodCall(QStringLiteral("org.kde.Solid.PowerManagement"), QStringLiteral("/org/kde/Solid/PowerManagement"), QStringLiteral("org.freedesktop.DBus.Introspectable"), QStringLiteral("Introspect"));
@@ -30,7 +30,7 @@ Utilities::Utilities(QObject *parent)
         connect(m_worker, &AlarmWaitWorker::finished, [this] {
             // notify time is up
             Q_EMIT this->wakeup(m_currentCookie);
-            this->unregiser(m_currentCookie);
+            this->clearWakeup(m_currentCookie);
         });
         m_timerThread->start();
 
@@ -38,7 +38,7 @@ Utilities::Utilities(QObject *parent)
     }
 }
 
-int Utilities::regiser(qint64 timestamp)
+int Utilities::scheduleWakeup(qint64 timestamp)
 {
     if (this->hasPowerDevil()) {
         QDBusReply<uint> reply = m_interface->call(QStringLiteral("scheduleWakeup"), QStringLiteral("org.kde.kclockd"), QDBusObjectPath("/Utility"), timestamp);
@@ -51,7 +51,7 @@ int Utilities::regiser(qint64 timestamp)
     }
 }
 
-void Utilities::unregiser(int cookie)
+void Utilities::clearWakeup(int cookie)
 {
     if (this->hasPowerDevil()) {
         auto index = m_cookies.indexOf(cookie);
