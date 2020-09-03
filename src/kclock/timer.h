@@ -16,7 +16,12 @@ class Timer : public QObject
     Q_PROPERTY(bool running READ running NOTIFY propertyChanged)
 
 public:
+    Timer();
     explicit Timer(QString uuid);
+    const QUuid &uuid()
+    {
+        return m_uuid;
+    };
     Q_INVOKABLE void toggleRunning()
     {
         m_interface->toggleRunning();
@@ -64,9 +69,9 @@ public:
 signals:
     void propertyChanged();
 private slots:
-    void updateLength(int);
-    void updateLabel(QString);
-    void updateRunning(bool);
+    void updateLength();
+    void updateLabel();
+    void updateRunning();
 
 private:
     int m_length, m_elapsed; // seconds

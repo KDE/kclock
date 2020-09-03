@@ -43,6 +43,7 @@
 #include "kclockformat.h"
 #include "kclocksettings.h"
 #include "stopwatchtimer.h"
+#include "timer.h"
 #include "timermodel.h"
 #include "timezoneselectormodel.h"
 #include "utilmodel.h"

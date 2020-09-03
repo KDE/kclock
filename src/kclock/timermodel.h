@@ -21,9 +21,11 @@
 #ifndef KIRIGAMICLOCK_TIMERMODEL_H
 #define KIRIGAMICLOCK_TIMERMODEL_H
 
+#include <KLocalizedString>
 #include <QAbstractListModel>
 #include <QObject>
 
+#include "timermodelinterface.h"
 class Timer;
 class TimerModel : public QAbstractListModel
 {
@@ -39,14 +41,23 @@ public:
         return singleton;
     }
 
-    Q_INVOKABLE void addNew();
+    Q_INVOKABLE void addNew()
+    {
+        this->addTimer();
+    };
     Q_INVOKABLE void remove(int index);
     Q_INVOKABLE int count();
     Q_INVOKABLE Timer *get(int index);
+private slots:
+    void addTimer(QString uuid);
+    void removeTimer(QString uuid);
 
 private:
+    void addTimer(int length = 300, QString label = i18n("New timer"), bool running = false);
+
     explicit TimerModel(QObject *parent = nullptr);
-    QList<Timer *> timerList;
+    QList<Timer *> m_timerList;
+    OrgKdeKclockTimerModelInterface *m_interface;
 };
 
 #endif // KIRIGAMICLOCK_TIMERMODEL_H

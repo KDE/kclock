@@ -17,33 +17,51 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-
-#include "timermodel.h"
-
-#include <KLocalizedString>
-
 #include <QDebug>
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QtGlobal>
 
-/* ~ TimerModel ~ */
-const QString TIMERS_CFG_GROUP = "Timers", TIMERS_CFG_KEY = "timersList";
+#include <KLocalizedString>
 
+#include "timer.h"
+#include "timermodel.h"
+
+/* ~ TimerModel ~ */
 TimerModel::TimerModel(QObject *parent)
+    : m_interface(new OrgKdeKclockTimerModelInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Timers"), QDBusConnection::sessionBus(), this))
 {
+    if (m_interface->isValid()) {
+        connect(m_interface, SIGNAL(timerAdded(QString)), this, SLOT(addTimer(QString)));
+        connect(m_interface, SIGNAL(timerRemoved(QString)), this, SLOT(removeTimer(QString)));
+    }
+    QDBusInterface *interface = new QDBusInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/alarms"), QStringLiteral("org.freedesktop.DBus.Introspectable"), QDBusConnection::sessionBus(), this);
+    QDBusReply<QString> reply = interface->call(QStringLiteral("Introspect"));
+    if (reply.isValid()) {
+        auto xmlMsg = reply.value();
+        QXmlStreamReader xml(xmlMsg);
+        while (!xml.atEnd()) {
+            xml.readNext();
+            if (xml.name() == QStringLiteral("node") && xml.attributes().hasAttribute(QStringLiteral("name"))) {
+                if (xml.attributes().value(QStringLiteral("name")).toString().indexOf(QStringLiteral("org")) == -1) {
+                    this->addTimer(xml.attributes().value(QStringLiteral("name")).toString());
+                }
+            }
+        }
+    }
+    interface->deleteLater();
 }
 
 int TimerModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
-    return timerList.size();
+    return m_timerList.size();
 }
 
 int TimerModel::count()
 {
-    return timerList.size();
+    return m_timerList.size();
 }
 
 QVariant TimerModel::data(const QModelIndex &index, int role) const
@@ -51,18 +69,60 @@ QVariant TimerModel::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-void TimerModel::addNew()
+void TimerModel::addTimer(int length, QString label, bool running)
 {
+    m_interface->addTimer(length, label, running);
 }
 
 void TimerModel::remove(int index)
 {
+    if (index < 0 || index >= m_timerList.size())
+        return;
+
+    auto ptr = m_timerList.at(index);
+
+    Q_EMIT beginRemoveRows(QModelIndex(), index, index);
+    m_timerList.removeAt(index);
+    Q_EMIT endRemoveRows();
+
+    ptr->deleteLater();
 }
 
 Timer *TimerModel::get(int index)
 {
-    if ((index < 0) || (index >= timerList.count()))
+    if ((index < 0) || (index >= m_timerList.count()))
         return {};
 
-    return timerList.at(index);
+    return m_timerList.at(index);
+}
+
+void TimerModel::addTimer(QString uuid)
+{
+    auto *timer = new Timer(uuid.remove(QRegularExpression(QStringLiteral("[{}-]"))));
+
+    Q_EMIT beginInsertRows(QModelIndex(), 0, 0);
+    m_timerList.insert(0, timer);
+    Q_EMIT endInsertRows();
+}
+
+void TimerModel::removeTimer(QString uuid)
+{
+    auto index = 0;
+    for (auto timer : m_timerList) {
+        if (timer->uuid().toString() == uuid) {
+            break;
+        }
+        ++index;
+    }
+
+    if (index >= this->m_timerList.size())
+        return;
+
+    auto ptr = m_timerList.at(index);
+
+    Q_EMIT beginRemoveRows(QModelIndex(), index, index);
+    m_timerList.removeAt(index);
+    Q_EMIT endRemoveRows();
+
+    ptr->deleteLater();
 }

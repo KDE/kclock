@@ -35,7 +35,7 @@ Kirigami.ScrollablePage {
         iconName: "list-add"
         text: i18n("New Timer")
         onTriggered: {
-            createdTimer = true
+            createdTimer = true;
             timerModel.addNew();
         }
     }

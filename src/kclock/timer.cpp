@@ -1,7 +1,9 @@
 #include "timer.h"
 
 /* ~ Timer ~ */
-
+Timer::Timer()
+{
+}
 Timer::Timer(QString uuid)
     : m_interface(new OrgKdeKclockTimerInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Timers/") + uuid, QDBusConnection::sessionBus(), this))
 {
@@ -17,10 +19,19 @@ Timer::Timer(QString uuid)
     }
 }
 
-void Timer::toggleRunning()
+void Timer::updateLength()
 {
+    m_length = m_interface->length();
+    Q_EMIT propertyChanged();
 }
 
-void Timer::reset()
+void Timer::updateLabel()
 {
+    m_label = m_interface->label();
+    Q_EMIT propertyChanged();
+}
+void Timer::updateRunning()
+{
+    m_running = m_interface->running();
+    Q_EMIT propertyChanged();
 }

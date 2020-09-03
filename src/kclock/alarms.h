@@ -62,6 +62,7 @@ public:
     void setEnabled(bool enabled)
     {
         m_interface->setProperty("enabled", enabled);
+        m_enabled = enabled;
     }
     const int &hours() const
     {

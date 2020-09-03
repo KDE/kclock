@@ -55,12 +55,6 @@ Kirigami.Page {
             text: i18n("Reset")
             onTriggered: timer.reset();
         },
-//         Kirigami.Action {
-//             visible: !justCreated
-//             icon.name: "view-fullscreen"
-//             text: i18n("Fullscreen")
-//             onTriggered: showFullscreen = true;
-//         },
         Kirigami.Action {
             visible: !justCreated
             icon.name: "delete"
