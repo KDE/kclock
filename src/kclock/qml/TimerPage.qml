@@ -142,5 +142,6 @@ Kirigami.Page {
         visible: !justCreated
         timerDuration: duration
         timerElapsed: elapsed
+        timerRunning: running
     }
 }
