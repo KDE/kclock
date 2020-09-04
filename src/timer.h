@@ -16,6 +16,7 @@ class Timer : public QObject
 public:
     explicit Timer(int length = 0, QString label = QStringLiteral(), bool running = false);
     explicit Timer(const QJsonObject &obj);
+    ~Timer();
 
     QJsonObject serialize();
 
@@ -61,11 +62,11 @@ public:
         return m_running;
     }
 
-signals:
+Q_SIGNALS:
     Q_SCRIPTABLE void lengthChanged();
     Q_SCRIPTABLE void labelChanged();
     Q_SCRIPTABLE void runningChanged();
-private slots:
+private Q_SLOTS:
     void timeUp(int cookie);
 
 private:

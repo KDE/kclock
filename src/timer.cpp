@@ -31,6 +31,13 @@ Timer::Timer(const QJsonObject &obj)
     connect(this, &QObject::destroyed, [this] { QDBusConnection::sessionBus().unregisterObject(QStringLiteral("/Timers/") + this->m_uuid.toString(QUuid::Id128), QDBusConnection::UnregisterNode); });
 }
 
+Timer::~Timer()
+{
+    if (!m_running) { // stop wakeup if timer is being deleted
+        setRunning(false);
+    }
+}
+
 QJsonObject Timer::serialize()
 {
     QJsonObject obj;
