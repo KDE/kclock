@@ -89,7 +89,19 @@ Kirigami.ScrollablePage {
                     ProgressBar {
                         anchors.left: parent.left
                         anchors.right: parent.right
-                        value: timerDelegate.elapsed / timerDelegate.length
+                        property real progress: timerDelegate.elapsed / timerDelegate.length
+                        value: 0
+                        Component.onCompleted: value = progress
+                        
+                        onProgressChanged: {
+                            progressTransition.to = progress;
+                            progressTransition.restart();
+                        }
+                        NumberAnimation on value {
+                            id: progressTransition
+                            duration: 300
+                            easing.type: Easing.InOutQuad
+                        }
                     }
                     
                     RowLayout {
