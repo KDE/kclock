@@ -58,6 +58,8 @@ qt5_add_dbus_adaptor(kclockd_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.Ti
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.KClockSettings.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR})
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.Alarm.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR})
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.AlarmModel.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR})
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.TimerModel.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR})
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.Timer.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR})
 
 add_executable(kclockd main.cpp ${kclockd_SRCS} )
 target_link_libraries(kclockd
