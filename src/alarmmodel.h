@@ -48,6 +48,7 @@ Q_SIGNALS:
 public Q_SLOTS:
     Q_SCRIPTABLE quint64 getNextAlarm();
     void scheduleAlarm();
+    void wakeupCallback(int cookie);
 private Q_SLOTS:
     void updateNotifierItem(quint64 time); // update notify icon in systemtray
 
@@ -57,9 +58,9 @@ private:
     explicit AlarmModel(QObject *parent = nullptr);
 
     KStatusNotifierItem *m_notifierItem = nullptr;
-    
+
     quint64 m_nextAlarmTime = 0;
-    int m_cookie = -1; // token for wakeup call auth
+    int m_cookie = -1;             // token for wakeup call auth
     QList<Alarm *> alarmsToBeRung; // the alarms that will be rung on next wakeup
 
     QList<Alarm *> m_alarmsList;

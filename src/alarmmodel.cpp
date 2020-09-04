@@ -59,14 +59,7 @@ AlarmModel::AlarmModel(QObject *parent)
     m_notifierItem->setAssociatedWidget(nullptr);
 
     // alarm wakeup behaviour
-    connect(&Utilities::instance(), &Utilities::wakeup, [this](int cookie) {
-        if (this->m_cookie == cookie) {
-            for (auto alarm : this->alarmsToBeRung) {
-                alarm->ring();
-            }
-            this->scheduleAlarm();
-        }
-    });
+    connect(&Utilities::instance(), &Utilities::wakeup, this, &AlarmModel::wakeupCallback);
 }
 
 void AlarmModel::configureWakeups()
@@ -128,6 +121,15 @@ void AlarmModel::scheduleAlarm()
     Q_EMIT nextAlarm(m_nextAlarmTime);
 }
 
+void AlarmModel::wakeupCallback(int cookie)
+{
+    if (this->m_cookie == cookie) {
+        for (auto alarm : this->alarmsToBeRung) {
+            alarm->ring();
+        }
+        this->scheduleAlarm();
+    }
+}
 void AlarmModel::removeAlarm(QString uuid)
 {
     // find index of alarm
