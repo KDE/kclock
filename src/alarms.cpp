@@ -128,7 +128,6 @@ void Alarm::ring()
     notif->setTitle(name());
     notif->setText(QLocale::system().toString(QTime::currentTime(), QLocale::ShortFormat)); // TODO
     notif->setDefaultAction(i18n("View"));
-    notif->setUrgency(KNotification::HighUrgency);
     notif->setFlags(KNotification::NotificationFlag::Persistent);
 
     connect(notif, &KNotification::defaultActivated, this, &Alarm::handleDismiss);
