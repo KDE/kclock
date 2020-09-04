@@ -72,7 +72,7 @@ void Timer::timeUp(int cookie)
         this->sendNotification();
         this->m_cookie = -1;
         this->setRunning(false);
-        m_hasElapsed = 0;
+        this->m_hasElapsed = m_length;
     }
 }
 
@@ -83,11 +83,17 @@ void Timer::setRunning(bool running)
 
     if (m_running) {
         m_hasElapsed = QDateTime::currentSecsSinceEpoch() - m_startTime;
+        
         if (m_cookie > 0) {
             Utilities::instance().clearWakeup(m_cookie);
             m_cookie = -1;
         }
     } else {
+        qDebug() << m_hasElapsed << m_length;
+        if (m_hasElapsed == m_length) { // reset elapsed if the timer was already finished
+            m_hasElapsed = 0;
+        }
+        
         m_startTime = QDateTime::currentSecsSinceEpoch() - m_hasElapsed;
         m_cookie = Utilities::instance().scheduleWakeup(m_startTime + m_length);
     }

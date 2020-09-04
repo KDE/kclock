@@ -24,14 +24,8 @@ public:
     {
         return m_uuid;
     };
-    Q_INVOKABLE void toggleRunning()
-    {
-        m_interface->toggleRunning();
-    };
-    Q_INVOKABLE void reset()
-    {
-        m_interface->reset();
-    };
+    Q_INVOKABLE void toggleRunning();
+    Q_INVOKABLE void reset();
 
     QString lengthPretty() const
     {

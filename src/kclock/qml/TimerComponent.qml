@@ -56,6 +56,7 @@ Rectangle {
         interval: 1000
         running: timerRunning
         repeat: true
+        triggeredOnStart: true
         onTriggered: {
             secondsAngleAnimation.from %= 360;
             secondsAngleAnimation.to = secondsAngleAnimation.from + 360;

@@ -21,6 +21,19 @@ Timer::Timer(QString uuid, bool justCreated)
     }
 }
 
+void Timer::toggleRunning()
+{
+    m_interface->toggleRunning();
+}
+
+void Timer::reset()
+{
+    m_interface->reset();
+    
+    m_elapsed = m_interface->elapsed();
+    Q_EMIT elapsedChanged();
+};
+
 void Timer::updateLength()
 {
     m_length = m_interface->length();
