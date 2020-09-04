@@ -49,13 +49,7 @@ QJsonObject Timer::serialize()
 
 void Timer::toggleRunning()
 {
-    if (!m_running) {
-        setRunning(true);
-    } else {
-        setRunning(false);
-    }
-
-    Q_EMIT runningChanged();
+    setRunning(!m_running);
 }
 
 void Timer::reset()
@@ -89,7 +83,6 @@ void Timer::setRunning(bool running)
             m_cookie = -1;
         }
     } else {
-        qDebug() << m_hasElapsed << m_length;
         if (m_hasElapsed == m_length) { // reset elapsed if the timer was already finished
             m_hasElapsed = 0;
         }

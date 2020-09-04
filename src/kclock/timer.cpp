@@ -18,6 +18,8 @@ Timer::Timer(QString uuid, bool justCreated)
         connect(m_interface, &OrgKdeKclockTimerInterface::lengthChanged, this, &Timer::updateLength);
         connect(m_interface, &OrgKdeKclockTimerInterface::labelChanged, this, &Timer::updateLabel);
         connect(m_interface, &OrgKdeKclockTimerInterface::runningChanged, this, &Timer::updateRunning);
+        
+        updateRunning(); // start animation
     }
 }
 
@@ -49,11 +51,8 @@ void Timer::updateRunning()
 {
     m_running = m_interface->running();
     Q_EMIT propertyChanged();
-    if (m_running) {
-        this->animation(true);
-    } else {
-        this->animation(false);
-    }
+
+    this->animation(m_running);
 
     m_elapsed = m_interface->elapsed();
     Q_EMIT elapsedChanged();
@@ -70,7 +69,7 @@ void Timer::animation(bool start)
     }
 
     if (start) {
-        m_timer->start(1000);
+        m_timer->start(250);
     } else {
         m_timer->stop();
     }
