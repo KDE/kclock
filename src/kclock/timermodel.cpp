@@ -57,12 +57,12 @@ TimerModel::TimerModel(QObject *parent)
 int TimerModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
-    return m_timerList.size();
+    return m_timersList.size();
 }
 
 int TimerModel::count()
 {
-    return m_timerList.size();
+    return m_timersList.size();
 }
 
 QVariant TimerModel::data(const QModelIndex &index, int role) const
@@ -77,23 +77,23 @@ void TimerModel::addTimer(int length, QString label, bool running)
 
 void TimerModel::remove(int index)
 {
-    if (index < 0 || index >= m_timerList.size())
+    if (index < 0 || index >= m_timersList.size())
         return;
 
-    m_interface->removeTimer(m_timerList.at(index)->uuid().toString());
-    m_timerList.at(index)->deleteLater();
+    m_interface->removeTimer(m_timersList.at(index)->uuid().toString());
+    m_timersList.at(index)->deleteLater();
 
     Q_EMIT beginRemoveRows(QModelIndex(), index, index);
-    m_timerList.removeAt(index);
+    m_timersList.removeAt(index);
     Q_EMIT endRemoveRows();
 }
 
 Timer *TimerModel::get(int index)
 {
-    if ((index < 0) || (index >= m_timerList.count()))
+    if ((index < 0) || (index >= m_timersList.count()))
         return {};
 
-    return m_timerList.at(index);
+    return m_timersList.at(index);
 }
 
 void TimerModel::addTimer(QString uuid)
@@ -106,14 +106,14 @@ void TimerModel::addTimer(QString uuid, bool justCreated)
     auto *timer = new Timer(uuid.remove(QRegularExpression(QStringLiteral("[{}-]"))), justCreated);
 
     Q_EMIT beginInsertRows(QModelIndex(), 0, 0);
-    m_timerList.insert(0, timer);
+    m_timersList.insert(0, timer);
     Q_EMIT endInsertRows();
 }
 
 void TimerModel::removeTimer(QString uuid)
 {
     auto index = 0;
-    for (auto timer : m_timerList) {
+    for (auto timer : m_timersList) {
         if (timer->uuid().toString() == uuid) {
             break;
         }

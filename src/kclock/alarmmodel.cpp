@@ -37,13 +37,13 @@
 
 AlarmModel::AlarmModel(QObject *parent)
     : QAbstractListModel(parent)
-    , m_interface(new org::kde::kclock::AlarmModel(QStringLiteral("org.kde.kclockd"), QStringLiteral("/alarms"), QDBusConnection::sessionBus(), this))
+    , m_interface(new org::kde::kclock::AlarmModel(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Alarms"), QDBusConnection::sessionBus(), this))
 {
     if (m_interface->isValid()) {
         connect(m_interface, SIGNAL(alarmAdded(QString)), this, SLOT(addAlarm(QString)));
         connect(m_interface, SIGNAL(alarmRemoved(QString)), this, SLOT(removeAlarm(QString)));
     }
-    QDBusInterface *interface = new QDBusInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/alarms"), QStringLiteral("org.freedesktop.DBus.Introspectable"), QDBusConnection::sessionBus(), this);
+    QDBusInterface *interface = new QDBusInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Alarms"), QStringLiteral("org.freedesktop.DBus.Introspectable"), QDBusConnection::sessionBus(), this);
     QDBusReply<QString> reply = interface->call(QStringLiteral("Introspect"));
     if (reply.isValid()) {
         auto xmlMsg = reply.value();

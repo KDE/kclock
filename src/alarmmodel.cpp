@@ -38,7 +38,7 @@ AlarmModel::AlarmModel(QObject *parent)
 {
     // DBus
     new AlarmModelAdaptor(this);
-    QDBusConnection::sessionBus().registerObject(QStringLiteral("/alarms"), this);
+    QDBusConnection::sessionBus().registerObject(QStringLiteral("/Alarms"), this);
 
     // load alarms from config
     auto config = KSharedConfig::openConfig();

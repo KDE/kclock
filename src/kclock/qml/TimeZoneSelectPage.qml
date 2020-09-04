@@ -39,15 +39,29 @@ Kirigami.ScrollablePage {
             icon.name: "globe"
         }
         
-        header: Kirigami.SearchField {
-            width: parent.width
-            onTextChanged: {
-                timeZoneFilterModel.setFilterFixedString(text)
-                filterText = text
+        header: Item {
+            anchors.left: parent.left
+            anchors.right: parent.right
+            height: searchField.height + Kirigami.Units.largeSpacing * 2
+            
+            Kirigami.SearchField {
+                id: searchField
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.left: parent.left
+                anchors.right: parent.right
+                anchors.leftMargin: Kirigami.Units.largeSpacing
+                anchors.rightMargin: Kirigami.Units.largeSpacing
+                
+                onTextChanged: {
+                    timeZoneFilterModel.setFilterFixedString(text)
+                    filterText = text
+                    forceActiveFocus();
+                    focus = true
+                }
             }
         }
 
-        clip: true
         model: filterText == "" ? [] : timeZoneFilterModel // only display cities if there is a query (for performance)
         delegate: Kirigami.AbstractListItem {
             CheckBox {

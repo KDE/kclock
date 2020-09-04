@@ -58,7 +58,7 @@ private:
     void addTimer(QString uuid, bool justCreated);
 
     explicit TimerModel(QObject *parent = nullptr);
-    QList<Timer *> m_timerList;
+    QList<Timer *> m_timersList;
     OrgKdeKclockTimerModelInterface *m_interface;
 };
 
