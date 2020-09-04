@@ -2,6 +2,7 @@
 
 #include <QObject>
 #include "kclocksettingsinterface.h"
+
 class KClockSettings : public QObject
 {
     Q_OBJECT
@@ -10,6 +11,7 @@ class KClockSettings : public QObject
     Q_PROPERTY(QString alarmSnoozeLengthDisplay READ alarmSnoozeLengthDisplay WRITE setAlarmSnoozeLengthDisplay NOTIFY alarmSnoozedChanged)
     Q_PROPERTY(int alarmSilenceAfter READ alarmSilenceAfter WRITE setAlarmSilenceAfter NOTIFY alarmSilenceChanged)
     Q_PROPERTY(int alarmSnoozeLength READ alarmSnoozeLength WRITE setAlarmSnoozeLength NOTIFY alarmSnoozedChanged)
+
 public:
     static KClockSettings& instance(){
         static KClockSettings singleton;
@@ -56,14 +58,17 @@ public:
     const int& alarmSnoozeLength() const{
         return m_alarmSnoozeLength;
     }
-signals:
+
+Q_SIGNALS:
     void volumeChanged();
     void alarmSilenceChanged();
     void alarmSnoozedChanged();
-private slots:
+
+private Q_SLOTS:
     void updateVolume();
     void updateAlarmSilenceAfter();
     void updateAlarmSnoozeLength();
+
 private:
     KClockSettings();
     LocalKClockSettingsInterface * m_interface;

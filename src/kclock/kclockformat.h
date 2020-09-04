@@ -54,9 +54,9 @@ public:
         return m_hours;
     }
 
-private slots:
+private Q_SLOTS:
     void updateTime();
-signals:
+Q_SIGNALS:
     void timeChanged();
     void startDayChanged();
     void secondChanged();

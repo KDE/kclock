@@ -48,7 +48,8 @@ public:
     Q_INVOKABLE void remove(int index);
     Q_INVOKABLE int count();
     Q_INVOKABLE Timer *get(int index);
-private slots:
+
+private Q_SLOTS:
     void addTimer(QString uuid); // remote add, always justCreated
     void removeTimer(QString uuid);
 

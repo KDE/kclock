@@ -195,9 +195,9 @@ void AlarmModel::removeAlarm(QString uuid)
 
     auto ptr = alarmsList.at(index);
 
-    emit beginRemoveRows(QModelIndex(), index, index);
+    Q_EMIT beginRemoveRows(QModelIndex(), index, index);
     alarmsList.removeAt(index);
-    emit endRemoveRows();
+    Q_EMIT endRemoveRows();
 
     ptr->deleteLater();
 }

@@ -115,9 +115,9 @@ public:
     {
         m_interface->alarmChanged();
     };
-signals:
+Q_SIGNALS:
     void propertyChanged();
-private slots:
+private Q_SLOTS:
     void updateProperty(QString property);
 
 private:

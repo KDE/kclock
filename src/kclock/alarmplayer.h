@@ -37,7 +37,7 @@ public:
     Q_INVOKABLE void play();
     Q_INVOKABLE void stop();
 
-signals:
+Q_SIGNALS:
     void volumeChanged();
 
 protected:

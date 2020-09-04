@@ -131,7 +131,7 @@ QHash<int, QByteArray> TimeZoneSelectorModel::roleNames() const
 void TimeZoneSelectorModel::update()
 {
     QVector<int> roles = {TimeStringRole};
-    emit dataChanged(index(0), index(m_list.size() - 1), roles);
+    Q_EMIT dataChanged(index(0), index(m_list.size() - 1), roles);
 }
 
 Qt::ItemFlags TimeZoneSelectorModel::flags(const QModelIndex &index) const
@@ -148,7 +148,7 @@ bool TimeZoneSelectorModel::setData(const QModelIndex &index, const QVariant &va
         auto config = KSharedConfig::openConfig();
         KConfigGroup timezoneGroup = config->group(TZ_CFG_GROUP);
         timezoneGroup.writeEntry(std::get<0>(m_list[index.row()]).id().data(), value);
-        emit dataChanged(index, index, QVector<int> {ShownRole});
+        Q_EMIT dataChanged(index, index, QVector<int> {ShownRole});
         return true;
     }
     return false;
