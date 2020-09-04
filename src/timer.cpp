@@ -72,6 +72,7 @@ void Timer::timeUp(int cookie)
         this->sendNotification();
         this->m_cookie = -1;
         this->setRunning(false);
+        m_hasElapsed = 0;
     }
 }
 
@@ -87,7 +88,7 @@ void Timer::setRunning(bool running)
             m_cookie = -1;
         }
     } else {
-        m_startTime = QDateTime::currentSecsSinceEpoch();
+        m_startTime = QDateTime::currentSecsSinceEpoch() - m_hasElapsed;
         m_cookie = Utilities::instance().scheduleWakeup(m_startTime + m_length);
     }
 

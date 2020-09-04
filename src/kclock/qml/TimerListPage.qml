@@ -90,7 +90,6 @@ Kirigami.ScrollablePage {
                         anchors.left: parent.left
                         anchors.right: parent.right
                         value: timerDelegate.elapsed / timerDelegate.length
-                        enabled: timerDelegate.running
                     }
                     
                     RowLayout {

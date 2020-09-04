@@ -41,6 +41,9 @@ void Timer::updateRunning()
     } else {
         this->animation(false);
     }
+
+    m_elapsed = m_interface->elapsed();
+    Q_EMIT elapsedChanged();
 }
 
 void Timer::animation(bool start)
