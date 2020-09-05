@@ -1,4 +1,4 @@
-# KClock ![](logo.png =50x50)
+# KClock <img src="logo.png" width="40"/> 
 A convergent clock application for Plasma Mobile and Desktop.
 
 ## Features
@@ -24,7 +24,7 @@ sudo make install
 ```
 
 # Components
-KClock is split into three components: kclock (front-end), kclockd (backend-daemon), and plasmoids.
+KClock is split into three components: **kclock** (front-end), **kclockd** (backend-daemon), and **plasmoids**.
 
 These are individual apps and each has its own binaries. However you don't need to compile them one by one.
 
