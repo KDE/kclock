@@ -1,7 +1,26 @@
+/*
+ * Copyright 2020   Han Young <hanyoung@protonmail.com>
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation; either version 2 of
+ * the License or (at your option) version 3 or any later version
+ * accepted by the membership of KDE e.V. (or its successor approved
+ * by the membership of KDE e.V.), which shall act as a proxy
+ * defined in Section 14 of version 3 of the license.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
 #pragma once
 
-#include <QObject>
 #include "kclocksettingsinterface.h"
+#include <QObject>
 
 class KClockSettings : public QObject
 {
@@ -13,49 +32,59 @@ class KClockSettings : public QObject
     Q_PROPERTY(int alarmSnoozeLength READ alarmSnoozeLength WRITE setAlarmSnoozeLength NOTIFY alarmSnoozedChanged)
 
 public:
-    static KClockSettings& instance(){
+    static KClockSettings &instance()
+    {
         static KClockSettings singleton;
         return singleton;
     };
 
-    const int & volume() const
+    const int &volume() const
     {
         return m_volume;
     }
 
-    void setVolume(int volume){
+    void setVolume(int volume)
+    {
         m_interface->setProperty("alarmVolume", volume);
     }
 
-    const QString &alarmSilenceAfterDisplay() const{
+    const QString &alarmSilenceAfterDisplay() const
+    {
         return m_alarmSilenceAfterDisplay;
     }
 
-    void setAlarmSilenceAfterDisplay(QString str){
+    void setAlarmSilenceAfterDisplay(QString str)
+    {
         m_alarmSilenceAfterDisplay = str;
     }
 
-    const QString &alarmSnoozeLengthDisplay() const{
+    const QString &alarmSnoozeLengthDisplay() const
+    {
         return m_alarmSnoozeLengthDisplay;
     }
 
-    void setAlarmSnoozeLengthDisplay(QString str){
+    void setAlarmSnoozeLengthDisplay(QString str)
+    {
         m_alarmSnoozeLengthDisplay = str;
     }
 
-    const int& alarmSilenceAfter() const{
+    const int &alarmSilenceAfter() const
+    {
         return m_alarmSilenceAfter;
     }
 
-    void setAlarmSilenceAfter(int length){
+    void setAlarmSilenceAfter(int length)
+    {
         m_interface->setProperty("alarmSilenceAfter", length);
     }
 
-    void setAlarmSnoozeLength(int length){
+    void setAlarmSnoozeLength(int length)
+    {
         m_interface->setProperty("alarmSnoozeLength", length);
     }
 
-    const int& alarmSnoozeLength() const{
+    const int &alarmSnoozeLength() const
+    {
         return m_alarmSnoozeLength;
     }
 
@@ -71,7 +100,7 @@ private Q_SLOTS:
 
 private:
     KClockSettings();
-    LocalKClockSettingsInterface * m_interface;
+    LocalKClockSettingsInterface *m_interface;
 
     QString m_alarmSilenceAfterDisplay;
     QString m_alarmSnoozeLengthDisplay;
