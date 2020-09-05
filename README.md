@@ -1,48 +1,69 @@
-This is the repo for KClocd, KClock and plasmoids. These are individual apps and each has its own binaries. However you don't need to compile them one by one.
+# KClock ![](logo.png =50x50)
+A convergent clock application for Plasma Mobile and Desktop.
 
-Each app has its own roles and none of them is a substitute to another.
+## Features
+* Alarms
+* Stopwatch
+* World Clocks
+* Timers
+
+## Links
+* Project page: https://invent.kde.org/plasma-mobile/kclock
+* File issues: https://invent.kde.org/plasma-mobile/kclock/-/issues
+* Development channel: https://matrix.to/#/#plasmamobile:matrix.org
+
+## Installing
+This will install kclock, kclockd, and the plasmoids onto the system. When running kclock, make sure that kclockd is running first (it is configured to autostart in sessions).
+
+```
+mkdir build
+cd build
+cmake ..
+make
+sudo make install
+```
+
+# Components
+KClock is split into three components: kclock (front-end), kclockd (backend-daemon), and plasmoids.
+
+These are individual apps and each has its own binaries. However you don't need to compile them one by one.
 
 These apps combined together offers a powerful user experience to functionalities around Alarm, Timer and Clock.
 
-# KClockd
-KClock daemon, auto start on plasma launch. It does following things:
-* Schedule wakeup with PowerDevil, so if your system is sleeping, we can still wakeup on time to ring alarm.
-* Expose Alarms, Timers, and settings via D-Bus interface.
+## kclockd
+The KClock daemon, which is configured to auto start on Plasma launch (located in the src folder). It has the following functions:
+* Schedule wakeups with [PowerDevil](https://invent.kde.org/plasma/powerdevil), so if the system is sleeping, it will be woken up on time to ring alarms and timers.
+* Exposing Alarms, Timers, and settings via D-Bus interface.
 * Alarm/Timer audio and notifications, plus an indicator on system tray if there is any pending alarm.
 
-KClockd is written with performance in mind. Itself doesn't provide any user interface, all functionalities are exposed via D-Bus under service name `org.kde.kclockd`, you can add/remove and access properties of alarm/timer. And common settings like snooze minutes and ringtone volume. For actuall front end implementation you can refer to KClock.
+kclockd is written with performance in mind. It does not provide any user interface by itself, as all functionalities are exposed via a D-Bus under the service name `org.kde.kclockd`. The front-end (see kclock below) uses it to add/remove and access properties of alarm/timer, and common settings like snooze minutes and ringtone volume. This allows for clock functions to continue running even when the front-end application is closed.
 
-The plasmoids included in this repo also uses D-Bus to communicate with KClockd.
+The plasmoids included in this repo also uses D-Bus to communicate with kclockd.
 
-If PowerDevil is detected, it will use PowerDevil's scheduleWakeup feature to wakeup for alarm notifications. This was added in Plasma 5.20. If you want to disable this behaviour, pass the `--no-powerdevil` option when launching KClockd. Note that if running in `--no-powerdevil` mode, KClockd will fail to keep tracking of time if system sleeps. Which is quite common for mobile devices.
+If PowerDevil is detected, it will use PowerDevil's scheduleWakeup feature to wakeup for alarm notifications. This was added in Plasma 5.20. If you want to disable this behaviour, pass the `--no-powerdevil` option when launching kclockd. Note that while running in `--no-powerdevil` mode, kclockd will fail to keep track of time if the system sleeps, which is quite common for mobile devices.
 
-There are numerous reasons that causes KClockd running in `--no-powerdevil` mode, include:
-* Plasma 5.20 or later not installed
-* You are on BSD system
+There are numerous reasons that causes kclockd will start up in `--no-powerdevil` mode automatically, including:
+* Plasma 5.20 or later not being installed
+* You are on a BSD system
 * You choose to not to
 * All of the other possiblities I forgot to mention
 
 ## KClockd D-Bus interface
 TODO
 
-# KClock
-A front end for KClockd written in Kirigami for Plasma Mobile and Desktop.
+## kclock
+A front end for kclockd written in Kirigami for Plasma Mobile and Desktop (located in src/kclock).
 
-You can refer to this app in case you want to develop your own front end for KClockd.
-
-## Features
-* Alarms
-* Stopwatch
-* World Clocks
-* Timer
+You can refer to this application in case you want to develop your own front end for kclockd.
 
 Run with these environment variables to have mobile controls:
 ```
 QT_QUICK_CONTROLS_MOBILE=true QT_QUICK_CONTROLS_STYLE=Plasma
 ```
-# Plasmoids
-Various plasmoids for KClockd and some also communicate with KWeather.
+
+## Plasmoids
+Various plasmoids for kclockd and some also communicate with [KWeather](https://invent.kde.org/plasma-mobile/kweather).
 
 Currently we have two plasmoids, expect more in the future.
 
-Intended to provides `widgets` simlilar to those you can find in mainstream mobile platforms.
+Intended to provides `widgets` similar to those you can find in mainstream mobile platforms.
