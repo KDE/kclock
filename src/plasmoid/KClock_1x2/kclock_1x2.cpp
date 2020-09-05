@@ -20,10 +20,10 @@ KClock_1x2::KClock_1x2(QObject *parent, const QVariantList &args)
     // initial interval is milliseconds to next minute
     m_timer->start((60 - (QTime::currentTime().msecsSinceStartOfDay() / 1000) % 60) * 1000); // seconds to next minute
 
-    if (!QDBusConnection::sessionBus().connect("org.kde.kclock", "/alarms", "org.kde.kclock.AlarmModel", "nextAlarm", this, SLOT(updateAlarm(qulonglong))))
+    if (!QDBusConnection::sessionBus().connect("org.kde.kclockd", "/Alarms", "org.kde.kclock.AlarmModel", "nextAlarm", this, SLOT(updateAlarm(qulonglong))))
         m_string = "connect failed";
 
-    QDBusInterface *interface = new QDBusInterface("org.kde.kclock", "/alarms", "org.kde.kclock.AlarmModel", QDBusConnection::sessionBus(), this);
+    QDBusInterface *interface = new QDBusInterface("org.kde.kclockd", "/Alarms", "org.kde.kclock.AlarmModel", QDBusConnection::sessionBus(), this);
     QDBusReply<quint64> reply = interface->call("getNextAlarm");
     if (reply.isValid()) {
         auto alarmTime = reply.value();
@@ -41,7 +41,7 @@ void KClock_1x2::updateAlarm(qulonglong time)
 {
     auto dateTime = QDateTime::fromSecsSinceEpoch(time).toLocalTime();
     if (time > 0) {
-        m_string = dateTime.toString("ddd ") + m_local.toString(dateTime.time(), QLocale::ShortFormat);
+        m_string = m_local.standaloneDayName(dateTime.date().dayOfWeek()) + m_local.toString(dateTime.time(), QLocale::ShortFormat);
         m_hasAlarm = true;
     } else {
         m_hasAlarm = false;
