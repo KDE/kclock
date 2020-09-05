@@ -22,10 +22,10 @@ KClock_KWeather_3x3::KClock_KWeather_3x3(QObject *parent, const QVariantList &ar
         m_isCelsius = true;
     else
         m_isCelsius = false;
-    QDBusConnection::sessionBus().connect("org.kde.kweather", "/", "org.kde.kweather.LocationModel", "removed", this, SLOT(addCity(QString)));
-    QDBusConnection::sessionBus().connect("org.kde.kweather", "/", "org.kde.kweather.LocationModel", "added", this, SLOT(removeCity(QString)));
-    QDBusInterface *interface = new QDBusInterface("org.kde.kweather", "/locations", "org.freedesktop.DBus.Introspectable", QDBusConnection::sessionBus(), this);
-    QDBusReply<QString> reply = interface->call("Introspect");
+    QDBusConnection::sessionBus().connect(QStringLiteral("org.kde.kweather"), QStringLiteral("/"), QStringLiteral("org.kde.kweather.LocationModel"), QStringLiteral("removed"), this, SLOT(addCity(QString)));
+    QDBusConnection::sessionBus().connect(QStringLiteral("org.kde.kweather"), QStringLiteral("/"), QStringLiteral("org.kde.kweather.LocationModel"), QStringLiteral("added"), this, SLOT(removeCity(QString)));
+    QDBusInterface *interface = new QDBusInterface(QStringLiteral("org.kde.kweather"), QStringLiteral("/locations"), QStringLiteral("org.freedesktop.DBus.Introspectable"), QDBusConnection::sessionBus(), this);
+    QDBusReply<QString> reply = interface->call(QStringLiteral("Introspect"));
     if (reply.isValid()) {
         auto xmlMsg = reply.value();
         QXmlStreamReader xml(xmlMsg);
@@ -39,8 +39,9 @@ KClock_KWeather_3x3::KClock_KWeather_3x3(QObject *parent, const QVariantList &ar
     }
     delete interface;
     if (!m_location.isEmpty()) {
-        m_KWeatherInterface = new QDBusInterface("org.kde.kweather", "/locations/" + m_location, "org.kde.kweather.WeatherLocation", QDBusConnection::sessionBus(), this);
-        QDBusConnection::sessionBus().connect("org.kde.kweather", "/locations/" + m_location, "org.kde.kweather.WeatherLocation", "currentForecastChange", this, SLOT(update()));
+        m_KWeatherInterface = new QDBusInterface(QStringLiteral("org.kde.kweather"), QStringLiteral("/locations/") + m_location, QStringLiteral("org.kde.kweather.WeatherLocation"), QDBusConnection::sessionBus(), this);
+        QDBusConnection::sessionBus().connect(
+            QStringLiteral("org.kde.kweather"), QStringLiteral("/locations/") + m_location, QStringLiteral("org.kde.kweather.WeatherLocation"), QStringLiteral("currentForecastChange"), this, SLOT(update()));
 
         QDBusReply<QString> reply = m_KWeatherInterface->call("getWeatherData");
         this->parse(QJsonDocument::fromJson(reply.value().toUtf8()));
@@ -57,11 +58,11 @@ KClock_KWeather_3x3::KClock_KWeather_3x3(QObject *parent, const QVariantList &ar
     // initial interval is milliseconds to next minute
     m_timer->start((60 - (QTime::currentTime().msecsSinceStartOfDay() / 1000) % 60) * 1000); // seconds to next minute
 
-    if (!QDBusConnection::sessionBus().connect("org.kde.kclockd", "/Alarms", "org.kde.kclock.AlarmModel", "nextAlarm", this, SLOT(updateAlarm(qulonglong))))
-        m_string = "connect failed";
+    if (!QDBusConnection::sessionBus().connect(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Alarms"), QStringLiteral("org.kde.kclock.AlarmModel"), QStringLiteral("nextAlarm"), this, SLOT(updateAlarm(qulonglong))))
+        m_string = QStringLiteral("connect failed");
 
-    interface = new QDBusInterface("org.kde.kclockd", "/Alarms", "org.kde.kclock.AlarmModel", QDBusConnection::sessionBus(), this);
-    QDBusReply<quint64> KClock_reply = interface->call("getNextAlarm");
+    interface = new QDBusInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Alarms"), QStringLiteral("org.kde.kclock.AlarmModel"), QDBusConnection::sessionBus(), this);
+    QDBusReply<quint64> KClock_reply = interface->call(QStringLiteral("getNextAlarm"));
     if (reply.isValid()) {
         auto alarmTime = KClock_reply.value();
         if (alarmTime > 0) {
@@ -76,21 +77,21 @@ KClock_KWeather_3x3::KClock_KWeather_3x3(QObject *parent, const QVariantList &ar
 
 void KClock_KWeather_3x3::parse(QJsonDocument doc)
 {
-    QJsonArray dailyArray = doc["dailyForecasts"].toArray();
-    QJsonArray hourlyArray = doc["hourlyForecasts"].toArray();
-    m_description = hourlyArray.at(0).toObject()["weatherDescription"].toString();
-    m_weatherIcon = hourlyArray.at(0).toObject()["weatherIcon"].toString();
+    QJsonArray dailyArray = doc[QStringLiteral("dailyForecasts")].toArray();
+    QJsonArray hourlyArray = doc[QStringLiteral("hourlyForecasts")].toArray();
+    m_description = hourlyArray.at(0).toObject()[QStringLiteral("weatherDescription")].toString();
+    m_weatherIcon = hourlyArray.at(0).toObject()[QStringLiteral("weatherIcon")].toString();
     if (m_isCelsius)
-        m_tempNow = QString::number(hourlyArray.at(0).toObject()["temperature"].toDouble()) + "°C";
+        m_tempNow = QString::number(hourlyArray.at(0).toObject()[QStringLiteral("temperature")].toDouble()) + QStringLiteral("°C");
     else
-        m_tempNow = QString::number(hourlyArray.at(0).toObject()["temperature"].toDouble() * 1.8 + 32) + "°";
+        m_tempNow = QString::number(hourlyArray.at(0).toObject()[QStringLiteral("temperature")].toDouble() * 1.8 + 32) + QStringLiteral("°");
 
     if (m_isCelsius) {
-        m_maxTemp = static_cast<int>(dailyArray.first().toObject()["maxTemp"].toDouble());
-        m_minTemp = static_cast<int>(dailyArray.first().toObject()["minTemp"].toDouble());
+        m_maxTemp = static_cast<int>(dailyArray.first().toObject()[QStringLiteral("maxTemp")].toDouble());
+        m_minTemp = static_cast<int>(dailyArray.first().toObject()[QStringLiteral("minTemp")].toDouble());
     } else {
-        m_maxTemp = dailyArray.first().toObject()["maxTemp"].toDouble() * 1.8 + 32;
-        m_minTemp = dailyArray.first().toObject()["minTemp"].toDouble() * 1.8 + 32;
+        m_maxTemp = dailyArray.first().toObject()[QStringLiteral("maxTemp")].toDouble() * 1.8 + 32;
+        m_minTemp = dailyArray.first().toObject()[QStringLiteral("minTemp")].toDouble() * 1.8 + 32;
     }
     Q_EMIT dataUpdated();
 }
@@ -98,7 +99,7 @@ void KClock_KWeather_3x3::updateAlarm(qulonglong time)
 {
     auto dateTime = QDateTime::fromSecsSinceEpoch(time).toLocalTime();
     if (time > 0) {
-        m_string = m_local.standaloneDayName(dateTime.date().dayOfWeek(), QLocale::ShortFormat) + " " + m_local.toString(dateTime.time(), QLocale::ShortFormat);
+        m_string = m_local.standaloneDayName(dateTime.date().dayOfWeek(), QLocale::ShortFormat) + QStringLiteral(" ") + m_local.toString(dateTime.time(), QLocale::ShortFormat);
         m_hasAlarm = true;
     } else {
         m_hasAlarm = false;
@@ -108,7 +109,7 @@ void KClock_KWeather_3x3::updateAlarm(qulonglong time)
 void KClock_KWeather_3x3::openKClock()
 {
     m_process = new QProcess(this);
-    m_process->start("kclock", QStringList());
+    m_process->start(QStringLiteral("kclock"), QStringList());
 }
 void KClock_KWeather_3x3::initialTimeUpdate()
 {
@@ -134,7 +135,8 @@ QString KClock_KWeather_3x3::time()
 }
 QString KClock_KWeather_3x3::date()
 {
-    return m_local.standaloneDayName(QDate::currentDate().dayOfWeek()) + ", " + m_local.standaloneMonthName(QDate::currentDate().month(), QLocale::ShortFormat) + " " + QString::number(QDate::currentDate().day());
+    return m_local.standaloneDayName(QDate::currentDate().dayOfWeek()) + QStringLiteral(", ") + m_local.standaloneMonthName(QDate::currentDate().month(), QLocale::ShortFormat) + QStringLiteral(" ") +
+        QString::number(QDate::currentDate().day());
 }
 KClock_KWeather_3x3::~KClock_KWeather_3x3()
 {

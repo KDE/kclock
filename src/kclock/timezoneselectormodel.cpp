@@ -43,7 +43,7 @@ TimeZoneSelectorModel::TimeZoneSelectorModel(QObject *parent)
     }
     m_timer.setInterval(1000);
     connect(&m_timer, &QTimer::timeout, this, &TimeZoneSelectorModel::update);
-    
+
     // turn off timer when the application is not loaded to save on cpu cycles
     connect(UtilModel::instance(), &UtilModel::applicationLoadedChanged, this, [this] {
         if (UtilModel::instance()->applicationLoaded()) {
@@ -105,7 +105,7 @@ QVariant TimeZoneSelectorModel::data(const QModelIndex &index, int role) const
         time = time.toTimeZone(std::get<0>(tuple));
 
         // apply 12 hour or 24 hour settings
-        if (settings.value("Global/use24HourTime").toBool()) {
+        if (settings.value(QStringLiteral("Global/use24HourTime")).toBool()) {
             return time.time().toString("hh:mm");
         } else {
             return time.time().toString("h:mm ap");
@@ -167,5 +167,5 @@ TimeZoneViewModel::TimeZoneViewModel(TimeZoneSelectorModel *model, QObject *pare
 {
     setSourceModel(model);
     setFilterRole(TimeZoneSelectorModel::ShownRole);
-    setFilterFixedString("true");
+    setFilterFixedString(QStringLiteral("true"));
 }

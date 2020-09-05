@@ -122,7 +122,7 @@ void Timer::sendNotification()
     qDebug("Timer finished, sending notification...");
 
     KNotification *notif = new KNotification("timerFinished");
-    notif->setIconName("kclock");
+    notif->setIconName(QStringLiteral("kclock"));
     notif->setTitle(i18n("Timer complete"));
     notif->setText(i18n("Your timer %1 has finished!", this->label()));
     notif->setDefaultAction(i18n("View"));

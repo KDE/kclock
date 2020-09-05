@@ -20,11 +20,11 @@ KClock_1x2::KClock_1x2(QObject *parent, const QVariantList &args)
     // initial interval is milliseconds to next minute
     m_timer->start((60 - (QTime::currentTime().msecsSinceStartOfDay() / 1000) % 60) * 1000); // seconds to next minute
 
-    if (!QDBusConnection::sessionBus().connect("org.kde.kclockd", "/Alarms", "org.kde.kclock.AlarmModel", "nextAlarm", this, SLOT(updateAlarm(qulonglong))))
-        m_string = "connect failed";
+    if (!QDBusConnection::sessionBus().connect(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Alarms"), QStringLiteral("org.kde.kclock.AlarmModel"), QStringLiteral("nextAlarm"), this, SLOT(updateAlarm(qulonglong))))
+        m_string = QStringLiteral("connect failed");
 
-    QDBusInterface *interface = new QDBusInterface("org.kde.kclockd", "/Alarms", "org.kde.kclock.AlarmModel", QDBusConnection::sessionBus(), this);
-    QDBusReply<quint64> reply = interface->call("getNextAlarm");
+    QDBusInterface *interface = new QDBusInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Alarms"), QStringLiteral("org.kde.kclock.AlarmModel"), QDBusConnection::sessionBus(), this);
+    QDBusReply<quint64> reply = interface->call(QStringLiteral("getNextAlarm"));
     if (reply.isValid()) {
         auto alarmTime = reply.value();
         if (alarmTime > 0) {
@@ -51,7 +51,7 @@ void KClock_1x2::updateAlarm(qulonglong time)
 void KClock_1x2::openKClock()
 {
     m_process = new QProcess(this);
-    m_process->start("kclock", QStringList());
+    m_process->start(QStringLiteral("kclock"), QStringList());
 }
 void KClock_1x2::initialTimeUpdate()
 {

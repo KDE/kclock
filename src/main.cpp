@@ -37,9 +37,7 @@
 QCommandLineParser *createParser()
 {
     QCommandLineParser *parser = new QCommandLineParser;
-    parser->addOption(QCommandLineOption(QStringLiteral("page"), i18n("Select opened page"), QStringLiteral("page"), "main"));
     parser->addOption(QCommandLineOption(QStringLiteral("no-powerdevil"), i18n("Don't use PowerDevil for alarms if it is available")));
-    parser->addOption(QCommandLineOption(QStringLiteral("daemon"), i18n("Run in background mode")));
     parser->addHelpOption();
     return parser;
 };
@@ -59,7 +57,7 @@ int main(int argc, char *argv[])
 
     // initialize models
     new KClockSettingsAdaptor(KClockSettings::self());
-    QDBusConnection::sessionBus().registerObject("/Settings", KClockSettings::self());
+    QDBusConnection::sessionBus().registerObject(QStringLiteral("/Settings"), KClockSettings::self());
 
     // start alarm polling
     AlarmModel::instance()->configureWakeups();
