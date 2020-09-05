@@ -35,7 +35,7 @@ Kirigami.ScrollablePage {
         iconName: "list-add"
         text: i18n("New Timer")
         onTriggered: {
-            createdTimer = true
+            createdTimer = true;
             timerModel.addNew();
         }
     }
@@ -89,8 +89,19 @@ Kirigami.ScrollablePage {
                     ProgressBar {
                         anchors.left: parent.left
                         anchors.right: parent.right
-                        value: timerDelegate.elapsed / timerDelegate.length
-                        enabled: timerDelegate.running
+                        property real progress: timerDelegate.elapsed / timerDelegate.length
+                        value: 0
+                        Component.onCompleted: value = progress
+                        
+                        onProgressChanged: {
+                            progressTransition.to = progress;
+                            progressTransition.restart();
+                        }
+                        NumberAnimation on value {
+                            id: progressTransition
+                            duration: 300
+                            easing.type: Easing.InOutQuad
+                        }
                     }
                     
                     RowLayout {

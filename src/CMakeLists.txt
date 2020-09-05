@@ -1,47 +1,76 @@
-set(kclock_SRCS
+set(kclockd_SRCS
+    utilities.cpp
     alarms.cpp
     alarmmodel.cpp
-    timermodel.cpp
-    utilmodel.cpp
-    stopwatchtimer.cpp
     alarmwaitworker.cpp
     alarmplayer.cpp
-    kclockformat.cpp
-    resources.qrc
+    timermodel.cpp
+    timer.cpp
     )
-kconfig_add_kcfg_files(kclock_SRCS kclocksettings.kcfgc GENERATE_MOC)
-add_executable(kclock main.cpp timezoneselectormodel.cpp ${kclock_SRCS} )
-target_link_libraries(kclock
-        Qt5::Qml
-        Qt5::Gui
-        Qt5::QuickControls2
-        Qt5::Widgets
-        Qt5::Multimedia
-        KF5::I18n
-        KF5::ConfigCore
-        KF5::ConfigGui
-        KF5::CoreAddons
-        KF5::Notifications
-        KF5::DBusAddons
-        )
-if (ANDROID)
-    kirigami_package_breeze_icons(ICONS
-        clock
-        player-time
-        chronometer
-        notifications
-        settings-configure
-        list-add
-        notifications
-        entry-edit
-        delete
-        checkmark
-        chronometer-reset
-        chronometer-lap
-        chronometer-pause
-        chronometer-start
-        globe
+# generate KConfig class from xml
+kconfig_add_kcfg_files(kclockd_SRCS kclockdsettings.kcfgc GENERATE_MOC)
+
+# use generated KConfig header file to generate DBus adaptor xml
+set(kclockd_SRCS
+    ${kclockd_SRCS}
+    ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.KClockSettings.xml
+)
+
+qt5_generate_dbus_interface(
+    ${CMAKE_CURRENT_BINARY_DIR}/kclockdsettings.h
+    org.kde.kclockd.KClockSettings.xml
+    OPTIONS -S -P
+)
+qt5_generate_dbus_interface(
+    ${CMAKE_CURRENT_SOURCE_DIR}/alarms.h
+    org.kde.kclockd.Alarm.xml
+    OPTIONS -s -m -P
+)
+qt5_generate_dbus_interface(
+    ${CMAKE_CURRENT_SOURCE_DIR}/alarmmodel.h
+    org.kde.kclockd.AlarmModel.xml
+    OPTIONS -s -m
+)
+qt5_generate_dbus_interface(
+    ${CMAKE_CURRENT_SOURCE_DIR}/timermodel.h
+    org.kde.kclockd.TimerModel.xml
+    OPTIONS -s -m -p
+)
+
+qt5_generate_dbus_interface(
+    ${CMAKE_CURRENT_SOURCE_DIR}/timer.h
+    org.kde.kclockd.Timer.xml
+    OPTIONS -s -m -P
+)
+# use generated DBus adapator xml to generate adaptor source code
+qt5_add_dbus_adaptor(kclockd_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.KClockSettings.xml
+                     ${CMAKE_CURRENT_BINARY_DIR}/kclockdsettings.h KClockSettings)
+qt5_add_dbus_adaptor(kclockd_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.Alarm.xml
+                     ${CMAKE_CURRENT_SOURCE_DIR}/alarms.h Alarm)
+qt5_add_dbus_adaptor(kclockd_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.AlarmModel.xml
+                     ${CMAKE_CURRENT_SOURCE_DIR}/alarmmodel.h AlarmModel)
+qt5_add_dbus_adaptor(kclockd_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.TimerModel.xml
+                     ${CMAKE_CURRENT_SOURCE_DIR}/timermodel.h TimerModel)
+qt5_add_dbus_adaptor(kclockd_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.Timer.xml
+                     ${CMAKE_CURRENT_SOURCE_DIR}/timer.h Timer)
+
+# install DBus interface xml to dbus interface directory
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.KClockSettings.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR})
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.Alarm.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR})
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.AlarmModel.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR})
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.TimerModel.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR})
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.Timer.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR})
+
+add_executable(kclockd main.cpp ${kclockd_SRCS} )
+target_link_libraries(kclockd
+    Qt5::Multimedia
+    KF5::I18n
+    KF5::ConfigCore
+    KF5::ConfigGui
+    KF5::CoreAddons
+    KF5::Notifications
+    KF5::DBusAddons
     )
-endif()
-add_subdirectory(plasmoid)        
-install(TARGETS kclock ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS kclockd ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
+add_subdirectory(kclock)
+add_subdirectory(plasmoid)

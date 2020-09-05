@@ -1,0 +1,7 @@
+File=kclockdsettings.kcfg
+ClassName=KClockSettings
+DefaultValueGetters=true
+GenerateProperties=true
+Singleton=true
+Mutators=true
+ 

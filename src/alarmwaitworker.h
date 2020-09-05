@@ -17,8 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-#ifndef ALARMWAITWORKER_H
-#define ALARMWAITWORKER_H
+#pragma once
 
 #include <QObject>
 
@@ -29,12 +28,12 @@ public:
     explicit AlarmWaitWorker(qint64 timestamp = -1);
 
     void setNewTime(qint64 timestamp); // set new wait time, if is currently waiting
-signals:
+Q_SIGNALS:
     void finished();
     void error();
     void startWait(int waitId);
 
-protected slots:
+protected Q_SLOTS:
     void wait(int waitId);
 
 private:
@@ -43,5 +42,3 @@ private:
     qint64 m_waitEndTime;
     bool m_isFinished = true;
 };
-
-#endif // ALARMWAITWORKER_H

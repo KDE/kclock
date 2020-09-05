@@ -41,7 +41,7 @@ public:
     Qt::ItemFlags flags(const QModelIndex &index) const override;
     QHash<int, QByteArray> roleNames() const override;
 
-public slots:
+public Q_SLOTS:
     void update();
 
 private:

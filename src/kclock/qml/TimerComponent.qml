@@ -29,20 +29,57 @@ Rectangle {
     
     property int timerDuration
     property int timerElapsed
+    property bool timerRunning
     
     color: "transparent"
     
     function getTimeLeft() {
-        return timerDuration*1000 - timerElapsed;
+        return timerDuration - timerElapsed;
     }
     function getHours() {
-        return ("0" + parseInt(getTimeLeft() / 1000 / 60 / 60).toFixed(0)).slice(-2);
+        return ("0" + parseInt(getTimeLeft() / 60 / 60).toFixed(0)).slice(-2);
     }
     function getMinutes() {
-        return ("0" + parseInt(getTimeLeft() / 1000 / 60 - 60 * getHours())).slice(-2);
+        return ("0" + parseInt(getTimeLeft() / 60 - 60 * getHours())).slice(-2);
     }
     function getSeconds() {
-        return ("0" + parseInt(getTimeLeft() / 1000 - 60 * getMinutes())).slice(-2);
+        return ("0" + parseInt(getTimeLeft() - 60 * getMinutes())).slice(-2);
+    }
+    
+    // spinner circle animation
+    property int secondsStartAngle
+    NumberAnimation on secondsStartAngle {
+        id: secondsAngleAnimation
+        duration: 1000
+    }
+    Timer {
+        interval: 1000
+        running: timerRunning
+        repeat: true
+        triggeredOnStart: true
+        onTriggered: {
+            secondsAngleAnimation.from %= 360;
+            secondsAngleAnimation.to = secondsAngleAnimation.from + 360;
+            secondsAngleAnimation.restart();
+        }
+    }
+    
+    // elapsed sweep angle animation (progress circle)
+    property int elapsedSweepAngle
+    NumberAnimation on elapsedSweepAngle {
+        id: elapsedSweepAnimation
+        easing.type: Easing.InOutQuad
+        duration: 500
+    }
+    onTimerElapsedChanged: {
+        elapsedSweepAnimation.to = 360 * timerElapsed / timerDuration
+        elapsedSweepAnimation.start();
+    }
+    
+    // set initial values
+    Component.onCompleted: {
+        secondsStartAngle = (-90 + 360 * new Date().getMilliseconds() / 1000) % 360;
+        elapsedSweepAngle = 360 * timerElapsed / timerDuration;
     }
     
     // timer circle
@@ -84,20 +121,20 @@ Rectangle {
                 centerX: timerCircleArc.centerX; centerY: timerCircleArc.centerY
                 radiusX: timerCircleArc.radiusX; radiusY: timerCircleArc.radiusY
                 startAngle: -90
-                sweepAngle: 360 * (timerElapsed / 1000) / timerDuration
+                sweepAngle: elapsedSweepAngle
             }
         }
         
         // lapping circle
         ShapePath {
-            strokeColor: running ? "white" : "transparent"
+            strokeColor: timerRunning ? "white" : "transparent"
             fillColor: "transparent"
             strokeWidth: 4
             capStyle: ShapePath.FlatCap
             PathAngleArc {
                 centerX: timerCircleArc.centerX; centerY: timerCircleArc.centerY
                 radiusX: timerCircleArc.radiusX; radiusY: timerCircleArc.radiusY
-                startAngle: (-90 + 360 * (timerElapsed % 1000) / 1000) % 360
+                startAngle: secondsStartAngle % 360
                 sweepAngle: 16
             }
         }

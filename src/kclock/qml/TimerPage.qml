@@ -37,7 +37,7 @@ Kirigami.Page {
     property bool showFullscreen: false
     
     property int elapsed: timer == null ? 0 : timer.elapsed
-    property int duration: timer == null ? 0 : timer.length / 1000
+    property int duration: timer == null ? 0 : timer.length
     property bool running: timer == null ? 0 : timer.running
 
     // topbar action
@@ -55,12 +55,6 @@ Kirigami.Page {
             text: i18n("Reset")
             onTriggered: timer.reset();
         },
-//         Kirigami.Action {
-//             visible: !justCreated
-//             icon.name: "view-fullscreen"
-//             text: i18n("Fullscreen")
-//             onTriggered: showFullscreen = true;
-//         },
         Kirigami.Action {
             visible: !justCreated
             icon.name: "delete"
@@ -121,7 +115,7 @@ Kirigami.Page {
         }
 
         function setDuration() {
-            timer.length = 1000 * (spinBoxHours.value * 60 * 60 + spinBoxMinutes.value * 60 + spinBoxSeconds.value)
+            timer.length = spinBoxHours.value * 60 * 60 + spinBoxMinutes.value * 60 + spinBoxSeconds.value
         }
 
         Item {
@@ -148,5 +142,6 @@ Kirigami.Page {
         visible: !justCreated
         timerDuration: duration
         timerElapsed: elapsed
+        timerRunning: running
     }
 }

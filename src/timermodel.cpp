@@ -25,130 +25,20 @@
 #include <KNotification>
 #include <KSharedConfig>
 
-#include <QApplication>
-#include <QCoreApplication>
-#include <QDebug>
+#include <QDBusConnection>
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QObject>
-#include <QQmlEngine>
-#include <QtGlobal>
 
-/* ~ Timer ~ */
-
-Timer::Timer(QObject *parent, int length, int elapsed, QString label, bool running)
-    : QObject(parent)
-    , m_length(length)
-    , m_elapsed(elapsed)
-    , m_label(label)
-    , m_running(running)
-    , m_finished(false)
-    , m_justCreated(true)
-{
-    connect(
-        this, &Timer::propertyChanged, this, [] { TimerModel::instance()->requestSave(); }, Qt::UniqueConnection);
-}
-
-Timer::Timer(const QJsonObject &obj)
-{
-    m_length = obj["length"].toInt();
-    m_elapsed = obj["elapsed"].toInt();
-    m_label = obj["label"].toString();
-    m_running = obj["running"].toBool();
-    m_finished = obj["finished"].toBool();
-    m_justCreated = false;
-
-    connect(
-        this, &Timer::propertyChanged, this, [] { TimerModel::instance()->requestSave(); }, Qt::UniqueConnection);
-}
-
-QJsonObject Timer::serialize()
-{
-    QJsonObject obj;
-    obj["length"] = m_length;
-    obj["elapsed"] = m_elapsed;
-    obj["label"] = m_label;
-    obj["running"] = m_running;
-    obj["finished"] = m_finished;
-    return obj;
-}
-
-void Timer::updateTimer(qint64 duration)
-{
-    if (m_running) {
-        m_elapsed += duration;
-
-        // if the timer has finished
-        if (m_elapsed >= m_length) {
-            m_elapsed = m_length;
-            m_running = false;
-            m_finished = true;
-
-            qDebug("Timer finished, sending notification...");
-
-            KNotification *notif = new KNotification("timerFinished");
-            notif->setIconName("kclock");
-            notif->setTitle(i18n("Timer complete"));
-            notif->setText(i18n("Your timer has finished!"));
-            notif->setDefaultAction(i18n("View"));
-            notif->setUrgency(KNotification::HighUrgency);
-            notif->setFlags(KNotification::NotificationFlag::LoopSound | KNotification::NotificationFlag::Persistent);
-            notif->sendEvent();
-
-            TimerModel::instance()->updateTimerStatus();
-        }
-
-        emit propertyChanged();
-    }
-}
-
-void Timer::toggleRunning()
-{
-    if (m_finished) {
-        m_elapsed = 0;
-        m_running = true;
-        m_finished = false;
-    } else {
-        m_running = !m_running;
-    }
-
-    TimerModel::instance()->updateTimerStatus();
-
-    emit propertyChanged();
-}
-
-void Timer::reset()
-{
-    m_finished = false;
-    m_running = false;
-    m_elapsed = 0;
-
-    TimerModel::instance()->updateTimerStatus();
-
-    emit propertyChanged();
-}
-
+#include "timer.h"
 /* ~ TimerModel ~ */
-const int TIMER_CHECK_LENGTH = 16; // milliseconds
-const QString TIMERS_CFG_GROUP = "Timers", TIMERS_CFG_KEY = "timersList";
+const QString TIMERS_CFG_GROUP = QStringLiteral("Timers"), TIMERS_CFG_KEY = QStringLiteral("timersList");
 
-TimerModel::TimerModel(QObject *parent)
+TimerModel::TimerModel()
 {
     load();
-
-    timer = new QTimer(this);
-    connect(timer, &QTimer::timeout, this, QOverload<>::of(&TimerModel::updateTimerLoop));
-    timer->setInterval(TIMER_CHECK_LENGTH);
-    updateTimerStatus(); // start timer loop if necessary
-
-    // slow down saves to max once per second
-    saveTimer = new QTimer(this);
-    saveTimer->setSingleShot(true);
-    saveTimer->setInterval(1000);
-    connect(saveTimer, &QTimer::timeout, this, [this] {
-        save();
-    });
+    QDBusConnection::sessionBus().registerObject(QStringLiteral("/Timers"), this, QDBusConnection::ExportScriptableContents);
 }
 
 void TimerModel::load()
@@ -158,18 +48,18 @@ void TimerModel::load()
     QJsonDocument doc = QJsonDocument::fromJson(group.readEntry(TIMERS_CFG_KEY, "{}").toUtf8());
     for (QJsonValueRef r : doc.array()) {
         QJsonObject obj = r.toObject();
-        timerList.append(new Timer(obj));
+        m_timerList.append(new Timer(obj));
     }
 }
 
 void TimerModel::save()
 {
     QJsonArray arr;
-    for (auto timer : timerList) {
+    for (auto timer : m_timerList) {
         arr.push_back(timer->serialize());
     }
     QJsonObject obj;
-    obj["list"] = arr;
+    obj[QStringLiteral("list")] = arr;
 
     auto config = KSharedConfig::openConfig();
     KConfigGroup group = config->group(TIMERS_CFG_GROUP);
@@ -178,99 +68,41 @@ void TimerModel::save()
     group.sync();
 }
 
-void TimerModel::requestSave()
+void TimerModel::addTimer(int length, QString label, bool running)
 {
-    if (!saveTimer->isActive()) {
-        saveTimer->start();
-    }
-}
-
-void TimerModel::updateTimerLoop()
-{
-    for (auto *timer : timerList)
-        timer->updateTimer(TIMER_CHECK_LENGTH);
-}
-
-void TimerModel::updateTimerStatus()
-{
-    // stop timer if all timers are inactive
-    if (areTimersInactive() && timer->isActive()) {
-        timer->stop();
-    } else if (!areTimersInactive() && !timer->isActive()) {
-        timer->start();
-    }
-}
-
-bool TimerModel::areTimersInactive()
-{
-    for (auto *timer : timerList) {
-        if (timer->running()) {
-            return false;
-        }
-    }
-    return true;
-}
-
-int TimerModel::rowCount(const QModelIndex &parent) const
-{
-    Q_UNUSED(parent);
-    return timerList.size();
-}
-
-int TimerModel::count()
-{
-    return timerList.size();
-}
-
-QVariant TimerModel::data(const QModelIndex &index, int role) const
-{
-    return QVariant();
-}
-
-void TimerModel::addNew()
-{
-    insert(count(), new Timer(this));
-}
-
-void TimerModel::insert(int index, Timer *timer)
-{
-    if ((index < 0) || (index > timerList.count()))
-        return;
-
-    QQmlEngine::setObjectOwnership(timer, QQmlEngine::CppOwnership);
-    emit beginInsertRows(QModelIndex(), index, index);
-    timerList.insert(index, timer);
-    emit endInsertRows();
+    auto *timer = new Timer(length, label, running);
+    m_timerList.append(timer);
 
     save();
+
+    Q_EMIT timerAdded(timer->uuid().toString());
+}
+
+void TimerModel::removeTimer(QString uuid)
+{
+    int ind = -1;
+    for (int i = 0; i < m_timerList.size(); i++) {
+        if (m_timerList[i]->uuid().toString() == uuid) {
+            ind = i;
+            break;
+        }
+    }
+    if (ind != -1) {
+        this->remove(ind);
+    }
 }
 
 void TimerModel::remove(int index)
 {
-    if ((index < 0) || (index >= timerList.count()))
+    if ((index < 0) || (index >= m_timerList.count()))
         return;
 
-    emit beginRemoveRows(QModelIndex(), index, index);
-    auto timer = timerList.at(index);
-    timerList.removeAt(index);
-    delete timer;
-    emit endRemoveRows();
+    auto timer = m_timerList.at(index);
+
+    Q_EMIT timerRemoved(timer->uuid().toString());
+
+    m_timerList.removeAt(index);
+    timer->deleteLater();
 
     save();
-}
-
-Timer *TimerModel::get(int index)
-{
-    if ((index < 0) || (index >= timerList.count()))
-        return {};
-
-    return timerList.at(index);
-}
-
-void TimerModel::move(int oldIndex, int newIndex)
-{
-    if (oldIndex < 0 || oldIndex >= timerList.count() || newIndex < 0 || newIndex >= timerList.count())
-        return;
-
-    timerList.move(oldIndex, newIndex);
 }

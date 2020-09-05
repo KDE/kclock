@@ -42,6 +42,9 @@ public:
     bool applicationLoaded();
     void setApplicationLoaded(bool applicationLoaded);
     
+    long long calculateNextRingTime(int hours, int minutes, int daysOfWeek, int snooze = 0);
+    QString timeToRingFormatted(const long long &timestamp);
+    
 private:
     UtilModel(){}; // explicitly declare it private
     bool m_applicationLoaded = false;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Devin Lin <espidev@gmail.com>
+ * Copyright 2020   Han Young <hanyoung@protonmail.com>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -17,26 +17,39 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+#ifndef ALARMPLAYER_H
+#define ALARMPLAYER_H
 
-#include "utilmodel.h"
-#include <QString>
-#include <QTimeZone>
-
-QString UtilModel::getCurrentTimeZoneName()
+#include <QMediaPlayer>
+#include <QObject>
+class AlarmPlayer : public QObject
 {
-    return QTimeZone::systemTimeZoneId();
-}
+    Q_OBJECT
+    Q_PROPERTY(int volume READ volume WRITE setVolume NOTIFY volumeChanged)
+public:
+    static AlarmPlayer &instance();
+    int volume()
+    {
+        return m_player->volume();
+    };
+    Q_INVOKABLE void setVolume(int volume);
+    Q_INVOKABLE void setSource(QUrl path);
+    Q_INVOKABLE void play();
+    Q_INVOKABLE void stop();
 
-bool UtilModel::applicationLoaded()
-{
-    return m_applicationLoaded;
-}
+Q_SIGNALS:
+    void volumeChanged();
 
-void UtilModel::setApplicationLoaded(bool applicationLoaded)
-{
-    if (applicationLoaded != m_applicationLoaded) {
-        m_applicationLoaded = applicationLoaded;
-        Q_EMIT applicationLoadedChanged();
-    }
-}
+protected:
+    explicit AlarmPlayer(QObject *parent = nullptr);
 
+private:
+    QMediaPlayer *m_player;
+    quint64 startPlayingTime = 0;
+
+    bool userStop = false; // indicate if user asks to stop
+private slots:
+    void loopAudio(QMediaPlayer::State state);
+};
+
+#endif // ALARMPLAYER_H

@@ -19,6 +19,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+#include <QDBusConnection>
 #include <QDateTime>
 #include <QDebug>
 #include <QJsonDocument>
@@ -30,11 +31,12 @@
 #include <KNotification>
 #include <KSharedConfig>
 
+#include "alarmadaptor.h"
 #include "alarmmodel.h"
 #include "alarmplayer.h"
 #include "alarms.h"
 #include "alarmwaitworker.h"
-#include "kclocksettings.h"
+#include "kclockdsettings.h"
 
 // alarm created from UI
 Alarm::Alarm(AlarmModel *parent, QString name, int minutes, int hours, int daysOfWeek)
@@ -46,68 +48,61 @@ Alarm::Alarm(AlarmModel *parent, QString name, int minutes, int hours, int daysO
     , m_hours(hours)
     , m_daysOfWeek(daysOfWeek)
 {
-    connect(this, &Alarm::alarmChanged, this, &Alarm::save);
-    connect(this, &Alarm::alarmChanged, this, &Alarm::calculateNextRingTime); // the slots will be called according to
-                                                                              // the order they have been connected
-                                                                              // always connect this first than AlarmModel::scheduleAlarm
-
-    calculateNextRingTime();
-
-    if (parent) {
-        connect(this, &Alarm::propertyChanged, parent, &AlarmModel::updateUi);
-        connect(this, &Alarm::alarmChanged, parent, &AlarmModel::scheduleAlarm); // connect this last
-    }
-
-    this->save();
+    initialize(parent);
 }
 
 // alarm from json (loaded from storage)
 Alarm::Alarm(QString serialized, AlarmModel *parent)
     : QObject(parent)
 {
-    if (serialized == "") {
+    if (serialized.isEmpty()) {
         m_uuid = QUuid::createUuid();
     } else {
         QJsonDocument doc = QJsonDocument::fromJson(serialized.toUtf8());
         QJsonObject obj = doc.object();
 
-        m_uuid = QUuid::fromString(obj["uuid"].toString());
-        m_name = obj["name"].toString();
-        m_minutes = obj["minutes"].toInt();
-        m_hours = obj["hours"].toInt();
-        m_daysOfWeek = obj["daysOfWeek"].toInt();
-        m_enabled = obj["enabled"].toBool();
-        m_snooze = obj["snooze"].toInt();
-        m_ringtoneName = obj["ringtoneName"].toString();
-        m_audioPath = QUrl::fromLocalFile(obj["audioPath"].toString());
+        m_uuid = QUuid::fromString(obj[QStringLiteral("uuid")].toString());
+        m_name = obj[QStringLiteral("name")].toString();
+        m_minutes = obj[QStringLiteral("minutes")].toInt();
+        m_hours = obj[QStringLiteral("hours")].toInt();
+        m_daysOfWeek = obj[QStringLiteral("daysOfWeek")].toInt();
+        m_enabled = obj[QStringLiteral("enabled")].toBool();
+        m_snooze = obj[QStringLiteral("snooze")].toInt();
+        m_audioPath = QUrl::fromLocalFile(obj[QStringLiteral("audioPath")].toString());
     }
+    initialize(parent);
+}
 
+void Alarm::initialize(AlarmModel *parent)
+{
     connect(this, &Alarm::alarmChanged, this, &Alarm::save);
-    connect(this, &Alarm::alarmChanged, this, &Alarm::calculateNextRingTime); // the slots will be called according to
-                                                                              // the order they have been connected
-                                                                              // always connect this first than AlarmModel::scheduleAlarm
+    connect(this, &Alarm::alarmChanged, this, &Alarm::calculateNextRingTime); // the slots will be called according to the order they have been connected.
+                                                                              // always connect this before calling AlarmModel::scheduleAlarm
 
     calculateNextRingTime();
 
     if (parent) {
-        connect(this, &Alarm::propertyChanged, parent, &AlarmModel::updateUi);
         connect(this, &Alarm::alarmChanged, parent, &AlarmModel::scheduleAlarm); // connect this last
     }
+
+    // DBus
+    new AlarmAdaptor(this);
+    QDBusConnection::sessionBus().registerObject(QStringLiteral("/alarms/") + this->uuid().toString(QUuid::Id128), this);
+    connect(this, &QObject::destroyed, [this] { QDBusConnection::sessionBus().unregisterObject(QStringLiteral("/alarms/") + this->uuid().toString(QUuid::Id128), QDBusConnection::UnregisterNode); });
 }
 
 // alarm to json
 QString Alarm::serialize()
 {
     QJsonObject obj;
-    obj["uuid"] = uuid().toString();
-    obj["name"] = name();
-    obj["minutes"] = minutes();
-    obj["hours"] = hours();
-    obj["daysOfWeek"] = daysOfWeek();
-    obj["enabled"] = enabled();
-    obj["snooze"] = snooze();
-    obj["ringtoneName"] = ringtoneName();
-    obj["audioPath"] = m_audioPath.toLocalFile();
+    obj[QStringLiteral("uuid")] = uuid().toString();
+    obj[QStringLiteral("name")] = name();
+    obj[QStringLiteral("minutes")] = minutes();
+    obj[QStringLiteral("hours")] = hours();
+    obj[QStringLiteral("daysOfWeek")] = daysOfWeek();
+    obj[QStringLiteral("enabled")] = enabled();
+    obj[QStringLiteral("snooze")] = snooze();
+    obj[QStringLiteral("audioPath")] = m_audioPath.toLocalFile();
     return QString(QJsonDocument(obj).toJson(QJsonDocument::Compact));
 }
 
@@ -127,14 +122,12 @@ void Alarm::ring()
 
     qDebug() << "Ringing alarm" << m_name << "and sending notification...";
 
-    KNotification *notif = new KNotification("alarm");
-    notif->setActions(QStringList() << "Dismiss"
-                                    << "Snooze");
-    notif->setIconName("kclock");
+    KNotification *notif = new KNotification(QStringLiteral("alarm"));
+    notif->setActions(QStringList {i18n("Dismiss"), i18n("Snooze")});
+    notif->setIconName(QStringLiteral("kclock"));
     notif->setTitle(name());
-    notif->setText(QDateTime::currentDateTime().toLocalTime().toString("hh:mm ap")); // TODO
+    notif->setText(QLocale::system().toString(QTime::currentTime(), QLocale::ShortFormat)); // TODO
     notif->setDefaultAction(i18n("View"));
-    notif->setUrgency(KNotification::HighUrgency);
     notif->setFlags(KNotification::NotificationFlag::Persistent);
 
     connect(notif, &KNotification::defaultActivated, this, &Alarm::handleDismiss);
@@ -173,24 +166,21 @@ void Alarm::handleDismiss()
     m_justSnoozed = false;
 
     save();
-    emit alarmChanged();
+    Q_EMIT alarmChanged();
 }
 
 void Alarm::handleSnooze()
 {
     m_justSnoozed = true;
 
-    KClockSettings settings;
     alarmNotifOpen = false;
-    qDebug() << "Alarm snoozed (" << settings.alarmSnoozeLengthDisplay() << ")";
+    qDebug() << "Alarm snoozed (" << KClockSettings::self()->alarmSnoozeLength() << ")";
     AlarmPlayer::instance().stop();
 
-    setSnooze(snooze() + 60 * settings.alarmSnoozeLength()); // snooze 5 minutes
-    m_enabled = true;                                        // can't use setSnooze because it resets snooze time
+    setSnooze(snooze() + 60 * KClockSettings::self()->alarmSnoozeLength()); // snooze 5 minutes
+    m_enabled = true;                                                       // can't use setSnooze because it resets snooze time
     save();
-
-    emit propertyChanged();
-    emit alarmChanged();
+    Q_EMIT alarmChanged();
 }
 
 void Alarm::calculateNextRingTime()
@@ -233,31 +223,4 @@ qint64 Alarm::nextRingTime()
         calculateNextRingTime();
     }
     return m_nextRingTime;
-}
-
-QString Alarm::timeToRingFormated()
-{
-    auto remaining = this->nextRingTime() - QDateTime::currentSecsSinceEpoch();
-    int day = remaining / (24 * 3600);
-    int hour = remaining / 3600 - day * 24;
-    int minute = remaining / 60 - day * 24 * 60 - hour * 60;
-    QString arg;
-    if (day > 0) {
-        arg += i18np("%1 day", "%1 days", day);
-    }
-    if (hour > 0) {
-        if (day > 0 && minute > 0) {
-            arg += i18n(", ");
-        } else if (day > 0) {
-            arg += i18n(" and ");
-        }
-        arg += i18np("%1 hour", "%1 hours", hour);
-    }
-    if (minute > 0) {
-        if (day > 0 || hour > 0) {
-            arg += i18n(" and ");
-        }
-        arg += i18np("%1 minute", "%1 minutes", minute);
-    }
-    return i18n("Alarm will be rung after %1", arg);
 }

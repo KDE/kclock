@@ -20,14 +20,15 @@
  */
 
 #pragma once
+
+#include <QAbstractListModel>
 #include <QObject>
 
+#include "alarmmodelinterface.h"
 class Alarm;
-class KStatusNotifierItem;
-class AlarmModel : public QObject
+class AlarmModel : public QAbstractListModel
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "org.kde.kclock.AlarmModel")
 public:
     static AlarmModel *instance()
     {
@@ -35,33 +36,35 @@ public:
         return singleton;
     }
 
-    void configureWakeups(); // needs to be called to start worker thread, or configure powerdevil (called in main)
+    enum {
+        NameRole = Qt::DisplayRole,
+        EnabledRole = Qt::UserRole + 1,
+        HoursRole,
+        MinutesRole,
+        DaysOfWeekRole,
+        AlarmRole,
+    };
 
-    Q_SCRIPTABLE void removeAlarm(QString uuid);
-    Q_SCRIPTABLE void addAlarm(int hours, int minutes, int daysOfWeek, QString name, QString ringtonePath); // in 24 hours units
+    int rowCount(const QModelIndex &parent) const override;
+    QVariant data(const QModelIndex &index, int role) const override;
+    bool setData(const QModelIndex &index, const QVariant &value, int role) override;
+    Qt::ItemFlags flags(const QModelIndex &index) const override;
+    QHash<int, QByteArray> roleNames() const override;
 
-Q_SIGNALS:
-    Q_SCRIPTABLE void alarmAdded(QString uuid);
-    Q_SCRIPTABLE void alarmRemoved(QString uuid);
-    Q_SCRIPTABLE void nextAlarm(quint64 nextAlarmTimeStamp); // next alarm wakeup timestamp, or 0 if there are none
+    Q_INVOKABLE void updateUi();
 
-public Q_SLOTS:
-    Q_SCRIPTABLE quint64 getNextAlarm();
-    void scheduleAlarm();
-    void wakeupCallback(int cookie);
+    Q_INVOKABLE void remove(int index);
+
+    Q_INVOKABLE void addAlarm(int hours, int minutes, int daysOfWeek, QString name, QString ringtonePath = 0); // in 24 hours units, ringTone could be chosen from a list
+
+    Q_INVOKABLE QString timeToRingFormated(int hours, int minutes, int daysOfWeek); // for new alarm use
 private Q_SLOTS:
-    void updateNotifierItem(quint64 time); // update notify icon in systemtray
+    void addAlarm(QString uuid);
+    void removeAlarm(QString uuid);
 
 private:
-    void removeAlarm(int index);
+    org::kde::kclock::AlarmModel *m_interface;
 
     explicit AlarmModel(QObject *parent = nullptr);
-
-    KStatusNotifierItem *m_notifierItem = nullptr;
-
-    quint64 m_nextAlarmTime = 0;
-    int m_cookie = -1;             // token for wakeup call auth
-    QList<Alarm *> alarmsToBeRung; // the alarms that will be rung on next wakeup
-
-    QList<Alarm *> m_alarmsList;
+    QList<Alarm *> alarmsList;
 };

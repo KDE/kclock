@@ -51,13 +51,18 @@ Kirigami.ScrollablePage {
                     selectedAlarm.minutes = minutes;
                     selectedAlarm.daysOfWeek = alarmDaysOfWeek;
 
-                    selectedAlarm.alarmChanged(); // emit this signal, auto save
+                    selectedAlarm.save(); // remote save
+                    alarmPlayer.stop();
+                    pageStack.pop();
+                    if (selectedAlarm.enabled) {
+                        showPassiveNotification(selectedAlarm.timeToRingFormated());
+                    }
                 } else {
-                    selectedAlarm = alarmModel.addAlarm(hours, minutes, alarmDaysOfWeek, selectedAlarmName.text);
+                    alarmModel.addAlarm(hours, minutes, alarmDaysOfWeek, selectedAlarmName.text);
+                    alarmPlayer.stop();
+                    pageStack.pop();
+                    showPassiveNotification(alarmModel.timeToRingFormated(hours, minutes, alarmDaysOfWeek));
                 }
-                alarmPlayer.stop();
-                pageStack.pop();
-                showPassiveNotification(selectedAlarm.timeToRingFormated());
             }
         }
     }
@@ -72,6 +77,15 @@ Kirigami.ScrollablePage {
             hours: selectedAlarm ? hoursTo12(selectedAlarm.hours) : 0
             minutes: selectedAlarm ? selectedAlarm.minutes : 0
             pm: selectedAlarm ? selectedAlarm.hours >= 12 : false
+            
+            Component.onCompleted: {
+                if (!selectedAlarm) { // new alarm
+                    let date = new Date();
+                    hours = date.getHours() >= 12 ? date.getHours() - 12 : date.getHours();
+                    minutes = date.getMinutes();
+                    pm = date.getHours() >= 12;
+                }
+            }
 
             height: 400
             anchors.horizontalCenter: parent.horizontalCenter

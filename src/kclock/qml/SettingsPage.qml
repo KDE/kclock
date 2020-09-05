@@ -25,17 +25,17 @@ import org.kde.kirigami 2.11 as Kirigami
 
 Kirigami.ScrollablePage {
     title: i18n("Settings")
-    
+
     topPadding: 0
     bottomPadding: 0
     leftPadding: 0
     rightPadding: 0
     Kirigami.ColumnView.fillWidth: false
-    
+
     // settings list
     ColumnLayout {
         spacing: 0
-        
+
         ItemDelegate {
             Layout.fillWidth: true
             implicitHeight: Kirigami.Units.gridUnit * 3
@@ -53,27 +53,27 @@ Kirigami.ScrollablePage {
                     font.weight: Font.Bold
                 }
                 Label {
-                    text: alarmPlayer.volume
+                    text: String(settingsModel.volume)
                 }
             }
         }
-        
+
         Kirigami.Separator {
             Layout.fillWidth: true
         }
-        
+
         ItemDelegate {
             Layout.fillWidth: true
             implicitHeight: Kirigami.Units.gridUnit * 3
 
             onClicked: silenceAlarmAfter.open()
-            
+
             ColumnLayout {
                 spacing: -5
                 anchors.leftMargin: Kirigami.Units.gridUnit
                 anchors.rightMargin: Kirigami.Units.gridUnit
                 anchors.fill: parent
-                
+
                 Label {
                     text: i18n("Silence Alarm After")
                     font.weight: Font.Bold
@@ -83,23 +83,23 @@ Kirigami.ScrollablePage {
                 }
             }
         }
-        
+
         Kirigami.Separator {
             Layout.fillWidth: true
         }
-        
+
         ItemDelegate {
             Layout.fillWidth: true
             implicitHeight: Kirigami.Units.gridUnit * 3
 
             onClicked: alarmSnoozeLength.open()
-            
+
             ColumnLayout {
                 spacing: -5
                 anchors.leftMargin: Kirigami.Units.gridUnit
                 anchors.rightMargin: Kirigami.Units.gridUnit
                 anchors.fill: parent
-                
+
                 Label {
                     text: i18n("Alarm Snooze Length")
                     font.weight: Font.Bold
@@ -109,11 +109,11 @@ Kirigami.ScrollablePage {
                 }
             }
         }
-        
+
         Kirigami.Separator {
             Layout.fillWidth: true
         }
-        
+
         ItemDelegate {
             Layout.fillWidth: true
             font.bold: true
@@ -123,11 +123,11 @@ Kirigami.ScrollablePage {
             implicitHeight: Kirigami.Units.gridUnit * 3
             onClicked: pageStack.push(aboutPage)
         }
-        
+
         Kirigami.Separator {
             Layout.fillWidth: true
         }
-        
+
     }
 
     // alarm volume dialog
@@ -151,18 +151,19 @@ Kirigami.ScrollablePage {
                 Layout.fillWidth: true
                 from: 0
                 to: 100
-                value: settingsModel.alarmVolume // this doesn't auto update Cpp value
+                value: alarmPlayer.volume
                 onPressedChanged: {
                     if(!pressed){
-                        alarmPlayer.setVolume(volumeControl.value);
                         alarmPlayer.play();
                     }
                 }
             }
         }
-        onClosed: alarmPlayer.stop()
+        onClosed: {alarmPlayer.stop();
+                    settingsModel.volume = volumeControl.value;
+        }
     }
-    
+
     // Silence alarm after dialog
     Dialog {
         id: silenceAlarmAfter
@@ -173,27 +174,27 @@ Kirigami.ScrollablePage {
         height: Kirigami.Units.gridUnit * 20
         standardButtons: Dialog.Close
         title: i18n("Silence Alarm After")
-        
+
         contentItem: ScrollView {
             ListView {
                 model: ListModel {
-                    ListElement { 
+                    ListElement {
                         name: "30 seconds"
                         value: 30
                     }
-                    ListElement { 
+                    ListElement {
                         name: "1 minute"
                         value: 60
                     }
-                    ListElement { 
+                    ListElement {
                         name: "5 minutes"
                         value: 300
                     }
-                    ListElement { 
+                    ListElement {
                         name: "10 minutes"
                         value: 600
                     }
-                    ListElement { 
+                    ListElement {
                         name: "15 minutes"
                         value: 900
                     }
@@ -217,7 +218,7 @@ Kirigami.ScrollablePage {
             Component.onCompleted: background.visible = true
         }
     }
-    
+
     // Alarm snooze length dialog
     Dialog {
         id: alarmSnoozeLength
@@ -228,27 +229,27 @@ Kirigami.ScrollablePage {
         height: Kirigami.Units.gridUnit * 20
         standardButtons: Dialog.Close
         title: i18n("Alarm Snooze Length")
-        
+
         contentItem: ScrollView {
             ListView {
                 model: ListModel {
-                    ListElement { 
+                    ListElement {
                         name: "1 minute"
                         value: 1
                     }
-                    ListElement { 
+                    ListElement {
                         name: "2 minutes"
                         value: 2
                     }
-                    ListElement { 
+                    ListElement {
                         name: "3 minutes"
                         value: 3
                     }
-                    ListElement { 
+                    ListElement {
                         name: "4 minutes"
                         value: 4
                     }
-                    ListElement { 
+                    ListElement {
                         name: "5 minutes"
                         value: 5
                     }

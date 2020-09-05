@@ -50,7 +50,7 @@ void AlarmWaitWorker::wait(int waitId)
     poll(&fd, 1, -1);
 
     if (fd.revents & POLLNVAL) {
-        emit error();
+        Q_EMIT error();
         return;
     }
     // ensure that there is one wakeup and not multiple
@@ -61,13 +61,13 @@ void AlarmWaitWorker::wait(int waitId)
 
     qDebug() << "waiting end" << waitId;
 
-    emit finished();
+    Q_EMIT finished();
 }
 
 void AlarmWaitWorker::setNewTime(qint64 timestamp)
 {
     m_waitId = std::rand();
-    
+
     m_waitEndTime = timestamp;
     struct itimerspec timerSpec;
     timerSpec.it_value.tv_sec = m_waitEndTime;
@@ -76,7 +76,7 @@ void AlarmWaitWorker::setNewTime(qint64 timestamp)
     timerSpec.it_interval.tv_nsec = 0;
     timerfd_settime(m_timerFd, TFD_TIMER_ABSTIME, &timerSpec, nullptr); // absolute time
 
-    qDebug() << "start waiting, id:" << m_waitId;
+    qDebug() << "start waiting, id:" << m_waitId << " Wait Time: " << timestamp;
 
-    emit startWait(m_waitId);
+    Q_EMIT startWait(m_waitId);
 }
