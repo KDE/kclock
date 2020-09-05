@@ -1,5 +1,5 @@
 # KClock <img src="logo.png" width="40"/> 
-A convergent clock application for Plasma Mobile and Desktop.
+A convergent clock application for Plasma.
 
 ## Features
 * Alarms
@@ -13,7 +13,7 @@ A convergent clock application for Plasma Mobile and Desktop.
 * Development channel: https://matrix.to/#/#plasmamobile:matrix.org
 
 ## Installing
-This will install kclock, kclockd, and the plasmoids onto the system. When running kclock, make sure that kclockd is running first (it is configured to autostart in sessions).
+This will compile and install kclock, kclockd, and the plasmoids onto the system. When running kclock, make sure that kclockd is running first (it is configured to autostart in sessions).
 
 ```
 mkdir build
