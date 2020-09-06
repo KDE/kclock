@@ -67,7 +67,7 @@ KClock_KWeather_3x3::KClock_KWeather_3x3(QObject *parent, const QVariantList &ar
         auto alarmTime = KClock_reply.value();
         if (alarmTime > 0) {
             auto dateTime = QDateTime::fromSecsSinceEpoch(alarmTime).toLocalTime();
-            m_string = m_local.standaloneDayName(dateTime.date().dayOfWeek(), QLocale::ShortFormat) + " " + m_local.toString(dateTime.time(), QLocale::ShortFormat);
+            m_string = m_local.standaloneDayName(dateTime.date().dayOfWeek(), QLocale::ShortFormat) + " " + m_local.toString(dateTime.time(), QStringLiteral("hh:mm"));
             m_hasAlarm = true;
         } else
             m_hasAlarm = false;
@@ -99,7 +99,7 @@ void KClock_KWeather_3x3::updateAlarm(qulonglong time)
 {
     auto dateTime = QDateTime::fromSecsSinceEpoch(time).toLocalTime();
     if (time > 0) {
-        m_string = m_local.standaloneDayName(dateTime.date().dayOfWeek(), QLocale::ShortFormat) + QStringLiteral(" ") + m_local.toString(dateTime.time(), QLocale::ShortFormat);
+        m_string = m_local.standaloneDayName(dateTime.date().dayOfWeek(), QLocale::ShortFormat) + QStringLiteral(" ") + m_local.toString(dateTime.time(), QStringLiteral("hh:mm"));
         m_hasAlarm = true;
     } else {
         m_hasAlarm = false;
@@ -131,12 +131,11 @@ void KClock_KWeather_3x3::updateTime()
 }
 QString KClock_KWeather_3x3::time()
 {
-    return m_local.toString(QTime::currentTime(), QLocale::ShortFormat);
+    return m_local.toString(QTime::currentTime(), QStringLiteral("hh:mm"));
 }
 QString KClock_KWeather_3x3::date()
 {
-    return m_local.standaloneDayName(QDate::currentDate().dayOfWeek()) + QStringLiteral(", ") + m_local.standaloneMonthName(QDate::currentDate().month(), QLocale::ShortFormat) + QStringLiteral(" ") +
-        QString::number(QDate::currentDate().day());
+    return m_local.toString(QDate::currentDate(), QStringLiteral("ddd, MMMM d"));
 }
 KClock_KWeather_3x3::~KClock_KWeather_3x3()
 {
