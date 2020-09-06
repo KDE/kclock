@@ -49,7 +49,14 @@ There are numerous reasons that causes kclockd will start up in `--no-powerdevil
 * All of the other possiblities I forgot to mention
 
 ## KClockd D-Bus interface
-TODO
+After install, five D-Bus interface XML files are copied to the KDE D-Bus interface directory. These are:
+* org.kde.kclockd.KClockSettings.xml
+* org.kde.kclockd.Alarm.xml
+* org.kde.kclockd.AlarmModel.xml
+* org.kde.kclockd.TimerModel.xml
+* org.kde.kclockd.Timer.xml
+
+One can use these files to generate D-Bus adaptor. Things worth noting is that Alarm and Timer will be registered under path "/Alarms/" or "/Timers/" + its uuid's Id128 string representation. I.e.  *8c7d59b3befa49a48853959fe7e025d7*. However, the "remove" slots in AlarmModel or TimerModel only accept its normal representation, i.e. *{8c7d59b3-befa-49a4-8853-959fe7e025d7}*. One can get normal string by calling getUUID() method in each alarm/timer. Timer is in seconds precision, but you may want to call elapsed() method every 500ms or so to avoid skipped seconds caused by time used in calling and caculation. 
 
 ## kclock
 A front end for kclockd written in Kirigami for Plasma Mobile and Desktop (located in src/kclock).
