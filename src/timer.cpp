@@ -128,5 +128,7 @@ void Timer::sendNotification()
     notif->setDefaultAction(i18n("View"));
     notif->setUrgency(KNotification::HighUrgency);
     notif->setFlags(KNotification::NotificationFlag::LoopSound | KNotification::NotificationFlag::Persistent);
+    connect(notif, &KNotification::closed, [notif] { notif->close(); });
+
     notif->sendEvent();
 }

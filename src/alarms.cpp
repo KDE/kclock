@@ -134,6 +134,7 @@ void Alarm::ring()
     connect(notif, &KNotification::action1Activated, this, &Alarm::handleDismiss);
     connect(notif, &KNotification::action2Activated, this, &Alarm::handleSnooze);
     connect(notif, &KNotification::closed, this, &Alarm::handleDismiss);
+    connect(notif, &KNotification::closed, [notif] { notif->close(); });
 
     notif->sendEvent();
 
