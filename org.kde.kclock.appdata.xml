@@ -17,6 +17,7 @@
   <name xml:lang="nn">Klokke</name>
   <name xml:lang="pt">Relógio</name>
   <name xml:lang="pt-BR">Relógio</name>
+  <name xml:lang="ro">Ceas</name>
   <name xml:lang="sk">Hodiny</name>
   <name xml:lang="sl">Clock</name>
   <name xml:lang="sv">Klocka</name>
@@ -37,6 +38,7 @@
   <summary xml:lang="nn">Eit enkelt alt-i-eitt-ur.</summary>
   <summary xml:lang="pt">Uma aplicação simples de relógio tudo-em-um.</summary>
   <summary xml:lang="pt-BR">Um simples aplicativo de relógio tudo em um.</summary>
+  <summary xml:lang="ro">Aplicație simplă de ceas.</summary>
   <summary xml:lang="sk">Jednoduchá hodinová aplikácia všetko v jednom.</summary>
   <summary xml:lang="sl">Enostavni program za uro.</summary>
   <summary xml:lang="sv">Ett enkelt allt-i-ett klockprogram.</summary>
@@ -60,6 +62,7 @@
   <developer_name xml:lang="nn">KDE-fellesskapet</developer_name>
   <developer_name xml:lang="pt">Comunidade do KDE</developer_name>
   <developer_name xml:lang="pt-BR">Comunidade KDE</developer_name>
+  <developer_name xml:lang="ro">Comunitatea KDE</developer_name>
   <developer_name xml:lang="sk">KDE komunita</developer_name>
   <developer_name xml:lang="sl">Skupnost KDE</developer_name>
   <developer_name xml:lang="sv">KDE-gemenskapen</developer_name>
@@ -81,6 +84,7 @@
     <p xml:lang="nn">KClock er eit mobil­vennleg klokke­program med stoppeklokke, nedtaljar og alarmar.</p>
     <p xml:lang="pt">O KClock é uma aplicação móvel e amigável de relógio, que inclui alarmes, cronómetros e temporizadores</p>
     <p xml:lang="pt-BR">O KClock é um aplicativo de relógio para dispositivos móveis, que inclui um cronômetro, temporizador e alarmes</p>
+    <p xml:lang="ro">KClock e o aplicație de ceas prietenoasă cu dispozitivele mobile, ce include un cronometru, temporizator și alarme</p>
     <p xml:lang="sk">KClock je hodinová aplikácia pre mobily, ktorá obsahuje stopky, časovač a budíky</p>
     <p xml:lang="sl">KClock je mobilni program, ki vsebuje štoparico, časomerilnik in alarme</p>
     <p xml:lang="sv">Kclock är ett mobilvänligt klockprogram, som inkluderar ett stoppur, tidtagning och alarm</p>
