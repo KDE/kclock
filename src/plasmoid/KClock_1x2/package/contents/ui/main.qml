@@ -13,21 +13,24 @@ import org.kde.kirigami 2.11 as Kirigami
 Item {
     Plasmoid.backgroundHints: "ShadowBackground";
     Plasmoid.fullRepresentation: Item {
-        Layout.preferredWidth: alarmLabel.width
+        property int fontSize: mainItem.height / 4
+        id: mainItem
+        Layout.preferredHeight: Kirigami.Units.gridUnit * 10
+        Layout.preferredWidth: mainDisplay.width
         MouseArea {
             anchors.fill: parent
             onClicked: plasmoid.nativeInterface.openKClock()
         }
         ColumnLayout {
-            spacing: 0
+            id: mainDisplay
+            spacing:0
             PlasmaComponents.Label {
                 text: plasmoid.nativeInterface.time
-                font.pointSize: Kirigami.Theme.defaultFont.pointSize * 3
+                font.pointSize: fontSize
                 color: "white"
                 Layout.alignment: Qt.AlignHCenter
             }
             RowLayout {
-                id: alarmLabel
                 visible: plasmoid.nativeInterface.hasAlarm
                 Layout.alignment: Qt.AlignHCenter
                 Kirigami.Icon {
@@ -40,15 +43,10 @@ Item {
                     Layout.alignment: Qt.AlignCenter
                     text: plasmoid.nativeInterface.alarmTime
                     color: "white"
-                    font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.5
+                    font.pointSize: fontSize / 2
                 }
             }
         }
     }
-    Plasmoid.compactRepresentation: Kirigami.Icon {
-        source: "notifications"
-        height: Kirigami.Units.gridUnit
-        width: Kirigami.Units.gridUnit
-    }
-    Plasmoid.status: plasmoid.nativeInterface.hasAlarm ? PlasmaCore.Types.ActiveStatus : PlasmaCore.Types.Hidden
+    Plasmoid.status : plasmoid.nativeInterface.hasAlarm ? PlasmaCore.Types.ActiveStatus : PlasmaCore.Types.Hidden
 }

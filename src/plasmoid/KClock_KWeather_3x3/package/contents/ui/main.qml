@@ -13,32 +13,33 @@ import org.kde.kirigami 2.11 as Kirigami
 Item {
     Plasmoid.backgroundHints: "ShadowBackground";
     Plasmoid.fullRepresentation: Item {
-        Layout.preferredWidth: mainLayout.width
-        Layout.preferredHeight: mainLayout.height
-        MouseArea {
-            anchors.fill: parent
-            onClicked: plasmoid.nativeInterface.openKClock()
-        }
+        property int fontSize: mainItem.height / 4
+        id: mainItem
+        Layout.preferredHeight: Kirigami.Units.gridUnit * 12
+        Layout.preferredWidth: fontSize * 24
         ColumnLayout {
             id: mainLayout
+            Layout.fillWidth: true
             spacing: 0
             PlasmaComponents.Label {
                 text: plasmoid.nativeInterface.time
-                font.pointSize: Kirigami.Theme.defaultFont.pointSize * 6
+                font.pointSize: fontSize
                 color: "white"
                 font.bold: true
                 Layout.alignment: Qt.AlignHCenter
             }
             RowLayout {
+                Layout.fillWidth: true
                 Layout.alignment: Qt.AlignHCenter
                 PlasmaComponents.Label {
                     text: plasmoid.nativeInterface.date
-                    font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.5
+                    font.pointSize: fontSize / 3
                     color: "white"
                     Layout.rightMargin: Kirigami.Units.gridUnit
                 }
                 RowLayout {
                     id: alarmLabel
+                    Layout.fillWidth: true
                     visible: plasmoid.nativeInterface.hasAlarm
                     Kirigami.Icon {
                         source: "notifications"
@@ -50,52 +51,60 @@ Item {
                         Layout.alignment: Qt.AlignCenter
                         text: plasmoid.nativeInterface.alarmTime
                         color: "white"
-                        font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.5
+                        font.pointSize: fontSize / 3
                     }
+                }
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: plasmoid.nativeInterface.openKClock()
                 }
             }
             RowLayout {
                 id: weatherLayout
-
+                Layout.fillWidth: true
                 // left city name and weather description
                 ColumnLayout {
+                    Layout.fillWidth: true
                     PlasmaComponents.Label {
+                        id: cityName
                         text: plasmoid.nativeInterface.cityName
-                        font.pointSize: Kirigami.Theme.defaultFont.pointSize * 2
+                        font.pointSize: fontSize / 2
                         font.bold: true
                         color: "white"
                     }
                     PlasmaComponents.Label {
                         text: plasmoid.nativeInterface.description
-                        font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.5
+                        font.pointSize: fontSize / 3
                         color: "white"
                     }
                 }
                 // center weather icon
                 Kirigami.Icon {
                     source: plasmoid.nativeInterface.weatherIcon
-                    Layout.preferredHeight: Kirigami.Units.gridUnit * 4
-                    Layout.preferredWidth: Kirigami.Units.gridUnit * 4
+                    Layout.preferredHeight: fontSize
+                    Layout.preferredWidth: fontSize
                 }
                 // right temperature
                 ColumnLayout {
+                    Layout.fillWidth: true
                     PlasmaComponents.Label {
+                        id: tempNow
                         text: plasmoid.nativeInterface.tempNow
-                        font.pointSize: Kirigami.Theme.defaultFont.pointSize * 2
+                        font.pointSize: fontSize / 2
                         font.bold: true
                         color: "white"
                     }
                     RowLayout {
                         PlasmaComponents.Label {
                             text: plasmoid.nativeInterface.maxTemp
-                            font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.5
+                            font.pointSize: fontSize / 3
                             font.bold: true
                             color: "white"
                         }
                         PlasmaComponents.Label {
                             Layout.alignment: Qt.AlignBottom
                             text: plasmoid.nativeInterface.minTemp
-                            font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1
+                            font.pointSize: fontSize / 4
                             font.bold: true
                             color: "white"
                         }
