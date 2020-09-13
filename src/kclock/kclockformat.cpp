@@ -72,7 +72,7 @@ bool KclockFormat::isChecked(int dayIndex, int daysOfWeek)
 
 void KclockFormat::startTimer()
 {
-    m_currentTime = QLocale::system().toString(QTime::currentTime(), QStringLiteral("hh:mm:ss"));
+    m_currentTime = QLocale::system().toString(QTime::currentTime(), QStringLiteral("hh:mm"));
     m_hours = QTime::currentTime().hour() >= 12 ? QTime::currentTime().hour() - 12 : QTime::currentTime().hour();
     m_minutesCounter = (QTime::currentTime().msecsSinceStartOfDay() / 1000) % 60; // seconds to next minute
     m_hoursCounter = QTime::currentTime().minute();
