@@ -27,7 +27,6 @@ import org.kde.kirigami 2.11 as Kirigami
 Kirigami.ApplicationWindow
 {
     id: appwindow
-    visible: false // don't open in daemon mode
     width: Kirigami.Settings.isMobile ? 650 : 210
     height: 500
 

@@ -118,7 +118,6 @@ int main(int argc, char *argv[])
         if (parser->isSet(QStringLiteral("page"))) {
             QMetaObject::invokeMethod(engine->rootObjects().first(), "switchToPage", Q_ARG(QVariant, parser->value("page")));
         }
-        QMetaObject::invokeMethod(engine->rootObjects().first(), "show");
     }
     return app.exec();
 }
