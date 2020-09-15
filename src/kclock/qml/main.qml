@@ -28,7 +28,7 @@ Kirigami.ApplicationWindow
 {
     id: appwindow
     visible: false // don't open in daemon mode
-    width: 650
+    width: Kirigami.Settings.isMobile ? 650 : 210
     height: 500
 
     title: i18n("Clock")
