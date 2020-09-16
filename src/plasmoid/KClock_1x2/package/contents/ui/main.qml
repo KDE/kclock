@@ -15,8 +15,9 @@ Item {
     Plasmoid.fullRepresentation: Item {
         property int fontSize: mainItem.height / 4
         id: mainItem
-        Layout.preferredHeight: Kirigami.Units.gridUnit * 10
-        Layout.preferredWidth: mainDisplay.width
+        Layout.preferredHeight: plasmoid.nativeInterface.hasAlarm ? Kirigami.Theme.defaultFont.pointSize * 8 : Kirigami.Theme.defaultFont.pointSize * 16
+        Layout.preferredWidth: Kirigami.Units.gridUnit * 20
+        Layout.alignment: Qt.AlignHCenter
         MouseArea {
             anchors.fill: parent
             onClicked: plasmoid.nativeInterface.openKClock()
