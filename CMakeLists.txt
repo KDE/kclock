@@ -57,6 +57,11 @@ install(PROGRAMS org.kde.kclockd-autostart.desktop DESTINATION ${KDE_INSTALL_AUT
 install(FILES org.kde.kclock.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 install(FILES kclock.svg DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/scalable/apps/)
 
+configure_file(org.kde.kclockd.service.in
+               ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.service)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.service
+        DESTINATION ${KDE_INSTALL_DBUSSERVICEDIR})
+
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
 # add clang-format target for all our real source files
