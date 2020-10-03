@@ -27,7 +27,7 @@ import org.kde.kirigami 2.11 as Kirigami
 Kirigami.ApplicationWindow
 {
     id: appwindow
-    width: Kirigami.Settings.isMobile ? 650 : 210
+    width: Kirigami.Settings.isMobile ? 400 : 650
     height: 500
 
     title: i18n("Clock")
