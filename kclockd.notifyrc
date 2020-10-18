@@ -1,4 +1,5 @@
 [Global]
+IconName=kclock
 Name=Clock
 Name[ca]=Rellotge
 Name[ca@valencia]=Rellotge
