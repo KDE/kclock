@@ -41,7 +41,9 @@ Kirigami.ApplicationWindow
     
     globalDrawer: Kirigami.GlobalDrawer {
         title: "Clock"
-        modal: !wideScreen
+        
+        property bool isWidescreen: appwindow.width > appwindow.height
+        modal: !isWidescreen
         bannerVisible: true
         width: 200
 
