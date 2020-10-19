@@ -28,7 +28,7 @@ import org.kde.kirigami 2.12 as Kirigami
 Kirigami.ScrollablePage {
     
     title: "Time"
-    
+    icon.name: "clock"
     // time zones
     ListView {
         model: timeZoneShowModel

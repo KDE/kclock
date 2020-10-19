@@ -25,7 +25,7 @@ import org.kde.kirigami 2.11 as Kirigami
 
 Kirigami.ScrollablePage {
     title: i18n("Settings")
-
+    icon.name: "settings-configure"
     topPadding: 0
     bottomPadding: 0
     leftPadding: 0
@@ -121,7 +121,7 @@ Kirigami.ScrollablePage {
             leftPadding: Kirigami.Units.gridUnit
             rightPadding: Kirigami.Units.gridUnit
             implicitHeight: Kirigami.Units.gridUnit * 3
-            onClicked: pageStack.push(aboutPage)
+            onClicked: swipeNavigator.layers.push(aboutPage)
         }
 
         Kirigami.Separator {

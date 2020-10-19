@@ -28,7 +28,7 @@ import kclock 1.0
 Kirigami.ScrollablePage {
     
     title: i18n("Alarms")
-
+    icon.name: "notifications"
     mainAction: Kirigami.Action {
         iconName: "list-add"
         text: "New Alarm"

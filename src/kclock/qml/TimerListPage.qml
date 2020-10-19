@@ -28,7 +28,7 @@ import kclock 1.0
 Kirigami.ScrollablePage {
     
     title: i18n("Timers")
-    
+    icon.name: "player-time"
     property bool createdTimer: false
     
     mainAction: Kirigami.Action {

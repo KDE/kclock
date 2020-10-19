@@ -23,7 +23,7 @@ import QtQuick 2.11
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.2
 import org.kde.kirigami 2.11 as Kirigami
-
+import "swipenavigator"
 Kirigami.ApplicationWindow
 {
     id: appwindow
@@ -32,49 +32,49 @@ Kirigami.ApplicationWindow
 
     title: i18n("Clock")
 
-    pageStack.initialPage: timePage
+    //    pageStack.initialPage: timePage
     
-    function switchToPage(page, depth) {
-        while (pageStack.depth > depth) pageStack.pop()
-        pageStack.push(page)
-    }
+    //    function switchToPage(page, depth) {
+    //        while (pageStack.depth > depth) pageStack.pop()
+    //        pageStack.push(page)
+    //    }
     
-    globalDrawer: Kirigami.GlobalDrawer {
-        title: "Clock"
-        
-        property bool isWidescreen: appwindow.width > appwindow.height
-        modal: !isWidescreen
-        bannerVisible: true
-        width: 200
+    //    globalDrawer: Kirigami.GlobalDrawer {
+    //        title: "Clock"
 
-        actions: [
-            Kirigami.Action {
-                text: i18n("Time")
-                iconName: "clock"
-                onTriggered: switchToPage(timePage, 0)
-            },
-            Kirigami.Action {
-                text: i18n("Timer")
-                iconName: "player-time"
-                onTriggered: switchToPage(timerListPage, 0)
-            },
-            Kirigami.Action {
-                text: i18n("Stopwatch")
-                iconName: "chronometer"
-                onTriggered: switchToPage(stopwatchPage, 0)
-            },
-            Kirigami.Action {
-                text: i18n("Alarm")
-                iconName: "notifications"
-                onTriggered: switchToPage(alarmPage, 0)
-            },
-            Kirigami.Action {
-                text: i18n("Settings")
-                iconName: "settings-configure"
-                onTriggered: switchToPage(settingsPage, 0)
-            }
-        ]
-    }
+    //        property bool isWidescreen: appwindow.width > appwindow.height
+    //        modal: !isWidescreen
+    //        bannerVisible: true
+    //        width: 200
+
+    //        actions: [
+    //            Kirigami.Action {
+    //                text: i18n("Time")
+    //                iconName: "clock"
+    //                onTriggered: switchToPage(timePage, 0)
+    //            },
+    //            Kirigami.Action {
+    //                text: i18n("Timer")
+    //                iconName: "player-time"
+    //                onTriggered: switchToPage(timerListPage, 0)
+    //            },
+    //            Kirigami.Action {
+    //                text: i18n("Stopwatch")
+    //                iconName: "chronometer"
+    //                onTriggered: switchToPage(stopwatchPage, 0)
+    //            },
+    //            Kirigami.Action {
+    //                text: i18n("Alarm")
+    //                iconName: "notifications"
+    //                onTriggered: switchToPage(alarmPage, 0)
+    //            },
+    //            Kirigami.Action {
+    //                text: i18n("Settings")
+    //                iconName: "settings-configure"
+    //                onTriggered: switchToPage(settingsPage, 0)
+    //            }
+    //        ]
+    //    }
     
     // clock fonts
     FontLoader {
@@ -82,30 +82,34 @@ Kirigami.ApplicationWindow
         source: "/assets/RedHatText-Regular.ttf"
     }
     
-    // pages
-    TimePage {
-        id: timePage
-        objectName: "time"
-    }
-    TimerListPage {
-        id: timerListPage
-        objectName: "timer"
-        visible: false
-    }
-    StopwatchPage {
-        id: stopwatchPage
-        objectName: "stopwatch"
-        visible: false
-    }
-    AlarmPage {
-        id: alarmPage
-        objectName: "alarm"
-        visible: false
-    }
-    SettingsPage {
-        id: settingsPage
-        objectName: "settings"
-        visible: false
+    SwipeNavigator {
+        id: swipeNavigator
+        anchors.fill: parent
+        // pages
+        TimePage {
+            id: timePage
+            objectName: "time"
+        }
+        TimerListPage {
+            id: timerListPage
+            objectName: "timer"
+            visible: false
+        }
+        StopwatchPage {
+            id: stopwatchPage
+            objectName: "stopwatch"
+            visible: false
+        }
+        AlarmPage {
+            id: alarmPage
+            objectName: "alarm"
+            visible: false
+        }
+        SettingsPage {
+            id: settingsPage
+            objectName: "settings"
+            visible: false
+        }
     }
     Kirigami.AboutPage {
         id: aboutPage
@@ -142,25 +146,32 @@ Kirigami.ApplicationWindow
                         }
                     ],
         }
+
+        actions {
+            main: Kirigami.Action {
+                text: i18n("Close")
+                iconName: "checkmark"
+                onTriggered: swipeNavigator.layers.pop()
+            }
+        }
+        // tray icon
+        //     QtPlatform.SystemTrayIcon {
+        //         visible: true
+        //         icon.name: "clock"
+        //
+        //         onActivated: {
+        //             appwindow.show()
+        //             appwindow.raise()
+        //             appwindow.requestActivate()
+        //         }
+        //
+        //         menu: QtPlatform.Menu {
+        //             visible: false
+        //             QtPlatform.MenuItem {
+        //                 text: qsTr("Quit")
+        //                 onTriggered: Qt.quit()
+        //             }
+        //         }
+        //     }
     }
-    
-    // tray icon
-    //     QtPlatform.SystemTrayIcon {
-    //         visible: true
-    //         icon.name: "clock"
-    //
-    //         onActivated: {
-    //             appwindow.show()
-    //             appwindow.raise()
-    //             appwindow.requestActivate()
-    //         }
-    //
-    //         menu: QtPlatform.Menu {
-    //             visible: false
-    //             QtPlatform.MenuItem {
-    //                 text: qsTr("Quit")
-    //                 onTriggered: Qt.quit()
-    //             }
-    //         }
-    //     }
 }

@@ -28,6 +28,7 @@ import org.kde.kirigami 2.4 as Kirigami
 Kirigami.ScrollablePage {
     id: stopwatchpage
     title: "Stopwatch"
+    icon.name: "chronometer"
     property bool running: false
     property int elapsedTime: stopwatchTimer.elapsedTime
     
