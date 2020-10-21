@@ -60,7 +60,7 @@ Kirigami.ScrollablePage {
                     alarmPlayer.stop();
                     showPassiveNotification(alarmModel.timeToRingFormated(hours, minutes, alarmDaysOfWeek));
                 }
-                pageStack.pop();
+                pageStack.layers.pop();
             }
         }
     }

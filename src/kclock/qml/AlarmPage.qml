@@ -32,7 +32,7 @@ Kirigami.ScrollablePage {
     mainAction: Kirigami.Action {
         iconName: "list-add"
         text: "New Alarm"
-        onTriggered: pageStack.push(Qt.resolvedUrl("NewAlarmPage.qml"))
+        onTriggered: appwindow.pageStack.layers.push(Qt.resolvedUrl("NewAlarmPage.qml"))
     }
 
     ListView {
@@ -59,7 +59,7 @@ Kirigami.ScrollablePage {
                 Kirigami.Action {
                     iconName: "entry-edit"
                     text: i18n("Edit")
-                    onTriggered: pageStack.push(Qt.resolvedUrl("NewAlarmPage.qml"), {selectedAlarm: model.alarm})
+                    onTriggered: pageStack.layers.push(Qt.resolvedUrl("NewAlarmPage.qml"), {selectedAlarm: model.alarm})
                 },
                 Kirigami.Action {
                     iconName: "delete"

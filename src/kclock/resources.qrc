@@ -12,6 +12,8 @@
         <file>qml/TimeZoneEntry.qml</file>
         <file>qml/AnalogClock.qml</file>
         <file>qml/TimerComponent.qml</file>
+        <file>qml/Sidebar.qml</file>
+        <file>qml/BottomToolbar.qml</file>
         <file>assets/RedHatText-Regular.ttf</file>
     </qresource>
 </RCC>

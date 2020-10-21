@@ -45,45 +45,37 @@ Kirigami.ApplicationWindow
             case "Timer": return timerListPage;
             case "Stopwatch": return stopwatchPage;
             case "Alarm": return alarmPage;
+            case "Settings": return settingsPage;
         }
     }
     
-    //globalDrawer: Kirigami.GlobalDrawer {
-        //title: "Clock"
-
-        //property bool isWidescreen: appwindow.width > appwindow.height
-        //modal: !isWidescreen
-        //bannerVisible: true
-        //width: 200
-
-        //actions: [
-            //Kirigami.Action {
-                //text: i18n("Time")
-                //iconName: "clock"
-                //onTriggered: switchToPage(timePage, 0)
-            //},
-            //Kirigami.Action {
-                //text: i18n("Timer")
-                //iconName: "player-time"
-                //onTriggered: switchToPage(timerListPage, 0)
-            //},
-            //Kirigami.Action {
-                //text: i18n("Stopwatch")
-                //iconName: "chronometer"
-                //onTriggered: switchToPage(stopwatchPage, 0)
-            //},
-            //Kirigami.Action {
-                //text: i18n("Alarm")
-                //iconName: "notifications"
-                //onTriggered: switchToPage(alarmPage, 0)
-            //},
-            //Kirigami.Action {
-                //text: i18n("Settings")
-                //iconName: "settings-configure"
-                //onTriggered: switchToPage(settingsPage, 0)
-            //}
-        //]
-    //}
+    property bool isWidescreen: appwindow.width >= appwindow.height
+    onIsWidescreenChanged: changeNav(!isWidescreen);
+    
+    // switch between bottom toolbar and sidebar
+    function changeNav(toNarrow) {
+        if (toNarrow) {
+            sidebarLoader.active = false;
+            globalDrawer = null;
+            
+            let bottomToolbar = Qt.createComponent("qrc:/qml/BottomToolbar.qml")
+            footer = bottomToolbar.createObject(appwindow);
+        } else {
+            if (footer !== null) {
+                footer.destroy();
+                footer = null;
+            }
+            sidebarLoader.active = true;
+            globalDrawer = sidebarLoader.item;
+        }
+    }
+    Component.onCompleted: changeNav(!isWidescreen)
+    
+    Loader {
+        id: sidebarLoader
+        source: "qrc:/qml/Sidebar.qml"
+        active: false
+    }
     
     // clock fonts
     FontLoader {
@@ -91,61 +83,6 @@ Kirigami.ApplicationWindow
         source: "/assets/RedHatText-Regular.ttf"
     }
     
-    footer: ToolBar {
-        
-        RowLayout {
-            anchors.fill: parent
-            Repeater {
-                
-                model: ListModel {
-                    ListElement {
-                        name: "Time"
-                        icon: "clock"
-                    }
-                    ListElement {
-                        name: "Timer"
-                        icon: "player-time"
-                    }
-                    ListElement {
-                        name: "Stopwatch"
-                        icon: "chronometer"
-                    }
-                    ListElement {
-                        name: "Alarm"
-                        icon: "notifications"
-                    }
-                }
-                
-                ColumnLayout {
-                    Layout.preferredWidth: parent.width / 4
-                    Layout.preferredHeight: Kirigami.Units.gridUnit * 2.5
-                    Layout.alignment: Qt.AlignCenter
-                    spacing: 0
-                    
-                    Kirigami.Icon {
-                        color: getPage(model.name).visible ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
-                        source: model.icon
-                        Layout.alignment: Qt.AlignCenter
-                        Layout.preferredHeight: Kirigami.Units.gridUnit * 1.5
-                        Layout.preferredWidth: Kirigami.Units.gridUnit * 1.5
-                    }
-                    Label {
-                        color: getPage(model.name).visible ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
-                        text: i18n(model.name)
-                        Layout.alignment: Qt.AlignCenter
-                        horizontalAlignment: Text.AlignHCenter
-                        elide: Text.ElideRight
-                        font.pointSize: Kirigami.Theme.defaultFont.pointSize * 0.8
-                    }
-                    MouseArea {
-                        anchors.fill: parent
-                        onClicked: switchToPage(getPage(model.name), 0)
-                    }
-                }
-            }
-        }
-    }
-
     TimePage {
         id: timePage
         objectName: "time"
@@ -207,13 +144,6 @@ Kirigami.ApplicationWindow
                     ],
         }
 
-        actions {
-            main: Kirigami.Action {
-                text: i18n("Close")
-                iconName: "checkmark"
-                onTriggered: swipeNavigator.layers.pop()
-            }
-        }
         // tray icon
         //     QtPlatform.SystemTrayIcon {
         //         visible: true

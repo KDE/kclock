@@ -121,7 +121,7 @@ Kirigami.ScrollablePage {
             leftPadding: Kirigami.Units.gridUnit
             rightPadding: Kirigami.Units.gridUnit
             implicitHeight: Kirigami.Units.gridUnit * 3
-            onClicked: swipeNavigator.layers.push(aboutPage)
+            onClicked: appwindow.pageStack.layers.push(aboutPage)
         }
 
         Kirigami.Separator {
