@@ -22,7 +22,7 @@
 import QtQuick 2.11
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.2
-import org.kde.kirigami 2.11 as Kirigami
+import org.kde.kirigami 2.12 as Kirigami
 
 ToolBar {
     function getPage(name) {
@@ -35,10 +35,18 @@ ToolBar {
         }
     }
     
+    background: Kirigami.ShadowedRectangle {
+        color: Kirigami.Theme.viewBackgroundColor
+        anchors.fill: parent
+
+        shadow.size: Kirigami.Units.largeSpacing * 1.5
+        shadow.color: Qt.rgba(0.0, 0.0, 0.0, 0.5)
+        shadow.yOffset: Kirigami.Units.devicePixelRatio * 2
+    }
+    
     RowLayout {
         anchors.fill: parent
         Repeater {
-            
             model: ListModel {
                 ListElement {
                     name: "Time"
@@ -70,6 +78,20 @@ ToolBar {
                     Layout.alignment: Qt.AlignCenter
                     Layout.preferredHeight: Kirigami.Units.gridUnit * 1.5
                     Layout.preferredWidth: Kirigami.Units.gridUnit * 1.5
+                    
+                    ColorAnimation on color {
+                        easing: Easing.InOutQuad
+                    }
+                    NumberAnimation on Layout.preferredWidth {
+                        id: widthAnim
+                        easing: Easing.InElastic
+                        duration: 100
+                    }
+                    NumberAnimation on Layout.preferredHeight {
+                        id: heightAnim
+                        easing: Easing.InElastic
+                        duration: 100
+                    }
                 }
                 Label {
                     color: getPage(model.name).visible ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
@@ -78,10 +100,37 @@ ToolBar {
                     horizontalAlignment: Text.AlignHCenter
                     elide: Text.ElideRight
                     font.pointSize: Kirigami.Theme.defaultFont.pointSize * 0.8
+                    
+                    ColorAnimation on color {
+                        easing: Easing.InOutQuad
+                    }
+                    NumberAnimation on font.pointSize {
+                        id: fontAnim
+                        easing: Easing.InElastic
+                        duration: 100
+                    }
                 }
                 MouseArea {
                     anchors.fill: parent
-                    onClicked: appwindow.switchToPage(getPage(model.name), 0)
+                    onClicked: {
+                        appwindow.switchToPage(getPage(model.name), 0)
+                    }
+                    onPressed: {
+                        widthAnim.to = Kirigami.Units.gridUnit * 1.2;
+                        heightAnim.to = Kirigami.Units.gridUnit * 1.2;
+                        fontAnim.to = Kirigami.Theme.defaultFont.pointSize * 0.7;
+                        widthAnim.restart();
+                        heightAnim.restart();
+                        fontAnim.restart();
+                    }
+                    onReleased: {
+                        widthAnim.to = Kirigami.Units.gridUnit * 1.5;
+                        heightAnim.to = Kirigami.Units.gridUnit * 1.5;
+                        fontAnim.to = Kirigami.Theme.defaultFont.pointSize * 0.8;
+                        widthAnim.restart();
+                        heightAnim.restart();
+                        fontAnim.restart();
+                    }
                 }
             }
         }
