@@ -23,7 +23,7 @@ import QtQuick 2.11
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.2
 import org.kde.kirigami 2.11 as Kirigami
-import "swipenavigator"
+
 Kirigami.ApplicationWindow
 {
     id: appwindow
@@ -32,87 +32,145 @@ Kirigami.ApplicationWindow
 
     title: i18n("Clock")
 
-    //    pageStack.initialPage: timePage
+    pageStack.initialPage: timePage
     
-    function switchToPage(page) {
-        swipeNavigator.layers.push(page);
-    }
-    function popPage() {
-        swipeNavigator.layers.pop()
+    function switchToPage(page, depth) {
+        while (pageStack.depth > depth) pageStack.pop()
+        pageStack.push(page)
     }
     
-    //    globalDrawer: Kirigami.GlobalDrawer {
-    //        title: "Clock"
+    function getPage(name) {
+        switch (name) {
+            case "Time": return timePage;
+            case "Timer": return timerListPage;
+            case "Stopwatch": return stopwatchPage;
+            case "Alarm": return alarmPage;
+        }
+    }
+    
+    //globalDrawer: Kirigami.GlobalDrawer {
+        //title: "Clock"
 
-    //        property bool isWidescreen: appwindow.width > appwindow.height
-    //        modal: !isWidescreen
-    //        bannerVisible: true
-    //        width: 200
+        //property bool isWidescreen: appwindow.width > appwindow.height
+        //modal: !isWidescreen
+        //bannerVisible: true
+        //width: 200
 
-    //        actions: [
-    //            Kirigami.Action {
-    //                text: i18n("Time")
-    //                iconName: "clock"
-    //                onTriggered: switchToPage(timePage, 0)
-    //            },
-    //            Kirigami.Action {
-    //                text: i18n("Timer")
-    //                iconName: "player-time"
-    //                onTriggered: switchToPage(timerListPage, 0)
-    //            },
-    //            Kirigami.Action {
-    //                text: i18n("Stopwatch")
-    //                iconName: "chronometer"
-    //                onTriggered: switchToPage(stopwatchPage, 0)
-    //            },
-    //            Kirigami.Action {
-    //                text: i18n("Alarm")
-    //                iconName: "notifications"
-    //                onTriggered: switchToPage(alarmPage, 0)
-    //            },
-    //            Kirigami.Action {
-    //                text: i18n("Settings")
-    //                iconName: "settings-configure"
-    //                onTriggered: switchToPage(settingsPage, 0)
-    //            }
-    //        ]
-    //    }
+        //actions: [
+            //Kirigami.Action {
+                //text: i18n("Time")
+                //iconName: "clock"
+                //onTriggered: switchToPage(timePage, 0)
+            //},
+            //Kirigami.Action {
+                //text: i18n("Timer")
+                //iconName: "player-time"
+                //onTriggered: switchToPage(timerListPage, 0)
+            //},
+            //Kirigami.Action {
+                //text: i18n("Stopwatch")
+                //iconName: "chronometer"
+                //onTriggered: switchToPage(stopwatchPage, 0)
+            //},
+            //Kirigami.Action {
+                //text: i18n("Alarm")
+                //iconName: "notifications"
+                //onTriggered: switchToPage(alarmPage, 0)
+            //},
+            //Kirigami.Action {
+                //text: i18n("Settings")
+                //iconName: "settings-configure"
+                //onTriggered: switchToPage(settingsPage, 0)
+            //}
+        //]
+    //}
     
     // clock fonts
     FontLoader {
         id: clockFont;
         source: "/assets/RedHatText-Regular.ttf"
     }
-
-    SwipeNavigator {
-        id: swipeNavigator
-        anchors.fill: parent
-        // pages
-        TimePage {
-            id: timePage
-            objectName: "time"
-        }
-        TimerListPage {
-            id: timerListPage
-            objectName: "timer"
-            visible: false
-        }
-        StopwatchPage {
-            id: stopwatchPage
-            objectName: "stopwatch"
-            visible: false
-        }
-        AlarmPage {
-            id: alarmPage
-            objectName: "alarm"
-            visible: false
-        }
-        SettingsPage {
-            id: settingsPage
-            objectName: "settings"
-            visible: false
+    
+    footer: ToolBar {
+        
+        RowLayout {
+            anchors.fill: parent
+            Repeater {
+                
+                model: ListModel {
+                    ListElement {
+                        name: "Time"
+                        icon: "clock"
+                    }
+                    ListElement {
+                        name: "Timer"
+                        icon: "player-time"
+                    }
+                    ListElement {
+                        name: "Stopwatch"
+                        icon: "chronometer"
+                    }
+                    ListElement {
+                        name: "Alarm"
+                        icon: "notifications"
+                    }
+                }
+                
+                ColumnLayout {
+                    Layout.preferredWidth: parent.width / 4
+                    Layout.preferredHeight: Kirigami.Units.gridUnit * 2.5
+                    Layout.alignment: Qt.AlignCenter
+                    spacing: 0
+                    
+                    Kirigami.Icon {
+                        color: getPage(model.name).visible ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
+                        source: model.icon
+                        Layout.alignment: Qt.AlignCenter
+                        Layout.preferredHeight: Kirigami.Units.gridUnit * 1.5
+                        Layout.preferredWidth: Kirigami.Units.gridUnit * 1.5
+                    }
+                    Label {
+                        color: getPage(model.name).visible ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
+                        text: i18n(model.name)
+                        Layout.alignment: Qt.AlignCenter
+                        horizontalAlignment: Text.AlignHCenter
+                        elide: Text.ElideRight
+                        font.pointSize: Kirigami.Theme.defaultFont.pointSize * 0.8
+                    }
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked: switchToPage(getPage(model.name), 0)
+                    }
+                }
+            }
         }
     }
+
+    TimePage {
+        id: timePage
+        objectName: "time"
+    }
+    TimerListPage {
+        id: timerListPage
+        objectName: "timer"
+        visible: false
+    }
+    StopwatchPage {
+        id: stopwatchPage
+        objectName: "stopwatch"
+        visible: false
+    }
+    AlarmPage {
+        id: alarmPage
+        objectName: "alarm"
+        visible: false
+    }
+    SettingsPage {
+        id: settingsPage
+        objectName: "settings"
+        visible: false
+    }
+        
     Kirigami.AboutPage {
         id: aboutPage
         visible: false

@@ -13,9 +13,5 @@
         <file>qml/AnalogClock.qml</file>
         <file>qml/TimerComponent.qml</file>
         <file>assets/RedHatText-Regular.ttf</file>
-        <file>qml/swipenavigator/PrivateSwipeStack.qml</file>
-        <file>qml/swipenavigator/PrivateSwipeTab.qml</file>
-        <file>qml/swipenavigator/PrivateSwipeTabBar.qml</file>
-        <file>qml/swipenavigator/SwipeNavigator.qml</file>
     </qresource>
 </RCC>

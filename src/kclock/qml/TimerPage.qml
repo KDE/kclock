@@ -48,11 +48,6 @@ Kirigami.Page {
             onTriggered: timer.toggleRunning()
             visible: !justCreated
         }
-        left: Kirigami.Action {
-            text: i18n("return")
-            iconName: "draw-arrow-back"
-            onTriggered: popPage()
-        }
 
         contextualActions: [
             Kirigami.Action {
