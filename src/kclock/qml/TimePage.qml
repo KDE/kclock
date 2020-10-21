@@ -98,6 +98,7 @@ Kirigami.ScrollablePage {
         }
     }
     
+    //globalToolBarStyle: Kirigami.ApplicationHeaderStyle.ToolBar
     mainAction: Kirigami.Action {
         iconName: "globe"
         text: i18n("Edit")

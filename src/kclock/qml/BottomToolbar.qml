@@ -64,6 +64,10 @@ ToolBar {
                     name: "Alarm"
                     icon: "notifications"
                 }
+                ListElement {
+                    name: "Settings"
+                    icon: "settings-configure"
+                }
             }
             
             ColumnLayout {
