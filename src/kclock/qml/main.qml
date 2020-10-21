@@ -34,10 +34,12 @@ Kirigami.ApplicationWindow
 
     //    pageStack.initialPage: timePage
     
-    //    function switchToPage(page, depth) {
-    //        while (pageStack.depth > depth) pageStack.pop()
-    //        pageStack.push(page)
-    //    }
+    function switchToPage(page) {
+        swipeNavigator.layers.push(page);
+    }
+    function popPage() {
+        swipeNavigator.layers.pop()
+    }
     
     //    globalDrawer: Kirigami.GlobalDrawer {
     //        title: "Clock"
@@ -81,7 +83,7 @@ Kirigami.ApplicationWindow
         id: clockFont;
         source: "/assets/RedHatText-Regular.ttf"
     }
-    
+
     SwipeNavigator {
         id: swipeNavigator
         anchors.fill: parent

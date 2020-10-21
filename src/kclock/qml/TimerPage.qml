@@ -41,27 +41,34 @@ Kirigami.Page {
     property bool running: timer == null ? 0 : timer.running
 
     // topbar action
-    mainAction: Kirigami.Action {
-        text: running ? i18n("Pause") : i18n("Start")
-        iconName: running ? "chronometer-pause" : "chronometer-start"
-        onTriggered: timer.toggleRunning()
-        visible: !justCreated
-    }
-
-    actions.contextualActions: [
-        Kirigami.Action {
+    actions {
+        main: Kirigami.Action {
+            text: running ? i18n("Pause") : i18n("Start")
+            iconName: running ? "chronometer-pause" : "chronometer-start"
+            onTriggered: timer.toggleRunning()
             visible: !justCreated
-            icon.name: "chronometer-reset"
-            text: i18n("Reset")
-            onTriggered: timer.reset();
-        },
-        Kirigami.Action {
-            visible: !justCreated
-            icon.name: "delete"
-            text: i18n("Delete")
-            onTriggered: timerModel.remove(timerIndex);
         }
-    ]
+        left: Kirigami.Action {
+            text: i18n("return")
+            iconName: "draw-arrow-back"
+            onTriggered: popPage()
+        }
+
+        contextualActions: [
+            Kirigami.Action {
+                visible: !justCreated
+                icon.name: "chronometer-reset"
+                text: i18n("Reset")
+                onTriggered: timer.reset();
+            },
+            Kirigami.Action {
+                visible: !justCreated
+                icon.name: "delete"
+                text: i18n("Delete")
+                onTriggered: timerModel.remove(timerIndex);
+            }
+        ]
+    }
 
     // create new timer form
 

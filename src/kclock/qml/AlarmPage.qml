@@ -32,7 +32,7 @@ Kirigami.ScrollablePage {
     mainAction: Kirigami.Action {
         iconName: "list-add"
         text: "New Alarm"
-        onTriggered: pageStack.push(Qt.resolvedUrl("NewAlarmPage.qml"))
+        onTriggered: switchToPage(Qt.resolvedUrl("NewAlarmPage.qml"))
     }
 
     ListView {
