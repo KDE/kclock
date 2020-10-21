@@ -103,7 +103,7 @@ Kirigami.ScrollablePage {
         iconName: "globe"
         text: i18n("Edit")
         onTriggered: {
-            pageStack.push("qrc:/qml/TimeZoneSelectPage.qml")
+            pageStack.layers.push("qrc:/qml/TimeZoneSelectPage.qml")
         }
     }
 }
