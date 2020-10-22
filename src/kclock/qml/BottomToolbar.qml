@@ -36,16 +36,18 @@ ToolBar {
     }
     
     background: Kirigami.ShadowedRectangle {
-        color: Kirigami.Theme.viewBackgroundColor
+        Kirigami.Theme.colorSet: Kirigami.Theme.Header
+        color: Kirigami.Theme.backgroundColor
         anchors.fill: parent
 
-        shadow.size: Kirigami.Units.largeSpacing * 1.5
-        shadow.color: Qt.rgba(0.0, 0.0, 0.0, 0.5)
+        shadow.size: Kirigami.Units.largeSpacing * 1.3
+        shadow.color: Qt.rgba(0.0, 0.0, 0.0, 0.4)
         shadow.yOffset: Kirigami.Units.devicePixelRatio * 2
     }
     
     RowLayout {
         anchors.fill: parent
+        spacing: 0
         Repeater {
             model: ListModel {
                 ListElement {
@@ -70,51 +72,24 @@ ToolBar {
                 }
             }
             
-            ColumnLayout {
-                Layout.preferredWidth: parent.width / 4
-                Layout.preferredHeight: Kirigami.Units.gridUnit * 2.5
+            Rectangle {
+                Layout.minimumWidth: parent.width / 5
+                Layout.maximumWidth: parent.width / 5
+                Layout.preferredHeight: Kirigami.Units.gridUnit * 2.7
                 Layout.alignment: Qt.AlignCenter
-                spacing: 0
+                Kirigami.Theme.colorSet: Kirigami.Theme.Header
+                color: mouseArea.pressed ? Qt.darker(Kirigami.Theme.backgroundColor, 1.1) : 
+                       mouseArea.containsMouse ? Qt.darker(Kirigami.Theme.backgroundColor, 1.03) : Kirigami.Theme.backgroundColor
+                Behavior on color {
+                    ColorAnimation { 
+                        duration: 100 
+                        easing.type: Easing.InOutQuad
+                    }
+                }
                 
-                Kirigami.Icon {
-                    color: getPage(model.name).visible ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
-                    source: model.icon
-                    Layout.alignment: Qt.AlignCenter
-                    Layout.preferredHeight: Kirigami.Units.gridUnit * 1.5
-                    Layout.preferredWidth: Kirigami.Units.gridUnit * 1.5
-                    
-                    ColorAnimation on color {
-                        easing: Easing.InOutQuad
-                    }
-                    NumberAnimation on Layout.preferredWidth {
-                        id: widthAnim
-                        easing: Easing.InElastic
-                        duration: 100
-                    }
-                    NumberAnimation on Layout.preferredHeight {
-                        id: heightAnim
-                        easing: Easing.InElastic
-                        duration: 100
-                    }
-                }
-                Label {
-                    color: getPage(model.name).visible ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
-                    text: i18n(model.name)
-                    Layout.alignment: Qt.AlignCenter
-                    horizontalAlignment: Text.AlignHCenter
-                    elide: Text.ElideRight
-                    font.pointSize: Kirigami.Theme.defaultFont.pointSize * 0.8
-                    
-                    ColorAnimation on color {
-                        easing: Easing.InOutQuad
-                    }
-                    NumberAnimation on font.pointSize {
-                        id: fontAnim
-                        easing: Easing.InElastic
-                        duration: 100
-                    }
-                }
                 MouseArea {
+                    id: mouseArea
+                    hoverEnabled: true
                     anchors.fill: parent
                     onClicked: {
                         appwindow.switchToPage(getPage(model.name), 0)
@@ -134,6 +109,51 @@ ToolBar {
                         widthAnim.restart();
                         heightAnim.restart();
                         fontAnim.restart();
+                    }
+                }
+                
+                ColumnLayout {
+                    id: itemColumn
+                    anchors.fill: parent
+                    spacing: 0
+                    
+                    Kirigami.Icon {
+                        color: getPage(model.name).visible ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
+                        source: model.icon
+                        Layout.alignment: Qt.AlignCenter
+                        Layout.preferredHeight: Kirigami.Units.gridUnit * 1.5
+                        Layout.preferredWidth: Kirigami.Units.gridUnit * 1.5
+                        
+                        ColorAnimation on color {
+                            easing.type: Easing.Linear
+                        }
+                        NumberAnimation on Layout.preferredWidth {
+                            id: widthAnim
+                            easing.type: Easing.Linear
+                            duration: 100
+                        }
+                        NumberAnimation on Layout.preferredHeight {
+                            id: heightAnim
+                            easing.type: Easing.Linear
+                            duration: 100
+                        }
+                    }
+                    Label {
+                        color: getPage(model.name).visible ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
+                        text: i18n(model.name)
+                        Layout.alignment: Qt.AlignCenter
+                        horizontalAlignment: Text.AlignHCenter
+                        elide: Text.ElideRight
+                        font.pointSize: Kirigami.Theme.defaultFont.pointSize * 0.8
+                        
+                        ColorAnimation on color {
+                            easing.type: Easing.Linear
+                        }
+                        NumberAnimation on font.pointSize {
+                            id: fontAnim
+                            easing.type: Easing.Linear
+                            duration: 100
+                        }
                     }
                 }
             }
