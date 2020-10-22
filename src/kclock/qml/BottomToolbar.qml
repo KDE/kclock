@@ -75,7 +75,7 @@ ToolBar {
             Rectangle {
                 Layout.minimumWidth: parent.width / 5
                 Layout.maximumWidth: parent.width / 5
-                Layout.preferredHeight: Kirigami.Units.gridUnit * 2.7
+                Layout.preferredHeight: Kirigami.Units.gridUnit * 3
                 Layout.alignment: Qt.AlignCenter
                 Kirigami.Theme.colorSet: Kirigami.Theme.Header
                 color: mouseArea.pressed ? Qt.darker(Kirigami.Theme.backgroundColor, 1.1) : 
@@ -103,8 +103,8 @@ ToolBar {
                         fontAnim.restart();
                     }
                     onReleased: {
-                        widthAnim.to = Kirigami.Units.gridUnit * 1.5;
-                        heightAnim.to = Kirigami.Units.gridUnit * 1.5;
+                        widthAnim.to = Kirigami.Units.gridUnit * 1.6;
+                        heightAnim.to = Kirigami.Units.gridUnit * 1.6;
                         fontAnim.to = Kirigami.Theme.defaultFont.pointSize * 0.8;
                         widthAnim.restart();
                         heightAnim.restart();
@@ -121,8 +121,8 @@ ToolBar {
                         color: getPage(model.name).visible ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
                         source: model.icon
                         Layout.alignment: Qt.AlignCenter
-                        Layout.preferredHeight: Kirigami.Units.gridUnit * 1.5
-                        Layout.preferredWidth: Kirigami.Units.gridUnit * 1.5
+                        Layout.preferredHeight: Kirigami.Units.gridUnit * 1.6
+                        Layout.preferredWidth: Kirigami.Units.gridUnit * 1.6
                         
                         ColorAnimation on color {
                             easing.type: Easing.Linear
