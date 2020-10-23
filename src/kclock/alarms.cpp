@@ -30,7 +30,7 @@
 Alarm::Alarm() {};
 Alarm::Alarm(QString uuid)
 {
-    m_interface = new org::kde::kclock::Alarm(QStringLiteral("org.kde.kclockd"), QStringLiteral("/alarms/") + uuid, QDBusConnection::sessionBus(), this);
+    m_interface = new org::kde::kclock::Alarm(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Alarms/") + uuid, QDBusConnection::sessionBus(), this);
 
     if (m_interface->isValid()) {
         connect(m_interface, &OrgKdeKclockAlarmInterface::propertyChanged, this, &Alarm::updateProperty);

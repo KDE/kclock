@@ -87,8 +87,8 @@ void Alarm::initialize(AlarmModel *parent)
 
     // DBus
     new AlarmAdaptor(this);
-    QDBusConnection::sessionBus().registerObject(QStringLiteral("/alarms/") + this->uuid().toString(QUuid::Id128), this);
-    connect(this, &QObject::destroyed, [this] { QDBusConnection::sessionBus().unregisterObject(QStringLiteral("/alarms/") + this->uuid().toString(QUuid::Id128), QDBusConnection::UnregisterNode); });
+    QDBusConnection::sessionBus().registerObject(QStringLiteral("/Alarms/") + this->uuid().toString(QUuid::Id128), this);
+    connect(this, &QObject::destroyed, [this] { QDBusConnection::sessionBus().unregisterObject(QStringLiteral("/Alarms/") + this->uuid().toString(QUuid::Id128), QDBusConnection::UnregisterNode); });
 }
 
 // alarm to json
