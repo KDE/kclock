@@ -1,2 +1,2 @@
 add_subdirectory(KClock_1x2)
-add_subdirectory(KClock_KWeather_3x3)
+#add_subdirectory(KClock_KWeather_3x3)

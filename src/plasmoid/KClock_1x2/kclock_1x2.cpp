@@ -34,7 +34,7 @@ KClock_1x2::KClock_1x2(QObject *parent, const QVariantList &args)
         } else
             m_hasAlarm = false;
     }
-    emit propertyChanged();
+    Q_EMIT propertyChanged();
 }
 
 void KClock_1x2::updateAlarm(qulonglong time)
@@ -46,7 +46,7 @@ void KClock_1x2::updateAlarm(qulonglong time)
     } else {
         m_hasAlarm = false;
     }
-    emit propertyChanged();
+    Q_EMIT propertyChanged();
 }
 void KClock_1x2::openKClock()
 {
@@ -55,7 +55,7 @@ void KClock_1x2::openKClock()
 }
 void KClock_1x2::initialTimeUpdate()
 {
-    emit timeChanged();
+    Q_EMIT timeChanged();
     disconnect(m_timer, &QTimer::timeout, this, &KClock_1x2::initialTimeUpdate); // disconnect
     m_timer->setSingleShot(false);
     connect(m_timer, &QTimer::timeout, this, &KClock_1x2::timeChanged);
