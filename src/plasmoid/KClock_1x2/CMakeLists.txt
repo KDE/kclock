@@ -16,5 +16,5 @@ target_link_libraries(plasma_applet_kclock_1x2
 
 
 install(TARGETS plasma_applet_kclock_1x2 DESTINATION ${KDE_INSTALL_PLUGINDIR}/plasma/applets)
-
+install(FILES kclock_plasmoid_1x2.svg DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/scalable/apps/)
 plasma_install_package(package org.kde.plasma.kclock_1x2)

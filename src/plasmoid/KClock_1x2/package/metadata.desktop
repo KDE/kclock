@@ -43,7 +43,7 @@ Comment[uk]=Віджет KClock (1x2)
 Comment[x-test]=xxKClock widget (1x2)xx
 
 
-Icon=kclock
+Icon=kclock_plasmoid_1x2
 Type=Service
 X-KDE-ServiceTypes=Plasma/Applet
 X-KDE-Library=plasma_applet_kclock_1x2
