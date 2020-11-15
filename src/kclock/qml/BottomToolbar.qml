@@ -23,6 +23,7 @@ import QtQuick 2.12
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.2
 import org.kde.kirigami 2.12 as Kirigami
+import QtGraphicalEffects 1.12
 
 ToolBar {
     id: toolbarRoot
@@ -41,14 +42,19 @@ ToolBar {
         }
     }
     
-    background: Kirigami.ShadowedRectangle {
+    background: Rectangle {
         Kirigami.Theme.colorSet: Kirigami.Theme.Header
         color: Kirigami.Theme.backgroundColor
         anchors.fill: parent
-
-        shadow.size: Kirigami.Units.largeSpacing * 1.3
-        shadow.color: Qt.rgba(0.0, 0.0, 0.0, 0.4)
-        shadow.yOffset: Kirigami.Units.devicePixelRatio * 2
+        
+        layer.enabled: true
+        layer.effect: DropShadow {
+            //transparentBorder: false
+            //verticalOffset: -1
+            color: Qt.rgba(0.0, 0.0, 0.0, 0.4)
+            radius: 6
+            samples: 8
+        }
     }
     
     RowLayout {
