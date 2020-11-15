@@ -49,8 +49,6 @@ ToolBar {
         
         layer.enabled: true
         layer.effect: DropShadow {
-            //transparentBorder: false
-            //verticalOffset: -1
             color: Qt.rgba(0.0, 0.0, 0.0, 0.4)
             radius: 6
             samples: 8

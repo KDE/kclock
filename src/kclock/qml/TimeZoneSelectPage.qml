@@ -30,6 +30,21 @@ Kirigami.ScrollablePage {
     title: i18n("Timezones")
     property string filterText: ""
     
+    header: Control {
+        padding: Kirigami.Units.largeSpacing
+        
+        contentItem: Kirigami.SearchField {
+            id: searchField
+            
+            onTextChanged: {
+                timeZoneFilterModel.setFilterFixedString(text)
+                filterText = text
+                forceActiveFocus();
+                focus = true
+            }
+        }
+    }
+    
     ListView {
 
         Kirigami.PlaceholderMessage {
@@ -37,29 +52,6 @@ Kirigami.ScrollablePage {
             visible: parent.count == 0
             text: i18n("Search for a city")
             icon.name: "globe"
-        }
-        
-        header: Item {
-            anchors.left: parent.left
-            anchors.right: parent.right
-            height: searchField.height + Kirigami.Units.largeSpacing * 2
-            
-            Kirigami.SearchField {
-                id: searchField
-                anchors.verticalCenter: parent.verticalCenter
-                anchors.horizontalCenter: parent.horizontalCenter
-                anchors.left: parent.left
-                anchors.right: parent.right
-                anchors.leftMargin: Kirigami.Units.largeSpacing
-                anchors.rightMargin: Kirigami.Units.largeSpacing
-                
-                onTextChanged: {
-                    timeZoneFilterModel.setFilterFixedString(text)
-                    filterText = text
-                    forceActiveFocus();
-                    focus = true
-                }
-            }
         }
 
         model: filterText == "" ? [] : timeZoneFilterModel // only display cities if there is a query (for performance)
