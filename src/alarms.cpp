@@ -187,7 +187,7 @@ void Alarm::handleSnooze()
 void Alarm::calculateNextRingTime()
 {
     if (!this->m_enabled) { // if not enabled, means this would never ring
-        m_nextRingTime = -1;
+        m_nextRingTime = 0;
         return;
     }
 
@@ -217,10 +217,10 @@ void Alarm::calculateNextRingTime()
     }
 }
 
-qint64 Alarm::nextRingTime()
+quint64 Alarm::nextRingTime()
 {
     // day changed, re-calculate
-    if (this->m_nextRingTime < QDateTime::currentSecsSinceEpoch()) {
+    if (this->m_nextRingTime < static_cast<unsigned long long>(QDateTime::currentSecsSinceEpoch())) {
         calculateNextRingTime();
     }
     return m_nextRingTime;

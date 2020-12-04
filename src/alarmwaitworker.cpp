@@ -24,7 +24,7 @@
 #include <sys/timerfd.h>
 #include <unistd.h>
 
-AlarmWaitWorker::AlarmWaitWorker(qint64 timestamp)
+AlarmWaitWorker::AlarmWaitWorker(quint64 timestamp)
     : m_timerFd(timerfd_create(CLOCK_REALTIME, 0))
     , m_waitEndTime(timestamp)
 {
@@ -33,10 +33,10 @@ AlarmWaitWorker::AlarmWaitWorker(qint64 timestamp)
 
 void AlarmWaitWorker::wait(int waitId)
 {
-    if (m_waitEndTime < 0)
+    if (m_waitEndTime == 0)
         return;
     struct itimerspec timerSpec;
-    timerSpec.it_value.tv_sec = m_waitEndTime;
+    timerSpec.it_value.tv_sec = static_cast<long>(m_waitEndTime);
     timerSpec.it_value.tv_nsec = 0;
     timerSpec.it_interval.tv_sec = 0;
     timerSpec.it_interval.tv_nsec = 0;
@@ -64,13 +64,13 @@ void AlarmWaitWorker::wait(int waitId)
     Q_EMIT finished();
 }
 
-void AlarmWaitWorker::setNewTime(qint64 timestamp)
+void AlarmWaitWorker::setNewTime(quint64 timestamp)
 {
     m_waitId = std::rand();
 
     m_waitEndTime = timestamp;
     struct itimerspec timerSpec;
-    timerSpec.it_value.tv_sec = m_waitEndTime;
+    timerSpec.it_value.tv_sec = static_cast<long>(m_waitEndTime);
     timerSpec.it_value.tv_nsec = 0;
     timerSpec.it_interval.tv_sec = 0;
     timerSpec.it_interval.tv_nsec = 0;

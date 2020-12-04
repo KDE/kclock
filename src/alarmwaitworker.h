@@ -25,9 +25,9 @@ class AlarmWaitWorker : public QObject
 {
     Q_OBJECT
 public:
-    explicit AlarmWaitWorker(qint64 timestamp = -1);
+    explicit AlarmWaitWorker(quint64 timestamp = 0);
 
-    void setNewTime(qint64 timestamp); // set new wait time, if is currently waiting
+    void setNewTime(quint64 timestamp); // set new wait time, if is currently waiting
 Q_SIGNALS:
     void finished();
     void error();
@@ -38,7 +38,7 @@ protected Q_SLOTS:
 
 private:
     int m_timerFd;
-    int m_waitId; // use only newest poll 
-    qint64 m_waitEndTime;
+    int m_waitId; // use only newest poll
+    quint64 m_waitEndTime;
     bool m_isFinished = true;
 };

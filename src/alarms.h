@@ -126,11 +126,11 @@ public:
             return 0;
         }
     }
-    qint64 snooze() const
+    int snooze() const
     {
         return m_snooze;
     }
-    void setSnooze(qint64 snooze)
+    void setSnooze(int snooze)
     {
         this->m_snooze = snooze;
         Q_EMIT snoozedMinutesChanged();
@@ -148,8 +148,8 @@ public:
     }
     QString serialize();
 
-    Q_SCRIPTABLE qint64 nextRingTime(); // the next time this should ring, if this would never ring, return -1
-    void ring();                        // ring alarm
+    Q_SCRIPTABLE quint64 nextRingTime(); // the next time this should ring, if this would never ring, return -1
+    void ring();                         // ring alarm
     Q_SCRIPTABLE QString getUUID()
     {
         return m_uuid.toString();
@@ -179,6 +179,6 @@ private:
     bool m_enabled = true;
     bool m_justSnoozed = false; // pressing snooze on the notification also triggers the dismiss event, so this is a helper for that
     int m_hours = 0, m_minutes = 0, m_daysOfWeek = 0;
-    qint64 m_snooze = 0;        // current snooze length
-    qint64 m_nextRingTime = -1; // store calculated next ring time
+    int m_snooze = 0;           // current snooze length
+    quint64 m_nextRingTime = 0; // store calculated next ring time
 };

@@ -85,7 +85,7 @@ void AlarmModel::scheduleAlarm()
     alarmsToBeRung.clear();
 
     // get the next minimum time for a wakeup (next alarm ring), and add alarms that will needed to be woken up to the list
-    qint64 minTime = std::numeric_limits<qint64>::max();
+    quint64 minTime = std::numeric_limits<quint64>::max();
     for (auto *alarm : m_alarmsList) {
         if (alarm->nextRingTime() > 0) {
             if (alarm->nextRingTime() == minTime) {
@@ -99,7 +99,7 @@ void AlarmModel::scheduleAlarm()
     }
 
     // if there is an alarm that needs to rung
-    if (minTime != std::numeric_limits<qint64>::max()) {
+    if (minTime != std::numeric_limits<quint64>::max()) {
         qDebug() << "scheduled wakeup" << QDateTime::fromSecsSinceEpoch(minTime).toString();
         m_nextAlarmTime = minTime;
 
