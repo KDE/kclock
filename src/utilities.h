@@ -39,12 +39,12 @@ public:
         return m_hasPowerDevil;
     };
 
-    int scheduleWakeup(qint64 timestamp);
+    int scheduleWakeup(quint64 timestamp);
     void clearWakeup(int cookie);
 Q_SIGNALS:
     void wakeup(int cookie);
 public Q_SLOTS:
-    void wakeupCallback(int cookie);
+    Q_SCRIPTABLE void wakeupCallback(int cookie);
 
 private:
     void schedule(); // For AlarmWaitWorker use
@@ -55,9 +55,9 @@ private:
     bool m_hasPowerDevil = false;
     QList<int> m_cookies; // token for PowerDevil: https://invent.kde.org/plasma/powerdevil/-/merge_requests/13
 
-    QList<std::tuple<int, long long>> m_list; // cookie, timestamp. For AlarmWaitWorker use
-    int m_cookie = 1;                         // For AlarmWaitWorker use
-    int m_currentCookie;                      // For AlarmWaitWorker use
+    QList<std::tuple<int, quint64>> m_list; // cookie, timestamp. For AlarmWaitWorker use
+    int m_cookie = 1;                       // For AlarmWaitWorker use
+    int m_currentCookie;                    // For AlarmWaitWorker use
 
     QThread *m_timerThread = nullptr;
     AlarmWaitWorker *m_worker = nullptr;

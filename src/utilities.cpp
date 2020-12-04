@@ -57,7 +57,7 @@ Utilities::Utilities(QObject *parent)
     }
 }
 
-int Utilities::scheduleWakeup(qint64 timestamp)
+int Utilities::scheduleWakeup(quint64 timestamp)
 {
     if (this->hasPowerDevil()) {
         QDBusReply<uint> reply = m_interface->call(QStringLiteral("scheduleWakeup"), QStringLiteral("org.kde.kclockd"), QDBusObjectPath("/Utility"), timestamp);
