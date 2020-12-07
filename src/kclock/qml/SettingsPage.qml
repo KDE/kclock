@@ -35,6 +35,8 @@ Kirigami.ScrollablePage {
     // settings list
     ColumnLayout {
         spacing: 0
+        anchors.leftMargin: Kirigami.Units.smallSpacing
+        anchors.rightMargin: Kirigami.Units.smallSpacing
 
         ItemDelegate {
             Layout.fillWidth: true
@@ -116,12 +118,17 @@ Kirigami.ScrollablePage {
 
         ItemDelegate {
             Layout.fillWidth: true
-            font.bold: true
-            text: i18n("About")
-            leftPadding: Kirigami.Units.gridUnit
-            rightPadding: Kirigami.Units.gridUnit
             implicitHeight: Kirigami.Units.gridUnit * 3
+            
             onClicked: appwindow.pageStack.layers.push(aboutPage)
+            
+            Label {
+                anchors.left: parent.left
+                anchors.leftMargin: Kirigami.Units.gridUnit
+                anchors.verticalCenter: parent.verticalCenter
+                font.bold: true
+                text: i18n("About")
+            }
         }
 
         Kirigami.Separator {
@@ -143,7 +150,7 @@ Kirigami.ScrollablePage {
         contentItem: RowLayout {
             anchors.horizontalCenter: parent.horizontalCenter
             width: parent.width
-            Text {
+            Label {
                 text: i18n("Volume: ")
             }
             Slider {
