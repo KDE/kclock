@@ -107,7 +107,7 @@ Kirigami.ScrollablePage {
                 model: weekModel
 
                 ToolButton {
-                    implicitWidth: 40
+                    implicitWidth: Kirigami.Units.gridUnit * 2.8
                     text: name
                     checkable: true
                     checked: kclockFormat.isChecked(index, alarmDaysOfWeek)

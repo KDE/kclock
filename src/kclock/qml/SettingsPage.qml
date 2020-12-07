@@ -35,8 +35,6 @@ Kirigami.ScrollablePage {
     // settings list
     ColumnLayout {
         spacing: 0
-        anchors.leftMargin: Kirigami.Units.smallSpacing
-        anchors.rightMargin: Kirigami.Units.smallSpacing
 
         ItemDelegate {
             Layout.fillWidth: true
