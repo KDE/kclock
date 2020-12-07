@@ -100,7 +100,7 @@ Kirigami.ScrollablePage {
                             visible: model.alarm.snoozedMinutes != 0
                             font.weight: Font.Bold
                             color: Kirigami.Theme.disabledTextColor
-                            text: i18n("Snoozed ") + model.alarm.snoozedMinutes + i18n(" minutes")
+                            text: i18n("Snoozed %1 minutes", model.alarm.snoozedMinutes)
                         }
                         Label {
                             id: alarmName
