@@ -20,14 +20,31 @@
  */
 
 import org.kde.kirigami 2.11 as Kirigami
+import QtQuick.Layouts 1.3
+import QtQuick.Controls 2.1 as QQC2
 
 Kirigami.GlobalDrawer {
     id: drawer
-    title: "Clock"
+    title: i18n("Clock")
 
     modal: false
-    bannerVisible: true
     width: 200
+    bannerVisible: false
+
+    Kirigami.Theme.colorSet: Kirigami.Theme.Window
+
+    header: Kirigami.AbstractApplicationHeader {
+        topPadding: Kirigami.Units.smallSpacing
+        bottomPadding: Kirigami.Units.largeSpacing
+        leftPadding: Kirigami.Units.smallSpacing
+        rightPadding: Kirigami.Units.smallSpacing
+        implicitHeight: Kirigami.Units.gridUnit * 2
+        Kirigami.Heading {
+            level: 1
+            text: i18n("Clock")
+            Layout.fillWidth: true
+        }
+    }
 
     actions: [
         Kirigami.Action {
@@ -52,7 +69,7 @@ Kirigami.GlobalDrawer {
         },
         Kirigami.Action {
             text: i18n("Settings")
-            iconName: "settings-configure"
+            icon.name: "settings-configure"
             onTriggered: appwindow.switchToPage(settingsPage, 0)
         }
     ]
