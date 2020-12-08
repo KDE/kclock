@@ -49,7 +49,7 @@ ToolBar {
         
         layer.enabled: true
         layer.effect: DropShadow {
-            color: Qt.rgba(0.0, 0.0, 0.0, 0.4)
+            color: Qt.rgba(0.0, 0.0, 0.0, 0.33)
             radius: 6
             samples: 8
         }
@@ -103,7 +103,9 @@ ToolBar {
                     hoverEnabled: true
                     anchors.fill: parent
                     onClicked: {
-                        appwindow.switchToPage(getPage(model.name), 0)
+                        if (!getPage(model.name).visible) {
+                            appwindow.switchToPage(getPage(model.name), 0);
+                        }
                     }
                     onPressed: {
                         widthAnim.to = toolbarRoot.shrinkIconSize;
