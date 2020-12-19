@@ -118,7 +118,7 @@ Kirigami.ApplicationWindow
             "shortDescription": "A mobile friendly clock app built with Kirigami.",
             "homepage": "",
             "bugAddress": "",
-            "version": "0.2",
+            "version": "0.2.2",
             "otherText": "",
             "copyrightStatement": "© 2020 Plasma Development Team",
             "desktopFileName": "org.kde.kclock",
