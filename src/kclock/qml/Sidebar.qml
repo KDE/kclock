@@ -36,13 +36,18 @@ Kirigami.GlobalDrawer {
     header: Kirigami.AbstractApplicationHeader {
         topPadding: Kirigami.Units.smallSpacing
         bottomPadding: Kirigami.Units.largeSpacing
-        leftPadding: Kirigami.Units.smallSpacing
-        rightPadding: Kirigami.Units.smallSpacing
+        leftPadding: Kirigami.Units.largeSpacing
+        rightPadding: Kirigami.Units.largeSpacing
         implicitHeight: Kirigami.Units.gridUnit * 2
+        
         Kirigami.Heading {
             level: 1
             text: i18n("Clock")
             Layout.fillWidth: true
+            
+            // HACK: spacing with other header is misaligned, so align it manually
+            x: Kirigami.Units.largeSpacing
+            y: Kirigami.Units.gridUnit * 0.13
         }
     }
 
