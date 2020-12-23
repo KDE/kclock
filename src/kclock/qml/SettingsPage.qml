@@ -118,13 +118,13 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
             implicitHeight: Kirigami.Units.gridUnit * 3
             
-            onClicked: appwindow.pageStack.layers.push(aboutPage)
+            onClicked: appwindow.switchToPageUrl("AboutPage.qml", 1)
             
             Label {
                 anchors.left: parent.left
                 anchors.leftMargin: Kirigami.Units.gridUnit
                 anchors.verticalCenter: parent.verticalCenter
-                font.bold: true
+                font.weight: Font.Bold
                 text: i18n("About")
             }
         }
@@ -141,7 +141,7 @@ Kirigami.ScrollablePage {
         modal: true
         focus: true
         anchors.centerIn: Overlay.overlay
-        width: Math.min(settingsPage.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 20)
+        width: Math.min(appwindow.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 20)
         height: Kirigami.Units.gridUnit * 8
         standardButtons: Dialog.Close
         title: i18n("Change Alarm Volume")
@@ -175,7 +175,7 @@ Kirigami.ScrollablePage {
         modal: true
         focus: true
         anchors.centerIn: Overlay.overlay
-        width: Math.min(settingsPage.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 20)
+        width: Math.min(appwindow.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 20)
         height: Kirigami.Units.gridUnit * 20
         standardButtons: Dialog.Close
         title: i18n("Silence Alarm After")
@@ -230,7 +230,7 @@ Kirigami.ScrollablePage {
         modal: true
         focus: true
         anchors.centerIn: Overlay.overlay
-        width: Math.min(settingsPage.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 20)
+        width: Math.min(appwindow.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 20)
         height: Kirigami.Units.gridUnit * 20
         standardButtons: Dialog.Close
         title: i18n("Alarm Snooze Length")

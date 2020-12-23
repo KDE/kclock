@@ -32,20 +32,30 @@ Kirigami.ApplicationWindow
 
     title: i18n("Clock")
 
-    pageStack.initialPage: timePage
+    Kirigami.PagePool {
+        id: pagePool
+    }
+    
+    pageStack.initialPage: pagePool.loadPage("TimePage.qml")
     
     function switchToPage(page, depth) {
         while (pageStack.depth > depth) pageStack.pop()
-        pageStack.push(page)
+        while (pageStack.layers.depth > 1) pageStack.layers.pop()
+        pageStack.push(page);
+    }
+    function switchToPageUrl(page, depth) {
+        while (pageStack.depth > depth) pageStack.pop()
+        while (pageStack.layers.depth > 1) pageStack.layers.pop()
+        pageStack.push(pagePool.loadPage(page));
     }
     
     function getPage(name) {
         switch (name) {
-            case "Time": return timePage;
-            case "Timer": return timerListPage;
-            case "Stopwatch": return stopwatchPage;
-            case "Alarm": return alarmPage;
-            case "Settings": return settingsPage;
+            case "Time": return "qrc:/qml/TimePage.qml";
+            case "Timer": return "qrc:/qml/TimerListPage.qml";
+            case "Stopwatch": return "qrc:/qml/StopwatchPage.qml";
+            case "Alarm": return "qrc:/qml/AlarmPage.qml";
+            case "Settings": return "qrc:/qml/SettingsPage.qml";
         }
     }
     
@@ -81,87 +91,5 @@ Kirigami.ApplicationWindow
     FontLoader {
         id: clockFont;
         source: "/assets/RedHatText-Regular.ttf"
-    }
-    
-    TimePage {
-        id: timePage
-        objectName: "time"
-    }
-    TimerListPage {
-        id: timerListPage
-        objectName: "timer"
-        visible: false
-    }
-    StopwatchPage {
-        id: stopwatchPage
-        objectName: "stopwatch"
-        visible: false
-    }
-    AlarmPage {
-        id: alarmPage
-        objectName: "alarm"
-        visible: false
-    }
-    SettingsPage {
-        id: settingsPage
-        objectName: "settings"
-        visible: false
-    }
-        
-    Kirigami.AboutPage {
-        id: aboutPage
-        visible: false
-        aboutData: {
-            "displayName": "Clock",
-            "productName": "kirigami/clock",
-            "componentName": "kclock",
-            "shortDescription": "A mobile friendly clock app built with Kirigami.",
-            "homepage": "",
-            "bugAddress": "",
-            "version": "0.2.2",
-            "otherText": "",
-            "copyrightStatement": "© 2020 Plasma Development Team",
-            "desktopFileName": "org.kde.kclock",
-            "authors": [
-                        {
-                            "name": "Devin Lin",
-                            "emailAddress": "espidev@gmail.com",
-                            "webAddress": "https://espi.dev",
-                        },
-                        {
-                            "name": "Han Young",
-                            "emailAddress": "hanyoung@protonmail.com",
-                            "webAddress": "https://han-y.gitlab.io",
-                        },
-
-                    ],
-            "licenses" : [
-                        {
-                            "name" : "GPL v2",
-                            "text" : "long, boring, license text",
-                            "spdx" : "GPL-2.0",
-                        }
-                    ],
-        }
-
-        // tray icon
-        //     QtPlatform.SystemTrayIcon {
-        //         visible: true
-        //         icon.name: "clock"
-        //
-        //         onActivated: {
-        //             appwindow.show()
-        //             appwindow.raise()
-        //             appwindow.requestActivate()
-        //         }
-        //
-        //         menu: QtPlatform.Menu {
-        //             visible: false
-        //             QtPlatform.MenuItem {
-        //                 text: qsTr("Quit")
-        //                 onTriggered: Qt.quit()
-        //             }
-        //         }
-        //     }
     }
 }

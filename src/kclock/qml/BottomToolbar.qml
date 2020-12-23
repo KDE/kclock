@@ -32,16 +32,6 @@ ToolBar {
     property double fontSize: Kirigami.Theme.defaultFont.pointSize * 0.8
     property double shrinkFontSize: Kirigami.Theme.defaultFont.pointSize * 0.7
     
-    function getPage(name) {
-        switch (name) {
-            case "Time": return timePage;
-            case "Timer": return timerListPage;
-            case "Stopwatch": return stopwatchPage;
-            case "Alarm": return alarmPage;
-            case "Settings": return settingsPage;
-        }
-    }
-    
     background: Rectangle {
         Kirigami.Theme.colorSet: Kirigami.Theme.Header
         color: Kirigami.Theme.backgroundColor
@@ -103,8 +93,8 @@ ToolBar {
                     hoverEnabled: true
                     anchors.fill: parent
                     onClicked: {
-                        if (!getPage(model.name).visible) {
-                            appwindow.switchToPage(getPage(model.name), 0);
+                        if (!appwindow.getPage(model.name).visible) {
+                            appwindow.switchToPageUrl(appwindow.getPage(model.name), 0);
                         }
                     }
                     onPressed: {
