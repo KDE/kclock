@@ -99,6 +99,7 @@ int main(int argc, char *argv[])
 
     engine->rootContext()->setContextObject(new KLocalizedContext(engine));
     // models
+    engine->rootContext()->setContextProperty("timeZoneSelectorModel", timeZoneModel);
     engine->rootContext()->setContextProperty("timeZoneShowModel", timeZoneViewModel);
     engine->rootContext()->setContextProperty("timeZoneFilterModel", timeZoneFilterModel);
     engine->rootContext()->setContextProperty("alarmModel", AlarmModel::instance());
