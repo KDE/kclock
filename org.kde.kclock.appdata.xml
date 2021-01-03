@@ -16,6 +16,7 @@
   <name xml:lang="ko">시계</name>
   <name xml:lang="nl">Klok</name>
   <name xml:lang="nn">Klokke</name>
+  <name xml:lang="pa">ਘੜੀ</name>
   <name xml:lang="pt">Relógio</name>
   <name xml:lang="pt-BR">Relógio</name>
   <name xml:lang="ro">Ceas</name>
@@ -38,6 +39,7 @@
   <summary xml:lang="ko">간단한 올인원 시계 프로그램입니다.</summary>
   <summary xml:lang="nl">Een eenvoudige alles-in-een kloktoepassing.</summary>
   <summary xml:lang="nn">Eit enkelt alt-i-eitt-ur.</summary>
+  <summary xml:lang="pa">ਇੱਕ ਸਰਲ ਘੜੀ ਐਪਲੀਕੇਸ਼ਨ ਹੈ।</summary>
   <summary xml:lang="pt">Uma aplicação simples de relógio tudo-em-um.</summary>
   <summary xml:lang="pt-BR">Um simples aplicativo de relógio tudo em um.</summary>
   <summary xml:lang="ro">Aplicație simplă de ceas.</summary>
@@ -63,6 +65,7 @@
   <developer_name xml:lang="ko">KDE 커뮤니티</developer_name>
   <developer_name xml:lang="nl">KDE-gemeenschap</developer_name>
   <developer_name xml:lang="nn">KDE-fellesskapet</developer_name>
+  <developer_name xml:lang="pa">ਕੇਡੀਈ ਕਮਿਊਨਟੀ</developer_name>
   <developer_name xml:lang="pt">Comunidade do KDE</developer_name>
   <developer_name xml:lang="pt-BR">Comunidade KDE</developer_name>
   <developer_name xml:lang="ro">Comunitatea KDE</developer_name>
@@ -86,6 +89,7 @@
     <p xml:lang="ko">KClock은 초시계, 타이머, 알람 기능을 지원하는 모바일 친화적 시계 프로그램입니다</p>
     <p xml:lang="nl">KClock is een mobielvriendelijke kloktoepassing, die een stopwatch, timer en wekker bevat</p>
     <p xml:lang="nn">KClock er eit mobil­vennleg klokke­program med stoppeklokke, nedtaljar og alarmar.</p>
+    <p xml:lang="pa">ਕੇ-ਘੜੀ ਮੋਬਾਇਲ ਲਈ ਢੁੱਕਵੀਂ ਘੜੀ ਐਪਲੀਕੇਸ਼ਨ ਹੈ, ਜਿਸ ਵਿੱਚ ਸਟਾਪ-ਵਾਚ, ਟਾਈਮਰ ਤੇ ਅਲਾਰਮ ਸ਼ਾਮਲ ਹਨ।</p>
     <p xml:lang="pt">O KClock é uma aplicação móvel e amigável de relógio, que inclui alarmes, cronómetros e temporizadores</p>
     <p xml:lang="pt-BR">O KClock é um aplicativo de relógio para dispositivos móveis, que inclui um cronômetro, temporizador e alarmes</p>
     <p xml:lang="ro">KClock e o aplicație de ceas prietenoasă cu dispozitivele mobile, ce include un cronometru, temporizator și alarme</p>
