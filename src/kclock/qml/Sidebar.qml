@@ -55,27 +55,27 @@ Kirigami.GlobalDrawer {
         Kirigami.Action {
             text: i18n("Time")
             iconName: "clock"
-            onTriggered: appwindow.switchToPageUrl(appwindow.getPage("Time"), 0)
+            onTriggered: appwindow.switchToPage(appwindow.getPage("Time"), 0)
         },
         Kirigami.Action {
             text: i18n("Timer")
             iconName: "player-time"
-            onTriggered: appwindow.switchToPageUrl(appwindow.getPage("Timer"), 0)
+            onTriggered: appwindow.switchToPage(appwindow.getPage("Timer"), 0)
         },
         Kirigami.Action {
             text: i18n("Stopwatch")
             iconName: "chronometer"
-            onTriggered: appwindow.switchToPageUrl(appwindow.getPage("Stopwatch"), 0)
+            onTriggered: appwindow.switchToPage(appwindow.getPage("Stopwatch"), 0)
         },
         Kirigami.Action {
             text: i18n("Alarm")
             iconName: "notifications"
-            onTriggered: appwindow.switchToPageUrl(appwindow.getPage("Alarm"), 0)
+            onTriggered: appwindow.switchToPage(appwindow.getPage("Alarm"), 0)
         },
         Kirigami.Action {
             text: i18n("Settings")
             icon.name: "settings-configure"
-            onTriggered: appwindow.switchToPageUrl(appwindow.getPage("Settings"), 0)
+            onTriggered: appwindow.switchToPage(appwindow.getPage("Settings"), 0)
         }
     ]
 }

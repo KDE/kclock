@@ -118,7 +118,7 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
             implicitHeight: Kirigami.Units.gridUnit * 3
             
-            onClicked: appwindow.switchToPageUrl("AboutPage.qml", 1)
+            onClicked: appwindow.switchToPage(appwindow.getPage("About"), 1)
             
             Label {
                 anchors.left: parent.left
@@ -158,7 +158,7 @@ Kirigami.ScrollablePage {
                 to: 100
                 value: alarmPlayer.volume
                 onPressedChanged: {
-                    if(!pressed){
+                    if (!pressed) {
                         alarmPlayer.play();
                     }
                 }
@@ -211,7 +211,7 @@ Kirigami.ScrollablePage {
                 delegate: RadioDelegate {
                     width: parent.width
                     text: i18n(name)
-                    checked: settingsModel.alarmSilenceAfter == value
+                    checked: settingsModel && settingsModel.alarmSilenceAfter == value
                     onCheckedChanged: {
                         if (checked) {
                             settingsModel.alarmSilenceAfter = value;
@@ -274,7 +274,7 @@ Kirigami.ScrollablePage {
                 delegate: RadioDelegate {
                     width: parent.width
                     text: i18n(name)
-                    checked: settingsModel.alarmSnoozeLength == value
+                    checked: settingsModel && settingsModel.alarmSnoozeLength == value
                     onCheckedChanged: {
                         if (checked) {
                             settingsModel.alarmSnoozeLength = value;

@@ -94,7 +94,7 @@ ToolBar {
                     anchors.fill: parent
                     onClicked: {
                         if (!appwindow.getPage(model.name).visible) {
-                            appwindow.switchToPageUrl(appwindow.getPage(model.name), 0);
+                            appwindow.switchToPage(appwindow.getPage(model.name), 0);
                         }
                     }
                     onPressed: {

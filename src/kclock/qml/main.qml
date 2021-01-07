@@ -43,19 +43,15 @@ Kirigami.ApplicationWindow
         while (pageStack.layers.depth > 1) pageStack.layers.pop()
         pageStack.push(page);
     }
-    function switchToPageUrl(page, depth) {
-        while (pageStack.depth > depth) pageStack.pop()
-        while (pageStack.layers.depth > 1) pageStack.layers.pop()
-        pageStack.push(pagePool.loadPage(page));
-    }
     
     function getPage(name) {
         switch (name) {
-            case "Time": return "qrc:/qml/TimePage.qml";
-            case "Timer": return "qrc:/qml/TimerListPage.qml";
-            case "Stopwatch": return "qrc:/qml/StopwatchPage.qml";
-            case "Alarm": return "qrc:/qml/AlarmPage.qml";
-            case "Settings": return "qrc:/qml/SettingsPage.qml";
+            case "Time": return pagePool.loadPage("qrc:/qml/TimePage.qml");
+            case "Timer": return pagePool.loadPage("qrc:/qml/TimerListPage.qml");
+            case "Stopwatch": return pagePool.loadPage("qrc:/qml/StopwatchPage.qml");
+            case "Alarm": return pagePool.loadPage("qrc:/qml/AlarmPage.qml");
+            case "Settings": return pagePool.loadPage("qrc:/qml/SettingsPage.qml");
+            case "About": return pagePool.loadPage("qrc:/qml/AboutPage.qml");
         }
     }
     
