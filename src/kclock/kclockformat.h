@@ -35,6 +35,13 @@ class KclockFormat : public QObject
     Q_PROPERTY(int hours READ hours NOTIFY hourChanged)
 public:
     explicit KclockFormat(QObject *parent = nullptr);
+    
+    static KclockFormat *instance()
+    {
+        static KclockFormat * singleton = new KclockFormat();
+        return singleton;
+    };
+    
     Q_INVOKABLE QString formatTimeString(int hours, int minutes);
     Q_INVOKABLE bool isChecked(int dayIndex, int daysOfWeek);
     QString currentTime()

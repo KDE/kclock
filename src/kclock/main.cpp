@@ -80,7 +80,6 @@ int main(int argc, char *argv[])
 
     auto *timeZoneFilterModel = new TimeZoneFilterModel(timeZoneModel);
     auto *stopwatchTimer = new StopwatchTimer();
-    auto *kclockFormat = new KclockFormat();
     auto *weekModel = new WeekModel();
 
     // register QML types
@@ -107,7 +106,7 @@ int main(int argc, char *argv[])
     engine->rootContext()->setContextProperty("utilModel", UtilModel::instance());
     engine->rootContext()->setContextProperty("stopwatchTimer", stopwatchTimer);
     engine->rootContext()->setContextProperty("alarmPlayer", &AlarmPlayer::instance());
-    engine->rootContext()->setContextProperty("kclockFormat", kclockFormat);
+    engine->rootContext()->setContextProperty("kclockFormat", KclockFormat::instance());
     engine->rootContext()->setContextProperty("weekModel", weekModel);
     engine->rootContext()->setContextProperty("settingsModel", &KClockSettings::instance());
 

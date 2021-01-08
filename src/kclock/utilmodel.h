@@ -24,7 +24,6 @@
 #include <QObject>
 #include <QString>
 
-class UtilModel;
 class UtilModel : public QObject
 {
     Q_OBJECT
