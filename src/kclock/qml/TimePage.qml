@@ -26,7 +26,8 @@ import QtQuick.Shapes 1.12
 import org.kde.kirigami 2.12 as Kirigami
 
 Kirigami.ScrollablePage {
-    
+    id: timePage
+
     title: "Time"
     icon.name: "clock"
     
@@ -51,11 +52,14 @@ Kirigami.ScrollablePage {
         Item {
             id: clockItem
             Layout.alignment: Qt.AlignHCenter
-            width: analogClock.clockRadius * 2 + Kirigami.Units.gridUnit * 0.5
-            height: analogClock.clockRadius * 2 + Kirigami.Units.gridUnit
+            property int clockRadius: Kirigami.Units.gridUnit * 4
+            width: clockRadius * 2 + Kirigami.Units.gridUnit * 0.5
+            height: clockRadius * 2 + Kirigami.Units.gridUnit
             AnalogClock {
                 id: analogClock
-                clockRadius: Kirigami.Units.gridUnit * 4
+                anchors.centerIn: parent
+                height: parent.clockRadius * 2 
+                width: parent.clockRadius * 2
             }
         }
         

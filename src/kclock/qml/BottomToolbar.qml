@@ -80,7 +80,9 @@ ToolBar {
                 Kirigami.Theme.colorSet: Kirigami.Theme.Header
                 color: mouseArea.pressed ? Qt.darker(Kirigami.Theme.backgroundColor, 1.1) : 
                        mouseArea.containsMouse ? Qt.darker(Kirigami.Theme.backgroundColor, 1.03) : Kirigami.Theme.backgroundColor
-                       
+                
+                property bool isCurrentPage: appwindow.getPage(model.name) === appwindow.pageStack.currentItem
+                
                 Behavior on color {
                     ColorAnimation { 
                         duration: 100 
@@ -93,7 +95,7 @@ ToolBar {
                     hoverEnabled: true
                     anchors.fill: parent
                     onClicked: {
-                        if (!appwindow.getPage(model.name).visible) {
+                        if (!isCurrentPage) {
                             appwindow.switchToPage(appwindow.getPage(model.name), 0);
                         }
                     }
@@ -127,7 +129,7 @@ ToolBar {
                     spacing: Kirigami.Units.smallSpacing
                     
                     Kirigami.Icon {
-                        color: getPage(model.name).visible ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
+                        color: isCurrentPage ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
                         source: model.icon
                         Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
                         Layout.preferredHeight: toolbarRoot.iconSize
@@ -161,7 +163,7 @@ ToolBar {
                     }
                     
                     Label {
-                        color: getPage(model.name).visible ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
+                        color: isCurrentPage ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
                         text: i18n(model.name)
                         Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
                         horizontalAlignment: Text.AlignHCenter
