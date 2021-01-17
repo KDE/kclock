@@ -31,7 +31,7 @@ Kirigami.ScrollablePage {
     icon.name: "notifications"
     mainAction: Kirigami.Action {
         iconName: "list-add"
-        text: "New Alarm"
+        text: i18n("New Alarm")
         onTriggered: appwindow.pageStack.layers.push(Qt.resolvedUrl("NewAlarmPage.qml"))
     }
 

@@ -74,7 +74,7 @@ Kirigami.Page {
 
         Item {
             Kirigami.FormData.isSection: true
-            Kirigami.FormData.label: "Duration"
+            Kirigami.FormData.label: i18n("Duration")
         }
         Kirigami.Separator {}
 
@@ -122,7 +122,7 @@ Kirigami.Page {
 
         Item {
             Kirigami.FormData.isSection: true
-            Kirigami.FormData.label: "Label (optional)"
+            Kirigami.FormData.label: i18n("Label (optional)")
         }
 
         Kirigami.Separator {}
@@ -135,7 +135,7 @@ Kirigami.Page {
         ToolButton {
             flat: false
             icon.name: "list-add"
-            text: "Create"
+            text: i18n("Create")
             onClicked: justCreated = false;
         }
     }

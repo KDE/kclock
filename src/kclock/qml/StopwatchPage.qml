@@ -27,7 +27,7 @@ import org.kde.kirigami 2.4 as Kirigami
 
 Kirigami.ScrollablePage {
     id: stopwatchpage
-    title: "Stopwatch"
+    title: i18n("Stopwatch")
     icon.name: "chronometer"
     property bool running: false
     property int elapsedTime: stopwatchTimer.elapsedTime
@@ -36,7 +36,7 @@ Kirigami.ScrollablePage {
 
     // start/pause button
     mainAction: Kirigami.Action {
-        text: running ? "Pause" : "Start"
+        text: running ? i18n("Pause") : i18n("Start")
         iconName: running ? "chronometer-pause" : "chronometer-start"
         onTriggered: {
             running = !running;
@@ -113,7 +113,7 @@ Kirigami.ScrollablePage {
                     ToolButton {
                         Layout.alignment: Qt.AlignHCenter
                         icon.name: "chronometer-reset"
-                        text: "Reset"
+                        text: i18n("Reset")
                         flat: false
                         onClicked: {
                             running = false;
@@ -124,7 +124,7 @@ Kirigami.ScrollablePage {
                     ToolButton {
                         Layout.alignment: Qt.AlignHCenter
                         icon.name: "chronometer-lap"
-                        text: "Lap"
+                        text: i18n("Lap")
                         flat: false
                         enabled: running
                         onClicked: {

@@ -28,7 +28,7 @@ import org.kde.kirigami 2.12 as Kirigami
 Kirigami.ScrollablePage {
     id: timePage
 
-    title: "Time"
+    title: i18n("Time")
     icon.name: "clock"
     
     //globalToolBarStyle: Kirigami.ApplicationHeaderStyle.ToolBar

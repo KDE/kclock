@@ -158,7 +158,7 @@ Kirigami.ScrollablePage {
 
         FileDialog {
             id: fileDialog
-            title: "Choose an audio"
+            title: i18n("Choose an audio")
             folder: shortcuts.music
             onAccepted: {
                 newAlarmPageRoot.ringtonePath = fileDialog.fileUrl;
