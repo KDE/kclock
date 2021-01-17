@@ -116,7 +116,9 @@ int main(int argc, char *argv[])
         QScopedPointer<QCommandLineParser> parser(createParser());
         parser->process(app);
         if (parser->isSet(QStringLiteral("page"))) {
-            QMetaObject::invokeMethod(engine->rootObjects().first(), "switchToPage", Q_ARG(QVariant, parser->value("page")));
+            QVariant page;
+            QMetaObject::invokeMethod(engine->rootObjects().first(), "getPage", Q_RETURN_ARG(QVariant, page), Q_ARG(QVariant, parser->value("page")));
+            QMetaObject::invokeMethod(engine->rootObjects().first(), "switchToPage", Q_ARG(QVariant, page), Q_ARG(QVariant, 0));
         }
     }
     return app.exec();
