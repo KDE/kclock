@@ -12,6 +12,7 @@
   <name xml:lang="eu">Erlojua</name>
   <name xml:lang="fi">Kello</name>
   <name xml:lang="fr">Horloge</name>
+  <name xml:lang="id">Clock</name>
   <name xml:lang="it">Orologio</name>
   <name xml:lang="ko">시계</name>
   <name xml:lang="nl">Klok</name>
@@ -35,6 +36,7 @@
   <summary xml:lang="eu">Dena batean duen erloju aplikazio erraz bat.</summary>
   <summary xml:lang="fi">Yksinkertainen kaikki yhdessä -kellosovellus.</summary>
   <summary xml:lang="fr">Une application d'horloge, simple et tout-en-un.</summary>
+  <summary xml:lang="id">Sebuah aplikasi semua dalam satu jam yang sederhana.</summary>
   <summary xml:lang="it">Una semplice applicazione tutto in uno per l'orologio.</summary>
   <summary xml:lang="ko">간단한 올인원 시계 프로그램입니다.</summary>
   <summary xml:lang="nl">Een eenvoudige alles-in-een kloktoepassing.</summary>
@@ -61,6 +63,7 @@
   <developer_name xml:lang="eu">KDE komunitatea</developer_name>
   <developer_name xml:lang="fi">KDE-yhteisö</developer_name>
   <developer_name xml:lang="fr">Communauté KDE</developer_name>
+  <developer_name xml:lang="id">Komunitas KDE</developer_name>
   <developer_name xml:lang="it">Comunità KDE</developer_name>
   <developer_name xml:lang="ko">KDE 커뮤니티</developer_name>
   <developer_name xml:lang="nl">KDE-gemeenschap</developer_name>
@@ -85,6 +88,7 @@
     <p xml:lang="eu">KClock mugikorrekiko lagunkoia den erloju aplikazio bat da, kronometro bat, tenporizadorea eta alarmak dituena</p>
     <p xml:lang="fi">KClock on mobiiliystävällinen kellosovellus, johon sisältyvät ajanotto, ajastus ja hälytykset</p>
     <p xml:lang="fr">KClock est une application nomade et agréable d'horloge, intégrant un chronomètre, des temporisations et des alarmes</p>
+    <p xml:lang="id">KClock adalah aplikasi jam ramah seluler, yang mencakup stopwatch, timer, dan alarm</p>
     <p xml:lang="it">KClock è un'applicazione per l'orologio ottimizzata per dispositivi mobili, che un cronometro, dei timer e degli allarmi</p>
     <p xml:lang="ko">KClock은 초시계, 타이머, 알람 기능을 지원하는 모바일 친화적 시계 프로그램입니다</p>
     <p xml:lang="nl">KClock is een mobielvriendelijke kloktoepassing, die een stopwatch, timer en wekker bevat</p>
