@@ -26,24 +26,24 @@ import org.kde.kirigami 2.11 as Kirigami
 Kirigami.AboutPage {
     id: aboutPage
     aboutData: {
-        "displayName": "Clock",
+        "displayName": i18n("Clock"),
         "productName": "kirigami/clock",
         "componentName": "kclock",
-        "shortDescription": "A mobile friendly clock app built with Kirigami.",
+        "shortDescription": i18n("A mobile friendly clock app built with Kirigami."),
         "homepage": "",
         "bugAddress": "",
         "version": "0.3.0",
         "otherText": "",
-        "copyrightStatement": "© 2020 Plasma Development Team",
+        "copyrightStatement": i18n("© 2020 Plasma Development Team"),
         "desktopFileName": "org.kde.kclock",
         "authors": [
                     {
-                        "name": "Devin Lin",
+                        "name": i18n("Devin Lin"),
                         "emailAddress": "espidev@gmail.com",
                         "webAddress": "https://espi.dev",
                     },
                     {
-                        "name": "Han Young",
+                        "name": i18n("Han Young"),
                         "emailAddress": "hanyoung@protonmail.com",
                         "webAddress": "https://han-y.gitlab.io",
                     },

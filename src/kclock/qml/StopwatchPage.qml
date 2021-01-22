@@ -151,7 +151,7 @@ Kirigami.ScrollablePage {
                             anchors.horizontalCenter: parent.horizontalCenter
                             color: Kirigami.Theme.textColor
                             font.weight: Font.Bold
-                            text: i18n("Lap") + " " + (roundModel.count - model.index)
+                            text: i18n("Lap %1", roundModel.count - model.index)
                         }
                     }
                     Rectangle {

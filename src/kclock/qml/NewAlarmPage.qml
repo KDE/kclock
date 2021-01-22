@@ -176,7 +176,7 @@ Kirigami.ScrollablePage {
             onRejected: {
                 this.close();
             }
-            nameFilters: [ "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)", "All files (*)" ]
+            nameFilters: [ i18n("Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"), i18n("All files (*)") ]
         }
     }
     function hoursTo12(hours){ // auxiliary function to convert 24hours to 12
