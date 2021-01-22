@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
     QQmlDebuggingEnabler enabler;
 
     KLocalizedString::setApplicationDomain("kclock");
-    KAboutData aboutData("kclock", "Clock", "0.2.2", "Simple clock made in Kirigami", KAboutLicense::GPL, i18n("© 2020 KDE Community"));
+    KAboutData aboutData("kclock", "Clock", "0.3.0", "Simple clock made in Kirigami", KAboutLicense::GPL, i18n("© 2020 KDE Community"));
     aboutData.addAuthor(i18n("Devin Lin"), QString(), QStringLiteral("espidev@gmail.com"));
     aboutData.addAuthor(i18n("Han Young"), QString(), QStringLiteral("hanyoung@protonmail.com"));
     KAboutData::setApplicationData(aboutData);
