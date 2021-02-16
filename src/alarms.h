@@ -35,7 +35,9 @@ class QMediaPlayer;
 class QThread;
 class AlarmWaitWorker;
 class AlarmModel;
+
 const QString ALARM_CFG_GROUP = "Alarms";
+
 class Alarm : public QObject
 {
     Q_OBJECT
@@ -51,6 +53,7 @@ class Alarm : public QObject
 public Q_SLOTS:
     void handleDismiss();
     void handleSnooze();
+    void save(); // serialize and save to config
 
 public:
     explicit Alarm(AlarmModel *parent = nullptr, QString name = "", int minutes = 0, int hours = 0, int daysOfWeek = 0);
@@ -148,8 +151,8 @@ public:
     }
     QString serialize();
 
+    void ring(); // ring alarm
     Q_SCRIPTABLE quint64 nextRingTime(); // the next time this should ring, if this would never ring, return -1
-    void ring();                         // ring alarm
     Q_SCRIPTABLE QString getUUID()
     {
         return m_uuid.toString();
@@ -164,8 +167,6 @@ Q_SIGNALS:
     void ringtonePathChanged();
     Q_SCRIPTABLE void propertyChanged(QString property);
     Q_SCRIPTABLE void alarmChanged();
-private Q_SLOTS:
-    void save(); // serialize and save to config
 private:
     void initialize(AlarmModel *parent); // called after object construction
     void calculateNextRingTime();

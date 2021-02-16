@@ -24,6 +24,7 @@
 #include <QDBusConnection>
 #include <QDBusReply>
 #include <QLocale>
+#include <QDebug>
 #include <klocalizedstring.h>
 
 #include "alarmmodel.h"
@@ -41,6 +42,20 @@ AlarmModel::AlarmModel(QObject *parent)
     QDBusConnection::sessionBus().registerObject(QStringLiteral("/Alarms"), this);
 
     // load alarms from config
+    load();
+
+    // update notify icon in systemtray
+    connect(this, &AlarmModel::nextAlarm, this, &AlarmModel::updateNotifierItem);
+    m_notifierItem->setIconByName(QStringLiteral("clock"));
+    m_notifierItem->setStandardActionsEnabled(false);
+    m_notifierItem->setAssociatedWidget(nullptr);
+
+    // alarm wakeup behaviour
+    connect(&Utilities::instance(), &Utilities::wakeup, this, &AlarmModel::wakeupCallback);
+}
+
+void AlarmModel::load()
+{
     auto config = KSharedConfig::openConfig();
     KConfigGroup group = config->group(ALARM_CFG_GROUP);
     for (QString key : group.keyList()) {
@@ -51,15 +66,6 @@ AlarmModel::AlarmModel(QObject *parent)
             m_alarmsList.append(alarm);
         }
     }
-
-    // update notify icon in systemtray
-    connect(this, &AlarmModel::nextAlarm, this, &AlarmModel::updateNotifierItem);
-    m_notifierItem->setIconByName(QStringLiteral("clock"));
-    m_notifierItem->setStandardActionsEnabled(false);
-    m_notifierItem->setAssociatedWidget(nullptr);
-
-    // alarm wakeup behaviour
-    connect(&Utilities::instance(), &Utilities::wakeup, this, &AlarmModel::wakeupCallback);
 }
 
 void AlarmModel::configureWakeups()
@@ -176,6 +182,7 @@ void AlarmModel::removeAlarm(int index)
 void AlarmModel::addAlarm(int hours, int minutes, int daysOfWeek, QString name, QString ringtonePath)
 {
     Alarm *alarm = new Alarm(this, name, minutes, hours, daysOfWeek);
+    alarm->save();
 
     // insert new alarm in order by time of day
     int i = 0;

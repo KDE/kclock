@@ -35,6 +35,7 @@ public:
         return singleton;
     }
 
+    void load();
     void configureWakeups(); // needs to be called to start worker thread, or configure powerdevil (called in main)
 
     Q_SCRIPTABLE void removeAlarm(QString uuid);
