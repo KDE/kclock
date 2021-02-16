@@ -46,7 +46,6 @@ There are numerous reasons that causes kclockd will start up in `--no-powerdevil
 * Plasma 5.20 or later not being installed
 * You are on a BSD system
 * You choose to not to
-* All of the other possiblities I forgot to mention
 
 ## KClockd D-Bus interface
 After installing, five D-Bus interface XML files are copied to the KDE D-Bus interface directory. 
@@ -71,8 +70,8 @@ QT_QUICK_CONTROLS_MOBILE=true QT_QUICK_CONTROLS_STYLE=Plasma
 ```
 
 ## Plasmoids
-Various plasmoids for kclockd and some also communicate with [KWeather](https://invent.kde.org/plasma-mobile/kweather).
+Various plasmoids for kclockd exist, and some also communicate with [KWeather](https://invent.kde.org/plasma-mobile/kweather).
 
 Currently we have two plasmoids, expect more in the future.
 
-Intended to provides `widgets` similar to those you can find in mainstream mobile platforms.
+Intended to provide `widgets` similar to those you can find on mainstream mobile platforms.
