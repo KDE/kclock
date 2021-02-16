@@ -1,7 +1,0 @@
-File=kclocksettings.kcfg
-ClassName=KClockSettings
-Mutators=true
-DefaultValueGetters=true
-GenerateProperties=true
-ParentInConstructor=true
- 
