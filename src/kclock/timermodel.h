@@ -18,14 +18,15 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef KIRIGAMICLOCK_TIMERMODEL_H
-#define KIRIGAMICLOCK_TIMERMODEL_H
+#ifndef KCLOCK_TIMERMODEL_H
+#define KCLOCK_TIMERMODEL_H
 
 #include <KLocalizedString>
 #include <QAbstractListModel>
 #include <QObject>
 
 #include "timermodelinterface.h"
+
 class Timer;
 class TimerModel : public QAbstractListModel
 {
@@ -62,4 +63,4 @@ private:
     OrgKdeKclockTimerModelInterface *m_interface;
 };
 
-#endif // KIRIGAMICLOCK_TIMERMODEL_H
+#endif // KCLOCK_TIMERMODEL_H

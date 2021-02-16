@@ -24,7 +24,7 @@
 #include <KLocalizedString>
 
 #include "alarmmodel.h"
-#include "alarms.h"
+#include "alarm.h"
 #include "utilmodel.h"
 
 Alarm::Alarm() {};

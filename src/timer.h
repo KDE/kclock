@@ -17,7 +17,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-#pragma once
+
+#ifndef KCLOCKD_TIMER_H
+#define KCLOCKD_TIMER_H
 
 #include <QDateTime>
 #include <QObject>
@@ -100,3 +102,5 @@ private:
     QString m_label;
     bool m_running = false;
 };
+
+#endif // KCLOCKD_TIMER_H

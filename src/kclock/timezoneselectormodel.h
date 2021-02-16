@@ -18,8 +18,8 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef TIMEZONESELECTORMODEL_H
-#define TIMEZONESELECTORMODEL_H
+#ifndef KCLOCK_TIMEZONESELECTORMODEL_H
+#define KCLOCK_TIMEZONESELECTORMODEL_H
 
 #include <QAbstractListModel>
 #include <QSortFilterProxyModel>
@@ -64,4 +64,4 @@ public:
     explicit TimeZoneViewModel(TimeZoneSelectorModel *model, QObject *parent = nullptr);
 };
 
-#endif
+#endif // KCLOCK_TIMEZONESELECTORMODEL_H

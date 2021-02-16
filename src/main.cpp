@@ -34,6 +34,7 @@
 #include "kclockdsettings.h"
 #include "kclocksettingsadaptor.h"
 #include "timermodel.h"
+
 QCommandLineParser *createParser()
 {
     QCommandLineParser *parser = new QCommandLineParser;

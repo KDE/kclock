@@ -1,5 +1,5 @@
 set(kclock_SRCS
-    alarms.cpp
+    alarm.cpp
     alarmmodel.cpp
     timer.cpp
     timermodel.cpp
@@ -7,7 +7,8 @@ set(kclock_SRCS
     stopwatchtimer.cpp
     alarmplayer.cpp
     kclockformat.cpp
-    kclocksettings.cpp
+    settingsmodel.cpp
+    timezoneselectormodel.cpp
     resources.qrc
     )
 
@@ -23,7 +24,7 @@ qt5_add_dbus_interface(kclock_SRCS ${AlarmModelXML} alarmmodelinterface )
 qt5_add_dbus_interface(kclock_SRCS ${TimermModelXML} timermodelinterface )
 qt5_add_dbus_interface(kclock_SRCS ${TimerXML} timerinterface )
 
-add_executable(kclock main.cpp timezoneselectormodel.cpp ${kclock_SRCS} )
+add_executable(kclock main.cpp ${kclock_SRCS} )
 add_dependencies(kclock kclockd)
 target_link_libraries(kclock
         Qt5::Qml

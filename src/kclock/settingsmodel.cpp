@@ -17,11 +17,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-#include "kclocksettings.h"
-#include "alarmplayer.h"
+
 #include <KLocalizedString>
 #include <QDebug>
-KClockSettings::KClockSettings()
+
+#include "settingsmodel.h"
+#include "alarmplayer.h"
+
+SettingsModel::SettingsModel()
     : m_interface(new LocalKClockSettingsInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Settings"), QDBusConnection::sessionBus()))
 {
     m_volume = m_interface->alarmVolume();
@@ -30,9 +33,9 @@ KClockSettings::KClockSettings()
     m_alarmSilenceAfter = m_interface->alarmSilenceAfter();
     m_alarmSnoozeLength = m_interface->alarmSnoozeLength();
 
-    connect(m_interface, &LocalKClockSettingsInterface::alarmVolumeChanged, this, &KClockSettings::updateVolume);
-    connect(m_interface, &LocalKClockSettingsInterface::alarmSilenceAfterChanged, this, &KClockSettings::updateAlarmSilenceAfter);
-    connect(m_interface, &LocalKClockSettingsInterface::alarmSnoozeLengthChanged, this, &KClockSettings::updateAlarmSnoozeLength);
+    connect(m_interface, &LocalKClockSettingsInterface::alarmVolumeChanged, this, &SettingsModel::updateVolume);
+    connect(m_interface, &LocalKClockSettingsInterface::alarmSilenceAfterChanged, this, &SettingsModel::updateAlarmSilenceAfter);
+    connect(m_interface, &LocalKClockSettingsInterface::alarmSnoozeLengthChanged, this, &SettingsModel::updateAlarmSnoozeLength);
 
     // init display
     switch (m_alarmSilenceAfter) {
@@ -85,19 +88,19 @@ KClockSettings::KClockSettings()
     qDebug() << m_alarmSnoozeLengthDisplay;
 }
 
-void KClockSettings::updateVolume()
+void SettingsModel::updateVolume()
 {
     m_volume = m_interface->alarmVolume();
     Q_EMIT volumeChanged();
 }
 
-void KClockSettings::updateAlarmSilenceAfter()
+void SettingsModel::updateAlarmSilenceAfter()
 {
     m_alarmSilenceAfter = m_interface->alarmSilenceAfter();
     Q_EMIT alarmSilenceChanged();
 }
 
-void KClockSettings::updateAlarmSnoozeLength()
+void SettingsModel::updateAlarmSnoozeLength()
 {
     m_alarmSnoozeLength = m_interface->alarmSnoozeLength();
     Q_EMIT alarmSnoozedChanged();

@@ -17,11 +17,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-#ifndef ALARMPLAYER_H
-#define ALARMPLAYER_H
+#ifndef KCLOCK_ALARMPLAYER_H
+#define KCLOCK_ALARMPLAYER_H
 
 #include <QMediaPlayer>
 #include <QObject>
+
 class AlarmPlayer : public QObject
 {
     Q_OBJECT
@@ -52,4 +53,4 @@ private slots:
     void loopAudio(QMediaPlayer::State state);
 };
 
-#endif // ALARMPLAYER_H
+#endif // KCLOCK_ALARMPLAYER_H

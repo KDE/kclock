@@ -18,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+
 #include <KConfigGroup>
 #include <KSharedConfig>
 #include <KStatusNotifierItem>
@@ -30,8 +31,8 @@
 
 #include <klocalizedstring.h>
 
+#include "alarm.h"
 #include "alarmmodel.h"
-#include "alarms.h"
 #include "utilmodel.h"
 #include "kclock_algorithm.hpp"
 
@@ -43,6 +44,7 @@ AlarmModel::AlarmModel(QObject *parent)
         connect(m_interface, SIGNAL(alarmAdded(QString)), this, SLOT(addAlarm(QString)));
         connect(m_interface, SIGNAL(alarmRemoved(QString)), this, SLOT(removeAlarm(QString)));
     }
+    
     QDBusInterface *interface = new QDBusInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Alarms"), QStringLiteral("org.freedesktop.DBus.Introspectable"), QDBusConnection::sessionBus(), this);
     QDBusReply<QString> reply = interface->call(QStringLiteral("Introspect"));
     if (reply.isValid()) {

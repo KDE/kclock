@@ -22,9 +22,10 @@
 
 #include <QAbstractListModel>
 #include <QObject>
+#include <QTimer>
 #include <array>
 #include <tuple>
-class QTimer;
+
 class WeekModel;
 class KclockFormat : public QObject
 {

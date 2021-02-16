@@ -18,8 +18,8 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef KIRIGAMICLOCK_UTILMODEL_H
-#define KIRIGAMICLOCK_UTILMODEL_H
+#ifndef KCLOCK_UTILMODEL_H
+#define KCLOCK_UTILMODEL_H
 
 #include <QObject>
 #include <QString>
@@ -55,4 +55,4 @@ Q_SIGNALS:
     void applicationLoadedChanged();
 };
 
-#endif // KIRIGAMICLOCK_UTILMODEL_H
+#endif // KCLOCK_UTILMODEL_H

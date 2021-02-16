@@ -17,14 +17,18 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-#include "alarmplayer.h"
+
 #include <QStandardPaths>
 #include <QDateTime>
+
+#include "alarmplayer.h"
+
 AlarmPlayer &AlarmPlayer::instance()
 {
     static AlarmPlayer singleton;
     return singleton;
 }
+
 AlarmPlayer::AlarmPlayer(QObject *parent)
     : QObject(parent)
     , m_player(new QMediaPlayer(this, QMediaPlayer::LowLatency))

@@ -18,8 +18,8 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef KIRIGAMICLOCK_TIMERMODEL_H
-#define KIRIGAMICLOCK_TIMERMODEL_H
+#ifndef KCLOCK_TIMERMODEL_H
+#define KCLOCK_TIMERMODEL_H
 
 #include <QObject>
 
@@ -29,6 +29,7 @@ class TimerModel : public QObject
 {
     Q_OBJECT
     Q_CLASSINFO("D-Bus Interface", "org.kde.kclock.TimerModel")
+
 public:
     static TimerModel *instance()
     {
@@ -52,4 +53,4 @@ private:
     QList<Timer *> m_timerList;
 };
 
-#endif // KIRIGAMICLOCK_TIMERMODEL_H
+#endif // KCLOCK_TIMERMODEL_H

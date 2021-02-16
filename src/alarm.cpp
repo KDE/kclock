@@ -32,10 +32,7 @@
 #include <KSharedConfig>
 
 #include "alarmadaptor.h"
-#include "alarmmodel.h"
-#include "alarmplayer.h"
-#include "alarms.h"
-#include "alarmwaitworker.h"
+#include "alarm.h"
 #include "kclockdsettings.h"
 
 // alarm created from UI

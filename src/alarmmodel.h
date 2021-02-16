@@ -19,11 +19,15 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#pragma once
+#ifndef KCLOCKD_ALARMMODEL_H
+#define KCLOCKD_ALARMMODEL_H
+
 #include <QObject>
+#include <KStatusNotifierItem>
+
+#include "alarm.h"
 
 class Alarm;
-class KStatusNotifierItem;
 class AlarmModel : public QObject
 {
     Q_OBJECT
@@ -66,3 +70,5 @@ private:
 
     QList<Alarm *> m_alarmsList;
 };
+
+#endif // KCLOCKD_ALARMMODEL_H

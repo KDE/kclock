@@ -17,12 +17,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-#pragma once
 
-#include "kclocksettingsinterface.h"
+#ifndef KCLOCK_SETTINGSMODEL_H
+#define KCLOCK_SETTINGSMODEL_H
+
 #include <QObject>
 
-class KClockSettings : public QObject
+#include "kclocksettingsinterface.h"
+
+class SettingsModel : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(int volume READ volume WRITE setVolume NOTIFY volumeChanged)
@@ -32,9 +35,9 @@ class KClockSettings : public QObject
     Q_PROPERTY(int alarmSnoozeLength READ alarmSnoozeLength WRITE setAlarmSnoozeLength NOTIFY alarmSnoozedChanged)
 
 public:
-    static KClockSettings &instance()
+    static SettingsModel &instance()
     {
-        static KClockSettings singleton;
+        static SettingsModel singleton;
         return singleton;
     };
 
@@ -99,7 +102,7 @@ private Q_SLOTS:
     void updateAlarmSnoozeLength();
 
 private:
-    KClockSettings();
+    SettingsModel();
     LocalKClockSettingsInterface *m_interface;
 
     QString m_alarmSilenceAfterDisplay;
@@ -109,3 +112,5 @@ private:
     int m_alarmSilenceAfter;
     int m_alarmSnoozeLength;
 };
+
+#endif // KCLOCK_SETTINGSMODEL_H

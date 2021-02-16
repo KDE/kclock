@@ -19,8 +19,8 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef KIRIGAMICLOCK_ALARMS_H
-#define KIRIGAMICLOCK_ALARMS_H
+#ifndef KCLOCK_ALARM_H
+#define KCLOCK_ALARM_H
 
 #include <QFileDialog>
 #include <QObject>
@@ -30,6 +30,7 @@
 #include <QUuid>
 
 #include "alarminterface.h"
+
 class Alarm : public QObject
 {
     Q_OBJECT
@@ -141,4 +142,4 @@ private:
     bool m_isValid = true;
 };
 
-#endif // KIRIGAMICLOCK_ALARMS_H
+#endif // KCLOCK_ALARM_H

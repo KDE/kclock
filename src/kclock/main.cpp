@@ -19,7 +19,6 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-#include <malloc.h>
 
 #include <QApplication>
 #include <QCommandLineParser>
@@ -39,9 +38,9 @@
 
 #include "alarmmodel.h"
 #include "alarmplayer.h"
-#include "alarms.h"
+#include "alarm.h"
 #include "kclockformat.h"
-#include "kclocksettings.h"
+#include "settingsmodel.h"
 #include "stopwatchtimer.h"
 #include "timer.h"
 #include "timermodel.h"
@@ -108,7 +107,7 @@ int main(int argc, char *argv[])
     engine->rootContext()->setContextProperty("alarmPlayer", &AlarmPlayer::instance());
     engine->rootContext()->setContextProperty("kclockFormat", KclockFormat::instance());
     engine->rootContext()->setContextProperty("weekModel", weekModel);
-    engine->rootContext()->setContextProperty("settingsModel", &KClockSettings::instance());
+    engine->rootContext()->setContextProperty("settingsModel", &SettingsModel::instance());
 
     engine->load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
 

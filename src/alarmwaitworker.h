@@ -17,7 +17,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-#pragma once
+
+#ifndef KCLOCKD_ALARMWAITWORKER_H
+#define KCLOCKD_ALARMWAITWORKER_H
 
 #include <QObject>
 
@@ -42,3 +44,5 @@ private:
     quint64 m_waitEndTime;
     bool m_isFinished = true;
 };
+
+#endif // KCLOCKD_ALARMWAITWORKER_H

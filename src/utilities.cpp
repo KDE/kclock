@@ -17,13 +17,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-#include <QDBusInterface>
 #include <QDBusReply>
 #include <QDebug>
 #include <QThread>
 
-#include "alarmwaitworker.h"
 #include "utilities.h"
+
 Utilities::Utilities(QObject *parent)
     : QObject(parent)
     , m_interface(new QDBusInterface(QStringLiteral("org.kde.Solid.PowerManagement"), QStringLiteral("/org/kde/Solid/PowerManagement"), QStringLiteral("org.kde.Solid.PowerManagement"), QDBusConnection::sessionBus(), this))

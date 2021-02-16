@@ -20,7 +20,6 @@
  */
 #include <KConfigGroup>
 #include <KSharedConfig>
-#include <KStatusNotifierItem>
 #include <QDBusConnection>
 #include <QDBusReply>
 #include <QLocale>
@@ -29,7 +28,6 @@
 
 #include "alarmmodel.h"
 #include "alarmmodeladaptor.h"
-#include "alarms.h"
 #include "utilities.h"
 
 #define SCRIPTANDPROPERTY QDBusConnection::ExportScriptableContents | QDBusConnection::ExportAllProperties

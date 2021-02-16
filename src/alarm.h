@@ -19,7 +19,8 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#pragma once
+#ifndef KCLOCKD_ALARM_H
+#define KCLOCKD_ALARM_H
 
 #include <QDebug>
 #include <QFileDialog>
@@ -29,15 +30,16 @@
 #include <QTime>
 #include <QUrl>
 #include <QUuid>
+#include <QThread>
+#include <QMediaPlayer>
 
 #include "alarmplayer.h"
-class QMediaPlayer;
-class QThread;
-class AlarmWaitWorker;
-class AlarmModel;
+#include "alarmmodel.h"
+#include "alarmwaitworker.h"
 
 const QString ALARM_CFG_GROUP = "Alarms";
 
+class AlarmModel;
 class Alarm : public QObject
 {
     Q_OBJECT
@@ -183,3 +185,5 @@ private:
     int m_snooze = 0;           // current snooze length
     quint64 m_nextRingTime = 0; // store calculated next ring time
 };
+
+#endif // KCLOCKD_ALARM_H

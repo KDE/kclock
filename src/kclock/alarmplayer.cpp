@@ -17,9 +17,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-#include "alarmplayer.h"
+
 #include <QDateTime>
 #include <QStandardPaths>
+
+#include "alarmplayer.h"
+
 AlarmPlayer &AlarmPlayer::instance()
 {
     static AlarmPlayer singleton;

@@ -19,13 +19,15 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#pragma once
+#ifndef KCLOCK_ALARMSMODEL_H
+#define KCLOCK_ALARMSMODEL_H
 
 #include <QAbstractListModel>
 #include <QObject>
 
 #include "alarmmodelinterface.h"
-class Alarm;
+#include "alarm.h"
+
 class AlarmModel : public QAbstractListModel
 {
     Q_OBJECT
@@ -68,3 +70,5 @@ private:
     explicit AlarmModel(QObject *parent = nullptr);
     QList<Alarm *> alarmsList;
 };
+
+#endif // KCLOCK_ALARMSMODEL_H

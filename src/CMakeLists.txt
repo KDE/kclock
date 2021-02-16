@@ -1,6 +1,6 @@
 set(kclockd_SRCS
     utilities.cpp
-    alarms.cpp
+    alarm.cpp
     alarmmodel.cpp
     alarmwaitworker.cpp
     alarmplayer.cpp
@@ -22,7 +22,7 @@ qt5_generate_dbus_interface(
     OPTIONS -S -P
 )
 qt5_generate_dbus_interface(
-    ${CMAKE_CURRENT_SOURCE_DIR}/alarms.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/alarm.h
     org.kde.kclockd.Alarm.xml
     OPTIONS -s -m -P
 )
@@ -46,7 +46,7 @@ qt5_generate_dbus_interface(
 qt5_add_dbus_adaptor(kclockd_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.KClockSettings.xml
                      ${CMAKE_CURRENT_BINARY_DIR}/kclockdsettings.h KClockSettings)
 qt5_add_dbus_adaptor(kclockd_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.Alarm.xml
-                     ${CMAKE_CURRENT_SOURCE_DIR}/alarms.h Alarm)
+                     ${CMAKE_CURRENT_SOURCE_DIR}/alarm.h Alarm)
 qt5_add_dbus_adaptor(kclockd_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.AlarmModel.xml
                      ${CMAKE_CURRENT_SOURCE_DIR}/alarmmodel.h AlarmModel)
 qt5_add_dbus_adaptor(kclockd_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.TimerModel.xml

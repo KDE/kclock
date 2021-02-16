@@ -17,12 +17,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-#pragma once
+
+#ifndef KCLOCKD_UTILITIES_H
+#define KCLOCKD_UTILITIES_H
 
 #include <QObject>
+#include <QDBusInterface>
 
-class QDBusInterface;
-class AlarmWaitWorker;
+#include "alarmwaitworker.h"
+
 class Utilities : public QObject
 {
     Q_OBJECT
@@ -47,8 +50,9 @@ public Q_SLOTS:
     Q_SCRIPTABLE void wakeupCallback(int cookie);
 
 private:
-    void schedule(); // For AlarmWaitWorker use
     explicit Utilities(QObject *parent = nullptr);
+    
+    void schedule(); // For AlarmWaitWorker use
 
     QDBusInterface *m_interface = nullptr;
 
@@ -62,3 +66,5 @@ private:
     QThread *m_timerThread = nullptr;
     AlarmWaitWorker *m_worker = nullptr;
 };
+
+#endif // KCLOCKD_UTILITIES_H
