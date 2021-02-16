@@ -38,6 +38,7 @@ Kirigami.ScrollablePage {
     ListView {
         id: alarmsList
         model: alarmModel
+        currentIndex: -1 // no default selection
 
         // no alarms placeholder
         Kirigami.PlaceholderMessage {

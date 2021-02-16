@@ -86,6 +86,7 @@ Kirigami.ScrollablePage {
     ListView {
         model: timeZoneShowModel
         id: zoneList
+        currentIndex: -1 // no default selection
         
         // no timezones placeholder
         Kirigami.PlaceholderMessage {
@@ -93,11 +94,6 @@ Kirigami.ScrollablePage {
             visible: zoneList.count == 0
             text: i18n("Add timezone")
         }
-        
-        // analog clock header
-        //headerPositioning: ListView.InlineHeader
-        
-        ScrollBar.vertical: ScrollBar {}
         
         delegate: TimeZoneEntry {
             tzId: model.id
