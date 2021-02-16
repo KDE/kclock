@@ -27,8 +27,10 @@ import org.kde.kirigami 2.4 as Kirigami
 
 Kirigami.ScrollablePage {
     id: stopwatchpage
+    
     title: i18n("Stopwatch")
     icon.name: "chronometer"
+    
     property bool running: false
     property int elapsedTime: stopwatchTimer.elapsedTime
     
@@ -44,145 +46,139 @@ Kirigami.ScrollablePage {
         }
     }
     
-    // lap list display
-    ListView {
-        model: roundModel
-        spacing: 0
-        
-        header: Item {
-            height: Kirigami.Units.gridUnit * 9
-            anchors.left: parent.left
-            anchors.right: parent.right
+    header: ColumnLayout {
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.topMargin: Kirigami.Units.gridUnit
+        spacing: Kirigami.Units.gridUnit
 
-            Column {
-                spacing: Kirigami.Units.gridUnit
-                anchors.fill: parent
-                anchors.topMargin: Kirigami.Units.gridUnit
-                
-                // clock display
-                RowLayout {
-                    id: timeLabels
-                    anchors.horizontalCenter: parent.horizontalCenter
+        // clock display
+        RowLayout {
+            id: timeLabels
+            Layout.alignment: Qt.AlignHCenter
 
-                    Label {
-                        id: minutesText
-                        text: stopwatchTimer.minutes
-                        color: Kirigami.Theme.highlightColor
-                        font.pointSize: Kirigami.Theme.defaultFont.pointSize*4
-                        font.family: clockFont.name
-                    }
-                    Label {
-                        text: ":"
-                        color: Kirigami.Theme.textColor
-                        font.pointSize: Kirigami.Theme.defaultFont.pointSize*4
-                        font.family: clockFont.name
-                    }
-                    Label {
-                        text: stopwatchTimer.seconds
-                        color: Kirigami.Theme.highlightColor
-                        font.pointSize: Kirigami.Theme.defaultFont.pointSize*4
-                        font.family: clockFont.name
-                    }
-                    Label {
-                        text: "."
-                        color: Kirigami.Theme.textColor
-                        font.pointSize: Kirigami.Theme.defaultFont.pointSize*4
-                        font.family: clockFont.name
-                    }
-                    Rectangle {
-                        height: minutesText.height / 2
-                        width: Kirigami.Theme.defaultFont.pointSize*5
-                        color: "transparent"
-                        Label {
-                            id: secondsText
-                            text: stopwatchTimer.small
-                            color: Kirigami.Theme.highlightColor
-                            font.pointSize: Kirigami.Theme.defaultFont.pointSize*2.6
-                            font.family: clockFont.name
-                        }
-                    }
-                }
-
-                // start/pause and lap button
-                RowLayout {
-                    id: buttons
-                    anchors.left: parent.left
-                    anchors.right: parent.right
-                    Layout.alignment: Qt.AlignHCenter
-
-                    ToolButton {
-                        Layout.alignment: Qt.AlignHCenter
-                        icon.name: "chronometer-reset"
-                        text: i18n("Reset")
-                        flat: false
-                        onClicked: {
-                            running = false;
-                            stopwatchTimer.reset();
-                            roundModel.clear();
-                        }
-                    }
-                    ToolButton {
-                        Layout.alignment: Qt.AlignHCenter
-                        icon.name: "chronometer-lap"
-                        text: i18n("Lap")
-                        flat: false
-                        enabled: running
-                        onClicked: {
-                            roundModel.insert(0, { time: elapsedTime })
-                        }
-                    }
+            Label {
+                id: minutesText
+                text: stopwatchTimer.minutes
+                color: Kirigami.Theme.highlightColor
+                font.pointSize: Kirigami.Theme.defaultFont.pointSize*4
+                font.family: clockFont.name
+            }
+            Label {
+                text: ":"
+                color: Kirigami.Theme.textColor
+                font.pointSize: Kirigami.Theme.defaultFont.pointSize*4
+                font.family: clockFont.name
+            }
+            Label {
+                text: stopwatchTimer.seconds
+                color: Kirigami.Theme.highlightColor
+                font.pointSize: Kirigami.Theme.defaultFont.pointSize*4
+                font.family: clockFont.name
+            }
+            Label {
+                text: "."
+                color: Kirigami.Theme.textColor
+                font.pointSize: Kirigami.Theme.defaultFont.pointSize*4
+                font.family: clockFont.name
+            }
+            Rectangle {
+                height: minutesText.height / 2
+                width: Kirigami.Theme.defaultFont.pointSize*5
+                color: "transparent"
+                Label {
+                    id: secondsText
+                    text: stopwatchTimer.small
+                    color: Kirigami.Theme.highlightColor
+                    font.pointSize: Kirigami.Theme.defaultFont.pointSize*2.6
+                    font.family: clockFont.name
                 }
             }
         }
-        
-        ScrollBar.vertical: ScrollBar {}
+
+        // start/pause and lap button
+        RowLayout {
+            id: buttons
+            Layout.fillWidth: true
+            Layout.bottomMargin: Kirigami.Units.gridUnit
+            
+            Item { Layout.fillWidth: true }
+            ToolButton {
+                Layout.alignment: Qt.AlignHCenter
+                icon.name: "chronometer-reset"
+                text: i18n("Reset")
+                flat: false
+                onClicked: {
+                    running = false;
+                    stopwatchTimer.reset();
+                    roundModel.clear();
+                }
+            }
+            Item { Layout.fillWidth: true }
+            ToolButton {
+                Layout.alignment: Qt.AlignHCenter
+                icon.name: "chronometer-lap"
+                text: i18n("Lap")
+                flat: false
+                enabled: running
+                onClicked: {
+                    roundModel.insert(0, { time: elapsedTime })
+                }
+            }
+            Item { Layout.fillWidth: true }
+        }
+    }
+    
+    // lap list display
+    ListView {
+        model: roundModel
+//         spacing: 0
+
+        ListModel {
+            id: roundModel
+        }
 
         // lap items
         delegate: Kirigami.BasicListItem {
             activeBackgroundColor: "transparent"
 
             contentItem: RowLayout {
-                    // round number
-                    Rectangle {
-                        Layout.fillHeight: true
-                        Layout.alignment: Qt.AlignRight
-                        Label {
-                            anchors.verticalCenter: parent.verticalCenter
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            color: Kirigami.Theme.textColor
-                            font.weight: Font.Bold
-                            text: i18n("Lap %1", roundModel.count - model.index)
-                        }
+                // round number
+                Rectangle {
+                    Layout.fillHeight: true
+                    Layout.alignment: Qt.AlignRight
+                    Label {
+                        anchors.verticalCenter: parent.verticalCenter
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        color: Kirigami.Theme.textColor
+                        font.weight: Font.Bold
+                        text: i18n("Lap %1", roundModel.count - model.index)
                     }
-                    Rectangle {
-                        width: 1
+                }
+                Rectangle {
+                    width: 1
+                }
+                // time since beginning
+                Rectangle {
+                    Layout.fillHeight: true
+                    Label {
+                        anchors.verticalCenter: parent.verticalCenter
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        color: Kirigami.Theme.textColor
+                        text: parseFloat(model.time/1000).toFixed(2)
                     }
-                    // time since beginning
-                    Rectangle {
-                        Layout.fillHeight: true
-                        Label {
-                            anchors.verticalCenter: parent.verticalCenter
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            color: Kirigami.Theme.textColor
-                            text: parseFloat(model.time/1000).toFixed(2)
-                        }
+                }
+                // time since last lap
+                Rectangle {
+                    Layout.fillHeight: true
+                    Label {
+                        anchors.verticalCenter: parent.verticalCenter
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        color: Kirigami.Theme.focusColor
+                        text: index == roundModel.count-1 ? parseFloat(model.time/1000).toFixed(2) : "+" + parseFloat((model.time - roundModel.get(index+1).time)/1000).toFixed(2)
                     }
-                    // time since last lap
-                    Rectangle {
-                        Layout.fillHeight: true
-                        Label {
-                            anchors.verticalCenter: parent.verticalCenter
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            color: Kirigami.Theme.focusColor
-                            text: index == roundModel.count-1 ? parseFloat(model.time/1000).toFixed(2) : "+" + parseFloat((model.time - roundModel.get(index+1).time)/1000).toFixed(2)
-                        }
-                    }
+                }
             }
         }
     }
-
-    ListModel {
-        id: roundModel
-    }
-
 }
