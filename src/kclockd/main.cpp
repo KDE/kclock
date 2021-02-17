@@ -49,8 +49,8 @@ int main(int argc, char *argv[])
 
     KLocalizedString::setApplicationDomain("kclockd");
     KAboutData aboutData(QStringLiteral("kclockd"), QStringLiteral("KClock daemon"), QStringLiteral("0.1"), QStringLiteral("KClock daemon"), KAboutLicense::GPL, i18n("© 2020 KDE Community"));
-    aboutData.addAuthor(i18n("Devin Lin"), QStringLiteral(), QStringLiteral("espidev@gmail.com"));
-    aboutData.addAuthor(i18n("Han Young"), QStringLiteral(), QStringLiteral("hanyoung@protonmail.com"));
+    aboutData.addAuthor(i18n("Devin Lin"), QLatin1String(), QStringLiteral("espidev@gmail.com"));
+    aboutData.addAuthor(i18n("Han Young"), QLatin1String(), QStringLiteral("hanyoung@protonmail.com"));
     KAboutData::setApplicationData(aboutData);
 
     // only allow one instance
