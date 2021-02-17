@@ -132,52 +132,105 @@ Kirigami.ScrollablePage {
     // lap list display
     ListView {
         model: roundModel
-//         spacing: 0
+        spacing: 0
 
         ListModel {
             id: roundModel
         }
-
+        
+        // live count entry
+        header: Kirigami.BasicListItem {
+            visible: roundModel.count > 0
+            activeBackgroundColor: "transparent"
+            contentItem: RowLayout {
+                Item { Layout.fillWidth: true }
+                RowLayout {
+                    Layout.maximumWidth: Kirigami.Units.gridUnit * 16
+                    Layout.preferredWidth: Kirigami.Units.gridUnit * 16
+                    
+                    Item {
+                        Layout.fillHeight: true
+                        Layout.leftMargin: Kirigami.Units.largeSpacing
+                        implicitWidth: Kirigami.Units.gridUnit * 2
+                        Label {
+                            color: Kirigami.Theme.textColor
+                            font.weight: Font.Bold
+                            text: i18n("#%1", roundModel.count+1)
+                        }
+                    }
+                    Label {
+                        Layout.alignment: Qt.AlignLeft
+                        color: Kirigami.Theme.textColor
+                        text: roundModel.count == 0 ? "" : "+" + parseFloat((elapsedTime - roundModel.get(roundModel.count-1).time)/1000).toFixed(2)
+                    }
+                    Item { Layout.fillWidth: true }
+                    Item {
+                        Layout.fillHeight: true
+                        Layout.alignment: Qt.AlignRight
+                        implicitWidth: Kirigami.Units.gridUnit * 3
+                        Label {
+                            anchors.left: parent.left
+                            color: Kirigami.Theme.focusColor
+                            text: parseFloat(elapsedTime/1000).toFixed(2)
+                        }
+                    }
+                }
+                Item { Layout.fillWidth: true }
+            }
+        }
+        
         // lap items
         delegate: Kirigami.BasicListItem {
             activeBackgroundColor: "transparent"
 
             contentItem: RowLayout {
-                // round number
-                Rectangle {
-                    Layout.fillHeight: true
-                    Layout.alignment: Qt.AlignRight
+                Item { Layout.fillWidth: true }
+                
+                RowLayout {
+                    Layout.maximumWidth: Kirigami.Units.gridUnit * 16
+                    Layout.preferredWidth: Kirigami.Units.gridUnit * 16
+                    
+                    // lap number
+                    Item {
+                        Layout.fillHeight: true
+                        Layout.leftMargin: Kirigami.Units.largeSpacing
+                        Layout.minimumWidth: Kirigami.Units.gridUnit * 2
+                        Label {
+                            color: Kirigami.Theme.textColor
+                            font.weight: Font.Bold
+                            text: i18n("#%1", roundModel.count - model.index)
+                        }
+                    }
+                    
+                    // time since last lap
                     Label {
-                        anchors.verticalCenter: parent.verticalCenter
-                        anchors.horizontalCenter: parent.horizontalCenter
+                        Layout.alignment: Qt.AlignLeft
                         color: Kirigami.Theme.textColor
-                        font.weight: Font.Bold
-                        text: i18n("Lap %1", roundModel.count - model.index)
+                        text: {
+                            if (index == roundModel.count - 1) {
+                                return "+" + parseFloat(model.time/1000).toFixed(2);
+                            } else if (model) {
+                                return "+" + parseFloat((model.time - roundModel.get(index+1).time)/1000).toFixed(2);
+                            }
+                        }
+                    }
+                    
+                    Item { Layout.fillWidth: true }
+                    
+                    // time since beginning
+                    Item {
+                        Layout.fillHeight: true
+                        Layout.alignment: Qt.AlignRight
+                        Layout.minimumWidth: Kirigami.Units.gridUnit * 3
+                        Label {
+                            anchors.left: parent.left
+                            color: Kirigami.Theme.focusColor
+                            text: parseFloat(model.time/1000).toFixed(2)
+                        }
                     }
                 }
-                Rectangle {
-                    width: 1
-                }
-                // time since beginning
-                Rectangle {
-                    Layout.fillHeight: true
-                    Label {
-                        anchors.verticalCenter: parent.verticalCenter
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        color: Kirigami.Theme.textColor
-                        text: parseFloat(model.time/1000).toFixed(2)
-                    }
-                }
-                // time since last lap
-                Rectangle {
-                    Layout.fillHeight: true
-                    Label {
-                        anchors.verticalCenter: parent.verticalCenter
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        color: Kirigami.Theme.focusColor
-                        text: index == roundModel.count-1 ? parseFloat(model.time/1000).toFixed(2) : "+" + parseFloat((model.time - roundModel.get(index+1).time)/1000).toFixed(2)
-                    }
-                }
+                
+                Item { Layout.fillWidth: true }
             }
         }
     }
