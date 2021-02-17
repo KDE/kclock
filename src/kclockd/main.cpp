@@ -60,6 +60,11 @@ int main(int argc, char *argv[])
     new KClockSettingsAdaptor(KClockSettings::self());
     QDBusConnection::sessionBus().registerObject(QStringLiteral("/Settings"), KClockSettings::self());
 
+    // save config
+    QObject::connect(KClockSettings::self(), &KClockSettings::alarmSilenceAfterChanged, KClockSettings::self(), &KClockSettings::save);
+    QObject::connect(KClockSettings::self(), &KClockSettings::alarmSnoozeLengthChanged, KClockSettings::self(), &KClockSettings::save);
+    QObject::connect(KClockSettings::self(), &KClockSettings::alarmVolumeChanged, KClockSettings::self(), &KClockSettings::save);
+
     // start alarm polling
     AlarmModel::instance()->configureWakeups();
     TimerModel::instance();
