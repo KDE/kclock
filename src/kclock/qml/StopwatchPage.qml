@@ -161,7 +161,7 @@ Kirigami.ScrollablePage {
                     Label {
                         Layout.alignment: Qt.AlignLeft
                         color: Kirigami.Theme.textColor
-                        text: roundModel.count == 0 ? "" : "+" + parseFloat((elapsedTime - roundModel.get(roundModel.count-1).time)/1000).toFixed(2)
+                        text: roundModel.count == 0 ? "" : "+" + parseFloat((elapsedTime - roundModel.get(0).time)/1000).toFixed(2)
                     }
                     Item { Layout.fillWidth: true }
                     Item {
