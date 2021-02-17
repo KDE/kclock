@@ -12,11 +12,11 @@ set(kclock_SRCS
     resources.qrc
     )
 
-set(SettingsXML ${CMAKE_CURRENT_BINARY_DIR}/../org.kde.kclockd.KClockSettings.xml)
-set(AlarmXML ${CMAKE_CURRENT_BINARY_DIR}/../org.kde.kclockd.Alarm.xml)
-set(AlarmModelXML ${CMAKE_CURRENT_BINARY_DIR}/../org.kde.kclockd.AlarmModel.xml)
-set(TimermModelXML ${CMAKE_CURRENT_BINARY_DIR}/../org.kde.kclockd.TimerModel.xml)
-set(TimerXML ${CMAKE_CURRENT_BINARY_DIR}/../org.kde.kclockd.Timer.xml)
+set(SettingsXML ${CMAKE_CURRENT_BINARY_DIR}/../kclockd/org.kde.kclockd.KClockSettings.xml)
+set(AlarmXML ${CMAKE_CURRENT_BINARY_DIR}/../kclockd/org.kde.kclockd.Alarm.xml)
+set(AlarmModelXML ${CMAKE_CURRENT_BINARY_DIR}/../kclockd/org.kde.kclockd.AlarmModel.xml)
+set(TimermModelXML ${CMAKE_CURRENT_BINARY_DIR}/../kclockd/org.kde.kclockd.TimerModel.xml)
+set(TimerXML ${CMAKE_CURRENT_BINARY_DIR}/../kclockd/org.kde.kclockd.Timer.xml)
 
 qt5_add_dbus_interface(kclock_SRCS ${SettingsXML} kclocksettingsinterface )
 qt5_add_dbus_interface(kclock_SRCS ${AlarmXML} alarminterface )
