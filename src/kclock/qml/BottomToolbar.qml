@@ -34,6 +34,7 @@ ToolBar {
     
     background: Rectangle {
         Kirigami.Theme.colorSet: Kirigami.Theme.Header
+        Kirigami.Theme.inherit: false
         color: Kirigami.Theme.backgroundColor
         anchors.fill: parent
         
@@ -77,7 +78,10 @@ ToolBar {
                 Layout.maximumWidth: parent.width / 5
                 Layout.preferredHeight: Kirigami.Units.gridUnit * 3
                 Layout.alignment: Qt.AlignCenter
+                
                 Kirigami.Theme.colorSet: Kirigami.Theme.Header
+                Kirigami.Theme.inherit: false
+                
                 color: mouseArea.pressed ? Qt.darker(Kirigami.Theme.backgroundColor, 1.1) : 
                        mouseArea.containsMouse ? Qt.darker(Kirigami.Theme.backgroundColor, 1.03) : Kirigami.Theme.backgroundColor
                 
