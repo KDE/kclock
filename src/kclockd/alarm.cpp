@@ -20,6 +20,7 @@
  */
 
 #include <QDBusConnection>
+#include <QDBusMessage>
 #include <QDateTime>
 #include <QDebug>
 #include <QJsonDocument>
@@ -134,6 +135,12 @@ void Alarm::ring()
     connect(notif, &KNotification::closed, [notif] { notif->close(); });
 
     notif->sendEvent();
+
+    QDBusMessage wakeupCall = QDBusMessage::createMethodCall(QStringLiteral("org.kde.Solid.PowerManagement"),
+                                                              QStringLiteral("/org/kde/Solid/PowerManagement"),
+                                                              QStringLiteral("org.kde.Solid.PowerManagement"),
+                                                              QStringLiteral("wakeup"));
+    QDBusConnection::sessionBus().call(wakeupCall);
 
     alarmNotifOpen = true;
     alarmNotifOpenTime = QTime::currentTime();
