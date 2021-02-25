@@ -136,15 +136,33 @@ Kirigami.ScrollablePage {
                             
                             ToolButton {
                                 icon.name: timerDelegate.running ? "chronometer-pause" : "chronometer-start"
+                                display: AbstractButton.IconOnly
+                                text: timerDelegate.running ? i18n("Pause") : i18n("Start")
                                 onClicked: timerDelegate.toggleRunning()
+                                
+                                ToolTip.visible: hovered && text.length > 0
+                                ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
+                                ToolTip.text: text
                             }
                             ToolButton {
                                 icon.name: "chronometer-reset"
+                                display: AbstractButton.IconOnly
+                                text: i18n("Reset")
                                 onClicked: timerDelegate.reset();
+                                
+                                ToolTip.visible: hovered && text.length > 0
+                                ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
+                                ToolTip.text: text
                             }
                             ToolButton {
                                 icon.name: "delete"
+                                display: AbstractButton.IconOnly
+                                text: i18n("Delete")
                                 onClicked: timerModel.remove(index)
+                                
+                                ToolTip.visible: hovered && text.length > 0
+                                ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
+                                ToolTip.text: text
                             }
                         }
                     }
