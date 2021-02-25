@@ -6,7 +6,7 @@
         <file>qml/TimerListPage.qml</file>
         <file>qml/StopwatchPage.qml</file>
         <file>qml/AboutPage.qml</file>
-        <file>qml/AlarmPage.qml</file>
+        <file>qml/AlarmListPage.qml</file>
         <file>qml/TimeZoneSelectPage.qml</file>
         <file>qml/NewAlarmPage.qml</file>
         <file>qml/SettingsPage.qml</file>
