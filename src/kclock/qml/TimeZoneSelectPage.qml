@@ -20,7 +20,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.11
+import QtQuick 2.15
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import org.kde.kirigami 2.12 as Kirigami
@@ -46,7 +46,8 @@ Kirigami.ScrollablePage {
     }
     
     ListView {
-
+        reuseItems: true
+        
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent 
             visible: parent.count == 0

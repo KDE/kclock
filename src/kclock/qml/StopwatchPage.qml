@@ -19,7 +19,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.2
 import QtQuick.Window 2.11
@@ -134,6 +134,8 @@ Kirigami.ScrollablePage {
         model: roundModel
         spacing: 0
 
+        reuseItems: true
+        
         ListModel {
             id: roundModel
         }

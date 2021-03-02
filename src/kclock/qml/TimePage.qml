@@ -19,7 +19,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.2
 import QtQuick.Shapes 1.12
@@ -94,6 +94,8 @@ Kirigami.ScrollablePage {
         model: timeZoneShowModel
         id: zoneList
         currentIndex: -1 // no default selection
+        
+        reuseItems: true
         
         // no timezones placeholder
         Kirigami.PlaceholderMessage {
