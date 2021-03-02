@@ -27,6 +27,8 @@ import org.kde.kirigami 2.12 as Kirigami
 
 Kirigami.ScrollablePage {
     id: timePage
+    
+    property int clockRadius: Kirigami.Units.gridUnit * 4
 
     title: i18n("Time")
     icon.name: "clock"
@@ -43,23 +45,28 @@ Kirigami.ScrollablePage {
     
     header: RowLayout {
         id: bigTimeDisplay
-        height: clockItem.height + Kirigami.Units.gridUnit * 0.5
+        height: clockItemLoader.height + Kirigami.Units.gridUnit * 0.5
         implicitHeight: height
         anchors.left: parent.left
         anchors.right: parent.right
         
         // left side - analog clock
-        Item {
-            id: clockItem
+        Loader {
+            id: clockItemLoader
             Layout.alignment: Qt.AlignHCenter
-            property int clockRadius: Kirigami.Units.gridUnit * 4
             width: clockRadius * 2 + Kirigami.Units.gridUnit * 0.5
             height: clockRadius * 2 + Kirigami.Units.gridUnit
-            AnalogClock {
-                id: analogClock
-                anchors.centerIn: parent
-                height: parent.clockRadius * 2 
-                width: parent.clockRadius * 2
+            
+            asynchronous: true
+            
+            sourceComponent: Item {
+                id: clockItem
+                AnalogClock {
+                    id: analogClock
+                    anchors.centerIn: parent
+                    height: clockRadius * 2 
+                    width: clockRadius * 2
+                }
             }
         }
         
