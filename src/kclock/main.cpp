@@ -87,11 +87,6 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine *engine = new QQmlApplicationEngine();
 
-    UtilModel::instance()->setApplicationLoaded(true);
-    QObject::connect(&app, &QApplication::applicationStateChanged, [](Qt::ApplicationStates state) {
-        UtilModel::instance()->setApplicationLoaded(state == Qt::ApplicationActive);
-    });
-
     engine->rootContext()->setContextObject(new KLocalizedContext(engine));
     // models
     engine->rootContext()->setContextProperty("timeZoneSelectorModel", timeZoneModel);
