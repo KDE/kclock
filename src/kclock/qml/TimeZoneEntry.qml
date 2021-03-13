@@ -48,14 +48,12 @@ Kirigami.SwipeListItem {
                 }
                 Label {
                     id: timeZoneRelative
-                    font.weight: Font.Normal
                 }
             }
             
             Label {
                 id: timeZoneTime
                 Layout.alignment: Qt.AlignRight|Qt.AlignVCenter
-                font.weight: Font.Light
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.25
             }
         }

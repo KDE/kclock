@@ -39,6 +39,10 @@ Kirigami.Page {
     property int duration: timer == null ? 0 : timer.length
     property bool running: timer == null ? 0 : timer.running
 
+    // keyboard controls
+    Keys.onSpacePressed: timer.toggleRunning();
+    Keys.onReturnPressed: timer.toggleRunning();
+    
     // topbar action
     actions {
         main: Kirigami.Action {
@@ -56,7 +60,10 @@ Kirigami.Page {
             Kirigami.Action {
                 icon.name: "delete"
                 text: i18n("Delete")
-                onTriggered: timerModel.remove(timerIndex);
+                onTriggered: {
+                    pageStack.pop();
+                    timerModel.remove(timerIndex);
+                }
             }
         ]
     }

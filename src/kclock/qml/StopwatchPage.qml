@@ -35,15 +35,27 @@ Kirigami.ScrollablePage {
     property int elapsedTime: stopwatchTimer.elapsedTime
     
     Layout.fillWidth: true
+    
+    function toggleStopwatch() {
+        running = !running;
+        stopwatchTimer.toggle();
+    }
+    function addLap() {
+        if (running) {
+            roundModel.insert(0, { time: elapsedTime });
+        }
+    }
+    
+    // keyboard controls
+    Keys.onSpacePressed: toggleStopwatch();
+    Keys.onReturnPressed: addLap();
 
     // start/pause button
     mainAction: Kirigami.Action {
+        id: toggleAction
         text: running ? i18n("Pause") : i18n("Start")
         iconName: running ? "chronometer-pause" : "chronometer-start"
-        onTriggered: {
-            running = !running;
-            stopwatchTimer.toggle();
-        }
+        onTriggered: toggleStopwatch();
     }
     
     header: ColumnLayout {
@@ -129,7 +141,7 @@ Kirigami.ScrollablePage {
                 enabled: running
                 
                 onClicked: {
-                    roundModel.insert(0, { time: elapsedTime })
+                    addLap();
                     focus = false; // prevent highlight
                 }
             }
@@ -193,6 +205,8 @@ Kirigami.ScrollablePage {
         delegate: Kirigami.BasicListItem {
             activeBackgroundColor: "transparent"
 
+            Keys.onSpacePressed: toggleStopwatch();
+            
             contentItem: RowLayout {
                 Item { Layout.fillWidth: true }
                 

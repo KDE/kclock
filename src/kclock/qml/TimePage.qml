@@ -33,7 +33,6 @@ Kirigami.ScrollablePage {
     title: i18n("Time")
     icon.name: "clock"
     
-    //globalToolBarStyle: Kirigami.ApplicationHeaderStyle.ToolBar
     mainAction: Kirigami.Action {
         iconName: "globe"
         text: i18n("Edit")
@@ -60,7 +59,7 @@ Kirigami.ScrollablePage {
         Loader {
             id: clockItemLoader
             Layout.alignment: Qt.AlignHCenter
-            width: clockRadius * 2 + Kirigami.Units.gridUnit * 0.5
+            width: Math.round(clockRadius * 2 + Kirigami.Units.gridUnit * 0.5)
             height: clockRadius * 2 + Kirigami.Units.gridUnit
             
             asynchronous: true
@@ -79,16 +78,17 @@ Kirigami.ScrollablePage {
         // right side - digital clock + location
         ColumnLayout {
             Layout.alignment: Qt.AlignHCenter
+            Layout.rightMargin: Kirigami.Units.smallSpacing
             Label {
                 Layout.alignment: Qt.AlignRight
-                font.pointSize: Kirigami.Theme.defaultFont.pointSize * 3.0
+                font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 2.8)
                 font.family: clockFont.name
                 font.weight: Font.Light
                 text: kclockFormat.currentTime
             }
             Label {
                 Layout.alignment: Qt.AlignRight
-                font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.2
+                font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 1.2)
                 text: utilModel.tzName
                 color: Kirigami.Theme.textColor
             }
