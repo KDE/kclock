@@ -89,10 +89,7 @@ int main(int argc, char *argv[])
 
     UtilModel::instance()->setApplicationLoaded(true);
     QObject::connect(&app, &QApplication::applicationStateChanged, [](Qt::ApplicationStates state) {
-        if (state == Qt::ApplicationActive)
-            UtilModel::instance()->setApplicationLoaded(true);
-        else
-            UtilModel::instance()->setApplicationLoaded(false);
+        UtilModel::instance()->setApplicationLoaded(state == Qt::ApplicationActive);
     });
 
     engine->rootContext()->setContextObject(new KLocalizedContext(engine));

@@ -31,19 +31,6 @@ QString UtilModel::getCurrentTimeZoneName()
     return QTimeZone::systemTimeZoneId();
 }
 
-bool UtilModel::applicationLoaded()
-{
-    return m_applicationLoaded;
-}
-
-void UtilModel::setApplicationLoaded(bool applicationLoaded)
-{
-    if (applicationLoaded != m_applicationLoaded) {
-        m_applicationLoaded = applicationLoaded;
-        Q_EMIT applicationLoadedChanged();
-    }
-}
-
 long long UtilModel::calculateNextRingTime(int hours, int minutes, int daysOfWeek, int snooze)
 {
     // get the time that the alarm will ring on the day

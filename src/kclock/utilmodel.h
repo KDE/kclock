@@ -38,8 +38,6 @@ public:
     }
     
     QString getCurrentTimeZoneName();
-    bool applicationLoaded();
-    void setApplicationLoaded(bool applicationLoaded);
     
     long long calculateNextRingTime(int hours, int minutes, int daysOfWeek, int snooze = 0);
     QString timeToRingFormatted(const long long &timestamp);
