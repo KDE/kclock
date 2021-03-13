@@ -27,10 +27,10 @@ import QtGraphicalEffects 1.12
 
 ToolBar {
     id: toolbarRoot
-    property double iconSize: Kirigami.Units.gridUnit * 1.5
-    property double shrinkIconSize: Kirigami.Units.gridUnit * 1.1
-    property double fontSize: Kirigami.Theme.defaultFont.pointSize * 0.8
-    property double shrinkFontSize: Kirigami.Theme.defaultFont.pointSize * 0.7
+    property double iconSize: Math.round(Kirigami.Units.gridUnit * 1.5)
+    property double shrinkIconSize: Math.round(Kirigami.Units.gridUnit * 1.1)
+    property double fontSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 0.8)
+    property double shrinkFontSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 0.7)
     
     background: Rectangle {
         Kirigami.Theme.colorSet: Kirigami.Theme.Header
