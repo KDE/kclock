@@ -107,12 +107,15 @@ Kirigami.ScrollablePage {
                 implicitHeight: Kirigami.Units.gridUnit * 2
                 implicitWidth: Kirigami.Units.gridUnit * 6
                 Layout.alignment: Qt.AlignHCenter
+                
                 icon.name: "chronometer-reset"
                 text: i18n("Reset")
+                
                 onClicked: {
                     running = false;
                     stopwatchTimer.reset();
                     roundModel.clear();
+                    focus = false; // prevent highlight
                 }
             }
             Item { Layout.fillWidth: true }
@@ -120,11 +123,14 @@ Kirigami.ScrollablePage {
                 implicitHeight: Kirigami.Units.gridUnit * 2
                 implicitWidth: Kirigami.Units.gridUnit * 6
                 Layout.alignment: Qt.AlignHCenter
+                
                 icon.name: "chronometer-lap"
                 text: i18n("Lap")
                 enabled: running
+                
                 onClicked: {
                     roundModel.insert(0, { time: elapsedTime })
+                    focus = false; // prevent highlight
                 }
             }
             Item { Layout.fillWidth: true }
