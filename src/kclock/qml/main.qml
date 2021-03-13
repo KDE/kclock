@@ -28,7 +28,7 @@ Kirigami.ApplicationWindow
 {
     id: appwindow
     width: Kirigami.Settings.isMobile ? 400 : 650
-    height: 500
+    height: Kirigami.Settings.isMobile ? 650 : 500
 
     title: i18n("Clock")
 

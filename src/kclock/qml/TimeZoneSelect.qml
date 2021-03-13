@@ -41,8 +41,10 @@ ColumnLayout {
     }
     ScrollView {
         Layout.minimumHeight: Kirigami.Units.gridUnit * 14
-        Layout.maximumHeight: Kirigami.Units.gridUnit * 14
+        Layout.maximumHeight: Kirigami.Units.gridUnit * 20
+        Layout.preferredHeight: Kirigami.Units.gridUnit * (Kirigami.Settings.isMobile ? 20 : 14) // mobile drawer should be taller
         Layout.fillWidth: true
+        ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
         ListView {
             currentIndex: -1
             reuseItems: true
