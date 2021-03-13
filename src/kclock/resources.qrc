@@ -19,6 +19,6 @@
         <file>qml/BottomToolbar.qml</file>
         <file>qml/TimeZoneSelect.qml</file>
         <file>qml/TimeZoneSelectWrapper.qml</file>
-        <file>assets/RedHatText-Regular.ttf</file>
+        <file>assets/NotoSans-Light.ttf</file>
     </qresource>
 </RCC>

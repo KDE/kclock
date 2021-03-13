@@ -60,27 +60,27 @@ Kirigami.ScrollablePage {
             Label {
                 id: minutesText
                 text: stopwatchTimer.minutes
-                color: Kirigami.Theme.highlightColor
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize*4
                 font.family: clockFont.name
+                font.weight: Font.Light
             }
             Label {
                 text: ":"
-                color: Kirigami.Theme.textColor
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize*4
                 font.family: clockFont.name
+                font.weight: Font.Light
             }
             Label {
                 text: stopwatchTimer.seconds
-                color: Kirigami.Theme.highlightColor
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize*4
                 font.family: clockFont.name
+                font.weight: Font.Light
             }
             Label {
                 text: "."
-                color: Kirigami.Theme.textColor
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize*4
                 font.family: clockFont.name
+                font.weight: Font.Light
             }
             Rectangle {
                 height: minutesText.height / 2
@@ -89,9 +89,9 @@ Kirigami.ScrollablePage {
                 Label {
                     id: secondsText
                     text: stopwatchTimer.small
-                    color: Kirigami.Theme.highlightColor
                     font.pointSize: Kirigami.Theme.defaultFont.pointSize*2.6
                     font.family: clockFont.name
+                    font.weight: Font.Light
                 }
             }
         }

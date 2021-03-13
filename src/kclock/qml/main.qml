@@ -85,7 +85,7 @@ Kirigami.ApplicationWindow
     
     // clock fonts
     FontLoader {
-        id: clockFont;
-        source: "/assets/RedHatText-Regular.ttf"
+        id: clockFont
+        source: "/assets/NotoSans-Light.ttf"
     }
 }

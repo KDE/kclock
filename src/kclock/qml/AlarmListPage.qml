@@ -93,28 +93,34 @@ Kirigami.ScrollablePage {
                     columns: width > Kirigami.Units.gridUnit * 20 ? 4 : 2
 
                     ColumnLayout {
-                        
                         Label {
+                            font.family: clockFont.name
                             font.weight: Font.Light
-                            font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.5
+                            font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 1.75)
                             text: kclockFormat.formatTimeString(model.hours, model.minutes)
+                            color: model.enabled ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
+                        }
+                        RowLayout {
+                            spacing: 0
+                            Label {
+                                id: alarmName
+                                visible: text !== ""
+                                font.weight: Font.Bold
+                                font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.15
+                                color: model.enabled ? Kirigami.Theme.activeTextColor : Kirigami.Theme.disabledTextColor
+                                text: model.name
+                            }
+                            Label {
+                                font.weight: Font.Normal
+                                text: (alarmName.visible ? " - " : "") + getRepeatFormat(model.daysOfWeek) 
+                                color: model.enabled ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
+                            }
                         }
                         Label {
                             visible: model.alarm.snoozedMinutes != 0
                             font.weight: Font.Bold
                             color: Kirigami.Theme.disabledTextColor
                             text: i18n("Snoozed %1 minutes", model.alarm.snoozedMinutes)
-                        }
-                        Label {
-                            id: alarmName
-                            font.weight: Font.Bold
-                            color: model.enabled ? Kirigami.Theme.activeTextColor : Kirigami.Theme.disabledTextColor
-                            font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.15
-                            text: model.name
-                        }
-                        Label {
-                            font.weight: Font.Normal
-                            text: getRepeatFormat(model.daysOfWeek) // related to UI improvements, leave it for now
                         }
                     }
 

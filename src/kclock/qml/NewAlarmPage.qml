@@ -35,7 +35,13 @@ Kirigami.ScrollablePage {
     property string ringtonePath: selectedAlarm ? selectedAlarm.ringtonePath : ""
 
     id: newAlarmPageRoot
-    title: selectedAlarm ? selectedAlarm.name : i18n("New Alarm")
+    title: {
+        if (selectedAlarm) {
+            return i18nc("Edit alarm page title", "Editing %1", selectedAlarm.name === "" ? i18n("Alarm") : selectedAlarm.name);
+        } else {
+            return i18n("New Alarm");
+        }
+    }
     
     actions {
         main: Kirigami.Action {
@@ -126,14 +132,14 @@ Kirigami.ScrollablePage {
 
         Label {
             anchors.horizontalCenter: parent.horizontalCenter
-            text: i18n("Alarm Name")
+            text: i18n("Alarm Name (optional)")
             font.weight: Font.Bold
         }
         TextField {
             anchors.horizontalCenter: parent.horizontalCenter
             id: selectedAlarmName
             placeholderText: i18n("Wake Up")
-            text: selectedAlarm ? selectedAlarm.name : "Alarm"
+            text: selectedAlarm ? selectedAlarm.name : ""
         }
         Label {
             anchors.horizontalCenter: parent.horizontalCenter

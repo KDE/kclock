@@ -148,36 +148,41 @@ Rectangle {
         Label {
             id: hoursText
             text: getHours()
-            color: Kirigami.Theme.highlightColor
             font.pointSize: Kirigami.Theme.defaultFont.pointSize*3
             font.family: clockFont.name
+            font.weight: Font.Light
+            color: timerRunning ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
             visible: text != "00"
         }
         Label {
             text: ":"
-            color: Kirigami.Theme.textColor
             font.pointSize: Kirigami.Theme.defaultFont.pointSize*3
             font.family: clockFont.name
+            font.weight: Font.Light
+            color: timerRunning ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
             visible: getHours() != "00"
         }
         Label {
             id: minutesText
             text: getMinutes()
-            color: Kirigami.Theme.highlightColor
             font.pointSize: Kirigami.Theme.defaultFont.pointSize*3
             font.family: clockFont.name
+            font.weight: Font.Light
+            color: timerRunning ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
         }
         Label {
             text: ":"
-            color: Kirigami.Theme.textColor
             font.pointSize: Kirigami.Theme.defaultFont.pointSize*3
             font.family: clockFont.name
+            font.weight: Font.Light
+            color: timerRunning ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
         }
         Label {
             text: getSeconds()
-            color: Kirigami.Theme.highlightColor
             font.pointSize: Kirigami.Theme.defaultFont.pointSize*3
             font.family: clockFont.name
+            font.weight: Font.Light
+            color: timerRunning ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
         }
     }
 }

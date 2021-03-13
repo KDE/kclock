@@ -52,7 +52,7 @@ void KclockFormat::updateTime()
 
 QString KclockFormat::formatTimeString(int hours, int minutes)
 {
-    return QLocale::system().toString(QTime(hours, minutes), QStringLiteral("hh:mm"));
+    return QLocale::system().toString(QTime(hours, minutes), QStringLiteral("hh:mm ap"));
 }
 
 bool KclockFormat::isChecked(int dayIndex, int daysOfWeek)

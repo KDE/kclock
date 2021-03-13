@@ -83,7 +83,7 @@ Kirigami.ScrollablePage {
                 Layout.alignment: Qt.AlignRight
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize * 3.0
                 font.family: clockFont.name
-                color: Kirigami.Theme.highlightColor
+                font.weight: Font.Light
                 text: kclockFormat.currentTime
             }
             Label {
