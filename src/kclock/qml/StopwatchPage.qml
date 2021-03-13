@@ -103,11 +103,12 @@ Kirigami.ScrollablePage {
             Layout.bottomMargin: Kirigami.Units.gridUnit
             
             Item { Layout.fillWidth: true }
-            ToolButton {
+            Button {
+                implicitHeight: Kirigami.Units.gridUnit * 2
+                implicitWidth: Kirigami.Units.gridUnit * 6
                 Layout.alignment: Qt.AlignHCenter
                 icon.name: "chronometer-reset"
                 text: i18n("Reset")
-                flat: false
                 onClicked: {
                     running = false;
                     stopwatchTimer.reset();
@@ -115,11 +116,12 @@ Kirigami.ScrollablePage {
                 }
             }
             Item { Layout.fillWidth: true }
-            ToolButton {
+            Button {
+                implicitHeight: Kirigami.Units.gridUnit * 2
+                implicitWidth: Kirigami.Units.gridUnit * 6
                 Layout.alignment: Qt.AlignHCenter
                 icon.name: "chronometer-lap"
                 text: i18n("Lap")
-                flat: false
                 enabled: running
                 onClicked: {
                     roundModel.insert(0, { time: elapsedTime })

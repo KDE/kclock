@@ -45,6 +45,9 @@ Kirigami.FormLayout {
         RowLayout {
             spacing: Kirigami.Units.smallSpacing
             Button {
+                topPadding: Kirigami.Units.largeSpacing
+                bottomPadding: Kirigami.Units.largeSpacing
+                implicitWidth: Kirigami.Units.gridUnit * 4
                 text: i18n("1 m")
                 onClicked: {
                     spinBoxHours.value = 0;
@@ -54,6 +57,9 @@ Kirigami.FormLayout {
                 }
             }
             Button {
+                topPadding: Kirigami.Units.largeSpacing
+                bottomPadding: Kirigami.Units.largeSpacing
+                implicitWidth: Kirigami.Units.gridUnit * 4
                 text: i18n("5 m")
                 onClicked: {
                     spinBoxHours.value = 0;
@@ -63,6 +69,9 @@ Kirigami.FormLayout {
                 }
             }
             Button {
+                topPadding: Kirigami.Units.largeSpacing
+                bottomPadding: Kirigami.Units.largeSpacing
+                implicitWidth: Kirigami.Units.gridUnit * 4
                 text: i18n("10 m")
                 onClicked: {
                     spinBoxHours.value = 0;
@@ -77,6 +86,9 @@ Kirigami.FormLayout {
             Layout.bottomMargin: Kirigami.Units.largeSpacing
             spacing: Kirigami.Units.smallSpacing
             Button {
+                topPadding: Kirigami.Units.largeSpacing
+                bottomPadding: Kirigami.Units.largeSpacing
+                implicitWidth: Kirigami.Units.gridUnit * 4
                 text: i18n("15 m")
                 onClicked: {
                     spinBoxHours.value = 0;
@@ -86,6 +98,9 @@ Kirigami.FormLayout {
                 }
             }
             Button {
+                topPadding: Kirigami.Units.largeSpacing
+                bottomPadding: Kirigami.Units.largeSpacing
+                implicitWidth: Kirigami.Units.gridUnit * 4
                 text: i18n("30 m")
                 onClicked: {
                     spinBoxHours.value = 0;
@@ -95,6 +110,9 @@ Kirigami.FormLayout {
                 }
             }
             Button {
+                topPadding: Kirigami.Units.largeSpacing
+                bottomPadding: Kirigami.Units.largeSpacing
+                implicitWidth: Kirigami.Units.gridUnit * 4
                 text: i18n("1 h")
                 onClicked: {
                     spinBoxHours.value = 1;
