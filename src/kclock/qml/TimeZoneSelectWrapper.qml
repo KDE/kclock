@@ -26,17 +26,13 @@ import kclock 1.0
         
 Loader {
     id: loader
-    sourceComponent: Kirigami.Settings.isMobile ? mobileTimerForm : desktopTimerForm
-    
-    function createTimer(duration, label) {
-        timerModel.addNew(duration, label);
-    }
+    sourceComponent: Kirigami.Settings.isMobile ? mobileComponent : desktopComponent
     
     Component {
-        id: mobileTimerForm
+        id: mobileComponent
         Kirigami.OverlayDrawer {
             height: contents.implicitHeight + Kirigami.Units.largeSpacing
-            width: timerPage.width
+            width: timePage.width
             edge: Qt.BottomEdge
             parent: applicationWindow().overlay
             
@@ -56,71 +52,32 @@ Loader {
                 
                 Kirigami.Heading {
                     level: 3
-                    text: i18n("<b>Create New Timer</b>")
+                    text: i18n("<b>Timezones</b>")
                     Layout.alignment: Qt.AlignHCenter
+                    Layout.bottomMargin: Kirigami.Units.smallSpacing
                 }
                 
-                TimerForm {
+                TimeZoneSelect {
                     id: timerForm
-                    Layout.leftMargin: Kirigami.Units.largeSpacing
-                    Layout.rightMargin: Kirigami.Units.largeSpacing
-                    Layout.bottomMargin: Kirigami.Units.largeSpacing
+                    Layout.leftMargin: Kirigami.Units.smallSpacing
+                    Layout.rightMargin: Kirigami.Units.smallSpacing
                     Layout.fillWidth: true
-                    wideMode: false
-                }
-                
-                RowLayout {
-                    Layout.margins: Kirigami.Units.largeSpacing
-                    Item { Layout.fillWidth: true }
-                    Button {
-                        icon.name: "dialog-cancel"
-                        text: i18n("Cancel")
-                        onClicked: close()
-                    }
-                    Button {
-                        icon.name: "dialog-ok"
-                        text: i18n("Done")
-                        onClicked: {
-                            loader.createTimer(timerForm.getDuration(), timerForm.name);
-                            close();
-                        }
-                    }
                 }
             }
         }
     }
     
     Component {
-        id: desktopTimerForm
+        id: desktopComponent
         Kirigami.OverlaySheet {
             parent: applicationWindow().overlay
-            
             header: Kirigami.Heading {
                 level: 2
-                text: i18n("Create timer")
-            }
-            footer: RowLayout {
-                Item { Layout.fillWidth: true }
-                Button {
-                    icon.name: "dialog-cancel"
-                    text: i18n("Cancel")
-                    onClicked: close()
-                }
-                Button {
-                    icon.name: "dialog-ok"
-                    text: i18n("Done")
-                    onClicked: {
-                        loader.createTimer(timerForm.getDuration(), timerForm.name);
-                        close();
-                    }
-                }
+                text: i18n("Timezones")
             }
             
-            contentItem: ColumnLayout {
-                TimerForm {
-                    id: timerForm
-                    Layout.fillWidth: true
-                }
+            contentItem: TimeZoneSelect {
+                Layout.fillWidth: true
             }
         }
     }

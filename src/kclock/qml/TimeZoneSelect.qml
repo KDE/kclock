@@ -25,42 +25,43 @@ import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import org.kde.kirigami 2.12 as Kirigami
 
-Kirigami.ScrollablePage {
-    
-    title: i18n("Timezones")
+ColumnLayout {
+    id: root
     property string filterText: ""
-    
-    header: Control {
-        padding: Kirigami.Units.largeSpacing
+    Kirigami.SearchField {
+        id: searchField
+        Layout.fillWidth: true
         
-        contentItem: Kirigami.SearchField {
-            id: searchField
-            
-            onTextChanged: {
-                timeZoneFilterModel.setFilterFixedString(text)
-                filterText = text
-                forceActiveFocus();
-                focus = true
-            }
+        onTextChanged: {
+            timeZoneFilterModel.setFilterFixedString(text)
+            root.filterText = text
+            forceActiveFocus();
+            focus = true
         }
     }
-    
-    ListView {
-        reuseItems: true
-        
-        Kirigami.PlaceholderMessage {
-            anchors.centerIn: parent 
-            visible: parent.count == 0
-            text: i18n("Search for a city")
-            icon.name: "globe"
-        }
+    ScrollView {
+        Layout.minimumHeight: Kirigami.Units.gridUnit * 14
+        Layout.maximumHeight: Kirigami.Units.gridUnit * 14
+        Layout.fillWidth: true
+        ListView {
+            currentIndex: -1
+            reuseItems: true
+            
+            Kirigami.PlaceholderMessage {
+                anchors.centerIn: parent 
+                visible: parent.count == 0
+                text: i18n("Search for a city")
+                icon.name: "globe"
+            }
 
-        model: filterText == "" ? [] : timeZoneFilterModel // only display cities if there is a query (for performance)
-        delegate: Kirigami.AbstractListItem {
-            CheckBox {
-                checked: model.shown
-                text: i18n("%1 %2", model.id, model.shortName)
-                onClicked: model.shown = this.checked
+            model: root.filterText == "" ? [] : timeZoneFilterModel // only display cities if there is a query (for performance)
+            delegate: Kirigami.AbstractListItem {
+                activeBackgroundColor: "transparent"
+                CheckBox {
+                    checked: model.shown
+                    text: i18n("%1 %2", model.id, model.shortName)
+                    onClicked: model.shown = this.checked
+                }
             }
         }
     }

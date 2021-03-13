@@ -39,8 +39,14 @@ Kirigami.ScrollablePage {
         text: i18n("Edit")
         onTriggered: {
             timeZoneSelectorModel.update();
-            appwindow.pageStack.layers.push("qrc:/qml/TimeZoneSelectPage.qml");
+            timeZoneSelect.active = true;
+            timeZoneSelect.item.open();
         }
+    }
+    
+    TimeZoneSelectWrapper {
+        id: timeZoneSelect
+        active: false
     }
     
     header: RowLayout {

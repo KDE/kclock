@@ -9,7 +9,6 @@
         <file>qml/StopwatchPage.qml</file>
         <file>qml/AboutPage.qml</file>
         <file>qml/AlarmListPage.qml</file>
-        <file>qml/TimeZoneSelectPage.qml</file>
         <file>qml/NewAlarmPage.qml</file>
         <file>qml/SettingsPage.qml</file>
         <file>qml/TimeZoneEntry.qml</file>
@@ -18,6 +17,8 @@
         <file>qml/TimerComponent.qml</file>
         <file>qml/Sidebar.qml</file>
         <file>qml/BottomToolbar.qml</file>
+        <file>qml/TimeZoneSelect.qml</file>
+        <file>qml/TimeZoneSelectWrapper.qml</file>
         <file>assets/RedHatText-Regular.ttf</file>
     </qresource>
 </RCC>
