@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2020 Devin Lin <espidev@gmail.com>
  *
@@ -26,6 +25,7 @@ import org.kde.kirigami 2.15 as Kirigami
 import kclock 1.0
 
 Kirigami.ScrollablePage {
+    id: timerPage
     
     title: i18n("Timers")
     icon.name: "player-time"
@@ -35,8 +35,8 @@ Kirigami.ScrollablePage {
         iconName: "list-add"
         text: i18n("New Timer")
         onTriggered: {
-            createdTimer = true;
-            timerModel.addNew();
+            newTimerForm.active = true;
+            newTimerForm.item.open();
         }
     }
     
@@ -52,26 +52,33 @@ Kirigami.ScrollablePage {
             icon.name: "player-time"
         }
         
-        // each timer
+        // create timer form
+        TimerFormWrapper {
+            id: newTimerForm
+            active: false
+        }
+        
+        // timer card delegate
         delegate: Kirigami.AbstractCard {
             
             property Timer timerDelegate: timerModel.get(index)
             
-            TimerPage {
-                id: timerPage
-                timerIndex: index
-                timer: timerDelegate
-                visible: false
-            }
-            
-            Component.onCompleted: {
-                if (createdTimer) {
-                    switchToPage(timerPage, 1);
+            Loader {
+                id: timerPageLoader
+                active: false
+                sourceComponent: TimerPage {
+                    id: timerPage
+                    timerIndex: index
+                    timer: timerDelegate
+                    visible: false
                 }
             }
             
             showClickFeedback: true
-            onClicked: switchToPage(timerPage, 1)
+            onClicked: {
+                timerPageLoader.active = true;
+                switchToPage(timerPageLoader.item, 1);
+            }
                 
             contentItem: Item {
                 implicitWidth: delegateLayout.implicitWidth

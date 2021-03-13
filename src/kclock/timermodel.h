@@ -42,9 +42,9 @@ public:
         return singleton;
     }
 
-    Q_INVOKABLE void addNew()
+    Q_INVOKABLE void addNew(int length, QString label)
     {
-        this->addTimer();
+        this->addTimer(length, label, false);
     };
     Q_INVOKABLE void remove(int index);
     Q_INVOKABLE int count();
@@ -52,10 +52,10 @@ public:
 
 private Q_SLOTS:
     void addTimer(QString uuid); // remote add, always justCreated
+    void addTimer(int length = 300, QString label = i18n("New timer"), bool running = false);
     void removeTimer(QString uuid);
 
 private:
-    void addTimer(int length = 300, QString label = i18n("New timer"), bool running = false);
     void addTimer(QString uuid, bool justCreated);
 
     explicit TimerModel(QObject *parent = nullptr);

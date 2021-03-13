@@ -3,6 +3,8 @@
         <file>qml/main.qml</file>
         <file>qml/TimePage.qml</file>
         <file>qml/TimerPage.qml</file>
+        <file>qml/TimerForm.qml</file>
+        <file>qml/TimerFormWrapper.qml</file>
         <file>qml/TimerListPage.qml</file>
         <file>qml/StopwatchPage.qml</file>
         <file>qml/AboutPage.qml</file>
