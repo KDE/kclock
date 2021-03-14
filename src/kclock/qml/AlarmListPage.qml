@@ -53,6 +53,16 @@ Kirigami.ScrollablePage {
             icon.name: "notifications"
         }
         
+        add: Transition {
+            NumberAnimation { property: "opacity"; from: 0; to: 1.0; duration: Kirigami.Units.shortDuration }
+        }
+        remove: Transition {
+            NumberAnimation { property: "opacity"; from: 0; to: 1.0; duration: Kirigami.Units.shortDuration }
+        }
+        displaced: Transition {
+            NumberAnimation { properties: "x,y"; duration: Kirigami.Units.longDuration; easing.type: Easing.InOutQuad}
+        }
+        
         // each alarm
         delegate: Kirigami.SwipeListItem {
 

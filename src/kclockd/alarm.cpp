@@ -123,7 +123,7 @@ void Alarm::ring()
     KNotification *notif = new KNotification(QStringLiteral("alarm"));
     notif->setActions(QStringList {i18n("Dismiss"), i18n("Snooze")});
     notif->setIconName(QStringLiteral("kclock"));
-    notif->setTitle(name());
+    notif->setTitle(name() == "" ? i18n("Alarm") : name());
     notif->setText(QLocale::system().toString(QTime::currentTime(), QLocale::ShortFormat)); // TODO
     notif->setDefaultAction(i18n("View"));
     notif->setFlags(KNotification::NotificationFlag::Persistent);

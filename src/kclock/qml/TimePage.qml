@@ -103,6 +103,16 @@ Kirigami.ScrollablePage {
         
         reuseItems: true
         
+        add: Transition {
+            NumberAnimation { property: "opacity"; from: 0; to: 1.0; duration: Kirigami.Units.shortDuration }
+        }
+        remove: Transition {
+            NumberAnimation { property: "opacity"; from: 0; to: 1.0; duration: Kirigami.Units.shortDuration }
+        }
+        displaced: Transition {
+            NumberAnimation { properties: "x,y"; duration: Kirigami.Units.longDuration; easing.type: Easing.InOutQuad}
+        }
+        
         // no timezones placeholder
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
