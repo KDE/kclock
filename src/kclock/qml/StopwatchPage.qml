@@ -60,7 +60,7 @@ Kirigami.ScrollablePage {
         id: toggleAction
         iconName: !Kirigami.Settings.isMobile ? "chronometer-reset" : (running ? "chronometer-pause" : "chronometer-start")
         text: !Kirigami.Settings.isMobile ? i18n("Reset") : (running ? i18n("Pause") : i18n("Start"))
-        onTriggered: Kirigami.Settings.isMobile ? resetStopwatch() : toggleStopwatch()
+        onTriggered: !Kirigami.Settings.isMobile ? resetStopwatch() : toggleStopwatch()
     }
     
     header: ColumnLayout {
