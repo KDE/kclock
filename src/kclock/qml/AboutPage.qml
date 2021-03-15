@@ -52,7 +52,7 @@ Kirigami.AboutPage {
         "licenses" : [
                     {
                         "name" : "GPL v2",
-                        "text" : "long, boring, license text",
+                        "text" : i18n("long, boring, license text"),
                         "spdx" : "GPL-2.0",
                     }
                 ],

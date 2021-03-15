@@ -161,13 +161,13 @@ Kirigami.ScrollablePage {
             return i18n("Weekdays");
 
         let str = "";
-        if (dayOfWeek & monday) str += "Mon., ";
-        if (dayOfWeek & tuesday) str += "Tue., ";
-        if (dayOfWeek & wednesday) str += "Wed., ";
-        if (dayOfWeek & thursday) str += "Thu., ";
-        if (dayOfWeek & friday) str += "Fri., ";
-        if (dayOfWeek & saturday) str += "Sat., ";
-        if (dayOfWeek & sunday) str += "Sun., ";
+        if (dayOfWeek & monday) str += i18n("Mon., ");
+        if (dayOfWeek & tuesday) str += i18n("Tue., ");
+        if (dayOfWeek & wednesday) str += i18n("Wed., ");
+        if (dayOfWeek & thursday) str += i18n("Thu., ");
+        if (dayOfWeek & friday) str += i18n("Fri., ");
+        if (dayOfWeek & saturday) str += i18n("Sat., ");
+        if (dayOfWeek & sunday) str += i18n("Sun., ");
         return str.substring(0, str.length - 2);
     }
 }

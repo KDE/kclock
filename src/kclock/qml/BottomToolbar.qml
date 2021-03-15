@@ -52,23 +52,23 @@ ToolBar {
         Repeater {
             model: ListModel {
                 ListElement {
-                    name: "Time"
+                    name: i18n("Time")
                     icon: "clock"
                 }
                 ListElement {
-                    name: "Timer"
+                    name: i18n("Timer")
                     icon: "player-time"
                 }
                 ListElement {
-                    name: "Stopwatch"
+                    name: i18n("Stopwatch")
                     icon: "chronometer"
                 }
                 ListElement {
-                    name: "Alarm"
+                    name: i18n("Alarm")
                     icon: "notifications"
                 }
                 ListElement {
-                    name: "Settings"
+                    name: i18n("Settings")
                     icon: "settings-configure"
                 }
             }

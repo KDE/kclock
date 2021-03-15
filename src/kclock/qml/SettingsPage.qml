@@ -184,27 +184,27 @@ Kirigami.ScrollablePage {
             ListView {
                 model: ListModel {
                     ListElement {
-                        name: "30 seconds"
+                        name: i18n("30 seconds")
                         value: 30
                     }
                     ListElement {
-                        name: "1 minute"
+                        name: i18n("1 minute")
                         value: 60
                     }
                     ListElement {
-                        name: "5 minutes"
+                        name: i18n("5 minutes")
                         value: 300
                     }
                     ListElement {
-                        name: "10 minutes"
+                        name: i18n("10 minutes")
                         value: 600
                     }
                     ListElement {
-                        name: "15 minutes"
+                        name: i18n("15 minutes")
                         value: 900
                     }
                     ListElement {
-                        name: "Never"
+                        name: i18n("Never")
                         value: -1
                     }
                 }
@@ -239,35 +239,35 @@ Kirigami.ScrollablePage {
             ListView {
                 model: ListModel {
                     ListElement {
-                        name: "1 minute"
+                        name: i18n("1 minute")
                         value: 1
                     }
                     ListElement {
-                        name: "2 minutes"
+                        name: i18n("2 minutes")
                         value: 2
                     }
                     ListElement {
-                        name: "3 minutes"
+                        name: i18n("3 minutes")
                         value: 3
                     }
                     ListElement {
-                        name: "4 minutes"
+                        name: i18n("4 minutes")
                         value: 4
                     }
                     ListElement {
-                        name: "5 minutes"
+                        name: i18n("5 minutes")
                         value: 5
                     }
                     ListElement {
-                        name: "10 minutes"
+                        name: i18n("10 minutes")
                         value: 10
                     }
                     ListElement {
-                        name: "30 minutes"
+                        name: i18n("30 minutes")
                         value: 30
                     }
                     ListElement {
-                        name: "1 hour"
+                        name: i18n("1 hour")
                         value: 60
                     }
                 }
