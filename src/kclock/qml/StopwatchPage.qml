@@ -60,7 +60,7 @@ Kirigami.ScrollablePage {
         id: toggleAction
         iconName: !Kirigami.Settings.isMobile ? "chronometer-reset" : (running ? "chronometer-pause" : "chronometer-start")
         text: !Kirigami.Settings.isMobile ? i18n("Reset") : (running ? i18n("Pause") : i18n("Start"))
-        onTriggered: !Kirigami.Settings.isMobile ? resetStopwatch() : toggleStopwatch()
+        onTriggered: Kirigami.Settings.isMobile ? resetStopwatch() : toggleStopwatch()
     }
     
     header: ColumnLayout {
@@ -70,45 +70,54 @@ Kirigami.ScrollablePage {
         spacing: Kirigami.Units.gridUnit
 
         // clock display
-        RowLayout {
-            id: timeLabels
+        Item {
             Layout.alignment: Qt.AlignHCenter
+            width: timeLabels.implicitWidth
+            height: timeLabels.implicitHeight
+            MouseArea {
+                anchors.fill: timeLabels
+                onClicked: toggleStopwatch()
+            }
+            RowLayout {
+                id: timeLabels
+                anchors.horizontalCenter: parent.horizontalCenter
 
-            Label {
-                id: minutesText
-                text: stopwatchTimer.minutes
-                font.pointSize: Kirigami.Theme.defaultFont.pointSize*4
-                font.family: clockFont.name
-                font.weight: Font.Light
-            }
-            Label {
-                text: ":"
-                font.pointSize: Kirigami.Theme.defaultFont.pointSize*4
-                font.family: clockFont.name
-                font.weight: Font.Light
-            }
-            Label {
-                text: stopwatchTimer.seconds
-                font.pointSize: Kirigami.Theme.defaultFont.pointSize*4
-                font.family: clockFont.name
-                font.weight: Font.Light
-            }
-            Label {
-                text: "."
-                font.pointSize: Kirigami.Theme.defaultFont.pointSize*4
-                font.family: clockFont.name
-                font.weight: Font.Light
-            }
-            Rectangle {
-                height: minutesText.height / 2
-                width: Kirigami.Theme.defaultFont.pointSize*5
-                color: "transparent"
                 Label {
-                    id: secondsText
-                    text: stopwatchTimer.small
-                    font.pointSize: Kirigami.Theme.defaultFont.pointSize*2.6
+                    id: minutesText
+                    text: stopwatchTimer.minutes
+                    font.pointSize: Kirigami.Theme.defaultFont.pointSize*4
                     font.family: clockFont.name
                     font.weight: Font.Light
+                }
+                Label {
+                    text: ":"
+                    font.pointSize: Kirigami.Theme.defaultFont.pointSize*4
+                    font.family: clockFont.name
+                    font.weight: Font.Light
+                }
+                Label {
+                    text: stopwatchTimer.seconds
+                    font.pointSize: Kirigami.Theme.defaultFont.pointSize*4
+                    font.family: clockFont.name
+                    font.weight: Font.Light
+                }
+                Label {
+                    text: "."
+                    font.pointSize: Kirigami.Theme.defaultFont.pointSize*4
+                    font.family: clockFont.name
+                    font.weight: Font.Light
+                }
+                Rectangle {
+                    height: minutesText.height / 2
+                    width: Kirigami.Theme.defaultFont.pointSize*5
+                    color: "transparent"
+                    Label {
+                        id: secondsText
+                        text: stopwatchTimer.small
+                        font.pointSize: Kirigami.Theme.defaultFont.pointSize*2.6
+                        font.family: clockFont.name
+                        font.weight: Font.Light
+                    }
                 }
             }
         }
