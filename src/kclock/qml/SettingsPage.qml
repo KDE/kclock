@@ -184,29 +184,14 @@ Kirigami.ScrollablePage {
             ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
             ListView {
                 model: ListModel {
-                    ListElement {
-                        name: i18n("30 seconds")
-                        value: 30
-                    }
-                    ListElement {
-                        name: i18n("1 minute")
-                        value: 60
-                    }
-                    ListElement {
-                        name: i18n("5 minutes")
-                        value: 300
-                    }
-                    ListElement {
-                        name: i18n("10 minutes")
-                        value: 600
-                    }
-                    ListElement {
-                        name: i18n("15 minutes")
-                        value: 900
-                    }
-                    ListElement {
-                        name: i18n("Never")
-                        value: -1
+                    // we can't use i18n with ListElement
+                    Component.onCompleted: {
+                        append({"name": i18n("30 seconds"), "value": 30});
+                        append({"name": i18n("1 minute"), "value": 60});
+                        append({"name": i18n("5 minutes"), "value": 300});
+                        append({"name": i18n("10 minutes"), "value": 600});
+                        append({"name": i18n("15 minutes"), "value": 900});
+                        append({"name": i18n("Never"), "value": -1});
                     }
                 }
                 delegate: RadioDelegate {
@@ -240,37 +225,16 @@ Kirigami.ScrollablePage {
             ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
             ListView {
                 model: ListModel {
-                    ListElement {
-                        name: i18n("1 minute")
-                        value: 1
-                    }
-                    ListElement {
-                        name: i18n("2 minutes")
-                        value: 2
-                    }
-                    ListElement {
-                        name: i18n("3 minutes")
-                        value: 3
-                    }
-                    ListElement {
-                        name: i18n("4 minutes")
-                        value: 4
-                    }
-                    ListElement {
-                        name: i18n("5 minutes")
-                        value: 5
-                    }
-                    ListElement {
-                        name: i18n("10 minutes")
-                        value: 10
-                    }
-                    ListElement {
-                        name: i18n("30 minutes")
-                        value: 30
-                    }
-                    ListElement {
-                        name: i18n("1 hour")
-                        value: 60
+                    // we can't use i18n with ListElement
+                    Component.onCompleted: {
+                        append({"name": i18n("1 minute"), "value": 1});
+                        append({"name": i18n("2 minutes"), "value": 2});
+                        append({"name": i18n("3 minutes"), "value": 3});
+                        append({"name": i18n("4 minutes"), "value": 4});
+                        append({"name": i18n("5 minutes"), "value": 5});
+                        append({"name": i18n("10 minutes"), "value": 10});
+                        append({"name": i18n("30 minutes"), "value": 30});
+                        append({"name": i18n("1 hour"), "value": 60});
                     }
                 }
                 delegate: RadioDelegate {

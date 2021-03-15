@@ -51,25 +51,13 @@ ToolBar {
         spacing: 0
         Repeater {
             model: ListModel {
-                ListElement {
-                    name: i18n("Time")
-                    icon: "clock"
-                }
-                ListElement {
-                    name: i18n("Timer")
-                    icon: "player-time"
-                }
-                ListElement {
-                    name: i18n("Stopwatch")
-                    icon: "chronometer"
-                }
-                ListElement {
-                    name: i18n("Alarm")
-                    icon: "notifications"
-                }
-                ListElement {
-                    name: i18n("Settings")
-                    icon: "settings-configure"
+                // we can't use i18n with ListElement
+                Component.onCompleted: {
+                    append({"name": i18n("Time"), "icon": "clock"});
+                    append({"name": i18n("Timer"), "icon": "player-time"});
+                    append({"name": i18n("Stopwatch"), "icon": "chronometer"});
+                    append({"name": i18n("Alarm"), "icon": "notifications"});
+                    append({"name": i18n("Settings"), "icon": "settings-configure"});
                 }
             }
             
