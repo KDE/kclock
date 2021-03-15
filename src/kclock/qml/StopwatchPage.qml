@@ -45,17 +45,22 @@ Kirigami.ScrollablePage {
             roundModel.insert(0, { time: elapsedTime });
         }
     }
+    function resetStopwatch() {
+        running = false;
+        stopwatchTimer.reset();
+        roundModel.clear();
+    }
     
     // keyboard controls
     Keys.onSpacePressed: toggleStopwatch();
     Keys.onReturnPressed: addLap();
 
-    // start/pause button
+    // start/pause button on mobile, reset button on desktop
     mainAction: Kirigami.Action {
         id: toggleAction
-        text: running ? i18n("Pause") : i18n("Start")
-        iconName: running ? "chronometer-pause" : "chronometer-start"
-        onTriggered: toggleStopwatch();
+        iconName: !Kirigami.Settings.isMobile ? "chronometer-reset" : (running ? "chronometer-pause" : "chronometer-start")
+        text: !Kirigami.Settings.isMobile ? i18n("Reset") : (running ? i18n("Pause") : i18n("Start"))
+        onTriggered: !Kirigami.Settings.isMobile ? resetStopwatch() : toggleStopwatch()
     }
     
     header: ColumnLayout {
@@ -108,7 +113,7 @@ Kirigami.ScrollablePage {
             }
         }
 
-        // start/pause and lap button
+        // reset button on mobile, start/pause on desktop, and lap button
         RowLayout {
             id: buttons
             Layout.fillWidth: true
@@ -120,13 +125,15 @@ Kirigami.ScrollablePage {
                 implicitWidth: Kirigami.Units.gridUnit * 6
                 Layout.alignment: Qt.AlignHCenter
                 
-                icon.name: "chronometer-reset"
-                text: i18n("Reset")
+                icon.name: Kirigami.Settings.isMobile ? "chronometer-reset" : (running ? "chronometer-pause" : "chronometer-start")
+                text: Kirigami.Settings.isMobile ? i18n("Reset") : (running ? i18n("Pause") : i18n("Start"))
                 
                 onClicked: {
-                    running = false;
-                    stopwatchTimer.reset();
-                    roundModel.clear();
+                    if (Kirigami.Settings.isMobile) {
+                        resetStopwatch();
+                    } else {
+                        toggleStopwatch();
+                    }
                     focus = false; // prevent highlight
                 }
             }
