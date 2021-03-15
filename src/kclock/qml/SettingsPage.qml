@@ -181,6 +181,7 @@ Kirigami.ScrollablePage {
         title: i18n("Silence Alarm After")
 
         contentItem: ScrollView {
+            ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
             ListView {
                 model: ListModel {
                     ListElement {
@@ -236,6 +237,7 @@ Kirigami.ScrollablePage {
         title: i18n("Alarm Snooze Length")
 
         contentItem: ScrollView {
+            ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
             ListView {
                 model: ListModel {
                     ListElement {
