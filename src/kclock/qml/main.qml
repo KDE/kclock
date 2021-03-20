@@ -36,11 +36,44 @@ Kirigami.ApplicationWindow
         id: pagePool
     }
     
-    pageStack.initialPage: pagePool.loadPage("TimePage.qml")
+    Component.onCompleted: {
+        // initial page and nav type
+        switchToPage(getPage("Time"), 1);
+        changeNav(!isWidescreen);
+    }
+    
+    // page switch animation
+    NumberAnimation {
+        id: anim
+        from: 0
+        to: 1
+        duration: Kirigami.Units.longDuration * 2
+        easing.type: Easing.InOutQuad
+    }
+    NumberAnimation {
+        id: yAnim
+        from: Kirigami.Units.gridUnit * 3
+        to: 0
+        duration: Kirigami.Units.longDuration * 3
+        easing.type: Easing.OutQuint
+    }
     
     function switchToPage(page, depth) {
-        while (pageStack.depth > depth) pageStack.pop()
-        while (pageStack.layers.depth > 1) pageStack.layers.pop()
+        while (pageStack.depth > depth) pageStack.pop();
+        while (pageStack.layers.depth > 1) pageStack.layers.pop();
+        
+        // page switch animation
+        yAnim.target = page;
+        anim.target = page;
+        yAnim.properties = "mainItem.y,mainItem.anchors.topMargin";
+        anim.properties = "mainItem.opacity";
+        if (page.header) {
+            yAnim.properties = "header.anchors.topMargin"; // don't duplicate animation
+            anim.properties += ",header.opacity";
+        }
+        yAnim.restart();
+        anim.restart();
+        
         pageStack.push(page);
     }
     
@@ -75,7 +108,6 @@ Kirigami.ApplicationWindow
             globalDrawer = sidebarLoader.item;
         }
     }
-    Component.onCompleted: changeNav(!isWidescreen)
     
     Loader {
         id: sidebarLoader

@@ -132,124 +132,123 @@ Kirigami.ScrollablePage {
         Kirigami.Separator {
             Layout.fillWidth: true
         }
-
-    }
-
-    // alarm volume dialog
-    Dialog {
-        id: alarmVolumeDialog
-        modal: true
-        focus: true
-        anchors.centerIn: Overlay.overlay
-        width: Math.min(appwindow.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 20)
-        height: Kirigami.Units.gridUnit * 8
-        standardButtons: Dialog.Close
-        title: i18n("Change Alarm Volume")
-        contentItem: RowLayout {
-            anchors.horizontalCenter: parent.horizontalCenter
-            width: parent.width
-            Label {
-                text: i18n("Volume: ")
-            }
-            Slider {
-                id: volumeControl
-                Layout.fillWidth: true
-                from: 0
-                to: 100
-                value: alarmPlayer.volume
-                onPressedChanged: {
-                    if (!pressed) {
-                        alarmPlayer.play();
-                    }
+        
+        // alarm volume dialog
+        Dialog {
+            id: alarmVolumeDialog
+            modal: true
+            focus: true
+            anchors.centerIn: Overlay.overlay
+            width: Math.min(appwindow.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 20)
+            height: Kirigami.Units.gridUnit * 8
+            standardButtons: Dialog.Close
+            title: i18n("Change Alarm Volume")
+            contentItem: RowLayout {
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: parent.width
+                Label {
+                    text: i18n("Volume: ")
                 }
-            }
-        }
-        onClosed: {alarmPlayer.stop();
-                    settingsModel.volume = volumeControl.value;
-        }
-    }
-
-    // Silence alarm after dialog
-    Dialog {
-        id: silenceAlarmAfter
-        modal: true
-        focus: true
-        anchors.centerIn: Overlay.overlay
-        width: Math.min(appwindow.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 20)
-        height: Kirigami.Units.gridUnit * 20
-        standardButtons: Dialog.Close
-        title: i18n("Silence Alarm After")
-
-        contentItem: ScrollView {
-            ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
-            ListView {
-                model: ListModel {
-                    // we can't use i18n with ListElement
-                    Component.onCompleted: {
-                        append({"name": i18n("30 seconds"), "value": 30});
-                        append({"name": i18n("1 minute"), "value": 60});
-                        append({"name": i18n("5 minutes"), "value": 300});
-                        append({"name": i18n("10 minutes"), "value": 600});
-                        append({"name": i18n("15 minutes"), "value": 900});
-                        append({"name": i18n("Never"), "value": -1});
-                    }
-                }
-                delegate: RadioDelegate {
-                    width: parent.width
-                    text: i18n(name)
-                    checked: settingsModel && settingsModel.alarmSilenceAfter == value
-                    onCheckedChanged: {
-                        if (checked) {
-                            settingsModel.alarmSilenceAfter = value;
-                            settingsModel.alarmSilenceAfterDisplay = name;
+                Slider {
+                    id: volumeControl
+                    Layout.fillWidth: true
+                    from: 0
+                    to: 100
+                    value: alarmPlayer.volume
+                    onPressedChanged: {
+                        if (!pressed) {
+                            alarmPlayer.play();
                         }
                     }
                 }
             }
-            Component.onCompleted: background.visible = true
+            onClosed: {alarmPlayer.stop();
+                        settingsModel.volume = volumeControl.value;
+            }
         }
-    }
 
-    // Alarm snooze length dialog
-    Dialog {
-        id: alarmSnoozeLength
-        modal: true
-        focus: true
-        anchors.centerIn: Overlay.overlay
-        width: Math.min(appwindow.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 20)
-        height: Kirigami.Units.gridUnit * 20
-        standardButtons: Dialog.Close
-        title: i18n("Alarm Snooze Length")
+        // Silence alarm after dialog
+        Dialog {
+            id: silenceAlarmAfter
+            modal: true
+            focus: true
+            anchors.centerIn: Overlay.overlay
+            width: Math.min(appwindow.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 20)
+            height: Kirigami.Units.gridUnit * 20
+            standardButtons: Dialog.Close
+            title: i18n("Silence Alarm After")
 
-        contentItem: ScrollView {
-            ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
-            ListView {
-                model: ListModel {
-                    // we can't use i18n with ListElement
-                    Component.onCompleted: {
-                        append({"name": i18n("1 minute"), "value": 1});
-                        append({"name": i18n("2 minutes"), "value": 2});
-                        append({"name": i18n("3 minutes"), "value": 3});
-                        append({"name": i18n("4 minutes"), "value": 4});
-                        append({"name": i18n("5 minutes"), "value": 5});
-                        append({"name": i18n("10 minutes"), "value": 10});
-                        append({"name": i18n("30 minutes"), "value": 30});
-                        append({"name": i18n("1 hour"), "value": 60});
+            contentItem: ScrollView {
+                ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
+                ListView {
+                    model: ListModel {
+                        // we can't use i18n with ListElement
+                        Component.onCompleted: {
+                            append({"name": i18n("30 seconds"), "value": 30});
+                            append({"name": i18n("1 minute"), "value": 60});
+                            append({"name": i18n("5 minutes"), "value": 300});
+                            append({"name": i18n("10 minutes"), "value": 600});
+                            append({"name": i18n("15 minutes"), "value": 900});
+                            append({"name": i18n("Never"), "value": -1});
+                        }
                     }
-                }
-                delegate: RadioDelegate {
-                    width: parent.width
-                    text: i18n(name)
-                    checked: settingsModel && settingsModel.alarmSnoozeLength == value
-                    onCheckedChanged: {
-                        if (checked) {
-                            settingsModel.alarmSnoozeLength = value;
-                            settingsModel.alarmSnoozeLengthDisplay = name;
+                    delegate: RadioDelegate {
+                        width: parent.width
+                        text: i18n(name)
+                        checked: settingsModel && settingsModel.alarmSilenceAfter == value
+                        onCheckedChanged: {
+                            if (checked) {
+                                settingsModel.alarmSilenceAfter = value;
+                                settingsModel.alarmSilenceAfterDisplay = name;
+                            }
                         }
                     }
                 }
+                Component.onCompleted: background.visible = true
             }
-            Component.onCompleted: background.visible = true
+        }
+
+        // Alarm snooze length dialog
+        Dialog {
+            id: alarmSnoozeLength
+            modal: true
+            focus: true
+            anchors.centerIn: Overlay.overlay
+            width: Math.min(appwindow.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 20)
+            height: Kirigami.Units.gridUnit * 20
+            standardButtons: Dialog.Close
+            title: i18n("Alarm Snooze Length")
+
+            contentItem: ScrollView {
+                ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
+                ListView {
+                    model: ListModel {
+                        // we can't use i18n with ListElement
+                        Component.onCompleted: {
+                            append({"name": i18n("1 minute"), "value": 1});
+                            append({"name": i18n("2 minutes"), "value": 2});
+                            append({"name": i18n("3 minutes"), "value": 3});
+                            append({"name": i18n("4 minutes"), "value": 4});
+                            append({"name": i18n("5 minutes"), "value": 5});
+                            append({"name": i18n("10 minutes"), "value": 10});
+                            append({"name": i18n("30 minutes"), "value": 30});
+                            append({"name": i18n("1 hour"), "value": 60});
+                        }
+                    }
+                    delegate: RadioDelegate {
+                        width: parent.width
+                        text: i18n(name)
+                        checked: settingsModel && settingsModel.alarmSnoozeLength == value
+                        onCheckedChanged: {
+                            if (checked) {
+                                settingsModel.alarmSnoozeLength = value;
+                                settingsModel.alarmSnoozeLengthDisplay = name;
+                            }
+                        }
+                    }
+                }
+                Component.onCompleted: background.visible = true
+            }
         }
     }
 }

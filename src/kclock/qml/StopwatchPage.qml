@@ -72,11 +72,11 @@ Kirigami.ScrollablePage {
     header: ColumnLayout {
         anchors.left: parent.left
         anchors.right: parent.right
-        anchors.topMargin: Kirigami.Units.gridUnit
         spacing: Kirigami.Units.gridUnit
 
         // clock display
         Item {
+            Layout.topMargin: Kirigami.Units.gridUnit
             Layout.alignment: Qt.AlignHCenter
             width: timeLabels.implicitWidth
             height: timeLabels.implicitHeight

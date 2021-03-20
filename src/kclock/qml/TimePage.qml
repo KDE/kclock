@@ -32,7 +32,7 @@ Kirigami.ScrollablePage {
 
     title: i18n("Time")
     icon.name: "clock"
-    
+
     mainAction: Kirigami.Action {
         iconName: "globe"
         text: i18n("Edit")
