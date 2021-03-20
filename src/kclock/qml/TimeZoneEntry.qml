@@ -29,6 +29,11 @@ Kirigami.SwipeListItem {
     property alias tzRelative: timeZoneRelative.text
     property alias tzTime: timeZoneTime.text
     
+    leftPadding: Kirigami.Units.largeSpacing * 2
+    rightPadding: Kirigami.Units.largeSpacing * 2
+    topPadding: Kirigami.Units.largeSpacing
+    bottomPadding: Kirigami.Units.largeSpacing
+    
     contentItem: Item {
         Layout.fillWidth: true
         implicitHeight: timeZoneColumn.height

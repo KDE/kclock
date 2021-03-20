@@ -65,7 +65,10 @@ Kirigami.ScrollablePage {
         
         // each alarm
         delegate: Kirigami.SwipeListItem {
-
+            leftPadding: Kirigami.Units.largeSpacing * 2
+            topPadding: Kirigami.Units.largeSpacing
+            bottomPadding: Kirigami.Units.largeSpacing
+            
             onClicked: model.enabled = !model.enabled
             
             actions: [
