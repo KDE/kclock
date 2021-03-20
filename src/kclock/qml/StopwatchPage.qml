@@ -42,13 +42,19 @@ Kirigami.ScrollablePage {
     }
     function addLap() {
         if (running) {
-            roundModel.insert(0, { time: elapsedTime });
+            if (roundModel.count === 0) {
+                roundModel.append({ time: 0 }); // constantly counting lap
+                roundModel.append({ time: elapsedTime });
+            } else {
+                roundModel.insert(0, { time: 0 }); // insert constantly count lap
+                roundModel.get(1).time = elapsedTime;
+            }
         }
     }
     function resetStopwatch() {
         running = false;
-        stopwatchTimer.reset();
         roundModel.clear();
+        stopwatchTimer.reset();
     }
     
     // keyboard controls
@@ -167,8 +173,10 @@ Kirigami.ScrollablePage {
     
     // lap list display
     ListView {
+        id: listView
         model: roundModel
         spacing: 0
+        currentIndex: -1
 
         reuseItems: true
         
@@ -186,49 +194,13 @@ Kirigami.ScrollablePage {
             NumberAnimation { properties: "x,y"; duration: Kirigami.Units.longDuration; easing.type: Easing.InOutQuad}
         }
         
-        // live count entry
-        header: Kirigami.BasicListItem {
-            visible: roundModel.count > 0
-            activeBackgroundColor: "transparent"
-            contentItem: RowLayout {
-                Item { Layout.fillWidth: true }
-                RowLayout {
-                    Layout.maximumWidth: Kirigami.Units.gridUnit * 16
-                    Layout.preferredWidth: Kirigami.Units.gridUnit * 16
-                    
-                    Item {
-                        Layout.fillHeight: true
-                        Layout.leftMargin: Kirigami.Units.largeSpacing
-                        implicitWidth: Kirigami.Units.gridUnit * 2
-                        Label {
-                            color: Kirigami.Theme.textColor
-                            font.weight: Font.Bold
-                            text: i18n("#%1", roundModel.count+1)
-                        }
-                    }
-                    Label {
-                        Layout.alignment: Qt.AlignLeft
-                        color: Kirigami.Theme.textColor
-                        text: roundModel.count == 0 ? "" : "+" + parseFloat((elapsedTime - roundModel.get(0).time)/1000).toFixed(2)
-                    }
-                    Item { Layout.fillWidth: true }
-                    Item {
-                        Layout.fillHeight: true
-                        Layout.alignment: Qt.AlignRight
-                        implicitWidth: Kirigami.Units.gridUnit * 3
-                        Label {
-                            anchors.left: parent.left
-                            color: Kirigami.Theme.focusColor
-                            text: parseFloat(elapsedTime/1000).toFixed(2)
-                        }
-                    }
-                }
-                Item { Layout.fillWidth: true }
-            }
-        }
-        
         // lap items
         delegate: Kirigami.BasicListItem {
+            y: -height
+            leftPadding: Kirigami.Units.largeSpacing * 2
+            rightPadding: Kirigami.Units.largeSpacing * 2
+            topPadding: Kirigami.Units.largeSpacing
+            bottomPadding: Kirigami.Units.largeSpacing
             activeBackgroundColor: "transparent"
 
             Keys.onSpacePressed: toggleStopwatch();
@@ -257,10 +229,12 @@ Kirigami.ScrollablePage {
                         Layout.alignment: Qt.AlignLeft
                         color: Kirigami.Theme.textColor
                         text: {
-                            if (index == roundModel.count - 1) {
-                                return "+" + parseFloat(model.time/1000).toFixed(2);
+                            if (index === 0) { // constantly updated lap (top lap)
+                                return "+" + parseFloat((elapsedTime - roundModel.get(1).time)/1000).toFixed(2);
+                            } else if (index === roundModel.count - 1) {
+                                return "+" + parseFloat(model.time / 1000).toFixed(2);
                             } else if (model) {
-                                return "+" + parseFloat((model.time - roundModel.get(index+1).time)/1000).toFixed(2);
+                                return "+" + parseFloat((model.time - roundModel.get(index+1).time)/1000).toFixed(2)
                             }
                         }
                     }
@@ -275,7 +249,7 @@ Kirigami.ScrollablePage {
                         Label {
                             anchors.left: parent.left
                             color: Kirigami.Theme.focusColor
-                            text: parseFloat(model.time/1000).toFixed(2)
+                            text: parseFloat((index == 0 ? elapsedTime : model.time) / 1000).toFixed(2)
                         }
                     }
                 }
