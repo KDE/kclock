@@ -35,9 +35,9 @@ Kirigami.GlobalDrawer {
     Kirigami.Theme.colorSet: Kirigami.Theme.Window
     Kirigami.Theme.inherit: false
 
-    header: Kirigami.AbstractApplicationHeader {
-        implicitHeight: Kirigami.Units.gridUnit * 2
-        
+    header: QQC2.ToolBar {
+        implicitHeight: Kirigami.Units.gridUnit * 2 + Kirigami.Units.smallSpacing
+
         Item {
             anchors.fill: parent
             Kirigami.Heading {
