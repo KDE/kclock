@@ -26,6 +26,9 @@ import org.kde.kirigami 2.12 as Kirigami
 import kclock 1.0
 
 Kirigami.ScrollablePage {
+    id: alarmPage
+    
+    property int yTranslate: 0
     
     title: i18n("Alarms")
     icon.name: "notifications"
@@ -39,6 +42,8 @@ Kirigami.ScrollablePage {
         id: alarmsList
         model: alarmModel
         currentIndex: -1 // no default selection
+        
+        transform: Translate { y: yTranslate }
         
         reuseItems: true
 

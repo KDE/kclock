@@ -24,6 +24,10 @@ import QtQuick.Layouts 1.2
 import org.kde.kirigami 2.11 as Kirigami
 
 Kirigami.ScrollablePage {
+    id: settingsPage
+    
+    property int yTranslate: 0
+    
     title: i18n("Settings")
     icon.name: "settings-configure"
     topPadding: 0
@@ -34,6 +38,7 @@ Kirigami.ScrollablePage {
 
     // settings list
     ColumnLayout {
+        transform: Translate { y: yTranslate }
         spacing: 0
 
         ItemDelegate {

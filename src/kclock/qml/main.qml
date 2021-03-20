@@ -64,11 +64,10 @@ Kirigami.ApplicationWindow
         
         // page switch animation
         yAnim.target = page;
+        yAnim.properties = "yTranslate";
         anim.target = page;
-        yAnim.properties = "mainItem.y,mainItem.anchors.topMargin";
         anim.properties = "mainItem.opacity";
         if (page.header) {
-            yAnim.properties = "header.anchors.topMargin"; // don't duplicate animation
             anim.properties += ",header.opacity";
         }
         yAnim.restart();

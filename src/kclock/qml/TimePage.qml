@@ -28,6 +28,8 @@ import org.kde.kirigami 2.12 as Kirigami
 Kirigami.ScrollablePage {
     id: timePage
     
+    property int yTranslate: 0
+
     property int clockRadius: Kirigami.Units.gridUnit * 4
 
     title: i18n("Time")
@@ -54,6 +56,8 @@ Kirigami.ScrollablePage {
         implicitHeight: height
         anchors.left: parent.left
         anchors.right: parent.right
+        
+        transform: Translate { y: yTranslate }
         
         // left side - analog clock
         Loader {
@@ -100,6 +104,7 @@ Kirigami.ScrollablePage {
         model: timeZoneShowModel
         id: zoneList
         currentIndex: -1 // no default selection
+        transform: Translate { y: yTranslate }
         
         reuseItems: true
         

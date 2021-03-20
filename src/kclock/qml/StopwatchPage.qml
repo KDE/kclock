@@ -28,6 +28,8 @@ import org.kde.kirigami 2.4 as Kirigami
 Kirigami.ScrollablePage {
     id: stopwatchpage
     
+    property int yTranslate
+    
     title: i18n("Stopwatch")
     icon.name: "chronometer"
     
@@ -70,6 +72,7 @@ Kirigami.ScrollablePage {
     }
     
     header: ColumnLayout {
+        transform: Translate { y: yTranslate }
         anchors.left: parent.left
         anchors.right: parent.right
         spacing: Kirigami.Units.gridUnit
@@ -177,6 +180,7 @@ Kirigami.ScrollablePage {
         model: roundModel
         spacing: 0
         currentIndex: -1
+        transform: Translate { y: yTranslate }
 
         reuseItems: true
         

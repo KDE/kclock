@@ -27,6 +27,8 @@ import kclock 1.0
 Kirigami.ScrollablePage {
     id: timerPage
     
+    property int yTranslate: 0
+    
     title: i18n("Timers")
     icon.name: "player-time"
     property bool createdTimer: false
@@ -43,6 +45,8 @@ Kirigami.ScrollablePage {
     Kirigami.CardsListView {
         id: timersList
         model: timerModel
+        
+        transform: Translate { y: yTranslate }
         
         // no timer placeholder
         Kirigami.PlaceholderMessage {
