@@ -81,7 +81,7 @@ Kirigami.ScrollablePage {
                     iconName: "delete"
                     text: i18n("Delete")
                     onTriggered: {
-                        showPassiveNotification(i18n("Deleted %1", model.name));
+                        showPassiveNotification(i18n("Deleted %1", model.name == "" ? i18n("alarm") : model.name));
                         alarmModel.remove(index);
                         alarmModel.updateUi();
                     }
