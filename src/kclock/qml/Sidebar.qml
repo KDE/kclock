@@ -33,6 +33,7 @@ Kirigami.GlobalDrawer {
     bannerVisible: false
 
     Kirigami.Theme.colorSet: Kirigami.Theme.Window
+    Kirigami.Theme.inherit: false
 
     header: Kirigami.AbstractApplicationHeader {
         implicitHeight: Kirigami.Units.gridUnit * 2
@@ -53,27 +54,47 @@ Kirigami.GlobalDrawer {
         Kirigami.Action {
             text: i18n("Time")
             iconName: "clock"
-            onTriggered: appwindow.switchToPage(appwindow.getPage("Time"), 0)
+            onTriggered: {
+                if (appwindow.pageStack.currentItem !== appwindow.getPage("Time")) {
+                    appwindow.switchToPage(appwindow.getPage("Time"), 0);
+                }
+            }
         },
         Kirigami.Action {
             text: i18n("Timer")
             iconName: "player-time"
-            onTriggered: appwindow.switchToPage(appwindow.getPage("Timer"), 0)
+            onTriggered: {
+                if (appwindow.pageStack.currentItem !== appwindow.getPage("Timer")) {
+                    appwindow.switchToPage(appwindow.getPage("Timer"), 0);
+                }
+            }
         },
         Kirigami.Action {
             text: i18n("Stopwatch")
             iconName: "chronometer"
-            onTriggered: appwindow.switchToPage(appwindow.getPage("Stopwatch"), 0)
+            onTriggered: {
+                if (appwindow.pageStack.currentItem !== appwindow.getPage("Stopwatch")) {
+                    appwindow.switchToPage(appwindow.getPage("Stopwatch"), 0);
+                }
+            }
         },
         Kirigami.Action {
             text: i18n("Alarm")
             iconName: "notifications"
-            onTriggered: appwindow.switchToPage(appwindow.getPage("Alarm"), 0)
+            onTriggered: {
+                if (appwindow.pageStack.currentItem !== appwindow.getPage("Alarm")) {
+                    appwindow.switchToPage(appwindow.getPage("Alarm"), 0);
+                }
+            }
         },
         Kirigami.Action {
             text: i18n("Settings")
             icon.name: "settings-configure"
-            onTriggered: appwindow.switchToPage(appwindow.getPage("Settings"), 0)
+            onTriggered: {
+                if (appwindow.pageStack.currentItem !== appwindow.getPage("Settings")) {
+                    appwindow.switchToPage(appwindow.getPage("Settings"), 0);
+                }
+            }
         }
     ]
 }
