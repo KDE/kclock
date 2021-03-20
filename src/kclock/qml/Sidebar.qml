@@ -19,9 +19,10 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-import org.kde.kirigami 2.11 as Kirigami
+import QtQuick 2.15
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.1 as QQC2
+import org.kde.kirigami 2.11 as Kirigami
 
 Kirigami.GlobalDrawer {
     id: drawer
@@ -34,20 +35,17 @@ Kirigami.GlobalDrawer {
     Kirigami.Theme.colorSet: Kirigami.Theme.Window
 
     header: Kirigami.AbstractApplicationHeader {
-        topPadding: Kirigami.Units.smallSpacing
-        bottomPadding: Kirigami.Units.largeSpacing
-        leftPadding: Kirigami.Units.largeSpacing
-        rightPadding: Kirigami.Units.largeSpacing
         implicitHeight: Kirigami.Units.gridUnit * 2
         
-        Kirigami.Heading {
-            level: 1
-            text: i18n("Clock")
-            Layout.fillWidth: true
-            
-            // HACK: spacing with other header is misaligned, so align it manually
-            x: Kirigami.Units.largeSpacing
-            y: Kirigami.Units.gridUnit * 0.13
+        Item {
+            anchors.fill: parent
+            Kirigami.Heading {
+                level: 1
+                text: i18n("Clock")
+                anchors.left: parent.left
+                anchors.leftMargin: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+                anchors.verticalCenter: parent.verticalCenter
+            }
         }
     }
 
