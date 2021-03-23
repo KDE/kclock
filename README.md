@@ -75,3 +75,12 @@ Various plasmoids for kclockd exist, and some also communicate with [KWeather](h
 Currently we have two plasmoids, expect more in the future.
 
 Intended to provide `widgets` similar to those you can find on mainstream mobile platforms.
+
+## Gallery
+
+<img src="screenshots/kclock-mobile-timezones.png" width="200px">
+<img src="screenshots/kclock-mobile-timers.png" width="200px">
+<img src="screenshots/kclock-mobile-stopwatch.png" width="200px">
+<img src="screenshots/kclock-mobile-alarms.png" width="200px">
+<img src="screenshots/kclock-desktop-timezones.png" width="400px">
+<img src="screenshots/kclock-desktop-timer.png" width="400px">
