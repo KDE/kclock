@@ -26,30 +26,7 @@
   <name xml:lang="sv">Klocka</name>
   <name xml:lang="uk">Годинник</name>
   <name xml:lang="x-test">xxClockxx</name>
-  <summary>A simple all in one clock application.</summary>
-  <summary xml:lang="ca">Una aplicació senzilla de rellotge tot en un.</summary>
-  <summary xml:lang="ca-valencia">Una aplicació senzilla de rellotge tot en un.</summary>
-  <summary xml:lang="el">Μια απλή και πλήρης εφαρμογή ρολογιού.</summary>
-  <summary xml:lang="en-GB">A simple all in one clock application.</summary>
-  <summary xml:lang="es">Sencilla aplicación de reloj todo en uno.</summary>
-  <summary xml:lang="et">Lihtne kõik-ühes kellarakendus.</summary>
-  <summary xml:lang="eu">Dena batean duen erloju aplikazio erraz bat.</summary>
-  <summary xml:lang="fi">Yksinkertainen kaikki yhdessä -kellosovellus.</summary>
-  <summary xml:lang="fr">Une application d'horloge, simple et tout-en-un.</summary>
-  <summary xml:lang="id">Sebuah aplikasi semua dalam satu jam yang sederhana.</summary>
-  <summary xml:lang="it">Una semplice applicazione tutto in uno per l'orologio.</summary>
-  <summary xml:lang="ko">간단한 올인원 시계 프로그램입니다.</summary>
-  <summary xml:lang="nl">Een eenvoudige alles-in-een kloktoepassing.</summary>
-  <summary xml:lang="nn">Eit enkelt alt-i-eitt-ur.</summary>
-  <summary xml:lang="pa">ਇੱਕ ਸਰਲ ਘੜੀ ਐਪਲੀਕੇਸ਼ਨ ਹੈ।</summary>
-  <summary xml:lang="pt">Uma aplicação simples de relógio tudo-em-um.</summary>
-  <summary xml:lang="pt-BR">Um simples aplicativo de relógio tudo em um.</summary>
-  <summary xml:lang="ro">Aplicație simplă de ceas.</summary>
-  <summary xml:lang="sk">Jednoduchá hodinová aplikácia všetko v jednom.</summary>
-  <summary xml:lang="sl">Enostavni program za uro.</summary>
-  <summary xml:lang="sv">Ett enkelt allt-i-ett klockprogram.</summary>
-  <summary xml:lang="uk">Проста універсальна програма-годинник</summary>
-  <summary xml:lang="x-test">xxA simple all in one clock application.xx</summary>
+  <summary>A convergent clock application for Plasma.</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2+</project_license>
   <developer_name>KDE Community</developer_name>
@@ -78,29 +55,6 @@
   <developer_name xml:lang="uk">Спільнота KDE</developer_name>
   <developer_name xml:lang="x-test">xxKDE Communityxx</developer_name>
   <description>
-    <p>KClock is a mobile friendly clock application, that includes a stopwatch, timer and alarms</p>
-    <p xml:lang="ca">El KClock és una aplicació de rellotge fàcil d'usar, que inclou un cronòmetre, temporitzador i alarmes.</p>
-    <p xml:lang="ca-valencia">El KClock és una aplicació de rellotge fàcil d'usar, que inclou un cronòmetre, temporitzador i alarmes.</p>
-    <p xml:lang="el">Το KClock είναι μια φιλική σε κινητά εφαρμογή ρολογιού, η οποία περιλαμβάνει χρονοδιακόπτη, χρονόμετρο και συναγερμούς</p>
-    <p xml:lang="en-GB">KClock is a mobile friendly clock application, that includes a stopwatch, timer and alarms</p>
-    <p xml:lang="es">KClock es una aplicación de reloj para móviles que incluye un cronómetro, temporizador y alarmas</p>
-    <p xml:lang="et">KClock on kasutajasõbralik kellarakendus mobiilile, mis pakub äratust, taimerit ja stopperit</p>
-    <p xml:lang="eu">KClock mugikorrekiko lagunkoia den erloju aplikazio bat da, kronometro bat, tenporizadorea eta alarmak dituena</p>
-    <p xml:lang="fi">KClock on mobiiliystävällinen kellosovellus, johon sisältyvät ajanotto, ajastus ja hälytykset</p>
-    <p xml:lang="fr">KClock est une application nomade et agréable d'horloge, intégrant un chronomètre, des temporisations et des alarmes</p>
-    <p xml:lang="id">KClock adalah aplikasi jam ramah seluler, yang mencakup stopwatch, timer, dan alarm</p>
-    <p xml:lang="it">KClock è un'applicazione per l'orologio ottimizzata per dispositivi mobili, che un cronometro, dei timer e degli allarmi</p>
-    <p xml:lang="ko">KClock은 초시계, 타이머, 알람 기능을 지원하는 모바일 친화적 시계 프로그램입니다</p>
-    <p xml:lang="nl">KClock is een mobielvriendelijke kloktoepassing, die een stopwatch, timer en wekker bevat</p>
-    <p xml:lang="nn">KClock er eit mobil­vennleg klokke­program med stoppeklokke, nedtaljar og alarmar.</p>
-    <p xml:lang="pa">ਕੇ-ਘੜੀ ਮੋਬਾਇਲ ਲਈ ਢੁੱਕਵੀਂ ਘੜੀ ਐਪਲੀਕੇਸ਼ਨ ਹੈ, ਜਿਸ ਵਿੱਚ ਸਟਾਪ-ਵਾਚ, ਟਾਈਮਰ ਤੇ ਅਲਾਰਮ ਸ਼ਾਮਲ ਹਨ।</p>
-    <p xml:lang="pt">O KClock é uma aplicação móvel e amigável de relógio, que inclui alarmes, cronómetros e temporizadores</p>
-    <p xml:lang="pt-BR">O KClock é um aplicativo de relógio para dispositivos móveis, que inclui um cronômetro, temporizador e alarmes</p>
-    <p xml:lang="ro">KClock e o aplicație de ceas prietenoasă cu dispozitivele mobile, ce include un cronometru, temporizator și alarme</p>
-    <p xml:lang="sk">KClock je hodinová aplikácia pre mobily, ktorá obsahuje stopky, časovač a budíky</p>
-    <p xml:lang="sl">KClock je mobilni program, ki vsebuje štoparico, merilnik časa in alarme</p>
-    <p xml:lang="sv">Kclock är ett mobilvänligt klockprogram, som inkluderar ett stoppur, tidtagning och alarm</p>
-    <p xml:lang="uk">KClock — програма-годинник для мобільних пристроїв, у якій передбачено секундомір, таймер та нагадування</p>
-    <p xml:lang="x-test">xxKClock is a mobile friendly clock application, that includes a stopwatch, timer and alarmsxx</p>
+    <p>A convergent clock application for Plasma. It contains alarm, timer, stopwatch and timezone functionalities. Alarms are also able to wake the device from suspend when using Plasma.</p>
   </description>
 </component>

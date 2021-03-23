@@ -32,9 +32,9 @@ Kirigami.AboutPage {
         "shortDescription": i18n("A mobile friendly clock app built with Kirigami."),
         "homepage": "",
         "bugAddress": "",
-        "version": "0.3.0",
+        "version": "0.5.0",
         "otherText": "",
-        "copyrightStatement": i18n("© 2020 Plasma Development Team"),
+        "copyrightStatement": i18n("© 2020-2021 Plasma Development Team"),
         "desktopFileName": "org.kde.kclock",
         "authors": [
                     {
