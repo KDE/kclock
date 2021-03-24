@@ -59,28 +59,28 @@
   </description>
   <screenshots>
     <screenshot type="default">
-        <caption>Mobile view</caption>
-        <image>https://cdn.kde.org/screenshots/kclock/kclock-mobile-timezones.png</image>
+      <caption>Mobile view</caption>
+      <image>https://cdn.kde.org/screenshots/kclock/kclock-mobile-timezones.png</image>
     </screenshot>
     <screenshot>
-        <caption>Desktop view</caption>
-        <image>https://cdn.kde.org/screenshots/kclock/kclock-desktop-timezones.png</image>
+      <caption>Desktop view</caption>
+      <image>https://cdn.kde.org/screenshots/kclock/kclock-desktop-timezones.png</image>
     </screenshot>
     <screenshot>
-        <caption>Timers page</caption>
-        <image>https://cdn.kde.org/screenshots/kclock/kclock-mobile-timers.png</image>
+      <caption>Timers page</caption>
+      <image>https://cdn.kde.org/screenshots/kclock/kclock-mobile-timers.png</image>
     </screenshot>
     <screenshot>
-        <caption>Timer page</caption>
-        <image>https://cdn.kde.org/screenshots/kclock/kclock-desktop-timer.png</image>
+      <caption>Timer page</caption>
+      <image>https://cdn.kde.org/screenshots/kclock/kclock-desktop-timer.png</image>
     </screenshot>
     <screenshot>
-        <caption>Stopwatch page</caption>
-        <image>https://cdn.kde.org/screenshots/kclock/kclock-mobile-stopwatch.png</image>
+      <caption>Stopwatch page</caption>
+      <image>https://cdn.kde.org/screenshots/kclock/kclock-mobile-stopwatch.png</image>
     </screenshot>
     <screenshot>
-        <caption>Alarms page</caption>
-        <image>https://cdn.kde.org/screenshots/kclock/kclock-mobile-alarms.png</image>
+      <caption>Alarms page</caption>
+      <image>https://cdn.kde.org/screenshots/kclock/kclock-mobile-alarms.png</image>
     </screenshot>
   </screenshots>
 </component>
