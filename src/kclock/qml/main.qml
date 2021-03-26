@@ -108,6 +108,11 @@ Kirigami.ApplicationWindow
         }
     }
     
+    contextDrawer: Kirigami.ContextDrawer {
+        id: contextDrawer
+        handle.anchors.bottomMargin: appwindow.footer.height + Kirigami.Units.largeSpacing
+    }
+    
     Loader {
         id: sidebarLoader
         source: "qrc:/qml/Sidebar.qml"
