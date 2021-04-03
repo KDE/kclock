@@ -217,11 +217,11 @@ void AlarmModel::updateNotifierItem(quint64 time)
     } else {
         auto dateTime = QDateTime::fromSecsSinceEpoch(time).toLocalTime();
         m_notifierItem->setStatus(KStatusNotifierItem::Active);
-        m_notifierItem->setToolTip(
-            QStringLiteral("clock"),
-            QStringLiteral("KClock"),
-            xi18nc("@info",
-                   "Alarm: <shortcut>%1</shortcut>",
-                   QLocale::system().standaloneDayName(dateTime.date().dayOfWeek()) + QLocale::system().toString(dateTime.time(), QLocale::ShortFormat)));
+        m_notifierItem->setToolTip(QStringLiteral("clock"),
+                                   QStringLiteral("KClock"),
+                                   xi18nc("@info",
+                                          "Alarm: <shortcut>%1 %2</shortcut>",
+                                          QLocale::system().standaloneDayName(dateTime.date().dayOfWeek()),
+                                          QLocale::system().toString(dateTime.time(), QLocale::ShortFormat)));
     }
 }
