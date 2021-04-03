@@ -20,16 +20,26 @@ KClock_1x2::KClock_1x2(QObject *parent, const QVariantList &args)
     // initial interval is milliseconds to next minute
     m_timer->start((60 - (QTime::currentTime().msecsSinceStartOfDay() / 1000) % 60) * 1000); // seconds to next minute
 
-    if (!QDBusConnection::sessionBus().connect(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Alarms"), QStringLiteral("org.kde.kclock.AlarmModel"), QStringLiteral("nextAlarm"), this, SLOT(updateAlarm(qulonglong))))
+    if (!QDBusConnection::sessionBus().connect(QStringLiteral("org.kde.kclockd"),
+                                               QStringLiteral("/Alarms"),
+                                               QStringLiteral("org.kde.kclock.AlarmModel"),
+                                               QStringLiteral("nextAlarm"),
+                                               this,
+                                               SLOT(updateAlarm(qulonglong))))
         m_string = QStringLiteral("connect failed");
 
-    QDBusInterface *interface = new QDBusInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Alarms"), QStringLiteral("org.kde.kclock.AlarmModel"), QDBusConnection::sessionBus(), this);
+    QDBusInterface *interface = new QDBusInterface(QStringLiteral("org.kde.kclockd"),
+                                                   QStringLiteral("/Alarms"),
+                                                   QStringLiteral("org.kde.kclock.AlarmModel"),
+                                                   QDBusConnection::sessionBus(),
+                                                   this);
     QDBusReply<quint64> reply = interface->call(QStringLiteral("getNextAlarm"));
     if (reply.isValid()) {
         auto alarmTime = reply.value();
         if (alarmTime > 0) {
             auto dateTime = QDateTime::fromSecsSinceEpoch(alarmTime).toLocalTime();
-            m_string = m_local.standaloneDayName(dateTime.date().dayOfWeek(), QLocale::ShortFormat) + QStringLiteral(", ") + m_local.toString(dateTime.time(), QStringLiteral("hh:mm"));
+            m_string = m_local.standaloneDayName(dateTime.date().dayOfWeek(), QLocale::ShortFormat) + QStringLiteral(", ")
+                + m_local.toString(dateTime.time(), QStringLiteral("hh:mm"));
             m_hasAlarm = true;
         } else
             m_hasAlarm = false;
@@ -41,7 +51,8 @@ void KClock_1x2::updateAlarm(qulonglong time)
 {
     auto dateTime = QDateTime::fromSecsSinceEpoch(time).toLocalTime();
     if (time > 0) {
-        m_string = m_local.standaloneDayName(dateTime.date().dayOfWeek(), QLocale::ShortFormat) + QStringLiteral(", ") + m_local.toString(dateTime.time(), QStringLiteral("hh:mm"));
+        m_string = m_local.standaloneDayName(dateTime.date().dayOfWeek(), QLocale::ShortFormat) + QStringLiteral(", ")
+            + m_local.toString(dateTime.time(), QStringLiteral("hh:mm"));
         m_hasAlarm = true;
     } else {
         m_hasAlarm = false;

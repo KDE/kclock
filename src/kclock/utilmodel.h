@@ -33,21 +33,21 @@ class UtilModel : public QObject
 public:
     static UtilModel *instance()
     {
-        static UtilModel * singleton = new UtilModel;
+        static UtilModel *singleton = new UtilModel;
         return singleton;
     }
-    
+
     QString getCurrentTimeZoneName();
-    
+
     long long calculateNextRingTime(int hours, int minutes, int daysOfWeek, int snooze = 0);
     QString timeToRingFormatted(const long long &timestamp);
-    
+
     bool isLocale24HourTime();
-    
+
 private:
     UtilModel(){}; // explicitly declare it private
     bool m_applicationLoaded = false;
-    
+
 Q_SIGNALS:
     void propertyChanged();
     void applicationLoadedChanged();

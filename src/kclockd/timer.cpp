@@ -33,8 +33,12 @@ Timer::Timer(int length, QString label, bool running)
     , m_uuid(QUuid::createUuid())
 {
     connect(&Utilities::instance(), &Utilities::wakeup, this, &Timer::timeUp);
-    QDBusConnection::sessionBus().registerObject(QStringLiteral("/Timers/") + this->m_uuid.toString(QUuid::Id128), this, QDBusConnection::ExportScriptableContents | QDBusConnection::ExportAllProperties);
-    connect(this, &QObject::destroyed, [this] { QDBusConnection::sessionBus().unregisterObject(QStringLiteral("/Timers/") + this->m_uuid.toString(QUuid::Id128), QDBusConnection::UnregisterNode); });
+    QDBusConnection::sessionBus().registerObject(QStringLiteral("/Timers/") + this->m_uuid.toString(QUuid::Id128),
+                                                 this,
+                                                 QDBusConnection::ExportScriptableContents | QDBusConnection::ExportAllProperties);
+    connect(this, &QObject::destroyed, [this] {
+        QDBusConnection::sessionBus().unregisterObject(QStringLiteral("/Timers/") + this->m_uuid.toString(QUuid::Id128), QDBusConnection::UnregisterNode);
+    });
     if (running)
         this->toggleRunning();
 }
@@ -46,8 +50,12 @@ Timer::Timer(const QJsonObject &obj)
     m_uuid = QUuid(obj[QStringLiteral("uuid")].toString());
 
     connect(&Utilities::instance(), &Utilities::wakeup, this, &Timer::timeUp);
-    QDBusConnection::sessionBus().registerObject(QStringLiteral("/Timers/") + this->m_uuid.toString(QUuid::Id128), this, QDBusConnection::ExportScriptableContents | QDBusConnection::ExportAllProperties);
-    connect(this, &QObject::destroyed, [this] { QDBusConnection::sessionBus().unregisterObject(QStringLiteral("/Timers/") + this->m_uuid.toString(QUuid::Id128), QDBusConnection::UnregisterNode); });
+    QDBusConnection::sessionBus().registerObject(QStringLiteral("/Timers/") + this->m_uuid.toString(QUuid::Id128),
+                                                 this,
+                                                 QDBusConnection::ExportScriptableContents | QDBusConnection::ExportAllProperties);
+    connect(this, &QObject::destroyed, [this] {
+        QDBusConnection::sessionBus().unregisterObject(QStringLiteral("/Timers/") + this->m_uuid.toString(QUuid::Id128), QDBusConnection::UnregisterNode);
+    });
 }
 
 Timer::~Timer()
@@ -128,7 +136,9 @@ void Timer::sendNotification()
     notif->setDefaultAction(i18n("View"));
     notif->setUrgency(KNotification::HighUrgency);
     notif->setFlags(KNotification::NotificationFlag::LoopSound | KNotification::NotificationFlag::Persistent);
-    connect(notif, &KNotification::closed, [notif] { notif->close(); });
+    connect(notif, &KNotification::closed, [notif] {
+        notif->close();
+    });
 
     notif->sendEvent();
 }

@@ -38,7 +38,8 @@ AlarmPlayer::AlarmPlayer(QObject *parent)
 
 void AlarmPlayer::loopAudio(QMediaPlayer::State state)
 {
-    if (!userStop && state == QMediaPlayer::StoppedState /* && static_cast<int>(QDateTime::currentSecsSinceEpoch() - startPlayingTime) < settings.alarmSilenceAfter()*/) {
+    if (!userStop
+        && state == QMediaPlayer::StoppedState /* && static_cast<int>(QDateTime::currentSecsSinceEpoch() - startPlayingTime) < settings.alarmSilenceAfter()*/) {
         m_player->play();
     }
 }
@@ -70,6 +71,7 @@ void AlarmPlayer::setSource(QUrl path)
 {
     // if user set a invalid audio path or doesn't even specified a path, resort to default
     if (!path.isLocalFile())
-        m_player->setMedia(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("sounds/freedesktop/stereo/alarm-clock-elapsed.oga"))));
+        m_player->setMedia(QUrl::fromLocalFile(
+            QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("sounds/freedesktop/stereo/alarm-clock-elapsed.oga"))));
     m_player->setMedia(path);
 }

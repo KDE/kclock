@@ -23,18 +23,20 @@
 
 #include <KLocalizedString>
 
-#include "alarmmodel.h"
 #include "alarm.h"
+#include "alarmmodel.h"
 #include "utilmodel.h"
 
-Alarm::Alarm() {};
+Alarm::Alarm(){};
 Alarm::Alarm(QString uuid)
 {
     m_interface = new org::kde::kclock::Alarm(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Alarms/") + uuid, QDBusConnection::sessionBus(), this);
 
     if (m_interface->isValid()) {
         connect(m_interface, &OrgKdeKclockAlarmInterface::propertyChanged, this, &Alarm::updateProperty);
-        connect(m_interface, &OrgKdeKclockAlarmInterface::alarmChanged, [this] { m_nextRingTime = m_interface->nextRingTime(); });
+        connect(m_interface, &OrgKdeKclockAlarmInterface::alarmChanged, [this] {
+            m_nextRingTime = m_interface->nextRingTime();
+        });
 
         m_uuid = QUuid(m_interface->getUUID());
         m_name = m_interface->name();
@@ -82,6 +84,6 @@ void Alarm::calculateNextRingTime()
         m_nextRingTime = -1;
         return;
     }
-    
+
     m_nextRingTime = UtilModel::instance()->calculateNextRingTime(this->m_hours, this->m_minutes, this->m_daysOfWeek, this->m_snooze);
 }

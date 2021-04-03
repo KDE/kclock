@@ -20,9 +20,9 @@
 
 #include "utilmodel.h"
 
+#include <QLocale>
 #include <QString>
 #include <QTimeZone>
-#include <QLocale>
 
 #include <KLocalizedString>
 
@@ -38,7 +38,7 @@ long long UtilModel::calculateNextRingTime(int hours, int minutes, int daysOfWee
 
     QDateTime date = QDateTime::currentDateTime();
 
-    if (daysOfWeek == 0) {              // alarm does not repeat (no days of the week are specified)
+    if (daysOfWeek == 0) { // alarm does not repeat (no days of the week are specified)
         if (alarmTime >= date.time()) { // alarm occurs later today
             return QDateTime(date.date(), alarmTime).toSecsSinceEpoch();
         } else { // alarm occurs on the next day
@@ -49,7 +49,7 @@ long long UtilModel::calculateNextRingTime(int hours, int minutes, int daysOfWee
 
         // keeping looping forward a single day until the day of week is accepted
         while (((daysOfWeek & (1 << (date.date().dayOfWeek() - 1))) == 0) // check day
-               || (first && (alarmTime < date.time())))                   // check time if the current day is accepted (keep looping forward if alarmTime has passed)
+               || (first && (alarmTime < date.time()))) // check time if the current day is accepted (keep looping forward if alarmTime has passed)
         {
             date = date.addDays(1); // go forward a day
             first = false;
@@ -83,7 +83,7 @@ QString UtilModel::timeToRingFormatted(const long long &timestamp)
         }
         arg += i18np("%1 minute", "%1 minutes", minute);
     }
-    
+
     if (day <= 0 && hour <= 0 && minute <= 0) {
         return i18n("Alarm will be rung within a minute");
     } else {

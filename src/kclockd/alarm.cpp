@@ -32,8 +32,8 @@
 #include <KNotification>
 #include <KSharedConfig>
 
-#include "alarmadaptor.h"
 #include "alarm.h"
+#include "alarmadaptor.h"
 #include "kclockdsettings.h"
 
 // alarm created from UI
@@ -86,7 +86,9 @@ void Alarm::initialize(AlarmModel *parent)
     // DBus
     new AlarmAdaptor(this);
     QDBusConnection::sessionBus().registerObject(QStringLiteral("/Alarms/") + this->uuid().toString(QUuid::Id128), this);
-    connect(this, &QObject::destroyed, [this] { QDBusConnection::sessionBus().unregisterObject(QStringLiteral("/Alarms/") + this->uuid().toString(QUuid::Id128), QDBusConnection::UnregisterNode); });
+    connect(this, &QObject::destroyed, [this] {
+        QDBusConnection::sessionBus().unregisterObject(QStringLiteral("/Alarms/") + this->uuid().toString(QUuid::Id128), QDBusConnection::UnregisterNode);
+    });
 }
 
 // alarm to json
@@ -121,7 +123,7 @@ void Alarm::ring()
     qDebug() << "Ringing alarm" << m_name << "and sending notification...";
 
     KNotification *notif = new KNotification(QStringLiteral("alarm"));
-    notif->setActions(QStringList {i18n("Dismiss"), i18n("Snooze")});
+    notif->setActions(QStringList{i18n("Dismiss"), i18n("Snooze")});
     notif->setIconName(QStringLiteral("kclock"));
     notif->setTitle(name() == "" ? i18n("Alarm") : name());
     notif->setText(QLocale::system().toString(QTime::currentTime(), QLocale::ShortFormat)); // TODO
@@ -132,14 +134,16 @@ void Alarm::ring()
     connect(notif, &KNotification::action1Activated, this, &Alarm::handleDismiss);
     connect(notif, &KNotification::action2Activated, this, &Alarm::handleSnooze);
     connect(notif, &KNotification::closed, this, &Alarm::handleDismiss);
-    connect(notif, &KNotification::closed, [notif] { notif->close(); });
+    connect(notif, &KNotification::closed, [notif] {
+        notif->close();
+    });
 
     notif->sendEvent();
 
     QDBusMessage wakeupCall = QDBusMessage::createMethodCall(QStringLiteral("org.kde.Solid.PowerManagement"),
-                                                              QStringLiteral("/org/kde/Solid/PowerManagement"),
-                                                              QStringLiteral("org.kde.Solid.PowerManagement"),
-                                                              QStringLiteral("wakeup"));
+                                                             QStringLiteral("/org/kde/Solid/PowerManagement"),
+                                                             QStringLiteral("org.kde.Solid.PowerManagement"),
+                                                             QStringLiteral("wakeup"));
     QDBusConnection::sessionBus().call(wakeupCall);
 
     alarmNotifOpen = true;
@@ -183,7 +187,7 @@ void Alarm::handleSnooze()
     AlarmPlayer::instance().stop();
 
     setSnooze(snooze() + 60 * KClockSettings::self()->alarmSnoozeLength()); // snooze 5 minutes
-    m_enabled = true;                                                       // can't use setSnooze because it resets snooze time
+    m_enabled = true; // can't use setSnooze because it resets snooze time
     save();
     Q_EMIT alarmChanged();
 }
@@ -200,7 +204,7 @@ void Alarm::calculateNextRingTime()
 
     QDateTime date = QDateTime::currentDateTime();
 
-    if (this->m_daysOfWeek == 0) {      // alarm does not repeat (no days of the week are specified)
+    if (this->m_daysOfWeek == 0) { // alarm does not repeat (no days of the week are specified)
         if (alarmTime >= date.time()) { // alarm occurs later today
             m_nextRingTime = QDateTime(date.date(), alarmTime).toSecsSinceEpoch();
         } else { // alarm occurs on the next day
@@ -211,7 +215,7 @@ void Alarm::calculateNextRingTime()
 
         // keeping looping forward a single day until the day of week is accepted
         while (((this->m_daysOfWeek & (1 << (date.date().dayOfWeek() - 1))) == 0) // check day
-               || (first && (alarmTime < date.time())))                           // check time if the current day is accepted (keep looping forward if alarmTime has passed)
+               || (first && (alarmTime < date.time()))) // check time if the current day is accepted (keep looping forward if alarmTime has passed)
         {
             date = date.addDays(1); // go forward a day
             first = false;

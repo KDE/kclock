@@ -36,7 +36,11 @@ TimerModel::TimerModel(QObject *parent)
         connect(m_interface, SIGNAL(timerAdded(QString)), this, SLOT(addTimer(QString)));
         connect(m_interface, SIGNAL(timerRemoved(QString)), this, SLOT(removeTimer(QString)));
     }
-    QDBusInterface *interface = new QDBusInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Timers"), QStringLiteral("org.freedesktop.DBus.Introspectable"), QDBusConnection::sessionBus(), this);
+    QDBusInterface *interface = new QDBusInterface(QStringLiteral("org.kde.kclockd"),
+                                                   QStringLiteral("/Timers"),
+                                                   QStringLiteral("org.freedesktop.DBus.Introspectable"),
+                                                   QDBusConnection::sessionBus(),
+                                                   this);
     QDBusReply<QString> reply = interface->call(QStringLiteral("Introspect"));
     if (reply.isValid()) {
         auto xmlMsg = reply.value();

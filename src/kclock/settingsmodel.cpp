@@ -21,8 +21,8 @@
 #include <KLocalizedString>
 #include <QDebug>
 
-#include "settingsmodel.h"
 #include "alarmplayer.h"
+#include "settingsmodel.h"
 
 SettingsModel::SettingsModel()
     : m_interface(new LocalKClockSettingsInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Settings"), QDBusConnection::sessionBus()))

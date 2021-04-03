@@ -24,17 +24,17 @@
 
 #include <QDebug>
 #include <QFileDialog>
+#include <QMediaPlayer>
 #include <QObject>
 #include <QStandardPaths>
 #include <QString>
+#include <QThread>
 #include <QTime>
 #include <QUrl>
 #include <QUuid>
-#include <QThread>
-#include <QMediaPlayer>
 
-#include "alarmplayer.h"
 #include "alarmmodel.h"
+#include "alarmplayer.h"
 #include "alarmwaitworker.h"
 
 const QString ALARM_CFG_GROUP = "Alarms";
@@ -81,7 +81,7 @@ public:
     void setEnabled(bool enabled)
     {
         if (this->m_enabled != enabled) {
-            this->m_snooze = 0;        // reset snooze value
+            this->m_snooze = 0; // reset snooze value
             this->m_nextRingTime = -1; // reset next ring time
 
             this->m_enabled = enabled;
@@ -169,12 +169,13 @@ Q_SIGNALS:
     void ringtonePathChanged();
     Q_SCRIPTABLE void propertyChanged(QString property);
     Q_SCRIPTABLE void alarmChanged();
+
 private:
     void initialize(AlarmModel *parent); // called after object construction
     void calculateNextRingTime();
 
     bool alarmNotifOpen = false; // if the alarm notification is open
-    QTime alarmNotifOpenTime;    // time the alarm notification opened
+    QTime alarmNotifOpenTime; // time the alarm notification opened
 
     QUrl m_audioPath = QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "sounds/freedesktop/stereo/alarm-clock-elapsed.oga"));
     QString m_name = "New Alarm";
@@ -182,7 +183,7 @@ private:
     bool m_enabled = true;
     bool m_justSnoozed = false; // pressing snooze on the notification also triggers the dismiss event, so this is a helper for that
     int m_hours = 0, m_minutes = 0, m_daysOfWeek = 0;
-    int m_snooze = 0;           // current snooze length
+    int m_snooze = 0; // current snooze length
     quint64 m_nextRingTime = 0; // store calculated next ring time
 };
 

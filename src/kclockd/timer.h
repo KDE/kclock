@@ -97,7 +97,7 @@ private:
 
     QUuid m_uuid;
     int m_length, m_startTime = 0; // seconds
-    int m_hasElapsed = 0;          // time has elapsed till stop, only be updated if stopped or finished
+    int m_hasElapsed = 0; // time has elapsed till stop, only be updated if stopped or finished
     int m_cookie = -1;
     QString m_label;
     bool m_running = false;

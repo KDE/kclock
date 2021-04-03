@@ -25,9 +25,9 @@
 #include <QSettings>
 #include <QTimeZone>
 
+#include "kclockformat.h"
 #include "timezoneselectormodel.h"
 #include "utilmodel.h"
-#include "kclockformat.h"
 
 const QString TZ_CFG_GROUP = "Timezones";
 
@@ -42,7 +42,7 @@ TimeZoneSelectorModel::TimeZoneSelectorModel(QObject *parent)
         bool show = timezoneGroup.readEntry(id.data(), false);
         m_list.append(std::make_tuple(QTimeZone(id), show));
     }
-    
+
     connect(KclockFormat::instance(), &KclockFormat::timeChanged, this, &TimeZoneSelectorModel::update);
 }
 
@@ -140,7 +140,7 @@ bool TimeZoneSelectorModel::setData(const QModelIndex &index, const QVariant &va
         auto config = KSharedConfig::openConfig();
         KConfigGroup timezoneGroup = config->group(TZ_CFG_GROUP);
         timezoneGroup.writeEntry(std::get<0>(m_list[index.row()]).id().data(), value);
-        Q_EMIT dataChanged(index, index, QVector<int> {ShownRole});
+        Q_EMIT dataChanged(index, index, QVector<int>{ShownRole});
         return true;
     }
     return false;

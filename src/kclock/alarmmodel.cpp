@@ -33,8 +33,8 @@
 
 #include "alarm.h"
 #include "alarmmodel.h"
-#include "utilmodel.h"
 #include "kclock_algorithm.hpp"
+#include "utilmodel.h"
 
 AlarmModel::AlarmModel(QObject *parent)
     : QAbstractListModel(parent)
@@ -44,8 +44,12 @@ AlarmModel::AlarmModel(QObject *parent)
         connect(m_interface, SIGNAL(alarmAdded(QString)), this, SLOT(addAlarm(QString)));
         connect(m_interface, SIGNAL(alarmRemoved(QString)), this, SLOT(removeAlarm(QString)));
     }
-    
-    QDBusInterface *interface = new QDBusInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Alarms"), QStringLiteral("org.freedesktop.DBus.Introspectable"), QDBusConnection::sessionBus(), this);
+
+    QDBusInterface *interface = new QDBusInterface(QStringLiteral("org.kde.kclockd"),
+                                                   QStringLiteral("/Alarms"),
+                                                   QStringLiteral("org.freedesktop.DBus.Introspectable"),
+                                                   QDBusConnection::sessionBus(),
+                                                   this);
     QDBusReply<QString> reply = interface->call(QStringLiteral("Introspect"));
     if (reply.isValid()) {
         auto xmlMsg = reply.value();

@@ -43,24 +43,27 @@ public:
     {
         return m_description;
     };
-    QString weatherIcon(){
+    QString weatherIcon()
+    {
         return m_weatherIcon;
     }
     QString tempNow()
     {
         return m_tempNow;
     };
-    QString maxTemp(){
+    QString maxTemp()
+    {
         QString arg = QString::number(m_maxTemp);
-        if(this->m_isCelsius)
+        if (this->m_isCelsius)
             arg += "°C";
         else
             arg += "°";
         return arg;
     };
-    QString minTemp(){
+    QString minTemp()
+    {
         QString arg = QString::number(m_minTemp);
-        if(this->m_isCelsius)
+        if (this->m_isCelsius)
             arg += "°C";
         else
             arg += "°";
@@ -77,6 +80,7 @@ private slots:
     void updateAlarm(qulonglong time);
     void initialTimeUpdate(); // align time to minute mark
     void updateTime();
+
 private:
     void parse(QJsonDocument);
 

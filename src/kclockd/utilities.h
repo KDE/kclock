@@ -21,8 +21,8 @@
 #ifndef KCLOCKD_UTILITIES_H
 #define KCLOCKD_UTILITIES_H
 
-#include <QObject>
 #include <QDBusInterface>
+#include <QObject>
 
 #include "alarmwaitworker.h"
 
@@ -51,7 +51,7 @@ public Q_SLOTS:
 
 private:
     explicit Utilities(QObject *parent = nullptr);
-    
+
     void schedule(); // For AlarmWaitWorker use
 
     QDBusInterface *m_interface = nullptr;
@@ -60,8 +60,8 @@ private:
     QList<int> m_cookies; // token for PowerDevil: https://invent.kde.org/plasma/powerdevil/-/merge_requests/13
 
     QList<std::tuple<int, quint64>> m_list; // cookie, timestamp. For AlarmWaitWorker use
-    int m_cookie = 1;                       // For AlarmWaitWorker use
-    int m_currentCookie;                    // For AlarmWaitWorker use
+    int m_cookie = 1; // For AlarmWaitWorker use
+    int m_currentCookie; // For AlarmWaitWorker use
 
     QThread *m_timerThread = nullptr;
     AlarmWaitWorker *m_worker = nullptr;

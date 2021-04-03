@@ -36,9 +36,9 @@
 
 #include <KDBusService>
 
+#include "alarm.h"
 #include "alarmmodel.h"
 #include "alarmplayer.h"
-#include "alarm.h"
 #include "kclockformat.h"
 #include "settingsmodel.h"
 #include "stopwatchtimer.h"
