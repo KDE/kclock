@@ -26,8 +26,9 @@ Timer::Timer()
 {
 }
 Timer::Timer(QString uuid, bool justCreated)
-    : m_interface(new OrgKdeKclockTimerInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Timers/") + uuid, QDBusConnection::sessionBus(), this))
-    , m_justCreated(justCreated)
+    : m_justCreated(justCreated)
+    , m_interface(new OrgKdeKclockTimerInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Timers/") + uuid, QDBusConnection::sessionBus(), this))
+
 {
     if (m_interface->isValid()) {
         m_uuid = QUuid(m_interface->getUUID());

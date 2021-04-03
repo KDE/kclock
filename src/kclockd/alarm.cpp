@@ -40,11 +40,11 @@
 // alarm created from UI
 Alarm::Alarm(AlarmModel *parent, QString name, int minutes, int hours, int daysOfWeek)
     : QObject(parent)
+    , m_name(name)
     , m_uuid(QUuid::createUuid())
     , m_enabled(true)
-    , m_name(name)
-    , m_minutes(minutes)
     , m_hours(hours)
+    , m_minutes(minutes)
     , m_daysOfWeek(daysOfWeek)
 {
     initialize(parent);

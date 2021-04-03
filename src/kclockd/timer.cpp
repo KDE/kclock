@@ -30,9 +30,9 @@
 /* ~ Timer ~ */
 
 Timer::Timer(int length, QString label, bool running)
-    : m_length(length)
+    : m_uuid(QUuid::createUuid())
+    , m_length(length)
     , m_label(label)
-    , m_uuid(QUuid::createUuid())
 {
     connect(&Utilities::instance(), &Utilities::wakeup, this, &Timer::timeUp);
     QDBusConnection::sessionBus().registerObject(QStringLiteral("/Timers/") + this->m_uuid.toString(QUuid::Id128),
