@@ -30,6 +30,8 @@
   <summary xml:lang="ca">Una aplicació de rellotge convergent per al Plasma.</summary>
   <summary xml:lang="ca-valencia">Una aplicació de rellotge convergent per al Plasma.</summary>
   <summary xml:lang="es">Aplicación de reloj convergente para Plasma.</summary>
+  <summary xml:lang="fr">Une application d'horloge convergente pour Plasma.</summary>
+  <summary xml:lang="it">Una semplice applicazione per l'orologio per Plasma.</summary>
   <summary xml:lang="nl">Een convergente kloktoepassing voor Plasma.</summary>
   <summary xml:lang="nn">Klokke for Plasma, tilpassa ulike typar brukarflater.</summary>
   <summary xml:lang="pt">Uma aplicação de relógio convergente para o Plasma.</summary>
@@ -49,7 +51,7 @@
   <developer_name xml:lang="et">KDE kogukond</developer_name>
   <developer_name xml:lang="eu">KDE komunitatea</developer_name>
   <developer_name xml:lang="fi">KDE-yhteisö</developer_name>
-  <developer_name xml:lang="fr">Communauté KDE</developer_name>
+  <developer_name xml:lang="fr">Communauté de KDE</developer_name>
   <developer_name xml:lang="id">Komunitas KDE</developer_name>
   <developer_name xml:lang="it">Comunità KDE</developer_name>
   <developer_name xml:lang="ko">KDE 커뮤니티</developer_name>
@@ -69,6 +71,8 @@
     <p xml:lang="ca">Una aplicació de rellotge convergent per al Plasma. Conté funcions d'alarma, temporitzador, cronòmetre i zona horària. Les alarmes també poden fer que el dispositiu deixi d'estar suspès quan s'usa el Plasma.</p>
     <p xml:lang="ca-valencia">Una aplicació de rellotge convergent per al Plasma. Conté funcions d'alarma, temporitzador, cronòmetre i zona horària. Les alarmes també poden fer que el dispositiu deixi d'estar suspès quan s'usa el Plasma.</p>
     <p xml:lang="es">Una aplicación de reloj convergente para Plasma. Contiene las funciones de alarma, temporizador, cronómetro y zona horaria. Las alarmas también pueden despertar el dispositivo del estado de suspensión si usa Plasma.</p>
+    <p xml:lang="fr">Une application d'horloge convergente pour Plasma. Elle contient des fonctionnalités d'alarmes, de chronomètres, de minuteurs et de fuseaux horaires. Les alarmes sont aussi capables de faire sortir le périphérique du mode de veille lors de l'utilisation de Plasma.</p>
+    <p xml:lang="it">Una semplice applicazione per l'orologio per Plasma. Contiene le funzionalità per allarmi, timer, cronometro e fuso orario. Gli allarmi possono risvegliare il dispositivo dalla sospensione se si utilizza Plasma.</p>
     <p xml:lang="nl">Een convergente kloktoepassing voor Plasma. Deze bevat alarm, timer, stopwatch en tijdzone functionaliteiten. Alarmen kunnen het apparaat uit status onderbroken laten ontwaken bij gebruik van Plasma.</p>
     <p xml:lang="pt">Uma aplicação de relógio convergente para o Plasma. Contém funcionalidades de alarmes, temporizadores, cronómetros e fusos-horários. Os alarmes também conseguirão acordar o dispositivo da suspensão ao usar o Plasma.</p>
     <p xml:lang="sl">Konvergentna aplikacija ure za Plasmo. Vsebuje alarm, odštevalnik časa, štoparico in funkcionalnost časovnih pasov. Alarm je sposoben tudi aktivirati napravo iz mirovanja, kadar uporablja Plasmo.</p>
@@ -82,6 +86,8 @@
       <caption xml:lang="ca">Vista mòbil</caption>
       <caption xml:lang="ca-valencia">Vista mòbil</caption>
       <caption xml:lang="es">Vista móvil</caption>
+      <caption xml:lang="fr">Affichage pour mobile</caption>
+      <caption xml:lang="it">Vista mobile</caption>
       <caption xml:lang="nl">Beeld op mobiel</caption>
       <caption xml:lang="nn">Mobilvising</caption>
       <caption xml:lang="pt">Versão para dispositivos móveis</caption>
@@ -96,6 +102,8 @@
       <caption xml:lang="ca">Vista d'escriptori</caption>
       <caption xml:lang="ca-valencia">Vista d'escriptori</caption>
       <caption xml:lang="es">Vista de escritorio</caption>
+      <caption xml:lang="fr">Affichage de bureau</caption>
+      <caption xml:lang="it">Vista desktop</caption>
       <caption xml:lang="nl">Beeld op bureaublad</caption>
       <caption xml:lang="nn">Skrivebordsvising</caption>
       <caption xml:lang="pt">Versão para computador</caption>
@@ -110,6 +118,8 @@
       <caption xml:lang="ca">Pàgina dels temporitzadors</caption>
       <caption xml:lang="ca-valencia">Pàgina dels temporitzadors</caption>
       <caption xml:lang="es">Página de temporizadores</caption>
+      <caption xml:lang="fr">Page de chronomètres</caption>
+      <caption xml:lang="it">Pagina dei timer</caption>
       <caption xml:lang="nl">Pagina met timers</caption>
       <caption xml:lang="nn">Nedteljarside</caption>
       <caption xml:lang="pt">Página de Temporizadores</caption>
@@ -124,6 +134,8 @@
       <caption xml:lang="ca">Pàgina del temporitzador</caption>
       <caption xml:lang="ca-valencia">Pàgina del temporitzador</caption>
       <caption xml:lang="es">Página del temporizador</caption>
+      <caption xml:lang="fr">Page de chronomètre</caption>
+      <caption xml:lang="it">Pagina del timer</caption>
       <caption xml:lang="nl">Pagina met timer</caption>
       <caption xml:lang="nn">Nedteljingsside</caption>
       <caption xml:lang="pt">Página do Temporizador</caption>
@@ -138,6 +150,8 @@
       <caption xml:lang="ca">Pàgina del cronòmetre</caption>
       <caption xml:lang="ca-valencia">Pàgina del cronòmetre</caption>
       <caption xml:lang="es">Página del cronómetro</caption>
+      <caption xml:lang="fr">Page de minuteur</caption>
+      <caption xml:lang="it">Pagina del cronometro</caption>
       <caption xml:lang="nl">Pagina met stopwatch</caption>
       <caption xml:lang="nn">Stoppeklokke-side</caption>
       <caption xml:lang="pt">Página de Cronómetro</caption>
@@ -152,6 +166,8 @@
       <caption xml:lang="ca">Pàgina de les alarmes</caption>
       <caption xml:lang="ca-valencia">Pàgina de les alarmes</caption>
       <caption xml:lang="es">Página de alarmas</caption>
+      <caption xml:lang="fr">Page d'alarmes</caption>
+      <caption xml:lang="it">Pagina degli allarmi</caption>
       <caption xml:lang="nl">Pagina met alarmen</caption>
       <caption xml:lang="nn">Alarmside</caption>
       <caption xml:lang="pt">Página de Alarmes</caption>
