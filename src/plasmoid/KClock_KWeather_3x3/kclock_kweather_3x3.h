@@ -6,6 +6,7 @@
 #pragma once
 #include <Plasma/Applet>
 #include <QLocale>
+
 class QProcess;
 class QTimer;
 class QDBusInterface;

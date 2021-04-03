@@ -22,11 +22,11 @@
 #ifndef KCLOCK_ALARMSMODEL_H
 #define KCLOCK_ALARMSMODEL_H
 
-#include <QAbstractListModel>
-#include <QObject>
-
 #include "alarm.h"
 #include "alarmmodelinterface.h"
+
+#include <QAbstractListModel>
+#include <QObject>
 
 class AlarmModel : public QAbstractListModel
 {

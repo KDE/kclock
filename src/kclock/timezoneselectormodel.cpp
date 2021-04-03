@@ -18,16 +18,18 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+#include "timezoneselectormodel.h"
+
+#include "kclockformat.h"
+#include "utilmodel.h"
+
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
+
 #include <QDebug>
 #include <QSettings>
 #include <QTimeZone>
-
-#include "kclockformat.h"
-#include "timezoneselectormodel.h"
-#include "utilmodel.h"
 
 const QString TZ_CFG_GROUP = "Timezones";
 

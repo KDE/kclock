@@ -21,11 +21,12 @@
 #ifndef KCLOCK_TIMERMODEL_H
 #define KCLOCK_TIMERMODEL_H
 
+#include "timermodelinterface.h"
+
 #include <KLocalizedString>
+
 #include <QAbstractListModel>
 #include <QObject>
-
-#include "timermodelinterface.h"
 
 class Timer;
 class TimerModel : public QAbstractListModel

@@ -18,11 +18,13 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include <KLocalizedString>
-#include <QDebug>
+#include "settingsmodel.h"
 
 #include "alarmplayer.h"
-#include "settingsmodel.h"
+
+#include <KLocalizedString>
+
+#include <QDebug>
 
 SettingsModel::SettingsModel()
     : m_interface(new LocalKClockSettingsInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Settings"), QDBusConnection::sessionBus()))

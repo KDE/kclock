@@ -17,11 +17,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+
+#include "utilities.h"
+
 #include <QDBusReply>
 #include <QDebug>
 #include <QThread>
-
-#include "utilities.h"
 
 Utilities::Utilities(QObject *parent)
     : QObject(parent)

@@ -18,12 +18,13 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+#include "kclockformat.h"
+
+#include "utilmodel.h"
+
 #include <QLocale>
 #include <QTime>
 #include <QTimer>
-
-#include "kclockformat.h"
-#include "utilmodel.h"
 
 KclockFormat::KclockFormat(QObject *parent)
     : QObject(parent)

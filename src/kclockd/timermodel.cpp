@@ -20,6 +20,8 @@
 
 #include "timermodel.h"
 
+#include "timer.h"
+
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KNotification>
@@ -30,8 +32,6 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QObject>
-
-#include "timer.h"
 
 const QString TIMERS_CFG_GROUP = QStringLiteral("Timers"), TIMERS_CFG_KEY = QStringLiteral("timersList");
 

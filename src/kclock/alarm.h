@@ -22,14 +22,14 @@
 #ifndef KCLOCK_ALARM_H
 #define KCLOCK_ALARM_H
 
+#include "alarminterface.h"
+
 #include <QFileDialog>
 #include <QObject>
 #include <QStandardPaths>
 #include <QString>
 #include <QUrl>
 #include <QUuid>
-
-#include "alarminterface.h"
 
 class Alarm : public QObject
 {

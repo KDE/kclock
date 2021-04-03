@@ -19,6 +19,16 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+#include "alarm.h"
+
+#include "alarmadaptor.h"
+#include "kclockdsettings.h"
+
+#include <KConfigGroup>
+#include <KLocalizedString>
+#include <KNotification>
+#include <KSharedConfig>
+
 #include <QDBusConnection>
 #include <QDBusMessage>
 #include <QDateTime>
@@ -26,15 +36,6 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QTime>
-
-#include <KConfigGroup>
-#include <KLocalizedString>
-#include <KNotification>
-#include <KSharedConfig>
-
-#include "alarm.h"
-#include "alarmadaptor.h"
-#include "kclockdsettings.h"
 
 // alarm created from UI
 Alarm::Alarm(AlarmModel *parent, QString name, int minutes, int hours, int daysOfWeek)

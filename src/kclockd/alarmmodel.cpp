@@ -18,17 +18,19 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+#include "alarmmodel.h"
+
+#include "alarmmodeladaptor.h"
+#include "utilities.h"
+
 #include <KConfigGroup>
+#include <KLocalizedString>
 #include <KSharedConfig>
+
 #include <QDBusConnection>
 #include <QDBusReply>
 #include <QDebug>
 #include <QLocale>
-#include <klocalizedstring.h>
-
-#include "alarmmodel.h"
-#include "alarmmodeladaptor.h"
-#include "utilities.h"
 
 #define SCRIPTANDPROPERTY QDBusConnection::ExportScriptableContents | QDBusConnection::ExportAllProperties
 AlarmModel::AlarmModel(QObject *parent)

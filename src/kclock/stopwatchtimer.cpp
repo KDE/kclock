@@ -20,6 +20,7 @@
  */
 
 #include "stopwatchtimer.h"
+
 #include <QDebug>
 #include <QTimer>
 

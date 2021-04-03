@@ -22,10 +22,10 @@
 #ifndef KCLOCKD_ALARMMODEL_H
 #define KCLOCKD_ALARMMODEL_H
 
+#include "alarm.h"
+
 #include <KStatusNotifierItem>
 #include <QObject>
-
-#include "alarm.h"
 
 class Alarm;
 class AlarmModel : public QObject

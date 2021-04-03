@@ -4,6 +4,9 @@
 */
 
 #include "kclock_kweather_3x3.h"
+
+#include <KLocalizedString>
+
 #include <QDBusConnection>
 #include <QDBusInterface>
 #include <QDBusReply>
@@ -12,7 +15,7 @@
 #include <QProcess>
 #include <QTimer>
 #include <QXmlStreamReader>
-#include <klocalizedstring.h>
+
 KClock_KWeather_3x3::KClock_KWeather_3x3(QObject *parent, const QVariantList &args)
     : Plasma::Applet(parent, args)
 {

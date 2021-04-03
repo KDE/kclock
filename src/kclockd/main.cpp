@@ -20,20 +20,20 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include <QApplication>
-#include <QCommandLineParser>
+#include "alarmmodel.h"
+#include "kclockdsettings.h"
+#include "kclocksettingsadaptor.h"
+#include "timermodel.h"
 
 #include <KAboutData>
 #include <KConfig>
 #include <KLocalizedContext>
 #include <KLocalizedString>
 
-#include <KDBusService>
+#include <QApplication>
+#include <QCommandLineParser>
 
-#include "alarmmodel.h"
-#include "kclockdsettings.h"
-#include "kclocksettingsadaptor.h"
-#include "timermodel.h"
+#include <KDBusService>
 
 QCommandLineParser *createParser()
 {

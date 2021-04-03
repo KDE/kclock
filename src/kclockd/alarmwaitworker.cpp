@@ -18,8 +18,10 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 #include "alarmwaitworker.h"
+
 #include <QDateTime>
 #include <QDebug>
+
 #include <poll.h>
 #include <sys/timerfd.h>
 #include <unistd.h>

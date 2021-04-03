@@ -20,10 +20,11 @@
 #ifndef TIMER_H
 #define TIMER_H
 
+#include "timerinterface.h"
+
 #include <QObject>
 #include <QUuid>
 
-#include "timerinterface.h"
 class QTimer;
 class Timer : public QObject
 {

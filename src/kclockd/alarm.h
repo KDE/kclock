@@ -22,6 +22,10 @@
 #ifndef KCLOCKD_ALARM_H
 #define KCLOCKD_ALARM_H
 
+#include "alarmmodel.h"
+#include "alarmplayer.h"
+#include "alarmwaitworker.h"
+
 #include <QDebug>
 #include <QFileDialog>
 #include <QMediaPlayer>
@@ -32,10 +36,6 @@
 #include <QTime>
 #include <QUrl>
 #include <QUuid>
-
-#include "alarmmodel.h"
-#include "alarmplayer.h"
-#include "alarmwaitworker.h"
 
 const QString ALARM_CFG_GROUP = "Alarms";
 

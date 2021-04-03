@@ -21,9 +21,9 @@
 #ifndef KCLOCK_SETTINGSMODEL_H
 #define KCLOCK_SETTINGSMODEL_H
 
-#include <QObject>
-
 #include "kclocksettingsinterface.h"
+
+#include <QObject>
 
 class SettingsModel : public QObject
 {

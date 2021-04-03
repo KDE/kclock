@@ -17,9 +17,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+#include "timer.h"
+
 #include <QTimer>
 
-#include "timer.h"
 /* ~ Timer ~ */
 Timer::Timer()
 {

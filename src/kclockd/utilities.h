@@ -21,10 +21,10 @@
 #ifndef KCLOCKD_UTILITIES_H
 #define KCLOCKD_UTILITIES_H
 
+#include "alarmwaitworker.h"
+
 #include <QDBusInterface>
 #include <QObject>
-
-#include "alarmwaitworker.h"
 
 class Utilities : public QObject
 {

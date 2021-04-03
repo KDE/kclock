@@ -21,11 +21,11 @@
 #ifndef KCLOCKD_TIMER_H
 #define KCLOCKD_TIMER_H
 
+#include "timermodel.h"
+
 #include <QDateTime>
 #include <QObject>
 #include <QUuid>
-
-#include "timermodel.h"
 
 class Timer : public QObject
 {

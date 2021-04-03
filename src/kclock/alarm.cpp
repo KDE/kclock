@@ -19,13 +19,14 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include <QDateTime>
+#include "alarm.h"
+
+#include "alarmmodel.h"
+#include "utilmodel.h"
 
 #include <KLocalizedString>
 
-#include "alarm.h"
-#include "alarmmodel.h"
-#include "utilmodel.h"
+#include <QDateTime>
 
 Alarm::Alarm(){};
 Alarm::Alarm(QString uuid)

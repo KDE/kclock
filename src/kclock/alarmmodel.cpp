@@ -19,22 +19,23 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+#include "alarmmodel.h"
+
+#include "alarm.h"
+#include "kclock_algorithm.hpp"
+#include "utilmodel.h"
+
 #include <KConfigGroup>
+#include <KLocalizedString>
 #include <KSharedConfig>
 #include <KStatusNotifierItem>
+
 #include <QDBusConnection>
 #include <QDBusInterface>
 #include <QDBusReply>
 #include <QLocale>
 #include <QThread>
 #include <QXmlStreamReader>
-
-#include <klocalizedstring.h>
-
-#include "alarm.h"
-#include "alarmmodel.h"
-#include "kclock_algorithm.hpp"
-#include "utilmodel.h"
 
 AlarmModel::AlarmModel(QObject *parent)
     : QAbstractListModel(parent)

@@ -17,6 +17,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+
+#include "timermodel.h"
+
+#include "timer.h"
+
 #include <QDebug>
 #include <QJsonArray>
 #include <QJsonDocument>
@@ -24,9 +29,6 @@
 #include <QtGlobal>
 
 #include <KLocalizedString>
-
-#include "timer.h"
-#include "timermodel.h"
 
 /* ~ TimerModel ~ */
 TimerModel::TimerModel(QObject *parent)

@@ -4,12 +4,14 @@
 */
 
 #include "kclock_1x2.h"
+
+#include <KLocalizedString>
+
 #include <QDBusConnection>
 #include <QDBusInterface>
 #include <QDBusReply>
 #include <QProcess>
 #include <QTimer>
-#include <klocalizedstring.h>
 
 KClock_1x2::KClock_1x2(QObject *parent, const QVariantList &args)
     : Plasma::Applet(parent, args)

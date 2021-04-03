@@ -5,6 +5,7 @@
 #pragma once
 #include <Plasma/Applet>
 #include <QLocale>
+
 class QProcess;
 class QTimer;
 class KClock_1x2 : public Plasma::Applet

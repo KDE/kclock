@@ -20,22 +20,6 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include <QApplication>
-#include <QCommandLineParser>
-#include <QMetaObject>
-#include <QQmlApplicationEngine>
-#include <QQmlContext>
-#include <QQmlDebuggingEnabler>
-#include <QQuickWindow>
-#include <QStringLiteral>
-
-#include <KAboutData>
-#include <KConfig>
-#include <KLocalizedContext>
-#include <KLocalizedString>
-
-#include <KDBusService>
-
 #include "alarm.h"
 #include "alarmmodel.h"
 #include "alarmplayer.h"
@@ -46,6 +30,22 @@
 #include "timermodel.h"
 #include "timezoneselectormodel.h"
 #include "utilmodel.h"
+
+#include <KAboutData>
+#include <KConfig>
+#include <KLocalizedContext>
+#include <KLocalizedString>
+
+#include <KDBusService>
+
+#include <QApplication>
+#include <QCommandLineParser>
+#include <QMetaObject>
+#include <QQmlApplicationEngine>
+#include <QQmlContext>
+#include <QQmlDebuggingEnabler>
+#include <QQuickWindow>
+#include <QStringLiteral>
 
 QCommandLineParser *createParser()
 {

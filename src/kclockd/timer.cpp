@@ -17,14 +17,16 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+#include "timer.h"
+
+#include "utilities.h"
+
 #include <KLocalizedString>
 #include <KNotification>
 
 #include <QDBusConnection>
 #include <QJsonObject>
 
-#include "timer.h"
-#include "utilities.h"
 /* ~ Timer ~ */
 
 Timer::Timer(int length, QString label, bool running)
