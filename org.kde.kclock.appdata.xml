@@ -5,6 +5,7 @@
   <name xml:lang="ca">Rellotge</name>
   <name xml:lang="ca-valencia">Rellotge</name>
   <name xml:lang="cs">Hodiny</name>
+  <name xml:lang="de">Clock</name>
   <name xml:lang="el">Ρολόι</name>
   <name xml:lang="en-GB">Clock</name>
   <name xml:lang="es">Reloj</name>
@@ -47,6 +48,7 @@
   <developer_name xml:lang="ca">La comunitat KDE</developer_name>
   <developer_name xml:lang="ca-valencia">La comunitat KDE</developer_name>
   <developer_name xml:lang="cs">Komunita KDE</developer_name>
+  <developer_name xml:lang="de">KDE-Gemeinschaft</developer_name>
   <developer_name xml:lang="el">Η κοινότητα του KDE</developer_name>
   <developer_name xml:lang="en-GB">KDE Community</developer_name>
   <developer_name xml:lang="es">Comunidad KDE</developer_name>
@@ -89,6 +91,7 @@
       <caption>Mobile view</caption>
       <caption xml:lang="ca">Vista mòbil</caption>
       <caption xml:lang="ca-valencia">Vista mòbil</caption>
+      <caption xml:lang="de">Mobile Ansicht</caption>
       <caption xml:lang="en-GB">Mobile view</caption>
       <caption xml:lang="es">Vista móvil</caption>
       <caption xml:lang="fr">Affichage pour mobile</caption>
