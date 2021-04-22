@@ -91,6 +91,7 @@
       <caption>Mobile view</caption>
       <caption xml:lang="ca">Vista mòbil</caption>
       <caption xml:lang="ca-valencia">Vista mòbil</caption>
+      <caption xml:lang="cs">Mobilní pohled</caption>
       <caption xml:lang="de">Mobile Ansicht</caption>
       <caption xml:lang="en-GB">Mobile view</caption>
       <caption xml:lang="es">Vista móvil</caption>
@@ -110,6 +111,7 @@
       <caption>Desktop view</caption>
       <caption xml:lang="ca">Vista d'escriptori</caption>
       <caption xml:lang="ca-valencia">Vista d'escriptori</caption>
+      <caption xml:lang="cs">Pohled pracovní plochy</caption>
       <caption xml:lang="en-GB">Desktop view</caption>
       <caption xml:lang="es">Vista de escritorio</caption>
       <caption xml:lang="fr">Affichage de bureau</caption>
@@ -128,6 +130,7 @@
       <caption>Timers page</caption>
       <caption xml:lang="ca">Pàgina dels temporitzadors</caption>
       <caption xml:lang="ca-valencia">Pàgina dels temporitzadors</caption>
+      <caption xml:lang="cs">Stránka s časovači</caption>
       <caption xml:lang="en-GB">Timers page</caption>
       <caption xml:lang="es">Página de temporizadores</caption>
       <caption xml:lang="fr">Page de chronomètres</caption>
@@ -146,6 +149,7 @@
       <caption>Timer page</caption>
       <caption xml:lang="ca">Pàgina del temporitzador</caption>
       <caption xml:lang="ca-valencia">Pàgina del temporitzador</caption>
+      <caption xml:lang="cs">Stránka s časovačem</caption>
       <caption xml:lang="en-GB">Timer page</caption>
       <caption xml:lang="es">Página del temporizador</caption>
       <caption xml:lang="fr">Page de chronomètre</caption>
@@ -164,6 +168,7 @@
       <caption>Stopwatch page</caption>
       <caption xml:lang="ca">Pàgina del cronòmetre</caption>
       <caption xml:lang="ca-valencia">Pàgina del cronòmetre</caption>
+      <caption xml:lang="cs">Stránka se stopkami</caption>
       <caption xml:lang="en-GB">Stopwatch page</caption>
       <caption xml:lang="es">Página del cronómetro</caption>
       <caption xml:lang="fr">Page de minuteur</caption>
@@ -182,6 +187,7 @@
       <caption>Alarms page</caption>
       <caption xml:lang="ca">Pàgina de les alarmes</caption>
       <caption xml:lang="ca-valencia">Pàgina de les alarmes</caption>
+      <caption xml:lang="cs">Stránka s upozorněními</caption>
       <caption xml:lang="en-GB">Alarms page</caption>
       <caption xml:lang="es">Página de alarmas</caption>
       <caption xml:lang="fr">Page d'alarmes</caption>
