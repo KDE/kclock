@@ -39,7 +39,6 @@ Comment[sl]=Konvergentna aplikacija ure za Plasmo.
 Comment[sv]=Ett konvergent klockprogram för Plasma.
 Comment[uk]=Проста програма-годинник для Плазми.
 Comment[x-test]=xxA convergent clock application for Plasma.xx
-Version=0.5.0
 Exec=kclock
 Icon=kclock
 Type=Application
