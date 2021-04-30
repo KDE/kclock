@@ -43,15 +43,12 @@ Kirigami.ScrollablePage {
     }
     
     header: ColumnLayout {
-        anchors.margins: Kirigami.Units.smallSpacing
         Kirigami.InlineMessage {
             type: Kirigami.MessageType.Error
             text: i18n("The clock daemon was not found. Please start kclockd in order to have alarm functionality.")
-            visible: !alarmModel.connectedToDaemon
+            visible: !alarmModel.connectedToDaemon // by default, it's false so we need this
             Layout.fillWidth: true
-            Layout.leftMargin: Kirigami.Units.smallSpacing
-            Layout.rightMargin: Kirigami.Units.smallSpacing
-            Layout.bottomMargin: Kirigami.Units.smallSpacing
+            Layout.margins: Kirigami.Units.smallSpacing
         }
     }
     
@@ -63,7 +60,7 @@ Kirigami.ScrollablePage {
         transform: Translate { y: yTranslate }
         
         reuseItems: true
-
+        
         // no alarms placeholder
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
