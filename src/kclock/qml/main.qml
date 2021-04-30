@@ -81,9 +81,9 @@ Kirigami.ApplicationWindow
     function getPage(name) {
         switch (name) {
             case "Time": return pagePool.loadPage("qrc:/qml/TimePage.qml");
-            case "Timer": return pagePool.loadPage("qrc:/qml/TimerListPage.qml");
+            case "Timers": return pagePool.loadPage("qrc:/qml/TimerListPage.qml");
             case "Stopwatch": return pagePool.loadPage("qrc:/qml/StopwatchPage.qml");
-            case "Alarm": return pagePool.loadPage("qrc:/qml/AlarmListPage.qml");
+            case "Alarms": return pagePool.loadPage("qrc:/qml/AlarmListPage.qml");
             case "Settings": return pagePool.loadPage("qrc:/qml/SettingsPage.qml");
             case "About": return pagePool.loadPage("qrc:/qml/AboutPage.qml");
         }

@@ -54,9 +54,9 @@ ToolBar {
                 // we can't use i18n with ListElement
                 Component.onCompleted: {
                     append({"name": i18n("Time"), "icon": "clock"});
-                    append({"name": i18n("Timer"), "icon": "player-time"});
+                    append({"name": i18n("Timers"), "icon": "player-time"});
                     append({"name": i18n("Stopwatch"), "icon": "chronometer"});
-                    append({"name": i18n("Alarm"), "icon": "notifications"});
+                    append({"name": i18n("Alarms"), "icon": "notifications"});
                     append({"name": i18n("Settings"), "icon": "settings-configure"});
                 }
             }

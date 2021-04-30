@@ -61,11 +61,11 @@ Kirigami.GlobalDrawer {
             }
         },
         Kirigami.Action {
-            text: i18n("Timer")
+            text: i18n("Timers")
             iconName: "player-time"
             onTriggered: {
-                if (appwindow.pageStack.currentItem !== appwindow.getPage("Timer")) {
-                    appwindow.switchToPage(appwindow.getPage("Timer"), 0);
+                if (appwindow.pageStack.currentItem !== appwindow.getPage("Timers")) {
+                    appwindow.switchToPage(appwindow.getPage("Timers"), 0);
                 }
             }
         },
@@ -79,11 +79,11 @@ Kirigami.GlobalDrawer {
             }
         },
         Kirigami.Action {
-            text: i18n("Alarm")
+            text: i18n("Alarms")
             iconName: "notifications"
             onTriggered: {
-                if (appwindow.pageStack.currentItem !== appwindow.getPage("Alarm")) {
-                    appwindow.switchToPage(appwindow.getPage("Alarm"), 0);
+                if (appwindow.pageStack.currentItem !== appwindow.getPage("Alarms")) {
+                    appwindow.switchToPage(appwindow.getPage("Alarms"), 0);
                 }
             }
         },
