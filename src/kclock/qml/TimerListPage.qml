@@ -65,8 +65,17 @@ Kirigami.ScrollablePage {
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
             visible: timersList.count === 0
-            text: i18n("Add a timer")
+            text: i18n("No timers configured")
             icon.name: "player-time"
+            
+            helpfulAction: Kirigami.Action {
+                iconName: "list-add"
+                text: "Add timer"
+                onTriggered: {
+                    newTimerForm.active = true;
+                    newTimerForm.item.open();
+                }
+            }
         }
         
         // create timer form
