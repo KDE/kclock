@@ -36,10 +36,12 @@ Kirigami.ScrollablePage {
     mainAction: Kirigami.Action {
         iconName: "list-add"
         text: i18n("New Timer")
-        onTriggered: {
-            newTimerForm.active = true;
-            newTimerForm.item.open();
-        }
+        onTriggered: timerPage.addTimer()
+    }
+    
+    function addTimer() {
+        newTimerForm.active = true;
+        newTimerForm.item.open();
     }
     
     header: ColumnLayout {
@@ -71,10 +73,7 @@ Kirigami.ScrollablePage {
             helpfulAction: Kirigami.Action {
                 iconName: "list-add"
                 text: "Add timer"
-                onTriggered: {
-                    newTimerForm.active = true;
-                    newTimerForm.item.open();
-                }
+                onTriggered: timerPage.addTimer()
             }
         }
         

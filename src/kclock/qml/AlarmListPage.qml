@@ -35,9 +35,13 @@ Kirigami.ScrollablePage {
     mainAction: Kirigami.Action {
         iconName: "list-add"
         text: i18n("New Alarm")
-        onTriggered: appwindow.pageStack.layers.push(Qt.resolvedUrl("NewAlarmPage.qml"))
+        onTriggered: alarmPage.addAlarm()
     }
 
+    function addAlarm() {
+        appwindow.pageStack.layers.push(Qt.resolvedUrl("NewAlarmPage.qml"));
+    }
+    
     header: ColumnLayout {
         anchors.margins: Kirigami.Units.smallSpacing
         Kirigami.InlineMessage {
@@ -69,6 +73,12 @@ Kirigami.ScrollablePage {
             visible: alarmsList.count == 0
             text: i18n("No alarms configured")
             icon.name: "notifications"
+            
+            helpfulAction: Kirigami.Action {
+                iconName: "list-add"
+                text: "Add alarm"
+                onTriggered: alarmPage.addAlarm()
+            }
         }
         
         add: Transition {
