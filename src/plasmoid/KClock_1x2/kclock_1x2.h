@@ -12,7 +12,6 @@ class QTimer;
 class KClock_1x2 : public Plasma::Applet
 {
     Q_OBJECT
-    Q_PROPERTY(QString time READ time NOTIFY timeChanged)
     Q_PROPERTY(QString date READ date NOTIFY timeChanged)
     Q_PROPERTY(QString alarmTime READ alarmTime NOTIFY propertyChanged)
     Q_PROPERTY(bool hasAlarm READ hasAlarm NOTIFY propertyChanged)
@@ -21,7 +20,6 @@ public:
     KClock_1x2(QObject *parent, const QVariantList &args);
     ~KClock_1x2();
 
-    QString time();
     QString date();
     QString alarmTime()
     {

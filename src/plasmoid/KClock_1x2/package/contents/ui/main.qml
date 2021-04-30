@@ -14,8 +14,15 @@ Item {
     Plasmoid.status: plasmoid.nativeInterface.hasAlarm ? PlasmaCore.Types.ActiveStatus : PlasmaCore.Types.Hidden
     Plasmoid.backgroundHints: "ShadowBackground";
     
+    PlasmaCore.DataSource {
+        id: timeSource
+        engine: "time"
+        connectedSources: ["Local"]
+        interval: 1000
+    }
+    
     Plasmoid.fullRepresentation: Item {
-        property int fontSize: Math.round(mainItem.width / 6)
+        property int fontSize: Math.round(mainItem.width / 5)
         
         id: mainItem
         Layout.preferredHeight: plasmoid.nativeInterface.hasAlarm ? Kirigami.Theme.defaultFont.pointSize * 8 : Kirigami.Theme.defaultFont.pointSize * 16
@@ -33,7 +40,7 @@ Item {
             spacing: 0
             
             PlasmaComponents.Label {
-                text: plasmoid.nativeInterface.time
+                text: Qt.formatTime(timeSource.data["Local"]["DateTime"], plasmoid.configuration.twelveHourTime ? "h:mm ap" : "h:mm")
                 font.pointSize: fontSize
                 font.weight: Font.ExtraLight
                 color: "white"

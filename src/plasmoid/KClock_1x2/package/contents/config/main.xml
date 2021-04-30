@@ -4,6 +4,7 @@
 
     <group name="General">
         <entry name="twelveHourTime" type="Bool">
+            <label>Whether or not to show the time in 12 hour format rather than 24 hour format.</label>
             <default>true</default>
         </entry>
         <entry name="showDate" type="Bool">

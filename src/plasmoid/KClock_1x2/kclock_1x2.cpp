@@ -84,11 +84,6 @@ void KClock_1x2::initialTimeUpdate()
     m_timer->start(60000); // update every minute
 }
 
-QString KClock_1x2::time()
-{
-    return m_locale.toString(QTime::currentTime(), QStringLiteral("h:mm ap"));
-}
-
 QString KClock_1x2::date()
 {
     return m_locale.toString(QDate::currentDate(), QStringLiteral("ddd, MMM d"));
