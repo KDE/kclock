@@ -54,6 +54,7 @@ Icon=kclock_plasmoid_1x2
 Type=Service
 X-KDE-ServiceTypes=Plasma/Applet
 X-KDE-Library=plasma_applet_kclock_1x2
+X-KDE-FormFactors=tablet,handset,desktop
 
 X-Plasma-Provides=org.kde.plasma.time
 X-Plasma-DBusActivationService=org.kde.kclock.*

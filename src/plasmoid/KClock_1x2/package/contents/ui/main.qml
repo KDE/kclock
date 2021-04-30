@@ -11,45 +11,61 @@ import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.kirigami 2.11 as Kirigami
 
 Item {
+    Plasmoid.status: plasmoid.nativeInterface.hasAlarm ? PlasmaCore.Types.ActiveStatus : PlasmaCore.Types.Hidden
     Plasmoid.backgroundHints: "ShadowBackground";
+    
     Plasmoid.fullRepresentation: Item {
-        property int fontSize: mainItem.width / 4
+        property int fontSize: Math.round(mainItem.width / 6)
         
         id: mainItem
         Layout.preferredHeight: plasmoid.nativeInterface.hasAlarm ? Kirigami.Theme.defaultFont.pointSize * 8 : Kirigami.Theme.defaultFont.pointSize * 16
         Layout.preferredWidth: Kirigami.Settings.isMobile ? plasmoid.screenGeometry.width : Kirigami.Units.gridUnit * 20
         Layout.alignment: Qt.AlignHCenter
+        
         MouseArea {
             anchors.fill: parent
             onClicked: plasmoid.nativeInterface.openKClock()
         }
+        
         ColumnLayout {
             id: mainDisplay
             anchors.horizontalCenter: parent.horizontalCenter
-            spacing:0
+            spacing: 0
+            
             PlasmaComponents.Label {
                 text: plasmoid.nativeInterface.time
                 font.pointSize: fontSize
+                font.weight: Font.ExtraLight
                 color: "white"
                 Layout.alignment: Qt.AlignHCenter
             }
-            RowLayout {
-                visible: plasmoid.nativeInterface.hasAlarm
+            
+            PlasmaComponents.Label {
+                text: plasmoid.nativeInterface.date
+                font.pointSize: Math.round(fontSize / 4)
+                color: "white"
                 Layout.alignment: Qt.AlignHCenter
+                visible: plasmoid.configuration.showDate
+            }
+            
+            RowLayout {
+                Layout.topMargin: PlasmaCore.Units.smallSpacing
+                Layout.alignment: Qt.AlignHCenter
+                
                 Kirigami.Icon {
+                    visible: plasmoid.nativeInterface.hasAlarm && plasmoid.configuration.showAlarms
                     source: "notifications"
-                    Layout.preferredHeight: alarmTime.height
-                    Layout.preferredWidth: alarmTime.height
+                    Layout.preferredHeight: Math.round(alarmTime.height)
+                    Layout.preferredWidth: Math.round(alarmTime.height)
                 }
                 PlasmaComponents.Label {
+                    visible: plasmoid.nativeInterface.hasAlarm && plasmoid.configuration.showAlarms
                     id: alarmTime
-                    Layout.alignment: Qt.AlignCenter
                     text: plasmoid.nativeInterface.alarmTime
                     color: "white"
-                    font.pointSize: fontSize / 2
+                    font.pointSize: Math.round(fontSize / 4)
                 }
             }
         }
     }
-    Plasmoid.status : plasmoid.nativeInterface.hasAlarm ? PlasmaCore.Types.ActiveStatus : PlasmaCore.Types.Hidden
 }

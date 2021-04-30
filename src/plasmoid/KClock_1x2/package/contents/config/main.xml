@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
+    <kcfgfile name=""/>
+
+    <group name="General">
+        <entry name="twelveHourTime" type="Bool">
+            <default>true</default>
+        </entry>
+        <entry name="showDate" type="Bool">
+            <label>Whether or not to show the date below the time.</label>
+            <default>true</default>
+        </entry>
+        <entry name="showAlarms" type="Bool">
+            <label>Whether or not to show the next alarm to ring.</label>
+            <default>true</default>
+        </entry>
+        <entry name="textAlignment" type="Enum">
+            <label>The alignment of the widget text.</label>
+            <choices name="Settings::textAlignment">
+                <choice name="Left" />
+                <choice name="Center" />
+                <choice name="Right" />
+            </choices>
+            <default>Center</default>
+        </entry>
+    </group>
+</kcfg>
