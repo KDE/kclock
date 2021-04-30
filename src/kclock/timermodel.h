@@ -32,6 +32,7 @@ class Timer;
 class TimerModel : public QAbstractListModel
 {
     Q_OBJECT
+    Q_PROPERTY(bool connectedToDaemon READ connectedToDaemon NOTIFY connectedToDaemonChanged)
 
 public:
     int rowCount(const QModelIndex &parent) const override;
@@ -50,6 +51,11 @@ public:
     Q_INVOKABLE void remove(int index);
     Q_INVOKABLE int count();
     Q_INVOKABLE Timer *get(int index);
+    bool connectedToDaemon();
+    void setConnectedToDaemon(bool connectedToDaemon);
+
+Q_SIGNALS:
+    void connectedToDaemonChanged();
 
 private Q_SLOTS:
     void addTimer(QString uuid); // remote add, always justCreated
@@ -57,11 +63,13 @@ private Q_SLOTS:
     void removeTimer(QString uuid);
 
 private:
+    explicit TimerModel(QObject *parent = nullptr);
     void addTimer(QString uuid, bool justCreated);
 
-    explicit TimerModel(QObject *parent = nullptr);
     QList<Timer *> m_timersList;
     OrgKdeKclockTimerModelInterface *m_interface;
+    QDBusServiceWatcher *m_watcher;
+    bool m_connectedToDaemon = false;
 };
 
 #endif // KCLOCK_TIMERMODEL_H

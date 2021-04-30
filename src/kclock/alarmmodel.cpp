@@ -45,6 +45,7 @@ AlarmModel::AlarmModel(QObject *parent)
         connect(m_interface, SIGNAL(alarmAdded(QString)), this, SLOT(addAlarm(QString)));
         connect(m_interface, SIGNAL(alarmRemoved(QString)), this, SLOT(removeAlarm(QString)));
     }
+    setConnectedToDaemon(m_interface->isValid());
 
     QDBusInterface *interface = new QDBusInterface(QStringLiteral("org.kde.kclockd"),
                                                    QStringLiteral("/Alarms"),
@@ -65,6 +66,15 @@ AlarmModel::AlarmModel(QObject *parent)
         }
     }
     interface->deleteLater();
+
+    // watch for kclockd
+    m_watcher = new QDBusServiceWatcher(QStringLiteral("org.kde.kclockd"), QDBusConnection::sessionBus(), QDBusServiceWatcher::WatchForOwnerChange, this);
+    connect(m_watcher, &QDBusServiceWatcher::serviceRegistered, this, [this]() -> void {
+        setConnectedToDaemon(true);
+    });
+    connect(m_watcher, &QDBusServiceWatcher::serviceUnregistered, this, [this]() -> void {
+        setConnectedToDaemon(false);
+    });
 }
 /* ~ Alarm row data ~ */
 
@@ -207,4 +217,17 @@ void AlarmModel::removeAlarm(QString uuid)
     Q_EMIT endRemoveRows();
 
     ptr->deleteLater();
+}
+
+bool AlarmModel::connectedToDaemon()
+{
+    return m_connectedToDaemon;
+}
+
+void AlarmModel::setConnectedToDaemon(bool connectedToDaemon)
+{
+    if (m_connectedToDaemon != connectedToDaemon) {
+        m_connectedToDaemon = connectedToDaemon;
+        Q_EMIT connectedToDaemonChanged();
+    }
 }

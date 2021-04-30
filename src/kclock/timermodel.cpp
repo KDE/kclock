@@ -38,6 +38,8 @@ TimerModel::TimerModel(QObject *parent)
         connect(m_interface, SIGNAL(timerAdded(QString)), this, SLOT(addTimer(QString)));
         connect(m_interface, SIGNAL(timerRemoved(QString)), this, SLOT(removeTimer(QString)));
     }
+    setConnectedToDaemon(m_interface->isValid());
+
     QDBusInterface *interface = new QDBusInterface(QStringLiteral("org.kde.kclockd"),
                                                    QStringLiteral("/Timers"),
                                                    QStringLiteral("org.freedesktop.DBus.Introspectable"),
@@ -58,6 +60,15 @@ TimerModel::TimerModel(QObject *parent)
         }
     }
     interface->deleteLater();
+
+    // watch for kclockd
+    m_watcher = new QDBusServiceWatcher(QStringLiteral("org.kde.kclockd"), QDBusConnection::sessionBus(), QDBusServiceWatcher::WatchForOwnerChange, this);
+    connect(m_watcher, &QDBusServiceWatcher::serviceRegistered, this, [this]() -> void {
+        setConnectedToDaemon(true);
+    });
+    connect(m_watcher, &QDBusServiceWatcher::serviceUnregistered, this, [this]() -> void {
+        setConnectedToDaemon(false);
+    });
 }
 
 int TimerModel::rowCount(const QModelIndex &parent) const
@@ -128,4 +139,17 @@ void TimerModel::removeTimer(QString uuid)
 
     // don't need to check index out of bound, remove(index) takes care of that
     remove(index);
+}
+
+bool TimerModel::connectedToDaemon()
+{
+    return m_connectedToDaemon;
+}
+
+void TimerModel::setConnectedToDaemon(bool connectedToDaemon)
+{
+    if (m_connectedToDaemon != connectedToDaemon) {
+        m_connectedToDaemon = connectedToDaemon;
+        Q_EMIT connectedToDaemonChanged();
+    }
 }

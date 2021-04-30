@@ -38,6 +38,19 @@ Kirigami.ScrollablePage {
         onTriggered: appwindow.pageStack.layers.push(Qt.resolvedUrl("NewAlarmPage.qml"))
     }
 
+    header: ColumnLayout {
+        anchors.margins: Kirigami.Units.smallSpacing
+        Kirigami.InlineMessage {
+            type: Kirigami.MessageType.Error
+            text: i18n("The clock daemon was not found. Please start kclockd in order to have alarm functionality.")
+            visible: !alarmModel.connectedToDaemon
+            Layout.fillWidth: true
+            Layout.leftMargin: Kirigami.Units.smallSpacing
+            Layout.rightMargin: Kirigami.Units.smallSpacing
+            Layout.bottomMargin: Kirigami.Units.smallSpacing
+        }
+    }
+    
     ListView {
         id: alarmsList
         model: alarmModel

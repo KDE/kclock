@@ -31,6 +31,8 @@
 class AlarmModel : public QAbstractListModel
 {
     Q_OBJECT
+    Q_PROPERTY(bool connectedToDaemon READ connectedToDaemon NOTIFY connectedToDaemonChanged)
+
 public:
     static AlarmModel *instance()
     {
@@ -61,12 +63,21 @@ public:
     addAlarm(int hours, int minutes, int daysOfWeek, QString name, QString ringtonePath = 0); // in 24 hours units, ringTone could be chosen from a list
 
     Q_INVOKABLE QString timeToRingFormated(int hours, int minutes, int daysOfWeek); // for new alarm use
+
+    bool connectedToDaemon();
+    void setConnectedToDaemon(bool connectedToDaemon);
+
+Q_SIGNALS:
+    void connectedToDaemonChanged();
+
 private Q_SLOTS:
     void addAlarm(QString uuid);
     void removeAlarm(QString uuid);
 
 private:
     org::kde::kclock::AlarmModel *m_interface;
+    QDBusServiceWatcher *m_watcher;
+    bool m_connectedToDaemon = false;
 
     explicit AlarmModel(QObject *parent = nullptr);
     QList<Alarm *> alarmsList;

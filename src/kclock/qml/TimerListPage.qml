@@ -42,6 +42,19 @@ Kirigami.ScrollablePage {
         }
     }
     
+    header: ColumnLayout {
+        anchors.margins: Kirigami.Units.smallSpacing
+        Kirigami.InlineMessage {
+            type: Kirigami.MessageType.Error
+            text: i18n("The clock daemon was not found. Please start kclockd in order to have timer functionality.")
+            visible: !timerModel.connectedToDaemon
+            Layout.fillWidth: true
+            Layout.leftMargin: Kirigami.Units.smallSpacing
+            Layout.rightMargin: Kirigami.Units.smallSpacing
+            Layout.bottomMargin: Kirigami.Units.smallSpacing
+        }
+    }
+    
     Kirigami.CardsListView {
         id: timersList
         model: timerModel
