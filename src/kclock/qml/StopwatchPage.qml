@@ -83,50 +83,31 @@ Kirigami.ScrollablePage {
             Layout.alignment: Qt.AlignHCenter
             width: timeLabels.implicitWidth
             height: timeLabels.implicitHeight
+            
             MouseArea {
                 anchors.fill: timeLabels
                 onClicked: toggleStopwatch()
             }
-            RowLayout {
+            
+            Row {
                 id: timeLabels
                 anchors.horizontalCenter: parent.horizontalCenter
+                spacing: Math.round(Kirigami.Units.smallSpacing / 2)
 
                 Label {
-                    id: minutesText
-                    text: stopwatchTimer.minutes
-                    font.pointSize: Kirigami.Theme.defaultFont.pointSize*4
+                    id: text
+                    text: stopwatchTimer.minutes + ':' + stopwatchTimer.seconds + '.'
+                    font.pointSize: Kirigami.Theme.defaultFont.pointSize * 4
                     font.family: clockFont.name
                     font.weight: Font.Light
                 }
                 Label {
-                    text: ":"
-                    font.pointSize: Kirigami.Theme.defaultFont.pointSize*4
+                    id: secondsText
+                    anchors.baseline: text.baseline
+                    text: stopwatchTimer.small
+                    font.pointSize: Kirigami.Theme.defaultFont.pointSize * 3
                     font.family: clockFont.name
                     font.weight: Font.Light
-                }
-                Label {
-                    text: stopwatchTimer.seconds
-                    font.pointSize: Kirigami.Theme.defaultFont.pointSize*4
-                    font.family: clockFont.name
-                    font.weight: Font.Light
-                }
-                Label {
-                    text: "."
-                    font.pointSize: Kirigami.Theme.defaultFont.pointSize*4
-                    font.family: clockFont.name
-                    font.weight: Font.Light
-                }
-                Rectangle {
-                    height: minutesText.height / 2
-                    width: Kirigami.Theme.defaultFont.pointSize*5
-                    color: "transparent"
-                    Label {
-                        id: secondsText
-                        text: stopwatchTimer.small
-                        font.pointSize: Kirigami.Theme.defaultFont.pointSize*2.6
-                        font.family: clockFont.name
-                        font.weight: Font.Light
-                    }
                 }
             }
         }
@@ -188,9 +169,6 @@ Kirigami.ScrollablePage {
             id: roundModel
         }
         
-        add: Transition {
-            NumberAnimation { property: "opacity"; from: 0; to: 1.0; duration: Kirigami.Units.shortDuration }
-        }
         remove: Transition {
             NumberAnimation { property: "opacity"; from: 0; to: 1.0; duration: Kirigami.Units.shortDuration }
         }
@@ -200,6 +178,8 @@ Kirigami.ScrollablePage {
         
         // lap items
         delegate: Kirigami.BasicListItem {
+            id: listItem
+            
             y: -height
             leftPadding: Kirigami.Units.largeSpacing * 2
             rightPadding: Kirigami.Units.largeSpacing * 2
@@ -207,7 +187,31 @@ Kirigami.ScrollablePage {
             bottomPadding: Kirigami.Units.largeSpacing
             activeBackgroundColor: "transparent"
 
-            Keys.onSpacePressed: toggleStopwatch();
+            opacity: 0
+            ListView.onReused: opacityAnimation.restart()
+            Component.onCompleted: opacityAnimation.restart()
+            NumberAnimation on opacity {
+                id: opacityAnimation
+                duration: Kirigami.Units.shortDuration
+                from: 0
+                to: 1
+            }
+            
+            Keys.onSpacePressed: toggleStopwatch()
+            
+            property int lapNumber: model.index == -1 ? -1 : roundModel.count - model.index
+            
+            property double timeSinceLastLap: {
+                if (index === 0) { // constantly updated lap (top lap)
+                    return parseFloat((elapsedTime - roundModel.get(1).time)/1000)
+                } else if (index === roundModel.count - 1) { // last lap
+                    return parseFloat(model.time / 1000)
+                } else if (model) {
+                    return parseFloat((model.time - roundModel.get(index+1).time)/1000)
+                }
+            }
+            
+            property double timeSinceBeginning: parseFloat((index == 0 ? elapsedTime : model.time) / 1000)
             
             contentItem: RowLayout {
                 Item { Layout.fillWidth: true }
@@ -224,7 +228,7 @@ Kirigami.ScrollablePage {
                         Label {
                             color: Kirigami.Theme.textColor
                             font.weight: Font.Bold
-                            text: i18n("#%1", roundModel.count - model.index)
+                            text: listItem.lapNumber >= 0 ? i18n("#%1", listItem.lapNumber) : ""
                         }
                     }
                     
@@ -232,15 +236,7 @@ Kirigami.ScrollablePage {
                     Label {
                         Layout.alignment: Qt.AlignLeft
                         color: Kirigami.Theme.textColor
-                        text: {
-                            if (index === 0) { // constantly updated lap (top lap)
-                                return "+" + parseFloat((elapsedTime - roundModel.get(1).time)/1000).toFixed(2);
-                            } else if (index === roundModel.count - 1) {
-                                return "+" + parseFloat(model.time / 1000).toFixed(2);
-                            } else if (model) {
-                                return "+" + parseFloat((model.time - roundModel.get(index+1).time)/1000).toFixed(2)
-                            }
-                        }
+                        text: isNaN(timeSinceLastLap) ? "" : "+" + listItem.timeSinceLastLap.toFixed(2);
                     }
                     
                     Item { Layout.fillWidth: true }
@@ -253,7 +249,7 @@ Kirigami.ScrollablePage {
                         Label {
                             anchors.left: parent.left
                             color: Kirigami.Theme.focusColor
-                            text: parseFloat((index == 0 ? elapsedTime : model.time) / 1000).toFixed(2)
+                            text: isNaN(timeSinceBeginning) ? "" : listItem.timeSinceBeginning.toFixed(2) 
                         }
                     }
                 }
