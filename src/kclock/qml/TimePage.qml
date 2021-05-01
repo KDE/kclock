@@ -38,11 +38,13 @@ Kirigami.ScrollablePage {
     mainAction: Kirigami.Action {
         iconName: "globe"
         text: i18n("Edit")
-        onTriggered: {
-            timeZoneSelectorModel.update();
-            timeZoneSelect.active = true;
-            timeZoneSelect.item.open();
-        }
+        onTriggered: timePage.openEditSheet()
+    }
+    
+    function openEditSheet() {
+        timeZoneSelectorModel.update();
+        timeZoneSelect.active = true;
+        timeZoneSelect.item.open();
     }
     
     TimeZoneSelectWrapper {
@@ -120,9 +122,12 @@ Kirigami.ScrollablePage {
         
         // no timezones placeholder
         Kirigami.PlaceholderMessage {
-            anchors.centerIn: parent
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: parent.top
+            anchors.topMargin: Math.round(parent.height / 2 - bigTimeDisplay.height / 2)
             visible: zoneList.count == 0
-            text: i18n("Add timezone")
+            text: i18n("No timezones configured")
+            icon.name: "globe"
         }
         
         delegate: TimeZoneEntry {
