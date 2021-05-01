@@ -40,7 +40,7 @@ Item {
         
         ColumnLayout {
             id: mainDisplay
-            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.centerIn: parent
             spacing: 0
             
             PlasmaComponents.Label {
