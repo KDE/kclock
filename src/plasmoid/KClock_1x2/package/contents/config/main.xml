@@ -15,13 +15,8 @@
             <label>Whether or not to show the next alarm to ring.</label>
             <default>true</default>
         </entry>
-        <entry name="textAlignment" type="Enum">
+        <entry name="textAlignment" type="String">
             <label>The alignment of the widget text.</label>
-            <choices name="Settings::textAlignment">
-                <choice name="Left" />
-                <choice name="Center" />
-                <choice name="Right" />
-            </choices>
             <default>Center</default>
         </entry>
     </group>
