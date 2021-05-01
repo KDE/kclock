@@ -13,7 +13,7 @@ Kirigami.FormLayout {
   
     property alias cfg_twelveHourTime: twelveHourTime.checked
     property alias cfg_showDate: showDate.checked
-    property alias cfg_showAlarms: showAlarms.text
+    property alias cfg_showAlarms: showAlarms.checked
     property string cfg_textAlignment
 
     CheckBox {
@@ -48,6 +48,9 @@ Kirigami.FormLayout {
         ]
         onCurrentIndexChanged: cfg_textAlignment = model[currentIndex]["name"]
         Component.onCompleted: {
+            if (plasmoid.configuration.textAlignment == "") {
+                plasmoid.configuration.textAlignment = "Center";
+            }
             for (var i = 0; i < model.length; i++) {
                 if (model[i]["name"] === plasmoid.configuration.textAlignment) {
                     textAlignment.currentIndex = i;

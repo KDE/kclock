@@ -1,5 +1,6 @@
 /*
     SPDX-FileCopyrightText: 2020 HanY <hanyoung@protonmail.com>
+    SPDX-FileCopyrightText: 2021 Devin Lin <espidev@gmail.com>
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
@@ -25,9 +26,12 @@ Item {
         property int fontSize: Math.round(mainItem.width / 5)
         
         id: mainItem
-        Layout.preferredHeight: plasmoid.nativeInterface.hasAlarm ? Kirigami.Theme.defaultFont.pointSize * 8 : Kirigami.Theme.defaultFont.pointSize * 16
-        Layout.preferredWidth: Kirigami.Settings.isMobile ? plasmoid.screenGeometry.width : Kirigami.Units.gridUnit * 20
+        Layout.preferredHeight: Kirigami.Theme.defaultFont.pointSize * 10
+        Layout.preferredWidth: Kirigami.Settings.isMobile ? Math.round(plasmoid.screenGeometry.width * 0.5) : Kirigami.Units.gridUnit * 12
         Layout.alignment: Qt.AlignHCenter
+        
+        property var layoutAlignment: plasmoid.configuration.textAlignment == "Left" ? Qt.AlignLeft :
+                                        plasmoid.configuration.textAlignment == "Right" ? Qt.AlignRight : Qt.AlignHCenter
         
         MouseArea {
             anchors.fill: parent
@@ -36,7 +40,7 @@ Item {
         
         ColumnLayout {
             id: mainDisplay
-            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.fill: parent
             spacing: 0
             
             PlasmaComponents.Label {
@@ -44,20 +48,20 @@ Item {
                 font.pointSize: fontSize
                 font.weight: Font.ExtraLight
                 color: "white"
-                Layout.alignment: Qt.AlignHCenter
+                Layout.alignment: mainItem.layoutAlignment
             }
             
             PlasmaComponents.Label {
                 text: plasmoid.nativeInterface.date
                 font.pointSize: Math.round(fontSize / 4)
                 color: "white"
-                Layout.alignment: Qt.AlignHCenter
+                Layout.alignment: mainItem.layoutAlignment
                 visible: plasmoid.configuration.showDate
             }
             
             RowLayout {
                 Layout.topMargin: PlasmaCore.Units.smallSpacing
-                Layout.alignment: Qt.AlignHCenter
+                Layout.alignment: mainItem.layoutAlignment
                 
                 Kirigami.Icon {
                     visible: plasmoid.nativeInterface.hasAlarm && plasmoid.configuration.showAlarms
