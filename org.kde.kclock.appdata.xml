@@ -36,6 +36,7 @@
   <summary xml:lang="it">Una semplice applicazione per l'orologio per Plasma.</summary>
   <summary xml:lang="nl">Een convergente kloktoepassing voor Plasma.</summary>
   <summary xml:lang="nn">Klokke for Plasma, tilpassa ulike typar brukarflater.</summary>
+  <summary xml:lang="pa">ਪਲਾਜ਼ਮਾ ਲਈ ਸਰਲ ਘੜੀ ਐਪਲੀਕੇਸ਼ਨ ਹੈ।</summary>
   <summary xml:lang="pt">Uma aplicação de relógio convergente para o Plasma.</summary>
   <summary xml:lang="pt-BR">Um aplicativo de relógio convergente para o Plasma.</summary>
   <summary xml:lang="sl">Konvergentna aplikacija ure.</summary>
@@ -79,6 +80,7 @@
     <p xml:lang="fr">Une application d'horloge convergente pour Plasma. Elle contient des fonctionnalités d'alarmes, de chronomètres, de minuteurs et de fuseaux horaires. Les alarmes sont aussi capables de faire sortir le périphérique du mode de veille lors de l'utilisation de Plasma.</p>
     <p xml:lang="it">Una semplice applicazione per l'orologio per Plasma. Contiene le funzionalità per allarmi, timer, cronometro e fuso orario. Gli allarmi possono risvegliare il dispositivo dalla sospensione se si utilizza Plasma.</p>
     <p xml:lang="nl">Een convergente kloktoepassing voor Plasma. Deze bevat alarm, timer, stopwatch en tijdzone functionaliteiten. Alarmen kunnen het apparaat uit status onderbroken laten ontwaken bij gebruik van Plasma.</p>
+    <p xml:lang="pa">ਪਲਾਜ਼ਮਾ ਲਈ ਸਰਲ ਘੜੀ ਐਪਲੀਕੇਸ਼ਨ ਹੈ। ਇਸ ਵਿੱਚ ਅਲਾਰਮ, ਟਾਈਮਰ, ਸਟਾਪ-ਵਾਚ ਅਤੇ ਸਮਾਂ-ਖੇਤਰ ਦੀਆਂ ਸਹੂਲਤਾਂ ਹਨ। ਜਦੋਂ ਪਲਾਜ਼ਮਾ ਵਰਤਿਆ ਜਾਂਦਾ ਹੈ ਤਾਂ ਅਲਾਰਮ ਸਸਪੈਂਡ ਤੋਂ ਵੀ ਡਿਵਾਈਸ ਨੂੰ ਜਗਾ ਸਕਦੇ ਹਨ।</p>
     <p xml:lang="pt">Uma aplicação de relógio convergente para o Plasma. Contém funcionalidades de alarmes, temporizadores, cronómetros e fusos-horários. Os alarmes também conseguirão acordar o dispositivo da suspensão ao usar o Plasma.</p>
     <p xml:lang="pt-BR">Um aplicativo de relógio convergente para o Plasma. Ele contém alarme, temporizador, cronômetro e funcionalidades de fuso horário. Os alarmes também estão disponíveis para acordar o dispositivo da suspensão quando usando o Plasma.</p>
     <p xml:lang="sl">Konvergentna aplikacija ure za Plasmo. Vsebuje alarm, odštevalnik časa, štoparico in funkcionalnost časovnih pasov. Alarm je sposoben tudi aktivirati napravo iz mirovanja, kadar uporablja Plasmo.</p>
@@ -99,6 +101,7 @@
       <caption xml:lang="it">Vista mobile</caption>
       <caption xml:lang="nl">Beeld op mobiel</caption>
       <caption xml:lang="nn">Mobilvising</caption>
+      <caption xml:lang="pa">ਮੋਬਾਈਲ ਝਲਕ</caption>
       <caption xml:lang="pt">Versão para dispositivos móveis</caption>
       <caption xml:lang="pt-BR">Vista do celular</caption>
       <caption xml:lang="sl">Mobilni pogled</caption>
@@ -118,6 +121,7 @@
       <caption xml:lang="it">Vista desktop</caption>
       <caption xml:lang="nl">Beeld op bureaublad</caption>
       <caption xml:lang="nn">Skrivebordsvising</caption>
+      <caption xml:lang="pa">ਡੈਸਕਟਾਪ ਝਲਕ</caption>
       <caption xml:lang="pt">Versão para computador</caption>
       <caption xml:lang="pt-BR">Vista da área de trabalho</caption>
       <caption xml:lang="sl">Namizni pogled</caption>
@@ -137,6 +141,7 @@
       <caption xml:lang="it">Pagina dei timer</caption>
       <caption xml:lang="nl">Pagina met timers</caption>
       <caption xml:lang="nn">Nedteljarside</caption>
+      <caption xml:lang="pa">ਟਾਈਮਰ ਸਫ਼ਾ</caption>
       <caption xml:lang="pt">Página de Temporizadores</caption>
       <caption xml:lang="pt-BR">Página dos temporizadores</caption>
       <caption xml:lang="sl">Stran merilnikov časa</caption>
@@ -156,6 +161,7 @@
       <caption xml:lang="it">Pagina del timer</caption>
       <caption xml:lang="nl">Pagina met timer</caption>
       <caption xml:lang="nn">Nedteljingsside</caption>
+      <caption xml:lang="pa">ਟਾਈਮਰ ਸਫ਼ਾ</caption>
       <caption xml:lang="pt">Página do Temporizador</caption>
       <caption xml:lang="pt-BR">Página do temporizador</caption>
       <caption xml:lang="sl">Stran merilnika časa</caption>
@@ -175,6 +181,7 @@
       <caption xml:lang="it">Pagina del cronometro</caption>
       <caption xml:lang="nl">Pagina met stopwatch</caption>
       <caption xml:lang="nn">Stoppeklokke-side</caption>
+      <caption xml:lang="pa">ਸਟਾਪਵਾਚ ਸਫ਼ਾ</caption>
       <caption xml:lang="pt">Página de Cronómetro</caption>
       <caption xml:lang="pt-BR">Página do cronômetro</caption>
       <caption xml:lang="sl">Stran štoparice</caption>
@@ -195,6 +202,7 @@
       <caption xml:lang="it">Pagina degli allarmi</caption>
       <caption xml:lang="nl">Pagina met alarmen</caption>
       <caption xml:lang="nn">Alarmside</caption>
+      <caption xml:lang="pa">ਅਲਾਰਮ ਸਫ਼ਾ</caption>
       <caption xml:lang="pt">Página de Alarmes</caption>
       <caption xml:lang="pt-BR">Página do alarme</caption>
       <caption xml:lang="sl">Stran alarma</caption>
