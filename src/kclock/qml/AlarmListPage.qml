@@ -73,7 +73,7 @@ Kirigami.ScrollablePage {
             
             helpfulAction: Kirigami.Action {
                 iconName: "list-add"
-                text: "Add alarm"
+                text: i18n("Add alarm")
                 onTriggered: alarmPage.addAlarm()
             }
         }

@@ -163,7 +163,7 @@ Kirigami.FormLayout {
     TextField {
         id: label
         Kirigami.FormData.label: i18n("<b>Label (optional):</b>")
-        text: "New Timer" // default
+        text: i18n("New Timer") // default
         onTextChanged: timer.label = text
     }
 } 

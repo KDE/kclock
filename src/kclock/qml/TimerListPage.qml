@@ -69,7 +69,7 @@ Kirigami.ScrollablePage {
             
             helpfulAction: Kirigami.Action {
                 iconName: "list-add"
-                text: "Add timer"
+                text: i18n("Add timer")
                 onTriggered: timerPage.addTimer()
             }
         }
