@@ -131,10 +131,38 @@ Kirigami.ScrollablePage {
         }
         
         delegate: Kirigami.BasicListItem {
-            label: model.id
-            subtitle: model.relativeTime
-            trailing: Label {
-                text: model.timeString
+            activeBackgroundColor: "transparent"
+            leftPadding: Kirigami.Units.largeSpacing * 2
+            rightPadding: Kirigami.Units.largeSpacing * 2
+            topPadding: Kirigami.Units.largeSpacing
+            bottomPadding: Kirigami.Units.largeSpacing
+            
+            contentItem: Item {
+                implicitHeight: row.implicitHeight
+                RowLayout {
+                    id: row
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.verticalCenter: parent.verticalCenter
+                    ColumnLayout {
+                        spacing: Kirigami.Units.smallSpacing
+                        Label {
+                            elide: Text.ElideRight
+                            font.weight: Font.Bold
+                            text: model.id
+                        }
+                        Label {
+                            elide: Text.ElideRight
+                            text: model.relativeTime
+                        }
+                    }
+                    Item { Layout.fillWidth: true }
+                    Kirigami.Heading {
+                        level: 1
+                        font.weight: Font.Light
+                        text: model.timeString
+                    }
+                }
             }
         }
     }
