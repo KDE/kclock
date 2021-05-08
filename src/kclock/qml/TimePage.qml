@@ -130,10 +130,12 @@ Kirigami.ScrollablePage {
             icon.name: "globe"
         }
         
-        delegate: TimeZoneEntry {
-            tzId: model.id
-            tzRelative: model.relativeTime
-            tzTime: model.timeString
+        delegate: Kirigami.BasicListItem {
+            label: model.id
+            subtitle: model.relativeTime
+            trailing: Label {
+                text: model.timeString
+            }
         }
     }
 }
