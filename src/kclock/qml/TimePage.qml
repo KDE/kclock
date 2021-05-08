@@ -23,7 +23,7 @@ import QtQuick 2.15
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.2
 import QtQuick.Shapes 1.12
-import org.kde.kirigami 2.12 as Kirigami
+import org.kde.kirigami 2.15 as Kirigami
 
 Kirigami.ScrollablePage {
     id: timePage
@@ -131,38 +131,20 @@ Kirigami.ScrollablePage {
         }
         
         delegate: Kirigami.BasicListItem {
-            activeBackgroundColor: "transparent"
             leftPadding: Kirigami.Units.largeSpacing * 2
             rightPadding: Kirigami.Units.largeSpacing * 2
             topPadding: Kirigami.Units.largeSpacing
             bottomPadding: Kirigami.Units.largeSpacing
+            activeBackgroundColor: "transparent"
+            activeTextColor: Kirigami.Theme.textColor
+
+            label: model.id
+            subtitle: model.relativeTime
+            bold: true
             
-            contentItem: Item {
-                implicitHeight: row.implicitHeight
-                RowLayout {
-                    id: row
-                    anchors.left: parent.left
-                    anchors.right: parent.right
-                    anchors.verticalCenter: parent.verticalCenter
-                    ColumnLayout {
-                        spacing: Kirigami.Units.smallSpacing
-                        Label {
-                            elide: Text.ElideRight
-                            font.weight: Font.Bold
-                            text: model.id
-                        }
-                        Label {
-                            elide: Text.ElideRight
-                            text: model.relativeTime
-                        }
-                    }
-                    Item { Layout.fillWidth: true }
-                    Kirigami.Heading {
-                        level: 1
-                        font.weight: Font.Light
-                        text: model.timeString
-                    }
-                }
+            trailing: Kirigami.Heading {
+                level: 2
+                text: model.timeString
             }
         }
     }
