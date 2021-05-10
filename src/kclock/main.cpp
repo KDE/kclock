@@ -100,6 +100,7 @@ int main(int argc, char *argv[])
     engine->rootContext()->setContextProperty("kclockFormat", KclockFormat::instance());
     engine->rootContext()->setContextProperty("weekModel", weekModel);
     engine->rootContext()->setContextProperty("settingsModel", &SettingsModel::instance());
+    engine->rootContext()->setContextProperty(QStringLiteral("kclockAboutData"), QVariant::fromValue(aboutData));
 
     engine->load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
 
