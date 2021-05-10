@@ -39,4 +39,5 @@ target_link_libraries(kclock
         KF5::Notifications
         KF5::DBusAddons
         )
+target_include_directories(kclock PRIVATE ${CMAKE_BINARY_DIR})
 install(TARGETS kclock ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})

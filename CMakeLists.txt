@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
 
 project(kclock)
+set(PROJECT_VERSION "21.05")
 
 set(KF5_MIN_VERSION "5.79.0")
 set(QT_MIN_VERSION "5.15.0")
@@ -18,6 +19,11 @@ include(KDEClangFormat)
 include(KDEGitCommitHooks)
 include(ECMQMLModules)
 include(ECMConfiguredInstall)
+
+ecm_setup_version(${PROJECT_VERSION}
+    VARIABLE_PREFIX KCLOCK
+    VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/version.h
+)
 
 find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS
     Core

@@ -30,6 +30,7 @@
 #include "timermodel.h"
 #include "timezoneselectormodel.h"
 #include "utilmodel.h"
+#include "version.h"
 
 #include <KAboutData>
 #include <KConfig>
@@ -51,6 +52,7 @@ QCommandLineParser *createParser()
 {
     QCommandLineParser *parser = new QCommandLineParser;
     parser->addOption(QCommandLineOption(QStringLiteral("page"), i18n("Select opened page"), QStringLiteral("page"), "main"));
+    parser->addVersionOption();
     parser->addHelpOption();
     return parser;
 };
@@ -61,7 +63,12 @@ int main(int argc, char *argv[])
     QQmlDebuggingEnabler enabler;
 
     KLocalizedString::setApplicationDomain("kclock");
-    KAboutData aboutData("kclock", "Clock", "0.5.0", "A convergent clock application for Plasma", KAboutLicense::GPL, i18n("© 2020 KDE Community"));
+    KAboutData aboutData("kclock",
+                         "Clock",
+                         QStringLiteral(KCLOCK_VERSION_STRING),
+                         "A convergent clock application for Plasma",
+                         KAboutLicense::GPL,
+                         i18n("© 2020 KDE Community"));
     aboutData.addAuthor(i18n("Devin Lin"), QString(), QStringLiteral("espidev@gmail.com"));
     aboutData.addAuthor(i18n("Han Young"), QString(), QStringLiteral("hanyoung@protonmail.com"));
     KAboutData::setApplicationData(aboutData);
