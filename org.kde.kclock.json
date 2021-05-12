@@ -1,18 +1,19 @@
 {
     "id": "org.kde.kclock",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.12",
+    "runtime-version": "5.15",
     "sdk": "org.kde.Sdk",
     "command": "kclock",
     "tags": ["nightly"],
     "desktop-file-name-suffix": " (Nightly)",
     "finish-args": [
         "--share=ipc",
-        "--share=network",
         "--socket=x11",
         "--socket=wayland",
+        "--socket=pulseaudio",
         "--device=dri",
-        "--filesystem=home",
+        "--filesystem=xdg-config",
+        "--talk-name=org.kde.kclockd",
         "--talk-name=org.freedesktop.Notifications"
     ],
     "separate-locales": false,
