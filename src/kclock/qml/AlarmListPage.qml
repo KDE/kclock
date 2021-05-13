@@ -132,7 +132,6 @@ Kirigami.ScrollablePage {
 
                     ColumnLayout {
                         Label {
-                            font.family: clockFont.name
                             font.weight: Font.Light
                             font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 1.75)
                             text: kclockFormat.formatTimeString(model.hours, model.minutes)

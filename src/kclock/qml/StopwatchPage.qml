@@ -98,7 +98,6 @@ Kirigami.ScrollablePage {
                     id: text
                     text: stopwatchTimer.minutes + ':' + stopwatchTimer.seconds + '.'
                     font.pointSize: Kirigami.Theme.defaultFont.pointSize * 4
-                    font.family: clockFont.name
                     font.weight: Font.Light
                 }
                 Label {
@@ -106,7 +105,6 @@ Kirigami.ScrollablePage {
                     anchors.baseline: text.baseline
                     text: stopwatchTimer.small
                     font.pointSize: Kirigami.Theme.defaultFont.pointSize * 3
-                    font.family: clockFont.name
                     font.weight: Font.Light
                 }
             }

@@ -120,10 +120,4 @@ Kirigami.ApplicationWindow
         source: "qrc:/qml/Sidebar.qml"
         active: false
     }
-    
-    // clock fonts
-    FontLoader {
-        id: clockFont
-        source: "/assets/NotoSans-Light.ttf"
-    }
 }
