@@ -229,7 +229,7 @@ void Alarm::calculateNextRingTime()
 quint64 Alarm::nextRingTime()
 {
     // day changed, re-calculate
-    if (this->m_nextRingTime < static_cast<unsigned long long>(QDateTime::currentSecsSinceEpoch())) {
+    if (this->m_nextRingTime <= static_cast<unsigned long long>(QDateTime::currentSecsSinceEpoch())) {
         calculateNextRingTime();
     }
     return m_nextRingTime;
