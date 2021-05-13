@@ -8,17 +8,24 @@
     "desktop-file-name-suffix": " (Nightly)",
     "finish-args": [
         "--share=ipc",
+        "--share=network",
         "--socket=x11",
         "--socket=wayland",
-        "--socket=pulseaudio",
         "--device=dri",
-        "--filesystem=xdg-config",
-        "--talk-name=org.kde.kclockd",
-        "--talk-name=org.freedesktop.Notifications"
+        "--filesystem=xdg-data/sounds",
+        "--talk-name=org.freedesktop.Notifications",
+        "--talk-name=org.kde.Solid.PowerManagement",
+        "--own-name=org.kde.kclockd"
     ],
     "separate-locales": false,
 
     "modules": [
+        {
+            "name": "kirigamiaddons",
+            "config-opts": [ "-DBUILD_TESTING=OFF" ],
+            "buildsystem": "cmake-ninja",
+            "sources": [ { "type": "git", "url": "https://invent.kde.org/libraries/kirigami-addons.git", "branch": "master" } ]
+        },
         {
             "name": "kclock",
             "buildsystem": "cmake-ninja",
