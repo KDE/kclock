@@ -32,19 +32,16 @@ Item {
     property int minutes
     property int seconds
     
-    PlasmaCore.DataSource {
-        id: dataSource
-        engine: "time"
-        connectedSources: "Local"
+    Timer {
+        running: true
+        repeat: true
+        triggeredOnStart: true
         interval: 1000
-        onDataChanged: {
-            var date = new Date(data["Local"]["DateTime"]);
+        onTriggered: {
+            let date = new Date();
             hours = date.getHours();
             minutes = date.getMinutes();
             seconds = date.getSeconds();
-        }
-        Component.onCompleted: {
-            onDataChanged();
         }
     }
 
