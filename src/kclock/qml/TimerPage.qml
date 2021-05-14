@@ -31,7 +31,7 @@ Kirigami.Page {
     property int timerIndex
     
     id: timerpage
-    title: timer.label !== "" ? timer.label : i18n("New timer")
+    title: timer && timer.label !== "" ? timer.label : i18n("New timer")
     
     property bool showFullscreen: false
     

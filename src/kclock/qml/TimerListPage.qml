@@ -119,7 +119,7 @@ Kirigami.ScrollablePage {
                     ProgressBar {
                         anchors.left: parent.left
                         anchors.right: parent.right
-                        property real progress: timerDelegate.elapsed / timerDelegate.length
+                        property real progress: timerDelegate ? (timerDelegate.elapsed / timerDelegate.length) : 0
                         value: 0
                         Component.onCompleted: value = progress
                         
@@ -140,14 +140,14 @@ Kirigami.ScrollablePage {
                         Kirigami.Heading {
                             level: 3
                             Layout.alignment: Qt.AlignLeft
-                            text: timerDelegate.elapsedPretty
-                            color: timerDelegate.running ? Kirigami.Theme.activeTextColor : Kirigami.Theme.disabledTextColor
+                            text: timerDelegate ? timerDelegate.elapsedPretty : ""
+                            color: timerDelegate && timerDelegate.running ? Kirigami.Theme.activeTextColor : Kirigami.Theme.disabledTextColor
                         }
                         Kirigami.Heading {
                             level: 3
                             Layout.alignment: Qt.AlignRight
-                            text: timerDelegate.lengthPretty
-                            color: timerDelegate.running ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
+                            text: timerDelegate ? timerDelegate.lengthPretty : ""
+                            color: timerDelegate && timerDelegate.running ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
                         }
                     }
                     
@@ -157,16 +157,16 @@ Kirigami.ScrollablePage {
                         Kirigami.Heading {
                             level: 4
                             Layout.alignment: Qt.AlignLeft
-                            text: timerDelegate.label
+                            text: timerDelegate ? timerDelegate.label : ""
                         }
                         
                         Row {
                             Layout.alignment: Qt.AlignRight
                             
                             ToolButton {
-                                icon.name: timerDelegate.running ? "chronometer-pause" : "chronometer-start"
+                                icon.name: timerDelegate && timerDelegate.running ? "chronometer-pause" : "chronometer-start"
                                 display: AbstractButton.IconOnly
-                                text: timerDelegate.running ? i18n("Pause") : i18n("Start")
+                                text: timerDelegate && timerDelegate.running ? i18n("Pause") : i18n("Start")
                                 onClicked: timerDelegate.toggleRunning()
                                 
                                 ToolTip.visible: hovered && text.length > 0
