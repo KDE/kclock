@@ -4,6 +4,7 @@
     "runtime-version": "5.15",
     "sdk": "org.kde.Sdk",
     "command": "kclock",
+    "rename-icon": "kclock",
     "tags": ["nightly"],
     "desktop-file-name-suffix": " (Nightly)",
     "finish-args": [
