@@ -38,6 +38,7 @@
   <summary xml:lang="es">Aplicación de reloj convergente para Plasma.</summary>
   <summary xml:lang="fr">Une application d'horloge convergente pour Plasma.</summary>
   <summary xml:lang="it">Una semplice applicazione per l'orologio per Plasma.</summary>
+  <summary xml:lang="ko">Plasma용 간단한 올인원 시계 프로그램입니다.</summary>
   <summary xml:lang="nl">Een convergente kloktoepassing voor Plasma.</summary>
   <summary xml:lang="nn">Klokke for Plasma, tilpassa ulike typar brukarflater.</summary>
   <summary xml:lang="pa">ਪਲਾਜ਼ਮਾ ਲਈ ਸਰਲ ਘੜੀ ਐਪਲੀਕੇਸ਼ਨ ਹੈ।</summary>
@@ -83,6 +84,7 @@
     <p xml:lang="es">Una aplicación de reloj convergente para Plasma. Contiene las funciones de alarma, temporizador, cronómetro y zona horaria. Las alarmas también pueden despertar el dispositivo del estado de suspensión si usa Plasma.</p>
     <p xml:lang="fr">Une application d'horloge convergente pour Plasma. Elle contient des fonctionnalités d'alarmes, de chronomètres, de minuteurs et de fuseaux horaires. Les alarmes sont aussi capables de faire sortir le périphérique du mode de veille lors de l'utilisation de Plasma.</p>
     <p xml:lang="it">Una semplice applicazione per l'orologio per Plasma. Contiene le funzionalità per allarmi, timer, cronometro e fuso orario. Gli allarmi possono risvegliare il dispositivo dalla sospensione se si utilizza Plasma.</p>
+    <p xml:lang="ko">Plasma용 통합된 시계 프로그램입니다. 알람, 타이머, 초시계, 시간대 기능을 지원합니다. Plasma를 사용 중일 때 장치를 절전 모드에서 알람으로 깨울 수도 있습니다.</p>
     <p xml:lang="nl">Een convergente kloktoepassing voor Plasma. Deze bevat alarm, timer, stopwatch en tijdzone functionaliteiten. Alarmen kunnen het apparaat uit status onderbroken laten ontwaken bij gebruik van Plasma.</p>
     <p xml:lang="pa">ਪਲਾਜ਼ਮਾ ਲਈ ਸਰਲ ਘੜੀ ਐਪਲੀਕੇਸ਼ਨ ਹੈ। ਇਸ ਵਿੱਚ ਅਲਾਰਮ, ਟਾਈਮਰ, ਸਟਾਪ-ਵਾਚ ਅਤੇ ਸਮਾਂ-ਖੇਤਰ ਦੀਆਂ ਸਹੂਲਤਾਂ ਹਨ। ਜਦੋਂ ਪਲਾਜ਼ਮਾ ਵਰਤਿਆ ਜਾਂਦਾ ਹੈ ਤਾਂ ਅਲਾਰਮ ਸਸਪੈਂਡ ਤੋਂ ਵੀ ਡਿਵਾਈਸ ਨੂੰ ਜਗਾ ਸਕਦੇ ਹਨ।</p>
     <p xml:lang="pl">Spójna aplikacja zegara dla Plazmy. Zawiera alarm, czasomierz, stoper oraz różne strefy czasowe. Alarmy są także w stanie wybudzić urządzenie z uśpienia, gdy używasz Plazmy.</p>
@@ -109,6 +111,7 @@
       <caption xml:lang="es">Vista móvil</caption>
       <caption xml:lang="fr">Affichage pour mobile</caption>
       <caption xml:lang="it">Vista mobile</caption>
+      <caption xml:lang="ko">모바일 보기</caption>
       <caption xml:lang="nl">Beeld op mobiel</caption>
       <caption xml:lang="nn">Mobilvising</caption>
       <caption xml:lang="pa">ਮੋਬਾਈਲ ਝਲਕ</caption>
@@ -130,6 +133,7 @@
       <caption xml:lang="es">Vista de escritorio</caption>
       <caption xml:lang="fr">Affichage de bureau</caption>
       <caption xml:lang="it">Vista desktop</caption>
+      <caption xml:lang="ko">데스크톱 보기</caption>
       <caption xml:lang="nl">Beeld op bureaublad</caption>
       <caption xml:lang="nn">Skrivebordsvising</caption>
       <caption xml:lang="pa">ਡੈਸਕਟਾਪ ਝਲਕ</caption>
@@ -151,6 +155,7 @@
       <caption xml:lang="es">Página de temporizadores</caption>
       <caption xml:lang="fr">Page de chronomètres</caption>
       <caption xml:lang="it">Pagina dei timer</caption>
+      <caption xml:lang="ko">타이머 쪽</caption>
       <caption xml:lang="nl">Pagina met timers</caption>
       <caption xml:lang="nn">Nedteljarside</caption>
       <caption xml:lang="pa">ਟਾਈਮਰ ਸਫ਼ਾ</caption>
@@ -172,6 +177,7 @@
       <caption xml:lang="es">Página del temporizador</caption>
       <caption xml:lang="fr">Page de chronomètre</caption>
       <caption xml:lang="it">Pagina del timer</caption>
+      <caption xml:lang="ko">타이머 쪽</caption>
       <caption xml:lang="nl">Pagina met timer</caption>
       <caption xml:lang="nn">Nedteljingsside</caption>
       <caption xml:lang="pa">ਟਾਈਮਰ ਸਫ਼ਾ</caption>
@@ -193,6 +199,7 @@
       <caption xml:lang="es">Página del cronómetro</caption>
       <caption xml:lang="fr">Page de minuteur</caption>
       <caption xml:lang="it">Pagina del cronometro</caption>
+      <caption xml:lang="ko">초시계 쪽</caption>
       <caption xml:lang="nl">Pagina met stopwatch</caption>
       <caption xml:lang="nn">Stoppeklokke-side</caption>
       <caption xml:lang="pa">ਸਟਾਪਵਾਚ ਸਫ਼ਾ</caption>
@@ -215,6 +222,7 @@
       <caption xml:lang="es">Página de alarmas</caption>
       <caption xml:lang="fr">Page d'alarmes</caption>
       <caption xml:lang="it">Pagina degli allarmi</caption>
+      <caption xml:lang="ko">알람 쪽</caption>
       <caption xml:lang="nl">Pagina met alarmen</caption>
       <caption xml:lang="nn">Alarmside</caption>
       <caption xml:lang="pa">ਅਲਾਰਮ ਸਫ਼ਾ</caption>
