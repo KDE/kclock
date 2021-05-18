@@ -141,9 +141,15 @@ Kirigami.ScrollablePage {
             subtitle: model.relativeTime
             bold: true
             
-            trailing: Kirigami.Heading {
-                level: 2
-                text: model.timeString
+            trailing: Item {
+                implicitWidth: timeText.width
+                implicitHeight: timeText.height
+                Kirigami.Heading {
+                    id: timeText
+                    level: 2
+                    text: model.timeString
+                    anchors.verticalCenter: parent.verticalCenter
+                }
             }
         }
     }
