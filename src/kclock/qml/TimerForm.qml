@@ -26,9 +26,9 @@ import kclock 1.0
 
 Kirigami.FormLayout {
     id: form
-    
+
     property alias name: label.text
-    
+
     function setDuration(duration) {
         hours = duration / 60 / 60;
         minutes = duration % (60 * 60) / 60;
@@ -39,14 +39,13 @@ Kirigami.FormLayout {
     }
 
     ColumnLayout {
-        id: presets
         anchors.horizontalCenter: parent.horizontalCenter
         spacing: Kirigami.Units.smallSpacing
+
         RowLayout {
+            Layout.alignment: Qt.AlignHCenter
             spacing: Kirigami.Units.smallSpacing
             Button {
-                topPadding: Kirigami.Units.largeSpacing
-                bottomPadding: Kirigami.Units.largeSpacing
                 implicitWidth: Kirigami.Units.gridUnit * 4
                 text: i18n("1 m")
                 onClicked: {
@@ -57,8 +56,6 @@ Kirigami.FormLayout {
                 }
             }
             Button {
-                topPadding: Kirigami.Units.largeSpacing
-                bottomPadding: Kirigami.Units.largeSpacing
                 implicitWidth: Kirigami.Units.gridUnit * 4
                 text: i18n("5 m")
                 onClicked: {
@@ -69,8 +66,6 @@ Kirigami.FormLayout {
                 }
             }
             Button {
-                topPadding: Kirigami.Units.largeSpacing
-                bottomPadding: Kirigami.Units.largeSpacing
                 implicitWidth: Kirigami.Units.gridUnit * 4
                 text: i18n("10 m")
                 onClicked: {
@@ -83,11 +78,8 @@ Kirigami.FormLayout {
         }
         RowLayout {
             Layout.alignment: Qt.AlignHCenter
-            Layout.bottomMargin: Kirigami.Units.largeSpacing
             spacing: Kirigami.Units.smallSpacing
             Button {
-                topPadding: Kirigami.Units.largeSpacing
-                bottomPadding: Kirigami.Units.largeSpacing
                 implicitWidth: Kirigami.Units.gridUnit * 4
                 text: i18n("15 m")
                 onClicked: {
@@ -98,8 +90,6 @@ Kirigami.FormLayout {
                 }
             }
             Button {
-                topPadding: Kirigami.Units.largeSpacing
-                bottomPadding: Kirigami.Units.largeSpacing
                 implicitWidth: Kirigami.Units.gridUnit * 4
                 text: i18n("30 m")
                 onClicked: {
@@ -110,8 +100,6 @@ Kirigami.FormLayout {
                 }
             }
             Button {
-                topPadding: Kirigami.Units.largeSpacing
-                bottomPadding: Kirigami.Units.largeSpacing
                 implicitWidth: Kirigami.Units.gridUnit * 4
                 text: i18n("1 h")
                 onClicked: {
@@ -123,46 +111,82 @@ Kirigami.FormLayout {
             }
         }
     }
-    
-    RowLayout {
-        Kirigami.FormData.label: i18n("<b>Duration:</b>")
-        SpinBox {
-            Layout.alignment: Qt.AlignVCenter
-            id: spinBoxHours
-            value: 0 // default
-        }
-        Label {
-            Layout.alignment: Qt.AlignVCenter
-            text: i18n("hours")
-        }
-    }
-    RowLayout {
-        SpinBox {
-            Layout.alignment: Qt.AlignVCenter
-            id: spinBoxMinutes
-            value: 5 // default
-        }
-        Label {
-            Layout.alignment: Qt.AlignVCenter
-            text: i18n("minutes")
-        }
-    }
-    RowLayout {
-        SpinBox {
-            Layout.alignment: Qt.AlignVCenter
-            id: spinBoxSeconds
-            to: 60
-            value: 0 // default
-        }
-        Label {
-            Layout.alignment: Qt.AlignVCenter
-            text: i18n("seconds")
-        }
-    }
+    Kirigami.Separator {}
 
+    ColumnLayout {
+        Layout.alignment: Qt.AlignHCenter
+        Kirigami.FormData.label: i18n("<b>Duration:</b>")
+        Kirigami.FormData.buddyFor: spinBoxHours
+        RowLayout {
+            SpinBox {
+                id: spinBoxHours
+                value: 0 // default
+            }
+            Label {
+                text: i18n("hours")
+            }
+        }
+        RowLayout {
+            SpinBox {
+                id: spinBoxMinutes
+                value: 5 // default
+            }
+            Label {
+                text: i18n("minutes")
+            }
+        }
+        RowLayout {
+            SpinBox {
+                id: spinBoxSeconds
+                to: 60
+                value: 0 // default
+            }
+            Label {
+                text: i18n("seconds")
+            }
+        }
+    }
     TextField {
         id: label
         Kirigami.FormData.label: i18n("<b>Label (optional):</b>")
         text: i18n("New Timer") // default
+        focus: true
+        onTextChanged: {
+            if (timer) {
+                timer.label = text;
+            }
+        }
     }
-} 
+    RowLayout {
+        Layout.alignment: Qt.AlignHCenter
+        spacing: Kirigami.Units.smallSpacing
+        Button {
+            id: presetButton
+            text: showPresets ? i18n("Hide Presets") : i18n("Show Presets")
+            onClicked: showPresets = !showPresets
+        }
+        ToolButton {
+            icon.name: "delete"
+            text: i18n("Toggle Delete")
+            onClicked: showDelete = !showDelete
+            visible: showPresets
+            checkable: true
+            checked: false
+        }
+    }
+    Flow {
+        spacing: Kirigami.Units.smallSpacing
+        visible: showPresets && Kirigami.Settings.isMobile
+        Layout.fillWidth: true
+
+        Repeater {
+            model: TimerPresetModel
+
+            Button {
+                text: showDelete ? "Delete" : preset.presetName
+                onClicked: showDelete ? TimerPresetModel.deletePreset(index) : loader.createTimer(timerForm.getDuration(), timerForm.name) & close();
+
+            }
+        }
+    }
+}

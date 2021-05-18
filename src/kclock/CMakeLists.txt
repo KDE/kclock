@@ -10,6 +10,7 @@ set(kclock_SRCS
     settingsmodel.cpp
     timezoneselectormodel.cpp
     resources.qrc
+    timerpresetmodel.cpp
     )
 
 set(SettingsXML ${CMAKE_CURRENT_BINARY_DIR}/../kclockd/org.kde.kclockd.KClockSettings.xml)

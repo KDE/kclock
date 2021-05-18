@@ -28,6 +28,7 @@
 #include "stopwatchtimer.h"
 #include "timer.h"
 #include "timermodel.h"
+#include "timerpresetmodel.h"
 #include "timezoneselectormodel.h"
 #include "utilmodel.h"
 #include "version.h"
@@ -91,6 +92,9 @@ int main(int argc, char *argv[])
     // register QML types
     qmlRegisterType<Alarm>("kclock", 1, 0, "Alarm");
     qmlRegisterType<Timer>("kclock", 1, 0, "Timer");
+    qmlRegisterSingletonType<TimerPresetModel>("kclock", 1, 0, "TimerPresetModel", [](QQmlEngine *, QJSEngine *) -> QObject * {
+        return TimerPresetModel::instance();
+    });
 
     QQmlApplicationEngine *engine = new QQmlApplicationEngine();
 
