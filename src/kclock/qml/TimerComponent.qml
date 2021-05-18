@@ -180,4 +180,24 @@ Rectangle {
             color: timerRunning ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
         }
     }
+    Kirigami.Heading {
+        level: 4
+        text: timer.label
+        color: timerRunning ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
+        anchors.bottom: timeLabels.top
+        anchors.bottomMargin: Kirigami.Units.smallSpacing
+        anchors.horizontalCenter: parent.horizontalCenter
+    }
+
+    ToolButton {
+        text: i18n("1 minute")
+        icon.name: "list-add"
+        anchors.topMargin: Kirigami.Units.smallSpacing
+        anchors.top: timeLabels.bottom
+        anchors.horizontalCenter: parent.horizontalCenter
+        implicitHeight: Kirigami.Units.gridUnit * 2
+        onClicked: {
+            timerDelegate.addMinute();
+        }
+    }
 }

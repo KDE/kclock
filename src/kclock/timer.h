@@ -46,6 +46,7 @@ public:
     };
     Q_INVOKABLE void toggleRunning();
     Q_INVOKABLE void reset();
+    Q_INVOKABLE void addMinute();
 
     QString lengthPretty() const
     {

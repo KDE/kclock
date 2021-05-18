@@ -55,7 +55,15 @@ void Timer::reset()
 
     m_elapsed = m_interface->elapsed();
     Q_EMIT elapsedChanged();
-};
+}
+
+void Timer::addMinute()
+{
+    int newLength = length() + 60;
+    m_interface->setLength(newLength);
+    updateLength();
+    Q_EMIT propertyChanged();
+}
 
 void Timer::updateLength()
 {
