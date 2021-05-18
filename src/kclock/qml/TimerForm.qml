@@ -151,11 +151,6 @@ Kirigami.FormLayout {
         Kirigami.FormData.label: i18n("<b>Label (optional):</b>")
         text: i18n("New Timer") // default
         focus: true
-        onTextChanged: {
-            if (timer) {
-                timer.label = text;
-            }
-        }
     }
     RowLayout {
         Layout.alignment: Qt.AlignHCenter

@@ -8,6 +8,8 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 
+const QString TIMERPRESETS_CFG_GROUP = QStringLiteral("TimerPresets"), TIMERPRESETS_CFG_KEY = QStringLiteral("timerPresets");
+
 /* ~ TimerPreset ~ */
 TimerPreset::TimerPreset(QObject *parent, const QString &presetName, int presetDuration)
     : QObject(parent)
@@ -50,21 +52,21 @@ void TimerPreset::setDurationLength(int presetDuration)
 TimerPresetModel::TimerPresetModel(QObject *parent)
     : QAbstractListModel(parent)
 {
-    m_settings = new QSettings(parent);
     load();
 }
 
 TimerPresetModel::~TimerPresetModel()
 {
     save();
-    delete m_settings;
 
     qDeleteAll(m_presets);
 }
 
 void TimerPresetModel::load()
 {
-    QJsonDocument doc = QJsonDocument::fromJson(m_settings->value(QStringLiteral("presets")).toString().toUtf8());
+    auto config = KSharedConfig::openConfig();
+    KConfigGroup group = config->group(TIMERPRESETS_CFG_GROUP);
+    QJsonDocument doc = QJsonDocument::fromJson(group.readEntry(TIMERPRESETS_CFG_KEY, "{}").toUtf8());
 
     const auto array = doc.array();
     std::transform(array.begin(), array.end(), std::back_inserter(m_presets), [](const QJsonValue &pre) {
@@ -81,7 +83,11 @@ void TimerPresetModel::save()
         return QJsonValue(preset->toJson());
     });
 
-    m_settings->setValue(QStringLiteral("presets"), QString(QJsonDocument(arr).toJson(QJsonDocument::Compact)));
+    auto config = KSharedConfig::openConfig();
+    KConfigGroup group = config->group(TIMERPRESETS_CFG_GROUP);
+    group.writeEntry(TIMERPRESETS_CFG_KEY, QString(QJsonDocument(arr).toJson(QJsonDocument::Compact)));
+
+    group.sync();
 }
 
 QHash<int, QByteArray> TimerPresetModel::roleNames() const

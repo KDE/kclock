@@ -8,7 +8,10 @@
 #include <QCoreApplication>
 #include <QJsonObject>
 #include <QObject>
-#include <QSettings>
+
+#include <KConfigGroup>
+#include <KLocalizedString>
+#include <KSharedConfig>
 
 class TimerPreset : public QObject
 {
@@ -77,7 +80,6 @@ private:
     explicit TimerPresetModel(QObject *parent = nullptr);
     ~TimerPresetModel();
 
-    QSettings *m_settings;
     QList<TimerPreset *> m_presets;
 };
 
