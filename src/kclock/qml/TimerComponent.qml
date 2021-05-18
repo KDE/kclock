@@ -105,7 +105,7 @@ Rectangle {
             PathAngleArc {
                 id: timerCircleArc
                 centerX: timerCircle.width / 2; centerY: timerCircle.height / 2;
-                radiusX: Math.max(timerpage.width * 0.25, 1); radiusY: radiusX
+                radiusX: Math.max(timerpage.width * (Kirigami.Settings.isMobile ? 0.3 : 0.25), 1); radiusY: radiusX
                 startAngle: -180
                 sweepAngle: 360
             }
