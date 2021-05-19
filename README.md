@@ -18,7 +18,7 @@ This will compile and install kclock, kclockd, and the plasmoids onto the system
 ```
 mkdir build
 cd build
-cmake ..
+cmake .. # add -DCMAKE_BUILD_TYPE=Release to compile for release
 make
 sudo make install
 ```

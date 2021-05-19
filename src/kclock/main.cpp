@@ -45,7 +45,6 @@
 #include <QMetaObject>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
-#include <QQmlDebuggingEnabler>
 #include <QQuickWindow>
 #include <QStringLiteral>
 
@@ -61,7 +60,6 @@ QCommandLineParser *createParser()
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-    QQmlDebuggingEnabler enabler;
 
     KLocalizedString::setApplicationDomain("kclock");
     KAboutData aboutData("kclock",
