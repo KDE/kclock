@@ -1,0 +1,7 @@
+# Copyright (C) 2021 Devin Lin <espidev@gmail.com>
+# SPDX-License-Identifier: GPL-2.0-or-later
+
+include:
+  - https://invent.kde.org/sysadmin/ci-tooling/raw/master/invent/ci-reuse.yml
+  - https://invent.kde.org/sysadmin/ci-tooling/raw/master/invent/ci-before.yml
+  - https://invent.kde.org/sysadmin/ci-tooling/raw/master/invent/ci-extragear-linux.yml
