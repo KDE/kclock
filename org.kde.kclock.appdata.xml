@@ -37,6 +37,7 @@
   <summary xml:lang="de">Eine zusammenfassende Uhrenanwendung für Plasma.</summary>
   <summary xml:lang="en-GB">A convergent clock application for Plasma.</summary>
   <summary xml:lang="es">Aplicación de reloj convergente para Plasma.</summary>
+  <summary xml:lang="fi">Tuttavallinen kellosovellus Plasmaan.</summary>
   <summary xml:lang="fr">Une application d'horloge convergente pour Plasma.</summary>
   <summary xml:lang="it">Una semplice applicazione per l'orologio per Plasma.</summary>
   <summary xml:lang="ko">Plasma용 간단한 올인원 시계 프로그램입니다.</summary>
@@ -84,6 +85,7 @@
     <p xml:lang="de">Eine konvergente Uhrenanwendung für Plasma. Sie beinhaltet einen Erinnerungsalarm, eine Eieruhr, eine Stoppuhr und Zeitzonenfunktionen. Erinnerungen sind in der Lage, Ihr Gerät aus dem Standby-Modus aufzuwecken, sofern Sie Plasma verwenden.</p>
     <p xml:lang="en-GB">A convergent clock application for Plasma. It contains alarm, timer, stopwatch and timezone functionalities. Alarms are also able to wake the device from suspend when using Plasma.</p>
     <p xml:lang="es">Una aplicación de reloj convergente para Plasma. Contiene las funciones de alarma, temporizador, cronómetro y zona horaria. Las alarmas también pueden despertar el dispositivo del estado de suspensión si usa Plasma.</p>
+    <p xml:lang="fi">Tuttavallinen kellosovellus Plasmaan. Toimintoihin kuuluvat hälytykset, ajastin, sekuntikello ja aikavyöhykkeet. Plasmaa käytettäessä hälytykset voivat myös herättää laitteen valmiustilasta.</p>
     <p xml:lang="fr">Une application d'horloge convergente pour Plasma. Elle contient des fonctionnalités d'alarmes, de chronomètres, de minuteurs et de fuseaux horaires. Les alarmes sont aussi capables de faire sortir le périphérique du mode de veille lors de l'utilisation de Plasma.</p>
     <p xml:lang="it">Una semplice applicazione per l'orologio per Plasma. Contiene le funzionalità per allarmi, timer, cronometro e fuso orario. Gli allarmi possono risvegliare il dispositivo dalla sospensione se si utilizza Plasma.</p>
     <p xml:lang="ko">Plasma용 통합된 시계 프로그램입니다. 알람, 타이머, 초시계, 시간대 기능을 지원합니다. Plasma를 사용 중일 때 장치를 절전 모드에서 알람으로 깨울 수도 있습니다.</p>
@@ -111,6 +113,7 @@
       <caption xml:lang="de">Mobile Ansicht</caption>
       <caption xml:lang="en-GB">Mobile view</caption>
       <caption xml:lang="es">Vista móvil</caption>
+      <caption xml:lang="fi">Mobiilinäkymä</caption>
       <caption xml:lang="fr">Affichage pour mobile</caption>
       <caption xml:lang="it">Vista mobile</caption>
       <caption xml:lang="ko">모바일 보기</caption>
@@ -134,6 +137,7 @@
       <caption xml:lang="de">Arbeitsflächenansicht</caption>
       <caption xml:lang="en-GB">Desktop view</caption>
       <caption xml:lang="es">Vista de escritorio</caption>
+      <caption xml:lang="fi">Työpöytänäkymä</caption>
       <caption xml:lang="fr">Affichage de bureau</caption>
       <caption xml:lang="it">Vista desktop</caption>
       <caption xml:lang="ko">데스크톱 보기</caption>
@@ -157,6 +161,7 @@
       <caption xml:lang="de">Eieruhrseite</caption>
       <caption xml:lang="en-GB">Timers page</caption>
       <caption xml:lang="es">Página de temporizadores</caption>
+      <caption xml:lang="fi">Ajastinsivu</caption>
       <caption xml:lang="fr">Page de chronomètres</caption>
       <caption xml:lang="it">Pagina dei timer</caption>
       <caption xml:lang="ko">타이머 쪽</caption>
@@ -180,6 +185,7 @@
       <caption xml:lang="de">Eieruhrseite</caption>
       <caption xml:lang="en-GB">Timer page</caption>
       <caption xml:lang="es">Página del temporizador</caption>
+      <caption xml:lang="fi">Ajastinsivu</caption>
       <caption xml:lang="fr">Page de chronomètre</caption>
       <caption xml:lang="it">Pagina del timer</caption>
       <caption xml:lang="ko">타이머 쪽</caption>
@@ -203,6 +209,7 @@
       <caption xml:lang="de">Stoppuhrseite</caption>
       <caption xml:lang="en-GB">Stopwatch page</caption>
       <caption xml:lang="es">Página del cronómetro</caption>
+      <caption xml:lang="fi">Sekuntikellosivu</caption>
       <caption xml:lang="fr">Page de minuteur</caption>
       <caption xml:lang="it">Pagina del cronometro</caption>
       <caption xml:lang="ko">초시계 쪽</caption>
@@ -226,6 +233,7 @@
       <caption xml:lang="de">Erinnerungsseite</caption>
       <caption xml:lang="en-GB">Alarms page</caption>
       <caption xml:lang="es">Página de alarmas</caption>
+      <caption xml:lang="fi">Hälytyssivu</caption>
       <caption xml:lang="fr">Page d'alarmes</caption>
       <caption xml:lang="it">Pagina degli allarmi</caption>
       <caption xml:lang="ko">알람 쪽</caption>
