@@ -1,5 +1,8 @@
-// SPDX-FileCopyrightText: 2021 Swapnil Tripathi <swapnil06.st@gmail.com>
-// SPDX-License-Identifier: GPL-2.0-or-later
+/*
+ * Copyright 2021 Swapnil Tripathi <swapnil06.st@gmail.com>
+ *
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ */
 
 #ifndef TIMERPRESETMODEL_H
 #define TIMERPRESETMODEL_H

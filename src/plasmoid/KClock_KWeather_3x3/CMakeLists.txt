@@ -1,3 +1,9 @@
+#
+# Copyright 2020 Han Young <hanyoung@protonmail.com>
+#
+# SPDX-License-Identifier: GPL-2.0-or-later
+#
+
 # TODO: adapt "org.kde.plasma" here & elsewhere if needed (see README)
 add_definitions(-DTRANSLATION_DOMAIN=\"plasma_applet_org.kde.plasma.kclock_kweather_3x3\")
 

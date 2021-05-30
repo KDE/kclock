@@ -1,3 +1,10 @@
+#
+# Copyright 2020 Han Young <hanyoung@protonmail.com>
+# Copyright 2020 Devin Lin <espidev@gmail.com>
+#
+# SPDX-License-Identifier: GPL-2.0-or-later
+#
+
 *.qmlc
 build/
 .kdev4/
@@ -5,10 +12,8 @@ kclock.kdev4
 CMakeLists.txt.user
 
 /cmake-build-debug
-/test.sh
 /flatpak-build-desktop
 /.flatpak-builder
-/mobiletest.sh
 
 kclock.cflags
 kclock.config

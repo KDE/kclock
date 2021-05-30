@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+- Copyright 2020 Devin Lin <espidev@gmail.com>
+- Copyright 2020 Han Young <hanyoung@protonmail.com>
+- SPDX-License-Identifier: GPL-2.0-or-later
+-->
 <kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0

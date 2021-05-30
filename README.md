@@ -1,3 +1,9 @@
+<!--
+- Copyright 2020 Han Young <hanyoung@protonmail.com>
+- Copyright 2020 Devin Lin <espidev@gmail.com>
+- SPDX-License-Identifier: GPL-2.0-or-later
+-->
+
 # KClock <img src="logo.png" width="40"/> 
 A convergent clock application for Plasma.
 
