@@ -224,6 +224,7 @@ Kirigami.ScrollablePage {
                         Layout.leftMargin: Kirigami.Units.largeSpacing
                         Layout.minimumWidth: Kirigami.Units.gridUnit * 2
                         Label {
+                            anchors.verticalCenter: parent.verticalCenter
                             color: Kirigami.Theme.textColor
                             font.weight: Font.Bold
                             text: listItem.lapNumber >= 0 ? i18n("#%1", listItem.lapNumber) : ""
@@ -246,6 +247,7 @@ Kirigami.ScrollablePage {
                         Layout.minimumWidth: Kirigami.Units.gridUnit * 3
                         Label {
                             anchors.left: parent.left
+                            anchors.verticalCenter: parent.verticalCenter
                             color: Kirigami.Theme.focusColor
                             text: isNaN(timeSinceBeginning) ? "" : listItem.timeSinceBeginning.toFixed(2) 
                         }
