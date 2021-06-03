@@ -141,6 +141,15 @@ Kirigami.FormLayout {
     RowLayout {
         Layout.alignment: Qt.AlignHCenter
         spacing: Kirigami.Units.smallSpacing
+        visible: repeater.count > 0
+        Connections {
+            target: repeater
+            function onCountChanged() {
+                // open presets every time a preset is added
+                showPresets = true;
+            }
+        }
+        
         Button {
             id: presetButton
             text: showPresets ? i18n("Hide Presets") : i18n("Show Presets")
@@ -157,10 +166,11 @@ Kirigami.FormLayout {
     }
     Flow {
         spacing: Kirigami.Units.smallSpacing
-        visible: showPresets && Kirigami.Settings.isMobile
+        visible: showPresets && Kirigami.Settings.isMobile && repeater.count > 0
         Layout.fillWidth: true
 
         Repeater {
+            id: repeater
             model: TimerPresetModel
 
             Button {

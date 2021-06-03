@@ -29,6 +29,10 @@ Loader {
             edge: Qt.BottomEdge
             parent: applicationWindow().overlay
 
+            Behavior on height {
+                NumberAnimation { duration: Kirigami.Units.shortDuration }
+            }
+            
             ColumnLayout {
                 id: contents
                 anchors.left: parent.left
