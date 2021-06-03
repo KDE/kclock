@@ -52,6 +52,7 @@
   <summary xml:lang="pl">Spójna aplikacja zegara dla Plazmy.</summary>
   <summary xml:lang="pt">Uma aplicação de relógio convergente para o Plasma.</summary>
   <summary xml:lang="pt-BR">Um aplicativo de relógio convergente para o Plasma.</summary>
+  <summary xml:lang="ro">Aplicație de ceas convergentă pentru Plasma.</summary>
   <summary xml:lang="sl">Konvergentna aplikacija ure.</summary>
   <summary xml:lang="sv">Ett konvergent klockprogram för Plasma.</summary>
   <summary xml:lang="uk">Проста програма-годинник для Плазми.</summary>
@@ -128,6 +129,7 @@
       <caption xml:lang="pl">Widok na urz. przenośne</caption>
       <caption xml:lang="pt">Versão para dispositivos móveis</caption>
       <caption xml:lang="pt-BR">Vista do celular</caption>
+      <caption xml:lang="ro">Vizualizare mobilă</caption>
       <caption xml:lang="sl">Mobilni pogled</caption>
       <caption xml:lang="sv">Mobil vy</caption>
       <caption xml:lang="uk">Вигляд на мобільному пристрої</caption>
@@ -152,6 +154,7 @@
       <caption xml:lang="pl">Widok na urz. biurkowe</caption>
       <caption xml:lang="pt">Versão para computador</caption>
       <caption xml:lang="pt-BR">Vista da área de trabalho</caption>
+      <caption xml:lang="ro">Vizualizare pentru birou</caption>
       <caption xml:lang="sl">Namizni pogled</caption>
       <caption xml:lang="sv">Skrivbordsvy</caption>
       <caption xml:lang="uk">Вигляд на комп'ютері</caption>
@@ -176,6 +179,7 @@
       <caption xml:lang="pl">Strona czasomierzy</caption>
       <caption xml:lang="pt">Página de Temporizadores</caption>
       <caption xml:lang="pt-BR">Página dos temporizadores</caption>
+      <caption xml:lang="ro">Pagina temporizatorilor</caption>
       <caption xml:lang="sl">Stran merilnikov časa</caption>
       <caption xml:lang="sv">Sida med tidtagningar</caption>
       <caption xml:lang="uk">Сторінка таймерів</caption>
@@ -200,6 +204,7 @@
       <caption xml:lang="pl">Strona czasomierza</caption>
       <caption xml:lang="pt">Página do Temporizador</caption>
       <caption xml:lang="pt-BR">Página do temporizador</caption>
+      <caption xml:lang="ro">Pagina temporizatorului</caption>
       <caption xml:lang="sl">Stran merilnika časa</caption>
       <caption xml:lang="sv">Sida med tidtagning</caption>
       <caption xml:lang="uk">Сторінка таймера</caption>
@@ -224,6 +229,7 @@
       <caption xml:lang="pl">Strona stopera</caption>
       <caption xml:lang="pt">Página de Cronómetro</caption>
       <caption xml:lang="pt-BR">Página do cronômetro</caption>
+      <caption xml:lang="ro">Pagina cronometrului</caption>
       <caption xml:lang="sl">Stran štoparice</caption>
       <caption xml:lang="sv">Sida med stoppur</caption>
       <caption xml:lang="uk">Сторінка секундоміра</caption>
@@ -248,6 +254,7 @@
       <caption xml:lang="pl">Strona alarmów</caption>
       <caption xml:lang="pt">Página de Alarmes</caption>
       <caption xml:lang="pt-BR">Página do alarme</caption>
+      <caption xml:lang="ro">Pagina alarmelor</caption>
       <caption xml:lang="sl">Stran alarma</caption>
       <caption xml:lang="sv">Sida med alarm</caption>
       <caption xml:lang="uk">Сторінка будильників</caption>
