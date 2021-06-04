@@ -275,6 +275,7 @@
   <url type="homepage">https://invent.kde.org/plasma-mobile/kclock</url>
   <url type="bugtracker">https://invent.kde.org/plasma-mobile/kclock/-/issues</url>
   <releases>
+    <release version="21.06" date="2021-06-10"/>
     <release version="21.05" date="2021-05-10"/>
   </releases>
 </component>
