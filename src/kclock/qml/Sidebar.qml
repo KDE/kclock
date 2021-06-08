@@ -40,6 +40,7 @@ Kirigami.GlobalDrawer {
         Kirigami.Action {
             text: i18n("Time")
             iconName: "clock"
+            checked: appwindow.pageStack.currentItem == appwindow.getPage("Time")
             onTriggered: {
                 if (appwindow.pageStack.currentItem !== appwindow.getPage("Time")) {
                     appwindow.switchToPage(appwindow.getPage("Time"), 0);
@@ -49,6 +50,7 @@ Kirigami.GlobalDrawer {
         Kirigami.Action {
             text: i18n("Timers")
             iconName: "player-time"
+            checked: appwindow.pageStack.currentItem == appwindow.getPage("Timers")
             onTriggered: {
                 if (appwindow.pageStack.currentItem !== appwindow.getPage("Timers")) {
                     appwindow.switchToPage(appwindow.getPage("Timers"), 0);
@@ -58,6 +60,7 @@ Kirigami.GlobalDrawer {
         Kirigami.Action {
             text: i18n("Stopwatch")
             iconName: "chronometer"
+            checked: appwindow.pageStack.currentItem == appwindow.getPage("Stopwatch")
             onTriggered: {
                 if (appwindow.pageStack.currentItem !== appwindow.getPage("Stopwatch")) {
                     appwindow.switchToPage(appwindow.getPage("Stopwatch"), 0);
@@ -67,6 +70,7 @@ Kirigami.GlobalDrawer {
         Kirigami.Action {
             text: i18n("Alarms")
             iconName: "notifications"
+            checked: appwindow.pageStack.currentItem == appwindow.getPage("Alarms")
             onTriggered: {
                 if (appwindow.pageStack.currentItem !== appwindow.getPage("Alarms")) {
                     appwindow.switchToPage(appwindow.getPage("Alarms"), 0);
@@ -76,6 +80,7 @@ Kirigami.GlobalDrawer {
         Kirigami.Action {
             text: i18n("Settings")
             icon.name: "settings-configure"
+            checked: appwindow.pageStack.currentItem == appwindow.getPage("Settings")
             onTriggered: {
                 if (appwindow.pageStack.currentItem !== appwindow.getPage("Settings")) {
                     appwindow.switchToPage(appwindow.getPage("Settings"), 0);
