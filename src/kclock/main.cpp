@@ -31,6 +31,7 @@
 #include <QMetaObject>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+#include <QQuickStyle>
 #include <QQuickWindow>
 #include <QStringLiteral>
 
@@ -46,6 +47,9 @@ QCommandLineParser *createParser()
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
+    if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
+        QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
+    }
 
     KLocalizedString::setApplicationDomain("kclock");
     KAboutData aboutData("kclock",
@@ -53,7 +57,7 @@ int main(int argc, char *argv[])
                          QStringLiteral(KCLOCK_VERSION_STRING),
                          "A convergent clock application for Plasma",
                          KAboutLicense::GPL,
-                         i18n("© 2020 KDE Community"));
+                         i18n("© 2020-2021 KDE Community"));
     aboutData.addAuthor(i18n("Devin Lin"), QString(), QStringLiteral("espidev@gmail.com"));
     aboutData.addAuthor(i18n("Han Young"), QString(), QStringLiteral("hanyoung@protonmail.com"));
     KAboutData::setApplicationData(aboutData);
