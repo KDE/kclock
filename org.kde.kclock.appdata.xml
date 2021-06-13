@@ -40,6 +40,7 @@
   <summary xml:lang="ca">Una aplicació de rellotge convergent per al Plasma.</summary>
   <summary xml:lang="ca-valencia">Una aplicació de rellotge convergent per al Plasma.</summary>
   <summary xml:lang="de">Eine zusammenfassende Uhrenanwendung für Plasma.</summary>
+  <summary xml:lang="el">Μια συνοδευτική εφαρμογή ρολογιού για το Plasma.</summary>
   <summary xml:lang="en-GB">A convergent clock application for Plasma.</summary>
   <summary xml:lang="es">Aplicación de reloj convergente para Plasma.</summary>
   <summary xml:lang="fi">Tuttavallinen kellosovellus Plasmaan.</summary>
@@ -89,6 +90,7 @@
     <p xml:lang="ca">Una aplicació de rellotge convergent per al Plasma. Conté funcions d'alarma, temporitzador, cronòmetre i zona horària. Les alarmes també poden fer que el dispositiu deixi d'estar suspès quan s'usa el Plasma.</p>
     <p xml:lang="ca-valencia">Una aplicació de rellotge convergent per al Plasma. Conté funcions d'alarma, temporitzador, cronòmetre i zona horària. Les alarmes també poden fer que el dispositiu deixi d'estar suspès quan s'usa el Plasma.</p>
     <p xml:lang="de">Eine konvergente Uhrenanwendung für Plasma. Sie beinhaltet einen Erinnerungsalarm, eine Eieruhr, eine Stoppuhr und Zeitzonenfunktionen. Erinnerungen sind in der Lage, Ihr Gerät aus dem Standby-Modus aufzuwecken, sofern Sie Plasma verwenden.</p>
+    <p xml:lang="el">Μια συνοδευτική εφαρμογή ρολογιού για το Plasma. Περιλαμβάνει συναγερμό, χρονοδιακόπτη, χρονόμετρο και λειτουργίες ζωνών ώρας. Οι συναγερμοί ενεργοποιούν τη συσκευή από αναστολή αν χρησιμοποιείται το Plasma.</p>
     <p xml:lang="en-GB">A convergent clock application for Plasma. It contains alarm, timer, stopwatch and timezone functionalities. Alarms are also able to wake the device from suspend when using Plasma.</p>
     <p xml:lang="es">Una aplicación de reloj convergente para Plasma. Contiene las funciones de alarma, temporizador, cronómetro y zona horaria. Las alarmas también pueden despertar el dispositivo del estado de suspensión si usa Plasma.</p>
     <p xml:lang="fi">Tuttavallinen kellosovellus Plasmaan. Toimintoihin kuuluvat hälytykset, ajastin, sekuntikello ja aikavyöhykkeet. Plasmaa käytettäessä hälytykset voivat myös herättää laitteen valmiustilasta.</p>
@@ -117,6 +119,7 @@
       <caption xml:lang="ca-valencia">Vista mòbil</caption>
       <caption xml:lang="cs">Mobilní pohled</caption>
       <caption xml:lang="de">Mobile Ansicht</caption>
+      <caption xml:lang="el">Προβολή για κινητά</caption>
       <caption xml:lang="en-GB">Mobile view</caption>
       <caption xml:lang="es">Vista móvil</caption>
       <caption xml:lang="fi">Mobiilinäkymä</caption>
@@ -142,6 +145,7 @@
       <caption xml:lang="ca-valencia">Vista d'escriptori</caption>
       <caption xml:lang="cs">Pohled pracovní plochy</caption>
       <caption xml:lang="de">Arbeitsflächenansicht</caption>
+      <caption xml:lang="el">Προβολή για υπολογιστή γραφείου</caption>
       <caption xml:lang="en-GB">Desktop view</caption>
       <caption xml:lang="es">Vista de escritorio</caption>
       <caption xml:lang="fi">Työpöytänäkymä</caption>
@@ -167,6 +171,7 @@
       <caption xml:lang="ca-valencia">Pàgina dels temporitzadors</caption>
       <caption xml:lang="cs">Stránka s časovači</caption>
       <caption xml:lang="de">Eieruhrseite</caption>
+      <caption xml:lang="el">Σελίδα χρονοδιακοπτών</caption>
       <caption xml:lang="en-GB">Timers page</caption>
       <caption xml:lang="es">Página de temporizadores</caption>
       <caption xml:lang="fi">Ajastinsivu</caption>
@@ -192,6 +197,7 @@
       <caption xml:lang="ca-valencia">Pàgina del temporitzador</caption>
       <caption xml:lang="cs">Stránka s časovačem</caption>
       <caption xml:lang="de">Eieruhrseite</caption>
+      <caption xml:lang="el">Σελίδα χρονοδιακόπτη</caption>
       <caption xml:lang="en-GB">Timer page</caption>
       <caption xml:lang="es">Página del temporizador</caption>
       <caption xml:lang="fi">Ajastinsivu</caption>
@@ -217,6 +223,7 @@
       <caption xml:lang="ca-valencia">Pàgina del cronòmetre</caption>
       <caption xml:lang="cs">Stránka se stopkami</caption>
       <caption xml:lang="de">Stoppuhrseite</caption>
+      <caption xml:lang="el">Σελίδα χρονομέτρου</caption>
       <caption xml:lang="en-GB">Stopwatch page</caption>
       <caption xml:lang="es">Página del cronómetro</caption>
       <caption xml:lang="fi">Sekuntikellosivu</caption>
@@ -242,6 +249,7 @@
       <caption xml:lang="ca-valencia">Pàgina de les alarmes</caption>
       <caption xml:lang="cs">Stránka s upozorněními</caption>
       <caption xml:lang="de">Erinnerungsseite</caption>
+      <caption xml:lang="el">Σελίδα συναγερμών</caption>
       <caption xml:lang="en-GB">Alarms page</caption>
       <caption xml:lang="es">Página de alarmas</caption>
       <caption xml:lang="fi">Hälytyssivu</caption>
