@@ -7,6 +7,8 @@
 # KClock <img src="logo.png" width="40"/> 
 A convergent clock application for Plasma.
 
+<a href='https://flathub.org/apps/details/org.kde.kclock'><img width='190px' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-i-en.png'/></a>
+
 ## Features
 * Alarms
 * Stopwatch
