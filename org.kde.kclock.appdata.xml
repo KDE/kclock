@@ -43,7 +43,7 @@
   <summary xml:lang="el">Μια συνοδευτική εφαρμογή ρολογιού για το Plasma.</summary>
   <summary xml:lang="en-GB">A convergent clock application for Plasma.</summary>
   <summary xml:lang="es">Aplicación de reloj convergente para Plasma.</summary>
-  <summary xml:lang="fi">Tuttavallinen kellosovellus Plasmaan.</summary>
+  <summary xml:lang="fi">Mukautuva kellosovellus Plasmaan.</summary>
   <summary xml:lang="fr">Une application d'horloge convergente pour Plasma.</summary>
   <summary xml:lang="it">Una semplice applicazione per l'orologio per Plasma.</summary>
   <summary xml:lang="ko">Plasma용 간단한 올인원 시계 프로그램입니다.</summary>
@@ -93,7 +93,7 @@
     <p xml:lang="el">Μια συνοδευτική εφαρμογή ρολογιού για το Plasma. Περιλαμβάνει συναγερμό, χρονοδιακόπτη, χρονόμετρο και λειτουργίες ζωνών ώρας. Οι συναγερμοί ενεργοποιούν τη συσκευή από αναστολή αν χρησιμοποιείται το Plasma.</p>
     <p xml:lang="en-GB">A convergent clock application for Plasma. It contains alarm, timer, stopwatch and timezone functionalities. Alarms are also able to wake the device from suspend when using Plasma.</p>
     <p xml:lang="es">Una aplicación de reloj convergente para Plasma. Contiene las funciones de alarma, temporizador, cronómetro y zona horaria. Las alarmas también pueden despertar el dispositivo del estado de suspensión si usa Plasma.</p>
-    <p xml:lang="fi">Tuttavallinen kellosovellus Plasmaan. Toimintoihin kuuluvat hälytykset, ajastin, sekuntikello ja aikavyöhykkeet. Plasmaa käytettäessä hälytykset voivat myös herättää laitteen valmiustilasta.</p>
+    <p xml:lang="fi">Mukautuva kellosovellus Plasmaan. Toimintoihin kuuluvat hälytykset, ajastin, sekuntikello ja aikavyöhykkeet. Plasmaa käytettäessä hälytykset voivat myös herättää laitteen valmiustilasta.</p>
     <p xml:lang="fr">Une application d'horloge convergente pour Plasma. Elle contient des fonctionnalités d'alarmes, de chronomètres, de minuteurs et de fuseaux horaires. Les alarmes sont aussi capables de faire sortir le périphérique du mode de veille lors de l'utilisation de Plasma.</p>
     <p xml:lang="it">Una semplice applicazione per l'orologio per Plasma. Contiene le funzionalità per allarmi, timer, cronometro e fuso orario. Gli allarmi possono risvegliare il dispositivo dalla sospensione se si utilizza Plasma.</p>
     <p xml:lang="ko">Plasma용 통합된 시계 프로그램입니다. 알람, 타이머, 초시계, 시간대 기능을 지원합니다. Plasma를 사용 중일 때 장치를 절전 모드에서 알람으로 깨울 수도 있습니다.</p>
