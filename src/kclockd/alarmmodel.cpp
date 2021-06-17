@@ -39,6 +39,7 @@ AlarmModel::AlarmModel(QObject *parent)
 
     // alarm wakeup behaviour
     connect(&Utilities::instance(), &Utilities::wakeup, this, &AlarmModel::wakeupCallback);
+    connect(&Utilities::instance(), &Utilities::needsReschedule, this, &AlarmModel::scheduleAlarm);
 }
 
 void AlarmModel::load()

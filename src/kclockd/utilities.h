@@ -11,7 +11,7 @@
 
 #include <QDBusInterface>
 #include <QObject>
-
+const QString POWERDEVIL_SERVICE_NAME = QStringLiteral("org.kde.Solid.PowerManagement");
 class Utilities : public QObject
 {
     Q_OBJECT
@@ -32,6 +32,7 @@ public:
     void clearWakeup(int cookie);
 Q_SIGNALS:
     void wakeup(int cookie);
+    void needsReschedule();
 public Q_SLOTS:
     Q_SCRIPTABLE void wakeupCallback(int cookie);
 
@@ -39,7 +40,8 @@ private:
     explicit Utilities(QObject *parent = nullptr);
 
     void schedule(); // For AlarmWaitWorker use
-
+    void initWorker();
+    bool hasWakeup();
     QDBusInterface *m_interface = nullptr;
 
     bool m_hasPowerDevil = false;

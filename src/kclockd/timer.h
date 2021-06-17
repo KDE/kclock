@@ -76,6 +76,7 @@ Q_SIGNALS:
     Q_SCRIPTABLE void runningChanged();
 private Q_SLOTS:
     void timeUp(int cookie);
+    void reschedule();
 
 private:
     void setRunning(bool running);

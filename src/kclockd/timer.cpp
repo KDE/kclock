@@ -22,6 +22,7 @@ Timer::Timer(int length, QString label, bool running)
     , m_label(label)
 {
     connect(&Utilities::instance(), &Utilities::wakeup, this, &Timer::timeUp);
+    connect(&Utilities::instance(), &Utilities::needsReschedule, this, &Timer::reschedule);
     QDBusConnection::sessionBus().registerObject(QStringLiteral("/Timers/") + this->m_uuid.toString(QUuid::Id128),
                                                  this,
                                                  QDBusConnection::ExportScriptableContents | QDBusConnection::ExportAllProperties);
@@ -130,4 +131,10 @@ void Timer::sendNotification()
     });
 
     notif->sendEvent();
+}
+void Timer::reschedule()
+{
+    if (m_running) {
+        m_cookie = Utilities::instance().scheduleWakeup(m_startTime + m_length);
+    }
 }
