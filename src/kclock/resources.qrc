@@ -5,6 +5,7 @@
 <RCC>
     <qresource prefix="/">
         <file>qml/main.qml</file>
+        <file>qml/PopupDialog.qml</file>
         <file>qml/TimePage.qml</file>
         <file>qml/TimerPage.qml</file>
         <file>qml/TimerForm.qml</file>

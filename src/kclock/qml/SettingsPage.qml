@@ -17,12 +17,11 @@ Kirigami.ScrollablePage {
     
     title: i18n("Settings")
     icon.name: "settings-configure"
-    topPadding: 0
-    bottomPadding: 0
-    leftPadding: 0
-    rightPadding: 0
+    padding: 0
     Kirigami.ColumnView.fillWidth: false
-
+    Kirigami.Theme.inherit: false
+    Kirigami.Theme.colorSet: Kirigami.Theme.View
+    
     // settings list
     ColumnLayout {
         transform: Translate { y: yTranslate }
@@ -52,6 +51,9 @@ Kirigami.ScrollablePage {
 
         Kirigami.Separator {
             Layout.fillWidth: true
+            Layout.leftMargin: Kirigami.Units.largeSpacing
+            Layout.rightMargin: Kirigami.Units.largeSpacing
+            opacity: 0.8
         }
 
         ItemDelegate {
@@ -78,6 +80,9 @@ Kirigami.ScrollablePage {
 
         Kirigami.Separator {
             Layout.fillWidth: true
+            Layout.leftMargin: Kirigami.Units.largeSpacing
+            Layout.rightMargin: Kirigami.Units.largeSpacing
+            opacity: 0.8
         }
 
         ItemDelegate {
@@ -104,6 +109,9 @@ Kirigami.ScrollablePage {
 
         Kirigami.Separator {
             Layout.fillWidth: true
+            Layout.leftMargin: Kirigami.Units.largeSpacing
+            Layout.rightMargin: Kirigami.Units.largeSpacing
+            opacity: 0.8
         }
 
         ItemDelegate {
@@ -123,21 +131,26 @@ Kirigami.ScrollablePage {
 
         Kirigami.Separator {
             Layout.fillWidth: true
+            Layout.leftMargin: Kirigami.Units.largeSpacing
+            Layout.rightMargin: Kirigami.Units.largeSpacing
+            opacity: 0.8
         }
         
         // alarm volume dialog
-        Dialog {
+        PopupDialog {
             id: alarmVolumeDialog
-            modal: true
-            focus: true
-            anchors.centerIn: Overlay.overlay
-            width: Math.min(appwindow.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 20)
-            height: Kirigami.Units.gridUnit * 8
             standardButtons: Dialog.Close
+            padding: Kirigami.Units.largeSpacing * 2
+            
+            onClosed: {
+                alarmPlayer.stop();
+                settingsModel.volume = volumeControl.value;
+            }
+            
             title: i18n("Change Alarm Volume")
             contentItem: RowLayout {
-                anchors.horizontalCenter: parent.horizontalCenter
-                width: parent.width
+                id: row
+                transform: Translate { y: alarmVolumeDialog.translateY }
                 Label {
                     text: i18n("Volume: ")
                 }
@@ -154,25 +167,20 @@ Kirigami.ScrollablePage {
                     }
                 }
             }
-            onClosed: {alarmPlayer.stop();
-                        settingsModel.volume = volumeControl.value;
-            }
         }
 
         // Silence alarm after dialog
-        Dialog {
+        PopupDialog {
             id: silenceAlarmAfter
-            modal: true
-            focus: true
-            anchors.centerIn: Overlay.overlay
-            width: Math.min(appwindow.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 20)
-            height: Kirigami.Units.gridUnit * 20
             standardButtons: Dialog.Close
             title: i18n("Silence Alarm After")
 
-            contentItem: ScrollView {
-                ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
-                ListView {
+            ColumnLayout {
+                Kirigami.Theme.inherit: false
+                Kirigami.Theme.colorSet: Kirigami.Theme.View
+                spacing: 0
+                
+                Repeater {
                     model: ListModel {
                         // we can't use i18n with ListElement
                         Component.onCompleted: {
@@ -185,8 +193,11 @@ Kirigami.ScrollablePage {
                         }
                     }
                     delegate: RadioDelegate {
-                        width: parent.width
-                        text: i18n(name)
+                        topPadding: Kirigami.Units.smallSpacing * 2
+                        bottomPadding: Kirigami.Units.smallSpacing * 2
+                        implicitWidth: Kirigami.Units.gridUnit * 16
+                        
+                        text: name
                         checked: settingsModel && settingsModel.alarmSilenceAfter == value
                         onCheckedChanged: {
                             if (checked) {
@@ -196,24 +207,21 @@ Kirigami.ScrollablePage {
                         }
                     }
                 }
-                Component.onCompleted: background.visible = true
             }
         }
 
         // Alarm snooze length dialog
-        Dialog {
+        PopupDialog {
             id: alarmSnoozeLength
-            modal: true
-            focus: true
-            anchors.centerIn: Overlay.overlay
-            width: Math.min(appwindow.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 20)
-            height: Kirigami.Units.gridUnit * 20
             standardButtons: Dialog.Close
             title: i18n("Alarm Snooze Length")
 
-            contentItem: ScrollView {
-                ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
-                ListView {
+            ColumnLayout {
+                Kirigami.Theme.inherit: false
+                Kirigami.Theme.colorSet: Kirigami.Theme.View
+                spacing: 0
+                
+                Repeater {
                     model: ListModel {
                         // we can't use i18n with ListElement
                         Component.onCompleted: {
@@ -228,8 +236,11 @@ Kirigami.ScrollablePage {
                         }
                     }
                     delegate: RadioDelegate {
-                        width: parent.width
-                        text: i18n(name)
+                        topPadding: Kirigami.Units.smallSpacing * 2
+                        bottomPadding: Kirigami.Units.smallSpacing * 2
+                        implicitWidth: Kirigami.Units.gridUnit * 16
+                        
+                        text: name
                         checked: settingsModel && settingsModel.alarmSnoozeLength == value
                         onCheckedChanged: {
                             if (checked) {
@@ -239,7 +250,6 @@ Kirigami.ScrollablePage {
                         }
                     }
                 }
-                Component.onCompleted: background.visible = true
             }
         }
     }
