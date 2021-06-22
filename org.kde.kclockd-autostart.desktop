@@ -61,5 +61,4 @@ Exec=kclockd
 Icon=kclock
 Type=Application
 Terminal=false
-OnlyShownIn=KDE
 Categories=Qt;KDE;Utility;
