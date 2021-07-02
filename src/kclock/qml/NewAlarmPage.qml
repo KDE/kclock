@@ -45,9 +45,8 @@ Kirigami.ScrollablePage {
                     selectedAlarm.daysOfWeek = alarmDaysOfWeek;
                     selectedAlarm.save(); // remote save
                     alarmPlayer.stop();
-                    if (selectedAlarm.enabled) {
-                        showPassiveNotification(selectedAlarm.timeToRingFormated());
-                    }
+                    selectedAlarm.enabled = true;
+                    showPassiveNotification(selectedAlarm.timeToRingFormated());
                 } else {
                     alarmModel.addAlarm(hours, minutes, alarmDaysOfWeek, selectedAlarmName.text);
                     alarmPlayer.stop();
