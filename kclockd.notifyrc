@@ -33,6 +33,7 @@ Name[sl]=Clock
 Name[sv]=Klocka
 Name[uk]=Годинник
 Name[x-test]=xxClockxx
+Name[zh_CN]=时钟
 
 [Event/timerFinished]
 Name=Timer finished
@@ -61,6 +62,7 @@ Name[sl]=Merilnik časa je končal
 Name[sv]=Tidtagning klar
 Name[uk]=Відлік завершено
 Name[x-test]=xxTimer finishedxx
+Name[zh_CN]=计时器结束
 Comment=Your timer has finished!
 Comment[ca]=El temporitzador ha finalitzat!
 Comment[ca@valencia]=El temporitzador ha finalitzat!
@@ -87,6 +89,7 @@ Comment[sl]=Vaš merilnik časa je končal!
 Comment[sv]=Tidtagningen är klar.
 Comment[uk]=Відлік за вашими таймером завершено!
 Comment[x-test]=xxYour timer has finished!xx
+Comment[zh_CN]=您的计时器已结束！
 Action=Sound|Popup
 Sound=freedesktop/stereo/alarm-clock-elapsed.oga
 
@@ -118,5 +121,6 @@ Name[sl]=Alarm
 Name[sv]=Alarm
 Name[uk]=Нагадування
 Name[x-test]=xxAlarmxx
+Name[zh_CN]=闹钟
 Action=Popup
 Urgency=Critical

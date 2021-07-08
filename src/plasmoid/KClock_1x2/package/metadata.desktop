@@ -28,6 +28,7 @@ Name[sl]=KClock 1x2
 Name[sv]=KClock_1x2
 Name[uk]=KClock_1x2
 Name[x-test]=xxKClock_1x2xx
+Name[zh_CN]=KClock_1x2
 Comment=KClock widget (1x2)
 Comment[ca]=Giny del KClock (1x2)
 Comment[ca@valencia]=Giny del KClock (1x2)
@@ -54,6 +55,7 @@ Comment[sl]=Gradnik KClock (1x2)
 Comment[sv]=KClock grafisk komponent (1 x 2)
 Comment[uk]=Віджет KClock (1x2)
 Comment[x-test]=xxKClock widget (1x2)xx
+Comment[zh_CN]=KClock 小部件 (1x2)
 
 
 Icon=kclock_plasmoid_1x2

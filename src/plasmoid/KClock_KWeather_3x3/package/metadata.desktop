@@ -27,6 +27,7 @@ Name[sl]=KClock_KWeather_3x3
 Name[sv]=KClock_KWeather_3x3
 Name[uk]=KClock_KWeather_3x3
 Name[x-test]=xxKClock_KWeather_3x3xx
+Name[zh_CN]=KClock_KWeather_3x3
 Comment=KClock widget (3x3 with Weather info)
 Comment[ca]=Giny del KClock (3x3 amb informació meteorològica)
 Comment[ca@valencia]=Giny del KClock (3x3 amb informació meteorològica)
@@ -52,6 +53,7 @@ Comment[sl]=Gradnik KClock (3x3 z vremenskimi podatki)
 Comment[sv]=KClock grafisk komponent (3 x 3 med väderinformation)
 Comment[uk]=Віджет KClock (3x3 із даними щодо погоди)
 Comment[x-test]=xxKClock widget (3x3 with Weather info)xx
+Comment[zh_CN]=KClock 小部件 (3x3 包含天气信息)
 
 
 Icon=kclock
