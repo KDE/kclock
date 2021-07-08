@@ -36,6 +36,7 @@
   <name xml:lang="sv">Klocka</name>
   <name xml:lang="uk">Годинник</name>
   <name xml:lang="x-test">xxClockxx</name>
+  <name xml:lang="zh-CN">时钟</name>
   <summary>A convergent clock application for Plasma.</summary>
   <summary xml:lang="ca">Una aplicació de rellotge convergent per al Plasma.</summary>
   <summary xml:lang="ca-valencia">Una aplicació de rellotge convergent per al Plasma.</summary>
@@ -58,6 +59,7 @@
   <summary xml:lang="sv">Ett konvergent klockprogram för Plasma.</summary>
   <summary xml:lang="uk">Проста програма-годинник для Плазми.</summary>
   <summary xml:lang="x-test">xxA convergent clock application for Plasma.xx</summary>
+  <summary xml:lang="zh-CN">Plasma 的综合时钟应用。</summary>
   <developer_name>KDE Community</developer_name>
   <developer_name xml:lang="ca">La comunitat KDE</developer_name>
   <developer_name xml:lang="ca-valencia">La comunitat KDE</developer_name>
@@ -85,6 +87,7 @@
   <developer_name xml:lang="sv">KDE-gemenskapen</developer_name>
   <developer_name xml:lang="uk">Спільнота KDE</developer_name>
   <developer_name xml:lang="x-test">xxKDE Communityxx</developer_name>
+  <developer_name xml:lang="zh-CN">KDE 社区</developer_name>
   <description>
     <p>A convergent clock application for Plasma. It contains alarm, timer, stopwatch and timezone functionalities. Alarms are also able to wake the device from suspend when using Plasma.</p>
     <p xml:lang="ca">Una aplicació de rellotge convergent per al Plasma. Conté funcions d'alarma, temporitzador, cronòmetre i zona horària. Les alarmes també poden fer que el dispositiu deixi d'estar suspès quan s'usa el Plasma.</p>
@@ -106,6 +109,7 @@
     <p xml:lang="sv">Ett konvergent klockprogram för Plasma. Det innehåller alarm, tidtagning, stoppur och tidszonsfunktioner. Alarm kan också väcka enheten från viloläge när Plasma används.</p>
     <p xml:lang="uk">Зручна програма-годинник для Плазми. Передбачено будильник, таймер та секундомір, а також функціональні можливості з роботи у різних часових поясах. Крім того, будильники здатні пробуджувати пристрій зі стану сну, якщо на ньому використовується Плазма.</p>
     <p xml:lang="x-test">xxA convergent clock application for Plasma. It contains alarm, timer, stopwatch and timezone functionalities. Alarms are also able to wake the device from suspend when using Plasma.xx</p>
+    <p xml:lang="zh-CN">Plasma 的综合时钟应用程序。它包含闹钟、计时器、秒表和时区功能。 当使用 Plasma 时，闹钟也可以唤醒设备。</p>
   </description>
   <recommends>
     <control>pointing</control>
@@ -137,6 +141,7 @@
       <caption xml:lang="sv">Mobil vy</caption>
       <caption xml:lang="uk">Вигляд на мобільному пристрої</caption>
       <caption xml:lang="x-test">xxMobile viewxx</caption>
+      <caption xml:lang="zh-CN">移动设备视图</caption>
       <image>https://cdn.kde.org/screenshots/kclock/kclock-mobile-timezones.png</image>
     </screenshot>
     <screenshot>
@@ -163,6 +168,7 @@
       <caption xml:lang="sv">Skrivbordsvy</caption>
       <caption xml:lang="uk">Вигляд на комп'ютері</caption>
       <caption xml:lang="x-test">xxDesktop viewxx</caption>
+      <caption xml:lang="zh-CN">桌面视图</caption>
       <image>https://cdn.kde.org/screenshots/kclock/kclock-desktop-timezones.png</image>
     </screenshot>
     <screenshot>
@@ -189,6 +195,7 @@
       <caption xml:lang="sv">Sida med tidtagningar</caption>
       <caption xml:lang="uk">Сторінка таймерів</caption>
       <caption xml:lang="x-test">xxTimers pagexx</caption>
+      <caption xml:lang="zh-CN">计时器页面</caption>
       <image>https://cdn.kde.org/screenshots/kclock/kclock-mobile-timers.png</image>
     </screenshot>
     <screenshot>
@@ -215,6 +222,7 @@
       <caption xml:lang="sv">Sida med tidtagning</caption>
       <caption xml:lang="uk">Сторінка таймера</caption>
       <caption xml:lang="x-test">xxTimer pagexx</caption>
+      <caption xml:lang="zh-CN">计时器页面</caption>
       <image>https://cdn.kde.org/screenshots/kclock/kclock-desktop-timer.png</image>
     </screenshot>
     <screenshot>
@@ -241,6 +249,7 @@
       <caption xml:lang="sv">Sida med stoppur</caption>
       <caption xml:lang="uk">Сторінка секундоміра</caption>
       <caption xml:lang="x-test">xxStopwatch pagexx</caption>
+      <caption xml:lang="zh-CN">秒表页面</caption>
       <image>https://cdn.kde.org/screenshots/kclock/kclock-mobile-stopwatch.png</image>
     </screenshot>
     <screenshot>
@@ -267,6 +276,7 @@
       <caption xml:lang="sv">Sida med alarm</caption>
       <caption xml:lang="uk">Сторінка будильників</caption>
       <caption xml:lang="x-test">xxAlarms pagexx</caption>
+      <caption xml:lang="zh-CN">闹钟页面</caption>
       <image>https://cdn.kde.org/screenshots/kclock/kclock-mobile-alarms.png</image>
     </screenshot>
   </screenshots>
