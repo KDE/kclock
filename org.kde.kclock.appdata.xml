@@ -44,6 +44,7 @@
   <summary xml:lang="el">Μια συνοδευτική εφαρμογή ρολογιού για το Plasma.</summary>
   <summary xml:lang="en-GB">A convergent clock application for Plasma.</summary>
   <summary xml:lang="es">Aplicación de reloj convergente para Plasma.</summary>
+  <summary xml:lang="eu">Plasmarako erloju aplikazio konbergente bat.</summary>
   <summary xml:lang="fi">Mukautuva kellosovellus Plasmaan.</summary>
   <summary xml:lang="fr">Une application d'horloge convergente pour Plasma.</summary>
   <summary xml:lang="it">Una semplice applicazione per l'orologio per Plasma.</summary>
@@ -96,6 +97,7 @@
     <p xml:lang="el">Μια συνοδευτική εφαρμογή ρολογιού για το Plasma. Περιλαμβάνει συναγερμό, χρονοδιακόπτη, χρονόμετρο και λειτουργίες ζωνών ώρας. Οι συναγερμοί ενεργοποιούν τη συσκευή από αναστολή αν χρησιμοποιείται το Plasma.</p>
     <p xml:lang="en-GB">A convergent clock application for Plasma. It contains alarm, timer, stopwatch and timezone functionalities. Alarms are also able to wake the device from suspend when using Plasma.</p>
     <p xml:lang="es">Una aplicación de reloj convergente para Plasma. Contiene las funciones de alarma, temporizador, cronómetro y zona horaria. Las alarmas también pueden despertar el dispositivo del estado de suspensión si usa Plasma.</p>
+    <p xml:lang="eu">Plasmarako erloju aplikazio konbergente bat. Alarmak, tenporizadorea, kronometroa eta ordu-eremu funtzionalitateak ditu. Plasma erabiltzean, alarmak gailua esekiduratik esnatzeko gai dira.</p>
     <p xml:lang="fi">Mukautuva kellosovellus Plasmaan. Toimintoihin kuuluvat hälytykset, ajastin, sekuntikello ja aikavyöhykkeet. Plasmaa käytettäessä hälytykset voivat myös herättää laitteen valmiustilasta.</p>
     <p xml:lang="fr">Une application d'horloge convergente pour Plasma. Elle contient des fonctionnalités d'alarmes, de chronomètres, de minuteurs et de fuseaux horaires. Les alarmes sont aussi capables de faire sortir le périphérique du mode de veille lors de l'utilisation de Plasma.</p>
     <p xml:lang="it">Una semplice applicazione per l'orologio per Plasma. Contiene le funzionalità per allarmi, timer, cronometro e fuso orario. Gli allarmi possono risvegliare il dispositivo dalla sospensione se si utilizza Plasma.</p>
@@ -126,6 +128,7 @@
       <caption xml:lang="el">Προβολή για κινητά</caption>
       <caption xml:lang="en-GB">Mobile view</caption>
       <caption xml:lang="es">Vista móvil</caption>
+      <caption xml:lang="eu">Mugikor ikuspegia</caption>
       <caption xml:lang="fi">Mobiilinäkymä</caption>
       <caption xml:lang="fr">Affichage pour mobile</caption>
       <caption xml:lang="it">Vista mobile</caption>
@@ -153,6 +156,7 @@
       <caption xml:lang="el">Προβολή για υπολογιστή γραφείου</caption>
       <caption xml:lang="en-GB">Desktop view</caption>
       <caption xml:lang="es">Vista de escritorio</caption>
+      <caption xml:lang="eu">Mahaigaineko ikuspegia</caption>
       <caption xml:lang="fi">Työpöytänäkymä</caption>
       <caption xml:lang="fr">Affichage de bureau</caption>
       <caption xml:lang="it">Vista desktop</caption>
@@ -180,6 +184,7 @@
       <caption xml:lang="el">Σελίδα χρονοδιακοπτών</caption>
       <caption xml:lang="en-GB">Timers page</caption>
       <caption xml:lang="es">Página de temporizadores</caption>
+      <caption xml:lang="eu">Tenporizadoreen orria</caption>
       <caption xml:lang="fi">Ajastinsivu</caption>
       <caption xml:lang="fr">Page de chronomètres</caption>
       <caption xml:lang="it">Pagina dei timer</caption>
@@ -207,6 +212,7 @@
       <caption xml:lang="el">Σελίδα χρονοδιακόπτη</caption>
       <caption xml:lang="en-GB">Timer page</caption>
       <caption xml:lang="es">Página del temporizador</caption>
+      <caption xml:lang="eu">Tenporizadorearen orria</caption>
       <caption xml:lang="fi">Ajastinsivu</caption>
       <caption xml:lang="fr">Page de chronomètre</caption>
       <caption xml:lang="it">Pagina del timer</caption>
@@ -234,6 +240,7 @@
       <caption xml:lang="el">Σελίδα χρονομέτρου</caption>
       <caption xml:lang="en-GB">Stopwatch page</caption>
       <caption xml:lang="es">Página del cronómetro</caption>
+      <caption xml:lang="eu">Kronometroaren orria</caption>
       <caption xml:lang="fi">Sekuntikellosivu</caption>
       <caption xml:lang="fr">Page de minuteur</caption>
       <caption xml:lang="it">Pagina del cronometro</caption>
@@ -261,6 +268,7 @@
       <caption xml:lang="el">Σελίδα συναγερμών</caption>
       <caption xml:lang="en-GB">Alarms page</caption>
       <caption xml:lang="es">Página de alarmas</caption>
+      <caption xml:lang="eu">Alarmen orria</caption>
       <caption xml:lang="fi">Hälytyssivu</caption>
       <caption xml:lang="fr">Page d'alarmes</caption>
       <caption xml:lang="it">Pagina degli allarmi</caption>
