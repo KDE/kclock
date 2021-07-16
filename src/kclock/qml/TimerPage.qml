@@ -24,6 +24,7 @@ Kirigami.Page {
     property int elapsed: timer == null ? 0 : timer.elapsed
     property int duration: timer == null ? 0 : timer.length
     property bool running: timer == null ? 0 : timer.running
+    property bool looping: timer == null ? 0 : timer.looping
 
     // keyboard controls
     Keys.onSpacePressed: timer.toggleRunning();
@@ -38,6 +39,11 @@ Kirigami.Page {
         }
 
         contextualActions: [
+            Kirigami.Action {
+                text: looping ? i18n("Timer is looping") : i18n("Timer is not looping")
+                iconName: looping ? "media-repeat-all" : "media-repeat-none"
+                onTriggered: timer.toggleLooping()
+            },
             Kirigami.Action {
                 icon.name: "chronometer-reset"
                 text: i18n("Reset")

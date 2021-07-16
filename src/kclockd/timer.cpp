@@ -69,6 +69,13 @@ void Timer::toggleRunning()
     setRunning(!m_running);
 }
 
+void Timer::toggleLooping()
+{
+    m_looping = !m_looping;
+
+    Q_EMIT loopingChanged();
+}
+
 void Timer::reset()
 {
     setRunning(false);
@@ -82,8 +89,13 @@ void Timer::timeUp(int cookie)
     if (cookie == m_cookie) {
         this->sendNotification();
         this->m_cookie = -1;
-        this->setRunning(false);
-        this->m_hasElapsed = m_length;
+        if (m_looping) {
+            this->reset();
+            this->setRunning(true);
+        } else {
+            this->setRunning(false);
+            this->m_hasElapsed = m_length;
+        }
     }
 }
 

@@ -27,6 +27,7 @@ Timer::Timer(QString uuid, bool justCreated)
         connect(m_interface, &OrgKdeKclockTimerInterface::lengthChanged, this, &Timer::updateLength);
         connect(m_interface, &OrgKdeKclockTimerInterface::labelChanged, this, &Timer::updateLabel);
         connect(m_interface, &OrgKdeKclockTimerInterface::runningChanged, this, &Timer::updateRunning);
+        connect(m_interface, &OrgKdeKclockTimerInterface::loopingChanged, this, &Timer::updateLooping);
 
         updateRunning(); // start animation
     }
@@ -35,6 +36,11 @@ Timer::Timer(QString uuid, bool justCreated)
 void Timer::toggleRunning()
 {
     m_interface->toggleRunning();
+}
+
+void Timer::toggleLooping()
+{
+    m_interface->toggleLooping();
 }
 
 void Timer::reset()
@@ -73,6 +79,12 @@ void Timer::updateRunning()
 
     m_elapsed = m_interface->elapsed();
     Q_EMIT elapsedChanged();
+}
+
+void Timer::updateLooping()
+{
+    m_looping = m_interface->looping();
+    Q_EMIT propertyChanged();
 }
 
 void Timer::animation(bool start)

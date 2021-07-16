@@ -148,7 +148,16 @@ Kirigami.ScrollablePage {
                         
                         Row {
                             Layout.alignment: Qt.AlignRight
-                            
+                            ToolButton {
+                                icon.name: timerDelegate && timerDelegate.looping ? "media-repeat-all" : "media-repeat-none"
+                                display: AbstractButton.IconOnly
+                                text: timerDelegate && timerDelegate.looping ? i18n("Timer is looping") : i18n("Timer in not looping")
+                                onClicked: timerDelegate.toggleLooping()
+                                
+                                ToolTip.visible: hovered && text.length > 0
+                                ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
+                                ToolTip.text: text
+                            }
                             ToolButton {
                                 icon.name: timerDelegate && timerDelegate.running ? "chronometer-pause" : "chronometer-start"
                                 display: AbstractButton.IconOnly
