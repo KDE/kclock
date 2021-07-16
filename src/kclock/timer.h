@@ -23,7 +23,6 @@ class Timer : public QObject
     Q_PROPERTY(QString elapsedPretty READ elapsedPretty NOTIFY elapsedChanged)
     Q_PROPERTY(QString label READ label WRITE setLabel NOTIFY propertyChanged)
     Q_PROPERTY(bool running READ running NOTIFY propertyChanged)
-    Q_PROPERTY(bool looping READ looping NOTIFY propertyChanged)
     Q_PROPERTY(bool justCreated MEMBER m_justCreated NOTIFY propertyChanged)
 
 public:
@@ -34,7 +33,6 @@ public:
         return m_uuid;
     };
     Q_INVOKABLE void toggleRunning();
-    Q_INVOKABLE void toggleLooping();
     Q_INVOKABLE void reset();
     Q_INVOKABLE void addMinute();
 
@@ -72,10 +70,6 @@ public:
     {
         return m_running;
     }
-    const bool &looping() const
-    {
-        return m_looping;
-    }
 
 signals:
     void propertyChanged();
@@ -84,7 +78,6 @@ private slots:
     void updateLength();
     void updateLabel();
     void updateRunning();
-    void updateLooping();
 
 private:
     void animation(bool start);
@@ -92,7 +85,6 @@ private:
     int m_length, m_elapsed; // seconds
     QString m_label;
     bool m_running;
-    bool m_looping;
     bool m_justCreated;
 
     QUuid m_uuid;

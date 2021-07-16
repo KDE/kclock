@@ -20,7 +20,6 @@ class Timer : public QObject
     Q_PROPERTY(int length READ length WRITE setLength NOTIFY lengthChanged)
     Q_PROPERTY(QString label READ label WRITE setLabel NOTIFY labelChanged)
     Q_PROPERTY(bool running READ running NOTIFY runningChanged)
-    Q_PROPERTY(bool looping READ looping NOTIFY loopingChanged)
 
 public:
     explicit Timer(int length = 0, QString label = QStringLiteral(), bool running = false);
@@ -30,7 +29,6 @@ public:
     QJsonObject serialize();
 
     Q_SCRIPTABLE void toggleRunning();
-    Q_SCRIPTABLE void toggleLooping();
     Q_SCRIPTABLE void reset();
     Q_SCRIPTABLE int elapsed() const
     {
@@ -71,16 +69,11 @@ public:
     {
         return m_running;
     }
-    const bool &looping() const
-    {
-        return m_looping;
-    }
 
 Q_SIGNALS:
     Q_SCRIPTABLE void lengthChanged();
     Q_SCRIPTABLE void labelChanged();
     Q_SCRIPTABLE void runningChanged();
-    Q_SCRIPTABLE void loopingChanged();
 private Q_SLOTS:
     void timeUp(int cookie);
     void reschedule();
@@ -95,7 +88,6 @@ private:
     int m_cookie = -1;
     QString m_label;
     bool m_running = false;
-    bool m_looping = false;
 };
 
 #endif // KCLOCKD_TIMER_H

@@ -38,7 +38,6 @@ Timer::Timer(const QJsonObject &obj)
     m_length = obj[QStringLiteral("length")].toInt();
     m_label = obj[QStringLiteral("label")].toString();
     m_uuid = QUuid(obj[QStringLiteral("uuid")].toString());
-    m_looping = obj[QStringLiteral("looping")].toBool();
 
     connect(&Utilities::instance(), &Utilities::wakeup, this, &Timer::timeUp);
     QDBusConnection::sessionBus().registerObject(QStringLiteral("/Timers/") + this->m_uuid.toString(QUuid::Id128),
@@ -62,22 +61,12 @@ QJsonObject Timer::serialize()
     obj[QStringLiteral("length")] = m_length;
     obj[QStringLiteral("label")] = m_label;
     obj[QStringLiteral("uuid")] = m_uuid.toString();
-    obj[QStringLiteral("looping")] = m_looping;
     return obj;
 }
 
 void Timer::toggleRunning()
 {
     setRunning(!m_running);
-}
-
-void Timer::toggleLooping()
-{
-    m_looping = !m_looping;
-
-    Q_EMIT loopingChanged();
-
-    TimerModel::instance()->save();
 }
 
 void Timer::reset()
@@ -93,13 +82,8 @@ void Timer::timeUp(int cookie)
     if (cookie == m_cookie) {
         this->sendNotification();
         this->m_cookie = -1;
-        if (m_looping) {
-            this->reset();
-            this->setRunning(true);
-        } else {
-            this->setRunning(false);
-            this->m_hasElapsed = m_length;
-        }
+        this->setRunning(false);
+        this->m_hasElapsed = m_length;
     }
 }
 
