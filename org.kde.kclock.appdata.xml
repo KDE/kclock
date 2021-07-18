@@ -301,6 +301,17 @@
   <url type="homepage">https://invent.kde.org/plasma-mobile/kclock</url>
   <url type="bugtracker">https://invent.kde.org/plasma-mobile/kclock/-/issues</url>
   <releases>
+    <release version="21.07" date="2021-07-20">
+      <description>
+        <p>Changes:</p>
+        <ul>
+          <li>Watch DBus for PowerDevil, so wake from suspend always works if PowerDevil is found</li>
+          <li>Use consistent dialog style on the settings page</li>
+          <li>After editing an alarm, the alarm now automatically is activated</li>
+        </ul>
+      </description>
+      <url>https://www.plasma-mobile.org/2021/07/20/plasma-mobile-gear-21-07/</url>
+    </release>
     <release version="21.06" date="2021-06-10">
       <description>
         <p>New features and bugfixes:</p>
