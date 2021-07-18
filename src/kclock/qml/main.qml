@@ -14,8 +14,9 @@ import org.kde.kirigami 2.11 as Kirigami
 Kirigami.ApplicationWindow
 {
     id: appwindow
-    minimumWidth: 330
-    minimumHeight: 360
+    // needs to work with 360x720 (+ panel heights)
+    minimumWidth: 300
+    minimumHeight: minimumWidth + 1
     width: Kirigami.Settings.isMobile ? 400 : 650
     height: Kirigami.Settings.isMobile ? 650 : 500
 
