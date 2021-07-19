@@ -40,11 +40,6 @@ Kirigami.Page {
 
         contextualActions: [
             Kirigami.Action {
-                text: looping ? i18n("Timer is looping") : i18n("Timer is not looping")
-                iconName: looping ? "media-repeat-all" : "media-repeat-none"
-                onTriggered: timer.toggleLooping()
-            },
-            Kirigami.Action {
                 icon.name: "chronometer-reset"
                 text: i18n("Reset")
                 onTriggered: timer.reset();
