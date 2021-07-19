@@ -151,7 +151,8 @@ Kirigami.ScrollablePage {
                             ToolButton {
                                 icon.name: timerDelegate && timerDelegate.looping ? "media-repeat-all" : "media-repeat-none"
                                 display: AbstractButton.IconOnly
-                                text: timerDelegate && timerDelegate.looping ? i18n("Timer is looping") : i18n("Timer in not looping")
+                                text: i18n("Loop Timer")
+                                checked: timerDelegate && timerDelegate.looping
                                 onClicked: timerDelegate.toggleLooping()
                                 
                                 ToolTip.visible: hovered && text.length > 0
