@@ -56,6 +56,13 @@ Kirigami.Page {
                     pageStack.pop();
                     timerModel.remove(timerIndex);
                 }
+            },
+            Kirigami.Action {
+                icon.name: "media-repeat-all"
+                text: i18n("Loop Timer")
+                checkable: true
+                checked: looping
+                onTriggered: timer.toggleLooping()
             }
         ]
     }
