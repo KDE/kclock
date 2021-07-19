@@ -24,6 +24,7 @@ Timer::Timer(QString uuid, bool justCreated)
         m_length = m_interface->length();
         m_running = m_interface->running();
         m_elapsed = m_interface->elapsed();
+        m_looping = m_interface->looping();
         connect(m_interface, &OrgKdeKclockTimerInterface::lengthChanged, this, &Timer::updateLength);
         connect(m_interface, &OrgKdeKclockTimerInterface::labelChanged, this, &Timer::updateLabel);
         connect(m_interface, &OrgKdeKclockTimerInterface::runningChanged, this, &Timer::updateRunning);
