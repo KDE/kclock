@@ -191,6 +191,31 @@ Kirigami.ScrollablePage {
                             }
                         }
                     }
+                    
+                    RowLayout {
+                        anchors.left: parent.left
+                        anchors.right: parent.right
+                        ToolButton {
+                            icon.name: "dialog-scripts"
+                            display: AbstractButton.IconOnly
+                            text: i18n("Command")
+                            checked: timerDelegate && timerDelegate.isCommandTimeout
+                            onClicked: timerDelegate.toggleIsCommandTimeout()
+                            
+                            ToolTip.visible: hovered && text.length > 0
+                            ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
+                            ToolTip.text: text
+                        }
+                        TextField {
+                            Layout.fillWidth: true
+                            enabled: timerDelegate && timerDelegate.isCommandTimeout
+                            focus: true
+                            font.family: "Monospace"
+                            onEditingFinished: timerDelegate.saveCommandTimeout(text)
+                            text: timerDelegate.commandTimeout
+                            placeholderText: "Command to execute at timeout…"
+                        }
+                    }
                 }
             }
         }

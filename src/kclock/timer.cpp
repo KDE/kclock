@@ -25,10 +25,14 @@ Timer::Timer(QString uuid, bool justCreated)
         m_running = m_interface->running();
         m_elapsed = m_interface->elapsed();
         m_looping = m_interface->looping();
+        m_isCommandTimeout = m_interface->isCommandTimeout();
+        m_commandTimeout = m_interface->commandTimeout();
         connect(m_interface, &OrgKdeKclockTimerInterface::lengthChanged, this, &Timer::updateLength);
         connect(m_interface, &OrgKdeKclockTimerInterface::labelChanged, this, &Timer::updateLabel);
         connect(m_interface, &OrgKdeKclockTimerInterface::runningChanged, this, &Timer::updateRunning);
         connect(m_interface, &OrgKdeKclockTimerInterface::loopingChanged, this, &Timer::updateLooping);
+        connect(m_interface, &OrgKdeKclockTimerInterface::isCommandTimeoutChanged, this, &Timer::updateIsCommandTimeout);
+        connect(m_interface, &OrgKdeKclockTimerInterface::commandTimeoutChanged, this, &Timer::updateCommandTimeout);
 
         updateRunning(); // start animation
     }
@@ -42,6 +46,16 @@ void Timer::toggleRunning()
 void Timer::toggleLooping()
 {
     m_interface->toggleLooping();
+}
+
+void Timer::toggleIsCommandTimeout()
+{
+    m_interface->toggleIsCommandTimeout();
+}
+
+void Timer::saveCommandTimeout(QString command)
+{
+    m_interface->saveCommandTimeout(command);
 }
 
 void Timer::reset()
@@ -85,6 +99,18 @@ void Timer::updateRunning()
 void Timer::updateLooping()
 {
     m_looping = m_interface->looping();
+    Q_EMIT propertyChanged();
+}
+
+void Timer::updateIsCommandTimeout()
+{
+    m_isCommandTimeout = m_interface->isCommandTimeout();
+    Q_EMIT propertyChanged();
+}
+
+void Timer::updateCommandTimeout()
+{
+    m_commandTimeout = m_interface->commandTimeout();
     Q_EMIT propertyChanged();
 }
 

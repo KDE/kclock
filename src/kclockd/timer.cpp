@@ -6,6 +6,8 @@
 
 #include "timer.h"
 
+#include <QProcess>
+
 #include "utilities.h"
 
 #include <KLocalizedString>
@@ -39,6 +41,8 @@ Timer::Timer(const QJsonObject &obj)
     m_label = obj[QStringLiteral("label")].toString();
     m_uuid = QUuid(obj[QStringLiteral("uuid")].toString());
     m_looping = obj[QStringLiteral("looping")].toBool();
+    m_isCommandTimeout = obj[QStringLiteral("isCommandTimeout")].toBool();
+    m_commandTimeout = obj[QStringLiteral("commandTimeout")].toString();
 
     connect(&Utilities::instance(), &Utilities::wakeup, this, &Timer::timeUp);
     QDBusConnection::sessionBus().registerObject(QStringLiteral("/Timers/") + this->m_uuid.toString(QUuid::Id128),
@@ -63,6 +67,8 @@ QJsonObject Timer::serialize()
     obj[QStringLiteral("label")] = m_label;
     obj[QStringLiteral("uuid")] = m_uuid.toString();
     obj[QStringLiteral("looping")] = m_looping;
+    obj[QStringLiteral("isCommandTimeout")] = m_isCommandTimeout;
+    obj[QStringLiteral("commandTimeout")] = m_commandTimeout;
     return obj;
 }
 
@@ -80,6 +86,24 @@ void Timer::toggleLooping()
     TimerModel::instance()->save();
 }
 
+void Timer::toggleIsCommandTimeout()
+{
+    m_isCommandTimeout = !m_isCommandTimeout;
+
+    Q_EMIT isCommandTimeoutChanged();
+
+    TimerModel::instance()->save();
+}
+
+void Timer::saveCommandTimeout(QString command)
+{
+    m_commandTimeout = command;
+
+    Q_EMIT commandTimeoutChanged();
+
+    TimerModel::instance()->save();
+}
+
 void Timer::reset()
 {
     setRunning(false);
@@ -93,6 +117,10 @@ void Timer::timeUp(int cookie)
     if (cookie == m_cookie) {
         this->sendNotification();
         this->m_cookie = -1;
+        if (m_isCommandTimeout) {
+            QProcess *process = new QProcess;
+            process->start(m_commandTimeout);
+        }
         if (m_looping) {
             this->reset();
             this->setRunning(true);
