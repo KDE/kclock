@@ -24,6 +24,7 @@ Kirigami.Page {
     property int elapsed: timer == null ? 0 : timer.elapsed
     property int duration: timer == null ? 0 : timer.length
     property bool running: timer == null ? 0 : timer.running
+    property bool isCommandTimeout: timer == null ? 0 : timer.isCommandTimeout
 
     // keyboard controls
     Keys.onSpacePressed: timer.toggleRunning();
@@ -50,6 +51,13 @@ Kirigami.Page {
                     pageStack.pop();
                     timerModel.remove(timerIndex);
                 }
+            },
+            Kirigami.Action {
+                icon.name: "dialog-scripts"
+                text: i18n("Command")
+                checkable: true
+                checked: isCommandTimeout
+                onTriggered: timer.toggleIsCommandTimeout();
             }
         ]
     }
