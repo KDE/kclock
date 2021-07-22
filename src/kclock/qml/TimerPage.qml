@@ -76,7 +76,7 @@ Kirigami.Page {
             source: "dialog-scripts"
             visible: isCommandTimeout
         }
-        Kirigami.Label {
+        Label {
             visible: isCommandTimeout
             font.family: "Monospace"
             text: timerDelegate.commandTimeout
