@@ -1,5 +1,6 @@
 /*
  * Copyright 2020 Devin Lin <espidev@gmail.com>
+ * Copyright 2021 Boris Petrov <boris.v.petrov@protonmail.com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
@@ -25,7 +26,7 @@ public:
 
     void load();
     void save();
-    Q_SCRIPTABLE void addTimer(int length, QString label, bool running);
+    Q_SCRIPTABLE void addTimer(int length, QString label, QString commandTimeout, bool running);
     Q_SCRIPTABLE void removeTimer(QString uuid);
 Q_SIGNALS:
     Q_SCRIPTABLE void timerAdded(QString);

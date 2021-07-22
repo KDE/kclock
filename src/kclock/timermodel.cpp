@@ -1,6 +1,7 @@
 /*
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
  * Copyright 2020 Devin Lin <espidev@gmail.com>
+ * Copyright 2021 Boris Petrov <boris.v.petrov@protonmail.com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
@@ -74,9 +75,9 @@ QVariant TimerModel::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-void TimerModel::addTimer(int length, QString label, bool running)
+void TimerModel::addTimer(int length, QString label, QString commandTimeout, bool running)
 {
-    m_interface->addTimer(length, label, running);
+    m_interface->addTimer(length, label, commandTimeout, running);
 }
 
 void TimerModel::remove(int index)
