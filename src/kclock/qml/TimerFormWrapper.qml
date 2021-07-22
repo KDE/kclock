@@ -1,5 +1,6 @@
 /*
  * Copyright 2021 Devin Lin <espidev@gmail.com>
+ * Copyright 2021 Boris Petrov <boris.v.petrov@protonmail.com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
@@ -14,8 +15,8 @@ Loader {
     id: loader
     sourceComponent: Kirigami.Settings.isMobile ? mobileTimerForm : desktopTimerForm
 
-    function createTimer(duration, label) {
-        timerModel.addNew(duration, label);
+    function createTimer(duration, label, commandTimeout) {
+        timerModel.addNew(duration, label, commandTimeout);
     }
 
     property bool showPresets: false
@@ -81,7 +82,7 @@ Loader {
                         icon.name: "dialog-ok"
                         text: i18n("Done")
                         onClicked: {
-                            loader.createTimer(timerForm.getDuration(), timerForm.name);
+                            loader.createTimer(timerForm.getDuration(), timerForm.name, timerForm.commandTimeout);
                             close();
                         }
                     }
@@ -139,7 +140,7 @@ Loader {
                     icon.name: "dialog-ok"
                     text: i18n("Done")
                     onClicked: {
-                        loader.createTimer(timerForm.getDuration(), timerForm.name);
+                        loader.createTimer(timerForm.getDuration(), timerForm.name, timerForm.commandTimeout);
                         close();
                     }
                 }

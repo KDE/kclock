@@ -1,6 +1,7 @@
 /*
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
  * Copyright 2020 Devin Lin <espidev@gmail.com>
+ * Copyright 2021 Boris Petrov <boris.v.petrov@protonmail.com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
@@ -22,10 +23,9 @@ class Timer : public QObject
     Q_PROPERTY(QString lengthPretty READ lengthPretty NOTIFY propertyChanged)
     Q_PROPERTY(QString elapsedPretty READ elapsedPretty NOTIFY elapsedChanged)
     Q_PROPERTY(QString label READ label WRITE setLabel NOTIFY propertyChanged)
+    Q_PROPERTY(QString commandTimeout READ commandTimeout WRITE setCommandTimeout NOTIFY propertyChanged)
     Q_PROPERTY(bool running READ running NOTIFY propertyChanged)
     Q_PROPERTY(bool justCreated MEMBER m_justCreated NOTIFY propertyChanged)
-    Q_PROPERTY(bool isCommandTimeout READ isCommandTimeout NOTIFY propertyChanged)
-    Q_PROPERTY(QString commandTimeout READ commandTimeout NOTIFY propertyChanged)
 
 public:
     Timer();
@@ -35,8 +35,6 @@ public:
         return m_uuid;
     };
     Q_INVOKABLE void toggleRunning();
-    Q_INVOKABLE void toggleIsCommandTimeout();
-    Q_INVOKABLE void saveCommandTimeout(QString);
     Q_INVOKABLE void reset();
     Q_INVOKABLE void addMinute();
 
@@ -70,17 +68,17 @@ public:
     {
         m_interface->setLabel(label);
     }
-    const bool &running() const
-    {
-        return m_running;
-    }
-    const bool &isCommandTimeout() const
-    {
-        return m_isCommandTimeout;
-    }
     const QString &commandTimeout() const
     {
         return m_commandTimeout;
+    }
+    void setCommandTimeout(QString commandTimeout)
+    {
+        m_interface->setCommandTimeout(commandTimeout);
+    }
+    const bool &running() const
+    {
+        return m_running;
     }
 
 signals:
@@ -89,18 +87,16 @@ signals:
 private slots:
     void updateLength();
     void updateLabel();
-    void updateRunning();
-    void updateIsCommandTimeout();
     void updateCommandTimeout();
+    void updateRunning();
 
 private:
     void animation(bool start);
 
     int m_length, m_elapsed; // seconds
     QString m_label;
-    bool m_running;
-    bool m_isCommandTimeout;
     QString m_commandTimeout;
+    bool m_running;
     bool m_justCreated;
 
     QUuid m_uuid;

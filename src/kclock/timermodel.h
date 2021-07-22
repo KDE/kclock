@@ -1,6 +1,7 @@
 /*
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
  * Copyright 2020 Devin Lin <espidev@gmail.com>
+ * Copyright 2021 Boris Petrov <boris.v.petrov@protonmail.com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
@@ -31,9 +32,9 @@ public:
         return singleton;
     }
 
-    Q_INVOKABLE void addNew(int length, QString label)
+    Q_INVOKABLE void addNew(int length, QString label, QString commandTimeout)
     {
-        this->addTimer(length, label, false);
+        this->addTimer(length, label, commandTimeout, false);
     };
     Q_INVOKABLE void remove(int index);
     Q_INVOKABLE int count();
@@ -46,7 +47,7 @@ Q_SIGNALS:
 
 private Q_SLOTS:
     void addTimer(QString uuid); // remote add, always justCreated
-    void addTimer(int length = 300, QString label = i18n("New timer"), bool running = false);
+    void addTimer(int length = 300, QString label = i18n("New timer"), QString commandTimeout = "", bool running = false);
     void removeTimer(QString uuid);
 
 private:

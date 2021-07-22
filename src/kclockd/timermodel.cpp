@@ -1,5 +1,6 @@
 /*
  * Copyright 2020 Devin Lin <espidev@gmail.com>
+ * Copyright 2021 Boris Petrov <boris.v.petrov@protonmail.com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
@@ -54,9 +55,9 @@ void TimerModel::save()
     group.sync();
 }
 
-void TimerModel::addTimer(int length, QString label, bool running)
+void TimerModel::addTimer(int length, QString label, QString commandTimeout, bool running)
 {
-    auto *timer = new Timer(length, label, running);
+    auto *timer = new Timer(length, label, commandTimeout, running);
     m_timerList.append(timer);
 
     save();

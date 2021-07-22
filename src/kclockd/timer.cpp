@@ -1,5 +1,6 @@
 /*
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
+ * Copyright 2021 Boris Petrov <boris.v.petrov@protonmail.com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
@@ -18,10 +19,11 @@
 
 /* ~ Timer ~ */
 
-Timer::Timer(int length, QString label, bool running)
+Timer::Timer(int length, QString label, QString commandTimeout, bool running)
     : m_uuid(QUuid::createUuid())
     , m_length(length)
     , m_label(label)
+    , m_commandTimeout(commandTimeout)
 {
     connect(&Utilities::instance(), &Utilities::wakeup, this, &Timer::timeUp);
     connect(&Utilities::instance(), &Utilities::needsReschedule, this, &Timer::reschedule);
@@ -40,7 +42,6 @@ Timer::Timer(const QJsonObject &obj)
     m_length = obj[QStringLiteral("length")].toInt();
     m_label = obj[QStringLiteral("label")].toString();
     m_uuid = QUuid(obj[QStringLiteral("uuid")].toString());
-    m_isCommandTimeout = obj[QStringLiteral("isCommandTimeout")].toBool();
     m_commandTimeout = obj[QStringLiteral("commandTimeout")].toString();
 
     connect(&Utilities::instance(), &Utilities::wakeup, this, &Timer::timeUp);
@@ -65,7 +66,6 @@ QJsonObject Timer::serialize()
     obj[QStringLiteral("length")] = m_length;
     obj[QStringLiteral("label")] = m_label;
     obj[QStringLiteral("uuid")] = m_uuid.toString();
-    obj[QStringLiteral("isCommandTimeout")] = m_isCommandTimeout;
     obj[QStringLiteral("commandTimeout")] = m_commandTimeout;
     return obj;
 }
@@ -73,24 +73,6 @@ QJsonObject Timer::serialize()
 void Timer::toggleRunning()
 {
     setRunning(!m_running);
-}
-
-void Timer::toggleIsCommandTimeout()
-{
-    m_isCommandTimeout = !m_isCommandTimeout;
-
-    Q_EMIT isCommandTimeoutChanged();
-
-    TimerModel::instance()->save();
-}
-
-void Timer::saveCommandTimeout(QString command)
-{
-    m_commandTimeout = command;
-
-    Q_EMIT commandTimeoutChanged();
-
-    TimerModel::instance()->save();
 }
 
 void Timer::reset()
@@ -106,7 +88,7 @@ void Timer::timeUp(int cookie)
     if (cookie == m_cookie) {
         this->sendNotification();
         this->m_cookie = -1;
-        if (m_isCommandTimeout) {
+        if (m_commandTimeout != "") {
             QProcess *process = new QProcess;
             process->start(m_commandTimeout);
         }

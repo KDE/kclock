@@ -1,5 +1,6 @@
 /*
  * Copyright 2021 Devin Lin <espidev@gmail.com>
+ * Copyright 2021 Boris Petrov <boris.v.petrov@protonmail.com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
@@ -14,6 +15,7 @@ Kirigami.FormLayout {
     id: form
 
     property alias name: label.text
+    property alias commandTimeout: commandTimeoutField.text
 
     function setDuration(duration) {
         hours = duration / 60 / 60;
@@ -138,6 +140,13 @@ Kirigami.FormLayout {
         text: i18n("New Timer") // default
         focus: true
     }
+    TextField {
+        id: commandTimeoutField
+        Kirigami.FormData.label: i18n("<b>Command at timeout:</b>")
+        font.family: "Monospace"
+        focus: true
+        placeholderText: i18n("Optional")
+    }
     RowLayout {
         Layout.alignment: Qt.AlignHCenter
         spacing: Kirigami.Units.smallSpacing
@@ -175,7 +184,7 @@ Kirigami.FormLayout {
 
             Button {
                 text: showDelete ? "Delete" : preset.presetName
-                onClicked: showDelete ? TimerPresetModel.deletePreset(index) : loader.createTimer(timerForm.getDuration(), timerForm.name) & close();
+                onClicked: showDelete ? TimerPresetModel.deletePreset(index) : loader.createTimer(timerForm.getDuration(), timerForm.name, timerForm.commandTimeout) & close();
 
             }
         }

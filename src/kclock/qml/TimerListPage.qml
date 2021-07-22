@@ -1,5 +1,6 @@
 /*
  * Copyright 2020 Devin Lin <espidev@gmail.com>
+ * Copyright 2021 Boris Petrov <boris.v.petrov@protonmail.com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
@@ -185,25 +186,17 @@ Kirigami.ScrollablePage {
                     RowLayout {
                         anchors.left: parent.left
                         anchors.right: parent.right
-                        ToolButton {
-                            icon.name: "dialog-scripts"
-                            display: AbstractButton.IconOnly
-                            text: i18n("Command")
-                            checked: timerDelegate && timerDelegate.isCommandTimeout
-                            onClicked: timerDelegate.toggleIsCommandTimeout()
-                            
-                            ToolTip.visible: hovered && text.length > 0
-                            ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
-                            ToolTip.text: text
+                        Layout.alignment: Qt.AlignLeft
+                        Kirigami.Icon {
+                            source: "dialog-scripts"
+                            visible: timerDelegate && timerDelegate.commandTimeout.length > 0
                         }
-                        TextField {
-                            Layout.fillWidth: true
-                            enabled: timerDelegate && timerDelegate.isCommandTimeout
-                            focus: true
+                        Label {
+                            visible: timerDelegate && timerDelegate.commandTimeout.length > 0
                             font.family: "Monospace"
-                            onEditingFinished: timerDelegate.saveCommandTimeout(text)
+                            Layout.fillWidth: true
                             text: timerDelegate.commandTimeout
-                            placeholderText: "Command to execute at timeout…"
+                            color: timerDelegate && Kirigami.Theme.disabledTextColor
                         }
                     }
                 }

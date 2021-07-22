@@ -1,5 +1,6 @@
 /*
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
+ * Copyright 2021 Boris Petrov <boris.v.petrov@protonmail.com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
@@ -19,20 +20,17 @@ class Timer : public QObject
     Q_CLASSINFO("D-Bus Interface", "org.kde.kclock.Timer")
     Q_PROPERTY(int length READ length WRITE setLength NOTIFY lengthChanged)
     Q_PROPERTY(QString label READ label WRITE setLabel NOTIFY labelChanged)
+    Q_PROPERTY(QString commandTimeout READ commandTimeout WRITE setCommandTimeout NOTIFY commandTimeoutChanged)
     Q_PROPERTY(bool running READ running NOTIFY runningChanged)
-    Q_PROPERTY(bool isCommandTimeout READ isCommandTimeout NOTIFY isCommandTimeoutChanged)
-    Q_PROPERTY(QString commandTimeout READ commandTimeout NOTIFY commandTimeoutChanged)
 
 public:
-    explicit Timer(int length = 0, QString label = QStringLiteral(), bool running = false);
+    explicit Timer(int length = 0, QString label = QStringLiteral(), QString commandTimeout = QStringLiteral(), bool running = false);
     explicit Timer(const QJsonObject &obj);
     ~Timer();
 
     QJsonObject serialize();
 
     Q_SCRIPTABLE void toggleRunning();
-    Q_SCRIPTABLE void toggleIsCommandTimeout();
-    Q_SCRIPTABLE void saveCommandTimeout(QString);
     Q_SCRIPTABLE void reset();
     Q_SCRIPTABLE int elapsed() const
     {
@@ -69,24 +67,25 @@ public:
         Q_EMIT labelChanged();
         TimerModel::instance()->save();
     }
-    const bool &running() const
-    {
-        return m_running;
-    }
-    const bool &isCommandTimeout() const
-    {
-        return m_isCommandTimeout;
-    }
     const QString &commandTimeout() const
     {
         return m_commandTimeout;
+    }
+    void setCommandTimeout(QString commandTiemout)
+    {
+        m_commandTimeout = commandTiemout;
+        Q_EMIT commandTimeoutChanged();
+        TimerModel::instance()->save();
+    }
+    const bool &running() const
+    {
+        return m_running;
     }
 
 Q_SIGNALS:
     Q_SCRIPTABLE void lengthChanged();
     Q_SCRIPTABLE void labelChanged();
     Q_SCRIPTABLE void runningChanged();
-    Q_SCRIPTABLE void isCommandTimeoutChanged();
     Q_SCRIPTABLE void commandTimeoutChanged();
 private Q_SLOTS:
     void timeUp(int cookie);
@@ -101,9 +100,8 @@ private:
     int m_hasElapsed = 0; // time has elapsed till stop, only be updated if stopped or finished
     int m_cookie = -1;
     QString m_label;
+    QString m_commandTimeout;
     bool m_running = false;
-    bool m_isCommandTimeout = false;
-    QString m_commandTimeout = "";
 };
 
 #endif // KCLOCKD_TIMER_H
