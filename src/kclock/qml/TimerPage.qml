@@ -67,6 +67,9 @@ Kirigami.Page {
         Kirigami.Icon {
             source: "dialog-scripts"
             visible: isCommandTimeout
+            implicitWidth: Kirigami.Units.iconSizes.sizeForLabels * 1.5
+            implicitHeight: Kirigami.Units.iconSizes.sizeForLabels * 1.5
+            color: timerDelegate && Kirigami.Theme.disabledTextColor
         }
         Label {
             visible: isCommandTimeout
