@@ -145,7 +145,7 @@ Kirigami.FormLayout {
         Kirigami.FormData.label: i18n("<b>Command at timeout:</b>")
         font.family: "Monospace"
         focus: true
-        placeholderText: i18n("Optional")
+        placeholderText: i18n("optional")
     }
     RowLayout {
         Layout.alignment: Qt.AlignHCenter
