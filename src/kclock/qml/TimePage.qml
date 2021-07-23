@@ -64,6 +64,15 @@ Kirigami.ScrollablePage {
                     height: clockRadius * 2 
                     width: clockRadius * 2
                 }
+                
+                // clock rotation animation at app launch
+                transform: Rotation {
+                    origin.x: clockItemLoader.width / 2
+                    origin.y: clockItemLoader.height / 2
+                    angle: 180
+                    
+                    NumberAnimation on angle { running: true; to: 0; duration: 800; easing.type: Easing.OutCubic }
+                }
             }
         }
         

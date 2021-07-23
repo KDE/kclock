@@ -15,10 +15,15 @@ import org.kde.plasma.core 2.0 as PlasmaCore
 Item {
     id: representation
 
-    property int hours
-    property int minutes
-    property int seconds
+    property double hours: 0
+    property double minutes: 0
+    property double seconds: 0
     
+    property int realHours
+    property int realMinutes
+    property int realSeconds
+    
+    // update time each second
     Timer {
         running: true
         repeat: true
@@ -26,10 +31,36 @@ Item {
         interval: 1000
         onTriggered: {
             let date = new Date();
-            hours = date.getHours();
-            minutes = date.getMinutes();
-            seconds = date.getSeconds();
+            realHours = date.getHours();
+            realMinutes = date.getMinutes();
+            realSeconds = date.getSeconds();
         }
+    }
+    
+    // open dial hands moving animation
+    NumberAnimation on hours {
+        id: hoursShowAnimation
+        to: new Date().getHours()
+        running: true
+        duration: 1500
+        easing.type: Easing.OutQuint
+        onFinished: representation.hours = Qt.binding(() => representation.realHours)
+    }
+    NumberAnimation on minutes {
+        id: minutesShowAnimation
+        to: new Date().getMinutes()
+        running: true
+        duration: 1500
+        easing.type: Easing.OutQuint
+        onFinished: representation.minutes = Qt.binding(() => representation.realMinutes)
+    }
+    NumberAnimation on seconds {
+        id: secondsShowAnimation
+        to: new Date().getSeconds()
+        running: true
+        duration: 1500
+        easing.type: Easing.OutQuint
+        onFinished: representation.seconds = Qt.binding(() => representation.realSeconds)
     }
 
     PlasmaCore.Svg {
@@ -90,13 +121,14 @@ Item {
             verticalRotationOffset: clock.verticalShadowOffset
             rotation: 180 + hours * 30 + (minutes/2)
             svgScale: clock.svgScale
-
+            animateRotation: !hoursShowAnimation.running
         }
         AnalogClockHand {
             elementId: "HourHand"
             rotationCenterHintId: "hint-hourhand-rotation-center-offset"
             rotation: 180 + hours * 30 + (minutes/2)
             svgScale: clock.svgScale
+            animateRotation: !hoursShowAnimation.running
         }
 
         AnalogClockHand {
@@ -106,12 +138,14 @@ Item {
             verticalRotationOffset: clock.verticalShadowOffset
             rotation: 180 + minutes * 6
             svgScale: clock.svgScale
+            animateRotation: !minutesShowAnimation.running
         }
         AnalogClockHand {
             elementId: "MinuteHand"
             rotationCenterHintId: "hint-minutehand-rotation-center-offset"
             rotation: 180 + minutes * 6
             svgScale: clock.svgScale
+            animateRotation: !minutesShowAnimation.running
         }
 
         AnalogClockHand {
@@ -121,12 +155,14 @@ Item {
             verticalRotationOffset: clock.verticalShadowOffset
             rotation: 180 + seconds * 6
             svgScale: clock.svgScale
+            animateRotation: !secondsShowAnimation.running
         }
         AnalogClockHand {
             elementId: "SecondHand"
             rotationCenterHintId: "hint-secondhand-rotation-center-offset"
             rotation: 180 + seconds * 6
             svgScale: clock.svgScale
+            animateRotation: !secondsShowAnimation.running
         }
 
         PlasmaCore.SvgItem {

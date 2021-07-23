@@ -2,6 +2,7 @@
  * Copyright 2012 Viranch Mehta <viranch.mehta@gmail.com>
  * Copyright 2012 Marco Martin <mart@kde.org>
  * Copyright 2013 David Edmundson <davidedmundson@kde.org>
+ * Copyright 2021 Devin Lin <espidev@gmail.com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
@@ -13,6 +14,8 @@ import org.kde.plasma.core 2.0 as PlasmaCore
 PlasmaCore.SvgItem {
     id: handRoot
 
+    property bool animateRotation: true
+    
     property alias rotation: rotation.angle
     property double svgScale
     property double horizontalRotationOffset: 0
@@ -57,9 +60,9 @@ PlasmaCore.SvgItem {
         Behavior on angle {
             RotationAnimation {
                 id: anim
-                duration: 200
+                duration: animateRotation ? 400 : 0
                 direction: RotationAnimation.Clockwise
-                easing.type: Easing.OutElastic
+                easing.type: animateRotation ? Easing.OutElastic : Easing.Linear
                 easing.overshoot: 0.5
             }
         }
