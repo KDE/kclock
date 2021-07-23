@@ -200,6 +200,9 @@ Kirigami.ScrollablePage {
                         Kirigami.Icon {
                             source: "dialog-scripts"
                             visible: timerDelegate && timerDelegate.commandTimeout.length > 0
+                            implicitWidth: Kirigami.Units.iconSizes.sizeForLabels * 1.5
+                            implicitHeight: Kirigami.Units.iconSizes.sizeForLabels * 1.5
+                            color: timerDelegate && Kirigami.Theme.disabledTextColor
                         }
                         Label {
                             visible: timerDelegate && timerDelegate.commandTimeout.length > 0
