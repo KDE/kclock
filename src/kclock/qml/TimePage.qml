@@ -50,12 +50,21 @@ Kirigami.ScrollablePage {
         // left side - analog clock
         Loader {
             id: clockItemLoader
+            
             Layout.alignment: Qt.AlignHCenter
             width: Math.round(clockRadius * 2 + Kirigami.Units.gridUnit * 0.5)
             height: clockRadius * 2 + Kirigami.Units.gridUnit
             
+            // reload clock when page opens for animation
             asynchronous: true
+            Connections {
+                target: appwindow.pageStack                
+                function onCurrentItemChanged() {
+                    clockItemLoader.active = appwindow.pageStack.currentItem == appwindow.getPage("Time");
+                }
+            }
             
+            // clock item
             sourceComponent: Item {
                 id: clockItem
                 AnalogClock {
@@ -63,15 +72,6 @@ Kirigami.ScrollablePage {
                     anchors.centerIn: parent
                     height: clockRadius * 2 
                     width: clockRadius * 2
-                }
-                
-                // clock rotation animation at app launch
-                transform: Rotation {
-                    origin.x: clockItemLoader.width / 2
-                    origin.y: clockItemLoader.height / 2
-                    angle: 180
-                    
-                    NumberAnimation on angle { running: true; to: 0; duration: 800; easing.type: Easing.OutCubic }
                 }
             }
         }
