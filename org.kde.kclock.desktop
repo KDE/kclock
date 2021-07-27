@@ -1,6 +1,6 @@
 #
 # Copyright 2020 Han Young <hanyoung@protonmail.com>
-# Copyright 2020 Devin Lin <espidev@gmail.com>
+# Copyright 2020-2021 Devin Lin <espidev@gmail.com>
 #
 # SPDX-License-Identifier: GPL-2.0-or-later
 #
@@ -62,3 +62,4 @@ Icon=kclock
 Type=Application
 Terminal=false
 Categories=Qt;KDE;Utility;
+X-KDE-FormFactor=Workstation;Mobile;
