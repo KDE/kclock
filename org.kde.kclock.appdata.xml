@@ -21,6 +21,7 @@
   <name xml:lang="eu">Erlojua</name>
   <name xml:lang="fi">Kello</name>
   <name xml:lang="fr">Horloge</name>
+  <name xml:lang="hi">घड़ी</name>
   <name xml:lang="id">Clock</name>
   <name xml:lang="it">Orologio</name>
   <name xml:lang="ko">시계</name>
@@ -47,6 +48,7 @@
   <summary xml:lang="eu">Plasmarako erloju aplikazio konbergente bat.</summary>
   <summary xml:lang="fi">Mukautuva kellosovellus Plasmaan.</summary>
   <summary xml:lang="fr">Une application d'horloge convergente pour Plasma.</summary>
+  <summary xml:lang="hi">प्लाज़्मा के लिए एक संसृत घड़ी अनुप्रयोग।</summary>
   <summary xml:lang="it">Una semplice applicazione per l'orologio per Plasma.</summary>
   <summary xml:lang="ko">Plasma용 간단한 올인원 시계 프로그램입니다.</summary>
   <summary xml:lang="nl">Een convergente kloktoepassing voor Plasma.</summary>
@@ -73,6 +75,7 @@
   <developer_name xml:lang="eu">KDE komunitatea</developer_name>
   <developer_name xml:lang="fi">KDE-yhteisö</developer_name>
   <developer_name xml:lang="fr">Communauté de KDE</developer_name>
+  <developer_name xml:lang="hi">केडीई समुदाय</developer_name>
   <developer_name xml:lang="id">Komunitas KDE</developer_name>
   <developer_name xml:lang="it">Comunità KDE</developer_name>
   <developer_name xml:lang="ko">KDE 커뮤니티</developer_name>
@@ -100,6 +103,7 @@
     <p xml:lang="eu">Plasmarako erloju aplikazio konbergente bat. Alarmak, tenporizadorea, kronometroa eta ordu-eremu funtzionalitateak ditu. Plasma erabiltzean, alarmak gailua esekiduratik esnatzeko gai dira.</p>
     <p xml:lang="fi">Mukautuva kellosovellus Plasmaan. Toimintoihin kuuluvat hälytykset, ajastin, sekuntikello ja aikavyöhykkeet. Plasmaa käytettäessä hälytykset voivat myös herättää laitteen valmiustilasta.</p>
     <p xml:lang="fr">Une application d'horloge convergente pour Plasma. Elle contient des fonctionnalités d'alarmes, de chronomètres, de minuteurs et de fuseaux horaires. Les alarmes sont aussi capables de faire sortir le périphérique du mode de veille lors de l'utilisation de Plasma.</p>
+    <p xml:lang="hi">प्लाज़्मा के लिए एक संसृत घड़ी अनुप्रयोग। इसमें अलार्म, टाइमर,  विराम घड़ी और समय क्षेत्र विषेशताएँ शामिल हैं। प्लाज़्मा का उपयोग करते समय अलार्म उपकरण को तंत्र निलंबन से जगाने में भी सक्षम होते हैं।</p>
     <p xml:lang="it">Una semplice applicazione per l'orologio per Plasma. Contiene le funzionalità per allarmi, timer, cronometro e fuso orario. Gli allarmi possono risvegliare il dispositivo dalla sospensione se si utilizza Plasma.</p>
     <p xml:lang="ko">Plasma용 통합된 시계 프로그램입니다. 알람, 타이머, 초시계, 시간대 기능을 지원합니다. Plasma를 사용 중일 때 장치를 절전 모드에서 알람으로 깨울 수도 있습니다.</p>
     <p xml:lang="nl">Een convergente kloktoepassing voor Plasma. Deze bevat alarm, timer, stopwatch en tijdzone functionaliteiten. Alarmen kunnen het apparaat uit status onderbroken laten ontwaken bij gebruik van Plasma.</p>
@@ -131,6 +135,7 @@
       <caption xml:lang="eu">Mugikor ikuspegia</caption>
       <caption xml:lang="fi">Mobiilinäkymä</caption>
       <caption xml:lang="fr">Affichage pour mobile</caption>
+      <caption xml:lang="hi">मोबाइल दृश्य</caption>
       <caption xml:lang="it">Vista mobile</caption>
       <caption xml:lang="ko">모바일 보기</caption>
       <caption xml:lang="nl">Beeld op mobiel</caption>
@@ -159,6 +164,7 @@
       <caption xml:lang="eu">Mahaigaineko ikuspegia</caption>
       <caption xml:lang="fi">Työpöytänäkymä</caption>
       <caption xml:lang="fr">Affichage de bureau</caption>
+      <caption xml:lang="hi">डेस्कटॉप दृश्य</caption>
       <caption xml:lang="it">Vista desktop</caption>
       <caption xml:lang="ko">데스크톱 보기</caption>
       <caption xml:lang="nl">Beeld op bureaublad</caption>
@@ -187,6 +193,7 @@
       <caption xml:lang="eu">Tenporizadoreen orria</caption>
       <caption xml:lang="fi">Ajastinsivu</caption>
       <caption xml:lang="fr">Page de chronomètres</caption>
+      <caption xml:lang="hi">टाइमरों का पृष्ठ</caption>
       <caption xml:lang="it">Pagina dei timer</caption>
       <caption xml:lang="ko">타이머 쪽</caption>
       <caption xml:lang="nl">Pagina met timers</caption>
@@ -215,6 +222,7 @@
       <caption xml:lang="eu">Tenporizadorearen orria</caption>
       <caption xml:lang="fi">Ajastinsivu</caption>
       <caption xml:lang="fr">Page de chronomètre</caption>
+      <caption xml:lang="hi">टाइमर पृष्ठ</caption>
       <caption xml:lang="it">Pagina del timer</caption>
       <caption xml:lang="ko">타이머 쪽</caption>
       <caption xml:lang="nl">Pagina met timer</caption>
@@ -243,6 +251,7 @@
       <caption xml:lang="eu">Kronometroaren orria</caption>
       <caption xml:lang="fi">Sekuntikellosivu</caption>
       <caption xml:lang="fr">Page de minuteur</caption>
+      <caption xml:lang="hi">विराम घड़ी पृष्ठ</caption>
       <caption xml:lang="it">Pagina del cronometro</caption>
       <caption xml:lang="ko">초시계 쪽</caption>
       <caption xml:lang="nl">Pagina met stopwatch</caption>
@@ -271,6 +280,7 @@
       <caption xml:lang="eu">Alarmen orria</caption>
       <caption xml:lang="fi">Hälytyssivu</caption>
       <caption xml:lang="fr">Page d'alarmes</caption>
+      <caption xml:lang="hi">अलार्मों का पृष्ठ</caption>
       <caption xml:lang="it">Pagina degli allarmi</caption>
       <caption xml:lang="ko">알람 쪽</caption>
       <caption xml:lang="nl">Pagina met alarmen</caption>
