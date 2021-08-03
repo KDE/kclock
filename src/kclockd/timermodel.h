@@ -26,6 +26,7 @@ public:
 
     void load();
     void save();
+    Q_SCRIPTABLE QStringList timers() const;
     Q_SCRIPTABLE void addTimer(int length, QString label, QString commandTimeout, bool running);
     Q_SCRIPTABLE void removeTimer(QString uuid);
 Q_SIGNALS:

@@ -28,26 +28,11 @@ TimerModel::TimerModel(QObject *parent)
     }
     setConnectedToDaemon(m_interface->isValid());
 
-    QDBusInterface *interface = new QDBusInterface(QStringLiteral("org.kde.kclockd"),
-                                                   QStringLiteral("/Timers"),
-                                                   QStringLiteral("org.freedesktop.DBus.Introspectable"),
-                                                   QDBusConnection::sessionBus(),
-                                                   this);
-    QDBusReply<QString> reply = interface->call(QStringLiteral("Introspect"));
-    if (reply.isValid()) {
-        auto xmlMsg = reply.value();
-        QXmlStreamReader xml(xmlMsg);
-        while (!xml.atEnd()) {
-            xml.readNext();
-            if (xml.name() == QStringLiteral("node") && xml.attributes().hasAttribute(QStringLiteral("name"))) {
-                if (xml.attributes().value(QStringLiteral("name")).toString().indexOf(QStringLiteral("org")) == -1) {
-                    // already existed on kclock launch, not justCreated
-                    this->addTimer(xml.attributes().value(QStringLiteral("name")).toString(), false);
-                }
-            }
-        }
+    const QStringList timers = m_interface->timers();
+
+    for (const QString &timerId : timers) {
+        addTimer(timerId, false);
     }
-    interface->deleteLater();
 
     // watch for kclockd
     m_watcher = new QDBusServiceWatcher(QStringLiteral("org.kde.kclockd"), QDBusConnection::sessionBus(), QDBusServiceWatcher::WatchForOwnerChange, this);

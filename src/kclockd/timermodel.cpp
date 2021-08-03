@@ -93,3 +93,17 @@ void TimerModel::remove(int index)
 
     save();
 }
+
+QStringList TimerModel::timers() const
+{
+    QStringList ret;
+    ret.reserve(m_timerList.size());
+
+    // Filter out { } and - which are not allowed in DBus paths
+    static QRegularExpression dbusfilter("[{}-]");
+
+    for (const Timer *timer : qAsConst(m_timerList)) {
+        ret << timer->uuid().toString().replace(dbusfilter, QString());
+    }
+    return ret;
+}
