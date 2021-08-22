@@ -37,11 +37,16 @@ public:
     Qt::ItemFlags flags(const QModelIndex &index) const override;
     QHash<int, QByteArray> roleNames() const override;
 
+    const std::vector<int> &selectedTimeZones() const;
+
 public Q_SLOTS:
     Q_INVOKABLE void update();
+Q_SIGNALS:
+    void selectedTimeZoneChanged();
 
 private:
     QList<std::tuple<QTimeZone, bool>> m_list;
+    std::vector<int> m_selectedTimeZones;
 };
 
 class TimeZoneFilterModel : public QSortFilterProxyModel
