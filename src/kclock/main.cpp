@@ -67,9 +67,6 @@ int main(int argc, char *argv[])
     // KDBusService service(KDBusService::Unique);
 
     // initialize models
-    auto *timeZoneModel = new TimeZoneSelectorModel();
-
-    auto *timeZoneFilterModel = new TimeZoneFilterModel(timeZoneModel);
     auto *stopwatchTimer = new StopwatchTimer();
     auto *weekModel = new WeekModel();
 
@@ -77,6 +74,7 @@ int main(int argc, char *argv[])
     qmlRegisterType<Alarm>("kclock", 1, 0, "Alarm");
     qmlRegisterType<Timer>("kclock", 1, 0, "Timer");
     qmlRegisterType<SavedTimeZonesModel>("kclock", 1, 0, "SavedTimeZonesModel");
+    qmlRegisterType<TimeZoneFilterModel>("kclock", 1, 0, "TimeZoneFilterModel");
     qmlRegisterSingletonType<TimerPresetModel>("kclock", 1, 0, "TimerPresetModel", [](QQmlEngine *, QJSEngine *) -> QObject * {
         return TimerPresetModel::instance();
     });
@@ -85,7 +83,6 @@ int main(int argc, char *argv[])
 
     engine->rootContext()->setContextObject(new KLocalizedContext(engine));
     // models
-    engine->rootContext()->setContextProperty("timeZoneFilterModel", timeZoneFilterModel);
     engine->rootContext()->setContextProperty("alarmModel", AlarmModel::instance());
     engine->rootContext()->setContextProperty("timerModel", TimerModel::instance());
     engine->rootContext()->setContextProperty("utilModel", UtilModel::instance());

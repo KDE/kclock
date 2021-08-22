@@ -11,15 +11,22 @@ import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import org.kde.kirigami 2.12 as Kirigami
 
+import kclock 1.0
+
 ColumnLayout {
     id: root
     property string filterText: ""
+
+    TimeZoneFilterModel {
+        id: timeZoneModel
+    }
+
     Kirigami.SearchField {
         id: searchField
         Layout.fillWidth: true
         
         onTextChanged: {
-            timeZoneFilterModel.setFilterFixedString(text)
+            timeZoneModel.setFilterFixedString(text)
             root.filterText = text
             forceActiveFocus();
             focus = true
@@ -42,7 +49,7 @@ ColumnLayout {
                 icon.name: "globe"
             }
 
-            model: root.filterText == "" ? [] : timeZoneFilterModel // only display cities if there is a query (for performance)
+            model: root.filterText == "" ? [] : timeZoneModel // only display cities if there is a query (for performance)
             delegate: Kirigami.AbstractListItem {
                 activeBackgroundColor: "transparent"
                 CheckBox {

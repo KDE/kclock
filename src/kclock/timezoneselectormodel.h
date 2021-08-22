@@ -44,7 +44,7 @@ class TimeZoneFilterModel : public QSortFilterProxyModel
     Q_OBJECT
 
 public:
-    explicit TimeZoneFilterModel(TimeZoneSelectorModel *model, QObject *parent = nullptr);
+    explicit TimeZoneFilterModel(QObject *parent = nullptr);
 };
 
 #endif // KCLOCK_TIMEZONESELECTORMODEL_H
