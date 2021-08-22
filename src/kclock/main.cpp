@@ -46,6 +46,8 @@ QCommandLineParser *createParser()
 
 int main(int argc, char *argv[])
 {
+    qDebug() << "started";
+    auto time = QDateTime::currentMSecsSinceEpoch();
     QApplication app(argc, argv);
     if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
         QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
@@ -73,9 +75,9 @@ int main(int argc, char *argv[])
     timeZoneViewModel->setSourceModel(timeZoneModel);
     timeZoneViewModel->setFilterRole(TimeZoneSelectorModel::ShownRole);
 
-    //    auto *timeZoneFilterModel = new TimeZoneFilterModel(timeZoneModel);
-    //    auto *stopwatchTimer = new StopwatchTimer();
-    //    auto *weekModel = new WeekModel();
+    auto *timeZoneFilterModel = new TimeZoneFilterModel(timeZoneModel);
+    auto *stopwatchTimer = new StopwatchTimer();
+    auto *weekModel = new WeekModel();
 
     // register QML types
     qmlRegisterType<Alarm>("kclock", 1, 0, "Alarm");
@@ -88,19 +90,20 @@ int main(int argc, char *argv[])
 
     engine->rootContext()->setContextObject(new KLocalizedContext(engine));
     // models
-    //    engine->rootContext()->setContextProperty("timeZoneSelectorModel", timeZoneModel);
-    //    engine->rootContext()->setContextProperty("timeZoneShowModel", timeZoneViewModel);
-    //    engine->rootContext()->setContextProperty("timeZoneFilterModel", timeZoneFilterModel);
-    //    engine->rootContext()->setContextProperty("alarmModel", AlarmModel::instance());
-    //    engine->rootContext()->setContextProperty("timerModel", TimerModel::instance());
-    //    engine->rootContext()->setContextProperty("utilModel", UtilModel::instance());
-    //    engine->rootContext()->setContextProperty("stopwatchTimer", stopwatchTimer);
-    //    engine->rootContext()->setContextProperty("alarmPlayer", &AlarmPlayer::instance());
-    //    engine->rootContext()->setContextProperty("kclockFormat", KclockFormat::instance());
-    //    engine->rootContext()->setContextProperty("weekModel", weekModel);
-    //    engine->rootContext()->setContextProperty("settingsModel", &SettingsModel::instance());
+    engine->rootContext()->setContextProperty("timeZoneSelectorModel", timeZoneModel);
+    engine->rootContext()->setContextProperty("timeZoneShowModel", timeZoneViewModel);
+    engine->rootContext()->setContextProperty("timeZoneFilterModel", timeZoneFilterModel);
+    engine->rootContext()->setContextProperty("alarmModel", AlarmModel::instance());
+    engine->rootContext()->setContextProperty("timerModel", TimerModel::instance());
+    engine->rootContext()->setContextProperty("utilModel", UtilModel::instance());
+    engine->rootContext()->setContextProperty("stopwatchTimer", stopwatchTimer);
+    engine->rootContext()->setContextProperty("alarmPlayer", &AlarmPlayer::instance());
+    engine->rootContext()->setContextProperty("kclockFormat", KclockFormat::instance());
+    engine->rootContext()->setContextProperty("weekModel", weekModel);
+    engine->rootContext()->setContextProperty("settingsModel", &SettingsModel::instance());
     engine->rootContext()->setContextProperty(QStringLiteral("kclockAboutData"), QVariant::fromValue(aboutData));
 
+    qDebug() << "start qml: " << QDateTime::currentMSecsSinceEpoch() - time;
     engine->load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
 
     {
