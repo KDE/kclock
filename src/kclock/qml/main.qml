@@ -14,11 +14,8 @@ import org.kde.kirigami 2.11 as Kirigami
 Kirigami.ApplicationWindow
 {
     id: appwindow
-    // needs to work with 360x720 (+ panel heights)
-    minimumWidth: 300
-    minimumHeight: minimumWidth + 1
-    width: Kirigami.Settings.isMobile ? 400 : 650
-    height: Kirigami.Settings.isMobile ? 650 : 500
+    width: 400
+    height: 650
     property string currentPage: "Time"
     title: i18n("Clock")
 
@@ -26,41 +23,38 @@ Kirigami.ApplicationWindow
         id: pagePool
     }
     footer: BottomToolbar {}
-    Component.onCompleted: {
-        // initial page and nav type
-        switchToPage(getPage("Time"), 1);
-    }
+    pageStack.initialPage: TimePage {}
     
     // page switch animation
-    NumberAnimation {
-        id: anim
-        from: 0
-        to: 1
-        duration: Kirigami.Units.longDuration * 2
-        easing.type: Easing.InOutQuad
-    }
-    NumberAnimation {
-        id: yAnim
-        from: Kirigami.Units.gridUnit * 3
-        to: 0
-        duration: Kirigami.Units.longDuration * 3
-        easing.type: Easing.OutQuint
-    }
+//    NumberAnimation {
+//        id: anim
+//        from: 0
+//        to: 1
+//        duration: Kirigami.Units.longDuration * 2
+//        easing.type: Easing.InOutQuad
+//    }
+//    NumberAnimation {
+//        id: yAnim
+//        from: Kirigami.Units.gridUnit * 3
+//        to: 0
+//        duration: Kirigami.Units.longDuration * 3
+//        easing.type: Easing.OutQuint
+//    }
     
     function switchToPage(page, depth) {
         while (pageStack.depth > depth) pageStack.pop();
         while (pageStack.layers.depth > 1) pageStack.layers.pop();
         
         // page switch animation
-        yAnim.target = page;
-        yAnim.properties = "yTranslate";
-        anim.target = page;
-        anim.properties = "mainItem.opacity";
-        if (page.header) {
-            anim.properties += ",header.opacity";
-        }
-        yAnim.restart();
-        anim.restart();
+//        yAnim.target = page;
+//        yAnim.properties = "yTranslate";
+//        anim.target = page;
+//        anim.properties = "mainItem.opacity";
+//        if (page.header) {
+//            anim.properties += ",header.opacity";
+//        }
+//        yAnim.restart();
+//        anim.restart();
         pageStack.push(page);
     }
     
