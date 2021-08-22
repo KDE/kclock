@@ -19,17 +19,16 @@ Kirigami.ApplicationWindow
     minimumHeight: minimumWidth + 1
     width: Kirigami.Settings.isMobile ? 400 : 650
     height: Kirigami.Settings.isMobile ? 650 : 500
-
+    property string currentPage: "Time"
     title: i18n("Clock")
 
     Kirigami.PagePool {
         id: pagePool
     }
-    
+    footer: BottomToolbar {}
     Component.onCompleted: {
         // initial page and nav type
         switchToPage(getPage("Time"), 1);
-        changeNav(!isWidescreen);
     }
     
     // page switch animation
@@ -62,7 +61,6 @@ Kirigami.ApplicationWindow
         }
         yAnim.restart();
         anim.restart();
-        
         pageStack.push(page);
     }
     
@@ -77,35 +75,8 @@ Kirigami.ApplicationWindow
         }
     }
     
-    property bool isWidescreen: appwindow.width >= appwindow.height
-    onIsWidescreenChanged: changeNav(!isWidescreen);
-    
-    // switch between bottom toolbar and sidebar
-    function changeNav(toNarrow) {
-        if (toNarrow) {
-            sidebarLoader.active = false;
-            globalDrawer = null;
-            
-            let bottomToolbar = Qt.createComponent("qrc:/qml/BottomToolbar.qml")
-            footer = bottomToolbar.createObject(appwindow);
-        } else {
-            if (footer !== null) {
-                footer.destroy();
-                footer = null;
-            }
-            sidebarLoader.active = true;
-            globalDrawer = sidebarLoader.item;
-        }
-    }
-    
     contextDrawer: Kirigami.ContextDrawer {
         id: contextDrawer
         handle.anchors.bottomMargin: appwindow.footer.height + Kirigami.Units.largeSpacing
-    }
-    
-    Loader {
-        id: sidebarLoader
-        source: "qrc:/qml/Sidebar.qml"
-        active: false
     }
 }

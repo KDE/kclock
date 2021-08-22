@@ -1,7 +1,3 @@
-<!--
-- Copyright 2020 Devin Lin <espidev@gmail.com>\
-- SPDX-License-Identifier: GPL-2.0-or-later
--->
 <RCC>
     <qresource prefix="/">
         <file>qml/main.qml</file>
@@ -23,5 +19,7 @@
         <file>qml/BottomToolbar.qml</file>
         <file>qml/TimeZoneSelect.qml</file>
         <file>qml/TimeZoneSelectWrapper.qml</file>
+        <file>qml/BottomToolBarButton.qml</file>
+        <file>qml/TumblerTimePicker.qml</file>
     </qresource>
 </RCC>

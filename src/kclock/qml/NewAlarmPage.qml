@@ -12,7 +12,6 @@ import QtQuick.Window 2.2
 import QtQuick.Layouts 1.2
 import QtQuick.Dialogs 1.3
 import org.kde.kirigami 2.11 as Kirigami
-import org.kde.kirigamiaddons.dateandtime 0.1 as DateAndTime
 import kclock 1.0
 
 Kirigami.ScrollablePage {
@@ -61,7 +60,7 @@ Kirigami.ScrollablePage {
         spacing: Kirigami.Units.largeSpacing
 
         // time picker
-        DateAndTime.TimePicker {
+        TumblerTimePicker {
             id: selectedAlarmTime
 
             hours: selectedAlarm ? hoursTo12(selectedAlarm.hours) : 0
@@ -77,9 +76,9 @@ Kirigami.ScrollablePage {
                 }
             }
 
-            height: 400
+            height: 200
             anchors.horizontalCenter: parent.horizontalCenter
-            width: Math.min(400, parent.width)
+            width: Math.min(200, parent.width)
         }
 
         Kirigami.Separator {
