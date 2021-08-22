@@ -1,3 +1,8 @@
+/*
+ * Copyright 2021 Han Young <hanyoung@protonmail.com>
+ *
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ */
 #ifndef KCLOCK_TIMEZONEVIEWPROXYMODEL_H
 #define KCLOCK_TIMEZONEVIEWPROXYMODEL_H
 

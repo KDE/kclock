@@ -1,3 +1,8 @@
+/*
+ * Copyright 2021 Han Young <hanyoung@protonmail.com>
+ *
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ */
 #include "timezoneviewproxymodel.h"
 #include "timezoneselectormodel.h"
 TimeZoneViewProxyModel::TimeZoneViewProxyModel(TimeZoneSelectorModel *parent)
