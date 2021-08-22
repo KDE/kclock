@@ -47,8 +47,6 @@ QCommandLineParser *createParser()
 
 int main(int argc, char *argv[])
 {
-    qDebug() << "started";
-    auto time = QDateTime::currentMSecsSinceEpoch();
     QApplication app(argc, argv);
     if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
         QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
@@ -70,10 +68,7 @@ int main(int argc, char *argv[])
 
     // initialize models
     auto *timeZoneModel = new TimeZoneSelectorModel();
-
-    auto time = QDateTime::currentMSecsSinceEpoch();
     auto *timeZoneViewModel = new TimeZoneViewProxyModel(timeZoneModel);
-    qDebug() << "time: " << QDateTime::currentMSecsSinceEpoch() - time;
     auto *timeZoneFilterModel = new TimeZoneFilterModel(timeZoneModel);
     auto *stopwatchTimer = new StopwatchTimer();
     auto *weekModel = new WeekModel();
@@ -102,7 +97,6 @@ int main(int argc, char *argv[])
     engine->rootContext()->setContextProperty("settingsModel", &SettingsModel::instance());
     engine->rootContext()->setContextProperty(QStringLiteral("kclockAboutData"), QVariant::fromValue(aboutData));
 
-    qDebug() << "start qml: " << QDateTime::currentMSecsSinceEpoch() - time;
     engine->load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
 
     {
