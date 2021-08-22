@@ -28,9 +28,14 @@ TimeZoneSelectorModel::TimeZoneSelectorModel(QObject *parent)
     KConfigGroup timezoneGroup = config->group(TZ_CFG_GROUP);
 
     // add other configured time zones
+    auto i{0};
     for (QByteArray id : QTimeZone::availableTimeZoneIds()) {
         bool show = timezoneGroup.readEntry(id.data(), false);
         m_list.append(std::make_tuple(QTimeZone(id), show));
+        if (show) {
+            m_selectedTimeZones.push_back(i);
+        }
+        i++;
     }
 
     connect(KclockFormat::instance(), &KclockFormat::timeChanged, this, &TimeZoneSelectorModel::update);
@@ -109,7 +114,10 @@ QHash<int, QByteArray> TimeZoneSelectorModel::roleNames() const
     roles[IDRole] = "id";
     return roles;
 }
-
+const std::vector<int> &TimeZoneSelectorModel::selectedTimeZones() const
+{
+    return m_selectedTimeZones;
+}
 void TimeZoneSelectorModel::update()
 {
     QVector<int> roles = {TimeStringRole};

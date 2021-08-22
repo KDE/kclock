@@ -16,6 +16,7 @@
 #include "timermodel.h"
 #include "timerpresetmodel.h"
 #include "timezoneselectormodel.h"
+#include "timezoneviewproxymodel.h"
 #include "utilmodel.h"
 #include "version.h"
 
@@ -70,11 +71,9 @@ int main(int argc, char *argv[])
     // initialize models
     auto *timeZoneModel = new TimeZoneSelectorModel();
 
-    auto *timeZoneViewModel = new QSortFilterProxyModel();
-    timeZoneViewModel->setFilterFixedString("true");
-    timeZoneViewModel->setSourceModel(timeZoneModel);
-    timeZoneViewModel->setFilterRole(TimeZoneSelectorModel::ShownRole);
-
+    auto time = QDateTime::currentMSecsSinceEpoch();
+    auto *timeZoneViewModel = new TimeZoneViewProxyModel(timeZoneModel);
+    qDebug() << "time: " << QDateTime::currentMSecsSinceEpoch() - time;
     auto *timeZoneFilterModel = new TimeZoneFilterModel(timeZoneModel);
     auto *stopwatchTimer = new StopwatchTimer();
     auto *weekModel = new WeekModel();
