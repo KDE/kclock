@@ -9,6 +9,10 @@ TimeZoneViewProxyModel::TimeZoneViewProxyModel(TimeZoneSelectorModel *parent)
     : QAbstractListModel((QObject *)parent)
     , m_parent(parent)
 {
+    connect(m_parent, &TimeZoneSelectorModel::dataChanged, this, [this] {
+        beginResetModel();
+        endResetModel();
+    });
 }
 
 int TimeZoneViewProxyModel::rowCount(const QModelIndex &parent) const

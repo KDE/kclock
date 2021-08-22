@@ -41,9 +41,6 @@ public:
 
 public Q_SLOTS:
     Q_INVOKABLE void update();
-Q_SIGNALS:
-    void selectedTimeZoneChanged();
-
 private:
     QList<std::tuple<QTimeZone, bool>> m_list;
     std::vector<int> m_selectedTimeZones;
