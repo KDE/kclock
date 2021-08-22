@@ -10,6 +10,7 @@
 #include "alarmmodel.h"
 #include "alarmplayer.h"
 #include "kclockformat.h"
+#include "savedtimezonesmodel.h"
 #include "settingsmodel.h"
 #include "stopwatchtimer.h"
 #include "timer.h"
@@ -68,11 +69,6 @@ int main(int argc, char *argv[])
     // initialize models
     auto *timeZoneModel = new TimeZoneSelectorModel();
 
-    auto *timeZoneViewModel = new QSortFilterProxyModel();
-    timeZoneViewModel->setFilterFixedString("true");
-    timeZoneViewModel->setSourceModel(timeZoneModel);
-    timeZoneViewModel->setFilterRole(TimeZoneSelectorModel::ShownRole);
-
     auto *timeZoneFilterModel = new TimeZoneFilterModel(timeZoneModel);
     auto *stopwatchTimer = new StopwatchTimer();
     auto *weekModel = new WeekModel();
@@ -80,6 +76,7 @@ int main(int argc, char *argv[])
     // register QML types
     qmlRegisterType<Alarm>("kclock", 1, 0, "Alarm");
     qmlRegisterType<Timer>("kclock", 1, 0, "Timer");
+    qmlRegisterType<SavedTimeZonesModel>("kclock", 1, 0, "SavedTimeZonesModel");
     qmlRegisterSingletonType<TimerPresetModel>("kclock", 1, 0, "TimerPresetModel", [](QQmlEngine *, QJSEngine *) -> QObject * {
         return TimerPresetModel::instance();
     });
@@ -88,8 +85,6 @@ int main(int argc, char *argv[])
 
     engine->rootContext()->setContextObject(new KLocalizedContext(engine));
     // models
-    engine->rootContext()->setContextProperty("timeZoneSelectorModel", timeZoneModel);
-    engine->rootContext()->setContextProperty("timeZoneShowModel", timeZoneViewModel);
     engine->rootContext()->setContextProperty("timeZoneFilterModel", timeZoneFilterModel);
     engine->rootContext()->setContextProperty("alarmModel", AlarmModel::instance());
     engine->rootContext()->setContextProperty("timerModel", TimerModel::instance());

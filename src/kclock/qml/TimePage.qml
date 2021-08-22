@@ -11,6 +11,8 @@ import QtQuick.Layouts 1.2
 import QtQuick.Shapes 1.12
 import org.kde.kirigami 2.15 as Kirigami
 
+import kclock 1.0
+
 Kirigami.ScrollablePage {
     id: timePage
     
@@ -28,7 +30,6 @@ Kirigami.ScrollablePage {
     }
     
     function openEditSheet() {
-        timeZoneSelectorModel.update();
         timeZoneSelect.active = true;
         timeZoneSelect.item.open();
     }
@@ -97,7 +98,7 @@ Kirigami.ScrollablePage {
     
     // time zones
     ListView {
-        model: timeZoneShowModel
+        model: SavedTimeZonesModel {}
         id: zoneList
         currentIndex: -1 // no default selection
         transform: Translate { y: yTranslate }
@@ -132,7 +133,7 @@ Kirigami.ScrollablePage {
             activeBackgroundColor: "transparent"
             activeTextColor: Kirigami.Theme.textColor
 
-            label: model.id
+            label: model.name
             subtitle: model.relativeTime
             bold: true
             

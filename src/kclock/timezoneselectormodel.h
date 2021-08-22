@@ -26,8 +26,6 @@ public:
         ShownRole = Qt::UserRole + 0,
         OffsetRole = Qt::UserRole + 1,
         ShortNameRole = Qt::UserRole + 2,
-        TimeStringRole,
-        RelativeTimeRole,
         IDRole
     };
 
@@ -36,9 +34,6 @@ public:
     bool setData(const QModelIndex &index, const QVariant &value, int role) override;
     Qt::ItemFlags flags(const QModelIndex &index) const override;
     QHash<int, QByteArray> roleNames() const override;
-
-public Q_SLOTS:
-    Q_INVOKABLE void update();
 
 private:
     QList<std::tuple<QTimeZone, bool>> m_list;
@@ -50,14 +45,6 @@ class TimeZoneFilterModel : public QSortFilterProxyModel
 
 public:
     explicit TimeZoneFilterModel(TimeZoneSelectorModel *model, QObject *parent = nullptr);
-};
-
-class TimeZoneViewModel : public QSortFilterProxyModel
-{
-    Q_OBJECT
-
-public:
-    explicit TimeZoneViewModel(TimeZoneSelectorModel *model, QObject *parent = nullptr);
 };
 
 #endif // KCLOCK_TIMEZONESELECTORMODEL_H
