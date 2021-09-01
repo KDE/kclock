@@ -31,11 +31,14 @@ public:
 
     bool isLocale24HourTime();
 
+    void setSelectedTimezone(QByteArray id, bool selected);
+
 private:
     UtilModel(){}; // explicitly declare it private
     bool m_applicationLoaded = false;
 
 Q_SIGNALS:
+    void selectedTimezoneChanged(QByteArray id, bool selected);
     void propertyChanged();
     void applicationLoadedChanged();
 };

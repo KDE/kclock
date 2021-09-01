@@ -63,7 +63,6 @@ void KclockFormat::startTimer()
     m_hoursCounter = QTime::currentTime().minute();
     m_timer->start(1000);
 }
-
 WeekModel::WeekModel(QObject *parent)
     : QAbstractListModel(parent)
 {

@@ -16,7 +16,7 @@
 #include <KSharedConfig>
 
 #include "kclockformat.h"
-
+#include "utilmodel.h"
 const QString TZ_CFG_GROUP = "Timezones";
 
 SavedTimeZonesModel::SavedTimeZonesModel(QObject *parent)
@@ -32,6 +32,21 @@ SavedTimeZonesModel::SavedTimeZonesModel(QObject *parent)
     connect(KclockFormat::instance(), &KclockFormat::timeChanged, this, [this] {
         QVector<int> roles = {TimeStringRole};
         Q_EMIT dataChanged(index(0), index(m_timeZones.size() - 1), roles);
+    });
+    connect(UtilModel::instance(), &UtilModel::selectedTimezoneChanged, this, [this](QByteArray id, bool selected) {
+        if (selected) {
+            beginInsertRows(QModelIndex(), m_timeZones.size(), m_timeZones.size());
+            m_timeZones.push_back(QTimeZone(id));
+            endInsertRows();
+        } else {
+            auto t = QTimeZone(id);
+            auto pos = std::find(m_timeZones.begin(), m_timeZones.end(), t);
+            if (pos != m_timeZones.end()) {
+                beginRemoveRows(QModelIndex(), std::distance(m_timeZones.begin(), pos), std::distance(m_timeZones.begin(), pos));
+                m_timeZones.erase(pos);
+                endRemoveRows();
+            }
+        }
     });
 }
 

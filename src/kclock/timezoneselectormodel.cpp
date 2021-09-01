@@ -78,12 +78,14 @@ Qt::ItemFlags TimeZoneSelectorModel::flags(const QModelIndex &index) const
 bool TimeZoneSelectorModel::setData(const QModelIndex &index, const QVariant &value, int role)
 {
     if (index.isValid() && role == ShownRole && value.type() == QVariant::Bool) {
-        std::get<1>(m_list[index.row()]) = value.toBool();
+        auto selected = value.toBool();
+        std::get<1>(m_list[index.row()]) = selected;
 
         auto config = KSharedConfig::openConfig();
         KConfigGroup timezoneGroup = config->group(TZ_CFG_GROUP);
         timezoneGroup.writeEntry(std::get<0>(m_list[index.row()]).id().data(), value);
         Q_EMIT dataChanged(index, index, QVector<int>{ShownRole});
+        UtilModel::instance()->setSelectedTimezone(std::get<0>(m_list[index.row()]).id(), selected);
         return true;
     }
     return false;
