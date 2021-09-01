@@ -133,7 +133,7 @@ Kirigami.ScrollablePage {
             activeBackgroundColor: "transparent"
             activeTextColor: Kirigami.Theme.textColor
 
-            label: model.name
+            label: model.id
             subtitle: model.relativeTime
             bold: true
             

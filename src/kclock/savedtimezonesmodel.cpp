@@ -82,6 +82,9 @@ QVariant SavedTimeZonesModel::data(const QModelIndex &index, int role) const
             return QVariant(i18n("Local time"));
         }
     }
+    case IdRole: {
+        return m_timeZones[row].id();
+    }
     }
 
     return {};
@@ -89,9 +92,5 @@ QVariant SavedTimeZonesModel::data(const QModelIndex &index, int role) const
 
 QHash<int, QByteArray> SavedTimeZonesModel::roleNames() const
 {
-    return {
-        {NameRole, "name"},
-        {TimeStringRole, "timeString"},
-        {RelativeTimeRole, "relativeTime"},
-    };
+    return {{NameRole, "name"}, {TimeStringRole, "timeString"}, {RelativeTimeRole, "relativeTime"}, {IdRole, "id"}};
 }

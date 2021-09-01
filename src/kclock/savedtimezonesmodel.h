@@ -20,6 +20,7 @@ public:
         NameRole = Qt::DisplayRole,
         TimeStringRole = Qt::UserRole + 1,
         RelativeTimeRole,
+        IdRole,
     };
 
     explicit SavedTimeZonesModel(QObject *parent = nullptr);
