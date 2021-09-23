@@ -21,6 +21,7 @@ Kirigami.ApplicationWindow
     height: Kirigami.Settings.isMobile ? 650 : 500
 
     title: i18n("Clock")
+    pageStack.globalToolBar.canContainHandles: true
 
     Kirigami.PagePool {
         id: pagePool
