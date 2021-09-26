@@ -27,7 +27,7 @@ Kirigami.GlobalDrawer {
         Item {
             anchors.fill: parent
             Kirigami.Heading {
-                level: 2
+                level: 1
                 text: i18n("Clock")
                 anchors.left: parent.left
                 anchors.leftMargin: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
