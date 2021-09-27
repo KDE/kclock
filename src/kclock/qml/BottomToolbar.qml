@@ -13,6 +13,8 @@ import QtGraphicalEffects 1.12
 
 Kirigami.NavigationTabBar {
     id: root
+    visible: appwindow.pageStack.layers.depth <= 1
+    
     actions: [
         Kirigami.Action {
             iconName: "clock"
