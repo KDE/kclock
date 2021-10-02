@@ -19,11 +19,21 @@ Kirigami.ScrollablePage {
     
     title: i18n("Alarms")
     icon.name: "notifications"
+    
     mainAction: Kirigami.Action {
         iconName: "list-add"
         text: i18n("New Alarm")
         onTriggered: alarmPage.addAlarm()
     }
+    actions.contextualActions: [
+        Kirigami.Action {
+            displayHint: Kirigami.Action.AlwaysHide
+            visible: !appwindow.isWidescreen
+            iconName: "settings-configure"
+            text: i18n("Settings")
+            onTriggered: appwindow.pageStack.layers.push(appwindow.getPage("Settings"))
+        }
+    ]
 
     function addAlarm() {
         appwindow.pageStack.layers.push(Qt.resolvedUrl("NewAlarmPage.qml"));

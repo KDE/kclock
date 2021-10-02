@@ -55,16 +55,6 @@ Kirigami.NavigationTabBar {
                     appwindow.switchToPage(appwindow.getPage("Alarms"), 0);
                 }
             }
-        },
-        Kirigami.Action {
-            iconName: "settings-configure"
-            text: i18n("Settings")
-            checked: appwindow.getPage("Settings") === appwindow.pageStack.currentItem
-            onTriggered: {
-                if (appwindow.getPage("Settings") !== appwindow.pageStack.currentItem) {
-                    appwindow.switchToPage(appwindow.getPage("Settings"), 0);
-                }
-            }
         }
     ]
 } 

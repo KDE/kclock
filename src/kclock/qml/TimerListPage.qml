@@ -25,6 +25,15 @@ Kirigami.ScrollablePage {
         text: i18n("New Timer")
         onTriggered: timerPage.addTimer()
     }
+    actions.contextualActions: [
+        Kirigami.Action {
+            displayHint: Kirigami.Action.AlwaysHide
+            visible: !appwindow.isWidescreen
+            iconName: "settings-configure"
+            text: i18n("Settings")
+            onTriggered: appwindow.pageStack.layers.push(appwindow.getPage("Settings"))
+        }
+    ]
     
     function addTimer() {
         newTimerForm.active = true;

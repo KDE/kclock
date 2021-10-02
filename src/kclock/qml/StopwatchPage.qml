@@ -57,6 +57,16 @@ Kirigami.ScrollablePage {
         onTriggered: !Kirigami.Settings.isMobile ? resetStopwatch() : toggleStopwatch()
     }
     
+    actions.contextualActions: [
+        Kirigami.Action {
+            displayHint: Kirigami.Action.AlwaysHide
+            visible: !appwindow.isWidescreen
+            iconName: "settings-configure"
+            text: i18n("Settings")
+            onTriggered: appwindow.pageStack.layers.push(appwindow.getPage("Settings"))
+        }
+    ]
+    
     header: ColumnLayout {
         transform: Translate { y: yTranslate }
         anchors.left: parent.left
