@@ -16,12 +16,15 @@ import org.kde.kirigamiaddons.dateandtime 0.1 as DateAndTime
 import kclock 1.0
 
 Kirigami.ScrollablePage {
+    id: root
 
     property Alarm selectedAlarm: null
     property int alarmDaysOfWeek: selectedAlarm ? selectedAlarm.daysOfWeek : 0
     property string ringtonePath: selectedAlarm ? selectedAlarm.ringtonePath : ""
 
-    id: newAlarmPageRoot
+    Kirigami.Theme.colorSet: Kirigami.Theme.View
+    Kirigami.Theme.inherit: false
+    
     title: {
         if (selectedAlarm) {
             return i18nc("Edit alarm page title", "Editing %1", selectedAlarm.name === "" ? i18n("Alarm") : selectedAlarm.name);
@@ -30,29 +33,67 @@ Kirigami.ScrollablePage {
         }
     }
     
-    actions {
-        main: Kirigami.Action {
-            iconName: "checkmark"
-            text: i18n("Done")
-            onTriggered: {
-                let hours = selectedAlarmTime.hours + (selectedAlarmTime.pm ? 12 : 0);
-                let minutes = selectedAlarmTime.minutes;
+    function formComplete() {
+        let hours = selectedAlarmTime.hours + (selectedAlarmTime.pm ? 12 : 0);
+        let minutes = selectedAlarmTime.minutes;
 
-                if (selectedAlarm) {
-                    selectedAlarm.name = selectedAlarmName.text;
-                    selectedAlarm.hours = hours;
-                    selectedAlarm.minutes = minutes;
-                    selectedAlarm.daysOfWeek = alarmDaysOfWeek;
-                    selectedAlarm.save(); // remote save
-                    alarmPlayer.stop();
-                    selectedAlarm.enabled = true;
-                    showPassiveNotification(selectedAlarm.timeToRingFormated());
-                } else {
-                    alarmModel.addAlarm(hours, minutes, alarmDaysOfWeek, selectedAlarmName.text);
-                    alarmPlayer.stop();
-                    showPassiveNotification(alarmModel.timeToRingFormated(hours, minutes, alarmDaysOfWeek));
-                }
-                pageStack.layers.pop();
+        if (selectedAlarm) {
+            selectedAlarm.name = selectedAlarmName.text;
+            selectedAlarm.hours = hours;
+            selectedAlarm.minutes = minutes;
+            selectedAlarm.daysOfWeek = alarmDaysOfWeek;
+            selectedAlarm.save(); // remote save
+            alarmPlayer.stop();
+            selectedAlarm.enabled = true;
+            showPassiveNotification(selectedAlarm.timeToRingFormated());
+        } else {
+            alarmModel.addAlarm(hours, minutes, alarmDaysOfWeek, selectedAlarmName.text);
+            alarmPlayer.stop();
+            showPassiveNotification(alarmModel.timeToRingFormated(hours, minutes, alarmDaysOfWeek));
+        }
+        pageStack.layers.pop();
+    }
+    
+    actions.main: Kirigami.Action {
+        iconName: "dialog-ok"
+        text: i18n("Done")
+        onTriggered: root.formComplete()
+    }
+    
+    // mobile footer actions
+    footer: ToolBar {
+        id: toolbar
+        visible: Kirigami.Settings.isMobile
+        topPadding: 0; bottomPadding: 0
+        rightPadding: 0; leftPadding: 0
+        
+        Kirigami.Theme.colorSet: Kirigami.Theme.Window
+        Kirigami.Theme.inherit: false
+        
+        property bool opened: false
+        RowLayout {
+            anchors.fill: parent
+            spacing: 0
+            
+            Item { Layout.fillWidth: true }
+            FooterToolBarButton {
+                display: toolbar.opened ? AbstractButton.TextUnderIcon : AbstractButton.TextOnly
+                text: i18n("Done")
+                icon.name: "dialog-ok"
+                onClicked: root.formComplete()
+            }
+            FooterToolBarButton {
+                display: toolbar.opened ? AbstractButton.TextUnderIcon : AbstractButton.TextOnly
+                text: i18n("Cancel")
+                icon.name: "dialog-cancel"
+                onClicked: appwindow.pageStack.layers.pop()
+            }
+            FooterToolBarButton {
+                display: toolbar.opened ? AbstractButton.TextUnderIcon : AbstractButton.TextOnly
+                icon.name: "view-more-symbolic"
+                onClicked: toolbar.opened = !toolbar.opened
+                iconSize: Kirigami.Units.iconSizes.small
+                implicitWidth: Kirigami.Units.gridUnit * 2.5
             }
         }
     }
@@ -137,7 +178,7 @@ Kirigami.ScrollablePage {
             id: selectAlarmField
             anchors.horizontalCenter: parent.horizontalCenter
             placeholderText: selectedAlarm ? selectedAlarm.ringtoneName : ""
-            width: newAlarmPageRoot.width * 0.8
+            width: root.width * 0.8
             rightActions: [
                 Kirigami.Action {
                     iconName: "list-add"
@@ -153,14 +194,14 @@ Kirigami.ScrollablePage {
             title: i18n("Choose an audio")
             folder: shortcuts.music
             onAccepted: {
-                newAlarmPageRoot.ringtonePath = fileDialog.fileUrl;
+                root.ringtonePath = fileDialog.fileUrl;
                 if (ringtonePath != "") {
                     if (selectedAlarm) {
-                        selectedAlarm.ringtonePath = newAlarmPageRoot.ringtonePath;
-                        selectedAlarm.ringtoneName = newAlarmPageRoot.ringtonePath.toString().split('/').pop();
+                        selectedAlarm.ringtonePath = root.ringtonePath;
+                        selectedAlarm.ringtoneName = root.ringtonePath.toString().split('/').pop();
                     }
-                    console.log(newAlarmPageRoot.ringtonePath);
-                    alarmPlayer.setSource(newAlarmPageRoot.ringtonePath);
+                    console.log(root.ringtonePath);
+                    alarmPlayer.setSource(root.ringtonePath);
                     alarmPlayer.play();
                 }
                 this.close();
