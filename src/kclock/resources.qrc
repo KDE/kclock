@@ -24,5 +24,6 @@
         <file>qml/TimeZoneSelect.qml</file>
         <file>qml/TimeZoneSelectWrapper.qml</file>
         <file>qml/FloatingActionButton.qml</file>
+        <file>qml/FooterToolBarButton.qml</file>
     </qresource>
 </RCC>

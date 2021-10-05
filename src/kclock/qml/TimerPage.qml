@@ -63,6 +63,60 @@ Kirigami.Page {
             }
         ]
     }
+    
+    // mobile footer actions
+    footer: ToolBar {
+        id: toolbar
+        visible: Kirigami.Settings.isMobile
+        topPadding: 0; bottomPadding: 0
+        rightPadding: 0; leftPadding: 0
+        
+        Kirigami.Theme.colorSet: Kirigami.Theme.Window
+        Kirigami.Theme.inherit: false
+        
+        property bool opened: false
+        RowLayout {
+            anchors.fill: parent
+            spacing: 0
+            
+            Item { Layout.fillWidth: true }
+            FooterToolBarButton {
+                display: toolbar.opened ? AbstractButton.TextUnderIcon : AbstractButton.TextOnly
+                text: timerpage.running ? i18n("Pause") : i18n("Start")
+                icon.name: timerpage.running ? "chronometer-pause" : "chronometer-start"
+                onClicked: timer.toggleRunning()
+            }
+            FooterToolBarButton {
+                display: toolbar.opened ? AbstractButton.TextUnderIcon : AbstractButton.TextOnly
+                text: i18n("Reset")
+                icon.name: "chronometer-reset"
+                onClicked: timer.reset()
+            }
+            FooterToolBarButton {
+                display: toolbar.opened ? AbstractButton.TextUnderIcon : AbstractButton.TextOnly
+                text: i18n("Delete")
+                icon.name: "delete"
+                onClicked: {
+                    pageStack.layers.pop();
+                    timerModel.remove(timerIndex);
+                }
+            }
+            FooterToolBarButton {
+                display: toolbar.opened ? AbstractButton.TextUnderIcon : AbstractButton.TextOnly
+                text: i18n("Loop Timer")
+                icon.name: "media-repeat-all"
+                checked: timerpage.looping
+                onClicked: timer.toggleLooping()
+            }
+            FooterToolBarButton {
+                display: toolbar.opened ? AbstractButton.TextUnderIcon : AbstractButton.TextOnly
+                icon.name: "view-more-symbolic"
+                onClicked: toolbar.opened = !toolbar.opened
+                iconSize: Kirigami.Units.iconSizes.small
+                implicitWidth: Kirigami.Units.gridUnit * 2.5
+            }
+        }
+    }
 
     TimerComponent {
         timerDuration: duration
