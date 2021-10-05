@@ -23,5 +23,6 @@
         <file>qml/BottomToolbar.qml</file>
         <file>qml/TimeZoneSelect.qml</file>
         <file>qml/TimeZoneSelectWrapper.qml</file>
+        <file>qml/FloatingActionButton.qml</file>
     </qresource>
 </RCC>

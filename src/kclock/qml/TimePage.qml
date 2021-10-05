@@ -23,15 +23,17 @@ Kirigami.ScrollablePage {
     title: i18n("Time")
     icon.name: "clock"
 
+    // desktop action
     mainAction: Kirigami.Action {
         iconName: "globe"
         text: i18n("Edit")
         onTriggered: timePage.openEditSheet()
+        visible: !Kirigami.Settings.isMobile
     }
     
     actions.contextualActions: [
         Kirigami.Action {
-            displayHint: Kirigami.Action.AlwaysHide
+            displayHint: Kirigami.Action.IconOnly
             visible: !appwindow.isWidescreen
             iconName: "settings-configure"
             text: i18n("Settings")
@@ -133,6 +135,14 @@ Kirigami.ScrollablePage {
             visible: zoneList.count == 0
             text: i18n("No timezones configured")
             icon.name: "globe"
+        }
+        
+        // mobile action
+        FloatingActionButton {
+            anchors.fill: parent
+            iconName: "globe"
+            onClicked: timePage.openEditSheet()
+            visible: Kirigami.Settings.isMobile
         }
         
         delegate: Kirigami.BasicListItem {

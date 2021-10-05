@@ -24,10 +24,12 @@ Kirigami.ScrollablePage {
         iconName: "list-add"
         text: i18n("New Alarm")
         onTriggered: alarmPage.addAlarm()
+        visible: !Kirigami.Settings.isMobile
     }
+    
     actions.contextualActions: [
         Kirigami.Action {
-            displayHint: Kirigami.Action.AlwaysHide
+            displayHint: Kirigami.Action.IconOnly
             visible: !appwindow.isWidescreen
             iconName: "settings-configure"
             text: i18n("Settings")
@@ -83,6 +85,14 @@ Kirigami.ScrollablePage {
         }
         displaced: Transition {
             NumberAnimation { properties: "x,y"; duration: Kirigami.Units.longDuration; easing.type: Easing.InOutQuad}
+        }
+        
+        // mobile action
+        FloatingActionButton {
+            anchors.fill: parent
+            iconName: "list-add"
+            onClicked: alarmPage.addAlarm()
+            visible: Kirigami.Settings.isMobile
         }
         
         // each alarm

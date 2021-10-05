@@ -22,6 +22,7 @@ Kirigami.ApplicationWindow
 
     title: i18n("Clock")
     pageStack.globalToolBar.canContainHandles: true
+    pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
 
     Kirigami.PagePool {
         id: pagePool

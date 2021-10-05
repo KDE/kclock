@@ -49,17 +49,18 @@ Kirigami.ScrollablePage {
     Keys.onSpacePressed: toggleStopwatch();
     Keys.onReturnPressed: addLap();
 
-    // start/pause button on mobile, reset button on desktop
+    // desktop action
     mainAction: Kirigami.Action {
         id: toggleAction
-        iconName: !Kirigami.Settings.isMobile ? "chronometer-reset" : (running ? "chronometer-pause" : "chronometer-start")
-        text: !Kirigami.Settings.isMobile ? i18n("Reset") : (running ? i18n("Pause") : i18n("Start"))
-        onTriggered: !Kirigami.Settings.isMobile ? resetStopwatch() : toggleStopwatch()
+        visible: !Kirigami.Settings.isMobile
+        iconName: "chronometer-reset"
+        text: i18n("Reset")
+        onTriggered: resetStopwatch()
     }
     
     actions.contextualActions: [
         Kirigami.Action {
-            displayHint: Kirigami.Action.AlwaysHide
+            displayHint: Kirigami.Action.IconOnly
             visible: !appwindow.isWidescreen
             iconName: "settings-configure"
             text: i18n("Settings")
@@ -168,6 +169,14 @@ Kirigami.ScrollablePage {
         }
         displaced: Transition {
             NumberAnimation { properties: "x,y"; duration: Kirigami.Units.longDuration; easing.type: Easing.InOutQuad}
+        }
+        
+        // mobile action
+        FloatingActionButton {
+            anchors.fill: parent
+            iconName: stopwatchpage.running ? "chronometer-pause" : "chronometer-start"
+            onClicked: stopwatchpage.toggleStopwatch()
+            visible: Kirigami.Settings.isMobile
         }
         
         // lap items

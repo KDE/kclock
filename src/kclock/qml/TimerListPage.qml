@@ -20,14 +20,17 @@ Kirigami.ScrollablePage {
     icon.name: "player-time"
     property bool createdTimer: false
     
+    // desktop action
     mainAction: Kirigami.Action {
         iconName: "list-add"
         text: i18n("New Timer")
         onTriggered: timerPage.addTimer()
+        visible: !Kirigami.Settings.isMobile
     }
+    
     actions.contextualActions: [
         Kirigami.Action {
-            displayHint: Kirigami.Action.AlwaysHide
+            displayHint: Kirigami.Action.IconOnly
             visible: !appwindow.isWidescreen
             iconName: "settings-configure"
             text: i18n("Settings")
@@ -55,6 +58,14 @@ Kirigami.ScrollablePage {
         model: timerModel
         
         transform: Translate { y: yTranslate }
+        
+        // mobile action
+        FloatingActionButton {
+            anchors.fill: parent
+            iconName: "list-add"
+            onClicked: timerPage.addTimer()
+            visible: Kirigami.Settings.isMobile
+        }
         
         // no timer placeholder
         Kirigami.PlaceholderMessage {
@@ -95,7 +106,7 @@ Kirigami.ScrollablePage {
             showClickFeedback: true
             onClicked: {
                 timerPageLoader.active = true;
-                switchToPage(timerPageLoader.item, 1);
+                appwindow.pageStack.layers.push(timerPageLoader.item);
             }
                 
             contentItem: Item {
