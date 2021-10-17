@@ -9,6 +9,8 @@
 #ifndef KCLOCK_TIMEZONESELECTORMODEL_H
 #define KCLOCK_TIMEZONESELECTORMODEL_H
 
+#include "kclockformat.h"
+
 #include <QAbstractListModel>
 #include <QSortFilterProxyModel>
 #include <QTimeZone>
@@ -26,6 +28,7 @@ public:
         ShownRole = Qt::UserRole + 0,
         OffsetRole = Qt::UserRole + 1,
         ShortNameRole = Qt::UserRole + 2,
+        CurrentTimeRole = Qt::UserRole + 3,
         IDRole
     };
 

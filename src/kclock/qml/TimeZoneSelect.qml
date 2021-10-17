@@ -52,10 +52,16 @@ ColumnLayout {
             model: root.filterText == "" ? [] : timeZoneModel // only display cities if there is a query (for performance)
             delegate: Kirigami.AbstractListItem {
                 activeBackgroundColor: "transparent"
-                CheckBox {
-                    checked: model.shown
-                    text: i18n("%1 %2", model.id, model.shortName)
-                    onClicked: model.shown = this.checked
+                RowLayout {
+                    CheckBox {
+                        checked: model.shown
+                        text: i18n("%1 %2", model.id, model.shortName)
+                        onClicked: model.shown = this.checked
+                    }
+                    Label {
+                        Layout.alignment: Qt.AlignRight
+                        text: model.currentTime
+                    }
                 }
             }
         }

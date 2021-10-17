@@ -31,6 +31,10 @@ TimeZoneSelectorModel::TimeZoneSelectorModel(QObject *parent)
         bool show = timezoneGroup.readEntry(id.data(), false);
         m_list.append(std::make_tuple(QTimeZone(id), show));
     }
+
+    connect(KclockFormat::instance(), &KclockFormat::timeChanged, this, [this] {
+        Q_EMIT dataChanged(index(0), index(m_list.size() - 1), {CurrentTimeRole});
+    });
 }
 
 int TimeZoneSelectorModel::rowCount(const QModelIndex &parent) const
@@ -54,6 +58,10 @@ QVariant TimeZoneSelectorModel::data(const QModelIndex &index, int role) const
         return std::get<0>(tuple).id();
     case ShortNameRole:
         return std::get<0>(tuple).displayName(QDateTime::currentDateTime(), QTimeZone::ShortName);
+    case CurrentTimeRole:
+        QDateTime time = QDateTime::currentDateTime();
+        time = time.toTimeZone(std::get<0>(tuple));
+        return KclockFormat().formatTimeString(time.time().hour(), time.time().minute());
     }
     return QVariant();
 }
@@ -66,6 +74,7 @@ QHash<int, QByteArray> TimeZoneSelectorModel::roleNames() const
     roles[OffsetRole] = "offset";
     roles[ShortNameRole] = "shortName";
     roles[IDRole] = "id";
+    roles[CurrentTimeRole] = "currentTime";
     return roles;
 }
 
