@@ -55,7 +55,7 @@ QVariant TimeZoneSelectorModel::data(const QModelIndex &index, int role) const
     case ShownRole:
         return std::get<1>(tuple);
     case IDRole:
-        return std::get<0>(tuple).id();
+        return std::get<0>(tuple).id().replace("_", " ");
     case ShortNameRole:
         return std::get<0>(tuple).displayName(QDateTime::currentDateTime(), QTimeZone::ShortName);
     case CurrentTimeRole:

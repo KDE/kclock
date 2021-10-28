@@ -98,7 +98,7 @@ QVariant SavedTimeZonesModel::data(const QModelIndex &index, int role) const
         }
     }
     case IdRole: {
-        return m_timeZones[row].id();
+        return m_timeZones[row].id().replace("_", " ");
     }
     }
 
