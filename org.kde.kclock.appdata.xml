@@ -125,8 +125,8 @@
   <screenshots>
     <screenshot type="default">
       <caption>Mobile view</caption>
-      <caption xml:lang="ca">Vista mòbil</caption>
-      <caption xml:lang="ca-valencia">Vista mòbil</caption>
+      <caption xml:lang="ca">Vista al mòbil</caption>
+      <caption xml:lang="ca-valencia">Vista al mòbil</caption>
       <caption xml:lang="cs">Mobilní pohled</caption>
       <caption xml:lang="de">Mobile Ansicht</caption>
       <caption xml:lang="el">Προβολή για κινητά</caption>
@@ -154,8 +154,8 @@
     </screenshot>
     <screenshot>
       <caption>Desktop view</caption>
-      <caption xml:lang="ca">Vista d'escriptori</caption>
-      <caption xml:lang="ca-valencia">Vista d'escriptori</caption>
+      <caption xml:lang="ca">Vista a l'escriptori</caption>
+      <caption xml:lang="ca-valencia">Vista a l'escriptori</caption>
       <caption xml:lang="cs">Pohled pracovní plochy</caption>
       <caption xml:lang="de">Arbeitsflächenansicht</caption>
       <caption xml:lang="el">Προβολή για υπολογιστή γραφείου</caption>
