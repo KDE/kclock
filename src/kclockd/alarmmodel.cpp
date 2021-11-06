@@ -36,6 +36,8 @@ AlarmModel::AlarmModel(QObject *parent)
     m_notifierItem->setIconByName(QStringLiteral("clock"));
     m_notifierItem->setStandardActionsEnabled(false);
     m_notifierItem->setAssociatedWidget(nullptr);
+    m_notifierItem->setCategory(KStatusNotifierItem::SystemServices);
+    m_notifierItem->setStatus(KStatusNotifierItem::Passive);
 
     // alarm wakeup behaviour
     connect(&Utilities::instance(), &Utilities::wakeup, this, &AlarmModel::wakeupCallback);
