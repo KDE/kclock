@@ -48,8 +48,9 @@ void AlarmModel::load()
 {
     auto config = KSharedConfig::openConfig();
     KConfigGroup group = config->group(ALARM_CFG_GROUP);
-    for (QString key : group.keyList()) {
-        QString json = group.readEntry(key, QStringLiteral());
+    QStringList list = group.keyList();
+    for (const QString &key : list) {
+        QString json = group.readEntry(key, QString());
         if (!json.isEmpty()) {
             Alarm *alarm = new Alarm(json, this);
 
@@ -82,7 +83,7 @@ void AlarmModel::scheduleAlarm()
 
     // get the next minimum time for a wakeup (next alarm ring), and add alarms that will needed to be woken up to the list
     quint64 minTime = std::numeric_limits<quint64>::max();
-    for (auto *alarm : m_alarmsList) {
+    for (auto *alarm : std::as_const(m_alarmsList)) {
         if (alarm->nextRingTime() > 0) {
             if (alarm->nextRingTime() == minTime) {
                 alarmsToBeRung.append(alarm);
@@ -120,7 +121,7 @@ void AlarmModel::scheduleAlarm()
 void AlarmModel::wakeupCallback(int cookie)
 {
     if (this->m_cookie == cookie) {
-        for (auto alarm : this->alarmsToBeRung) {
+        for (auto alarm : std::as_const(alarmsToBeRung)) {
             alarm->ring();
         }
         this->scheduleAlarm();
@@ -171,12 +172,13 @@ void AlarmModel::removeAlarm(int index)
 
 void AlarmModel::addAlarm(int hours, int minutes, int daysOfWeek, QString name, QString ringtonePath)
 {
+    Q_UNUSED(ringtonePath)
     Alarm *alarm = new Alarm(this, name, minutes, hours, daysOfWeek);
     alarm->save();
 
     // insert new alarm in order by time of day
     int i = 0;
-    for (auto alarms : m_alarmsList) {
+    for (auto alarms : std::as_const(m_alarmsList)) {
         if (alarms->hours() < hours) {
             i++;
             continue;
@@ -203,7 +205,7 @@ void AlarmModel::updateNotifierItem(quint64 time)
 {
     if (time == 0) {
         m_notifierItem->setStatus(KStatusNotifierItem::Passive);
-        m_notifierItem->setToolTip(QStringLiteral("clock"), QStringLiteral("KClock"), QStringLiteral());
+        m_notifierItem->setToolTip(QStringLiteral("clock"), QStringLiteral("KClock"), QString());
     } else {
         auto dateTime = QDateTime::fromSecsSinceEpoch(time).toLocalTime();
         m_notifierItem->setStatus(KStatusNotifierItem::Active);
