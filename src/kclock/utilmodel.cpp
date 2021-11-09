@@ -72,9 +72,9 @@ QString UtilModel::timeToRingFormatted(const long long &timestamp)
     }
 
     if (day <= 0 && hour <= 0 && minute <= 0) {
-        return i18n("Alarm will be rung within a minute");
+        return i18n("Alarm will ring in under a minute");
     } else {
-        return i18n("Alarm will be rung after %1", arg);
+        return i18n("Alarm will ring in %1", arg);
     }
 }
 

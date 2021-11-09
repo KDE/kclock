@@ -53,7 +53,7 @@ private:
 
     quint64 m_nextAlarmTime = 0;
     int m_cookie = -1; // token for wakeup call auth
-    QList<Alarm *> alarmsToBeRung; // the alarms that will be rung on next wakeup
+    QList<Alarm *> alarmsToRing; // the alarms that will ring on next wakeup
 
     QList<Alarm *> m_alarmsList;
     KStatusNotifierItem *m_item{nullptr};

@@ -80,17 +80,17 @@ void AlarmModel::scheduleAlarm()
         return;
     }
 
-    alarmsToBeRung.clear();
+    alarmsToRing.clear();
 
     // get the next minimum time for a wakeup (next alarm ring), and add alarms that will needed to be woken up to the list
     quint64 minTime = std::numeric_limits<quint64>::max();
     for (auto *alarm : std::as_const(m_alarmsList)) {
         if (alarm->nextRingTime() > 0) {
             if (alarm->nextRingTime() == minTime) {
-                alarmsToBeRung.append(alarm);
+                alarmsToRing.append(alarm);
             } else if (alarm->nextRingTime() < minTime) {
-                alarmsToBeRung.clear();
-                alarmsToBeRung.append(alarm);
+                alarmsToRing.clear();
+                alarmsToRing.append(alarm);
                 minTime = alarm->nextRingTime();
             }
         }
@@ -125,7 +125,7 @@ void AlarmModel::scheduleAlarm()
 void AlarmModel::wakeupCallback(int cookie)
 {
     if (this->m_cookie == cookie) {
-        for (auto alarm : std::as_const(alarmsToBeRung)) {
+        for (auto alarm : std::as_const(alarmsToRing)) {
             alarm->ring();
         }
         this->scheduleAlarm();
@@ -156,9 +156,9 @@ void AlarmModel::removeAlarm(int index)
     Alarm *alarmPointer = m_alarmsList.at(index);
 
     // remove from list of alarms to ring
-    for (int i = 0; i < alarmsToBeRung.size(); i++) {
-        if (alarmsToBeRung.at(i) == alarmPointer) {
-            alarmsToBeRung.removeAt(i);
+    for (int i = 0; i < alarmsToRing.size(); i++) {
+        if (alarmsToRing.at(i) == alarmPointer) {
+            alarmsToRing.removeAt(i);
             i--;
         }
     }
