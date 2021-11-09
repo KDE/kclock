@@ -145,6 +145,13 @@ public:
     {
         return m_uuid.toString();
     }
+
+    static void bumpRingingCount();
+    static void lowerRingingCount();
+    static int ringing()
+    {
+        return Alarm::ringingCount;
+    }
 Q_SIGNALS:
     void nameChanged();
     void enabledChanged();
@@ -171,6 +178,8 @@ private:
     int m_hours = 0, m_minutes = 0, m_daysOfWeek = 0;
     int m_snooze = 0; // current snooze length
     quint64 m_nextRingTime = 0; // store calculated next ring time
+
+    static std::atomic<int> ringingCount;
 };
 
 #endif // KCLOCKD_ALARM_H

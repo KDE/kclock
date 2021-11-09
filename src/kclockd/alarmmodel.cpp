@@ -19,10 +19,8 @@
 #include <QDebug>
 #include <QLocale>
 
-#define SCRIPTANDPROPERTY QDBusConnection::ExportScriptableContents | QDBusConnection::ExportAllProperties
 AlarmModel::AlarmModel(QObject *parent)
     : QObject(parent)
-    , m_notifierItem(new KStatusNotifierItem(this))
 {
     // DBus
     new AlarmModelAdaptor(this);
@@ -33,11 +31,6 @@ AlarmModel::AlarmModel(QObject *parent)
 
     // update notify icon in systemtray
     connect(this, &AlarmModel::nextAlarm, this, &AlarmModel::updateNotifierItem);
-    m_notifierItem->setIconByName(QStringLiteral("clock"));
-    m_notifierItem->setStandardActionsEnabled(false);
-    m_notifierItem->setAssociatedWidget(nullptr);
-    m_notifierItem->setCategory(KStatusNotifierItem::SystemServices);
-    m_notifierItem->setStatus(KStatusNotifierItem::Passive);
 
     // alarm wakeup behaviour
     connect(&Utilities::instance(), &Utilities::wakeup, this, &AlarmModel::wakeupCallback);
@@ -59,6 +52,13 @@ void AlarmModel::load()
     }
 }
 
+void AlarmModel::save()
+{
+    std::for_each(m_alarmsList.begin(), m_alarmsList.end(), [](Alarm *alarm) {
+        alarm->save();
+    });
+}
+
 void AlarmModel::configureWakeups()
 {
     // start alarm polling
@@ -76,6 +76,7 @@ void AlarmModel::scheduleAlarm()
     if (m_alarmsList.count() == 0) {
         m_nextAlarmTime = 0;
         Q_EMIT nextAlarm(0);
+        Utilities::instance().exitAfterTimeout();
         return;
     }
 
@@ -116,6 +117,9 @@ void AlarmModel::scheduleAlarm()
         m_cookie = -1;
     }
     Q_EMIT nextAlarm(m_nextAlarmTime);
+    if (Alarm::ringing() == 0 && Utilities::instance().hasPowerDevil()) {
+        Utilities::instance().exitAfterTimeout();
+    }
 }
 
 void AlarmModel::wakeupCallback(int cookie)
@@ -200,20 +204,34 @@ void AlarmModel::addAlarm(int hours, int minutes, int daysOfWeek, QString name, 
 
     Q_EMIT alarmAdded(alarm->uuid().toString());
 }
-
+void AlarmModel::initNotifierItem()
+{
+    if (!m_item) {
+        m_item = new KStatusNotifierItem(this);
+        m_item->setIconByName(QStringLiteral("clock"));
+        m_item->setStandardActionsEnabled(false);
+        m_item->setAssociatedWidget(nullptr);
+        m_item->setCategory(KStatusNotifierItem::SystemServices);
+        m_item->setStatus(KStatusNotifierItem::Passive);
+    }
+}
 void AlarmModel::updateNotifierItem(quint64 time)
 {
     if (time == 0) {
-        m_notifierItem->setStatus(KStatusNotifierItem::Passive);
-        m_notifierItem->setToolTip(QStringLiteral("clock"), QStringLiteral("KClock"), QString());
+        // no alarm waiting, only set notifier if we have one
+        if (m_item) {
+            m_item->setStatus(KStatusNotifierItem::Passive);
+            m_item->setToolTip(QStringLiteral("clock"), QStringLiteral("KClock"), QString());
+        }
     } else {
         auto dateTime = QDateTime::fromSecsSinceEpoch(time).toLocalTime();
-        m_notifierItem->setStatus(KStatusNotifierItem::Active);
-        m_notifierItem->setToolTip(QStringLiteral("clock"),
-                                   QStringLiteral("KClock"),
-                                   xi18nc("@info",
-                                          "Alarm: <shortcut>%1 %2</shortcut>",
-                                          QLocale::system().standaloneDayName(dateTime.date().dayOfWeek()),
-                                          QLocale::system().toString(dateTime.time(), QLocale::ShortFormat)));
+        initNotifierItem();
+        m_item->setStatus(KStatusNotifierItem::Active);
+        m_item->setToolTip(QStringLiteral("clock"),
+                           QStringLiteral("KClock"),
+                           xi18nc("@info",
+                                  "Alarm: <shortcut>%1 %2</shortcut>",
+                                  QLocale::system().standaloneDayName(dateTime.date().dayOfWeek()),
+                                  QLocale::system().toString(dateTime.time(), QLocale::ShortFormat)));
     }
 }

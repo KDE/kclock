@@ -11,6 +11,7 @@
 
 #include <QDBusInterface>
 #include <QObject>
+class QTimer;
 const QString POWERDEVIL_SERVICE_NAME = QStringLiteral("org.kde.Solid.PowerManagement");
 class Utilities : public QObject
 {
@@ -23,13 +24,15 @@ public:
         return singleton;
     }
 
-    const bool &hasPowerDevil()
+    bool hasPowerDevil()
     {
         return m_hasPowerDevil;
     };
 
     int scheduleWakeup(quint64 timestamp);
     void clearWakeup(int cookie);
+    void exitAfterTimeout();
+    void stopExit();
 Q_SIGNALS:
     void wakeup(int cookie);
     void needsReschedule();
@@ -53,6 +56,7 @@ private:
 
     QThread *m_timerThread = nullptr;
     AlarmWaitWorker *m_worker = nullptr;
+    QTimer *m_timer = nullptr;
 };
 
 #endif // KCLOCKD_UTILITIES_H

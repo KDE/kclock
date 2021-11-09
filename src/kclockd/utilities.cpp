@@ -6,11 +6,12 @@
 
 #include "utilities.h"
 
+#include <QApplication>
 #include <QDBusReply>
 #include <QDBusServiceWatcher>
 #include <QDebug>
 #include <QThread>
-
+#include <QTimer>
 Utilities::Utilities(QObject *parent)
     : QObject(parent)
     , m_interface(new QDBusInterface(POWERDEVIL_SERVICE_NAME,
@@ -18,7 +19,11 @@ Utilities::Utilities(QObject *parent)
                                      QStringLiteral("org.kde.Solid.PowerManagement"),
                                      QDBusConnection::sessionBus(),
                                      this))
+    , m_timer(new QTimer(this))
 {
+    connect(m_timer, &QTimer::timeout, this, [] {
+        QApplication::exit();
+    });
     // if PowerDevil is present, we can rely on PowerDevil to track time, otherwise we do it ourself
     if (m_interface->isValid()) {
         // test Plasma 5.20 PowerDevil schedule wakeup feature
@@ -41,7 +46,7 @@ Utilities::Utilities(QObject *parent)
     auto m_watcher = new QDBusServiceWatcher{POWERDEVIL_SERVICE_NAME,
                                              QDBusConnection::sessionBus(),
                                              QDBusServiceWatcher::WatchForRegistration | QDBusServiceWatcher::WatchForUnregistration};
-    connect(m_watcher, &QDBusServiceWatcher::serviceRegistered, [this]() {
+    connect(m_watcher, &QDBusServiceWatcher::serviceRegistered, this, [this]() {
         qDebug() << "powerdevil found";
         m_hasPowerDevil = hasWakeup();
         if (m_hasPowerDevil && m_timerThread)
@@ -49,7 +54,7 @@ Utilities::Utilities(QObject *parent)
 
         Q_EMIT needsReschedule();
     });
-    connect(m_watcher, &QDBusServiceWatcher::serviceUnregistered, [this]() {
+    connect(m_watcher, &QDBusServiceWatcher::serviceUnregistered, this, [this]() {
         m_hasPowerDevil = false;
         initWorker();
 
@@ -61,7 +66,11 @@ int Utilities::scheduleWakeup(quint64 timestamp)
 {
     if (this->hasPowerDevil()) {
         QDBusReply<uint> reply = m_interface->call(QStringLiteral("scheduleWakeup"), QStringLiteral("org.kde.kclockd"), QDBusObjectPath("/Utility"), timestamp);
-        m_cookies.append(reply.value());
+        if (reply.isValid()) {
+            m_cookies.append(reply.value());
+        } else {
+            qDebug() << "invalid reply, error: " << reply.error();
+        }
         return reply.value();
     } else {
         m_list.append({++m_cookie, timestamp});
@@ -80,7 +89,7 @@ void Utilities::clearWakeup(int cookie)
         }
     } else {
         auto index = 0;
-        for (auto tuple : m_list) {
+        for (const auto &tuple : std::as_const(m_list)) {
             if (cookie == std::get<0>(tuple)) {
                 break;
             }
@@ -110,9 +119,9 @@ void Utilities::wakeupCallback(int cookie)
 
 void Utilities::schedule()
 {
-    auto minTime = std::numeric_limits<long long>::max();
+    auto minTime = std::numeric_limits<unsigned long long>::max();
 
-    for (auto tuple : m_list) {
+    for (const auto &tuple : std::as_const(m_list)) {
         if (minTime > std::get<1>(tuple)) {
             minTime = std::get<1>(tuple);
             m_currentCookie = std::get<0>(tuple);
@@ -126,7 +135,7 @@ void Utilities::initWorker()
         m_timerThread = new QThread(this);
         m_worker = new AlarmWaitWorker();
         m_worker->moveToThread(m_timerThread);
-        connect(m_worker, &AlarmWaitWorker::finished, [this] {
+        connect(m_worker, &AlarmWaitWorker::finished, this, [this] {
             // notify time is up
             Q_EMIT this->wakeup(m_currentCookie);
             this->clearWakeup(m_currentCookie);
@@ -147,4 +156,14 @@ bool Utilities::hasWakeup()
     } else {
         return false;
     }
+}
+
+void Utilities::exitAfterTimeout()
+{
+    m_timer->start(30000);
+}
+
+void Utilities::stopExit()
+{
+    m_timer->stop();
 }

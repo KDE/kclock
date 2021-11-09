@@ -9,6 +9,7 @@
 
 #include "alarmadaptor.h"
 #include "kclockdsettings.h"
+#include "utilities.h"
 
 #include <KConfigGroup>
 #include <KLocalizedString>
@@ -22,7 +23,17 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QTime>
+std::atomic<int> Alarm::ringingCount = 0;
 
+void Alarm::bumpRingingCount()
+{
+    Alarm::ringingCount++;
+}
+
+void Alarm::lowerRingingCount()
+{
+    Alarm::ringingCount--;
+}
 // alarm created from UI
 Alarm::Alarm(AlarmModel *parent, QString name, int minutes, int hours, int daysOfWeek)
     : QObject(parent)
@@ -106,7 +117,7 @@ void Alarm::ring()
     // if not enabled, don't ring
     if (!this->enabled())
         return;
-
+    bumpRingingCount();
     qDebug() << "Ringing alarm" << m_name << "and sending notification...";
 
     KNotification *notif = new KNotification(QStringLiteral("alarm"));
@@ -121,9 +132,6 @@ void Alarm::ring()
     connect(notif, &KNotification::action1Activated, this, &Alarm::handleDismiss);
     connect(notif, &KNotification::action2Activated, this, &Alarm::handleSnooze);
     connect(notif, &KNotification::closed, this, &Alarm::handleDismiss);
-    connect(notif, &KNotification::closed, [notif] {
-        notif->close();
-    });
 
     notif->sendEvent();
 
@@ -163,6 +171,7 @@ void Alarm::handleDismiss()
 
     save();
     Q_EMIT alarmChanged();
+    lowerRingingCount();
 }
 
 void Alarm::handleSnooze()
@@ -177,6 +186,7 @@ void Alarm::handleSnooze()
     m_enabled = true; // can't use setSnooze because it resets snooze time
     save();
     Q_EMIT alarmChanged();
+    lowerRingingCount();
 }
 
 void Alarm::calculateNextRingTime()
