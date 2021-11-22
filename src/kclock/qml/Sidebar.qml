@@ -57,7 +57,11 @@ Kirigami.OverlayDrawer {
                 checked: pageStack.currentItem === page
                 property var page: appwindow.getPage("Time")
                 onClicked: {
-                    if (appwindow.pageStack.currentItem !== page) appwindow.switchToPage(page, 0);
+                    if (appwindow.pageStack.currentItem !== page) {
+                        appwindow.switchToPage(page, 0);
+                    } else {
+                        checked = Qt.binding(function() { return appwindow.pageStack.currentItem === page; });
+                    }
                 }
             }
             
@@ -70,7 +74,11 @@ Kirigami.OverlayDrawer {
                 checked: pageStack.currentItem === page
                 property var page: appwindow.getPage("Timers")
                 onClicked: {
-                    if (appwindow.pageStack.currentItem !== page) appwindow.switchToPage(page, 0);
+                    if (appwindow.pageStack.currentItem !== page) {
+                        appwindow.switchToPage(page, 0);
+                    } else {
+                        checked = Qt.binding(function() { return appwindow.pageStack.currentItem === page; });
+                    }
                 }
             }
             
@@ -83,7 +91,11 @@ Kirigami.OverlayDrawer {
                 checked: pageStack.currentItem === page
                 property var page: appwindow.getPage("Stopwatch")
                 onClicked: {
-                    if (appwindow.pageStack.currentItem !== page) appwindow.switchToPage(page, 0);
+                    if (appwindow.pageStack.currentItem !== page) {
+                        appwindow.switchToPage(page, 0);
+                    } else {
+                        checked = Qt.binding(function() { return appwindow.pageStack.currentItem === page; });
+                    }
                 }
             }
             
@@ -96,7 +108,11 @@ Kirigami.OverlayDrawer {
                 checked: pageStack.currentItem === page
                 property var page: appwindow.getPage("Alarms")
                 onClicked: {
-                    if (appwindow.pageStack.currentItem !== page) appwindow.switchToPage(page, 0);
+                    if (appwindow.pageStack.currentItem !== page) {
+                        appwindow.switchToPage(page, 0);
+                    } else {
+                        checked = Qt.binding(function() { return appwindow.pageStack.currentItem === page; });
+                    }
                 }
             }
             
@@ -114,7 +130,11 @@ Kirigami.OverlayDrawer {
                 checked: pageStack.currentItem === page
                 property var page: appwindow.getPage("Settings")
                 onClicked: {
-                    if (appwindow.pageStack.currentItem !== page) appwindow.switchToPage(page, 0);
+                    if (appwindow.pageStack.currentItem !== page) {
+                        appwindow.switchToPage(page, 0);
+                    } else {
+                        checked = Qt.binding(function() { return appwindow.pageStack.currentItem === page; });
+                    }
                 }
             }
         }
