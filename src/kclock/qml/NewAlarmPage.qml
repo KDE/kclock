@@ -64,6 +64,7 @@ Kirigami.ScrollablePage {
     footer: ToolBar {
         id: toolbar
         visible: Kirigami.Settings.isMobile
+        height: Kirigami.Settings.isMobile ? implicitHeight : 0
         topPadding: 0; bottomPadding: 0
         rightPadding: 0; leftPadding: 0
         
