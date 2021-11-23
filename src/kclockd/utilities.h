@@ -32,9 +32,8 @@ public:
     int scheduleWakeup(quint64 timestamp);
     void clearWakeup(int cookie);
     void exitAfterTimeout();
-    void stopExit();
-    void incfActiveTimerCount();
-    void decfActiveTimerCount();
+    void incfActiveCount();
+    void decfActiveCount();
 
 Q_SIGNALS:
     void wakeup(int cookie);

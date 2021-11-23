@@ -76,7 +76,6 @@ void AlarmModel::scheduleAlarm()
     if (m_alarmsList.count() == 0) {
         m_nextAlarmTime = 0;
         Q_EMIT nextAlarm(0);
-        Utilities::instance().exitAfterTimeout();
         return;
     }
 
@@ -94,6 +93,11 @@ void AlarmModel::scheduleAlarm()
                 minTime = alarm->nextRingTime();
             }
         }
+    }
+
+    int activeAlarmCount = alarmsToRing.size();
+    while (activeAlarmCount--) {
+        Utilities::instance().incfActiveCount();
     }
 
     // if there is an alarm that needs to rung
@@ -117,9 +121,6 @@ void AlarmModel::scheduleAlarm()
         m_cookie = -1;
     }
     Q_EMIT nextAlarm(m_nextAlarmTime);
-    if (Alarm::ringing() == 0 && Utilities::instance().hasPowerDevil()) {
-        Utilities::instance().exitAfterTimeout();
-    }
 }
 
 void AlarmModel::wakeupCallback(int cookie)

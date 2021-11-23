@@ -64,6 +64,9 @@ Utilities::Utilities(QObject *parent)
 
         Q_EMIT needsReschedule();
     });
+
+    // exit after 1 min if nothing happens
+    m_timer->start(60 * 1000);
 }
 
 int Utilities::scheduleWakeup(quint64 timestamp)
@@ -167,17 +170,12 @@ void Utilities::exitAfterTimeout()
     m_timer->start(30000);
 }
 
-void Utilities::stopExit()
-{
-    m_timer->stop();
-}
-
-void Utilities::incfActiveTimerCount()
+void Utilities::incfActiveCount()
 {
     m_activeTimerCount++;
 }
 
-void Utilities::decfActiveTimerCount()
+void Utilities::decfActiveCount()
 {
     m_activeTimerCount--;
     exitAfterTimeout();
@@ -186,10 +184,10 @@ void Utilities::decfActiveTimerCount()
 // hack, use timer count to keep alive
 void Utilities::keepAlive()
 {
-    incfActiveTimerCount();
+    incfActiveCount();
 }
 
 void Utilities::canExit()
 {
-    decfActiveTimerCount();
+    decfActiveCount();
 }

@@ -172,6 +172,7 @@ void Alarm::handleDismiss()
     save();
     Q_EMIT alarmChanged();
     lowerRingingCount();
+    Utilities::instance().decfActiveCount();
 }
 
 void Alarm::handleSnooze()
@@ -187,6 +188,7 @@ void Alarm::handleSnooze()
     save();
     Q_EMIT alarmChanged();
     lowerRingingCount();
+    Utilities::instance().decfActiveCount();
 }
 
 void Alarm::calculateNextRingTime()
