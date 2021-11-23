@@ -21,9 +21,12 @@ Utilities::Utilities(QObject *parent)
                                      this))
     , m_timer(new QTimer(this))
 {
-    connect(m_timer, &QTimer::timeout, this, [] {
-        QApplication::exit();
+    connect(m_timer, &QTimer::timeout, this, [this] {
+        if (m_activeTimerCount <= 0) {
+            QApplication::exit();
+        }
     });
+
     // if PowerDevil is present, we can rely on PowerDevil to track time, otherwise we do it ourself
     if (m_interface->isValid()) {
         // test Plasma 5.20 PowerDevil schedule wakeup feature
@@ -34,6 +37,7 @@ Utilities::Utilities(QObject *parent)
                                                                 QStringLiteral("org.kde.PowerManagement"),
                                                                 this,
                                                                 QDBusConnection::ExportScriptableSlots);
+    QDBusConnection::sessionBus().registerObject(QStringLiteral("/Utility"), this, QDBusConnection::ExportScriptableContents);
     qDebug() << "Register Utility on DBus: " << success;
     if (this->hasPowerDevil()) {
         qDebug() << "PowerDevil found, using it for time tracking.";
@@ -166,4 +170,26 @@ void Utilities::exitAfterTimeout()
 void Utilities::stopExit()
 {
     m_timer->stop();
+}
+
+void Utilities::incfActiveTimerCount()
+{
+    m_activeTimerCount++;
+}
+
+void Utilities::decfActiveTimerCount()
+{
+    m_activeTimerCount--;
+    exitAfterTimeout();
+}
+
+// hack, use timer count to keep alive
+void Utilities::keepAlive()
+{
+    incfActiveTimerCount();
+}
+
+void Utilities::canExit()
+{
+    decfActiveTimerCount();
 }

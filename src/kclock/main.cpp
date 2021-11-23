@@ -17,6 +17,7 @@
 #include "timermodel.h"
 #include "timerpresetmodel.h"
 #include "timezoneselectormodel.h"
+#include "utilityinterface.h"
 #include "utilmodel.h"
 #include "version.h"
 
@@ -104,5 +105,12 @@ int main(int argc, char *argv[])
             QMetaObject::invokeMethod(engine->rootObjects().first(), "switchToPage", Q_ARG(QVariant, page), Q_ARG(QVariant, 0));
         }
     }
+
+    OrgKdeKclockUtilitiesInterface *interface =
+        new OrgKdeKclockUtilitiesInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Utility"), QDBusConnection::sessionBus());
+    interface->keepAlive();
+    QObject::connect(&app, &QCoreApplication::aboutToQuit, &app, [interface] {
+        interface->canExit();
+    });
     return app.exec();
 }

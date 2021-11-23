@@ -33,11 +33,16 @@ public:
     void clearWakeup(int cookie);
     void exitAfterTimeout();
     void stopExit();
+    void incfActiveTimerCount();
+    void decfActiveTimerCount();
+
 Q_SIGNALS:
     void wakeup(int cookie);
     void needsReschedule();
 public Q_SLOTS:
     Q_SCRIPTABLE void wakeupCallback(int cookie);
+    Q_SCRIPTABLE void keepAlive();
+    Q_SCRIPTABLE void canExit();
 
 private:
     explicit Utilities(QObject *parent = nullptr);
@@ -53,6 +58,7 @@ private:
     QList<std::tuple<int, quint64>> m_list; // cookie, timestamp. For AlarmWaitWorker use
     int m_cookie = 1; // For AlarmWaitWorker use
     int m_currentCookie; // For AlarmWaitWorker use
+    std::atomic<int> m_activeTimerCount{0};
 
     QThread *m_timerThread = nullptr;
     AlarmWaitWorker *m_worker = nullptr;
