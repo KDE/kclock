@@ -12,15 +12,29 @@ import org.kde.kirigami 2.12 as Kirigami
 Controls.AbstractButton {
     id: button
     
-    background: Rectangle {
-        radius: Kirigami.Units.smallSpacing
-        Kirigami.Theme.colorSet: Kirigami.Theme.Button
-        Kirigami.Theme.inherit: false
-        color: button.pressed ? Qt.rgba(Kirigami.Theme.disabledTextColor.r, Kirigami.Theme.disabledTextColor.g, Kirigami.Theme.disabledTextColor.b, 0.3) : 
-                                (button.checked || hoverHandler.hovered ? Qt.rgba(Kirigami.Theme.disabledTextColor.r, Kirigami.Theme.disabledTextColor.g, Kirigami.Theme.disabledTextColor.b, 0.2) : "transparent")
-                                                  
-        HoverHandler {
-            id: hoverHandler
+    background: Item {
+        
+        Rectangle {
+            anchors.fill: parent
+            radius: Kirigami.Units.smallSpacing
+            Kirigami.Theme.colorSet: Kirigami.Theme.Button
+            Kirigami.Theme.inherit: false
+            
+            property color baseColor: Kirigami.Theme.highlightColor
+            
+            color: button.pressed ? Qt.rgba(baseColor.r, baseColor.g, baseColor.b, 0.3) : 
+                                    (button.checked || hoverHandler.hovered ? Qt.rgba(baseColor.r, baseColor.g, baseColor.b, 0.2) : "transparent")
+
+            border.color: button.checked ? Qt.rgba(baseColor.r, baseColor.g, baseColor.b, 0.7) : 
+                                        button.pressed ? Qt.rgba(baseColor.r, baseColor.g, baseColor.b, 0.9) : color
+            border.width: 1
+
+            Behavior on color { ColorAnimation { duration: Kirigami.Units.shortDuration } }
+            Behavior on border.color { ColorAnimation { duration: Kirigami.Units.shortDuration } }
+            
+            HoverHandler {
+                id: hoverHandler
+            }
         }
     }
     
