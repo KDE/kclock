@@ -29,7 +29,7 @@ Kirigami.OverlayDrawer {
         
         QQC2.ToolBar {
             Layout.fillWidth: true
-            implicitHeight: Kirigami.Units.gridUnit * 2 + Kirigami.Units.smallSpacing
+            implicitHeight: applicationWindow().pageStack.globalToolBar.preferredHeight
 
             Item {
                 anchors.fill: parent
