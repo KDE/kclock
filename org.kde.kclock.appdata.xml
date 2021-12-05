@@ -315,8 +315,12 @@
       <description>
         <p>Changes:</p>
         <ul>
-          <li>User interface improvements</li>
-          <li>Several bugfixes and improvements</li>
+          <li>Kirigami's bottom navigation bar component is now used for mobile</li>
+          <li>A Plasma style sidebar is now used on desktop</li>
+          <li>The system tray item now only shows when alarms are pending</li>
+          <li>The daemon automatically stops if no alarms and timers are pending</li>
+          <li>Action bars are now used on the timer and alarms forms page</li>
+          <li>The settings button has been moved to the top actions bar</li>
         </ul>
       </description>
       <url>https://www.plasma-mobile.org/2021/12/07/plasma-mobile-gear-21-12/</url>
