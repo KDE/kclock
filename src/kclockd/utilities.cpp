@@ -37,7 +37,6 @@ Utilities::Utilities(QObject *parent)
                                                                 QStringLiteral("org.kde.PowerManagement"),
                                                                 this,
                                                                 QDBusConnection::ExportScriptableSlots);
-    QDBusConnection::sessionBus().registerObject(QStringLiteral("/Utility"), this, QDBusConnection::ExportScriptableContents);
     qDebug() << "Register Utility on DBus: " << success;
     if (this->hasPowerDevil()) {
         qDebug() << "PowerDevil found, using it for time tracking.";

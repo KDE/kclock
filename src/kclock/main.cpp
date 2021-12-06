@@ -106,8 +106,8 @@ int main(int argc, char *argv[])
         }
     }
 
-    OrgKdeKclockUtilitiesInterface *interface =
-        new OrgKdeKclockUtilitiesInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Utility"), QDBusConnection::sessionBus());
+    OrgKdePowerManagementInterface *interface =
+        new OrgKdePowerManagementInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Utility"), QDBusConnection::sessionBus());
     interface->keepAlive();
     QObject::connect(&app, &QCoreApplication::aboutToQuit, &app, [interface] {
         interface->canExit();

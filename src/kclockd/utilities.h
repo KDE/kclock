@@ -16,7 +16,7 @@ const QString POWERDEVIL_SERVICE_NAME = QStringLiteral("org.kde.Solid.PowerManag
 class Utilities : public QObject
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "org.kde.kclock.Utilities")
+    Q_CLASSINFO("D-Bus Interface", "org.kde.PowerManagement")
 public:
     static Utilities &instance()
     {
