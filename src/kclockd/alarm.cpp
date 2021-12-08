@@ -1,6 +1,6 @@
 /*
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
- * Copyright 2020 Devin Lin <espidev@gmail.com>
+ * Copyright 2020-2021 Devin Lin <devin@kde.org>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
@@ -23,7 +23,8 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QTime>
-std::atomic<int> Alarm::ringingCount = 0;
+
+std::atomic<int> Alarm::ringingCount{0};
 
 void Alarm::bumpRingingCount()
 {
@@ -34,22 +35,28 @@ void Alarm::lowerRingingCount()
 {
     Alarm::ringingCount--;
 }
+
+int Alarm::ringing()
+{
+    return Alarm::ringingCount;
+}
+
 // alarm created from UI
 Alarm::Alarm(AlarmModel *parent, QString name, int minutes, int hours, int daysOfWeek)
-    : QObject(parent)
-    , m_name(name)
-    , m_uuid(QUuid::createUuid())
-    , m_enabled(true)
-    , m_hours(hours)
-    , m_minutes(minutes)
-    , m_daysOfWeek(daysOfWeek)
+    : QObject{parent}
+    , m_name{name}
+    , m_uuid{QUuid::createUuid()}
+    , m_hours{hours}
+    , m_minutes{minutes}
+    , m_daysOfWeek{daysOfWeek}
 {
     initialize(parent);
 }
 
 // alarm from json (loaded from storage)
 Alarm::Alarm(QString serialized, AlarmModel *parent)
-    : QObject(parent)
+    : QObject{parent}
+    , m_name{QStringLiteral("New Alarm")}
 {
     if (serialized.isEmpty()) {
         m_uuid = QUuid::createUuid();
@@ -67,6 +74,118 @@ Alarm::Alarm(QString serialized, AlarmModel *parent)
         m_audioPath = QUrl::fromLocalFile(obj[QStringLiteral("audioPath")].toString());
     }
     initialize(parent);
+}
+
+QString Alarm::name() const
+{
+    return m_name;
+}
+
+void Alarm::setName(QString name)
+{
+    this->m_name = name;
+    Q_EMIT nameChanged();
+    Q_EMIT propertyChanged(QStringLiteral("name"));
+}
+
+QUuid Alarm::uuid() const
+{
+    return m_uuid;
+}
+
+bool Alarm::enabled() const
+{
+    return m_enabled;
+}
+
+void Alarm::setEnabled(bool enabled)
+{
+    if (this->m_enabled != enabled) {
+        this->m_snooze = 0; // reset snooze value
+        this->m_nextRingTime = -1; // reset next ring time
+
+        this->m_enabled = enabled;
+        Q_EMIT alarmChanged(); // notify the AlarmModel to reschedule
+        Q_EMIT enabledChanged();
+        Q_EMIT propertyChanged(QStringLiteral("enabled"));
+    }
+}
+
+int Alarm::hours() const
+{
+    return m_hours;
+}
+
+void Alarm::setHours(int hours)
+{
+    this->m_hours = hours;
+    Q_EMIT alarmChanged();
+    Q_EMIT hoursChanged();
+    Q_EMIT propertyChanged(QStringLiteral("hours"));
+}
+
+int Alarm::minutes() const
+{
+    return m_minutes;
+}
+
+void Alarm::setMinutes(int minutes)
+{
+    this->m_minutes = minutes;
+    Q_EMIT alarmChanged();
+    Q_EMIT minutesChanged();
+    Q_EMIT propertyChanged(QStringLiteral("minutes"));
+}
+
+int Alarm::daysOfWeek() const
+{
+    return m_daysOfWeek;
+}
+
+void Alarm::setDaysOfWeek(int daysOfWeek)
+{
+    this->m_daysOfWeek = daysOfWeek;
+    Q_EMIT alarmChanged();
+    Q_EMIT daysOfWeekChanged();
+    Q_EMIT propertyChanged(QStringLiteral("daysOfWeek"));
+}
+
+int Alarm::snoozedMinutes() const
+{
+    if (m_snooze != 0 && m_enabled) {
+        return m_snooze / 60;
+    } else {
+        return 0;
+    }
+}
+
+int Alarm::snooze() const
+{
+    return m_snooze;
+}
+
+void Alarm::setSnooze(int snooze)
+{
+    this->m_snooze = snooze;
+    Q_EMIT snoozedMinutesChanged();
+    Q_EMIT propertyChanged(QStringLiteral("snoozedMinutes"));
+}
+
+QString Alarm::ringtonePath() const
+{
+    return m_audioPath.toString();
+}
+
+void Alarm::setRingtonePath(QString path)
+{
+    m_audioPath = QUrl(path);
+    Q_EMIT ringtonePathChanged();
+    Q_EMIT propertyChanged(QStringLiteral("ringtonePath"));
+}
+
+QString Alarm::getUUID()
+{
+    return m_uuid.toString();
 }
 
 void Alarm::initialize(AlarmModel *parent)
@@ -101,7 +220,8 @@ QString Alarm::serialize()
     obj[QStringLiteral("enabled")] = enabled();
     obj[QStringLiteral("snooze")] = snooze();
     obj[QStringLiteral("audioPath")] = m_audioPath.toLocalFile();
-    return QString(QJsonDocument(obj).toJson(QJsonDocument::Compact));
+    QByteArray data = QJsonDocument(obj).toJson(QJsonDocument::Compact);
+    return QString::fromStdString(data.toStdString());
 }
 
 void Alarm::save()
@@ -123,7 +243,7 @@ void Alarm::ring()
     KNotification *notif = new KNotification(QStringLiteral("alarm"));
     notif->setActions(QStringList{i18n("Dismiss"), i18n("Snooze")});
     notif->setIconName(QStringLiteral("kclock"));
-    notif->setTitle(name() == "" ? i18n("Alarm") : name());
+    notif->setTitle(name() == QString() ? i18n("Alarm") : name());
     notif->setText(QLocale::system().toString(QTime::currentTime(), QLocale::ShortFormat)); // TODO
     notif->setDefaultAction(i18n("View"));
     notif->setFlags(KNotification::NotificationFlag::Persistent);

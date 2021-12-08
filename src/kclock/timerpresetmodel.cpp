@@ -13,7 +13,6 @@
 
 const QString TIMERPRESETS_CFG_GROUP = QStringLiteral("TimerPresets"), TIMERPRESETS_CFG_KEY = QStringLiteral("timerPresets");
 
-/* ~ TimerPreset ~ */
 TimerPreset::TimerPreset(QObject *parent, const QString &presetName, int presetDuration)
     : QObject(parent)
     , m_presetName(presetName)
@@ -21,8 +20,8 @@ TimerPreset::TimerPreset(QObject *parent, const QString &presetName, int presetD
 {
 }
 TimerPreset::TimerPreset(const QJsonObject &obj)
-    : m_presetName(obj["presetName"].toString())
-    , m_presetDuration(obj["presetDuration"].toInt())
+    : m_presetName(obj[QStringLiteral("presetName")].toString())
+    , m_presetDuration(obj[QStringLiteral("presetDuration")].toInt())
 {
 }
 
@@ -33,24 +32,40 @@ TimerPreset::~TimerPreset()
 QJsonObject TimerPreset::toJson() const
 {
     QJsonObject obj;
-    obj["presetName"] = m_presetName;
-    obj["presetDuration"] = m_presetDuration;
+    obj[QStringLiteral("presetName")] = m_presetName;
+    obj[QStringLiteral("presetDuration")] = m_presetDuration;
     return obj;
+}
+
+QString TimerPreset::presetName() const
+{
+    return m_presetName;
+}
+
+int TimerPreset::presetDuration() const
+{
+    return m_presetDuration;
 }
 
 void TimerPreset::setPresetName(const QString &presetName)
 {
     m_presetName = presetName;
-    emit propertyChanged();
+    Q_EMIT propertyChanged();
 }
 
 void TimerPreset::setDurationLength(int presetDuration)
 {
     m_presetDuration = presetDuration;
-    emit propertyChanged();
+    Q_EMIT propertyChanged();
 }
 
 /* - TimerPresetModel - */
+
+TimerPresetModel *TimerPresetModel::instance()
+{
+    static TimerPresetModel *s_presetModel = new TimerPresetModel(qApp);
+    return s_presetModel;
+}
 
 TimerPresetModel::TimerPresetModel(QObject *parent)
     : QAbstractListModel(parent)
@@ -88,7 +103,7 @@ void TimerPresetModel::save()
 
     auto config = KSharedConfig::openConfig();
     KConfigGroup group = config->group(TIMERPRESETS_CFG_GROUP);
-    group.writeEntry(TIMERPRESETS_CFG_KEY, QString(QJsonDocument(arr).toJson(QJsonDocument::Compact)));
+    group.writeEntry(TIMERPRESETS_CFG_KEY, QString::fromStdString(QJsonDocument(arr).toJson(QJsonDocument::Compact).toStdString()));
 
     group.sync();
 }

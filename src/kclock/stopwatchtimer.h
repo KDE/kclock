@@ -1,17 +1,16 @@
 /*
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
- * Copyright 2020 Devin Lin <espidev@gmail.com>
+ * Copyright 2020-2021 Devin Lin <devin@kde.org>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#ifndef STOPWATCHTIMER_H
-#define STOPWATCHTIMER_H
+#pragma once
 
 #include <QDateTime>
 #include <QObject>
+#include <QTimer>
 
-class QTimer;
 class StopwatchTimer : public QObject
 {
     Q_OBJECT
@@ -35,10 +34,10 @@ public:
     Q_INVOKABLE void reset();
     Q_INVOKABLE void toggle();
 
-signals:
+Q_SIGNALS:
     void timeChanged();
 
-private slots:
+private Q_SLOTS:
     void updateTime();
 
 private:
@@ -51,5 +50,3 @@ private:
     bool stopped = true, paused = false;
     QTimer *m_timer;
 };
-
-#endif // STOPWATCHTIMER_H

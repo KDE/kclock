@@ -4,8 +4,7 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#ifndef TIMERPRESETMODEL_H
-#define TIMERPRESETMODEL_H
+#pragma once
 
 #include <QAbstractListModel>
 #include <QCoreApplication>
@@ -21,6 +20,7 @@ class TimerPreset : public QObject
     Q_OBJECT
     Q_PROPERTY(QString presetName READ presetName WRITE setPresetName NOTIFY propertyChanged)
     Q_PROPERTY(int presetDuration READ presetDuration NOTIFY propertyChanged)
+
 public:
     explicit TimerPreset(QObject *parent = nullptr, const QString &presetName = {}, int presetDuration = 0);
     explicit TimerPreset(const QJsonObject &obj);
@@ -29,45 +29,29 @@ public:
 
     QJsonObject toJson() const;
 
-    QString presetName() const
-    {
-        return m_presetName;
-    }
-
-    int presetDuration() const
-    {
-        return m_presetDuration;
-    }
-
+    QString presetName() const;
+    int presetDuration() const;
     void setPresetName(const QString &presetName);
-
     void setDurationLength(int presetDuration);
 
 private:
     QString m_presetName;
     int m_presetDuration;
-signals:
+
+Q_SIGNALS:
     void propertyChanged();
 };
-
-class TimerPresetModel;
-static TimerPresetModel *s_presetModel = nullptr;
 
 class TimerPresetModel : public QAbstractListModel
 {
     Q_OBJECT
+
 public:
     enum Roles { TimerPresetRole = Qt::UserRole };
-    static TimerPresetModel *instance()
-    {
-        if (!s_presetModel) {
-            s_presetModel = new TimerPresetModel(qApp);
-        }
-        return s_presetModel;
-    }
+
+    static TimerPresetModel *instance();
 
     void load();
-
     void save();
 
     QHash<int, QByteArray> roleNames() const override;
@@ -85,5 +69,3 @@ private:
 
     QList<TimerPreset *> m_presets;
 };
-
-#endif // TIMERPRESETMODEL_H

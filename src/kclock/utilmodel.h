@@ -1,12 +1,11 @@
 /*
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
- * Copyright 2020 Devin Lin <espidev@gmail.com>
+ * Copyright 2020-2021 Devin Lin <devin@kde.org>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#ifndef KCLOCK_UTILMODEL_H
-#define KCLOCK_UTILMODEL_H
+#pragma once
 
 #include <QObject>
 #include <QString>
@@ -18,11 +17,7 @@ class UtilModel : public QObject
     Q_PROPERTY(QString tzName READ getCurrentTimeZoneName NOTIFY propertyChanged)
 
 public:
-    static UtilModel *instance()
-    {
-        static UtilModel *singleton = new UtilModel;
-        return singleton;
-    }
+    static UtilModel *instance();
 
     QString getCurrentTimeZoneName();
 
@@ -42,5 +37,3 @@ Q_SIGNALS:
     void propertyChanged();
     void applicationLoadedChanged();
 };
-
-#endif // KCLOCK_UTILMODEL_H

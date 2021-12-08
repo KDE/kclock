@@ -1,6 +1,6 @@
 /*
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
- * Copyright 2020 Devin Lin <espidev@gmail.com>
+ * Copyright 2020-2021 Devin Lin <devin@kde.org>
  * Copyright 2021 Nicolas Fella <nicolas.fella@gmx.de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later

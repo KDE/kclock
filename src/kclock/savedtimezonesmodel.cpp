@@ -1,6 +1,6 @@
 /*
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
- * Copyright 2020 Devin Lin <espidev@gmail.com>
+ * Copyright 2020-2021 Devin Lin <devin@kde.org>
  * Copyright 2021 Nicolas Fella <nicolas.fella@gmx.de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -17,7 +17,8 @@
 
 #include "kclockformat.h"
 #include "utilmodel.h"
-const QString TZ_CFG_GROUP = "Timezones";
+
+const QString TZ_CFG_GROUP = QStringLiteral("Timezones");
 
 SavedTimeZonesModel::SavedTimeZonesModel(QObject *parent)
     : QAbstractListModel(parent)
@@ -69,9 +70,9 @@ QVariant SavedTimeZonesModel::data(const QModelIndex &index, int role) const
 
         // apply 12 hour or 24 hour settings
         if (m_settings.value(QStringLiteral("Global/use24HourTime")).toBool()) {
-            return time.time().toString("hh:mm");
+            return time.time().toString(QStringLiteral("hh:mm"));
         } else {
-            return time.time().toString("h:mm ap");
+            return time.time().toString(QStringLiteral("h:mm ap"));
         }
     }
     case RelativeTimeRole: {

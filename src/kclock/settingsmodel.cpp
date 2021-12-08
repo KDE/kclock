@@ -77,6 +77,62 @@ SettingsModel::SettingsModel()
     qDebug() << m_alarmSnoozeLengthDisplay;
 }
 
+SettingsModel &SettingsModel::instance()
+{
+    static SettingsModel singleton;
+    return singleton;
+};
+
+const int &SettingsModel::volume() const
+{
+    return m_volume;
+}
+
+void SettingsModel::setVolume(int volume)
+{
+    m_interface->setProperty("alarmVolume", volume);
+}
+
+const QString &SettingsModel::alarmSilenceAfterDisplay() const
+{
+    return m_alarmSilenceAfterDisplay;
+}
+
+void SettingsModel::setAlarmSilenceAfterDisplay(QString str)
+{
+    m_alarmSilenceAfterDisplay = str;
+}
+
+const QString &SettingsModel::alarmSnoozeLengthDisplay() const
+{
+    return m_alarmSnoozeLengthDisplay;
+}
+
+void SettingsModel::setAlarmSnoozeLengthDisplay(QString str)
+{
+    m_alarmSnoozeLengthDisplay = str;
+}
+
+const int &SettingsModel::alarmSilenceAfter() const
+{
+    return m_alarmSilenceAfter;
+}
+
+void SettingsModel::setAlarmSilenceAfter(int length)
+{
+    m_interface->setProperty("alarmSilenceAfter", length);
+}
+
+void SettingsModel::setAlarmSnoozeLength(int length)
+{
+    m_interface->setProperty("alarmSnoozeLength", length);
+}
+
+const int &SettingsModel::alarmSnoozeLength() const
+{
+    return m_alarmSnoozeLength;
+}
+
 void SettingsModel::updateVolume()
 {
     m_volume = m_interface->alarmVolume();

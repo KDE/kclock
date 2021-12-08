@@ -3,12 +3,14 @@
     SPDX-FileCopyrightText: 2021 Devin Lin <espidev@gmail.com>
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
+
 #pragma once
+
 #include <Plasma/Applet>
 #include <QLocale>
+#include <QProcess>
+#include <QTimer>
 
-class QProcess;
-class QTimer;
 class KClock_1x2 : public Plasma::Applet
 {
     Q_OBJECT
@@ -21,21 +23,15 @@ public:
     ~KClock_1x2();
 
     QString date();
-    QString alarmTime()
-    {
-        return m_string;
-    };
-    bool hasAlarm()
-    {
-        return m_hasAlarm;
-    }
+    QString alarmTime();
+    bool hasAlarm();
     Q_INVOKABLE void openKClock();
 
-signals:
+Q_SIGNALS:
     void propertyChanged();
     void timeChanged();
 
-private slots:
+private Q_SLOTS:
     void updateAlarm(qulonglong time);
     void initialTimeUpdate(); // making sure time is update when minute changes
 

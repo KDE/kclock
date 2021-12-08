@@ -149,7 +149,6 @@ Kirigami.ScrollablePage {
             
             title: i18n("Change Alarm Volume")
             contentItem: RowLayout {
-                id: row
                 Label {
                     text: i18n("Volume: ")
                 }
@@ -175,8 +174,6 @@ Kirigami.ScrollablePage {
             title: i18n("Silence Alarm After")
 
             ColumnLayout {
-                Kirigami.Theme.inherit: false
-                Kirigami.Theme.colorSet: Kirigami.Theme.View
                 spacing: 0
                 
                 Repeater {

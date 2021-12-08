@@ -12,6 +12,13 @@
 #include <QDebug>
 #include <QThread>
 #include <QTimer>
+
+Utilities &Utilities::instance()
+{
+    static Utilities singleton;
+    return singleton;
+}
+
 Utilities::Utilities(QObject *parent)
     : QObject(parent)
     , m_interface(new QDBusInterface(POWERDEVIL_SERVICE_NAME,
@@ -67,6 +74,11 @@ Utilities::Utilities(QObject *parent)
     // exit after 1 min if nothing happens
     m_timer->start(60 * 1000);
 }
+
+bool Utilities::hasPowerDevil()
+{
+    return m_hasPowerDevil;
+};
 
 int Utilities::scheduleWakeup(quint64 timestamp)
 {

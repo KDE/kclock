@@ -1,11 +1,10 @@
 <!--
-- Copyright 2020-2021 Devin Lin <espidev@gmail.com>\
+- Copyright 2020-2021 Devin Lin <devin@kde.org>
 - SPDX-License-Identifier: GPL-2.0-or-later
 -->
 <RCC>
     <qresource prefix="/">
         <file>qml/main.qml</file>
-        <file>qml/PopupDialog.qml</file>
         <file>qml/TimePage.qml</file>
         <file>qml/TimerPage.qml</file>
         <file>qml/TimerForm.qml</file>
@@ -26,5 +25,6 @@
         <file>qml/FloatingActionButton.qml</file>
         <file>qml/FooterToolBarButton.qml</file>
         <file>qml/SidebarButton.qml</file>
+        <file>qml/SoundPickerPage.qml</file>
     </qresource>
 </RCC>

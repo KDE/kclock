@@ -4,30 +4,26 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#ifndef KCLOCKD_UTILITIES_H
-#define KCLOCKD_UTILITIES_H
+#pragma once
 
 #include "alarmwaitworker.h"
 
 #include <QDBusInterface>
 #include <QObject>
-class QTimer;
+
 const QString POWERDEVIL_SERVICE_NAME = QStringLiteral("org.kde.Solid.PowerManagement");
+
+class QTimer;
+
 class Utilities : public QObject
 {
     Q_OBJECT
     Q_CLASSINFO("D-Bus Interface", "org.kde.PowerManagement")
-public:
-    static Utilities &instance()
-    {
-        static Utilities singleton;
-        return singleton;
-    }
 
-    bool hasPowerDevil()
-    {
-        return m_hasPowerDevil;
-    };
+public:
+    static Utilities &instance();
+
+    bool hasPowerDevil();
 
     int scheduleWakeup(quint64 timestamp);
     void clearWakeup(int cookie);
@@ -38,6 +34,7 @@ public:
 Q_SIGNALS:
     void wakeup(int cookie);
     void needsReschedule();
+
 public Q_SLOTS:
     Q_SCRIPTABLE void wakeupCallback(int cookie);
     Q_SCRIPTABLE void keepAlive();
@@ -64,4 +61,3 @@ private:
     QTimer *m_timer = nullptr;
 };
 
-#endif // KCLOCKD_UTILITIES_H

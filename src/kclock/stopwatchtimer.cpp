@@ -1,6 +1,6 @@
 /*
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
- * Copyright 2020 Devin Lin <espidev@gmail.com>
+ * Copyright 2020-2021 Devin Lin <devin@kde.org>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
@@ -12,14 +12,14 @@
 
 StopwatchTimer::StopwatchTimer(QObject *parent)
     : QObject(parent)
+    , m_timer{new QTimer{this}}
 {
-    m_timer = new QTimer(this);
     connect(m_timer, &QTimer::timeout, this, &StopwatchTimer::updateTime);
 }
 
 void StopwatchTimer::updateTime()
 {
-    emit timeChanged();
+    Q_EMIT timeChanged();
 }
 
 void StopwatchTimer::toggle()
@@ -51,7 +51,7 @@ void StopwatchTimer::reset()
     pausedElapsed = 0;
     stopped = true;
     paused = false;
-    emit timeChanged();
+    Q_EMIT timeChanged();
 }
 
 long long StopwatchTimer::elapsedTime()
@@ -84,17 +84,17 @@ long long StopwatchTimer::small()
 QString StopwatchTimer::minutesDisplay()
 {
     long long amount = minutes();
-    return amount >= 10 ? QString::number(amount) : "0" + QString::number(amount);
+    return amount >= 10 ? QString::number(amount) : QStringLiteral("0") + QString::number(amount);
 }
 
 QString StopwatchTimer::secondsDisplay()
 {
     long long amount = seconds();
-    return amount >= 10 ? QString::number(amount) : "0" + QString::number(amount);
+    return amount >= 10 ? QString::number(amount) : QStringLiteral("0") + QString::number(amount);
 }
 
 QString StopwatchTimer::smallDisplay()
 {
     long long amount = small();
-    return amount >= 10 ? QString::number(amount) : "0" + QString::number(amount);
+    return amount >= 10 ? QString::number(amount) : QStringLiteral("0") + QString::number(amount);
 }

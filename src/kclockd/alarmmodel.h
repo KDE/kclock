@@ -1,12 +1,11 @@
 /*
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
- * Copyright 2020 Devin Lin <espidev@gmail.com>
+ * Copyright 2020-2021 Devin Lin <devin@kde.org>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#ifndef KCLOCKD_ALARMMODEL_H
-#define KCLOCKD_ALARMMODEL_H
+#pragma once
 
 #include "alarm.h"
 
@@ -18,12 +17,9 @@ class AlarmModel : public QObject
 {
     Q_OBJECT
     Q_CLASSINFO("D-Bus Interface", "org.kde.kclock.AlarmModel")
+
 public:
-    static AlarmModel *instance()
-    {
-        static AlarmModel *singleton = new AlarmModel();
-        return singleton;
-    }
+    static AlarmModel *instance();
 
     void load();
     void save();
@@ -41,6 +37,7 @@ public Q_SLOTS:
     Q_SCRIPTABLE quint64 getNextAlarm();
     void scheduleAlarm();
     void wakeupCallback(int cookie);
+
 private Q_SLOTS:
     void updateNotifierItem(quint64 time); // update notify icon in systemtray
 
@@ -58,5 +55,3 @@ private:
     QList<Alarm *> m_alarmsList;
     KStatusNotifierItem *m_item{nullptr};
 };
-
-#endif // KCLOCKD_ALARMMODEL_H

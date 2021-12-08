@@ -1,6 +1,6 @@
 /*
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
- * Copyright 2020 Devin Lin <espidev@gmail.com>
+ * Copyright 2020-2021 Devin Lin <devin@kde.org>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
@@ -13,9 +13,15 @@
 
 #include <KLocalizedString>
 
+UtilModel *UtilModel::instance()
+{
+    static UtilModel *singleton = new UtilModel;
+    return singleton;
+}
+
 QString UtilModel::getCurrentTimeZoneName()
 {
-    return QTimeZone::systemTimeZoneId();
+    return QString::fromStdString(QTimeZone::systemTimeZoneId().toStdString());
 }
 
 long long UtilModel::calculateNextRingTime(int hours, int minutes, int daysOfWeek, int snooze)
@@ -80,7 +86,7 @@ QString UtilModel::timeToRingFormatted(const long long &timestamp)
 
 bool UtilModel::isLocale24HourTime()
 {
-    return QLocale::system().timeFormat(QLocale::ShortFormat).toLower().indexOf("ap") == -1;
+    return QLocale::system().timeFormat(QLocale::ShortFormat).toLower().indexOf(QStringLiteral("ap")) == -1;
 }
 
 void UtilModel::setSelectedTimezone(QByteArray id, bool selected)

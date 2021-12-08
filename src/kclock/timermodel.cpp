@@ -1,6 +1,6 @@
 /*
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
- * Copyright 2020 Devin Lin <espidev@gmail.com>
+ * Copyright 2020-2021 Devin Lin <devin@kde.org>
  * Copyright 2021 Boris Petrov <boris.v.petrov@protonmail.com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -18,7 +18,12 @@
 
 #include <KLocalizedString>
 
-/* ~ TimerModel ~ */
+TimerModel *TimerModel::instance()
+{
+    static TimerModel *singleton = new TimerModel();
+    return singleton;
+}
+
 TimerModel::TimerModel(QObject *parent)
     : m_interface(new OrgKdeKclockTimerModelInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Timers"), QDBusConnection::sessionBus(), this))
 {

@@ -5,8 +5,7 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#ifndef KCLOCK_ALARMSMODEL_H
-#define KCLOCK_ALARMSMODEL_H
+#pragma once
 
 #include "alarm.h"
 #include "alarmmodelinterface.h"
@@ -20,11 +19,7 @@ class AlarmModel : public QAbstractListModel
     Q_PROPERTY(bool connectedToDaemon READ connectedToDaemon NOTIFY connectedToDaemonChanged)
 
 public:
-    static AlarmModel *instance()
-    {
-        static AlarmModel *singleton = new AlarmModel();
-        return singleton;
-    }
+    static AlarmModel *instance();
 
     enum {
         NameRole = Qt::DisplayRole,
@@ -46,7 +41,7 @@ public:
     Q_INVOKABLE void remove(int index);
 
     Q_INVOKABLE void
-    addAlarm(int hours, int minutes, int daysOfWeek, QString name, QString ringtonePath = 0); // in 24 hours units, ringTone could be chosen from a list
+    addAlarm(int hours, int minutes, int daysOfWeek, QString name, QString ringtonePath = QString{}); // in 24 hours units, ringTone could be chosen from a list
 
     Q_INVOKABLE QString timeToRingFormated(int hours, int minutes, int daysOfWeek); // for new alarm use
 
@@ -68,5 +63,3 @@ private:
     explicit AlarmModel(QObject *parent = nullptr);
     QList<Alarm *> alarmsList;
 };
-
-#endif // KCLOCK_ALARMSMODEL_H

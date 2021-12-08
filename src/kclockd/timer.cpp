@@ -94,12 +94,73 @@ void Timer::reset()
     Q_EMIT runningChanged();
 }
 
+int Timer::elapsed() const
+{
+    if (running()) {
+        return QDateTime::currentSecsSinceEpoch() - m_startTime;
+    } else {
+        return m_hasElapsed;
+    }
+}
+QString Timer::getUUID()
+{
+    return m_uuid.toString();
+}
+const QUuid &Timer::uuid() const
+{
+    return m_uuid;
+};
+const int &Timer::length() const
+{
+    return m_length;
+}
+void Timer::setLength(int length)
+{
+    m_length = length;
+    Q_EMIT lengthChanged();
+    TimerModel::instance()->save();
+}
+
+const QString &Timer::label() const
+{
+    return m_label;
+}
+
+void Timer::setLabel(QString label)
+{
+    m_label = label;
+    Q_EMIT labelChanged();
+    TimerModel::instance()->save();
+}
+
+const QString &Timer::commandTimeout() const
+{
+    return m_commandTimeout;
+}
+
+void Timer::setCommandTimeout(QString commandTimeout)
+{
+    m_commandTimeout = commandTimeout;
+    Q_EMIT commandTimeoutChanged();
+    TimerModel::instance()->save();
+}
+
+const bool &Timer::looping() const
+{
+    return m_looping;
+}
+
+const bool &Timer::running() const
+{
+    return m_running;
+}
+
 void Timer::timeUp(int cookie)
 {
     if (cookie == m_cookie) {
         this->sendNotification();
         this->m_cookie = -1;
-        if (m_commandTimeout != "") {
+        if (m_commandTimeout.isEmpty()) {
             QProcess *process = new QProcess;
             process->start(m_commandTimeout);
         }
@@ -145,7 +206,7 @@ void Timer::sendNotification()
 {
     qDebug("Timer finished, sending notification...");
 
-    KNotification *notif = new KNotification("timerFinished");
+    KNotification *notif = new KNotification(QStringLiteral("timerFinished"));
     notif->setIconName(QStringLiteral("kclock"));
     notif->setTitle(i18n("Timer complete"));
     notif->setText(i18n("Your timer %1 has finished!", this->label()));

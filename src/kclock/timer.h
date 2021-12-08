@@ -1,20 +1,19 @@
 /*
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
- * Copyright 2020 Devin Lin <espidev@gmail.com>
+ * Copyright 2020-2021 Devin Lin <devin@kde.org>
  * Copyright 2021 Boris Petrov <boris.v.petrov@protonmail.com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#ifndef TIMER_H
-#define TIMER_H
+#pragma once
 
 #include "timerinterface.h"
 
 #include <QObject>
+#include <QTimer>
 #include <QUuid>
 
-class QTimer;
 class Timer : public QObject
 {
     Q_OBJECT
@@ -31,66 +30,35 @@ class Timer : public QObject
 public:
     Timer();
     explicit Timer(QString uuid, bool justCreated = true);
-    const QUuid &uuid()
-    {
-        return m_uuid;
-    };
+
+    const QUuid &uuid();
     Q_INVOKABLE void toggleRunning();
     Q_INVOKABLE void toggleLooping();
     Q_INVOKABLE void reset();
     Q_INVOKABLE void addMinute();
 
-    QString lengthPretty() const
-    {
-        qint64 len = m_length, hours = len / 60 / 60, minutes = len / 60 - hours * 60, seconds = len - hours * 60 * 60 - minutes * 60;
-        return QString::number(hours) + ":" + QString::number(minutes).rightJustified(2, '0') + ":" + QString::number(seconds).rightJustified(2, '0');
-    }
-    QString elapsedPretty() const
-    {
-        qint64 len = m_elapsed, hours = len / 60 / 60, minutes = len / 60 - hours * 60, seconds = len - hours * 60 * 60 - minutes * 60;
-        return QString::number(hours) + ":" + QString::number(minutes).rightJustified(2, '0') + ":" + QString::number(seconds).rightJustified(2, '0');
-    }
-    int length() const
-    {
-        return m_length;
-    }
-    void setLength(int length)
-    {
-        m_interface->setLength(length);
-    }
-    const int &elapsed() const
-    {
-        return m_elapsed;
-    }
-    const QString &label() const
-    {
-        return m_label;
-    }
-    void setLabel(QString label)
-    {
-        m_interface->setLabel(label);
-    }
-    const QString &commandTimeout() const
-    {
-        return m_commandTimeout;
-    }
-    const bool &looping() const
-    {
-        return m_looping;
-    }
-    void setCommandTimeout(QString commandTimeout)
-    {
-        m_interface->setCommandTimeout(commandTimeout);
-    }
-    const bool &running() const
-    {
-        return m_running;
-    }
+    QString lengthPretty() const;
+    QString elapsedPretty() const;
 
-signals:
+    int length() const;
+    void setLength(int length);
+
+    const int &elapsed() const;
+
+    const QString &label() const;
+    void setLabel(QString label);
+
+    const QString &commandTimeout() const;
+    void setCommandTimeout(QString commandTimeout);
+
+    const bool &looping() const;
+    const bool &running() const;
+
+Q_SIGNALS:
     void propertyChanged();
     void elapsedChanged();
-private slots:
+
+private Q_SLOTS:
     void updateLength();
     void updateLabel();
     void updateLooping();
@@ -111,5 +79,3 @@ private:
     org::kde::kclock::Timer *m_interface;
     QTimer *m_timer = nullptr;
 };
-
-#endif // TIMER_H

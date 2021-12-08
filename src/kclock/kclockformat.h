@@ -5,8 +5,7 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#ifndef KCLOCKFORMAT_H
-#define KCLOCKFORMAT_H
+#pragma once
 
 #include <QAbstractListModel>
 #include <QObject>
@@ -83,5 +82,3 @@ public:
 private:
     weekListItem m_listItem;
 };
-
-#endif // KCLOCKFORMAT_H

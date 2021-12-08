@@ -1,12 +1,11 @@
 /*
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
- * Copyright 2020 Devin Lin <espidev@gmail.com>
+ * Copyright 2020-2021 Devin Lin <devin@kde.org>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#ifndef KCLOCKD_ALARM_H
-#define KCLOCKD_ALARM_H
+#pragma once
 
 #include "alarmmodel.h"
 #include "alarmplayer.h"
@@ -23,9 +22,10 @@
 #include <QUrl>
 #include <QUuid>
 
-const QString ALARM_CFG_GROUP = "Alarms";
+const QString ALARM_CFG_GROUP = QStringLiteral("Alarms");
 
 class AlarmModel;
+
 class Alarm : public QObject
 {
     Q_OBJECT
@@ -44,114 +44,42 @@ public Q_SLOTS:
     void save(); // serialize and save to config
 
 public:
-    explicit Alarm(AlarmModel *parent = nullptr, QString name = "", int minutes = 0, int hours = 0, int daysOfWeek = 0);
-    explicit Alarm(QString serialized, AlarmModel *parent = nullptr);
-    QString name() const
-    {
-        return m_name;
-    }
-    void setName(QString name)
-    {
-        this->m_name = name;
-        Q_EMIT nameChanged();
-        Q_EMIT propertyChanged("name");
-    }
-    QUuid uuid() const
-    {
-        return m_uuid;
-    }
-    bool enabled() const
-    {
-        return m_enabled;
-    }
-    void setEnabled(bool enabled)
-    {
-        if (this->m_enabled != enabled) {
-            this->m_snooze = 0; // reset snooze value
-            this->m_nextRingTime = -1; // reset next ring time
+    static void bumpRingingCount();
+    static void lowerRingingCount();
+    static int ringing();
 
-            this->m_enabled = enabled;
-            Q_EMIT alarmChanged(); // notify the AlarmModel to reschedule
-            Q_EMIT enabledChanged();
-            Q_EMIT propertyChanged("enabled");
-        }
-    }
-    int hours() const
-    {
-        return m_hours;
-    }
-    void setHours(int hours)
-    {
-        this->m_hours = hours;
-        Q_EMIT alarmChanged();
-        Q_EMIT hoursChanged();
-        Q_EMIT propertyChanged("hours");
-    }
-    int minutes() const
-    {
-        return m_minutes;
-    }
-    void setMinutes(int minutes)
-    {
-        this->m_minutes = minutes;
-        Q_EMIT alarmChanged();
-        Q_EMIT minutesChanged();
-        Q_EMIT propertyChanged("minutes");
-    }
-    int daysOfWeek() const
-    {
-        return m_daysOfWeek;
-    }
-    void setDaysOfWeek(int daysOfWeek)
-    {
-        this->m_daysOfWeek = daysOfWeek;
-        Q_EMIT alarmChanged();
-        Q_EMIT daysOfWeekChanged();
-        Q_EMIT propertyChanged("daysOfWeek");
-    }
-    int snoozedMinutes() const
-    {
-        if (m_snooze != 0 && m_enabled) {
-            return m_snooze / 60;
-        } else {
-            return 0;
-        }
-    }
-    int snooze() const
-    {
-        return m_snooze;
-    }
-    void setSnooze(int snooze)
-    {
-        this->m_snooze = snooze;
-        Q_EMIT snoozedMinutesChanged();
-        Q_EMIT propertyChanged("snoozedMinutes");
-    }
-    QString ringtonePath() const
-    {
-        return m_audioPath.toString();
-    };
-    void setRingtonePath(QString path)
-    {
-        m_audioPath = QUrl(path);
-        Q_EMIT ringtonePathChanged();
-        Q_EMIT propertyChanged("ringtonePath");
-    }
+    explicit Alarm(AlarmModel *parent = nullptr, QString name = QStringLiteral(""), int minutes = 0, int hours = 0, int daysOfWeek = 0);
+    explicit Alarm(QString serialized, AlarmModel *parent = nullptr);
+
+    QString name() const;
+    void setName(QString name);
+
+    QUuid uuid() const;
+
+    bool enabled() const;
+    void setEnabled(bool enabled);
+
+    int hours() const;
+    void setHours(int hours);
+
+    int minutes() const;
+    void setMinutes(int minutes);
+
+    int daysOfWeek() const;
+    void setDaysOfWeek(int daysOfWeek);
+
+    int snoozedMinutes() const;
+    int snooze() const;
+    void setSnooze(int snooze);
+
+    QString ringtonePath() const;
+    void setRingtonePath(QString path);
     QString serialize();
 
     void ring(); // ring alarm
     Q_SCRIPTABLE quint64 nextRingTime(); // the next time this should ring, if this would never ring, return -1
-    Q_SCRIPTABLE QString getUUID()
-    {
-        return m_uuid.toString();
-    }
+    Q_SCRIPTABLE QString getUUID();
 
-    static void bumpRingingCount();
-    static void lowerRingingCount();
-    static int ringing()
-    {
-        return Alarm::ringingCount;
-    }
 Q_SIGNALS:
     void nameChanged();
     void enabledChanged();
@@ -160,6 +88,7 @@ Q_SIGNALS:
     void daysOfWeekChanged();
     void snoozedMinutesChanged();
     void ringtonePathChanged();
+
     Q_SCRIPTABLE void propertyChanged(QString property);
     Q_SCRIPTABLE void alarmChanged();
 
@@ -167,11 +96,9 @@ private:
     void initialize(AlarmModel *parent); // called after object construction
     void calculateNextRingTime();
 
-    bool alarmNotifOpen = false; // if the alarm notification is open
-    QTime alarmNotifOpenTime; // time the alarm notification opened
-
-    QUrl m_audioPath = QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, "sounds/freedesktop/stereo/alarm-clock-elapsed.oga"));
-    QString m_name = "New Alarm";
+    QUrl m_audioPath =
+        QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("sounds/freedesktop/stereo/alarm-clock-elapsed.oga")));
+    QString m_name;
     QUuid m_uuid;
     bool m_enabled = true;
     bool m_justSnoozed = false; // pressing snooze on the notification also triggers the dismiss event, so this is a helper for that
@@ -179,7 +106,8 @@ private:
     int m_snooze = 0; // current snooze length
     quint64 m_nextRingTime = 0; // store calculated next ring time
 
+    bool alarmNotifOpen = false; // if the alarm notification is open
+    QTime alarmNotifOpenTime; // time the alarm notification opened
+
     static std::atomic<int> ringingCount;
 };
-
-#endif // KCLOCKD_ALARM_H

@@ -1,6 +1,6 @@
 #
 # Copyright 2020 Han Young <hanyoung@protonmail.com>
-# Copyright 2020 Devin Lin <espidev@gmail.com>
+# Copyright 2020-2021 Devin Lin <devin@kde.org>
 #
 # SPDX-License-Identifier: GPL-2.0-or-later
 #
@@ -10,7 +10,7 @@ set (CMAKE_CXX_STANDARD 17)
 project(kclock)
 set(PROJECT_VERSION "21.12")
 
-set(KF5_MIN_VERSION "5.79.0")
+set(KF5_MIN_VERSION "5.89.0")
 set(QT_MIN_VERSION "5.15.0")
 
 find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)

@@ -1,6 +1,6 @@
 /*
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
- * Copyright 2020 Devin Lin <espidev@gmail.com>
+ * Copyright 2020-2021 Devin Lin <devin@kde.org>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
@@ -39,6 +39,85 @@ Alarm::Alarm(QString uuid)
     }
 }
 
+const QString &Alarm::name() const
+{
+    return m_name;
+}
+
+void Alarm::setName(QString name)
+{
+    m_interface->setProperty("name", name);
+}
+
+const QUuid &Alarm::uuid() const
+{
+    return m_uuid;
+}
+
+const bool &Alarm::enabled() const
+{
+    return m_enabled;
+}
+
+void Alarm::setEnabled(bool enabled)
+{
+    m_interface->setProperty("enabled", enabled);
+    m_enabled = enabled;
+}
+
+const int &Alarm::hours() const
+{
+    return m_hours;
+}
+
+void Alarm::setHours(int hours)
+{
+    m_hours = hours;
+    m_interface->setProperty("hours", hours);
+}
+
+const int &Alarm::minutes() const
+{
+    return m_minutes;
+}
+
+void Alarm::setMinutes(int minutes)
+{
+    m_minutes = minutes;
+    m_interface->setProperty("minutes", minutes);
+}
+
+const int &Alarm::daysOfWeek() const
+{
+    return m_daysOfWeek;
+}
+
+void Alarm::setDaysOfWeek(int daysOfWeek)
+{
+    m_daysOfWeek = daysOfWeek;
+    m_interface->setProperty("daysOfWeek", daysOfWeek);
+}
+
+int Alarm::snoozedMinutes() const
+{
+    return m_snooze / 60;
+}
+
+const QString &Alarm::ringtonePath() const
+{
+    return m_ringtonePath;
+}
+
+void Alarm::setRingtonePath(QString path)
+{
+    m_interface->setProperty("ringtonePath", path);
+}
+
+bool Alarm::isValid()
+{
+    return m_isValid;
+}
+
 QString Alarm::timeToRingFormated()
 {
     this->calculateNextRingTime();
@@ -74,3 +153,13 @@ void Alarm::calculateNextRingTime()
 
     m_nextRingTime = UtilModel::instance()->calculateNextRingTime(this->m_hours, this->m_minutes, this->m_daysOfWeek, this->m_snooze);
 }
+
+void Alarm::save()
+{
+    m_interface->alarmChanged();
+};
+
+const qint64 &Alarm::nextRingTime() const
+{
+    return m_nextRingTime;
+};

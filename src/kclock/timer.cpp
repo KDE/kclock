@@ -37,6 +37,11 @@ Timer::Timer(QString uuid, bool justCreated)
     }
 }
 
+const QUuid &Timer::uuid()
+{
+    return m_uuid;
+};
+
 void Timer::toggleRunning()
 {
     m_interface->toggleRunning();
@@ -45,6 +50,57 @@ void Timer::toggleRunning()
 void Timer::toggleLooping()
 {
     m_interface->toggleLooping();
+}
+
+QString Timer::lengthPretty() const
+{
+    qint64 len = m_length, hours = len / 60 / 60, minutes = len / 60 - hours * 60, seconds = len - hours * 60 * 60 - minutes * 60;
+    return QString::number(hours) + QStringLiteral(":") + QString::number(minutes).rightJustified(2, QLatin1Char('0')) + QStringLiteral(":")
+        + QString::number(seconds).rightJustified(2, QLatin1Char('0'));
+}
+
+QString Timer::elapsedPretty() const
+{
+    qint64 len = m_elapsed, hours = len / 60 / 60, minutes = len / 60 - hours * 60, seconds = len - hours * 60 * 60 - minutes * 60;
+    return QString::number(hours) + QStringLiteral(":") + QString::number(minutes).rightJustified(2, QLatin1Char('0')) + QStringLiteral(":")
+        + QString::number(seconds).rightJustified(2, QLatin1Char('0'));
+}
+
+int Timer::length() const
+{
+    return m_length;
+}
+void Timer::setLength(int length)
+{
+    m_interface->setLength(length);
+}
+const int &Timer::elapsed() const
+{
+    return m_elapsed;
+}
+const QString &Timer::label() const
+{
+    return m_label;
+}
+void Timer::setLabel(QString label)
+{
+    m_interface->setLabel(label);
+}
+const QString &Timer::commandTimeout() const
+{
+    return m_commandTimeout;
+}
+const bool &Timer::looping() const
+{
+    return m_looping;
+}
+void Timer::setCommandTimeout(QString commandTimeout)
+{
+    m_interface->setCommandTimeout(commandTimeout);
+}
+const bool &Timer::running() const
+{
+    return m_running;
 }
 
 void Timer::reset()

@@ -1,12 +1,11 @@
 /*
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
- * Copyright 2020 Devin Lin <espidev@gmail.com>
+ * Copyright 2021 Devin Lin <devin@kde.org>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#ifndef KCLOCK_ALARM_H
-#define KCLOCK_ALARM_H
+#pragma once
 
 #include "alarminterface.h"
 
@@ -27,91 +26,47 @@ class Alarm : public QObject
     Q_PROPERTY(int daysOfWeek READ daysOfWeek WRITE setDaysOfWeek NOTIFY propertyChanged)
     Q_PROPERTY(int snoozedMinutes READ snoozedMinutes NOTIFY propertyChanged)
     Q_PROPERTY(QString ringtonePath READ ringtonePath WRITE setRingtonePath NOTIFY propertyChanged)
+
 public:
     explicit Alarm();
     explicit Alarm(QString uuid);
-    const QString &name() const
-    {
-        return m_name;
-    }
-    void setName(QString name)
-    {
-        m_interface->setProperty("name", name);
-    }
-    const QUuid &uuid() const
-    {
-        return m_uuid;
-    }
-    const bool &enabled() const
-    {
-        return m_enabled;
-    }
-    void setEnabled(bool enabled)
-    {
-        m_interface->setProperty("enabled", enabled);
-        m_enabled = enabled;
-    }
-    const int &hours() const
-    {
-        return m_hours;
-    }
-    void setHours(int hours)
-    {
-        m_hours = hours;
-        m_interface->setProperty("hours", hours);
-    }
-    const int &minutes() const
-    {
-        return m_minutes;
-    }
-    void setMinutes(int minutes)
-    {
-        m_minutes = minutes;
-        m_interface->setProperty("minutes", minutes);
-    }
-    const int &daysOfWeek() const
-    {
-        return m_daysOfWeek;
-    }
-    void setDaysOfWeek(int daysOfWeek)
-    {
-        m_daysOfWeek = daysOfWeek;
-        m_interface->setProperty("daysOfWeek", daysOfWeek);
-    }
-    int snoozedMinutes() const
-    {
-        return m_snooze / 60;
-    }
-    const QString &ringtonePath() const
-    {
-        return m_ringtonePath;
-    };
-    void setRingtonePath(QString path)
-    {
-        m_interface->setProperty("ringtonePath", path);
-    }
 
-    bool isValid()
-    {
-        return m_isValid;
-    };
+    const QString &name() const;
+    void setName(QString name);
+
+    const QUuid &uuid() const;
+
+    const bool &enabled() const;
+    void setEnabled(bool enabled);
+
+    const int &hours() const;
+    void setHours(int hours);
+
+    const int &minutes() const;
+    void setMinutes(int minutes);
+
+    const int &daysOfWeek() const;
+    void setDaysOfWeek(int daysOfWeek);
+
+    int snoozedMinutes() const;
+
+    const QString &ringtonePath() const;
+    void setRingtonePath(QString path);
+
+    bool isValid();
 
     Q_INVOKABLE QString timeToRingFormated();
 
-    Q_INVOKABLE void save()
-    {
-        m_interface->alarmChanged();
-    };
+    Q_INVOKABLE void save();
+
 Q_SIGNALS:
     void propertyChanged();
+
 private Q_SLOTS:
     void updateProperty(QString property);
 
 private:
-    const qint64 &nextRingTime() const
-    {
-        return m_nextRingTime;
-    };
+    const qint64 &nextRingTime() const;
 
     void calculateNextRingTime();
 
@@ -127,5 +82,3 @@ private:
 
     bool m_isValid = true;
 };
-
-#endif // KCLOCK_ALARM_H

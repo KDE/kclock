@@ -5,8 +5,7 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#ifndef KCLOCKD_TIMER_H
-#define KCLOCKD_TIMER_H
+#pragma once
 
 #include "timermodel.h"
 
@@ -34,59 +33,22 @@ public:
     Q_SCRIPTABLE void toggleRunning();
     Q_SCRIPTABLE void toggleLooping();
     Q_SCRIPTABLE void reset();
-    Q_SCRIPTABLE int elapsed() const
-    {
-        if (running())
-            return QDateTime::currentSecsSinceEpoch() - m_startTime;
-        else
-            return m_hasElapsed;
-    }
-    Q_SCRIPTABLE QString getUUID()
-    {
-        return m_uuid.toString();
-    }
-    const QUuid &uuid() const
-    {
-        return m_uuid;
-    };
-    const int &length() const
-    {
-        return m_length;
-    }
-    void setLength(int length)
-    {
-        m_length = length;
-        Q_EMIT lengthChanged();
-        TimerModel::instance()->save();
-    }
-    const QString &label() const
-    {
-        return m_label;
-    }
-    void setLabel(QString label)
-    {
-        m_label = label;
-        Q_EMIT labelChanged();
-        TimerModel::instance()->save();
-    }
-    const QString &commandTimeout() const
-    {
-        return m_commandTimeout;
-    }
-    const bool &looping() const
-    {
-        return m_looping;
-    }
-    void setCommandTimeout(QString commandTimeout)
-    {
-        m_commandTimeout = commandTimeout;
-        Q_EMIT commandTimeoutChanged();
-        TimerModel::instance()->save();
-    }
-    const bool &running() const
-    {
-        return m_running;
-    }
+    Q_SCRIPTABLE int elapsed() const;
+    Q_SCRIPTABLE QString getUUID();
+
+    const QUuid &uuid() const;
+
+    const int &length() const;
+    void setLength(int length);
+
+    const QString &label() const;
+    void setLabel(QString label);
+
+    const QString &commandTimeout() const;
+    void setCommandTimeout(QString commandTimeout);
+
+    const bool &looping() const;
+    const bool &running() const;
 
 Q_SIGNALS:
     Q_SCRIPTABLE void lengthChanged();
@@ -94,6 +56,7 @@ Q_SIGNALS:
     Q_SCRIPTABLE void runningChanged();
     Q_SCRIPTABLE void loopingChanged();
     Q_SCRIPTABLE void commandTimeoutChanged();
+
 private Q_SLOTS:
     void timeUp(int cookie);
     void reschedule();
@@ -111,5 +74,3 @@ private:
     bool m_running = false;
     bool m_looping = false;
 };
-
-#endif // KCLOCKD_TIMER_H

@@ -1,6 +1,6 @@
 /*
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
- * Copyright 2020 Devin Lin <espidev@gmail.com>
+ * Copyright 2020-2021 Devin Lin <devin@kde.org>
  * Copyright 2019 Nick Reitemeyer <nick.reitemeyer@web.de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -18,7 +18,7 @@
 #include <QDebug>
 #include <QTimeZone>
 
-const QString TZ_CFG_GROUP = "Timezones";
+const QString TZ_CFG_GROUP = QStringLiteral("Timezones");
 
 TimeZoneSelectorModel::TimeZoneSelectorModel(QObject *parent)
     : QAbstractListModel(parent)
@@ -68,14 +68,7 @@ QVariant TimeZoneSelectorModel::data(const QModelIndex &index, int role) const
 
 QHash<int, QByteArray> TimeZoneSelectorModel::roleNames() const
 {
-    QHash<int, QByteArray> roles;
-    roles[NameRole] = "name";
-    roles[ShownRole] = "shown";
-    roles[OffsetRole] = "offset";
-    roles[ShortNameRole] = "shortName";
-    roles[IDRole] = "id";
-    roles[CurrentTimeRole] = "currentTime";
-    return roles;
+    return {{NameRole, "name"}, {ShownRole, "shown"}, {OffsetRole, "offset"}, {ShortNameRole, "shortName"}, {IDRole, "id"}, {CurrentTimeRole, "currentTime"}};
 }
 
 Qt::ItemFlags TimeZoneSelectorModel::flags(const QModelIndex &index) const

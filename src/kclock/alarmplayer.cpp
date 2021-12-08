@@ -1,6 +1,6 @@
 /*
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
- * Copyright 2020 Devin Lin <espidev@gmail.com>
+ * Copyright 2020-2021 Devin Lin <devin@kde.org>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
@@ -15,9 +15,10 @@ AlarmPlayer &AlarmPlayer::instance()
     static AlarmPlayer singleton;
     return singleton;
 }
+
 AlarmPlayer::AlarmPlayer(QObject *parent)
-    : QObject(parent)
-    , m_player(new QMediaPlayer(this, QMediaPlayer::LowLatency))
+    : QObject{parent}
+    , m_player{new QMediaPlayer(this, QMediaPlayer::LowLatency)}
 {
     // m_player->setVolume(settings.alarmVolume());
     connect(m_player, &QMediaPlayer::stateChanged, this, &AlarmPlayer::loopAudio);
@@ -33,8 +34,9 @@ void AlarmPlayer::loopAudio(QMediaPlayer::State state)
 
 void AlarmPlayer::play()
 {
-    if (m_player->state() == QMediaPlayer::PlayingState)
+    if (m_player->state() == QMediaPlayer::PlayingState) {
         return;
+    }
 
     startPlayingTime = QDateTime::currentSecsSinceEpoch();
     userStop = false;
@@ -46,6 +48,11 @@ void AlarmPlayer::stop()
     userStop = true;
     m_player->stop();
 }
+
+int AlarmPlayer::volume()
+{
+    return m_player->volume();
+};
 
 void AlarmPlayer::setVolume(int volume)
 {

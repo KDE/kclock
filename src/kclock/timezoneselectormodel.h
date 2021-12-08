@@ -1,13 +1,12 @@
 /*
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
- * Copyright 2020 Devin Lin <espidev@gmail.com>
+ * Copyright 2020-2021 Devin Lin <devin@kde.org>
  * Copyright 2019 Nick Reitemeyer <nick.reitemeyer@web.de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#ifndef KCLOCK_TIMEZONESELECTORMODEL_H
-#define KCLOCK_TIMEZONESELECTORMODEL_H
+#pragma once
 
 #include "kclockformat.h"
 
@@ -49,5 +48,3 @@ class TimeZoneFilterModel : public QSortFilterProxyModel
 public:
     explicit TimeZoneFilterModel(QObject *parent = nullptr);
 };
-
-#endif // KCLOCK_TIMEZONESELECTORMODEL_H

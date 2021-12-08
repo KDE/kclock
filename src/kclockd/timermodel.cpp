@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Devin Lin <espidev@gmail.com>
+ * Copyright 2020-2021 Devin Lin <devin@kde.org>
  * Copyright 2021 Boris Petrov <boris.v.petrov@protonmail.com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -21,6 +21,12 @@
 #include <QObject>
 
 const QString TIMERS_CFG_GROUP = QStringLiteral("Timers"), TIMERS_CFG_KEY = QStringLiteral("timersList");
+
+TimerModel *TimerModel::instance()
+{
+    static TimerModel *singleton = new TimerModel();
+    return singleton;
+}
 
 TimerModel::TimerModel()
 {
@@ -50,7 +56,8 @@ void TimerModel::save()
 
     auto config = KSharedConfig::openConfig();
     KConfigGroup group = config->group(TIMERS_CFG_GROUP);
-    group.writeEntry(TIMERS_CFG_KEY, QString(QJsonDocument(arr).toJson(QJsonDocument::Compact)));
+    QByteArray data = QJsonDocument(arr).toJson(QJsonDocument::Compact);
+    group.writeEntry(TIMERS_CFG_KEY, QString::fromStdString(data.toStdString()));
 
     group.sync();
 }
@@ -100,7 +107,7 @@ QStringList TimerModel::timers() const
     ret.reserve(m_timerList.size());
 
     // Filter out { } and - which are not allowed in DBus paths
-    static QRegularExpression dbusfilter("[{}-]");
+    static QRegularExpression dbusfilter(QStringLiteral("[{}-]"));
 
     for (const Timer *timer : qAsConst(m_timerList)) {
         ret << timer->uuid().toString().replace(dbusfilter, QString());

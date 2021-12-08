@@ -23,9 +23,15 @@
 #include <QThread>
 #include <QXmlStreamReader>
 
+AlarmModel *AlarmModel::instance()
+{
+    static AlarmModel *singleton = new AlarmModel();
+    return singleton;
+}
+
 AlarmModel::AlarmModel(QObject *parent)
-    : QAbstractListModel(parent)
-    , m_interface(new org::kde::kclock::AlarmModel(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Alarms"), QDBusConnection::sessionBus(), this))
+    : QAbstractListModel{parent}
+    , m_interface{new org::kde::kclock::AlarmModel(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Alarms"), QDBusConnection::sessionBus(), this)}
 {
     if (m_interface->isValid()) {
         connect(m_interface, SIGNAL(alarmAdded(QString)), this, SLOT(addAlarm(QString)));
@@ -115,7 +121,7 @@ bool AlarmModel::setData(const QModelIndex &index, const QVariant &value, int ro
     else
         return false;
 
-    emit dataChanged(index, index);
+    Q_EMIT dataChanged(index, index);
     return true;
 }
 
@@ -141,16 +147,16 @@ void AlarmModel::remove(int index)
     m_interface->removeAlarm(alarmsList.at(index)->uuid().toString());
     auto ptr = alarmsList.at(index);
 
-    emit beginRemoveRows(QModelIndex(), index, index);
+    Q_EMIT beginRemoveRows(QModelIndex(), index, index);
     alarmsList.removeAt(index);
-    emit endRemoveRows();
+    Q_EMIT endRemoveRows();
 
     ptr->deleteLater();
 }
 
 void AlarmModel::updateUi()
 {
-    emit dataChanged(createIndex(0, 0), createIndex(alarmsList.count() - 1, 0));
+    Q_EMIT dataChanged(createIndex(0, 0), createIndex(alarmsList.count() - 1, 0));
 }
 
 void AlarmModel::addAlarm(int hours, int minutes, int daysOfWeek, QString name, QString ringtonePath)

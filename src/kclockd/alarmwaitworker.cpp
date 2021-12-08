@@ -14,16 +14,18 @@
 #include <unistd.h>
 
 AlarmWaitWorker::AlarmWaitWorker(quint64 timestamp)
-    : m_timerFd(timerfd_create(CLOCK_REALTIME, 0))
-    , m_waitEndTime(timestamp)
+    : m_timerFd{timerfd_create(CLOCK_REALTIME, 0)}
+    , m_waitEndTime{timestamp}
 {
     connect(this, &AlarmWaitWorker::startWait, this, &AlarmWaitWorker::wait);
 }
 
 void AlarmWaitWorker::wait(int waitId)
 {
-    if (m_waitEndTime == 0)
+    if (m_waitEndTime == 0) {
         return;
+    }
+
     struct itimerspec timerSpec;
     timerSpec.it_value.tv_sec = static_cast<long>(m_waitEndTime);
     timerSpec.it_value.tv_nsec = 0;

@@ -40,7 +40,7 @@
 QCommandLineParser *createParser()
 {
     QCommandLineParser *parser = new QCommandLineParser;
-    parser->addOption(QCommandLineOption(QStringLiteral("page"), i18n("Select opened page"), QStringLiteral("page"), "main"));
+    parser->addOption(QCommandLineOption(QStringLiteral("page"), i18n("Select opened page"), QStringLiteral("page"), QStringLiteral("main")));
     parser->addVersionOption();
     parser->addHelpOption();
     return parser;
@@ -54,18 +54,15 @@ int main(int argc, char *argv[])
     }
 
     KLocalizedString::setApplicationDomain("kclock");
-    KAboutData aboutData("kclock",
-                         "Clock",
+    KAboutData aboutData(QStringLiteral("kclock"),
+                         QStringLiteral("Clock"),
                          QStringLiteral(KCLOCK_VERSION_STRING),
-                         "A convergent clock application for Plasma",
+                         QStringLiteral("Set alarms and timers, use a stopwatch, and manage world clocks"),
                          KAboutLicense::GPL,
                          i18n("© 2020-2021 KDE Community"));
-    aboutData.addAuthor(i18n("Devin Lin"), QString(), QStringLiteral("espidev@gmail.com"));
+    aboutData.addAuthor(i18n("Devin Lin"), QString(), QStringLiteral("devin@kde.org"));
     aboutData.addAuthor(i18n("Han Young"), QString(), QStringLiteral("hanyoung@protonmail.com"));
     KAboutData::setApplicationData(aboutData);
-
-    // only allow one instance
-    // KDBusService service(KDBusService::Unique);
 
     // initialize models
     auto *stopwatchTimer = new StopwatchTimer();
@@ -84,14 +81,14 @@ int main(int argc, char *argv[])
 
     engine->rootContext()->setContextObject(new KLocalizedContext(engine));
     // models
-    engine->rootContext()->setContextProperty("alarmModel", AlarmModel::instance());
-    engine->rootContext()->setContextProperty("timerModel", TimerModel::instance());
-    engine->rootContext()->setContextProperty("utilModel", UtilModel::instance());
-    engine->rootContext()->setContextProperty("stopwatchTimer", stopwatchTimer);
-    engine->rootContext()->setContextProperty("alarmPlayer", &AlarmPlayer::instance());
-    engine->rootContext()->setContextProperty("kclockFormat", KclockFormat::instance());
-    engine->rootContext()->setContextProperty("weekModel", weekModel);
-    engine->rootContext()->setContextProperty("settingsModel", &SettingsModel::instance());
+    engine->rootContext()->setContextProperty(QStringLiteral("alarmModel"), AlarmModel::instance());
+    engine->rootContext()->setContextProperty(QStringLiteral("timerModel"), TimerModel::instance());
+    engine->rootContext()->setContextProperty(QStringLiteral("utilModel"), UtilModel::instance());
+    engine->rootContext()->setContextProperty(QStringLiteral("stopwatchTimer"), stopwatchTimer);
+    engine->rootContext()->setContextProperty(QStringLiteral("alarmPlayer"), &AlarmPlayer::instance());
+    engine->rootContext()->setContextProperty(QStringLiteral("kclockFormat"), KclockFormat::instance());
+    engine->rootContext()->setContextProperty(QStringLiteral("weekModel"), weekModel);
+    engine->rootContext()->setContextProperty(QStringLiteral("settingsModel"), &SettingsModel::instance());
     engine->rootContext()->setContextProperty(QStringLiteral("kclockAboutData"), QVariant::fromValue(aboutData));
 
     engine->load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
@@ -101,7 +98,10 @@ int main(int argc, char *argv[])
         parser->process(app);
         if (parser->isSet(QStringLiteral("page"))) {
             QVariant page;
-            QMetaObject::invokeMethod(engine->rootObjects().first(), "getPage", Q_RETURN_ARG(QVariant, page), Q_ARG(QVariant, parser->value("page")));
+            QMetaObject::invokeMethod(engine->rootObjects().first(),
+                                      "getPage",
+                                      Q_RETURN_ARG(QVariant, page),
+                                      Q_ARG(QVariant, parser->value(QStringLiteral("page"))));
             QMetaObject::invokeMethod(engine->rootObjects().first(), "switchToPage", Q_ARG(QVariant, page), Q_ARG(QVariant, 0));
         }
     }

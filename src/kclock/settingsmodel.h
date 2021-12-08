@@ -1,12 +1,11 @@
 /*
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
- * Copyright 2020 Devin Lin <espidev@gmail.com>
+ * Copyright 2020-2021 Devin Lin <devin@kde.org>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#ifndef KCLOCK_SETTINGSMODEL_H
-#define KCLOCK_SETTINGSMODEL_H
+#pragma once
 
 #include "kclocksettingsinterface.h"
 
@@ -22,61 +21,22 @@ class SettingsModel : public QObject
     Q_PROPERTY(int alarmSnoozeLength READ alarmSnoozeLength WRITE setAlarmSnoozeLength NOTIFY alarmSnoozedChanged)
 
 public:
-    static SettingsModel &instance()
-    {
-        static SettingsModel singleton;
-        return singleton;
-    };
+    static SettingsModel &instance();
 
-    const int &volume() const
-    {
-        return m_volume;
-    }
+    const int &volume() const;
+    void setVolume(int volume);
 
-    void setVolume(int volume)
-    {
-        m_interface->setProperty("alarmVolume", volume);
-    }
+    const QString &alarmSilenceAfterDisplay() const;
+    void setAlarmSilenceAfterDisplay(QString str);
 
-    const QString &alarmSilenceAfterDisplay() const
-    {
-        return m_alarmSilenceAfterDisplay;
-    }
+    const QString &alarmSnoozeLengthDisplay() const;
+    void setAlarmSnoozeLengthDisplay(QString str);
 
-    void setAlarmSilenceAfterDisplay(QString str)
-    {
-        m_alarmSilenceAfterDisplay = str;
-    }
+    const int &alarmSilenceAfter() const;
+    void setAlarmSilenceAfter(int length);
 
-    const QString &alarmSnoozeLengthDisplay() const
-    {
-        return m_alarmSnoozeLengthDisplay;
-    }
-
-    void setAlarmSnoozeLengthDisplay(QString str)
-    {
-        m_alarmSnoozeLengthDisplay = str;
-    }
-
-    const int &alarmSilenceAfter() const
-    {
-        return m_alarmSilenceAfter;
-    }
-
-    void setAlarmSilenceAfter(int length)
-    {
-        m_interface->setProperty("alarmSilenceAfter", length);
-    }
-
-    void setAlarmSnoozeLength(int length)
-    {
-        m_interface->setProperty("alarmSnoozeLength", length);
-    }
-
-    const int &alarmSnoozeLength() const
-    {
-        return m_alarmSnoozeLength;
-    }
+    const int &alarmSnoozeLength() const;
+    void setAlarmSnoozeLength(int length);
 
 Q_SIGNALS:
     void volumeChanged();
@@ -99,5 +59,3 @@ private:
     int m_alarmSilenceAfter;
     int m_alarmSnoozeLength;
 };
-
-#endif // KCLOCK_SETTINGSMODEL_H

@@ -56,6 +56,16 @@ KClock_1x2::KClock_1x2(QObject *parent, const QVariantList &args)
     Q_EMIT propertyChanged();
 }
 
+QString KClock_1x2::alarmTime()
+{
+    return m_string;
+};
+
+bool KClock_1x2::hasAlarm()
+{
+    return m_hasAlarm;
+}
+
 void KClock_1x2::updateAlarm(qulonglong time)
 {
     auto dateTime = QDateTime::fromSecsSinceEpoch(time).toLocalTime();

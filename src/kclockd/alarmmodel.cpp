@@ -1,6 +1,6 @@
 /*
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
- * Copyright 2020 Devin Lin <espidev@gmail.com>
+ * Copyright 2020-2021 Devin Lin <devin@kde.org>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
@@ -19,8 +19,14 @@
 #include <QDebug>
 #include <QLocale>
 
+AlarmModel *AlarmModel::instance()
+{
+    static AlarmModel *singleton = new AlarmModel();
+    return singleton;
+}
+
 AlarmModel::AlarmModel(QObject *parent)
-    : QObject(parent)
+    : QObject{parent}
 {
     // DBus
     new AlarmModelAdaptor(this);
