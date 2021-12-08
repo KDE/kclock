@@ -12,10 +12,11 @@ import org.kde.kirigami 2.12 as Kirigami
 Controls.AbstractButton {
     id: button
     
+    readonly property color baseColor: Kirigami.Theme.highlightColor
     readonly property color pressedColor: Qt.rgba(baseColor.r, baseColor.g, baseColor.b, 0.3)
     readonly property color hoverSelectColor: Qt.rgba(baseColor.r, baseColor.g, baseColor.b, 0.2)
     readonly property color checkedBorderColor: Qt.rgba(baseColor.r, baseColor.g, baseColor.b, 0.7)
-    readonly preoprty color pressedBorderColor: Qt.rgba(baseColor.r, baseColor.g, baseColor.b, 0.9)
+    readonly property color pressedBorderColor: Qt.rgba(baseColor.r, baseColor.g, baseColor.b, 0.9)
     
     background: Item {
         
@@ -24,8 +25,6 @@ Controls.AbstractButton {
             radius: Kirigami.Units.smallSpacing
             Kirigami.Theme.colorSet: Kirigami.Theme.Button
             Kirigami.Theme.inherit: false
-            
-            property color baseColor: Kirigami.Theme.highlightColor
             
             color: button.pressed ? pressedColor : (button.checked || hoverHandler.hovered ? hoverSelectColor : "transparent")
 

@@ -1,6 +1,6 @@
 /*
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
- * Copyright 2020 Devin Lin <espidev@gmail.com>
+ * Copyright 2020-2021 Devin Lin <devin@kde.org>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
@@ -8,7 +8,7 @@
 import QtQuick 2.11
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.2
-import org.kde.kirigami 2.11 as Kirigami
+import org.kde.kirigami 2.19 as Kirigami
 
 Kirigami.ScrollablePage {
     id: settingsPage
@@ -137,7 +137,7 @@ Kirigami.ScrollablePage {
         }
         
         // alarm volume dialog
-        PopupDialog {
+        Kirigami.Dialog {
             id: alarmVolumeDialog
             standardButtons: Dialog.Close
             padding: Kirigami.Units.largeSpacing * 2
@@ -150,7 +150,6 @@ Kirigami.ScrollablePage {
             title: i18n("Change Alarm Volume")
             contentItem: RowLayout {
                 id: row
-                transform: Translate { y: alarmVolumeDialog.translateY }
                 Label {
                     text: i18n("Volume: ")
                 }
@@ -170,7 +169,7 @@ Kirigami.ScrollablePage {
         }
 
         // Silence alarm after dialog
-        PopupDialog {
+        Kirigami.Dialog {
             id: silenceAlarmAfter
             standardButtons: Dialog.Close
             title: i18n("Silence Alarm After")
@@ -211,7 +210,7 @@ Kirigami.ScrollablePage {
         }
 
         // Alarm snooze length dialog
-        PopupDialog {
+        Kirigami.Dialog {
             id: alarmSnoozeLength
             standardButtons: Dialog.Close
             title: i18n("Alarm Snooze Length")
