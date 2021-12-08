@@ -34,10 +34,10 @@ Kirigami.ScrollablePage {
     actions.contextualActions: [
         Kirigami.Action {
             displayHint: Kirigami.Action.IconOnly
-            visible: !appwindow.isWidescreen
+            visible: !applicationWindow().isWidescreen
             iconName: "settings-configure"
             text: i18n("Settings")
-            onTriggered: appwindow.pageStack.layers.push(appwindow.getPage("Settings"))
+            onTriggered: applicationWindow().pageStack.layers.push(applicationWindow().getPage("Settings"))
         }
     ]
     
@@ -71,9 +71,9 @@ Kirigami.ScrollablePage {
             // reload clock when page opens for animation
             asynchronous: true
             Connections {
-                target: appwindow.pageStack                
+                target: applicationWindow().pageStack                
                 function onCurrentItemChanged() {
-                    clockItemLoader.active = appwindow.pageStack.currentItem == appwindow.getPage("Time");
+                    clockItemLoader.active = applicationWindow().pageStack.currentItem == applicationWindow().getPage("Time");
                 }
             }
             

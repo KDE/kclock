@@ -118,7 +118,7 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
             implicitHeight: Kirigami.Units.gridUnit * 3
             
-            onClicked: appwindow.pageStack.layers.push(appwindow.getPage("About"))
+            onClicked: applicationWindow().pageStack.layers.push(applicationWindow().getPage("About"))
             
             Label {
                 anchors.left: parent.left

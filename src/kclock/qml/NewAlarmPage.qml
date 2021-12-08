@@ -87,7 +87,7 @@ Kirigami.ScrollablePage {
                 display: toolbar.opened ? AbstractButton.TextUnderIcon : AbstractButton.TextOnly
                 text: i18n("Cancel")
                 icon.name: "dialog-cancel"
-                onClicked: appwindow.pageStack.layers.pop()
+                onClicked: applicationWindow().pageStack.layers.pop()
             }
             FooterToolBarButton {
                 display: toolbar.opened ? AbstractButton.TextUnderIcon : AbstractButton.TextOnly
@@ -186,6 +186,10 @@ Kirigami.ScrollablePage {
                     onTriggered: {
                         fileDialog.open();
                     }
+                },
+                Kirigami.Action {
+                    iconName: "edit-select-all"
+                    onTriggered: applicationWindow().pageStack.layers.push(Qt.resolvedUrl("SoundPickerPage.qml"));
                 }
             ]
         }

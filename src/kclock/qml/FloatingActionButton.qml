@@ -10,6 +10,7 @@ import QtQuick.Layouts 1.2
 import QtGraphicalEffects 1.12
 import org.kde.kirigami 2.15 as Kirigami
 
+// floating round button for mobile actions
 Item {
     id: root
     property string iconName

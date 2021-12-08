@@ -11,9 +11,9 @@ import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.2
 import org.kde.kirigami 2.11 as Kirigami
 
-Kirigami.ApplicationWindow
-{
-    id: appwindow
+Kirigami.ApplicationWindow {
+    id: root
+    
     // needs to work with 360x720 (+ panel heights)
     minimumWidth: 300
     minimumHeight: minimumWidth + 1
@@ -21,9 +21,15 @@ Kirigami.ApplicationWindow
     height: Kirigami.Settings.isMobile ? 650 : 500
 
     title: i18n("Clock")
+    
+    contextDrawer: Kirigami.ContextDrawer {}
+    
     pageStack.globalToolBar.canContainHandles: true
     pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
 
+    property bool isWidescreen: root.width >= root.height
+    onIsWidescreenChanged: changeNav(isWidescreen);
+    
     Kirigami.PagePool {
         id: pagePool
     }
@@ -31,26 +37,11 @@ Kirigami.ApplicationWindow
     Component.onCompleted: {
         // initial page and nav type
         switchToPage(getPage("Time"), 1);
-        changeNav(!isWidescreen);
-    }
-    
-    // page switch animation
-    NumberAnimation {
-        id: anim
-        from: 0
-        to: 1
-        duration: Kirigami.Units.longDuration * 2
-        easing.type: Easing.InOutQuad
-    }
-    NumberAnimation {
-        id: yAnim
-        from: Kirigami.Units.gridUnit * 3
-        to: 0
-        duration: Kirigami.Units.longDuration * 3
-        easing.type: Easing.OutQuint
+        changeNav(isWidescreen);
     }
     
     function switchToPage(page, depth) {
+        // pop pages above depth
         while (pageStack.depth > depth) pageStack.pop();
         while (pageStack.layers.depth > 1) pageStack.layers.pop();
         
@@ -79,30 +70,38 @@ Kirigami.ApplicationWindow
         }
     }
     
-    property bool isWidescreen: appwindow.width >= appwindow.height
-    onIsWidescreenChanged: changeNav(!isWidescreen);
-    
     // switch between bottom toolbar and sidebar
-    function changeNav(toNarrow) {
-        if (toNarrow) {
-            sidebarLoader.active = false;
-            globalDrawer = null;
-            
-            let bottomToolbar = Qt.createComponent("qrc:/qml/BottomToolbar.qml")
-            footer = bottomToolbar.createObject(appwindow);
-        } else {
+    function changeNav(toWidescreen) {
+        if (toWidescreen) {
             if (footer !== null) {
                 footer.destroy();
                 footer = null;
             }
             sidebarLoader.active = true;
             globalDrawer = sidebarLoader.item;
+        } else {
+            sidebarLoader.active = false;
+            globalDrawer = null;
+            
+            let bottomToolbar = Qt.createComponent("qrc:/qml/BottomToolbar.qml")
+            footer = bottomToolbar.createObject(root);
         }
     }
     
-    contextDrawer: Kirigami.ContextDrawer {
-        id: contextDrawer
-        handle.anchors.bottomMargin: appwindow.footer.height + Kirigami.Units.largeSpacing
+    // page switch animation
+    NumberAnimation {
+        id: anim
+        from: 0
+        to: 1
+        duration: Kirigami.Units.longDuration * 2
+        easing.type: Easing.InOutQuad
+    }
+    NumberAnimation {
+        id: yAnim
+        from: Kirigami.Units.gridUnit * 3
+        to: 0
+        duration: Kirigami.Units.longDuration * 3
+        easing.type: Easing.OutQuint
     }
     
     Loader {

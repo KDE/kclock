@@ -13,46 +13,61 @@ import QtGraphicalEffects 1.12
 
 Kirigami.NavigationTabBar {
     id: root
-    visible: appwindow.pageStack.layers.depth <= 1
+    visible: applicationWindow().pageStack.layers.depth <= 1
+    
+    property var pageStack: applicationWindow().pageStack
+    
+    function getTimePage() {
+        return applicationWindow().getPage("Time");
+    }
+    function getTimersPage() {
+        return applicationWindow().getPage("Timers");
+    }
+    function getStopwatchPage() {
+        return applicationWindow().getPage("Stopwatch");
+    }
+    function getAlarmsPage() {
+        return applicationWindow().getPage("Alarms");
+    }
     
     actions: [
         Kirigami.Action {
             iconName: "clock"
             text: i18n("Time")
-            checked: appwindow.getPage("Time") === appwindow.pageStack.currentItem
+            checked: getTimePage() === pageStack.currentItem
             onTriggered: {
-                if (appwindow.getPage("Time") !== appwindow.pageStack.currentItem) {
-                    appwindow.switchToPage(appwindow.getPage("Time"), 0);
+                if (getTimePage()  !== pageStack.currentItem) {
+                    applicationWindow().switchToPage(getTimePage(), 0);
                 }
             }
         },
         Kirigami.Action {
             iconName: "player-time"
             text: i18n("Timers")
-            checked: appwindow.getPage("Timers") === appwindow.pageStack.currentItem
+            checked: getTimersPage() === pageStack.currentItem
             onTriggered: {
-                if (appwindow.getPage("Timers") !== appwindow.pageStack.currentItem) {
-                    appwindow.switchToPage(appwindow.getPage("Timers"), 0);
+                if (getTimersPage() !== pageStack.currentItem) {
+                    applicationWindow().switchToPage(getTimersPage(), 0);
                 }
             }
         },
         Kirigami.Action {
             iconName: "chronometer"
             text: i18n("Stopwatch")
-            checked: appwindow.getPage("Stopwatch") === appwindow.pageStack.currentItem
+            checked: getStopwatchPage() === pageStack.currentItem
             onTriggered: {
-                if (appwindow.getPage("Stopwatch") !== appwindow.pageStack.currentItem) {
-                    appwindow.switchToPage(appwindow.getPage("Stopwatch"), 0);
+                if (getStopwatchPage() !== pageStack.currentItem) {
+                    applicationWindow().switchToPage(getStopwatchPage(), 0);
                 }
             }
         },
         Kirigami.Action {
             iconName: "notifications"
             text: i18n("Alarms")
-            checked: appwindow.getPage("Alarms") === appwindow.pageStack.currentItem
+            checked: getAlarmsPage() === pageStack.currentItem
             onTriggered: {
-                if (appwindow.getPage("Alarms") !== appwindow.pageStack.currentItem) {
-                    appwindow.switchToPage(appwindow.getPage("Alarms"), 0);
+                if (getAlarmsPage() !== pageStack.currentItem) {
+                    applicationWindow().switchToPage(getAlarmsPage(), 0);
                 }
             }
         }

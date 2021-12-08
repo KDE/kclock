@@ -14,11 +14,13 @@ Controls.AbstractButton {
     
     property real iconSize: 24
     
+    readonly property color activeColor: Qt.rgba(Kirigami.Theme.disabledTextColor.r, Kirigami.Theme.disabledTextColor.g, Kirigami.Theme.disabledTextColor.b, 0.3)
+    readonly property color hoverColor: Qt.rgba(Kirigami.Theme.disabledTextColor.r, Kirigami.Theme.disabledTextColor.g, Kirigami.Theme.disabledTextColor.b, 0.2)
+    
     background: Rectangle {
         Kirigami.Theme.colorSet: Kirigami.Theme.Button
         Kirigami.Theme.inherit: false
-        color: button.checked || button.pressed ? Qt.rgba(Kirigami.Theme.disabledTextColor.r, Kirigami.Theme.disabledTextColor.g, Kirigami.Theme.disabledTextColor.b, 0.3) : 
-                                                  (hoverHandler.hovered ? Qt.rgba(Kirigami.Theme.disabledTextColor.r, Kirigami.Theme.disabledTextColor.g, Kirigami.Theme.disabledTextColor.b, 0.2) : "transparent")
+        color: (button.checked || button.pressed) ? activeColor : (hoverHandler.hovered ? hoverColor : "transparent")
     }
     
     contentItem: Item {

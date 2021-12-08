@@ -61,10 +61,10 @@ Kirigami.ScrollablePage {
     actions.contextualActions: [
         Kirigami.Action {
             displayHint: Kirigami.Action.IconOnly
-            visible: !appwindow.isWidescreen
+            visible: !applicationWindow().isWidescreen
             iconName: "settings-configure"
             text: i18n("Settings")
-            onTriggered: appwindow.pageStack.layers.push(appwindow.getPage("Settings"))
+            onTriggered: applicationWindow().pageStack.layers.push(applicationWindow().getPage("Settings"))
         }
     ]
     

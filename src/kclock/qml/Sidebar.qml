@@ -1,6 +1,6 @@
 /*
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
- * Copyright 2020-2021 Devin Lin <espidev@gmail.com>
+ * Copyright 2020-2021 Devin Lin <devin@kde.org>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
@@ -14,7 +14,7 @@ Kirigami.OverlayDrawer {
     id: drawer
     modal: false
     width: 200
-    height: appwindow.height
+    height: applicationWindow().height
     
     Kirigami.Theme.colorSet: Kirigami.Theme.Window
     Kirigami.Theme.inherit: false
@@ -49,69 +49,77 @@ Kirigami.OverlayDrawer {
             Layout.margins: Kirigami.Units.smallSpacing
             
             SidebarButton {
+                property var page: applicationWindow().getPage("Time")
+                
+                Layout.fillWidth: true
+                Layout.minimumHeight: Kirigami.Units.gridUnit * 2
+                Layout.bottomMargin: Kirigami.Units.smallSpacing
+                
                 text: i18n("Time")
                 icon.name: "clock"
-                Layout.fillWidth: true
-                Layout.minimumHeight: Kirigami.Units.gridUnit * 2
-                Layout.bottomMargin: Kirigami.Units.smallSpacing
                 checked: pageStack.currentItem === page
-                property var page: appwindow.getPage("Time")
                 onClicked: {
-                    if (appwindow.pageStack.currentItem !== page) {
-                        appwindow.switchToPage(page, 0);
+                    if (applicationWindow().pageStack.currentItem !== page) {
+                        applicationWindow().switchToPage(page, 0);
                     } else {
-                        checked = Qt.binding(function() { return appwindow.pageStack.currentItem === page; });
+                        checked = Qt.binding(function() { return applicationWindow().pageStack.currentItem === page; });
                     }
                 }
             }
             
             SidebarButton {
+                property var page: applicationWindow().getPage("Timers")
+                
+                Layout.fillWidth: true
+                Layout.minimumHeight: Kirigami.Units.gridUnit * 2
+                Layout.bottomMargin: Kirigami.Units.smallSpacing
+                
                 text: i18n("Timers")
                 icon.name: "player-time"
-                Layout.fillWidth: true
-                Layout.minimumHeight: Kirigami.Units.gridUnit * 2
-                Layout.bottomMargin: Kirigami.Units.smallSpacing
                 checked: pageStack.currentItem === page
-                property var page: appwindow.getPage("Timers")
                 onClicked: {
-                    if (appwindow.pageStack.currentItem !== page) {
-                        appwindow.switchToPage(page, 0);
+                    if (applicationWindow().pageStack.currentItem !== page) {
+                        applicationWindow().switchToPage(page, 0);
                     } else {
-                        checked = Qt.binding(function() { return appwindow.pageStack.currentItem === page; });
+                        checked = Qt.binding(function() { return applicationWindow().pageStack.currentItem === page; });
                     }
                 }
             }
             
             SidebarButton {
+                property var page: applicationWindow().getPage("Stopwatch")
+                
+                Layout.fillWidth: true
+                Layout.minimumHeight: Kirigami.Units.gridUnit * 2
+                Layout.bottomMargin: Kirigami.Units.smallSpacing
+                
                 text: i18n("Stopwatch")
                 icon.name: "chronometer"
-                Layout.fillWidth: true
-                Layout.minimumHeight: Kirigami.Units.gridUnit * 2
-                Layout.bottomMargin: Kirigami.Units.smallSpacing
                 checked: pageStack.currentItem === page
-                property var page: appwindow.getPage("Stopwatch")
                 onClicked: {
-                    if (appwindow.pageStack.currentItem !== page) {
-                        appwindow.switchToPage(page, 0);
+                    if (applicationWindow().pageStack.currentItem !== page) {
+                        applicationWindow().switchToPage(page, 0);
                     } else {
-                        checked = Qt.binding(function() { return appwindow.pageStack.currentItem === page; });
+                        checked = Qt.binding(function() { return applicationWindow().pageStack.currentItem === page; });
                     }
                 }
             }
             
             SidebarButton {
-                text: i18n("Alarms")
-                icon.name: "notifications"
+                property var page: applicationWindow().getPage("Alarms")
+                
                 Layout.fillWidth: true
                 Layout.minimumHeight: Kirigami.Units.gridUnit * 2
                 Layout.bottomMargin: Kirigami.Units.smallSpacing
+                
+                text: i18n("Alarms")
+                icon.name: "notifications"
                 checked: pageStack.currentItem === page
-                property var page: appwindow.getPage("Alarms")
                 onClicked: {
-                    if (appwindow.pageStack.currentItem !== page) {
-                        appwindow.switchToPage(page, 0);
+                    if (applicationWindow().pageStack.currentItem !== page) {
+                        applicationWindow().switchToPage(page, 0);
                     } else {
-                        checked = Qt.binding(function() { return appwindow.pageStack.currentItem === page; });
+                        checked = Qt.binding(function() { return applicationWindow().pageStack.currentItem === page; });
                     }
                 }
             }
@@ -123,17 +131,19 @@ Kirigami.OverlayDrawer {
             }
             
             SidebarButton {
-                text: i18n("Settings")
-                icon.name: "settings-configure"
+                property var page: applicationWindow().getPage("Settings")
+                
                 Layout.fillWidth: true
                 Layout.minimumHeight: Kirigami.Units.gridUnit * 2
+                
+                text: i18n("Settings")
+                icon.name: "settings-configure"
                 checked: pageStack.currentItem === page
-                property var page: appwindow.getPage("Settings")
                 onClicked: {
-                    if (appwindow.pageStack.currentItem !== page) {
-                        appwindow.switchToPage(page, 0);
+                    if (applicationWindow().pageStack.currentItem !== page) {
+                        applicationWindow().switchToPage(page, 0);
                     } else {
-                        checked = Qt.binding(function() { return appwindow.pageStack.currentItem === page; });
+                        checked = Qt.binding(function() { return applicationWindow().pageStack.currentItem === page; });
                     }
                 }
             }

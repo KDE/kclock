@@ -12,6 +12,11 @@ import org.kde.kirigami 2.12 as Kirigami
 Controls.AbstractButton {
     id: button
     
+    readonly property color pressedColor: Qt.rgba(baseColor.r, baseColor.g, baseColor.b, 0.3)
+    readonly property color hoverSelectColor: Qt.rgba(baseColor.r, baseColor.g, baseColor.b, 0.2)
+    readonly property color checkedBorderColor: Qt.rgba(baseColor.r, baseColor.g, baseColor.b, 0.7)
+    readonly preoprty color pressedBorderColor: Qt.rgba(baseColor.r, baseColor.g, baseColor.b, 0.9)
+    
     background: Item {
         
         Rectangle {
@@ -22,11 +27,9 @@ Controls.AbstractButton {
             
             property color baseColor: Kirigami.Theme.highlightColor
             
-            color: button.pressed ? Qt.rgba(baseColor.r, baseColor.g, baseColor.b, 0.3) : 
-                                    (button.checked || hoverHandler.hovered ? Qt.rgba(baseColor.r, baseColor.g, baseColor.b, 0.2) : "transparent")
+            color: button.pressed ? pressedColor : (button.checked || hoverHandler.hovered ? hoverSelectColor : "transparent")
 
-            border.color: button.checked ? Qt.rgba(baseColor.r, baseColor.g, baseColor.b, 0.7) : 
-                                        button.pressed ? Qt.rgba(baseColor.r, baseColor.g, baseColor.b, 0.9) : color
+            border.color: button.checked ? checkedBorderColor : (button.pressed ? pressedBorderColor : color)
             border.width: 1
 
             Behavior on color { ColorAnimation { duration: Kirigami.Units.shortDuration } }
