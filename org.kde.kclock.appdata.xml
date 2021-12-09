@@ -69,8 +69,8 @@
   <developer_name xml:lang="x-test">xxKDE Communityxx</developer_name>
   <developer_name xml:lang="zh-CN">KDE 社区</developer_name>
   <description>
-      <p>A universal clock application for desktop and mobile.</p> 
-      <p>It contains alarm, timer, stopwatch and timezone functionalities. Alarms and timers are able to wake the device from suspend on Plasma.</p>
+    <p>A universal clock application for desktop and mobile.</p>
+    <p>It contains alarm, timer, stopwatch and timezone functionalities. Alarms and timers are able to wake the device from suspend on Plasma.</p>
   </description>
   <recommends>
     <control>pointing</control>
