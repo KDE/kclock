@@ -4,27 +4,35 @@
 -->
 <RCC>
     <qresource prefix="/">
+        
         <file>qml/main.qml</file>
-        <file>qml/TimePage.qml</file>
-        <file>qml/TimerPage.qml</file>
-        <file>qml/TimerForm.qml</file>
-        <file>qml/TimerFormWrapper.qml</file>
-        <file>qml/TimerListPage.qml</file>
-        <file>qml/StopwatchPage.qml</file>
-        <file>qml/AboutPage.qml</file>
-        <file>qml/AlarmListPage.qml</file>
-        <file>qml/NewAlarmPage.qml</file>
-        <file>qml/SettingsPage.qml</file>
-        <file>qml/AnalogClock.qml</file>
-        <file>qml/AnalogClockHand.qml</file>
-        <file>qml/TimerComponent.qml</file>
-        <file>qml/Sidebar.qml</file>
-        <file>qml/BottomToolbar.qml</file>
-        <file>qml/TimeZoneSelect.qml</file>
-        <file>qml/TimeZoneSelectWrapper.qml</file>
-        <file>qml/FloatingActionButton.qml</file>
-        <file>qml/FooterToolBarButton.qml</file>
-        <file>qml/SidebarButton.qml</file>
-        <file>qml/SoundPickerPage.qml</file>
+        
+        <file>qml/alarm/AlarmListPage.qml</file>
+        <file>qml/alarm/AlarmFormPage.qml</file>
+        
+        <file>qml/components/AboutPage.qml</file>
+        <file>qml/components/BottomToolbar.qml</file>
+        <file>qml/components/FloatingActionButton.qml</file>
+        <file>qml/components/FooterToolBarButton.qml</file>
+        <file>qml/components/Sidebar.qml</file>
+        <file>qml/components/SidebarButton.qml</file>
+        <file>qml/components/SoundPickerPage.qml</file>
+        
+        <file>qml/settings/SettingsPage.qml</file>
+        
+        <file>qml/stopwatch/StopwatchPage.qml</file>
+        
+        <file>qml/time/AnalogClock.qml</file>
+        <file>qml/time/AnalogClockHand.qml</file>
+        <file>qml/time/TimePage.qml</file>
+        <file>qml/time/TimeZoneSelect.qml</file>
+        <file>qml/time/TimeZoneSelectWrapper.qml</file>
+        
+        <file>qml/timer/TimerComponent.qml</file>
+        <file>qml/timer/TimerForm.qml</file>
+        <file>qml/timer/TimerFormWrapper.qml</file>
+        <file>qml/timer/TimerListPage.qml</file>
+        <file>qml/timer/TimerPage.qml</file>
+        
     </qresource>
 </RCC>

@@ -9,7 +9,10 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.2
+
 import org.kde.kirigami 2.12 as Kirigami
+
+import "../components"
 import kclock 1.0
 
 Kirigami.ScrollablePage {
@@ -38,7 +41,7 @@ Kirigami.ScrollablePage {
     ]
 
     function addAlarm() {
-        applicationWindow().pageStack.layers.push(Qt.resolvedUrl("NewAlarmPage.qml"));
+        applicationWindow().pageStack.layers.push(Qt.resolvedUrl("AlarmFormPage.qml"));
     }
     
     header: ColumnLayout {
@@ -107,7 +110,7 @@ Kirigami.ScrollablePage {
                 Kirigami.Action {
                     iconName: "entry-edit"
                     text: i18n("Edit")
-                    onTriggered: pageStack.layers.push(Qt.resolvedUrl("NewAlarmPage.qml"), {selectedAlarm: model.alarm})
+                    onTriggered: applicationWindow().pageStack.layers.push(Qt.resolvedUrl("AlarmFormPage.qml"), {selectedAlarm: model.alarm})
                 },
                 Kirigami.Action {
                     iconName: "delete"

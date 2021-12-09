@@ -11,8 +11,11 @@ import QtQuick.Controls 2.4
 import QtQuick.Window 2.2
 import QtQuick.Layouts 1.2
 import QtQuick.Dialogs 1.3
+
 import org.kde.kirigami 2.11 as Kirigami
 import org.kde.kirigamiaddons.dateandtime 0.1 as DateAndTime
+
+import "../components"
 import kclock 1.0
 
 Kirigami.ScrollablePage {
@@ -189,9 +192,16 @@ Kirigami.ScrollablePage {
                 },
                 Kirigami.Action {
                     iconName: "edit-select-all"
-                    onTriggered: applicationWindow().pageStack.layers.push(Qt.resolvedUrl("SoundPickerPage.qml"));
+                    onTriggered: {
+                        soundPickerPage.selectedUrl = 
+                        applicationWindow().pageStack.layers.push(soundPickerPage);
+                    }
                 }
             ]
+        }
+        
+        SoundPickerPage {
+            id: soundPickerPage
         }
 
         FileDialog {

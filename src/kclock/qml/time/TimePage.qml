@@ -9,8 +9,10 @@ import QtQuick 2.15
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.2
 import QtQuick.Shapes 1.12
+
 import org.kde.kirigami 2.15 as Kirigami
 
+import "../components"
 import kclock 1.0
 
 Kirigami.ScrollablePage {

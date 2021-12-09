@@ -61,12 +61,12 @@ Kirigami.ApplicationWindow {
     
     function getPage(name) {
         switch (name) {
-            case "Time": return pagePool.loadPage("qrc:/qml/TimePage.qml");
-            case "Timers": return pagePool.loadPage("qrc:/qml/TimerListPage.qml");
-            case "Stopwatch": return pagePool.loadPage("qrc:/qml/StopwatchPage.qml");
-            case "Alarms": return pagePool.loadPage("qrc:/qml/AlarmListPage.qml");
-            case "Settings": return pagePool.loadPage("qrc:/qml/SettingsPage.qml");
-            case "About": return pagePool.loadPage("qrc:/qml/AboutPage.qml");
+            case "Time": return pagePool.loadPage("qrc:/qml/time/TimePage.qml");
+            case "Timers": return pagePool.loadPage("qrc:/qml/timer/TimerListPage.qml");
+            case "Stopwatch": return pagePool.loadPage("qrc:/qml/stopwatch/StopwatchPage.qml");
+            case "Alarms": return pagePool.loadPage("qrc:/qml/alarm/AlarmListPage.qml");
+            case "Settings": return pagePool.loadPage("qrc:/qml/settings/SettingsPage.qml");
+            case "About": return pagePool.loadPage("qrc:/qml/components/AboutPage.qml");
         }
     }
     
@@ -83,7 +83,7 @@ Kirigami.ApplicationWindow {
             sidebarLoader.active = false;
             globalDrawer = null;
             
-            let bottomToolbar = Qt.createComponent("qrc:/qml/BottomToolbar.qml")
+            let bottomToolbar = Qt.createComponent("qrc:/qml/components/BottomToolbar.qml")
             footer = bottomToolbar.createObject(root);
         }
     }
@@ -106,7 +106,7 @@ Kirigami.ApplicationWindow {
     
     Loader {
         id: sidebarLoader
-        source: "qrc:/qml/Sidebar.qml"
+        source: "qrc:/qml/components/Sidebar.qml"
         active: false
     }
 }
