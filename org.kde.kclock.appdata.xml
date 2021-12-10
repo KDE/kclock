@@ -39,6 +39,12 @@
   <name xml:lang="x-test">xxClockxx</name>
   <name xml:lang="zh-CN">时钟</name>
   <summary>Set alarms and timers, use a stopwatch, and manage world clocks</summary>
+  <summary xml:lang="ca">Estableix alarmes i temporitzadors, useu un cronòmetre i gestioneu els rellotges mundials</summary>
+  <summary xml:lang="es">Definir alarmas y temporizadores, usar un cronómetro y gestionar relojes mundiales</summary>
+  <summary xml:lang="nl">Zet alarmen en timers, gebruik een stopwatch en beheer wereldklokken</summary>
+  <summary xml:lang="sv">Ställ in alarm och tidtagare, använd ett stoppur, och hantera världsklockor</summary>
+  <summary xml:lang="uk">Встановіть нагадування та таймери, скористайтеся секундоміром і керуйте показом часу з усього світу</summary>
+  <summary xml:lang="x-test">xxSet alarms and timers, use a stopwatch, and manage world clocksxx</summary>
   <developer_name>KDE Community</developer_name>
   <developer_name xml:lang="ca">La comunitat KDE</developer_name>
   <developer_name xml:lang="ca-valencia">La comunitat KDE</developer_name>
@@ -70,7 +76,19 @@
   <developer_name xml:lang="zh-CN">KDE 社区</developer_name>
   <description>
     <p>A universal clock application for desktop and mobile.</p>
+    <p xml:lang="ca">Una aplicació universal de rellotge per a l'escriptori i mòbil.</p>
+    <p xml:lang="es">Aplicación de reloj universal para el escritorio y el móvil.</p>
+    <p xml:lang="nl">Een universele kloktoepassing voor bureaublad en mobiel.</p>
+    <p xml:lang="sv">Ett universellt klockprogram för skrivbord och mobil.</p>
+    <p xml:lang="uk">Універсальна програма-годинник для робочих станцій та мобільних пристроїв.</p>
+    <p xml:lang="x-test">xxA universal clock application for desktop and mobile.xx</p>
     <p>It contains alarm, timer, stopwatch and timezone functionalities. Alarms and timers are able to wake the device from suspend on Plasma.</p>
+    <p xml:lang="ca">Conté funcions d'alarma, temporitzador, cronòmetre i zona horària. Les alarmes i els temporitzadors també poden fer que el dispositiu deixi d'estar suspès en el Plasma.</p>
+    <p xml:lang="es">Contiene las funciones de alarma, temporizador, cronómetro y zona horaria. Las alarmas y los temporizadores pueden despertar el dispositivo del estado de suspensión en Plasma.</p>
+    <p xml:lang="nl">Het bevat de functionaliteiten alarm, timer, stopwatch en tijdzone. Alarmen kunnen het apparaat uit status onderbroken laten ontwaken bij gebruik van Plasma.</p>
+    <p xml:lang="sv">Det innehåller alarm, tidtagning, stoppur och tidszonsfunktioner. Alarm och tidtagare kan också väcka enheten från viloläge när Plasma används.</p>
+    <p xml:lang="uk">Передбачено будильник, таймер та секундомір, а також функціональні можливості з роботи у різних часових поясах. Будильники і таймери здатні пробуджувати пристрій зі стану сну, якщо на ньому використовується Плазма.</p>
+    <p xml:lang="x-test">xxIt contains alarm, timer, stopwatch and timezone functionalities. Alarms and timers are able to wake the device from suspend on Plasma.xx</p>
   </description>
   <recommends>
     <control>pointing</control>
