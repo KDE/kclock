@@ -12,7 +12,6 @@ set(kclock_SRCS
     timermodel.cpp
     utilmodel.cpp
     stopwatchtimer.cpp
-    alarmplayer.cpp
     kclockformat.cpp
     settingsmodel.cpp
     timezoneselectormodel.cpp

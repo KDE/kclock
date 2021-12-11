@@ -1,6 +1,6 @@
 /*
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
- * Copyright 2020 Devin Lin <espidev@gmail.com>
+ * Copyright 2020-2021 Devin Lin <devin@kde.org>
  * Copyright 2019 Nick Reitemeyer <nick.reitemeyer@web.de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -16,7 +16,7 @@ import "../components"
 import kclock 1.0
 
 Kirigami.ScrollablePage {
-    id: alarmPage
+    id: root
     
     property int yTranslate: 0
     
@@ -26,7 +26,7 @@ Kirigami.ScrollablePage {
     mainAction: Kirigami.Action {
         iconName: "list-add"
         text: i18n("New Alarm")
-        onTriggered: alarmPage.addAlarm()
+        onTriggered: root.addAlarm()
         visible: !Kirigami.Settings.isMobile
     }
     
@@ -76,7 +76,7 @@ Kirigami.ScrollablePage {
             helpfulAction: Kirigami.Action {
                 iconName: "list-add"
                 text: i18n("Add alarm")
-                onTriggered: alarmPage.addAlarm()
+                onTriggered: root.addAlarm()
             }
         }
         
@@ -94,117 +94,21 @@ Kirigami.ScrollablePage {
         FloatingActionButton {
             anchors.fill: parent
             iconName: "list-add"
-            onClicked: alarmPage.addAlarm()
+            onClicked: root.addAlarm()
             visible: Kirigami.Settings.isMobile
         }
         
         // each alarm
-        delegate: Kirigami.SwipeListItem {
-            leftPadding: Kirigami.Units.largeSpacing * 2
-            topPadding: Kirigami.Units.largeSpacing
-            bottomPadding: Kirigami.Units.largeSpacing
+        delegate: AlarmListDelegate {
+            alarm: modelData
             
-            onClicked: model.enabled = !model.enabled
-            
-            actions: [
-                Kirigami.Action {
-                    iconName: "entry-edit"
-                    text: i18n("Edit")
-                    onTriggered: applicationWindow().pageStack.layers.push(Qt.resolvedUrl("AlarmFormPage.qml"), {selectedAlarm: model.alarm})
-                },
-                Kirigami.Action {
-                    iconName: "delete"
-                    text: i18n("Delete")
-                    onTriggered: {
-                        showPassiveNotification(i18n("Deleted %1", model.name == "" ? i18n("alarm") : model.name));
-                        alarmModel.remove(index);
-                        alarmModel.updateUi();
-                    }
-                }
-            ]
-
-            // alarm text
-            contentItem: Item {
-                implicitWidth: delegateLayout.implicitWidth
-                implicitHeight: delegateLayout.implicitHeight
-
-                GridLayout {
-                    id: delegateLayout
-                    anchors {
-                        left: parent.left
-                        top: parent.top
-                        right: parent.right
-                    }
-
-                    rowSpacing: Kirigami.Units.smallSpacing
-                    columnSpacing: Kirigami.Units.smallSpacing
-                    columns: width > Kirigami.Units.gridUnit * 20 ? 4 : 2
-
-                    ColumnLayout {
-                        Label {
-                            font.weight: Font.Light
-                            font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 1.75)
-                            text: kclockFormat.formatTimeString(model.hours, model.minutes)
-                            color: model.enabled ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
-                        }
-                        RowLayout {
-                            spacing: 0
-                            Label {
-                                id: alarmName
-                                visible: text !== ""
-                                font.weight: Font.Bold
-                                font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.15
-                                color: model.enabled ? Kirigami.Theme.activeTextColor : Kirigami.Theme.disabledTextColor
-                                text: model.name
-                            }
-                            Label {
-                                font.weight: Font.Normal
-                                text: (alarmName.visible ? " - " : "") + getRepeatFormat(model.daysOfWeek) 
-                                color: model.enabled ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
-                            }
-                        }
-                        Label {
-                            visible: model.alarm.snoozedMinutes != 0
-                            font.weight: Font.Bold
-                            color: Kirigami.Theme.disabledTextColor
-                            text: i18n("Snoozed %1 minutes", model.alarm.snoozedMinutes)
-                        }
-                    }
-
-                    Switch {
-                        Layout.alignment: Qt.AlignRight|Qt.AlignVCenter
-                        Layout.columnSpan: 1
-                        checked: model.enabled
-                        onCheckedChanged: {
-                            model.enabled = checked;
-                            alarmName.color = checked ? Kirigami.Theme.activeTextColor : Kirigami.Theme.disabledTextColor;
-                        }
-                    }
-                }
+            onEditClicked: {
+                applicationWindow().pageStack.layers.push(Qt.resolvedUrl("AlarmFormPage.qml"), { selectedAlarm: alarm })
+            }
+            onDeleteClicked: {
+                showPassiveNotification(i18n("Deleted %1", alarm.name == "" ? i18n("alarm") : alarm.name));
+                alarmModel.remove(index);
             }
         }
-    }
-
-    function getRepeatFormat(dayOfWeek) {
-        if (dayOfWeek == 0) {
-            return i18n("Only once");
-        }
-        let monday = 1 << 0, tuesday = 1 << 1, wednesday = 1 << 2, thursday = 1 << 3, friday = 1 << 4, saturday = 1 << 5, sunday = 1 << 6;
-
-        if (dayOfWeek == monday + tuesday + wednesday + thursday + friday + saturday + sunday)
-            return i18n("Everyday");
-
-        if (dayOfWeek == monday + tuesday + wednesday + thursday + friday)
-            return i18n("Weekdays");
-
-        let str = "";
-        if (dayOfWeek & monday) str += i18n("Mon., ");
-        if (dayOfWeek & tuesday) str += i18n("Tue., ");
-        if (dayOfWeek & wednesday) str += i18n("Wed., ");
-        if (dayOfWeek & thursday) str += i18n("Thu., ");
-        if (dayOfWeek & friday) str += i18n("Fri., ");
-        if (dayOfWeek & saturday) str += i18n("Sat., ");
-        if (dayOfWeek & sunday) str += i18n("Sun., ");
-        return str.substring(0, str.length - 2);
     }
 }

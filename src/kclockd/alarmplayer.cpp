@@ -62,9 +62,10 @@ void AlarmPlayer::setVolume(int volume)
 void AlarmPlayer::setSource(QUrl path)
 {
     // if user set a invalid audio path or doesn't even specified a path, resort to default
-    if (!path.isLocalFile()) {
+    if (path.isEmpty() || !path.isLocalFile()) {
         m_player->setMedia(QUrl::fromLocalFile(
             QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("sounds/freedesktop/stereo/alarm-clock-elapsed.oga"))));
+    } else {
+        m_player->setMedia(path);
     }
-    m_player->setMedia(path);
 }

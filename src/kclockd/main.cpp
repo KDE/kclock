@@ -36,11 +36,11 @@ int main(int argc, char *argv[])
     KLocalizedString::setApplicationDomain("kclockd");
     KAboutData aboutData(QStringLiteral("kclockd"),
                          QStringLiteral("KClock daemon"),
-                         QStringLiteral("0.1"),
+                         QStringLiteral("1.0"),
                          QStringLiteral("KClock daemon"),
                          KAboutLicense::GPL,
                          i18n("© 2020-2021 KDE Community"));
-    aboutData.addAuthor(i18n("Devin Lin"), QLatin1String(), QStringLiteral("espidev@gmail.com"));
+    aboutData.addAuthor(i18n("Devin Lin"), QLatin1String(), QStringLiteral("devin@kde.org"));
     aboutData.addAuthor(i18n("Han Young"), QLatin1String(), QStringLiteral("hanyoung@protonmail.com"));
     KAboutData::setApplicationData(aboutData);
 
@@ -52,8 +52,6 @@ int main(int argc, char *argv[])
     QDBusConnection::sessionBus().registerObject(QStringLiteral("/Settings"), KClockSettings::self());
 
     // save config
-    QObject::connect(KClockSettings::self(), &KClockSettings::alarmSilenceAfterChanged, KClockSettings::self(), &KClockSettings::save);
-    QObject::connect(KClockSettings::self(), &KClockSettings::alarmSnoozeLengthChanged, KClockSettings::self(), &KClockSettings::save);
     QObject::connect(KClockSettings::self(), &KClockSettings::alarmVolumeChanged, KClockSettings::self(), &KClockSettings::save);
 
     // start alarm polling

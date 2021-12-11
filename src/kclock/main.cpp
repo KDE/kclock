@@ -8,7 +8,6 @@
 
 #include "alarm.h"
 #include "alarmmodel.h"
-#include "alarmplayer.h"
 #include "kclockformat.h"
 #include "savedtimezonesmodel.h"
 #include "settingsmodel.h"
@@ -85,7 +84,6 @@ int main(int argc, char *argv[])
     engine->rootContext()->setContextProperty(QStringLiteral("timerModel"), TimerModel::instance());
     engine->rootContext()->setContextProperty(QStringLiteral("utilModel"), UtilModel::instance());
     engine->rootContext()->setContextProperty(QStringLiteral("stopwatchTimer"), stopwatchTimer);
-    engine->rootContext()->setContextProperty(QStringLiteral("alarmPlayer"), &AlarmPlayer::instance());
     engine->rootContext()->setContextProperty(QStringLiteral("kclockFormat"), KclockFormat::instance());
     engine->rootContext()->setContextProperty(QStringLiteral("weekModel"), weekModel);
     engine->rootContext()->setContextProperty(QStringLiteral("settingsModel"), &SettingsModel::instance());

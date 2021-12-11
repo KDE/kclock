@@ -11,6 +11,8 @@
 #include "alarmplayer.h"
 #include "alarmwaitworker.h"
 
+#include <KNotification>
+
 #include <QDebug>
 #include <QFileDialog>
 #include <QMediaPlayer>
@@ -35,26 +37,25 @@ class Alarm : public QObject
     Q_PROPERTY(int hours READ hours WRITE setHours NOTIFY hoursChanged)
     Q_PROPERTY(int minutes READ minutes WRITE setMinutes NOTIFY minutesChanged)
     Q_PROPERTY(int daysOfWeek READ daysOfWeek WRITE setDaysOfWeek NOTIFY daysOfWeekChanged)
-    Q_PROPERTY(int snoozedMinutes READ snoozedMinutes NOTIFY snoozedMinutesChanged)
-    Q_PROPERTY(QString ringtonePath READ ringtonePath WRITE setRingtonePath NOTIFY ringtonePathChanged)
-
-public Q_SLOTS:
-    void handleDismiss();
-    void handleSnooze();
-    void save(); // serialize and save to config
+    Q_PROPERTY(QString audioPath READ audioPath WRITE setAudioPath NOTIFY audioPathChanged)
+    Q_PROPERTY(int ringDuration READ ringDuration WRITE setRingDuration NOTIFY ringDurationChanged)
+    Q_PROPERTY(int snoozeDuration READ snoozeDuration WRITE setSnoozeDuration NOTIFY snoozeDurationChanged)
+    Q_PROPERTY(int snoozedLength READ snoozedLength NOTIFY snoozedLengthChanged)
+    Q_PROPERTY(bool ringing READ ringing NOTIFY ringingChanged)
+    Q_PROPERTY(quint64 nextRingTime READ nextRingTime NOTIFY nextRingTimeChanged)
 
 public:
-    static void bumpRingingCount();
-    static void lowerRingingCount();
-    static int ringing();
-
-    explicit Alarm(AlarmModel *parent = nullptr, QString name = QStringLiteral(""), int minutes = 0, int hours = 0, int daysOfWeek = 0);
+    explicit Alarm(AlarmModel *parent = nullptr);
     explicit Alarm(QString serialized, AlarmModel *parent = nullptr);
+    explicit Alarm(AlarmModel *parent, QString name, int hours, int minutes, int daysOfWeek, QString audioPath, int ringDuration, int snoozeDuration);
+
+    // serialize this alarm to json
+    QString serialize();
+
+    Q_SCRIPTABLE QString uuid() const;
 
     QString name() const;
     void setName(QString name);
-
-    QUuid uuid() const;
 
     bool enabled() const;
     void setEnabled(bool enabled);
@@ -68,46 +69,96 @@ public:
     int daysOfWeek() const;
     void setDaysOfWeek(int daysOfWeek);
 
-    int snoozedMinutes() const;
-    int snooze() const;
-    void setSnooze(int snooze);
+    QString audioPath() const;
+    void setAudioPath(QString path);
 
-    QString ringtonePath() const;
-    void setRingtonePath(QString path);
-    QString serialize();
+    int ringDuration() const;
+    void setRingDuration(int ringDuration);
 
-    void ring(); // ring alarm
-    Q_SCRIPTABLE quint64 nextRingTime(); // the next time this should ring, if this would never ring, return -1
-    Q_SCRIPTABLE QString getUUID();
+    int snoozeDuration() const;
+    void setSnoozeDuration(int snoozeDuration);
+
+    int snoozedLength() const;
+
+    bool ringing() const;
+
+    // ring the alarm now
+    void ring();
+
+    // get the next time the alarm will ring (unix time), or 0 if it will never ring
+    quint64 nextRingTime();
+
+public Q_SLOTS:
+    Q_SCRIPTABLE void dismiss();
+    Q_SCRIPTABLE void snooze();
+    Q_SCRIPTABLE void save(); // serialize and save to config
 
 Q_SIGNALS:
-    void nameChanged();
-    void enabledChanged();
-    void hoursChanged();
-    void minutesChanged();
-    void daysOfWeekChanged();
-    void snoozedMinutesChanged();
-    void ringtonePathChanged();
+    Q_SCRIPTABLE void nameChanged();
+    Q_SCRIPTABLE void enabledChanged();
+    Q_SCRIPTABLE void hoursChanged();
+    Q_SCRIPTABLE void minutesChanged();
+    Q_SCRIPTABLE void daysOfWeekChanged();
+    Q_SCRIPTABLE void audioPathChanged();
+    Q_SCRIPTABLE void ringDurationChanged();
+    Q_SCRIPTABLE void snoozeDurationChanged();
 
-    Q_SCRIPTABLE void propertyChanged(QString property);
-    Q_SCRIPTABLE void alarmChanged();
+    Q_SCRIPTABLE void snoozedLengthChanged();
+    Q_SCRIPTABLE void ringingChanged();
+    Q_SCRIPTABLE void nextRingTimeChanged();
+
+    // the time that the alarm is going to ring has changed
+    Q_SCRIPTABLE void rescheduleRequested();
 
 private:
-    void initialize(AlarmModel *parent); // called after object construction
+    void setSnoozedLength(int snoozedLength);
+    void setRinging(bool ringing);
+    void setNextRingTime(quint64 nextRingTime);
     void calculateNextRingTime();
 
-    QUrl m_audioPath =
-        QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("sounds/freedesktop/stereo/alarm-clock-elapsed.oga")));
-    QString m_name;
     QUuid m_uuid;
-    bool m_enabled = true;
-    bool m_justSnoozed = false; // pressing snooze on the notification also triggers the dismiss event, so this is a helper for that
-    int m_hours = 0, m_minutes = 0, m_daysOfWeek = 0;
-    int m_snooze = 0; // current snooze length
-    quint64 m_nextRingTime = 0; // store calculated next ring time
 
-    bool alarmNotifOpen = false; // if the alarm notification is open
-    QTime alarmNotifOpenTime; // time the alarm notification opened
+    // properties that persist to storage:
 
-    static std::atomic<int> ringingCount;
+    // name of the alarm
+    QString m_name;
+
+    // whether the alarm is enabled
+    bool m_enabled;
+
+    // hour of the day the alarm rings at
+    int m_hours;
+
+    // minute of the hour the alarm rings at
+    int m_minutes;
+
+    // bitmask of the days of the week that the alarm rings (if zero, it rings once)
+    int m_daysOfWeek;
+
+    // the path to the audio file to ring
+    QUrl m_audioPath;
+
+    // the amount of time the alarm rings for, in minutes
+    int m_ringDuration;
+
+    // the amount of time the alarm adds when snoozed, in minutes
+    int m_snoozeDuration;
+
+    // the amount of time snoozing has added to the current ring, in seconds
+    int m_snoozedLength;
+
+    // properties only relevant for the current state of the alarm (not persisted):
+
+    // whether the alarm is ringing
+    bool m_ringing;
+
+    // cache calculated next ring time (unix time)
+    quint64 m_nextRingTime = 0;
+
+    // whether snooze just occurred
+    bool m_justSnoozed;
+
+    KNotification *m_notification;
+
+    QTimer *m_ringTimer;
 };

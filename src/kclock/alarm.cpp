@@ -20,26 +20,41 @@ Alarm::Alarm(QString uuid)
     m_interface = new org::kde::kclock::Alarm(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Alarms/") + uuid, QDBusConnection::sessionBus(), this);
 
     if (m_interface->isValid()) {
-        connect(m_interface, &OrgKdeKclockAlarmInterface::propertyChanged, this, &Alarm::updateProperty);
-        connect(m_interface, &OrgKdeKclockAlarmInterface::alarmChanged, [this] {
-            m_nextRingTime = m_interface->nextRingTime();
-        });
+        connect(m_interface, &OrgKdeKclockAlarmInterface::nameChanged, this, &Alarm::updateName);
+        connect(m_interface, &OrgKdeKclockAlarmInterface::enabledChanged, this, &Alarm::updateEnabled);
+        connect(m_interface, &OrgKdeKclockAlarmInterface::hoursChanged, this, &Alarm::updateHours);
+        connect(m_interface, &OrgKdeKclockAlarmInterface::minutesChanged, this, &Alarm::updateMinutes);
+        connect(m_interface, &OrgKdeKclockAlarmInterface::daysOfWeekChanged, this, &Alarm::updateDaysOfWeek);
+        connect(m_interface, &OrgKdeKclockAlarmInterface::audioPathChanged, this, &Alarm::updateAudioPath);
+        connect(m_interface, &OrgKdeKclockAlarmInterface::ringDurationChanged, this, &Alarm::updateRingDuration);
+        connect(m_interface, &OrgKdeKclockAlarmInterface::snoozeDurationChanged, this, &Alarm::updateSnoozeDuration);
+        connect(m_interface, &OrgKdeKclockAlarmInterface::snoozedLengthChanged, this, &Alarm::updateSnoozedLength);
+        connect(m_interface, &OrgKdeKclockAlarmInterface::ringingChanged, this, &Alarm::updateRinging);
+        connect(m_interface, &OrgKdeKclockAlarmInterface::nextRingTimeChanged, this, &Alarm::updateNextRingTime);
 
-        m_uuid = QUuid(m_interface->getUUID());
-        m_name = m_interface->name();
-        m_enabled = m_interface->enabled();
-        m_hours = m_interface->hours();
-        m_minutes = m_interface->minutes();
-        m_daysOfWeek = m_interface->daysOfWeek();
-        m_snooze = m_interface->snoozedMinutes() * 60;
-        m_ringtonePath = m_interface->ringtonePath();
-        m_nextRingTime = m_interface->nextRingTime();
+        m_uuid = QUuid(m_interface->uuid());
+        updateName();
+        updateEnabled();
+        updateHours();
+        updateMinutes();
+        updateDaysOfWeek();
+        updateAudioPath();
+        updateRingDuration();
+        updateSnoozeDuration();
+        updateSnoozedLength();
+        updateRinging();
+        updateNextRingTime();
     } else {
         m_isValid = false;
     }
 }
 
-const QString &Alarm::name() const
+QUuid Alarm::uuid() const
+{
+    return m_uuid;
+}
+
+QString Alarm::name() const
 {
     return m_name;
 }
@@ -49,12 +64,7 @@ void Alarm::setName(QString name)
     m_interface->setProperty("name", name);
 }
 
-const QUuid &Alarm::uuid() const
-{
-    return m_uuid;
-}
-
-const bool &Alarm::enabled() const
+bool Alarm::enabled() const
 {
     return m_enabled;
 }
@@ -62,104 +72,161 @@ const bool &Alarm::enabled() const
 void Alarm::setEnabled(bool enabled)
 {
     m_interface->setProperty("enabled", enabled);
-    m_enabled = enabled;
 }
 
-const int &Alarm::hours() const
+int Alarm::hours() const
 {
     return m_hours;
 }
 
 void Alarm::setHours(int hours)
 {
-    m_hours = hours;
     m_interface->setProperty("hours", hours);
 }
 
-const int &Alarm::minutes() const
+int Alarm::minutes() const
 {
     return m_minutes;
 }
 
 void Alarm::setMinutes(int minutes)
 {
-    m_minutes = minutes;
     m_interface->setProperty("minutes", minutes);
 }
 
-const int &Alarm::daysOfWeek() const
+int Alarm::daysOfWeek() const
 {
     return m_daysOfWeek;
 }
 
 void Alarm::setDaysOfWeek(int daysOfWeek)
 {
-    m_daysOfWeek = daysOfWeek;
     m_interface->setProperty("daysOfWeek", daysOfWeek);
 }
 
-int Alarm::snoozedMinutes() const
+QString Alarm::audioPath() const
 {
-    return m_snooze / 60;
+    return m_audioPath;
 }
 
-const QString &Alarm::ringtonePath() const
+void Alarm::setAudioPath(QString path)
 {
-    return m_ringtonePath;
+    m_interface->setProperty("audioPath", path);
 }
 
-void Alarm::setRingtonePath(QString path)
+int Alarm::ringDuration() const
 {
-    m_interface->setProperty("ringtonePath", path);
+    return m_ringDuration;
 }
 
-bool Alarm::isValid()
+void Alarm::setRingDuration(int ringDuration)
+{
+    m_interface->setProperty("ringDuration", ringDuration);
+}
+
+int Alarm::snoozeDuration() const
+{
+    return m_snoozeDuration;
+}
+
+void Alarm::setSnoozeDuration(int snoozeDuration)
+{
+    m_interface->setProperty("snoozeDuration", snoozeDuration);
+}
+
+int Alarm::snoozedLength() const
+{
+    return m_snoozedLength ? m_snoozedLength / 60 : 0;
+}
+
+bool Alarm::ringing() const
+{
+    return m_ringing;
+}
+
+quint64 Alarm::nextRingTime() const
+{
+    return m_nextRingTime;
+}
+
+bool Alarm::isValid() const
 {
     return m_isValid;
 }
 
-QString Alarm::timeToRingFormated()
+QString Alarm::timeToRingFormatted()
 {
-    this->calculateNextRingTime();
-
-    return UtilModel::instance()->timeToRingFormatted(this->nextRingTime());
-}
-
-void Alarm::updateProperty(QString property)
-{
-    if (property == QStringLiteral("name"))
-        this->m_name = m_interface->property("name").toString();
-    else if (property == QStringLiteral("enabled"))
-        this->m_enabled = m_interface->property("enabled").toBool();
-    else if (property == QStringLiteral("hours"))
-        this->m_hours = m_interface->property("hours").toInt();
-    else if (property == QStringLiteral("minutes"))
-        this->m_minutes = m_interface->property("minutes").toInt();
-    else if (property == QStringLiteral("daysOfWeek"))
-        this->m_daysOfWeek = m_interface->property("daysOfWeek").toInt();
-    else if (property == QStringLiteral("snoozedMinutes"))
-        this->m_snooze = m_interface->property("snoozedMinutes").toInt() * 60;
-    else if (property == QStringLiteral("ringtonePath"))
-        this->m_ringtonePath = m_interface->property("ringtonePath").toBool();
-    Q_EMIT propertyChanged();
-}
-
-void Alarm::calculateNextRingTime()
-{
-    if (!this->m_enabled) { // if not enabled, means this would never ring
-        m_nextRingTime = -1;
-        return;
-    }
-
-    m_nextRingTime = UtilModel::instance()->calculateNextRingTime(this->m_hours, this->m_minutes, this->m_daysOfWeek, this->m_snooze);
+    updateNextRingTime();
+    return UtilModel::instance()->timeToRingFormatted(nextRingTime());
 }
 
 void Alarm::save()
 {
-    m_interface->alarmChanged();
-};
+    m_interface->save();
+}
 
-const qint64 &Alarm::nextRingTime() const
+void Alarm::updateName()
 {
-    return m_nextRingTime;
-};
+    m_name = m_interface->name();
+    Q_EMIT nameChanged();
+}
+
+void Alarm::updateEnabled()
+{
+    m_enabled = m_interface->enabled();
+    Q_EMIT enabledChanged();
+}
+
+void Alarm::updateHours()
+{
+    m_hours = m_interface->hours();
+    Q_EMIT hoursChanged();
+}
+
+void Alarm::updateMinutes()
+{
+    m_minutes = m_interface->minutes();
+    Q_EMIT minutesChanged();
+}
+
+void Alarm::updateDaysOfWeek()
+{
+    m_daysOfWeek = m_interface->daysOfWeek();
+    Q_EMIT daysOfWeekChanged();
+}
+
+void Alarm::updateAudioPath()
+{
+    m_audioPath = m_interface->audioPath();
+    Q_EMIT audioPathChanged();
+}
+
+void Alarm::updateRingDuration()
+{
+    m_ringDuration = m_interface->ringDuration();
+    Q_EMIT ringDurationChanged();
+}
+
+void Alarm::updateSnoozeDuration()
+{
+    m_snoozeDuration = m_interface->snoozeDuration();
+    Q_EMIT snoozeDurationChanged();
+}
+
+void Alarm::updateSnoozedLength()
+{
+    m_snoozedLength = m_interface->snoozedLength();
+    Q_EMIT snoozedLengthChanged();
+}
+
+void Alarm::updateRinging()
+{
+    m_ringing = m_interface->ringing();
+    Q_EMIT ringingChanged();
+}
+
+void Alarm::updateNextRingTime()
+{
+    m_nextRingTime = m_interface->nextRingTime();
+    Q_EMIT nextRingTimeChanged();
+}

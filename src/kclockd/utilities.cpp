@@ -161,6 +161,7 @@ void Utilities::initWorker()
     }
     m_timerThread->start();
 }
+
 bool Utilities::hasWakeup()
 {
     QDBusMessage m = QDBusMessage::createMethodCall(QStringLiteral("org.kde.Solid.PowerManagement"),
@@ -190,6 +191,15 @@ void Utilities::decfActiveCount()
 {
     m_activeTimerCount--;
     exitAfterTimeout();
+}
+
+void Utilities::wakeupNow()
+{
+    QDBusMessage wakeupCall = QDBusMessage::createMethodCall(QStringLiteral("org.kde.Solid.PowerManagement"),
+                                                             QStringLiteral("/org/kde/Solid/PowerManagement"),
+                                                             QStringLiteral("org.kde.Solid.PowerManagement"),
+                                                             QStringLiteral("wakeup"));
+    QDBusConnection::sessionBus().call(wakeupCall);
 }
 
 // hack, use timer count to keep alive

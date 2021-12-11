@@ -48,11 +48,11 @@ void AlarmModel::load()
     auto config = KSharedConfig::openConfig();
     KConfigGroup group = config->group(ALARM_CFG_GROUP);
     QStringList list = group.keyList();
+
     for (const QString &key : list) {
         QString json = group.readEntry(key, QString());
         if (!json.isEmpty()) {
             Alarm *alarm = new Alarm(json, this);
-
             m_alarmsList.append(alarm);
         }
     }
@@ -108,7 +108,7 @@ void AlarmModel::scheduleAlarm()
 
     // if there is an alarm that needs to rung
     if (minTime != std::numeric_limits<quint64>::max()) {
-        qDebug() << "scheduled wakeup" << QDateTime::fromSecsSinceEpoch(minTime).toString();
+        qDebug() << "Scheduled alarm wakeup at" << QDateTime::fromSecsSinceEpoch(minTime).toString();
         m_nextAlarmTime = minTime;
 
         // if we scheduled a wakeup before, cancel it first
@@ -120,7 +120,7 @@ void AlarmModel::scheduleAlarm()
     } else {
         // this doesn't explicitly cancel the alarm currently waiting in m_worker if disabled by user
         // because alarm->ring() will return immediately if disabled
-        qDebug() << "no alarm to ring";
+        qDebug() << "No alarms scheduled";
 
         m_nextAlarmTime = 0;
         Utilities::instance().clearWakeup(m_cookie);
@@ -140,25 +140,21 @@ void AlarmModel::wakeupCallback(int cookie)
 }
 void AlarmModel::removeAlarm(QString uuid)
 {
-    // find index of alarm
-    int index = -1;
     for (int i = 0; i < m_alarmsList.size(); i++) {
-        if (m_alarmsList[i]->uuid().toString() == uuid) {
-            index = i;
+        if (m_alarmsList[i]->uuid() == uuid) {
+            removeAlarm(i);
             break;
         }
-    }
-    if (index != -1) {
-        this->removeAlarm(index);
     }
 }
 
 void AlarmModel::removeAlarm(int index)
 {
-    if (index < 0 || index >= this->m_alarmsList.size())
+    if (index < 0 || index >= this->m_alarmsList.size()) {
         return;
+    }
 
-    Q_EMIT alarmRemoved(m_alarmsList.at(index)->uuid().toString());
+    Q_EMIT alarmRemoved(m_alarmsList.at(index)->uuid());
 
     Alarm *alarmPointer = m_alarmsList.at(index);
 
@@ -173,7 +169,7 @@ void AlarmModel::removeAlarm(int index)
     // write to config
     auto config = KSharedConfig::openConfig();
     KConfigGroup group = config->group(ALARM_CFG_GROUP);
-    group.deleteEntry(m_alarmsList.at(index)->uuid().toString());
+    group.deleteEntry(m_alarmsList.at(index)->uuid());
     m_alarmsList.at(index)->deleteLater(); // delete object
     m_alarmsList.removeAt(index);
 
@@ -181,36 +177,22 @@ void AlarmModel::removeAlarm(int index)
     scheduleAlarm();
 }
 
-void AlarmModel::addAlarm(int hours, int minutes, int daysOfWeek, QString name, QString ringtonePath)
+void AlarmModel::addAlarm(QString name, int hours, int minutes, int daysOfWeek, QString audioPath, int ringDuration, int snoozeDuration)
 {
-    Q_UNUSED(ringtonePath)
-    Alarm *alarm = new Alarm(this, name, minutes, hours, daysOfWeek);
+    Alarm *alarm = new Alarm(this, name, hours, minutes, daysOfWeek, audioPath, ringDuration, snoozeDuration);
     alarm->save();
 
     // insert new alarm in order by time of day
     int i = 0;
-    for (auto alarms : std::as_const(m_alarmsList)) {
-        if (alarms->hours() < hours) {
-            i++;
-            continue;
-        } else if (alarms->hours() == hours) {
-            if (alarms->minutes() < minutes) {
-                i++;
-                continue;
-            } else {
-                break;
-            }
-        } else {
-            break;
-        }
+    while (i < m_alarmsList.size() && !(m_alarmsList[i]->hours() == hours && m_alarmsList[i]->minutes() >= minutes)) {
+        ++i;
     }
-
     m_alarmsList.insert(i, alarm);
 
     scheduleAlarm();
-
-    Q_EMIT alarmAdded(alarm->uuid().toString());
+    Q_EMIT alarmAdded(alarm->uuid());
 }
+
 void AlarmModel::initNotifierItem()
 {
     if (!m_item) {
@@ -222,6 +204,7 @@ void AlarmModel::initNotifierItem()
         m_item->setStatus(KStatusNotifierItem::Passive);
     }
 }
+
 void AlarmModel::updateNotifierItem(quint64 time)
 {
     if (time == 0) {

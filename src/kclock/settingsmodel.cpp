@@ -7,8 +7,6 @@
 
 #include "settingsmodel.h"
 
-#include "alarmplayer.h"
-
 #include <KLocalizedString>
 
 #include <QDebug>
@@ -17,64 +15,8 @@ SettingsModel::SettingsModel()
     : m_interface(new LocalKClockSettingsInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Settings"), QDBusConnection::sessionBus()))
 {
     m_volume = m_interface->alarmVolume();
-    AlarmPlayer::instance().setVolume(m_volume);
-
-    m_alarmSilenceAfter = m_interface->alarmSilenceAfter();
-    m_alarmSnoozeLength = m_interface->alarmSnoozeLength();
 
     connect(m_interface, &LocalKClockSettingsInterface::alarmVolumeChanged, this, &SettingsModel::updateVolume);
-    connect(m_interface, &LocalKClockSettingsInterface::alarmSilenceAfterChanged, this, &SettingsModel::updateAlarmSilenceAfter);
-    connect(m_interface, &LocalKClockSettingsInterface::alarmSnoozeLengthChanged, this, &SettingsModel::updateAlarmSnoozeLength);
-
-    // init display
-    switch (m_alarmSilenceAfter) {
-    case 30:
-        m_alarmSilenceAfterDisplay = i18n("30 seconds");
-        break;
-    case 60:
-        m_alarmSilenceAfterDisplay = i18n("1 minute");
-        break;
-    case 300:
-        m_alarmSilenceAfterDisplay = i18n("5 minutes");
-        break;
-    case 600:
-        m_alarmSilenceAfterDisplay = i18n("10 minutes");
-        break;
-    case 900:
-        m_alarmSilenceAfterDisplay = i18n("15 minutes");
-        break;
-    case -1:
-        m_alarmSilenceAfterDisplay = i18n("Never");
-        break;
-    }
-
-    switch (m_alarmSnoozeLength) {
-    case 1:
-        m_alarmSnoozeLengthDisplay = i18n("1 minute");
-        break;
-    case 2:
-        m_alarmSnoozeLengthDisplay = i18n("2 minutes");
-        break;
-    case 3:
-        m_alarmSnoozeLengthDisplay = i18n("3 minutes");
-        break;
-    case 4:
-        m_alarmSnoozeLengthDisplay = i18n("4 minutes");
-        break;
-    case 5:
-        m_alarmSnoozeLengthDisplay = i18n("5 minutes");
-        break;
-    case 10:
-        m_alarmSnoozeLengthDisplay = i18n("10 minutes");
-        break;
-    case 30:
-        m_alarmSnoozeLengthDisplay = i18n("30 minutes");
-        break;
-    case 60:
-        m_alarmSnoozeLengthDisplay = i18n("1 hour");
-        break;
-    }
-    qDebug() << m_alarmSnoozeLengthDisplay;
 }
 
 SettingsModel &SettingsModel::instance()
@@ -93,60 +35,8 @@ void SettingsModel::setVolume(int volume)
     m_interface->setProperty("alarmVolume", volume);
 }
 
-const QString &SettingsModel::alarmSilenceAfterDisplay() const
-{
-    return m_alarmSilenceAfterDisplay;
-}
-
-void SettingsModel::setAlarmSilenceAfterDisplay(QString str)
-{
-    m_alarmSilenceAfterDisplay = str;
-}
-
-const QString &SettingsModel::alarmSnoozeLengthDisplay() const
-{
-    return m_alarmSnoozeLengthDisplay;
-}
-
-void SettingsModel::setAlarmSnoozeLengthDisplay(QString str)
-{
-    m_alarmSnoozeLengthDisplay = str;
-}
-
-const int &SettingsModel::alarmSilenceAfter() const
-{
-    return m_alarmSilenceAfter;
-}
-
-void SettingsModel::setAlarmSilenceAfter(int length)
-{
-    m_interface->setProperty("alarmSilenceAfter", length);
-}
-
-void SettingsModel::setAlarmSnoozeLength(int length)
-{
-    m_interface->setProperty("alarmSnoozeLength", length);
-}
-
-const int &SettingsModel::alarmSnoozeLength() const
-{
-    return m_alarmSnoozeLength;
-}
-
 void SettingsModel::updateVolume()
 {
     m_volume = m_interface->alarmVolume();
     Q_EMIT volumeChanged();
-}
-
-void SettingsModel::updateAlarmSilenceAfter()
-{
-    m_alarmSilenceAfter = m_interface->alarmSilenceAfter();
-    Q_EMIT alarmSilenceChanged();
-}
-
-void SettingsModel::updateAlarmSnoozeLength()
-{
-    m_alarmSnoozeLength = m_interface->alarmSnoozeLength();
-    Q_EMIT alarmSnoozedChanged();
 }

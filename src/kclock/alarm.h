@@ -19,65 +19,101 @@
 class Alarm : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(QString name READ name WRITE setName NOTIFY propertyChanged)
-    Q_PROPERTY(bool enabled READ enabled WRITE setEnabled NOTIFY propertyChanged)
-    Q_PROPERTY(int hours READ hours WRITE setHours NOTIFY propertyChanged)
-    Q_PROPERTY(int minutes READ minutes WRITE setMinutes NOTIFY propertyChanged)
-    Q_PROPERTY(int daysOfWeek READ daysOfWeek WRITE setDaysOfWeek NOTIFY propertyChanged)
-    Q_PROPERTY(int snoozedMinutes READ snoozedMinutes NOTIFY propertyChanged)
-    Q_PROPERTY(QString ringtonePath READ ringtonePath WRITE setRingtonePath NOTIFY propertyChanged)
+    Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
+    Q_PROPERTY(bool enabled READ enabled WRITE setEnabled NOTIFY enabledChanged)
+    Q_PROPERTY(int hours READ hours WRITE setHours NOTIFY hoursChanged)
+    Q_PROPERTY(int minutes READ minutes WRITE setMinutes NOTIFY minutesChanged)
+    Q_PROPERTY(int daysOfWeek READ daysOfWeek WRITE setDaysOfWeek NOTIFY daysOfWeekChanged)
+    Q_PROPERTY(QString audioPath READ audioPath WRITE setAudioPath NOTIFY audioPathChanged)
+    Q_PROPERTY(int ringDuration READ ringDuration WRITE setRingDuration NOTIFY ringDurationChanged)
+    Q_PROPERTY(int snoozeDuration READ snoozeDuration WRITE setSnoozeDuration NOTIFY snoozeDurationChanged)
+    Q_PROPERTY(int snoozedLength READ snoozedLength NOTIFY snoozedLengthChanged)
+    Q_PROPERTY(bool ringing READ ringing NOTIFY ringingChanged)
+    Q_PROPERTY(quint64 nextRingTime READ nextRingTime NOTIFY nextRingTimeChanged)
 
 public:
     explicit Alarm();
     explicit Alarm(QString uuid);
 
-    const QString &name() const;
+    QUuid uuid() const;
+
+    QString name() const;
     void setName(QString name);
 
-    const QUuid &uuid() const;
-
-    const bool &enabled() const;
+    bool enabled() const;
     void setEnabled(bool enabled);
 
-    const int &hours() const;
+    int hours() const;
     void setHours(int hours);
 
-    const int &minutes() const;
+    int minutes() const;
     void setMinutes(int minutes);
 
-    const int &daysOfWeek() const;
+    int daysOfWeek() const;
     void setDaysOfWeek(int daysOfWeek);
 
-    int snoozedMinutes() const;
+    QString audioPath() const;
+    void setAudioPath(QString path);
 
-    const QString &ringtonePath() const;
-    void setRingtonePath(QString path);
+    int ringDuration() const;
+    void setRingDuration(int ringDuration);
 
-    bool isValid();
+    int snoozeDuration() const;
+    void setSnoozeDuration(int snoozeDuration);
 
-    Q_INVOKABLE QString timeToRingFormated();
+    int snoozedLength() const;
+
+    bool ringing() const;
+
+    quint64 nextRingTime() const;
+
+    bool isValid() const;
+
+    Q_INVOKABLE QString timeToRingFormatted();
 
     Q_INVOKABLE void save();
 
 Q_SIGNALS:
-    void propertyChanged();
+    void nameChanged();
+    void enabledChanged();
+    void hoursChanged();
+    void minutesChanged();
+    void daysOfWeekChanged();
+    void audioPathChanged();
+    void ringDurationChanged();
+    void snoozeDurationChanged();
+    void snoozedLengthChanged();
+    void ringingChanged();
+    void nextRingTimeChanged();
 
 private Q_SLOTS:
-    void updateProperty(QString property);
+    void updateName();
+    void updateEnabled();
+    void updateHours();
+    void updateMinutes();
+    void updateDaysOfWeek();
+    void updateAudioPath();
+    void updateRingDuration();
+    void updateSnoozeDuration();
+    void updateSnoozedLength();
+    void updateRinging();
+    void updateNextRingTime();
 
 private:
-    const qint64 &nextRingTime() const;
-
-    void calculateNextRingTime();
-
     org::kde::kclock::Alarm *m_interface;
 
-    QString m_ringtonePath;
-    QString m_name;
     QUuid m_uuid;
+
+    QString m_name;
     bool m_enabled;
-    int m_hours, m_minutes, m_daysOfWeek;
-    qint64 m_snooze;
+    int m_hours;
+    int m_minutes;
+    int m_daysOfWeek;
+    QString m_audioPath;
+    int m_ringDuration;
+    int m_snoozeDuration;
+    int m_snoozedLength;
+    bool m_ringing;
     qint64 m_nextRingTime;
 
     bool m_isValid = true;

@@ -72,11 +72,11 @@ WeekModel::WeekModel(QObject *parent)
     // init week and flag value
     int dayFlag[] = {1, 2, 4, 8, 16, 32, 64}, i = 0;
     for (int j = QLocale::system().firstDayOfWeek(); j <= 7; j++) {
-        m_listItem[i++] = std::tuple<QString, int>(QLocale::system().dayName(j, QLocale::ShortFormat), dayFlag[j - 1]);
+        m_listItem[i++] = std::tuple<QString, int>(QLocale::system().dayName(j, QLocale::LongFormat), dayFlag[j - 1]);
     }
 
     for (int j = 1; j < QLocale::system().firstDayOfWeek(); j++) {
-        m_listItem[i++] = std::tuple<QString, int>(QLocale::system().dayName(j, QLocale::ShortFormat), dayFlag[j - 1]);
+        m_listItem[i++] = std::tuple<QString, int>(QLocale::system().dayName(j, QLocale::LongFormat), dayFlag[j - 1]);
     }
 }
 

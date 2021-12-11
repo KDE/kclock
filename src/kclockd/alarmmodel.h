@@ -13,6 +13,7 @@
 #include <QObject>
 
 class Alarm;
+
 class AlarmModel : public QObject
 {
     Q_OBJECT
@@ -26,7 +27,7 @@ public:
     void configureWakeups(); // needs to be called to start worker thread, or configure powerdevil (called in main)
 
     Q_SCRIPTABLE void removeAlarm(QString uuid);
-    Q_SCRIPTABLE void addAlarm(int hours, int minutes, int daysOfWeek, QString name, QString ringtonePath); // in 24 hours units
+    Q_SCRIPTABLE void addAlarm(QString name, int hours, int minutes, int daysOfWeek, QString audioPath, int ringDuration, int snoozeDuration);
 
 Q_SIGNALS:
     Q_SCRIPTABLE void alarmAdded(QString uuid);
@@ -42,16 +43,23 @@ private Q_SLOTS:
     void updateNotifierItem(quint64 time); // update notify icon in systemtray
 
 private:
-    void removeAlarm(int index);
-
     explicit AlarmModel(QObject *parent = nullptr);
 
+    void removeAlarm(int index);
     void initNotifierItem();
 
+    // next scheduled system wakeup for ringing alarms, in unix time
     quint64 m_nextAlarmTime = 0;
-    int m_cookie = -1; // token for wakeup call auth
-    QList<Alarm *> alarmsToRing; // the alarms that will ring on next wakeup
 
+    // token for system wakeup call authentication
+    int m_cookie = -1;
+
+    // list of alarms that will ring on the next scheduled system wakeup
+    QList<Alarm *> alarmsToRing;
+
+    // list of alarms in the model
     QList<Alarm *> m_alarmsList;
+
+    // system tray notifier item
     KStatusNotifierItem *m_item{nullptr};
 };

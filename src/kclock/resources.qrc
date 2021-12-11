@@ -7,16 +7,22 @@
         
         <file>qml/main.qml</file>
         
-        <file>qml/alarm/AlarmListPage.qml</file>
+        <file>qml/alarm/AlarmForm.qml</file>
         <file>qml/alarm/AlarmFormPage.qml</file>
+        <file>qml/alarm/AlarmListPage.qml</file>
+        <file>qml/alarm/AlarmListDelegate.qml</file>
         
         <file>qml/components/AboutPage.qml</file>
         <file>qml/components/BottomToolbar.qml</file>
+        <file>qml/components/DialogComboBox.qml</file>
         <file>qml/components/FloatingActionButton.qml</file>
         <file>qml/components/FooterToolBarButton.qml</file>
+        <file>qml/components/formatUtil.js</file>
         <file>qml/components/Sidebar.qml</file>
         <file>qml/components/SidebarButton.qml</file>
         <file>qml/components/SoundPickerPage.qml</file>
+        <file>qml/components/TimePicker.qml</file>
+        <file>qml/components/TimePickerSpinBox.qml</file>
         
         <file>qml/settings/SettingsPage.qml</file>
         

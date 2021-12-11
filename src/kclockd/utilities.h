@@ -31,6 +31,8 @@ public:
     void incfActiveCount();
     void decfActiveCount();
 
+    static void wakeupNow();
+
 Q_SIGNALS:
     void wakeup(int cookie);
     void needsReschedule();
