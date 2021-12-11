@@ -1,3 +1,10 @@
+/*
+ * Copyright 2020 Han Young <hanyoung@protonmail.com>
+ * Copyright 2020-2021 Devin Lin <devin@kde.org>
+ *
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ */
+
 // display format for days of the week to repeat for alarms
 function getRepeatFormat(dayOfWeek) {
     if (dayOfWeek == 0) {
