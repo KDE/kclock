@@ -155,6 +155,9 @@ private:
     // cache calculated next ring time (unix time)
     quint64 m_nextRingTime = 0;
 
+    // saves the original ring time (without snoozing applied to it)
+    quint64 m_originalRingTime = 0;
+
     // whether snooze just occurred
     bool m_justSnoozed;
 

@@ -285,6 +285,11 @@ void Alarm::ring()
 
     qDebug() << "Ringing alarm" << m_name << "and sending notification...";
 
+    // save ring time
+    if (m_snoozedLength == 0) {
+        m_originalRingTime = m_nextRingTime;
+    }
+
     // send notification
     m_notification->setText(QLocale::system().toString(QTime::currentTime(), QLocale::ShortFormat));
     m_notification->sendEvent();
@@ -332,7 +337,7 @@ void Alarm::snooze()
     m_justSnoozed = true;
 
     // add snooze amount, and enable alarm
-    setSnoozedLength(m_snoozedLength + 60 * m_snoozeDuration);
+    setSnoozedLength((QDateTime::currentSecsSinceEpoch() + 60 * m_snoozeDuration) - m_originalRingTime);
     m_enabled = true; // can't use setEnabled, since it will reset snoozedLength
     Q_EMIT enabledChanged();
     Q_EMIT rescheduleRequested();
