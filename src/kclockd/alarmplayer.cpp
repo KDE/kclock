@@ -22,6 +22,7 @@ AlarmPlayer::AlarmPlayer(QObject *parent)
 {
     connect(m_player, &QMediaPlayer::stateChanged, this, &AlarmPlayer::loopAudio);
     m_player->setAudioRole(QAudio::AlarmRole);
+    m_player->setCategory(QStringLiteral("alarm");
 }
 
 void AlarmPlayer::loopAudio(QMediaPlayer::State state)
