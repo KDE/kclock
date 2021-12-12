@@ -35,82 +35,70 @@ Kirigami.FormLayout {
         RowLayout {
             Layout.alignment: Qt.AlignHCenter
             spacing: Kirigami.Units.smallSpacing
-            Button {
-                implicitWidth: Kirigami.Units.gridUnit * 4
+            PresetDurationButton {
                 text: i18n("1 m")
-                onClicked: {
-                    spinBoxHours.value = 0;
-                    spinBoxMinutes.value = 1;
-                    spinBoxSeconds.value = 0;
-                    focus = false;
-                }
+                hours: 0
+                minutes: 1
+                hoursSpinBox: spinBoxHours 
+                minutesSpinBox: spinBoxMinutes
+                secondsSpinBox: spinBoxSeconds
             }
-            Button {
-                implicitWidth: Kirigami.Units.gridUnit * 4
+            PresetDurationButton {
                 text: i18n("5 m")
-                onClicked: {
-                    spinBoxHours.value = 0;
-                    spinBoxMinutes.value = 5;
-                    spinBoxSeconds.value = 0;
-                    focus = false;
-                }
+                hours: 0
+                minutes: 5
+                hoursSpinBox: spinBoxHours 
+                minutesSpinBox: spinBoxMinutes
+                secondsSpinBox: spinBoxSeconds
             }
-            Button {
-                implicitWidth: Kirigami.Units.gridUnit * 4
+            PresetDurationButton {
                 text: i18n("10 m")
-                onClicked: {
-                    spinBoxHours.value = 0;
-                    spinBoxMinutes.value = 10;
-                    spinBoxSeconds.value = 0;
-                    focus = false;
-                }
+                hours: 0
+                minutes: 10
+                hoursSpinBox: spinBoxHours 
+                minutesSpinBox: spinBoxMinutes
+                secondsSpinBox: spinBoxSeconds
             }
         }
         RowLayout {
             Layout.alignment: Qt.AlignHCenter
             spacing: Kirigami.Units.smallSpacing
-            Button {
-                implicitWidth: Kirigami.Units.gridUnit * 4
+            PresetDurationButton {
                 text: i18n("15 m")
-                onClicked: {
-                    spinBoxHours.value = 0;
-                    spinBoxMinutes.value = 15;
-                    spinBoxSeconds.value = 0;
-                    focus = false;
-                }
+                hours: 0
+                minutes: 15
+                hoursSpinBox: spinBoxHours 
+                minutesSpinBox: spinBoxMinutes
+                secondsSpinBox: spinBoxSeconds
             }
-            Button {
-                implicitWidth: Kirigami.Units.gridUnit * 4
+            PresetDurationButton {
                 text: i18n("30 m")
-                onClicked: {
-                    spinBoxHours.value = 0;
-                    spinBoxMinutes.value = 30;
-                    spinBoxSeconds.value = 0;
-                    focus = false;
-                }
+                hours: 0
+                minutes: 30
+                hoursSpinBox: spinBoxHours 
+                minutesSpinBox: spinBoxMinutes
+                secondsSpinBox: spinBoxSeconds
             }
-            Button {
-                implicitWidth: Kirigami.Units.gridUnit * 4
+            PresetDurationButton {
                 text: i18n("1 h")
-                onClicked: {
-                    spinBoxHours.value = 1;
-                    spinBoxMinutes.value = 0;
-                    spinBoxSeconds.value = 0;
-                    focus = false;
-                }
+                hours: 1
+                minutes: 0
+                hoursSpinBox: spinBoxHours 
+                minutesSpinBox: spinBoxMinutes
+                secondsSpinBox: spinBoxSeconds
             }
         }
     }
     Kirigami.Separator {}
 
     ColumnLayout {
-        Layout.alignment: Qt.AlignHCenter
         Kirigami.FormData.label: i18n("<b>Duration:</b>")
         Kirigami.FormData.buddyFor: spinBoxHours
         RowLayout {
             SpinBox {
                 id: spinBoxHours
                 value: 0 // default
+                Layout.preferredWidth: Kirigami.Units.gridUnit * 6
             }
             Label {
                 text: i18n("hours")
@@ -119,7 +107,9 @@ Kirigami.FormLayout {
         RowLayout {
             SpinBox {
                 id: spinBoxMinutes
+                to: 59
                 value: 5 // default
+                Layout.preferredWidth: Kirigami.Units.gridUnit * 6
             }
             Label {
                 text: i18n("minutes")
@@ -128,8 +118,9 @@ Kirigami.FormLayout {
         RowLayout {
             SpinBox {
                 id: spinBoxSeconds
-                to: 60
+                to: 59
                 value: 0 // default
+                Layout.preferredWidth: Kirigami.Units.gridUnit * 6
             }
             Label {
                 text: i18n("seconds")

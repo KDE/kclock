@@ -34,6 +34,7 @@
         <file>qml/time/TimeZoneSelect.qml</file>
         <file>qml/time/TimeZoneSelectWrapper.qml</file>
         
+        <file>qml/timer/PresetDurationButton.qml</file>
         <file>qml/timer/TimerComponent.qml</file>
         <file>qml/timer/TimerForm.qml</file>
         <file>qml/timer/TimerFormWrapper.qml</file>
