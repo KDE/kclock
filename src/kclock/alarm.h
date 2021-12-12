@@ -69,6 +69,9 @@ public:
 
     bool isValid() const;
 
+    Q_INVOKABLE void dismiss();
+    Q_INVOKABLE void snooze();
+
     Q_INVOKABLE QString timeToRingFormatted();
 
     Q_INVOKABLE void save();

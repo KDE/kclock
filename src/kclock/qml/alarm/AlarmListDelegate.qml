@@ -95,7 +95,7 @@ Kirigami.SwipeListItem {
                     visible: root.snoozedLength != 0
                     font.weight: Font.Bold
                     color: Kirigami.Theme.disabledTextColor
-                    text: i18n("Snoozed %1 minutes", root.snoozedLength)
+                    text: root.snoozedLength === 1 ? i18n("Snoozed %1 minute", root.snoozedLength) : i18n("Snoozed %1 minutes", root.snoozedLength)
                 }
             }
 
@@ -108,15 +108,37 @@ Kirigami.SwipeListItem {
                 property bool alarmEnabled: root.enabled
                 onAlarmEnabledChanged: checked = root.enabled
                 
-                // prevent binding loop
-                property bool selfEdit: false
                 checked: root.enabled
                 onCheckedChanged: {
-                    if (selfEdit) {
-                        selfEdit = false;
-                    } else {
-                        root.alarm.enabled = checked;
-                        selfEdit = true;
+                    root.alarm.enabled = checked;
+                }
+            }
+        }
+        
+        // alarm ringing popup
+        Loader {
+            id: popupLoader
+            active: false
+            
+            sourceComponent: AlarmRingingPopup {
+                alarm: root.alarm
+                onVisibleChanged: {
+                    if (!visible) {
+                        popupLoader.active = false;
+                    }
+                }
+            }
+            
+            Connections {
+                target: root.alarm
+                ignoreUnknownSignals: true
+                
+                function onRingingChanged() {
+                    if (root.alarm.ringing) {
+                        popupLoader.active = true;
+                        popupLoader.item.open();
+                    } else if (popupLoader.item) {
+                        popupLoader.item.close();
                     }
                 }
             }

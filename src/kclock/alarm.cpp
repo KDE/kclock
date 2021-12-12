@@ -154,6 +154,16 @@ bool Alarm::isValid() const
     return m_isValid;
 }
 
+void Alarm::dismiss()
+{
+    m_interface->dismiss();
+}
+
+void Alarm::snooze()
+{
+    m_interface->snooze();
+}
+
 QString Alarm::timeToRingFormatted()
 {
     updateNextRingTime();

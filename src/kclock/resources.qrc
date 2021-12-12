@@ -11,6 +11,7 @@
         <file>qml/alarm/AlarmFormPage.qml</file>
         <file>qml/alarm/AlarmListPage.qml</file>
         <file>qml/alarm/AlarmListDelegate.qml</file>
+        <file>qml/alarm/AlarmRingingPopup.qml</file>
         
         <file>qml/components/AboutPage.qml</file>
         <file>qml/components/BottomToolbar.qml</file>
