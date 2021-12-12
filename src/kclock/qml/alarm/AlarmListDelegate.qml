@@ -119,7 +119,6 @@ Kirigami.SwipeListItem {
         Loader {
             id: popupLoader
             active: false
-            
             sourceComponent: AlarmRingingPopup {
                 alarm: root.alarm
                 onVisibleChanged: {
@@ -129,17 +128,22 @@ Kirigami.SwipeListItem {
                 }
             }
             
+            Component.onCompleted: determineState()
+            function determineState() {
+                if (root.alarm.ringing) {
+                    popupLoader.active = true;
+                    popupLoader.item.open();
+                } else if (popupLoader.item) {
+                    popupLoader.item.close();
+                }
+            }
+            
             Connections {
                 target: root.alarm
                 ignoreUnknownSignals: true
                 
                 function onRingingChanged() {
-                    if (root.alarm.ringing) {
-                        popupLoader.active = true;
-                        popupLoader.item.open();
-                    } else if (popupLoader.item) {
-                        popupLoader.item.close();
-                    }
+                    popupLoader.determineState();
                 }
             }
         }

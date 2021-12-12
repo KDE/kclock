@@ -290,6 +290,9 @@ void Alarm::ring()
         m_originalRingTime = m_nextRingTime;
     }
 
+    // reset snoozed length (if snooze happens, this will get set again)
+    setSnoozedLength(0);
+
     // send notification
     m_notification->setText(QLocale::system().toString(QTime::currentTime(), QLocale::ShortFormat));
     m_notification->sendEvent();
