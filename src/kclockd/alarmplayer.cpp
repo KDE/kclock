@@ -21,6 +21,7 @@ AlarmPlayer::AlarmPlayer(QObject *parent)
     , m_player{new QMediaPlayer(this, QMediaPlayer::LowLatency)}
 {
     connect(m_player, &QMediaPlayer::stateChanged, this, &AlarmPlayer::loopAudio);
+    m_player->setAudioRole(QAudio::AlarmRole);
 }
 
 void AlarmPlayer::loopAudio(QMediaPlayer::State state)
