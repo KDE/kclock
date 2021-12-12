@@ -18,25 +18,21 @@ Controls.AbstractButton {
     readonly property color checkedBorderColor: Qt.rgba(baseColor.r, baseColor.g, baseColor.b, 0.7)
     readonly property color pressedBorderColor: Qt.rgba(baseColor.r, baseColor.g, baseColor.b, 0.9)
     
-    background: Item {
+    background: Rectangle {
+        radius: Kirigami.Units.smallSpacing
+        Kirigami.Theme.colorSet: Kirigami.Theme.Button
+        Kirigami.Theme.inherit: false
         
-        Rectangle {
-            anchors.fill: parent
-            radius: Kirigami.Units.smallSpacing
-            Kirigami.Theme.colorSet: Kirigami.Theme.Button
-            Kirigami.Theme.inherit: false
-            
-            color: button.pressed ? pressedColor : (button.checked || hoverHandler.hovered ? hoverSelectColor : "transparent")
+        color: button.pressed ? pressedColor : (button.checked || hoverHandler.hovered ? hoverSelectColor : "transparent")
 
-            border.color: button.checked ? checkedBorderColor : (button.pressed ? pressedBorderColor : color)
-            border.width: 1
+        border.color: button.checked ? checkedBorderColor : (button.pressed ? pressedBorderColor : color)
+        border.width: 1
 
-            Behavior on color { ColorAnimation { duration: Kirigami.Units.shortDuration } }
-            Behavior on border.color { ColorAnimation { duration: Kirigami.Units.shortDuration } }
-            
-            HoverHandler {
-                id: hoverHandler
-            }
+        Behavior on color { ColorAnimation { duration: Kirigami.Units.shortDuration } }
+        Behavior on border.color { ColorAnimation { duration: Kirigami.Units.shortDuration } }
+        
+        HoverHandler {
+            id: hoverHandler
         }
     }
     

@@ -9,7 +9,7 @@ import QtQuick 2.15
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.2
 
-import org.kde.kirigami 2.15 as Kirigami
+import org.kde.kirigami 2.19 as Kirigami
 
 import kclock 1.0
 
@@ -95,12 +95,15 @@ Loader {
 
     Component {
         id: desktopTimerForm
-        Kirigami.OverlaySheet {
+        Kirigami.Dialog {
+            title: i18n("Create timer")
+            standardButtons: Dialog.NoButton
+            
+            topPadding: 0
+            bottomPadding: Kirigami.Units.largeSpacing
+            leftPadding: Kirigami.Units.gridUnit
+            rightPadding: Kirigami.Units.gridUnit
 
-            header: Kirigami.Heading {
-                level: 2
-                text: i18n("Create timer")
-            }
             contentItem: ColumnLayout {
                 Layout.preferredWidth:  Kirigami.Units.gridUnit * 25
                 TimerForm {
@@ -118,35 +121,33 @@ Loader {
                         Button {
                             text: showDelete ? "Delete" : preset.presetName
                             onClicked: showDelete ? TimerPresetModel.deletePreset(index) : loader.createTimer(timerForm.getDuration(), timerForm.name) & close();
-
                         }
                     }
                 }
             }
 
-            footer: RowLayout {
-                Item { Layout.fillWidth: true }
-                Button {
-                    icon.name: "list-add"
+            customFooterActions: [
+                Kirigami.Action {
+                    iconName: "list-add"
                     text: i18n("Save As Preset")
-                    onClicked: {
+                    onTriggered: {
                         TimerPresetModel.insertPreset(timerForm.name, timerForm.getDuration());
                     }
-                }
-                Button {
-                    icon.name: "dialog-cancel"
+                },
+                Kirigami.Action {
+                    iconName: "dialog-cancel"
                     text: i18n("Cancel")
-                    onClicked: close()
-                }
-                Button {
-                    icon.name: "dialog-ok"
+                    onTriggered: close()
+                },
+                Kirigami.Action {
+                    iconName: "dialog-ok"
                     text: i18n("Done")
-                    onClicked: {
+                    onTriggered: {
                         loader.createTimer(timerForm.getDuration(), timerForm.name, timerForm.commandTimeout);
                         close();
                     }
                 }
-            }
+            ]
         }
     }
 }
