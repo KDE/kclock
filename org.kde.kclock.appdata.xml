@@ -47,6 +47,7 @@
   <summary xml:lang="sv">Ställ in alarm och tidtagare, använd ett stoppur, och hantera världsklockor</summary>
   <summary xml:lang="uk">Встановіть нагадування та таймери, скористайтеся секундоміром і керуйте показом часу з усього світу</summary>
   <summary xml:lang="x-test">xxSet alarms and timers, use a stopwatch, and manage world clocksxx</summary>
+  <summary xml:lang="zh-CN">设置闹钟、倒计时、使用秒表和管理世界时钟</summary>
   <developer_name>KDE Community</developer_name>
   <developer_name xml:lang="ca">La comunitat KDE</developer_name>
   <developer_name xml:lang="ca-valencia">La comunitat KDE</developer_name>
@@ -86,6 +87,7 @@
     <p xml:lang="sv">Ett universellt klockprogram för skrivbord och mobil.</p>
     <p xml:lang="uk">Універсальна програма-годинник для робочих станцій та мобільних пристроїв.</p>
     <p xml:lang="x-test">xxA universal clock application for desktop and mobile.xx</p>
+    <p xml:lang="zh-CN">桌面和移动设备通用的时钟应用程序。</p>
     <p>It contains alarm, timer, stopwatch and timezone functionalities. Alarms and timers are able to wake the device from suspend on Plasma.</p>
     <p xml:lang="ca">Conté funcions d'alarma, temporitzador, cronòmetre i zona horària. Les alarmes i els temporitzadors també poden fer que el dispositiu deixi d'estar suspès en el Plasma.</p>
     <p xml:lang="es">Contiene las funciones de alarma, temporizador, cronómetro y zona horaria. Las alarmas y los temporizadores pueden despertar el dispositivo del estado de suspensión en Plasma.</p>
@@ -95,6 +97,7 @@
     <p xml:lang="sv">Det innehåller alarm, tidtagning, stoppur och tidszonsfunktioner. Alarm och tidtagare kan också väcka enheten från viloläge när Plasma används.</p>
     <p xml:lang="uk">Передбачено будильник, таймер та секундомір, а також функціональні можливості з роботи у різних часових поясах. Будильники і таймери здатні пробуджувати пристрій зі стану сну, якщо на ньому використовується Плазма.</p>
     <p xml:lang="x-test">xxIt contains alarm, timer, stopwatch and timezone functionalities. Alarms and timers are able to wake the device from suspend on Plasma.xx</p>
+    <p xml:lang="zh-CN">它包含闹钟、计时器、秒表和时区功能。闹钟和计时器能够在 Plasma 上唤醒设备。</p>
   </description>
   <recommends>
     <control>pointing</control>
