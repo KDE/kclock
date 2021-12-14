@@ -8,8 +8,10 @@
 #include "utilmodel.h"
 
 #include <QLocale>
+#include <QStandardPaths>
 #include <QString>
 #include <QTimeZone>
+#include <QUrl>
 
 #include <KLocalizedString>
 
@@ -17,6 +19,12 @@ UtilModel *UtilModel::instance()
 {
     static UtilModel *singleton = new UtilModel;
     return singleton;
+}
+
+QString UtilModel::getDefaultAlarmFileLocation()
+{
+    return QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("sounds/freedesktop/stereo/alarm-clock-elapsed.oga")))
+        .path();
 }
 
 QString UtilModel::getCurrentTimeZoneName()

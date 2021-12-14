@@ -70,7 +70,7 @@ Kirigami.ScrollablePage {
                 topPadding: root.delegateVerticalPadding
                 bottomPadding: root.delegateVerticalPadding
                 
-                property string defaultPath: ""
+                property string defaultPath: utilModel.getDefaultAlarmFileLocation()
                 onClicked: root.alarmForm.formAudioPath = defaultPath;
                 
                 contentItem: RowLayout {
@@ -85,7 +85,7 @@ Kirigami.ScrollablePage {
                         id: radioButton
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         
-                        checked: root.alarmForm.formAudioPath == defaultItem.defaultPath
+                        checked: root.alarmForm.formAudioPath.replace('file://', '') == defaultItem.defaultPath
                         onCheckedChanged: {
                             if (checked) {
                                 root.alarmForm.formAudioPath = defaultItem.defaultPath;
@@ -94,7 +94,7 @@ Kirigami.ScrollablePage {
                         Connections {
                             target: root.alarmForm
                             function onFormAudioPathChanged() {
-                                radioButton.checked = root.alarmForm.formAudioPath == defaultItem.defaultPath;
+                                radioButton.checked = root.alarmForm.formAudioPath.replace('file://', '') == defaultItem.defaultPath;
                             }
                         }
                     }

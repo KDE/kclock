@@ -27,7 +27,7 @@ Kirigami.FormLayout {
     readonly property int hours: selectedAlarm ? selectedAlarm.hours : 0
     readonly property int minutes: selectedAlarm ? selectedAlarm.minutes : 0
     readonly property int daysOfWeek: selectedAlarm ? selectedAlarm.daysOfWeek : 0
-    readonly property string audioPath: selectedAlarm ? selectedAlarm.audioPath : ""
+    readonly property string audioPath: selectedAlarm ? selectedAlarm.audioPath : utilModel.getDefaultAlarmFileLocation()
     readonly property int ringDuration: selectedAlarm ? selectedAlarm.ringDuration : 5
     readonly property int snoozeDuration: selectedAlarm ? selectedAlarm.snoozeDuration : 5
     
@@ -199,15 +199,16 @@ Kirigami.FormLayout {
         
         onClicked: applicationWindow().pageStack.layers.push(Qt.resolvedUrl("SoundPickerPage.qml"), { alarmForm: root });
         
-        contentItem: RowLayout {
-            Label {
-                Layout.leftMargin: Kirigami.Units.largeSpacing
-                Layout.fillWidth: true
-                text: root.formAudioPath ? root.formAudioPath : i18n("Default Sound")
-                horizontalAlignment: Text.AlignLeft
-                verticalAlignment: Text.AlignVCenter
-                elide: Text.ElideLeft
+        text: {
+            if (root.formAudioPath.replace('file://', '') == utilModel.getDefaultAlarmFileLocation())  {
+                return i18n("Default Sound");
+            } else {
+                let split = root.formAudioPath.split('/')
+                return split[split.length - 1];
             }
+        }
+        
+        contentItem: RowLayout {
             Kirigami.Icon {
                 Layout.rightMargin: Kirigami.Units.smallSpacing
                 Layout.alignment: Qt.AlignVCenter | Qt.AlignRight

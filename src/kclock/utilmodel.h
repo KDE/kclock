@@ -19,6 +19,8 @@ class UtilModel : public QObject
 public:
     static UtilModel *instance();
 
+    Q_INVOKABLE QString getDefaultAlarmFileLocation();
+
     QString getCurrentTimeZoneName();
 
     long long calculateNextRingTime(int hours, int minutes, int daysOfWeek, int snooze = 0);
