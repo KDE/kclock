@@ -16,7 +16,7 @@ import "../components/formatUtil.js" as FormatUtil
 
 import kclock 1.0
 
-Kirigami.SwipeListItem {
+Control {
     id: root
     
     property Alarm alarm
@@ -29,123 +29,122 @@ Kirigami.SwipeListItem {
     readonly property int daysOfWeek: alarm ? alarm.daysOfWeek : 0
     readonly property int snoozedLength: alarm ? alarm.snoozedLength : 0
     
+    property bool editMode: false
+    
     signal editClicked()
     signal deleteClicked()
     
     leftPadding: Kirigami.Units.largeSpacing * 2
     topPadding: Kirigami.Units.largeSpacing
     bottomPadding: Kirigami.Units.largeSpacing
+    rightPadding: Kirigami.Units.largeSpacing
     
-    onClicked: alarm.enabled = !alarm.enabled
-    
-    actions: [
-        Kirigami.Action {
-            iconName: "entry-edit"
-            text: i18n("Edit")
-            onTriggered: root.editClicked()
-        },
-        Kirigami.Action {
-            iconName: "delete"
-            text: i18n("Delete")
-            onTriggered: root.deleteClicked();
+    hoverEnabled: true
+    background: Rectangle {
+        color: Kirigami.Theme.textColor
+        opacity: tapHandler.pressed ? 0.2 : root.hovered ? 0.1 : 0
+        
+        TapHandler {
+            id: tapHandler
+            onTapped: root.editClicked()
         }
-    ]
-
-    // alarm text
-    contentItem: Item {
-        implicitWidth: delegateLayout.implicitWidth
-        implicitHeight: delegateLayout.implicitHeight
-
-        GridLayout {
-            id: delegateLayout
-            anchors.left: parent.left
-            anchors.top: parent.top
-            anchors.right: parent.right
-
-            rowSpacing: Kirigami.Units.smallSpacing
-            columnSpacing: Kirigami.Units.smallSpacing
-            columns: width > Kirigami.Units.gridUnit * 20 ? 4 : 2
-
-            ColumnLayout {
-                Label {
-                    font.weight: Font.Light
-                    font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 1.75)
-                    text: kclockFormat.formatTimeString(root.hours, root.minutes)
-                    color: root.enabled ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
-                }
-                
-                RowLayout {
-                    spacing: 0
-                    Label {
-                        id: alarmName
-                        visible: text !== ""
-                        font.weight: Font.Bold
-                        font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.15
-                        color: root.enabled ? Kirigami.Theme.activeTextColor : Kirigami.Theme.disabledTextColor
-                        text: root.name
-                    }
-                    Label {
-                        font.weight: Font.Normal
-                        text: (alarmName.visible ? " - " : "") + FormatUtil.getRepeatFormat(root.daysOfWeek) 
-                        color: root.enabled ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
-                    }
-                }
-                
-                Label {
-                    visible: root.snoozedLength != 0
-                    font.weight: Font.Bold
-                    color: Kirigami.Theme.disabledTextColor
-                    text: root.snoozedLength === 1 ? i18n("Snoozed %1 minute", root.snoozedLength) : i18n("Snoozed %1 minutes", root.snoozedLength)
-                }
-            }
-
-            Switch {
-                id: toggleSwitch
-                Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
-                Layout.columnSpan: 1
-                
-                // can't use Connections since it conflicts with enabled property
-                property bool alarmEnabled: root.enabled
-                onAlarmEnabledChanged: checked = root.enabled
-                
-                checked: root.enabled
-                onCheckedChanged: {
-                    root.alarm.enabled = checked;
+    }
+    
+    // alarm ringing popup
+    Loader {
+        id: popupLoader
+        active: false
+        sourceComponent: AlarmRingingPopup {
+            alarm: root.alarm
+            onVisibleChanged: {
+                if (!visible) {
+                    popupLoader.active = false;
                 }
             }
         }
         
-        // alarm ringing popup
-        Loader {
-            id: popupLoader
-            active: false
-            sourceComponent: AlarmRingingPopup {
-                alarm: root.alarm
-                onVisibleChanged: {
-                    if (!visible) {
-                        popupLoader.active = false;
-                    }
+        Component.onCompleted: determineState()
+        function determineState() {
+            if (root.alarm.ringing) {
+                popupLoader.active = true;
+                popupLoader.item.open();
+            } else if (popupLoader.item) {
+                popupLoader.item.close();
+            }
+        }
+        
+        Connections {
+            target: root.alarm
+            ignoreUnknownSignals: true
+            
+            function onRingingChanged() {
+                popupLoader.determineState();
+            }
+        }
+    }
+    
+    // alarm text
+    contentItem: RowLayout {
+        spacing: Kirigami.Units.smallSpacing
+
+        ColumnLayout {
+            Label {
+                font.weight: Font.Light
+                font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 1.75)
+                text: kclockFormat.formatTimeString(root.hours, root.minutes)
+                color: root.enabled ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
+            }
+            
+            RowLayout {
+                spacing: 0
+                Label {
+                    id: alarmName
+                    visible: text !== ""
+                    font.weight: Font.Bold
+                    color: root.enabled ? Kirigami.Theme.activeTextColor : Kirigami.Theme.disabledTextColor
+                    text: root.name
+                }
+                Label {
+                    font.weight: Font.Normal
+                    text: (alarmName.visible ? " - " : "") + FormatUtil.getRepeatFormat(root.daysOfWeek) 
+                    color: root.enabled ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
                 }
             }
             
-            Component.onCompleted: determineState()
-            function determineState() {
-                if (root.alarm.ringing) {
-                    popupLoader.active = true;
-                    popupLoader.item.open();
-                } else if (popupLoader.item) {
-                    popupLoader.item.close();
-                }
+            Label {
+                visible: root.snoozedLength != 0
+                font.weight: Font.Bold
+                color: Kirigami.Theme.disabledTextColor
+                text: root.snoozedLength === 1 ? i18n("Snoozed %1 minute", root.snoozedLength) : i18n("Snoozed %1 minutes", root.snoozedLength)
             }
+        }
+
+        Item { Layout.fillWidth: true }
+        
+        Switch {
+            id: toggleSwitch
+            Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
             
-            Connections {
-                target: root.alarm
-                ignoreUnknownSignals: true
-                
-                function onRingingChanged() {
-                    popupLoader.determineState();
-                }
-            }
+            // can't use Connections since it conflicts with enabled property
+            property bool alarmEnabled: root.enabled
+            onAlarmEnabledChanged: checked = root.enabled
+            
+            checked: root.enabled
+            onCheckedChanged: root.alarm.enabled = checked;
+        }
+        
+        ToolButton {
+            Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+            icon.name: "delete"
+            text: i18n("Delete")
+            onClicked: root.deleteClicked()
+            visible: root.editMode
+            display: AbstractButton.IconOnly
+            
+            ToolTip.delay: Kirigami.Units.toolTipDelay
+            ToolTip.timeout: 5000
+            ToolTip.visible: Kirigami.Settings.tabletMode ? pressed : hovered
+            ToolTip.text: text
         }
     }
 }

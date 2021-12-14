@@ -20,6 +20,8 @@ Kirigami.ScrollablePage {
     
     property int yTranslate: 0
     
+    property bool editMode: false
+    
     title: i18n("Alarms")
     icon.name: "notifications"
     
@@ -31,6 +33,13 @@ Kirigami.ScrollablePage {
     }
     
     actions.contextualActions: [
+        Kirigami.Action {
+            iconName: "edit-entry"
+            text: i18n("Edit")
+            onTriggered: root.editMode = !root.editMode
+            checkable: true
+            visible: alarmsList.count > 0
+        },
         Kirigami.Action {
             displayHint: Kirigami.Action.IconOnly
             visible: !applicationWindow().isWidescreen
@@ -101,6 +110,8 @@ Kirigami.ScrollablePage {
         // each alarm
         delegate: AlarmListDelegate {
             alarm: modelData
+            editMode: root.editMode
+            width: alarmsList.width
             
             onEditClicked: {
                 applicationWindow().pageStack.layers.push(Qt.resolvedUrl("AlarmFormPage.qml"), { selectedAlarm: alarm })

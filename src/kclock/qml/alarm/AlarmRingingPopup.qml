@@ -29,7 +29,7 @@ Kirigami.Dialog {
     showCloseButton: false
     closePolicy: Popup.NoAutoClose
     
-    contentItem: ColumnLayout {
+    ColumnLayout {
         width: implicitWidth
         implicitWidth: Kirigami.Units.gridUnit * 20
         Label {
