@@ -117,7 +117,7 @@ Kirigami.ScrollablePage {
                     id: radioButton
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     
-                    checked: root.alarmForm.formAudioPath == sourceUrl
+                    checked: root.alarmForm.formAudioPath.replace('file://', '') == sourceUrl
                     onCheckedChanged: {
                         if (checked) {
                             root.alarmForm.formAudioPath = sourceUrl;
