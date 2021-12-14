@@ -103,9 +103,9 @@ Loader {
             bottomPadding: Kirigami.Units.largeSpacing
             leftPadding: Kirigami.Units.gridUnit
             rightPadding: Kirigami.Units.gridUnit
+            preferredWidth: Kirigami.Units.gridUnit * 20
 
-            contentItem: ColumnLayout {
-                Layout.preferredWidth:  Kirigami.Units.gridUnit * 25
+            ColumnLayout {
                 TimerForm {
                     id: timerForm
                     Layout.fillWidth: true

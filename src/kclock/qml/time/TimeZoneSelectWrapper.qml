@@ -7,7 +7,7 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.2
-import org.kde.kirigami 2.15 as Kirigami
+import org.kde.kirigami 2.19 as Kirigami
 import kclock 1.0
         
 Loader {
@@ -55,16 +55,14 @@ Loader {
     
     Component {
         id: desktopComponent
-        Kirigami.OverlaySheet {
+        Kirigami.Dialog {
+            standardButtons: Kirigami.Dialog.NoButton
             parent: applicationWindow().overlay
-            header: Kirigami.Heading {
-                level: 2
-                text: i18n("Timezones")
-            }
+            title: i18n("Timezones")
+            preferredWidth: Kirigami.Units.gridUnit * 16
+            padding: Kirigami.Units.largeSpacing
             
-            contentItem: TimeZoneSelect {
-                Layout.fillWidth: true
-            }
+            TimeZoneSelect {}
         }
     }
 } 
