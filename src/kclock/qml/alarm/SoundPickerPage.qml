@@ -21,6 +21,8 @@ Kirigami.ScrollablePage {
     
     title: i18n("Select Alarm Sound")
     
+    readonly property int delegateVerticalPadding: Kirigami.Settings.isMobile ? (Kirigami.Units.largeSpacing * 2) : Kirigami.Units.largeSpacing
+    
     function playSound() {
         audioPlayer.play();
     }
@@ -44,8 +46,11 @@ Kirigami.ScrollablePage {
             // choose from file
             ListDelegate {
                 Layout.fillWidth: true
+                Layout.preferredHeight: defaultItem.height
                 leftPadding: Kirigami.Units.largeSpacing * 2
-                
+                topPadding: root.delegateVerticalPadding
+                bottomPadding: root.delegateVerticalPadding
+                 
                 onClicked: fileDialog.open()
                 
                 contentItem: RowLayout {
@@ -62,6 +67,8 @@ Kirigami.ScrollablePage {
                 id: defaultItem
                 Layout.fillWidth: true
                 leftPadding: Kirigami.Units.largeSpacing * 2
+                topPadding: root.delegateVerticalPadding
+                bottomPadding: root.delegateVerticalPadding
                 
                 property string defaultPath: ""
                 onClicked: root.alarmForm.formAudioPath = defaultPath;
@@ -101,6 +108,8 @@ Kirigami.ScrollablePage {
             
             width: listView.width
             leftPadding: Kirigami.Units.largeSpacing * 2
+            topPadding: root.delegateVerticalPadding
+            bottomPadding: root.delegateVerticalPadding
             
             onClicked: {
                 root.alarmForm.formAudioPath = sourceUrl;
