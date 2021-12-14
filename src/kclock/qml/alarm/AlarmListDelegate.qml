@@ -13,10 +13,11 @@ import QtQuick.Layouts 1.15
 import org.kde.kirigami 2.12 as Kirigami
 
 import "../components/formatUtil.js" as FormatUtil
+import "../components"
 
 import kclock 1.0
 
-Control {
+ListDelegate {
     id: root
     
     property Alarm alarm
@@ -34,21 +35,12 @@ Control {
     signal editClicked()
     signal deleteClicked()
     
+    onClicked: editClicked()
+    
     leftPadding: Kirigami.Units.largeSpacing * 2
     topPadding: Kirigami.Units.largeSpacing
     bottomPadding: Kirigami.Units.largeSpacing
     rightPadding: Kirigami.Units.largeSpacing
-    
-    hoverEnabled: true
-    background: Rectangle {
-        color: Kirigami.Theme.textColor
-        opacity: tapHandler.pressed ? 0.2 : root.hovered ? 0.1 : 0
-        
-        TapHandler {
-            id: tapHandler
-            onTapped: root.editClicked()
-        }
-    }
     
     // alarm ringing popup
     Loader {

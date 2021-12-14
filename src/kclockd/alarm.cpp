@@ -214,7 +214,7 @@ QString Alarm::audioPath() const
 
 void Alarm::setAudioPath(QString path)
 {
-    m_audioPath = QUrl(path);
+    m_audioPath = QUrl::fromLocalFile(path);
     Q_EMIT audioPathChanged();
 }
 
@@ -302,7 +302,7 @@ void Alarm::ring()
 
     // play sound (it will loop)
     qDebug() << "Alarm sound: " << m_audioPath;
-    AlarmPlayer::instance().setSource(this->m_audioPath);
+    AlarmPlayer::instance().setSource(m_audioPath);
     AlarmPlayer::instance().play();
     setRinging(true);
 
@@ -356,7 +356,7 @@ void Alarm::calculateNextRingTime()
     }
 
     // get the time that the alarm will ring on the day
-    QTime alarmTime = QTime(this->m_hours, this->m_minutes, 0).addSecs(m_snoozedLength);
+    QTime alarmTime = QTime(m_hours, m_minutes, 0).addSecs(m_snoozedLength);
     QDateTime date = QDateTime::currentDateTime();
 
     if (this->m_daysOfWeek == 0) { // alarm does not repeat (no days of the week are specified)

@@ -8,9 +8,7 @@
 
 import QtQuick 2.15
 import QtQuick.Controls 2.15
-import QtQuick.Window 2.2
 import QtQuick.Layouts 1.2
-import QtQuick.Dialogs 1.3
 
 import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kirigamiaddons.dateandtime 0.1 as DateAndTime
@@ -34,11 +32,12 @@ Kirigami.FormLayout {
     readonly property int snoozeDuration: selectedAlarm ? selectedAlarm.snoozeDuration : 5
     
     // values currently in form
+    // the editable fields have bindings that are broken by the form
     readonly property string formName: nameField.text
     readonly property int formHours: timePicker.hours + (timePicker.pm ? 12 : 0)
     readonly property int formMinutes: timePicker.minutes
-    property int formDaysOfWeek: daysOfWeek // binding is broken by form
-    readonly property string formAudioPath: audioPathField.text
+    property int formDaysOfWeek: daysOfWeek
+    property string formAudioPath: audioPath
     property int formRingDuration: ringDuration
     property int formSnoozeDuration: snoozeDuration
     
@@ -191,52 +190,31 @@ Kirigami.FormLayout {
     }
     
     // audio path field
-    Kirigami.ActionTextField {
+    Button {
         id: audioPathField
-        Kirigami.FormData.label: i18n("Ringtone:")
-        placeholderText: root.audioPath
-        width: root.width * 0.8
-        rightActions: [
-            Kirigami.Action {
-                iconName: "list-add"
-                onTriggered: {
-                    fileDialog.open();
-                }
-            },
-            Kirigami.Action {
-                iconName: "edit-select-all"
-                onTriggered: {
-                    soundPickerPage.selectedUrl = applicationWindow().pageStack.layers.push(soundPickerPage);
-                }
+        implicitWidth: root.width
+        width: root.width
+        
+        Kirigami.FormData.label: i18n("Ring Sound:")
+        
+        onClicked: applicationWindow().pageStack.layers.push(Qt.resolvedUrl("SoundPickerPage.qml"), { alarmForm: root });
+        
+        contentItem: RowLayout {
+            Label {
+                Layout.leftMargin: Kirigami.Units.largeSpacing
+                Layout.fillWidth: true
+                text: root.formAudioPath ? root.formAudioPath : i18n("Default Sound")
+                horizontalAlignment: Text.AlignLeft
+                verticalAlignment: Text.AlignVCenter
+                elide: Text.ElideLeft
             }
-        ]
-    }
-    
-    SoundPickerPage {
-        id: soundPickerPage
-        visible: false
-    }
-
-    FileDialog {
-        id: fileDialog
-        title: i18n("Choose an audio")
-        folder: shortcuts.music
-        onAccepted: {
-            root.ringtonePath = fileDialog.fileUrl;
-            if (ringtonePath != "") {
-                if (selectedAlarm) {
-                    selectedAlarm.ringtonePath = root.ringtonePath;
-                    selectedAlarm.ringtoneName = root.ringtonePath.toString().split('/').pop();
-                }
-                console.log(root.ringtonePath);
-                alarmPlayer.setSource(root.ringtonePath);
-                alarmPlayer.play();
+            Kirigami.Icon {
+                Layout.rightMargin: Kirigami.Units.smallSpacing
+                Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
+                source: "go-down-symbolic"
+                implicitWidth: Kirigami.Units.iconSizes.small
+                implicitHeight: Kirigami.Units.iconSizes.small
             }
-            this.close();
         }
-        onRejected: {
-            this.close();
-        }
-        nameFilters: [ i18n("Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"), i18n("All files (*)") ]
     }
 }
