@@ -91,10 +91,15 @@ Kirigami.ScrollablePage {
                                 root.alarmForm.formAudioPath = defaultItem.defaultPath;
                             }
                         }
+                        
                         Connections {
                             target: root.alarmForm
+                            
                             function onFormAudioPathChanged() {
                                 radioButton.checked = root.alarmForm.formAudioPath.replace('file://', '') == defaultItem.defaultPath;
+                                if (radioButton.checked) {
+                                    root.playSound();
+                                }
                             }
                         }
                     }
@@ -111,10 +116,7 @@ Kirigami.ScrollablePage {
             topPadding: root.delegateVerticalPadding
             bottomPadding: root.delegateVerticalPadding
             
-            onClicked: {
-                root.alarmForm.formAudioPath = sourceUrl;
-                root.playSound();
-            }
+            onClicked: root.alarmForm.formAudioPath = sourceUrl;
                 
             contentItem: RowLayout {
                 Label {
@@ -137,6 +139,10 @@ Kirigami.ScrollablePage {
                         target: root.alarmForm
                         function onFormAudioPathChanged() {
                             radioButton.checked = root.alarmForm.formAudioPath == sourceUrl;
+                            
+                            if (radioButton.checked) {
+                                root.playSound();
+                            }
                         }
                     }
                 }
@@ -151,11 +157,9 @@ Kirigami.ScrollablePage {
             onAccepted: {
                 root.alarmForm.formAudioPath = fileDialog.fileUrl;
                 root.playSound();
-                this.close();
+                close();
             }
-            onRejected: {
-                this.close();
-            }
+            onRejected: close();
             nameFilters: [ i18n("Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"), i18n("All files (*)") ]
         }
     }
