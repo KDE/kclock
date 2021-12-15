@@ -214,8 +214,10 @@ QString Alarm::audioPath() const
 
 void Alarm::setAudioPath(QString path)
 {
-    m_audioPath = QUrl::fromLocalFile(path);
-    Q_EMIT audioPathChanged();
+    if (m_audioPath.path() != path) {
+        m_audioPath = QUrl::fromLocalFile(path);
+        Q_EMIT audioPathChanged();
+    }
 }
 
 int Alarm::ringDuration() const
@@ -264,8 +266,10 @@ bool Alarm::ringing() const
 
 void Alarm::setRinging(bool ringing)
 {
-    m_ringing = ringing;
-    Q_EMIT ringingChanged();
+    if (ringing != m_ringing) {
+        m_ringing = ringing;
+        Q_EMIT ringingChanged();
+    }
 }
 
 void Alarm::save()
@@ -381,8 +385,10 @@ void Alarm::calculateNextRingTime()
 
 void Alarm::setNextRingTime(quint64 nextRingTime)
 {
-    m_nextRingTime = nextRingTime;
-    Q_EMIT nextRingTimeChanged();
+    if (m_nextRingTime != nextRingTime) {
+        m_nextRingTime = nextRingTime;
+        Q_EMIT nextRingTimeChanged();
+    }
 }
 
 quint64 Alarm::nextRingTime()
