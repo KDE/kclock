@@ -43,6 +43,7 @@
   <summary xml:lang="ca-valencia">Estableix alarmes i temporitzadors, useu un cronòmetre i gestioneu els rellotges mundials</summary>
   <summary xml:lang="es">Definir alarmas y temporizadores, usar un cronómetro y gestionar relojes mundiales</summary>
   <summary xml:lang="fr">Régler des alarmes et des minuteurs, utiliser un chronomètre et gérer les horloges mondiales.</summary>
+  <summary xml:lang="it">Imposta allarmi e timer, usa un cronometro e gestisci gli orologi del mondo</summary>
   <summary xml:lang="nl">Zet alarmen en timers, gebruik een stopwatch en beheer wereldklokken</summary>
   <summary xml:lang="pl">Ustawiaj alarmy i czasomierze, używaj stopera i zarządzaj zegarami światowymi</summary>
   <summary xml:lang="sl">Nastavi alarme in ure, uporablja štoparico in upravlja svetovne ure</summary>
@@ -85,6 +86,7 @@
     <p xml:lang="ca-valencia">Una aplicació universal de rellotge per a l'escriptori i mòbil.</p>
     <p xml:lang="es">Aplicación de reloj universal para el escritorio y el móvil.</p>
     <p xml:lang="fr">Une application d'horloge universelle pour bureau et mobile.</p>
+    <p xml:lang="it">Un'applicazione universale per l'orologio per desktop e per mobile.</p>
     <p xml:lang="nl">Een universele kloktoepassing voor bureaublad en mobiel.</p>
     <p xml:lang="pl">Wszechstronna aplikacja zegara dla urządzeń biurkowych i przenośnych.</p>
     <p xml:lang="sl">Splošna aplikacija ure za namizje in mobilne naprave.</p>
@@ -97,6 +99,7 @@
     <p xml:lang="ca-valencia">Conté funcions d'alarma, temporitzador, cronòmetre i zona horària. Les alarmes i els temporitzadors també poden fer que el dispositiu deixi d'estar suspès en el Plasma.</p>
     <p xml:lang="es">Contiene las funciones de alarma, temporizador, cronómetro y zona horaria. Las alarmas y los temporizadores pueden despertar el dispositivo del estado de suspensión en Plasma.</p>
     <p xml:lang="fr">Elle contient des fonctionnalités d'alarmes, de chronomètres, de minuteurs et de fuseaux horaires. Les alarmes et minuteurs sont aussi capables de faire sortir le périphérique du mode de veille lors de l'utilisation de Plasma.</p>
+    <p xml:lang="it">Contiene le funzionalità di allarme, timer, cronometro e fuso orario. Gli allarmi e i timer possono risvegliare il dispositivo dalla sospensione se si utilizza Plasma.</p>
     <p xml:lang="nl">Het bevat de functionaliteiten alarm, timer, stopwatch en tijdzone. Alarmen kunnen het apparaat uit status onderbroken laten ontwaken bij gebruik van Plasma.</p>
     <p xml:lang="pl">Zawiera alarm, czasomierz, stoper oraz różne strefy czasowe. Alarmy i czasomierze są także w stanie wybudzić urządzenie z uśpienia na Plazmie.</p>
     <p xml:lang="sl">Vsebuje alarm, odštevalnik časa, štoparico in funkcionalnost časovnih pasov. Alarm je sposoben tudi aktivirati napravo iz mirovanja, kadar uporablja Plasmo.</p>
