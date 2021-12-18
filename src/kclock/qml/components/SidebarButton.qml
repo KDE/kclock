@@ -38,7 +38,6 @@ Controls.AbstractButton {
     
     contentItem: RowLayout {
         spacing: Kirigami.Units.gridUnit
-        height: Kirigami.Units.gridUnit * 3
         
         Kirigami.Icon {
             Layout.leftMargin: Kirigami.Units.gridUnit
