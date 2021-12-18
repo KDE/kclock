@@ -21,6 +21,7 @@ class Alarm : public QObject
     Q_OBJECT
     Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
     Q_PROPERTY(bool enabled READ enabled WRITE setEnabled NOTIFY enabledChanged)
+    Q_PROPERTY(QString formattedTime READ formattedTime NOTIFY formattedTimeChanged)
     Q_PROPERTY(int hours READ hours WRITE setHours NOTIFY hoursChanged)
     Q_PROPERTY(int minutes READ minutes WRITE setMinutes NOTIFY minutesChanged)
     Q_PROPERTY(int daysOfWeek READ daysOfWeek WRITE setDaysOfWeek NOTIFY daysOfWeekChanged)
@@ -42,6 +43,8 @@ public:
 
     bool enabled() const;
     void setEnabled(bool enabled);
+
+    QString formattedTime() const;
 
     int hours() const;
     void setHours(int hours);
@@ -79,6 +82,7 @@ public:
 Q_SIGNALS:
     void nameChanged();
     void enabledChanged();
+    void formattedTimeChanged();
     void hoursChanged();
     void minutesChanged();
     void daysOfWeekChanged();

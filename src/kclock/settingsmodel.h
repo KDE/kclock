@@ -14,23 +14,21 @@
 class SettingsModel : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(int volume READ volume WRITE setVolume NOTIFY volumeChanged)
+    Q_PROPERTY(QString timeFormat READ timeFormat WRITE setTimeFormat NOTIFY timeFormatChanged)
 
 public:
-    static SettingsModel &instance();
+    static SettingsModel *instance();
 
-    const int &volume() const;
-    void setVolume(int volume);
+    QString timeFormat() const;
+    void setTimeFormat(QString timeFormat);
 
 Q_SIGNALS:
-    void volumeChanged();
-
-private Q_SLOTS:
-    void updateVolume();
+    void timeFormatChanged();
 
 private:
     SettingsModel();
     LocalKClockSettingsInterface *m_interface;
+    QSettings m_settings;
 
-    int m_volume;
+    QString m_timeFormat;
 };

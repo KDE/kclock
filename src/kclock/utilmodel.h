@@ -26,12 +26,16 @@ public:
     long long calculateNextRingTime(int hours, int minutes, int daysOfWeek, int snooze = 0);
     QString timeToRingFormatted(const long long &timestamp);
 
-    bool isLocale24HourTime();
+    QString timeFormat();
+    bool use24HourTime();
 
     void setSelectedTimezone(QByteArray id, bool selected);
 
 private:
     UtilModel(){}; // explicitly declare it private
+
+    bool isLocale24HourTime();
+
     bool m_applicationLoaded = false;
 
 Q_SIGNALS:

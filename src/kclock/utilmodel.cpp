@@ -6,6 +6,7 @@
  */
 
 #include "utilmodel.h"
+#include "settingsmodel.h"
 
 #include <QLocale>
 #include <QStandardPaths>
@@ -89,6 +90,21 @@ QString UtilModel::timeToRingFormatted(const long long &timestamp)
         return i18n("Alarm will ring in under a minute");
     } else {
         return i18n("Alarm will ring in %1", arg);
+    }
+}
+
+QString UtilModel::timeFormat()
+{
+    return use24HourTime() ? QStringLiteral("hh:mm") : QStringLiteral("hh:mm ap");
+}
+
+bool UtilModel::use24HourTime()
+{
+    QString timeFormat = SettingsModel::instance()->timeFormat();
+    if (timeFormat == QStringLiteral("SystemDefault")) {
+        return isLocale24HourTime();
+    } else {
+        return timeFormat == QStringLiteral("24Hour");
     }
 }
 

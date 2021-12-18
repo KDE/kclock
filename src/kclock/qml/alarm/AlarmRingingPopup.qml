@@ -19,8 +19,7 @@ Kirigami.Dialog {
     
     property Alarm alarm
     
-    readonly property int hours: alarm ? alarm.hours : 0
-    readonly property int minutes: alarm ? alarm.minutes : 0
+    readonly property string formattedTime: alarm ? alarm.formattedTime : ""
     readonly property string name: alarm ? alarm.name : ""
 
     padding: Kirigami.Units.gridUnit * 3
@@ -36,7 +35,7 @@ Kirigami.Dialog {
             Layout.alignment: Qt.AlignHCenter
             font.weight: Font.Light
             font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 2)
-            text: kclockFormat.formatTimeString(root.hours, root.minutes)
+            text: root.formattedTime
         }
         
         Label {

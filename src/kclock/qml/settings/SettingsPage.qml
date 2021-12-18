@@ -5,19 +5,21 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-import QtQuick 2.11
-import QtQuick.Controls 2.4
+import QtQuick 2.15
+import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.2
 import org.kde.kirigami 2.19 as Kirigami
 
+import "../components"
+
 Kirigami.ScrollablePage {
-    id: settingsPage
+    id: root
     
     property int yTranslate: 0
     
     title: i18n("Settings")
     icon.name: "settings-configure"
-    padding: 0
+    
     Kirigami.ColumnView.fillWidth: false
     Kirigami.Theme.inherit: false
     Kirigami.Theme.colorSet: Kirigami.Theme.View
@@ -27,82 +29,60 @@ Kirigami.ScrollablePage {
         transform: Translate { y: yTranslate }
         spacing: 0
 
-        ItemDelegate {
+        Kirigami.FormLayout {
+            id: form
             Layout.fillWidth: true
-            implicitHeight: Kirigami.Units.gridUnit * 3
-
-            onClicked: alarmVolumeDialog.open()
-
-            ColumnLayout {
-                spacing: -5
-                anchors.leftMargin: Kirigami.Units.gridUnit
-                anchors.rightMargin: Kirigami.Units.gridUnit
-                anchors.fill: parent
-
-                Label {
-                    text: i18n("Alarm Volume")
-                    font.weight: Font.Bold
+            Layout.maximumWidth: root.width - root.leftPadding - root.rightPadding
+            wideMode: false
+            
+            DialogComboBox {
+                id: snoozeLengthPicker
+                implicitWidth: form.width
+                
+                Kirigami.FormData.label: i18n("Time Format:")
+                title: i18n("Select Time Format")
+                text: {
+                    switch (settingsModel.timeFormat) {
+                        case "SystemDefault":
+                            return i18n("Use System Default")
+                        case "12Hour":
+                            return i18n("12 Hour Time")
+                        case "24Hour":
+                            return i18n("24 Hour Time")
+                        default:
+                            return "";
+                    }
                 }
-                Label {
-                    text: String(settingsModel.volume)
+                
+                model: ListModel {
+                    // we can't use i18n with ListElement
+                    Component.onCompleted: {
+                        append({"name": i18n("Use System Default"), "value": "SystemDefault"});
+                        append({"name": i18n("12 Hour Time"), "value": "12Hour"});
+                        append({"name": i18n("24 Hour Time"), "value": "24Hour"});
+                    }
                 }
-            }
-        }
-
-        Kirigami.Separator {
-            Layout.fillWidth: true
-            Layout.leftMargin: Kirigami.Units.largeSpacing
-            Layout.rightMargin: Kirigami.Units.largeSpacing
-            opacity: 0.8
-        }
-
-        ItemDelegate {
-            Layout.fillWidth: true
-            implicitHeight: Kirigami.Units.gridUnit * 3
-            
-            onClicked: applicationWindow().pageStack.layers.push(applicationWindow().getPage("About"))
-            
-            Label {
-                anchors.left: parent.left
-                anchors.leftMargin: Kirigami.Units.gridUnit
-                anchors.verticalCenter: parent.verticalCenter
-                font.weight: Font.Bold
-                text: i18n("About")
-            }
-        }
-
-        Kirigami.Separator {
-            Layout.fillWidth: true
-            Layout.leftMargin: Kirigami.Units.largeSpacing
-            Layout.rightMargin: Kirigami.Units.largeSpacing
-            opacity: 0.8
-        }
-        
-        // alarm volume dialog
-        Kirigami.Dialog {
-            id: alarmVolumeDialog
-            standardButtons: Dialog.Close
-            padding: Kirigami.Units.largeSpacing * 2
-            
-            onClosed: settingsModel.volume = volumeControl.value;
-            
-            title: i18n("Change Alarm Volume")
-            contentItem: RowLayout {
-                Label {
-                    text: i18n("Volume: ")
-                }
-                Slider {
-                    id: volumeControl
-                    Layout.fillWidth: true
-                    from: 0
-                    to: 100
-                    value: settingsModel.volume
-                    onPressedChanged: {
-                        if (!pressed) {
-                            settingsModel.volume
+                
+                dialogDelegate: RadioDelegate {
+                    implicitWidth: Kirigami.Units.gridUnit * 16
+                    topPadding: Kirigami.Units.smallSpacing * 2
+                    bottomPadding: Kirigami.Units.smallSpacing * 2
+                    
+                    text: name
+                    checked: settingsModel.timeFormat == value
+                    onCheckedChanged: {
+                        if (checked) {
+                            settingsModel.timeFormat = value;
                         }
                     }
                 }
+            }
+            
+            Button {
+                Kirigami.FormData.label: i18n("More Info:")
+                text: i18n("About")
+                icon.name: "help-about-symbolic"
+                onClicked: applicationWindow().pageStack.layers.push(applicationWindow().getPage("About"))
             }
         }
     }

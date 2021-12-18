@@ -7,6 +7,7 @@
 
 #include "kclockformat.h"
 
+#include "settingsmodel.h"
 #include "utilmodel.h"
 
 #include <QLocale>
@@ -17,16 +18,22 @@ KclockFormat::KclockFormat(QObject *parent)
     : QObject(parent)
     , m_timer(new QTimer(this))
 {
+    connect(SettingsModel::instance(), &SettingsModel::timeFormatChanged, this, &KclockFormat::updateCurrentTime);
     connect(m_timer, &QTimer::timeout, this, &KclockFormat::updateTime);
+
     this->startTimer();
+}
+
+void KclockFormat::updateCurrentTime()
+{
+    m_currentTime = QLocale::system().toString(QTime::currentTime(), UtilModel::instance()->timeFormat());
+    Q_EMIT timeChanged();
 }
 
 void KclockFormat::updateTime()
 {
     if (m_minutesCounter == 60) {
-        m_currentTime =
-            QLocale::system().toString(QTime::currentTime(), UtilModel::instance()->isLocale24HourTime() ? QStringLiteral("hh:mm") : QStringLiteral("h:mm ap"));
-        Q_EMIT timeChanged();
+        updateCurrentTime();
         m_minutesCounter = 0;
         m_hoursCounter++;
     }
@@ -41,7 +48,7 @@ void KclockFormat::updateTime()
 
 QString KclockFormat::formatTimeString(int hours, int minutes)
 {
-    return QLocale::system().toString(QTime(hours, minutes), QStringLiteral("hh:mm ap"));
+    return QLocale::system().toString(QTime(hours, minutes), UtilModel::instance()->timeFormat());
 }
 
 bool KclockFormat::isChecked(int dayIndex, int daysOfWeek)
@@ -58,8 +65,7 @@ bool KclockFormat::isChecked(int dayIndex, int daysOfWeek)
 
 void KclockFormat::startTimer()
 {
-    m_currentTime =
-        QLocale::system().toString(QTime::currentTime(), UtilModel::instance()->isLocale24HourTime() ? QStringLiteral("hh:mm") : QStringLiteral("h:mm ap"));
+    updateCurrentTime();
     m_hours = QTime::currentTime().hour() >= 12 ? QTime::currentTime().hour() - 12 : QTime::currentTime().hour();
     m_minutesCounter = (QTime::currentTime().msecsSinceStartOfDay() / 1000) % 60; // seconds to next minute
     m_hoursCounter = QTime::currentTime().minute();

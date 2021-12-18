@@ -25,8 +25,7 @@ ListDelegate {
     // avoid null errors when deleting delegate
     readonly property bool enabled: alarm ? alarm.enabled : false
     readonly property string name: alarm ? alarm.name : ""
-    readonly property int hours: alarm ? alarm.hours : 0
-    readonly property int minutes: alarm ? alarm.minutes : 0
+    readonly property string formattedTime: alarm ? alarm.formattedTime : ""
     readonly property int daysOfWeek: alarm ? alarm.daysOfWeek : 0
     readonly property int snoozedLength: alarm ? alarm.snoozedLength : 0
     
@@ -83,7 +82,7 @@ ListDelegate {
             Label {
                 font.weight: Font.Light
                 font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 1.75)
-                text: kclockFormat.formatTimeString(root.hours, root.minutes)
+                text: root.formattedTime
                 color: root.enabled ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
             }
             

@@ -8,6 +8,7 @@
 #include "alarm.h"
 
 #include "alarmmodel.h"
+#include "settingsmodel.h"
 #include "utilmodel.h"
 
 #include <KLocalizedString>
@@ -44,6 +45,16 @@ Alarm::Alarm(QString uuid)
         updateSnoozedLength();
         updateRinging();
         updateNextRingTime();
+
+        connect(this, &Alarm::hoursChanged, this, [this] {
+            Q_EMIT formattedTimeChanged();
+        });
+        connect(this, &Alarm::minutesChanged, this, [this] {
+            Q_EMIT formattedTimeChanged();
+        });
+        connect(SettingsModel::instance(), &SettingsModel::timeFormatChanged, this, [this] {
+            Q_EMIT formattedTimeChanged();
+        });
     } else {
         m_isValid = false;
     }
@@ -72,6 +83,11 @@ bool Alarm::enabled() const
 void Alarm::setEnabled(bool enabled)
 {
     m_interface->setProperty("enabled", enabled);
+}
+
+QString Alarm::formattedTime() const
+{
+    return QLocale::system().toString(QTime(m_hours, m_minutes), UtilModel::instance()->timeFormat());
 }
 
 int Alarm::hours() const

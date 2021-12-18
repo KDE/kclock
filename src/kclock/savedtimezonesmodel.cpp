@@ -16,6 +16,7 @@
 #include <KSharedConfig>
 
 #include "kclockformat.h"
+#include "settingsmodel.h"
 #include "utilmodel.h"
 
 const QString TZ_CFG_GROUP = QStringLiteral("Timezones");
@@ -27,13 +28,13 @@ SavedTimeZonesModel::SavedTimeZonesModel(QObject *parent)
     KConfigGroup timezoneGroup = config->group(TZ_CFG_GROUP);
 
     for (const QString &timezoneId : timezoneGroup.keyList()) {
-        QTimeZone z(timezoneId.toUtf8());
-        m_timeZones.push_back(z);
+        m_timeZones.push_back(QTimeZone{timezoneId.toUtf8()});
     }
+
     connect(KclockFormat::instance(), &KclockFormat::timeChanged, this, [this] {
-        QVector<int> roles = {TimeStringRole};
-        Q_EMIT dataChanged(index(0), index(m_timeZones.size() - 1), roles);
+        Q_EMIT dataChanged(index(0), index(m_timeZones.size() - 1), {TimeStringRole});
     });
+
     connect(UtilModel::instance(), &UtilModel::selectedTimezoneChanged, this, [this](QByteArray id, bool selected) {
         if (selected) {
             beginInsertRows(QModelIndex(), m_timeZones.size(), m_timeZones.size());
@@ -62,14 +63,16 @@ QVariant SavedTimeZonesModel::data(const QModelIndex &index, int role) const
     const int row = index.row();
 
     switch (role) {
-    case NameRole:
-        return m_timeZones[row].displayName(QDateTime::currentDateTime());
+    case NameRole: {
+        auto split = m_timeZones[row].displayName(QDateTime::currentDateTime()).split(QLatin1Char('/'));
+        return split[split.length() - 1];
+    }
     case TimeStringRole: {
         QDateTime time = QDateTime::currentDateTime();
         time = time.toTimeZone(m_timeZones[row]);
 
         // apply 12 hour or 24 hour settings
-        if (m_settings.value(QStringLiteral("Global/use24HourTime")).toBool()) {
+        if (UtilModel::instance()->use24HourTime()) {
             return time.time().toString(QStringLiteral("hh:mm"));
         } else {
             return time.time().toString(QStringLiteral("h:mm ap"));
@@ -99,7 +102,8 @@ QVariant SavedTimeZonesModel::data(const QModelIndex &index, int role) const
         }
     }
     case IdRole: {
-        return m_timeZones[row].id().replace("_", " ");
+        auto split = m_timeZones[row].id().replace("_", " ").split('/');
+        return split[split.length() - 1];
     }
     }
 

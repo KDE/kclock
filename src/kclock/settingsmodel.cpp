@@ -1,6 +1,6 @@
 /*
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
- * Copyright 2020 Devin Lin <espidev@gmail.com>
+ * Copyright 2020-2021 Devin Lin <devin@kde.org>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
@@ -14,29 +14,30 @@
 SettingsModel::SettingsModel()
     : m_interface(new LocalKClockSettingsInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Settings"), QDBusConnection::sessionBus()))
 {
-    m_volume = m_interface->alarmVolume();
+    m_timeFormat = m_interface->timeFormat();
 
-    connect(m_interface, &LocalKClockSettingsInterface::alarmVolumeChanged, this, &SettingsModel::updateVolume);
+    connect(m_interface, &LocalKClockSettingsInterface::timeFormatChanged, this, [this]() {
+        QString timeFormat = m_interface->timeFormat();
+
+        if (timeFormat != m_timeFormat) {
+            m_timeFormat = timeFormat;
+            Q_EMIT timeFormatChanged();
+        }
+    });
 }
 
-SettingsModel &SettingsModel::instance()
+SettingsModel *SettingsModel::instance()
 {
-    static SettingsModel singleton;
+    static SettingsModel *singleton = new SettingsModel();
     return singleton;
 };
 
-const int &SettingsModel::volume() const
+QString SettingsModel::timeFormat() const
 {
-    return m_volume;
+    return m_timeFormat;
 }
 
-void SettingsModel::setVolume(int volume)
+void SettingsModel::setTimeFormat(QString timeFormat)
 {
-    m_interface->setProperty("alarmVolume", volume);
-}
-
-void SettingsModel::updateVolume()
-{
-    m_volume = m_interface->alarmVolume();
-    Q_EMIT volumeChanged();
+    m_interface->setProperty("timeFormat", timeFormat);
 }

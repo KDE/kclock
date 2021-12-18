@@ -22,7 +22,7 @@ Button {
     
     Kirigami.Dialog {
         id: dialog
-        showCloseButton: !Kirigami.Settings.isMobile
+        showCloseButton: false
         
         ColumnLayout {
             Kirigami.Theme.inherit: false

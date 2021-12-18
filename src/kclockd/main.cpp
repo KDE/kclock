@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
     QDBusConnection::sessionBus().registerObject(QStringLiteral("/Settings"), KClockSettings::self());
 
     // save config
-    QObject::connect(KClockSettings::self(), &KClockSettings::alarmVolumeChanged, KClockSettings::self(), &KClockSettings::save);
+    QObject::connect(KClockSettings::self(), &KClockSettings::timeFormatChanged, KClockSettings::self(), &KClockSettings::save);
 
     // start alarm polling
     AlarmModel::instance()->configureWakeups();
