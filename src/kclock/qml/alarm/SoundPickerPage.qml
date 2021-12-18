@@ -21,7 +21,7 @@ Kirigami.ScrollablePage {
     
     title: i18n("Select Alarm Sound")
     
-    readonly property int delegateVerticalPadding: Kirigami.Settings.isMobile ? (Kirigami.Units.largeSpacing * 2) : Kirigami.Units.largeSpacing
+    readonly property int delegateVerticalPadding: Kirigami.Settings.isMobile ? (Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing) : Kirigami.Units.largeSpacing
     
     function playSound() {
         audioPlayer.play();
@@ -50,6 +50,7 @@ Kirigami.ScrollablePage {
                 leftPadding: Kirigami.Units.largeSpacing * 2
                 topPadding: root.delegateVerticalPadding
                 bottomPadding: root.delegateVerticalPadding
+                showSeparator: true
                  
                 onClicked: fileDialog.open()
                 
@@ -69,9 +70,21 @@ Kirigami.ScrollablePage {
                 leftPadding: Kirigami.Units.largeSpacing * 2
                 topPadding: root.delegateVerticalPadding
                 bottomPadding: root.delegateVerticalPadding
+                showSeparator: listView.count > 0
                 
                 property string defaultPath: utilModel.getDefaultAlarmFileLocation()
                 onClicked: root.alarmForm.formAudioPath = defaultPath;
+                
+                Connections {
+                    target: root.alarmForm
+                            
+                    function onFormAudioPathChanged() {
+                        radioButton.checked = root.alarmForm.formAudioPath.replace('file://', '') == defaultItem.defaultPath;
+                        if (radioButton.checked) {
+                            root.playSound();
+                        }
+                    }
+                }
                 
                 contentItem: RowLayout {
                     width: listView.width
@@ -91,17 +104,6 @@ Kirigami.ScrollablePage {
                                 root.alarmForm.formAudioPath = defaultItem.defaultPath;
                             }
                         }
-                        
-                        Connections {
-                            target: root.alarmForm
-                            
-                            function onFormAudioPathChanged() {
-                                radioButton.checked = root.alarmForm.formAudioPath.replace('file://', '') == defaultItem.defaultPath;
-                                if (radioButton.checked) {
-                                    root.playSound();
-                                }
-                            }
-                        }
                     }
                 }
             }
@@ -111,13 +113,26 @@ Kirigami.ScrollablePage {
         delegate: ListDelegate {
             property string sourceUrl: model.sourceUrl
             
+            showSeparator: index < listView.count - 1
+            
             width: listView.width
             leftPadding: Kirigami.Units.largeSpacing * 2
             topPadding: root.delegateVerticalPadding
             bottomPadding: root.delegateVerticalPadding
             
             onClicked: root.alarmForm.formAudioPath = sourceUrl;
-                
+            
+            Connections {
+                target: root.alarmForm
+                function onFormAudioPathChanged() {
+                    radioButton.checked = root.alarmForm.formAudioPath == sourceUrl;
+                    
+                    if (radioButton.checked) {
+                        root.playSound();
+                    }
+                }
+            }
+            
             contentItem: RowLayout {
                 Label {
                     Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
@@ -132,17 +147,6 @@ Kirigami.ScrollablePage {
                     onCheckedChanged: {
                         if (checked) {
                             root.alarmForm.formAudioPath = sourceUrl;
-                        }
-                    }
-                    
-                    Connections {
-                        target: root.alarmForm
-                        function onFormAudioPathChanged() {
-                            radioButton.checked = root.alarmForm.formAudioPath == sourceUrl;
-                            
-                            if (radioButton.checked) {
-                                root.playSound();
-                            }
                         }
                     }
                 }

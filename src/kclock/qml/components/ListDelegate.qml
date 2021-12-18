@@ -14,6 +14,7 @@ import org.kde.kirigami 2.12 as Kirigami
 
 Control {
     id: root
+    property bool showSeparator: false
     
     signal clicked()
     
@@ -24,12 +25,21 @@ Control {
     
     hoverEnabled: true
     background: Rectangle {
-        color: Kirigami.Theme.textColor
-        opacity: tapHandler.pressed ? 0.2 : root.hovered ? 0.1 : 0
+        color: Qt.rgba(Kirigami.Theme.textColor.r, Kirigami.Theme.textColor.g, Kirigami.Theme.textColor.b, tapHandler.pressed ? 0.2 : root.hovered ? 0.1 : 0)
         
         TapHandler {
             id: tapHandler
             onTapped: root.clicked()
+        }
+        
+        Kirigami.Separator {
+            anchors.bottom: parent.bottom
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.leftMargin: root.leftPadding
+            anchors.rightMargin: root.rightPadding
+            visible: root.showSeparator
+            opacity: 0.5
         }
     }
 }
