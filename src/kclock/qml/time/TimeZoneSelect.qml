@@ -32,6 +32,7 @@ ColumnLayout {
             focus = true
         }
     }
+    
     ScrollView {
         Layout.minimumHeight: Kirigami.Units.gridUnit * 14
         Layout.maximumHeight: Kirigami.Units.gridUnit * 20

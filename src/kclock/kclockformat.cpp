@@ -19,31 +19,20 @@ KclockFormat::KclockFormat(QObject *parent)
     , m_timer(new QTimer(this))
 {
     connect(SettingsModel::instance(), &SettingsModel::timeFormatChanged, this, &KclockFormat::updateCurrentTime);
-    connect(m_timer, &QTimer::timeout, this, &KclockFormat::updateTime);
+    connect(m_timer, &QTimer::timeout, this, &KclockFormat::updateCurrentTime);
 
     this->startTimer();
 }
+
+QString KclockFormat::currentTime()
+{
+    return m_currentTime;
+};
 
 void KclockFormat::updateCurrentTime()
 {
     m_currentTime = QLocale::system().toString(QTime::currentTime(), UtilModel::instance()->timeFormat());
     Q_EMIT timeChanged();
-}
-
-void KclockFormat::updateTime()
-{
-    if (m_minutesCounter == 60) {
-        updateCurrentTime();
-        m_minutesCounter = 0;
-        m_hoursCounter++;
-    }
-    if (m_hoursCounter == 60) {
-        m_hoursCounter = 0;
-        m_hours = QTime::currentTime().hour() >= 12 ? QTime::currentTime().hour() - 12 : QTime::currentTime().hour();
-        Q_EMIT hourChanged();
-    }
-    m_minutesCounter++;
-    Q_EMIT secondChanged();
 }
 
 QString KclockFormat::formatTimeString(int hours, int minutes)
@@ -66,9 +55,6 @@ bool KclockFormat::isChecked(int dayIndex, int daysOfWeek)
 void KclockFormat::startTimer()
 {
     updateCurrentTime();
-    m_hours = QTime::currentTime().hour() >= 12 ? QTime::currentTime().hour() - 12 : QTime::currentTime().hour();
-    m_minutesCounter = (QTime::currentTime().msecsSinceStartOfDay() / 1000) % 60; // seconds to next minute
-    m_hoursCounter = QTime::currentTime().minute();
     m_timer->start(1000);
 }
 
