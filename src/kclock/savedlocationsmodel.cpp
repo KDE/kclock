@@ -6,7 +6,7 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#include "savedtimezonesmodel.h"
+#include "savedlocationsmodel.h"
 
 #include <QDebug>
 #include <QTimeZone>
@@ -15,15 +15,50 @@
 #include <KLocalizedString>
 #include <KSharedConfig>
 
+#include "addlocationmodel.h"
 #include "kclockformat.h"
 #include "settingsmodel.h"
 #include "utilmodel.h"
 
 const QString TZ_CFG_GROUP = QStringLiteral("Timezones");
 
-SavedTimeZonesModel::SavedTimeZonesModel(QObject *parent)
+SavedLocationsModel *SavedLocationsModel::instance()
+{
+    static SavedLocationsModel *singleton = new SavedLocationsModel;
+    return singleton;
+}
+
+SavedLocationsModel::SavedLocationsModel(QObject *parent)
     : QAbstractListModel(parent)
 {
+    load();
+
+    connect(KclockFormat::instance(), &KclockFormat::timeChanged, this, [this] {
+        Q_EMIT dataChanged(index(0), index(m_timeZones.size() - 1), {TimeStringRole});
+    });
+}
+
+Q_INVOKABLE void SavedLocationsModel::removeLocation(int index)
+{
+    auto config = KSharedConfig::openConfig();
+    KConfigGroup timezoneGroup = config->group(TZ_CFG_GROUP);
+    QString ianaId = data(this->index(index, 0), SavedLocationsModel::IdRole).toString().replace(QStringLiteral(" "), QStringLiteral("_"));
+    timezoneGroup.deleteEntry(ianaId);
+    config->sync();
+
+    AddLocationModel::instance()->load();
+
+    beginRemoveRows(QModelIndex(), index, index);
+    m_timeZones.erase(m_timeZones.begin() + index);
+    endRemoveRows();
+}
+
+void SavedLocationsModel::load()
+{
+    beginResetModel();
+
+    m_timeZones.clear();
+
     auto config = KSharedConfig::openConfig();
     KConfigGroup timezoneGroup = config->group(TZ_CFG_GROUP);
 
@@ -31,34 +66,16 @@ SavedTimeZonesModel::SavedTimeZonesModel(QObject *parent)
         m_timeZones.push_back(QTimeZone{timezoneId.toUtf8()});
     }
 
-    connect(KclockFormat::instance(), &KclockFormat::timeChanged, this, [this] {
-        Q_EMIT dataChanged(index(0), index(m_timeZones.size() - 1), {TimeStringRole});
-    });
-
-    connect(UtilModel::instance(), &UtilModel::selectedTimezoneChanged, this, [this](QByteArray id, bool selected) {
-        if (selected) {
-            beginInsertRows(QModelIndex(), m_timeZones.size(), m_timeZones.size());
-            m_timeZones.push_back(QTimeZone(id));
-            endInsertRows();
-        } else {
-            auto t = QTimeZone(id);
-            auto pos = std::find(m_timeZones.begin(), m_timeZones.end(), t);
-            if (pos != m_timeZones.end()) {
-                beginRemoveRows(QModelIndex(), std::distance(m_timeZones.begin(), pos), std::distance(m_timeZones.begin(), pos));
-                m_timeZones.erase(pos);
-                endRemoveRows();
-            }
-        }
-    });
+    endResetModel();
 }
 
-int SavedTimeZonesModel::rowCount(const QModelIndex &parent) const
+int SavedLocationsModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent)
     return m_timeZones.size();
 }
 
-QVariant SavedTimeZonesModel::data(const QModelIndex &index, int role) const
+QVariant SavedLocationsModel::data(const QModelIndex &index, int role) const
 {
     const int row = index.row();
 
@@ -101,16 +118,19 @@ QVariant SavedTimeZonesModel::data(const QModelIndex &index, int role) const
             return QVariant(i18n("Local time"));
         }
     }
-    case IdRole: {
+    case CityRole: {
         auto split = m_timeZones[row].id().replace("_", " ").split('/');
         return split[split.length() - 1];
+    }
+    case IdRole: {
+        return m_timeZones[row].id().replace("_", " ");
     }
     }
 
     return {};
 }
 
-QHash<int, QByteArray> SavedTimeZonesModel::roleNames() const
+QHash<int, QByteArray> SavedLocationsModel::roleNames() const
 {
-    return {{NameRole, "name"}, {TimeStringRole, "timeString"}, {RelativeTimeRole, "relativeTime"}, {IdRole, "id"}};
+    return {{NameRole, "name"}, {TimeStringRole, "timeString"}, {RelativeTimeRole, "relativeTime"}, {CityRole, "city"}, {IdRole, "id"}};
 }

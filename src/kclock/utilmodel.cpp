@@ -112,8 +112,3 @@ bool UtilModel::isLocale24HourTime()
 {
     return QLocale::system().timeFormat(QLocale::ShortFormat).toLower().indexOf(QStringLiteral("ap")) == -1;
 }
-
-void UtilModel::setSelectedTimezone(QByteArray id, bool selected)
-{
-    Q_EMIT selectedTimezoneChanged(id, selected);
-}

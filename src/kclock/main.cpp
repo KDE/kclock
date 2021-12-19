@@ -6,16 +6,16 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
+#include "addlocationmodel.h"
 #include "alarm.h"
 #include "alarmmodel.h"
 #include "kclockformat.h"
-#include "savedtimezonesmodel.h"
+#include "savedlocationsmodel.h"
 #include "settingsmodel.h"
 #include "stopwatchtimer.h"
 #include "timer.h"
 #include "timermodel.h"
 #include "timerpresetmodel.h"
-#include "timezoneselectormodel.h"
 #include "utilityinterface.h"
 #include "utilmodel.h"
 #include "version.h"
@@ -70,8 +70,13 @@ int main(int argc, char *argv[])
     // register QML types
     qmlRegisterType<Alarm>("kclock", 1, 0, "Alarm");
     qmlRegisterType<Timer>("kclock", 1, 0, "Timer");
-    qmlRegisterType<SavedTimeZonesModel>("kclock", 1, 0, "SavedTimeZonesModel");
-    qmlRegisterType<TimeZoneFilterModel>("kclock", 1, 0, "TimeZoneFilterModel");
+
+    qmlRegisterSingletonType<AddLocationSearchModel>("kclock", 1, 0, "AddLocationSearchModel", [](QQmlEngine *, QJSEngine *) -> QObject * {
+        return AddLocationSearchModel::instance();
+    });
+    qmlRegisterSingletonType<SavedLocationsModel>("kclock", 1, 0, "SavedLocationsModel", [](QQmlEngine *, QJSEngine *) -> QObject * {
+        return SavedLocationsModel::instance();
+    });
     qmlRegisterSingletonType<TimerPresetModel>("kclock", 1, 0, "TimerPresetModel", [](QQmlEngine *, QJSEngine *) -> QObject * {
         return TimerPresetModel::instance();
     });

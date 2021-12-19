@@ -17,6 +17,8 @@ Loader {
     Component {
         id: mobileComponent
         Kirigami.OverlayDrawer {
+            id: drawer
+            
             height: contents.implicitHeight + Kirigami.Units.largeSpacing
             width: timePage.width
             edge: Qt.BottomEdge
@@ -38,16 +40,18 @@ Loader {
                 
                 Kirigami.Heading {
                     level: 3
-                    text: i18n("<b>Timezones</b>")
+                    text: i18n("<b>Add Location</b>")
                     Layout.alignment: Qt.AlignHCenter
                     Layout.bottomMargin: Kirigami.Units.smallSpacing
                 }
                 
-                TimeZoneSelect {
+                AddLocation {
                     id: timerForm
                     Layout.leftMargin: Kirigami.Units.smallSpacing
                     Layout.rightMargin: Kirigami.Units.smallSpacing
                     Layout.fillWidth: true
+                    
+                    onCloseRequested: drawer.close()
                 }
             }
         }
@@ -56,13 +60,17 @@ Loader {
     Component {
         id: desktopComponent
         Kirigami.Dialog {
+            id: dialog
+            
             standardButtons: Kirigami.Dialog.NoButton
             parent: applicationWindow().overlay
-            title: i18n("Timezones")
-            preferredWidth: Kirigami.Units.gridUnit * 16
+            title: i18n("Add Location")
+            preferredWidth: Kirigami.Units.gridUnit * 20
             padding: Kirigami.Units.largeSpacing
             
-            TimeZoneSelect {}
+            AddLocation {
+                onCloseRequested: dialog.close()
+            }
         }
     }
 } 

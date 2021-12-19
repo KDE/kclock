@@ -30,11 +30,12 @@
         
         <file>qml/stopwatch/StopwatchPage.qml</file>
         
+        <file>qml/time/AddLocation.qml</file>
+        <file>qml/time/AddLocationWrapper.qml</file>
         <file>qml/time/AnalogClock.qml</file>
         <file>qml/time/AnalogClockHand.qml</file>
         <file>qml/time/TimePage.qml</file>
-        <file>qml/time/TimeZoneSelect.qml</file>
-        <file>qml/time/TimeZoneSelectWrapper.qml</file>
+        <file>qml/time/TimePageDelegate.qml</file>
         
         <file>qml/timer/PresetDurationButton.qml</file>
         <file>qml/timer/TimerComponent.qml</file>

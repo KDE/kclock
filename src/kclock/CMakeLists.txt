@@ -1,6 +1,6 @@
 #
 # Copyright 2020 Han Young <hanyoung@protonmail.com>
-# Copyright 2020 Devin Lin <espidev@gmail.com>
+# Copyright 2020-2021 Devin Lin <devin@kde.org>
 #
 # SPDX-License-Identifier: GPL-2.0-or-later
 #
@@ -14,10 +14,10 @@ set(kclock_SRCS
     stopwatchtimer.cpp
     kclockformat.cpp
     settingsmodel.cpp
-    timezoneselectormodel.cpp
+    addlocationmodel.cpp
     resources.qrc
     timerpresetmodel.cpp
-    savedtimezonesmodel.cpp
+    savedlocationsmodel.cpp
     )
 
 set(SettingsXML ${CMAKE_CURRENT_BINARY_DIR}/../kclockd/org.kde.kclockd.KClockSettings.xml)
