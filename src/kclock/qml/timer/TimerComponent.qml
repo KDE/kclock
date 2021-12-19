@@ -12,8 +12,7 @@ import QtQuick.Shapes 1.12
 import org.kde.kirigami 2.11 as Kirigami
 
 Rectangle {
-    anchors.fill: parent
-    
+    id: root
     property int timerDuration
     property int timerElapsed
     property bool timerRunning
@@ -92,7 +91,7 @@ Rectangle {
             PathAngleArc {
                 id: timerCircleArc
                 centerX: timerCircle.width / 2; centerY: timerCircle.height / 2;
-                radiusX: Math.max(timerpage.width * (Kirigami.Settings.isMobile ? 0.3 : 0.25), 1); radiusY: radiusX
+                radiusX: Math.max(root.width * (Kirigami.Settings.isMobile ? 0.3 : 0.25), 1); radiusY: radiusX
                 startAngle: -180
                 sweepAngle: 360
             }

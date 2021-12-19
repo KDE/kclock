@@ -16,20 +16,21 @@ import "../components"
 import kclock 1.0
 
 Kirigami.Page {
+    id: root
     
     property Timer timer
     property int timerIndex
     
-    id: timerpage
     title: timer && timer.label !== "" ? timer.label : i18n("New timer")
     
     property bool showFullscreen: false
     
-    property int elapsed: timer == null ? 0 : timer.elapsed
-    property int duration: timer == null ? 0 : timer.length
-    property bool running: timer == null ? 0 : timer.running
-    property bool looping: timer == null ? 0 : timer.looping
-    property bool isCommandTimeout: timer == null ? 0 : timer.commandTimeout.length > 0
+    property int elapsed: timer ? timer.elapsed : 0
+    property int duration: timer ? timer.length : 0
+    property bool running: timer ? timer.running : 0
+    property bool looping: timer ? timer.looping : 0
+    property string commandTimeout: timer ? timer.commandTimeout : ""
+    property bool isCommandTimeout: commandTimeout.length > 0
 
     // keyboard controls
     Keys.onSpacePressed: timer.toggleRunning();
@@ -40,21 +41,21 @@ Kirigami.Page {
         main: Kirigami.Action {
             text: running ? i18n("Pause") : i18n("Start")
             iconName: running ? "chronometer-pause" : "chronometer-start"
-            onTriggered: timer.toggleRunning()
+            onTriggered: root.timer.toggleRunning()
         }
 
         contextualActions: [
             Kirigami.Action {
                 icon.name: "chronometer-reset"
                 text: i18n("Reset")
-                onTriggered: timer.reset();
+                onTriggered: root.timer.reset();
             },
             Kirigami.Action {
                 icon.name: "delete"
                 text: i18n("Delete")
                 onTriggered: {
-                    pageStack.pop();
-                    timerModel.remove(timerIndex);
+                    applicationWindow().pageStack.layers.pop();
+                    TimerModel.remove(timerIndex);
                 }
             },
             Kirigami.Action {
@@ -62,7 +63,7 @@ Kirigami.Page {
                 text: i18n("Loop Timer")
                 checkable: true
                 checked: looping
-                onTriggered: timer.toggleLooping()
+                onTriggered: root.timer.toggleLooping()
             }
         ]
     }
@@ -86,31 +87,31 @@ Kirigami.Page {
             Item { Layout.fillWidth: true }
             FooterToolBarButton {
                 display: toolbar.opened ? AbstractButton.TextUnderIcon : AbstractButton.TextOnly
-                text: timerpage.running ? i18n("Pause") : i18n("Start")
-                icon.name: timerpage.running ? "chronometer-pause" : "chronometer-start"
-                onClicked: timer.toggleRunning()
+                text: root.running ? i18n("Pause") : i18n("Start")
+                icon.name: root.running ? "chronometer-pause" : "chronometer-start"
+                onClicked: root.timer.toggleRunning()
             }
             FooterToolBarButton {
                 display: toolbar.opened ? AbstractButton.TextUnderIcon : AbstractButton.TextOnly
                 text: i18n("Reset")
                 icon.name: "chronometer-reset"
-                onClicked: timer.reset()
+                onClicked: root.timer.reset()
             }
             FooterToolBarButton {
                 display: toolbar.opened ? AbstractButton.TextUnderIcon : AbstractButton.TextOnly
                 text: i18n("Delete")
                 icon.name: "delete"
                 onClicked: {
-                    pageStack.layers.pop();
-                    timerModel.remove(timerIndex);
+                    applicationWindow().pageStack.layers.pop();
+                    TimerModel.remove(timerIndex);
                 }
             }
             FooterToolBarButton {
                 display: toolbar.opened ? AbstractButton.TextUnderIcon : AbstractButton.TextOnly
                 text: i18n("Loop Timer")
                 icon.name: "media-repeat-all"
-                checked: timerpage.looping
-                onClicked: timer.toggleLooping()
+                checked: root.looping
+                onClicked: root.timer.toggleLooping()
             }
             FooterToolBarButton {
                 display: toolbar.opened ? AbstractButton.TextUnderIcon : AbstractButton.TextOnly
@@ -123,6 +124,7 @@ Kirigami.Page {
     }
 
     TimerComponent {
+        anchors.fill: parent
         timerDuration: duration
         timerElapsed: elapsed
         timerRunning: running
@@ -136,13 +138,13 @@ Kirigami.Page {
             visible: isCommandTimeout
             implicitWidth: Kirigami.Units.iconSizes.sizeForLabels * 1.5
             implicitHeight: Kirigami.Units.iconSizes.sizeForLabels * 1.5
-            color: timerDelegate && Kirigami.Theme.disabledTextColor
+            color: Kirigami.Theme.disabledTextColor
         }
         Label {
             visible: isCommandTimeout
             font.family: "Monospace"
-            text: timerDelegate.commandTimeout
-            color: timerDelegate && Kirigami.Theme.disabledTextColor
+            text: root.commandTimeout
+            color: Kirigami.Theme.disabledTextColor
         }
     }
 }

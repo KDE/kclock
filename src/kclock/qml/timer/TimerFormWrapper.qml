@@ -18,7 +18,7 @@ Loader {
     sourceComponent: Kirigami.Settings.isMobile ? mobileTimerForm : desktopTimerForm
 
     function createTimer(duration, label, commandTimeout) {
-        timerModel.addNew(duration, label, commandTimeout);
+        TimerModel.addNew(duration, label, commandTimeout);
     }
 
     property bool showPresets: false
@@ -28,7 +28,7 @@ Loader {
         id: mobileTimerForm
         Kirigami.OverlayDrawer {
             height: contents.implicitHeight + Kirigami.Units.largeSpacing
-            width: timerPage.width
+            width: loader.parent.width
             edge: Qt.BottomEdge
             parent: applicationWindow().overlay
 

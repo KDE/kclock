@@ -41,6 +41,7 @@
         <file>qml/timer/TimerComponent.qml</file>
         <file>qml/timer/TimerForm.qml</file>
         <file>qml/timer/TimerFormWrapper.qml</file>
+        <file>qml/timer/TimerListDelegate.qml</file>
         <file>qml/timer/TimerListPage.qml</file>
         <file>qml/timer/TimerPage.qml</file>
         

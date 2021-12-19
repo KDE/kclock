@@ -55,14 +55,17 @@ int TimerModel::rowCount(const QModelIndex &parent) const
     return m_timersList.size();
 }
 
-int TimerModel::count()
-{
-    return m_timersList.size();
-}
-
 QVariant TimerModel::data(const QModelIndex &index, int role) const
 {
-    return QVariant();
+    if ((index.row() < 0) || (index.row() >= m_timersList.count()))
+        return {};
+
+    return QVariant::fromValue(m_timersList.at(index.row()));
+}
+
+QHash<int, QByteArray> TimerModel::roleNames() const
+{
+    return {{TimerRole, "timer"}};
 }
 
 void TimerModel::addTimer(int length, QString label, QString commandTimeout, bool running)
@@ -70,25 +73,22 @@ void TimerModel::addTimer(int length, QString label, QString commandTimeout, boo
     m_interface->addTimer(length, label, commandTimeout, running);
 }
 
+void TimerModel::addNew(int length, QString label, QString commandTimeout)
+{
+    this->addTimer(length, label, commandTimeout, false);
+};
+
 void TimerModel::remove(int index)
 {
     if (index < 0 || index >= m_timersList.size())
         return;
 
+    beginRemoveRows(QModelIndex(), index, index);
     m_interface->removeTimer(m_timersList.at(index)->uuid().toString());
     m_timersList.at(index)->deleteLater();
 
-    Q_EMIT beginRemoveRows(QModelIndex(), index, index);
     m_timersList.removeAt(index);
-    Q_EMIT endRemoveRows();
-}
-
-Timer *TimerModel::get(int index)
-{
-    if ((index < 0) || (index >= m_timersList.count()))
-        return {};
-
-    return m_timersList.at(index);
+    endRemoveRows();
 }
 
 void TimerModel::addTimer(QString uuid)

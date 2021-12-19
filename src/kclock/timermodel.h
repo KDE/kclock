@@ -24,16 +24,17 @@ class TimerModel : public QAbstractListModel
 public:
     static TimerModel *instance();
 
+    enum {
+        TimerRole,
+    };
+
     int rowCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role) const override;
+    QHash<int, QByteArray> roleNames() const override;
 
-    Q_INVOKABLE void addNew(int length, QString label, QString commandTimeout)
-    {
-        this->addTimer(length, label, commandTimeout, false);
-    };
+    Q_INVOKABLE void addNew(int length, QString label, QString commandTimeout);
     Q_INVOKABLE void remove(int index);
-    Q_INVOKABLE int count();
-    Q_INVOKABLE Timer *get(int index);
+
     bool connectedToDaemon();
     void setConnectedToDaemon(bool connectedToDaemon);
 
