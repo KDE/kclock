@@ -30,7 +30,7 @@
         
         <file>qml/stopwatch/StopwatchPage.qml</file>
         
-        <file>qml/time/AddLocation.qml</file>
+        <file>qml/time/AddLocationListView.qml</file>
         <file>qml/time/AddLocationWrapper.qml</file>
         <file>qml/time/AnalogClock.qml</file>
         <file>qml/time/AnalogClockHand.qml</file>

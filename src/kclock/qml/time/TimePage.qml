@@ -25,13 +25,10 @@ Kirigami.ScrollablePage {
     title: i18n("Time")
     icon.name: "clock"
 
-    mainAction: Kirigami.Settings.isMobile ? undefined : newAction
-    
-    actions.contextualActions: [editAction, settingsAction]
+    actions.contextualActions: [newAction, editAction, settingsAction]
     
     function openAddSheet() {
-        timeZoneSelect.active = true;
-        timeZoneSelect.item.open();
+        timeZoneSelect.open();
     }
     
     Kirigami.Action {
@@ -45,6 +42,7 @@ Kirigami.ScrollablePage {
         id: newAction
         iconName: "list-add"
         text: i18n("Add")
+        visible: !Kirigami.Settings.isMobile
         onTriggered: root.openAddSheet()
     }
     

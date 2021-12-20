@@ -1,6 +1,6 @@
 /*
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
- * Copyright 2020 Devin Lin <espidev@gmail.com>
+ * Copyright 2020-2021 Devin Lin <espidev@gmail.com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
@@ -13,7 +13,56 @@ import QtGraphicalEffects 1.12
 
 Kirigami.NavigationTabBar {
     id: root
-    visible: applicationWindow().pageStack.layers.depth <= 1
+    
+    property bool shouldShow: pageStack.layers.depth <= 1 && pageStack.depth <= 1
+    onShouldShowChanged: {
+        if (shouldShow) {
+            hideAnim.stop();
+            showAnim.restart();
+        } else {
+            showAnim.stop();
+            hideAnim.restart();
+        }
+    }
+    
+    visible: height !== 0
+    
+    // animate showing and hiding of navbar
+    ParallelAnimation {
+        id: showAnim
+        NumberAnimation {
+            target: root
+            property: "height"
+            to: root.implicitHeight
+            duration: Kirigami.Units.longDuration
+            easing.type: Easing.InOutQuad
+        }
+        NumberAnimation {
+            target: root
+            property: "opacity"
+            to: 1
+            duration: Kirigami.Units.longDuration
+            easing.type: Easing.InOutQuad
+        }
+    }
+    
+    SequentialAnimation {
+        id: hideAnim
+        NumberAnimation {
+            target: root
+            property: "opacity"
+            to: 0
+            duration: Kirigami.Units.longDuration
+            easing.type: Easing.InOutQuad
+        }
+        NumberAnimation {
+            target: root
+            property: "height"
+            to: 0
+            duration: Kirigami.Units.longDuration
+            easing.type: Easing.InOutQuad
+        }
+    }
     
     property var pageStack: applicationWindow().pageStack
     

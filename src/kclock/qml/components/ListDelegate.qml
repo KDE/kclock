@@ -25,7 +25,11 @@ Control {
     
     hoverEnabled: true
     background: Rectangle {
-        color: Qt.rgba(Kirigami.Theme.textColor.r, Kirigami.Theme.textColor.g, Kirigami.Theme.textColor.b, tapHandler.pressed ? 0.2 : root.hovered ? 0.1 : 0)
+        color: Qt.rgba(Kirigami.Theme.textColor.r, Kirigami.Theme.textColor.g, Kirigami.Theme.textColor.b, tapHandler.pressed ? 0.2 : hoverHandler.hovered ? 0.1 : 0)
+        
+        HoverHandler {
+            id: hoverHandler
+        }
         
         TapHandler {
             id: tapHandler

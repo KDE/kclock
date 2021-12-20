@@ -14,45 +14,26 @@ Loader {
     id: loader
     sourceComponent: Kirigami.Settings.isMobile ? mobileComponent : desktopComponent
     
+    function open() {
+        loader.active = false;
+        loader.active = true;
+        if (Kirigami.Settings.isMobile) {
+            applicationWindow().pageStack.push(loader.item);
+        } else {
+            loader.item.open();
+        }
+    }
+    
     Component {
         id: mobileComponent
-        Kirigami.OverlayDrawer {
-            id: drawer
+        Kirigami.ScrollablePage {
+            id: root
             
-            height: contents.implicitHeight + Kirigami.Units.largeSpacing
-            width: timePage.width
-            edge: Qt.BottomEdge
-            parent: applicationWindow().overlay
+            title: i18n("Add Location")
             
-            ColumnLayout {
-                id: contents
-                anchors.left: parent.left
-                anchors.right: parent.right
-                spacing: 0
-                
-                Kirigami.Icon {
-                    Layout.margins: Kirigami.Units.smallSpacing
-                    source: "arrow-down"
-                    implicitWidth: Kirigami.Units.gridUnit
-                    implicitHeight: Kirigami.Units.gridUnit
-                    Layout.alignment: Qt.AlignHCenter
-                }
-                
-                Kirigami.Heading {
-                    level: 3
-                    text: i18n("<b>Add Location</b>")
-                    Layout.alignment: Qt.AlignHCenter
-                    Layout.bottomMargin: Kirigami.Units.smallSpacing
-                }
-                
-                AddLocation {
-                    id: timerForm
-                    Layout.leftMargin: Kirigami.Units.smallSpacing
-                    Layout.rightMargin: Kirigami.Units.smallSpacing
-                    Layout.fillWidth: true
-                    
-                    onCloseRequested: drawer.close()
-                }
+            AddLocationListView {
+                addPadding: true
+                onCloseRequested: applicationWindow().pageStack.currentIndex = 0
             }
         }
     }
@@ -65,10 +46,12 @@ Loader {
             standardButtons: Kirigami.Dialog.NoButton
             parent: applicationWindow().overlay
             title: i18n("Add Location")
+            preferredHeight: Kirigami.Units.gridUnit * 20
             preferredWidth: Kirigami.Units.gridUnit * 20
             padding: Kirigami.Units.largeSpacing
             
-            AddLocation {
+            AddLocationListView {
+                addPadding: false
                 onCloseRequested: dialog.close()
             }
         }
