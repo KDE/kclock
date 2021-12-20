@@ -45,12 +45,12 @@ Kirigami.ScrollablePage {
             visible: !applicationWindow().isWidescreen
             iconName: "settings-configure"
             text: i18n("Settings")
-            onTriggered: applicationWindow().pageStack.layers.push(applicationWindow().getPage("Settings"))
+            onTriggered: applicationWindow().pageStack.push(applicationWindow().getPage("Settings"))
         }
     ]
 
     function addAlarm() {
-        applicationWindow().pageStack.layers.push(Qt.resolvedUrl("AlarmFormPage.qml"));
+        applicationWindow().pageStack.push(Qt.resolvedUrl("AlarmFormPage.qml"));
     }
     
     header: ColumnLayout {
@@ -114,7 +114,7 @@ Kirigami.ScrollablePage {
             width: alarmsList.width
             
             onEditClicked: {
-                applicationWindow().pageStack.layers.push(Qt.resolvedUrl("AlarmFormPage.qml"), { selectedAlarm: alarm })
+                applicationWindow().pageStack.push(Qt.resolvedUrl("AlarmFormPage.qml"), { selectedAlarm: alarm })
             }
             onDeleteClicked: {
                 showPassiveNotification(i18n("Deleted %1", alarm.name == "" ? i18n("alarm") : alarm.name));

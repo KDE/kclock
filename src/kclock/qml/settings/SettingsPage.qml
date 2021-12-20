@@ -82,7 +82,7 @@ Kirigami.ScrollablePage {
                 Kirigami.FormData.label: i18n("More Info:")
                 text: i18n("About")
                 icon.name: "help-about-symbolic"
-                onClicked: applicationWindow().pageStack.layers.push(applicationWindow().getPage("About"))
+                onClicked: applicationWindow().pageStack.push(applicationWindow().getPage("About"))
             }
         }
     }

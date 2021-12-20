@@ -68,7 +68,7 @@ Kirigami.ScrollablePage {
                 display: toolbar.opened ? AbstractButton.TextUnderIcon : AbstractButton.TextOnly
                 text: i18n("Cancel")
                 icon.name: "dialog-cancel"
-                onClicked: applicationWindow().pageStack.layers.pop()
+                onClicked: applicationWindow().pageStack.currentIndex--
             }
             FooterToolBarButton {
                 display: toolbar.opened ? AbstractButton.TextUnderIcon : AbstractButton.TextOnly

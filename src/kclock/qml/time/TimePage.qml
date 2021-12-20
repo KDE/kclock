@@ -52,7 +52,7 @@ Kirigami.ScrollablePage {
         visible: !applicationWindow().isWidescreen
         iconName: "settings-configure"
         text: i18n("Settings")
-        onTriggered: applicationWindow().pageStack.layers.push(applicationWindow().getPage("Settings"))
+        onTriggered: applicationWindow().pageStack.push(applicationWindow().getPage("Settings"))
     }
     
     AddLocationWrapper {

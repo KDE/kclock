@@ -41,7 +41,7 @@ Kirigami.AbstractCard {
     showClickFeedback: true
     onClicked: {
         timerPageLoader.active = true;
-        applicationWindow().pageStack.layers.push(timerPageLoader.item);
+        applicationWindow().pageStack.push(timerPageLoader.item);
     }
         
     contentItem: Item {

@@ -36,6 +36,9 @@ Kirigami.Page {
     Keys.onSpacePressed: timer.toggleRunning();
     Keys.onReturnPressed: timer.toggleRunning();
     
+    Kirigami.Theme.inherit: false
+    Kirigami.Theme.colorSet: Kirigami.Theme.View
+    
     // topbar action
     actions {
         main: Kirigami.Action {
