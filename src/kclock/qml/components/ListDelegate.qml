@@ -17,6 +17,7 @@ Control {
     property bool showSeparator: false
     
     signal clicked()
+    signal rightClicked()
     
     leftPadding: Kirigami.Units.largeSpacing
     topPadding: Kirigami.Units.largeSpacing
@@ -25,15 +26,10 @@ Control {
     
     hoverEnabled: true
     background: Rectangle {
-        color: Qt.rgba(Kirigami.Theme.textColor.r, Kirigami.Theme.textColor.g, Kirigami.Theme.textColor.b, tapHandler.pressed ? 0.2 : hoverHandler.hovered ? 0.1 : 0)
+        color: Qt.rgba(Kirigami.Theme.textColor.r, Kirigami.Theme.textColor.g, Kirigami.Theme.textColor.b, mouseArea.pressed ? 0.2 : hoverHandler.hovered ? 0.1 : 0)
         
         HoverHandler {
             id: hoverHandler
-        }
-        
-        TapHandler {
-            id: tapHandler
-            onTapped: root.clicked()
         }
         
         Kirigami.Separator {
@@ -44,6 +40,20 @@ Control {
             anchors.rightMargin: root.rightPadding
             visible: root.showSeparator
             opacity: 0.5
+        }
+    }
+    
+    MouseArea {
+        id: mouseArea
+        anchors.fill: parent
+        acceptedButtons: Qt.LeftButton | Qt.RightButton
+        
+        onClicked: {
+            if (mouse.button === Qt.RightButton) {
+                root.rightClicked();
+            } else if (mouse.button === Qt.LeftButton) {
+                root.clicked();
+            }
         }
     }
 }
