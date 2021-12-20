@@ -78,7 +78,7 @@ Utilities::Utilities(QObject *parent)
 bool Utilities::hasPowerDevil()
 {
     return m_hasPowerDevil;
-};
+}
 
 int Utilities::scheduleWakeup(quint64 timestamp)
 {

@@ -76,7 +76,7 @@ void TimerModel::addTimer(int length, QString label, QString commandTimeout, boo
 void TimerModel::addNew(int length, QString label, QString commandTimeout)
 {
     this->addTimer(length, label, commandTimeout, false);
-};
+}
 
 void TimerModel::remove(int index)
 {

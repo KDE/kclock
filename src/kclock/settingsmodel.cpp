@@ -30,7 +30,7 @@ SettingsModel *SettingsModel::instance()
 {
     static SettingsModel *singleton = new SettingsModel();
     return singleton;
-};
+}
 
 QString SettingsModel::timeFormat() const
 {

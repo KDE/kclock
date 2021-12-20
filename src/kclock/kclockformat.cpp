@@ -27,7 +27,7 @@ KclockFormat::KclockFormat(QObject *parent)
 QString KclockFormat::currentTime()
 {
     return m_currentTime;
-};
+}
 
 void KclockFormat::updateCurrentTime()
 {

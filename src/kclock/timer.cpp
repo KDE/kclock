@@ -40,7 +40,7 @@ Timer::Timer(QString uuid, bool justCreated)
 const QUuid &Timer::uuid()
 {
     return m_uuid;
-};
+}
 
 void Timer::toggleRunning()
 {

@@ -57,7 +57,7 @@ Kirigami.Page {
                 icon.name: "delete"
                 text: i18n("Delete")
                 onTriggered: {
-                    applicationWindow().pageStack.layers.pop();
+                    applicationWindow().pageStack.pop();
                     TimerModel.remove(timerIndex);
                 }
             },
@@ -105,7 +105,7 @@ Kirigami.Page {
                 text: i18n("Delete")
                 icon.name: "delete"
                 onClicked: {
-                    applicationWindow().pageStack.layers.pop();
+                    applicationWindow().pageStack.pop();
                     TimerModel.remove(timerIndex);
                 }
             }

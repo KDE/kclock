@@ -51,7 +51,7 @@ void AlarmPlayer::stop()
 int AlarmPlayer::volume()
 {
     return m_player->volume();
-};
+}
 
 void AlarmPlayer::setVolume(int volume)
 {

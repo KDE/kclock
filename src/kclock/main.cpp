@@ -43,7 +43,7 @@ QCommandLineParser *createParser()
     parser->addVersionOption();
     parser->addHelpOption();
     return parser;
-};
+}
 
 int main(int argc, char *argv[])
 {

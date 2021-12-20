@@ -32,7 +32,7 @@ Kirigami.ScrollablePage {
     
     function accept() {
         form.submitForm();
-        pageStack.layers.pop();
+        pageStack.currentIndex--;
     }
     
     actions.main: Kirigami.Action {

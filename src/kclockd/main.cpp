@@ -27,7 +27,7 @@ QCommandLineParser *createParser()
     parser->addOption(QCommandLineOption(QStringLiteral("no-powerdevil"), i18n("Don't use PowerDevil for alarms if it is available")));
     parser->addHelpOption();
     return parser;
-};
+}
 
 int main(int argc, char *argv[])
 {

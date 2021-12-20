@@ -59,7 +59,7 @@ long long UtilModel::calculateNextRingTime(int hours, int minutes, int daysOfWee
 
         return QDateTime(date.date(), alarmTime).toSecsSinceEpoch();
     }
-};
+}
 
 QString UtilModel::timeToRingFormatted(const long long &timestamp)
 {
