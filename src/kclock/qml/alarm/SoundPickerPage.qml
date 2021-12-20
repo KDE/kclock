@@ -27,6 +27,15 @@ Kirigami.ScrollablePage {
         audioPlayer.play();
     }
     
+    // HACK: we have issues with file:file:file: being prepended to audio paths
+    function replacePrefix(str) {
+        return str.replace('file://', '');
+    }
+    
+    function playablePath(str) {
+        return str.includes('file://') ? str : ('file://' + str);
+    }
+    
     ListView {
         id: listView
         model: Sounds.SoundsModel {
@@ -36,7 +45,7 @@ Kirigami.ScrollablePage {
         
         Audio {
             id: audioPlayer
-            source: "file:" + root.alarmForm.formAudioPath;
+            source: root.playablePath(root.alarmForm.formAudioPath);
         }
 
         header: ColumnLayout {
@@ -73,13 +82,13 @@ Kirigami.ScrollablePage {
                 showSeparator: listView.count > 0
                 
                 property string defaultPath: utilModel.getDefaultAlarmFileLocation()
-                onClicked: root.alarmForm.formAudioPath = defaultPath;
+                onClicked: root.alarmForm.formAudioPath = playablePath(replacePrefix(defaultPath));
                 
                 Connections {
                     target: root.alarmForm
                             
                     function onFormAudioPathChanged() {
-                        radioButton.checked = root.alarmForm.formAudioPath.replace('file://', '') == defaultItem.defaultPath;
+                        radioButton.checked = replacePrefix(root.alarmForm.formAudioPath) == replacePrefix(defaultItem.defaultPath);
                         if (radioButton.checked) {
                             root.playSound();
                         }
@@ -98,10 +107,10 @@ Kirigami.ScrollablePage {
                         id: radioButton
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         
-                        checked: root.alarmForm.formAudioPath.replace('file://', '') == defaultItem.defaultPath
+                        checked: replacePrefix(root.alarmForm.formAudioPath) == replacePrefix(defaultItem.defaultPath)
                         onCheckedChanged: {
                             if (checked) {
-                                root.alarmForm.formAudioPath = defaultItem.defaultPath;
+                                root.alarmForm.formAudioPath = playablePath(replacePrefix(defaultItem.defaultPath));
                             }
                         }
                     }
@@ -120,12 +129,12 @@ Kirigami.ScrollablePage {
             topPadding: root.delegateVerticalPadding
             bottomPadding: root.delegateVerticalPadding
             
-            onClicked: root.alarmForm.formAudioPath = sourceUrl;
+            onClicked: root.alarmForm.formAudioPath = playablePath(replacePrefix(sourceUrl));
             
             Connections {
                 target: root.alarmForm
                 function onFormAudioPathChanged() {
-                    radioButton.checked = root.alarmForm.formAudioPath == sourceUrl;
+                    radioButton.checked = replacePrefix(root.alarmForm.formAudioPath) == replacePrefix(sourceUrl);
                     
                     if (radioButton.checked) {
                         root.playSound();
@@ -143,10 +152,10 @@ Kirigami.ScrollablePage {
                     id: radioButton
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     
-                    checked: root.alarmForm.formAudioPath.replace('file://', '') == sourceUrl
+                    checked: replacePrefix(root.alarmForm.formAudioPath) == replacePrefix(sourceUrl)
                     onCheckedChanged: {
                         if (checked) {
-                            root.alarmForm.formAudioPath = sourceUrl;
+                            root.alarmForm.formAudioPath = playablePath(replacePrefix(sourceUrl));
                         }
                     }
                 }
@@ -159,7 +168,7 @@ Kirigami.ScrollablePage {
             title: i18n("Choose an audio")
             folder: shortcuts.music
             onAccepted: {
-                root.alarmForm.formAudioPath = fileDialog.fileUrl;
+                root.alarmForm.formAudioPath = playablePath(replacePrefix(fileDialog.fileUrl.toString()));
                 root.playSound();
                 close();
             }

@@ -200,7 +200,7 @@ Kirigami.FormLayout {
         onClicked: applicationWindow().pageStack.push(Qt.resolvedUrl("SoundPickerPage.qml"), { alarmForm: root });
         
         text: {
-            if (root.formAudioPath.replace('file://', '') == utilModel.getDefaultAlarmFileLocation())  {
+            if (root.formAudioPath == utilModel.getDefaultAlarmFileLocation())  {
                 return i18n("Default Sound");
             } else {
                 let split = root.formAudioPath.split('/')
@@ -208,14 +208,13 @@ Kirigami.FormLayout {
             }
         }
         
-        contentItem: RowLayout {
-            Kirigami.Icon {
-                Layout.rightMargin: Kirigami.Units.smallSpacing
-                Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
-                source: "go-down-symbolic"
-                implicitWidth: Kirigami.Units.iconSizes.small
-                implicitHeight: Kirigami.Units.iconSizes.small
-            }
+        Kirigami.Icon {
+            source: "go-down-symbolic"
+            implicitWidth: Kirigami.Units.iconSizes.small
+            implicitHeight: Kirigami.Units.iconSizes.small
+            anchors.right: parent.right
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.rightMargin: Kirigami.Units.smallSpacing
         }
     }
 }

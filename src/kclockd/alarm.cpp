@@ -108,7 +108,7 @@ Alarm::Alarm(AlarmModel *parent, QString name, int hours, int minutes, int daysO
     m_hours = hours;
     m_minutes = minutes;
     m_daysOfWeek = daysOfWeek;
-    m_audioPath = QUrl::fromLocalFile(audioPath);
+    m_audioPath = QUrl::fromLocalFile(audioPath.replace(QStringLiteral("file://"), QString()));
     m_ringDuration = ringDuration;
     m_snoozeDuration = snoozeDuration;
 }
@@ -209,12 +209,13 @@ void Alarm::setDaysOfWeek(int daysOfWeek)
 
 QString Alarm::audioPath() const
 {
-    return m_audioPath.toString();
+    return m_audioPath.toLocalFile();
 }
 
 void Alarm::setAudioPath(QString path)
 {
     if (m_audioPath.path() != path) {
+        path = path.replace(QStringLiteral("file://"), QString());
         m_audioPath = QUrl::fromLocalFile(path);
         Q_EMIT audioPathChanged();
     }
