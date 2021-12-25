@@ -123,17 +123,27 @@ Kirigami.FormLayout {
         implicitWidth: root.width
         
         Kirigami.FormData.label: i18n("Ring Duration:")
-        text: formRingDuration === 1 ? i18n("1 minute") : i18n("%1 minutes", formRingDuration)
+        text: {
+            if (formRingDuration === -1) {
+                return i18n("None");
+            } else if (formRingDuration === 1) {
+                return i18n("1 minute");
+            } else {
+                return i18n("%1 minutes", formRingDuration);
+            }
+        }
         title: i18n("Select Ring Duration")
         model: ListModel {
             // we can't use i18n with ListElement
             Component.onCompleted: {
+                append({"name": i18n("None"), "value": -1});
                 append({"name": i18n("1 minute"), "value": 1});
                 append({"name": i18n("2 minutes"), "value": 2});
                 append({"name": i18n("5 minutes"), "value": 5});
                 append({"name": i18n("10 minutes"), "value": 10});
                 append({"name": i18n("15 minutes"), "value": 15});
-                append({"name": i18n("Never"), "value": -1});
+                append({"name": i18n("30 minutes"), "value": 30});
+                append({"name": i18n("1 hour"), "value": 60});
             }
         }
         
