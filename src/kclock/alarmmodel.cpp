@@ -44,6 +44,10 @@ AlarmModel::AlarmModel(QObject *parent)
     m_watcher = new QDBusServiceWatcher(QStringLiteral("org.kde.kclockd"), QDBusConnection::sessionBus(), QDBusServiceWatcher::WatchForOwnerChange, this);
     connect(m_watcher, &QDBusServiceWatcher::serviceRegistered, this, [this]() -> void {
         setConnectedToDaemon(true);
+        if (m_interface->isValid()) {
+            connect(m_interface, SIGNAL(alarmAdded(QString)), this, SLOT(addAlarm(QString)));
+            connect(m_interface, SIGNAL(alarmRemoved(QString)), this, SLOT(removeAlarm(QString)));
+        }
     });
     connect(m_watcher, &QDBusServiceWatcher::serviceUnregistered, this, [this]() -> void {
         setConnectedToDaemon(false);
