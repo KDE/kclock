@@ -10,6 +10,7 @@
   <project_license>GPL-2.0-or-later</project_license>
   <content_rating type="oars-1.1"/>
   <name>Clock</name>
+  <name xml:lang="ar">الساعة</name>
   <name xml:lang="ca">Rellotge</name>
   <name xml:lang="ca-valencia">Rellotge</name>
   <name xml:lang="cs">Hodiny</name>
@@ -39,10 +40,12 @@
   <name xml:lang="x-test">xxClockxx</name>
   <name xml:lang="zh-CN">时钟</name>
   <summary>Set alarms and timers, use a stopwatch, and manage world clocks</summary>
+  <summary xml:lang="ar">اضبط المنبهات والمؤقتات، واستخدم ساعة الإيقاف، وقم بإدارة الساعات العالمية</summary>
   <summary xml:lang="ca">Estableix alarmes i temporitzadors, useu un cronòmetre i gestioneu els rellotges mundials</summary>
   <summary xml:lang="ca-valencia">Estableix alarmes i temporitzadors, useu un cronòmetre i gestioneu els rellotges mundials</summary>
   <summary xml:lang="en-GB">Set alarms and timers, use a stopwatch, and manage world clocks</summary>
   <summary xml:lang="es">Definir alarmas y temporizadores, usar un cronómetro y gestionar relojes mundiales</summary>
+  <summary xml:lang="fi">Aseta hälytyksiä ja ajastimia, käytä sekuntikelloa ja hallitse maailmankelloa</summary>
   <summary xml:lang="fr">Régler des alarmes et des minuteurs, utiliser un chronomètre et gérer les horloges mondiales.</summary>
   <summary xml:lang="it">Imposta allarmi e timer, usa un cronometro e gestisci gli orologi del mondo</summary>
   <summary xml:lang="nl">Zet alarmen en timers, gebruik een stopwatch en beheer wereldklokken</summary>
@@ -55,6 +58,7 @@
   <summary xml:lang="x-test">xxSet alarms and timers, use a stopwatch, and manage world clocksxx</summary>
   <summary xml:lang="zh-CN">设置闹钟、倒计时、使用秒表和管理世界时钟</summary>
   <developer_name>KDE Community</developer_name>
+  <developer_name xml:lang="ar">مجتمع كدي</developer_name>
   <developer_name xml:lang="ca">La comunitat KDE</developer_name>
   <developer_name xml:lang="ca-valencia">La comunitat KDE</developer_name>
   <developer_name xml:lang="cs">Komunita KDE</developer_name>
@@ -85,10 +89,13 @@
   <developer_name xml:lang="zh-CN">KDE 社区</developer_name>
   <description>
     <p>A universal clock application for desktop and mobile.</p>
+    <p xml:lang="ar">تطبيق ساعة عالمي لسطح المكتب والجوال.</p>
     <p xml:lang="ca">Una aplicació universal de rellotge per a l'escriptori i mòbil.</p>
     <p xml:lang="ca-valencia">Una aplicació universal de rellotge per a l'escriptori i mòbil.</p>
+    <p xml:lang="cs">Univerzální aplikace hodin pro pracovní plochu a mobilní zařízení.</p>
     <p xml:lang="en-GB">A universal clock application for desktop and mobile.</p>
     <p xml:lang="es">Aplicación de reloj universal para el escritorio y el móvil.</p>
+    <p xml:lang="fi">Yleiskellosovellus työpöydälle ja mobiiliin.</p>
     <p xml:lang="fr">Une application d'horloge universelle pour bureau et mobile.</p>
     <p xml:lang="it">Un'applicazione universale per l'orologio per desktop e per mobile.</p>
     <p xml:lang="nl">Een universele kloktoepassing voor bureaublad en mobiel.</p>
@@ -101,10 +108,12 @@
     <p xml:lang="x-test">xxA universal clock application for desktop and mobile.xx</p>
     <p xml:lang="zh-CN">桌面和移动设备通用的时钟应用程序。</p>
     <p>It contains alarm, timer, stopwatch and timezone functionalities. Alarms and timers are able to wake the device from suspend on Plasma.</p>
+    <p xml:lang="ar">يحتوي على وظائف التنبيه والمؤقت وساعة التوقيت والمنطقة الزمنية. المنبهات والمؤقتات قادرة على إيقاظ الجهاز من حالة التعليق على البلازما.</p>
     <p xml:lang="ca">Conté funcions d'alarma, temporitzador, cronòmetre i zona horària. Les alarmes i els temporitzadors també poden fer que el dispositiu deixi d'estar suspès en el Plasma.</p>
     <p xml:lang="ca-valencia">Conté funcions d'alarma, temporitzador, cronòmetre i zona horària. Les alarmes i els temporitzadors també poden fer que el dispositiu deixi d'estar suspès en el Plasma.</p>
     <p xml:lang="en-GB">It contains alarm, timer, stopwatch and timezone functionalities. Alarms and timers are able to wake the device from suspend on Plasma.</p>
     <p xml:lang="es">Contiene las funciones de alarma, temporizador, cronómetro y zona horaria. Las alarmas y los temporizadores pueden despertar el dispositivo del estado de suspensión en Plasma.</p>
+    <p xml:lang="fi">Sisältää hälytys-, ajastin, sekuntikello- ja aikavyöhyketoiminnot. Hälytykset ja ajastimet voivat Plasmassa herättää laitteen keskeytystilasta.</p>
     <p xml:lang="fr">Elle contient des fonctionnalités d'alarmes, de chronomètres, de minuteurs et de fuseaux horaires. Les alarmes et minuteurs sont aussi capables de faire sortir le périphérique du mode de veille lors de l'utilisation de Plasma.</p>
     <p xml:lang="it">Contiene le funzionalità di allarme, timer, cronometro e fuso orario. Gli allarmi e i timer possono risvegliare il dispositivo dalla sospensione se si utilizza Plasma.</p>
     <p xml:lang="nl">Het bevat de functionaliteiten alarm, timer, stopwatch en tijdzone. Alarmen kunnen het apparaat uit status onderbroken laten ontwaken bij gebruik van Plasma.</p>
@@ -128,6 +137,7 @@
   <screenshots>
     <screenshot type="default">
       <caption>Mobile view</caption>
+      <caption xml:lang="ar">عرض المحمول</caption>
       <caption xml:lang="ca">Vista al mòbil</caption>
       <caption xml:lang="ca-valencia">Vista al mòbil</caption>
       <caption xml:lang="cs">Mobilní pohled</caption>
@@ -157,6 +167,7 @@
     </screenshot>
     <screenshot>
       <caption>Desktop view</caption>
+      <caption xml:lang="ar">عرض سطح المكتب</caption>
       <caption xml:lang="ca">Vista a l'escriptori</caption>
       <caption xml:lang="ca-valencia">Vista a l'escriptori</caption>
       <caption xml:lang="cs">Pohled pracovní plochy</caption>
@@ -186,6 +197,7 @@
     </screenshot>
     <screenshot>
       <caption>Timers page</caption>
+      <caption xml:lang="ar">صفحة المؤقتات</caption>
       <caption xml:lang="ca">Pàgina dels temporitzadors</caption>
       <caption xml:lang="ca-valencia">Pàgina dels temporitzadors</caption>
       <caption xml:lang="cs">Stránka s časovači</caption>
@@ -215,6 +227,7 @@
     </screenshot>
     <screenshot>
       <caption>Timer page</caption>
+      <caption xml:lang="ar">صفحة المؤقت</caption>
       <caption xml:lang="ca">Pàgina del temporitzador</caption>
       <caption xml:lang="ca-valencia">Pàgina del temporitzador</caption>
       <caption xml:lang="cs">Stránka s časovačem</caption>
@@ -244,6 +257,7 @@
     </screenshot>
     <screenshot>
       <caption>Stopwatch page</caption>
+      <caption xml:lang="ar">ساعة الإيقاف</caption>
       <caption xml:lang="ca">Pàgina del cronòmetre</caption>
       <caption xml:lang="ca-valencia">Pàgina del cronòmetre</caption>
       <caption xml:lang="cs">Stránka se stopkami</caption>
@@ -273,6 +287,7 @@
     </screenshot>
     <screenshot>
       <caption>Alarms page</caption>
+      <caption xml:lang="ar">ساعة المنبه</caption>
       <caption xml:lang="ca">Pàgina de les alarmes</caption>
       <caption xml:lang="ca-valencia">Pàgina de les alarmes</caption>
       <caption xml:lang="cs">Stránka s upozorněními</caption>
