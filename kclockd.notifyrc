@@ -8,6 +8,7 @@
 [Global]
 IconName=kclock
 Name=Clock
+Name[ar]=الساعة
 Name[ca]=Rellotge
 Name[ca@valencia]=Rellotge
 Name[cs]=Hodiny
@@ -38,6 +39,7 @@ Name[zh_CN]=时钟
 
 [Event/timerFinished]
 Name=Timer finished
+Name[ar]=انتهى المؤقّت
 Name[ca]=El temporitzador ha finalitzat
 Name[ca@valencia]=El temporitzador ha finalitzat
 Name[cs]=Časovač skončil
@@ -66,6 +68,7 @@ Name[uk]=Відлік завершено
 Name[x-test]=xxTimer finishedxx
 Name[zh_CN]=计时器结束
 Comment=Your timer has finished!
+Comment[ar]=انتهى المؤقّت!
 Comment[ca]=El temporitzador ha finalitzat!
 Comment[ca@valencia]=El temporitzador ha finalitzat!
 Comment[cs]=Váš časovač skončil.
@@ -99,6 +102,7 @@ Sound=freedesktop/stereo/alarm-clock-elapsed.oga
 
 [Event/alarm]
 Name=Alarm
+Name[ar]=المنبه
 Name[ca]=Alarma
 Name[ca@valencia]=Alarma
 Name[cs]=Alarm

@@ -3,6 +3,7 @@
 
 [Desktop Entry]
 Name=KClock_KWeather_3x3
+Name[ar]=ساعة_طقس_٣×٣
 Name[ca]=KClock_KWeather_3x3
 Name[ca@valencia]=KClock_KWeather_3x3
 Name[de]=KClock_KWeather_3x3
@@ -30,6 +31,7 @@ Name[uk]=KClock_KWeather_3x3
 Name[x-test]=xxKClock_KWeather_3x3xx
 Name[zh_CN]=KClock_KWeather_3x3
 Comment=KClock widget (3x3 with Weather info)
+Comment[ar]=ودجة الساعة (٣×٣ مع معلومات الطقس)
 Comment[ca]=Giny del KClock (3x3 amb informació meteorològica)
 Comment[ca@valencia]=Giny del KClock (3x3 amb informació meteorològica)
 Comment[de]=KClock-Miniprogramm (3x3 mit Wetter-Info)

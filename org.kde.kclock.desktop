@@ -7,6 +7,7 @@
 
 [Desktop Entry]
 Name=Clock
+Name[ar]=الساعة
 Name[ca]=Rellotge
 Name[ca@valencia]=Rellotge
 Name[cs]=Hodiny
@@ -35,6 +36,7 @@ Name[uk]=Годинник
 Name[x-test]=xxClockxx
 Name[zh_CN]=时钟
 Comment=A convergent clock application for Plasma.
+Comment[ar]=تطبيق ساعة متعددة الواجهات لبلازما
 Comment[ca]=Una aplicació de rellotge convergent per al Plasma.
 Comment[ca@valencia]=Una aplicació de rellotge convergent per al Plasma.
 Comment[de]=Eine zusammenfassende Uhrenanwendung für Plasma.

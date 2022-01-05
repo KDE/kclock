@@ -3,6 +3,7 @@
 
 [Desktop Entry]
 Name=KClock_1x2
+Name[ar]=ساعة_١×٢
 Name[ca]=KClock_1x2
 Name[ca@valencia]=KClock_1x2
 Name[cs]=KClock_1x2
@@ -31,6 +32,7 @@ Name[uk]=KClock_1x2
 Name[x-test]=xxKClock_1x2xx
 Name[zh_CN]=KClock_1x2
 Comment=KClock widget (1x2)
+Comment[ar]=ودجة الساة (1x2)
 Comment[ca]=Giny del KClock (1x2)
 Comment[ca@valencia]=Giny del KClock (1x2)
 Comment[cs]=Widget KClock (1x2)

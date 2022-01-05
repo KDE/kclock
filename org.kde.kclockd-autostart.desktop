@@ -6,6 +6,7 @@
 
 [Desktop Entry]
 Name=Clock
+Name[ar]=الساعة
 Name[ca]=Rellotge
 Name[ca@valencia]=Rellotge
 Name[cs]=Hodiny
@@ -34,6 +35,7 @@ Name[uk]=Годинник
 Name[x-test]=xxClockxx
 Name[zh_CN]=时钟
 Comment=A simple clock application in Kirigami.
+Comment[ar]=تطبيق ساعة بسيط مكتوب كراجامي
 Comment[ca]=Una aplicació senzilla de rellotge creada amb el Kirigami.
 Comment[ca@valencia]=Una aplicació senzilla de rellotge creada amb el Kirigami.
 Comment[cs]=Jednoduchá aplikace hodin v Kirigami.
