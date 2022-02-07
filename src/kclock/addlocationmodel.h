@@ -58,4 +58,7 @@ public:
     explicit AddLocationSearchModel(QObject *parent = nullptr);
 
     Q_INVOKABLE void addLocation(int index);
+
+protected:
+    bool lessThan(const QModelIndex &left, const QModelIndex &right) const override;
 };

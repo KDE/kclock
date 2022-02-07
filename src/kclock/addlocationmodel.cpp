@@ -117,8 +117,8 @@ AddLocationSearchModel::AddLocationSearchModel(QObject *parent)
 {
     setFilterCaseSensitivity(Qt::CaseInsensitive);
     setSourceModel(AddLocationModel::instance());
-    setSortRole(AddLocationModel::CityRole);
     setFilterRole(AddLocationModel::IdRole);
+    sort(0);
 }
 
 void AddLocationSearchModel::addLocation(int index)
@@ -131,4 +131,9 @@ void AddLocationSearchModel::addLocation(int index)
 
     AddLocationModel::instance()->load();
     SavedLocationsModel::instance()->load();
+}
+
+bool AddLocationSearchModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
+{
+    return sourceModel()->data(left, AddLocationModel::CityRole) < sourceModel()->data(right, AddLocationModel::CityRole);
 }
