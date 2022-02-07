@@ -64,6 +64,15 @@ int main(int argc, char *argv[])
     aboutData.addAuthor(i18n("Han Young"), QString(), QStringLiteral("hanyoung@protonmail.com"));
     KAboutData::setApplicationData(aboutData);
 
+    // ensure kclockd is up with dbus autostart, any call will do
+    QDBusInterface *testInterface = new QDBusInterface(QStringLiteral("org.kde.kclockd"),
+                                                       QStringLiteral("/Alarms"),
+                                                       QStringLiteral("org.freedesktop.DBus.Introspectable"),
+                                                       QDBusConnection::sessionBus(),
+                                                       nullptr);
+    testInterface->call(QStringLiteral("Introspect"));
+    testInterface->deleteLater();
+
     // initialize models
     auto *stopwatchTimer = new StopwatchTimer();
     auto *weekModel = new WeekModel();
