@@ -23,6 +23,7 @@
   <name xml:lang="fi">Kello</name>
   <name xml:lang="fr">Horloge</name>
   <name xml:lang="hi">घड़ी</name>
+  <name xml:lang="hu">Óra</name>
   <name xml:lang="id">Clock</name>
   <name xml:lang="it">Orologio</name>
   <name xml:lang="ko">시계</name>
@@ -48,6 +49,7 @@
   <summary xml:lang="fi">Aseta hälytyksiä ja ajastimia, käytä sekuntikelloa ja hallitse maailmankelloa</summary>
   <summary xml:lang="fr">Régler des alarmes et des minuteurs, utiliser un chronomètre et gérer les horloges mondiales.</summary>
   <summary xml:lang="hi">अलार्म और टाइमर सेट करें, विराम घड़ी का उपयोग करें और विश्व घड़ियों का प्रबंधन करें</summary>
+  <summary xml:lang="hu">Állítson be ébresztőket és időzítőket, használjon stoppert és kezeljen világórákat</summary>
   <summary xml:lang="it">Imposta allarmi e timer, usa un cronometro e gestisci gli orologi del mondo</summary>
   <summary xml:lang="nl">Zet alarmen en timers, gebruik een stopwatch en beheer wereldklokken</summary>
   <summary xml:lang="pa">ਅਲਾਰਮ ਤੇ ਟਾਈਮਰ ਸੈੱਟ ਕਰੋ, ਸਟਾਪ-ਵਾਚ ਵਰਤੋ ਅਤੇ ਸੰਸਾਰ ਦੀਆਂ ਘੜੀਆਂ ਦਾ ਇੰਤਜ਼ਾਮ ਕਰੋ</summary>
@@ -73,6 +75,7 @@
   <developer_name xml:lang="fi">KDE-yhteisö</developer_name>
   <developer_name xml:lang="fr">Communauté de KDE</developer_name>
   <developer_name xml:lang="hi">केडीई समुदाय</developer_name>
+  <developer_name xml:lang="hu">A KDE Közösség</developer_name>
   <developer_name xml:lang="id">Komunitas KDE</developer_name>
   <developer_name xml:lang="it">Comunità KDE</developer_name>
   <developer_name xml:lang="ko">KDE 커뮤니티</developer_name>
@@ -100,6 +103,7 @@
     <p xml:lang="fi">Yleiskellosovellus työpöydälle ja mobiiliin.</p>
     <p xml:lang="fr">Une application d'horloge universelle pour bureau et mobile.</p>
     <p xml:lang="hi">डेस्कटॉप और मोबाइल के लिए एक सार्वजनीन घड़ी अनुप्रयोग।</p>
+    <p xml:lang="hu">Univerzális óraalkalmazás telefonra és asztali számítógépre.</p>
     <p xml:lang="it">Un'applicazione universale per l'orologio per desktop e per mobile.</p>
     <p xml:lang="nl">Een universele kloktoepassing voor bureaublad en mobiel.</p>
     <p xml:lang="pa">ਡੈਸਕਟਾਪ ਤੇ ਮੋਬਾਈਲ ਲਈ ਸਾਂਝੀ ਘੜੀ ਐਪਲੀਕੇਸ਼ਨ ਹੈ।</p>
@@ -120,6 +124,7 @@
     <p xml:lang="fi">Sisältää hälytys-, ajastin, sekuntikello- ja aikavyöhyketoiminnot. Hälytykset ja ajastimet voivat Plasmassa herättää laitteen keskeytystilasta.</p>
     <p xml:lang="fr">Elle contient des fonctionnalités d'alarmes, de chronomètres, de minuteurs et de fuseaux horaires. Les alarmes et minuteurs sont aussi capables de faire sortir le périphérique du mode de veille lors de l'utilisation de Plasma.</p>
     <p xml:lang="hi">प्लाज़्मा के लिए एक संसृत घड़ी अनुप्रयोग। इसमें अलार्म, टाइमर,  विराम घड़ी और समय क्षेत्र विषेशताएँ शामिल हैं। प्लाज़्मा का उपयोग करते समय अलार्म उपकरण को तंत्र निलंबन से जगाने में भी सक्षम होते हैं।</p>
+    <p xml:lang="hu">Ébresztő, időzítő, stopper és időzóna funkciókat tartalmaz. Plasma használatakor az ébresztők és az időzítők képesek felébreszteni az eszközt felfüggesztett állapotból.</p>
     <p xml:lang="it">Contiene le funzionalità di allarme, timer, cronometro e fuso orario. Gli allarmi e i timer possono risvegliare il dispositivo dalla sospensione se si utilizza Plasma.</p>
     <p xml:lang="nl">Het bevat de functionaliteiten alarm, timer, stopwatch en tijdzone. Alarmen kunnen het apparaat uit status onderbroken laten ontwaken bij gebruik van Plasma.</p>
     <p xml:lang="pa">ਇਸ ਵਿੱਚ ਅਲਾਰਮ, ਟਾਈਮਰ, ਸਟਾਪ-ਵਾਚ ਅਤੇ ਸਮਾਂ-ਖੇਤਰ ਦੀਆਂ ਸਹੂਲਤਾਂ ਹਨ। ਪਲਾਜ਼ਮਾ ਉੱਤੇ ਅਲਾਰਮ ਤੇ ਟਾਈਮਰ ਸਸਪੈਂਡ ਤੋਂ ਡਿਵਾਈਸ ਨੂੰ ਚਾਲੂ ਕਰ ਸਕਦੇ ਹਨ।</p>
@@ -155,6 +160,7 @@
       <caption xml:lang="fi">Mobiilinäkymä</caption>
       <caption xml:lang="fr">Affichage pour mobile</caption>
       <caption xml:lang="hi">मोबाइल दृश्य</caption>
+      <caption xml:lang="hu">Mobilnézet</caption>
       <caption xml:lang="it">Vista mobile</caption>
       <caption xml:lang="ko">모바일 보기</caption>
       <caption xml:lang="nl">Beeld op mobiel</caption>
@@ -185,6 +191,7 @@
       <caption xml:lang="fi">Työpöytänäkymä</caption>
       <caption xml:lang="fr">Affichage de bureau</caption>
       <caption xml:lang="hi">डेस्कटॉप दृश्य</caption>
+      <caption xml:lang="hu">Asztali nézet</caption>
       <caption xml:lang="it">Vista desktop</caption>
       <caption xml:lang="ko">데스크톱 보기</caption>
       <caption xml:lang="nl">Beeld op bureaublad</caption>
@@ -215,6 +222,7 @@
       <caption xml:lang="fi">Ajastinsivu</caption>
       <caption xml:lang="fr">Page de chronomètres</caption>
       <caption xml:lang="hi">टाइमरों का पृष्ठ</caption>
+      <caption xml:lang="hu">Időzítők oldal</caption>
       <caption xml:lang="it">Pagina dei timer</caption>
       <caption xml:lang="ko">타이머 쪽</caption>
       <caption xml:lang="nl">Pagina met timers</caption>
@@ -245,6 +253,7 @@
       <caption xml:lang="fi">Ajastinsivu</caption>
       <caption xml:lang="fr">Page de chronomètre</caption>
       <caption xml:lang="hi">टाइमर पृष्ठ</caption>
+      <caption xml:lang="hu">Időzítő oldal</caption>
       <caption xml:lang="it">Pagina del timer</caption>
       <caption xml:lang="ko">타이머 쪽</caption>
       <caption xml:lang="nl">Pagina met timer</caption>
@@ -275,6 +284,7 @@
       <caption xml:lang="fi">Sekuntikellosivu</caption>
       <caption xml:lang="fr">Page de minuteur</caption>
       <caption xml:lang="hi">विराम घड़ी पृष्ठ</caption>
+      <caption xml:lang="hu">Stopper oldal</caption>
       <caption xml:lang="it">Pagina del cronometro</caption>
       <caption xml:lang="ko">초시계 쪽</caption>
       <caption xml:lang="nl">Pagina met stopwatch</caption>
@@ -305,6 +315,7 @@
       <caption xml:lang="fi">Hälytyssivu</caption>
       <caption xml:lang="fr">Page d'alarmes</caption>
       <caption xml:lang="hi">अलार्मों का पृष्ठ</caption>
+      <caption xml:lang="hu">Ébresztés oldal</caption>
       <caption xml:lang="it">Pagina degli allarmi</caption>
       <caption xml:lang="ko">알람 쪽</caption>
       <caption xml:lang="nl">Pagina met alarmen</caption>
