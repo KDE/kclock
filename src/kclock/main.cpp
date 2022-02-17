@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
                          QStringLiteral(KCLOCK_VERSION_STRING),
                          QStringLiteral("Set alarms and timers, use a stopwatch, and manage world clocks"),
                          KAboutLicense::GPL,
-                         i18n("© 2020-2021 KDE Community"));
+                         i18n("© 2020-2022 KDE Community"));
     aboutData.setBugAddress("https://invent.kde.org/plasma-mobile/kclock/-/issues");
     aboutData.addAuthor(i18n("Devin Lin"), QString(), QStringLiteral("devin@kde.org"));
     aboutData.addAuthor(i18n("Han Young"), QString(), QStringLiteral("hanyoung@protonmail.com"));
