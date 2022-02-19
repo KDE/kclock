@@ -99,20 +99,20 @@ QVariant SavedLocationsModel::data(const QModelIndex &index, int role) const
         int offset = m_timeZones[row].offsetFromUtc(QDateTime::currentDateTime()) - QTimeZone::systemTimeZone().offsetFromUtc(QDateTime::currentDateTime());
         offset /= 60; // convert to minutes
 
-        QString hour = abs(offset) / 60 == 1 ? i18n("hour") : i18n("hours");
+        bool isHour = abs(offset) / 60 == 1;
 
         if (offset > 0) {
             if (offset % 60) { // half an hour ahead
-                return QVariant(i18n("%1 and a half hours ahead", offset / 60));
+                return isHour ? QVariant(i18n("%1 hour and 30 minutes ahead", offset / 60)) : QVariant(i18n("%1 hours and 30 minutes ahead", offset / 60));
             } else { // full hours ahead
-                return QVariant(i18n("%1 %2 ahead", offset / 60, hour));
+                return isHour ? QVariant(i18n("%1 hour ahead", offset / 60)) : QVariant(i18n("%1 hours ahead", offset / 60));
             }
         } else if (offset < 0) {
             offset = abs(offset);
             if (offset % 60) { // half an hour behind
-                return QVariant(i18n("%1 and a half hours behind", offset / 60));
+                return isHour ? QVariant(i18n("%1 hour and 30 minutes behind", offset / 60)) : QVariant(i18n("%1 hours and 30 minutes behind", offset / 60));
             } else { // full hours behind
-                return QVariant(i18n("%1 %2 behind", offset / 60, hour));
+                return isHour ? QVariant(i18n("%1 hour behind", offset / 60)) : QVariant(i18n("%1 hours behind", offset / 60));
             }
         } else {
             return QVariant(i18n("Local time"));
