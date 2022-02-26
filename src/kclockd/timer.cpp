@@ -7,15 +7,6 @@
  */
 
 #include "timer.h"
-#include "utilities.h"
-
-#include <QProcess>
-
-#include <KLocalizedString>
-#include <KNotification>
-
-#include <QDBusConnection>
-#include <QJsonObject>
 
 Timer::Timer(int length, QString label, QString commandTimeout, bool running, QObject *parent)
     : QObject{parent}
@@ -23,7 +14,6 @@ Timer::Timer(int length, QString label, QString commandTimeout, bool running, QO
     , m_length{length}
     , m_label{label}
     , m_commandTimeout{commandTimeout}
-    , m_looping{false}
 {
     init();
 
@@ -58,6 +48,18 @@ void Timer::init()
     connect(&Utilities::instance(), &Utilities::wakeup, this, &Timer::timeUp);
     connect(&Utilities::instance(), &Utilities::needsReschedule, this, &Timer::reschedule);
 
+    // initialize notification
+    m_notification->setIconName(QStringLiteral("kclock"));
+    m_notification->setTitle(i18n("Timer complete"));
+    m_notification->setText(i18n("Your timer %1 has finished!", label()));
+    m_notification->setDefaultAction(i18n("View"));
+    m_notification->setUrgency(KNotification::HighUrgency);
+    m_notification->setAutoDelete(false); // don't auto-delete when closing
+
+    connect(m_notification, &KNotification::defaultActivated, this, &Timer::dismiss);
+    connect(m_notification, &KNotification::action1Activated, this, &Timer::dismiss);
+    connect(m_notification, &KNotification::closed, this, &Timer::dismiss);
+
     // initialize DBus object
     QDBusConnection::sessionBus().registerObject(QStringLiteral("/Timers/") + m_uuid.toString(QUuid::Id128),
                                                  this,
@@ -86,7 +88,6 @@ void Timer::toggleRunning()
 void Timer::toggleLooping()
 {
     m_looping = !m_looping;
-
     Q_EMIT loopingChanged();
 
     TimerModel::instance()->save();
@@ -97,6 +98,7 @@ void Timer::reset()
     setRunning(false);
     m_hasElapsed = 0;
 
+    // ensure UI keeps up to date with hasElapsed
     Q_EMIT runningChanged();
 }
 
@@ -108,82 +110,99 @@ int Timer::elapsed() const
         return m_hasElapsed;
     }
 }
-QString Timer::getUUID()
+
+QString Timer::uuid() const
 {
     return m_uuid.toString();
 }
-const QUuid &Timer::uuid() const
-{
-    return m_uuid;
-};
-const int &Timer::length() const
+
+int Timer::length() const
 {
     return m_length;
 }
+
 void Timer::setLength(int length)
 {
-    m_length = length;
-    Q_EMIT lengthChanged();
-    TimerModel::instance()->save();
+    if (length != m_length) {
+        m_length = length;
+        Q_EMIT lengthChanged();
+
+        TimerModel::instance()->save();
+    }
 }
 
-const QString &Timer::label() const
+QString Timer::label() const
 {
     return m_label;
 }
 
 void Timer::setLabel(QString label)
 {
-    m_label = label;
-    Q_EMIT labelChanged();
-    TimerModel::instance()->save();
+    if (label != m_label) {
+        m_label = label;
+        Q_EMIT labelChanged();
+
+        TimerModel::instance()->save();
+    }
 }
 
-const QString &Timer::commandTimeout() const
+QString Timer::commandTimeout() const
 {
     return m_commandTimeout;
 }
 
 void Timer::setCommandTimeout(QString commandTimeout)
 {
-    m_commandTimeout = commandTimeout;
-    Q_EMIT commandTimeoutChanged();
-    TimerModel::instance()->save();
+    if (m_commandTimeout != commandTimeout) {
+        m_commandTimeout = commandTimeout;
+        Q_EMIT commandTimeoutChanged();
+
+        TimerModel::instance()->save();
+    }
 }
 
-const bool &Timer::looping() const
+bool Timer::looping() const
 {
     return m_looping;
 }
 
-const bool &Timer::running() const
+bool Timer::running() const
 {
     return m_running;
+}
+
+bool Timer::ringing() const
+{
+    return m_ringing;
 }
 
 void Timer::timeUp(int cookie)
 {
     if (cookie == m_cookie) {
-        this->sendNotification();
-        this->m_cookie = -1;
+        ring();
+        m_cookie = -1;
+
+        // run command since timer has ended
         if (m_commandTimeout.isEmpty()) {
-            QProcess *process = new QProcess;
-            process->start(m_commandTimeout);
+            QProcess::execute(m_commandTimeout, {});
         }
+
+        // loop if it is set
         if (m_looping) {
-            this->reset();
-            this->setRunning(true);
+            reset();
+            setRunning(true);
         } else {
-            this->setRunning(false);
-            this->m_hasElapsed = m_length;
+            setRunning(false);
+            m_hasElapsed = m_length;
         }
     }
 }
 
 void Timer::setRunning(bool running)
 {
-    if (m_running == running)
+    if (m_running == running) {
         return;
+    }
 
     if (m_running) {
         m_hasElapsed = QDateTime::currentSecsSinceEpoch() - m_startTime;
@@ -193,7 +212,8 @@ void Timer::setRunning(bool running)
             m_cookie = -1;
         }
     } else {
-        if (m_hasElapsed == m_length) { // reset elapsed if the timer was already finished
+        if (m_hasElapsed == m_length) {
+            // reset elapsed if the timer was already finished
             m_hasElapsed = 0;
         }
         Utilities::instance().incfActiveCount();
@@ -202,29 +222,29 @@ void Timer::setRunning(bool running)
     }
 
     m_running = running;
-
     Q_EMIT runningChanged();
 
     TimerModel::instance()->save();
 }
 
-void Timer::sendNotification()
+void Timer::ring()
 {
     qDebug("Timer finished, sending notification...");
+    m_notification->sendEvent();
 
-    KNotification *notif = new KNotification(QStringLiteral("timerFinished"));
-    notif->setIconName(QStringLiteral("kclock"));
-    notif->setTitle(i18n("Timer complete"));
-    notif->setText(i18n("Your timer %1 has finished!", this->label()));
-    notif->setDefaultAction(i18n("View"));
-    notif->setUrgency(KNotification::HighUrgency);
-    notif->setFlags(KNotification::NotificationFlag::LoopSound | KNotification::NotificationFlag::Persistent);
-    connect(notif, &KNotification::closed, [notif] {
-        notif->close();
-    });
-
-    notif->sendEvent();
+    m_ringing = true;
+    Q_EMIT ringingChanged();
 }
+
+void Timer::dismiss()
+{
+    qDebug() << "Timer dismissed.";
+    m_notification->close();
+
+    m_ringing = false;
+    Q_EMIT ringingChanged();
+}
+
 void Timer::reschedule()
 {
     if (m_running) {

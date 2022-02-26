@@ -69,14 +69,14 @@ void TimerModel::addTimer(int length, QString label, QString commandTimeout, boo
 
     save();
 
-    Q_EMIT timerAdded(timer->uuid().toString());
+    Q_EMIT timerAdded(timer->uuid());
 }
 
 void TimerModel::removeTimer(QString uuid)
 {
     int ind = -1;
     for (int i = 0; i < m_timerList.size(); i++) {
-        if (m_timerList[i]->uuid().toString() == uuid) {
+        if (m_timerList[i]->uuid() == uuid) {
             ind = i;
             break;
         }
@@ -93,7 +93,7 @@ void TimerModel::remove(int index)
 
     auto timer = m_timerList.at(index);
 
-    Q_EMIT timerRemoved(timer->uuid().toString());
+    Q_EMIT timerRemoved(timer->uuid());
 
     m_timerList.removeAt(index);
     timer->deleteLater();
@@ -110,7 +110,7 @@ QStringList TimerModel::timers() const
     static QRegularExpression dbusfilter(QStringLiteral("[{}-]"));
 
     for (const Timer *timer : qAsConst(m_timerList)) {
-        ret << timer->uuid().toString().replace(dbusfilter, QString());
+        ret << timer->uuid().replace(dbusfilter, QString());
     }
     return ret;
 }

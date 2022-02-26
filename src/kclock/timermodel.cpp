@@ -25,21 +25,23 @@ TimerModel *TimerModel::instance()
 }
 
 TimerModel::TimerModel(QObject *parent)
-    : m_interface(new OrgKdeKclockTimerModelInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Timers"), QDBusConnection::sessionBus(), this))
+    : QAbstractListModel{parent}
+    , m_interface(new OrgKdeKclockTimerModelInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Timers"), QDBusConnection::sessionBus(), this))
 {
     if (m_interface->isValid()) {
+        // connect timer signals
         connect(m_interface, SIGNAL(timerAdded(QString)), this, SLOT(addTimer(QString)));
         connect(m_interface, SIGNAL(timerRemoved(QString)), this, SLOT(removeTimer(QString)));
     }
-    setConnectedToDaemon(m_interface->isValid());
 
+    // load timers
     const QStringList timers = m_interface->timers();
-
     for (const QString &timerId : timers) {
-        addTimer(timerId, false);
+        addTimer(timerId);
     }
 
-    // watch for kclockd
+    // watch for kclockd's status
+    setConnectedToDaemon(m_interface->isValid());
     m_watcher = new QDBusServiceWatcher(QStringLiteral("org.kde.kclockd"), QDBusConnection::sessionBus(), QDBusServiceWatcher::WatchForOwnerChange, this);
     connect(m_watcher, &QDBusServiceWatcher::serviceRegistered, this, [this]() -> void {
         setConnectedToDaemon(true);
@@ -57,6 +59,8 @@ int TimerModel::rowCount(const QModelIndex &parent) const
 
 QVariant TimerModel::data(const QModelIndex &index, int role) const
 {
+    Q_UNUSED(role)
+
     if ((index.row() < 0) || (index.row() >= m_timersList.count()))
         return {};
 
@@ -68,14 +72,9 @@ QHash<int, QByteArray> TimerModel::roleNames() const
     return {{TimerRole, "timer"}};
 }
 
-void TimerModel::addTimer(int length, QString label, QString commandTimeout, bool running)
-{
-    m_interface->addTimer(length, label, commandTimeout, running);
-}
-
 void TimerModel::addNew(int length, QString label, QString commandTimeout)
 {
-    this->addTimer(length, label, commandTimeout, false);
+    m_interface->addTimer(length, label, commandTimeout, false);
 }
 
 void TimerModel::remove(int index)
@@ -83,22 +82,13 @@ void TimerModel::remove(int index)
     if (index < 0 || index >= m_timersList.size())
         return;
 
-    beginRemoveRows(QModelIndex(), index, index);
+    // request kclockd to remove timer, which will trigger a signal back to remove it from the UI
     m_interface->removeTimer(m_timersList.at(index)->uuid().toString());
-    m_timersList.at(index)->deleteLater();
-
-    m_timersList.removeAt(index);
-    endRemoveRows();
 }
 
 void TimerModel::addTimer(QString uuid)
 {
-    this->addTimer(uuid, true);
-}
-
-void TimerModel::addTimer(QString uuid, bool justCreated)
-{
-    auto *timer = new Timer(uuid.remove(QRegularExpression(QStringLiteral("[{}-]"))), justCreated);
+    auto *timer = new Timer(uuid.remove(QRegularExpression(QStringLiteral("[{}-]"))));
 
     Q_EMIT beginInsertRows(QModelIndex(), 0, 0);
     m_timersList.insert(0, timer);
@@ -107,16 +97,14 @@ void TimerModel::addTimer(QString uuid, bool justCreated)
 
 void TimerModel::removeTimer(QString uuid)
 {
-    auto index = 0;
-    for (auto timer : m_timersList) {
-        if (timer->uuid().toString() == uuid) {
-            break;
+    for (int i = 0; i < m_timersList.size(); ++i) {
+        if (m_timersList[i]->uuid().toString() == uuid) {
+            beginRemoveRows(QModelIndex(), i, i);
+            m_timersList.at(i)->deleteLater();
+            m_timersList.removeAt(i);
+            endRemoveRows();
         }
-        ++index;
     }
-
-    // don't need to check index out of bound, remove(index) takes care of that
-    remove(index);
 }
 
 bool TimerModel::connectedToDaemon()

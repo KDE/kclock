@@ -17,65 +17,80 @@
 class Timer : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(int length READ length WRITE setLength NOTIFY propertyChanged)
+    Q_PROPERTY(int length READ length WRITE setLength NOTIFY lengthChanged)
+    Q_PROPERTY(QString lengthPretty READ lengthPretty NOTIFY lengthChanged)
     Q_PROPERTY(int elapsed READ elapsed NOTIFY elapsedChanged)
-    Q_PROPERTY(QString lengthPretty READ lengthPretty NOTIFY propertyChanged)
     Q_PROPERTY(QString elapsedPretty READ elapsedPretty NOTIFY elapsedChanged)
-    Q_PROPERTY(QString label READ label WRITE setLabel NOTIFY propertyChanged)
-    Q_PROPERTY(QString commandTimeout READ commandTimeout WRITE setCommandTimeout NOTIFY propertyChanged)
-    Q_PROPERTY(bool running READ running NOTIFY propertyChanged)
-    Q_PROPERTY(bool looping READ looping NOTIFY propertyChanged)
-    Q_PROPERTY(bool justCreated MEMBER m_justCreated NOTIFY propertyChanged)
+    Q_PROPERTY(QString label READ label WRITE setLabel NOTIFY labelChanged)
+    Q_PROPERTY(QString commandTimeout READ commandTimeout WRITE setCommandTimeout NOTIFY commandTimeoutChanged)
+    Q_PROPERTY(bool running READ running NOTIFY runningChanged)
+    Q_PROPERTY(bool looping READ looping NOTIFY loopingChanged)
+    Q_PROPERTY(bool ringing READ ringing NOTIFY ringingChanged)
 
 public:
-    Timer();
-    explicit Timer(QString uuid, bool justCreated = true);
+    explicit Timer(QString uuid = QString{}, QObject *parent = nullptr);
 
     const QUuid &uuid();
+
+    int length() const;
+    QString lengthPretty() const;
+    void setLength(int length);
+
+    int elapsed() const;
+    QString elapsedPretty() const;
+
+    QString label() const;
+    void setLabel(QString label);
+
+    QString commandTimeout() const;
+    void setCommandTimeout(QString commandTimeout);
+
+    bool running() const;
+
+    bool looping() const;
+
+    bool ringing() const;
+
     Q_INVOKABLE void toggleRunning();
     Q_INVOKABLE void toggleLooping();
     Q_INVOKABLE void reset();
     Q_INVOKABLE void addMinute();
-
-    QString lengthPretty() const;
-    QString elapsedPretty() const;
-
-    int length() const;
-    void setLength(int length);
-
-    const int &elapsed() const;
-
-    const QString &label() const;
-    void setLabel(QString label);
-
-    const QString &commandTimeout() const;
-    void setCommandTimeout(QString commandTimeout);
-
-    const bool &looping() const;
-    const bool &running() const;
+    Q_INVOKABLE void dismiss();
 
 Q_SIGNALS:
-    void propertyChanged();
+    void lengthChanged();
     void elapsedChanged();
+    void labelChanged();
+    void commandTimeoutChanged();
+    void runningChanged();
+    void loopingChanged();
+    void ringingChanged();
 
 private Q_SLOTS:
     void updateLength();
+    void updateElapsed();
     void updateLabel();
-    void updateLooping();
     void updateCommandTimeout();
     void updateRunning();
+    void updateLooping();
+    void updateRinging();
 
 private:
     void animation(bool start);
 
-    int m_length, m_elapsed; // seconds
+    int m_length;
+    int m_elapsed;
+
     QString m_label;
     QString m_commandTimeout;
+
     bool m_running;
     bool m_looping;
-    bool m_justCreated;
+    bool m_ringing;
 
     QUuid m_uuid;
+
     org::kde::kclock::Timer *m_interface;
-    QTimer *m_timer = nullptr;
+
+    QTimer *m_animationTimer;
 };

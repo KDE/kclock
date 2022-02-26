@@ -9,10 +9,17 @@
 #pragma once
 
 #include "timermodel.h"
+#include "utilities.h"
 
+#include <QDBusConnection>
 #include <QDateTime>
+#include <QJsonObject>
 #include <QObject>
+#include <QProcess>
 #include <QUuid>
+
+#include <KLocalizedString>
+#include <KNotification>
 
 class Timer : public QObject
 {
@@ -23,6 +30,7 @@ class Timer : public QObject
     Q_PROPERTY(QString commandTimeout READ commandTimeout WRITE setCommandTimeout NOTIFY commandTimeoutChanged)
     Q_PROPERTY(bool running READ running NOTIFY runningChanged)
     Q_PROPERTY(bool looping READ looping NOTIFY loopingChanged)
+    Q_PROPERTY(bool ringing READ ringing NOTIFY ringingChanged)
 
 public:
     explicit Timer(int length = 0, QString label = QString{}, QString commandTimeout = QString{}, bool running = false, QObject *parent = nullptr);
@@ -39,28 +47,30 @@ public:
     Q_SCRIPTABLE void toggleLooping();
     Q_SCRIPTABLE void reset();
     Q_SCRIPTABLE int elapsed() const;
-    Q_SCRIPTABLE QString getUUID();
 
-    const QUuid &uuid() const;
+    Q_SCRIPTABLE QString uuid() const;
 
-    const int &length() const;
+    int length() const;
     void setLength(int length);
 
-    const QString &label() const;
+    QString label() const;
     void setLabel(QString label);
 
-    const QString &commandTimeout() const;
+    QString commandTimeout() const;
     void setCommandTimeout(QString commandTimeout);
 
-    const bool &looping() const;
-    const bool &running() const;
+    bool looping() const;
+    bool running() const;
+    bool ringing() const;
+    Q_SCRIPTABLE void dismiss();
 
 Q_SIGNALS:
     Q_SCRIPTABLE void lengthChanged();
     Q_SCRIPTABLE void labelChanged();
+    Q_SCRIPTABLE void commandTimeoutChanged();
     Q_SCRIPTABLE void runningChanged();
     Q_SCRIPTABLE void loopingChanged();
-    Q_SCRIPTABLE void commandTimeoutChanged();
+    Q_SCRIPTABLE void ringingChanged();
 
 private Q_SLOTS:
     void timeUp(int cookie);
@@ -68,7 +78,7 @@ private Q_SLOTS:
 
 private:
     void setRunning(bool running);
-    void sendNotification();
+    void ring();
 
     // -- properties persisted to storage: --
 
@@ -100,4 +110,10 @@ private:
 
     // whether the timer is looping
     bool m_looping = false;
+
+    // whether the timer is ringing
+    bool m_ringing = false;
+
+    KNotification *m_notification =
+        new KNotification{QStringLiteral("timerFinished"), KNotification::NotificationFlag::LoopSound | KNotification::NotificationFlag::Persistent, this};
 };

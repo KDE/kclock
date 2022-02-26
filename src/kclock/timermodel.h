@@ -42,14 +42,11 @@ Q_SIGNALS:
     void connectedToDaemonChanged();
 
 private Q_SLOTS:
-    void addTimer(QString uuid); // remote add, always justCreated
-    void addTimer(int length = 300, QString label = i18n("New timer"), QString commandTimeout = QString{}, bool running = false);
+    void addTimer(QString uuid);
     void removeTimer(QString uuid);
 
 private:
     explicit TimerModel(QObject *parent = nullptr);
-
-    void addTimer(QString uuid, bool justCreated);
 
     QList<Timer *> m_timersList;
     OrgKdeKclockTimerModelInterface *m_interface;
