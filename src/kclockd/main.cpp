@@ -10,6 +10,7 @@
 #include "kclockdsettings.h"
 #include "kclocksettingsadaptor.h"
 #include "timermodel.h"
+#include "version.h"
 
 #include <KAboutData>
 #include <KConfig>
@@ -36,16 +37,18 @@ int main(int argc, char *argv[])
     KLocalizedString::setApplicationDomain("kclockd");
     KAboutData aboutData(QStringLiteral("kclockd"),
                          QStringLiteral("KClock daemon"),
-                         QStringLiteral("1.0"),
+                         QStringLiteral(KCLOCK_VERSION_STRING),
                          QStringLiteral("KClock daemon"),
                          KAboutLicense::GPL,
-                         i18n("© 2020-2021 KDE Community"));
+                         i18n("© 2020-2022 KDE Community"));
     aboutData.addAuthor(i18n("Devin Lin"), QLatin1String(), QStringLiteral("devin@kde.org"));
     aboutData.addAuthor(i18n("Han Young"), QLatin1String(), QStringLiteral("hanyoung@protonmail.com"));
     KAboutData::setApplicationData(aboutData);
 
     // only allow one instance
     KDBusService service(KDBusService::Unique);
+
+    qDebug() << "Starting kclockd" << KCLOCK_VERSION_STRING;
 
     // initialize models
     new KClockSettingsAdaptor(KClockSettings::self());

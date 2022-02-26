@@ -108,7 +108,7 @@ void AlarmModel::scheduleAlarm()
 
     // if there is an alarm that needs to rung
     if (minTime != std::numeric_limits<quint64>::max()) {
-        qDebug() << "Scheduled alarm wakeup at" << QDateTime::fromSecsSinceEpoch(minTime).toString();
+        qDebug() << "Scheduled alarm wakeup at" << QDateTime::fromSecsSinceEpoch(minTime).toString() << ".";
         m_nextAlarmTime = minTime;
 
         // if we scheduled a wakeup before, cancel it first
@@ -120,7 +120,7 @@ void AlarmModel::scheduleAlarm()
     } else {
         // this doesn't explicitly cancel the alarm currently waiting in m_worker if disabled by user
         // because alarm->ring() will return immediately if disabled
-        qDebug() << "No alarms scheduled";
+        qDebug() << "No alarms scheduled.";
 
         m_nextAlarmTime = 0;
         Utilities::instance().clearWakeup(m_cookie);
