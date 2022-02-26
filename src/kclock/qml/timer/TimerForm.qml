@@ -130,7 +130,7 @@ Kirigami.FormLayout {
     TextField {
         id: label
         Kirigami.FormData.label: i18n("<b>Label:</b>")
-        text: i18n("New Timer") // default
+        text: i18n("Timer") // default
         focus: true
     }
     TextField {

@@ -44,6 +44,7 @@
         <file>qml/timer/TimerListDelegate.qml</file>
         <file>qml/timer/TimerListPage.qml</file>
         <file>qml/timer/TimerPage.qml</file>
+        <file>qml/timer/TimerRingingPopup.qml</file>
         
     </qresource>
 </RCC>

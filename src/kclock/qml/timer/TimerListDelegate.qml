@@ -27,6 +27,13 @@ Kirigami.AbstractCard {
     readonly property bool running: timer ? timer.running : false
     readonly property bool looping: timer ? timer.looping : false
     
+    showClickFeedback: true
+    onClicked: {
+        timerPageLoader.active = true;
+        applicationWindow().pageStack.push(timerPageLoader.item);
+    }
+    
+    // timer page
     Loader {
         id: timerPageLoader
         active: false
@@ -38,12 +45,40 @@ Kirigami.AbstractCard {
         }
     }
     
-    showClickFeedback: true
-    onClicked: {
-        timerPageLoader.active = true;
-        applicationWindow().pageStack.push(timerPageLoader.item);
-    }
+    // timer ringing popup
+    Loader {
+        id: popupLoader
+        active: false
+        sourceComponent: TimerRingingPopup {
+            timer: root.timer
+            onVisibleChanged: {
+                if (!visible) {
+                    popupLoader.active = false;
+                }
+            }
+        }
         
+        Component.onCompleted: determineState()
+        function determineState() {
+            if (root.timer.ringing) {
+                popupLoader.active = true;
+                popupLoader.item.open();
+            } else if (popupLoader.item) {
+                popupLoader.item.close();
+            }
+        }
+        
+        Connections {
+            target: root.timer
+            ignoreUnknownSignals: true
+            
+            function onRingingChanged() {
+                popupLoader.determineState();
+            }
+        }
+    }
+    
+    // timer card contents
     contentItem: Item {
         implicitWidth: delegateLayout.implicitWidth
         implicitHeight: delegateLayout.implicitHeight
