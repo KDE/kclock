@@ -59,6 +59,14 @@ Alarm::Alarm(QString name, int hours, int minutes, int daysOfWeek, QString audio
     init(parent);
 }
 
+Alarm::~Alarm()
+{
+    // ensure alarm doesn't continue ringing after deletion
+    if (m_ringing) {
+        AlarmPlayer::instance().stop();
+    }
+}
+
 void Alarm::init(AlarmModel *parent)
 {
     // setup notification
@@ -67,7 +75,6 @@ void Alarm::init(AlarmModel *parent)
     m_notification->setTitle(name() == QString() ? i18n("Alarm") : name());
     m_notification->setText(QLocale::system().toString(QTime::currentTime(), QLocale::ShortFormat));
     m_notification->setDefaultAction(i18n("View"));
-    m_notification->setFlags(KNotification::NotificationFlag::Persistent);
     m_notification->setAutoDelete(false); // don't auto-delete when closing
 
     connect(m_notification, &KNotification::defaultActivated, this, &Alarm::dismiss);

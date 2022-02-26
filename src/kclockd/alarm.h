@@ -59,6 +59,8 @@ public:
 
     void init(AlarmModel *parent);
 
+    ~Alarm();
+
     // serialize this alarm to json
     QString serialize();
 
@@ -171,7 +173,7 @@ private:
     // whether snooze just occurred
     bool m_justSnoozed;
 
-    KNotification *m_notification = new KNotification{QStringLiteral("alarm")};
+    KNotification *m_notification = new KNotification{QStringLiteral("alarm"), KNotification::NotificationFlag::Persistent, this};
 
     QTimer *m_ringTimer = new QTimer(this);
 };
