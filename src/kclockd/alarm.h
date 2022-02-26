@@ -1,6 +1,6 @@
 /*
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
- * Copyright 2020-2021 Devin Lin <devin@kde.org>
+ * Copyright 2020-2022 Devin Lin <devin@kde.org>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
@@ -11,6 +11,7 @@
 #include "alarmplayer.h"
 #include "alarmwaitworker.h"
 
+#include <KLocalizedString>
 #include <KNotification>
 
 #include <QDebug>
@@ -21,6 +22,7 @@
 #include <QString>
 #include <QThread>
 #include <QTime>
+#include <QTimer>
 #include <QUrl>
 #include <QUuid>
 
@@ -45,9 +47,17 @@ class Alarm : public QObject
     Q_PROPERTY(quint64 nextRingTime READ nextRingTime NOTIFY nextRingTimeChanged)
 
 public:
-    explicit Alarm(AlarmModel *parent = nullptr);
     explicit Alarm(QString serialized, AlarmModel *parent = nullptr);
-    explicit Alarm(AlarmModel *parent, QString name, int hours, int minutes, int daysOfWeek, QString audioPath, int ringDuration, int snoozeDuration);
+    explicit Alarm(QString name = i18n("Alarm"),
+                   int hours = 0,
+                   int minutes = 0,
+                   int daysOfWeek = 0,
+                   QString audioPath = QString{},
+                   int ringDuration = 5,
+                   int snoozeDuration = 5,
+                   AlarmModel *parent = nullptr);
+
+    void init(AlarmModel *parent);
 
     // serialize this alarm to json
     QString serialize();
@@ -118,7 +128,7 @@ private:
 
     QUuid m_uuid;
 
-    // properties that persist to storage:
+    // -- properties that persist to storage: --
 
     // name of the alarm
     QString m_name;
@@ -145,12 +155,12 @@ private:
     int m_snoozeDuration;
 
     // the amount of time snoozing has added to the current ring, in seconds
-    int m_snoozedLength;
+    int m_snoozedLength = 0;
 
-    // properties only relevant for the current state of the alarm (not persisted):
+    // -- properties only relevant for the current state of the alarm (not persisted): --
 
     // whether the alarm is ringing
-    bool m_ringing;
+    bool m_ringing = false;
 
     // cache calculated next ring time (unix time)
     quint64 m_nextRingTime = 0;
@@ -161,7 +171,7 @@ private:
     // whether snooze just occurred
     bool m_justSnoozed;
 
-    KNotification *m_notification;
+    KNotification *m_notification = new KNotification{QStringLiteral("alarm")};
 
-    QTimer *m_ringTimer;
+    QTimer *m_ringTimer = new QTimer(this);
 };

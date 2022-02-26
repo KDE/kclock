@@ -1,6 +1,6 @@
 /*
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
- * Copyright 2020-2021 Devin Lin <devin@kde.org>
+ * Copyright 2020-2022 Devin Lin <devin@kde.org>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
@@ -12,7 +12,6 @@
 #include "utilities.h"
 
 #include <KConfigGroup>
-#include <KLocalizedString>
 #include <KSharedConfig>
 
 #include <QDBusConnection>
@@ -21,24 +20,46 @@
 #include <QDebug>
 #include <QJsonDocument>
 #include <QJsonObject>
-#include <QTime>
 
-Alarm::Alarm(AlarmModel *parent)
+// alarm from json (loaded from storage)
+Alarm::Alarm(QString serialized, AlarmModel *parent)
+    : QObject{parent}
+{
+    if (!serialized.isEmpty()) {
+        QJsonDocument doc = QJsonDocument::fromJson(serialized.toUtf8());
+        QJsonObject obj = doc.object();
+
+        m_uuid = QUuid::fromString(obj[QStringLiteral("uuid")].toString());
+        m_name = obj[QStringLiteral("name")].toString();
+        m_enabled = obj[QStringLiteral("enabled")].toBool();
+        m_hours = obj[QStringLiteral("hours")].toInt();
+        m_minutes = obj[QStringLiteral("minutes")].toInt();
+        m_daysOfWeek = obj[QStringLiteral("daysOfWeek")].toInt();
+        m_audioPath = QUrl::fromLocalFile(obj[QStringLiteral("audioPath")].toString());
+        m_ringDuration = obj[QStringLiteral("ringDuration")].toInt(5);
+        m_snoozeDuration = obj[QStringLiteral("snoozeDuration")].toInt(5);
+        m_snoozedLength = obj[QStringLiteral("snoozedLength")].toInt();
+    }
+
+    init(parent);
+}
+
+Alarm::Alarm(QString name, int hours, int minutes, int daysOfWeek, QString audioPath, int ringDuration, int snoozeDuration, AlarmModel *parent)
     : QObject{parent}
     , m_uuid{QUuid::createUuid()}
-    , m_name{i18n("Alarm")}
-    , m_enabled{false}
-    , m_hours{0}
-    , m_minutes{0}
-    , m_daysOfWeek{0}
-    , m_audioPath{}
-    , m_ringDuration{5}
-    , m_snoozeDuration{5}
-    , m_snoozedLength{0}
-    , m_ringing{false}
-    , m_nextRingTime{0}
-    , m_notification{new KNotification{QStringLiteral("alarm")}}
-    , m_ringTimer{new QTimer(this)}
+    , m_name{name}
+    , m_enabled{true} // default the alarm to be on
+    , m_hours{hours}
+    , m_minutes{minutes}
+    , m_daysOfWeek{daysOfWeek}
+    , m_audioPath{QUrl::fromLocalFile(audioPath.replace(QStringLiteral("file://"), QString()))}
+    , m_ringDuration{ringDuration}
+    , m_snoozeDuration{snoozeDuration}
+{
+    init(parent);
+}
+
+void Alarm::init(AlarmModel *parent)
 {
     // setup notification
     m_notification->setActions({i18n("Dismiss"), i18n("Snooze")});
@@ -75,42 +96,6 @@ Alarm::Alarm(AlarmModel *parent)
     connect(m_ringTimer, &QTimer::timeout, this, []() {
         AlarmPlayer::instance().stop();
     });
-}
-
-// alarm from json (loaded from storage)
-Alarm::Alarm(QString serialized, AlarmModel *parent)
-    : Alarm{parent}
-{
-    if (serialized.isEmpty()) {
-        m_uuid = QUuid::createUuid();
-    } else {
-        QJsonDocument doc = QJsonDocument::fromJson(serialized.toUtf8());
-        QJsonObject obj = doc.object();
-
-        m_uuid = QUuid::fromString(obj[QStringLiteral("uuid")].toString());
-        m_name = obj[QStringLiteral("name")].toString();
-        m_enabled = obj[QStringLiteral("enabled")].toBool();
-        m_hours = obj[QStringLiteral("hours")].toInt();
-        m_minutes = obj[QStringLiteral("minutes")].toInt();
-        m_daysOfWeek = obj[QStringLiteral("daysOfWeek")].toInt();
-        m_audioPath = QUrl::fromLocalFile(obj[QStringLiteral("audioPath")].toString());
-        m_ringDuration = obj[QStringLiteral("ringDuration")].toInt(5);
-        m_snoozeDuration = obj[QStringLiteral("snoozeDuration")].toInt(5);
-        m_snoozedLength = obj[QStringLiteral("snoozedLength")].toInt();
-    }
-}
-
-Alarm::Alarm(AlarmModel *parent, QString name, int hours, int minutes, int daysOfWeek, QString audioPath, int ringDuration, int snoozeDuration)
-    : Alarm{parent}
-{
-    m_enabled = true; // default the alarm to be on
-    m_name = name;
-    m_hours = hours;
-    m_minutes = minutes;
-    m_daysOfWeek = daysOfWeek;
-    m_audioPath = QUrl::fromLocalFile(audioPath.replace(QStringLiteral("file://"), QString()));
-    m_ringDuration = ringDuration;
-    m_snoozeDuration = snoozeDuration;
 }
 
 // alarm to json

@@ -1,6 +1,7 @@
 /*
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
  * Copyright 2021 Boris Petrov <boris.v.petrov@protonmail.com>
+ * Copyright 2022 Devin Lin <devin@kde.org>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
@@ -24,10 +25,14 @@ class Timer : public QObject
     Q_PROPERTY(bool looping READ looping NOTIFY loopingChanged)
 
 public:
-    explicit Timer(int length = 0, QString label = QStringLiteral(), QString commandTimeout = QStringLiteral(), bool running = false);
-    explicit Timer(const QJsonObject &obj);
+    explicit Timer(int length = 0, QString label = QString{}, QString commandTimeout = QString{}, bool running = false, QObject *parent = nullptr);
+    explicit Timer(const QJsonObject &obj, QObject *parent);
+
     ~Timer();
 
+    void init();
+
+    // serialize this timer to json
     QJsonObject serialize();
 
     Q_SCRIPTABLE void toggleRunning();
@@ -65,12 +70,34 @@ private:
     void setRunning(bool running);
     void sendNotification();
 
+    // -- properties persisted to storage: --
+
+    // the uuid of the timer
     QUuid m_uuid;
-    int m_length, m_startTime = 0; // seconds
-    int m_hasElapsed = 0; // time has elapsed till stop, only be updated if stopped or finished
-    int m_cookie = -1;
+
+    // the total length of the timer, in seconds
+    int m_length;
+
+    // the name of the timer, can be blank
     QString m_label;
+
+    // the command to run when the timer finishes, can be blank
     QString m_commandTimeout;
+
+    // -- properties that are not persisted: --
+
+    // the unix timestamp (seconds) at which the timer was started
+    int m_startTime = 0;
+
+    // the time the timer elapsed till the most recent pause/stop, only updated when timer is stopped or finished
+    int m_hasElapsed = 0;
+
+    // the PowerDevil cookie used for system wakeup when the timer is supposed to go off
+    int m_cookie = -1;
+
+    // whether the timer is running
     bool m_running = false;
+
+    // whether the timer is looping
     bool m_looping = false;
 };

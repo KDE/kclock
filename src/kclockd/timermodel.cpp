@@ -41,7 +41,7 @@ void TimerModel::load()
     QJsonDocument doc = QJsonDocument::fromJson(group.readEntry(TIMERS_CFG_KEY, "{}").toUtf8());
     for (QJsonValueRef r : doc.array()) {
         QJsonObject obj = r.toObject();
-        m_timerList.append(new Timer(obj));
+        m_timerList.append(new Timer(obj, this));
     }
 }
 

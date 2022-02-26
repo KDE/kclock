@@ -1,15 +1,15 @@
 /*
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
  * Copyright 2021 Boris Petrov <boris.v.petrov@protonmail.com>
+ * Copyright 2022 Devin Lin <devin@kde.org>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
 #include "timer.h"
+#include "utilities.h"
 
 #include <QProcess>
-
-#include "utilities.h"
 
 #include <KLocalizedString>
 #include <KNotification>
@@ -17,48 +17,54 @@
 #include <QDBusConnection>
 #include <QJsonObject>
 
-/* ~ Timer ~ */
-
-Timer::Timer(int length, QString label, QString commandTimeout, bool running)
-    : m_uuid(QUuid::createUuid())
-    , m_length(length)
-    , m_label(label)
-    , m_commandTimeout(commandTimeout)
+Timer::Timer(int length, QString label, QString commandTimeout, bool running, QObject *parent)
+    : QObject{parent}
+    , m_uuid{QUuid::createUuid()}
+    , m_length{length}
+    , m_label{label}
+    , m_commandTimeout{commandTimeout}
+    , m_looping{false}
 {
-    connect(&Utilities::instance(), &Utilities::wakeup, this, &Timer::timeUp);
-    connect(&Utilities::instance(), &Utilities::needsReschedule, this, &Timer::reschedule);
-    QDBusConnection::sessionBus().registerObject(QStringLiteral("/Timers/") + this->m_uuid.toString(QUuid::Id128),
-                                                 this,
-                                                 QDBusConnection::ExportScriptableContents | QDBusConnection::ExportAllProperties);
-    connect(this, &QObject::destroyed, [this] {
-        QDBusConnection::sessionBus().unregisterObject(QStringLiteral("/Timers/") + this->m_uuid.toString(QUuid::Id128), QDBusConnection::UnregisterNode);
-    });
-    if (running)
+    init();
+
+    // start timer if requested
+    if (running) {
         this->toggleRunning();
+    }
 }
 
-Timer::Timer(const QJsonObject &obj)
+Timer::Timer(const QJsonObject &obj, QObject *parent)
+    : QObject{parent}
+    , m_uuid{QUuid(obj[QStringLiteral("uuid")].toString())}
+    , m_length{obj[QStringLiteral("length")].toInt()}
+    , m_label{obj[QStringLiteral("label")].toString()}
+    , m_commandTimeout{obj[QStringLiteral("commandTimeout")].toString()}
+    , m_looping{obj[QStringLiteral("looping")].toBool()}
 {
-    m_length = obj[QStringLiteral("length")].toInt();
-    m_label = obj[QStringLiteral("label")].toString();
-    m_uuid = QUuid(obj[QStringLiteral("uuid")].toString());
-    m_looping = obj[QStringLiteral("looping")].toBool();
-    m_commandTimeout = obj[QStringLiteral("commandTimeout")].toString();
-
-    connect(&Utilities::instance(), &Utilities::wakeup, this, &Timer::timeUp);
-    QDBusConnection::sessionBus().registerObject(QStringLiteral("/Timers/") + this->m_uuid.toString(QUuid::Id128),
-                                                 this,
-                                                 QDBusConnection::ExportScriptableContents | QDBusConnection::ExportAllProperties);
-    connect(this, &QObject::destroyed, [this] {
-        QDBusConnection::sessionBus().unregisterObject(QStringLiteral("/Timers/") + this->m_uuid.toString(QUuid::Id128), QDBusConnection::UnregisterNode);
-    });
+    init();
 }
 
 Timer::~Timer()
 {
-    if (!m_running) { // stop wakeup if timer is being deleted
+    if (!m_running) {
+        // stop wakeup if timer is being deleted
         setRunning(false);
     }
+}
+
+void Timer::init()
+{
+    // connect signals
+    connect(&Utilities::instance(), &Utilities::wakeup, this, &Timer::timeUp);
+    connect(&Utilities::instance(), &Utilities::needsReschedule, this, &Timer::reschedule);
+
+    // initialize DBus object
+    QDBusConnection::sessionBus().registerObject(QStringLiteral("/Timers/") + m_uuid.toString(QUuid::Id128),
+                                                 this,
+                                                 QDBusConnection::ExportScriptableContents | QDBusConnection::ExportAllProperties);
+    connect(this, &QObject::destroyed, [this] {
+        QDBusConnection::sessionBus().unregisterObject(QStringLiteral("/Timers/") + m_uuid.toString(QUuid::Id128), QDBusConnection::UnregisterNode);
+    });
 }
 
 QJsonObject Timer::serialize()

@@ -179,7 +179,7 @@ void AlarmModel::removeAlarm(int index)
 
 void AlarmModel::addAlarm(QString name, int hours, int minutes, int daysOfWeek, QString audioPath, int ringDuration, int snoozeDuration)
 {
-    Alarm *alarm = new Alarm(this, name, hours, minutes, daysOfWeek, audioPath, ringDuration, snoozeDuration);
+    Alarm *alarm = new Alarm(name, hours, minutes, daysOfWeek, audioPath, ringDuration, snoozeDuration, this);
     alarm->save();
 
     // insert new alarm in order by time of day
