@@ -28,15 +28,16 @@ Utilities::Utilities(QObject *parent)
                                      this))
     , m_timer(new QTimer(this))
 {
-    connect(m_timer, &QTimer::timeout, this, [this] {
-        if (m_activeTimerCount <= 0) {
-            QApplication::exit();
-        }
-    });
+    // TODO: It'd be nice to be able to have the daemon off if no alarms/timers are running.
+    // However, with the current implementation, the client continuously thinks it is off.
+    //     connect(m_timer, &QTimer::timeout, this, [this] {
+    //         if (m_activeTimerCount <= 0) {
+    //             QApplication::exit();
+    //         }
+    //     });
 
     // if PowerDevil is present, we can rely on PowerDevil to track time, otherwise we do it ourself
     if (m_interface->isValid()) {
-        // test Plasma 5.20 PowerDevil schedule wakeup feature
         m_hasPowerDevil = hasWakeup();
     }
 
@@ -44,12 +45,12 @@ Utilities::Utilities(QObject *parent)
                                                                 QStringLiteral("org.kde.PowerManagement"),
                                                                 this,
                                                                 QDBusConnection::ExportScriptableSlots);
-    qDebug() << "Register Utility on DBus: " << success;
-    if (this->hasPowerDevil()) {
+    qDebug() << "Registered on dbus:" << success;
+
+    if (hasPowerDevil()) {
         qDebug() << "PowerDevil found, using it for time tracking.";
     } else {
         initWorker();
-
         qDebug() << "PowerDevil not found, using wait worker thread for time tracking.";
     }
 
@@ -57,7 +58,7 @@ Utilities::Utilities(QObject *parent)
                                              QDBusConnection::sessionBus(),
                                              QDBusServiceWatcher::WatchForRegistration | QDBusServiceWatcher::WatchForUnregistration};
     connect(m_watcher, &QDBusServiceWatcher::serviceRegistered, this, [this]() {
-        qDebug() << "powerdevil found";
+        qDebug() << "PowerDevil found on DBus";
         m_hasPowerDevil = hasWakeup();
         if (m_hasPowerDevil && m_timerThread)
             m_timerThread->quit();
@@ -82,12 +83,12 @@ bool Utilities::hasPowerDevil()
 
 int Utilities::scheduleWakeup(quint64 timestamp)
 {
-    if (this->hasPowerDevil()) {
+    if (hasPowerDevil()) {
         QDBusReply<uint> reply = m_interface->call(QStringLiteral("scheduleWakeup"), QStringLiteral("org.kde.kclockd"), QDBusObjectPath("/Utility"), timestamp);
         if (reply.isValid()) {
             m_cookies.append(reply.value());
         } else {
-            qDebug() << "invalid reply, error: " << reply.error();
+            qDebug() << "Invalid reply, error: " << reply.error();
         }
         return reply.value();
     } else {
@@ -121,12 +122,12 @@ void Utilities::clearWakeup(int cookie)
 
 void Utilities::wakeupCallback(int cookie)
 {
-    qDebug() << "wakeup callback";
+    qDebug() << "Received wakeup callback.";
     auto index = m_cookies.indexOf(cookie);
 
     if (index == -1) {
         // something must be wrong here, return and do nothing
-        qDebug() << "callback ignored (wrong cookie)";
+        qDebug() << "Callback ignored (wrong cookie).";
         return;
     } else {
         // remove token
@@ -170,11 +171,7 @@ bool Utilities::hasWakeup()
                                                     QStringLiteral("Introspect"));
     QDBusReply<QString> result = QDBusConnection::sessionBus().call(m);
 
-    if (result.isValid() && result.value().indexOf(QStringLiteral("scheduleWakeup")) >= 0) { // have this feature
-        return true;
-    } else {
-        return false;
-    }
+    return result.isValid() && result.value().indexOf(QStringLiteral("scheduleWakeup")) >= 0;
 }
 
 void Utilities::exitAfterTimeout()
