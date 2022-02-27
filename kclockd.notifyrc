@@ -98,7 +98,7 @@ Comment[sl]=Vaš merilnik časa je končal!
 Comment[sv]=Tidtagningen är klar.
 Comment[uk]=Відлік за вашими таймером завершено!
 Comment[x-test]=xxYour timer has finished!xx
-Comment[zh_CN]=您的计时器已结束！
+Comment[zh_CN]=计时器已结束计时！
 Action=Sound|Popup
 Sound=freedesktop/stereo/alarm-clock-elapsed.oga
 
