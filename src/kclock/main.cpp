@@ -47,10 +47,16 @@ QCommandLineParser *createParser()
 
 int main(int argc, char *argv[])
 {
-    QApplication app(argc, argv);
+    // set default style
     if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
         QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
     }
+    // if using org.kde.desktop, ensure we use kde style if possible
+    if (qEnvironmentVariableIsEmpty("QT_QPA_PLATFORMTHEME")) {
+        qputenv("QT_QPA_PLATFORMTHEME", "kde");
+    }
+
+    QApplication app(argc, argv);
 
     KLocalizedString::setApplicationDomain("kclock");
     KAboutData aboutData(QStringLiteral("kclock"),
