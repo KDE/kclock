@@ -73,7 +73,7 @@ Kirigami.ScrollablePage {
                     checked: SettingsModel.timeFormat == value
                     onCheckedChanged: {
                         if (checked) {
-                            settingsModel.timeFormat = value;
+                            SettingsModel.timeFormat = value;
                         }
                     }
                 }
