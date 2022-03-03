@@ -57,7 +57,7 @@ Kirigami.ScrollablePage {
         Kirigami.InlineMessage {
             type: Kirigami.MessageType.Error
             text: i18n("The clock daemon was not found. Please start kclockd in order to have alarm functionality.")
-            visible: !alarmModel.connectedToDaemon // by default, it's false so we need this
+            visible: !AlarmModel.connectedToDaemon // by default, it's false so we need this
             Layout.fillWidth: true
             Layout.margins: Kirigami.Units.smallSpacing
         }
@@ -65,7 +65,7 @@ Kirigami.ScrollablePage {
     
     ListView {
         id: alarmsList
-        model: alarmModel
+        model: AlarmModel
         currentIndex: -1 // no default selection
         
         transform: Translate { y: yTranslate }
@@ -118,7 +118,7 @@ Kirigami.ScrollablePage {
             }
             onDeleteClicked: {
                 showPassiveNotification(i18n("Deleted %1", alarm.name == "" ? i18n("alarm") : alarm.name));
-                alarmModel.remove(index);
+                AlarmModel.remove(index);
             }
         }
     }

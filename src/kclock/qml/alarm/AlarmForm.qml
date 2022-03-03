@@ -27,7 +27,7 @@ Kirigami.FormLayout {
     readonly property int hours: selectedAlarm ? selectedAlarm.hours : 0
     readonly property int minutes: selectedAlarm ? selectedAlarm.minutes : 0
     readonly property int daysOfWeek: selectedAlarm ? selectedAlarm.daysOfWeek : 0
-    readonly property string audioPath: selectedAlarm ? selectedAlarm.audioPath : utilModel.getDefaultAlarmFileLocation()
+    readonly property string audioPath: selectedAlarm ? selectedAlarm.audioPath : UtilModel.getDefaultAlarmFileLocation()
     readonly property int ringDuration: selectedAlarm ? selectedAlarm.ringDuration : 5
     readonly property int snoozeDuration: selectedAlarm ? selectedAlarm.snoozeDuration : 5
     
@@ -53,8 +53,8 @@ Kirigami.FormLayout {
             selectedAlarm.enabled = true;
             showPassiveNotification(selectedAlarm.timeToRingFormatted());
         } else { // create new alarm
-            alarmModel.addAlarm(formName, formHours, formMinutes, formDaysOfWeek, formAudioPath, formRingDuration, formSnoozeDuration);
-            showPassiveNotification(alarmModel.timeToRingFormatted(formHours, formMinutes, formDaysOfWeek));
+            AlarmModel.addAlarm(formName, formHours, formMinutes, formDaysOfWeek, formAudioPath, formRingDuration, formSnoozeDuration);
+            showPassiveNotification(AlarmModel.timeToRingFormatted(formHours, formMinutes, formDaysOfWeek));
         }
     }
     
@@ -90,7 +90,7 @@ Kirigami.FormLayout {
         Kirigami.FormData.label: i18n("Days to repeat:")
         text: FormatUtil.getRepeatFormat(root.formDaysOfWeek)
         title: i18n("Select Days to Repeat")
-        model: weekModel
+        model: WeekModel
         
         dialogDelegate: CheckDelegate {
             implicitWidth: Kirigami.Units.gridUnit * 16
@@ -98,7 +98,7 @@ Kirigami.FormLayout {
             bottomPadding: Kirigami.Units.smallSpacing * 2
             
             text: name
-            checkState: kclockFormat.isChecked(index, root.formDaysOfWeek) ? Qt.Checked : Qt.Unchecked
+            checkState: KClockFormat.isChecked(index, root.formDaysOfWeek) ? Qt.Checked : Qt.Unchecked
             onCheckStateChanged: {
                 if (checkState == Qt.Checked) {
                     root.formDaysOfWeek |= flag;
@@ -210,7 +210,7 @@ Kirigami.FormLayout {
         onClicked: applicationWindow().pageStack.push(Qt.resolvedUrl("SoundPickerPage.qml"), { alarmForm: root });
         
         text: {
-            if (root.formAudioPath == utilModel.getDefaultAlarmFileLocation())  {
+            if (root.formAudioPath == UtilModel.getDefaultAlarmFileLocation())  {
                 return i18n("Default Sound");
             } else {
                 let split = root.formAudioPath.split('/')

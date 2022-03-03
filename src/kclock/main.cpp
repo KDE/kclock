@@ -99,17 +99,28 @@ int main(int argc, char *argv[])
     qmlRegisterSingletonType<TimerPresetModel>("kclock", 1, 0, "TimerModel", [](QQmlEngine *, QJSEngine *) -> QObject * {
         return TimerModel::instance();
     });
+    qmlRegisterSingletonType<TimerPresetModel>("kclock", 1, 0, "AlarmModel", [](QQmlEngine *, QJSEngine *) -> QObject * {
+        return AlarmModel::instance();
+    });
+    qmlRegisterSingletonType<TimerPresetModel>("kclock", 1, 0, "UtilModel", [](QQmlEngine *, QJSEngine *) -> QObject * {
+        return UtilModel::instance();
+    });
+    qmlRegisterSingletonType<TimerPresetModel>("kclock", 1, 0, "StopwatchTimer", [stopwatchTimer](QQmlEngine *, QJSEngine *) -> QObject * {
+        return stopwatchTimer;
+    });
+    qmlRegisterSingletonType<TimerPresetModel>("kclock", 1, 0, "KClockFormat", [](QQmlEngine *, QJSEngine *) -> QObject * {
+        return KclockFormat::instance();
+    });
+    qmlRegisterSingletonType<TimerPresetModel>("kclock", 1, 0, "WeekModel", [weekModel](QQmlEngine *, QJSEngine *) -> QObject * {
+        return weekModel;
+    });
+    qmlRegisterSingletonType<TimerPresetModel>("kclock", 1, 0, "SettingsModel", [](QQmlEngine *, QJSEngine *) -> QObject * {
+        return SettingsModel::instance();
+    });
 
     QQmlApplicationEngine *engine = new QQmlApplicationEngine();
 
     engine->rootContext()->setContextObject(new KLocalizedContext(engine));
-    // models
-    engine->rootContext()->setContextProperty(QStringLiteral("alarmModel"), AlarmModel::instance());
-    engine->rootContext()->setContextProperty(QStringLiteral("utilModel"), UtilModel::instance());
-    engine->rootContext()->setContextProperty(QStringLiteral("stopwatchTimer"), stopwatchTimer);
-    engine->rootContext()->setContextProperty(QStringLiteral("kclockFormat"), KclockFormat::instance());
-    engine->rootContext()->setContextProperty(QStringLiteral("weekModel"), weekModel);
-    engine->rootContext()->setContextProperty(QStringLiteral("settingsModel"), SettingsModel::instance());
     engine->rootContext()->setContextProperty(QStringLiteral("kclockAboutData"), QVariant::fromValue(aboutData));
 
     engine->load(QUrl(QStringLiteral("qrc:/qml/main.qml")));

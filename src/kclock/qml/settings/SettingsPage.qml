@@ -11,6 +11,7 @@ import QtQuick.Layouts 1.2
 import org.kde.kirigami 2.19 as Kirigami
 
 import "../components"
+import kclock 1.0
 
 Kirigami.ScrollablePage {
     id: root
@@ -42,7 +43,7 @@ Kirigami.ScrollablePage {
                 Kirigami.FormData.label: i18n("Time Format:")
                 title: i18n("Select Time Format")
                 text: {
-                    switch (settingsModel.timeFormat) {
+                    switch (SettingsModel.timeFormat) {
                         case "SystemDefault":
                             return i18n("Use System Default")
                         case "12Hour":
@@ -69,7 +70,7 @@ Kirigami.ScrollablePage {
                     bottomPadding: Kirigami.Units.smallSpacing * 2
                     
                     text: name
-                    checked: settingsModel.timeFormat == value
+                    checked: SettingsModel.timeFormat == value
                     onCheckedChanged: {
                         if (checked) {
                             settingsModel.timeFormat = value;

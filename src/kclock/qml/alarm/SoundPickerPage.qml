@@ -14,6 +14,7 @@ import org.kde.kirigami 2.12 as Kirigami
 import org.kde.kirigamiaddons.sounds 0.1 as Sounds
 
 import "../components"
+import kclock 1.0
 
 Kirigami.ScrollablePage {
     id: root
@@ -81,7 +82,7 @@ Kirigami.ScrollablePage {
                 bottomPadding: root.delegateVerticalPadding
                 showSeparator: listView.count > 0
                 
-                property string defaultPath: utilModel.getDefaultAlarmFileLocation()
+                property string defaultPath: UtilModel.getDefaultAlarmFileLocation()
                 onClicked: root.alarmForm.formAudioPath = playablePath(replacePrefix(defaultPath));
                 
                 Connections {

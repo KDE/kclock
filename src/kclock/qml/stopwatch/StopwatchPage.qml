@@ -13,6 +13,7 @@ import QtQuick.Window 2.11
 import org.kde.kirigami 2.4 as Kirigami
 
 import "../components"
+import kclock 1.0
 
 Kirigami.ScrollablePage {
     id: stopwatchpage
@@ -23,13 +24,13 @@ Kirigami.ScrollablePage {
     icon.name: "chronometer"
     
     property bool running: false
-    property int elapsedTime: stopwatchTimer.elapsedTime
+    property int elapsedTime: StopwatchTimer.elapsedTime
     
     Layout.fillWidth: true
     
     function toggleStopwatch() {
         running = !running;
-        stopwatchTimer.toggle();
+        StopwatchTimer.toggle();
     }
     function addLap() {
         if (running) {
@@ -45,7 +46,7 @@ Kirigami.ScrollablePage {
     function resetStopwatch() {
         running = false;
         roundModel.clear();
-        stopwatchTimer.reset();
+        StopwatchTimer.reset();
     }
     
     // keyboard controls
@@ -96,14 +97,14 @@ Kirigami.ScrollablePage {
 
                 Label {
                     id: text
-                    text: stopwatchTimer.minutes + ':' + stopwatchTimer.seconds + '.'
+                    text: StopwatchTimer.minutes + ':' + StopwatchTimer.seconds + '.'
                     font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 4.75)
                     font.weight: Font.ExtraLight
                 }
                 Label {
                     id: secondsText
                     anchors.baseline: text.baseline
-                    text: stopwatchTimer.small
+                    text: StopwatchTimer.small
                     font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 3.75)
                     font.weight: Font.ExtraLight
                 }
