@@ -70,6 +70,8 @@ int main(int argc, char *argv[])
     aboutData.addAuthor(i18n("Han Young"), QString(), QStringLiteral("hanyoung@protonmail.com"));
     KAboutData::setApplicationData(aboutData);
 
+    // ~~~~ DBus setup ~~~~
+
     // ensure kclockd is up with dbus autostart, any call will do
     QDBusInterface *testInterface = new QDBusInterface(QStringLiteral("org.kde.kclockd"),
                                                        QStringLiteral("/Alarms"),
@@ -78,6 +80,15 @@ int main(int argc, char *argv[])
                                                        nullptr);
     testInterface->call(QStringLiteral("Introspect"));
     testInterface->deleteLater();
+
+    OrgKdePowerManagementInterface *interface =
+        new OrgKdePowerManagementInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Utility"), QDBusConnection::sessionBus());
+    interface->keepAlive();
+    QObject::connect(&app, &QCoreApplication::aboutToQuit, &app, [interface] {
+        interface->canExit();
+    });
+
+    // ~~~ Qt application setup ~~~~
 
     // initialize models
     auto *stopwatchTimer = new StopwatchTimer();
@@ -125,6 +136,7 @@ int main(int argc, char *argv[])
 
     engine->load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
 
+    // ~~~~ Parse command line arguments ~~~~
     {
         QScopedPointer<QCommandLineParser> parser(createParser());
         parser->process(app);
@@ -138,11 +150,5 @@ int main(int argc, char *argv[])
         }
     }
 
-    OrgKdePowerManagementInterface *interface =
-        new OrgKdePowerManagementInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Utility"), QDBusConnection::sessionBus());
-    interface->keepAlive();
-    QObject::connect(&app, &QCoreApplication::aboutToQuit, &app, [interface] {
-        interface->canExit();
-    });
     return app.exec();
 }

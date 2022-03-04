@@ -11,6 +11,7 @@
 #include "kclocksettingsadaptor.h"
 #include "timermodel.h"
 #include "version.h"
+#include "xdgportal.h"
 
 #include <KAboutData>
 #include <KConfig>
@@ -49,6 +50,10 @@ int main(int argc, char *argv[])
     KDBusService service(KDBusService::Unique);
 
     qDebug() << "Starting kclockd" << KCLOCK_VERSION_STRING;
+
+    // call org.freedesktop.portal.Background for autostart in flatpak
+    XDGPortal *portalInterface = new XDGPortal();
+    portalInterface->requestBackground();
 
     // initialize models
     new KClockSettingsAdaptor(KClockSettings::self());
