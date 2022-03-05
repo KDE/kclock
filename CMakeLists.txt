@@ -22,13 +22,13 @@ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -DQT_QML_DEBUG ")
 
 include(FeatureSummary)
 include(ECMSetupVersion)
+include(ECMFindQmlModule)
+include(ECMConfiguredInstall)
 include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(KDEClangFormat)
 include(KDEGitCommitHooks)
-include(ECMQMLModules)
-include(ECMConfiguredInstall)
 
 ecm_setup_version(${PROJECT_VERSION}
     VARIABLE_PREFIX KCLOCK
@@ -55,6 +55,8 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     Notifications
     DBusAddons
 )
+
+find_package(Qt5QuickCompiler)
 
 ecm_find_qmlmodule(org.kde.kirigamiaddons.dateandtime 0.1)
 

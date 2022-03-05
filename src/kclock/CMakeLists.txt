@@ -15,7 +15,6 @@ set(kclock_SRCS
     kclockformat.cpp
     settingsmodel.cpp
     addlocationmodel.cpp
-    resources.qrc
     timerpresetmodel.cpp
     savedlocationsmodel.cpp
     )
@@ -34,7 +33,9 @@ qt5_add_dbus_interface(kclock_SRCS ${TimermModelXML} timermodelinterface )
 qt5_add_dbus_interface(kclock_SRCS ${TimerXML} timerinterface )
 qt5_add_dbus_interface(kclock_SRCS ${UtilityXML} utilityinterface )
 
-add_executable(kclock main.cpp ${kclock_SRCS} )
+qtquick_compiler_add_resources(RESOURCES resources.qrc)
+
+add_executable(kclock main.cpp ${kclock_SRCS} ${RESOURCES})
 add_dependencies(kclock kclockd)
 target_link_libraries(kclock
         Qt5::Qml
