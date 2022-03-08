@@ -7,6 +7,7 @@
  */
 
 #include "addlocationmodel.h"
+#include "about.h"
 #include "alarm.h"
 #include "alarmmodel.h"
 #include "kclockformat.h"
@@ -128,11 +129,11 @@ int main(int argc, char *argv[])
     qmlRegisterSingletonType<TimerPresetModel>("kclock", 1, 0, "SettingsModel", [](QQmlEngine *, QJSEngine *) -> QObject * {
         return SettingsModel::instance();
     });
+    qmlRegisterSingletonInstance("kclock", 1, 0, "AboutType", &AboutType::instance());
 
     QQmlApplicationEngine *engine = new QQmlApplicationEngine();
 
     engine->rootContext()->setContextObject(new KLocalizedContext(engine));
-    engine->rootContext()->setContextProperty(QStringLiteral("kclockAboutData"), QVariant::fromValue(aboutData));
 
     engine->load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
 

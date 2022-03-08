@@ -6,6 +6,7 @@
 #
 
 set(kclock_SRCS
+    about.cpp
     alarm.cpp
     alarmmodel.cpp
     timer.cpp
