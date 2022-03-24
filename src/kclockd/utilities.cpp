@@ -124,6 +124,9 @@ void Utilities::clearWakeup(int cookie)
                 m_waitWorkerCookies.erase(index);
             }
         }
+
+        // ensure that we schedule the next queued wakeup
+        schedule();
     }
 }
 
