@@ -21,6 +21,7 @@ class Utilities : public QObject
     Q_CLASSINFO("D-Bus Interface", "org.kde.PowerManagement")
 
 public:
+    static void disablePowerDevil(bool disable);
     static Utilities &instance();
 
     bool hasPowerDevil();
@@ -50,16 +51,17 @@ private:
     bool hasWakeup();
     QDBusInterface *m_interface = nullptr;
 
-    bool m_hasPowerDevil = false;
-    QList<int> m_cookies; // token for PowerDevil: https://invent.kde.org/plasma/powerdevil/-/merge_requests/13
+    bool m_hasPowerDevil;
 
-    QList<std::tuple<int, quint64>> m_list; // cookie, timestamp. For AlarmWaitWorker use
+    QList<int> m_powerDevilCookies; // token for PowerDevil: https://invent.kde.org/plasma/powerdevil/-/merge_requests/13
+    QList<std::pair<int, quint64>> m_waitWorkerCookies; // <cookie, timestamp>. For AlarmWaitWorker use
+
     int m_cookie = 1; // For AlarmWaitWorker use
     int m_currentCookie; // For AlarmWaitWorker use
+
     std::atomic<int> m_activeTimerCount{0};
 
     QThread *m_timerThread = nullptr;
     AlarmWaitWorker *m_worker = nullptr;
     QTimer *m_timer = nullptr;
 };
-

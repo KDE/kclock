@@ -13,6 +13,14 @@
 #include <QThread>
 #include <QTimer>
 
+// manually disable powerdevil, even if found
+static bool noPowerDevil = false;
+
+void Utilities::disablePowerDevil(bool disable)
+{
+    noPowerDevil = disable;
+}
+
 Utilities &Utilities::instance()
 {
     static Utilities singleton;
@@ -26,6 +34,7 @@ Utilities::Utilities(QObject *parent)
                                      QStringLiteral("org.kde.Solid.PowerManagement"),
                                      QDBusConnection::sessionBus(),
                                      this))
+    , m_hasPowerDevil(false)
     , m_timer(new QTimer(this))
 {
     // TODO: It'd be nice to be able to have the daemon off if no alarms/timers are running.
@@ -37,7 +46,7 @@ Utilities::Utilities(QObject *parent)
     //     });
 
     // if PowerDevil is present, we can rely on PowerDevil to track time, otherwise we do it ourself
-    if (m_interface->isValid()) {
+    if (m_interface->isValid() && !noPowerDevil) {
         m_hasPowerDevil = hasWakeup();
     }
 
@@ -54,23 +63,25 @@ Utilities::Utilities(QObject *parent)
         qDebug() << "PowerDevil not found, using wait worker thread for time tracking.";
     }
 
-    auto m_watcher = new QDBusServiceWatcher{POWERDEVIL_SERVICE_NAME,
-                                             QDBusConnection::sessionBus(),
-                                             QDBusServiceWatcher::WatchForRegistration | QDBusServiceWatcher::WatchForUnregistration};
-    connect(m_watcher, &QDBusServiceWatcher::serviceRegistered, this, [this]() {
-        qDebug() << "PowerDevil found on DBus";
-        m_hasPowerDevil = hasWakeup();
-        if (m_hasPowerDevil && m_timerThread)
-            m_timerThread->quit();
+    if (!noPowerDevil) { // do not watch for powerdevil if we explicitly turned it off
+        auto m_watcher = new QDBusServiceWatcher{POWERDEVIL_SERVICE_NAME,
+                                                 QDBusConnection::sessionBus(),
+                                                 QDBusServiceWatcher::WatchForRegistration | QDBusServiceWatcher::WatchForUnregistration};
+        connect(m_watcher, &QDBusServiceWatcher::serviceRegistered, this, [this]() {
+            qDebug() << "PowerDevil found on DBus";
+            m_hasPowerDevil = hasWakeup();
+            if (m_hasPowerDevil && m_timerThread)
+                m_timerThread->quit();
 
-        Q_EMIT needsReschedule();
-    });
-    connect(m_watcher, &QDBusServiceWatcher::serviceUnregistered, this, [this]() {
-        m_hasPowerDevil = false;
-        initWorker();
+            Q_EMIT needsReschedule();
+        });
+        connect(m_watcher, &QDBusServiceWatcher::serviceUnregistered, this, [this]() {
+            m_hasPowerDevil = false;
+            initWorker();
 
-        Q_EMIT needsReschedule();
-    });
+            Q_EMIT needsReschedule();
+        });
+    }
 
     // exit after 1 min if nothing happens
     m_timer->start(60 * 1000);
@@ -86,44 +97,41 @@ int Utilities::scheduleWakeup(quint64 timestamp)
     if (hasPowerDevil()) {
         QDBusReply<uint> reply = m_interface->call(QStringLiteral("scheduleWakeup"), QStringLiteral("org.kde.kclockd"), QDBusObjectPath("/Utility"), timestamp);
         if (reply.isValid()) {
-            m_cookies.append(reply.value());
+            m_powerDevilCookies.append(reply.value());
         } else {
             qDebug() << "Invalid reply, error: " << reply.error();
         }
         return reply.value();
     } else {
-        m_list.append({++m_cookie, timestamp});
-        this->schedule();
+        m_waitWorkerCookies.append({++m_cookie, timestamp});
+        schedule();
         return m_cookie;
     }
 }
 
 void Utilities::clearWakeup(int cookie)
 {
-    if (this->hasPowerDevil()) {
-        auto index = m_cookies.indexOf(cookie);
+    if (hasPowerDevil()) {
+        auto index = m_powerDevilCookies.indexOf(cookie);
         if (index != -1) {
             m_interface->call(QStringLiteral("clearWakeup"), cookie);
-            m_cookies.removeAt(index);
+            m_powerDevilCookies.removeAt(index);
         }
     } else {
-        auto index = 0;
-        for (const auto &tuple : std::as_const(m_list)) {
-            if (cookie == std::get<0>(tuple)) {
+        for (auto index = m_waitWorkerCookies.begin(); index < m_waitWorkerCookies.end(); ++index) {
+            if (cookie == (*index).first) {
+                m_waitWorkerCookies.erase(index);
                 break;
             }
-            ++index;
         }
-        m_list.removeAt(index);
-
-        this->schedule();
+        schedule();
     }
 }
 
 void Utilities::wakeupCallback(int cookie)
 {
     qDebug() << "Received wakeup callback.";
-    auto index = m_cookies.indexOf(cookie);
+    auto index = m_powerDevilCookies.indexOf(cookie);
 
     if (index == -1) {
         // something must be wrong here, return and do nothing
@@ -131,7 +139,7 @@ void Utilities::wakeupCallback(int cookie)
         return;
     } else {
         // remove token
-        m_cookies.removeAt(index);
+        m_powerDevilCookies.removeAt(index);
         Q_EMIT wakeup(cookie);
     }
 }
@@ -140,10 +148,10 @@ void Utilities::schedule()
 {
     auto minTime = std::numeric_limits<unsigned long long>::max();
 
-    for (const auto &tuple : std::as_const(m_list)) {
-        if (minTime > std::get<1>(tuple)) {
-            minTime = std::get<1>(tuple);
-            m_currentCookie = std::get<0>(tuple);
+    for (auto tuple : m_waitWorkerCookies) {
+        if (minTime > tuple.second) {
+            minTime = tuple.second;
+            m_currentCookie = tuple.first;
         }
     }
     m_worker->setNewTime(minTime); // Unix uses int64 internally for time, if we don't have anything to wait, we wait to year 2262 A.D.
@@ -156,8 +164,8 @@ void Utilities::initWorker()
         m_worker->moveToThread(m_timerThread);
         connect(m_worker, &AlarmWaitWorker::finished, this, [this] {
             // notify time is up
-            Q_EMIT this->wakeup(m_currentCookie);
-            this->clearWakeup(m_currentCookie);
+            Q_EMIT wakeup(m_currentCookie);
+            clearWakeup(m_currentCookie);
         });
     }
     m_timerThread->start();
