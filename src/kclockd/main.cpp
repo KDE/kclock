@@ -10,6 +10,7 @@
 #include "kclockdsettings.h"
 #include "kclocksettingsadaptor.h"
 #include "timermodel.h"
+#include "utilities.h"
 #include "version.h"
 #include "xdgportal.h"
 
@@ -45,6 +46,16 @@ int main(int argc, char *argv[])
     aboutData.addAuthor(i18n("Devin Lin"), QLatin1String(), QStringLiteral("devin@kde.org"));
     aboutData.addAuthor(i18n("Han Young"), QLatin1String(), QStringLiteral("hanyoung@protonmail.com"));
     KAboutData::setApplicationData(aboutData);
+
+    // ~~~~ Parse command line arguments ~~~~
+    {
+        QScopedPointer<QCommandLineParser> parser(createParser());
+        parser->process(app);
+
+        if (parser->isSet(QStringLiteral("no-powerdevil"))) {
+            Utilities::disablePowerDevil(true);
+        }
+    }
 
     // only allow one instance
     KDBusService service(KDBusService::Unique);
