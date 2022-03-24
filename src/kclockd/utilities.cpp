@@ -119,12 +119,11 @@ void Utilities::clearWakeup(int cookie)
         }
     } else {
         for (auto index = m_waitWorkerCookies.begin(); index < m_waitWorkerCookies.end(); ++index) {
-            if (cookie == (*index).first) {
+            int pairCookie = (*index).first;
+            if (cookie == pairCookie) {
                 m_waitWorkerCookies.erase(index);
-                break;
             }
         }
-        schedule();
     }
 }
 
@@ -136,7 +135,6 @@ void Utilities::wakeupCallback(int cookie)
     if (index == -1) {
         // something must be wrong here, return and do nothing
         qDebug() << "Callback ignored (wrong cookie).";
-        return;
     } else {
         // remove token
         m_powerDevilCookies.removeAt(index);
@@ -146,7 +144,8 @@ void Utilities::wakeupCallback(int cookie)
 
 void Utilities::schedule()
 {
-    auto minTime = std::numeric_limits<unsigned long long>::max();
+    auto eternity = std::numeric_limits<unsigned long long>::max();
+    auto minTime = eternity;
 
     for (auto tuple : m_waitWorkerCookies) {
         if (minTime > tuple.second) {
@@ -154,8 +153,12 @@ void Utilities::schedule()
             m_currentCookie = tuple.first;
         }
     }
-    m_worker->setNewTime(minTime); // Unix uses int64 internally for time, if we don't have anything to wait, we wait to year 2262 A.D.
+
+    if (minTime != eternity) { // only schedule worker if we have something to wait on
+        m_worker->setNewTime(minTime); // Unix uses int64 internally for time
+    }
 }
+
 void Utilities::initWorker()
 {
     if (!m_timerThread) {

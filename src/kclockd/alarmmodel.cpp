@@ -131,11 +131,11 @@ void AlarmModel::scheduleAlarm()
 
 void AlarmModel::wakeupCallback(int cookie)
 {
-    if (this->m_cookie == cookie) {
+    if (m_cookie == cookie) {
         for (auto alarm : std::as_const(alarmsToRing)) {
             alarm->ring();
         }
-        this->scheduleAlarm();
+        scheduleAlarm();
     }
 }
 void AlarmModel::removeAlarm(QString uuid)

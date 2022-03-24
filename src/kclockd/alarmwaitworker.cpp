@@ -67,7 +67,7 @@ void AlarmWaitWorker::setNewTime(quint64 timestamp)
     timerSpec.it_interval.tv_nsec = 0;
     timerfd_settime(m_timerFd, TFD_TIMER_ABSTIME, &timerSpec, nullptr); // absolute time
 
-    qDebug() << "start waiting, id:" << m_waitId << " Wait Time: " << timestamp;
+    qDebug() << "start waiting, id:" << m_waitId << " Wait Time:" << timestamp;
 
     Q_EMIT startWait(m_waitId);
 }

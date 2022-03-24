@@ -180,7 +180,12 @@ void Timer::timeUp(int cookie)
 {
     if (cookie == m_cookie) {
         ring();
-        m_cookie = -1;
+
+        // clear wakeup if it's somehow still there
+        if (m_cookie > 0) {
+            Utilities::instance().clearWakeup(m_cookie);
+            m_cookie = -1;
+        }
 
         // run command since timer has ended
         if (m_commandTimeout.isEmpty()) {
@@ -206,7 +211,10 @@ void Timer::setRunning(bool running)
 
     if (m_running) {
         m_hasElapsed = QDateTime::currentSecsSinceEpoch() - m_startTime;
+
         Utilities::instance().decfActiveCount();
+
+        // clear wakeup
         if (m_cookie > 0) {
             Utilities::instance().clearWakeup(m_cookie);
             m_cookie = -1;
@@ -216,7 +224,14 @@ void Timer::setRunning(bool running)
             // reset elapsed if the timer was already finished
             m_hasElapsed = 0;
         }
+
+        // if we scheduled a wakeup before, cancel it first
+        if (m_cookie > 0) {
+            Utilities::instance().clearWakeup(m_cookie);
+        }
+
         Utilities::instance().incfActiveCount();
+
         m_startTime = QDateTime::currentSecsSinceEpoch() - m_hasElapsed;
         m_cookie = Utilities::instance().scheduleWakeup(m_startTime + m_length);
     }
