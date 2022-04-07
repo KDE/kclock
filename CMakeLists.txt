@@ -60,6 +60,8 @@ find_package(Qt5QuickCompiler)
 
 ecm_find_qmlmodule(org.kde.kirigamiaddons.dateandtime 0.1)
 
+ki18n_install(po)
+
 add_subdirectory(src)
 
 install(PROGRAMS org.kde.kclock.desktop DESTINATION ${KDE_INSTALL_APPDIR})
