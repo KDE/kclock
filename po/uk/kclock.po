@@ -1,0 +1,426 @@
+# Translation of kclock.po to Ukrainian
+# Copyright (C) 2020-2021 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2021, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: kclock\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-25 00:46+0000\n"
+"PO-Revision-Date: 2022-03-05 08:43+0200\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Lokalize 20.12.0\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Юрій Чорноіван"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "yurchor@ukr.net"
+
+#: alarm.cpp:73
+#, kde-format
+msgid "Dismiss"
+msgstr "Відкинути"
+
+#: alarm.cpp:73
+#, kde-format
+msgid "Snooze"
+msgstr "Нагадати пізніше"
+
+#: alarm.cpp:75 alarm.h:51
+#, kde-format
+msgid "Alarm"
+msgstr "Нагадування"
+
+#: alarm.cpp:77 timer.cpp:55
+#, kde-format
+msgid "View"
+msgstr "Перегляд"
+
+#: alarmmodel.cpp:223
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Alarm: <shortcut>%1 %2</shortcut>"
+msgstr "Нагадування: <shortcut>%1 %2</shortcut>"
+
+#: main.cpp:30
+#, kde-format
+msgid "Don't use PowerDevil for alarms if it is available"
+msgstr "Не використовувати PowerDevil для нагадувань, якщо ця система доступна"
+
+#: main.cpp:45
+#, kde-format
+msgid "© 2020-2022 KDE Community"
+msgstr "© Спільнота KDE, 2020–2022"
+
+#: main.cpp:46
+#, kde-format
+msgid "Devin Lin"
+msgstr "Devin Lin"
+
+#: main.cpp:47
+#, kde-format
+msgid "Han Young"
+msgstr "Han Young"
+
+#: timer.cpp:53
+#, kde-format
+msgid "Timer complete"
+msgstr "Відлік завершено"
+
+#: timer.cpp:54
+#, kde-format
+msgid "Your timer %1 has finished!"
+msgstr "Відлік за вашим таймером %1 завершено!"
+
+#: xdgportal.cpp:34
+#, kde-format
+msgid ""
+"Allow the clock process to be in the background and launched on startup."
+msgstr ""
+"Дозволити запуск процесу годинника у фоновому режимі під час запуску "
+"середовища."
+
+#~ msgid "Select opened page"
+#~ msgstr "Вибрати відкриту сторінку"
+
+#~ msgid "Clock"
+#~ msgstr "Годинник"
+
+#~ msgid "A mobile friendly clock app built with Kirigami."
+#~ msgstr ""
+#~ "Пристосована до мобільних пристроїв програма-годинник на основі Kirigami."
+
+#~ msgid "© 2020 Plasma Development Team"
+#~ msgstr "© Команда розробників Плазми, 2020"
+
+#~ msgid "Alarms"
+#~ msgstr "Нагадування"
+
+#~ msgid "New Alarm"
+#~ msgstr "Створити нагадування"
+
+#~ msgid "No alarms configured"
+#~ msgstr "Нагадувань не налаштовано"
+
+#~ msgid "Edit"
+#~ msgstr "Змінити"
+
+#~ msgid "Delete"
+#~ msgstr "Вилучити"
+
+#~ msgid "Deleted %1"
+#~ msgstr "Вилучено %1"
+
+#~ msgid "Snoozed %1 minutes"
+#~ msgstr "Приспано на %1 хвилин"
+
+#~ msgid "Only once"
+#~ msgstr "Лише раз"
+
+#~ msgid "Everyday"
+#~ msgstr "Щодня"
+
+#~ msgid "Weekdays"
+#~ msgstr "Дні тижня"
+
+#~ msgctxt "Edit alarm page title"
+#~ msgid "Editing %1"
+#~ msgstr "Редагування %1"
+
+#~ msgid "Done"
+#~ msgstr "Виконано"
+
+#~ msgid "Days to Repeat"
+#~ msgstr "Кількість днів повторення"
+
+#~ msgid "Alarm Name (optional)"
+#~ msgstr "Назва нагадування (необов'язкова)"
+
+#~ msgid "Wake Up"
+#~ msgstr "Розбудити"
+
+#~ msgid "Ringtone"
+#~ msgstr "Мелодія дзвінка"
+
+#~ msgid "Choose an audio"
+#~ msgstr "Виберіть звук"
+
+#~ msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
+#~ msgstr "звукові файли (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
+
+#~ msgid "All files (*)"
+#~ msgstr "усі файли (*)"
+
+#~ msgid "Settings"
+#~ msgstr "Параметри"
+
+#~ msgid "Alarm Volume"
+#~ msgstr "Гучність нагадування"
+
+#~ msgid "Silence Alarm After"
+#~ msgstr "Вимкнути нагадування за"
+
+#~ msgid "Alarm Snooze Length"
+#~ msgstr "Тривалість присипляння нагадування"
+
+#~ msgid "About"
+#~ msgstr "Про програму"
+
+#~ msgid "Change Alarm Volume"
+#~ msgstr "Змінити гучність нагадування"
+
+#~ msgid "Volume: "
+#~ msgstr "Гучність:"
+
+#~ msgid "Time"
+#~ msgstr "Час"
+
+#~ msgid "Timer"
+#~ msgstr "Таймер"
+
+#~ msgid "Stopwatch"
+#~ msgstr "Хронометр"
+
+#~ msgid "Pause"
+#~ msgstr "Призупинити"
+
+#~ msgid "Start"
+#~ msgstr "Запустити"
+
+#~ msgid "Reset"
+#~ msgstr "Скинути"
+
+#~ msgid "Lap"
+#~ msgstr "Оберт"
+
+#~ msgid "#%1"
+#~ msgstr "№%1"
+
+#~ msgid "Add timezone"
+#~ msgstr "Додати часовий пояс"
+
+#~ msgid "1 m"
+#~ msgstr "1 хв."
+
+#~ msgid "5 m"
+#~ msgstr "5 хв."
+
+#~ msgid "10 m"
+#~ msgstr "10 хв."
+
+#~ msgid "15 m"
+#~ msgstr "15 хв."
+
+#~ msgid "30 m"
+#~ msgstr "30 хв."
+
+#~ msgid "1 h"
+#~ msgstr "1 год."
+
+#~ msgid "<b>Duration:</b>"
+#~ msgstr "<b>Тривалість:</b>"
+
+#~ msgid "hours"
+#~ msgstr "годин"
+
+#~ msgid "minutes"
+#~ msgstr "хвилин"
+
+#~ msgid "seconds"
+#~ msgstr "секунд"
+
+#~ msgid "<b>Label (optional):</b>"
+#~ msgstr "<b>Мітка (необов'язкова):</b>"
+
+#~ msgid "<b>Create New Timer</b>"
+#~ msgstr "<b>Створити таймер</b>"
+
+#~ msgid "Cancel"
+#~ msgstr "Скасувати"
+
+#~ msgid "Create timer"
+#~ msgstr "Створити таймер"
+
+#~ msgid "Timers"
+#~ msgstr "Таймери"
+
+#~ msgid "New Timer"
+#~ msgstr "Новий таймер"
+
+#~ msgid "Add a timer"
+#~ msgstr "Додати таймер"
+
+#~ msgid "New timer"
+#~ msgstr "Новий таймер"
+
+#~ msgid "Search for a city"
+#~ msgstr "Пошук за містом"
+
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#~ msgid "<b>Timezones</b>"
+#~ msgstr "<b>Часові пояси</b>"
+
+#~ msgid "Timezones"
+#~ msgstr "Часові пояси"
+
+#~ msgid "30 seconds"
+#~ msgstr "30 секунд"
+
+#~ msgid "1 minute"
+#~ msgstr "1 хвилина"
+
+#~ msgid "5 minutes"
+#~ msgstr "5 хвилин"
+
+#~ msgid "10 minutes"
+#~ msgstr "10 хвилин"
+
+#~ msgid "15 minutes"
+#~ msgstr "15 хвилин"
+
+#~ msgid "Never"
+#~ msgstr "Ніколи"
+
+#~ msgid "2 minutes"
+#~ msgstr "2 хвилини"
+
+#~ msgid "3 minutes"
+#~ msgstr "3 хвилини"
+
+#~ msgid "4 minutes"
+#~ msgstr "4 хвилини"
+
+#~ msgid "30 minutes"
+#~ msgstr "30 хвилин"
+
+#~ msgid "1 hour"
+#~ msgstr "1 година"
+
+#~ msgid "hour"
+#~ msgstr "година"
+
+#~ msgid "%1 and a half hours ahead"
+#~ msgstr "%1 і пів години попереду"
+
+#~ msgid "%1 %2 ahead"
+#~ msgstr "%1 %2 попереду"
+
+#~ msgid "%1 and a half hours behind"
+#~ msgstr "%1 і пів години позаду"
+
+#~ msgid "%1 %2 behind"
+#~ msgstr "%1 %2 позаду"
+
+#~ msgid "Local time"
+#~ msgstr "Місцевий час"
+
+#~ msgid "%1 day"
+#~ msgid_plural "%1 days"
+#~ msgstr[0] "%1 день"
+#~ msgstr[1] "%1 дні"
+#~ msgstr[2] "%1 днів"
+#~ msgstr[3] "%1 день"
+
+#~ msgid ", "
+#~ msgstr ", "
+
+#~ msgid " and "
+#~ msgstr " і "
+
+#~ msgid "%1 hour"
+#~ msgid_plural "%1 hours"
+#~ msgstr[0] "%1 година"
+#~ msgstr[1] "%1 години"
+#~ msgstr[2] "%1 годин"
+#~ msgstr[3] "%1 година"
+
+#~ msgid "%1 minute"
+#~ msgid_plural "%1 minutes"
+#~ msgstr[0] "%1 хвилина"
+#~ msgstr[1] "%1 хвилини"
+#~ msgstr[2] "%1 хвилин"
+#~ msgstr[3] "%1 хвилина"
+
+#~ msgid "Alarm will be rung within a minute"
+#~ msgstr "Нагадування буде увімкнено за хвилину"
+
+#~ msgid "Alarm will be rung after %1"
+#~ msgstr "Нагадування буде увімкнено за %1"
+
+#~ msgid "Alarm Name"
+#~ msgstr "Назва нагадування"
+
+#~ msgid "Create"
+#~ msgstr "Створити"
+
+#~ msgid "Lap %1"
+#~ msgstr "Оберт %1"
+
+#~ msgid " minutes"
+#~ msgstr " хвилин"
+
+#~ msgid "Run in background mode"
+#~ msgstr "Працювати у фоновому режимі"
+
+#~| msgid "days "
+#~ msgid " days"
+#~ msgstr " дні"
+
+#~| msgid "hours"
+#~ msgid " hours"
+#~ msgstr " годин"
+
+#~ msgid "day "
+#~ msgstr "день "
+
+#~| msgid "hours"
+#~ msgid "hours "
+#~ msgstr "години "
+
+#~| msgid "hour"
+#~ msgid "hour "
+#~ msgstr "година "
+
+#~| msgid "minutes"
+#~ msgid "minute"
+#~ msgstr "хвилини"
+
+#~ msgid "Use 24 Hour Time"
+#~ msgstr "24-годинний формат запису часу"
+
+#~ msgid "default"
+#~ msgstr "типова"
+
+#~ msgid "Change Timer Duration"
+#~ msgstr "Змінити тривалість таймера"
+
+#~ msgid "Hours"
+#~ msgstr "Години"
+
+#~ msgid "Minutes"
+#~ msgstr "Хвилини"
+
+#~ msgid "Seconds"
+#~ msgstr "Секунди"
+
+#~ msgid "Edit Alarm"
+#~ msgstr "Редагувати будильник"
+
+#~ msgid "Start week on"
+#~ msgstr "Починати тиждень з"

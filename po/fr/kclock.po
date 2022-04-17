@@ -1,0 +1,405 @@
+# Xavier Besnard <xavier.besnard@neuf.fr>, 2020, 2021, 2022.
+# Simon Depiets <sdepiets@gmail.com>, 2020.
+# Noé Lopez <noelopez@free.fr>, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: kclock\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-25 00:46+0000\n"
+"PO-Revision-Date: 2022-03-17 21:46+0100\n"
+"Last-Translator: Noé Lopez <noelopez@free.fr>\n"
+"Language-Team: French <kde-francophone@kde.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 21.12.3\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Simon Depiets, Xavier Besnard"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "vpinon@kde.org, xavier.besnard@neuf.fr"
+
+#: alarm.cpp:73
+#, kde-format
+msgid "Dismiss"
+msgstr "Rejeter"
+
+#: alarm.cpp:73
+#, kde-format
+msgid "Snooze"
+msgstr "Retarder"
+
+#: alarm.cpp:75 alarm.h:51
+#, kde-format
+msgid "Alarm"
+msgstr "Alarme"
+
+#: alarm.cpp:77 timer.cpp:55
+#, kde-format
+msgid "View"
+msgstr "Afficher"
+
+#: alarmmodel.cpp:223
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Alarm: <shortcut>%1 %2</shortcut>"
+msgstr "Alarme : <shortcut>%1 %2</shortcut>"
+
+#: main.cpp:30
+#, kde-format
+msgid "Don't use PowerDevil for alarms if it is available"
+msgstr "Ne pas utiliser « PowerDevil » pour des alarmes lorsque disponible"
+
+#: main.cpp:45
+#, kde-format
+msgid "© 2020-2022 KDE Community"
+msgstr "© 2020 - 2022 Communauté KDE"
+
+#: main.cpp:46
+#, kde-format
+msgid "Devin Lin"
+msgstr "Devin Lin"
+
+#: main.cpp:47
+#, kde-format
+msgid "Han Young"
+msgstr "Han Young"
+
+#: timer.cpp:53
+#, kde-format
+msgid "Timer complete"
+msgstr "Temps écoulé"
+
+#: timer.cpp:54
+#, kde-format
+msgid "Your timer %1 has finished!"
+msgstr "Votre minuteur %1 est terminé !"
+
+#: xdgportal.cpp:34
+#, kde-format
+msgid ""
+"Allow the clock process to be in the background and launched on startup."
+msgstr ""
+"Permettre au processus d'horloge de s'exécuter en arrière-plan et d'être "
+"lancé au démarrage."
+
+#~ msgid "Select opened page"
+#~ msgstr "Sélectionner une page ouverte"
+
+#~ msgid "Clock"
+#~ msgstr "Horloge"
+
+#~ msgid "A mobile friendly clock app built with Kirigami."
+#~ msgstr "Une application mobile sympathique construite avec Kirigami."
+
+#~ msgid "© 2020 Plasma Development Team"
+#~ msgstr "© 2020 L'équipe de développement de Plasma"
+
+#~ msgid "Alarms"
+#~ msgstr "Alarmes"
+
+#~ msgid "New Alarm"
+#~ msgstr "Nouvelle alarme"
+
+#~ msgid "No alarms configured"
+#~ msgstr "Aucune alarme configurée"
+
+#~ msgid "Edit"
+#~ msgstr "Modifier"
+
+#~ msgid "Delete"
+#~ msgstr "Supprimer"
+
+#~ msgid "Deleted %1"
+#~ msgstr "%1 supprimé"
+
+#~ msgid "Snoozed %1 minutes"
+#~ msgstr "Endormi pendant %1 minutes"
+
+#~ msgid "Only once"
+#~ msgstr "Une fois seulement"
+
+#~ msgid "Everyday"
+#~ msgstr "Tous les jours"
+
+#~ msgid "Weekdays"
+#~ msgstr "Jours ouvrables"
+
+#, fuzzy
+#~| msgid "Edit %1"
+#~ msgctxt "Edit alarm page title"
+#~ msgid "Editing %1"
+#~ msgstr "Modifier %1"
+
+#~ msgid "Done"
+#~ msgstr "Fait"
+
+#~ msgid "Days to Repeat"
+#~ msgstr "Jours à répéter"
+
+#, fuzzy
+#~| msgid "Label (optional)"
+#~ msgid "Alarm Name (optional)"
+#~ msgstr "Étiquette (optionnel)"
+
+#~ msgid "Wake Up"
+#~ msgstr "Réveil"
+
+#~ msgid "Ringtone"
+#~ msgstr "Sonnerie"
+
+#~ msgid "Choose an audio"
+#~ msgstr "Sélectionner un fichier audio"
+
+#~ msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
+#~ msgstr "Fichiers audio (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
+
+#~ msgid "All files (*)"
+#~ msgstr "Tous les fichiers (*)"
+
+#~ msgid "Settings"
+#~ msgstr "Configuration"
+
+#~ msgid "Alarm Volume"
+#~ msgstr "Volume de l'alarme"
+
+#~ msgid "Silence Alarm After"
+#~ msgstr "Alarme silencieuse après"
+
+#~ msgid "Alarm Snooze Length"
+#~ msgstr "Durée de l'alarme répétitive"
+
+#~ msgid "About"
+#~ msgstr "À propos"
+
+#~ msgid "Change Alarm Volume"
+#~ msgstr "Modifier le volume de l'alarme"
+
+#~ msgid "Volume: "
+#~ msgstr "Volume : "
+
+#~ msgid "Time"
+#~ msgstr "Heure"
+
+#~ msgid "Timer"
+#~ msgstr "Minuteur"
+
+#~ msgid "Stopwatch"
+#~ msgstr "Chronomètre"
+
+#~ msgid "Pause"
+#~ msgstr "Pause"
+
+#~ msgid "Start"
+#~ msgstr "Démarrer"
+
+#~ msgid "Reset"
+#~ msgstr "Réinitialiser"
+
+#~ msgid "Lap"
+#~ msgstr "Tour"
+
+#~ msgid "#%1"
+#~ msgstr "#%1"
+
+#~ msgid "Add timezone"
+#~ msgstr "Ajouter un fuseau horaire"
+
+#, fuzzy
+#~| msgid "1 hour"
+#~ msgid "1 h"
+#~ msgstr "1 heure"
+
+#, fuzzy
+#~| msgid "Duration"
+#~ msgid "<b>Duration:</b>"
+#~ msgstr "Durée"
+
+#~ msgid "hours"
+#~ msgstr "heures"
+
+#~ msgid "minutes"
+#~ msgstr "minutes"
+
+#~ msgid "seconds"
+#~ msgstr "secondes"
+
+#, fuzzy
+#~| msgid "Label (optional)"
+#~ msgid "<b>Label (optional):</b>"
+#~ msgstr "Étiquette (optionnel)"
+
+#, fuzzy
+#~| msgid "New timer"
+#~ msgid "Create timer"
+#~ msgstr "Nouveau minuteur"
+
+#~ msgid "Timers"
+#~ msgstr "Minuteurs"
+
+#~ msgid "New Timer"
+#~ msgstr "Nouveau minuteur"
+
+#~ msgid "Add a timer"
+#~ msgstr "Ajouter un minuteur"
+
+#~ msgid "New timer"
+#~ msgstr "Nouveau minuteur"
+
+#~ msgid "Search for a city"
+#~ msgstr "Rechercher une ville"
+
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#, fuzzy
+#~| msgid "Timezones"
+#~ msgid "<b>Timezones</b>"
+#~ msgstr "Fuseaux horaires"
+
+#~ msgid "Timezones"
+#~ msgstr "Fuseaux horaires"
+
+#~ msgid "30 seconds"
+#~ msgstr "30 secondes"
+
+#~ msgid "1 minute"
+#~ msgstr "1 minute"
+
+#~ msgid "5 minutes"
+#~ msgstr "5 minutes"
+
+#~ msgid "10 minutes"
+#~ msgstr "10 minutes"
+
+#~ msgid "15 minutes"
+#~ msgstr "15 minutes"
+
+#~ msgid "Never"
+#~ msgstr "Jamais"
+
+#~ msgid "2 minutes"
+#~ msgstr "2 minutes"
+
+#~ msgid "3 minutes"
+#~ msgstr "3 minutes"
+
+#~ msgid "4 minutes"
+#~ msgstr "4 minutes"
+
+#~ msgid "30 minutes"
+#~ msgstr "30 minutes"
+
+#~ msgid "1 hour"
+#~ msgstr "1 heure"
+
+#~ msgid "hour"
+#~ msgstr "heure"
+
+#~ msgid "%1 and a half hours ahead"
+#~ msgstr "%1 et une demi-heure après"
+
+#~ msgid "%1 %2 ahead"
+#~ msgstr "%1 %2 en avant"
+
+#~ msgid "%1 and a half hours behind"
+#~ msgstr "%1 et une demi-heure à suivre"
+
+#~ msgid "%1 %2 behind"
+#~ msgstr "%1 %2 derrière"
+
+#~ msgid "Local time"
+#~ msgstr "Heure locale"
+
+#~ msgid "%1 day"
+#~ msgid_plural "%1 days"
+#~ msgstr[0] "%1 jour"
+#~ msgstr[1] "%1 jours"
+
+#~ msgid ", "
+#~ msgstr ", "
+
+#~ msgid " and "
+#~ msgstr " et"
+
+#~ msgid "%1 hour"
+#~ msgid_plural "%1 hours"
+#~ msgstr[0] "%1 heure"
+#~ msgstr[1] "%1 heures"
+
+#~ msgid "%1 minute"
+#~ msgid_plural "%1 minutes"
+#~ msgstr[0] "%1 minute"
+#~ msgstr[1] "%1 minutes"
+
+#~ msgid "Alarm will be rung within a minute"
+#~ msgstr "La sonnerie de l'alarme sera déclenchée dans une minute"
+
+#~ msgid "Alarm will be rung after %1"
+#~ msgstr "La sonnerie de l'alarme sera déclenchée après %1"
+
+#~ msgid "Alarm Name"
+#~ msgstr "Nom de l'alarme"
+
+#~ msgid "Create"
+#~ msgstr "Créer"
+
+#~ msgid " minutes"
+#~ msgstr "minutes"
+
+#~ msgid "Run in background mode"
+#~ msgstr "Lancer en mode d'arrière-plan"
+
+#, fuzzy
+#~| msgid "hours"
+#~ msgid " hours"
+#~ msgstr "heures"
+
+#, fuzzy
+#~| msgid "hours"
+#~ msgid "hours "
+#~ msgstr "heures"
+
+#, fuzzy
+#~| msgid "hour"
+#~ msgid "hour "
+#~ msgstr "heure"
+
+#, fuzzy
+#~| msgid "minutes"
+#~ msgid "minute"
+#~ msgstr "minutes"
+
+#~ msgid "Use 24 Hour Time"
+#~ msgstr "Utiliser une heure sur 24 heures"
+
+#~ msgid "default"
+#~ msgstr "par défaut"
+
+#~ msgid "Change Timer Duration"
+#~ msgstr "Modifier la durée à décompter"
+
+#~ msgid "Hours"
+#~ msgstr "Heures"
+
+#~ msgid "Minutes"
+#~ msgstr "Minutes"
+
+#~ msgid "Seconds"
+#~ msgstr "Secondes"
+
+#~ msgid "Edit Alarm"
+#~ msgstr "Modifier une alarme"
+
+#~ msgid "Start week on"
+#~ msgstr "Démarrer la semaine par"

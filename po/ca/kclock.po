@@ -1,0 +1,417 @@
+# Translation of kclock.po to Catalan
+# Copyright (C) 2020-2022 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Antoni Bella Pérez <antonibella5@yahoo.com>, 2020, 2021.
+# Josep M. Ferrer <txemaq@gmail.com>, 2020, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: kclock\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-25 00:46+0000\n"
+"PO-Revision-Date: 2022-03-05 11:15+0100\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 20.12.0\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Antoni Bella"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "antonibella5@yahoo.com"
+
+#: alarm.cpp:73
+#, kde-format
+msgid "Dismiss"
+msgstr "Descarta"
+
+#: alarm.cpp:73
+#, kde-format
+msgid "Snooze"
+msgstr "Posposa"
+
+#: alarm.cpp:75 alarm.h:51
+#, kde-format
+msgid "Alarm"
+msgstr "Alarma"
+
+#: alarm.cpp:77 timer.cpp:55
+#, kde-format
+msgid "View"
+msgstr "Visualitza"
+
+#: alarmmodel.cpp:223
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Alarm: <shortcut>%1 %2</shortcut>"
+msgstr "Alarma: <shortcut>%1 %2</shortcut>"
+
+#: main.cpp:30
+#, kde-format
+msgid "Don't use PowerDevil for alarms if it is available"
+msgstr "No usa el PowerDevil per a les alarmes si és disponible"
+
+#: main.cpp:45
+#, kde-format
+msgid "© 2020-2022 KDE Community"
+msgstr "© 2020-2022 La comunitat KDE"
+
+#: main.cpp:46
+#, kde-format
+msgid "Devin Lin"
+msgstr "Devin Lin"
+
+#: main.cpp:47
+#, kde-format
+msgid "Han Young"
+msgstr "Han Young"
+
+#: timer.cpp:53
+#, kde-format
+msgid "Timer complete"
+msgstr "Finalització del temporitzador"
+
+#: timer.cpp:54
+#, kde-format
+msgid "Your timer %1 has finished!"
+msgstr "El temporitzador %1 ha finalitzat!"
+
+#: xdgportal.cpp:34
+#, kde-format
+msgid ""
+"Allow the clock process to be in the background and launched on startup."
+msgstr ""
+"Permet que el procés del rellotge estigui en segon pla i es llanci en "
+"iniciar."
+
+#~ msgid "Select opened page"
+#~ msgstr "Selecciona la pàgina oberta"
+
+#~ msgid "Clock"
+#~ msgstr "Rellotge"
+
+#~ msgid "© 2020 Plasma Development Team"
+#~ msgstr "© 2020 L'equip de desenvolupament del Plasma"
+
+#~ msgid "Alarms"
+#~ msgstr "Alarmes"
+
+#~ msgid "New Alarm"
+#~ msgstr "Alarma nova"
+
+#~ msgid "No alarms configured"
+#~ msgstr "No s'ha configurat cap alarma"
+
+#~ msgid "Edit"
+#~ msgstr "Edita"
+
+#~ msgid "Delete"
+#~ msgstr "Suprimeix"
+
+#~ msgid "Deleted %1"
+#~ msgstr "S'ha suprimit %1"
+
+#~ msgid "Snoozed %1 minutes"
+#~ msgstr "Posposat %1 minuts"
+
+#~ msgid "Only once"
+#~ msgstr "Només una vegada"
+
+#~ msgid "Everyday"
+#~ msgstr "Cada dia"
+
+#~ msgid "Weekdays"
+#~ msgstr "Dies de la setmana"
+
+#~ msgctxt "Edit alarm page title"
+#~ msgid "Editing %1"
+#~ msgstr "Edició de %1"
+
+#~ msgid "Done"
+#~ msgstr "Fet"
+
+#~ msgid "Days to Repeat"
+#~ msgstr "Dies per a repetir"
+
+#~ msgid "Alarm Name (optional)"
+#~ msgstr "Nom de l'alarma (opcional)"
+
+#~ msgid "Wake Up"
+#~ msgstr "Desperta"
+
+#~ msgid "Ringtone"
+#~ msgstr "To de la trucada"
+
+#~ msgid "Choose an audio"
+#~ msgstr "Trieu un àudio"
+
+#~ msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
+#~ msgstr ""
+#~ "Fitxers d'àudio (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
+
+#~ msgid "All files (*)"
+#~ msgstr "Tots els fitxers (*)"
+
+#~ msgid "Settings"
+#~ msgstr "Arranjament"
+
+#~ msgid "Alarm Volume"
+#~ msgstr "Volum de l'alarma"
+
+#~ msgid "Silence Alarm After"
+#~ msgstr "Silencia l'alarma després de"
+
+#~ msgid "Alarm Snooze Length"
+#~ msgstr "Durada del posposament de l'alarma"
+
+#~ msgid "About"
+#~ msgstr "Quant al"
+
+#~ msgid "Change Alarm Volume"
+#~ msgstr "Canvia el volum de l'alarma"
+
+#~ msgid "Volume: "
+#~ msgstr "Volum: "
+
+#~ msgid "Time"
+#~ msgstr "Temps"
+
+#~ msgid "Timer"
+#~ msgstr "Temporitzador"
+
+#~ msgid "Stopwatch"
+#~ msgstr "Cronòmetre"
+
+#~ msgid "Pause"
+#~ msgstr "Pausa"
+
+#~ msgid "Start"
+#~ msgstr "Inicia"
+
+#~ msgid "Reset"
+#~ msgstr "Reinicia"
+
+#~ msgid "Lap"
+#~ msgstr "Volta"
+
+#~ msgid "#%1"
+#~ msgstr "núm. %1"
+
+#~ msgid "Add timezone"
+#~ msgstr "Afegeix una zona horària"
+
+#~ msgid "1 m"
+#~ msgstr "1 m"
+
+#~ msgid "5 m"
+#~ msgstr "5 m"
+
+#~ msgid "10 m"
+#~ msgstr "10 m"
+
+#~ msgid "15 m"
+#~ msgstr "15 m"
+
+#~ msgid "30 m"
+#~ msgstr "30 m"
+
+#~ msgid "1 h"
+#~ msgstr "1 h"
+
+#~ msgid "<b>Duration:</b>"
+#~ msgstr "<b>Durada:</b>"
+
+#~ msgid "hours"
+#~ msgstr "hores"
+
+#~ msgid "minutes"
+#~ msgstr "minuts"
+
+#~ msgid "seconds"
+#~ msgstr "segons"
+
+#~ msgid "<b>Label (optional):</b>"
+#~ msgstr "<b>Etiqueta (opcional):</b>"
+
+#~ msgid "<b>Create New Timer</b>"
+#~ msgstr "<b>Crea un temporitzador nou</b>"
+
+#~ msgid "Cancel"
+#~ msgstr "Cancel·la"
+
+#~ msgid "Create timer"
+#~ msgstr "Crea un temporitzador"
+
+#~ msgid "Timers"
+#~ msgstr "Temporitzadors"
+
+#~ msgid "New Timer"
+#~ msgstr "Temporitzador nou"
+
+#~ msgid "Add a timer"
+#~ msgstr "Afegeix un temporitzador"
+
+#~ msgid "New timer"
+#~ msgstr "Temporitzador nou"
+
+#~ msgid "Search for a city"
+#~ msgstr "Cerca una ciutat"
+
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#~ msgid "<b>Timezones</b>"
+#~ msgstr "<b>Zones horàries</b>"
+
+#~ msgid "Timezones"
+#~ msgstr "Zones horàries"
+
+#~ msgid "30 seconds"
+#~ msgstr "30 segons"
+
+#~ msgid "1 minute"
+#~ msgstr "1 minut"
+
+#~ msgid "5 minutes"
+#~ msgstr "5 minuts"
+
+#~ msgid "10 minutes"
+#~ msgstr "10 minuts"
+
+#~ msgid "15 minutes"
+#~ msgstr "15 minuts"
+
+#~ msgid "Never"
+#~ msgstr "Mai"
+
+#~ msgid "2 minutes"
+#~ msgstr "2 minuts"
+
+#~ msgid "3 minutes"
+#~ msgstr "3 minuts"
+
+#~ msgid "4 minutes"
+#~ msgstr "4 minuts"
+
+#~ msgid "30 minutes"
+#~ msgstr "30 minuts"
+
+#~ msgid "1 hour"
+#~ msgstr "1 hora"
+
+#~ msgid "hour"
+#~ msgstr "hora"
+
+#~ msgid "%1 and a half hours ahead"
+#~ msgstr "%1 i mitja hora per davant"
+
+#~ msgid "%1 %2 ahead"
+#~ msgstr "%1 %2 per davant"
+
+#~ msgid "%1 and a half hours behind"
+#~ msgstr "%1 i mitja hora per darrere"
+
+#~ msgid "%1 %2 behind"
+#~ msgstr "%1 %2 per darrere"
+
+#~ msgid "Local time"
+#~ msgstr "Hora local"
+
+#~ msgid "%1 day"
+#~ msgid_plural "%1 days"
+#~ msgstr[0] "%1 dia"
+#~ msgstr[1] "%1 dies"
+
+#~ msgid ", "
+#~ msgstr ", "
+
+#~ msgid " and "
+#~ msgstr " i "
+
+#~ msgid "%1 hour"
+#~ msgid_plural "%1 hours"
+#~ msgstr[0] "%1 hora"
+#~ msgstr[1] "%1 hores"
+
+#~ msgid "%1 minute"
+#~ msgid_plural "%1 minutes"
+#~ msgstr[0] "%1 minut"
+#~ msgstr[1] "%1 minuts"
+
+#~ msgid "Alarm will be rung within a minute"
+#~ msgstr "L'alarma sonarà després d'un minut"
+
+#~ msgid "Alarm will be rung after %1"
+#~ msgstr "L'alarma sonarà després de %1"
+
+#~ msgid "Alarm Name"
+#~ msgstr "Nom de l'alarma"
+
+#~ msgid "Create"
+#~ msgstr "Crea"
+
+#~ msgid "Lap %1"
+#~ msgstr "Volta %1"
+
+#~ msgid " minutes"
+#~ msgstr " minuts"
+
+#~ msgid "Run in background mode"
+#~ msgstr "Executa en el mode segon pla"
+
+#~| msgid "days "
+#~ msgid " days"
+#~ msgstr " dies"
+
+#~| msgid "hours"
+#~ msgid " hours"
+#~ msgstr " hores"
+
+#~ msgid "day "
+#~ msgstr "dia "
+
+#~| msgid "hours"
+#~ msgid "hours "
+#~ msgstr "hores "
+
+#~| msgid "hour"
+#~ msgid "hour "
+#~ msgstr "hora "
+
+#~| msgid "minutes"
+#~ msgid "minute"
+#~ msgstr "minut"
+
+#~ msgid "Use 24 Hour Time"
+#~ msgstr "Usa un temps de 24 hores"
+
+#~ msgid "default"
+#~ msgstr "Predeterminat"
+
+#~ msgid "Change Timer Duration"
+#~ msgstr "Canvia la durada del temporitzador"
+
+#~ msgid "Hours"
+#~ msgstr "Hores"
+
+#~ msgid "Minutes"
+#~ msgstr "Minuts"
+
+#~ msgid "Seconds"
+#~ msgstr "Segons"
+
+#~ msgid "Edit Alarm"
+#~ msgstr "Edita l'alarma"
+
+#~ msgid "Start week on"
+#~ msgstr "Inici de la setmana"

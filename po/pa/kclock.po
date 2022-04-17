@@ -1,0 +1,346 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the kclock package.
+#
+# A S Alam <aalam.yellow@gmail.com>, 2021, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: kclock\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-25 00:46+0000\n"
+"PO-Revision-Date: 2022-01-03 09:31-0800\n"
+"Last-Translator: A S Alam <aalam@satluj.org>\n"
+"Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
+"Language: pa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 21.04.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "ਅ.ਸ.ਆਲਮ ੨੦੨੧-੨੦੨੨"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "alam.yellow@gmail.com"
+
+#: alarm.cpp:73
+#, kde-format
+msgid "Dismiss"
+msgstr "ਖ਼ਾਰਜ"
+
+#: alarm.cpp:73
+#, kde-format
+msgid "Snooze"
+msgstr "ਟਾਲੋ"
+
+#: alarm.cpp:75 alarm.h:51
+#, kde-format
+msgid "Alarm"
+msgstr "ਅਲਾਰਮ"
+
+#: alarm.cpp:77 timer.cpp:55
+#, kde-format
+msgid "View"
+msgstr "ਵੇਖੋ"
+
+#: alarmmodel.cpp:223
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Alarm: <shortcut>%1 %2</shortcut>"
+msgstr "ਅਲਾਰਮ: <shortcut>%1 %2</shortcut>"
+
+#: main.cpp:30
+#, kde-format
+msgid "Don't use PowerDevil for alarms if it is available"
+msgstr "ਜੇ ਉਪਲੱਬਧ ਹੈ ਤਾਂ ਆਲਰਮਾਂ ਲਈ ਪਾਵਰ-ਡਿਵੇਲ ਨਾ ਵਰਤੋਂ"
+
+#: main.cpp:45
+#, fuzzy, kde-format
+#| msgid "© 2020-2021 KDE Community"
+msgid "© 2020-2022 KDE Community"
+msgstr "© 2020-2021 KDE ਕਮਿਊਨਟੀ"
+
+#: main.cpp:46
+#, kde-format
+msgid "Devin Lin"
+msgstr "ਡੇਵਿਨ ਲਿਨ"
+
+#: main.cpp:47
+#, kde-format
+msgid "Han Young"
+msgstr "ਹਾਂ ਯੰਗ"
+
+#: timer.cpp:53
+#, kde-format
+msgid "Timer complete"
+msgstr "ਟਾਈਮਰ ਪੂਰਾ"
+
+#: timer.cpp:54
+#, kde-format
+msgid "Your timer %1 has finished!"
+msgstr "ਤੁਹਾਡਾ ਟਾਈਮਰ %1 ਪੂਰਾ ਹੋਇਆ!"
+
+#: xdgportal.cpp:34
+#, kde-format
+msgid ""
+"Allow the clock process to be in the background and launched on startup."
+msgstr ""
+
+#~ msgid "Select opened page"
+#~ msgstr "ਖੋਲ੍ਹੇ ਸਫ਼ੇ ਨੂੰ ਚੁਣੋ"
+
+#~ msgid "Clock"
+#~ msgstr "ਘੜੀ"
+
+#~ msgid "A mobile friendly clock app built with Kirigami."
+#~ msgstr "ਕੀਰੀਗਾਮੀ ਵਿੱਚ ਬਣਾਈ ਘੜੀ ਸੰਬੰਧੀ ਵਰਤੋਂਕਾਰਾਂ ਲਈ ਸਰਲ ਐਪ ਹੈ।"
+
+#~ msgid "© 2020 Plasma Development Team"
+#~ msgstr "© 2020 ਪਲਾਜ਼ਮਾ ਡਿਵੈਲਪਮੈਂਟ ਟੀਮ"
+
+#~ msgid "Alarms"
+#~ msgstr "ਅਲਾਰਮ"
+
+#~ msgid "New Alarm"
+#~ msgstr "ਨਵਾਂ ਅਲਾਰਮ"
+
+#~ msgid "No alarms configured"
+#~ msgstr "ਕੋਈ ਅਲਾਰਮ ਸੰਰਚਿਤ ਨਹੀਂ ਹੈ"
+
+#~ msgid "Edit"
+#~ msgstr "ਸੋਧੋ"
+
+#~ msgid "Delete"
+#~ msgstr "ਹਟਾਓ"
+
+#~ msgid "Deleted %1"
+#~ msgstr "%1 ਹਟਾਇਆ"
+
+#~ msgid "Snoozed %1 minutes"
+#~ msgstr "%1 ਮਿੰਟ ਲਈ ਟਾਲੋ"
+
+#~ msgid "Only once"
+#~ msgstr "ਸਿਰਫ਼ ਇੱਕ ਵਾਰ"
+
+#~ msgid "Everyday"
+#~ msgstr "ਹਰ ਰੋਜ਼"
+
+#~ msgid "Weekdays"
+#~ msgstr "ਹਫ਼ਤੇਵਾਰ"
+
+#~ msgid "Done"
+#~ msgstr "ਮੁਕੰਮਲ"
+
+#~ msgid "Days to Repeat"
+#~ msgstr "ਦਰਹਾਉਣ ਲਈ ਦਿਨ"
+
+#, fuzzy
+#~| msgid "Label (optional)"
+#~ msgid "Alarm Name (optional)"
+#~ msgstr "ਲੇਬਲ (ਚੋਣਵਾਂ)"
+
+#~ msgid "Wake Up"
+#~ msgstr "ਜਗਾਓ"
+
+#~ msgid "Ringtone"
+#~ msgstr "ਰਿੰਗਟੋਨ"
+
+#~ msgid "Choose an audio"
+#~ msgstr "ਆਡੀਓ ਚੁਣੋ"
+
+#~ msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
+#~ msgstr "ਆਡੀਓ ਫਾਇਲਾਂ (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
+
+#~ msgid "All files (*)"
+#~ msgstr "ਸਭ ਫਾਇਲਾਂ (**)"
+
+#~ msgid "Settings"
+#~ msgstr "ਸੈਟਿੰਗਾਂ"
+
+#~ msgid "Alarm Volume"
+#~ msgstr "ਅਲਾਰਮ ਦੀ ਆਵਾਜ਼"
+
+#~ msgid "Silence Alarm After"
+#~ msgstr "ਇਸ ਦੇ ਬਾਅਦ ਅਲਾਰਮ ਮੌਨ ਕਰੋ"
+
+#~ msgid "Alarm Snooze Length"
+#~ msgstr "ਅਲਾਰਮ ਟਾਲਣ ਦੀ ਲੰਬਾਈ"
+
+#~ msgid "About"
+#~ msgstr "ਇਸ ਬਾਰੇ"
+
+#~ msgid "Change Alarm Volume"
+#~ msgstr "ਅਲਾਰਮ ਦੀ ਆਵਾਜ਼ ਨੂੰ ਬਦਲੋ"
+
+#~ msgid "Volume: "
+#~ msgstr "ਵਾਲੀਅਮ:"
+
+#~ msgid "Time"
+#~ msgstr "ਵੇਲਾ"
+
+#~ msgid "Timer"
+#~ msgstr "ਟਾਈਮਰ"
+
+#~ msgid "Stopwatch"
+#~ msgstr "ਸਟਾਪ-ਵਾਚ"
+
+#~ msgid "Pause"
+#~ msgstr "ਵਿਰਾਮ"
+
+#~ msgid "Start"
+#~ msgstr " ਸ਼਼ੁਰੂ ਕਰੋ"
+
+#~ msgid "Reset"
+#~ msgstr "ਮੁੜ-ਸੈੱਟ ਕਰੋ"
+
+#~ msgid "Lap"
+#~ msgstr "ਲੈਪ"
+
+#~ msgid "Add timezone"
+#~ msgstr "ਸਮਾਂ-ਖੇਤਰ ਜੋੜੋ"
+
+#, fuzzy
+#~| msgid "1 hour"
+#~ msgid "1 h"
+#~ msgstr "1 ਘੰਟਾ"
+
+#, fuzzy
+#~| msgid "Duration"
+#~ msgid "<b>Duration:</b>"
+#~ msgstr "ਅੰਤਰਾਲ"
+
+#~ msgid "hours"
+#~ msgstr "ਘੰਟੇ"
+
+#~ msgid "minutes"
+#~ msgstr "ਮਿੰਟ"
+
+#~ msgid "seconds"
+#~ msgstr "ਸਕਿੰਟ"
+
+#, fuzzy
+#~| msgid "Label (optional)"
+#~ msgid "<b>Label (optional):</b>"
+#~ msgstr "ਲੇਬਲ (ਚੋਣਵਾਂ)"
+
+#, fuzzy
+#~| msgid "New timer"
+#~ msgid "Create timer"
+#~ msgstr "ਨਵਾਂ ਟਾਈਮਰ"
+
+#~ msgid "Timers"
+#~ msgstr "ਟਾਈਮਰ"
+
+#~ msgid "New Timer"
+#~ msgstr "ਨਵਾਂ ਟਾਈਮਰ"
+
+#~ msgid "Add a timer"
+#~ msgstr "ਟਾਈਮਰ ਜੋੜੋ"
+
+#~ msgid "New timer"
+#~ msgstr "ਨਵਾਂ ਟਾਈਮਰ"
+
+#~ msgid "Search for a city"
+#~ msgstr "ਸ਼ਹਿਰ ਲੱਭੋ"
+
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#, fuzzy
+#~| msgid "Timezones"
+#~ msgid "<b>Timezones</b>"
+#~ msgstr "ਸਮਾਂ-ਖੇਤਰ"
+
+#~ msgid "Timezones"
+#~ msgstr "ਸਮਾਂ-ਖੇਤਰ"
+
+#~ msgid "30 seconds"
+#~ msgstr "30 ਸਕਿੰਟ"
+
+#~ msgid "1 minute"
+#~ msgstr "1 ਮਿੰਟ"
+
+#~ msgid "5 minutes"
+#~ msgstr "5 ਮਿੰਟ"
+
+#~ msgid "10 minutes"
+#~ msgstr "10 ਮਿੰਟ"
+
+#~ msgid "15 minutes"
+#~ msgstr "15 ਮਿੰਟ"
+
+#~ msgid "Never"
+#~ msgstr "ਕਦੇ ਨਹੀਂ"
+
+#~ msgid "2 minutes"
+#~ msgstr "2 ਮਿੰਟ"
+
+#~ msgid "3 minutes"
+#~ msgstr "3 ਮਿੰਟ"
+
+#~ msgid "4 minutes"
+#~ msgstr "4 ਮਿੰਟ"
+
+#~ msgid "30 minutes"
+#~ msgstr "30 ਮਿੰਟ"
+
+#~ msgid "1 hour"
+#~ msgstr "1 ਘੰਟਾ"
+
+#~ msgid "hour"
+#~ msgstr "ਘੰਟਾ"
+
+#~ msgid "%1 and a half hours ahead"
+#~ msgstr "%1 ਤੇ ਅੱਧਾ ਘੰਟਾ ਅੱਗੇ ਹੈ"
+
+#~ msgid "%1 %2 ahead"
+#~ msgstr "%1 %2 ਅੱਗੇ"
+
+#~ msgid "%1 and a half hours behind"
+#~ msgstr "%1 ਤੇ ਅੱਧਾ ਘੰਟਾ ਪਿੱਛੇ ਹੈ"
+
+#~ msgid "%1 %2 behind"
+#~ msgstr "%1 %2 ਪਿੱਛੇ"
+
+#~ msgid "Local time"
+#~ msgstr "ਲੋਕਲ ਵੇਲਾ"
+
+#~ msgid "%1 day"
+#~ msgid_plural "%1 days"
+#~ msgstr[0] "%1 ਦਿਨ"
+#~ msgstr[1] "%1 ਦਿਨ"
+
+#~ msgid ", "
+#~ msgstr ", "
+
+#~ msgid " and "
+#~ msgstr " ਅਤੇ "
+
+#~ msgid "%1 hour"
+#~ msgid_plural "%1 hours"
+#~ msgstr[0] "%1 ਘੰਟਾ"
+#~ msgstr[1] "%1 ਘੰਟੇ"
+
+#~ msgid "%1 minute"
+#~ msgid_plural "%1 minutes"
+#~ msgstr[0] "%1 ਮਿੰਟ"
+#~ msgstr[1] "%1 ਮਿੰਟ"
+
+#~ msgid "Alarm will be rung within a minute"
+#~ msgstr "ਅਲਾਰਮ ਇੱਕ ਮਿੰਟ ਵਿੱਚ ਵੱਜੇਗਾ"
+
+#~ msgid "Alarm will be rung after %1"
+#~ msgstr "ਅਲਾਰਮ %1 ਬਾਅਦ ਵੱਜੇਗਾ"
+
+#~ msgid "Alarm Name"
+#~ msgstr "ਅਲਾਰਮ ਦਾ ਨਾਂ"
+
+#~ msgid "Create"
+#~ msgstr "ਬਣਾਓ"
+
+#~ msgid "Lap %1"
+#~ msgstr "ਚੱਕਰ %1"

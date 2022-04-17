@@ -1,0 +1,315 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the kclock package.
+#
+# Stelios <sstavra@gmail.com>, 2020, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: kclock\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-25 00:46+0000\n"
+"PO-Revision-Date: 2021-06-12 21:25+0300\n"
+"Last-Translator: Stelios <sstavra@gmail.com>\n"
+"Language-Team: Greek <kde-i18n-el@kde.org>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 20.04.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Stelios"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sstavra@gmail.com"
+
+#: alarm.cpp:73
+#, kde-format
+msgid "Dismiss"
+msgstr "Αποδέσμευση"
+
+#: alarm.cpp:73
+#, kde-format
+msgid "Snooze"
+msgstr "Αναβολή"
+
+#: alarm.cpp:75 alarm.h:51
+#, kde-format
+msgid "Alarm"
+msgstr "Συναγερμός"
+
+#: alarm.cpp:77 timer.cpp:55
+#, kde-format
+msgid "View"
+msgstr "Προβολή"
+
+#: alarmmodel.cpp:223
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Alarm: <shortcut>%1 %2</shortcut>"
+msgstr "Συναγερμός: <shortcut>%1 %2</shortcut>"
+
+#: main.cpp:30
+#, kde-format
+msgid "Don't use PowerDevil for alarms if it is available"
+msgstr "Να μη χρησιμοποιείται το PowerDevil για συναγερμούς αν είναι διαθέσιμο"
+
+#: main.cpp:45
+#, fuzzy, kde-format
+#| msgid "© 2020 KDE Community"
+msgid "© 2020-2022 KDE Community"
+msgstr "© 2020 Η Κοινότητα του KDE"
+
+#: main.cpp:46
+#, kde-format
+msgid "Devin Lin"
+msgstr "Devin Lin"
+
+#: main.cpp:47
+#, kde-format
+msgid "Han Young"
+msgstr "Han Young"
+
+#: timer.cpp:53
+#, kde-format
+msgid "Timer complete"
+msgstr "Τέλος χρόνου"
+
+#: timer.cpp:54
+#, kde-format
+msgid "Your timer %1 has finished!"
+msgstr "Ο χρονοδιακόπτης %1 δείχνει τέλος χρόνου!"
+
+#: xdgportal.cpp:34
+#, kde-format
+msgid ""
+"Allow the clock process to be in the background and launched on startup."
+msgstr ""
+
+#~ msgid "Select opened page"
+#~ msgstr "Επιλέξτε ανοιγμένη σελίδα"
+
+#~ msgid "Clock"
+#~ msgstr "Ρολόι"
+
+#~ msgid "Alarms"
+#~ msgstr "Συναγερμοί"
+
+#~ msgid "New Alarm"
+#~ msgstr "Νέος συναγερμός"
+
+#~ msgid "No alarms configured"
+#~ msgstr "Δεν έχουν διαμορφωθεί συναγερμοί"
+
+#~ msgid "Edit"
+#~ msgstr "Επεξεργασία"
+
+#~ msgid "Delete"
+#~ msgstr "Διαγραφή"
+
+#~ msgid "Deleted %1"
+#~ msgstr "Διαγράφηκε %1"
+
+#~ msgid "Snoozed %1 minutes"
+#~ msgstr "Αναβολή %1 λεπτά"
+
+#~ msgid "Only once"
+#~ msgstr "Μόνο μία φορά"
+
+#~ msgid "Everyday"
+#~ msgstr "Κάθε μέρα"
+
+#~ msgid "Weekdays"
+#~ msgstr "Καθημερινές"
+
+#~ msgid "Done"
+#~ msgstr "Έγινε"
+
+#~ msgid "Days to Repeat"
+#~ msgstr "Ημέρες για επανάληψη"
+
+#, fuzzy
+#~| msgid "Alarm Name"
+#~ msgid "Alarm Name (optional)"
+#~ msgstr "Όνομα συναγερμού"
+
+#~ msgid "Wake Up"
+#~ msgstr "Ξύπνημα"
+
+#~ msgid "Ringtone"
+#~ msgstr "Κουδούνισμα"
+
+#~ msgid "Settings"
+#~ msgstr "Ρυθμίσεις"
+
+#~ msgid "Alarm Volume"
+#~ msgstr "Ένταση συναγερμού"
+
+#~ msgid "Silence Alarm After"
+#~ msgstr "Διακοπή συναγερμού μετά από"
+
+#~ msgid "Alarm Snooze Length"
+#~ msgstr "Περίοδος αναβολής συναγερμού"
+
+#~ msgid "About"
+#~ msgstr "Περίγραμμα"
+
+#~ msgid "Change Alarm Volume"
+#~ msgstr "Αλλαγή έντασης συναγερμού"
+
+#~ msgid "Volume: "
+#~ msgstr "Ένταση: "
+
+#~ msgid "Time"
+#~ msgstr "Χρόνος"
+
+#~ msgid "Timer"
+#~ msgstr "Χρονόμετρο"
+
+#~ msgid "Stopwatch"
+#~ msgstr "Χρονόμετρο"
+
+#~ msgid "Pause"
+#~ msgstr "Παύση"
+
+#~ msgid "Start"
+#~ msgstr "Έναρξη"
+
+#~ msgid "Reset"
+#~ msgstr "Επαναφορά"
+
+#~ msgid "Lap"
+#~ msgstr "Γύρος"
+
+#~ msgid "Add timezone"
+#~ msgstr "Προσθήκη ζώνης ώρας"
+
+#, fuzzy
+#~| msgid "1 hour"
+#~ msgid "1 h"
+#~ msgstr "1 ώρα"
+
+#~ msgid "hours"
+#~ msgstr "ώρες"
+
+#~ msgid "minutes"
+#~ msgstr "λεπτά"
+
+#~ msgid "seconds"
+#~ msgstr "δευτερόλεπτα"
+
+#, fuzzy
+#~| msgid "New timer"
+#~ msgid "Create timer"
+#~ msgstr "Νέο χρονόμετρο"
+
+#~ msgid "Timers"
+#~ msgstr "Χρονόμετρα"
+
+#~ msgid "New Timer"
+#~ msgstr "Νέο χρονόμετρο"
+
+#~ msgid "Add a timer"
+#~ msgstr "Προσθήκη χρονομέτρου"
+
+#~ msgid "New timer"
+#~ msgstr "Νέο χρονόμετρο"
+
+#~ msgid "Search for a city"
+#~ msgstr "Αναζήτηση πόλης"
+
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#, fuzzy
+#~| msgid "Timezones"
+#~ msgid "<b>Timezones</b>"
+#~ msgstr "Ζώνες ώρας"
+
+#~ msgid "Timezones"
+#~ msgstr "Ζώνες ώρας"
+
+#~ msgid "30 seconds"
+#~ msgstr "30 δευτερόλεπτα"
+
+#~ msgid "1 minute"
+#~ msgstr "1 λεπτό"
+
+#~ msgid "5 minutes"
+#~ msgstr "5 λεπτά"
+
+#~ msgid "10 minutes"
+#~ msgstr "10 λεπτά"
+
+#~ msgid "15 minutes"
+#~ msgstr "15 λεπτά"
+
+#~ msgid "Never"
+#~ msgstr "Ποτέ"
+
+#~ msgid "2 minutes"
+#~ msgstr "2 λεπτά"
+
+#~ msgid "3 minutes"
+#~ msgstr "3 λεπτά"
+
+#~ msgid "4 minutes"
+#~ msgstr "4 λεπτά"
+
+#~ msgid "30 minutes"
+#~ msgstr "30 λεπτά"
+
+#~ msgid "1 hour"
+#~ msgstr "1 ώρα"
+
+#~ msgid "hour"
+#~ msgstr "ώρα"
+
+#~ msgid "%1 and a half hours ahead"
+#~ msgstr "%1 και μισή ώρες μπροστά"
+
+#~ msgid "%1 %2 ahead"
+#~ msgstr "%1 %2 μπροστά"
+
+#~ msgid "%1 and a half hours behind"
+#~ msgstr "%1 και μισή ώρες πίσω"
+
+#~ msgid "%1 %2 behind"
+#~ msgstr "%1 %2 πίσω"
+
+#~ msgid "Local time"
+#~ msgstr "Τοπική ώρα"
+
+#~ msgid "%1 day"
+#~ msgid_plural "%1 days"
+#~ msgstr[0] "%1 ημέρα"
+#~ msgstr[1] "%1 ημέρες"
+
+#~ msgid ", "
+#~ msgstr ", "
+
+#~ msgid " and "
+#~ msgstr " και "
+
+#~ msgid "%1 hour"
+#~ msgid_plural "%1 hours"
+#~ msgstr[0] "%1 ώρα"
+#~ msgstr[1] "%1 ώρες"
+
+#~ msgid "%1 minute"
+#~ msgid_plural "%1 minutes"
+#~ msgstr[0] "%1 λεπτό"
+#~ msgstr[1] "%1 λεπτά"
+
+#~ msgid "Alarm will be rung within a minute"
+#~ msgstr "Ο συναγερμός θα ηχήσει σε ένα λεπτό"
+
+#~ msgid "Alarm will be rung after %1"
+#~ msgstr "Ο συναγερμός θα ηχήσει μετά από %1"
+
+#~ msgid " minutes"
+#~ msgstr " λεπτά"

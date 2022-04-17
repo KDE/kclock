@@ -1,0 +1,426 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the kclock package.
+#
+# Matjaž Jeran <matjaz.jeran@amis.net>, 2020, 2021, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: kclock\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-25 00:46+0000\n"
+"PO-Revision-Date: 2022-03-06 09:53+0100\n"
+"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
+"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Matjaž Jeran"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "matjaz.jeran@amis.net"
+
+#: alarm.cpp:73
+#, kde-format
+msgid "Dismiss"
+msgstr "Odpusti"
+
+#: alarm.cpp:73
+#, kde-format
+msgid "Snooze"
+msgstr "Dremež"
+
+#: alarm.cpp:75 alarm.h:51
+#, kde-format
+msgid "Alarm"
+msgstr "Budilka"
+
+#: alarm.cpp:77 timer.cpp:55
+#, kde-format
+msgid "View"
+msgstr "Pogled"
+
+#: alarmmodel.cpp:223
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Alarm: <shortcut>%1 %2</shortcut>"
+msgstr "Alarm: <shortcut>%1 %2</shortcut>"
+
+#: main.cpp:30
+#, kde-format
+msgid "Don't use PowerDevil for alarms if it is available"
+msgstr "Ne uporabljajte programa PowerDevil za alarme, če je na voljo"
+
+#: main.cpp:45
+#, kde-format
+msgid "© 2020-2022 KDE Community"
+msgstr "© 2020-2022 skupnost KDE"
+
+#: main.cpp:46
+#, kde-format
+msgid "Devin Lin"
+msgstr "Devin Lin"
+
+#: main.cpp:47
+#, kde-format
+msgid "Han Young"
+msgstr "Han Young"
+
+#: timer.cpp:53
+#, kde-format
+msgid "Timer complete"
+msgstr "Odštevalnik zaključen"
+
+#: timer.cpp:54
+#, kde-format
+msgid "Your timer %1 has finished!"
+msgstr "Odštevalnik časa %1 je končal!"
+
+#: xdgportal.cpp:34
+#, kde-format
+msgid ""
+"Allow the clock process to be in the background and launched on startup."
+msgstr "Dovoli procesu ure delovanje v ozadju in aktiviranje ob zagonu."
+
+#~ msgid "Select opened page"
+#~ msgstr "Izberi odprto stran"
+
+#~ msgid "Clock"
+#~ msgstr "Clock"
+
+#~ msgid "A mobile friendly clock app built with Kirigami."
+#~ msgstr "Prijazna mobilna aplikacija izdelana s Kirigami."
+
+#~ msgid "© 2020 Plasma Development Team"
+#~ msgstr "© 2020 Plasma Development Team"
+
+#~ msgid "Alarms"
+#~ msgstr "Alarmi"
+
+#~ msgid "New Alarm"
+#~ msgstr "Nov alarm"
+
+#~ msgid "No alarms configured"
+#~ msgstr "Ni nastavljenih alarmov"
+
+#~ msgid "Edit"
+#~ msgstr "Uredi"
+
+#~ msgid "Delete"
+#~ msgstr "Zbriši"
+
+#~ msgid "Deleted %1"
+#~ msgstr "Zbrisano %1"
+
+#~ msgid "Snoozed %1 minutes"
+#~ msgstr "Dremal %1 minut"
+
+#~ msgid "Only once"
+#~ msgstr "Samo enkrat"
+
+#~ msgid "Everyday"
+#~ msgstr "Vsak dan"
+
+#~ msgid "Weekdays"
+#~ msgstr "Ob delavnikih"
+
+#~| msgid "Edit %1"
+#~ msgctxt "Edit alarm page title"
+#~ msgid "Editing %1"
+#~ msgstr "Urejam %1"
+
+#~ msgid "Done"
+#~ msgstr "Narejeno"
+
+#~ msgid "Days to Repeat"
+#~ msgstr "Dni ponavljanja"
+
+#~| msgid "Label (optional)"
+#~ msgid "Alarm Name (optional)"
+#~ msgstr "Ime alarma (neobvezno)"
+
+#~ msgid "Wake Up"
+#~ msgstr "Zbudi se"
+
+#~ msgid "Ringtone"
+#~ msgstr "Zvok opozorila"
+
+#~ msgid "Choose an audio"
+#~ msgstr "Izberi zvok"
+
+#~ msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
+#~ msgstr ""
+#~ "Zvočne datoteke (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
+
+#~ msgid "All files (*)"
+#~ msgstr "Vse datoteke (*)"
+
+#~ msgid "Settings"
+#~ msgstr "Nastavitve"
+
+#~ msgid "Alarm Volume"
+#~ msgstr "Glasnost alarma"
+
+#~ msgid "Silence Alarm After"
+#~ msgstr "Utišaj alarm po"
+
+#~ msgid "Alarm Snooze Length"
+#~ msgstr "Dolžina dremeža alarma"
+
+#~ msgid "About"
+#~ msgstr "O programu"
+
+#~ msgid "Change Alarm Volume"
+#~ msgstr "Spremeni glasnost alarma"
+
+#~ msgid "Volume: "
+#~ msgstr "Glasnost: "
+
+#~ msgid "Time"
+#~ msgstr "Čas"
+
+#~ msgid "Timer"
+#~ msgstr "Odštevalnik časa"
+
+#~ msgid "Stopwatch"
+#~ msgstr "Štoparica"
+
+#~ msgid "Pause"
+#~ msgstr "Premor"
+
+#~ msgid "Start"
+#~ msgstr "Začetek"
+
+#~ msgid "Reset"
+#~ msgstr "Ponovno nastavi"
+
+#~ msgid "Lap"
+#~ msgstr "Krog"
+
+#~ msgid "#%1"
+#~ msgstr "#%1"
+
+#~ msgid "Add timezone"
+#~ msgstr "Dodaj časovni pas"
+
+#~ msgid "1 m"
+#~ msgstr "1 m"
+
+#~ msgid "5 m"
+#~ msgstr "5 m"
+
+#~ msgid "10 m"
+#~ msgstr "10 m"
+
+#~ msgid "15 m"
+#~ msgstr "15 m"
+
+#~ msgid "30 m"
+#~ msgstr "30 m"
+
+#~| msgid "1 hour"
+#~ msgid "1 h"
+#~ msgstr "1 h"
+
+#~| msgid "Duration"
+#~ msgid "<b>Duration:</b>"
+#~ msgstr "<b>Trajanje:</b>"
+
+#~ msgid "hours"
+#~ msgstr "ur"
+
+#~ msgid "minutes"
+#~ msgstr "minut"
+
+#~ msgid "seconds"
+#~ msgstr "sekund"
+
+#~| msgid "Label (optional)"
+#~ msgid "<b>Label (optional):</b>"
+#~ msgstr "<b>Oznaka (neobvezno):</b>"
+
+#~ msgid "<b>Create New Timer</b>"
+#~ msgstr "<b>Ustvari nov merilnik časa</b>"
+
+#~ msgid "Cancel"
+#~ msgstr "Prekliči"
+
+#~| msgid "New timer"
+#~ msgid "Create timer"
+#~ msgstr "Ustvari merilnik časa"
+
+#~ msgid "Timers"
+#~ msgstr "Merilniki časa"
+
+#~ msgid "New Timer"
+#~ msgstr "Nov merilnik časa"
+
+#~ msgid "Add a timer"
+#~ msgstr "Dodaj merilnik časa"
+
+#~ msgid "New timer"
+#~ msgstr "Nov merilnik časa"
+
+#~ msgid "Search for a city"
+#~ msgstr "Išči kraj"
+
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#~| msgid "Timezones"
+#~ msgid "<b>Timezones</b>"
+#~ msgstr "<b>Časovni pasovi</b>"
+
+#~ msgid "Timezones"
+#~ msgstr "Časovni pasovi"
+
+#~ msgid "30 seconds"
+#~ msgstr "30 sekund"
+
+#~ msgid "1 minute"
+#~ msgstr "1 minuta"
+
+#~ msgid "5 minutes"
+#~ msgstr "5 minut"
+
+#~ msgid "10 minutes"
+#~ msgstr "10 minut"
+
+#~ msgid "15 minutes"
+#~ msgstr "15 minut"
+
+#~ msgid "Never"
+#~ msgstr "Nikoli"
+
+#~ msgid "2 minutes"
+#~ msgstr "2 minuti"
+
+#~ msgid "3 minutes"
+#~ msgstr "3 minute"
+
+#~ msgid "4 minutes"
+#~ msgstr "4 minute"
+
+#~ msgid "30 minutes"
+#~ msgstr "30 minut"
+
+#~ msgid "1 hour"
+#~ msgstr "1 ura"
+
+#~ msgid "hour"
+#~ msgstr "ure"
+
+#~ msgid "%1 and a half hours ahead"
+#~ msgstr "%1 in pol ure naprej"
+
+#~ msgid "%1 %2 ahead"
+#~ msgstr "%1 %2 naprej"
+
+#~ msgid "%1 and a half hours behind"
+#~ msgstr "%1 in pol ure nazaj"
+
+#~ msgid "%1 %2 behind"
+#~ msgstr "%1 %2 nazaj"
+
+#~ msgid "Local time"
+#~ msgstr "Lokalni čas"
+
+#~ msgid "%1 day"
+#~ msgid_plural "%1 days"
+#~ msgstr[0] "%1 dan"
+#~ msgstr[1] "%1 dneva"
+#~ msgstr[2] "%1 dnevi"
+#~ msgstr[3] "%1 dni"
+
+#~ msgid ", "
+#~ msgstr ", "
+
+#~ msgid " and "
+#~ msgstr " in "
+
+#~ msgid "%1 hour"
+#~ msgid_plural "%1 hours"
+#~ msgstr[0] "%1 ura"
+#~ msgstr[1] "%1 uri"
+#~ msgstr[2] "%1 ure"
+#~ msgstr[3] "%1 ur"
+
+#~ msgid "%1 minute"
+#~ msgid_plural "%1 minutes"
+#~ msgstr[0] "%1 minuta"
+#~ msgstr[1] "%1 minuti"
+#~ msgstr[2] "%1 minute"
+#~ msgstr[3] "%1 minut"
+
+#~ msgid "Alarm will be rung within a minute"
+#~ msgstr "Alarm bo zazvonil v minuti"
+
+#~ msgid "Alarm will be rung after %1"
+#~ msgstr "Alarm bo zazvonil po %1"
+
+#~ msgid "Alarm Name"
+#~ msgstr "Ime alarma"
+
+#~ msgid "Create"
+#~ msgstr "Ustvari"
+
+#~ msgid "Lap %1"
+#~ msgstr "Krog %1"
+
+#~ msgid " minutes"
+#~ msgstr " minut"
+
+#~ msgid "Run in background mode"
+#~ msgstr "Izvajaj se v ozadju"
+
+#, fuzzy
+#~| msgid "hours"
+#~ msgid " hours"
+#~ msgstr "ur"
+
+#, fuzzy
+#~| msgid "hours"
+#~ msgid "hours "
+#~ msgstr "ur"
+
+#, fuzzy
+#~| msgid "hour"
+#~ msgid "hour "
+#~ msgstr "ure"
+
+#, fuzzy
+#~| msgid "minutes"
+#~ msgid "minute"
+#~ msgstr "minut"
+
+#~ msgid "Use 24 Hour Time"
+#~ msgstr "Uporabi 24 urno notacijo"
+
+#~ msgid "default"
+#~ msgstr "privzeto"
+
+#~ msgid "Change Timer Duration"
+#~ msgstr "Spremeni trajanje odštevalnika"
+
+#~ msgid "Hours"
+#~ msgstr "Ure"
+
+#~ msgid "Minutes"
+#~ msgstr "Minute"
+
+#~ msgid "Seconds"
+#~ msgstr "Sekunde"
+
+#~ msgid "Edit Alarm"
+#~ msgstr "Uredi alarm"
+
+#~ msgid "Start week on"
+#~ msgstr "Začni teden na"

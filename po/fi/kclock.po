@@ -1,0 +1,399 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the kclock package.
+# Tommi Nieminen <translator@legisign.org>, 2020, 2021, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kclock\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-25 00:46+0000\n"
+"PO-Revision-Date: 2022-01-04 22:43+0200\n"
+"Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
+"Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 20.04.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Tommi Nieminen"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "translator@legisign.org"
+
+#: alarm.cpp:73
+#, kde-format
+msgid "Dismiss"
+msgstr "Merkitse nähdyksi"
+
+#: alarm.cpp:73
+#, kde-format
+msgid "Snooze"
+msgstr "Torkuta"
+
+#: alarm.cpp:75 alarm.h:51
+#, kde-format
+msgid "Alarm"
+msgstr "Hälytys"
+
+#: alarm.cpp:77 timer.cpp:55
+#, kde-format
+msgid "View"
+msgstr "Näkymä"
+
+#: alarmmodel.cpp:223
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Alarm: <shortcut>%1 %2</shortcut>"
+msgstr "Hälytys: <shortcut>%1 %2</shortcut>"
+
+#: main.cpp:30
+#, kde-format
+msgid "Don't use PowerDevil for alarms if it is available"
+msgstr "Älä käytä hälytyksiin PowerDeviliä, vaikka se olisi käytettävissä"
+
+#: main.cpp:45
+#, fuzzy, kde-format
+#| msgid "© 2020-2021 KDE Community"
+msgid "© 2020-2022 KDE Community"
+msgstr "© 2020–2021 KDE-yhteisö"
+
+#: main.cpp:46
+#, kde-format
+msgid "Devin Lin"
+msgstr "Devin Lin"
+
+#: main.cpp:47
+#, kde-format
+msgid "Han Young"
+msgstr "Han Young"
+
+#: timer.cpp:53
+#, kde-format
+msgid "Timer complete"
+msgstr "Ajastus on päättynyt"
+
+#: timer.cpp:54
+#, kde-format
+msgid "Your timer %1 has finished!"
+msgstr "Ajastus %1 on päättynyt!"
+
+#: xdgportal.cpp:34
+#, kde-format
+msgid ""
+"Allow the clock process to be in the background and launched on startup."
+msgstr ""
+
+#~ msgid "Select opened page"
+#~ msgstr "Valitse avattu sivu"
+
+#~ msgid "Clock"
+#~ msgstr "Kello"
+
+#~ msgid "A mobile friendly clock app built with Kirigami."
+#~ msgstr "Kirigamilla rakennettu mobiiliystävällinen kellosovellus."
+
+#~ msgid "© 2020 Plasma Development Team"
+#~ msgstr "© 2020 Plasman kehitysryhmä"
+
+#~ msgid "Alarms"
+#~ msgstr "Hälytykset"
+
+#~ msgid "New Alarm"
+#~ msgstr "Uusi hälytys"
+
+#~ msgid "No alarms configured"
+#~ msgstr "Ei asetettuja hälytyksiä"
+
+#~ msgid "Edit"
+#~ msgstr "Muokkaa"
+
+#~ msgid "Delete"
+#~ msgstr "Poista"
+
+#~ msgid "Deleted %1"
+#~ msgstr "Poistettu %1"
+
+#~ msgid "Snoozed %1 minutes"
+#~ msgstr "Torkutettu %1 minuuttia"
+
+#~ msgid "Only once"
+#~ msgstr "Vain kerran"
+
+#~ msgid "Everyday"
+#~ msgstr "Päivittäin"
+
+#~ msgid "Weekdays"
+#~ msgstr "Arkipäivisin"
+
+#, fuzzy
+#~| msgid "Edit"
+#~ msgctxt "Edit alarm page title"
+#~ msgid "Editing %1"
+#~ msgstr "Muokkaa"
+
+#~ msgid "Done"
+#~ msgstr "Valmis"
+
+#~ msgid "Days to Repeat"
+#~ msgstr "Toistopäivät"
+
+#, fuzzy
+#~| msgid "Label (optional)"
+#~ msgid "Alarm Name (optional)"
+#~ msgstr "Selite (valinnainen)"
+
+#~ msgid "Wake Up"
+#~ msgstr "Herätys"
+
+#~ msgid "Ringtone"
+#~ msgstr "Soittoääni"
+
+#~ msgid "Choose an audio"
+#~ msgstr "Valitse ääni"
+
+#~ msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
+#~ msgstr "Äänitiedostot (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
+
+#~ msgid "All files (*)"
+#~ msgstr "Kaikki tiedostot (*)"
+
+#~ msgid "Settings"
+#~ msgstr "Asetukset"
+
+#~ msgid "Alarm Volume"
+#~ msgstr "Hälytyksen voimakkuus"
+
+#~ msgid "Silence Alarm After"
+#~ msgstr "Vaimenna hälytys ajassa"
+
+#~ msgid "Alarm Snooze Length"
+#~ msgstr "Hälytyksen torkutuksen kesto"
+
+#~ msgid "About"
+#~ msgstr "Tietoa ohjelmasta"
+
+#~ msgid "Change Alarm Volume"
+#~ msgstr "Muuta hälytyksen voimakkuutta"
+
+#~ msgid "Volume: "
+#~ msgstr "Äänenvoimakkuus: "
+
+#~ msgid "Time"
+#~ msgstr "Aika"
+
+#~ msgid "Timer"
+#~ msgstr "Ajastin"
+
+#~ msgid "Stopwatch"
+#~ msgstr "Sekuntikello"
+
+#~ msgid "Pause"
+#~ msgstr "Tauko"
+
+#~ msgid "Start"
+#~ msgstr "Käynnistä"
+
+#~ msgid "Reset"
+#~ msgstr "Nollaa"
+
+#~ msgid "Lap"
+#~ msgstr "Kierros"
+
+#~ msgid "Add timezone"
+#~ msgstr "Lisää aikavyöhyke"
+
+#, fuzzy
+#~| msgid "1 hour"
+#~ msgid "1 h"
+#~ msgstr "1 tunnin"
+
+#, fuzzy
+#~| msgid "Duration"
+#~ msgid "<b>Duration:</b>"
+#~ msgstr "Kesto"
+
+#~ msgid "hours"
+#~ msgstr "tuntia"
+
+#~ msgid "minutes"
+#~ msgstr "minuuttia"
+
+#~ msgid "seconds"
+#~ msgstr "sekuntia"
+
+#, fuzzy
+#~| msgid "Label (optional)"
+#~ msgid "<b>Label (optional):</b>"
+#~ msgstr "Selite (valinnainen)"
+
+#, fuzzy
+#~| msgid "New timer"
+#~ msgid "Create timer"
+#~ msgstr "Uusi ajastin"
+
+#~ msgid "Timers"
+#~ msgstr "Ajastimet"
+
+#~ msgid "New Timer"
+#~ msgstr "Uusi ajastin"
+
+#~ msgid "Add a timer"
+#~ msgstr "Lisää ajastin"
+
+#~ msgid "New timer"
+#~ msgstr "Uusi ajastin"
+
+#~ msgid "Search for a city"
+#~ msgstr "Etsi kaupunkia"
+
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#, fuzzy
+#~| msgid "Timezones"
+#~ msgid "<b>Timezones</b>"
+#~ msgstr "Aikavyöhykkeet"
+
+#~ msgid "Timezones"
+#~ msgstr "Aikavyöhykkeet"
+
+#~ msgid "30 seconds"
+#~ msgstr "30 sekunnin"
+
+#~ msgid "1 minute"
+#~ msgstr "1 minuutin"
+
+#~ msgid "5 minutes"
+#~ msgstr "5 minuutin"
+
+#~ msgid "10 minutes"
+#~ msgstr "10 minuutin"
+
+#~ msgid "15 minutes"
+#~ msgstr "15 minuutin"
+
+#~ msgid "Never"
+#~ msgstr "Ei koskaan"
+
+#~ msgid "2 minutes"
+#~ msgstr "2 minuutin"
+
+#~ msgid "3 minutes"
+#~ msgstr "3 minuutin"
+
+#~ msgid "4 minutes"
+#~ msgstr "4 minuutin"
+
+#~ msgid "30 minutes"
+#~ msgstr "30 minuutin"
+
+#~ msgid "1 hour"
+#~ msgstr "1 tunnin"
+
+#~ msgid "hour"
+#~ msgstr "tunti"
+
+#~ msgid "%1 and a half hours ahead"
+#~ msgstr "%1 ja puoli tuntia edellä"
+
+#~ msgid "%1 %2 ahead"
+#~ msgstr "%1 %2 edellä"
+
+#~ msgid "%1 and a half hours behind"
+#~ msgstr "%1 ja puoli tuntia jäljessä"
+
+#~ msgid "%1 %2 behind"
+#~ msgstr "%1 %2 jäljessä"
+
+#~ msgid "Local time"
+#~ msgstr "Paikallinen aika"
+
+#~ msgid "%1 day"
+#~ msgid_plural "%1 days"
+#~ msgstr[0] "%1 päivä"
+#~ msgstr[1] "%1 päivää"
+
+#~ msgid ", "
+#~ msgstr ", "
+
+#~ msgid " and "
+#~ msgstr " ja "
+
+#~ msgid "%1 hour"
+#~ msgid_plural "%1 hours"
+#~ msgstr[0] "%1 tunti"
+#~ msgstr[1] "%1 tuntia"
+
+#~ msgid "%1 minute"
+#~ msgid_plural "%1 minutes"
+#~ msgstr[0] "%1 minuutti"
+#~ msgstr[1] "%1 minuuttia"
+
+#~ msgid "Alarm will be rung within a minute"
+#~ msgstr "Hälytys soi minuutin sisään"
+
+#~ msgid "Alarm will be rung after %1"
+#~ msgstr "Hälytys soi %1 kuluttua"
+
+#~ msgid "Alarm Name"
+#~ msgstr "Hälytyksen nimi"
+
+#~ msgid "Create"
+#~ msgstr "Luo"
+
+#~ msgid "Lap %1"
+#~ msgstr "%1. kierros"
+
+#~ msgid " minutes"
+#~ msgstr " minuuttia"
+
+#~ msgid "Run in background mode"
+#~ msgstr "Suorita taustalla"
+
+#, fuzzy
+#~| msgid "hours"
+#~ msgid " hours"
+#~ msgstr "tuntia"
+
+#, fuzzy
+#~| msgid "hours"
+#~ msgid "hours "
+#~ msgstr "tuntia"
+
+#, fuzzy
+#~| msgid "hour"
+#~ msgid "hour "
+#~ msgstr "tunti"
+
+#, fuzzy
+#~| msgid "minutes"
+#~ msgid "minute"
+#~ msgstr "minuuttia"
+
+#~ msgid "Use 24 Hour Time"
+#~ msgstr "Käytä 24-tuntista kelloa"
+
+#~ msgid "Change Timer Duration"
+#~ msgstr "Muuta ajastimen kestoa"
+
+#~ msgid "Hours"
+#~ msgstr "Tunnit"
+
+#~ msgid "Minutes"
+#~ msgstr "Minuutit"
+
+#~ msgid "Seconds"
+#~ msgstr "Sekunnit"
+
+#~ msgid "Edit Alarm"
+#~ msgstr "Muokkaa hälytystä"
+
+#~ msgid "Start week on"
+#~ msgstr "Viikon aloituspäivä"

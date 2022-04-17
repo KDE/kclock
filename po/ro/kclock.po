@@ -1,0 +1,318 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the kclock package.
+# Sergiu Bivol <sergiu@cip.md>, 2020, 2021, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kclock\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-25 00:46+0000\n"
+"PO-Revision-Date: 2022-02-27 19:44+0000\n"
+"Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
+"Language-Team: Romanian\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2;\n"
+"X-Generator: Lokalize 21.12.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Sergiu Bivol"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sergiu@cip.md"
+
+#: alarm.cpp:73
+#, kde-format
+msgid "Dismiss"
+msgstr "Revocă"
+
+#: alarm.cpp:73
+#, kde-format
+msgid "Snooze"
+msgstr "Ațipește"
+
+#: alarm.cpp:75 alarm.h:51
+#, kde-format
+msgid "Alarm"
+msgstr "Alarmă"
+
+#: alarm.cpp:77 timer.cpp:55
+#, kde-format
+msgid "View"
+msgstr "Vezi"
+
+#: alarmmodel.cpp:223
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Alarm: <shortcut>%1 %2</shortcut>"
+msgstr "Alarmă: <shortcut>%1 %2</shortcut>"
+
+#: main.cpp:30
+#, kde-format
+msgid "Don't use PowerDevil for alarms if it is available"
+msgstr "Nu folosi PowerDevil pentru alarme dacă e disponibil"
+
+#: main.cpp:45
+#, kde-format
+msgid "© 2020-2022 KDE Community"
+msgstr "© 2020-2022 Comunitatea KDE"
+
+#: main.cpp:46
+#, kde-format
+msgid "Devin Lin"
+msgstr "Devin Lin"
+
+#: main.cpp:47
+#, kde-format
+msgid "Han Young"
+msgstr "Han Young"
+
+#: timer.cpp:53
+#, kde-format
+msgid "Timer complete"
+msgstr "Temporizator finalizat"
+
+#: timer.cpp:54
+#, kde-format
+msgid "Your timer %1 has finished!"
+msgstr "Temporizatorul %1 a expirat!"
+
+#: xdgportal.cpp:34
+#, kde-format
+msgid ""
+"Allow the clock process to be in the background and launched on startup."
+msgstr ""
+
+#~ msgid "Select opened page"
+#~ msgstr "Alege pagina deschisă"
+
+#~ msgid "Clock"
+#~ msgstr "Ceas"
+
+#~ msgid "Alarms"
+#~ msgstr "Alarme"
+
+#~ msgid "New Alarm"
+#~ msgstr "Alarmă nouă"
+
+#~ msgid "No alarms configured"
+#~ msgstr "Nicio alarmă configurată"
+
+#~ msgid "Edit"
+#~ msgstr "Modifică"
+
+#~ msgid "Delete"
+#~ msgstr "Șterge"
+
+#~ msgid "Deleted %1"
+#~ msgstr "Șters %1"
+
+#~ msgid "Snoozed %1 minutes"
+#~ msgstr "Ațipit %1 minut"
+
+#~ msgid "Only once"
+#~ msgstr "Numai o dată"
+
+#~ msgid "Everyday"
+#~ msgstr "Zilnic"
+
+#~ msgid "Weekdays"
+#~ msgstr "Zile de lucru"
+
+#~ msgid "Done"
+#~ msgstr "Gata"
+
+#~ msgid "Days to Repeat"
+#~ msgstr "Zile de repetat"
+
+#, fuzzy
+#~| msgid "Alarm Name"
+#~ msgid "Alarm Name (optional)"
+#~ msgstr "Denumirea alarmei"
+
+#~ msgid "Wake Up"
+#~ msgstr "Trezire"
+
+#~ msgid "Ringtone"
+#~ msgstr "Ton de apel"
+
+#~ msgid "Settings"
+#~ msgstr "Configurări"
+
+#~ msgid "Alarm Volume"
+#~ msgstr "Volumul alarmei"
+
+#~ msgid "Silence Alarm After"
+#~ msgstr "Stinge alarma după"
+
+#~ msgid "Alarm Snooze Length"
+#~ msgstr "Durata ațipirii alarmei"
+
+#~ msgid "About"
+#~ msgstr "Despre"
+
+#~ msgid "Change Alarm Volume"
+#~ msgstr "Schimbă volumul alarmei"
+
+#~ msgid "Volume: "
+#~ msgstr "Volum: "
+
+#~ msgid "Time"
+#~ msgstr "Oră"
+
+#~ msgid "Timer"
+#~ msgstr "Cronometru"
+
+#~ msgid "Stopwatch"
+#~ msgstr "Temporizator"
+
+#~ msgid "Pause"
+#~ msgstr "Întrerupe"
+
+#~ msgid "Start"
+#~ msgstr "Pornește"
+
+#~ msgid "Reset"
+#~ msgstr "Reinițializează"
+
+#~ msgid "Lap"
+#~ msgstr "Tur"
+
+#~ msgid "Add timezone"
+#~ msgstr "Adaugă fus orar"
+
+#, fuzzy
+#~| msgid "1 hour"
+#~ msgid "1 h"
+#~ msgstr "1 oră"
+
+#~ msgid "hours"
+#~ msgstr "ore"
+
+#~ msgid "minutes"
+#~ msgstr "minute"
+
+#~ msgid "seconds"
+#~ msgstr "secunde"
+
+#, fuzzy
+#~| msgid "New timer"
+#~ msgid "Create timer"
+#~ msgstr "Cronometru nou"
+
+#~ msgid "Timers"
+#~ msgstr "Cronometre"
+
+#~ msgid "New Timer"
+#~ msgstr "Cronometru nou"
+
+#~ msgid "Add a timer"
+#~ msgstr "Adaugă un cronometru"
+
+#~ msgid "New timer"
+#~ msgstr "Cronometru nou"
+
+#~ msgid "Search for a city"
+#~ msgstr "Caută un oraș"
+
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#, fuzzy
+#~| msgid "Timezones"
+#~ msgid "<b>Timezones</b>"
+#~ msgstr "Fuse orare"
+
+#~ msgid "Timezones"
+#~ msgstr "Fuse orare"
+
+#~ msgid "30 seconds"
+#~ msgstr "30 de secunde"
+
+#~ msgid "1 minute"
+#~ msgstr "1 minut"
+
+#~ msgid "5 minutes"
+#~ msgstr "5 minute"
+
+#~ msgid "10 minutes"
+#~ msgstr "10 minute"
+
+#~ msgid "15 minutes"
+#~ msgstr "15 minute"
+
+#~ msgid "Never"
+#~ msgstr "Niciodată"
+
+#~ msgid "2 minutes"
+#~ msgstr "2 minute"
+
+#~ msgid "3 minutes"
+#~ msgstr "3 minute"
+
+#~ msgid "4 minutes"
+#~ msgstr "4 minute"
+
+#~ msgid "30 minutes"
+#~ msgstr "30 de minute"
+
+#~ msgid "1 hour"
+#~ msgstr "1 oră"
+
+#~ msgid "hour"
+#~ msgstr "oră"
+
+#~ msgid "%1 and a half hours ahead"
+#~ msgstr "cu %1 ore și jumătate în față"
+
+#~ msgid "%1 %2 ahead"
+#~ msgstr "cu %1 și %2 în față"
+
+#~ msgid "%1 and a half hours behind"
+#~ msgstr "cu %1 ore și jumătate în spate"
+
+#~ msgid "%1 %2 behind"
+#~ msgstr "cu %1 și %2 în spate"
+
+#~ msgid "Local time"
+#~ msgstr "Ora locală"
+
+#~ msgid "%1 day"
+#~ msgid_plural "%1 days"
+#~ msgstr[0] "%1 zi"
+#~ msgstr[1] "%1 zile"
+#~ msgstr[2] "%1 de zile"
+
+#~ msgid ", "
+#~ msgstr ", "
+
+#~ msgid " and "
+#~ msgstr " și "
+
+#~ msgid "%1 hour"
+#~ msgid_plural "%1 hours"
+#~ msgstr[0] "%1 oră"
+#~ msgstr[1] "%1 ore"
+#~ msgstr[2] "%1 de ore"
+
+#~ msgid "%1 minute"
+#~ msgid_plural "%1 minutes"
+#~ msgstr[0] "%1 minut"
+#~ msgstr[1] "%1 minute"
+#~ msgstr[2] "%1 de minute"
+
+#~ msgid "Alarm will be rung within a minute"
+#~ msgstr "Alarma va suna în mai puțin de un minut"
+
+#~ msgid "Alarm will be rung after %1"
+#~ msgstr "Alarma va suna în %1"
+
+#~ msgid " minutes"
+#~ msgstr " minute"

@@ -1,0 +1,352 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the kclock package.
+#
+# Steve Allewell <steve.allewell@gmail.com>, 2020, 2021, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: kclock\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-25 00:46+0000\n"
+"PO-Revision-Date: 2022-04-02 16:41+0100\n"
+"Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
+"Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 21.12.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Steve Allewell"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "steve.allewell@gmail.com"
+
+#: alarm.cpp:73
+#, kde-format
+msgid "Dismiss"
+msgstr "Dismiss"
+
+#: alarm.cpp:73
+#, kde-format
+msgid "Snooze"
+msgstr "Snooze"
+
+#: alarm.cpp:75 alarm.h:51
+#, kde-format
+msgid "Alarm"
+msgstr "Alarm"
+
+#: alarm.cpp:77 timer.cpp:55
+#, kde-format
+msgid "View"
+msgstr "View"
+
+#: alarmmodel.cpp:223
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Alarm: <shortcut>%1 %2</shortcut>"
+msgstr "Alarm: <shortcut>%1 %2</shortcut>"
+
+#: main.cpp:30
+#, kde-format
+msgid "Don't use PowerDevil for alarms if it is available"
+msgstr "Do not use PowerDevil for alarms if it is available"
+
+#: main.cpp:45
+#, kde-format
+msgid "© 2020-2022 KDE Community"
+msgstr "© 2020-2022 KDE Community"
+
+#: main.cpp:46
+#, kde-format
+msgid "Devin Lin"
+msgstr "Devin Lin"
+
+#: main.cpp:47
+#, kde-format
+msgid "Han Young"
+msgstr "Han Young"
+
+#: timer.cpp:53
+#, kde-format
+msgid "Timer complete"
+msgstr "Timer complete"
+
+#: timer.cpp:54
+#, kde-format
+msgid "Your timer %1 has finished!"
+msgstr "Your timer %1 has finished!"
+
+#: xdgportal.cpp:34
+#, kde-format
+msgid ""
+"Allow the clock process to be in the background and launched on startup."
+msgstr ""
+"Allow the clock process to be in the background and launched on startup."
+
+#~ msgid "Select opened page"
+#~ msgstr "Select opened page"
+
+#~ msgid "Clock"
+#~ msgstr "Clock"
+
+#~ msgid "A mobile friendly clock app built with Kirigami."
+#~ msgstr "A mobile friendly clock app built with Kirigami."
+
+#~ msgid "© 2020 Plasma Development Team"
+#~ msgstr "© 2020 Plasma Development Team"
+
+#~ msgid "Alarms"
+#~ msgstr "Alarms"
+
+#~ msgid "New Alarm"
+#~ msgstr "New Alarm"
+
+#~ msgid "No alarms configured"
+#~ msgstr "No alarms configured"
+
+#~ msgid "Edit"
+#~ msgstr "Edit"
+
+#~ msgid "Delete"
+#~ msgstr "Delete"
+
+#~ msgid "Deleted %1"
+#~ msgstr "Deleted %1"
+
+#~ msgid "Snoozed %1 minutes"
+#~ msgstr "Snoozed %1 minutes"
+
+#~ msgid "Only once"
+#~ msgstr "Only once"
+
+#~ msgid "Everyday"
+#~ msgstr "Everyday"
+
+#~ msgid "Weekdays"
+#~ msgstr "Weekdays"
+
+#~ msgid "Done"
+#~ msgstr "Done"
+
+#~ msgid "Days to Repeat"
+#~ msgstr "Days to Repeat"
+
+#, fuzzy
+#~| msgid "Label (optional)"
+#~ msgid "Alarm Name (optional)"
+#~ msgstr "Label (optional)"
+
+#~ msgid "Wake Up"
+#~ msgstr "Wake Up"
+
+#~ msgid "Ringtone"
+#~ msgstr "Ringtone"
+
+#~ msgid "Choose an audio"
+#~ msgstr "Choose an audio"
+
+#~ msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
+#~ msgstr "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
+
+#~ msgid "All files (*)"
+#~ msgstr "All files (*)"
+
+#~ msgid "Settings"
+#~ msgstr "Settings"
+
+#~ msgid "Alarm Volume"
+#~ msgstr "Alarm Volume"
+
+#~ msgid "Silence Alarm After"
+#~ msgstr "Silence Alarm After"
+
+#~ msgid "Alarm Snooze Length"
+#~ msgstr "Alarm Snooze Length"
+
+#~ msgid "About"
+#~ msgstr "About"
+
+#~ msgid "Change Alarm Volume"
+#~ msgstr "Change Alarm Volume"
+
+#~ msgid "Volume: "
+#~ msgstr "Volume: "
+
+#~ msgid "Time"
+#~ msgstr "Time"
+
+#~ msgid "Timer"
+#~ msgstr "Timer"
+
+#~ msgid "Stopwatch"
+#~ msgstr "Stopwatch"
+
+#~ msgid "Pause"
+#~ msgstr "Pause"
+
+#~ msgid "Start"
+#~ msgstr "Start"
+
+#~ msgid "Reset"
+#~ msgstr "Reset"
+
+#~ msgid "Lap"
+#~ msgstr "Lap"
+
+#~ msgid "#%1"
+#~ msgstr "#%1"
+
+#~ msgid "Add timezone"
+#~ msgstr "Add timezone"
+
+#, fuzzy
+#~| msgid "1 hour"
+#~ msgid "1 h"
+#~ msgstr "1 hour"
+
+#, fuzzy
+#~| msgid "Duration"
+#~ msgid "<b>Duration:</b>"
+#~ msgstr "Duration"
+
+#~ msgid "hours"
+#~ msgstr "hours"
+
+#~ msgid "minutes"
+#~ msgstr "minutes"
+
+#~ msgid "seconds"
+#~ msgstr "seconds"
+
+#, fuzzy
+#~| msgid "Label (optional)"
+#~ msgid "<b>Label (optional):</b>"
+#~ msgstr "Label (optional)"
+
+#, fuzzy
+#~| msgid "New timer"
+#~ msgid "Create timer"
+#~ msgstr "New timer"
+
+#~ msgid "Timers"
+#~ msgstr "Timers"
+
+#~ msgid "New Timer"
+#~ msgstr "New Timer"
+
+#~ msgid "Add a timer"
+#~ msgstr "Add a timer"
+
+#~ msgid "New timer"
+#~ msgstr "New timer"
+
+#~ msgid "Search for a city"
+#~ msgstr "Search for a city"
+
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#, fuzzy
+#~| msgid "Timezones"
+#~ msgid "<b>Timezones</b>"
+#~ msgstr "Timezones"
+
+#~ msgid "Timezones"
+#~ msgstr "Timezones"
+
+#~ msgid "30 seconds"
+#~ msgstr "30 seconds"
+
+#~ msgid "1 minute"
+#~ msgstr "1 minute"
+
+#~ msgid "5 minutes"
+#~ msgstr "5 minutes"
+
+#~ msgid "10 minutes"
+#~ msgstr "10 minutes"
+
+#~ msgid "15 minutes"
+#~ msgstr "15 minutes"
+
+#~ msgid "Never"
+#~ msgstr "Never"
+
+#~ msgid "2 minutes"
+#~ msgstr "2 minutes"
+
+#~ msgid "3 minutes"
+#~ msgstr "3 minutes"
+
+#~ msgid "4 minutes"
+#~ msgstr "4 minutes"
+
+#~ msgid "30 minutes"
+#~ msgstr "30 minutes"
+
+#~ msgid "1 hour"
+#~ msgstr "1 hour"
+
+#~ msgid "hour"
+#~ msgstr "hour"
+
+#~ msgid "%1 and a half hours ahead"
+#~ msgstr "%1 and a half hours ahead"
+
+#~ msgid "%1 %2 ahead"
+#~ msgstr "%1 %2 ahead"
+
+#~ msgid "%1 and a half hours behind"
+#~ msgstr "%1 and a half hours behind"
+
+#~ msgid "%1 %2 behind"
+#~ msgstr "%1 %2 behind"
+
+#~ msgid "Local time"
+#~ msgstr "Local time"
+
+#~ msgid "%1 day"
+#~ msgid_plural "%1 days"
+#~ msgstr[0] "%1 day"
+#~ msgstr[1] "%1 days"
+
+#~ msgid ", "
+#~ msgstr ", "
+
+#~ msgid " and "
+#~ msgstr " and "
+
+#~ msgid "%1 hour"
+#~ msgid_plural "%1 hours"
+#~ msgstr[0] "%1 hour"
+#~ msgstr[1] "%1 hours"
+
+#~ msgid "%1 minute"
+#~ msgid_plural "%1 minutes"
+#~ msgstr[0] "%1 minute"
+#~ msgstr[1] "%1 minutes"
+
+#~ msgid "Alarm will be rung within a minute"
+#~ msgstr "Alarm will be rung within a minute"
+
+#~ msgid "Alarm will be rung after %1"
+#~ msgstr "Alarm will be rung after %1"
+
+#~ msgid "Alarm Name"
+#~ msgstr "Alarm Name"
+
+#~ msgid "Create"
+#~ msgstr "Create"
+
+#~ msgid "Lap %1"
+#~ msgstr "Lap %1"
+
+#~ msgid " minutes"
+#~ msgstr " minutes"

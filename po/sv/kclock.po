@@ -1,0 +1,414 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the kclock package.
+#
+# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2020, 2021, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: kclock\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-25 00:46+0000\n"
+"PO-Revision-Date: 2022-03-13 17:30+0100\n"
+"Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 20.08.1\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Stefan Asserhäll"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "stefan.asserhall@bredband.net"
+
+#: alarm.cpp:73
+#, kde-format
+msgid "Dismiss"
+msgstr "Stoppa"
+
+#: alarm.cpp:73
+#, kde-format
+msgid "Snooze"
+msgstr "Slumra"
+
+#: alarm.cpp:75 alarm.h:51
+#, kde-format
+msgid "Alarm"
+msgstr "Alarm"
+
+#: alarm.cpp:77 timer.cpp:55
+#, kde-format
+msgid "View"
+msgstr "Visa"
+
+#: alarmmodel.cpp:223
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Alarm: <shortcut>%1 %2</shortcut>"
+msgstr "Alarm: <shortcut>%1 %2</shortcut>"
+
+#: main.cpp:30
+#, kde-format
+msgid "Don't use PowerDevil for alarms if it is available"
+msgstr "Använd inte PowerDevil för alarm om det är tillgängligt"
+
+#: main.cpp:45
+#, kde-format
+msgid "© 2020-2022 KDE Community"
+msgstr "© 2020-2022 KDE-gemenskapen"
+
+#: main.cpp:46
+#, kde-format
+msgid "Devin Lin"
+msgstr "Devin Lin"
+
+#: main.cpp:47
+#, kde-format
+msgid "Han Young"
+msgstr "Han Young"
+
+#: timer.cpp:53
+#, kde-format
+msgid "Timer complete"
+msgstr "Tidtagning klar"
+
+#: timer.cpp:54
+#, kde-format
+msgid "Your timer %1 has finished!"
+msgstr "Tidtagning %1 är klar."
+
+#: xdgportal.cpp:34
+#, kde-format
+msgid ""
+"Allow the clock process to be in the background and launched on startup."
+msgstr "Tillåt klockprocessen att vara i bakgrunden och aktiveras vid start."
+
+#~ msgid "Select opened page"
+#~ msgstr "Välj öppnad sida"
+
+#~ msgid "Clock"
+#~ msgstr "Klocka"
+
+#~ msgid "A mobile friendly clock app built with Kirigami."
+#~ msgstr "Ett mobilvänligt klockprogram byggt med Kirigami"
+
+#~ msgid "© 2020 Plasma Development Team"
+#~ msgstr "© 2020 Plasma-utvecklingsgruppen"
+
+#~ msgid "Alarms"
+#~ msgstr "Alarm"
+
+#~ msgid "New Alarm"
+#~ msgstr "Nytt alarm"
+
+#~ msgid "No alarms configured"
+#~ msgstr "Inga alarm inställda"
+
+#~ msgid "Edit"
+#~ msgstr "Redigera"
+
+#~ msgid "Delete"
+#~ msgstr "Ta bort"
+
+#~ msgid "Deleted %1"
+#~ msgstr "Tog bort %1"
+
+#~ msgid "Snoozed %1 minutes"
+#~ msgstr "Slumrade %1 minuter"
+
+#~ msgid "Only once"
+#~ msgstr "Bara en gång"
+
+#~ msgid "Everyday"
+#~ msgstr "Varje dag"
+
+#~ msgid "Weekdays"
+#~ msgstr "Veckodagar"
+
+#~ msgctxt "Edit alarm page title"
+#~ msgid "Editing %1"
+#~ msgstr "Redigerar %1"
+
+#~ msgid "Done"
+#~ msgstr "Klar"
+
+#~ msgid "Days to Repeat"
+#~ msgstr "Dagar att upprepa"
+
+#~ msgid "Alarm Name (optional)"
+#~ msgstr "Alarmnamn (valfritt)"
+
+#~ msgid "Wake Up"
+#~ msgstr "Vakna"
+
+#~ msgid "Ringtone"
+#~ msgstr "Ringsignal"
+
+#~ msgid "Choose an audio"
+#~ msgstr "Välj ljud"
+
+#~ msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
+#~ msgstr "Ljudfiler (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
+
+#~ msgid "All files (*)"
+#~ msgstr "Alla filer (*)"
+
+#~ msgid "Settings"
+#~ msgstr "Inställningar"
+
+#~ msgid "Alarm Volume"
+#~ msgstr "Alarmvolym"
+
+#~ msgid "Silence Alarm After"
+#~ msgstr "Tysta alarmet efter"
+
+#~ msgid "Alarm Snooze Length"
+#~ msgstr "Längd på alarmslummer"
+
+#~ msgid "About"
+#~ msgstr "Om"
+
+#~ msgid "Change Alarm Volume"
+#~ msgstr "Ändra alarmvolym"
+
+#~ msgid "Volume: "
+#~ msgstr "Volym: "
+
+#~ msgid "Time"
+#~ msgstr "Tid"
+
+#~ msgid "Timer"
+#~ msgstr "Tidtagare"
+
+#~ msgid "Stopwatch"
+#~ msgstr "Tidtagarur"
+
+#~ msgid "Pause"
+#~ msgstr "Paus"
+
+#~ msgid "Start"
+#~ msgstr "Starta"
+
+#~ msgid "Reset"
+#~ msgstr "Nollställ"
+
+#~ msgid "Lap"
+#~ msgstr "Varv"
+
+#~ msgid "#%1"
+#~ msgstr "Nr. %1"
+
+#~ msgid "Add timezone"
+#~ msgstr "Lägg till tidszon"
+
+#~ msgid "1 m"
+#~ msgstr "1 m"
+
+#~ msgid "5 m"
+#~ msgstr "5 m"
+
+#~ msgid "10 m"
+#~ msgstr "10 m"
+
+#~ msgid "15 m"
+#~ msgstr "15 m"
+
+#~ msgid "30 m"
+#~ msgstr "30 m"
+
+#~ msgid "1 h"
+#~ msgstr "1 t"
+
+#~ msgid "<b>Duration:</b>"
+#~ msgstr "<b>Längd:</b>"
+
+#~ msgid "hours"
+#~ msgstr "timmar"
+
+#~ msgid "minutes"
+#~ msgstr "minuter"
+
+#~ msgid "seconds"
+#~ msgstr "sekunder"
+
+#~ msgid "<b>Label (optional):</b>"
+#~ msgstr "<b>Beteckning (valfri):</b>"
+
+#~ msgid "<b>Create New Timer</b>"
+#~ msgstr "<b>Skapa ny tidtagare</b>"
+
+#~ msgid "Cancel"
+#~ msgstr "Avbryt"
+
+#~ msgid "Create timer"
+#~ msgstr "Skapa tidtagare"
+
+#~ msgid "Timers"
+#~ msgstr "Tidtagare"
+
+#~ msgid "New Timer"
+#~ msgstr "Ny tidtagare"
+
+#~ msgid "Add a timer"
+#~ msgstr "Lägg till en tidtagare"
+
+#~ msgid "New timer"
+#~ msgstr "Ny tidtagare"
+
+#~ msgid "Search for a city"
+#~ msgstr "Sök efter en stad"
+
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#~ msgid "<b>Timezones</b>"
+#~ msgstr "<b>Tidszoner</b>"
+
+#~ msgid "Timezones"
+#~ msgstr "Tidszoner"
+
+#~ msgid "30 seconds"
+#~ msgstr "30 sekunder"
+
+#~ msgid "1 minute"
+#~ msgstr "1 minut"
+
+#~ msgid "5 minutes"
+#~ msgstr "5 minuter"
+
+#~ msgid "10 minutes"
+#~ msgstr "10 minuter"
+
+#~ msgid "15 minutes"
+#~ msgstr "15 minuter"
+
+#~ msgid "Never"
+#~ msgstr "Aldrig"
+
+#~ msgid "2 minutes"
+#~ msgstr "2 minuter"
+
+#~ msgid "3 minutes"
+#~ msgstr "3 minuter"
+
+#~ msgid "4 minutes"
+#~ msgstr "4 minuter"
+
+#~ msgid "30 minutes"
+#~ msgstr "30 minuter"
+
+#~ msgid "1 hour"
+#~ msgstr "1 timma"
+
+#~ msgid "hour"
+#~ msgstr "timma"
+
+#~ msgid "%1 and a half hours ahead"
+#~ msgstr "%1 och trettio minuter senare"
+
+#~ msgid "%1 %2 ahead"
+#~ msgstr "%1 %2 senare"
+
+#~ msgid "%1 and a half hours behind"
+#~ msgstr "%1 och trettio minuter tidigare"
+
+#~ msgid "%1 %2 behind"
+#~ msgstr "%1 %2 tidigare"
+
+#~ msgid "Local time"
+#~ msgstr "Lokal tid"
+
+#~ msgid "%1 day"
+#~ msgid_plural "%1 days"
+#~ msgstr[0] "%1 dag"
+#~ msgstr[1] "%1 dagar"
+
+#~ msgid ", "
+#~ msgstr ", "
+
+#~ msgid " and "
+#~ msgstr " och "
+
+#~ msgid "%1 hour"
+#~ msgid_plural "%1 hours"
+#~ msgstr[0] "%1 timma"
+#~ msgstr[1] "%1 timmar"
+
+#~ msgid "%1 minute"
+#~ msgid_plural "%1 minutes"
+#~ msgstr[0] "%1 minut"
+#~ msgstr[1] "%1 minuter"
+
+#~ msgid "Alarm will be rung within a minute"
+#~ msgstr "Alarmet startar inom en minut"
+
+#~ msgid "Alarm will be rung after %1"
+#~ msgstr "Alarmet startar efter %1"
+
+#~ msgid "Alarm Name"
+#~ msgstr "Alarmnamn"
+
+#~ msgid "Create"
+#~ msgstr "Skapa"
+
+#~ msgid "Lap %1"
+#~ msgstr "Varv %1"
+
+#~ msgid " minutes"
+#~ msgstr " minuter"
+
+#~ msgid "Run in background mode"
+#~ msgstr "Kör i bakgrundsläge"
+
+#~| msgid "days "
+#~ msgid " days"
+#~ msgstr " dagar"
+
+#~| msgid "hours"
+#~ msgid " hours"
+#~ msgstr " timmar"
+
+#~ msgid "day "
+#~ msgstr "dag "
+
+#~| msgid "hours"
+#~ msgid "hours "
+#~ msgstr "timmar "
+
+#~| msgid "hour"
+#~ msgid "hour "
+#~ msgstr "timma "
+
+#~| msgid "minutes"
+#~ msgid "minute"
+#~ msgstr "minute"
+
+#~ msgid "Use 24 Hour Time"
+#~ msgstr "Använd 24-timmarstid"
+
+#~ msgid "default"
+#~ msgstr "standard"
+
+#~ msgid "Change Timer Duration"
+#~ msgstr "Ändra tidtagningslängd"
+
+#~ msgid "Hours"
+#~ msgstr "Timmar"
+
+#~ msgid "Minutes"
+#~ msgstr "Minuter"
+
+#~ msgid "Seconds"
+#~ msgstr "Sekunder"
+
+#~ msgid "Edit Alarm"
+#~ msgstr "Redigera alarm"
+
+#~ msgid "Start week on"
+#~ msgstr "Starta veckan på"

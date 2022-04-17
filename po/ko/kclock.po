@@ -1,0 +1,365 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the kclock package.
+# Shinjo Park <kde@peremen.name>, 2020, 2021, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kclock\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-25 00:46+0000\n"
+"PO-Revision-Date: 2022-04-15 23:10+0200\n"
+"Last-Translator: Shinjo Park <kde@peremen.name>\n"
+"Language-Team: Korean <kde-kr@kde.org>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 21.08.1\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "박신조"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde@peremen.name"
+
+#: alarm.cpp:73
+#, kde-format
+msgid "Dismiss"
+msgstr "끄기"
+
+#: alarm.cpp:73
+#, kde-format
+msgid "Snooze"
+msgstr "지연"
+
+#: alarm.cpp:75 alarm.h:51
+#, kde-format
+msgid "Alarm"
+msgstr "알람"
+
+#: alarm.cpp:77 timer.cpp:55
+#, kde-format
+msgid "View"
+msgstr "보기"
+
+#: alarmmodel.cpp:223
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Alarm: <shortcut>%1 %2</shortcut>"
+msgstr "알람: <shortcut>%1 %2</shortcut>"
+
+#: main.cpp:30
+#, kde-format
+msgid "Don't use PowerDevil for alarms if it is available"
+msgstr "사용 가능한 경우에도 알람에 PowerDevil 사용하지 않음"
+
+#: main.cpp:45
+#, kde-format
+msgid "© 2020-2022 KDE Community"
+msgstr "© 2020-2022 KDE Community"
+
+#: main.cpp:46
+#, kde-format
+msgid "Devin Lin"
+msgstr "Devin Lin"
+
+#: main.cpp:47
+#, kde-format
+msgid "Han Young"
+msgstr "Han Young"
+
+#: timer.cpp:53
+#, kde-format
+msgid "Timer complete"
+msgstr "타이머 완료됨"
+
+#: timer.cpp:54
+#, kde-format
+msgid "Your timer %1 has finished!"
+msgstr "타이머 %1이(가) 완료되었습니다!"
+
+#: xdgportal.cpp:34
+#, kde-format
+msgid ""
+"Allow the clock process to be in the background and launched on startup."
+msgstr ""
+"시계 프로세스가 시동 시 실행되고 백그라운드에 머물 수 있도록 허용합니다."
+
+#~ msgid "Select opened page"
+#~ msgstr "열 페이지 선택"
+
+#~ msgid "Clock"
+#~ msgstr "시계"
+
+#~ msgid "Alarms"
+#~ msgstr "알람"
+
+#~ msgid "New Alarm"
+#~ msgstr "새 알람"
+
+#~ msgid "No alarms configured"
+#~ msgstr "설정한 알람 없음"
+
+#~ msgid "Edit"
+#~ msgstr "편집"
+
+#~ msgid "Delete"
+#~ msgstr "삭제"
+
+#~ msgid "Deleted %1"
+#~ msgstr "%1 삭제함"
+
+#, fuzzy
+#~| msgid "%1 minute"
+#~| msgid_plural "%1 minutes"
+#~ msgid "Snoozed %1 minutes"
+#~ msgstr "%1분"
+
+#~ msgid "Only once"
+#~ msgstr "한 번만"
+
+#~ msgid "Everyday"
+#~ msgstr "매일"
+
+#~ msgid "Weekdays"
+#~ msgstr "업무일"
+
+#, fuzzy
+#~| msgid "Edit"
+#~ msgctxt "Edit alarm page title"
+#~ msgid "Editing %1"
+#~ msgstr "편집"
+
+#~ msgid "Done"
+#~ msgstr "완료"
+
+#~ msgid "Days to Repeat"
+#~ msgstr "반복할 요일"
+
+#, fuzzy
+#~| msgid "Alarm Name"
+#~ msgid "Alarm Name (optional)"
+#~ msgstr "알람 이름"
+
+#~ msgid "Wake Up"
+#~ msgstr "일어나기"
+
+#~ msgid "Ringtone"
+#~ msgstr "벨소리"
+
+#~ msgid "Settings"
+#~ msgstr "설정"
+
+#~ msgid "Alarm Volume"
+#~ msgstr "알람 음량"
+
+#~ msgid "Silence Alarm After"
+#~ msgstr "다음 시간 이후 알람 소리 끄기"
+
+#~ msgid "Alarm Snooze Length"
+#~ msgstr "알람 지연 길이"
+
+#~ msgid "About"
+#~ msgstr "정보"
+
+#~ msgid "Change Alarm Volume"
+#~ msgstr "알람 음량 전환"
+
+#~ msgid "Volume: "
+#~ msgstr "음량:"
+
+#~ msgid "Time"
+#~ msgstr "시간"
+
+#~ msgid "Timer"
+#~ msgstr "타이머"
+
+#~ msgid "Stopwatch"
+#~ msgstr "초시계"
+
+#~ msgid "Pause"
+#~ msgstr "일시 정지"
+
+#~ msgid "Start"
+#~ msgstr "시작"
+
+#~ msgid "Reset"
+#~ msgstr "초기화"
+
+#~ msgid "Lap"
+#~ msgstr "랩"
+
+#~ msgid "Add timezone"
+#~ msgstr "시간대 추가"
+
+#, fuzzy
+#~| msgid "1 hour"
+#~ msgid "1 h"
+#~ msgstr "1시간"
+
+#~ msgid "hours"
+#~ msgstr "시간"
+
+#~ msgid "minutes"
+#~ msgstr "분"
+
+#~ msgid "seconds"
+#~ msgstr "초"
+
+#, fuzzy
+#~| msgid "New timer"
+#~ msgid "Create timer"
+#~ msgstr "새 타이머"
+
+#~ msgid "Timers"
+#~ msgstr "타이머"
+
+#~ msgid "New Timer"
+#~ msgstr "새 타이머"
+
+#~ msgid "Add a timer"
+#~ msgstr "타이머 추가"
+
+#~ msgid "New timer"
+#~ msgstr "새 타이머"
+
+#~ msgid "Search for a city"
+#~ msgstr "도시 검색"
+
+#~ msgid "%1 %2"
+#~ msgstr "%1%2"
+
+#, fuzzy
+#~| msgid "Timezones"
+#~ msgid "<b>Timezones</b>"
+#~ msgstr "시간대"
+
+#~ msgid "Timezones"
+#~ msgstr "시간대"
+
+#~ msgid "30 seconds"
+#~ msgstr "30초"
+
+#~ msgid "1 minute"
+#~ msgstr "1분"
+
+#~ msgid "5 minutes"
+#~ msgstr "5분"
+
+#~ msgid "10 minutes"
+#~ msgstr "10분"
+
+#~ msgid "15 minutes"
+#~ msgstr "15분"
+
+#~ msgid "Never"
+#~ msgstr "하지 않음"
+
+#~ msgid "2 minutes"
+#~ msgstr "2분"
+
+#~ msgid "3 minutes"
+#~ msgstr "3분"
+
+#~ msgid "4 minutes"
+#~ msgstr "4분"
+
+#~ msgid "30 minutes"
+#~ msgstr "30분"
+
+#~ msgid "1 hour"
+#~ msgstr "1시간"
+
+#~ msgid "hour"
+#~ msgstr "시간"
+
+#~ msgid "%1 and a half hours ahead"
+#~ msgstr "%1시간 반 빠름"
+
+#~ msgid "%1 %2 ahead"
+#~ msgstr "%1%2 빠름"
+
+#~ msgid "%1 and a half hours behind"
+#~ msgstr "%1시간 반 늦음"
+
+#~ msgid "%1 %2 behind"
+#~ msgstr "%1%2 늦음"
+
+#~ msgid "Local time"
+#~ msgstr "지역 시간대"
+
+#~ msgid "%1 day"
+#~ msgid_plural "%1 days"
+#~ msgstr[0] "%1일"
+
+#~ msgid ", "
+#~ msgstr ", "
+
+#~ msgid " and "
+#~ msgstr " 및 "
+
+#~ msgid "%1 hour"
+#~ msgid_plural "%1 hours"
+#~ msgstr[0] "%1시간"
+
+#~ msgid "%1 minute"
+#~ msgid_plural "%1 minutes"
+#~ msgstr[0] "%1분"
+
+#~ msgid "Alarm will be rung within a minute"
+#~ msgstr "1분 안에 알람이 울립니다"
+
+#~ msgid "Alarm will be rung after %1"
+#~ msgstr "%1 후에 알람이 울립니다"
+
+#~ msgid " minutes"
+#~ msgstr "분"
+
+#~ msgid "Run in background mode"
+#~ msgstr "백그라운드 모드에서 실행"
+
+#, fuzzy
+#~| msgid "hours"
+#~ msgid " hours"
+#~ msgstr "시간"
+
+#, fuzzy
+#~| msgid "hours"
+#~ msgid "hours "
+#~ msgstr "시간"
+
+#, fuzzy
+#~| msgid "hour"
+#~ msgid "hour "
+#~ msgstr "시간"
+
+#, fuzzy
+#~| msgid "Minutes"
+#~ msgid "minute"
+#~ msgstr "분"
+
+#~ msgid "Use 24 Hour Time"
+#~ msgstr "24시간제 사용"
+
+#~ msgid "Change Timer Duration"
+#~ msgstr "타이머 시간 변경"
+
+#~ msgid "Hours"
+#~ msgstr "시간"
+
+#~ msgid "Minutes"
+#~ msgstr "분"
+
+#~ msgid "Seconds"
+#~ msgstr "초"
+
+#~ msgid "Edit Alarm"
+#~ msgstr "알람 편집"
+
+#~ msgid "Start week on"
+#~ msgstr "일주일의 시작 요일"

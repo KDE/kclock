@@ -1,0 +1,405 @@
+# Translation for kclock.po to Euskara/Basque (eu).
+# Copyright (C) 2020-2022, This file is copyright:
+# This file is distributed under the same license as the kclock package.
+# KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>.
+#
+# Translators:
+# Ander Elortondo <ander.elor@gmail.com>, 2020.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2020, 2021, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: kclock\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-25 00:46+0000\n"
+"PO-Revision-Date: 2022-02-27 09:53+0100\n"
+"Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
+"Language-Team: Basque <kde-i18n-eu@kde.org>\n"
+"Language: eu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 21.12.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Ander Elortondo,Iñigo Salvador Azurmendi"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "Ander.elor@gmail.com,xalba@euskalnet.net"
+
+#: alarm.cpp:73
+#, kde-format
+msgid "Dismiss"
+msgstr "Baztertu"
+
+#: alarm.cpp:73
+#, kde-format
+msgid "Snooze"
+msgstr "Kuluxka"
+
+#: alarm.cpp:75 alarm.h:51
+#, kde-format
+msgid "Alarm"
+msgstr "Alarma"
+
+#: alarm.cpp:77 timer.cpp:55
+#, kde-format
+msgid "View"
+msgstr "Ikuspegia"
+
+#: alarmmodel.cpp:223
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Alarm: <shortcut>%1 %2</shortcut>"
+msgstr "Alarma: <shortcut>%1 %2</shortcut>"
+
+#: main.cpp:30
+#, kde-format
+msgid "Don't use PowerDevil for alarms if it is available"
+msgstr "Erabilgarri badago, ez erabili PowerDevil alarmetarako"
+
+#: main.cpp:45
+#, kde-format
+msgid "© 2020-2022 KDE Community"
+msgstr "© 2020-2022 KDE Komunitatea"
+
+#: main.cpp:46
+#, kde-format
+msgid "Devin Lin"
+msgstr "Devin Lin"
+
+#: main.cpp:47
+#, kde-format
+msgid "Han Young"
+msgstr "Han Young"
+
+#: timer.cpp:53
+#, kde-format
+msgid "Timer complete"
+msgstr "Tenporizadoreak bukatu du"
+
+#: timer.cpp:54
+#, kde-format
+msgid "Your timer %1 has finished!"
+msgstr "Zure %1 tenporizadoreak bukatu du!"
+
+#: xdgportal.cpp:34
+#, kde-format
+msgid ""
+"Allow the clock process to be in the background and launched on startup."
+msgstr ""
+
+#~ msgid "Select opened page"
+#~ msgstr "Hautatu irekitako orrialdea"
+
+#~ msgid "Clock"
+#~ msgstr "Erlojua"
+
+#~ msgid "A mobile friendly clock app built with Kirigami."
+#~ msgstr ""
+#~ "Mugikorrekiko lagunkoia den erloju aplikazio bat, Kirigami erabiliz "
+#~ "eraikia."
+
+#~ msgid "© 2020 Plasma Development Team"
+#~ msgstr "© 2020 Plasma garapen taldea"
+
+#~ msgid "Alarms"
+#~ msgstr "Alarmak"
+
+#~ msgid "New Alarm"
+#~ msgstr "Alarma berria"
+
+#~ msgid "No alarms configured"
+#~ msgstr "Ez da alarmarik konfiguratu"
+
+#~ msgid "Edit"
+#~ msgstr "Editatu"
+
+#~ msgid "Delete"
+#~ msgstr "Ezabatu"
+
+#~ msgid "Deleted %1"
+#~ msgstr "%1 ezabatu da"
+
+#~ msgid "Snoozed %1 minutes"
+#~ msgstr "%1 minutuko kuluxka"
+
+#~ msgid "Only once"
+#~ msgstr "Behin bakarrik"
+
+#~ msgid "Everyday"
+#~ msgstr "Egunero"
+
+#~ msgid "Weekdays"
+#~ msgstr "Astegunetan"
+
+#, fuzzy
+#~| msgid "Edit"
+#~ msgctxt "Edit alarm page title"
+#~ msgid "Editing %1"
+#~ msgstr "Editatu"
+
+#~ msgid "Done"
+#~ msgstr "Eginda"
+
+#~ msgid "Days to Repeat"
+#~ msgstr "Errepikatu beharreko egunak"
+
+#, fuzzy
+#~| msgid "Label (optional)"
+#~ msgid "Alarm Name (optional)"
+#~ msgstr "Etiketa (aukerakoa)"
+
+#~ msgid "Wake Up"
+#~ msgstr "Esnatu"
+
+#~ msgid "Ringtone"
+#~ msgstr "Txirrin-hotsa"
+
+#~ msgid "Choose an audio"
+#~ msgstr "Hautatu audio bat"
+
+#~ msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
+#~ msgstr ""
+#~ "Audio fitxategiak (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
+
+#~ msgid "All files (*)"
+#~ msgstr "Fitxategi guztiak (*)"
+
+#~ msgid "Settings"
+#~ msgstr "Ezarpenak"
+
+#~ msgid "Alarm Volume"
+#~ msgstr "Alarmaren bolumena"
+
+#~ msgid "Silence Alarm After"
+#~ msgstr "Isilarazi alarma hau igarotakoan,"
+
+#~ msgid "Alarm Snooze Length"
+#~ msgstr "Alarma-kuluxkaren iraupena"
+
+#~ msgid "About"
+#~ msgstr "Honi buruz"
+
+#~ msgid "Change Alarm Volume"
+#~ msgstr "Aldatu alarmaren bolumena"
+
+#~ msgid "Volume: "
+#~ msgstr "Bolumena: "
+
+#~ msgid "Time"
+#~ msgstr "Ordua"
+
+#~ msgid "Timer"
+#~ msgstr "Tenporizadorea"
+
+#~ msgid "Stopwatch"
+#~ msgstr "Kronometroa"
+
+#~ msgid "Pause"
+#~ msgstr "Eten"
+
+#~ msgid "Start"
+#~ msgstr "Abiarazi"
+
+#~ msgid "Reset"
+#~ msgstr "Berrezarri"
+
+#~ msgid "Lap"
+#~ msgstr "Itzulia"
+
+#~ msgid "Add timezone"
+#~ msgstr "Gehitu ordu-eremua"
+
+#, fuzzy
+#~| msgid "1 hour"
+#~ msgid "1 h"
+#~ msgstr "ordu 1"
+
+#, fuzzy
+#~| msgid "Duration"
+#~ msgid "<b>Duration:</b>"
+#~ msgstr "Iraupena"
+
+#~ msgid "hours"
+#~ msgstr "ordu"
+
+#~ msgid "minutes"
+#~ msgstr "minutu"
+
+#~ msgid "seconds"
+#~ msgstr "segundo"
+
+#, fuzzy
+#~| msgid "Label (optional)"
+#~ msgid "<b>Label (optional):</b>"
+#~ msgstr "Etiketa (aukerakoa)"
+
+#, fuzzy
+#~| msgid "New timer"
+#~ msgid "Create timer"
+#~ msgstr "Tenporizadore berria"
+
+#~ msgid "Timers"
+#~ msgstr "Tenporizadoreak"
+
+#~ msgid "New Timer"
+#~ msgstr "Tenporizadore berria"
+
+#~ msgid "Add a timer"
+#~ msgstr "Gehitu tenporizadore bat"
+
+#~ msgid "New timer"
+#~ msgstr "Tenporizadore berria"
+
+#~ msgid "Search for a city"
+#~ msgstr "Hiri bat bilatzea"
+
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#, fuzzy
+#~| msgid "Timezones"
+#~ msgid "<b>Timezones</b>"
+#~ msgstr "Ordu-eremuak"
+
+#~ msgid "Timezones"
+#~ msgstr "Ordu-eremuak"
+
+#~ msgid "30 seconds"
+#~ msgstr "30 segundo"
+
+#~ msgid "1 minute"
+#~ msgstr "minutu 1"
+
+#~ msgid "5 minutes"
+#~ msgstr "5 minutu"
+
+#~ msgid "10 minutes"
+#~ msgstr "10 minutu"
+
+#~ msgid "15 minutes"
+#~ msgstr "15 minutu"
+
+#~ msgid "Never"
+#~ msgstr "Inoiz ez"
+
+#~ msgid "2 minutes"
+#~ msgstr "2 minutu"
+
+#~ msgid "3 minutes"
+#~ msgstr "3 minutu"
+
+#~ msgid "4 minutes"
+#~ msgstr "4 minutu"
+
+#~ msgid "30 minutes"
+#~ msgstr "30 minutu"
+
+#~ msgid "1 hour"
+#~ msgstr "ordu 1"
+
+#~ msgid "hour"
+#~ msgstr "ordu"
+
+#~ msgid "%1 and a half hours ahead"
+#~ msgstr "%1 ordu eta erdiko aurrerapena"
+
+#~ msgid "%1 %2 ahead"
+#~ msgstr "%1 %2(e)ko aurrerapena"
+
+#~ msgid "%1 and a half hours behind"
+#~ msgstr "%1 ordu eta erdiko atzerapena"
+
+#~ msgid "%1 %2 behind"
+#~ msgstr "%1 %2(e)ko atzerapena"
+
+#~ msgid "Local time"
+#~ msgstr "Ordu lokala"
+
+#~ msgid "%1 day"
+#~ msgid_plural "%1 days"
+#~ msgstr[0] "eguna %1"
+#~ msgstr[1] "%1 egun"
+
+#~ msgid ", "
+#~ msgstr ", "
+
+#~ msgid " and "
+#~ msgstr "eta"
+
+#~ msgid "%1 hour"
+#~ msgid_plural "%1 hours"
+#~ msgstr[0] "ordu %1"
+#~ msgstr[1] "%1 ordu"
+
+#~ msgid "%1 minute"
+#~ msgid_plural "%1 minutes"
+#~ msgstr[0] "minutu %1"
+#~ msgstr[1] "%1 minutu"
+
+#~ msgid "Alarm will be rung within a minute"
+#~ msgstr "Alarma minutu bat barru joko da"
+
+#~ msgid "Alarm will be rung after %1"
+#~ msgstr "Alarma %1 barru joko da"
+
+#~ msgid "Alarm Name"
+#~ msgstr "Alarmaren izena"
+
+#~ msgid "Create"
+#~ msgstr "Sortu"
+
+#~ msgid "Lap %1"
+#~ msgstr "%1. itzulia"
+
+#~ msgid " minutes"
+#~ msgstr " minutuz"
+
+#~ msgid "Run in background mode"
+#~ msgstr "Exekutatu atzeko planoko moduan"
+
+#, fuzzy
+#~| msgid "hours"
+#~ msgid " hours"
+#~ msgstr "ordu"
+
+#, fuzzy
+#~| msgid "hours"
+#~ msgid "hours "
+#~ msgstr "ordu"
+
+#, fuzzy
+#~| msgid "hour"
+#~ msgid "hour "
+#~ msgstr "ordu"
+
+#, fuzzy
+#~| msgid "minutes"
+#~ msgid "minute"
+#~ msgstr "minutu"
+
+#~ msgid "Use 24 Hour Time"
+#~ msgstr "Erabili 24-orduko ordularia"
+
+#~ msgid "Change Timer Duration"
+#~ msgstr "Aldatu tenporizadore iraupena"
+
+#~ msgid "Hours"
+#~ msgstr "Orduak"
+
+#~ msgid "Minutes"
+#~ msgstr "Minutuak"
+
+#~ msgid "Seconds"
+#~ msgstr "Segundoak"
+
+#~ msgid "Edit Alarm"
+#~ msgstr "Editatu alarma"
+
+#~ msgid "Start week on"
+#~ msgstr "Aste hasiera"

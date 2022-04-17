@@ -1,0 +1,270 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the kclock package.
+# Burkhard Lück <lueck@hube-lueck.de>, 2020, 2021.
+# Frank Steinmetzger <dev@felsenfleischer.de>, 2021.
+# Frederik Schwarzer <schwarzer@kde.org>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kclock\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-25 00:46+0000\n"
+"PO-Revision-Date: 2022-03-06 18:27+0100\n"
+"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
+"Language-Team: German <kde-i18n-doc@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 21.12.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Deutsches KDE-Übersetzerteam"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde-i18n-de@kde.org"
+
+#: alarm.cpp:73
+#, kde-format
+msgid "Dismiss"
+msgstr "Schließen"
+
+#: alarm.cpp:73
+#, kde-format
+msgid "Snooze"
+msgstr "Erneut erinnern"
+
+#: alarm.cpp:75 alarm.h:51
+#, kde-format
+msgid "Alarm"
+msgstr "Erinnerung"
+
+#: alarm.cpp:77 timer.cpp:55
+#, kde-format
+msgid "View"
+msgstr "Ansicht"
+
+#: alarmmodel.cpp:223
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Alarm: <shortcut>%1 %2</shortcut>"
+msgstr "Erinnerung: <shortcut>%1 %2</shortcut>"
+
+#: main.cpp:30
+#, kde-format
+msgid "Don't use PowerDevil for alarms if it is available"
+msgstr "PowerDevil, sofern vorhanden, nicht für Erinnerungen benutzen."
+
+#: main.cpp:45
+#, kde-format
+msgid "© 2020-2022 KDE Community"
+msgstr "Copyright © 2020-2022 KDE-Gemeinschaft"
+
+#: main.cpp:46
+#, kde-format
+msgid "Devin Lin"
+msgstr "Devin Lin"
+
+#: main.cpp:47
+#, kde-format
+msgid "Han Young"
+msgstr "Han Young"
+
+#: timer.cpp:53
+#, kde-format
+msgid "Timer complete"
+msgstr "Eieruhr abgelaufen"
+
+#: timer.cpp:54
+#, kde-format
+msgid "Your timer %1 has finished!"
+msgstr "Ihre Eieruhr %1 ist abgelaufen."
+
+#: xdgportal.cpp:34
+#, kde-format
+msgid ""
+"Allow the clock process to be in the background and launched on startup."
+msgstr ""
+
+#~ msgid "Alarms"
+#~ msgstr "Erinnerungen"
+
+#~ msgid "New Alarm"
+#~ msgstr "Neue Erinnerung"
+
+#~ msgid "No alarms configured"
+#~ msgstr "Keine Erinnerungen eingerichtet"
+
+#~ msgid "Edit"
+#~ msgstr "Bearbeiten"
+
+#~ msgid "Delete"
+#~ msgstr "Löschen"
+
+#~ msgid "Deleted %1"
+#~ msgstr "%1 gelöscht"
+
+#, fuzzy
+#~| msgid "%1 minute"
+#~| msgid_plural "%1 minutes"
+#~ msgid "Snoozed %1 minutes"
+#~ msgstr "%1 Minute"
+
+#~ msgid "Only once"
+#~ msgstr "Nur einmal"
+
+#~ msgid "Everyday"
+#~ msgstr "Jeden Tag"
+
+#~ msgid "Weekdays"
+#~ msgstr "Wochentage"
+
+#~ msgid "Done"
+#~ msgstr "Fertig"
+
+#, fuzzy
+#~| msgid "Alarm Name"
+#~ msgid "Alarm Name (optional)"
+#~ msgstr "Erinnerungsname"
+
+#~ msgid "Ringtone"
+#~ msgstr "Klingelton"
+
+#~ msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
+#~ msgstr "Audio-Dateien (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
+
+#~ msgid "All files (*)"
+#~ msgstr "Alle Dateien (*)"
+
+#~ msgid "Settings"
+#~ msgstr "Einstellungen"
+
+#~ msgid "About"
+#~ msgstr "Über"
+
+#~ msgid "Volume: "
+#~ msgstr "Lautstärke: "
+
+#~ msgid "Time"
+#~ msgstr "Zeit"
+
+#~ msgid "Stopwatch"
+#~ msgstr "Stoppuhr"
+
+#~ msgid "Pause"
+#~ msgstr "Pause"
+
+#~ msgid "Start"
+#~ msgstr "Start"
+
+#~ msgid "Reset"
+#~ msgstr "Zurücksetzen"
+
+#~ msgid "#%1"
+#~ msgstr "#%1"
+
+#~ msgid "Add timezone"
+#~ msgstr "Zeitzone hinzufügen"
+
+#, fuzzy
+#~| msgid "1 hour"
+#~ msgid "1 h"
+#~ msgstr "1 Stunde"
+
+#, fuzzy
+#~| msgid "Duration"
+#~ msgid "<b>Duration:</b>"
+#~ msgstr "Dauer"
+
+#~ msgid "hours"
+#~ msgstr "Stunden"
+
+#~ msgid "minutes"
+#~ msgstr "Minuten"
+
+#~ msgid "seconds"
+#~ msgstr "Sekunden"
+
+#, fuzzy
+#~| msgid "Create"
+#~ msgid "Create timer"
+#~ msgstr "Erstellen"
+
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#, fuzzy
+#~| msgid "Timezones"
+#~ msgid "<b>Timezones</b>"
+#~ msgstr "Zeitzonen"
+
+#~ msgid "Timezones"
+#~ msgstr "Zeitzonen"
+
+#~ msgid "30 seconds"
+#~ msgstr "30 Sekunden"
+
+#~ msgid "1 minute"
+#~ msgstr "1 Minute"
+
+#~ msgid "5 minutes"
+#~ msgstr "5 Minuten"
+
+#~ msgid "10 minutes"
+#~ msgstr "10 Minuten"
+
+#~ msgid "15 minutes"
+#~ msgstr "15 Minuten"
+
+#~ msgid "Never"
+#~ msgstr "Nie"
+
+#~ msgid "2 minutes"
+#~ msgstr "2 Minuten"
+
+#~ msgid "3 minutes"
+#~ msgstr "3 Minuten"
+
+#~ msgid "4 minutes"
+#~ msgstr "4 Minuten"
+
+#~ msgid "30 minutes"
+#~ msgstr "30 Minuten"
+
+#~ msgid "1 hour"
+#~ msgstr "1 Stunde"
+
+#~ msgid "hour"
+#~ msgstr "Stunde"
+
+#~ msgid "Local time"
+#~ msgstr "Ortszeit"
+
+#~ msgid "%1 day"
+#~ msgid_plural "%1 days"
+#~ msgstr[0] "%1 Tag"
+#~ msgstr[1] "%1 Tage"
+
+#~ msgid ", "
+#~ msgstr ", "
+
+#~ msgid " and "
+#~ msgstr "und"
+
+#~ msgid "%1 hour"
+#~ msgid_plural "%1 hours"
+#~ msgstr[0] "%1 Stunde"
+#~ msgstr[1] "%1 Stunden"
+
+#~ msgid "%1 minute"
+#~ msgid_plural "%1 minutes"
+#~ msgstr[0] "%1 Minute"
+#~ msgstr[1] "%1 Minuten"
+
+#~ msgid " minutes"
+#~ msgstr " Minuten"
