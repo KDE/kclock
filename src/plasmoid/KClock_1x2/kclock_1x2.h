@@ -19,7 +19,7 @@ class KClock_1x2 : public Plasma::Applet
     Q_PROPERTY(bool hasAlarm READ hasAlarm NOTIFY propertyChanged)
 
 public:
-    KClock_1x2(QObject *parent, const QVariantList &args);
+    KClock_1x2(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args);
     ~KClock_1x2();
 
     QString date();

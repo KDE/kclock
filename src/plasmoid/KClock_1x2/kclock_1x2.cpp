@@ -14,8 +14,8 @@
 #include <QProcess>
 #include <QTimer>
 
-KClock_1x2::KClock_1x2(QObject *parent, const QVariantList &args)
-    : Plasma::Applet(parent, args)
+KClock_1x2::KClock_1x2(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args)
+    : Plasma::Applet(parent, metaData, args)
 {
     m_timer = new QTimer(this);
     connect(m_timer, &QTimer::timeout, this, &KClock_1x2::initialTimeUpdate);
@@ -103,6 +103,6 @@ KClock_1x2::~KClock_1x2()
 {
 }
 
-K_EXPORT_PLASMA_APPLET_WITH_JSON(kclock_1x2, KClock_1x2, "metadata.json")
+K_PLUGIN_CLASS_WITH_JSON(KClock_1x2, "metadata.json")
 
 #include "kclock_1x2.moc"
