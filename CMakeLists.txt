@@ -35,7 +35,7 @@ ecm_setup_version(${PROJECT_VERSION}
     VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/version.h
 )
 
-find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS
+find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED COMPONENTS
     Core
     Gui
     Quick
@@ -56,7 +56,7 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     DBusAddons
 )
 
-find_package(Qt5QuickCompiler)
+find_package(Qt${QT_MAJOR_VERSION}QuickCompiler)
 
 ecm_find_qmlmodule(org.kde.kirigamiaddons.dateandtime 0.1)
 

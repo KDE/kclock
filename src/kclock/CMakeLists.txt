@@ -27,23 +27,27 @@ set(TimermModelXML ${CMAKE_CURRENT_BINARY_DIR}/../kclockd/org.kde.kclockd.TimerM
 set(TimerXML ${CMAKE_CURRENT_BINARY_DIR}/../kclockd/org.kde.kclockd.Timer.xml)
 set(UtilityXML ${CMAKE_CURRENT_BINARY_DIR}/../kclockd/org.kde.kclockd.Utility.xml)
 
-qt5_add_dbus_interface(kclock_SRCS ${SettingsXML} kclocksettingsinterface )
-qt5_add_dbus_interface(kclock_SRCS ${AlarmXML} alarminterface )
-qt5_add_dbus_interface(kclock_SRCS ${AlarmModelXML} alarmmodelinterface )
-qt5_add_dbus_interface(kclock_SRCS ${TimermModelXML} timermodelinterface )
-qt5_add_dbus_interface(kclock_SRCS ${TimerXML} timerinterface )
-qt5_add_dbus_interface(kclock_SRCS ${UtilityXML} utilityinterface )
+qt_add_dbus_interface(kclock_SRCS ${SettingsXML} kclocksettingsinterface )
+qt_add_dbus_interface(kclock_SRCS ${AlarmXML} alarminterface )
+qt_add_dbus_interface(kclock_SRCS ${AlarmModelXML} alarmmodelinterface )
+qt_add_dbus_interface(kclock_SRCS ${TimermModelXML} timermodelinterface )
+qt_add_dbus_interface(kclock_SRCS ${TimerXML} timerinterface )
+qt_add_dbus_interface(kclock_SRCS ${UtilityXML} utilityinterface )
 
-qtquick_compiler_add_resources(RESOURCES resources.qrc)
+if(QT_MAJOR_VERSION STREQUAL "5")
+    qtquick_compiler_add_resources(RESOURCES resources.qrc)
+else()
+    qt_add_resources(RESOURCES resources.qrc)
+endif()
 
 add_executable(kclock main.cpp ${kclock_SRCS} ${RESOURCES})
 add_dependencies(kclock kclockd)
 target_link_libraries(kclock
-        Qt5::Qml
-        Qt5::Gui
-        Qt5::QuickControls2
-        Qt5::Widgets
-        Qt5::Multimedia
+        Qt::Qml
+        Qt::Gui
+        Qt::QuickControls2
+        Qt::Widgets
+        Qt::Multimedia
         KF5::I18n
         KF5::ConfigCore
         KF5::ConfigGui

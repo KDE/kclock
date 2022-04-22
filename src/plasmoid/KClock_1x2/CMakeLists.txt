@@ -15,8 +15,8 @@ add_library(plasma_applet_kclock_1x2 MODULE ${kclock_1x2_SRCS})
 kcoreaddons_desktop_to_json(plasma_applet_kclock_1x2 package/metadata.desktop SERVICE_TYPES plasma-applet.desktop)
 
 target_link_libraries(plasma_applet_kclock_1x2
-                      Qt5::Gui
-                      Qt5::DBus
+                      Qt::Gui
+                      Qt::DBus
                       KF5::Plasma
                       KF5::I18n)
 
