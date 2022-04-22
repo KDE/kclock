@@ -10,6 +10,10 @@
 #include <QMediaPlayer>
 #include <QObject>
 
+#if QT_VERSION > QT_VERSION_CHECK(6, 0, 0)
+#include <QAudioOutput>
+#endif
+
 class AlarmPlayer : public QObject
 {
     Q_OBJECT
@@ -32,10 +36,17 @@ protected:
 
 private:
     QMediaPlayer *m_player;
+#if QT_VERSION > QT_VERSION_CHECK(6, 0, 0)
+    QAudioOutput *m_audio;
+#endif
     quint64 startPlayingTime = 0;
 
     bool userStop = false; // indicate if user asks to stop
 
 private Q_SLOTS:
+#if QT_VERSION > QT_VERSION_CHECK(6, 0, 0)
+    void loopAudio(QMediaPlayer::PlaybackState state);
+#else
     void loopAudio(QMediaPlayer::State state);
+#endif
 };
