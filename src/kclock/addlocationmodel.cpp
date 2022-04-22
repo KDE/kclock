@@ -135,5 +135,10 @@ void AddLocationSearchModel::addLocation(int index)
 
 bool AddLocationSearchModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
 {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    return QVariant::compare(sourceModel()->data(left, AddLocationModel::CityRole), sourceModel()->data(right, AddLocationModel::CityRole))
+        == QPartialOrdering::Less;
+#else
     return sourceModel()->data(left, AddLocationModel::CityRole) < sourceModel()->data(right, AddLocationModel::CityRole);
+#endif
 }
