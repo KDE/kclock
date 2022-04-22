@@ -71,12 +71,12 @@ qt5_add_dbus_adaptor(kclockd_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.Ut
                      ${CMAKE_CURRENT_SOURCE_DIR}/utilities.h Utilities)
 
 # install DBus interface xml to dbus interface directory
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.KClockSettings.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR})
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.Alarm.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR})
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.AlarmModel.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR})
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.TimerModel.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR})
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.Timer.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR})
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.Utility.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR})
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.KClockSettings.xml DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR})
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.Alarm.xml DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR})
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.AlarmModel.xml DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR})
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.TimerModel.xml DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR})
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.Timer.xml DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR})
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.Utility.xml DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR})
 
 add_executable(kclockd main.cpp ${kclockd_SRCS} )
 target_link_libraries(kclockd
