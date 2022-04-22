@@ -89,4 +89,4 @@ target_link_libraries(kclockd
     KF5::DBusAddons
     )
 target_include_directories(kclockd PRIVATE ${CMAKE_BINARY_DIR})
-install(TARGETS kclockd ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS kclockd ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
