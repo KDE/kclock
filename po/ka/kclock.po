@@ -1,0 +1,91 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the kclock package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kclock\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-25 00:46+0000\n"
+"PO-Revision-Date: 2022-05-09 07:00+0200\n"
+"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
+"Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
+"Language: ka\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Temuri Doghonadze"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "Temuri.doghonadze@gmail.com"
+
+#: alarm.cpp:73
+#, kde-format
+msgid "Dismiss"
+msgstr "გაუქმება"
+
+#: alarm.cpp:73
+#, kde-format
+msgid "Snooze"
+msgstr "ჩაჩუმება"
+
+#: alarm.cpp:75 alarm.h:51
+#, kde-format
+msgid "Alarm"
+msgstr "მაღვიძარა"
+
+#: alarm.cpp:77 timer.cpp:55
+#, kde-format
+msgid "View"
+msgstr "ხედი"
+
+#: alarmmodel.cpp:223
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Alarm: <shortcut>%1 %2</shortcut>"
+msgstr "მაღვიძარა: <shortcut>%1 %2</shortcut>"
+
+#: main.cpp:30
+#, kde-format
+msgid "Don't use PowerDevil for alarms if it is available"
+msgstr "მაღვიძარისთვის PowerDevil-ის არ გამოყენება, თუ ხელმისაწვდომია"
+
+#: main.cpp:45
+#, kde-format
+msgid "© 2020-2022 KDE Community"
+msgstr "© 2020-2022 KDE-ის საზოგადოება"
+
+#: main.cpp:46
+#, kde-format
+msgid "Devin Lin"
+msgstr "Devin Lin"
+
+#: main.cpp:47
+#, kde-format
+msgid "Han Young"
+msgstr "ჰან იანგი"
+
+#: timer.cpp:53
+#, kde-format
+msgid "Timer complete"
+msgstr "წამმზომი დასრულდა"
+
+#: timer.cpp:54
+#, kde-format
+msgid "Your timer %1 has finished!"
+msgstr "თქვენი წამმზომი დასრულდა: %1!"
+
+#: xdgportal.cpp:34
+#, kde-format
+msgid ""
+"Allow the clock process to be in the background and launched on startup."
+msgstr "უფლებას აძლევს საათის აპლიკაციას ფონზე და გაშვებისას გაეშვას."
