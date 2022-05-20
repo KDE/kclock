@@ -59,7 +59,7 @@ msgstr "Alarma: <shortcut>%1 %2</shortcut>"
 #: main.cpp:30
 #, kde-format
 msgid "Don't use PowerDevil for alarms if it is available"
-msgstr "No utilitza PowerDevil per a les alarmes si és disponible"
+msgstr "No utilitza PowerDevil per a les alarmes si està disponible"
 
 #: main.cpp:45
 #, kde-format
