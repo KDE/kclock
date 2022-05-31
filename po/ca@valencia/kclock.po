@@ -79,12 +79,12 @@ msgstr "Han Young"
 #: timer.cpp:53
 #, kde-format
 msgid "Timer complete"
-msgstr "Finalització del temporitzador"
+msgstr "Finalisació del temporisador"
 
 #: timer.cpp:54
 #, kde-format
 msgid "Your timer %1 has finished!"
-msgstr "El temporitzador %1 ha finalitzat!"
+msgstr "El temporisador %1 ha finalisat!"
 
 #: xdgportal.cpp:34
 #, kde-format
