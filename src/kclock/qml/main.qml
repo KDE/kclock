@@ -70,7 +70,7 @@ Kirigami.ApplicationWindow {
         yAnim.target = page;
         yAnim.properties = "yTranslate";
         anim.target = page;
-        anim.properties = "mainItem.opacity";
+        anim.properties = "contentItem.opacity";
         if (page.header) {
             anim.properties += ",header.opacity";
         }
