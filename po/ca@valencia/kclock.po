@@ -48,7 +48,7 @@ msgstr "Alarma"
 #: alarm.cpp:77 timer.cpp:55
 #, kde-format
 msgid "View"
-msgstr "Visualisa"
+msgstr "Visualitza"
 
 #: alarmmodel.cpp:223
 #, kde-kuit-format
@@ -59,7 +59,7 @@ msgstr "Alarma: <shortcut>%1 %2</shortcut>"
 #: main.cpp:30
 #, kde-format
 msgid "Don't use PowerDevil for alarms if it is available"
-msgstr "No utilisa PowerDevil per a les alarmes si està disponible"
+msgstr "No utilitza PowerDevil per a les alarmes si està disponible"
 
 #: main.cpp:45
 #, kde-format
@@ -79,12 +79,12 @@ msgstr "Han Young"
 #: timer.cpp:53
 #, kde-format
 msgid "Timer complete"
-msgstr "Finalisació del temporisador"
+msgstr "Finalització del temporitzador"
 
 #: timer.cpp:54
 #, kde-format
 msgid "Your timer %1 has finished!"
-msgstr "El temporisador %1 ha finalisat!"
+msgstr "El temporitzador %1 ha finalitzat!"
 
 #: xdgportal.cpp:34
 #, kde-format
