@@ -8,7 +8,7 @@
 cmake_minimum_required(VERSION 3.16)
 set (CMAKE_CXX_STANDARD 17)
 project(kclock)
-set(PROJECT_VERSION "22.04")
+set(PROJECT_VERSION "22.06")
 
 set(KF5_MIN_VERSION "5.89.0")
 set(QT_MIN_VERSION "5.15.0")
