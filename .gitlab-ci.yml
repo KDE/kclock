@@ -1,7 +1,15 @@
-# Copyright (C) 2021 Devin Lin <espidev@gmail.com>
+# Copyright (C) 2021-2022 Devin Lin <espidev@gmail.com>
 # SPDX-License-Identifier: GPL-2.0-or-later
 
 include:
   - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/reuse-lint.yml
   - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/linux.yml
   - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/linux-qt6.yml
+
+appstream:
+  image:
+    name: alpinelinux/appstream-generator:latest
+    entrypoint: [""]
+  stage: build
+  script:
+    - appstreamcli validate org.kde.kclock.appdata.xml
