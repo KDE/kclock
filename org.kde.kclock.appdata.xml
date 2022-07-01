@@ -156,6 +156,7 @@
     <p xml:lang="x-test">xxIt contains alarm, timer, stopwatch and timezone functionalities. Alarms and timers are able to wake the device from suspend on Plasma.xx</p>
     <p xml:lang="zh-CN">它包含闹钟、计时器、秒表和时区功能。闹钟和计时器能够在 Plasma 上唤醒设备。</p>
   </description>
+  <launchable type="desktop-id">org.kde.kclock.desktop</launchable>
   <recommends>
     <control>pointing</control>
     <control>keyboard</control>
