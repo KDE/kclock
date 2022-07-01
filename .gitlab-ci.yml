@@ -8,8 +8,9 @@ include:
 
 appstream:
   image:
-    name: alpinelinux/appstream-generator:latest
+    name: archlinux:latest
     entrypoint: [""]
   stage: build
   script:
+    - pacman -S appstream --noconfirm
     - appstreamcli validate org.kde.kclock.appdata.xml
