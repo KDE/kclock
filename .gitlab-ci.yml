@@ -12,5 +12,5 @@ appstream:
     entrypoint: [""]
   stage: build
   script:
-    - pacman -S appstream --noconfirm
+    - pacman -Sy appstream --noconfirm
     - appstreamcli validate org.kde.kclock.appdata.xml
