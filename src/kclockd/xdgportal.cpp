@@ -29,12 +29,12 @@ void XDGPortal::requestBackground()
     QList<QVariant> msgArgs;
     msgArgs << QString(); // parent_window - we leave blank since this is a daemon
 
-    QMap<QString, QVariant> msgOpts = {
-        {QStringLiteral("handle_token"), m_handleToken},
-        {QStringLiteral("reason"), i18n("Allow the clock process to be in the background and launched on startup.")},
-        {QStringLiteral("autostart"), true},
-        {QStringLiteral("dbus-activatable"), true},
-    };
+    QStringList cmdLine = {{QStringLiteral("kclockd")}};
+    QMap<QString, QVariant> msgOpts = {{QStringLiteral("handle_token"), m_handleToken},
+                                       {QStringLiteral("reason"), i18n("Allow the clock process to be in the background and launched on startup.")},
+                                       {QStringLiteral("autostart"), true},
+                                       {QStringLiteral("dbus-activatable"), true},
+                                       {QStringLiteral("commandline"), cmdLine}};
     msgArgs << msgOpts;
 
     autostartMsg.setArguments(msgArgs);
