@@ -57,6 +57,7 @@
   <summary xml:lang="ka">დააყენეთ გაფრთხილებები, წამმზომები და მაღვიძარები, მართეთ საათები</summary>
   <summary xml:lang="ko">알람과 타이머 설정, 초시계 사용, 세계 시간 관리</summary>
   <summary xml:lang="nl">Zet alarmen en timers, gebruik een stopwatch en beheer wereldklokken</summary>
+  <summary xml:lang="nn">Still inn alarmar og nedteljing, bruk som stoppeklokke eller verdsur</summary>
   <summary xml:lang="pa">ਅਲਾਰਮ ਤੇ ਟਾਈਮਰ ਸੈੱਟ ਕਰੋ, ਸਟਾਪ-ਵਾਚ ਵਰਤੋ ਅਤੇ ਸੰਸਾਰ ਦੀਆਂ ਘੜੀਆਂ ਦਾ ਇੰਤਜ਼ਾਮ ਕਰੋ</summary>
   <summary xml:lang="pl">Ustawiaj alarmy i czasomierze, używaj stopera i zarządzaj zegarami światowymi</summary>
   <summary xml:lang="pt">Configurar alarmes e temporizadores, usar um cronómetro e gerir os relógios mundiais</summary>
@@ -118,6 +119,7 @@
     <p xml:lang="it">Un'applicazione universale per l'orologio per desktop e per mobile.</p>
     <p xml:lang="ko">데스크톱과 모바일용 다기능 시계 프로그램입니다.</p>
     <p xml:lang="nl">Een universele kloktoepassing voor bureaublad en mobiel.</p>
+    <p xml:lang="nn">Universell klokkeprogram for skrivebord og mobil.</p>
     <p xml:lang="pa">ਡੈਸਕਟਾਪ ਤੇ ਮੋਬਾਈਲ ਲਈ ਸਾਂਝੀ ਘੜੀ ਐਪਲੀਕੇਸ਼ਨ ਹੈ।</p>
     <p xml:lang="pl">Wszechstronna aplikacja zegara dla urządzeń biurkowych i przenośnych.</p>
     <p xml:lang="pt">Uma aplicação de relógio universal para o computador e telemóvel.</p>
@@ -145,6 +147,7 @@
     <p xml:lang="it">Contiene le funzionalità di allarme, timer, cronometro e fuso orario. Gli allarmi e i timer possono risvegliare il dispositivo dalla sospensione se si utilizza Plasma.</p>
     <p xml:lang="ko">알람, 타이머, 초시계, 시간대 기능을 지원합니다. Plasma를 사용 중일 때 장치를 절전 모드에서 알람이나 타이머로 깨울 수도 있습니다.</p>
     <p xml:lang="nl">Het bevat de functionaliteiten alarm, timer, stopwatch en tijdzone. Alarmen kunnen het apparaat uit status onderbroken laten ontwaken bij gebruik van Plasma.</p>
+    <p xml:lang="nn">Det inneheld alarmklokke, nedteljing, stoppeklokke og støtte for ulike tidssonar. Alarmar og nedteljing kan vekkja maskina frå kvilemodus på Plasma.</p>
     <p xml:lang="pa">ਇਸ ਵਿੱਚ ਅਲਾਰਮ, ਟਾਈਮਰ, ਸਟਾਪ-ਵਾਚ ਅਤੇ ਸਮਾਂ-ਖੇਤਰ ਦੀਆਂ ਸਹੂਲਤਾਂ ਹਨ। ਪਲਾਜ਼ਮਾ ਉੱਤੇ ਅਲਾਰਮ ਤੇ ਟਾਈਮਰ ਸਸਪੈਂਡ ਤੋਂ ਡਿਵਾਈਸ ਨੂੰ ਚਾਲੂ ਕਰ ਸਕਦੇ ਹਨ।</p>
     <p xml:lang="pl">Zawiera alarm, czasomierz, stoper oraz różne strefy czasowe. Alarmy i czasomierze są także w stanie wybudzić urządzenie z uśpienia na Plazmie.</p>
     <p xml:lang="pt">Contém funcionalidades de alarmes, temporizadores, cronómetros e fusos-horários. Os alarmes também conseguirão acordar o dispositivo da suspensão ao usar o Plasma.</p>
