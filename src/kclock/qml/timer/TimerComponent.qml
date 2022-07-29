@@ -32,24 +32,6 @@ Rectangle {
         return ("0" + parseInt(getTimeLeft() - 60 * getMinutes())).slice(-2);
     }
     
-    // spinner circle animation
-    property int secondsStartAngle
-    NumberAnimation on secondsStartAngle {
-        id: secondsAngleAnimation
-        duration: 1000
-    }
-    Timer {
-        interval: 1000
-        running: timerRunning
-        repeat: true
-        triggeredOnStart: true
-        onTriggered: {
-            secondsAngleAnimation.from %= 360;
-            secondsAngleAnimation.to = secondsAngleAnimation.from + 360;
-            secondsAngleAnimation.restart();
-        }
-    }
-    
     // elapsed sweep angle animation (progress circle)
     property int elapsedSweepAngle
     NumberAnimation on elapsedSweepAngle {
@@ -64,7 +46,6 @@ Rectangle {
     
     // set initial values
     Component.onCompleted: {
-        secondsStartAngle = (-90 + 360 * new Date().getMilliseconds() / 1000) % 360;
         elapsedSweepAngle = 360 * timerElapsed / timerDuration;
     }
     
@@ -108,20 +89,6 @@ Rectangle {
                 radiusX: timerCircleArc.radiusX; radiusY: timerCircleArc.radiusY
                 startAngle: -90
                 sweepAngle: elapsedSweepAngle
-            }
-        }
-        
-        // lapping circle
-        ShapePath {
-            strokeColor: timerRunning ? "white" : "transparent"
-            fillColor: "transparent"
-            strokeWidth: 4
-            capStyle: ShapePath.FlatCap
-            PathAngleArc {
-                centerX: timerCircleArc.centerX; centerY: timerCircleArc.centerY
-                radiusX: timerCircleArc.radiusX; radiusY: timerCircleArc.radiusY
-                startAngle: secondsStartAngle % 360
-                sweepAngle: 16
             }
         }
     }
