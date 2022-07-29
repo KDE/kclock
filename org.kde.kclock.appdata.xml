@@ -386,7 +386,7 @@
     <dbus type="user">org.kde.kclockd</dbus>
   </provides>
   <url type="homepage">https://invent.kde.org/plasma-mobile/kclock</url>
-  <url type="bugtracker">https://invent.kde.org/plasma-mobile/kclock/-/issues</url>
+  <url type="bugtracker">https://bugs.kde.org/describecomponents.cgi?product=KClock</url>
   <releases>
     <release version="22.06" date="2022-06-24">
       <url>https://www.plasma-mobile.org/2022/06/28/plasma-mobile-gear-22-06/</url>
