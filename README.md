@@ -17,7 +17,7 @@ A convergent clock application for Plasma.
 
 ## Links
 * Project page: https://invent.kde.org/plasma-mobile/kclock
-* File issues: https://invent.kde.org/plasma-mobile/kclock/-/issues
+* File issues: https://bugs.kde.org/describecomponents.cgi?product=KClock
 * Development channel: https://matrix.to/#/#plasmamobile:matrix.org
 
 ## Installing
