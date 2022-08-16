@@ -27,6 +27,8 @@ Kirigami.ApplicationWindow {
     pageStack.globalToolBar.canContainHandles: true
     pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
     pageStack.globalToolBar.showNavigationButtons: Kirigami.ApplicationHeaderStyle.ShowBackButton;
+    
+    pageStack.columnView.columnResizeMode: Kirigami.ColumnView.SingleColumn
 
     // pop pages when not in use
     Connections {
