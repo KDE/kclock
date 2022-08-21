@@ -12,48 +12,31 @@ import kclock 1.0
         
 Loader {
     id: loader
-    sourceComponent: Kirigami.Settings.isMobile ? mobileComponent : desktopComponent
+    active: false
     
     function open() {
         loader.active = false;
-        loader.active = true;
         if (Kirigami.Settings.isMobile) {
-            applicationWindow().pageStack.push(loader.item);
+            applicationWindow().pageStack.push("qrc:/qml/time/AddLocationPage.qml");
         } else {
+            loader.active = true;
             loader.item.open();
         }
     }
-    
-    Component {
-        id: mobileComponent
-        Kirigami.ScrollablePage {
-            id: root
-            
-            title: i18n("Add Location")
-            
-            AddLocationListView {
-                addPadding: true
-                onCloseRequested: applicationWindow().pageStack.currentIndex = 0
-            }
+
+    sourceComponent: Kirigami.Dialog {
+        id: dialog
+        
+        standardButtons: Kirigami.Dialog.NoButton
+        parent: applicationWindow().overlay
+        title: i18n("Add Location")
+        preferredHeight: Kirigami.Units.gridUnit * 20
+        preferredWidth: Kirigami.Units.gridUnit * 20
+        padding: Kirigami.Units.largeSpacing
+        
+        AddLocationListView {
+            addPadding: false
+            onCloseRequested: dialog.close()
         }
     }
-    
-    Component {
-        id: desktopComponent
-        Kirigami.Dialog {
-            id: dialog
-            
-            standardButtons: Kirigami.Dialog.NoButton
-            parent: applicationWindow().overlay
-            title: i18n("Add Location")
-            preferredHeight: Kirigami.Units.gridUnit * 20
-            preferredWidth: Kirigami.Units.gridUnit * 20
-            padding: Kirigami.Units.largeSpacing
-            
-            AddLocationListView {
-                addPadding: false
-                onCloseRequested: dialog.close()
-            }
-        }
-    }
-} 
+}
