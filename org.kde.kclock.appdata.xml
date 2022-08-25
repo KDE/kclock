@@ -169,6 +169,7 @@
   <requires>
     <display_length compare="ge">360</display_length>
   </requires>
+  <launchable type="desktop-id">org.kde.kclock.desktop</launchable>
   <screenshots>
     <screenshot type="default">
       <caption>Mobile view</caption>
