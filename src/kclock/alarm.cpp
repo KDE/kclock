@@ -33,7 +33,7 @@ Alarm::Alarm(QString uuid)
         connect(m_interface, &OrgKdeKclockAlarmInterface::ringingChanged, this, &Alarm::updateRinging);
         connect(m_interface, &OrgKdeKclockAlarmInterface::nextRingTimeChanged, this, &Alarm::updateNextRingTime);
 
-        m_uuid = QUuid(m_interface->uuid());
+        m_uuid = QUuid(m_interface->uuid().value());
         updateName();
         updateEnabled();
         updateHours();

@@ -30,7 +30,7 @@ Timer::Timer(QString uuid, QObject *parent)
         connect(m_interface, &OrgKdeKclockTimerInterface::loopingChanged, this, &Timer::updateLooping);
         connect(m_interface, &OrgKdeKclockTimerInterface::ringingChanged, this, &Timer::updateRinging);
 
-        m_uuid = QUuid(m_interface->uuid());
+        m_uuid = QUuid(m_interface->uuid().value());
         updateLength();
         updateElapsed();
         updateLabel();
