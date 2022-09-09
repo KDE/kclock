@@ -81,7 +81,7 @@ msgstr "Sayaç bitti"
 #: timer.cpp:54
 #, kde-format
 msgid "Your timer %1 has finished!"
-msgstr "Sayacınız %1 bitti"
+msgstr "Sayacınız %1, bitti"
 
 #: xdgportal.cpp:34
 #, kde-format
