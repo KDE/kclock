@@ -44,6 +44,7 @@ Kirigami.Page {
         main: Kirigami.Action {
             text: running ? i18n("Pause") : i18n("Start")
             iconName: running ? "chronometer-pause" : "chronometer-start"
+            visible: !Kirigami.Settings.isMobile
             onTriggered: root.timer.toggleRunning()
         }
 
@@ -51,11 +52,13 @@ Kirigami.Page {
             Kirigami.Action {
                 icon.name: "chronometer-reset"
                 text: i18n("Reset")
+                visible: !Kirigami.Settings.isMobile
                 onTriggered: root.timer.reset();
             },
             Kirigami.Action {
                 icon.name: "delete"
                 text: i18n("Delete")
+                visible: !Kirigami.Settings.isMobile
                 onTriggered: {
                     applicationWindow().pageStack.pop();
                     TimerModel.remove(timerIndex);
@@ -66,6 +69,7 @@ Kirigami.Page {
                 text: i18n("Loop Timer")
                 checkable: true
                 checked: looping
+                visible: !Kirigami.Settings.isMobile
                 onTriggered: root.timer.toggleLooping()
             }
         ]
