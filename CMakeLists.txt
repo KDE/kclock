@@ -11,7 +11,7 @@ project(kclock)
 set(PROJECT_VERSION "22.06")
 
 set(KF5_MIN_VERSION "5.89.0")
-set(QT_MIN_VERSION "5.15.0")
+set(QT_MIN_VERSION "5.15.2")
 
 find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
 
