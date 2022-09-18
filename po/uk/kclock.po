@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-03-25 00:46+0000\n"
+"POT-Creation-Date: 2022-09-18 00:47+0000\n"
 "PO-Revision-Date: 2022-03-05 08:43+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -30,75 +30,666 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
 
-#: alarm.cpp:73
+#: main.cpp:43
 #, kde-format
-msgid "Dismiss"
-msgstr "Відкинути"
+msgid "Select opened page"
+msgstr "Вибрати відкриту сторінку"
 
-#: alarm.cpp:73
-#, kde-format
-msgid "Snooze"
-msgstr "Нагадати пізніше"
-
-#: alarm.cpp:75 alarm.h:51
-#, kde-format
-msgid "Alarm"
-msgstr "Нагадування"
-
-#: alarm.cpp:77 timer.cpp:55
-#, kde-format
-msgid "View"
-msgstr "Перегляд"
-
-#: alarmmodel.cpp:223
-#, kde-kuit-format
-msgctxt "@info"
-msgid "Alarm: <shortcut>%1 %2</shortcut>"
-msgstr "Нагадування: <shortcut>%1 %2</shortcut>"
-
-#: main.cpp:30
-#, kde-format
-msgid "Don't use PowerDevil for alarms if it is available"
-msgstr "Не використовувати PowerDevil для нагадувань, якщо ця система доступна"
-
-#: main.cpp:45
+#: main.cpp:68
 #, kde-format
 msgid "© 2020-2022 KDE Community"
 msgstr "© Спільнота KDE, 2020–2022"
 
-#: main.cpp:46
+#: main.cpp:70
 #, kde-format
 msgid "Devin Lin"
 msgstr "Devin Lin"
 
-#: main.cpp:47
+#: main.cpp:71
 #, kde-format
 msgid "Han Young"
 msgstr "Han Young"
 
-#: timer.cpp:53
-#, kde-format
-msgid "Timer complete"
-msgstr "Відлік завершено"
+#: qml/alarm/AlarmForm.qml:90
+#, fuzzy, kde-format
+#| msgid "Days to Repeat"
+msgid "Days to repeat:"
+msgstr "Кількість днів повторення"
 
-#: timer.cpp:54
-#, kde-format
-msgid "Your timer %1 has finished!"
-msgstr "Відлік за вашим таймером %1 завершено!"
+#: qml/alarm/AlarmForm.qml:92
+#, fuzzy, kde-format
+#| msgid "Days to Repeat"
+msgid "Select Days to Repeat"
+msgstr "Кількість днів повторення"
 
-#: xdgportal.cpp:34
+#: qml/alarm/AlarmForm.qml:115
+#, fuzzy, kde-format
+#| msgid "Alarm Name (optional)"
+msgid "Alarm Name (optional):"
+msgstr "Назва нагадування (необов'язкова)"
+
+#: qml/alarm/AlarmForm.qml:116
+#, kde-format
+msgid "Wake Up"
+msgstr "Розбудити"
+
+#: qml/alarm/AlarmForm.qml:125
+#, fuzzy, kde-format
+#| msgid "Ringtone"
+msgid "Ring Duration:"
+msgstr "Мелодія дзвінка"
+
+#: qml/alarm/AlarmForm.qml:128 qml/alarm/AlarmForm.qml:139
+#, kde-format
+msgid "None"
+msgstr ""
+
+#: qml/alarm/AlarmForm.qml:130 qml/alarm/AlarmForm.qml:140
+#: qml/alarm/AlarmForm.qml:173 qml/alarm/AlarmForm.qml:177
+#: qml/timer/TimerComponent.qml:147
+#, kde-format
+msgid "1 minute"
+msgstr "1 хвилина"
+
+#: qml/alarm/AlarmForm.qml:132 qml/alarm/AlarmForm.qml:173
+#, fuzzy, kde-format
+#| msgid "%1 minute"
+#| msgid_plural "%1 minutes"
+msgid "%1 minutes"
+msgstr "%1 хвилина"
+
+#: qml/alarm/AlarmForm.qml:135
+#, kde-format
+msgid "Select Ring Duration"
+msgstr ""
+
+#: qml/alarm/AlarmForm.qml:141 qml/alarm/AlarmForm.qml:178
+#, kde-format
+msgid "2 minutes"
+msgstr "2 хвилини"
+
+#: qml/alarm/AlarmForm.qml:142 qml/alarm/AlarmForm.qml:179
+#, kde-format
+msgid "5 minutes"
+msgstr "5 хвилин"
+
+#: qml/alarm/AlarmForm.qml:143 qml/alarm/AlarmForm.qml:180
+#, kde-format
+msgid "10 minutes"
+msgstr "10 хвилин"
+
+#: qml/alarm/AlarmForm.qml:144 qml/alarm/AlarmForm.qml:181
+#, kde-format
+msgid "15 minutes"
+msgstr "15 хвилин"
+
+#: qml/alarm/AlarmForm.qml:145 qml/alarm/AlarmForm.qml:182
+#, kde-format
+msgid "30 minutes"
+msgstr "30 хвилин"
+
+#: qml/alarm/AlarmForm.qml:146 qml/alarm/AlarmForm.qml:183
+#, kde-format
+msgid "1 hour"
+msgstr "1 година"
+
+#: qml/alarm/AlarmForm.qml:171
+#, fuzzy, kde-format
+#| msgid "Alarm Snooze Length"
+msgid "Snooze Length:"
+msgstr "Тривалість присипляння нагадування"
+
+#: qml/alarm/AlarmForm.qml:172
+#, fuzzy, kde-format
+#| msgid "Alarm Snooze Length"
+msgid "Select Snooze Length"
+msgstr "Тривалість присипляння нагадування"
+
+#: qml/alarm/AlarmForm.qml:208
+#, fuzzy, kde-format
+#| msgid "Ringtone"
+msgid "Ring Sound:"
+msgstr "Мелодія дзвінка"
+
+#: qml/alarm/AlarmForm.qml:214
+#, fuzzy, kde-format
+#| msgid "default"
+msgid "Default Sound"
+msgstr "типова"
+
+#: qml/alarm/AlarmFormPage.qml:27 qml/alarm/AlarmRingingPopup.qml:45
+#, kde-format
+msgid "Alarm"
+msgstr "Нагадування"
+
+#: qml/alarm/AlarmFormPage.qml:27
+#, kde-format
+msgctxt "Edit alarm page title"
+msgid "Editing %1"
+msgstr "Редагування %1"
+
+#: qml/alarm/AlarmFormPage.qml:28 qml/alarm/AlarmListPage.qml:30
+#, kde-format
+msgid "New Alarm"
+msgstr "Створити нагадування"
+
+#: qml/alarm/AlarmFormPage.qml:40 qml/alarm/AlarmFormPage.qml:63
+#: qml/timer/TimerFormWrapper.qml:85 qml/timer/TimerFormWrapper.qml:144
+#, kde-format
+msgid "Done"
+msgstr "Виконано"
+
+#: qml/alarm/AlarmFormPage.qml:69 qml/timer/TimerFormWrapper.qml:80
+#: qml/timer/TimerFormWrapper.qml:139
+#, kde-format
+msgid "Cancel"
+msgstr "Скасувати"
+
+#: qml/alarm/AlarmListDelegate.qml:109
+#, fuzzy, kde-format
+#| msgid "Snoozed %1 minutes"
+msgid "Snoozed %1 minute"
+msgstr "Приспано на %1 хвилин"
+
+#: qml/alarm/AlarmListDelegate.qml:109
+#, kde-format
+msgid "Snoozed %1 minutes"
+msgstr "Приспано на %1 хвилин"
+
+#: qml/alarm/AlarmListDelegate.qml:130 qml/time/TimePageDelegate.qml:53
+#: qml/timer/TimerListDelegate.qml:176 qml/timer/TimerPage.qml:60
+#: qml/timer/TimerPage.qml:109
+#, kde-format
+msgid "Delete"
+msgstr "Вилучити"
+
+#: qml/alarm/AlarmListPage.qml:25 qml/components/BottomToolbar.qml:115
+#: qml/components/Sidebar.qml:115
+#, kde-format
+msgid "Alarms"
+msgstr "Нагадування"
+
+#: qml/alarm/AlarmListPage.qml:38 qml/time/TimePage.qml:37
+#, kde-format
+msgid "Edit"
+msgstr "Змінити"
+
+#: qml/alarm/AlarmListPage.qml:47 qml/components/Sidebar.qml:139
+#: qml/settings/SettingsPage.qml:21 qml/stopwatch/StopwatchPage.qml:70
+#: qml/time/TimePage.qml:54 qml/timer/TimerListPage.qml:37
+#, kde-format
+msgid "Settings"
+msgstr "Параметри"
+
+#: qml/alarm/AlarmListPage.qml:59
 #, kde-format
 msgid ""
-"Allow the clock process to be in the background and launched on startup."
+"The clock daemon was not found. Please start kclockd in order to have alarm "
+"functionality."
 msgstr ""
-"Дозволити запуск процесу годинника у фоновому режимі під час запуску "
-"середовища."
 
-#~ msgid "Select opened page"
-#~ msgstr "Вибрати відкриту сторінку"
+#: qml/alarm/AlarmListPage.qml:82
+#, kde-format
+msgid "No alarms configured"
+msgstr "Нагадувань не налаштовано"
 
-#~ msgid "Clock"
-#~ msgstr "Годинник"
+#: qml/alarm/AlarmListPage.qml:87
+#, fuzzy, kde-format
+#| msgid "Alarm"
+msgid "Add alarm"
+msgstr "Нагадування"
+
+#: qml/alarm/AlarmListPage.qml:120
+#, fuzzy, kde-format
+#| msgid "Alarm"
+msgid "alarm"
+msgstr "Нагадування"
+
+#: qml/alarm/AlarmListPage.qml:120
+#, kde-format
+msgid "Deleted %1"
+msgstr "Вилучено %1"
+
+#: qml/alarm/AlarmRingingPopup.qml:27
+#, kde-format
+msgid "Alarm is ringing"
+msgstr ""
+
+#: qml/alarm/AlarmRingingPopup.qml:55
+#, kde-format
+msgid "Snooze"
+msgstr "Нагадати пізніше"
+
+#: qml/alarm/AlarmRingingPopup.qml:59 qml/timer/TimerRingingPopup.qml:56
+#, kde-format
+msgid "Dismiss"
+msgstr "Відкинути"
+
+#: qml/alarm/SoundPickerPage.qml:23
+#, kde-format
+msgid "Select Alarm Sound"
+msgstr ""
+
+#: qml/alarm/SoundPickerPage.qml:71
+#, kde-format
+msgid "Select from files…"
+msgstr ""
+
+#: qml/alarm/SoundPickerPage.qml:104
+#, fuzzy, kde-format
+#| msgid "default"
+msgid "Default"
+msgstr "типова"
+
+#: qml/alarm/SoundPickerPage.qml:169
+#, kde-format
+msgid "Choose an audio"
+msgstr "Виберіть звук"
+
+#: qml/alarm/SoundPickerPage.qml:177
+#, kde-format
+msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
+msgstr "звукові файли (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
+
+#: qml/alarm/SoundPickerPage.qml:177
+#, kde-format
+msgid "All files (*)"
+msgstr "усі файли (*)"
+
+#: qml/components/BottomToolbar.qml:85 qml/components/Sidebar.qml:58
+#: qml/time/TimePage.qml:25
+#, kde-format
+msgid "Time"
+msgstr "Час"
+
+#: qml/components/BottomToolbar.qml:95 qml/components/Sidebar.qml:77
+#: qml/timer/TimerListPage.qml:21
+#, kde-format
+msgid "Timers"
+msgstr "Таймери"
+
+#: qml/components/BottomToolbar.qml:105 qml/components/Sidebar.qml:96
+#: qml/stopwatch/StopwatchPage.qml:23
+#, kde-format
+msgid "Stopwatch"
+msgstr "Хронометр"
+
+#: qml/components/Sidebar.qml:38 qml/main.qml:23
+#, kde-format
+msgid "Clock"
+msgstr "Годинник"
+
+#: qml/components/TimePicker.qml:70
+#, kde-format
+msgid "AM"
+msgstr ""
+
+#: qml/components/TimePicker.qml:70
+#, kde-format
+msgid "PM"
+msgstr ""
+
+#: qml/settings/SettingsPage.qml:43
+#, fuzzy, kde-format
+#| msgid "Timer complete"
+msgid "Time Format:"
+msgstr "Відлік завершено"
+
+#: qml/settings/SettingsPage.qml:44
+#, kde-format
+msgid "Select Time Format"
+msgstr ""
+
+#: qml/settings/SettingsPage.qml:48 qml/settings/SettingsPage.qml:61
+#, kde-format
+msgid "Use System Default"
+msgstr ""
+
+#: qml/settings/SettingsPage.qml:50 qml/settings/SettingsPage.qml:62
+#, fuzzy, kde-format
+#| msgid "Use 24 Hour Time"
+msgid "12 Hour Time"
+msgstr "24-годинний формат запису часу"
+
+#: qml/settings/SettingsPage.qml:52 qml/settings/SettingsPage.qml:63
+#, fuzzy, kde-format
+#| msgid "Use 24 Hour Time"
+msgid "24 Hour Time"
+msgstr "24-годинний формат запису часу"
+
+#: qml/settings/SettingsPage.qml:83
+#, kde-format
+msgid "More Info:"
+msgstr ""
+
+#: qml/settings/SettingsPage.qml:84
+#, kde-format
+msgid "About"
+msgstr "Про програму"
+
+#: qml/stopwatch/StopwatchPage.qml:61 qml/stopwatch/StopwatchPage.qml:127
+#: qml/timer/TimerListDelegate.qml:166 qml/timer/TimerPage.qml:54
+#: qml/timer/TimerPage.qml:103
+#, kde-format
+msgid "Reset"
+msgstr "Скинути"
+
+#: qml/stopwatch/StopwatchPage.qml:127 qml/timer/TimerListDelegate.qml:156
+#: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:97
+#, kde-format
+msgid "Pause"
+msgstr "Призупинити"
+
+#: qml/stopwatch/StopwatchPage.qml:127 qml/timer/TimerListDelegate.qml:156
+#: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:97
+#, kde-format
+msgid "Start"
+msgstr "Запустити"
+
+#: qml/stopwatch/StopwatchPage.qml:145
+#, kde-format
+msgid "Lap"
+msgstr "Оберт"
+
+#: qml/stopwatch/StopwatchPage.qml:239
+#, kde-format
+msgid "#%1"
+msgstr "№%1"
+
+#: qml/time/AddLocationListView.qml:52
+#, kde-format
+msgid "No locations found"
+msgstr ""
+
+#: qml/time/AddLocationPage.qml:17 qml/time/AddLocationWrapper.qml:32
+#, fuzzy, kde-format
+#| msgid "Add timezone"
+msgid "Add Location"
+msgstr "Додати часовий пояс"
+
+#: qml/time/TimePage.qml:44
+#, kde-format
+msgid "Add"
+msgstr ""
+
+#: qml/time/TimePage.qml:143
+#, fuzzy, kde-format
+#| msgid "No alarms configured"
+msgid "No locations configured"
+msgstr "Нагадувань не налаштовано"
+
+#: qml/timer/PresetDurationButton.qml:23 qml/timer/TimerForm.qml:39
+#, kde-format
+msgid "1 m"
+msgstr "1 хв."
+
+#: qml/timer/TimerForm.qml:47
+#, kde-format
+msgid "5 m"
+msgstr "5 хв."
+
+#: qml/timer/TimerForm.qml:55
+#, kde-format
+msgid "10 m"
+msgstr "10 хв."
+
+#: qml/timer/TimerForm.qml:67
+#, kde-format
+msgid "15 m"
+msgstr "15 хв."
+
+#: qml/timer/TimerForm.qml:75
+#, kde-format
+msgid "30 m"
+msgstr "30 хв."
+
+#: qml/timer/TimerForm.qml:83
+#, kde-format
+msgid "1 h"
+msgstr "1 год."
+
+#: qml/timer/TimerForm.qml:95
+#, kde-format
+msgid "<b>Duration:</b>"
+msgstr "<b>Тривалість:</b>"
+
+#: qml/timer/TimerForm.qml:104
+#, kde-format
+msgid "hours"
+msgstr "годин"
+
+#: qml/timer/TimerForm.qml:115
+#, kde-format
+msgid "minutes"
+msgstr "хвилин"
+
+#: qml/timer/TimerForm.qml:126
+#, kde-format
+msgid "seconds"
+msgstr "секунд"
+
+#: qml/timer/TimerForm.qml:132
+#, fuzzy, kde-format
+#| msgid "<b>Label (optional):</b>"
+msgid "<b>Label:</b>"
+msgstr "<b>Мітка (необов'язкова):</b>"
+
+#: qml/timer/TimerForm.qml:133
+#, kde-format
+msgid "Timer"
+msgstr "Таймер"
+
+#: qml/timer/TimerForm.qml:138
+#, kde-format
+msgid "<b>Command at timeout:</b>"
+msgstr ""
+
+#: qml/timer/TimerForm.qml:141
+#, kde-format
+msgid "optional"
+msgstr ""
+
+#: qml/timer/TimerForm.qml:157
+#, kde-format
+msgid "Hide Presets"
+msgstr ""
+
+#: qml/timer/TimerForm.qml:157
+#, kde-format
+msgid "Show Presets"
+msgstr ""
+
+#: qml/timer/TimerForm.qml:162
+#, fuzzy, kde-format
+#| msgid "Delete"
+msgid "Toggle Delete"
+msgstr "Вилучити"
+
+#: qml/timer/TimerFormWrapper.qml:55
+#, kde-format
+msgid "<b>Create New Timer</b>"
+msgstr "<b>Створити таймер</b>"
+
+#: qml/timer/TimerFormWrapper.qml:73 qml/timer/TimerFormWrapper.qml:132
+#, kde-format
+msgid "Save As Preset"
+msgstr ""
+
+#: qml/timer/TimerFormWrapper.qml:99
+#, kde-format
+msgid "Create timer"
+msgstr "Створити таймер"
+
+#: qml/timer/TimerListDelegate.qml:145 qml/timer/TimerPage.qml:69
+#: qml/timer/TimerPage.qml:118
+#, fuzzy, kde-format
+#| msgid "Timer"
+msgid "Loop Timer"
+msgstr "Таймер"
+
+#: qml/timer/TimerListPage.qml:27
+#, kde-format
+msgid "New Timer"
+msgstr "Новий таймер"
+
+#: qml/timer/TimerListPage.qml:50
+#, kde-format
+msgid ""
+"The clock daemon was not found. Please start kclockd in order to have timer "
+"functionality."
+msgstr ""
+
+#: qml/timer/TimerListPage.qml:85
+#, fuzzy, kde-format
+#| msgid "No alarms configured"
+msgid "No timers configured"
+msgstr "Нагадувань не налаштовано"
+
+#: qml/timer/TimerListPage.qml:90
+#, fuzzy, kde-format
+#| msgid "Add a timer"
+msgid "Add timer"
+msgstr "Додати таймер"
+
+#: qml/timer/TimerPage.qml:24
+#, kde-format
+msgid "New timer"
+msgstr "Новий таймер"
+
+#: qml/timer/TimerRingingPopup.qml:27
+#, fuzzy, kde-format
+#| msgid "Your timer %1 has finished!"
+msgid "Timer has finished"
+msgstr "Відлік за вашим таймером %1 завершено!"
+
+#: qml/timer/TimerRingingPopup.qml:46
+#, kde-format
+msgid "%1 has completed."
+msgstr ""
+
+#: qml/timer/TimerRingingPopup.qml:46
+#, fuzzy, kde-format
+#| msgid "Timer complete"
+msgid "The timer has completed."
+msgstr "Відлік завершено"
+
+#: savedlocationsmodel.cpp:106
+#, fuzzy, kde-format
+#| msgid "%1 and a half hours ahead"
+msgid "%1 hour and 30 minutes ahead"
+msgstr "%1 і пів години попереду"
+
+#: savedlocationsmodel.cpp:106
+#, kde-format
+msgid "%1 hours and 30 minutes ahead"
+msgstr ""
+
+#: savedlocationsmodel.cpp:108
+#, fuzzy, kde-format
+#| msgid "%1 %2 ahead"
+msgid "%1 hour ahead"
+msgstr "%1 %2 попереду"
+
+#: savedlocationsmodel.cpp:108
+#, fuzzy, kde-format
+#| msgid "%1 %2 ahead"
+msgid "%1 hours ahead"
+msgstr "%1 %2 попереду"
+
+#: savedlocationsmodel.cpp:113
+#, fuzzy, kde-format
+#| msgid "%1 and a half hours behind"
+msgid "%1 hour and 30 minutes behind"
+msgstr "%1 і пів години позаду"
+
+#: savedlocationsmodel.cpp:113
+#, fuzzy, kde-format
+#| msgid "%1 and a half hours behind"
+msgid "%1 hours and 30 minutes behind"
+msgstr "%1 і пів години позаду"
+
+#: savedlocationsmodel.cpp:115
+#, fuzzy, kde-format
+#| msgid "%1 %2 behind"
+msgid "%1 hour behind"
+msgstr "%1 %2 позаду"
+
+#: savedlocationsmodel.cpp:115
+#, fuzzy, kde-format
+#| msgid "%1 %2 behind"
+msgid "%1 hours behind"
+msgstr "%1 %2 позаду"
+
+#: savedlocationsmodel.cpp:118
+#, kde-format
+msgid "Local time"
+msgstr "Місцевий час"
+
+#: utilmodel.cpp:72
+#, kde-format
+msgid "%1 day"
+msgid_plural "%1 days"
+msgstr[0] "%1 день"
+msgstr[1] "%1 дні"
+msgstr[2] "%1 днів"
+msgstr[3] "%1 день"
+
+#: utilmodel.cpp:76
+#, kde-format
+msgid ", "
+msgstr ", "
+
+#: utilmodel.cpp:78 utilmodel.cpp:84
+#, kde-format
+msgid " and "
+msgstr " і "
+
+#: utilmodel.cpp:80
+#, kde-format
+msgid "%1 hour"
+msgid_plural "%1 hours"
+msgstr[0] "%1 година"
+msgstr[1] "%1 години"
+msgstr[2] "%1 годин"
+msgstr[3] "%1 година"
+
+#: utilmodel.cpp:86
+#, kde-format
+msgid "%1 minute"
+msgid_plural "%1 minutes"
+msgstr[0] "%1 хвилина"
+msgstr[1] "%1 хвилини"
+msgstr[2] "%1 хвилин"
+msgstr[3] "%1 хвилина"
+
+#: utilmodel.cpp:90
+#, fuzzy, kde-format
+#| msgid "Alarm will be rung within a minute"
+msgid "Alarm will ring in under a minute"
+msgstr "Нагадування буде увімкнено за хвилину"
+
+#: utilmodel.cpp:92
+#, fuzzy, kde-format
+#| msgid "Alarm will be rung after %1"
+msgid "Alarm will ring in %1"
+msgstr "Нагадування буде увімкнено за %1"
+
+#~ msgid "View"
+#~ msgstr "Перегляд"
+
+#~ msgctxt "@info"
+#~ msgid "Alarm: <shortcut>%1 %2</shortcut>"
+#~ msgstr "Нагадування: <shortcut>%1 %2</shortcut>"
+
+#~ msgid "Don't use PowerDevil for alarms if it is available"
+#~ msgstr ""
+#~ "Не використовувати PowerDevil для нагадувань, якщо ця система доступна"
+
+#~ msgid ""
+#~ "Allow the clock process to be in the background and launched on startup."
+#~ msgstr ""
+#~ "Дозволити запуск процесу годинника у фоновому режимі під час запуску "
+#~ "середовища."
 
 #~ msgid "A mobile friendly clock app built with Kirigami."
 #~ msgstr ""
@@ -106,27 +697,6 @@ msgstr ""
 
 #~ msgid "© 2020 Plasma Development Team"
 #~ msgstr "© Команда розробників Плазми, 2020"
-
-#~ msgid "Alarms"
-#~ msgstr "Нагадування"
-
-#~ msgid "New Alarm"
-#~ msgstr "Створити нагадування"
-
-#~ msgid "No alarms configured"
-#~ msgstr "Нагадувань не налаштовано"
-
-#~ msgid "Edit"
-#~ msgstr "Змінити"
-
-#~ msgid "Delete"
-#~ msgstr "Вилучити"
-
-#~ msgid "Deleted %1"
-#~ msgstr "Вилучено %1"
-
-#~ msgid "Snoozed %1 minutes"
-#~ msgstr "Приспано на %1 хвилин"
 
 #~ msgid "Only once"
 #~ msgstr "Лише раз"
@@ -137,135 +707,17 @@ msgstr ""
 #~ msgid "Weekdays"
 #~ msgstr "Дні тижня"
 
-#~ msgctxt "Edit alarm page title"
-#~ msgid "Editing %1"
-#~ msgstr "Редагування %1"
-
-#~ msgid "Done"
-#~ msgstr "Виконано"
-
-#~ msgid "Days to Repeat"
-#~ msgstr "Кількість днів повторення"
-
-#~ msgid "Alarm Name (optional)"
-#~ msgstr "Назва нагадування (необов'язкова)"
-
-#~ msgid "Wake Up"
-#~ msgstr "Розбудити"
-
-#~ msgid "Ringtone"
-#~ msgstr "Мелодія дзвінка"
-
-#~ msgid "Choose an audio"
-#~ msgstr "Виберіть звук"
-
-#~ msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
-#~ msgstr "звукові файли (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
-
-#~ msgid "All files (*)"
-#~ msgstr "усі файли (*)"
-
-#~ msgid "Settings"
-#~ msgstr "Параметри"
-
 #~ msgid "Alarm Volume"
 #~ msgstr "Гучність нагадування"
 
 #~ msgid "Silence Alarm After"
 #~ msgstr "Вимкнути нагадування за"
 
-#~ msgid "Alarm Snooze Length"
-#~ msgstr "Тривалість присипляння нагадування"
-
-#~ msgid "About"
-#~ msgstr "Про програму"
-
 #~ msgid "Change Alarm Volume"
 #~ msgstr "Змінити гучність нагадування"
 
 #~ msgid "Volume: "
 #~ msgstr "Гучність:"
-
-#~ msgid "Time"
-#~ msgstr "Час"
-
-#~ msgid "Timer"
-#~ msgstr "Таймер"
-
-#~ msgid "Stopwatch"
-#~ msgstr "Хронометр"
-
-#~ msgid "Pause"
-#~ msgstr "Призупинити"
-
-#~ msgid "Start"
-#~ msgstr "Запустити"
-
-#~ msgid "Reset"
-#~ msgstr "Скинути"
-
-#~ msgid "Lap"
-#~ msgstr "Оберт"
-
-#~ msgid "#%1"
-#~ msgstr "№%1"
-
-#~ msgid "Add timezone"
-#~ msgstr "Додати часовий пояс"
-
-#~ msgid "1 m"
-#~ msgstr "1 хв."
-
-#~ msgid "5 m"
-#~ msgstr "5 хв."
-
-#~ msgid "10 m"
-#~ msgstr "10 хв."
-
-#~ msgid "15 m"
-#~ msgstr "15 хв."
-
-#~ msgid "30 m"
-#~ msgstr "30 хв."
-
-#~ msgid "1 h"
-#~ msgstr "1 год."
-
-#~ msgid "<b>Duration:</b>"
-#~ msgstr "<b>Тривалість:</b>"
-
-#~ msgid "hours"
-#~ msgstr "годин"
-
-#~ msgid "minutes"
-#~ msgstr "хвилин"
-
-#~ msgid "seconds"
-#~ msgstr "секунд"
-
-#~ msgid "<b>Label (optional):</b>"
-#~ msgstr "<b>Мітка (необов'язкова):</b>"
-
-#~ msgid "<b>Create New Timer</b>"
-#~ msgstr "<b>Створити таймер</b>"
-
-#~ msgid "Cancel"
-#~ msgstr "Скасувати"
-
-#~ msgid "Create timer"
-#~ msgstr "Створити таймер"
-
-#~ msgid "Timers"
-#~ msgstr "Таймери"
-
-#~ msgid "New Timer"
-#~ msgstr "Новий таймер"
-
-#~ msgid "Add a timer"
-#~ msgstr "Додати таймер"
-
-#~ msgid "New timer"
-#~ msgstr "Новий таймер"
 
 #~ msgid "Search for a city"
 #~ msgstr "Пошук за містом"
@@ -282,23 +734,8 @@ msgstr ""
 #~ msgid "30 seconds"
 #~ msgstr "30 секунд"
 
-#~ msgid "1 minute"
-#~ msgstr "1 хвилина"
-
-#~ msgid "5 minutes"
-#~ msgstr "5 хвилин"
-
-#~ msgid "10 minutes"
-#~ msgstr "10 хвилин"
-
-#~ msgid "15 minutes"
-#~ msgstr "15 хвилин"
-
 #~ msgid "Never"
 #~ msgstr "Ніколи"
-
-#~ msgid "2 minutes"
-#~ msgstr "2 хвилини"
 
 #~ msgid "3 minutes"
 #~ msgstr "3 хвилини"
@@ -306,62 +743,8 @@ msgstr ""
 #~ msgid "4 minutes"
 #~ msgstr "4 хвилини"
 
-#~ msgid "30 minutes"
-#~ msgstr "30 хвилин"
-
-#~ msgid "1 hour"
-#~ msgstr "1 година"
-
 #~ msgid "hour"
 #~ msgstr "година"
-
-#~ msgid "%1 and a half hours ahead"
-#~ msgstr "%1 і пів години попереду"
-
-#~ msgid "%1 %2 ahead"
-#~ msgstr "%1 %2 попереду"
-
-#~ msgid "%1 and a half hours behind"
-#~ msgstr "%1 і пів години позаду"
-
-#~ msgid "%1 %2 behind"
-#~ msgstr "%1 %2 позаду"
-
-#~ msgid "Local time"
-#~ msgstr "Місцевий час"
-
-#~ msgid "%1 day"
-#~ msgid_plural "%1 days"
-#~ msgstr[0] "%1 день"
-#~ msgstr[1] "%1 дні"
-#~ msgstr[2] "%1 днів"
-#~ msgstr[3] "%1 день"
-
-#~ msgid ", "
-#~ msgstr ", "
-
-#~ msgid " and "
-#~ msgstr " і "
-
-#~ msgid "%1 hour"
-#~ msgid_plural "%1 hours"
-#~ msgstr[0] "%1 година"
-#~ msgstr[1] "%1 години"
-#~ msgstr[2] "%1 годин"
-#~ msgstr[3] "%1 година"
-
-#~ msgid "%1 minute"
-#~ msgid_plural "%1 minutes"
-#~ msgstr[0] "%1 хвилина"
-#~ msgstr[1] "%1 хвилини"
-#~ msgstr[2] "%1 хвилин"
-#~ msgstr[3] "%1 хвилина"
-
-#~ msgid "Alarm will be rung within a minute"
-#~ msgstr "Нагадування буде увімкнено за хвилину"
-
-#~ msgid "Alarm will be rung after %1"
-#~ msgstr "Нагадування буде увімкнено за %1"
 
 #~ msgid "Alarm Name"
 #~ msgstr "Назва нагадування"
@@ -400,12 +783,6 @@ msgstr ""
 #~| msgid "minutes"
 #~ msgid "minute"
 #~ msgstr "хвилини"
-
-#~ msgid "Use 24 Hour Time"
-#~ msgstr "24-годинний формат запису часу"
-
-#~ msgid "default"
-#~ msgstr "типова"
 
 #~ msgid "Change Timer Duration"
 #~ msgstr "Змінити тривалість таймера"
