@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-09-18 00:47+0000\n"
-"PO-Revision-Date: 2022-04-02 16:41+0100\n"
+"PO-Revision-Date: 2022-09-18 12:19+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
 "Language: en_GB\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -48,22 +48,19 @@ msgid "Han Young"
 msgstr "Han Young"
 
 #: qml/alarm/AlarmForm.qml:90
-#, fuzzy, kde-format
-#| msgid "Days to Repeat"
+#, kde-format
 msgid "Days to repeat:"
-msgstr "Days to Repeat"
+msgstr "Days to repeat:"
 
 #: qml/alarm/AlarmForm.qml:92
-#, fuzzy, kde-format
-#| msgid "Days to Repeat"
+#, kde-format
 msgid "Select Days to Repeat"
-msgstr "Days to Repeat"
+msgstr "Select Days to Repeat"
 
 #: qml/alarm/AlarmForm.qml:115
-#, fuzzy, kde-format
-#| msgid "Label (optional)"
+#, kde-format
 msgid "Alarm Name (optional):"
-msgstr "Label (optional)"
+msgstr "Alarm Name (optional):"
 
 #: qml/alarm/AlarmForm.qml:116
 #, kde-format
@@ -71,15 +68,14 @@ msgid "Wake Up"
 msgstr "Wake Up"
 
 #: qml/alarm/AlarmForm.qml:125
-#, fuzzy, kde-format
-#| msgid "Ringtone"
+#, kde-format
 msgid "Ring Duration:"
-msgstr "Ringtone"
+msgstr "Ring Duration:"
 
 #: qml/alarm/AlarmForm.qml:128 qml/alarm/AlarmForm.qml:139
 #, kde-format
 msgid "None"
-msgstr ""
+msgstr "None"
 
 #: qml/alarm/AlarmForm.qml:130 qml/alarm/AlarmForm.qml:140
 #: qml/alarm/AlarmForm.qml:173 qml/alarm/AlarmForm.qml:177
@@ -89,16 +85,14 @@ msgid "1 minute"
 msgstr "1 minute"
 
 #: qml/alarm/AlarmForm.qml:132 qml/alarm/AlarmForm.qml:173
-#, fuzzy, kde-format
-#| msgid "%1 minute"
-#| msgid_plural "%1 minutes"
+#, kde-format
 msgid "%1 minutes"
-msgstr "%1 minute"
+msgstr "%1 minutes"
 
 #: qml/alarm/AlarmForm.qml:135
 #, kde-format
 msgid "Select Ring Duration"
-msgstr ""
+msgstr "Select Ring Duration"
 
 #: qml/alarm/AlarmForm.qml:141 qml/alarm/AlarmForm.qml:178
 #, kde-format
@@ -131,27 +125,24 @@ msgid "1 hour"
 msgstr "1 hour"
 
 #: qml/alarm/AlarmForm.qml:171
-#, fuzzy, kde-format
-#| msgid "Alarm Snooze Length"
+#, kde-format
 msgid "Snooze Length:"
-msgstr "Alarm Snooze Length"
+msgstr "Snooze Length:"
 
 #: qml/alarm/AlarmForm.qml:172
-#, fuzzy, kde-format
-#| msgid "Alarm Snooze Length"
+#, kde-format
 msgid "Select Snooze Length"
-msgstr "Alarm Snooze Length"
+msgstr "Select Snooze Length"
 
 #: qml/alarm/AlarmForm.qml:208
-#, fuzzy, kde-format
-#| msgid "Ringtone"
+#, kde-format
 msgid "Ring Sound:"
-msgstr "Ringtone"
+msgstr "Ring Sound:"
 
 #: qml/alarm/AlarmForm.qml:214
 #, kde-format
 msgid "Default Sound"
-msgstr ""
+msgstr "Default Sound"
 
 #: qml/alarm/AlarmFormPage.qml:27 qml/alarm/AlarmRingingPopup.qml:45
 #, kde-format
@@ -162,7 +153,7 @@ msgstr "Alarm"
 #, kde-format
 msgctxt "Edit alarm page title"
 msgid "Editing %1"
-msgstr ""
+msgstr "Editing %1"
 
 #: qml/alarm/AlarmFormPage.qml:28 qml/alarm/AlarmListPage.qml:30
 #, kde-format
@@ -179,13 +170,12 @@ msgstr "Done"
 #: qml/timer/TimerFormWrapper.qml:139
 #, kde-format
 msgid "Cancel"
-msgstr ""
+msgstr "Cancel"
 
 #: qml/alarm/AlarmListDelegate.qml:109
-#, fuzzy, kde-format
-#| msgid "Snoozed %1 minutes"
+#, kde-format
 msgid "Snoozed %1 minute"
-msgstr "Snoozed %1 minutes"
+msgstr "Snoozed %1 minute"
 
 #: qml/alarm/AlarmListDelegate.qml:109
 #, kde-format
@@ -223,6 +213,8 @@ msgid ""
 "The clock daemon was not found. Please start kclockd in order to have alarm "
 "functionality."
 msgstr ""
+"The clock daemon was not found. Please start kclockd in order to have alarm "
+"functionality."
 
 #: qml/alarm/AlarmListPage.qml:82
 #, kde-format
@@ -230,16 +222,14 @@ msgid "No alarms configured"
 msgstr "No alarms configured"
 
 #: qml/alarm/AlarmListPage.qml:87
-#, fuzzy, kde-format
-#| msgid "Alarm"
+#, kde-format
 msgid "Add alarm"
-msgstr "Alarm"
+msgstr "Add alarm"
 
 #: qml/alarm/AlarmListPage.qml:120
-#, fuzzy, kde-format
-#| msgid "Alarm"
+#, kde-format
 msgid "alarm"
-msgstr "Alarm"
+msgstr "alarm"
 
 #: qml/alarm/AlarmListPage.qml:120
 #, kde-format
@@ -249,7 +239,7 @@ msgstr "Deleted %1"
 #: qml/alarm/AlarmRingingPopup.qml:27
 #, kde-format
 msgid "Alarm is ringing"
-msgstr ""
+msgstr "Alarm is ringing"
 
 #: qml/alarm/AlarmRingingPopup.qml:55
 #, kde-format
@@ -264,17 +254,17 @@ msgstr "Dismiss"
 #: qml/alarm/SoundPickerPage.qml:23
 #, kde-format
 msgid "Select Alarm Sound"
-msgstr ""
+msgstr "Select Alarm Sound"
 
 #: qml/alarm/SoundPickerPage.qml:71
 #, kde-format
 msgid "Select from files…"
-msgstr ""
+msgstr "Select from files…"
 
 #: qml/alarm/SoundPickerPage.qml:104
 #, kde-format
 msgid "Default"
-msgstr ""
+msgstr "Default"
 
 #: qml/alarm/SoundPickerPage.qml:169
 #, kde-format
@@ -317,43 +307,42 @@ msgstr "Clock"
 #: qml/components/TimePicker.qml:70
 #, kde-format
 msgid "AM"
-msgstr ""
+msgstr "AM"
 
 #: qml/components/TimePicker.qml:70
 #, kde-format
 msgid "PM"
-msgstr ""
+msgstr "PM"
 
 #: qml/settings/SettingsPage.qml:43
-#, fuzzy, kde-format
-#| msgid "Timer complete"
+#, kde-format
 msgid "Time Format:"
-msgstr "Timer complete"
+msgstr "Time Format:"
 
 #: qml/settings/SettingsPage.qml:44
 #, kde-format
 msgid "Select Time Format"
-msgstr ""
+msgstr "Select Time Format"
 
 #: qml/settings/SettingsPage.qml:48 qml/settings/SettingsPage.qml:61
 #, kde-format
 msgid "Use System Default"
-msgstr ""
+msgstr "Use System Default"
 
 #: qml/settings/SettingsPage.qml:50 qml/settings/SettingsPage.qml:62
 #, kde-format
 msgid "12 Hour Time"
-msgstr ""
+msgstr "12 Hour Time"
 
 #: qml/settings/SettingsPage.qml:52 qml/settings/SettingsPage.qml:63
 #, kde-format
 msgid "24 Hour Time"
-msgstr ""
+msgstr "24 Hour Time"
 
 #: qml/settings/SettingsPage.qml:83
 #, kde-format
 msgid "More Info:"
-msgstr ""
+msgstr "More Info:"
 
 #: qml/settings/SettingsPage.qml:84
 #, kde-format
@@ -392,62 +381,57 @@ msgstr "#%1"
 #: qml/time/AddLocationListView.qml:52
 #, kde-format
 msgid "No locations found"
-msgstr ""
+msgstr "No locations found"
 
 #: qml/time/AddLocationPage.qml:17 qml/time/AddLocationWrapper.qml:32
-#, fuzzy, kde-format
-#| msgid "Add timezone"
+#, kde-format
 msgid "Add Location"
-msgstr "Add timezone"
+msgstr "Add Location"
 
 #: qml/time/TimePage.qml:44
 #, kde-format
 msgid "Add"
-msgstr ""
+msgstr "Add"
 
 #: qml/time/TimePage.qml:143
-#, fuzzy, kde-format
-#| msgid "No alarms configured"
+#, kde-format
 msgid "No locations configured"
-msgstr "No alarms configured"
+msgstr "No locations configured"
 
 #: qml/timer/PresetDurationButton.qml:23 qml/timer/TimerForm.qml:39
-#, fuzzy, kde-format
-#| msgid "1 hour"
+#, kde-format
 msgid "1 m"
-msgstr "1 hour"
+msgstr "1 m"
 
 #: qml/timer/TimerForm.qml:47
 #, kde-format
 msgid "5 m"
-msgstr ""
+msgstr "5 m"
 
 #: qml/timer/TimerForm.qml:55
 #, kde-format
 msgid "10 m"
-msgstr ""
+msgstr "10 m"
 
 #: qml/timer/TimerForm.qml:67
 #, kde-format
 msgid "15 m"
-msgstr ""
+msgstr "15 m"
 
 #: qml/timer/TimerForm.qml:75
 #, kde-format
 msgid "30 m"
-msgstr ""
+msgstr "30 m"
 
 #: qml/timer/TimerForm.qml:83
-#, fuzzy, kde-format
-#| msgid "1 hour"
+#, kde-format
 msgid "1 h"
-msgstr "1 hour"
+msgstr "1 h"
 
 #: qml/timer/TimerForm.qml:95
-#, fuzzy, kde-format
-#| msgid "Duration"
+#, kde-format
 msgid "<b>Duration:</b>"
-msgstr "Duration"
+msgstr "<b>Duration:</b>"
 
 #: qml/timer/TimerForm.qml:104
 #, kde-format
@@ -465,10 +449,9 @@ msgid "seconds"
 msgstr "seconds"
 
 #: qml/timer/TimerForm.qml:132
-#, fuzzy, kde-format
-#| msgid "Label (optional)"
+#, kde-format
 msgid "<b>Label:</b>"
-msgstr "Label (optional)"
+msgstr "<b>Label:</b>"
 
 #: qml/timer/TimerForm.qml:133
 #, kde-format
@@ -478,52 +461,48 @@ msgstr "Timer"
 #: qml/timer/TimerForm.qml:138
 #, kde-format
 msgid "<b>Command at timeout:</b>"
-msgstr ""
+msgstr "<b>Command at timeout:</b>"
 
 #: qml/timer/TimerForm.qml:141
 #, kde-format
 msgid "optional"
-msgstr ""
+msgstr "optional"
 
 #: qml/timer/TimerForm.qml:157
 #, kde-format
 msgid "Hide Presets"
-msgstr ""
+msgstr "Hide Presets"
 
 #: qml/timer/TimerForm.qml:157
 #, kde-format
 msgid "Show Presets"
-msgstr ""
+msgstr "Show Presets"
 
 #: qml/timer/TimerForm.qml:162
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgid "Toggle Delete"
-msgstr "Delete"
+msgstr "Toggle Delete"
 
 #: qml/timer/TimerFormWrapper.qml:55
-#, fuzzy, kde-format
-#| msgid "New timer"
+#, kde-format
 msgid "<b>Create New Timer</b>"
-msgstr "New timer"
+msgstr "<b>Create New Timer</b>"
 
 #: qml/timer/TimerFormWrapper.qml:73 qml/timer/TimerFormWrapper.qml:132
 #, kde-format
 msgid "Save As Preset"
-msgstr ""
+msgstr "Save As Preset"
 
 #: qml/timer/TimerFormWrapper.qml:99
-#, fuzzy, kde-format
-#| msgid "New timer"
+#, kde-format
 msgid "Create timer"
-msgstr "New timer"
+msgstr "Create timer"
 
 #: qml/timer/TimerListDelegate.qml:145 qml/timer/TimerPage.qml:69
 #: qml/timer/TimerPage.qml:118
-#, fuzzy, kde-format
-#| msgid "Timer"
+#, kde-format
 msgid "Loop Timer"
-msgstr "Timer"
+msgstr "Loop Timer"
 
 #: qml/timer/TimerListPage.qml:27
 #, kde-format
@@ -536,18 +515,18 @@ msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
 "functionality."
 msgstr ""
+"The clock daemon was not found. Please start kclockd in order to have timer "
+"functionality."
 
 #: qml/timer/TimerListPage.qml:85
-#, fuzzy, kde-format
-#| msgid "No alarms configured"
+#, kde-format
 msgid "No timers configured"
-msgstr "No alarms configured"
+msgstr "No timers configured"
 
 #: qml/timer/TimerListPage.qml:90
-#, fuzzy, kde-format
-#| msgid "Add a timer"
+#, kde-format
 msgid "Add timer"
-msgstr "Add a timer"
+msgstr "Add timer"
 
 #: qml/timer/TimerPage.qml:24
 #, kde-format
@@ -555,68 +534,59 @@ msgid "New timer"
 msgstr "New timer"
 
 #: qml/timer/TimerRingingPopup.qml:27
-#, fuzzy, kde-format
-#| msgid "Your timer %1 has finished!"
+#, kde-format
 msgid "Timer has finished"
-msgstr "Your timer %1 has finished!"
+msgstr "Timer has finished"
 
 #: qml/timer/TimerRingingPopup.qml:46
 #, kde-format
 msgid "%1 has completed."
-msgstr ""
+msgstr "%1 has completed."
 
 #: qml/timer/TimerRingingPopup.qml:46
-#, fuzzy, kde-format
-#| msgid "Timer complete"
+#, kde-format
 msgid "The timer has completed."
-msgstr "Timer complete"
+msgstr "The timer has completed."
 
 #: savedlocationsmodel.cpp:106
-#, fuzzy, kde-format
-#| msgid "%1 and a half hours ahead"
+#, kde-format
 msgid "%1 hour and 30 minutes ahead"
-msgstr "%1 and a half hours ahead"
+msgstr "%1 hour and 30 minutes ahead"
 
 #: savedlocationsmodel.cpp:106
 #, kde-format
 msgid "%1 hours and 30 minutes ahead"
-msgstr ""
+msgstr "%1 hours and 30 minutes ahead"
 
 #: savedlocationsmodel.cpp:108
-#, fuzzy, kde-format
-#| msgid "%1 %2 ahead"
+#, kde-format
 msgid "%1 hour ahead"
-msgstr "%1 %2 ahead"
+msgstr "%1 hour ahead"
 
 #: savedlocationsmodel.cpp:108
-#, fuzzy, kde-format
-#| msgid "%1 %2 ahead"
+#, kde-format
 msgid "%1 hours ahead"
-msgstr "%1 %2 ahead"
+msgstr "%1 hours ahead"
 
 #: savedlocationsmodel.cpp:113
-#, fuzzy, kde-format
-#| msgid "%1 and a half hours behind"
+#, kde-format
 msgid "%1 hour and 30 minutes behind"
-msgstr "%1 and a half hours behind"
+msgstr "%1 hour and 30 minutes behind"
 
 #: savedlocationsmodel.cpp:113
-#, fuzzy, kde-format
-#| msgid "%1 and a half hours behind"
+#, kde-format
 msgid "%1 hours and 30 minutes behind"
-msgstr "%1 and a half hours behind"
+msgstr "%1 hours and 30 minutes behind"
 
 #: savedlocationsmodel.cpp:115
-#, fuzzy, kde-format
-#| msgid "%1 %2 behind"
+#, kde-format
 msgid "%1 hour behind"
-msgstr "%1 %2 behind"
+msgstr "%1 hour behind"
 
 #: savedlocationsmodel.cpp:115
-#, fuzzy, kde-format
-#| msgid "%1 %2 behind"
+#, kde-format
 msgid "%1 hours behind"
-msgstr "%1 %2 behind"
+msgstr "%1 hours behind"
 
 #: savedlocationsmodel.cpp:118
 #, kde-format
@@ -655,16 +625,14 @@ msgstr[0] "%1 minute"
 msgstr[1] "%1 minutes"
 
 #: utilmodel.cpp:90
-#, fuzzy, kde-format
-#| msgid "Alarm will be rung within a minute"
+#, kde-format
 msgid "Alarm will ring in under a minute"
-msgstr "Alarm will be rung within a minute"
+msgstr "Alarm will ring in under a minute"
 
 #: utilmodel.cpp:92
-#, fuzzy, kde-format
-#| msgid "Alarm will be rung after %1"
+#, kde-format
 msgid "Alarm will ring in %1"
-msgstr "Alarm will be rung after %1"
+msgstr "Alarm will ring in %1"
 
 #~ msgid "View"
 #~ msgstr "View"
