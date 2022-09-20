@@ -84,7 +84,7 @@ msgstr ""
 #: qml/alarm/AlarmForm.qml:130 qml/alarm/AlarmForm.qml:140
 #: qml/alarm/AlarmForm.qml:173 qml/alarm/AlarmForm.qml:177
 #: qml/timer/TimerComponent.qml:147
-#, kde-format
+#, fuzzy, kde-format
 msgid "1 minute"
 msgstr "1 Minute"
 
@@ -101,32 +101,32 @@ msgid "Select Ring Duration"
 msgstr ""
 
 #: qml/alarm/AlarmForm.qml:141 qml/alarm/AlarmForm.qml:178
-#, kde-format
+#, fuzzy, kde-format
 msgid "2 minutes"
 msgstr "2 Minuten"
 
 #: qml/alarm/AlarmForm.qml:142 qml/alarm/AlarmForm.qml:179
-#, kde-format
+#, fuzzy, kde-format
 msgid "5 minutes"
 msgstr "5 Minuten"
 
 #: qml/alarm/AlarmForm.qml:143 qml/alarm/AlarmForm.qml:180
-#, kde-format
+#, fuzzy, kde-format
 msgid "10 minutes"
 msgstr "10 Minuten"
 
 #: qml/alarm/AlarmForm.qml:144 qml/alarm/AlarmForm.qml:181
-#, kde-format
+#, fuzzy, kde-format
 msgid "15 minutes"
 msgstr "15 Minuten"
 
 #: qml/alarm/AlarmForm.qml:145 qml/alarm/AlarmForm.qml:182
-#, kde-format
+#, fuzzy, kde-format
 msgid "30 minutes"
 msgstr "30 Minuten"
 
 #: qml/alarm/AlarmForm.qml:146 qml/alarm/AlarmForm.qml:183
-#, kde-format
+#, fuzzy, kde-format
 msgid "1 hour"
 msgstr "1 Stunde"
 
@@ -164,13 +164,13 @@ msgid "Editing %1"
 msgstr ""
 
 #: qml/alarm/AlarmFormPage.qml:28 qml/alarm/AlarmListPage.qml:30
-#, kde-format
+#, fuzzy, kde-format
 msgid "New Alarm"
 msgstr "Neue Erinnerung"
 
 #: qml/alarm/AlarmFormPage.qml:40 qml/alarm/AlarmFormPage.qml:63
 #: qml/timer/TimerFormWrapper.qml:85 qml/timer/TimerFormWrapper.qml:144
-#, kde-format
+#, fuzzy, kde-format
 msgid "Done"
 msgstr "Fertig"
 
@@ -197,25 +197,25 @@ msgstr "%1 Minute"
 #: qml/alarm/AlarmListDelegate.qml:130 qml/time/TimePageDelegate.qml:53
 #: qml/timer/TimerListDelegate.qml:176 qml/timer/TimerPage.qml:60
 #: qml/timer/TimerPage.qml:109
-#, kde-format
+#, fuzzy, kde-format
 msgid "Delete"
 msgstr "Löschen"
 
 #: qml/alarm/AlarmListPage.qml:25 qml/components/BottomToolbar.qml:115
 #: qml/components/Sidebar.qml:115
-#, kde-format
+#, fuzzy, kde-format
 msgid "Alarms"
 msgstr "Erinnerungen"
 
 #: qml/alarm/AlarmListPage.qml:38 qml/time/TimePage.qml:37
-#, kde-format
+#, fuzzy, kde-format
 msgid "Edit"
 msgstr "Bearbeiten"
 
 #: qml/alarm/AlarmListPage.qml:47 qml/components/Sidebar.qml:139
 #: qml/settings/SettingsPage.qml:21 qml/stopwatch/StopwatchPage.qml:70
 #: qml/time/TimePage.qml:54 qml/timer/TimerListPage.qml:37
-#, kde-format
+#, fuzzy, kde-format
 msgid "Settings"
 msgstr "Einstellungen"
 
@@ -227,7 +227,7 @@ msgid ""
 msgstr ""
 
 #: qml/alarm/AlarmListPage.qml:82
-#, kde-format
+#, fuzzy, kde-format
 msgid "No alarms configured"
 msgstr "Keine Erinnerungen eingerichtet"
 
@@ -244,7 +244,7 @@ msgid "alarm"
 msgstr "Erinnerung"
 
 #: qml/alarm/AlarmListPage.qml:120
-#, kde-format
+#, fuzzy, kde-format
 msgid "Deleted %1"
 msgstr "%1 gelöscht"
 
@@ -284,18 +284,18 @@ msgid "Choose an audio"
 msgstr ""
 
 #: qml/alarm/SoundPickerPage.qml:177
-#, kde-format
+#, fuzzy, kde-format
 msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 msgstr "Audio-Dateien (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 
 #: qml/alarm/SoundPickerPage.qml:177
-#, kde-format
+#, fuzzy, kde-format
 msgid "All files (*)"
 msgstr "Alle Dateien (*)"
 
 #: qml/components/BottomToolbar.qml:85 qml/components/Sidebar.qml:58
 #: qml/time/TimePage.qml:25
-#, kde-format
+#, fuzzy, kde-format
 msgid "Time"
 msgstr "Zeit"
 
@@ -308,7 +308,7 @@ msgstr "Zeit"
 
 #: qml/components/BottomToolbar.qml:105 qml/components/Sidebar.qml:96
 #: qml/stopwatch/StopwatchPage.qml:23
-#, kde-format
+#, fuzzy, kde-format
 msgid "Stopwatch"
 msgstr "Stoppuhr"
 
@@ -359,26 +359,26 @@ msgid "More Info:"
 msgstr ""
 
 #: qml/settings/SettingsPage.qml:84
-#, kde-format
+#, fuzzy, kde-format
 msgid "About"
 msgstr "Über"
 
 #: qml/stopwatch/StopwatchPage.qml:61 qml/stopwatch/StopwatchPage.qml:127
 #: qml/timer/TimerListDelegate.qml:166 qml/timer/TimerPage.qml:54
 #: qml/timer/TimerPage.qml:103
-#, kde-format
+#, fuzzy, kde-format
 msgid "Reset"
 msgstr "Zurücksetzen"
 
 #: qml/stopwatch/StopwatchPage.qml:127 qml/timer/TimerListDelegate.qml:156
 #: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:97
-#, kde-format
+#, fuzzy, kde-format
 msgid "Pause"
 msgstr "Pause"
 
 #: qml/stopwatch/StopwatchPage.qml:127 qml/timer/TimerListDelegate.qml:156
 #: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:97
-#, kde-format
+#, fuzzy, kde-format
 msgid "Start"
 msgstr "Start"
 
@@ -388,7 +388,7 @@ msgid "Lap"
 msgstr ""
 
 #: qml/stopwatch/StopwatchPage.qml:239
-#, kde-format
+#, fuzzy, kde-format
 msgid "#%1"
 msgstr "#%1"
 
@@ -453,17 +453,17 @@ msgid "<b>Duration:</b>"
 msgstr "Dauer"
 
 #: qml/timer/TimerForm.qml:104
-#, kde-format
+#, fuzzy, kde-format
 msgid "hours"
 msgstr "Stunden"
 
 #: qml/timer/TimerForm.qml:115
-#, kde-format
+#, fuzzy, kde-format
 msgid "minutes"
 msgstr "Minuten"
 
 #: qml/timer/TimerForm.qml:126
-#, kde-format
+#, fuzzy, kde-format
 msgid "seconds"
 msgstr "Sekunden"
 
@@ -625,36 +625,36 @@ msgid "%1 hours behind"
 msgstr "%1 Stunde"
 
 #: savedlocationsmodel.cpp:118
-#, kde-format
+#, fuzzy, kde-format
 msgid "Local time"
 msgstr "Ortszeit"
 
 #: utilmodel.cpp:72
-#, kde-format
+#, fuzzy, kde-format
 msgid "%1 day"
 msgid_plural "%1 days"
 msgstr[0] "%1 Tag"
 msgstr[1] "%1 Tage"
 
 #: utilmodel.cpp:76
-#, kde-format
+#, fuzzy, kde-format
 msgid ", "
 msgstr ", "
 
 #: utilmodel.cpp:78 utilmodel.cpp:84
-#, kde-format
+#, fuzzy, kde-format
 msgid " and "
 msgstr "und"
 
 #: utilmodel.cpp:80
-#, kde-format
+#, fuzzy, kde-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
 msgstr[0] "%1 Stunde"
 msgstr[1] "%1 Stunden"
 
 #: utilmodel.cpp:86
-#, kde-format
+#, fuzzy, kde-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1 Minute"

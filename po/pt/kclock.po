@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-09-18 00:47+0000\n"
-"PO-Revision-Date: 2022-09-18 23:19+0100\n"
+"PO-Revision-Date: 2022-09-19 10:48+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -13,6 +13,7 @@ msgstr ""
 "X-POFile-SpellExtra: Devin Lin PowerDevil Han Young Kirigami mp aac flac\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-POFile-SpellExtra: webm mka kclockd AM PM\n"
+"X-POFile-IgnoreConsistency: Ring Duration:\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -67,7 +68,7 @@ msgstr "Acordar"
 #: qml/alarm/AlarmForm.qml:125
 #, kde-format
 msgid "Ring Duration:"
-msgstr "Duração do Toque"
+msgstr "Duração do Toque:"
 
 #: qml/alarm/AlarmForm.qml:128 qml/alarm/AlarmForm.qml:139
 #, kde-format
