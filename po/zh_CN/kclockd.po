@@ -1,91 +1,90 @@
-# Copyright (C) YEAR This file is copyright:
-# This file is distributed under the same license as the kclock package.
-#
-# Matjaž Jeran <matjaz.jeran@amis.net>, 2022.
 msgid ""
 msgstr ""
-"Project-Id-Version: kclock\n"
+"Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-09-18 00:47+0000\n"
-"PO-Revision-Date: 2022-09-19 12:25+0200\n"
-"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
-"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
-"Language: sl\n"
+"PO-Revision-Date: 2022-09-20 01:55\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
-"X-Generator: Lokalize 22.04.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: kdeorg\n"
+"X-Crowdin-Project-ID: 269464\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /kf5-trunk/messages/kclock/kclockd.pot\n"
+"X-Crowdin-File-ID: 40948\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Matjaž Jeran"
+msgstr ""
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "matjaz.jeran@amis.net"
+msgstr ""
 
 #: alarm.cpp:73
 #, kde-format
 msgid "Dismiss"
-msgstr "Opusti"
+msgstr ""
 
 #: alarm.cpp:73
 #, kde-format
 msgid "Snooze"
-msgstr "Dremež"
+msgstr ""
 
 #: alarm.cpp:75 alarm.h:51
 #, kde-format
 msgid "Alarm"
-msgstr "Alarm"
+msgstr ""
 
 #: alarm.cpp:77 timer.cpp:55
 #, kde-format
 msgid "View"
-msgstr "Pogled"
+msgstr ""
 
 #: alarmmodel.cpp:223
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Alarm: <shortcut>%1 %2</shortcut>"
-msgstr "Alarm: <shortcut>%1 %2</shortcut>"
+msgstr ""
 
 #: main.cpp:30
 #, kde-format
 msgid "Don't use PowerDevil for alarms if it is available"
-msgstr "Ne uporabljajte PowerDevil za alarme, če je na voljo"
+msgstr ""
 
 #: main.cpp:45
 #, kde-format
 msgid "© 2020-2022 KDE Community"
-msgstr "© 2020-2022 Skupnost KDE"
+msgstr ""
 
 #: main.cpp:46
 #, kde-format
 msgid "Devin Lin"
-msgstr "Devin Lin"
+msgstr ""
 
 #: main.cpp:47
 #, kde-format
 msgid "Han Young"
-msgstr "Han Young"
+msgstr ""
 
 #: timer.cpp:53
 #, kde-format
 msgid "Timer complete"
-msgstr "Merilnik časa končal"
+msgstr ""
 
 #: timer.cpp:54
 #, kde-format
 msgid "Your timer %1 has finished!"
-msgstr "Vaš merilnik časa %1 je končal!"
+msgstr ""
 
 #: xdgportal.cpp:34
 #, kde-format
 msgid ""
 "Allow the clock process to be in the background and launched on startup."
-msgstr "Dovoli, da je postopek ure v ozadju in se zažene na zagonu."
+msgstr ""

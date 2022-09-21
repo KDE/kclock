@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-09-18 00:47+0000\n"
-"PO-Revision-Date: 2022-08-20 14:17\n"
+"PO-Revision-Date: 2022-09-20 01:55\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -125,10 +125,9 @@ msgid "1 hour"
 msgstr ""
 
 #: qml/alarm/AlarmForm.qml:171
-#, fuzzy, kde-format
-#| msgid "Snooze"
+#, kde-format
 msgid "Snooze Length:"
-msgstr "稍后提醒"
+msgstr ""
 
 #: qml/alarm/AlarmForm.qml:172
 #, kde-format
@@ -157,10 +156,9 @@ msgid "Editing %1"
 msgstr ""
 
 #: qml/alarm/AlarmFormPage.qml:28 qml/alarm/AlarmListPage.qml:30
-#, fuzzy, kde-format
-#| msgid "Alarm"
+#, kde-format
 msgid "New Alarm"
-msgstr "闹钟"
+msgstr ""
 
 #: qml/alarm/AlarmFormPage.qml:40 qml/alarm/AlarmFormPage.qml:63
 #: qml/timer/TimerFormWrapper.qml:85 qml/timer/TimerFormWrapper.qml:144
@@ -193,10 +191,9 @@ msgstr ""
 
 #: qml/alarm/AlarmListPage.qml:25 qml/components/BottomToolbar.qml:115
 #: qml/components/Sidebar.qml:115
-#, fuzzy, kde-format
-#| msgid "Alarm"
+#, kde-format
 msgid "Alarms"
-msgstr "闹钟"
+msgstr ""
 
 #: qml/alarm/AlarmListPage.qml:38 qml/time/TimePage.qml:37
 #, kde-format
@@ -223,16 +220,14 @@ msgid "No alarms configured"
 msgstr ""
 
 #: qml/alarm/AlarmListPage.qml:87
-#, fuzzy, kde-format
-#| msgid "Alarm"
+#, kde-format
 msgid "Add alarm"
-msgstr "闹钟"
+msgstr ""
 
 #: qml/alarm/AlarmListPage.qml:120
-#, fuzzy, kde-format
-#| msgid "Alarm"
+#, kde-format
 msgid "alarm"
-msgstr "闹钟"
+msgstr ""
 
 #: qml/alarm/AlarmListPage.qml:120
 #, kde-format
@@ -318,10 +313,9 @@ msgid "PM"
 msgstr ""
 
 #: qml/settings/SettingsPage.qml:43
-#, fuzzy, kde-format
-#| msgid "Timer complete"
+#, kde-format
 msgid "Time Format:"
-msgstr "计时器结束"
+msgstr ""
 
 #: qml/settings/SettingsPage.qml:44
 #, kde-format
@@ -536,10 +530,9 @@ msgid "New timer"
 msgstr ""
 
 #: qml/timer/TimerRingingPopup.qml:27
-#, fuzzy, kde-format
-#| msgid "Your timer %1 has finished!"
+#, kde-format
 msgid "Timer has finished"
-msgstr "计时器 %1 已结束计时！"
+msgstr ""
 
 #: qml/timer/TimerRingingPopup.qml:46
 #, kde-format
@@ -547,10 +540,9 @@ msgid "%1 has completed."
 msgstr ""
 
 #: qml/timer/TimerRingingPopup.qml:46
-#, fuzzy, kde-format
-#| msgid "Timer complete"
+#, kde-format
 msgid "The timer has completed."
-msgstr "计时器结束"
+msgstr ""
 
 #: savedlocationsmodel.cpp:106
 #, kde-format
@@ -634,17 +626,3 @@ msgstr ""
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr ""
-
-#~ msgid "View"
-#~ msgstr "查看"
-
-#~ msgctxt "@info"
-#~ msgid "Alarm: <shortcut>%1 %2</shortcut>"
-#~ msgstr "闹钟：<shortcut>%1 %2</shortcut>"
-
-#~ msgid "Don't use PowerDevil for alarms if it is available"
-#~ msgstr "PowerDevil 可用时，不要使用它作为闹钟"
-
-#~ msgid ""
-#~ "Allow the clock process to be in the background and launched on startup."
-#~ msgstr "允许时钟进程在后台运行并在开机时启动。"
