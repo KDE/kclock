@@ -1,70 +1,65 @@
-# Translation for kclockd to Euskara/Basque (eu).
-# Copyright (C) 2022 This file is copyright:
-# This file is distributed under the same license as the kclock package.
-# KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>.
-#
-# Translators:
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2022.
+# translation of kclockd.po to Slovak
+# Roman Paholik <wizzardsk@gmail.com>, 2022.
 msgid ""
 msgstr ""
-"Project-Id-Version: kclock\n"
+"Project-Id-Version: kclockd\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-09-18 00:47+0000\n"
-"PO-Revision-Date: 2022-09-20 21:06+0200\n"
-"Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
-"Language-Team: Basque <kde-i18n-eu@kde.org>\n"
-"Language: eu\n"
+"PO-Revision-Date: 2022-09-21 19:05+0200\n"
+"Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.08.0\n"
+"X-Generator: Lokalize 22.04.3\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Iñigo Salvador Azurmendi"
+msgstr "Roman Paholík"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "xalba@ni.eus"
+msgstr "wizzardsk@gmail.com"
 
 #: alarm.cpp:73
 #, kde-format
 msgid "Dismiss"
-msgstr "Baztertu"
+msgstr "Zamietnuť"
 
 #: alarm.cpp:73
 #, kde-format
 msgid "Snooze"
-msgstr "Kuluxka"
+msgstr "Odložiť"
 
 #: alarm.cpp:75 alarm.h:51
 #, kde-format
 msgid "Alarm"
-msgstr "Alarma"
+msgstr "Poplach"
 
 #: alarm.cpp:77 timer.cpp:55
 #, kde-format
 msgid "View"
-msgstr "Ikuspegia"
+msgstr "Zobraziť"
 
 #: alarmmodel.cpp:223
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Alarm: <shortcut>%1 %2</shortcut>"
-msgstr "Alarma: <shortcut>%1 %2</shortcut>"
+msgstr "Budík: <shortcut>%1 %2</shortcut>"
 
 #: main.cpp:30
 #, kde-format
 msgid "Don't use PowerDevil for alarms if it is available"
-msgstr "Erabilgarri badago, ez erabili PowerDevil alarmetarako"
+msgstr "Nepoužívať PowerDevil na budíky, ak je k dispozícii"
 
 #: main.cpp:45
 #, kde-format
 msgid "© 2020-2022 KDE Community"
-msgstr "© 2020-2022 KDE Komunitatea"
+msgstr "© 2020-2022 KDE komunita"
 
 #: main.cpp:46
 #, kde-format
@@ -79,15 +74,15 @@ msgstr "Han Young"
 #: timer.cpp:53
 #, kde-format
 msgid "Timer complete"
-msgstr "Denbora bete da"
+msgstr "Časovač je dokončený"
 
 #: timer.cpp:54
 #, kde-format
 msgid "Your timer %1 has finished!"
-msgstr "Zure %1 tenporizadoreak amaitu du!"
+msgstr "Váš časovač %1 sa skončil!"
 
 #: xdgportal.cpp:34
 #, kde-format
 msgid ""
 "Allow the clock process to be in the background and launched on startup."
-msgstr "Baimendu erloju prozesua atzeko planoan egoten eta abioan abiaraztea."
+msgstr "Povoliť proces hodín v pozadí a spustiť pri štarte."
