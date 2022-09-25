@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-09-18 00:47+0000\n"
-"PO-Revision-Date: 2022-09-18 21:01+0200\n"
+"PO-Revision-Date: 2022-09-24 16:10+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
 "Language: fr\n"
@@ -127,16 +127,14 @@ msgid "1 hour"
 msgstr "1 heure"
 
 #: qml/alarm/AlarmForm.qml:171
-#, fuzzy, kde-format
-#| msgid "Alarm Snooze Length"
+#, kde-format
 msgid "Snooze Length:"
-msgstr "Durée de l'alarme répétitive"
+msgstr "Durée de l'alarme :"
 
 #: qml/alarm/AlarmForm.qml:172
-#, fuzzy, kde-format
-#| msgid "Alarm Snooze Length"
+#, kde-format
 msgid "Select Snooze Length"
-msgstr "Durée de l'alarme répétitive"
+msgstr "Sélectionner la durée de l'alarme"
 
 #: qml/alarm/AlarmForm.qml:208
 #, kde-format
@@ -177,10 +175,9 @@ msgid "Cancel"
 msgstr "Annuler"
 
 #: qml/alarm/AlarmListDelegate.qml:109
-#, fuzzy, kde-format
-#| msgid "Snoozed %1 minutes"
+#, kde-format
 msgid "Snoozed %1 minute"
-msgstr "Endormi pendant %1 minutes"
+msgstr "Sonnerie durant %1 minute"
 
 #: qml/alarm/AlarmListDelegate.qml:109
 #, kde-format
@@ -484,10 +481,9 @@ msgid "Show Presets"
 msgstr "Afficher les pré-réglages"
 
 #: qml/timer/TimerForm.qml:162
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgid "Toggle Delete"
-msgstr "Supprimer"
+msgstr "Basculer en suppression"
 
 #: qml/timer/TimerFormWrapper.qml:55
 #, kde-format
@@ -506,10 +502,9 @@ msgstr "Créer une nouvelle temporisation"
 
 #: qml/timer/TimerListDelegate.qml:145 qml/timer/TimerPage.qml:69
 #: qml/timer/TimerPage.qml:118
-#, fuzzy, kde-format
-#| msgid "Timer"
+#, kde-format
 msgid "Loop Timer"
-msgstr "Minuteur"
+msgstr "Minuteur de boucle"
 
 #: qml/timer/TimerListPage.qml:27
 #, kde-format
