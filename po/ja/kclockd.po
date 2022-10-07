@@ -1,0 +1,87 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kclock\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-18 00:47+0000\n"
+"PO-Revision-Date: 2020-06-13 17:20-0700\n"
+"Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
+"Language-Team: Japanese <kde-jp@kde.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: alarm.cpp:73
+#, kde-format
+msgid "Dismiss"
+msgstr ""
+
+#: alarm.cpp:73
+#, kde-format
+msgid "Snooze"
+msgstr ""
+
+#: alarm.cpp:75 alarm.h:51
+#, kde-format
+msgid "Alarm"
+msgstr ""
+
+#: alarm.cpp:77 timer.cpp:55
+#, kde-format
+msgid "View"
+msgstr ""
+
+#: alarmmodel.cpp:223
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Alarm: <shortcut>%1 %2</shortcut>"
+msgstr ""
+
+#: main.cpp:30
+#, kde-format
+msgid "Don't use PowerDevil for alarms if it is available"
+msgstr ""
+
+#: main.cpp:45
+#, kde-format
+msgid "© 2020-2022 KDE Community"
+msgstr ""
+
+#: main.cpp:46
+#, kde-format
+msgid "Devin Lin"
+msgstr ""
+
+#: main.cpp:47
+#, kde-format
+msgid "Han Young"
+msgstr ""
+
+#: timer.cpp:53
+#, kde-format
+msgid "Timer complete"
+msgstr ""
+
+#: timer.cpp:54
+#, kde-format
+msgid "Your timer %1 has finished!"
+msgstr ""
+
+#: xdgportal.cpp:34
+#, kde-format
+msgid ""
+"Allow the clock process to be in the background and launched on startup."
+msgstr ""
