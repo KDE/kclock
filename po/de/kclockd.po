@@ -3,21 +3,22 @@
 # Burkhard Lück <lueck@hube-lueck.de>, 2020, 2021.
 # Frank Steinmetzger <dev@felsenfleischer.de>, 2021.
 # Frederik Schwarzer <schwarzer@kde.org>, 2022.
+# Alois Spitzbart <spitz234@hotmail.com>, 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-09-18 00:47+0000\n"
-"PO-Revision-Date: 2022-03-06 18:27+0100\n"
-"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
-"Language-Team: German <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2022-10-12 10:06+0200\n"
+"Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.2\n"
+"X-Generator: Lokalize 22.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -90,3 +91,5 @@ msgstr "Ihre Eieruhr %1 ist abgelaufen."
 msgid ""
 "Allow the clock process to be in the background and launched on startup."
 msgstr ""
+"Dem Uhren-Prozess erlauben, im Hintergrund ausgeführt und beim Systemstart "
+"gestartet zu werden."
