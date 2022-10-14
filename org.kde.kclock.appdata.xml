@@ -46,6 +46,7 @@
   <summary xml:lang="ar">اضبط المنبهات والمؤقتات، واستخدم ساعة الإيقاف، وقم بإدارة الساعات العالمية</summary>
   <summary xml:lang="ca">Establiu alarmes i temporitzadors, useu un cronòmetre i gestioneu els rellotges mundials</summary>
   <summary xml:lang="ca-valencia">Establiu alarmes i temporitzadors, utilitzeu un cronòmetre i gestioneu els rellotges mundials</summary>
+  <summary xml:lang="de">Erinnerungen und Zeitgeber einstellen, eine Stoppuhr verwenden und Weltzeituhren verwalten</summary>
   <summary xml:lang="en-GB">Set alarms and timers, use a stopwatch, and manage world clocks</summary>
   <summary xml:lang="es">Definir alarmas y temporizadores, usar un cronómetro y gestionar relojes mundiales</summary>
   <summary xml:lang="eu">Ezarri alarmak eta tenporizadoreak, erabili kronometroa, eta kudeatu munduko ordulariak</summary>
@@ -109,6 +110,7 @@
     <p xml:lang="ca">Una aplicació universal de rellotge per a l'escriptori i mòbil.</p>
     <p xml:lang="ca-valencia">Una aplicació universal de rellotge per a l'escriptori i mòbil.</p>
     <p xml:lang="cs">Univerzální aplikace hodin pro pracovní plochu a mobilní zařízení.</p>
+    <p xml:lang="de">Eine universelle Uhren-Anwendung für Plasma.</p>
     <p xml:lang="en-GB">A universal clock application for desktop and mobile.</p>
     <p xml:lang="es">Aplicación de reloj universal para el escritorio y el móvil.</p>
     <p xml:lang="eu">Mahaigain eta mugikorrerako erloju-aplikazio unibertsal bat.</p>
