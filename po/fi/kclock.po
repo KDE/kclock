@@ -390,7 +390,7 @@ msgstr "Kierros"
 #: qml/stopwatch/StopwatchPage.qml:239
 #, kde-format
 msgid "#%1"
-msgstr ""
+msgstr "# %1"
 
 #: qml/time/AddLocationListView.qml:52
 #, kde-format
