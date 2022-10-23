@@ -137,6 +137,8 @@ int main(int argc, char *argv[])
 
     engine->load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
 
+    app.setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.kclock")));
+
     // ~~~~ Parse command line arguments ~~~~
     {
         QScopedPointer<QCommandLineParser> parser(createParser());
