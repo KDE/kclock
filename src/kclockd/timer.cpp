@@ -188,8 +188,10 @@ void Timer::timeUp(int cookie)
         }
 
         // run command since timer has ended
-        if (m_commandTimeout.isEmpty()) {
-            QProcess::execute(m_commandTimeout, {});
+        qDebug() << "Running command:" << m_commandTimeout;
+        if (!m_commandTimeout.isEmpty()) {
+            const QStringList commandAndArguments = QProcess::splitCommand(m_commandTimeout);
+            QProcess::execute(commandAndArguments.front(), commandAndArguments.mid(1));
         }
 
         // loop if it is set
