@@ -36,6 +36,12 @@ Kirigami.ScrollablePage {
         iconName: "edit-entry"
         text: i18n("Edit")
         checkable: true
+        visible: listView.count > 0
+        onVisibleChanged: {
+            if (!visible) {
+                checked = false;
+            }
+        }
     }
     
     Kirigami.Action {
