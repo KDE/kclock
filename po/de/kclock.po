@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-18 00:47+0000\n"
+"POT-Creation-Date: 2022-11-08 00:49+0000\n"
 "PO-Revision-Date: 2022-10-12 10:06+0200\n"
 "Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -205,7 +205,7 @@ msgstr "Bearbeiten"
 
 #: qml/alarm/AlarmListPage.qml:47 qml/components/Sidebar.qml:139
 #: qml/settings/SettingsPage.qml:21 qml/stopwatch/StopwatchPage.qml:70
-#: qml/time/TimePage.qml:54 qml/timer/TimerListPage.qml:37
+#: qml/time/TimePage.qml:60 qml/timer/TimerListPage.qml:37
 #, kde-format
 msgid "Settings"
 msgstr "Einstellungen"
@@ -391,12 +391,12 @@ msgstr "Keine Orte gefunden"
 msgid "Add Location"
 msgstr "Standort hinzufügen"
 
-#: qml/time/TimePage.qml:44
+#: qml/time/TimePage.qml:50
 #, kde-format
 msgid "Add"
 msgstr "Hinzufügen"
 
-#: qml/time/TimePage.qml:143
+#: qml/time/TimePage.qml:149
 #, kde-format
 msgid "No locations configured"
 msgstr "Keine Orte eingerichtet"

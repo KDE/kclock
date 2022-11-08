@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-18 00:47+0000\n"
+"POT-Creation-Date: 2022-11-08 00:49+0000\n"
 "PO-Revision-Date: 2022-09-18 13:22+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -205,7 +205,7 @@ msgstr "Змінити"
 
 #: qml/alarm/AlarmListPage.qml:47 qml/components/Sidebar.qml:139
 #: qml/settings/SettingsPage.qml:21 qml/stopwatch/StopwatchPage.qml:70
-#: qml/time/TimePage.qml:54 qml/timer/TimerListPage.qml:37
+#: qml/time/TimePage.qml:60 qml/timer/TimerListPage.qml:37
 #, kde-format
 msgid "Settings"
 msgstr "Параметри"
@@ -391,12 +391,12 @@ msgstr "Не знайдено жодного місця"
 msgid "Add Location"
 msgstr "Додати місце"
 
-#: qml/time/TimePage.qml:44
+#: qml/time/TimePage.qml:50
 #, kde-format
 msgid "Add"
 msgstr "Додати"
 
-#: qml/time/TimePage.qml:143
+#: qml/time/TimePage.qml:149
 #, kde-format
 msgid "No locations configured"
 msgstr "Місць не налаштовано"
