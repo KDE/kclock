@@ -10,7 +10,7 @@ import QtQuick 2.15
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.2
 
-import org.kde.kirigami 2.12 as Kirigami
+import org.kde.kirigami 2.20 as Kirigami
 
 import "../components"
 import kclock 1.0
@@ -101,8 +101,7 @@ Kirigami.ScrollablePage {
         
         // mobile action
         FloatingActionButton {
-            anchors.fill: parent
-            iconName: "list-add"
+            icon.name: "list-add"
             onClicked: root.addAlarm()
             visible: Kirigami.Settings.isMobile
         }

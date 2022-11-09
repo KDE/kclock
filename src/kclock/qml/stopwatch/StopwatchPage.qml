@@ -10,7 +10,7 @@ import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.2
 import QtQuick.Window 2.11
 
-import org.kde.kirigami 2.4 as Kirigami
+import org.kde.kirigami 2.20 as Kirigami
 
 import "../components"
 import kclock 1.0
@@ -177,8 +177,7 @@ Kirigami.ScrollablePage {
         
         // mobile action
         FloatingActionButton {
-            anchors.fill: parent
-            iconName: stopwatchpage.running ? "chronometer-pause" : "chronometer-start"
+            icon.name: stopwatchpage.running ? "chronometer-pause" : "chronometer-start"
             onClicked: stopwatchpage.toggleStopwatch()
             visible: Kirigami.Settings.isMobile
         }
