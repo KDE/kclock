@@ -55,6 +55,7 @@ T.RoundButton {
         anchors.fill: parent
         radius: root.radius
         color: root.pressed ? Qt.darker(Kirigami.Theme.highlightColor, 1.2) : Kirigami.Theme.highlightColor
+        renderType: Kirigami.ShadowedRectangle.HighQuality
         
         property color shadowColor: Qt.darker(Kirigami.Theme.backgroundColor, 1.5)
         shadow.color: Qt.rgba(shadowColor.r, shadowColor.g, shadowColor.b, 0.5)
