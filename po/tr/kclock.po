@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-08 00:49+0000\n"
+"POT-Creation-Date: 2022-11-10 00:48+0000\n"
 "PO-Revision-Date: 2022-09-18 17:22+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -226,12 +226,12 @@ msgstr "Yapılandırılan çalar saat yok"
 msgid "Add alarm"
 msgstr "Çalar saat ekle"
 
-#: qml/alarm/AlarmListPage.qml:120
+#: qml/alarm/AlarmListPage.qml:119
 #, kde-format
 msgid "alarm"
 msgstr "çalar saat"
 
-#: qml/alarm/AlarmListPage.qml:120
+#: qml/alarm/AlarmListPage.qml:119
 #, kde-format
 msgid "Deleted %1"
 msgstr "%1 Silindi"
@@ -373,7 +373,7 @@ msgstr "Başlat"
 msgid "Lap"
 msgstr "Tur"
 
-#: qml/stopwatch/StopwatchPage.qml:239
+#: qml/stopwatch/StopwatchPage.qml:238
 #, kde-format
 msgid "#%1"
 msgstr "#%1"
@@ -518,12 +518,12 @@ msgstr ""
 "Saat ardalan süreci bulunamadı. Sayaç işlevselliğine iye olmak için lütfen "
 "kclockd'yi başlatın."
 
-#: qml/timer/TimerListPage.qml:85
+#: qml/timer/TimerListPage.qml:84
 #, kde-format
 msgid "No timers configured"
 msgstr "Yapılandırılan sayaç yok"
 
-#: qml/timer/TimerListPage.qml:90
+#: qml/timer/TimerListPage.qml:89
 #, kde-format
 msgid "Add timer"
 msgstr "Sayaç Ekle"

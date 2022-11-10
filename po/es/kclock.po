@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-08 00:49+0000\n"
+"POT-Creation-Date: 2022-11-10 00:48+0000\n"
 "PO-Revision-Date: 2022-09-18 18:33+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -228,12 +228,12 @@ msgstr "No hay alarmas configuradas"
 msgid "Add alarm"
 msgstr "Añadir alarma"
 
-#: qml/alarm/AlarmListPage.qml:120
+#: qml/alarm/AlarmListPage.qml:119
 #, kde-format
 msgid "alarm"
 msgstr "alarma"
 
-#: qml/alarm/AlarmListPage.qml:120
+#: qml/alarm/AlarmListPage.qml:119
 #, kde-format
 msgid "Deleted %1"
 msgstr "%1 borrada"
@@ -376,7 +376,7 @@ msgstr "Iniciar"
 msgid "Lap"
 msgstr "Vuelta"
 
-#: qml/stopwatch/StopwatchPage.qml:239
+#: qml/stopwatch/StopwatchPage.qml:238
 #, kde-format
 msgid "#%1"
 msgstr "#%1"
@@ -521,12 +521,12 @@ msgstr ""
 "No se ha encontrado el demonio del reloj. Inicie kclockd para poder disponer "
 "de las funciones de temporizador."
 
-#: qml/timer/TimerListPage.qml:85
+#: qml/timer/TimerListPage.qml:84
 #, kde-format
 msgid "No timers configured"
 msgstr "No se ha configurado ningún temporizador"
 
-#: qml/timer/TimerListPage.qml:90
+#: qml/timer/TimerListPage.qml:89
 #, kde-format
 msgid "Add timer"
 msgstr "Añadir temporizador"

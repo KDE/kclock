@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-08 00:49+0000\n"
+"POT-Creation-Date: 2022-11-10 00:48+0000\n"
 "PO-Revision-Date: 2022-09-28 16:55+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -224,12 +224,12 @@ msgstr "Inga alarm inställda"
 msgid "Add alarm"
 msgstr "Lägg till alarm"
 
-#: qml/alarm/AlarmListPage.qml:120
+#: qml/alarm/AlarmListPage.qml:119
 #, kde-format
 msgid "alarm"
 msgstr "alarm"
 
-#: qml/alarm/AlarmListPage.qml:120
+#: qml/alarm/AlarmListPage.qml:119
 #, kde-format
 msgid "Deleted %1"
 msgstr "Tog bort %1"
@@ -371,7 +371,7 @@ msgstr "Starta"
 msgid "Lap"
 msgstr "Varv"
 
-#: qml/stopwatch/StopwatchPage.qml:239
+#: qml/stopwatch/StopwatchPage.qml:238
 #, kde-format
 msgid "#%1"
 msgstr "Nr. %1"
@@ -515,12 +515,12 @@ msgid ""
 msgstr ""
 "Klockdemonen hittades inte. Start kclockd för att få tidtagningsfunktion."
 
-#: qml/timer/TimerListPage.qml:85
+#: qml/timer/TimerListPage.qml:84
 #, kde-format
 msgid "No timers configured"
 msgstr "Inga tidtagare inställda"
 
-#: qml/timer/TimerListPage.qml:90
+#: qml/timer/TimerListPage.qml:89
 #, kde-format
 msgid "Add timer"
 msgstr "Lägg till tidtagare"

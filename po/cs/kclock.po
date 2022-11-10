@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-08 00:49+0000\n"
+"POT-Creation-Date: 2022-11-10 00:48+0000\n"
 "PO-Revision-Date: 2022-02-28 10:50+0100\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -225,12 +225,12 @@ msgstr ""
 msgid "Add alarm"
 msgstr ""
 
-#: qml/alarm/AlarmListPage.qml:120
+#: qml/alarm/AlarmListPage.qml:119
 #, kde-format
 msgid "alarm"
 msgstr ""
 
-#: qml/alarm/AlarmListPage.qml:120
+#: qml/alarm/AlarmListPage.qml:119
 #, kde-format
 msgid "Deleted %1"
 msgstr ""
@@ -372,7 +372,7 @@ msgstr "Spustit"
 msgid "Lap"
 msgstr ""
 
-#: qml/stopwatch/StopwatchPage.qml:239
+#: qml/stopwatch/StopwatchPage.qml:238
 #, kde-format
 msgid "#%1"
 msgstr ""
@@ -515,12 +515,12 @@ msgid ""
 "functionality."
 msgstr ""
 
-#: qml/timer/TimerListPage.qml:85
+#: qml/timer/TimerListPage.qml:84
 #, kde-format
 msgid "No timers configured"
 msgstr ""
 
-#: qml/timer/TimerListPage.qml:90
+#: qml/timer/TimerListPage.qml:89
 #, kde-format
 msgid "Add timer"
 msgstr ""

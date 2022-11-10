@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-08 00:49+0000\n"
+"POT-Creation-Date: 2022-11-10 00:48+0000\n"
 "PO-Revision-Date: 2022-06-01 15:13+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -236,13 +236,13 @@ msgstr "Nicio alarmă configurată"
 msgid "Add alarm"
 msgstr "Alarmă"
 
-#: qml/alarm/AlarmListPage.qml:120
+#: qml/alarm/AlarmListPage.qml:119
 #, fuzzy, kde-format
 #| msgid "Alarm"
 msgid "alarm"
 msgstr "Alarmă"
 
-#: qml/alarm/AlarmListPage.qml:120
+#: qml/alarm/AlarmListPage.qml:119
 #, kde-format
 msgid "Deleted %1"
 msgstr "Șters %1"
@@ -385,7 +385,7 @@ msgstr "Pornește"
 msgid "Lap"
 msgstr "Tur"
 
-#: qml/stopwatch/StopwatchPage.qml:239
+#: qml/stopwatch/StopwatchPage.qml:238
 #, kde-format
 msgid "#%1"
 msgstr ""
@@ -537,13 +537,13 @@ msgid ""
 "functionality."
 msgstr ""
 
-#: qml/timer/TimerListPage.qml:85
+#: qml/timer/TimerListPage.qml:84
 #, fuzzy, kde-format
 #| msgid "No alarms configured"
 msgid "No timers configured"
 msgstr "Nicio alarmă configurată"
 
-#: qml/timer/TimerListPage.qml:90
+#: qml/timer/TimerListPage.qml:89
 #, fuzzy, kde-format
 #| msgid "Add a timer"
 msgid "Add timer"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-08 00:49+0000\n"
+"POT-Creation-Date: 2022-11-10 00:48+0000\n"
 "PO-Revision-Date: 2022-04-15 23:10+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -236,13 +236,13 @@ msgstr "Ei asetettuja hälytyksiä"
 msgid "Add alarm"
 msgstr "Hälytys"
 
-#: qml/alarm/AlarmListPage.qml:120
+#: qml/alarm/AlarmListPage.qml:119
 #, fuzzy, kde-format
 #| msgid "Alarm"
 msgid "alarm"
 msgstr "Hälytys"
 
-#: qml/alarm/AlarmListPage.qml:120
+#: qml/alarm/AlarmListPage.qml:119
 #, kde-format
 msgid "Deleted %1"
 msgstr "Poistettu %1"
@@ -387,7 +387,7 @@ msgstr "Käynnistä"
 msgid "Lap"
 msgstr "Kierros"
 
-#: qml/stopwatch/StopwatchPage.qml:239
+#: qml/stopwatch/StopwatchPage.qml:238
 #, kde-format
 msgid "#%1"
 msgstr "# %1"
@@ -540,13 +540,13 @@ msgid ""
 "functionality."
 msgstr ""
 
-#: qml/timer/TimerListPage.qml:85
+#: qml/timer/TimerListPage.qml:84
 #, fuzzy, kde-format
 #| msgid "No alarms configured"
 msgid "No timers configured"
 msgstr "Ei asetettuja hälytyksiä"
 
-#: qml/timer/TimerListPage.qml:90
+#: qml/timer/TimerListPage.qml:89
 #, fuzzy, kde-format
 #| msgid "Add a timer"
 msgid "Add timer"

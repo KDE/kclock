@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-08 00:49+0000\n"
+"POT-Creation-Date: 2022-11-10 00:48+0000\n"
 "PO-Revision-Date: 2022-04-15 19:18+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -239,13 +239,13 @@ msgstr "Nie sú nakonfigurované žiadne alarmy"
 msgid "Add alarm"
 msgstr "Budík"
 
-#: qml/alarm/AlarmListPage.qml:120
+#: qml/alarm/AlarmListPage.qml:119
 #, fuzzy, kde-format
 #| msgid "Alarm"
 msgid "alarm"
 msgstr "Budík"
 
-#: qml/alarm/AlarmListPage.qml:120
+#: qml/alarm/AlarmListPage.qml:119
 #, kde-format
 msgid "Deleted %1"
 msgstr "Vymazané %1"
@@ -391,7 +391,7 @@ msgstr "Spustiť"
 msgid "Lap"
 msgstr "Kolo"
 
-#: qml/stopwatch/StopwatchPage.qml:239
+#: qml/stopwatch/StopwatchPage.qml:238
 #, kde-format
 msgid "#%1"
 msgstr ""
@@ -543,13 +543,13 @@ msgid ""
 "functionality."
 msgstr ""
 
-#: qml/timer/TimerListPage.qml:85
+#: qml/timer/TimerListPage.qml:84
 #, fuzzy, kde-format
 #| msgid "No alarms configured"
 msgid "No timers configured"
 msgstr "Nie sú nakonfigurované žiadne alarmy"
 
-#: qml/timer/TimerListPage.qml:90
+#: qml/timer/TimerListPage.qml:89
 #, fuzzy, kde-format
 #| msgid "Add a timer"
 msgid "Add timer"

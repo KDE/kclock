@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-08 00:49+0000\n"
-"PO-Revision-Date: 2022-11-08 10:51+0100\n"
+"POT-Creation-Date: 2022-11-10 00:48+0000\n"
+"PO-Revision-Date: 2022-11-09 08:35+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -227,12 +227,12 @@ msgstr "Ni nastavljenih alarmov"
 msgid "Add alarm"
 msgstr "Dodaj alarm"
 
-#: qml/alarm/AlarmListPage.qml:120
+#: qml/alarm/AlarmListPage.qml:119
 #, kde-format
 msgid "alarm"
 msgstr "alarm"
 
-#: qml/alarm/AlarmListPage.qml:120
+#: qml/alarm/AlarmListPage.qml:119
 #, kde-format
 msgid "Deleted %1"
 msgstr "Zbrisano %1"
@@ -374,7 +374,7 @@ msgstr "Začetek"
 msgid "Lap"
 msgstr "Krog"
 
-#: qml/stopwatch/StopwatchPage.qml:239
+#: qml/stopwatch/StopwatchPage.qml:238
 #, kde-format
 msgid "#%1"
 msgstr "#%1"
@@ -519,12 +519,12 @@ msgstr ""
 "Demona clock ni bilo mogoče najti. Zaženite kclockd, da bi imeli zmožnost "
 "merilnika časa."
 
-#: qml/timer/TimerListPage.qml:85
+#: qml/timer/TimerListPage.qml:84
 #, kde-format
 msgid "No timers configured"
 msgstr "Ni nastavljenih merilnikov časa"
 
-#: qml/timer/TimerListPage.qml:90
+#: qml/timer/TimerListPage.qml:89
 #, kde-format
 msgid "Add timer"
 msgstr "Dodaj merilnik časa"
