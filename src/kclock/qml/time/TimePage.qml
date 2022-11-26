@@ -18,7 +18,7 @@ import kclock 1.0
 Kirigami.ScrollablePage {
     id: root
     
-    property int yTranslate: 0
+    property real yTranslate: 0
 
     property int clockRadius: Kirigami.Units.gridUnit * 4
 

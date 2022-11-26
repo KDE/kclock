@@ -16,7 +16,7 @@ import kclock 1.0
 Kirigami.ScrollablePage {
     id: root
     
-    property int yTranslate: 0
+    property real yTranslate: 0
     
     title: i18n("Settings")
     icon.name: "settings-configure"

@@ -18,7 +18,7 @@ import kclock 1.0
 Kirigami.ScrollablePage {
     id: stopwatchpage
     
-    property int yTranslate
+    property real yTranslate
     
     title: i18n("Stopwatch")
     icon.name: "chronometer"
