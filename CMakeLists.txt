@@ -55,10 +55,9 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     Notifications
     DBusAddons
 )
+find_package(KF5KirigamiAddons 0.6 REQUIRED)
 
 find_package(Qt${QT_MAJOR_VERSION}QuickCompiler)
-
-ecm_find_qmlmodule(org.kde.kirigamiaddons.dateandtime 0.1)
 
 ki18n_install(po)
 
