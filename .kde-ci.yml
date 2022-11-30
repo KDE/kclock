@@ -12,3 +12,4 @@ Dependencies:
     'frameworks/kirigami': '@stable'
     'frameworks/kdbusaddons': '@stable'
     'frameworks/knotifications': '@stable'
+    'libraries/kirigami-addons': '@latest'
