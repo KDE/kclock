@@ -17,7 +17,7 @@ Kirigami.ApplicationWindow {
     // needs to work with 360x720 (+ panel heights)
     minimumWidth: 300
     minimumHeight: minimumWidth + 1
-    width: Kirigami.Settings.isMobile ? 360 : 650
+    width: Kirigami.Settings.isMobile ? 360 : 550
     height: Kirigami.Settings.isMobile ? 720 : 500
 
     title: i18n("Clock")
