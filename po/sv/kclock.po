@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-10 00:48+0000\n"
+"POT-Creation-Date: 2022-12-12 00:49+0000\n"
 "PO-Revision-Date: 2022-09-28 16:55+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -190,7 +190,7 @@ msgid "Delete"
 msgstr "Ta bort"
 
 #: qml/alarm/AlarmListPage.qml:25 qml/components/BottomToolbar.qml:115
-#: qml/components/Sidebar.qml:115
+#: qml/components/Sidebar.qml:108
 #, kde-format
 msgid "Alarms"
 msgstr "Alarm"
@@ -200,7 +200,7 @@ msgstr "Alarm"
 msgid "Edit"
 msgstr "Redigera"
 
-#: qml/alarm/AlarmListPage.qml:47 qml/components/Sidebar.qml:139
+#: qml/alarm/AlarmListPage.qml:47 qml/components/Sidebar.qml:135
 #: qml/settings/SettingsPage.qml:21 qml/stopwatch/StopwatchPage.qml:70
 #: qml/time/TimePage.qml:60 qml/timer/TimerListPage.qml:37
 #, kde-format
@@ -279,28 +279,23 @@ msgstr "Ljudfiler (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 msgid "All files (*)"
 msgstr "Alla filer (*)"
 
-#: qml/components/BottomToolbar.qml:85 qml/components/Sidebar.qml:58
+#: qml/components/BottomToolbar.qml:85 qml/components/Sidebar.qml:54
 #: qml/time/TimePage.qml:25
 #, kde-format
 msgid "Time"
 msgstr "Tid"
 
-#: qml/components/BottomToolbar.qml:95 qml/components/Sidebar.qml:77
+#: qml/components/BottomToolbar.qml:95 qml/components/Sidebar.qml:72
 #: qml/timer/TimerListPage.qml:21
 #, kde-format
 msgid "Timers"
 msgstr "Tidtagare"
 
-#: qml/components/BottomToolbar.qml:105 qml/components/Sidebar.qml:96
+#: qml/components/BottomToolbar.qml:105 qml/components/Sidebar.qml:90
 #: qml/stopwatch/StopwatchPage.qml:23
 #, kde-format
 msgid "Stopwatch"
 msgstr "Tidtagarur"
-
-#: qml/components/Sidebar.qml:38 qml/main.qml:23
-#, kde-format
-msgid "Clock"
-msgstr "Klocka"
 
 #: qml/components/TimePicker.qml:70
 #, kde-format
@@ -311,6 +306,11 @@ msgstr "FM"
 #, kde-format
 msgid "PM"
 msgstr "EM"
+
+#: qml/main.qml:23
+#, kde-format
+msgid "Clock"
+msgstr "Klocka"
 
 #: qml/settings/SettingsPage.qml:43
 #, kde-format

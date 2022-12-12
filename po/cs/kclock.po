@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-10 00:48+0000\n"
+"POT-Creation-Date: 2022-12-12 00:49+0000\n"
 "PO-Revision-Date: 2022-02-28 10:50+0100\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -191,7 +191,7 @@ msgid "Delete"
 msgstr "Smazat"
 
 #: qml/alarm/AlarmListPage.qml:25 qml/components/BottomToolbar.qml:115
-#: qml/components/Sidebar.qml:115
+#: qml/components/Sidebar.qml:108
 #, kde-format
 msgid "Alarms"
 msgstr "Alarmy"
@@ -201,7 +201,7 @@ msgstr "Alarmy"
 msgid "Edit"
 msgstr "Upravit"
 
-#: qml/alarm/AlarmListPage.qml:47 qml/components/Sidebar.qml:139
+#: qml/alarm/AlarmListPage.qml:47 qml/components/Sidebar.qml:135
 #: qml/settings/SettingsPage.qml:21 qml/stopwatch/StopwatchPage.qml:70
 #: qml/time/TimePage.qml:60 qml/timer/TimerListPage.qml:37
 #, kde-format
@@ -280,28 +280,23 @@ msgstr ""
 msgid "All files (*)"
 msgstr "Všechny soubory (*)"
 
-#: qml/components/BottomToolbar.qml:85 qml/components/Sidebar.qml:58
+#: qml/components/BottomToolbar.qml:85 qml/components/Sidebar.qml:54
 #: qml/time/TimePage.qml:25
 #, kde-format
 msgid "Time"
 msgstr "Čas"
 
-#: qml/components/BottomToolbar.qml:95 qml/components/Sidebar.qml:77
+#: qml/components/BottomToolbar.qml:95 qml/components/Sidebar.qml:72
 #: qml/timer/TimerListPage.qml:21
 #, kde-format
 msgid "Timers"
 msgstr "Časovače"
 
-#: qml/components/BottomToolbar.qml:105 qml/components/Sidebar.qml:96
+#: qml/components/BottomToolbar.qml:105 qml/components/Sidebar.qml:90
 #: qml/stopwatch/StopwatchPage.qml:23
 #, kde-format
 msgid "Stopwatch"
 msgstr "Stopky"
-
-#: qml/components/Sidebar.qml:38 qml/main.qml:23
-#, kde-format
-msgid "Clock"
-msgstr "Hodiny"
 
 #: qml/components/TimePicker.qml:70
 #, kde-format
@@ -312,6 +307,11 @@ msgstr "dop."
 #, kde-format
 msgid "PM"
 msgstr "odp."
+
+#: qml/main.qml:23
+#, kde-format
+msgid "Clock"
+msgstr "Hodiny"
 
 #: qml/settings/SettingsPage.qml:43
 #, kde-format

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-10 00:48+0000\n"
+"POT-Creation-Date: 2022-12-12 00:49+0000\n"
 "PO-Revision-Date: 2021-12-28 16:16+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -196,7 +196,7 @@ msgid "Delete"
 msgstr "Удалить"
 
 #: qml/alarm/AlarmListPage.qml:25 qml/components/BottomToolbar.qml:115
-#: qml/components/Sidebar.qml:115
+#: qml/components/Sidebar.qml:108
 #, kde-format
 msgid "Alarms"
 msgstr "Напоминания"
@@ -206,7 +206,7 @@ msgstr "Напоминания"
 msgid "Edit"
 msgstr "Изменить"
 
-#: qml/alarm/AlarmListPage.qml:47 qml/components/Sidebar.qml:139
+#: qml/alarm/AlarmListPage.qml:47 qml/components/Sidebar.qml:135
 #: qml/settings/SettingsPage.qml:21 qml/stopwatch/StopwatchPage.qml:70
 #: qml/time/TimePage.qml:60 qml/timer/TimerListPage.qml:37
 #, kde-format
@@ -287,28 +287,23 @@ msgstr ""
 msgid "All files (*)"
 msgstr ""
 
-#: qml/components/BottomToolbar.qml:85 qml/components/Sidebar.qml:58
+#: qml/components/BottomToolbar.qml:85 qml/components/Sidebar.qml:54
 #: qml/time/TimePage.qml:25
 #, fuzzy, kde-format
 msgid "Time"
 msgstr "Время"
 
-#: qml/components/BottomToolbar.qml:95 qml/components/Sidebar.qml:77
+#: qml/components/BottomToolbar.qml:95 qml/components/Sidebar.qml:72
 #: qml/timer/TimerListPage.qml:21
 #, kde-format
 msgid "Timers"
 msgstr "Таймеры"
 
-#: qml/components/BottomToolbar.qml:105 qml/components/Sidebar.qml:96
+#: qml/components/BottomToolbar.qml:105 qml/components/Sidebar.qml:90
 #: qml/stopwatch/StopwatchPage.qml:23
 #, kde-format
 msgid "Stopwatch"
 msgstr "Секундомер"
-
-#: qml/components/Sidebar.qml:38 qml/main.qml:23
-#, kde-format
-msgid "Clock"
-msgstr "Часы"
 
 #: qml/components/TimePicker.qml:70
 #, kde-format
@@ -319,6 +314,11 @@ msgstr ""
 #, kde-format
 msgid "PM"
 msgstr ""
+
+#: qml/main.qml:23
+#, kde-format
+msgid "Clock"
+msgstr "Часы"
 
 #: qml/settings/SettingsPage.qml:43
 #, fuzzy, kde-format
