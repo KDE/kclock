@@ -70,4 +70,5 @@ Icon=org.kde.kclock
 Type=Application
 Terminal=false
 Categories=Qt;KDE;Utility;
+Keywords=kclock;timer;stopwatch;alarm;timezone;time zone;world clock;
 X-KDE-FormFactor=desktop;tablet;handset;
