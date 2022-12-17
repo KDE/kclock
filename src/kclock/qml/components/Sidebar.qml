@@ -13,7 +13,7 @@ import org.kde.kirigami 2.20 as Kirigami
 Kirigami.OverlayDrawer {
     id: drawer
     modal: false
-    width: 90
+    width: 100
     height: applicationWindow().height
     
     Kirigami.Theme.colorSet: Kirigami.Theme.Window
@@ -121,7 +121,6 @@ Kirigami.OverlayDrawer {
             
         Kirigami.Separator {
             Layout.fillWidth: true
-            Layout.bottomMargin: Kirigami.Units.smallSpacing
             Layout.rightMargin: Kirigami.Units.smallSpacing
             Layout.leftMargin: Kirigami.Units.smallSpacing
         }
