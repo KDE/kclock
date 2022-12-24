@@ -32,12 +32,6 @@
             ]
         },
         {
-            "name": "kirigamiaddons",
-            "config-opts": [ "-DBUILD_TESTING=OFF" ],
-            "buildsystem": "cmake-ninja",
-            "sources": [ { "type": "git", "url": "https://invent.kde.org/libraries/kirigami-addons.git", "branch": "master" } ]
-        },
-        {
             "name": "sound-theme-freedesktop",
             "sources": [
                 {
@@ -46,6 +40,24 @@
                     "sha256": "cb518b20eef05ec2e82dda1fa89a292c1760dc023aba91b8aa69bafac85e8a14"
                 }
             ]
+        },
+        {
+            "name": "plasma-mobile-sounds",
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.kde.org/stable/plasma-mobile-sounds/0.1/plasma-mobile-sounds-0.1.tar.xz",
+                    "sha256": "f1aed3ddd1de209e0d60df54e968b141b4c868ff0c4706dedb85e4cce29f26af"
+                }
+            ]
+        },
+        {
+            "name": "kirigamiaddons",
+            "config-opts": [ "-DBUILD_TESTING=OFF" ],
+            "buildsystem": "cmake-ninja",
+            "sources": [ { "type": "git", "url": "https://invent.kde.org/libraries/kirigami-addons.git", "branch": "master" } ]
         },
         {
             "name": "kclock",
