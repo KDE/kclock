@@ -33,6 +33,7 @@ Name[tr]=KClock_KWeather_3x3
 Name[uk]=KClock_KWeather_3x3
 Name[x-test]=xxKClock_KWeather_3x3xx
 Name[zh_CN]=KClock_KWeather_3x3
+Name[zh_TW]=KClock_KWeather_3x3
 Comment=KClock widget (3x3 with Weather info)
 Comment[ar]=ودجة الساعة (٣×٣ مع معلومات الطقس)
 Comment[ca]=Giny del KClock (3x3 amb informació meteorològica)
@@ -64,6 +65,7 @@ Comment[tr]=KClock widget (3x3, hava durumu bilgisiyle)
 Comment[uk]=Віджет KClock (3x3 із даними щодо погоди)
 Comment[x-test]=xxKClock widget (3x3 with Weather info)xx
 Comment[zh_CN]=KClock 挂件 (3x3 包含天气信息)
+Comment[zh_TW]=KClock 元件 (3x3 包含天氣資訊)
 
 
 Icon=kclock
