@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-25 00:51+0000\n"
+"POT-Creation-Date: 2022-12-31 00:53+0000\n"
 "PO-Revision-Date: 2022-09-24 16:10+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -300,6 +300,56 @@ msgstr "Minuteurs"
 #, kde-format
 msgid "Stopwatch"
 msgstr "Chronomètre"
+
+#: qml/components/formatUtil.js:11
+#, kde-format
+msgid "Only once"
+msgstr "Une fois seulement"
+
+#: qml/components/formatUtil.js:16
+#, kde-format
+msgid "Everyday"
+msgstr "Tous les jours"
+
+#: qml/components/formatUtil.js:19
+#, kde-format
+msgid "Weekdays"
+msgstr "Jours ouvrables"
+
+#: qml/components/formatUtil.js:22
+#, kde-format
+msgid "Mon, "
+msgstr ""
+
+#: qml/components/formatUtil.js:23
+#, kde-format
+msgid "Tue, "
+msgstr ""
+
+#: qml/components/formatUtil.js:24
+#, kde-format
+msgid "Wed, "
+msgstr ""
+
+#: qml/components/formatUtil.js:25
+#, kde-format
+msgid "Thu, "
+msgstr ""
+
+#: qml/components/formatUtil.js:26
+#, kde-format
+msgid "Fri, "
+msgstr ""
+
+#: qml/components/formatUtil.js:27
+#, kde-format
+msgid "Sat, "
+msgstr ""
+
+#: qml/components/formatUtil.js:28
+#, kde-format
+msgid "Sun, "
+msgstr ""
 
 #: qml/components/TimePicker.qml:70
 #, kde-format
@@ -657,15 +707,6 @@ msgstr "L'alarme sera déclenchée dans %1"
 
 #~ msgid "© 2020 Plasma Development Team"
 #~ msgstr "© 2020 L'équipe de développement de Plasma"
-
-#~ msgid "Only once"
-#~ msgstr "Une fois seulement"
-
-#~ msgid "Everyday"
-#~ msgstr "Tous les jours"
-
-#~ msgid "Weekdays"
-#~ msgstr "Jours ouvrables"
 
 #~ msgid "Alarm Volume"
 #~ msgstr "Volume de l'alarme"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-25 00:51+0000\n"
+"POT-Creation-Date: 2022-12-31 00:53+0000\n"
 "PO-Revision-Date: 2022-10-12 10:06+0200\n"
 "Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -301,6 +301,56 @@ msgstr "Zeitmesser"
 #, kde-format
 msgid "Stopwatch"
 msgstr "Stoppuhr"
+
+#: qml/components/formatUtil.js:11
+#, kde-format
+msgid "Only once"
+msgstr "Nur einmal"
+
+#: qml/components/formatUtil.js:16
+#, kde-format
+msgid "Everyday"
+msgstr "Jeden Tag"
+
+#: qml/components/formatUtil.js:19
+#, kde-format
+msgid "Weekdays"
+msgstr "Wochentage"
+
+#: qml/components/formatUtil.js:22
+#, kde-format
+msgid "Mon, "
+msgstr ""
+
+#: qml/components/formatUtil.js:23
+#, kde-format
+msgid "Tue, "
+msgstr ""
+
+#: qml/components/formatUtil.js:24
+#, kde-format
+msgid "Wed, "
+msgstr ""
+
+#: qml/components/formatUtil.js:25
+#, kde-format
+msgid "Thu, "
+msgstr ""
+
+#: qml/components/formatUtil.js:26
+#, kde-format
+msgid "Fri, "
+msgstr ""
+
+#: qml/components/formatUtil.js:27
+#, kde-format
+msgid "Sat, "
+msgstr ""
+
+#: qml/components/formatUtil.js:28
+#, kde-format
+msgid "Sun, "
+msgstr ""
 
 #: qml/components/TimePicker.qml:70
 #, kde-format
@@ -646,15 +696,6 @@ msgstr "Alarm wird in %1 klingeln"
 
 #~ msgid "Don't use PowerDevil for alarms if it is available"
 #~ msgstr "PowerDevil, sofern vorhanden, nicht für Erinnerungen benutzen."
-
-#~ msgid "Only once"
-#~ msgstr "Nur einmal"
-
-#~ msgid "Everyday"
-#~ msgstr "Jeden Tag"
-
-#~ msgid "Weekdays"
-#~ msgstr "Wochentage"
 
 #~ msgid "Volume: "
 #~ msgstr "Lautstärke: "

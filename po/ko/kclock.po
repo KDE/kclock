@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-25 00:51+0000\n"
+"POT-Creation-Date: 2022-12-31 00:53+0000\n"
 "PO-Revision-Date: 2022-04-15 23:10+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -312,6 +312,56 @@ msgstr "타이머"
 #, kde-format
 msgid "Stopwatch"
 msgstr "초시계"
+
+#: qml/components/formatUtil.js:11
+#, kde-format
+msgid "Only once"
+msgstr "한 번만"
+
+#: qml/components/formatUtil.js:16
+#, kde-format
+msgid "Everyday"
+msgstr "매일"
+
+#: qml/components/formatUtil.js:19
+#, kde-format
+msgid "Weekdays"
+msgstr "업무일"
+
+#: qml/components/formatUtil.js:22
+#, kde-format
+msgid "Mon, "
+msgstr ""
+
+#: qml/components/formatUtil.js:23
+#, kde-format
+msgid "Tue, "
+msgstr ""
+
+#: qml/components/formatUtil.js:24
+#, kde-format
+msgid "Wed, "
+msgstr ""
+
+#: qml/components/formatUtil.js:25
+#, kde-format
+msgid "Thu, "
+msgstr ""
+
+#: qml/components/formatUtil.js:26
+#, kde-format
+msgid "Fri, "
+msgstr ""
+
+#: qml/components/formatUtil.js:27
+#, kde-format
+msgid "Sat, "
+msgstr ""
+
+#: qml/components/formatUtil.js:28
+#, kde-format
+msgid "Sun, "
+msgstr ""
 
 #: qml/components/TimePicker.qml:70
 #, kde-format
@@ -682,15 +732,6 @@ msgstr "%1 후에 알람이 울립니다"
 #~ "Allow the clock process to be in the background and launched on startup."
 #~ msgstr ""
 #~ "시계 프로세스가 시동 시 실행되고 백그라운드에 머물 수 있도록 허용합니다."
-
-#~ msgid "Only once"
-#~ msgstr "한 번만"
-
-#~ msgid "Everyday"
-#~ msgstr "매일"
-
-#~ msgid "Weekdays"
-#~ msgstr "업무일"
 
 #~ msgid "Alarm Volume"
 #~ msgstr "알람 음량"

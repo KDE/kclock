@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-25 00:51+0000\n"
+"POT-Creation-Date: 2022-12-31 00:53+0000\n"
 "PO-Revision-Date: 2021-06-12 21:25+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -309,6 +309,56 @@ msgstr "Χρονόμετρα"
 #, kde-format
 msgid "Stopwatch"
 msgstr "Χρονόμετρο"
+
+#: qml/components/formatUtil.js:11
+#, kde-format
+msgid "Only once"
+msgstr "Μόνο μία φορά"
+
+#: qml/components/formatUtil.js:16
+#, kde-format
+msgid "Everyday"
+msgstr "Κάθε μέρα"
+
+#: qml/components/formatUtil.js:19
+#, kde-format
+msgid "Weekdays"
+msgstr "Καθημερινές"
+
+#: qml/components/formatUtil.js:22
+#, kde-format
+msgid "Mon, "
+msgstr ""
+
+#: qml/components/formatUtil.js:23
+#, kde-format
+msgid "Tue, "
+msgstr ""
+
+#: qml/components/formatUtil.js:24
+#, kde-format
+msgid "Wed, "
+msgstr ""
+
+#: qml/components/formatUtil.js:25
+#, kde-format
+msgid "Thu, "
+msgstr ""
+
+#: qml/components/formatUtil.js:26
+#, kde-format
+msgid "Fri, "
+msgstr ""
+
+#: qml/components/formatUtil.js:27
+#, kde-format
+msgid "Sat, "
+msgstr ""
+
+#: qml/components/formatUtil.js:28
+#, kde-format
+msgid "Sun, "
+msgstr ""
 
 #: qml/components/TimePicker.qml:70
 #, kde-format
@@ -676,15 +726,6 @@ msgstr "Ο συναγερμός θα ηχήσει μετά από %1"
 #~ msgid "Don't use PowerDevil for alarms if it is available"
 #~ msgstr ""
 #~ "Να μη χρησιμοποιείται το PowerDevil για συναγερμούς αν είναι διαθέσιμο"
-
-#~ msgid "Only once"
-#~ msgstr "Μόνο μία φορά"
-
-#~ msgid "Everyday"
-#~ msgstr "Κάθε μέρα"
-
-#~ msgid "Weekdays"
-#~ msgstr "Καθημερινές"
 
 #~ msgid "Alarm Volume"
 #~ msgstr "Ένταση συναγερμού"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-25 00:51+0000\n"
+"POT-Creation-Date: 2022-12-31 00:53+0000\n"
 "PO-Revision-Date: 2022-01-03 09:31-0800\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -309,6 +309,56 @@ msgstr "ਟਾਈਮਰ"
 #, kde-format
 msgid "Stopwatch"
 msgstr "ਸਟਾਪ-ਵਾਚ"
+
+#: qml/components/formatUtil.js:11
+#, kde-format
+msgid "Only once"
+msgstr "ਸਿਰਫ਼ ਇੱਕ ਵਾਰ"
+
+#: qml/components/formatUtil.js:16
+#, kde-format
+msgid "Everyday"
+msgstr "ਹਰ ਰੋਜ਼"
+
+#: qml/components/formatUtil.js:19
+#, kde-format
+msgid "Weekdays"
+msgstr "ਹਫ਼ਤੇਵਾਰ"
+
+#: qml/components/formatUtil.js:22
+#, kde-format
+msgid "Mon, "
+msgstr ""
+
+#: qml/components/formatUtil.js:23
+#, kde-format
+msgid "Tue, "
+msgstr ""
+
+#: qml/components/formatUtil.js:24
+#, kde-format
+msgid "Wed, "
+msgstr ""
+
+#: qml/components/formatUtil.js:25
+#, kde-format
+msgid "Thu, "
+msgstr ""
+
+#: qml/components/formatUtil.js:26
+#, kde-format
+msgid "Fri, "
+msgstr ""
+
+#: qml/components/formatUtil.js:27
+#, kde-format
+msgid "Sat, "
+msgstr ""
+
+#: qml/components/formatUtil.js:28
+#, kde-format
+msgid "Sun, "
+msgstr ""
 
 #: qml/components/TimePicker.qml:70
 #, kde-format
@@ -682,15 +732,6 @@ msgstr "ਅਲਾਰਮ %1 ਬਾਅਦ ਵੱਜੇਗਾ"
 
 #~ msgid "© 2020 Plasma Development Team"
 #~ msgstr "© 2020 ਪਲਾਜ਼ਮਾ ਡਿਵੈਲਪਮੈਂਟ ਟੀਮ"
-
-#~ msgid "Only once"
-#~ msgstr "ਸਿਰਫ਼ ਇੱਕ ਵਾਰ"
-
-#~ msgid "Everyday"
-#~ msgstr "ਹਰ ਰੋਜ਼"
-
-#~ msgid "Weekdays"
-#~ msgstr "ਹਫ਼ਤੇਵਾਰ"
 
 #~ msgid "Alarm Volume"
 #~ msgstr "ਅਲਾਰਮ ਦੀ ਆਵਾਜ਼"
