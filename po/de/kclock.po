@@ -303,17 +303,20 @@ msgid "Stopwatch"
 msgstr "Stoppuhr"
 
 #: qml/components/formatUtil.js:11
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Only once"
 msgid "Only once"
 msgstr "Nur einmal"
 
 #: qml/components/formatUtil.js:16
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Everyday"
 msgid "Everyday"
 msgstr "Jeden Tag"
 
 #: qml/components/formatUtil.js:19
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Weekdays"
 msgid "Weekdays"
 msgstr "Wochentage"
 
