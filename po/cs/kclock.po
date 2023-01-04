@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-31 00:53+0000\n"
-"PO-Revision-Date: 2022-02-28 10:50+0100\n"
-"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"PO-Revision-Date: 2022-11-08 16:44+0100\n"
+"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 21.12.2\n"
+"X-Generator: Lokalize 22.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -83,7 +83,7 @@ msgstr "Nic"
 #: qml/timer/TimerComponent.qml:147
 #, kde-format
 msgid "1 minute"
-msgstr ""
+msgstr "1 minuta"
 
 #: qml/alarm/AlarmForm.qml:132 qml/alarm/AlarmForm.qml:173
 #, kde-format
@@ -98,32 +98,32 @@ msgstr ""
 #: qml/alarm/AlarmForm.qml:141 qml/alarm/AlarmForm.qml:178
 #, kde-format
 msgid "2 minutes"
-msgstr ""
+msgstr "2 minuty"
 
 #: qml/alarm/AlarmForm.qml:142 qml/alarm/AlarmForm.qml:179
 #, kde-format
 msgid "5 minutes"
-msgstr ""
+msgstr "5 minut"
 
 #: qml/alarm/AlarmForm.qml:143 qml/alarm/AlarmForm.qml:180
 #, kde-format
 msgid "10 minutes"
-msgstr ""
+msgstr "10 minut"
 
 #: qml/alarm/AlarmForm.qml:144 qml/alarm/AlarmForm.qml:181
 #, kde-format
 msgid "15 minutes"
-msgstr ""
+msgstr "15 minut"
 
 #: qml/alarm/AlarmForm.qml:145 qml/alarm/AlarmForm.qml:182
 #, kde-format
 msgid "30 minutes"
-msgstr ""
+msgstr "30 minut"
 
 #: qml/alarm/AlarmForm.qml:146 qml/alarm/AlarmForm.qml:183
 #, kde-format
 msgid "1 hour"
-msgstr ""
+msgstr "1 hodina"
 
 #: qml/alarm/AlarmForm.qml:171
 #, kde-format
@@ -154,7 +154,7 @@ msgstr "Alarm"
 #, kde-format
 msgctxt "Edit alarm page title"
 msgid "Editing %1"
-msgstr ""
+msgstr "Úprava %1"
 
 #: qml/alarm/AlarmFormPage.qml:28 qml/alarm/AlarmListPage.qml:30
 #, kde-format
@@ -233,7 +233,7 @@ msgstr ""
 #: qml/alarm/AlarmListPage.qml:119
 #, kde-format
 msgid "Deleted %1"
-msgstr ""
+msgstr "Smazáno %1"
 
 #: qml/alarm/AlarmRingingPopup.qml:27
 #, kde-format
@@ -273,7 +273,7 @@ msgstr ""
 #: qml/alarm/SoundPickerPage.qml:177
 #, kde-format
 msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
-msgstr ""
+msgstr "Audio soubory (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 
 #: qml/alarm/SoundPickerPage.qml:177
 #, kde-format
@@ -376,7 +376,7 @@ msgstr ""
 #: qml/settings/SettingsPage.qml:48 qml/settings/SettingsPage.qml:61
 #, kde-format
 msgid "Use System Default"
-msgstr ""
+msgstr "Použít výchozí systémový"
 
 #: qml/settings/SettingsPage.qml:50 qml/settings/SettingsPage.qml:62
 #, kde-format
@@ -425,7 +425,7 @@ msgstr ""
 #: qml/stopwatch/StopwatchPage.qml:238
 #, kde-format
 msgid "#%1"
-msgstr ""
+msgstr "#%1"
 
 #: qml/time/AddLocationListView.qml:52
 #, kde-format
@@ -450,32 +450,32 @@ msgstr ""
 #: qml/timer/PresetDurationButton.qml:23 qml/timer/TimerForm.qml:39
 #, kde-format
 msgid "1 m"
-msgstr ""
+msgstr "1 m"
 
 #: qml/timer/TimerForm.qml:47
 #, kde-format
 msgid "5 m"
-msgstr ""
+msgstr "5 m"
 
 #: qml/timer/TimerForm.qml:55
 #, kde-format
 msgid "10 m"
-msgstr ""
+msgstr "10 m"
 
 #: qml/timer/TimerForm.qml:67
 #, kde-format
 msgid "15 m"
-msgstr ""
+msgstr "15 m"
 
 #: qml/timer/TimerForm.qml:75
 #, kde-format
 msgid "30 m"
-msgstr ""
+msgstr "30 m"
 
 #: qml/timer/TimerForm.qml:83
 #, kde-format
 msgid "1 h"
-msgstr ""
+msgstr "1 h"
 
 #: qml/timer/TimerForm.qml:95
 #, kde-format
@@ -500,7 +500,7 @@ msgstr "sekund"
 #: qml/timer/TimerForm.qml:132
 #, kde-format
 msgid "<b>Label:</b>"
-msgstr ""
+msgstr "<b>Popisek:</b>"
 
 #: qml/timer/TimerForm.qml:133
 #, kde-format
@@ -525,7 +525,7 @@ msgstr ""
 #: qml/timer/TimerForm.qml:157
 #, kde-format
 msgid "Show Presets"
-msgstr ""
+msgstr "Zobrazit předvolby"
 
 #: qml/timer/TimerForm.qml:162
 #, kde-format
@@ -583,7 +583,7 @@ msgstr ""
 #: qml/timer/TimerRingingPopup.qml:27
 #, kde-format
 msgid "Timer has finished"
-msgstr ""
+msgstr "Časovač skončil"
 
 #: qml/timer/TimerRingingPopup.qml:46
 #, kde-format
