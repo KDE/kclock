@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-31 00:53+0000\n"
-"PO-Revision-Date: 2022-09-19 10:48+0100\n"
+"PO-Revision-Date: 2023-01-09 18:38+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-POFile-SpellExtra: Devin Lin PowerDevil Han Young Kirigami mp aac flac\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-POFile-SpellExtra: webm mka kclockd AM PM\n"
+"X-POFile-SpellExtra: webm mka kclockd AM PM Seg Qua Qui Sex Sáb\n"
 "X-POFile-IgnoreConsistency: Ring Duration:\n"
 
 #, kde-format
@@ -301,52 +301,52 @@ msgstr "Cronómetro"
 #: qml/components/formatUtil.js:11
 #, kde-format
 msgid "Only once"
-msgstr ""
+msgstr "Apenas uma vez"
 
 #: qml/components/formatUtil.js:16
 #, kde-format
 msgid "Everyday"
-msgstr ""
+msgstr "Todos os dias"
 
 #: qml/components/formatUtil.js:19
 #, kde-format
 msgid "Weekdays"
-msgstr ""
+msgstr "Dias da semana"
 
 #: qml/components/formatUtil.js:22
 #, kde-format
 msgid "Mon, "
-msgstr ""
+msgstr "Seg, "
 
 #: qml/components/formatUtil.js:23
 #, kde-format
 msgid "Tue, "
-msgstr ""
+msgstr "Ter, "
 
 #: qml/components/formatUtil.js:24
 #, kde-format
 msgid "Wed, "
-msgstr ""
+msgstr "Qua, "
 
 #: qml/components/formatUtil.js:25
 #, kde-format
 msgid "Thu, "
-msgstr ""
+msgstr "Qui, "
 
 #: qml/components/formatUtil.js:26
 #, kde-format
 msgid "Fri, "
-msgstr ""
+msgstr "Sex, "
 
 #: qml/components/formatUtil.js:27
 #, kde-format
 msgid "Sat, "
-msgstr ""
+msgstr "Sáb, "
 
 #: qml/components/formatUtil.js:28
 #, kde-format
 msgid "Sun, "
-msgstr ""
+msgstr "Dom, "
 
 #: qml/components/TimePicker.qml:70
 #, kde-format
