@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the kclock package.
-# Vit Pelcak <vit@pelcak.org>, 2020, 2021, 2022.
+# Vit Pelcak <vit@pelcak.org>, 2020, 2021, 2022, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-31 00:53+0000\n"
-"PO-Revision-Date: 2022-11-08 16:44+0100\n"
+"PO-Revision-Date: 2023-01-05 13:45+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 22.08.3\n"
+"X-Generator: Lokalize 22.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -65,7 +65,7 @@ msgstr ""
 #: qml/alarm/AlarmForm.qml:116
 #, kde-format
 msgid "Wake Up"
-msgstr ""
+msgstr "Probudit"
 
 #: qml/alarm/AlarmForm.qml:125
 #, kde-format
@@ -143,7 +143,7 @@ msgstr ""
 #: qml/alarm/AlarmForm.qml:214
 #, kde-format
 msgid "Default Sound"
-msgstr ""
+msgstr "Výchozí zvuk"
 
 #: qml/alarm/AlarmFormPage.qml:27 qml/alarm/AlarmRingingPopup.qml:45
 #, kde-format
@@ -223,12 +223,12 @@ msgstr ""
 #: qml/alarm/AlarmListPage.qml:87
 #, kde-format
 msgid "Add alarm"
-msgstr ""
+msgstr "Přidat budík"
 
 #: qml/alarm/AlarmListPage.qml:119
 #, kde-format
 msgid "alarm"
-msgstr ""
+msgstr "Budík"
 
 #: qml/alarm/AlarmListPage.qml:119
 #, kde-format
@@ -301,52 +301,52 @@ msgstr "Stopky"
 #: qml/components/formatUtil.js:11
 #, kde-format
 msgid "Only once"
-msgstr ""
+msgstr "Pouze jednou"
 
 #: qml/components/formatUtil.js:16
 #, kde-format
 msgid "Everyday"
-msgstr ""
+msgstr "Každý den"
 
 #: qml/components/formatUtil.js:19
 #, kde-format
 msgid "Weekdays"
-msgstr ""
+msgstr "Dny týdne"
 
 #: qml/components/formatUtil.js:22
 #, kde-format
 msgid "Mon, "
-msgstr ""
+msgstr "Po, "
 
 #: qml/components/formatUtil.js:23
 #, kde-format
 msgid "Tue, "
-msgstr ""
+msgstr "Út, "
 
 #: qml/components/formatUtil.js:24
 #, kde-format
 msgid "Wed, "
-msgstr ""
+msgstr "St, "
 
 #: qml/components/formatUtil.js:25
 #, kde-format
 msgid "Thu, "
-msgstr ""
+msgstr "Čt, "
 
 #: qml/components/formatUtil.js:26
 #, kde-format
 msgid "Fri, "
-msgstr ""
+msgstr "Pá, "
 
 #: qml/components/formatUtil.js:27
 #, kde-format
 msgid "Sat, "
-msgstr ""
+msgstr "So, "
 
 #: qml/components/formatUtil.js:28
 #, kde-format
 msgid "Sun, "
-msgstr ""
+msgstr "Slunce, "
 
 #: qml/components/TimePicker.qml:70
 #, kde-format
@@ -366,7 +366,7 @@ msgstr "Hodiny"
 #: qml/settings/SettingsPage.qml:43
 #, kde-format
 msgid "Time Format:"
-msgstr ""
+msgstr "Formát času:"
 
 #: qml/settings/SettingsPage.qml:44
 #, kde-format
