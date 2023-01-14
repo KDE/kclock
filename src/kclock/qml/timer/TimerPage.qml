@@ -31,7 +31,7 @@ Kirigami.Page {
     property bool looping: timer ? timer.looping : 0
     property string commandTimeout: timer ? timer.commandTimeout : ""
     property bool isCommandTimeout: commandTimeout.length > 0
-
+    
     // keyboard controls
     Keys.onSpacePressed: timer.toggleRunning();
     Keys.onReturnPressed: timer.toggleRunning();
@@ -135,6 +135,10 @@ Kirigami.Page {
         timerDuration: duration
         timerElapsed: elapsed
         timerRunning: running
+        
+        onRequestAddMinute: {
+            root.timer.addMinute();
+        }
     }
     
     RowLayout {

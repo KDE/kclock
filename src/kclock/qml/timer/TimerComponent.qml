@@ -17,6 +17,8 @@ Rectangle {
     property int timerElapsed
     property bool timerRunning
     
+    signal requestAddMinute()
+    
     color: "transparent"
     
     function getTimeLeft() {
@@ -151,7 +153,7 @@ Rectangle {
         anchors.horizontalCenter: parent.horizontalCenter
         implicitHeight: Kirigami.Units.gridUnit * 2
         onClicked: {
-            timerDelegate.addMinute();
+            root.requestAddMinute();
         }
     }
 }
