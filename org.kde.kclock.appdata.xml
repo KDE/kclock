@@ -405,6 +405,16 @@
   <url type="homepage">https://invent.kde.org/plasma-mobile/kclock</url>
   <url type="bugtracker">https://bugs.kde.org/describecomponents.cgi?product=KClock</url>
   <releases>
+     <release version="23.01" date="2023-01-30">
+      <url>https://plasma-mobile.org/2023/01/30/january-blog-post/</url>
+      <description>
+        <p>New features and bugfixes in this release:</p>
+        <ul>
+          <li>Fixed timer add one minute button.</li>
+          <li>Switched to tab bar based sidebar (similar to bottom navigation bar).</li>
+        </ul>
+      </description>
+    </release>
     <release version="22.11" date="2022-11-30">
       <url>https://plasma-mobile.org/2022/11/30/plasma-mobile-gear-22-11/</url>
     </release>
