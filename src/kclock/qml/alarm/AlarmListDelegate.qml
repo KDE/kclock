@@ -2,6 +2,7 @@
  * Copyright 2019 Nick Reitemeyer <nick.reitemeyer@web.de>
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
  * Copyright 2020-2021 Devin Lin <devin@kde.org>
+ * Copyright 2023 Nate Graham <nate@kde.org>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
@@ -10,14 +11,13 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 
-import org.kde.kirigami 2.12 as Kirigami
+import org.kde.kirigami 2.20 as Kirigami
 
 import "../components/formatUtil.js" as FormatUtil
-import "../components"
 
 import kclock 1.0
 
-ListDelegate {
+Kirigami.BasicListItem {
     id: root
     
     property Alarm alarm
@@ -73,48 +73,31 @@ ListDelegate {
             }
         }
     }
-    
-    // alarm text
-    contentItem: RowLayout {
-        spacing: Kirigami.Units.smallSpacing
 
-        ColumnLayout {
-            Label {
-                font.weight: Font.Light
-                font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 1.75)
-                text: root.formattedTime
-                color: root.enabled ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
-            }
-            
-            RowLayout {
-                spacing: 0
-                Label {
-                    id: alarmName
-                    visible: text !== ""
-                    font.weight: Font.Bold
-                    color: root.enabled ? Kirigami.Theme.activeTextColor : Kirigami.Theme.disabledTextColor
-                    text: root.name
-                }
-                Label {
-                    font.weight: Font.Normal
-                    text: (alarmName.visible ? " - " : "") + FormatUtil.getRepeatFormat(root.daysOfWeek) 
-                    color: root.enabled ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
-                }
-            }
-            
-            Label {
-                visible: root.snoozedLength != 0
-                font.weight: Font.Bold
-                color: Kirigami.Theme.disabledTextColor
-                text: root.snoozedLength === 1 ? i18n("Snoozed %1 minute", root.snoozedLength) : i18n("Snoozed %1 minutes", root.snoozedLength)
-            }
+    label: root.formattedTime
+    subtitle: {
+        let subtitleString = ""
+        if (root.name.length > 0) {
+            subtitleString = subtitleString + root.name + " - ";
         }
 
-        Item { Layout.fillWidth: true }
+        subtitleString += FormatUtil.getRepeatFormat(root.daysOfWeek);
+
+        if (root.snoozedLength > 0) {
+            subtitleString += "\n"
+            subtitleString += i18np("Snoozed %1 minute", "Snoozed %1 minutes", root.snoozedLength);
+        }
+        return subtitleString;
+    }
+
+    bold: true
+    fadeContent: !root.enabled
+
+    trailing: RowLayout {
+        spacing: Kirigami.Units.smallSpacing
         
         Switch {
             id: toggleSwitch
-            Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
             
             // can't use Connections since it conflicts with enabled property
             property bool alarmEnabled: root.enabled
@@ -125,7 +108,6 @@ ListDelegate {
         }
         
         ToolButton {
-            Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
             icon.name: "delete"
             text: i18n("Delete")
             onClicked: root.deleteClicked()

@@ -1,5 +1,6 @@
 /*
  * Copyright 2021 Devin Lin <devin@kde.org>
+ * Copyright 2023 Nate Graham <nate@kde.org>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
@@ -9,9 +10,8 @@ import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.2
 import QtQuick.Shapes 1.12
 
-import org.kde.kirigami 2.15 as Kirigami
+import org.kde.kirigami 2.20 as Kirigami
 
-import "../components"
 import kclock 1.0
 
 ListView {
@@ -55,9 +55,8 @@ ListView {
 
     model: AddLocationSearchModel
     
-    delegate: ListDelegate {
+    delegate: Kirigami.BasicListItem {
         width: root.width
-        showSeparator: model.index != root.count - 1
         
         leftPadding: Kirigami.Units.largeSpacing * (root.addPadding ? 2 : 1)
         rightPadding: Kirigami.Units.largeSpacing * (root.addPadding ? 2 : 1)
@@ -69,23 +68,12 @@ ListView {
             ListView.view.closeRequested();
         }
         
-        contentItem: RowLayout {
-            ColumnLayout {
-                Layout.fillWidth: true
-                spacing: Kirigami.Units.smallSpacing
-                Label {
-                    text: model.city
-                    font.weight: Font.Bold
-                }
-                Label {
-                    text: model.country
-                }
-            }
-            
-            Label {
-                Layout.alignment: Qt.AlignRight
-                text: model.currentTime
-            }
+        label: model.city
+        subtitle: model.country
+        bold: true
+
+        trailing: Label {
+            text: model.currentTime
         }
     }
 }

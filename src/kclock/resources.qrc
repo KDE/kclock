@@ -20,7 +20,6 @@
         <file>qml/components/FooterToolBarButton.qml</file>
         <file>qml/components/FloatingActionButton.qml</file>
         <file>qml/components/formatUtil.js</file>
-        <file>qml/components/ListDelegate.qml</file>
         <file>qml/components/Sidebar.qml</file>
         <file>qml/components/TimePicker.qml</file>
         <file>qml/components/TimePickerSpinBox.qml</file>

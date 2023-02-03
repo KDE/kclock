@@ -114,6 +114,7 @@ Kirigami.ScrollablePage {
             
             onEditClicked: {
                 applicationWindow().pageStack.push(Qt.resolvedUrl("AlarmFormPage.qml"), { selectedAlarm: alarm })
+                alarmsList.currentIndex = -1
             }
             onDeleteClicked: {
                 showPassiveNotification(i18n("Deleted %1", alarm.name == "" ? i18n("alarm") : alarm.name));

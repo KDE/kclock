@@ -1,5 +1,6 @@
 /*
  * SPDX-FileCopyrightText: 2021 Devin Lin <devin@kde.org>
+ * SPDX-FileCopyrightText: 2023 Nate Graham <nate@kde.org>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
@@ -10,10 +11,9 @@ import QtQuick.Layouts 1.2
 import QtQuick.Dialogs 1.3
 import QtMultimedia 5.15
 
-import org.kde.kirigami 2.12 as Kirigami
+import org.kde.kirigami 2.20 as Kirigami
 import org.kde.kirigamiaddons.sounds 0.1 as Sounds
 
-import "../components"
 import kclock 1.0
 
 Kirigami.ScrollablePage {
@@ -54,40 +54,27 @@ Kirigami.ScrollablePage {
             spacing: 0
             
             // choose from file
-            ListDelegate {
+            Kirigami.BasicListItem {
                 Layout.fillWidth: true
-                Layout.preferredHeight: defaultItem.height
-                leftPadding: Kirigami.Units.largeSpacing * 2
-                topPadding: root.delegateVerticalPadding
-                bottomPadding: root.delegateVerticalPadding
-                showSeparator: true
-                 
+                reserveSpaceForSubtitle: true
+                label: i18n("Select from files…")
+
                 onClicked: fileDialog.open()
-                
-                contentItem: RowLayout {
-                    width: listView.width
-                    Label {
-                        Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
-                        text: i18n("Select from files…")
-                    }
-                }
             }
-            
+
             // default sound
-            ListDelegate {
+            Kirigami.BasicListItem {
                 id: defaultItem
-                Layout.fillWidth: true
-                leftPadding: Kirigami.Units.largeSpacing * 2
-                topPadding: root.delegateVerticalPadding
-                bottomPadding: root.delegateVerticalPadding
-                showSeparator: listView.count > 0
-                
                 property string defaultPath: UtilModel.getDefaultAlarmFileLocation()
+                Layout.fillWidth: true
+                reserveSpaceForSubtitle: true
+                label: i18n("Default")
+
                 onClicked: root.alarmForm.formAudioPath = playablePath(replacePrefix(defaultPath));
-                
+
                 Connections {
                     target: root.alarmForm
-                            
+
                     function onFormAudioPathChanged() {
                         radioButton.checked = replacePrefix(root.alarmForm.formAudioPath) == replacePrefix(defaultItem.defaultPath);
                         if (radioButton.checked) {
@@ -95,24 +82,14 @@ Kirigami.ScrollablePage {
                         }
                     }
                 }
-                
-                contentItem: RowLayout {
-                    width: listView.width
-                    
-                    Label {
-                        Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
-                        text: i18n("Default")
-                    }
-                    
-                    RadioButton {
-                        id: radioButton
-                        Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
-                        
-                        checked: replacePrefix(root.alarmForm.formAudioPath) == replacePrefix(defaultItem.defaultPath)
-                        onCheckedChanged: {
-                            if (checked) {
-                                root.alarmForm.formAudioPath = playablePath(replacePrefix(defaultItem.defaultPath));
-                            }
+
+                trailing: RadioButton {
+                    id: radioButton
+
+                    checked: replacePrefix(root.alarmForm.formAudioPath) == replacePrefix(defaultItem.defaultPath)
+                    onCheckedChanged: {
+                        if (checked) {
+                            root.alarmForm.formAudioPath = playablePath(replacePrefix(defaultItem.defaultPath));
                         }
                     }
                 }
@@ -120,16 +97,12 @@ Kirigami.ScrollablePage {
         }
 
         // theme sounds
-        delegate: ListDelegate {
+        delegate: Kirigami.BasicListItem {
             property string sourceUrl: model.sourceUrl
-            
-            showSeparator: index < listView.count - 1
-            
             width: listView.width
-            leftPadding: Kirigami.Units.largeSpacing * 2
-            topPadding: root.delegateVerticalPadding
-            bottomPadding: root.delegateVerticalPadding
-            
+            reserveSpaceForSubtitle: true
+            label: model.ringtoneName
+
             onClicked: root.alarmForm.formAudioPath = playablePath(replacePrefix(sourceUrl));
             
             Connections {
@@ -142,22 +115,14 @@ Kirigami.ScrollablePage {
                     }
                 }
             }
-            
-            contentItem: RowLayout {
-                Label {
-                    Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
-                    text: model.ringtoneName
-                }
-                
-                RadioButton {
-                    id: radioButton
-                    Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
-                    
-                    checked: replacePrefix(root.alarmForm.formAudioPath) == replacePrefix(sourceUrl)
-                    onCheckedChanged: {
-                        if (checked) {
-                            root.alarmForm.formAudioPath = playablePath(replacePrefix(sourceUrl));
-                        }
+
+            trailing: RadioButton {
+                id: radioButton
+
+                checked: replacePrefix(root.alarmForm.formAudioPath) == replacePrefix(sourceUrl)
+                onCheckedChanged: {
+                    if (checked) {
+                        root.alarmForm.formAudioPath = playablePath(replacePrefix(sourceUrl));
                     }
                 }
             }
