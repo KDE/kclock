@@ -1,7 +1,7 @@
 /*
+ * Copyright 2019 Nick Reitemeyer <nick.reitemeyer@web.de>
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
  * Copyright 2020-2021 Devin Lin <devin@kde.org>
- * Copyright 2019 Nick Reitemeyer <nick.reitemeyer@web.de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
