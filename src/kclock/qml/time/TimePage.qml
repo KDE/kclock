@@ -69,9 +69,6 @@ Kirigami.ScrollablePage {
     header: RowLayout {
         id: bigTimeDisplay
         height: clockItemLoader.height + Kirigami.Units.gridUnit * 0.5
-        implicitHeight: height
-        anchors.left: parent.left
-        anchors.right: parent.right
         
         transform: Translate { y: yTranslate }
         
