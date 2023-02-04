@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-14 11:32+0000\n"
+"POT-Creation-Date: 2023-02-04 01:04+0000\n"
 "PO-Revision-Date: 2022-12-31 17:10+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -443,7 +443,7 @@ msgstr "Konum Ekle"
 msgid "Add"
 msgstr "Ekle"
 
-#: qml/time/TimePage.qml:149
+#: qml/time/TimePage.qml:146
 #, kde-format
 msgid "No locations configured"
 msgstr "Yapılandırılan konum yok"

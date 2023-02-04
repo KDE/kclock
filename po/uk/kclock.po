@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-14 11:32+0000\n"
+"POT-Creation-Date: 2023-02-04 01:04+0000\n"
 "PO-Revision-Date: 2022-12-31 09:07+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -446,7 +446,7 @@ msgstr "Додати місце"
 msgid "Add"
 msgstr "Додати"
 
-#: qml/time/TimePage.qml:149
+#: qml/time/TimePage.qml:146
 #, kde-format
 msgid "No locations configured"
 msgstr "Місць не налаштовано"

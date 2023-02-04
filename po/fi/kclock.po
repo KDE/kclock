@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-14 11:32+0000\n"
+"POT-Creation-Date: 2023-02-04 01:04+0000\n"
 "PO-Revision-Date: 2022-04-15 23:10+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -458,7 +458,7 @@ msgstr "Lisää aikavyöhyke"
 msgid "Add"
 msgstr ""
 
-#: qml/time/TimePage.qml:149
+#: qml/time/TimePage.qml:146
 #, fuzzy, kde-format
 #| msgid "No alarms configured"
 msgid "No locations configured"

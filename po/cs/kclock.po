@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-14 11:32+0000\n"
+"POT-Creation-Date: 2023-02-04 01:04+0000\n"
 "PO-Revision-Date: 2023-01-05 13:45+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -442,7 +442,7 @@ msgstr "Přidat umístění"
 msgid "Add"
 msgstr "Přidat"
 
-#: qml/time/TimePage.qml:149
+#: qml/time/TimePage.qml:146
 #, kde-format
 msgid "No locations configured"
 msgstr ""

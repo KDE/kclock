@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-14 11:32+0000\n"
+"POT-Creation-Date: 2023-02-04 01:04+0000\n"
 "PO-Revision-Date: 2022-06-01 15:13+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -456,7 +456,7 @@ msgstr "Adaugă fus orar"
 msgid "Add"
 msgstr ""
 
-#: qml/time/TimePage.qml:149
+#: qml/time/TimePage.qml:146
 #, fuzzy, kde-format
 #| msgid "No alarms configured"
 msgid "No locations configured"
