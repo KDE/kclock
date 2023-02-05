@@ -66,59 +66,6 @@ Kirigami.ScrollablePage {
         active: false
     }
     
-    header: RowLayout {
-        id: bigTimeDisplay
-        height: clockItemLoader.height + Kirigami.Units.gridUnit * 0.5
-        
-        transform: Translate { y: yTranslate }
-        
-        // left side - analog clock
-        Loader {
-            id: clockItemLoader
-            
-            Layout.alignment: Qt.AlignHCenter
-            width: Math.round(clockRadius * 2 + Kirigami.Units.gridUnit * 0.5)
-            height: clockRadius * 2 + Kirigami.Units.gridUnit
-            
-            // reload clock when page opens for animation
-            asynchronous: true
-            Connections {
-                target: applicationWindow().pageStack                
-                function onCurrentItemChanged() {
-                    clockItemLoader.active = applicationWindow().pageStack.currentItem == applicationWindow().getPage("Time");
-                }
-            }
-            
-            // clock item
-            sourceComponent: Item {
-                id: clockItem
-                AnalogClock {
-                    id: analogClock
-                    anchors.centerIn: parent
-                    height: clockRadius * 2 
-                    width: clockRadius * 2
-                }
-            }
-        }
-        
-        // right side - digital clock + location
-        ColumnLayout {
-            Layout.alignment: Qt.AlignHCenter
-            Layout.rightMargin: Kirigami.Units.smallSpacing
-            Label {
-                Layout.alignment: Qt.AlignRight
-                font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 2.8)
-                font.weight: Font.Light
-                text: KClockFormat.currentTime
-            }
-            Label {
-                Layout.alignment: Qt.AlignRight
-                font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 1.2)
-                text: UtilModel.tzName
-                color: Kirigami.Theme.textColor
-            }
-        }
-    }
     
     // time zones
     ListView {
@@ -136,12 +83,64 @@ Kirigami.ScrollablePage {
         displaced: Transition {
             NumberAnimation { properties: "x,y"; duration: Kirigami.Units.longDuration; easing.type: Easing.InOutQuad}
         }
-        
+
+        header: RowLayout {
+            height: clockItemLoader.height + Kirigami.Units.gridUnit * 0.5
+            
+            transform: Translate { y: yTranslate }
+            
+            // left side - analog clock
+            Loader {
+                id: clockItemLoader
+                
+                Layout.alignment: Qt.AlignHCenter
+                width: Math.round(clockRadius * 2 + Kirigami.Units.gridUnit * 0.5)
+                height: clockRadius * 2 + Kirigami.Units.gridUnit
+                
+                // reload clock when page opens for animation
+                asynchronous: true
+                Connections {
+                    target: applicationWindow().pageStack                
+                    function onCurrentItemChanged() {
+                        clockItemLoader.active = applicationWindow().pageStack.currentItem == applicationWindow().getPage("Time");
+                    }
+                }
+                
+                // clock item
+                sourceComponent: Item {
+                    id: clockItem
+                    AnalogClock {
+                        id: analogClock
+                        anchors.centerIn: parent
+                        height: clockRadius * 2 
+                        width: clockRadius * 2
+                    }
+                }
+            }
+            
+            // right side - digital clock + location
+            ColumnLayout {
+                Layout.alignment: Qt.AlignHCenter
+                Layout.rightMargin: Kirigami.Units.smallSpacing
+                Label {
+                    Layout.alignment: Qt.AlignRight
+                    font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 2.8)
+                    font.weight: Font.Light
+                    text: KClockFormat.currentTime
+                }
+                Label {
+                    Layout.alignment: Qt.AlignRight
+                    font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 1.2)
+                    text: UtilModel.tzName
+                    color: Kirigami.Theme.textColor
+                }
+            }
+        }
+
         // no timezones placeholder
         Kirigami.PlaceholderMessage {
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.top: parent.top
-            anchors.topMargin: Math.round(parent.height / 2 - bigTimeDisplay.height / 2)
+            anchors.centerIn: parent
+            anchors.verticalCenterOffset: Math.round(parent.headerItem.height / 4)
             visible: listView.count == 0
             text: i18n("No locations configured")
             icon.name: "globe"
