@@ -85,54 +85,61 @@ Kirigami.ScrollablePage {
         }
 
         header: RowLayout {
+            width: listView.width
             height: clockItemLoader.height + Kirigami.Units.gridUnit * 0.5
             
-            transform: Translate { y: yTranslate }
-            
-            // left side - analog clock
-            Loader {
-                id: clockItemLoader
-                
+            RowLayout {
                 Layout.alignment: Qt.AlignHCenter
-                width: Math.round(clockRadius * 2 + Kirigami.Units.gridUnit * 0.5)
-                height: clockRadius * 2 + Kirigami.Units.gridUnit
+                Layout.maximumWidth: Kirigami.Units.gridUnit * 23
+                Layout.minimumWidth: Kirigami.Units.gridUnit * 15
                 
-                // reload clock when page opens for animation
-                asynchronous: true
-                Connections {
-                    target: applicationWindow().pageStack                
-                    function onCurrentItemChanged() {
-                        clockItemLoader.active = applicationWindow().pageStack.currentItem == applicationWindow().getPage("Time");
+                // left side - analog clock
+                Loader {
+                    id: clockItemLoader
+                    
+                    Layout.alignment: Qt.AlignHCenter
+                    width: Math.round(clockRadius * 2 + Kirigami.Units.gridUnit * 0.5)
+                    height: clockRadius * 2 + Kirigami.Units.gridUnit
+                    
+                    // reload clock when page opens for animation
+                    asynchronous: true
+                    Connections {
+                        target: applicationWindow().pageStack                
+                        function onCurrentItemChanged() {
+                            clockItemLoader.active = applicationWindow().pageStack.currentItem == applicationWindow().getPage("Time");
+                        }
+                    }
+                    
+                    // clock item
+                    sourceComponent: Item {
+                        id: clockItem
+                        AnalogClock {
+                            id: analogClock
+                            anchors.centerIn: parent
+                            height: clockRadius * 2 
+                            width: clockRadius * 2
+                        }
                     }
                 }
                 
-                // clock item
-                sourceComponent: Item {
-                    id: clockItem
-                    AnalogClock {
-                        id: analogClock
-                        anchors.centerIn: parent
-                        height: clockRadius * 2 
-                        width: clockRadius * 2
+                Item { Layout.fillWidth: true }
+                
+                // right side - digital clock + location
+                ColumnLayout {
+                    Layout.alignment: Qt.AlignHCenter
+                    Layout.rightMargin: Kirigami.Units.smallSpacing
+                    Label {
+                        Layout.alignment: Qt.AlignRight
+                        font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 2.8)
+                        font.weight: Font.Light
+                        text: KClockFormat.currentTime
                     }
-                }
-            }
-            
-            // right side - digital clock + location
-            ColumnLayout {
-                Layout.alignment: Qt.AlignHCenter
-                Layout.rightMargin: Kirigami.Units.smallSpacing
-                Label {
-                    Layout.alignment: Qt.AlignRight
-                    font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 2.8)
-                    font.weight: Font.Light
-                    text: KClockFormat.currentTime
-                }
-                Label {
-                    Layout.alignment: Qt.AlignRight
-                    font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 1.2)
-                    text: UtilModel.tzName
-                    color: Kirigami.Theme.textColor
+                    Label {
+                        Layout.alignment: Qt.AlignRight
+                        font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 1.2)
+                        text: UtilModel.tzName
+                        color: Kirigami.Theme.textColor
+                    }
                 }
             }
         }
