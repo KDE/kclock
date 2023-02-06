@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-04 01:04+0000\n"
+"POT-Creation-Date: 2023-02-06 01:03+0000\n"
 "PO-Revision-Date: 2022-04-15 23:10+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -182,21 +182,15 @@ msgstr "완료"
 msgid "Cancel"
 msgstr ""
 
-#: qml/alarm/AlarmListDelegate.qml:109
+#: qml/alarm/AlarmListDelegate.qml:88
 #, fuzzy, kde-format
 #| msgid "%1 minute"
 #| msgid_plural "%1 minutes"
 msgid "Snoozed %1 minute"
-msgstr "%1분"
+msgid_plural "Snoozed %1 minutes"
+msgstr[0] "%1분"
 
-#: qml/alarm/AlarmListDelegate.qml:109
-#, fuzzy, kde-format
-#| msgid "%1 minute"
-#| msgid_plural "%1 minutes"
-msgid "Snoozed %1 minutes"
-msgstr "%1분"
-
-#: qml/alarm/AlarmListDelegate.qml:130 qml/time/TimePageDelegate.qml:53
+#: qml/alarm/AlarmListDelegate.qml:112 qml/time/TimePageDelegate.qml:46
 #: qml/timer/TimerListDelegate.qml:176 qml/timer/TimerPage.qml:60
 #: qml/timer/TimerPage.qml:109
 #, kde-format
@@ -239,13 +233,13 @@ msgstr "설정한 알람 없음"
 msgid "Add alarm"
 msgstr "알람"
 
-#: qml/alarm/AlarmListPage.qml:119
+#: qml/alarm/AlarmListPage.qml:120
 #, fuzzy, kde-format
 #| msgid "Alarm"
 msgid "alarm"
 msgstr "알람"
 
-#: qml/alarm/AlarmListPage.qml:119
+#: qml/alarm/AlarmListPage.qml:120
 #, kde-format
 msgid "Deleted %1"
 msgstr "%1 삭제함"
@@ -270,27 +264,27 @@ msgstr "끄기"
 msgid "Select Alarm Sound"
 msgstr ""
 
-#: qml/alarm/SoundPickerPage.qml:71
+#: qml/alarm/SoundPickerPage.qml:60
 #, kde-format
 msgid "Select from files…"
 msgstr ""
 
-#: qml/alarm/SoundPickerPage.qml:104
+#: qml/alarm/SoundPickerPage.qml:71
 #, kde-format
 msgid "Default"
 msgstr ""
 
-#: qml/alarm/SoundPickerPage.qml:169
+#: qml/alarm/SoundPickerPage.qml:134
 #, kde-format
 msgid "Choose an audio"
 msgstr ""
 
-#: qml/alarm/SoundPickerPage.qml:177
+#: qml/alarm/SoundPickerPage.qml:142
 #, kde-format
 msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 msgstr ""
 
-#: qml/alarm/SoundPickerPage.qml:177
+#: qml/alarm/SoundPickerPage.qml:142
 #, kde-format
 msgid "All files (*)"
 msgstr ""
@@ -461,7 +455,7 @@ msgstr "시간대 추가"
 msgid "Add"
 msgstr ""
 
-#: qml/time/TimePage.qml:146
+#: qml/time/TimePage.qml:152
 #, fuzzy, kde-format
 #| msgid "No alarms configured"
 msgid "No locations configured"
@@ -717,6 +711,12 @@ msgstr "1분 안에 알람이 울립니다"
 #| msgid "Alarm will be rung after %1"
 msgid "Alarm will ring in %1"
 msgstr "%1 후에 알람이 울립니다"
+
+#, fuzzy
+#~| msgid "%1 minute"
+#~| msgid_plural "%1 minutes"
+#~ msgid "Snoozed %1 minutes"
+#~ msgstr "%1분"
 
 #~ msgid "View"
 #~ msgstr "보기"

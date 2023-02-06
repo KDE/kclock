@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-04 01:04+0000\n"
+"POT-Creation-Date: 2023-02-06 01:03+0000\n"
 "PO-Revision-Date: 2022-10-18 17:19+0200\n"
 "Last-Translator: Grzegorz Koryga <rehork@tutamail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -174,17 +174,16 @@ msgstr "Gotowe"
 msgid "Cancel"
 msgstr "Anuluj"
 
-#: qml/alarm/AlarmListDelegate.qml:109
-#, kde-format
+#: qml/alarm/AlarmListDelegate.qml:88
+#, fuzzy, kde-format
+#| msgid "Snoozed %1 minute"
 msgid "Snoozed %1 minute"
-msgstr "Drzemka %1 minutę"
+msgid_plural "Snoozed %1 minutes"
+msgstr[0] "Drzemka %1 minutę"
+msgstr[1] "Drzemka %1 minutę"
+msgstr[2] "Drzemka %1 minutę"
 
-#: qml/alarm/AlarmListDelegate.qml:109
-#, kde-format
-msgid "Snoozed %1 minutes"
-msgstr "Drzemka %1 minut"
-
-#: qml/alarm/AlarmListDelegate.qml:130 qml/time/TimePageDelegate.qml:53
+#: qml/alarm/AlarmListDelegate.qml:112 qml/time/TimePageDelegate.qml:46
 #: qml/timer/TimerListDelegate.qml:176 qml/timer/TimerPage.qml:60
 #: qml/timer/TimerPage.qml:109
 #, kde-format
@@ -228,12 +227,12 @@ msgstr "Brak ustawionych alarmów"
 msgid "Add alarm"
 msgstr "Dodaj alarm"
 
-#: qml/alarm/AlarmListPage.qml:119
+#: qml/alarm/AlarmListPage.qml:120
 #, kde-format
 msgid "alarm"
 msgstr "alarm"
 
-#: qml/alarm/AlarmListPage.qml:119
+#: qml/alarm/AlarmListPage.qml:120
 #, kde-format
 msgid "Deleted %1"
 msgstr "Usunięto %1"
@@ -258,27 +257,27 @@ msgstr "Odrzuć"
 msgid "Select Alarm Sound"
 msgstr "Wybierz dźwięk dla alarmu"
 
-#: qml/alarm/SoundPickerPage.qml:71
+#: qml/alarm/SoundPickerPage.qml:60
 #, kde-format
 msgid "Select from files…"
 msgstr "Wybierz z pliku..."
 
-#: qml/alarm/SoundPickerPage.qml:104
+#: qml/alarm/SoundPickerPage.qml:71
 #, kde-format
 msgid "Default"
 msgstr "Domyślny"
 
-#: qml/alarm/SoundPickerPage.qml:169
+#: qml/alarm/SoundPickerPage.qml:134
 #, kde-format
 msgid "Choose an audio"
 msgstr "Wybierz dźwięk"
 
-#: qml/alarm/SoundPickerPage.qml:177
+#: qml/alarm/SoundPickerPage.qml:142
 #, kde-format
 msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 msgstr "Pliki dźwiękowe (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 
-#: qml/alarm/SoundPickerPage.qml:177
+#: qml/alarm/SoundPickerPage.qml:142
 #, kde-format
 msgid "All files (*)"
 msgstr "Wszystkie pliki (*)"
@@ -445,7 +444,7 @@ msgstr "Dodaj lokalizacje"
 msgid "Add"
 msgstr "Dodaj"
 
-#: qml/time/TimePage.qml:146
+#: qml/time/TimePage.qml:152
 #, kde-format
 msgid "No locations configured"
 msgstr "Brak skonfigurowanych lokalizacji"
@@ -688,6 +687,9 @@ msgstr "Alarm zadzwoni za mniej niż minutę"
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "Alarm zadzwoni za %1"
+
+#~ msgid "Snoozed %1 minutes"
+#~ msgstr "Drzemka %1 minut"
 
 #~ msgid "View"
 #~ msgstr "Widok"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-04 01:04+0000\n"
+"POT-Creation-Date: 2023-02-06 01:03+0000\n"
 "PO-Revision-Date: 2023-01-01 22:52+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -173,17 +173,15 @@ msgstr "Fatto"
 msgid "Cancel"
 msgstr "Annulla"
 
-#: qml/alarm/AlarmListDelegate.qml:109
-#, kde-format
+#: qml/alarm/AlarmListDelegate.qml:88
+#, fuzzy, kde-format
+#| msgid "Snoozed %1 minute"
 msgid "Snoozed %1 minute"
-msgstr "Posticipata di %1 minuto"
+msgid_plural "Snoozed %1 minutes"
+msgstr[0] "Posticipata di %1 minuto"
+msgstr[1] "Posticipata di %1 minuto"
 
-#: qml/alarm/AlarmListDelegate.qml:109
-#, kde-format
-msgid "Snoozed %1 minutes"
-msgstr "Posticipata di %1 minuti"
-
-#: qml/alarm/AlarmListDelegate.qml:130 qml/time/TimePageDelegate.qml:53
+#: qml/alarm/AlarmListDelegate.qml:112 qml/time/TimePageDelegate.qml:46
 #: qml/timer/TimerListDelegate.qml:176 qml/timer/TimerPage.qml:60
 #: qml/timer/TimerPage.qml:109
 #, kde-format
@@ -227,12 +225,12 @@ msgstr "Nessuna sveglia configurata"
 msgid "Add alarm"
 msgstr "Aggiungi sveglia"
 
-#: qml/alarm/AlarmListPage.qml:119
+#: qml/alarm/AlarmListPage.qml:120
 #, kde-format
 msgid "alarm"
 msgstr "sveglia"
 
-#: qml/alarm/AlarmListPage.qml:119
+#: qml/alarm/AlarmListPage.qml:120
 #, kde-format
 msgid "Deleted %1"
 msgstr "%1 eliminata"
@@ -257,27 +255,27 @@ msgstr "Ignora"
 msgid "Select Alarm Sound"
 msgstr "Seleziona il suono della sveglia"
 
-#: qml/alarm/SoundPickerPage.qml:71
+#: qml/alarm/SoundPickerPage.qml:60
 #, kde-format
 msgid "Select from files…"
 msgstr "Seleziona da file…"
 
-#: qml/alarm/SoundPickerPage.qml:104
+#: qml/alarm/SoundPickerPage.qml:71
 #, kde-format
 msgid "Default"
 msgstr "Predefinito"
 
-#: qml/alarm/SoundPickerPage.qml:169
+#: qml/alarm/SoundPickerPage.qml:134
 #, kde-format
 msgid "Choose an audio"
 msgstr "Scegli un audio"
 
-#: qml/alarm/SoundPickerPage.qml:177
+#: qml/alarm/SoundPickerPage.qml:142
 #, kde-format
 msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 msgstr "File audio (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 
-#: qml/alarm/SoundPickerPage.qml:177
+#: qml/alarm/SoundPickerPage.qml:142
 #, kde-format
 msgid "All files (*)"
 msgstr "Tutti i file (*)"
@@ -444,7 +442,7 @@ msgstr "Aggiungi località"
 msgid "Add"
 msgstr "Aggiungi"
 
-#: qml/time/TimePage.qml:146
+#: qml/time/TimePage.qml:152
 #, kde-format
 msgid "No locations configured"
 msgstr "Nessuna località configurata"
@@ -684,6 +682,9 @@ msgstr "La sveglia suonerà tra meno di un minuto"
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "La sveglia suonerà dopo %1"
+
+#~ msgid "Snoozed %1 minutes"
+#~ msgstr "Posticipata di %1 minuti"
 
 #~ msgid "View"
 #~ msgstr "Visualizza"

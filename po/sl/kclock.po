@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-04 01:04+0000\n"
+"POT-Creation-Date: 2023-02-06 01:03+0000\n"
 "PO-Revision-Date: 2023-01-02 20:06+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -173,17 +173,17 @@ msgstr "Narejeno"
 msgid "Cancel"
 msgstr "Prekliči"
 
-#: qml/alarm/AlarmListDelegate.qml:109
-#, kde-format
+#: qml/alarm/AlarmListDelegate.qml:88
+#, fuzzy, kde-format
+#| msgid "Snoozed %1 minute"
 msgid "Snoozed %1 minute"
-msgstr "Dremež %1 minut"
+msgid_plural "Snoozed %1 minutes"
+msgstr[0] "Dremež %1 minut"
+msgstr[1] "Dremež %1 minut"
+msgstr[2] "Dremež %1 minut"
+msgstr[3] "Dremež %1 minut"
 
-#: qml/alarm/AlarmListDelegate.qml:109
-#, kde-format
-msgid "Snoozed %1 minutes"
-msgstr "Dremež %1 minut"
-
-#: qml/alarm/AlarmListDelegate.qml:130 qml/time/TimePageDelegate.qml:53
+#: qml/alarm/AlarmListDelegate.qml:112 qml/time/TimePageDelegate.qml:46
 #: qml/timer/TimerListDelegate.qml:176 qml/timer/TimerPage.qml:60
 #: qml/timer/TimerPage.qml:109
 #, kde-format
@@ -227,12 +227,12 @@ msgstr "Ni nastavljenih alarmov"
 msgid "Add alarm"
 msgstr "Dodaj alarm"
 
-#: qml/alarm/AlarmListPage.qml:119
+#: qml/alarm/AlarmListPage.qml:120
 #, kde-format
 msgid "alarm"
 msgstr "alarm"
 
-#: qml/alarm/AlarmListPage.qml:119
+#: qml/alarm/AlarmListPage.qml:120
 #, kde-format
 msgid "Deleted %1"
 msgstr "Zbrisano %1"
@@ -257,27 +257,27 @@ msgstr "Odpusti"
 msgid "Select Alarm Sound"
 msgstr "Izberi zvok zvonjenja"
 
-#: qml/alarm/SoundPickerPage.qml:71
+#: qml/alarm/SoundPickerPage.qml:60
 #, kde-format
 msgid "Select from files…"
 msgstr "Izberi iz datotek…"
 
-#: qml/alarm/SoundPickerPage.qml:104
+#: qml/alarm/SoundPickerPage.qml:71
 #, kde-format
 msgid "Default"
 msgstr "Privzeto"
 
-#: qml/alarm/SoundPickerPage.qml:169
+#: qml/alarm/SoundPickerPage.qml:134
 #, kde-format
 msgid "Choose an audio"
 msgstr "Izberi zvok"
 
-#: qml/alarm/SoundPickerPage.qml:177
+#: qml/alarm/SoundPickerPage.qml:142
 #, kde-format
 msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 msgstr "Zvočne datoteke (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 
-#: qml/alarm/SoundPickerPage.qml:177
+#: qml/alarm/SoundPickerPage.qml:142
 #, kde-format
 msgid "All files (*)"
 msgstr "Vse datoteke (*)"
@@ -444,7 +444,7 @@ msgstr "Dodaj lokacijo"
 msgid "Add"
 msgstr "Dodaj"
 
-#: qml/time/TimePage.qml:146
+#: qml/time/TimePage.qml:152
 #, kde-format
 msgid "No locations configured"
 msgstr "Ni nastavljenih lokacij"
@@ -690,6 +690,9 @@ msgstr "Alarm bo zazvonil prej kot v minuti"
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "Alarm bo zazvonil po %1"
+
+#~ msgid "Snoozed %1 minutes"
+#~ msgstr "Dremež %1 minut"
 
 #~ msgid "View"
 #~ msgstr "Pogled"

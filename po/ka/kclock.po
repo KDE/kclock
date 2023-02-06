@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-04 01:04+0000\n"
+"POT-Creation-Date: 2023-02-06 01:03+0000\n"
 "PO-Revision-Date: 2023-01-01 07:36+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -173,17 +173,15 @@ msgstr "დასრულდა"
 msgid "Cancel"
 msgstr "გაუქმენა"
 
-#: qml/alarm/AlarmListDelegate.qml:109
-#, kde-format
+#: qml/alarm/AlarmListDelegate.qml:88
+#, fuzzy, kde-format
+#| msgid "Snoozed %1 minute"
 msgid "Snoozed %1 minute"
-msgstr "ჩაჩუმდა %1 წუთით"
+msgid_plural "Snoozed %1 minutes"
+msgstr[0] "ჩაჩუმდა %1 წუთით"
+msgstr[1] "ჩაჩუმდა %1 წუთით"
 
-#: qml/alarm/AlarmListDelegate.qml:109
-#, kde-format
-msgid "Snoozed %1 minutes"
-msgstr "ჩაჩუმდა %1 წუთით"
-
-#: qml/alarm/AlarmListDelegate.qml:130 qml/time/TimePageDelegate.qml:53
+#: qml/alarm/AlarmListDelegate.qml:112 qml/time/TimePageDelegate.qml:46
 #: qml/timer/TimerListDelegate.qml:176 qml/timer/TimerPage.qml:60
 #: qml/timer/TimerPage.qml:109
 #, kde-format
@@ -227,12 +225,12 @@ msgstr "მაღვიძარა გამართული არაა"
 msgid "Add alarm"
 msgstr "მაღვიძარა"
 
-#: qml/alarm/AlarmListPage.qml:119
+#: qml/alarm/AlarmListPage.qml:120
 #, kde-format
 msgid "alarm"
 msgstr "მაღვიძარა"
 
-#: qml/alarm/AlarmListPage.qml:119
+#: qml/alarm/AlarmListPage.qml:120
 #, kde-format
 msgid "Deleted %1"
 msgstr "%1 წაშლილია"
@@ -257,27 +255,27 @@ msgstr "გაუქმება"
 msgid "Select Alarm Sound"
 msgstr "აირჩიეთ მაღვიძარის ხმა"
 
-#: qml/alarm/SoundPickerPage.qml:71
+#: qml/alarm/SoundPickerPage.qml:60
 #, kde-format
 msgid "Select from files…"
 msgstr "ფაილებიდან არჩევა…"
 
-#: qml/alarm/SoundPickerPage.qml:104
+#: qml/alarm/SoundPickerPage.qml:71
 #, kde-format
 msgid "Default"
 msgstr "ნაგულისხმები"
 
-#: qml/alarm/SoundPickerPage.qml:169
+#: qml/alarm/SoundPickerPage.qml:134
 #, kde-format
 msgid "Choose an audio"
 msgstr "აირჩიეთ აუდიო"
 
-#: qml/alarm/SoundPickerPage.qml:177
+#: qml/alarm/SoundPickerPage.qml:142
 #, kde-format
 msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 msgstr "აუდიო ფაილები (* .wav * .mp3 * .ogg *.aac *.flac *.webm *.mka *.opus)"
 
-#: qml/alarm/SoundPickerPage.qml:177
+#: qml/alarm/SoundPickerPage.qml:142
 #, kde-format
 msgid "All files (*)"
 msgstr "ყველა ფაილი (*)"
@@ -444,7 +442,7 @@ msgstr "მდებარეობის დამატება"
 msgid "Add"
 msgstr "დამატება"
 
-#: qml/time/TimePage.qml:146
+#: qml/time/TimePage.qml:152
 #, kde-format
 msgid "No locations configured"
 msgstr "მორგებული მდებარეობების გარეშე"
@@ -683,6 +681,9 @@ msgstr "ზარი წუთზე ნაკლებში დარეკა
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "ზარი დარეკავს: %1"
+
+#~ msgid "Snoozed %1 minutes"
+#~ msgstr "ჩაჩუმდა %1 წუთით"
 
 #~ msgid "View"
 #~ msgstr "ხედი"

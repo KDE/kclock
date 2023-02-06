@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-04 01:04+0000\n"
+"POT-Creation-Date: 2023-02-06 01:03+0000\n"
 "PO-Revision-Date: 2022-01-03 09:31-0800\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -182,18 +182,15 @@ msgstr "ਮੁਕੰਮਲ"
 msgid "Cancel"
 msgstr ""
 
-#: qml/alarm/AlarmListDelegate.qml:109
+#: qml/alarm/AlarmListDelegate.qml:88
 #, fuzzy, kde-format
 #| msgid "Snoozed %1 minutes"
 msgid "Snoozed %1 minute"
-msgstr "%1 ਮਿੰਟ ਲਈ ਟਾਲੋ"
+msgid_plural "Snoozed %1 minutes"
+msgstr[0] "%1 ਮਿੰਟ ਲਈ ਟਾਲੋ"
+msgstr[1] "%1 ਮਿੰਟ ਲਈ ਟਾਲੋ"
 
-#: qml/alarm/AlarmListDelegate.qml:109
-#, kde-format
-msgid "Snoozed %1 minutes"
-msgstr "%1 ਮਿੰਟ ਲਈ ਟਾਲੋ"
-
-#: qml/alarm/AlarmListDelegate.qml:130 qml/time/TimePageDelegate.qml:53
+#: qml/alarm/AlarmListDelegate.qml:112 qml/time/TimePageDelegate.qml:46
 #: qml/timer/TimerListDelegate.qml:176 qml/timer/TimerPage.qml:60
 #: qml/timer/TimerPage.qml:109
 #, kde-format
@@ -236,13 +233,13 @@ msgstr "ਕੋਈ ਅਲਾਰਮ ਸੰਰਚਿਤ ਨਹੀਂ ਹੈ"
 msgid "Add alarm"
 msgstr "ਅਲਾਰਮ"
 
-#: qml/alarm/AlarmListPage.qml:119
+#: qml/alarm/AlarmListPage.qml:120
 #, fuzzy, kde-format
 #| msgid "Alarm"
 msgid "alarm"
 msgstr "ਅਲਾਰਮ"
 
-#: qml/alarm/AlarmListPage.qml:119
+#: qml/alarm/AlarmListPage.qml:120
 #, kde-format
 msgid "Deleted %1"
 msgstr "%1 ਹਟਾਇਆ"
@@ -267,27 +264,27 @@ msgstr "ਖ਼ਾਰਜ"
 msgid "Select Alarm Sound"
 msgstr ""
 
-#: qml/alarm/SoundPickerPage.qml:71
+#: qml/alarm/SoundPickerPage.qml:60
 #, kde-format
 msgid "Select from files…"
 msgstr ""
 
-#: qml/alarm/SoundPickerPage.qml:104
+#: qml/alarm/SoundPickerPage.qml:71
 #, kde-format
 msgid "Default"
 msgstr ""
 
-#: qml/alarm/SoundPickerPage.qml:169
+#: qml/alarm/SoundPickerPage.qml:134
 #, kde-format
 msgid "Choose an audio"
 msgstr "ਆਡੀਓ ਚੁਣੋ"
 
-#: qml/alarm/SoundPickerPage.qml:177
+#: qml/alarm/SoundPickerPage.qml:142
 #, kde-format
 msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 msgstr "ਆਡੀਓ ਫਾਇਲਾਂ (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 
-#: qml/alarm/SoundPickerPage.qml:177
+#: qml/alarm/SoundPickerPage.qml:142
 #, kde-format
 msgid "All files (*)"
 msgstr "ਸਭ ਫਾਇਲਾਂ (**)"
@@ -456,7 +453,7 @@ msgstr "ਸਮਾਂ-ਖੇਤਰ ਜੋੜੋ"
 msgid "Add"
 msgstr ""
 
-#: qml/time/TimePage.qml:146
+#: qml/time/TimePage.qml:152
 #, fuzzy, kde-format
 #| msgid "No alarms configured"
 msgid "No locations configured"
@@ -716,6 +713,9 @@ msgstr "ਅਲਾਰਮ ਇੱਕ ਮਿੰਟ ਵਿੱਚ ਵੱਜੇਗਾ"
 #| msgid "Alarm will be rung after %1"
 msgid "Alarm will ring in %1"
 msgstr "ਅਲਾਰਮ %1 ਬਾਅਦ ਵੱਜੇਗਾ"
+
+#~ msgid "Snoozed %1 minutes"
+#~ msgstr "%1 ਮਿੰਟ ਲਈ ਟਾਲੋ"
 
 #~ msgid "View"
 #~ msgstr "ਵੇਖੋ"
