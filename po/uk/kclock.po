@@ -3,13 +3,13 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2021, 2022.
+# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-06 01:03+0000\n"
-"PO-Revision-Date: 2022-12-31 09:07+0200\n"
+"PO-Revision-Date: 2023-02-06 08:13+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -176,12 +176,11 @@ msgid "Cancel"
 msgstr "Скасувати"
 
 #: qml/alarm/AlarmListDelegate.qml:88
-#, fuzzy, kde-format
-#| msgid "Snoozed %1 minute"
+#, kde-format
 msgid "Snoozed %1 minute"
 msgid_plural "Snoozed %1 minutes"
-msgstr[0] "Відкладено на %1 хвилин"
-msgstr[1] "Відкладено на %1 хвилин"
+msgstr[0] "Відкладено на %1 хвилину"
+msgstr[1] "Відкладено на %1 хвилини"
 msgstr[2] "Відкладено на %1 хвилин"
 msgstr[3] "Відкладено на %1 хвилин"
 
