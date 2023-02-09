@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-06 01:03+0000\n"
-"PO-Revision-Date: 2023-01-01 11:13+0100\n"
+"PO-Revision-Date: 2023-02-07 20:10+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 22.12.1\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -176,12 +176,11 @@ msgid "Cancel"
 msgstr "Annuler"
 
 #: qml/alarm/AlarmListDelegate.qml:88
-#, fuzzy, kde-format
-#| msgid "Snoozed %1 minute"
+#, kde-format
 msgid "Snoozed %1 minute"
 msgid_plural "Snoozed %1 minutes"
-msgstr[0] "Sonnerie durant %1 minute"
-msgstr[1] "Sonnerie durant %1 minute"
+msgstr[0] "En attente durant %1 minute"
+msgstr[1] "En attente durant %1 minutes"
 
 #: qml/alarm/AlarmListDelegate.qml:112 qml/time/TimePageDelegate.qml:46
 #: qml/timer/TimerListDelegate.qml:176 qml/timer/TimerPage.qml:60

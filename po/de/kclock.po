@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the kclock package.
 # Burkhard Lück <lueck@hube-lueck.de>, 2020, 2021.
 # Frank Steinmetzger <dev@felsenfleischer.de>, 2021.
-# Frederik Schwarzer <schwarzer@kde.org>, 2022.
+# Frederik Schwarzer <schwarzer@kde.org>, 2022, 2023.
 # Alois Spitzbart <spitz234@hotmail.com>, 2022.
 #
 msgid ""
@@ -10,15 +10,15 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-06 01:03+0000\n"
-"PO-Revision-Date: 2022-10-12 10:06+0200\n"
-"Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
+"PO-Revision-Date: 2023-02-09 01:02+0100\n"
+"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.08.0\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -176,12 +176,11 @@ msgid "Cancel"
 msgstr "Abbrechen"
 
 #: qml/alarm/AlarmListDelegate.qml:88
-#, fuzzy, kde-format
-#| msgid "Snoozed %1 minute"
+#, kde-format
 msgid "Snoozed %1 minute"
 msgid_plural "Snoozed %1 minutes"
 msgstr[0] "%1 Minute geschlummert"
-msgstr[1] "%1 Minute geschlummert"
+msgstr[1] "%1 Minuten geschlummert"
 
 #: qml/alarm/AlarmListDelegate.qml:112 qml/time/TimePageDelegate.qml:46
 #: qml/timer/TimerListDelegate.qml:176 qml/timer/TimerPage.qml:60
@@ -301,57 +300,54 @@ msgid "Stopwatch"
 msgstr "Stoppuhr"
 
 #: qml/components/formatUtil.js:11
-#, fuzzy, kde-format
-#| msgid "Only once"
+#, kde-format
 msgid "Only once"
 msgstr "Nur einmal"
 
 #: qml/components/formatUtil.js:16
-#, fuzzy, kde-format
-#| msgid "Everyday"
+#, kde-format
 msgid "Everyday"
 msgstr "Jeden Tag"
 
 #: qml/components/formatUtil.js:19
-#, fuzzy, kde-format
-#| msgid "Weekdays"
+#, kde-format
 msgid "Weekdays"
-msgstr "Wochentage"
+msgstr "Wochentags"
 
 #: qml/components/formatUtil.js:22
 #, kde-format
 msgid "Mon, "
-msgstr ""
+msgstr "Mo,"
 
 #: qml/components/formatUtil.js:23
 #, kde-format
 msgid "Tue, "
-msgstr ""
+msgstr "Di,"
 
 #: qml/components/formatUtil.js:24
 #, kde-format
 msgid "Wed, "
-msgstr ""
+msgstr "Mi,"
 
 #: qml/components/formatUtil.js:25
 #, kde-format
 msgid "Thu, "
-msgstr ""
+msgstr "Do,"
 
 #: qml/components/formatUtil.js:26
 #, kde-format
 msgid "Fri, "
-msgstr ""
+msgstr "Fr,"
 
 #: qml/components/formatUtil.js:27
 #, kde-format
 msgid "Sat, "
-msgstr ""
+msgstr "Sa,"
 
 #: qml/components/formatUtil.js:28
 #, kde-format
 msgid "Sun, "
-msgstr ""
+msgstr "So,"
 
 #: qml/components/TimePicker.qml:70
 #, kde-format
