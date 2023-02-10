@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-04 01:04+0000\n"
+"POT-Creation-Date: 2023-02-06 01:03+0000\n"
 "PO-Revision-Date: 2022-07-27 20:11+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -174,17 +174,14 @@ msgstr "Fullført"
 msgid "Cancel"
 msgstr ""
 
-#: qml/alarm/AlarmListDelegate.qml:109
+#: qml/alarm/AlarmListDelegate.qml:88
 #, kde-format
 msgid "Snoozed %1 minute"
-msgstr ""
+msgid_plural "Snoozed %1 minutes"
+msgstr[0] ""
+msgstr[1] ""
 
-#: qml/alarm/AlarmListDelegate.qml:109
-#, kde-format
-msgid "Snoozed %1 minutes"
-msgstr "Utsett i %1 minutt"
-
-#: qml/alarm/AlarmListDelegate.qml:130 qml/time/TimePageDelegate.qml:53
+#: qml/alarm/AlarmListDelegate.qml:112 qml/time/TimePageDelegate.qml:46
 #: qml/timer/TimerListDelegate.qml:176 qml/timer/TimerPage.qml:60
 #: qml/timer/TimerPage.qml:109
 #, kde-format
@@ -226,12 +223,12 @@ msgstr "Ingen alarmar er definerte"
 msgid "Add alarm"
 msgstr ""
 
-#: qml/alarm/AlarmListPage.qml:119
+#: qml/alarm/AlarmListPage.qml:120
 #, kde-format
 msgid "alarm"
 msgstr ""
 
-#: qml/alarm/AlarmListPage.qml:119
+#: qml/alarm/AlarmListPage.qml:120
 #, kde-format
 msgid "Deleted %1"
 msgstr "Sletta %1"
@@ -256,27 +253,27 @@ msgstr "Avvis"
 msgid "Select Alarm Sound"
 msgstr ""
 
-#: qml/alarm/SoundPickerPage.qml:71
+#: qml/alarm/SoundPickerPage.qml:60
 #, kde-format
 msgid "Select from files…"
 msgstr ""
 
-#: qml/alarm/SoundPickerPage.qml:104
+#: qml/alarm/SoundPickerPage.qml:71
 #, kde-format
 msgid "Default"
 msgstr ""
 
-#: qml/alarm/SoundPickerPage.qml:169
+#: qml/alarm/SoundPickerPage.qml:134
 #, kde-format
 msgid "Choose an audio"
 msgstr "Vel lyd"
 
-#: qml/alarm/SoundPickerPage.qml:177
+#: qml/alarm/SoundPickerPage.qml:142
 #, kde-format
 msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 msgstr "Lydfiler (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 
-#: qml/alarm/SoundPickerPage.qml:177
+#: qml/alarm/SoundPickerPage.qml:142
 #, kde-format
 msgid "All files (*)"
 msgstr "Alle filer (*)"
@@ -443,7 +440,7 @@ msgstr ""
 msgid "Add"
 msgstr ""
 
-#: qml/time/TimePage.qml:146
+#: qml/time/TimePage.qml:152
 #, kde-format
 msgid "No locations configured"
 msgstr ""
