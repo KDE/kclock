@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-06 01:03+0000\n"
-"PO-Revision-Date: 2023-01-09 18:38+0000\n"
+"PO-Revision-Date: 2023-02-15 16:04+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -171,12 +171,11 @@ msgid "Cancel"
 msgstr "Cancelar"
 
 #: qml/alarm/AlarmListDelegate.qml:88
-#, fuzzy, kde-format
-#| msgid "Snoozed %1 minute"
+#, kde-format
 msgid "Snoozed %1 minute"
 msgid_plural "Snoozed %1 minutes"
 msgstr[0] "Adiado por %1 minuto"
-msgstr[1] "Adiado por %1 minuto"
+msgstr[1] "Adiado por %1 minutos"
 
 #: qml/alarm/AlarmListDelegate.qml:112 qml/time/TimePageDelegate.qml:46
 #: qml/timer/TimerListDelegate.qml:176 qml/timer/TimerPage.qml:60
@@ -680,6 +679,3 @@ msgstr "O alarme irá tocar daqui a um minuto"
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "O alarme irá tocar daqui a %1"
-
-#~ msgid "Snoozed %1 minutes"
-#~ msgstr "Adiado por %1 minutos"
