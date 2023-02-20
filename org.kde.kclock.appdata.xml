@@ -35,6 +35,7 @@
   <name xml:lang="pt">Relógio</name>
   <name xml:lang="pt-BR">Relógio</name>
   <name xml:lang="ro">Ceas</name>
+  <name xml:lang="ru">Таймер</name>
   <name xml:lang="sk">Hodiny</name>
   <name xml:lang="sl">Clock</name>
   <name xml:lang="sv">Klocka</name>
@@ -99,6 +100,7 @@
   <developer_name xml:lang="pt">Comunidade do KDE</developer_name>
   <developer_name xml:lang="pt-BR">Comunidade KDE</developer_name>
   <developer_name xml:lang="ro">Comunitatea KDE</developer_name>
+  <developer_name xml:lang="ru">Сообщество KDE</developer_name>
   <developer_name xml:lang="sk">KDE komunita</developer_name>
   <developer_name xml:lang="sl">Skupnost KDE</developer_name>
   <developer_name xml:lang="sv">KDE-gemenskapen</developer_name>
@@ -207,6 +209,7 @@
       <caption xml:lang="pt">Versão para dispositivos móveis</caption>
       <caption xml:lang="pt-BR">Vista do celular</caption>
       <caption xml:lang="ro">Vizualizare mobilă</caption>
+      <caption xml:lang="ru">Режим для мобильных устройств</caption>
       <caption xml:lang="sl">Mobilni pogled</caption>
       <caption xml:lang="sv">Mobil vy</caption>
       <caption xml:lang="tr">Taşınabilir görünümü</caption>
@@ -242,6 +245,7 @@
       <caption xml:lang="pt">Versão para computador</caption>
       <caption xml:lang="pt-BR">Vista da área de trabalho</caption>
       <caption xml:lang="ro">Vizualizare pentru birou</caption>
+      <caption xml:lang="ru">Режим для ПК</caption>
       <caption xml:lang="sl">Namizni pogled</caption>
       <caption xml:lang="sv">Skrivbordsvy</caption>
       <caption xml:lang="tr">Masaüstü görünümü</caption>
@@ -277,6 +281,7 @@
       <caption xml:lang="pt">Página de Temporizadores</caption>
       <caption xml:lang="pt-BR">Página dos temporizadores</caption>
       <caption xml:lang="ro">Pagina temporizatorilor</caption>
+      <caption xml:lang="ru">Страница таймеров</caption>
       <caption xml:lang="sl">Stran merilnikov časa</caption>
       <caption xml:lang="sv">Sida med tidtagningar</caption>
       <caption xml:lang="tr">Sayaçlar sayfası</caption>
@@ -312,6 +317,7 @@
       <caption xml:lang="pt">Página do Temporizador</caption>
       <caption xml:lang="pt-BR">Página do temporizador</caption>
       <caption xml:lang="ro">Pagina temporizatorului</caption>
+      <caption xml:lang="ru">Страница таймера</caption>
       <caption xml:lang="sl">Stran merilnika časa</caption>
       <caption xml:lang="sv">Sida med tidtagning</caption>
       <caption xml:lang="tr">Sayaç sayfası</caption>
@@ -382,6 +388,7 @@
       <caption xml:lang="pt">Página de Alarmes</caption>
       <caption xml:lang="pt-BR">Página do alarme</caption>
       <caption xml:lang="ro">Pagina alarmelor</caption>
+      <caption xml:lang="ru">Страница напоминаний</caption>
       <caption xml:lang="sl">Stran alarma</caption>
       <caption xml:lang="sv">Sida med alarm</caption>
       <caption xml:lang="tr">Alarmlar sayfası</caption>
