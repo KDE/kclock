@@ -36,7 +36,7 @@ msgstr ""
 #: main.cpp:68
 #, kde-format
 msgid "© 2020-2022 KDE Community"
-msgstr "© 2020-2022 مجتمع كدي"
+msgstr "© 2020-2022 مجتمع كِيدِي"
 
 #: main.cpp:70
 #, kde-format
