@@ -81,12 +81,12 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.Utility.xml DESTINATIO
 add_executable(kclockd main.cpp ${kclockd_SRCS} )
 target_link_libraries(kclockd
     Qt::Multimedia
-    KF5::I18n
-    KF5::ConfigCore
-    KF5::ConfigGui
-    KF5::CoreAddons
-    KF5::Notifications
-    KF5::DBusAddons
+    KF${QT_MAJOR_VERSION}::I18n
+    KF${QT_MAJOR_VERSION}::ConfigCore
+    KF${QT_MAJOR_VERSION}::ConfigGui
+    KF${QT_MAJOR_VERSION}::CoreAddons
+    KF${QT_MAJOR_VERSION}::Notifications
+    KF${QT_MAJOR_VERSION}::DBusAddons
     )
 target_include_directories(kclockd PRIVATE ${CMAKE_BINARY_DIR})
 install(TARGETS kclockd ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

@@ -177,6 +177,6 @@ KClock_KWeather_3x3::~KClock_KWeather_3x3()
 {
 }
 
-K_EXPORT_PLASMA_APPLET_WITH_JSON(kclock_kweather_3x3, KClock_KWeather_3x3, "metadata.json")
+K_EXPORT_PLASMA_APPLET_WITH_JSON(kclock_kweather_3x3, KClock_KWeather_3x3, "package/metadata.json")
 
 #include "kclock_kweather_3x3.moc"

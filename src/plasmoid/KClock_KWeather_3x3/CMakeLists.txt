@@ -12,13 +12,11 @@ set(kclock_kweather_3x3_SRCS
 )
 add_library(plasma_applet_kclock_kweather_3x3 MODULE ${kclock_kweather_3x3_SRCS})
 
-kcoreaddons_desktop_to_json(plasma_applet_kclock_kweather_3x3 package/metadata.desktop SERVICE_TYPES plasma-applet.desktop)
-
 target_link_libraries(plasma_applet_kclock_kweather_3x3
                       Qt5::Gui
                       Qt5::DBus
-                      KF5::Plasma
-                      KF5::I18n)
+                      KF${QT_MAJOR_VERSION}::Plasma
+                      KF${QT_MAJOR_VERSION}::I18n)
 
 
 install(TARGETS plasma_applet_kclock_kweather_3x3 DESTINATION ${KDE_INSTALL_PLUGINDIR}/plasma/applets)

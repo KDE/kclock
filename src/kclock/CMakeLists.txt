@@ -48,12 +48,12 @@ target_link_libraries(kclock
         Qt::QuickControls2
         Qt::Widgets
         Qt::Multimedia
-        KF5::I18n
-        KF5::ConfigCore
-        KF5::ConfigGui
-        KF5::CoreAddons
-        KF5::Notifications
-        KF5::DBusAddons
+        KF${QT_MAJOR_VERSION}::I18n
+        KF${QT_MAJOR_VERSION}::ConfigCore
+        KF${QT_MAJOR_VERSION}::ConfigGui
+        KF${QT_MAJOR_VERSION}::CoreAddons
+        KF${QT_MAJOR_VERSION}::Notifications
+        KF${QT_MAJOR_VERSION}::DBusAddons
         )
 target_include_directories(kclock PRIVATE ${CMAKE_BINARY_DIR})
 install(TARGETS kclock ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

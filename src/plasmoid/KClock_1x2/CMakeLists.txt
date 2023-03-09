@@ -12,13 +12,11 @@ set(kclock_1x2_SRCS
 )
 add_library(plasma_applet_kclock_1x2 MODULE ${kclock_1x2_SRCS})
 
-kcoreaddons_desktop_to_json(plasma_applet_kclock_1x2 package/metadata.desktop SERVICE_TYPES plasma-applet.desktop)
-
 target_link_libraries(plasma_applet_kclock_1x2
                       Qt::Gui
                       Qt::DBus
-                      KF5::Plasma
-                      KF5::I18n)
+                      KF${QT_MAJOR_VERSION}::Plasma
+                      KF${QT_MAJOR_VERSION}::I18n)
 
 
 install(TARGETS plasma_applet_kclock_1x2 DESTINATION ${KDE_INSTALL_PLUGINDIR}/plasma/applets)
