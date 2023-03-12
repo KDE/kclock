@@ -4,11 +4,19 @@
             {
                 "Email": "hanyoung@protonmail.com",
                 "Name": "HanY",
+                "Name[ca]": "HanY",
+                "Name[fr]": "HanY",
+                "Name[nl]": "HanY",
+                "Name[pl]": "HanY",
                 "Name[x-test]": "xxHanYxx"
             }
         ],
         "Category": "Utilities",
         "Description": "KClock widget (1x2)",
+        "Description[ca]": "Giny del KClock (1x2)",
+        "Description[fr]": "Composant graphique de KClock (1 x 2)",
+        "Description[nl]": "KClock-widget (1x2)",
+        "Description[pl]": "Element interfejsu KClock (1x2)",
         "Description[x-test]": "xxKClock widget (1x2)xx",
         "EnabledByDefault": true,
         "FormFactors": [
@@ -20,6 +28,10 @@
         "Id": "org.kde.plasma.kclock_1x2",
         "License": "LGPL-2.1+",
         "Name": "KClock_1x2",
+        "Name[ca]": "KClock_1x2",
+        "Name[fr]": "KClock_1 x 2",
+        "Name[nl]": "KClock_1x2",
+        "Name[pl]": "KClock_1x2",
         "Name[x-test]": "xxKClock_1x2xx",
         "ServiceTypes": [
             "Plasma/Applet"
