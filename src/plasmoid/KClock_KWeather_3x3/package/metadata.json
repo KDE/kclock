@@ -3,16 +3,19 @@
         "Authors": [
             {
                 "Email": "hanyoung@protonmail.com",
-                "Name": "HanY"
+                "Name": "HanY",
+                "Name[x-test]": "xxHanYxx"
             }
         ],
         "Category": "Utilities",
         "Description": "KClock widget (3x3 with Weather info)",
+        "Description[x-test]": "xxKClock widget (3x3 with Weather info)xx",
         "EnabledByDefault": true,
         "Icon": "kclock",
         "Id": "org.kde.plasma.kclock_kweather_3x3",
         "License": "LGPL-2.1+",
         "Name": "KClock_KWeather_3x3",
+        "Name[x-test]": "xxKClock_KWeather_3x3xx",
         "ServiceTypes": [
             "Plasma/Applet"
         ],

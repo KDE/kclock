@@ -3,11 +3,13 @@
         "Authors": [
             {
                 "Email": "hanyoung@protonmail.com",
-                "Name": "HanY"
+                "Name": "HanY",
+                "Name[x-test]": "xxHanYxx"
             }
         ],
         "Category": "Utilities",
         "Description": "KClock widget (1x2)",
+        "Description[x-test]": "xxKClock widget (1x2)xx",
         "EnabledByDefault": true,
         "FormFactors": [
             "tablet",
@@ -18,6 +20,7 @@
         "Id": "org.kde.plasma.kclock_1x2",
         "License": "LGPL-2.1+",
         "Name": "KClock_1x2",
+        "Name[x-test]": "xxKClock_1x2xx",
         "ServiceTypes": [
             "Plasma/Applet"
         ],
