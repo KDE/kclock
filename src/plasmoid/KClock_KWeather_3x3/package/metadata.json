@@ -3,16 +3,34 @@
         "Authors": [
             {
                 "Email": "hanyoung@protonmail.com",
-                "Name": "HanY"
+                "Name": "HanY",
+                "Name[ca]": "HanY",
+                "Name[es]": "HanY",
+                "Name[nl]": "HanY",
+                "Name[tr]": "HanY",
+                "Name[uk]": "HanY",
+                "Name[x-test]": "xxHanYxx"
             }
         ],
         "Category": "Utilities",
         "Description": "KClock widget (3x3 with Weather info)",
+        "Description[ca]": "Giny del KClock (3x3 amb informació meteorològica)",
+        "Description[es]": "Widget de KClock (3x3 con información meteorológica)",
+        "Description[nl]": "KClock-widget (3x3 met weerinformatie)",
+        "Description[tr]": "K Saat araç takımı (3 x 3, hava durumu bilgisiyle)",
+        "Description[uk]": "Віджет KClock (3x3 із даними щодо погоди)",
+        "Description[x-test]": "xxKClock widget (3x3 with Weather info)xx",
         "EnabledByDefault": true,
         "Icon": "kclock",
         "Id": "org.kde.plasma.kclock_kweather_3x3",
         "License": "LGPL-2.1+",
         "Name": "KClock_KWeather_3x3",
+        "Name[ca]": "KClock_KWeather_3x3",
+        "Name[es]": "KClock_KWeather_3x3",
+        "Name[nl]": "KClock_KWeather_3x3",
+        "Name[tr]": "K Saat_K Hava_3 x 3",
+        "Name[uk]": "KClock_KWeather_3x3",
+        "Name[x-test]": "xxKClock_KWeather_3x3xx",
         "ServiceTypes": [
             "Plasma/Applet"
         ],

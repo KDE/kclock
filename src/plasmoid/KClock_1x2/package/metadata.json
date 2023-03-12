@@ -3,11 +3,23 @@
         "Authors": [
             {
                 "Email": "hanyoung@protonmail.com",
-                "Name": "HanY"
+                "Name": "HanY",
+                "Name[ca]": "HanY",
+                "Name[es]": "HanY",
+                "Name[nl]": "HanY",
+                "Name[tr]": "HanY",
+                "Name[uk]": "HanY",
+                "Name[x-test]": "xxHanYxx"
             }
         ],
         "Category": "Utilities",
         "Description": "KClock widget (1x2)",
+        "Description[ca]": "Giny del KClock (1x2)",
+        "Description[es]": "Widget de KClock (1x2)",
+        "Description[nl]": "KClock-widget (1x2)",
+        "Description[tr]": "K Saat araç takımı (1 x 2)",
+        "Description[uk]": "Віджет KClock (1x2)",
+        "Description[x-test]": "xxKClock widget (1x2)xx",
         "EnabledByDefault": true,
         "FormFactors": [
             "tablet",
@@ -18,6 +30,12 @@
         "Id": "org.kde.plasma.kclock_1x2",
         "License": "LGPL-2.1+",
         "Name": "KClock_1x2",
+        "Name[ca]": "KClock_1x2",
+        "Name[es]": "KClock_1x2",
+        "Name[nl]": "KClock_1x2",
+        "Name[tr]": "K Saat_1 x 2",
+        "Name[uk]": "KClock_1x2",
+        "Name[x-test]": "xxKClock_1x2xx",
         "ServiceTypes": [
             "Plasma/Applet"
         ],
