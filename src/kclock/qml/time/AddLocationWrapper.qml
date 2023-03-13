@@ -16,6 +16,7 @@ Loader {
     
     function open() {
         loader.active = false;
+        AddLocationSearchModel.setFilterFixedString("");
         if (Kirigami.Settings.isMobile) {
             applicationWindow().pageStack.push("qrc:/qml/time/AddLocationPage.qml");
         } else {
