@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-06 01:03+0000\n"
+"POT-Creation-Date: 2023-03-14 00:49+0000\n"
 "PO-Revision-Date: 2022-04-15 23:10+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -444,7 +444,7 @@ msgstr ""
 msgid "No locations found"
 msgstr ""
 
-#: qml/time/AddLocationPage.qml:17 qml/time/AddLocationWrapper.qml:32
+#: qml/time/AddLocationPage.qml:17 qml/time/AddLocationWrapper.qml:33
 #, fuzzy, kde-format
 #| msgid "Add timezone"
 msgid "Add Location"
