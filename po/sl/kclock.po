@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-06 01:03+0000\n"
+"POT-Creation-Date: 2023-03-14 02:55+0000\n"
 "PO-Revision-Date: 2023-02-07 08:31+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -433,7 +433,7 @@ msgstr "#%1"
 msgid "No locations found"
 msgstr "Ni najdenih lokacij"
 
-#: qml/time/AddLocationPage.qml:17 qml/time/AddLocationWrapper.qml:32
+#: qml/time/AddLocationPage.qml:17 qml/time/AddLocationWrapper.qml:33
 #, kde-format
 msgid "Add Location"
 msgstr "Dodaj lokacijo"
