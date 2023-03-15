@@ -12,6 +12,8 @@
                 "Name[it]": "HanY",
                 "Name[nl]": "HanY",
                 "Name[pl]": "HanY",
+                "Name[sl]": "HanY",
+                "Name[uk]": "HanY",
                 "Name[x-test]": "xxHanYxx"
             }
         ],
@@ -24,6 +26,8 @@
         "Description[it]": "Oggetto KClock (1x2)",
         "Description[nl]": "KClock-widget (1x2)",
         "Description[pl]": "Element interfejsu KClock (1x2)",
+        "Description[sl]": "KClock gradnik (1x2)",
+        "Description[uk]": "Віджет KClock (1x2)",
         "Description[x-test]": "xxKClock widget (1x2)xx",
         "EnabledByDefault": true,
         "FormFactors": [
@@ -43,6 +47,8 @@
         "Name[it]": "KClock_1x2",
         "Name[nl]": "KClock_1x2",
         "Name[pl]": "KClock_1x2",
+        "Name[sl]": "KClock_1x2",
+        "Name[uk]": "KClock_1x2",
         "Name[x-test]": "xxKClock_1x2xx",
         "ServiceTypes": [
             "Plasma/Applet"

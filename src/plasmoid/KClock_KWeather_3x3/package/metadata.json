@@ -12,6 +12,8 @@
                 "Name[it]": "HanY",
                 "Name[nl]": "HanY",
                 "Name[pl]": "HanY",
+                "Name[sl]": "HanY",
+                "Name[uk]": "HanY",
                 "Name[x-test]": "xxHanYxx"
             }
         ],
@@ -24,6 +26,8 @@
         "Description[it]": "Oggetto KClock (3x3 con informazioni meteo)",
         "Description[nl]": "KClock-widget (3x3 met weerinformatie)",
         "Description[pl]": "Element interfejsu (3x3 z danymi pogodowymi)",
+        "Description[sl]": "KClock gradnik (3x3 z informacijami o vremenu)",
+        "Description[uk]": "Віджет KClock (3x3 із даними щодо погоди)",
         "Description[x-test]": "xxKClock widget (3x3 with Weather info)xx",
         "EnabledByDefault": true,
         "Icon": "kclock",
@@ -37,6 +41,8 @@
         "Name[it]": "KClock_KWeather_3x3",
         "Name[nl]": "KClock_KWeather_3x3",
         "Name[pl]": "KClock_KWeather_3x3",
+        "Name[sl]": "KClock_KWeather_3x3",
+        "Name[uk]": "KClock_KWeather_3x3",
         "Name[x-test]": "xxKClock_KWeather_3x3xx",
         "ServiceTypes": [
             "Plasma/Applet"
