@@ -18,7 +18,8 @@
                 "Name[sl]": "HanY",
                 "Name[tr]": "HanY",
                 "Name[uk]": "HanY",
-                "Name[x-test]": "xxHanYxx"
+                "Name[x-test]": "xxHanYxx",
+                "Name[zh_CN]": "HanY"
             }
         ],
         "Category": "Utilities",
@@ -37,6 +38,7 @@
         "Description[tr]": "K Saat araç takımı (3 x 3, hava durumu bilgisiyle)",
         "Description[uk]": "Віджет KClock (3x3 із даними щодо погоди)",
         "Description[x-test]": "xxKClock widget (3x3 with Weather info)xx",
+        "Description[zh_CN]": "KClock 挂件 (3x3 包含天气信息)",
         "EnabledByDefault": true,
         "Icon": "kclock",
         "Id": "org.kde.plasma.kclock_kweather_3x3",
@@ -56,6 +58,7 @@
         "Name[tr]": "K Saat_K Hava_3 x 3",
         "Name[uk]": "KClock_KWeather_3x3",
         "Name[x-test]": "xxKClock_KWeather_3x3xx",
+        "Name[zh_CN]": "KClock_KWeather_3x3",
         "ServiceTypes": [
             "Plasma/Applet"
         ],
