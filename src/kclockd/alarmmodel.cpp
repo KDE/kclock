@@ -199,7 +199,6 @@ void AlarmModel::initNotifierItem()
         m_item = new KStatusNotifierItem(this);
         m_item->setIconByName(QStringLiteral("clock"));
         m_item->setStandardActionsEnabled(false);
-        m_item->setAssociatedWidget(nullptr);
         m_item->setCategory(KStatusNotifierItem::SystemServices);
         m_item->setStatus(KStatusNotifierItem::Passive);
     }
