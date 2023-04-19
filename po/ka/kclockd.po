@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-18 00:47+0000\n"
+"POT-Creation-Date: 2023-04-19 00:52+0000\n"
 "PO-Revision-Date: 2022-11-27 22:16+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -48,7 +48,7 @@ msgstr "მაღვიძარა"
 msgid "View"
 msgstr "ნახვა"
 
-#: alarmmodel.cpp:223
+#: alarmmodel.cpp:222
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Alarm: <shortcut>%1 %2</shortcut>"

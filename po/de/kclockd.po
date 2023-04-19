@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-18 00:47+0000\n"
+"POT-Creation-Date: 2023-04-19 00:52+0000\n"
 "PO-Revision-Date: 2022-10-12 10:06+0200\n"
 "Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -50,7 +50,7 @@ msgstr "Erinnerung"
 msgid "View"
 msgstr "Ansicht"
 
-#: alarmmodel.cpp:223
+#: alarmmodel.cpp:222
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Alarm: <shortcut>%1 %2</shortcut>"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-18 00:47+0000\n"
+"POT-Creation-Date: 2023-04-19 00:52+0000\n"
 "PO-Revision-Date: 2022-12-24 01:51+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
@@ -47,7 +47,7 @@ msgstr "鬧鐘"
 msgid "View"
 msgstr "檢視"
 
-#: alarmmodel.cpp:223
+#: alarmmodel.cpp:222
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Alarm: <shortcut>%1 %2</shortcut>"
