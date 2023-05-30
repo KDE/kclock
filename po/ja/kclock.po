@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
@@ -174,7 +174,6 @@ msgstr ""
 msgid "Snoozed %1 minute"
 msgid_plural "Snoozed %1 minutes"
 msgstr[0] ""
-msgstr[1] ""
 
 #: qml/alarm/AlarmListDelegate.qml:112 qml/time/TimePageDelegate.qml:46
 #: qml/timer/TimerListDelegate.qml:176 qml/timer/TimerPage.qml:60
@@ -638,7 +637,6 @@ msgstr ""
 msgid "%1 day"
 msgid_plural "%1 days"
 msgstr[0] ""
-msgstr[1] ""
 
 #: utilmodel.cpp:76
 #, kde-format
@@ -655,14 +653,12 @@ msgstr ""
 msgid "%1 hour"
 msgid_plural "%1 hours"
 msgstr[0] ""
-msgstr[1] ""
 
 #: utilmodel.cpp:86
 #, kde-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] ""
-msgstr[1] ""
 
 #: utilmodel.cpp:90
 #, kde-format

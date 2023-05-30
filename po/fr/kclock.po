@@ -1,7 +1,7 @@
 # Xavier Besnard <xavier.besnard@neuf.fr>, 2020, 2021, 2022.
 # Simon Depiets <sdepiets@gmail.com>, 2020.
 # Noé Lopez <noelopez@free.fr>, 2022.
-# Xavier BESNARD <xavier.besnard]neuf.fr>, 2023.
+# Xavier BESNARD <xavier.besnard@neuf.fr>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
