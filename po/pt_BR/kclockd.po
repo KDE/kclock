@@ -1,0 +1,92 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the kclock package.
+#
+# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2023.
+msgid ""
+msgstr ""
+"Project-Id-Version: kclock\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-04-19 00:52+0000\n"
+"PO-Revision-Date: 2023-06-07 10:59-0300\n"
+"Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
+"Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 22.12.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Luiz Fernando Ranghetti"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "elchevive@opensuse.org"
+
+#: alarm.cpp:73
+#, kde-format
+msgid "Dismiss"
+msgstr "Descartar"
+
+#: alarm.cpp:73
+#, kde-format
+msgid "Snooze"
+msgstr "Soneca"
+
+#: alarm.cpp:75 alarm.h:51
+#, kde-format
+msgid "Alarm"
+msgstr "Alarme"
+
+#: alarm.cpp:77 timer.cpp:55
+#, kde-format
+msgid "View"
+msgstr "Exibir"
+
+#: alarmmodel.cpp:222
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Alarm: <shortcut>%1 %2</shortcut>"
+msgstr "Alarme: <shortcut>%1 %2</shortcut>"
+
+#: main.cpp:30
+#, kde-format
+msgid "Don't use PowerDevil for alarms if it is available"
+msgstr "Não use o PowerDevil para alarmes se estiver disponível"
+
+#: main.cpp:45
+#, kde-format
+msgid "© 2020-2022 KDE Community"
+msgstr "© 2020-2022 Comunidade KDE"
+
+#: main.cpp:46
+#, kde-format
+msgid "Devin Lin"
+msgstr "Devin Lin"
+
+#: main.cpp:47
+#, kde-format
+msgid "Han Young"
+msgstr "Han Young"
+
+#: timer.cpp:53
+#, kde-format
+msgid "Timer complete"
+msgstr "Temporizador concluído"
+
+#: timer.cpp:54
+#, kde-format
+msgid "Your timer %1 has finished!"
+msgstr "Seu temporizador %1 terminou!"
+
+#: xdgportal.cpp:34
+#, kde-format
+msgid ""
+"Allow the clock process to be in the background and launched on startup."
+msgstr ""
+"Permitir que o processo do relógio fique em segundo plano e seja iniciado na "
+"inicialização."
