@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-09-18 00:47+0000\n"
-"PO-Revision-Date: 2023-02-19 17:37+0300\n"
+"PO-Revision-Date: 2023-05-31 09:25+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -21,17 +21,17 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Александр Яворский"
+msgstr "Александр Яворский,Алевтина Карашокова"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "kekcuha@gmail.com"
+msgstr "kekcuha@gmail.com,translation-team@basealt.ru"
 
 #: alarm.cpp:73
 #, kde-format
 msgid "Dismiss"
-msgstr "Отменить"
+msgstr "Отклонить"
 
 #: alarm.cpp:73
 #, kde-format
@@ -46,7 +46,7 @@ msgstr "Напоминание"
 #: alarm.cpp:77 timer.cpp:55
 #, kde-format
 msgid "View"
-msgstr ""
+msgstr "Вид"
 
 #: alarmmodel.cpp:223
 #, kde-kuit-format
@@ -57,7 +57,7 @@ msgstr "Напоминание: <shortcut>%1 %2</shortcut>"
 #: main.cpp:30
 #, kde-format
 msgid "Don't use PowerDevil for alarms if it is available"
-msgstr ""
+msgstr "Не использовать службу PowerDevil для напоминаний"
 
 #: main.cpp:45
 #, kde-format
@@ -77,15 +77,16 @@ msgstr "Han Young"
 #: timer.cpp:53
 #, kde-format
 msgid "Timer complete"
-msgstr ""
+msgstr "Отсчёт завершён"
 
 #: timer.cpp:54
 #, kde-format
 msgid "Your timer %1 has finished!"
-msgstr "Отсчёт таймера %1 завершён!"
+msgstr "Отсчёт таймера «%1» завершён!"
 
 #: xdgportal.cpp:34
 #, kde-format
 msgid ""
 "Allow the clock process to be in the background and launched on startup."
 msgstr ""
+"Разрешить работу часов в фоновом режиме и открывать при запуске устройства"
