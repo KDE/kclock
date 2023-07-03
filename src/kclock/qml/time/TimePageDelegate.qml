@@ -27,7 +27,7 @@ Kirigami.BasicListItem {
     label: model.city
     subtitle: model.relativeTime
 
-    bold: true
+    font.bold: true
 
     // Don't need a hover effect for the background, since these items don't
     // do anything when tapped or clicked

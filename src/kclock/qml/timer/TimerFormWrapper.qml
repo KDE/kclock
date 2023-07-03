@@ -128,19 +128,19 @@ Loader {
 
             customFooterActions: [
                 Kirigami.Action {
-                    iconName: "list-add"
+                    icon.name: "list-add"
                     text: i18n("Save As Preset")
                     onTriggered: {
                         TimerPresetModel.insertPreset(timerForm.name, timerForm.getDuration());
                     }
                 },
                 Kirigami.Action {
-                    iconName: "dialog-cancel"
+                    icon.name: "dialog-cancel"
                     text: i18n("Cancel")
                     onTriggered: close()
                 },
                 Kirigami.Action {
-                    iconName: "dialog-ok"
+                    icon.name: "dialog-ok"
                     text: i18n("Done")
                     onTriggered: {
                         loader.createTimer(timerForm.getDuration(), timerForm.name, timerForm.commandTimeout);

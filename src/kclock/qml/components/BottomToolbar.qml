@@ -81,7 +81,7 @@ Kirigami.NavigationTabBar {
     
     actions: [
         Kirigami.Action {
-            iconName: "clock"
+            icon.name: "clock"
             text: i18n("Time")
             checked: getTimePage() === pageStack.currentItem
             onTriggered: {
@@ -91,7 +91,7 @@ Kirigami.NavigationTabBar {
             }
         },
         Kirigami.Action {
-            iconName: "player-time"
+            icon.name: "player-time"
             text: i18n("Timers")
             checked: getTimersPage() === pageStack.currentItem
             onTriggered: {
@@ -101,7 +101,7 @@ Kirigami.NavigationTabBar {
             }
         },
         Kirigami.Action {
-            iconName: "chronometer"
+            icon.name: "chronometer"
             text: i18n("Stopwatch")
             checked: getStopwatchPage() === pageStack.currentItem
             onTriggered: {
@@ -111,7 +111,7 @@ Kirigami.NavigationTabBar {
             }
         },
         Kirigami.Action {
-            iconName: "notifications"
+            icon.name: "notifications"
             text: i18n("Alarms")
             checked: getAlarmsPage() === pageStack.currentItem
             onTriggered: {

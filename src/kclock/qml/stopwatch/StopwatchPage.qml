@@ -54,19 +54,18 @@ Kirigami.ScrollablePage {
     Keys.onReturnPressed: addLap();
 
     // desktop action
-    mainAction: Kirigami.Action {
-        id: toggleAction
-        visible: !Kirigami.Settings.isMobile
-        iconName: "chronometer-reset"
-        text: i18n("Reset")
-        onTriggered: resetStopwatch()
-    }
-    
-    actions.contextualActions: [
+    actions: [
         Kirigami.Action {
-            displayHint: Kirigami.Action.IconOnly
+            id: toggleAction
+            visible: !Kirigami.Settings.isMobile
+            icon.name: "chronometer-reset"
+            text: i18n("Reset")
+            onTriggered: resetStopwatch()
+        },
+        Kirigami.Action {
+            displayHint: Kirigami.DisplayHint.IconOnly
             visible: !applicationWindow().isWidescreen
-            iconName: "settings-configure"
+            icon.name: "settings-configure"
             text: i18n("Settings")
             onTriggered: applicationWindow().pageStack.push(applicationWindow().getPage("Settings"))
         }

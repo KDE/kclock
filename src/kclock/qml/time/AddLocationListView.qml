@@ -70,7 +70,7 @@ ListView {
         
         label: model.city
         subtitle: model.country
-        bold: true
+        font.bold: true
 
         trailing: Label {
             text: model.currentTime

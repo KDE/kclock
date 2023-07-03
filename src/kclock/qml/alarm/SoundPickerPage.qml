@@ -8,7 +8,7 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.2
-import QtQuick.Dialogs 1.3
+import QtQuick.Dialogs
 import QtMultimedia 5.15
 
 import org.kde.kirigami 2.20 as Kirigami
