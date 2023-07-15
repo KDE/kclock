@@ -47,35 +47,18 @@ find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED COMPONENTS
     Quick
     Test
     Svg
+    Widgets
     QuickControls2
-    Multimedia
-    DBus
 )
 
 find_package(KF${QT_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS
-    Config
     I18n
-    CoreAddons
-    Plasma
     Kirigami2
-    Notifications
-    DBusAddons
 )
-find_package(KF${QT_MAJOR_VERSION}KirigamiAddons 0.6 REQUIRED)
 
 find_package(Qt${QT_MAJOR_VERSION}QuickCompiler)
 
-ki18n_install(po)
-
 add_subdirectory(src)
-
-install(PROGRAMS org.kde.kclock.desktop DESTINATION ${KDE_INSTALL_APPDIR})
-install(FILES org.kde.kclockd-autostart.desktop DESTINATION ${KDE_INSTALL_AUTOSTARTDIR})
-install(FILES org.kde.kclock.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
-install(FILES org.kde.kclock.svg DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/scalable/apps/)
-install(FILES kclockd.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})
-
-ecm_install_configured_files(INPUT org.kde.kclockd.service.in DESTINATION ${KDE_INSTALL_DBUSSERVICEDIR} @ONLY)
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
