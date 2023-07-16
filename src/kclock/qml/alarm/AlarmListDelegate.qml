@@ -90,7 +90,7 @@ Kirigami.BasicListItem {
         return subtitleString;
     }
 
-    bold: true
+    font.bold: true
     fadeContent: !root.enabled
 
     trailing: RowLayout {

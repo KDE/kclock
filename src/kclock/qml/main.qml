@@ -83,6 +83,7 @@ Kirigami.ApplicationWindow {
             }
             sidebarLoader.active = true;
             globalDrawer = sidebarLoader.item;
+            globalDrawer.parent = Overlay.overlay;
         } else {
             sidebarLoader.active = false;
             globalDrawer = null;

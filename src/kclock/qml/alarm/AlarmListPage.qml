@@ -25,25 +25,24 @@ Kirigami.ScrollablePage {
     title: i18n("Alarms")
     icon.name: "notifications"
     
-    mainAction: Kirigami.Action {
-        iconName: "list-add"
-        text: i18n("New Alarm")
-        onTriggered: root.addAlarm()
-        visible: !Kirigami.Settings.isMobile
-    }
-    
-    actions.contextualActions: [
+    actions: [
         Kirigami.Action {
-            iconName: "edit-entry"
+            icon.name: "list-add"
+            text: i18n("New Alarm")
+            onTriggered: root.addAlarm()
+            visible: !Kirigami.Settings.isMobile
+        },
+        Kirigami.Action {
+            icon.name: "edit-entry"
             text: i18n("Edit")
             onTriggered: root.editMode = !root.editMode
             checkable: true
             visible: alarmsList.count > 0
         },
         Kirigami.Action {
-            displayHint: Kirigami.Action.IconOnly
+            displayHint: Kirigami.DisplayHint.IconOnly
             visible: !applicationWindow().isWidescreen
-            iconName: "settings-configure"
+            icon.name: "settings-configure"
             text: i18n("Settings")
             onTriggered: applicationWindow().pageStack.push(applicationWindow().getPage("Settings"))
         }
@@ -83,7 +82,7 @@ Kirigami.ScrollablePage {
             icon.name: "notifications"
             
             helpfulAction: Kirigami.Action {
-                iconName: "list-add"
+                icon.name: "list-add"
                 text: i18n("Add alarm")
                 onTriggered: root.addAlarm()
             }

@@ -10,7 +10,7 @@ import QtQuick 2.11
 import QtQuick.Controls 2.4
 import QtQuick.Window 2.2
 import QtQuick.Layouts 1.2
-import QtQuick.Dialogs 1.3
+import QtQuick.Dialogs
 
 import org.kde.kirigami 2.11 as Kirigami
 import org.kde.kirigamiaddons.dateandtime 0.1 as DateAndTime
@@ -35,11 +35,13 @@ Kirigami.ScrollablePage {
         pageStack.currentIndex--;
     }
     
-    actions.main: Kirigami.Action {
-        iconName: "dialog-ok"
-        text: i18n("Done")
-        onTriggered: root.accept()
-    }
+    actions: [
+        Kirigami.Action {
+            icon.name: "dialog-ok"
+            text: i18n("Done")
+            onTriggered: root.accept()
+        }
+    ]
     
     // mobile footer actions
     footer: ToolBar {

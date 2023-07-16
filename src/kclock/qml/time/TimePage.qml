@@ -25,7 +25,7 @@ Kirigami.ScrollablePage {
     title: i18n("Time")
     icon.name: "clock"
 
-    actions.contextualActions: [newAction, editAction, settingsAction]
+    actions: [newAction, editAction, settingsAction]
     
     function openAddSheet() {
         timeZoneSelect.open();
@@ -33,7 +33,7 @@ Kirigami.ScrollablePage {
     
     Kirigami.Action {
         id: editAction
-        iconName: "edit-entry"
+        icon.name: "edit-entry"
         text: i18n("Edit")
         checkable: true
         visible: listView.count > 0
@@ -46,7 +46,7 @@ Kirigami.ScrollablePage {
     
     Kirigami.Action {
         id: newAction
-        iconName: "list-add"
+        icon.name: "list-add"
         text: i18n("Add")
         visible: !Kirigami.Settings.isMobile
         onTriggered: root.openAddSheet()
@@ -54,9 +54,9 @@ Kirigami.ScrollablePage {
     
     Kirigami.Action {
         id: settingsAction
-        displayHint: Kirigami.Action.IconOnly
+        displayHint: Kirigami.DisplayHint.IconOnly
         visible: !applicationWindow().isWidescreen
-        iconName: "settings-configure"
+        icon.name: "settings-configure"
         text: i18n("Settings")
         onTriggered: applicationWindow().pageStack.push(applicationWindow().getPage("Settings"))
     }

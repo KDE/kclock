@@ -9,7 +9,6 @@ import QtQuick 2.12
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.2
 import org.kde.kirigami 2.19 as Kirigami
-import QtGraphicalEffects 1.12
 
 Kirigami.NavigationTabBar {
     id: root
@@ -18,7 +17,9 @@ Kirigami.NavigationTabBar {
     onShouldShowChanged: {
         if (shouldShow) {
             hideAnim.stop();
-            showAnim.restart();
+            if (implicitHeight > 0) {
+                showAnim.restart();
+            }
         } else {
             showAnim.stop();
             hideAnim.restart();
@@ -81,7 +82,7 @@ Kirigami.NavigationTabBar {
     
     actions: [
         Kirigami.Action {
-            iconName: "clock"
+            icon.name: "clock"
             text: i18n("Time")
             checked: getTimePage() === pageStack.currentItem
             onTriggered: {
@@ -91,7 +92,7 @@ Kirigami.NavigationTabBar {
             }
         },
         Kirigami.Action {
-            iconName: "player-time"
+            icon.name: "player-time"
             text: i18n("Timers")
             checked: getTimersPage() === pageStack.currentItem
             onTriggered: {
@@ -101,7 +102,7 @@ Kirigami.NavigationTabBar {
             }
         },
         Kirigami.Action {
-            iconName: "chronometer"
+            icon.name: "chronometer"
             text: i18n("Stopwatch")
             checked: getStopwatchPage() === pageStack.currentItem
             onTriggered: {
@@ -111,7 +112,7 @@ Kirigami.NavigationTabBar {
             }
         },
         Kirigami.Action {
-            iconName: "notifications"
+            icon.name: "notifications"
             text: i18n("Alarms")
             checked: getAlarmsPage() === pageStack.currentItem
             onTriggered: {
