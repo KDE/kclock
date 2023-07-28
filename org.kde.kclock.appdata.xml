@@ -17,6 +17,7 @@
   <name xml:lang="de">Clock</name>
   <name xml:lang="el">Ρολόι</name>
   <name xml:lang="en-GB">Clock</name>
+  <name xml:lang="eo">Horloĝo</name>
   <name xml:lang="es">Reloj</name>
   <name xml:lang="et">Kell</name>
   <name xml:lang="eu">Erlojua</name>
@@ -51,6 +52,7 @@
   <summary xml:lang="ca-valencia">Establiu alarmes i temporitzadors, utilitzeu un cronòmetre i gestioneu els rellotges mundials</summary>
   <summary xml:lang="de">Erinnerungen und Zeitgeber einstellen, eine Stoppuhr verwenden und Weltzeituhren verwalten</summary>
   <summary xml:lang="en-GB">Set alarms and timers, use a stopwatch, and manage world clocks</summary>
+  <summary xml:lang="eo">Agordu alarmojn kaj tempigilojn, uzu kronometron kaj administru mondajn horloĝojn</summary>
   <summary xml:lang="es">Definir alarmas y temporizadores, usar un cronómetro y gestionar relojes mundiales</summary>
   <summary xml:lang="eu">Ezarri alarmak eta tenporizadoreak, erabili kronometroa, eta kudeatu munduko ordulariak</summary>
   <summary xml:lang="fi">Aseta hälytyksiä ja ajastimia, käytä sekuntikelloa ja hallitse maailmankelloa</summary>
@@ -85,6 +87,7 @@
   <developer_name xml:lang="de">KDE-Gemeinschaft</developer_name>
   <developer_name xml:lang="el">Η κοινότητα του KDE</developer_name>
   <developer_name xml:lang="en-GB">KDE Community</developer_name>
+  <developer_name xml:lang="eo">KDE-Komunumo</developer_name>
   <developer_name xml:lang="es">Comunidad KDE</developer_name>
   <developer_name xml:lang="et">KDE kogukond</developer_name>
   <developer_name xml:lang="eu">KDE komunitatea</developer_name>
@@ -121,6 +124,7 @@
     <p xml:lang="cs">Univerzální aplikace hodin pro pracovní plochu a mobilní zařízení.</p>
     <p xml:lang="de">Eine universelle Uhren-Anwendung für Plasma.</p>
     <p xml:lang="en-GB">A universal clock application for desktop and mobile.</p>
+    <p xml:lang="eo">Universala horloĝa aplikaĵo por labortablo kaj poŝtelefono.</p>
     <p xml:lang="es">Aplicación de reloj universal para el escritorio y el móvil.</p>
     <p xml:lang="eu">Mahaigain eta mugikorrerako erloju-aplikazio unibertsal bat.</p>
     <p xml:lang="fi">Yleiskellosovellus työpöydälle ja mobiiliin.</p>
@@ -153,6 +157,7 @@
     <p xml:lang="ca-valencia">Conté funcions d'alarma, temporitzador, cronòmetre i zona horària. Les alarmes i els temporitzadors també poden fer que el dispositiu deixe d'estar suspés en Plasma.</p>
     <p xml:lang="de">Sie beinhaltet einen Erinnerungsalarm, eine Eieruhr, eine Stoppuhr und Zeitzonenfunktionen. Erinnerungen und die Eieruhr können Ihr Gerät aus dem Standby-Modus aufzuwecken, sofern Sie Plasma verwenden.</p>
     <p xml:lang="en-GB">It contains alarm, timer, stopwatch and timezone functionalities. Alarms and timers are able to wake the device from suspend on Plasma.</p>
+    <p xml:lang="eo">Ĝi enhavas alarmon, tempigilon, kronometron kaj horzonajn funkciojn. Alarmoj kaj tempigiloj kapablas veki la aparaton de suspendo sur Plasma.</p>
     <p xml:lang="es">Contiene las funciones de alarma, temporizador, cronómetro y zona horaria. Las alarmas y los temporizadores pueden despertar el dispositivo del estado de suspensión en Plasma.</p>
     <p xml:lang="eu">Alarma, tenporizadorea, kronometroa eta ordu-eremu funtzionalitateak ditu. Alarmak eta tenporizadoreak gailua esekiduratik esnatzeko gai dira.</p>
     <p xml:lang="fi">Sisältää hälytys-, ajastin, sekuntikello- ja aikavyöhyketoiminnot. Hälytykset ja ajastimet voivat Plasmassa herättää laitteen keskeytystilasta.</p>
@@ -200,6 +205,7 @@
       <caption xml:lang="de">Mobile Ansicht</caption>
       <caption xml:lang="el">Προβολή για κινητά</caption>
       <caption xml:lang="en-GB">Mobile view</caption>
+      <caption xml:lang="eo">Poŝtelefona vido</caption>
       <caption xml:lang="es">Vista móvil</caption>
       <caption xml:lang="eu">Mugikor ikuspegia</caption>
       <caption xml:lang="fi">Mobiilinäkymä</caption>
@@ -237,6 +243,7 @@
       <caption xml:lang="de">Arbeitsflächenansicht</caption>
       <caption xml:lang="el">Προβολή για υπολογιστή γραφείου</caption>
       <caption xml:lang="en-GB">Desktop view</caption>
+      <caption xml:lang="eo">Labortabla vido</caption>
       <caption xml:lang="es">Vista de escritorio</caption>
       <caption xml:lang="eu">Mahaigaineko ikuspegia</caption>
       <caption xml:lang="fi">Työpöytänäkymä</caption>
@@ -274,6 +281,7 @@
       <caption xml:lang="de">Eieruhrseite</caption>
       <caption xml:lang="el">Σελίδα χρονοδιακοπτών</caption>
       <caption xml:lang="en-GB">Timers page</caption>
+      <caption xml:lang="eo">Temporiziloj paĝo</caption>
       <caption xml:lang="es">Página de temporizadores</caption>
       <caption xml:lang="eu">Tenporizadoreen orria</caption>
       <caption xml:lang="fi">Ajastinsivu</caption>
@@ -311,6 +319,7 @@
       <caption xml:lang="de">Eieruhrseite</caption>
       <caption xml:lang="el">Σελίδα χρονοδιακόπτη</caption>
       <caption xml:lang="en-GB">Timer page</caption>
+      <caption xml:lang="eo">Timer-paĝo</caption>
       <caption xml:lang="es">Página del temporizador</caption>
       <caption xml:lang="eu">Tenporizadorearen orria</caption>
       <caption xml:lang="fi">Ajastinsivu</caption>
@@ -348,6 +357,7 @@
       <caption xml:lang="de">Stoppuhrseite</caption>
       <caption xml:lang="el">Σελίδα χρονομέτρου</caption>
       <caption xml:lang="en-GB">Stopwatch page</caption>
+      <caption xml:lang="eo">Kronometropaĝo</caption>
       <caption xml:lang="es">Página del cronómetro</caption>
       <caption xml:lang="eu">Kronometroaren orria</caption>
       <caption xml:lang="fi">Sekuntikellosivu</caption>
@@ -385,6 +395,7 @@
       <caption xml:lang="de">Erinnerungsseite</caption>
       <caption xml:lang="el">Σελίδα συναγερμών</caption>
       <caption xml:lang="en-GB">Alarms page</caption>
+      <caption xml:lang="eo">Paĝo de alarmoj</caption>
       <caption xml:lang="es">Página de alarmas</caption>
       <caption xml:lang="eu">Alarmen orria</caption>
       <caption xml:lang="fi">Hälytyssivu</caption>
