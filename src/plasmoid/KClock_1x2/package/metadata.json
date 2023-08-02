@@ -97,7 +97,7 @@
             "Plasma/Applet"
         ],
         "Version": "1.0",
-        "Website": "https://plasma.kde.org/"
+        "Website": "https://apps.kde.org/kclock"
     },
     "X-Plasma-API": "declarativeappletscript",
     "X-Plasma-DBusActivationService": "org.kde.kclock.*",
