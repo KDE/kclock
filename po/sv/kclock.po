@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the kclock package.
 #
-# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2020, 2021, 2022.
+# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-14 00:49+0000\n"
-"PO-Revision-Date: 2022-09-28 16:55+0200\n"
+"PO-Revision-Date: 2023-07-24 11:50+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -173,12 +173,11 @@ msgid "Cancel"
 msgstr "Avbryt"
 
 #: qml/alarm/AlarmListDelegate.qml:88
-#, fuzzy, kde-format
-#| msgid "Snoozed %1 minute"
+#, kde-format
 msgid "Snoozed %1 minute"
 msgid_plural "Snoozed %1 minutes"
-msgstr[0] "Slumrade %1 minute"
-msgstr[1] "Slumrade %1 minute"
+msgstr[0] "Slumrade %1 minut"
+msgstr[1] "Slumrade %1 minuter"
 
 #: qml/alarm/AlarmListDelegate.qml:112 qml/time/TimePageDelegate.qml:46
 #: qml/timer/TimerListDelegate.qml:176 qml/timer/TimerPage.qml:60
@@ -313,37 +312,37 @@ msgstr "Veckodagar"
 #: qml/components/formatUtil.js:22
 #, kde-format
 msgid "Mon, "
-msgstr ""
+msgstr "mån, "
 
 #: qml/components/formatUtil.js:23
 #, kde-format
 msgid "Tue, "
-msgstr ""
+msgstr "tis, "
 
 #: qml/components/formatUtil.js:24
 #, kde-format
 msgid "Wed, "
-msgstr ""
+msgstr "ons, "
 
 #: qml/components/formatUtil.js:25
 #, kde-format
 msgid "Thu, "
-msgstr ""
+msgstr "tor, "
 
 #: qml/components/formatUtil.js:26
 #, kde-format
 msgid "Fri, "
-msgstr ""
+msgstr "fre, "
 
 #: qml/components/formatUtil.js:27
 #, kde-format
 msgid "Sat, "
-msgstr ""
+msgstr "lör, "
 
 #: qml/components/formatUtil.js:28
 #, kde-format
 msgid "Sun, "
-msgstr ""
+msgstr "sön, "
 
 #: qml/components/TimePicker.qml:70
 #, kde-format
