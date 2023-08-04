@@ -103,6 +103,6 @@ KClock_1x2::~KClock_1x2()
 {
 }
 
-K_PLUGIN_CLASS_WITH_JSON(KClock_1x2, "package/metadata.json")
+K_PLUGIN_CLASS(KClock_1x2)
 
 #include "kclock_1x2.moc"
