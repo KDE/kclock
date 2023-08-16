@@ -60,6 +60,7 @@ find_package(KF${QT_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS
     Kirigami2
     Notifications
     DBusAddons
+    StatusNotifierItem
 )
 find_package(KF${QT_MAJOR_VERSION}KirigamiAddons 0.6 REQUIRED)
 

@@ -87,6 +87,7 @@ target_link_libraries(kclockd
     KF${QT_MAJOR_VERSION}::CoreAddons
     KF${QT_MAJOR_VERSION}::Notifications
     KF${QT_MAJOR_VERSION}::DBusAddons
+    KF6::StatusNotifierItem
     )
 target_include_directories(kclockd PRIVATE ${CMAKE_BINARY_DIR})
 install(TARGETS kclockd ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
