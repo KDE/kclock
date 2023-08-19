@@ -15,6 +15,7 @@ class StopwatchTimer : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(int elapsedTime READ elapsedTime NOTIFY timeChanged)
+    Q_PROPERTY(QString hours READ hoursDisplay NOTIFY timeChanged)
     Q_PROPERTY(QString minutes READ minutesDisplay NOTIFY timeChanged)
     Q_PROPERTY(QString seconds READ secondsDisplay NOTIFY timeChanged)
     Q_PROPERTY(QString small READ smallDisplay NOTIFY timeChanged)
@@ -22,9 +23,11 @@ class StopwatchTimer : public QObject
 public:
     explicit StopwatchTimer(QObject *parent = nullptr);
 
+    long long hours();
     long long minutes();
     long long seconds();
     long long small();
+    QString hoursDisplay();
     QString minutesDisplay();
     QString secondsDisplay();
     QString smallDisplay();
@@ -41,6 +44,8 @@ private Q_SLOTS:
     void updateTime();
 
 private:
+    static QString displayZeroOrAmount(const int &amount);
+
     const int m_interval = 41; // 24fps
 
     long long timerStartStamp = QDateTime::currentMSecsSinceEpoch();

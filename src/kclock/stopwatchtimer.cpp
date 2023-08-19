@@ -66,6 +66,11 @@ long long StopwatchTimer::elapsedTime()
     }
 }
 
+long long StopwatchTimer::hours()
+{
+    return elapsedTime() / 3600000;
+}
+
 long long StopwatchTimer::minutes()
 {
     return elapsedTime() / 1000 / 60;
@@ -81,20 +86,33 @@ long long StopwatchTimer::small()
     return elapsedTime() / 10 - 100 * seconds() - 100 * 60 * minutes();
 }
 
+QString StopwatchTimer::displayZeroOrAmount(const int &amount)
+{
+    return amount >= 10 ? QString::number(amount) : QStringLiteral("0") + QString::number(amount);
+}
+
+QString StopwatchTimer::hoursDisplay()
+{
+    long long amount = hours();
+    return displayZeroOrAmount(amount);
+}
+
 QString StopwatchTimer::minutesDisplay()
 {
-    long long amount = minutes();
-    return amount >= 10 ? QString::number(amount) : QStringLiteral("0") + QString::number(amount);
+    // % 60 discards anything above 60 minutes. Not used in minutes() because
+    // it may tamper with seconds() and small().
+    long long amount = minutes() % 60;
+    return displayZeroOrAmount(amount);
 }
 
 QString StopwatchTimer::secondsDisplay()
 {
     long long amount = seconds();
-    return amount >= 10 ? QString::number(amount) : QStringLiteral("0") + QString::number(amount);
+    return displayZeroOrAmount(amount);
 }
 
 QString StopwatchTimer::smallDisplay()
 {
     long long amount = small();
-    return amount >= 10 ? QString::number(amount) : QStringLiteral("0") + QString::number(amount);
+    return displayZeroOrAmount(amount);
 }
