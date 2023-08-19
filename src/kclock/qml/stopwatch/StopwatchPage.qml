@@ -230,8 +230,9 @@ Kirigami.ScrollablePage {
                     Item {
                         Layout.fillHeight: true
                         Layout.leftMargin: Kirigami.Units.largeSpacing
-                        Layout.minimumWidth: Kirigami.Units.gridUnit * 2
+                        Layout.minimumWidth: Math.max(Kirigami.Units.gridUnit * 2, lapLabel.implicitWidth)
                         Label {
+                            id: lapLabel
                             anchors.verticalCenter: parent.verticalCenter
                             color: Kirigami.Theme.textColor
                             font.weight: Font.Bold
