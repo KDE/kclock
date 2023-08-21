@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-14 00:49+0000\n"
+"POT-Creation-Date: 2023-08-20 00:49+0000\n"
 "PO-Revision-Date: 2022-07-27 20:11+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -420,7 +420,7 @@ msgstr "Start"
 msgid "Lap"
 msgstr "Runde"
 
-#: qml/stopwatch/StopwatchPage.qml:238
+#: qml/stopwatch/StopwatchPage.qml:239
 #, kde-format
 msgid "#%1"
 msgstr "#%1"
