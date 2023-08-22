@@ -70,16 +70,20 @@ Alarm::~Alarm()
 void Alarm::init(AlarmModel *parent)
 {
     // setup notification
-    m_notification->setActions({i18n("Dismiss"), i18n("Snooze")});
     m_notification->setIconName(QStringLiteral("kclock"));
     m_notification->setTitle(name() == QString() ? i18n("Alarm") : name());
     m_notification->setText(QLocale::system().toString(QTime::currentTime(), QLocale::ShortFormat));
-    m_notification->setDefaultAction(i18n("View"));
     m_notification->setAutoDelete(false); // don't auto-delete when closing
 
-    connect(m_notification, &KNotification::defaultActivated, this, &Alarm::dismiss);
-    connect(m_notification, &KNotification::action1Activated, this, &Alarm::dismiss);
-    connect(m_notification, &KNotification::action2Activated, this, &Alarm::snooze);
+    auto defaultAction = m_notification->addDefaultAction(i18n("View"));
+    connect(defaultAction, &KNotificationAction::activated, this, &Alarm::dismiss);
+
+    auto dismissAction = m_notification->addAction(i18n("Dismiss"));
+    connect(dismissAction, &KNotificationAction::activated, this, &Alarm::dismiss);
+
+    auto snoozeAction = m_notification->addAction(i18n("Snooze"));
+    connect(snoozeAction, &KNotificationAction::activated, this, &Alarm::snooze);
+
     connect(m_notification, &KNotification::closed, this, &Alarm::dismiss);
 
     // setup signals

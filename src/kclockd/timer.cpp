@@ -52,12 +52,12 @@ void Timer::init()
     m_notification->setIconName(QStringLiteral("kclock"));
     m_notification->setTitle(i18n("Timer complete"));
     m_notification->setText(i18n("Your timer %1 has finished!", label()));
-    m_notification->setDefaultAction(i18n("View"));
     m_notification->setUrgency(KNotification::HighUrgency);
     m_notification->setAutoDelete(false); // don't auto-delete when closing
 
-    connect(m_notification, &KNotification::defaultActivated, this, &Timer::dismiss);
-    connect(m_notification, &KNotification::action1Activated, this, &Timer::dismiss);
+    auto defaultAction = m_notification->addDefaultAction(i18n("View"));
+    connect(defaultAction, &KNotificationAction::activated, this, &Timer::dismiss);
+
     connect(m_notification, &KNotification::closed, this, &Timer::dismiss);
 
     // initialize DBus object
