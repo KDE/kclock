@@ -55,5 +55,10 @@ target_link_libraries(kclock
         KF${QT_MAJOR_VERSION}::Notifications
         KF${QT_MAJOR_VERSION}::DBusAddons
         )
+
+if(QT_MAJOR_VERSION STREQUAL "6")
+    target_link_libraries(kclock KF${QT_MAJOR_VERSION}::StatusNotifierItem)
+endif()
+
 target_include_directories(kclock PRIVATE ${CMAKE_BINARY_DIR})
 install(TARGETS kclock ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

@@ -81,6 +81,7 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.Utility.xml DESTINATIO
 add_executable(kclockd main.cpp ${kclockd_SRCS} )
 target_link_libraries(kclockd
     Qt::Multimedia
+    Qt::Widgets
     KF${QT_MAJOR_VERSION}::I18n
     KF${QT_MAJOR_VERSION}::ConfigCore
     KF${QT_MAJOR_VERSION}::ConfigGui
@@ -88,5 +89,10 @@ target_link_libraries(kclockd
     KF${QT_MAJOR_VERSION}::Notifications
     KF${QT_MAJOR_VERSION}::DBusAddons
     )
+
+if(QT_MAJOR_VERSION STREQUAL "6")
+    target_link_libraries(kclockd KF${QT_MAJOR_VERSION}::StatusNotifierItem)
+endif()
+
 target_include_directories(kclockd PRIVATE ${CMAKE_BINARY_DIR})
 install(TARGETS kclockd ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
