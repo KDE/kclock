@@ -65,6 +65,11 @@ void SavedLocationsModel::load()
     for (const QString &timezoneId : timezoneGroup.keyList()) {
         m_timeZones.push_back(QTimeZone{timezoneId.toUtf8()});
     }
+    std::sort(m_timeZones.begin(), m_timeZones.end(), [](const QTimeZone &lhs, const QTimeZone &rhs) {
+        int lhsOffset = lhs.offsetFromUtc(QDateTime::currentDateTime()) - QTimeZone::systemTimeZone().offsetFromUtc(QDateTime::currentDateTime());
+        int rhsOffset = rhs.offsetFromUtc(QDateTime::currentDateTime()) - QTimeZone::systemTimeZone().offsetFromUtc(QDateTime::currentDateTime());
+        return abs(lhsOffset) < abs(rhsOffset);
+    });
 
     endResetModel();
 }
