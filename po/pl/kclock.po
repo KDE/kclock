@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-20 00:49+0000\n"
+"POT-Creation-Date: 2023-09-03 00:48+0000\n"
 "PO-Revision-Date: 2023-02-18 08:35+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -598,47 +598,47 @@ msgstr "%1 zakończył pracę."
 msgid "The timer has completed."
 msgstr "Czasomierz zakończył pracę."
 
-#: savedlocationsmodel.cpp:106
+#: savedlocationsmodel.cpp:111
 #, kde-format
 msgid "%1 hour and 30 minutes ahead"
 msgstr "%1 godzina i 30 minut do przodu"
 
-#: savedlocationsmodel.cpp:106
+#: savedlocationsmodel.cpp:111
 #, kde-format
 msgid "%1 hours and 30 minutes ahead"
 msgstr "%1 godzin i 30 minut do przodu"
 
-#: savedlocationsmodel.cpp:108
+#: savedlocationsmodel.cpp:113
 #, kde-format
 msgid "%1 hour ahead"
 msgstr "%1 godzina do przodu"
 
-#: savedlocationsmodel.cpp:108
+#: savedlocationsmodel.cpp:113
 #, kde-format
 msgid "%1 hours ahead"
 msgstr "%1 godzin do przodu"
 
-#: savedlocationsmodel.cpp:113
+#: savedlocationsmodel.cpp:118
 #, kde-format
 msgid "%1 hour and 30 minutes behind"
 msgstr "%1 godzina i 30 minut do tyłu"
 
-#: savedlocationsmodel.cpp:113
+#: savedlocationsmodel.cpp:118
 #, kde-format
 msgid "%1 hours and 30 minutes behind"
 msgstr "%1 godzin i 30 minut do tyłu"
 
-#: savedlocationsmodel.cpp:115
+#: savedlocationsmodel.cpp:120
 #, kde-format
 msgid "%1 hour behind"
 msgstr "%1 godzina do tyłu"
 
-#: savedlocationsmodel.cpp:115
+#: savedlocationsmodel.cpp:120
 #, kde-format
 msgid "%1 hours behind"
 msgstr "%1 godzin do tyłu"
 
-#: savedlocationsmodel.cpp:118
+#: savedlocationsmodel.cpp:123
 #, kde-format
 msgid "Local time"
 msgstr "Czas lokalny"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-20 00:49+0000\n"
+"POT-Creation-Date: 2023-09-03 00:48+0000\n"
 "PO-Revision-Date: 2023-07-24 23:36+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -592,47 +592,47 @@ msgstr "%1이(가) 완료되었습니다.|/|%1$[이가 %1] 완료되었습니다
 msgid "The timer has completed."
 msgstr "타이머가 완료되었습니다."
 
-#: savedlocationsmodel.cpp:106
+#: savedlocationsmodel.cpp:111
 #, kde-format
 msgid "%1 hour and 30 minutes ahead"
 msgstr "%1시간 30분 후"
 
-#: savedlocationsmodel.cpp:106
+#: savedlocationsmodel.cpp:111
 #, kde-format
 msgid "%1 hours and 30 minutes ahead"
 msgstr "%1시간 30분 후"
 
-#: savedlocationsmodel.cpp:108
+#: savedlocationsmodel.cpp:113
 #, kde-format
 msgid "%1 hour ahead"
 msgstr "%1시간 후"
 
-#: savedlocationsmodel.cpp:108
+#: savedlocationsmodel.cpp:113
 #, kde-format
 msgid "%1 hours ahead"
 msgstr "%1시간 후"
 
-#: savedlocationsmodel.cpp:113
+#: savedlocationsmodel.cpp:118
 #, kde-format
 msgid "%1 hour and 30 minutes behind"
 msgstr "%1시간 30분 전"
 
-#: savedlocationsmodel.cpp:113
+#: savedlocationsmodel.cpp:118
 #, kde-format
 msgid "%1 hours and 30 minutes behind"
 msgstr "%1시간 30분 전"
 
-#: savedlocationsmodel.cpp:115
+#: savedlocationsmodel.cpp:120
 #, kde-format
 msgid "%1 hour behind"
 msgstr "%1시간 전"
 
-#: savedlocationsmodel.cpp:115
+#: savedlocationsmodel.cpp:120
 #, kde-format
 msgid "%1 hours behind"
 msgstr "%1시간 전"
 
-#: savedlocationsmodel.cpp:118
+#: savedlocationsmodel.cpp:123
 #, kde-format
 msgid "Local time"
 msgstr "지역 시간대"

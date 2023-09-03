@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-20 00:49+0000\n"
+"POT-Creation-Date: 2023-09-03 00:48+0000\n"
 "PO-Revision-Date: 2023-02-06 15:11+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -596,47 +596,47 @@ msgstr "%1 è stato terminato."
 msgid "The timer has completed."
 msgstr "Il timer è terminato."
 
-#: savedlocationsmodel.cpp:106
+#: savedlocationsmodel.cpp:111
 #, kde-format
 msgid "%1 hour and 30 minutes ahead"
 msgstr "%1 ora e 30 minuti in avanti"
 
-#: savedlocationsmodel.cpp:106
+#: savedlocationsmodel.cpp:111
 #, kde-format
 msgid "%1 hours and 30 minutes ahead"
 msgstr "%1 ore e 30 minuti in avanti"
 
-#: savedlocationsmodel.cpp:108
+#: savedlocationsmodel.cpp:113
 #, kde-format
 msgid "%1 hour ahead"
 msgstr "%1 ora in avanti"
 
-#: savedlocationsmodel.cpp:108
+#: savedlocationsmodel.cpp:113
 #, kde-format
 msgid "%1 hours ahead"
 msgstr "%1 ore in avanti"
 
-#: savedlocationsmodel.cpp:113
+#: savedlocationsmodel.cpp:118
 #, kde-format
 msgid "%1 hour and 30 minutes behind"
 msgstr "%1 ora e 30 minuti indietro"
 
-#: savedlocationsmodel.cpp:113
+#: savedlocationsmodel.cpp:118
 #, kde-format
 msgid "%1 hours and 30 minutes behind"
 msgstr "%1 ore e 30 minuti indietro"
 
-#: savedlocationsmodel.cpp:115
+#: savedlocationsmodel.cpp:120
 #, kde-format
 msgid "%1 hour behind"
 msgstr "%1 ora indietro"
 
-#: savedlocationsmodel.cpp:115
+#: savedlocationsmodel.cpp:120
 #, kde-format
 msgid "%1 hours behind"
 msgstr "%1 ore indietro"
 
-#: savedlocationsmodel.cpp:118
+#: savedlocationsmodel.cpp:123
 #, kde-format
 msgid "Local time"
 msgstr "Ora locale"

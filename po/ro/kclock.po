@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-20 00:49+0000\n"
+"POT-Creation-Date: 2023-09-03 00:48+0000\n"
 "PO-Revision-Date: 2022-06-01 15:13+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -619,54 +619,54 @@ msgstr ""
 msgid "The timer has completed."
 msgstr "Temporizator finalizat"
 
-#: savedlocationsmodel.cpp:106
+#: savedlocationsmodel.cpp:111
 #, fuzzy, kde-format
 #| msgid "%1 and a half hours ahead"
 msgid "%1 hour and 30 minutes ahead"
 msgstr "cu %1 ore și jumătate în față"
 
-#: savedlocationsmodel.cpp:106
+#: savedlocationsmodel.cpp:111
 #, kde-format
 msgid "%1 hours and 30 minutes ahead"
 msgstr ""
 
-#: savedlocationsmodel.cpp:108
+#: savedlocationsmodel.cpp:113
 #, fuzzy, kde-format
 #| msgid "%1 %2 ahead"
 msgid "%1 hour ahead"
 msgstr "cu %1 și %2 în față"
 
-#: savedlocationsmodel.cpp:108
+#: savedlocationsmodel.cpp:113
 #, fuzzy, kde-format
 #| msgid "%1 %2 ahead"
 msgid "%1 hours ahead"
 msgstr "cu %1 și %2 în față"
 
-#: savedlocationsmodel.cpp:113
+#: savedlocationsmodel.cpp:118
 #, fuzzy, kde-format
 #| msgid "%1 and a half hours behind"
 msgid "%1 hour and 30 minutes behind"
 msgstr "cu %1 ore și jumătate în spate"
 
-#: savedlocationsmodel.cpp:113
+#: savedlocationsmodel.cpp:118
 #, fuzzy, kde-format
 #| msgid "%1 and a half hours behind"
 msgid "%1 hours and 30 minutes behind"
 msgstr "cu %1 ore și jumătate în spate"
 
-#: savedlocationsmodel.cpp:115
+#: savedlocationsmodel.cpp:120
 #, fuzzy, kde-format
 #| msgid "%1 %2 behind"
 msgid "%1 hour behind"
 msgstr "cu %1 și %2 în spate"
 
-#: savedlocationsmodel.cpp:115
+#: savedlocationsmodel.cpp:120
 #, fuzzy, kde-format
 #| msgid "%1 %2 behind"
 msgid "%1 hours behind"
 msgstr "cu %1 și %2 în spate"
 
-#: savedlocationsmodel.cpp:118
+#: savedlocationsmodel.cpp:123
 #, kde-format
 msgid "Local time"
 msgstr "Ora locală"
