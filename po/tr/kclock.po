@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-14 00:49+0000\n"
-"PO-Revision-Date: 2023-02-06 18:41+0300\n"
+"PO-Revision-Date: 2023-09-08 05:16+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.2\n"
+"X-Generator: Lokalize 23.11.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -60,7 +60,7 @@ msgstr "Yinelenecek Günleri Seçin"
 #: qml/alarm/AlarmForm.qml:115
 #, kde-format
 msgid "Alarm Name (optional):"
-msgstr "Çalar Saat Adı (isteğe bağlı):"
+msgstr "Çalar saat adı (isteğe bağlı):"
 
 #: qml/alarm/AlarmForm.qml:116
 #, kde-format
@@ -221,7 +221,7 @@ msgstr "Yapılandırılan çalar saat yok"
 #: qml/alarm/AlarmListPage.qml:87
 #, kde-format
 msgid "Add alarm"
-msgstr "Çalar saat ekle"
+msgstr "Çalar Saat Ekle"
 
 #: qml/alarm/AlarmListPage.qml:120
 #, kde-format
@@ -236,7 +236,7 @@ msgstr "%1 Silindi"
 #: qml/alarm/AlarmRingingPopup.qml:27
 #, kde-format
 msgid "Alarm is ringing"
-msgstr "Çalar saat, çalıyor"
+msgstr "Saat çalıyor"
 
 #: qml/alarm/AlarmRingingPopup.qml:55
 #, kde-format
@@ -251,7 +251,7 @@ msgstr "Kapat"
 #: qml/alarm/SoundPickerPage.qml:23
 #, kde-format
 msgid "Select Alarm Sound"
-msgstr "Çalar Saat Sesi Seç"
+msgstr "Saat Sesi Seç"
 
 #: qml/alarm/SoundPickerPage.qml:60
 #, kde-format
@@ -364,7 +364,7 @@ msgstr "Saat"
 #: qml/settings/SettingsPage.qml:43
 #, kde-format
 msgid "Time Format:"
-msgstr "Zaman Biçimi:"
+msgstr "Zaman biçimi:"
 
 #: qml/settings/SettingsPage.qml:44
 #, kde-format
@@ -374,22 +374,22 @@ msgstr "Zaman Biçimi Seç"
 #: qml/settings/SettingsPage.qml:48 qml/settings/SettingsPage.qml:61
 #, kde-format
 msgid "Use System Default"
-msgstr "Sistem Öntanımlısını Kullan"
+msgstr "Sistem öntanımlısını kullan"
 
 #: qml/settings/SettingsPage.qml:50 qml/settings/SettingsPage.qml:62
 #, kde-format
 msgid "12 Hour Time"
-msgstr "12 Saatlik Zaman Dilimi"
+msgstr "12 saatlik zaman dilimi"
 
 #: qml/settings/SettingsPage.qml:52 qml/settings/SettingsPage.qml:63
 #, kde-format
 msgid "24 Hour Time"
-msgstr "24 Saatlit Zaman Dilimi"
+msgstr "24 saatlit zaman dilimi"
 
 #: qml/settings/SettingsPage.qml:83
 #, kde-format
 msgid "More Info:"
-msgstr "Daha Fazla Bilgi:"
+msgstr "Daha fazla bilgi:"
 
 #: qml/settings/SettingsPage.qml:84
 #, kde-format
@@ -674,12 +674,12 @@ msgstr[1] "%1 dakika"
 #: utilmodel.cpp:90
 #, kde-format
 msgid "Alarm will ring in under a minute"
-msgstr "Çalar saat, bir saatten daha az bir süre içinde çalacak"
+msgstr "Saat, bir saatten daha az bir süre içinde çalacak"
 
 #: utilmodel.cpp:92
 #, kde-format
 msgid "Alarm will ring in %1"
-msgstr "Çalar saat, %1 saat içinde çalacak"
+msgstr "Saat, %1 saat içinde çalacak"
 
 #~ msgid "Snoozed %1 minutes"
 #~ msgstr "%1 dakika ertelendi"
