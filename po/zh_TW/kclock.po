@@ -4,13 +4,13 @@
 # This file is distributed under the same license as the kclock package.
 #
 # Automatically generated, 2022.
-# Kisaragi Hiu <mail@kisaragi-hiu.com>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-03 00:48+0000\n"
-"PO-Revision-Date: 2023-06-15 04:29+0900\n"
+"PO-Revision-Date: 2023-09-12 01:40+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese <zh-l10n@linux.org.tw>\n"
 "Language: zh_TW\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.04.2\n"
+"X-Generator: Lokalize 23.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -518,12 +518,12 @@ msgstr "可選"
 #: qml/timer/TimerForm.qml:157
 #, kde-format
 msgid "Hide Presets"
-msgstr "隱藏機制"
+msgstr "隱藏預設檔"
 
 #: qml/timer/TimerForm.qml:157
 #, kde-format
 msgid "Show Presets"
-msgstr "顯示機制"
+msgstr "顯示預設檔"
 
 #: qml/timer/TimerForm.qml:162
 #, kde-format
@@ -538,7 +538,7 @@ msgstr "<b>建立新計時器</b>"
 #: qml/timer/TimerFormWrapper.qml:73 qml/timer/TimerFormWrapper.qml:132
 #, kde-format
 msgid "Save As Preset"
-msgstr "儲存為機制"
+msgstr "儲存為預設檔"
 
 #: qml/timer/TimerFormWrapper.qml:99
 #, kde-format
