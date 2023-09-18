@@ -9,13 +9,13 @@
 
 import QtQuick 2.0
 
-import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.ksvg 1.0 as KSvg
 
-PlasmaCore.SvgItem {
+KSvg.SvgItem {
     id: handRoot
 
     property bool animateRotation: true
-    
+
     property alias rotation: rotation.angle
     property double svgScale
     property double horizontalRotationOffset: 0
