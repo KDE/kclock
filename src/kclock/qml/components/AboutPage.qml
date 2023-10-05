@@ -5,11 +5,11 @@
  */
 
 import QtQuick 2.11
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 
 import kclock 1.0
 
-MobileForm.AboutPage {
+FormCard.AboutPage {
     id: aboutPage
     aboutData: AboutType.aboutData
 }
