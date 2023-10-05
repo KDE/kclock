@@ -18,6 +18,19 @@ set(kclock_SRCS
     addlocationmodel.cpp
     timerpresetmodel.cpp
     savedlocationsmodel.cpp
+
+    about.h
+    alarm.h
+    alarmmodel.h
+    timer.h
+    timermodel.h
+    utilmodel.h
+    stopwatchtimer.h
+    kclockformat.h
+    settingsmodel.h
+    addlocationmodel.h
+    timerpresetmodel.h
+    savedlocationsmodel.h
     )
 
 set(SettingsXML ${CMAKE_CURRENT_BINARY_DIR}/../kclockd/org.kde.kclockd.KClockSettings.xml)
