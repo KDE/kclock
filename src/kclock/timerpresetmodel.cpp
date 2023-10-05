@@ -130,7 +130,7 @@ int TimerPresetModel::rowCount(const QModelIndex &parent) const
     return parent.isValid() ? 0 : m_presets.count();
 }
 
-void TimerPresetModel::insertPreset(QString presetName, int presetDuration)
+void TimerPresetModel::insertPreset(const QString &presetName, int presetDuration)
 {
     Q_EMIT beginInsertRows({}, 0, 0);
     m_presets.insert(0, new TimerPreset(this, presetName, presetDuration));

@@ -79,7 +79,7 @@ quint64 AlarmModel::getNextAlarm()
 void AlarmModel::scheduleAlarm()
 {
     // if there are no alarms, return
-    if (m_alarmsList.count() == 0) {
+    if (m_alarmsList.isEmpty()) {
         m_nextAlarmTime = 0;
         Q_EMIT nextAlarm(0);
         return;
@@ -138,7 +138,7 @@ void AlarmModel::wakeupCallback(int cookie)
         scheduleAlarm();
     }
 }
-void AlarmModel::removeAlarm(QString uuid)
+void AlarmModel::removeAlarm(const QString &uuid)
 {
     for (int i = 0; i < m_alarmsList.size(); i++) {
         if (m_alarmsList[i]->uuid() == uuid) {
@@ -177,7 +177,7 @@ void AlarmModel::removeAlarm(int index)
     scheduleAlarm();
 }
 
-void AlarmModel::addAlarm(QString name, int hours, int minutes, int daysOfWeek, QString audioPath, int ringDuration, int snoozeDuration)
+void AlarmModel::addAlarm(const QString &name, int hours, int minutes, int daysOfWeek, const QString &audioPath, int ringDuration, int snoozeDuration)
 {
     Alarm *alarm = new Alarm(name, hours, minutes, daysOfWeek, audioPath, ringDuration, snoozeDuration, this);
     alarm->save();

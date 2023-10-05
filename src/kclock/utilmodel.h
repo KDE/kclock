@@ -26,13 +26,13 @@ public:
     long long calculateNextRingTime(int hours, int minutes, int daysOfWeek, int snooze = 0);
     QString timeToRingFormatted(const long long &timestamp);
 
-    QString timeFormat();
-    bool use24HourTime();
+    QString timeFormat() const;
+    bool use24HourTime() const;
 
 private:
     UtilModel(){}; // explicitly declare it private
 
-    bool isLocale24HourTime();
+    bool isLocale24HourTime() const;
 
     bool m_applicationLoaded = false;
 

@@ -93,12 +93,12 @@ QString UtilModel::timeToRingFormatted(const long long &timestamp)
     }
 }
 
-QString UtilModel::timeFormat()
+QString UtilModel::timeFormat() const
 {
     return use24HourTime() ? QStringLiteral("hh:mm") : QStringLiteral("hh:mm ap");
 }
 
-bool UtilModel::use24HourTime()
+bool UtilModel::use24HourTime() const
 {
     QString timeFormat = SettingsModel::instance()->timeFormat();
     if (timeFormat == QStringLiteral("SystemDefault")) {
@@ -108,7 +108,7 @@ bool UtilModel::use24HourTime()
     }
 }
 
-bool UtilModel::isLocale24HourTime()
+bool UtilModel::isLocale24HourTime() const
 {
     return QLocale::system().timeFormat(QLocale::ShortFormat).toLower().indexOf(QStringLiteral("ap")) == -1;
 }

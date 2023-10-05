@@ -40,10 +40,10 @@ public:
     QString elapsedPretty() const;
 
     QString label() const;
-    void setLabel(QString label);
+    void setLabel(const QString &label);
 
     QString commandTimeout() const;
-    void setCommandTimeout(QString commandTimeout);
+    void setCommandTimeout(const QString &commandTimeout);
 
     bool running() const;
 

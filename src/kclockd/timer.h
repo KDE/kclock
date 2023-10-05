@@ -33,7 +33,11 @@ class Timer : public QObject
     Q_PROPERTY(bool ringing READ ringing NOTIFY ringingChanged)
 
 public:
-    explicit Timer(int length = 0, QString label = QString{}, QString commandTimeout = QString{}, bool running = false, QObject *parent = nullptr);
+    explicit Timer(int length = 0,
+                   const QString &label = QString{},
+                   const QString &commandTimeout = QString{},
+                   bool running = false,
+                   QObject *parent = nullptr);
     explicit Timer(const QJsonObject &obj, QObject *parent);
 
     ~Timer();
@@ -54,10 +58,10 @@ public:
     void setLength(int length);
 
     QString label() const;
-    void setLabel(QString label);
+    void setLabel(const QString &label);
 
     QString commandTimeout() const;
-    void setCommandTimeout(QString commandTimeout);
+    void setCommandTimeout(const QString &commandTimeout);
 
     bool looping() const;
     bool running() const;

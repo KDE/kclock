@@ -47,8 +47,8 @@ class Alarm : public QObject
     Q_PROPERTY(quint64 nextRingTime READ nextRingTime NOTIFY nextRingTimeChanged)
 
 public:
-    explicit Alarm(QString serialized, AlarmModel *parent = nullptr);
-    explicit Alarm(QString name = i18n("Alarm"),
+    explicit Alarm(const QString &serialized, AlarmModel *parent = nullptr);
+    explicit Alarm(const QString &name = i18n("Alarm"),
                    int hours = 0,
                    int minutes = 0,
                    int daysOfWeek = 0,
@@ -67,7 +67,7 @@ public:
     Q_SCRIPTABLE QString uuid() const;
 
     QString name() const;
-    void setName(QString name);
+    void setName(const QString &name);
 
     bool enabled() const;
     void setEnabled(bool enabled);

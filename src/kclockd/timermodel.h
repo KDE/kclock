@@ -22,12 +22,12 @@ public:
     void load();
     void save();
     Q_SCRIPTABLE QStringList timers() const;
-    Q_SCRIPTABLE void addTimer(int length, QString label, QString commandTimeout, bool running);
-    Q_SCRIPTABLE void removeTimer(QString uuid);
+    Q_SCRIPTABLE void addTimer(int length, const QString &label, const QString &commandTimeout, bool running);
+    Q_SCRIPTABLE void removeTimer(const QString &uuid);
 
 Q_SIGNALS:
-    Q_SCRIPTABLE void timerAdded(QString);
-    Q_SCRIPTABLE void timerRemoved(QString);
+    Q_SCRIPTABLE void timerAdded(const QString &);
+    Q_SCRIPTABLE void timerRemoved(const QString &);
 
 private:
     void remove(int index);

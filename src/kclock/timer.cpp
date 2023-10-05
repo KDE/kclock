@@ -80,7 +80,7 @@ QString Timer::label() const
     return m_label;
 }
 
-void Timer::setLabel(QString label)
+void Timer::setLabel(const QString &label)
 {
     m_interface->setLabel(label);
 }
@@ -90,7 +90,7 @@ QString Timer::commandTimeout() const
     return m_commandTimeout;
 }
 
-void Timer::setCommandTimeout(QString commandTimeout)
+void Timer::setCommandTimeout(const QString &commandTimeout)
 {
     m_interface->setCommandTimeout(commandTimeout);
 }

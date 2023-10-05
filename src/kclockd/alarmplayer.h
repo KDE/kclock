@@ -24,7 +24,7 @@ public:
 
     int volume();
     Q_INVOKABLE void setVolume(int volume);
-    Q_INVOKABLE void setSource(QUrl path);
+    Q_INVOKABLE void setSource(const QUrl &path);
     Q_INVOKABLE void play();
     Q_INVOKABLE void stop();
 
