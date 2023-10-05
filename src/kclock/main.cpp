@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
     KAboutData aboutData(QStringLiteral("kclock"),
                          QStringLiteral("Clock"),
                          QStringLiteral(KCLOCK_VERSION_STRING),
-                         QStringLiteral("Set alarms and timers, use a stopwatch, and manage world clocks"),
+                         i18n("Set alarms and timers, use a stopwatch, and manage world clocks"),
                          KAboutLicense::GPL,
                          i18n("© 2020-2022 KDE Community"));
     aboutData.setBugAddress("https://bugs.kde.org/describecomponents.cgi?product=KClock");
