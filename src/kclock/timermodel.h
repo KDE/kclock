@@ -43,7 +43,7 @@ Q_SIGNALS:
 
 private Q_SLOTS:
     void addTimer(QString uuid);
-    void removeTimer(QString uuid);
+    void removeTimer(const QString &uuid);
 
 private:
     explicit TimerModel(QObject *parent = nullptr);

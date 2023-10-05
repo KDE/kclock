@@ -22,7 +22,7 @@
 #include <QJsonObject>
 
 // alarm from json (loaded from storage)
-Alarm::Alarm(QString serialized, AlarmModel *parent)
+Alarm::Alarm(const QString &serialized, AlarmModel *parent)
     : QObject{parent}
 {
     if (!serialized.isEmpty()) {
@@ -44,7 +44,7 @@ Alarm::Alarm(QString serialized, AlarmModel *parent)
     init(parent);
 }
 
-Alarm::Alarm(QString name, int hours, int minutes, int daysOfWeek, QString audioPath, int ringDuration, int snoozeDuration, AlarmModel *parent)
+Alarm::Alarm(const QString &name, int hours, int minutes, int daysOfWeek, QString audioPath, int ringDuration, int snoozeDuration, AlarmModel *parent)
     : QObject{parent}
     , m_uuid{QUuid::createUuid()}
     , m_name{name}
@@ -133,7 +133,7 @@ QString Alarm::name() const
     return m_name;
 }
 
-void Alarm::setName(QString name)
+void Alarm::setName(const QString &name)
 {
     if (name != m_name) {
         m_name = name;

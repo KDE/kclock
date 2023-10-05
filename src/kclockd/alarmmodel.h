@@ -26,12 +26,12 @@ public:
     void save();
     void configureWakeups(); // needs to be called to start worker thread, or configure powerdevil (called in main)
 
-    Q_SCRIPTABLE void removeAlarm(QString uuid);
-    Q_SCRIPTABLE void addAlarm(QString name, int hours, int minutes, int daysOfWeek, QString audioPath, int ringDuration, int snoozeDuration);
+    Q_SCRIPTABLE void removeAlarm(const QString &uuid);
+    Q_SCRIPTABLE void addAlarm(const QString &name, int hours, int minutes, int daysOfWeek, const QString &audioPath, int ringDuration, int snoozeDuration);
 
 Q_SIGNALS:
-    Q_SCRIPTABLE void alarmAdded(QString uuid);
-    Q_SCRIPTABLE void alarmRemoved(QString uuid);
+    Q_SCRIPTABLE void alarmAdded(const QString &uuid);
+    Q_SCRIPTABLE void alarmRemoved(const QString &uuid);
     Q_SCRIPTABLE void nextAlarm(quint64 nextAlarmTimeStamp); // next alarm wakeup timestamp, or 0 if there are none
 
 public Q_SLOTS:

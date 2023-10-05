@@ -8,7 +8,7 @@
 
 #include "timer.h"
 
-Timer::Timer(int length, QString label, QString commandTimeout, bool running, QObject *parent)
+Timer::Timer(int length, const QString &label, const QString &commandTimeout, bool running, QObject *parent)
     : QObject{parent}
     , m_uuid{QUuid::createUuid()}
     , m_length{length}
@@ -136,7 +136,7 @@ QString Timer::label() const
     return m_label;
 }
 
-void Timer::setLabel(QString label)
+void Timer::setLabel(const QString &label)
 {
     if (label != m_label) {
         m_label = label;
@@ -151,7 +151,7 @@ QString Timer::commandTimeout() const
     return m_commandTimeout;
 }
 
-void Timer::setCommandTimeout(QString commandTimeout)
+void Timer::setCommandTimeout(const QString &commandTimeout)
 {
     if (m_commandTimeout != commandTimeout) {
         m_commandTimeout = commandTimeout;

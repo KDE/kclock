@@ -39,7 +39,7 @@ public:
     QUuid uuid() const;
 
     QString name() const;
-    void setName(QString name);
+    void setName(const QString &name);
 
     bool enabled() const;
     void setEnabled(bool enabled);
@@ -56,7 +56,7 @@ public:
     void setDaysOfWeek(int daysOfWeek);
 
     QString audioPath() const;
-    void setAudioPath(QString path);
+    void setAudioPath(const QString &path);
 
     int ringDuration() const;
     void setRingDuration(int ringDuration);

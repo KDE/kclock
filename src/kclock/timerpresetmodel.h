@@ -60,7 +60,7 @@ public:
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
-    Q_INVOKABLE void insertPreset(QString presetName, int presetDuration);
+    Q_INVOKABLE void insertPreset(const QString &presetName, int presetDuration);
     Q_INVOKABLE void deletePreset(const int index);
 
 private:

@@ -62,7 +62,7 @@ void TimerModel::save()
     group.sync();
 }
 
-void TimerModel::addTimer(int length, QString label, QString commandTimeout, bool running)
+void TimerModel::addTimer(int length, const QString &label, const QString &commandTimeout, bool running)
 {
     auto *timer = new Timer(length, label, commandTimeout, running);
     m_timerList.append(timer);
@@ -72,7 +72,7 @@ void TimerModel::addTimer(int length, QString label, QString commandTimeout, boo
     Q_EMIT timerAdded(timer->uuid());
 }
 
-void TimerModel::removeTimer(QString uuid)
+void TimerModel::removeTimer(const QString &uuid)
 {
     int ind = -1;
     for (int i = 0; i < m_timerList.size(); i++) {

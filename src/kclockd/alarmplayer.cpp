@@ -85,7 +85,7 @@ void AlarmPlayer::setVolume(int volume)
     Q_EMIT volumeChanged();
 }
 
-void AlarmPlayer::setSource(QUrl path)
+void AlarmPlayer::setSource(const QUrl &path)
 {
     // if user set a invalid audio path or doesn't even specified a path, resort to default
     if (!path.isValid() || !QFile::exists(path.toLocalFile())) {

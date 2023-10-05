@@ -70,7 +70,7 @@ QString Alarm::name() const
     return m_name;
 }
 
-void Alarm::setName(QString name)
+void Alarm::setName(const QString &name)
 {
     m_interface->setProperty("name", name);
 }
@@ -125,7 +125,7 @@ QString Alarm::audioPath() const
     return m_audioPath;
 }
 
-void Alarm::setAudioPath(QString path)
+void Alarm::setAudioPath(const QString &path)
 {
     m_interface->setProperty("audioPath", path);
 }

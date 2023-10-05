@@ -95,7 +95,7 @@ void TimerModel::addTimer(QString uuid)
     Q_EMIT endInsertRows();
 }
 
-void TimerModel::removeTimer(QString uuid)
+void TimerModel::removeTimer(const QString &uuid)
 {
     for (int i = 0; i < m_timersList.size(); ++i) {
         if (m_timersList[i]->uuid().toString() == uuid) {
