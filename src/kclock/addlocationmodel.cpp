@@ -125,7 +125,7 @@ void AddLocationSearchModel::addLocation(int index)
 {
     auto config = KSharedConfig::openConfig();
     KConfigGroup timezoneGroup = config->group(TZ_CFG_GROUP);
-    QString ianaId = data(this->index(index, 0), AddLocationModel::IdRole).toString().replace(QStringLiteral(" "), QStringLiteral("_"));
+    const QString ianaId = data(this->index(index, 0), AddLocationModel::IdRole).toString().replace(QStringLiteral(" "), QStringLiteral("_"));
     timezoneGroup.writeEntry(ianaId, true);
     config->sync();
 

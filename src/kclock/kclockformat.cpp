@@ -74,6 +74,7 @@ WeekModel::WeekModel(QObject *parent)
 
 int WeekModel::rowCount(const QModelIndex &parent) const
 {
+    Q_UNUSED(parent)
     return 7;
 }
 

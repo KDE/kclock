@@ -22,13 +22,13 @@ UtilModel *UtilModel::instance()
     return singleton;
 }
 
-QString UtilModel::getDefaultAlarmFileLocation()
+QString UtilModel::getDefaultAlarmFileLocation() const
 {
     return QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("sounds/freedesktop/stereo/alarm-clock-elapsed.oga")))
         .path();
 }
 
-QString UtilModel::getCurrentTimeZoneName()
+QString UtilModel::getCurrentTimeZoneName() const
 {
     return QString::fromStdString(QTimeZone::systemTimeZoneId().toStdString());
 }

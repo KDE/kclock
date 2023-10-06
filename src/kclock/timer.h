@@ -90,7 +90,7 @@ private:
 
     QUuid m_uuid;
 
-    org::kde::kclock::Timer *m_interface;
+    org::kde::kclock::Timer *const m_interface;
 
-    QTimer *m_animationTimer;
+    QTimer *const m_animationTimer;
 };

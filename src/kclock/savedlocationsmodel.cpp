@@ -42,7 +42,7 @@ Q_INVOKABLE void SavedLocationsModel::removeLocation(int index)
 {
     auto config = KSharedConfig::openConfig();
     KConfigGroup timezoneGroup = config->group(TZ_CFG_GROUP);
-    QString ianaId = data(this->index(index, 0), SavedLocationsModel::IdRole).toString().replace(QStringLiteral(" "), QStringLiteral("_"));
+    const QString ianaId = data(this->index(index, 0), SavedLocationsModel::IdRole).toString().replace(QStringLiteral(" "), QStringLiteral("_"));
     timezoneGroup.deleteEntry(ianaId);
     config->sync();
 

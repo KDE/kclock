@@ -37,7 +37,7 @@ QString SettingsModel::timeFormat() const
     return m_timeFormat;
 }
 
-void SettingsModel::setTimeFormat(QString timeFormat)
+void SettingsModel::setTimeFormat(const QString &timeFormat)
 {
     m_interface->setProperty("timeFormat", timeFormat);
 }

@@ -48,5 +48,5 @@ private:
     long long pausedElapsed = 0;
 
     bool stopped = true, paused = false;
-    QTimer *m_timer;
+    QTimer *const m_timer;
 };

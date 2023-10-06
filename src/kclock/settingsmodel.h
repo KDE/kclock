@@ -20,7 +20,7 @@ public:
     static SettingsModel *instance();
 
     QString timeFormat() const;
-    void setTimeFormat(QString timeFormat);
+    void setTimeFormat(const QString &timeFormat);
 
 Q_SIGNALS:
     void timeFormatChanged();
