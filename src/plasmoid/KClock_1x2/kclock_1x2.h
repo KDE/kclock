@@ -22,9 +22,9 @@ public:
     KClock_1x2(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args);
     ~KClock_1x2();
 
-    QString date();
-    QString alarmTime();
-    bool hasAlarm();
+    QString date() const;
+    QString alarmTime() const;
+    bool hasAlarm() const;
     Q_INVOKABLE void openKClock();
 
 Q_SIGNALS:

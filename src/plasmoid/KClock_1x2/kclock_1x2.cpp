@@ -56,12 +56,12 @@ KClock_1x2::KClock_1x2(QObject *parent, const KPluginMetaData &metaData, const Q
     Q_EMIT propertyChanged();
 }
 
-QString KClock_1x2::alarmTime()
+QString KClock_1x2::alarmTime() const
 {
     return m_string;
 };
 
-bool KClock_1x2::hasAlarm()
+bool KClock_1x2::hasAlarm() const
 {
     return m_hasAlarm;
 }
@@ -94,7 +94,7 @@ void KClock_1x2::initialTimeUpdate()
     m_timer->start(60000); // update every minute
 }
 
-QString KClock_1x2::date()
+QString KClock_1x2::date() const
 {
     return m_locale.toString(QDate::currentDate(), QStringLiteral("ddd, MMM d"));
 }
