@@ -54,7 +54,7 @@ void StopwatchTimer::reset()
     Q_EMIT timeChanged();
 }
 
-long long StopwatchTimer::elapsedTime()
+long long StopwatchTimer::elapsedTime() const
 {
     long long cur = QDateTime::currentMSecsSinceEpoch();
     if (stopped) {
@@ -66,22 +66,22 @@ long long StopwatchTimer::elapsedTime()
     }
 }
 
-long long StopwatchTimer::hours()
+long long StopwatchTimer::hours() const
 {
     return elapsedTime() / 3600000;
 }
 
-long long StopwatchTimer::minutes()
+long long StopwatchTimer::minutes() const
 {
     return elapsedTime() / 1000 / 60;
 }
 
-long long StopwatchTimer::seconds()
+long long StopwatchTimer::seconds() const
 {
     return elapsedTime() / 1000 - 60 * minutes();
 }
 
-long long StopwatchTimer::small()
+long long StopwatchTimer::small() const
 {
     return elapsedTime() / 10 - 100 * seconds() - 100 * 60 * minutes();
 }
@@ -91,13 +91,13 @@ QString StopwatchTimer::displayZeroOrAmount(const int &amount)
     return amount >= 10 ? QString::number(amount) : QStringLiteral("0") + QString::number(amount);
 }
 
-QString StopwatchTimer::hoursDisplay()
+QString StopwatchTimer::hoursDisplay() const
 {
     long long amount = hours();
     return displayZeroOrAmount(amount);
 }
 
-QString StopwatchTimer::minutesDisplay()
+QString StopwatchTimer::minutesDisplay() const
 {
     // % 60 discards anything above 60 minutes. Not used in minutes() because
     // it may tamper with seconds() and small().
@@ -105,13 +105,13 @@ QString StopwatchTimer::minutesDisplay()
     return displayZeroOrAmount(amount);
 }
 
-QString StopwatchTimer::secondsDisplay()
+QString StopwatchTimer::secondsDisplay() const
 {
     long long amount = seconds();
     return displayZeroOrAmount(amount);
 }
 
-QString StopwatchTimer::smallDisplay()
+QString StopwatchTimer::smallDisplay() const
 {
     long long amount = small();
     return displayZeroOrAmount(amount);

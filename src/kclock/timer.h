@@ -28,7 +28,7 @@ class Timer : public QObject
     Q_PROPERTY(bool ringing READ ringing NOTIFY ringingChanged)
 
 public:
-    explicit Timer(QString uuid = QString{}, QObject *parent = nullptr);
+    explicit Timer(const QString &uuid = QString{}, QObject *parent = nullptr);
 
     const QUuid &uuid();
 

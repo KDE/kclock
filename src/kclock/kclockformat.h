@@ -29,7 +29,7 @@ public:
         return singleton;
     };
 
-    QString currentTime();
+    QString currentTime() const;
     QString formatTimeString(int hours, int minutes);
     Q_INVOKABLE bool isChecked(int dayIndex, int daysOfWeek);
 

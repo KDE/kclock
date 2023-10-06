@@ -11,7 +11,7 @@
 #include <QTimer>
 
 /* ~ Timer ~ */
-Timer::Timer(QString uuid, QObject *parent)
+Timer::Timer(const QString &uuid, QObject *parent)
     : QObject{parent}
     , m_interface{new OrgKdeKclockTimerInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Timers/") + uuid, QDBusConnection::sessionBus(), this)}
     , m_animationTimer{new QTimer(this)}

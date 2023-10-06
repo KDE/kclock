@@ -23,16 +23,16 @@ class StopwatchTimer : public QObject
 public:
     explicit StopwatchTimer(QObject *parent = nullptr);
 
-    long long hours();
-    long long minutes();
-    long long seconds();
-    long long small();
-    QString hoursDisplay();
-    QString minutesDisplay();
-    QString secondsDisplay();
-    QString smallDisplay();
+    long long hours() const;
+    long long minutes() const;
+    long long seconds() const;
+    long long small() const;
+    QString hoursDisplay() const;
+    QString minutesDisplay() const;
+    QString secondsDisplay() const;
+    QString smallDisplay() const;
 
-    long long elapsedTime();
+    long long elapsedTime() const;
 
     Q_INVOKABLE void reset();
     Q_INVOKABLE void toggle();

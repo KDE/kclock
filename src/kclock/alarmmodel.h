@@ -52,7 +52,7 @@ Q_SIGNALS:
 
 private Q_SLOTS:
     void addAlarm(QString uuid);
-    void removeAlarm(QString uuid);
+    void removeAlarm(const QString &uuid);
 
 private:
     org::kde::kclock::AlarmModel *m_interface;

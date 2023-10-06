@@ -24,7 +24,7 @@ KclockFormat::KclockFormat(QObject *parent)
     this->startTimer();
 }
 
-QString KclockFormat::currentTime()
+QString KclockFormat::currentTime() const
 {
     return m_currentTime;
 }
