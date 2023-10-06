@@ -34,7 +34,7 @@ class Alarm : public QObject
 
 public:
     explicit Alarm();
-    explicit Alarm(QString uuid);
+    explicit Alarm(const QString &uuid);
 
     QUuid uuid() const;
 

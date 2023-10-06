@@ -16,7 +16,7 @@
 #include <QDateTime>
 
 Alarm::Alarm(){};
-Alarm::Alarm(QString uuid)
+Alarm::Alarm(const QString &uuid)
 {
     m_interface = new org::kde::kclock::Alarm(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Alarms/") + uuid, QDBusConnection::sessionBus(), this);
 

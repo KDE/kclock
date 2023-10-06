@@ -150,7 +150,7 @@ void AlarmModel::addAlarm(QString uuid)
     Q_EMIT endInsertRows();
 }
 
-void AlarmModel::removeAlarm(QString uuid)
+void AlarmModel::removeAlarm(const QString &uuid)
 {
     auto index = 0;
     for (auto alarm : alarmsList) {

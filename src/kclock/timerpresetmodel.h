@@ -65,7 +65,7 @@ public:
 
 private:
     explicit TimerPresetModel(QObject *parent = nullptr);
-    ~TimerPresetModel();
+    ~TimerPresetModel() override;
 
     QList<TimerPreset *> m_presets;
 };
