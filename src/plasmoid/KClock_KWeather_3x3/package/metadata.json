@@ -88,12 +88,10 @@
         "Name[uk]": "KClock_KWeather_3x3",
         "Name[x-test]": "xxKClock_KWeather_3x3xx",
         "Name[zh_CN]": "KClock_KWeather_3x3",
-        "ServiceTypes": [
-            "Plasma/Applet"
-        ],
         "Version": "1.0",
         "Website": "https://apps.kde.org/kclock"
     },
+    "KPackageStructure": "Plasma/Applet",
     "X-Plasma-API": "declarativeappletscript",
     "X-Plasma-DBusActivationService": "org.kde.kclock.*",
     "X-Plasma-MainScript": "ui/main.qml",
