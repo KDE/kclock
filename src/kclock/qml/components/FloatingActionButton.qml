@@ -1,12 +1,12 @@
 // SPDX-FileCopyrightText: 2021-2022 Devin Lin <espidev@gmail.com>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-import QtQuick 2.12
-import QtQuick.Controls 2.15 as Controls
+import QtQuick
+import QtQuick.Controls as Controls
 import QtQuick.Templates 2.15 as T
-import QtQuick.Layouts 1.2
+import QtQuick.Layouts
 
-import org.kde.kirigami 2.15 as Kirigami
+import org.kde.kirigami as Kirigami
 
 /**
  * @brief Floating button that can be used on pages to trigger actions.
@@ -17,9 +17,9 @@ import org.kde.kirigami 2.15 as Kirigami
  * 
  * Example usage:
  * @code{.qml}
- * import QtQuick 2.15
- * import QtQuick.Layouts 1.15
- * import org.kde.kirigami 2.21 as Kirigami
+ * import QtQuick
+ * import QtQuick.Layouts
+ * import org.kde.kirigami as Kirigami
  * 
  * Kirigami.ScrollablePage {
  *     title: i18n("Page with ListView")

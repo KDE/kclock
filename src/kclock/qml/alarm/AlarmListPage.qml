@@ -14,7 +14,7 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.components as Components
 
 import "../components"
-import kclock 1.0
+import kclock
 
 Kirigami.ScrollablePage {
     id: root
