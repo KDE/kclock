@@ -94,9 +94,14 @@ void KClock_1x2::initialTimeUpdate()
     m_timer->start(60000); // update every minute
 }
 
-QString KClock_1x2::date()
+QString KClock_1x2::date() const
 {
     return m_locale.toString(QDate::currentDate(), QStringLiteral("ddd, MMM d"));
+}
+
+QDateTime KClock_1x2::datetime() const
+{
+    return QDateTime::currentDateTime();
 }
 
 KClock_1x2::~KClock_1x2()
