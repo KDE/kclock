@@ -5,32 +5,36 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-import QtQuick 2.15
-import QtQuick.Layouts 1.3
-import QtQuick.Controls 2.15 as QQC2
-import org.kde.kirigami 2.20 as Kirigami
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls as QQC2
+import org.kde.kirigami as Kirigami
 
 Kirigami.OverlayDrawer {
     id: drawer
     modal: false
     width: 100
     height: applicationWindow().height
-    
+
+    edge: Qt.application.layoutDirection === Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
+    parent: QQC2.Overlay.overlay
+    x: 0
+
     Kirigami.Theme.colorSet: Kirigami.Theme.Window
     Kirigami.Theme.inherit: false
-    
+
     leftPadding: 0
     rightPadding: 0
     topPadding: 0
     bottomPadding: 0
-    
+
     contentItem: ColumnLayout {
         spacing: 0
-        
+
         Kirigami.AbstractApplicationHeader {
             Layout.fillWidth: true
         }
-        
+
         QQC2.ScrollView {
             id: scrollView
             Layout.fillWidth: true
@@ -118,7 +122,7 @@ Kirigami.OverlayDrawer {
                 }
             }
         }
-            
+
         Kirigami.Separator {
             Layout.fillWidth: true
             Layout.rightMargin: Kirigami.Units.smallSpacing

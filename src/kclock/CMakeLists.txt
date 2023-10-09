@@ -6,7 +6,6 @@
 #
 
 set(kclock_SRCS
-    about.cpp
     alarm.cpp
     alarmmodel.cpp
     timer.cpp
@@ -34,31 +33,24 @@ qt_add_dbus_interface(kclock_SRCS ${TimermModelXML} timermodelinterface )
 qt_add_dbus_interface(kclock_SRCS ${TimerXML} timerinterface )
 qt_add_dbus_interface(kclock_SRCS ${UtilityXML} utilityinterface )
 
-if(QT_MAJOR_VERSION STREQUAL "5")
-    qtquick_compiler_add_resources(RESOURCES resources.qrc)
-else()
-    qt_add_resources(RESOURCES resources.qrc)
-endif()
+qt_add_resources(RESOURCES resources.qrc)
 
 add_executable(kclock main.cpp ${kclock_SRCS} ${RESOURCES})
 add_dependencies(kclock kclockd)
-target_link_libraries(kclock
-        Qt::Qml
-        Qt::Gui
-        Qt::QuickControls2
-        Qt::Widgets
-        Qt::Multimedia
-        KF${QT_MAJOR_VERSION}::I18n
-        KF${QT_MAJOR_VERSION}::ConfigCore
-        KF${QT_MAJOR_VERSION}::ConfigGui
-        KF${QT_MAJOR_VERSION}::CoreAddons
-        KF${QT_MAJOR_VERSION}::Notifications
-        KF${QT_MAJOR_VERSION}::DBusAddons
-        )
-
-if(QT_MAJOR_VERSION STREQUAL "6")
-    target_link_libraries(kclock KF${QT_MAJOR_VERSION}::StatusNotifierItem)
-endif()
+target_link_libraries(kclock PRIVATE
+    Qt6::Qml
+    Qt6::Gui
+    Qt6::QuickControls2
+    Qt6::Widgets
+    Qt6::Multimedia
+    KF6::I18n
+    KF6::ConfigCore
+    KF6::ConfigGui
+    KF6::CoreAddons
+    KF6::Notifications
+    KF6::DBusAddons
+    KF6::StatusNotifierItem
+)
 
 target_include_directories(kclock PRIVATE ${CMAKE_BINARY_DIR})
 install(TARGETS kclock ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

@@ -7,15 +7,15 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-import QtQuick 2.0
+import QtQuick
 
-import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.ksvg as KSvg
 
-PlasmaCore.SvgItem {
+KSvg.SvgItem {
     id: handRoot
 
     property bool animateRotation: true
-    
+
     property alias rotation: rotation.angle
     property double svgScale
     property double horizontalRotationOffset: 0

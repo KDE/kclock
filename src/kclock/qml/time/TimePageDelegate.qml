@@ -5,45 +5,42 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-import QtQuick 2.15
-import QtQuick.Controls 2.15
-import QtQuick.Layouts 1.15
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
 
-import org.kde.kirigami 2.20 as Kirigami
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.delegates as Delegates
 
-import kclock 1.0
+import kclock
 
-Kirigami.BasicListItem {
+Delegates.RoundedItemDelegate {
     id: root
+
     property bool editMode
+    required property string city
+    required property string relativeTime
+    required property string timeString
 
     signal deleteRequested()
-    
-    leftPadding: Kirigami.Units.largeSpacing * 2
-    topPadding: Kirigami.Units.largeSpacing
-    bottomPadding: Kirigami.Units.largeSpacing
-    rightPadding: Kirigami.Units.largeSpacing * 2
-    
-    label: model.city
-    subtitle: model.relativeTime
 
-    bold: true
+    text: city
 
-    // Don't need a hover effect for the background, since these items don't
-    // do anything when tapped or clicked
-    activeBackgroundColor: "transparent"
-    activeTextColor: Kirigami.Theme.textColor
-
-    trailing: RowLayout {
+    contentItem: RowLayout {
         spacing: Kirigami.Units.smallSpacing
 
+        Delegates.SubtitleContentItem {
+            itemDelegate: root
+            subtitle: root.relativeTime
+        }
+
         Label {
-            text: model.timeString
+            text: root.timeString
         }
 
         ToolButton {
             icon.name: "delete"
-            text: i18n("Delete")
+            text: i18nc("@action:button", "Delete")
             onClicked: root.deleteRequested()
             visible: root.editMode
             display: AbstractButton.IconOnly

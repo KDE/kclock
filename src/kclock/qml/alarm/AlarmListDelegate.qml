@@ -7,40 +7,36 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-import QtQuick 2.15
-import QtQuick.Controls 2.15
-import QtQuick.Layouts 1.15
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
 
-import org.kde.kirigami 2.20 as Kirigami
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.delegates as Delegates
 
 import "../components/formatUtil.js" as FormatUtil
 
-import kclock 1.0
+import kclock
 
-Kirigami.BasicListItem {
+Delegates.RoundedItemDelegate {
     id: root
-    
+
     property Alarm alarm
-    
+
     // avoid null errors when deleting delegate
     readonly property bool enabled: alarm ? alarm.enabled : false
     readonly property string name: alarm ? alarm.name : ""
     readonly property string formattedTime: alarm ? alarm.formattedTime : ""
     readonly property int daysOfWeek: alarm ? alarm.daysOfWeek : 0
     readonly property int snoozedLength: alarm ? alarm.snoozedLength : 0
-    
+
     property bool editMode: false
-    
+
     signal editClicked()
     signal deleteClicked()
-    
+
     onClicked: editClicked()
-    
-    leftPadding: Kirigami.Units.largeSpacing * 2
-    topPadding: Kirigami.Units.largeSpacing
-    bottomPadding: Kirigami.Units.largeSpacing
-    rightPadding: Kirigami.Units.largeSpacing
-    
+
     // alarm ringing popup
     Loader {
         id: popupLoader
@@ -53,7 +49,7 @@ Kirigami.BasicListItem {
                 }
             }
         }
-        
+
         Component.onCompleted: determineState()
         function determineState() {
             if (root.alarm.ringing) {
@@ -63,59 +59,57 @@ Kirigami.BasicListItem {
                 popupLoader.item.close();
             }
         }
-        
+
         Connections {
             target: root.alarm
             ignoreUnknownSignals: true
-            
+
             function onRingingChanged() {
                 popupLoader.determineState();
             }
         }
     }
+    text: root.formattedTime
 
-    label: root.formattedTime
-    subtitle: {
-        let subtitleString = ""
-        if (root.name.length > 0) {
-            subtitleString = subtitleString + root.name + " - ";
-        }
-
-        subtitleString += FormatUtil.getRepeatFormat(root.daysOfWeek);
-
-        if (root.snoozedLength > 0) {
-            subtitleString += "\n"
-            subtitleString += i18np("Snoozed %1 minute", "Snoozed %1 minutes", root.snoozedLength);
-        }
-        return subtitleString;
-    }
-
-    bold: true
-    fadeContent: !root.enabled
-
-    trailing: RowLayout {
+    contentItem: RowLayout {
         spacing: Kirigami.Units.smallSpacing
-        
+
+        Delegates.SubtitleContentItem {
+            subtitle: {
+                let subtitleString = "";
+                if (root.name.length > 0) {
+                    subtitleString = subtitleString + root.name + " - ";
+                }
+
+                subtitleString += FormatUtil.getRepeatFormat(root.daysOfWeek);
+
+                if (root.snoozedLength > 0) {
+                    subtitleString += "\n"
+                    subtitleString += i18np("Snoozed %1 minute", "Snoozed %1 minutes", root.snoozedLength);
+                }
+                return subtitleString;
+            }
+        }
+
         Switch {
             id: toggleSwitch
-            
+
             // can't use Connections since it conflicts with enabled property
             property bool alarmEnabled: root.enabled
             onAlarmEnabledChanged: checked = root.enabled
-            
+
             checked: root.enabled
             onCheckedChanged: root.alarm.enabled = checked;
         }
-        
+
         ToolButton {
             icon.name: "delete"
-            text: i18n("Delete")
+            text: i18nc("@action:button", "Delete")
             onClicked: root.deleteClicked()
             visible: root.editMode
             display: AbstractButton.IconOnly
-            
+
             ToolTip.delay: Kirigami.Units.toolTipDelay
-            ToolTip.timeout: 5000
             ToolTip.visible: Kirigami.Settings.tabletMode ? pressed : hovered
             ToolTip.text: text
         }

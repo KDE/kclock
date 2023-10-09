@@ -13,7 +13,7 @@ import org.kde.kirigami 2.11 as Kirigami
 
 Kirigami.ApplicationWindow {
     id: root
-    
+
     // needs to work with 360x720 (+ panel heights)
     minimumWidth: 300
     minimumHeight: minimumWidth + 1
@@ -21,34 +21,38 @@ Kirigami.ApplicationWindow {
     height: Kirigami.Settings.isMobile ? 720 : 500
 
     title: i18n("Clock")
-    
+
     contextDrawer: Kirigami.ContextDrawer {}
-    
-    pageStack.globalToolBar.canContainHandles: true
-    pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
-    pageStack.globalToolBar.showNavigationButtons: Kirigami.ApplicationHeaderStyle.ShowBackButton;
-    pageStack.popHiddenPages: true
-    
-    pageStack.columnView.columnResizeMode: Kirigami.ColumnView.SingleColumn
-    
+
+    pageStack {
+        globalToolBar {
+            canContainHandles: true
+            style: Kirigami.ApplicationHeaderStyle.ToolBar
+            showNavigationButtons: Kirigami.ApplicationHeaderStyle.ShowBackButton;
+        }
+        popHiddenPages: true
+
+        columnView.columnResizeMode: Kirigami.ColumnView.SingleColumn
+    }
+
     property bool isWidescreen: root.width >= 500
     onIsWidescreenChanged: changeNav(isWidescreen);
-    
+
     Kirigami.PagePool {
         id: pagePool
     }
-    
+
     Component.onCompleted: {
         // initial page and nav type
         switchToPage(getPage("Time"), 1);
         changeNav(isWidescreen);
     }
-    
+
     function switchToPage(page, depth) {
         // pop pages above depth
         while (pageStack.depth > depth) pageStack.pop();
         while (pageStack.layers.depth > 1) pageStack.layers.pop();
-        
+
         // page switch animation
         yAnim.target = page;
         yAnim.properties = "yTranslate";
@@ -59,10 +63,10 @@ Kirigami.ApplicationWindow {
         }
         yAnim.restart();
         anim.restart();
-        
+
         pageStack.push(page);
     }
-    
+
     function getPage(name) {
         switch (name) {
             case "Time": return pagePool.loadPage("qrc:/qml/time/TimePage.qml");
@@ -73,7 +77,7 @@ Kirigami.ApplicationWindow {
             case "About": return pagePool.loadPage("qrc:/qml/components/AboutPage.qml");
         }
     }
-    
+
     // switch between bottom toolbar and sidebar
     function changeNav(toWidescreen) {
         if (toWidescreen) {
@@ -82,16 +86,16 @@ Kirigami.ApplicationWindow {
                 footer = null;
             }
             sidebarLoader.active = true;
-            globalDrawer = sidebarLoader.item;
+            root.globalDrawer = sidebarLoader.item;
         } else {
             sidebarLoader.active = false;
             globalDrawer = null;
-            
+
             let bottomToolbar = Qt.createComponent("qrc:/qml/components/BottomToolbar.qml")
             footer = bottomToolbar.createObject(root);
         }
     }
-    
+
     // page switch animation
     NumberAnimation {
         id: anim
@@ -107,7 +111,7 @@ Kirigami.ApplicationWindow {
         duration: Kirigami.Units.longDuration * 3
         easing.type: Easing.OutQuint
     }
-    
+
     Loader {
         id: sidebarLoader
         source: "qrc:/qml/components/Sidebar.qml"

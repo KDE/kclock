@@ -5,86 +5,56 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-import QtQuick 2.15
-import QtQuick.Controls 2.15
-import QtQuick.Layouts 1.2
-import org.kde.kirigami 2.19 as Kirigami
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.formcard as FormCard
 
 import "../components"
-import kclock 1.0
+import kclock
 
-Kirigami.ScrollablePage {
+FormCard.FormCardPage {
     id: root
-    
+
     property real yTranslate: 0
-    
+
     title: i18n("Settings")
     icon.name: "settings-configure"
-    
-    Kirigami.ColumnView.fillWidth: false
-    Kirigami.Theme.inherit: false
-    Kirigami.Theme.colorSet: Kirigami.Theme.View
-    
-    // settings list
-    ColumnLayout {
-        transform: Translate { y: yTranslate }
-        spacing: 0
 
-        Kirigami.FormLayout {
-            id: form
-            Layout.fillWidth: true
-            Layout.maximumWidth: root.width - root.leftPadding - root.rightPadding
-            wideMode: false
-            
-            DialogComboBox {
-                id: snoozeLengthPicker
-                implicitWidth: form.width
-                
-                Kirigami.FormData.label: i18n("Time Format:")
-                title: i18n("Select Time Format")
-                text: {
-                    switch (SettingsModel.timeFormat) {
-                        case "SystemDefault":
-                            return i18n("Use System Default")
-                        case "12Hour":
-                            return i18n("12 Hour Time")
-                        case "24Hour":
-                            return i18n("24 Hour Time")
-                        default:
-                            return "";
-                    }
-                }
-                
-                model: ListModel {
-                    // we can't use i18n with ListElement
-                    Component.onCompleted: {
-                        append({"name": i18n("Use System Default"), "value": "SystemDefault"});
-                        append({"name": i18n("12 Hour Time"), "value": "12Hour"});
-                        append({"name": i18n("24 Hour Time"), "value": "24Hour"});
-                    }
-                }
-                
-                dialogDelegate: RadioDelegate {
-                    implicitWidth: Kirigami.Units.gridUnit * 16
-                    topPadding: Kirigami.Units.smallSpacing * 2
-                    bottomPadding: Kirigami.Units.smallSpacing * 2
-                    
-                    text: name
-                    checked: SettingsModel.timeFormat == value
-                    onCheckedChanged: {
-                        if (checked) {
-                            SettingsModel.timeFormat = value;
-                        }
-                    }
+    Kirigami.ColumnView.fillWidth: false
+
+    FormCard.FormCard {
+        Layout.topMargin: Kirigami.Units.largeSpacing
+
+        FormCard.FormComboBoxDelegate {
+            text: i18n("Time Format:")
+            model: ListModel {
+                // we can't use i18n with ListElement
+                Component.onCompleted: {
+                    append({"name": i18n("Use System Default"), "value": "SystemDefault"});
+                    append({"name": i18n("12 Hour Time"), "value": "12Hour"});
+                    append({"name": i18n("24 Hour Time"), "value": "24Hour"});
                 }
             }
-            
-            Button {
-                Kirigami.FormData.label: i18n("More Info:")
-                text: i18n("About")
-                icon.name: "help-about-symbolic"
-                onClicked: applicationWindow().pageStack.push(applicationWindow().getPage("About"))
+
+            textRole: "name"
+            valueRole: "value"
+
+            onCurrentValueChanged: SettingsModel.timeFormat = currentValue
+
+            Component.onCompleted: {
+                const index = indexOfValue(SettingsModel.timeFormat);
+                currentIndex = index == -1 ? 0 : index;
             }
+        }
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormButtonDelegate {
+            text: i18n("About Clock")
+            icon.name: "org.kde.kclock"
+            onClicked: applicationWindow().pageStack.push(applicationWindow().getPage("About"))
         }
     }
 }

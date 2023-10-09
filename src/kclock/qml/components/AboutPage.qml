@@ -4,12 +4,10 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-import QtQuick 2.11
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard as FormCard
+import org.kde.coreaddons as KCA
 
-import kclock 1.0
-
-MobileForm.AboutPage {
+FormCard.AboutPage {
     id: aboutPage
-    aboutData: AboutType.aboutData
+    aboutData: KCA.AboutData
 }

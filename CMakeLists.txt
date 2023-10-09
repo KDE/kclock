@@ -16,8 +16,8 @@ set(RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_
 
 project(kclock VERSION ${RELEASE_SERVICE_VERSION})
 
-set(KF_MIN_VERSION "5.101.0")
-set(QT_MIN_VERSION "5.15.2")
+set(KF_MIN_VERSION "5.240.0")
+set(QT_MIN_VERSION "6.5.0")
 
 find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
 
@@ -41,7 +41,7 @@ ecm_setup_version(${PROJECT_VERSION}
     VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/version.h
 )
 
-find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED COMPONENTS
+find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS
     Core
     Gui
     Quick
@@ -53,24 +53,18 @@ find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED COMPONENTS
     Widgets
 )
 
-find_package(KF${QT_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS
+find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
     Config
     I18n
     CoreAddons
     Kirigami2
     Notifications
     DBusAddons
+    StatusNotifierItem
 )
+find_package(KF6Plasma REQUIRED)
 
-find_package(KF${QT_MAJOR_VERSION}Plasma REQUIRED)
-
-if(QT_MAJOR_VERSION STREQUAL "6")
-    find_package(KF6StatusNotifierItem ${KF_MIN_VERSION} REQUIRED)
-endif()
-
-find_package(KF${QT_MAJOR_VERSION}KirigamiAddons 0.6 REQUIRED)
-
-find_package(Qt${QT_MAJOR_VERSION}QuickCompiler)
+find_package(KF6KirigamiAddons 0.6 REQUIRED)
 
 ki18n_install(po)
 

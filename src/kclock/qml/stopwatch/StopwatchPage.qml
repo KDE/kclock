@@ -5,29 +5,30 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-import QtQuick 2.15
-import QtQuick.Controls 2.4
-import QtQuick.Layouts 1.2
-import QtQuick.Window 2.11
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
+import QtQuick.Window
 
-import org.kde.kirigami 2.20 as Kirigami
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.delegates as Delegates
 
 import "../components"
-import kclock 1.0
+import kclock
 
 Kirigami.ScrollablePage {
     id: stopwatchpage
-    
+
     property real yTranslate
-    
+
     title: i18n("Stopwatch")
     icon.name: "chronometer"
-    
+
     property bool running: false
     property int elapsedTime: StopwatchTimer.elapsedTime
-    
+
     Layout.fillWidth: true
-    
+
     function toggleStopwatch() {
         running = !running;
         StopwatchTimer.toggle();
@@ -48,30 +49,29 @@ Kirigami.ScrollablePage {
         roundModel.clear();
         StopwatchTimer.reset();
     }
-    
+
     // keyboard controls
     Keys.onSpacePressed: toggleStopwatch();
     Keys.onReturnPressed: addLap();
 
-    // desktop action
-    mainAction: Kirigami.Action {
-        id: toggleAction
-        visible: !Kirigami.Settings.isMobile
-        iconName: "chronometer-reset"
-        text: i18n("Reset")
-        onTriggered: resetStopwatch()
-    }
-    
-    actions.contextualActions: [
+    actions: [
+        // desktop action
         Kirigami.Action {
-            displayHint: Kirigami.Action.IconOnly
+            id: toggleAction
+            visible: !Kirigami.Settings.isMobile
+            icon.name: "chronometer-reset"
+            text: i18n("Reset")
+            onTriggered: resetStopwatch()
+        },
+        Kirigami.Action {
+            displayHint: Kirigami.DisplayHint.IconOnly
             visible: !applicationWindow().isWidescreen
-            iconName: "settings-configure"
+            icon.name: "settings-configure"
             text: i18n("Settings")
             onTriggered: applicationWindow().pageStack.push(applicationWindow().getPage("Settings"))
         }
     ]
-    
+
     header: ColumnLayout {
         transform: Translate { y: yTranslate }
         anchors.left: parent.left
@@ -84,12 +84,12 @@ Kirigami.ScrollablePage {
             Layout.alignment: Qt.AlignHCenter
             width: timeLabels.implicitWidth
             height: timeLabels.implicitHeight
-            
+
             MouseArea {
                 anchors.fill: timeLabels
                 onClicked: toggleStopwatch()
             }
-            
+
             Row {
                 id: timeLabels
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -116,16 +116,16 @@ Kirigami.ScrollablePage {
             id: buttons
             Layout.fillWidth: true
             Layout.bottomMargin: Kirigami.Units.gridUnit
-            
+
             Item { Layout.fillWidth: true }
             Button {
                 implicitHeight: Kirigami.Units.gridUnit * 2
                 implicitWidth: Kirigami.Units.gridUnit * 6
                 Layout.alignment: Qt.AlignHCenter
-                
+
                 icon.name: Kirigami.Settings.isMobile ? "chronometer-reset" : (running ? "chronometer-pause" : "chronometer-start")
                 text: Kirigami.Settings.isMobile ? i18n("Reset") : (running ? i18n("Pause") : i18n("Start"))
-                
+
                 onClicked: {
                     if (Kirigami.Settings.isMobile) {
                         resetStopwatch();
@@ -140,11 +140,11 @@ Kirigami.ScrollablePage {
                 implicitHeight: Kirigami.Units.gridUnit * 2
                 implicitWidth: Kirigami.Units.gridUnit * 6
                 Layout.alignment: Qt.AlignHCenter
-                
+
                 icon.name: "chronometer-lap"
                 text: i18n("Lap")
                 enabled: running
-                
+
                 onClicked: {
                     addLap();
                     focus = false; // prevent highlight
@@ -153,7 +153,7 @@ Kirigami.ScrollablePage {
             Item { Layout.fillWidth: true }
         }
     }
-    
+
     // lap list display
     ListView {
         id: listView
@@ -163,35 +163,30 @@ Kirigami.ScrollablePage {
         transform: Translate { y: yTranslate }
 
         reuseItems: true
-        
+
         ListModel {
             id: roundModel
         }
-        
+
         remove: Transition {
             NumberAnimation { property: "opacity"; from: 0; to: 1.0; duration: Kirigami.Units.shortDuration }
         }
         displaced: Transition {
             NumberAnimation { properties: "x,y"; duration: Kirigami.Units.longDuration; easing.type: Easing.InOutQuad}
         }
-        
+
         // mobile action
         FloatingActionButton {
             icon.name: stopwatchpage.running ? "chronometer-pause" : "chronometer-start"
             onClicked: stopwatchpage.toggleStopwatch()
             visible: Kirigami.Settings.isMobile
         }
-        
+
         // lap items
-        delegate: Kirigami.BasicListItem {
+        delegate: Delegates.RoundedItemDelegate {
             id: listItem
-            
+
             y: -height
-            leftPadding: Kirigami.Units.largeSpacing * 2
-            rightPadding: Kirigami.Units.largeSpacing * 2
-            topPadding: Kirigami.Units.largeSpacing
-            bottomPadding: Kirigami.Units.largeSpacing
-            activeBackgroundColor: "transparent"
 
             opacity: 0
             ListView.onReused: opacityAnimation.restart()
@@ -202,11 +197,11 @@ Kirigami.ScrollablePage {
                 from: 0
                 to: 1
             }
-            
+
             Keys.onSpacePressed: toggleStopwatch()
-            
+
             property int lapNumber: model.index == -1 ? -1 : roundModel.count - model.index
-            
+
             property double timeSinceLastLap: {
                 if (index === 0) { // constantly updated lap (top lap)
                     return parseFloat((elapsedTime - roundModel.get(1).time)/1000)
@@ -216,16 +211,16 @@ Kirigami.ScrollablePage {
                     return parseFloat((model.time - roundModel.get(index+1).time)/1000)
                 }
             }
-            
+
             property double timeSinceBeginning: parseFloat((index == 0 ? elapsedTime : model.time) / 1000)
-            
+
             contentItem: RowLayout {
                 Item { Layout.fillWidth: true }
-                
+
                 RowLayout {
                     Layout.maximumWidth: Kirigami.Units.gridUnit * 16
                     Layout.preferredWidth: Kirigami.Units.gridUnit * 16
-                    
+
                     // lap number
                     Item {
                         Layout.fillHeight: true
@@ -234,21 +229,19 @@ Kirigami.ScrollablePage {
                         Label {
                             id: lapLabel
                             anchors.verticalCenter: parent.verticalCenter
-                            color: Kirigami.Theme.textColor
                             font.weight: Font.Bold
                             text: listItem.lapNumber >= 0 ? i18n("#%1", listItem.lapNumber) : ""
                         }
                     }
-                    
+
                     // time since last lap
                     Label {
                         Layout.alignment: Qt.AlignLeft
-                        color: Kirigami.Theme.textColor
                         text: isNaN(timeSinceLastLap) ? "" : "+" + listItem.timeSinceLastLap.toFixed(2);
                     }
-                    
+
                     Item { Layout.fillWidth: true }
-                    
+
                     // time since beginning
                     Item {
                         Layout.fillHeight: true
@@ -258,11 +251,11 @@ Kirigami.ScrollablePage {
                             anchors.left: parent.left
                             anchors.verticalCenter: parent.verticalCenter
                             color: Kirigami.Theme.focusColor
-                            text: isNaN(timeSinceBeginning) ? "" : listItem.timeSinceBeginning.toFixed(2) 
+                            text: isNaN(timeSinceBeginning) ? "" : listItem.timeSinceBeginning.toFixed(2)
                         }
                     }
                 }
-                
+
                 Item { Layout.fillWidth: true }
             }
         }

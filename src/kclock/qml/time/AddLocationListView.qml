@@ -5,75 +5,79 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-import QtQuick 2.15
-import QtQuick.Controls 2.4
-import QtQuick.Layouts 1.2
-import QtQuick.Shapes 1.12
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
 
-import org.kde.kirigami 2.20 as Kirigami
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.delegates as Delegates
 
-import kclock 1.0
+import kclock
 
 ListView {
     id: root
-    
+
     property string filterText: ""
-    property bool addPadding: false
-    
+
     signal closeRequested()
-    
+
     Component.onCompleted: root.filterText = "";
-    
+
     currentIndex: -1
     reuseItems: true
-    
-    header: Control {
+
+    headerPositioning: ListView.OverlayHeader
+    header: ToolBar {
         width: root.width
-        leftPadding: Kirigami.Units.largeSpacing * (root.addPadding ? 1 : 0)
-        rightPadding: Kirigami.Units.largeSpacing * (root.addPadding ? 1 : 0)
-        topPadding: Kirigami.Units.largeSpacing * (root.addPadding ? 1 : 0)
-        bottomPadding: Kirigami.Units.largeSpacing 
-        
+        z: 2
+
         contentItem: Kirigami.SearchField {
             id: searchField
-            
+
             onTextChanged: {
-                AddLocationSearchModel.setFilterFixedString(text)
-                root.filterText = text
+                AddLocationSearchModel.setFilterFixedString(text);
+                root.filterText = text;
                 forceActiveFocus();
-                focus = true
+                focus = true;
             }
         }
     }
-    
+
     Kirigami.PlaceholderMessage {
-        anchors.centerIn: parent 
+        anchors.centerIn: parent
         visible: root.count == 0
         text: i18n("No locations found")
         icon.name: "globe"
     }
 
     model: AddLocationSearchModel
-    
-    delegate: Kirigami.BasicListItem {
-        width: root.width
-        
-        leftPadding: Kirigami.Units.largeSpacing * (root.addPadding ? 2 : 1)
-        rightPadding: Kirigami.Units.largeSpacing * (root.addPadding ? 2 : 1)
-        topPadding: Kirigami.Units.largeSpacing
-        bottomPadding: Kirigami.Units.largeSpacing
-        
+
+    delegate: Delegates.RoundedItemDelegate {
+        id: delegate
+
+        required property int index
+        required property string city
+        required property string country
+        required property string currentTime
+
+        text: city
+
         onClicked: {
-            AddLocationSearchModel.addLocation(model.index);
+            AddLocationSearchModel.addLocation(index);
             ListView.view.closeRequested();
         }
-        
-        label: model.city
-        subtitle: model.country
-        bold: true
 
-        trailing: Label {
-            text: model.currentTime
+        contentItem: RowLayout {
+            spacing: Kirigami.Units.smallSpacing
+
+            Delegates.SubtitleContentItem {
+                itemDelegate: delegate
+                subtitle: delegate.country
+            }
+
+            Label {
+                text: delegate.currentTime
+            }
         }
     }
 }
