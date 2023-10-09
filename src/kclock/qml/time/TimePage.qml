@@ -161,8 +161,6 @@ Kirigami.ScrollablePage {
         }
 
         delegate: TimePageDelegate {
-            width: listView.width
-
             editMode: editAction.checked
             onDeleteRequested: SavedLocationsModel.removeLocation(model.index)
         }

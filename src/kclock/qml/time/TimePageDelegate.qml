@@ -32,6 +32,7 @@ Delegates.RoundedItemDelegate {
         Delegates.SubtitleContentItem {
             itemDelegate: root
             subtitle: root.relativeTime
+            Layout.fillWidth: true
         }
 
         Label {

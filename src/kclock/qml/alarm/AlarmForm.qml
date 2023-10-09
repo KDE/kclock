@@ -11,7 +11,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.dateandtime 0.1 as DateAndTime
+import org.kde.kirigamiaddons.dateandtime as DateAndTime
 
 import "../components"
 import "../components/formatUtil.js" as FormatUtil
@@ -34,7 +34,7 @@ Kirigami.FormLayout {
     // values currently in form
     // the editable fields have bindings that are broken by the form
     readonly property string formName: nameField.text
-    readonly property int formHours: timePicker.hours + (timePicker.pm ? 12 : 0)
+    readonly property int formHours: timePicker.hours
     readonly property int formMinutes: timePicker.minutes
     property int formDaysOfWeek: daysOfWeek
     property string formAudioPath: audioPath
@@ -65,20 +65,16 @@ Kirigami.FormLayout {
         id: timePicker
         anchors.left: parent.left
         anchors.right: parent.right
-        implicitHeight: 400
-        height: 400
         width: Math.min(400, parent.width)
 
-        hours: FormatUtil.hoursTo12(root.hours)
+        hours: root.hours
         minutes: root.minutes
-        pm: selectedAlarm ? root.hours >= 12 : false
-        
+
         Component.onCompleted: {
             if (!selectedAlarm) { // new alarm
                 let date = new Date();
-                hours = date.getHours() >= 12 ? date.getHours() - 12 : date.getHours();
+                hours = date.getHours();
                 minutes = date.getMinutes();
-                pm = date.getHours() >= 12;
             }
         }
     }

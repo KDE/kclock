@@ -73,6 +73,7 @@ ListView {
             Delegates.SubtitleContentItem {
                 itemDelegate: delegate
                 subtitle: delegate.country
+                Layout.fillWidth: true
             }
 
             Label {

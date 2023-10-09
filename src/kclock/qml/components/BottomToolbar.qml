@@ -9,11 +9,10 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
-import QtGraphicalEffects 1.12
 
 Kirigami.NavigationTabBar {
     id: root
-    
+
     property bool shouldShow: pageStack.layers.depth <= 1 && pageStack.depth <= 1
     onShouldShowChanged: {
         if (shouldShow) {
@@ -24,9 +23,9 @@ Kirigami.NavigationTabBar {
             hideAnim.restart();
         }
     }
-    
+
     visible: height !== 0
-    
+
     // animate showing and hiding of navbar
     ParallelAnimation {
         id: showAnim
@@ -45,7 +44,7 @@ Kirigami.NavigationTabBar {
             easing.type: Easing.InOutQuad
         }
     }
-    
+
     SequentialAnimation {
         id: hideAnim
         NumberAnimation {
@@ -63,9 +62,9 @@ Kirigami.NavigationTabBar {
             easing.type: Easing.InOutQuad
         }
     }
-    
+
     property var pageStack: applicationWindow().pageStack
-    
+
     function getTimePage() {
         return applicationWindow().getPage("Time");
     }
@@ -78,7 +77,7 @@ Kirigami.NavigationTabBar {
     function getAlarmsPage() {
         return applicationWindow().getPage("Alarms");
     }
-    
+
     actions: [
         Kirigami.Action {
             icon.name: "clock"
@@ -121,4 +120,4 @@ Kirigami.NavigationTabBar {
             }
         }
     ]
-} 
+}
