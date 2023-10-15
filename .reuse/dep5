@@ -1,0 +1,8 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: kclock
+Upstream-Contact: kde-devel <kde-devel@kde.org>
+Source: https://invent.kde.org/utilities/kclock
+
+Files: snapcraft.yaml
+Copyright: 2023 Scarlett Moore <sgmoore@kde.org>
+License: GPL-2.0-or-later
