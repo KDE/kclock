@@ -97,9 +97,7 @@
         "Website": "https://apps.kde.org/kclock"
     },
     "KPackageStructure": "Plasma/Applet",
-    "X-Plasma-API": "declarativeappletscript",
     "X-Plasma-DBusActivationService": "org.kde.kclock.*",
-    "X-Plasma-NotificationArea": "true",
     "X-Plasma-NotificationAreaCategory": "ApplicationStatus",
     "X-Plasma-Provides": [
         "org.kde.plasma.time"
