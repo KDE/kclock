@@ -75,6 +75,7 @@ Delegates.RoundedItemDelegate {
         spacing: Kirigami.Units.smallSpacing
 
         Delegates.SubtitleContentItem {
+            itemDelegate: root
             subtitle: {
                 let subtitleString = "";
                 if (root.name.length > 0) {

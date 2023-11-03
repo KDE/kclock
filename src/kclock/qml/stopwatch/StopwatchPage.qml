@@ -183,12 +183,14 @@ Kirigami.ScrollablePage {
         }
 
         // lap items
-        delegate: Delegates.RoundedItemDelegate {
+        delegate: ItemDelegate {
             id: listItem
 
             y: -height
 
-            opacity: 0
+            background: null
+            width: parent.width
+
             ListView.onReused: opacityAnimation.restart()
             Component.onCompleted: opacityAnimation.restart()
             NumberAnimation on opacity {

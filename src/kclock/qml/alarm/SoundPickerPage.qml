@@ -5,6 +5,7 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
+import QtCore
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
@@ -13,6 +14,7 @@ import QtMultimedia
 
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.sounds 0.1 as Sounds
+import org.kde.kirigamiaddons.delegates as Delegates
 
 import kclock
 
@@ -28,9 +30,9 @@ Kirigami.ScrollablePage {
         audioPlayer.play();
     }
 
-    // HACK: we have issues with file:file:file: being prepended to audio paths
-    function replacePrefix(str) {
-        return str.replace('file://', '');
+    // HACK: we have issues with file: being prepended to audio paths
+    function replacePrefix(path: string): string {
+        return path.replace('file://', '');
     }
 
     function playablePath(str) {
@@ -42,11 +44,14 @@ Kirigami.ScrollablePage {
         model: Sounds.SoundsModel {
             id: soundsModel
             notification: false
+            theme: 'freedesktop'
         }
+        currentIndex: -1
 
-        Audio {
+        MediaPlayer {
             id: audioPlayer
             source: root.playablePath(root.alarmForm.formAudioPath);
+            audioOutput: AudioOutput {}
         }
 
         header: ColumnLayout {
@@ -54,21 +59,19 @@ Kirigami.ScrollablePage {
             spacing: 0
 
             // choose from file
-            Kirigami.BasicListItem {
-                Layout.fillWidth: true
-                reserveSpaceForSubtitle: true
-                label: i18n("Select from files…")
-
+            Delegates.RoundedItemDelegate {
+                text: i18n("Select from files…")
                 onClicked: fileDialog.open()
+                Layout.fillWidth: true
             }
 
             // default sound
-            Kirigami.BasicListItem {
+            Delegates.RoundedItemDelegate {
                 id: defaultItem
+
                 property string defaultPath: UtilModel.getDefaultAlarmFileLocation()
-                Layout.fillWidth: true
-                reserveSpaceForSubtitle: true
-                label: i18n("Default")
+
+                text: i18n("Default")
 
                 onClicked: root.alarmForm.formAudioPath = playablePath(replacePrefix(defaultPath));
 
@@ -83,13 +86,21 @@ Kirigami.ScrollablePage {
                     }
                 }
 
-                trailing: RadioButton {
-                    id: radioButton
+                Layout.fillWidth: true
 
-                    checked: replacePrefix(root.alarmForm.formAudioPath) == replacePrefix(defaultItem.defaultPath)
-                    onCheckedChanged: {
-                        if (checked) {
-                            root.alarmForm.formAudioPath = playablePath(replacePrefix(defaultItem.defaultPath));
+                contentItem: RowLayout {
+                    Delegates.DefaultContentItem {
+                        itemDelegate: defaultItem
+                    }
+
+                    RadioButton {
+                        id: radioButton
+
+                        checked: replacePrefix(root.alarmForm.formAudioPath) === replacePrefix(defaultItem.defaultPath)
+                        onCheckedChanged: {
+                            if (checked) {
+                                root.alarmForm.formAudioPath = playablePath(replacePrefix(defaultItem.defaultPath));
+                            }
                         }
                     }
                 }
@@ -97,11 +108,15 @@ Kirigami.ScrollablePage {
         }
 
         // theme sounds
-        delegate: Kirigami.BasicListItem {
-            property string sourceUrl: model.sourceUrl
-            width: listView.width
-            reserveSpaceForSubtitle: true
-            label: model.ringtoneName
+        delegate: Delegates.RoundedItemDelegate {
+            id: soundDelegate
+
+            required property string ringtoneName
+            required property url sourceUrl
+            required property int index
+
+            text: ringtoneName
+
 
             onClicked: root.alarmForm.formAudioPath = playablePath(replacePrefix(sourceUrl));
 
@@ -116,13 +131,19 @@ Kirigami.ScrollablePage {
                 }
             }
 
-            trailing: RadioButton {
-                id: radioButton
+            contentItem: RowLayout {
+                Delegates.DefaultContentItem {
+                    itemDelegate: soundDelegate
+                }
 
-                checked: replacePrefix(root.alarmForm.formAudioPath) == replacePrefix(sourceUrl)
-                onCheckedChanged: {
-                    if (checked) {
-                        root.alarmForm.formAudioPath = playablePath(replacePrefix(sourceUrl));
+                RadioButton {
+                    id: radioButton
+
+                    checked: replacePrefix(root.alarmForm.formAudioPath) == replacePrefix(soundDelegate.sourceUrl)
+                    onCheckedChanged: {
+                        if (checked) {
+                            root.alarmForm.formAudioPath = playablePath(replacePrefix(soundDelegate.sourceUrl));
+                        }
                     }
                 }
             }
@@ -132,7 +153,7 @@ Kirigami.ScrollablePage {
         FileDialog {
             id: fileDialog
             title: i18n("Choose an audio")
-            folder: shortcuts.music
+            currentFolder: StandardPaths.standardLocations(StandardPaths.MusicLocation)[0]
             onAccepted: {
                 root.alarmForm.formAudioPath = playablePath(replacePrefix(fileDialog.fileUrl.toString()));
                 root.playSound();

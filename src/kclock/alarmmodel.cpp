@@ -34,7 +34,7 @@ AlarmModel::AlarmModel(QObject *parent)
     , m_interface{new org::kde::kclock::AlarmModel(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Alarms"), QDBusConnection::sessionBus(), this)}
 {
     if (m_interface->isValid()) {
-        connect(m_interface, SIGNAL(alarmAdded(QString)), this, SLOT(addAlarm(QString)));
+        connect(m_interface, SIGNAL(alarmAdded(QString)), this, SLOT(addAlarmInternal(QString)));
         connect(m_interface, SIGNAL(alarmRemoved(QString)), this, SLOT(removeAlarm(QString)));
     }
     setConnectedToDaemon(m_interface->isValid());
@@ -45,7 +45,7 @@ AlarmModel::AlarmModel(QObject *parent)
     connect(m_watcher, &QDBusServiceWatcher::serviceRegistered, this, [this]() -> void {
         setConnectedToDaemon(true);
         if (m_interface->isValid()) {
-            connect(m_interface, SIGNAL(alarmAdded(QString)), this, SLOT(addAlarm(QString)));
+            connect(m_interface, SIGNAL(alarmAdded(QString)), this, SLOT(addAlarmInternal(QString)));
             connect(m_interface, SIGNAL(alarmRemoved(QString)), this, SLOT(removeAlarm(QString)));
         }
     });
@@ -69,7 +69,7 @@ void AlarmModel::load()
             xml.readNext();
             if (xml.name() == QStringLiteral("node") && xml.attributes().hasAttribute(QStringLiteral("name"))) {
                 if (xml.attributes().value(QStringLiteral("name")).toString().indexOf(QStringLiteral("org")) == -1) {
-                    this->addAlarm(xml.attributes().value(QStringLiteral("name")).toString());
+                    this->addAlarmInternal(xml.attributes().value(QStringLiteral("name")).toString());
                 }
             }
         }
@@ -120,7 +120,7 @@ void AlarmModel::remove(int index)
     ptr->deleteLater();
 }
 
-void AlarmModel::addAlarm(QString name, int hours, int minutes, int daysOfWeek, QString audioPath, int ringDuration, int snoozeDuration)
+void AlarmModel::addAlarm(const QString &name, int hours, int minutes, int daysOfWeek, const QString &audioPath, int ringDuration, int snoozeDuration)
 {
     m_interface->addAlarm(name, hours, minutes, daysOfWeek, audioPath, ringDuration, snoozeDuration);
 }
@@ -130,7 +130,7 @@ QString AlarmModel::timeToRingFormatted(int hours, int minutes, int daysOfWeek)
     return UtilModel::instance()->timeToRingFormatted(UtilModel::instance()->calculateNextRingTime(hours, minutes, daysOfWeek));
 }
 
-void AlarmModel::addAlarm(QString uuid)
+void AlarmModel::addAlarmInternal(QString uuid)
 {
     auto alarm = new Alarm(uuid.remove(QRegularExpression(QStringLiteral("[{}-]"))));
     auto index = KClock::insert_index(alarm, alarmsList, [](Alarm *const &left, Alarm *const &right) {

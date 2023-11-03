@@ -34,11 +34,11 @@ public:
 
     Q_INVOKABLE void remove(int index);
 
-    Q_INVOKABLE void addAlarm(QString name,
+    Q_INVOKABLE void addAlarm(const QString &name,
                               int hours,
                               int minutes,
                               int daysOfWeek,
-                              QString audioPath,
+                              const QString &audioPath,
                               int ringDuration,
                               int snoozeDuration); // in 24 hours units, ringTone could be chosen from a list
 
@@ -51,7 +51,7 @@ Q_SIGNALS:
     void connectedToDaemonChanged();
 
 private Q_SLOTS:
-    void addAlarm(QString uuid);
+    void addAlarmInternal(QString uuid);
     void removeAlarm(const QString &uuid);
 
 private:

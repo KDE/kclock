@@ -105,7 +105,7 @@ Kirigami.ScrollablePage {
                     asynchronous: true
                     Connections {
                         target: applicationWindow().pageStack
-                        function onCurrentItemChanged() {
+                        function onCurrentItemChanged(): void {
                             clockItemLoader.active = applicationWindow().pageStack.currentItem == applicationWindow().getPage("Time");
                         }
                     }
