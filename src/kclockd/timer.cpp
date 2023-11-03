@@ -252,6 +252,8 @@ void Timer::ring()
     qDebug("Timer finished, sending notification...");
     m_notification->sendEvent();
 
+    Utilities::pauseMprisSources();
+
     m_ringing = true;
     Q_EMIT ringingChanged();
 }
@@ -260,6 +262,8 @@ void Timer::dismiss()
 {
     qDebug() << "Timer dismissed.";
     m_notification->close();
+
+    Utilities::resumeMprisSources();
 
     m_ringing = false;
     Q_EMIT ringingChanged();

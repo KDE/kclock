@@ -300,6 +300,9 @@ void Alarm::ring()
     // wake up device
     Utilities::wakeupNow();
 
+    // pause playing mpris media sources
+    Utilities::pauseMprisSources();
+
     // play sound (it will loop)
     qDebug() << "Alarm sound: " << m_audioPath;
     AlarmPlayer::instance().setSource(m_audioPath);
@@ -322,6 +325,8 @@ void Alarm::dismiss()
     m_justSnoozed = false;
 
     AlarmPlayer::instance().stop();
+    Utilities::resumeMprisSources();
+
     setRinging(false);
     m_ringTimer->stop();
     m_notification->close();
@@ -334,6 +339,8 @@ void Alarm::snooze()
 {
     qDebug() << "Alarm snoozed (" << m_snoozeDuration << " minutes)";
     AlarmPlayer::instance().stop();
+    Utilities::resumeMprisSources();
+
     setRinging(false);
     m_ringTimer->stop();
     m_notification->close();

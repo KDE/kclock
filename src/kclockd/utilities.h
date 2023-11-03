@@ -10,6 +10,7 @@
 
 #include <QDBusInterface>
 #include <QObject>
+#include <QStringList>
 
 const QString POWERDEVIL_SERVICE_NAME = QStringLiteral("org.kde.Solid.PowerManagement");
 
@@ -33,6 +34,9 @@ public:
     void decfActiveCount();
 
     static void wakeupNow();
+
+    static void pauseMprisSources();
+    static void resumeMprisSources();
 
 Q_SIGNALS:
     void wakeup(int cookie);
@@ -64,4 +68,7 @@ private:
     QThread *m_timerThread = nullptr;
     AlarmWaitWorker *m_worker = nullptr;
     QTimer *m_timer = nullptr;
+
+    // which mpris media sources were paused when the alarm/timer started ringing
+    static QStringList m_pausedSources;
 };

@@ -13,8 +13,12 @@
 #include <QThread>
 #include <QTimer>
 
+#include "generated/systeminterfaces/mprisplayer.h"
+
 // manually disable powerdevil, even if found
 static bool noPowerDevil = false;
+
+QStringList Utilities::m_pausedSources;
 
 void Utilities::disablePowerDevil(bool disable)
 {
@@ -222,4 +226,35 @@ void Utilities::keepAlive()
 void Utilities::canExit()
 {
     decfActiveCount();
+}
+
+void Utilities::pauseMprisSources()
+{
+    const QStringList interfaces = QDBusConnection::sessionBus().interface()->registeredServiceNames().value();
+    for (const QString &interface : interfaces) {
+        if (interface.startsWith(QLatin1String("org.mpris.MediaPlayer2"))) {
+            OrgMprisMediaPlayer2PlayerInterface mprisInterface(interface, QStringLiteral("/org/mpris/MediaPlayer2"), QDBusConnection::sessionBus());
+            QString status = mprisInterface.playbackStatus();
+            if (status == QLatin1String("Playing")) {
+                if (!m_pausedSources.contains(interface)) {
+                    m_pausedSources.append(interface);
+                    if (mprisInterface.canPause()) {
+                        mprisInterface.Pause();
+                    } else {
+                        mprisInterface.Stop();
+                    }
+                }
+            }
+        }
+    }
+}
+
+void Utilities::resumeMprisSources()
+{
+    for (const QString &interface : std::as_const(m_pausedSources)) {
+        OrgMprisMediaPlayer2PlayerInterface mprisInterface(interface, QStringLiteral("/org/mpris/MediaPlayer2"), QDBusConnection::sessionBus());
+        mprisInterface.Play();
+    }
+
+    m_pausedSources.clear();
 }

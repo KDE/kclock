@@ -78,6 +78,8 @@ qt_add_dbus_adaptor(kclockd_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.Tim
 qt_add_dbus_adaptor(kclockd_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.Utility.xml
                      ${CMAKE_CURRENT_SOURCE_DIR}/utilities.h Utilities)
 
+qt_add_dbus_interface(kclockd_SRCS systeminterfaces/org.mpris.MediaPlayer2.Player.xml generated/systeminterfaces/mprisplayer)
+
 # install DBus interface xml to dbus interface directory
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.KClockSettings.xml DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR})
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.Alarm.xml DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR})
