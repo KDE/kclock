@@ -57,11 +57,12 @@ find_package(KF${QT_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS
     Config
     I18n
     CoreAddons
-    Plasma
     Kirigami2
     Notifications
     DBusAddons
 )
+
+find_package(KF${QT_MAJOR_VERSION}Plasma REQUIRED)
 
 if(QT_MAJOR_VERSION STREQUAL "6")
     find_package(KF6StatusNotifierItem ${KF_MIN_VERSION} REQUIRED)
