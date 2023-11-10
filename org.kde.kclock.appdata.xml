@@ -26,6 +26,7 @@
   <name xml:lang="gl">Reloxo</name>
   <name xml:lang="hi">घड़ी</name>
   <name xml:lang="hu">Óra</name>
+  <name xml:lang="ia">Clock (Horologio)</name>
   <name xml:lang="id">Clock</name>
   <name xml:lang="it">Orologio</name>
   <name xml:lang="ka">საათი</name>
@@ -96,6 +97,7 @@
   <developer_name xml:lang="gl">Comunidade KDE</developer_name>
   <developer_name xml:lang="hi">केडीई समुदाय</developer_name>
   <developer_name xml:lang="hu">A KDE Közösség</developer_name>
+  <developer_name xml:lang="ia">Communitate de KDE</developer_name>
   <developer_name xml:lang="id">Komunitas KDE</developer_name>
   <developer_name xml:lang="it">Comunità KDE</developer_name>
   <developer_name xml:lang="ka">KDE Community</developer_name>
@@ -213,6 +215,7 @@
       <caption xml:lang="gl">Vista de móbil.</caption>
       <caption xml:lang="hi">मोबाइल दृश्य</caption>
       <caption xml:lang="hu">Mobilnézet</caption>
+      <caption xml:lang="ia">Vista de Mobile</caption>
       <caption xml:lang="id">Tampilan mobile</caption>
       <caption xml:lang="it">Vista mobile</caption>
       <caption xml:lang="ka">მობილური ხედი</caption>
@@ -251,6 +254,7 @@
       <caption xml:lang="gl">Vista de escritorio.</caption>
       <caption xml:lang="hi">डेस्कटॉप दृश्य</caption>
       <caption xml:lang="hu">Asztali nézet</caption>
+      <caption xml:lang="ia">Vista de Scriptorio</caption>
       <caption xml:lang="id">Tampilan desktop</caption>
       <caption xml:lang="it">Vista desktop</caption>
       <caption xml:lang="ka">სამუსაო მაგიდის ხედი</caption>
@@ -289,6 +293,7 @@
       <caption xml:lang="gl">Páxina dos temporizadores.</caption>
       <caption xml:lang="hi">टाइमरों का पृष्ठ</caption>
       <caption xml:lang="hu">Időzítők oldal</caption>
+      <caption xml:lang="ia">Pagina de chronometros</caption>
       <caption xml:lang="id">Halaman timer</caption>
       <caption xml:lang="it">Pagina dei timer</caption>
       <caption xml:lang="ka">წამმზომების გვერდი</caption>
@@ -327,6 +332,7 @@
       <caption xml:lang="gl">Páxina dun temporizador.</caption>
       <caption xml:lang="hi">टाइमर पृष्ठ</caption>
       <caption xml:lang="hu">Időzítő oldal</caption>
+      <caption xml:lang="ia">Pagiona de chronometro</caption>
       <caption xml:lang="id">Halaman timer</caption>
       <caption xml:lang="it">Pagina del timer</caption>
       <caption xml:lang="ka">წამმზომის გვერდი</caption>
@@ -403,6 +409,7 @@
       <caption xml:lang="gl">Páxina das alarmas.</caption>
       <caption xml:lang="hi">अलार्मों का पृष्ठ</caption>
       <caption xml:lang="hu">Ébresztés oldal</caption>
+      <caption xml:lang="ia">Pagina de alarma</caption>
       <caption xml:lang="id">Halaman alarm</caption>
       <caption xml:lang="it">Pagina degli allarmi</caption>
       <caption xml:lang="ka">მაღვიძარის გვერდი</caption>
