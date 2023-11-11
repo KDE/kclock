@@ -25,10 +25,10 @@ FormCard.FormCardPage {
     Kirigami.ColumnView.fillWidth: false
 
     FormCard.FormCard {
-        Layout.topMargin: Kirigami.Units.largeSpacing
+        Layout.topMargin: Kirigami.Units.gridUnit
 
         FormCard.FormComboBoxDelegate {
-            text: i18n("Time Format:")
+            text: i18n("Time Format")
             model: ListModel {
                 // we can't use i18n with ListElement
                 Component.onCompleted: {
@@ -48,13 +48,28 @@ FormCard.FormCardPage {
                 currentIndex = index == -1 ? 0 : index;
             }
         }
+    }
 
-        FormCard.FormDelegateSeparator {}
+    FormCard.FormCard {
+        Layout.topMargin: Kirigami.Units.gridUnit
 
         FormCard.FormButtonDelegate {
+            id: aboutClock
             text: i18n("About Clock")
-            icon.name: "org.kde.kclock"
             onClicked: applicationWindow().pageStack.push(applicationWindow().getPage("About"))
+        }
+
+        FormCard.FormDelegateSeparator { above: aboutClock; below: aboutKde }
+
+        FormCard.FormButtonDelegate {
+            id: aboutKde
+            text: i18n("About KDE")
+            onClicked: applicationWindow().pageStack.push(kdePage)
+
+            Component {
+                id: kdePage
+                FormCard.AboutKDE {}
+            }
         }
     }
 }
