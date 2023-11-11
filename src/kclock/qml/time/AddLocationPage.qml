@@ -17,7 +17,6 @@ Kirigami.ScrollablePage {
     title: i18n("Add Location")
 
     AddLocationListView {
-        addPadding: true
         onCloseRequested: applicationWindow().pageStack.currentIndex = 0
     }
 }
