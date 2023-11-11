@@ -107,25 +107,25 @@ int main(int argc, char *argv[])
     qmlRegisterSingletonType<TimerPresetModel>("kclock", 1, 0, "TimerPresetModel", [](QQmlEngine *, QJSEngine *) -> QObject * {
         return TimerPresetModel::instance();
     });
-    qmlRegisterSingletonType<TimerPresetModel>("kclock", 1, 0, "TimerModel", [](QQmlEngine *, QJSEngine *) -> QObject * {
+    qmlRegisterSingletonType<TimerModel>("kclock", 1, 0, "TimerModel", [](QQmlEngine *, QJSEngine *) -> QObject * {
         return TimerModel::instance();
     });
-    qmlRegisterSingletonType<TimerPresetModel>("kclock", 1, 0, "AlarmModel", [](QQmlEngine *, QJSEngine *) -> QObject * {
+    qmlRegisterSingletonType<AlarmModel>("kclock", 1, 0, "AlarmModel", [](QQmlEngine *, QJSEngine *) -> QObject * {
         return AlarmModel::instance();
     });
-    qmlRegisterSingletonType<TimerPresetModel>("kclock", 1, 0, "UtilModel", [](QQmlEngine *, QJSEngine *) -> QObject * {
+    qmlRegisterSingletonType<UtilModel>("kclock", 1, 0, "UtilModel", [](QQmlEngine *, QJSEngine *) -> QObject * {
         return UtilModel::instance();
     });
-    qmlRegisterSingletonType<TimerPresetModel>("kclock", 1, 0, "StopwatchTimer", [stopwatchTimer](QQmlEngine *, QJSEngine *) -> QObject * {
+    qmlRegisterSingletonType<StopwatchTimer>("kclock", 1, 0, "StopwatchTimer", [stopwatchTimer](QQmlEngine *, QJSEngine *) -> QObject * {
         return stopwatchTimer;
     });
-    qmlRegisterSingletonType<TimerPresetModel>("kclock", 1, 0, "KClockFormat", [](QQmlEngine *, QJSEngine *) -> QObject * {
+    qmlRegisterSingletonType<KclockFormat>("kclock", 1, 0, "KClockFormat", [](QQmlEngine *, QJSEngine *) -> QObject * {
         return KclockFormat::instance();
     });
-    qmlRegisterSingletonType<TimerPresetModel>("kclock", 1, 0, "WeekModel", [weekModel](QQmlEngine *, QJSEngine *) -> QObject * {
+    qmlRegisterSingletonType<WeekModel>("kclock", 1, 0, "WeekModel", [weekModel](QQmlEngine *, QJSEngine *) -> QObject * {
         return weekModel;
     });
-    qmlRegisterSingletonType<TimerPresetModel>("kclock", 1, 0, "SettingsModel", [](QQmlEngine *, QJSEngine *) -> QObject * {
+    qmlRegisterSingletonType<SettingsModel>("kclock", 1, 0, "SettingsModel", [](QQmlEngine *, QJSEngine *) -> QObject * {
         return SettingsModel::instance();
     });
 
