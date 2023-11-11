@@ -96,7 +96,7 @@ void TimerPresetModel::save()
 {
     QJsonArray arr;
 
-    const auto presets = qAsConst(m_presets);
+    const auto presets = std::as_const(m_presets);
     std::transform(presets.begin(), presets.end(), std::back_inserter(arr), [](const TimerPreset *preset) {
         return QJsonValue(preset->toJson());
     });

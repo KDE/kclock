@@ -109,7 +109,7 @@ QStringList TimerModel::timers() const
     // Filter out { } and - which are not allowed in DBus paths
     static QRegularExpression dbusfilter(QStringLiteral("[{}-]"));
 
-    for (const Timer *timer : qAsConst(m_timerList)) {
+    for (const Timer *timer : std::as_const(m_timerList)) {
         ret << timer->uuid().replace(dbusfilter, QString());
     }
     return ret;
