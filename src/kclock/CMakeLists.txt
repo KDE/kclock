@@ -7,16 +7,27 @@
 
 set(kclock_SRCS
     alarm.cpp
+    alarm.h
     alarmmodel.cpp
+    alarmmodel.h
     timer.cpp
+    timer.h
     timermodel.cpp
+    timermodel.h
     utilmodel.cpp
+    utilmodel.h
     stopwatchtimer.cpp
+    stopwatchtimer.h
     kclockformat.cpp
+    kclockformat.h
     settingsmodel.cpp
+    settingsmodel.h
     addlocationmodel.cpp
+    addlocationmodel.h
     timerpresetmodel.cpp
+    timerpresetmodel.h
     savedlocationsmodel.cpp
+    savedlocationsmodel.h
     )
 
 set(SettingsXML ${CMAKE_CURRENT_BINARY_DIR}/../kclockd/org.kde.kclockd.KClockSettings.xml)

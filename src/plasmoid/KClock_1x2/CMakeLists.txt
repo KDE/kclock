@@ -6,7 +6,7 @@
 
 add_definitions(-DTRANSLATION_DOMAIN=\"plasma_applet_org.kde.plasma.kclock_1x2\")
 
-kcoreaddons_add_plugin(org.kde.plasma.kclock_1x2 SOURCES kclock_1x2.cpp INSTALL_NAMESPACE plasma/applets)
+kcoreaddons_add_plugin(org.kde.plasma.kclock_1x2 SOURCES kclock_1x2.cpp kclock_1x2.h INSTALL_NAMESPACE plasma/applets)
 
 target_link_libraries(org.kde.plasma.kclock_1x2
     Qt6::Gui
