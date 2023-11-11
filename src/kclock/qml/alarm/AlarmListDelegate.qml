@@ -32,6 +32,11 @@ Delegates.RoundedItemDelegate {
 
     property bool editMode: false
 
+    topPadding: Kirigami.Settings.isMobile ? Kirigami.Units.gridUnit : Kirigami.Units.largeSpacing
+    bottomPadding: Kirigami.Settings.isMobile ? Kirigami.Units.gridUnit : Kirigami.Units.largeSpacing
+    leftPadding: Kirigami.Units.gridUnit
+    rightPadding: Kirigami.Units.gridUnit
+
     signal editClicked()
     signal deleteClicked()
 
@@ -69,26 +74,38 @@ Delegates.RoundedItemDelegate {
             }
         }
     }
-    text: root.formattedTime
 
     contentItem: RowLayout {
         spacing: Kirigami.Units.smallSpacing
 
-        Delegates.SubtitleContentItem {
-            itemDelegate: root
-            subtitle: {
-                let subtitleString = "";
-                if (root.name.length > 0) {
-                    subtitleString = subtitleString + root.name + " - ";
-                }
+        ColumnLayout {
+            Layout.fillWidth: true
+            spacing: Kirigami.Units.smallSpacing
 
-                subtitleString += FormatUtil.getRepeatFormat(root.daysOfWeek);
+            Label {
+                id: label
+                Layout.fillWidth: true
+                text: root.formattedTime
+                font.bold: true
+            }
 
-                if (root.snoozedLength > 0) {
-                    subtitleString += "\n"
-                    subtitleString += i18np("Snoozed %1 minute", "Snoozed %1 minutes", root.snoozedLength);
+            Label {
+                id: subtitle
+                Layout.fillWidth: true
+                text: {
+                    let subtitleString = "";
+                    if (root.name.length > 0) {
+                        subtitleString = subtitleString + root.name + " - ";
+                    }
+
+                    subtitleString += FormatUtil.getRepeatFormat(root.daysOfWeek);
+
+                    if (root.snoozedLength > 0) {
+                        subtitleString += "\n"
+                        subtitleString += i18np("Snoozed %1 minute", "Snoozed %1 minutes", root.snoozedLength);
+                    }
+                    return subtitleString;
                 }
-                return subtitleString;
             }
         }
 

@@ -65,6 +65,7 @@ Kirigami.ScrollablePage {
 
         transform: Translate { y: yTranslate }
 
+        topMargin: Kirigami.Units.smallSpacing
         reuseItems: true
 
         // no alarms placeholder
