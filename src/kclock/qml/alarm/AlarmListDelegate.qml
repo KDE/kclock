@@ -81,6 +81,7 @@ Delegates.RoundedItemDelegate {
         ColumnLayout {
             Layout.fillWidth: true
             spacing: Kirigami.Units.smallSpacing
+            opacity: root.enabled ? 1.0 : 0.7
 
             Label {
                 id: label
