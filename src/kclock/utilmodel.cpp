@@ -10,7 +10,6 @@
 
 #include <QLocale>
 #include <QStandardPaths>
-#include <QString>
 #include <QTimeZone>
 #include <QUrl>
 

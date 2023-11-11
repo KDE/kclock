@@ -16,8 +16,6 @@
 #include <QJsonObject>
 #include <QtGlobal>
 
-#include <KLocalizedString>
-
 TimerModel *TimerModel::instance()
 {
     static TimerModel *singleton = new TimerModel();

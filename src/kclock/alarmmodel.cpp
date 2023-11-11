@@ -7,7 +7,6 @@
 
 #include "alarmmodel.h"
 
-#include "alarm.h"
 #include "kclock_algorithm.hpp"
 #include "utilmodel.h"
 

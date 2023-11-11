@@ -11,8 +11,6 @@
 #include <QDBusConnection>
 #include <QDBusInterface>
 #include <QDBusReply>
-#include <QProcess>
-#include <QTimer>
 
 KClock_1x2::KClock_1x2(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args)
     : Plasma::Applet(parent, metaData, args)

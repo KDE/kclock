@@ -12,7 +12,6 @@
 
 #include <QLocale>
 #include <QTime>
-#include <QTimer>
 
 KclockFormat::KclockFormat(QObject *parent)
     : QObject(parent)

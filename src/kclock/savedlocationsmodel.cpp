@@ -9,7 +9,6 @@
 #include "savedlocationsmodel.h"
 
 #include <QDebug>
-#include <QTimeZone>
 
 #include <KConfigGroup>
 #include <KLocalizedString>

@@ -8,8 +8,6 @@
 
 #include "timer.h"
 
-#include <QTimer>
-
 /* ~ Timer ~ */
 Timer::Timer(const QString &uuid, QObject *parent)
     : QObject{parent}

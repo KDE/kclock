@@ -8,7 +8,6 @@
 
 #include "addlocationmodel.h"
 
-#include "kclockformat.h"
 #include "savedlocationsmodel.h"
 #include "utilmodel.h"
 
@@ -17,7 +16,6 @@
 #include <KSharedConfig>
 
 #include <QDebug>
-#include <QTimeZone>
 
 const QString TZ_CFG_GROUP = QStringLiteral("Timezones");
 

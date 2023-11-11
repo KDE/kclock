@@ -17,7 +17,6 @@
 #include <QDBusConnection>
 #include <QDBusMessage>
 #include <QDateTime>
-#include <QDebug>
 #include <QJsonDocument>
 #include <QJsonObject>
 

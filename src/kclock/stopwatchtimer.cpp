@@ -8,7 +8,6 @@
 #include "stopwatchtimer.h"
 
 #include <QDebug>
-#include <QTimer>
 
 StopwatchTimer::StopwatchTimer(QObject *parent)
     : QObject(parent)

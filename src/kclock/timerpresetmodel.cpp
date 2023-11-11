@@ -9,7 +9,6 @@
 #include <QDebug>
 #include <QJsonArray>
 #include <QJsonDocument>
-#include <QJsonObject>
 
 const QString TIMERPRESETS_CFG_GROUP = QStringLiteral("TimerPresets"), TIMERPRESETS_CFG_KEY = QStringLiteral("timerPresets");
 
