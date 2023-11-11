@@ -50,21 +50,28 @@ Kirigami.ScrollablePage {
         visible: !TimerModel.connectedToDaemon // by default, it's false so we need this
     }
 
-    Kirigami.CardsListView {
+    ListView {
         id: timersList
+        spacing: Kirigami.Units.gridUnit
+        topMargin: Kirigami.Units.gridUnit
+        bottomMargin: Kirigami.Units.gridUnit
+        leftMargin: Kirigami.Units.gridUnit
+        rightMargin: Kirigami.Units.gridUnit
+
         model: TimerModel
 
         transform: Translate { y: yTranslate }
 
-        add: Transition {
-            NumberAnimation { property: "opacity"; from: 0; to: 1.0; duration: Kirigami.Units.shortDuration }
-        }
-        remove: Transition {
-            NumberAnimation { property: "opacity"; from: 0; to: 1.0; duration: Kirigami.Units.shortDuration }
-        }
-        displaced: Transition {
-            NumberAnimation { properties: "x,y"; duration: Kirigami.Units.longDuration; easing.type: Easing.InOutQuad}
-        }
+        // TODO: these animations seem to cause the cards to overlap when a new timer is added, possible Qt bug?
+        // add: Transition {
+        //     NumberAnimation { property: "opacity"; from: 0; to: 1.0; duration: Kirigami.Units.shortDuration }
+        // }
+        // remove: Transition {
+        //     NumberAnimation { property: "opacity"; from: 0; to: 1.0; duration: Kirigami.Units.shortDuration }
+        // }
+        // displaced: Transition {
+        //     NumberAnimation { properties: "x,y"; duration: Kirigami.Units.longDuration; easing.type: Easing.InOutQuad}
+        // }
 
         // mobile action
         FloatingActionButton {
