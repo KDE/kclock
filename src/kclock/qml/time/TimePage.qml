@@ -66,7 +66,6 @@ Kirigami.ScrollablePage {
         active: false
     }
 
-
     // time zones
     ListView {
         id: listView
@@ -81,17 +80,16 @@ Kirigami.ScrollablePage {
             NumberAnimation { property: "opacity"; from: 0; to: 1.0; duration: Kirigami.Units.shortDuration }
         }
         displaced: Transition {
-            NumberAnimation { properties: "x,y"; duration: Kirigami.Units.longDuration; easing.type: Easing.InOutQuad}
+            NumberAnimation { properties: "x,y"; duration: Kirigami.Units.longDuration; easing.type: Easing.InOutQuad }
         }
 
         header: RowLayout {
-            width: listView.width
-            height: clockItemLoader.height + Kirigami.Units.gridUnit * 0.5
+            width: listView.width - (listView.ScrollBar.vertical ? listView.ScrollBar.vertical.width : 0)
+            height: clockItemLoader.height + Kirigami.Units.gridUnit
 
             RowLayout {
                 Layout.alignment: Qt.AlignHCenter
                 Layout.maximumWidth: Kirigami.Units.gridUnit * 23
-                Layout.minimumWidth: Kirigami.Units.gridUnit * 15
 
                 // left side - analog clock
                 Loader {
@@ -127,18 +125,21 @@ Kirigami.ScrollablePage {
                 // right side - digital clock + location
                 ColumnLayout {
                     Layout.alignment: Qt.AlignHCenter
-                    Layout.rightMargin: Kirigami.Units.smallSpacing
+                    Layout.rightMargin: Kirigami.Units.gridUnit
                     Label {
                         Layout.alignment: Qt.AlignRight
                         font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 2.8)
-                        font.weight: Font.Light
+                        font.weight: Font.Bold
+                        opacity: 0.7
                         text: KClockFormat.currentTime
+                        color: Kirigami.Theme.textColor
                     }
                     Label {
                         Layout.alignment: Qt.AlignRight
-                        font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 1.2)
+                        font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 1)
                         text: UtilModel.tzName
-                        color: Kirigami.Theme.textColor
+                        font.weight: Font.Bold
+                        opacity: 0.9
                     }
                 }
             }
@@ -161,7 +162,13 @@ Kirigami.ScrollablePage {
         }
 
         delegate: TimePageDelegate {
+            width: listView.width
             editMode: editAction.checked
+
+            city: model.city
+            relativeTime: model.relativeTime
+            timeString: model.timeString
+
             onDeleteRequested: SavedLocationsModel.removeLocation(model.index)
         }
     }

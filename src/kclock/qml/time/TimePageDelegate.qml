@@ -10,33 +10,49 @@ import QtQuick.Controls
 import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.delegates as Delegates
 
 import kclock
 
-Delegates.RoundedItemDelegate {
+Control {
     id: root
 
     property bool editMode
-    required property string city
-    required property string relativeTime
-    required property string timeString
+    property string city
+    property string relativeTime
+    property string timeString
 
     signal deleteRequested()
 
-    text: city
+    topPadding: Kirigami.Units.largeSpacing
+    bottomPadding: Kirigami.Units.largeSpacing
+    leftPadding: Kirigami.Units.gridUnit
+    rightPadding: Kirigami.Units.gridUnit
 
     contentItem: RowLayout {
-        spacing: Kirigami.Units.smallSpacing
+        spacing: Kirigami.Units.largeSpacing
 
-        Delegates.SubtitleContentItem {
-            itemDelegate: root
-            subtitle: root.relativeTime
+        ColumnLayout {
             Layout.fillWidth: true
+            spacing: Kirigami.Units.smallSpacing
+
+            Label {
+                Layout.fillWidth: true
+                text: root.city
+                font.bold: true
+            }
+            Label {
+                Layout.fillWidth: true
+                text: root.relativeTime
+                font: Kirigami.Theme.smallFont
+            }
         }
 
         Label {
             text: root.timeString
+            font.weight: Font.Bold
+            font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.2
+            opacity: 0.7
+            color: Kirigami.Theme.textColor
         }
 
         ToolButton {
