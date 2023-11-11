@@ -97,7 +97,14 @@ Kirigami.ScrollablePage {
 
                 Label {
                     id: text
-                    text: StopwatchTimer.hours + ':' + StopwatchTimer.minutes + ':' + StopwatchTimer.seconds + '.'
+                    text: {
+                        // only show hours if we have passed an hour
+                        if (StopwatchTimer.hours === '00') {
+                            return StopwatchTimer.minutes + ':' + StopwatchTimer.seconds + '.';
+                        } else {
+                            return StopwatchTimer.hours + ':' + StopwatchTimer.minutes + ':' + StopwatchTimer.seconds + '.';
+                        }
+                    }
                     font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 4.75)
                     font.weight: Font.ExtraLight
                 }
@@ -189,7 +196,7 @@ Kirigami.ScrollablePage {
             y: -height
 
             background: null
-            width: parent.width
+            width: ListView.view.width
 
             ListView.onReused: opacityAnimation.restart()
             Component.onCompleted: opacityAnimation.restart()
@@ -205,12 +212,14 @@ Kirigami.ScrollablePage {
             property int lapNumber: model.index == -1 ? -1 : roundModel.count - model.index
 
             property double timeSinceLastLap: {
-                if (index === 0) { // constantly updated lap (top lap)
+                if (index === 0 && roundModel.get(1)) { // constantly updated lap (top lap)
                     return parseFloat((elapsedTime - roundModel.get(1).time)/1000)
                 } else if (index === roundModel.count - 1) { // last lap
                     return parseFloat(model.time / 1000)
-                } else if (model) {
+                } else if (model && roundModel.get(index+1)) {
                     return parseFloat((model.time - roundModel.get(index+1).time)/1000)
+                } else {
+                    return 0;
                 }
             }
 
