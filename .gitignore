@@ -6,7 +6,7 @@
 #
 
 *.qmlc
-build/
+build*/
 .kdev4/
 kclock.kdev4
 CMakeLists.txt.user
