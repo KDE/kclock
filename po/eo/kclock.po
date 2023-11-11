@@ -1,38 +1,37 @@
-# Spanish translations for kclock.po package.
-# Copyright (C) 2020 This file is copyright:
+# translation of kclock.pot to esperanto
+# Copyright (C) 2023 Free Software Foundation, Inc.
 # This file is distributed under the same license as the kclock package.
+# Oliver Kellogg <okellogg@users.sourceforge.net, 2023.
 #
-# Automatically generated, 2020.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-11 01:45+0000\n"
-"PO-Revision-Date: 2023-02-06 15:19+0100\n"
-"Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
-"Language-Team: Spanish <kde-l10n-es@kde.org>\n"
-"Language: es\n"
+"PO-Revision-Date: 2023-11-09 20:45+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
+"Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
+"Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: translate-po (https://github.com/zcribe/translate-po)\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Eloy Cuadra"
+msgstr "Oliver Kellogg"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "ecuadra@eloihr.net"
+msgstr "okellogg@users.sourceforge.net"
 
 #: main.cpp:42
 #, kde-format
 msgid "Select opened page"
-msgstr "Seleccionar la página abierta"
+msgstr "Elekti malfermitan paĝon"
 
 #: main.cpp:65
 #, kde-format
@@ -42,7 +41,7 @@ msgstr ""
 #: main.cpp:67
 #, kde-format
 msgid "© 2020-2022 KDE Community"
-msgstr "© 2020-2022 La comunidad KDE"
+msgstr "© 2020-2022 KDE-Komunumo"
 
 #: main.cpp:69
 #, kde-format
@@ -57,32 +56,32 @@ msgstr "Han Young"
 #: qml/alarm/AlarmForm.qml:86
 #, kde-format
 msgid "Days to repeat:"
-msgstr "Días a repetir:"
+msgstr "Tagoj por ripeti:"
 
 #: qml/alarm/AlarmForm.qml:88
 #, kde-format
 msgid "Select Days to Repeat"
-msgstr "Seleccionar los días a repetir"
+msgstr "Elekti Tagojn Ripetendajn"
 
 #: qml/alarm/AlarmForm.qml:111
 #, kde-format
 msgid "Alarm Name (optional):"
-msgstr "Nombre de la alarma (opcional):"
+msgstr "Nomo de alarmo (laŭvola):"
 
 #: qml/alarm/AlarmForm.qml:112
 #, kde-format
 msgid "Wake Up"
-msgstr "Despertar"
+msgstr "Vekiĝi"
 
 #: qml/alarm/AlarmForm.qml:121
 #, kde-format
 msgid "Ring Duration:"
-msgstr "Duración del timbre:"
+msgstr "Sonordaŭro:"
 
 #: qml/alarm/AlarmForm.qml:124 qml/alarm/AlarmForm.qml:135
 #, kde-format
 msgid "None"
-msgstr "Ninguna"
+msgstr "Neniu"
 
 #: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:136
 #: qml/alarm/AlarmForm.qml:169 qml/alarm/AlarmForm.qml:173
@@ -94,122 +93,122 @@ msgstr "1 minuto"
 #: qml/alarm/AlarmForm.qml:128 qml/alarm/AlarmForm.qml:169
 #, kde-format
 msgid "%1 minutes"
-msgstr "%1 minutos"
+msgstr "%1 minutoj"
 
 #: qml/alarm/AlarmForm.qml:131
 #, kde-format
 msgid "Select Ring Duration"
-msgstr "Seleccionar la duración del timbre"
+msgstr "Elekti Sonordaŭron"
 
 #: qml/alarm/AlarmForm.qml:137 qml/alarm/AlarmForm.qml:174
 #, kde-format
 msgid "2 minutes"
-msgstr "2 minutos"
+msgstr "2 minutoj"
 
 #: qml/alarm/AlarmForm.qml:138 qml/alarm/AlarmForm.qml:175
 #, kde-format
 msgid "5 minutes"
-msgstr "5 minutos"
+msgstr "5 minutoj"
 
 #: qml/alarm/AlarmForm.qml:139 qml/alarm/AlarmForm.qml:176
 #, kde-format
 msgid "10 minutes"
-msgstr "10 minutos"
+msgstr "10 minutoj"
 
 #: qml/alarm/AlarmForm.qml:140 qml/alarm/AlarmForm.qml:177
 #, kde-format
 msgid "15 minutes"
-msgstr "15 minutos"
+msgstr "15 minutoj"
 
 #: qml/alarm/AlarmForm.qml:141 qml/alarm/AlarmForm.qml:178
 #, kde-format
 msgid "30 minutes"
-msgstr "30 minutos"
+msgstr "30 minutoj"
 
 #: qml/alarm/AlarmForm.qml:142 qml/alarm/AlarmForm.qml:179
 #, kde-format
 msgid "1 hour"
-msgstr "1 hora"
+msgstr "1 horo"
 
 #: qml/alarm/AlarmForm.qml:167
 #, kde-format
 msgid "Snooze Length:"
-msgstr "Duración de la posposición:"
+msgstr "Postlongo:"
 
 #: qml/alarm/AlarmForm.qml:168
 #, kde-format
 msgid "Select Snooze Length"
-msgstr "Seleccionar la duración de la posposición"
+msgstr "Elekti Postdorman Longecon"
 
 #: qml/alarm/AlarmForm.qml:204
 #, kde-format
 msgid "Ring Sound:"
-msgstr "Sonido del timbre:"
+msgstr "Sonorila Sono:"
 
 #: qml/alarm/AlarmForm.qml:210
 #, kde-format
 msgid "Default Sound"
-msgstr "Sonido predeterminado"
+msgstr "Defaŭlta Sono"
 
 #: qml/alarm/AlarmFormPage.qml:26 qml/alarm/AlarmRingingPopup.qml:45
 #, kde-format
 msgid "Alarm"
-msgstr "Alarma"
+msgstr "Alarmo"
 
 #: qml/alarm/AlarmFormPage.qml:26
 #, kde-format
 msgctxt "Edit alarm page title"
 msgid "Editing %1"
-msgstr "Editando %1"
+msgstr "Redaktante %1"
 
 #: qml/alarm/AlarmFormPage.qml:27 qml/alarm/AlarmListPage.qml:31
 #, kde-format
 msgid "New Alarm"
-msgstr "Nueva alarma"
+msgstr "Nova alarmo"
 
 #: qml/alarm/AlarmFormPage.qml:39 qml/alarm/AlarmFormPage.qml:62
 #: qml/timer/TimerFormWrapper.qml:85 qml/timer/TimerFormWrapper.qml:144
 #, kde-format
 msgid "Done"
-msgstr "Terminado"
+msgstr "Farita"
 
 #: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormWrapper.qml:80
 #: qml/timer/TimerFormWrapper.qml:139
 #, kde-format
 msgid "Cancel"
-msgstr "Cancelar"
+msgstr "Nuligi"
 
 #: qml/alarm/AlarmListDelegate.qml:89
 #, kde-format
 msgid "Snoozed %1 minute"
 msgid_plural "Snoozed %1 minutes"
-msgstr[0] "Pospuesta %1 minuto"
-msgstr[1] "Pospuesta %1 minutos"
+msgstr[0] "Postdormis %1 minuton"
+msgstr[1] "Postdormis %1 minutojn"
 
 #: qml/alarm/AlarmListDelegate.qml:108 qml/time/TimePageDelegate.qml:44
 #, fuzzy, kde-format
 #| msgid "Delete"
 msgctxt "@action:button"
 msgid "Delete"
-msgstr "Borrar"
+msgstr "Forigi"
 
 #: qml/alarm/AlarmListPage.qml:25 qml/components/BottomToolbar.qml:114
 #: qml/components/Sidebar.qml:112
 #, kde-format
 msgid "Alarms"
-msgstr "Alarmas"
+msgstr "Alarmoj"
 
 #: qml/alarm/AlarmListPage.qml:37 qml/time/TimePage.qml:37
 #, kde-format
 msgid "Edit"
-msgstr "Editar"
+msgstr "Redakti"
 
 #: qml/alarm/AlarmListPage.qml:46 qml/components/Sidebar.qml:138
 #: qml/settings/SettingsPage.qml:22 qml/stopwatch/StopwatchPage.qml:70
 #: qml/time/TimePage.qml:60 qml/timer/TimerListPage.qml:37
 #, kde-format
 msgid "Settings"
-msgstr "Preferencias"
+msgstr "Agordoj"
 
 #: qml/alarm/AlarmListPage.qml:57
 #, kde-format
@@ -217,107 +216,106 @@ msgid ""
 "The clock daemon was not found. Please start kclockd in order to have alarm "
 "functionality."
 msgstr ""
-"No se ha encontrado el demonio del reloj. Inicie kclockd para poder disponer "
-"de las funciones de alarma."
+"La horloĝdemono ne estis trovita. Bonvolu lanĉi kclockd por havi "
+"alarmfunkcion."
 
 #: qml/alarm/AlarmListPage.qml:77
 #, kde-format
 msgid "No alarms configured"
-msgstr "No hay alarmas configuradas"
+msgstr "Neniuj alarmoj agordis"
 
 #: qml/alarm/AlarmListPage.qml:82
 #, kde-format
 msgid "Add alarm"
-msgstr "Añadir alarma"
+msgstr "Aldoni alarmon"
 
 #: qml/alarm/AlarmListPage.qml:115
 #, kde-format
 msgid "alarm"
-msgstr "alarma"
+msgstr "alarmo"
 
 #: qml/alarm/AlarmListPage.qml:115
 #, kde-format
 msgid "Deleted %1"
-msgstr "%1 borrada"
+msgstr "Forigita %1"
 
 #: qml/alarm/AlarmRingingPopup.qml:27
 #, kde-format
 msgid "Alarm is ringing"
-msgstr "La alarma está sonando"
+msgstr "Alarmo sonoras"
 
 #: qml/alarm/AlarmRingingPopup.qml:55
 #, kde-format
 msgid "Snooze"
-msgstr "Posponer"
+msgstr "Postdormi"
 
 #: qml/alarm/AlarmRingingPopup.qml:59 qml/timer/TimerRingingPopup.qml:56
 #, kde-format
 msgid "Dismiss"
-msgstr "Descartar"
+msgstr "Forĵeti"
 
 #: qml/alarm/SoundPickerPage.qml:25
 #, kde-format
 msgid "Select Alarm Sound"
-msgstr "Seleccionar el sonido de la alarma"
+msgstr "Elekti Alarmsonon"
 
 #: qml/alarm/SoundPickerPage.qml:63
 #, kde-format
 msgid "Select from files…"
-msgstr "Seleccionar de archivos..."
+msgstr "Elekti el dosieroj…"
 
 #: qml/alarm/SoundPickerPage.qml:74
 #, kde-format
 msgid "Default"
-msgstr "Predeterminado"
+msgstr "Defaŭlte"
 
 #: qml/alarm/SoundPickerPage.qml:155
 #, kde-format
 msgid "Choose an audio"
-msgstr "Escoger un sonido"
+msgstr "Elektu audio"
 
 #: qml/alarm/SoundPickerPage.qml:163
 #, kde-format
 msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
-msgstr ""
-"Archivos de sonido (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
+msgstr "Sondosieroj (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 
 #: qml/alarm/SoundPickerPage.qml:163
 #, kde-format
 msgid "All files (*)"
-msgstr "Todos los archivos (*)"
+msgstr "Ĉiuj dosieroj (*)"
 
 #: qml/components/BottomToolbar.qml:84 qml/components/Sidebar.qml:58
 #: qml/time/TimePage.qml:25
 #, kde-format
 msgid "Time"
-msgstr "Hora"
+msgstr "Tempo"
 
 #: qml/components/BottomToolbar.qml:94 qml/components/Sidebar.qml:76
 #: qml/timer/TimerListPage.qml:22
 #, kde-format
 msgid "Timers"
-msgstr "Temporizadores"
+msgstr "Tempigiloj"
 
 #: qml/components/BottomToolbar.qml:104 qml/components/Sidebar.qml:94
 #: qml/stopwatch/StopwatchPage.qml:24
 #, kde-format
 msgid "Stopwatch"
-msgstr "Cronómetro"
+msgstr "Kronohorloĝo"
 
 #: qml/components/formatUtil.js:11
 #, kde-format
 msgid "Only once"
-msgstr "Solo una vez"
+msgstr "Nur unufoje"
 
 #: qml/components/formatUtil.js:16
 #, kde-format
 msgid "Everyday"
-msgstr "Cada día"
+msgstr "Ĉiutage"
 
 #: qml/components/formatUtil.js:19
 #, kde-format
 msgid "Weekdays"
-msgstr "Días de la semana"
+msgstr "Labortagoj"
 
 #: qml/components/formatUtil.js:22
 #, kde-format
@@ -332,27 +330,27 @@ msgstr "Mar, "
 #: qml/components/formatUtil.js:24
 #, kde-format
 msgid "Wed, "
-msgstr "Mié, "
+msgstr "Mer, "
 
 #: qml/components/formatUtil.js:25
 #, kde-format
 msgid "Thu, "
-msgstr "Jue, "
+msgstr "Ĵaŭ, "
 
 #: qml/components/formatUtil.js:26
 #, kde-format
 msgid "Fri, "
-msgstr "Vie, "
+msgstr "Ven, "
 
 #: qml/components/formatUtil.js:27
 #, kde-format
 msgid "Sat, "
-msgstr "Sáb, "
+msgstr "Sab, "
 
 #: qml/components/formatUtil.js:28
 #, kde-format
 msgid "Sun, "
-msgstr "Dom, "
+msgstr "Dim, "
 
 #: qml/components/TimePicker.qml:70
 #, kde-format
@@ -367,57 +365,57 @@ msgstr "PM"
 #: qml/main.qml:23
 #, kde-format
 msgid "Clock"
-msgstr "Reloj"
+msgstr "Horloĝo"
 
 #: qml/settings/SettingsPage.qml:31
 #, kde-format
 msgid "Time Format:"
-msgstr "Formato horario:"
+msgstr "Tempoformato:"
 
 #: qml/settings/SettingsPage.qml:35
 #, kde-format
 msgid "Use System Default"
-msgstr "Usar el predeterminado del sistema"
+msgstr "Uzi Sisteman Defaŭlton"
 
 #: qml/settings/SettingsPage.qml:36
 #, kde-format
 msgid "12 Hour Time"
-msgstr "Reloj de 12 horas"
+msgstr "12-Hora Tempo"
 
 #: qml/settings/SettingsPage.qml:37
 #, kde-format
 msgid "24 Hour Time"
-msgstr "Reloj de 24 horas"
+msgstr "24-Hora Tempo"
 
 #: qml/settings/SettingsPage.qml:55
 #, fuzzy, kde-format
 #| msgid "Clock"
 msgid "About Clock"
-msgstr "Reloj"
+msgstr "Horloĝo"
 
 #: qml/stopwatch/StopwatchPage.qml:63 qml/stopwatch/StopwatchPage.qml:127
 #: qml/timer/TimerListDelegate.qml:166 qml/timer/TimerPage.qml:52
 #: qml/timer/TimerPage.qml:100
 #, kde-format
 msgid "Reset"
-msgstr "Reiniciar"
+msgstr "Restarigi"
 
 #: qml/stopwatch/StopwatchPage.qml:127 qml/timer/TimerListDelegate.qml:156
 #: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
 #, kde-format
 msgid "Pause"
-msgstr "Pausar"
+msgstr "Paŭzi"
 
 #: qml/stopwatch/StopwatchPage.qml:127 qml/timer/TimerListDelegate.qml:156
 #: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
 #, kde-format
 msgid "Start"
-msgstr "Iniciar"
+msgstr "Komenci"
 
 #: qml/stopwatch/StopwatchPage.qml:145
 #, kde-format
 msgid "Lap"
-msgstr "Vuelta"
+msgstr "Rondiro"
 
 #: qml/stopwatch/StopwatchPage.qml:235
 #, kde-format
@@ -427,22 +425,22 @@ msgstr "#%1"
 #: qml/time/AddLocationListView.qml:49
 #, kde-format
 msgid "No locations found"
-msgstr "No se ha encontrado ninguna ubicación"
+msgstr "Neniuj lokoj trovitaj"
 
 #: qml/time/AddLocationPage.qml:17 qml/time/AddLocationWrapper.qml:33
 #, kde-format
 msgid "Add Location"
-msgstr "Añadir ubicación"
+msgstr "Aldoni Lokon"
 
 #: qml/time/TimePage.qml:50
 #, kde-format
 msgid "Add"
-msgstr "Añadir"
+msgstr "Aldoni"
 
 #: qml/time/TimePage.qml:152
 #, kde-format
 msgid "No locations configured"
-msgstr "No se ha configurado ninguna ubicación"
+msgstr "Neniuj lokoj agordis"
 
 #: qml/timer/PresetDurationButton.qml:23 qml/timer/TimerForm.qml:39
 #, kde-format
@@ -477,89 +475,89 @@ msgstr "1 h"
 #: qml/timer/TimerForm.qml:95
 #, kde-format
 msgid "<b>Duration:</b>"
-msgstr "<b>Duración:</b>"
+msgstr "<b>Daŭro:</b>"
 
 #: qml/timer/TimerForm.qml:104
 #, kde-format
 msgid "hours"
-msgstr "horas"
+msgstr "horoj"
 
 #: qml/timer/TimerForm.qml:115
 #, kde-format
 msgid "minutes"
-msgstr "minutos"
+msgstr "minutoj"
 
 #: qml/timer/TimerForm.qml:126
 #, kde-format
 msgid "seconds"
-msgstr "segundos"
+msgstr "sekundoj"
 
 #: qml/timer/TimerForm.qml:132
 #, kde-format
 msgid "<b>Label:</b>"
-msgstr "<b>Etiqueta:</b>"
+msgstr "<b>Etikedo:</b>"
 
 #: qml/timer/TimerForm.qml:133
 #, kde-format
 msgid "Timer"
-msgstr "Temporizador"
+msgstr "Tempigilo"
 
 #: qml/timer/TimerForm.qml:138
 #, kde-format
 msgid "<b>Command at timeout:</b>"
-msgstr "<b>Orden al final del tiempo de espera:</b>"
+msgstr "<b>Komando ĉe eltempiĝo:</b>"
 
 #: qml/timer/TimerForm.qml:141
 #, kde-format
 msgid "optional"
-msgstr "opcional"
+msgstr "nedeviga"
 
 #: qml/timer/TimerForm.qml:157
 #, kde-format
 msgid "Hide Presets"
-msgstr "Ocultar preajustes"
+msgstr "Kaŝi Antaŭagordojn"
 
 #: qml/timer/TimerForm.qml:157
 #, kde-format
 msgid "Show Presets"
-msgstr "Mostrar preajustes"
+msgstr "Montri Antaŭagordojn"
 
 #: qml/timer/TimerForm.qml:162
 #, kde-format
 msgid "Toggle Delete"
-msgstr "Conmutar el borrado"
+msgstr "Baskuligi Forigon"
 
 #: qml/timer/TimerFormWrapper.qml:55
 #, kde-format
 msgid "<b>Create New Timer</b>"
-msgstr "<b>Crear nuevo temporizador</b>"
+msgstr "<b>Krei Novan Tempigilon</b>"
 
 #: qml/timer/TimerFormWrapper.qml:73 qml/timer/TimerFormWrapper.qml:132
 #, kde-format
 msgid "Save As Preset"
-msgstr "Guardar como preajuste"
+msgstr "Konservi Kiel Antaŭmetita"
 
 #: qml/timer/TimerFormWrapper.qml:99
 #, kde-format
 msgid "Create timer"
-msgstr "Crear temporizador"
+msgstr "Krei tempigilon"
 
 #: qml/timer/TimerListDelegate.qml:145 qml/timer/TimerPage.qml:67
 #: qml/timer/TimerPage.qml:115
 #, kde-format
 msgid "Loop Timer"
-msgstr "Temporizador de bucle"
+msgstr "Bukli Tempigilon"
 
 #: qml/timer/TimerListDelegate.qml:176 qml/timer/TimerPage.qml:58
 #: qml/timer/TimerPage.qml:106
 #, kde-format
 msgid "Delete"
-msgstr "Borrar"
+msgstr "Forigi"
 
 #: qml/timer/TimerListPage.qml:29
 #, kde-format
 msgid "New Timer"
-msgstr "Nuevo temporizador"
+msgstr "Nova Tempigilo"
 
 #: qml/timer/TimerListPage.qml:49
 #, kde-format
@@ -567,90 +565,90 @@ msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
 "functionality."
 msgstr ""
-"No se ha encontrado el demonio del reloj. Inicie kclockd para poder disponer "
-"de las funciones de temporizador."
+"La horloĝdemono ne estis trovita. Bonvolu lanĉi kclockd por havi tempigilo-"
+"funkcion."
 
 #: qml/timer/TimerListPage.qml:80
 #, kde-format
 msgid "No timers configured"
-msgstr "No se ha configurado ningún temporizador"
+msgstr "Neniuj tempigiloj agordis"
 
 #: qml/timer/TimerListPage.qml:85
 #, kde-format
 msgid "Add timer"
-msgstr "Añadir temporizador"
+msgstr "Aldoni tempigilon"
 
 #: qml/timer/TimerPage.qml:24
 #, kde-format
 msgid "New timer"
-msgstr "Nuevo temporizador"
+msgstr "Nova tempigilo"
 
 #: qml/timer/TimerRingingPopup.qml:27
 #, kde-format
 msgid "Timer has finished"
-msgstr "El temporizador ha terminado"
+msgstr "Tempigilo finiĝis"
 
 #: qml/timer/TimerRingingPopup.qml:46
 #, kde-format
 msgid "%1 has completed."
-msgstr "%1 se ha completado."
+msgstr "%1 finiĝis."
 
 #: qml/timer/TimerRingingPopup.qml:46
 #, kde-format
 msgid "The timer has completed."
-msgstr "El temporizador se ha completado."
+msgstr "La tempigilo finiĝis."
 
 #: savedlocationsmodel.cpp:111
 #, kde-format
 msgid "%1 hour and 30 minutes ahead"
-msgstr "%1 hora y 30 minutos de adelanto"
+msgstr "%1 horo kaj 30 minutoj antaŭe"
 
 #: savedlocationsmodel.cpp:111
 #, kde-format
 msgid "%1 hours and 30 minutes ahead"
-msgstr "%1 horas y 30 minutos de adelanto"
+msgstr "%1 horoj kaj 30 minutoj antaŭe"
 
 #: savedlocationsmodel.cpp:113
 #, kde-format
 msgid "%1 hour ahead"
-msgstr "%1 hora de adelanto"
+msgstr "%1 horo antaŭe"
 
 #: savedlocationsmodel.cpp:113
 #, kde-format
 msgid "%1 hours ahead"
-msgstr "%1 horas de adelanto"
+msgstr "%1 horoj antaŭe"
 
 #: savedlocationsmodel.cpp:118
 #, kde-format
 msgid "%1 hour and 30 minutes behind"
-msgstr "%1 hora y 30 minutos de atraso"
+msgstr "%1 horo kaj 30 minutoj malantaŭe"
 
 #: savedlocationsmodel.cpp:118
 #, kde-format
 msgid "%1 hours and 30 minutes behind"
-msgstr "%1 horas y 30 minutos de atraso"
+msgstr "%1 horoj kaj 30 minutojn malantaŭe"
 
 #: savedlocationsmodel.cpp:120
 #, kde-format
 msgid "%1 hour behind"
-msgstr "%1 hora de atraso"
+msgstr "%1 horo malantaŭe"
 
 #: savedlocationsmodel.cpp:120
 #, kde-format
 msgid "%1 hours behind"
-msgstr "%1 horas de atraso"
+msgstr "%1 horoj malantaŭe"
 
 #: savedlocationsmodel.cpp:123
 #, kde-format
 msgid "Local time"
-msgstr "Hora local"
+msgstr "Loka horo"
 
 #: utilmodel.cpp:72
 #, kde-format
 msgid "%1 day"
 msgid_plural "%1 days"
-msgstr[0] "%1 día"
-msgstr[1] "%1 días"
+msgstr[0] "%1 tago"
+msgstr[1] "%1 tagoj"
 
 #: utilmodel.cpp:76
 #, kde-format
@@ -660,139 +658,37 @@ msgstr ", "
 #: utilmodel.cpp:78 utilmodel.cpp:84
 #, kde-format
 msgid " and "
-msgstr " y "
+msgstr " kaj "
 
 #: utilmodel.cpp:80
 #, kde-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
-msgstr[0] "%1 hora"
-msgstr[1] "%1 horas"
+msgstr[0] "%1 horo"
+msgstr[1] "%1 horoj"
 
 #: utilmodel.cpp:86
 #, kde-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1 minuto"
-msgstr[1] "%1 minutos"
+msgstr[1] "%1 minutoj"
 
 #: utilmodel.cpp:90
 #, kde-format
 msgid "Alarm will ring in under a minute"
-msgstr "La alarma sonará en menos de un minuto"
+msgstr "La alarmo sonoros post malpli ol minuto"
 
 #: utilmodel.cpp:92
 #, kde-format
 msgid "Alarm will ring in %1"
-msgstr "La alarma sonará en %1"
+msgstr "Alarmo sonoros en %1"
 
 #~ msgid "Select Time Format"
-#~ msgstr "Seleccionar el formato horario"
+#~ msgstr "Elekti Tempoformaton"
 
 #~ msgid "More Info:"
-#~ msgstr "Más información:"
+#~ msgstr "Pliaj Informoj:"
 
 #~ msgid "About"
-#~ msgstr "Acerca de"
-
-#~ msgid "Snoozed %1 minutes"
-#~ msgstr "Pospuesta %1 minutos"
-
-#~ msgid "View"
-#~ msgstr "Ver"
-
-#~ msgctxt "@info"
-#~ msgid "Alarm: <shortcut>%1 %2</shortcut>"
-#~ msgstr "Alarma: <shortcut>%1 %2</shortcut>"
-
-#~ msgid "Don't use PowerDevil for alarms if it is available"
-#~ msgstr "No usar PowerDevil para las alarmas si está disponible"
-
-#~ msgid ""
-#~ "Allow the clock process to be in the background and launched on startup."
-#~ msgstr ""
-#~ "Permitir que el proceso del reloj se ejecute en segundo plano y se lance "
-#~ "durante el arranque."
-
-#~ msgid "A mobile friendly clock app built with Kirigami."
-#~ msgstr "Una aplicación de reloj para móviles creada con Kirigami."
-
-#~ msgid "© 2020 Plasma Development Team"
-#~ msgstr "© 2020 El equipo de desarrollo de Plasma"
-
-#~ msgid "Alarm Volume"
-#~ msgstr "Volumen de la alarma"
-
-#~ msgid "Silence Alarm After"
-#~ msgstr "Silenciar alarma tras"
-
-#~ msgid "Change Alarm Volume"
-#~ msgstr "Cambiar el volumen de la alarma"
-
-#~ msgid "Volume: "
-#~ msgstr "Volumen:"
-
-#~ msgid "Search for a city"
-#~ msgstr "Buscar ciudad"
-
-#~ msgid "%1 %2"
-#~ msgstr "%1 %2"
-
-#~ msgid "<b>Timezones</b>"
-#~ msgstr "<b>Zonas horarias</b>"
-
-#~ msgid "Timezones"
-#~ msgstr "Zonas horarias"
-
-#~ msgid "30 seconds"
-#~ msgstr "30 segundos"
-
-#~ msgid "Never"
-#~ msgstr "Nunca"
-
-#~ msgid "3 minutes"
-#~ msgstr "3 minutos"
-
-#~ msgid "4 minutes"
-#~ msgstr "4 minutos"
-
-#~ msgid "hour"
-#~ msgstr "hora"
-
-#~ msgid "Alarm Name"
-#~ msgstr "Nombre de la alarma"
-
-#~ msgid "Create"
-#~ msgstr "Crear"
-
-#~ msgid "Lap %1"
-#~ msgstr "Vuelta %1"
-
-#~ msgid " minutes"
-#~ msgstr " minutos"
-
-#~ msgid "Run in background mode"
-#~ msgstr "Ejecutar en segundo plano"
-
-#, fuzzy
-#~| msgid "hours"
-#~ msgid " hours"
-#~ msgstr "horas"
-
-#~ msgid "Change Timer Duration"
-#~ msgstr "Cambiar la duración del temporizador"
-
-#~ msgid "Hours"
-#~ msgstr "Horas"
-
-#~ msgid "Minutes"
-#~ msgstr "Minutos"
-
-#~ msgid "Seconds"
-#~ msgstr "Segundos"
-
-#~ msgid "Edit Alarm"
-#~ msgstr "Editar alarma"
-
-#~ msgid "Start week on"
-#~ msgstr "La semana empieza en"
+#~ msgstr "Pri"

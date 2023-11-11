@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 01:39+0000\n"
+"POT-Creation-Date: 2023-11-11 01:45+0000\n"
 "PO-Revision-Date: 2023-07-24 23:36+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -27,183 +27,188 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde@peremen.name"
 
-#: main.cpp:43
+#: main.cpp:42
 #, kde-format
 msgid "Select opened page"
 msgstr "열 페이지 선택"
 
-#: main.cpp:68
+#: main.cpp:65
+#, kde-format
+msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
+msgstr ""
+
+#: main.cpp:67
 #, kde-format
 msgid "© 2020-2022 KDE Community"
 msgstr "© 2020-2022 KDE Community"
 
-#: main.cpp:70
+#: main.cpp:69
 #, kde-format
 msgid "Devin Lin"
 msgstr "Devin Lin"
 
-#: main.cpp:71
+#: main.cpp:70
 #, kde-format
 msgid "Han Young"
 msgstr "Han Young"
 
-#: qml/alarm/AlarmForm.qml:90
+#: qml/alarm/AlarmForm.qml:86
 #, kde-format
 msgid "Days to repeat:"
 msgstr "반복할 요일:"
 
-#: qml/alarm/AlarmForm.qml:92
+#: qml/alarm/AlarmForm.qml:88
 #, kde-format
 msgid "Select Days to Repeat"
 msgstr "반복할 요일 선택"
 
-#: qml/alarm/AlarmForm.qml:115
+#: qml/alarm/AlarmForm.qml:111
 #, kde-format
 msgid "Alarm Name (optional):"
 msgstr "알람 이름(선택 사항):"
 
-#: qml/alarm/AlarmForm.qml:116
+#: qml/alarm/AlarmForm.qml:112
 #, kde-format
 msgid "Wake Up"
 msgstr "일어나기"
 
-#: qml/alarm/AlarmForm.qml:125
+#: qml/alarm/AlarmForm.qml:121
 #, kde-format
 msgid "Ring Duration:"
 msgstr "알람 시간:"
 
-#: qml/alarm/AlarmForm.qml:128 qml/alarm/AlarmForm.qml:139
+#: qml/alarm/AlarmForm.qml:124 qml/alarm/AlarmForm.qml:135
 #, kde-format
 msgid "None"
 msgstr "없음"
 
-#: qml/alarm/AlarmForm.qml:130 qml/alarm/AlarmForm.qml:140
-#: qml/alarm/AlarmForm.qml:173 qml/alarm/AlarmForm.qml:177
+#: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:136
+#: qml/alarm/AlarmForm.qml:169 qml/alarm/AlarmForm.qml:173
 #: qml/timer/TimerComponent.qml:149
 #, kde-format
 msgid "1 minute"
 msgstr "1분"
 
-#: qml/alarm/AlarmForm.qml:132 qml/alarm/AlarmForm.qml:173
+#: qml/alarm/AlarmForm.qml:128 qml/alarm/AlarmForm.qml:169
 #, kde-format
 msgid "%1 minutes"
 msgstr "%1분"
 
-#: qml/alarm/AlarmForm.qml:135
+#: qml/alarm/AlarmForm.qml:131
 #, kde-format
 msgid "Select Ring Duration"
 msgstr "알람 시간 선택"
 
-#: qml/alarm/AlarmForm.qml:141 qml/alarm/AlarmForm.qml:178
+#: qml/alarm/AlarmForm.qml:137 qml/alarm/AlarmForm.qml:174
 #, kde-format
 msgid "2 minutes"
 msgstr "2분"
 
-#: qml/alarm/AlarmForm.qml:142 qml/alarm/AlarmForm.qml:179
+#: qml/alarm/AlarmForm.qml:138 qml/alarm/AlarmForm.qml:175
 #, kde-format
 msgid "5 minutes"
 msgstr "5분"
 
-#: qml/alarm/AlarmForm.qml:143 qml/alarm/AlarmForm.qml:180
+#: qml/alarm/AlarmForm.qml:139 qml/alarm/AlarmForm.qml:176
 #, kde-format
 msgid "10 minutes"
 msgstr "10분"
 
-#: qml/alarm/AlarmForm.qml:144 qml/alarm/AlarmForm.qml:181
+#: qml/alarm/AlarmForm.qml:140 qml/alarm/AlarmForm.qml:177
 #, kde-format
 msgid "15 minutes"
 msgstr "15분"
 
-#: qml/alarm/AlarmForm.qml:145 qml/alarm/AlarmForm.qml:182
+#: qml/alarm/AlarmForm.qml:141 qml/alarm/AlarmForm.qml:178
 #, kde-format
 msgid "30 minutes"
 msgstr "30분"
 
-#: qml/alarm/AlarmForm.qml:146 qml/alarm/AlarmForm.qml:183
+#: qml/alarm/AlarmForm.qml:142 qml/alarm/AlarmForm.qml:179
 #, kde-format
 msgid "1 hour"
 msgstr "1시간"
 
-#: qml/alarm/AlarmForm.qml:171
+#: qml/alarm/AlarmForm.qml:167
 #, kde-format
 msgid "Snooze Length:"
 msgstr "알람 지연 길이:"
 
-#: qml/alarm/AlarmForm.qml:172
+#: qml/alarm/AlarmForm.qml:168
 #, kde-format
 msgid "Select Snooze Length"
 msgstr "알람 지연 길이 선택"
 
-#: qml/alarm/AlarmForm.qml:208
+#: qml/alarm/AlarmForm.qml:204
 #, kde-format
 msgid "Ring Sound:"
 msgstr "알람 소리:"
 
-#: qml/alarm/AlarmForm.qml:214
+#: qml/alarm/AlarmForm.qml:210
 #, kde-format
 msgid "Default Sound"
 msgstr "기본 소리"
 
-#: qml/alarm/AlarmFormPage.qml:27 qml/alarm/AlarmRingingPopup.qml:45
+#: qml/alarm/AlarmFormPage.qml:26 qml/alarm/AlarmRingingPopup.qml:45
 #, kde-format
 msgid "Alarm"
 msgstr "알람"
 
-#: qml/alarm/AlarmFormPage.qml:27
+#: qml/alarm/AlarmFormPage.qml:26
 #, kde-format
 msgctxt "Edit alarm page title"
 msgid "Editing %1"
 msgstr "%1 편집"
 
-#: qml/alarm/AlarmFormPage.qml:28 qml/alarm/AlarmListPage.qml:30
+#: qml/alarm/AlarmFormPage.qml:27 qml/alarm/AlarmListPage.qml:31
 #, kde-format
 msgid "New Alarm"
 msgstr "새 알람"
 
-#: qml/alarm/AlarmFormPage.qml:40 qml/alarm/AlarmFormPage.qml:63
+#: qml/alarm/AlarmFormPage.qml:39 qml/alarm/AlarmFormPage.qml:62
 #: qml/timer/TimerFormWrapper.qml:85 qml/timer/TimerFormWrapper.qml:144
 #, kde-format
 msgid "Done"
 msgstr "완료"
 
-#: qml/alarm/AlarmFormPage.qml:69 qml/timer/TimerFormWrapper.qml:80
+#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormWrapper.qml:80
 #: qml/timer/TimerFormWrapper.qml:139
 #, kde-format
 msgid "Cancel"
 msgstr "취소"
 
-#: qml/alarm/AlarmListDelegate.qml:88
+#: qml/alarm/AlarmListDelegate.qml:89
 #, kde-format
 msgid "Snoozed %1 minute"
 msgid_plural "Snoozed %1 minutes"
 msgstr[0] "%1분 지연됨"
 
-#: qml/alarm/AlarmListDelegate.qml:112 qml/time/TimePageDelegate.qml:46
-#: qml/timer/TimerListDelegate.qml:176 qml/timer/TimerPage.qml:60
-#: qml/timer/TimerPage.qml:109
-#, kde-format
+#: qml/alarm/AlarmListDelegate.qml:108 qml/time/TimePageDelegate.qml:44
+#, fuzzy, kde-format
+#| msgid "Delete"
+msgctxt "@action:button"
 msgid "Delete"
 msgstr "삭제"
 
-#: qml/alarm/AlarmListPage.qml:25 qml/components/BottomToolbar.qml:115
-#: qml/components/Sidebar.qml:108
+#: qml/alarm/AlarmListPage.qml:25 qml/components/BottomToolbar.qml:114
+#: qml/components/Sidebar.qml:112
 #, kde-format
 msgid "Alarms"
 msgstr "알람"
 
-#: qml/alarm/AlarmListPage.qml:38 qml/time/TimePage.qml:37
+#: qml/alarm/AlarmListPage.qml:37 qml/time/TimePage.qml:37
 #, kde-format
 msgid "Edit"
 msgstr "편집"
 
-#: qml/alarm/AlarmListPage.qml:47 qml/components/Sidebar.qml:134
-#: qml/settings/SettingsPage.qml:21 qml/stopwatch/StopwatchPage.qml:70
+#: qml/alarm/AlarmListPage.qml:46 qml/components/Sidebar.qml:138
+#: qml/settings/SettingsPage.qml:22 qml/stopwatch/StopwatchPage.qml:70
 #: qml/time/TimePage.qml:60 qml/timer/TimerListPage.qml:37
 #, kde-format
 msgid "Settings"
 msgstr "설정"
 
-#: qml/alarm/AlarmListPage.qml:59
+#: qml/alarm/AlarmListPage.qml:57
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have alarm "
@@ -211,22 +216,22 @@ msgid ""
 msgstr ""
 "clock 데몬을 찾을 수 없습니다. 알람을 사용하려면 kclockd를 시작하십시오."
 
-#: qml/alarm/AlarmListPage.qml:82
+#: qml/alarm/AlarmListPage.qml:77
 #, kde-format
 msgid "No alarms configured"
 msgstr "설정한 알람 없음"
 
-#: qml/alarm/AlarmListPage.qml:87
+#: qml/alarm/AlarmListPage.qml:82
 #, kde-format
 msgid "Add alarm"
 msgstr "알람 추가"
 
-#: qml/alarm/AlarmListPage.qml:120
+#: qml/alarm/AlarmListPage.qml:115
 #, kde-format
 msgid "alarm"
 msgstr "알람"
 
-#: qml/alarm/AlarmListPage.qml:120
+#: qml/alarm/AlarmListPage.qml:115
 #, kde-format
 msgid "Deleted %1"
 msgstr "%1 삭제함"
@@ -246,50 +251,50 @@ msgstr "지연"
 msgid "Dismiss"
 msgstr "끄기"
 
-#: qml/alarm/SoundPickerPage.qml:23
+#: qml/alarm/SoundPickerPage.qml:25
 #, kde-format
 msgid "Select Alarm Sound"
 msgstr "알람 소리 선택"
 
-#: qml/alarm/SoundPickerPage.qml:60
+#: qml/alarm/SoundPickerPage.qml:63
 #, kde-format
 msgid "Select from files…"
 msgstr "파일에서 선택…"
 
-#: qml/alarm/SoundPickerPage.qml:71
+#: qml/alarm/SoundPickerPage.qml:74
 #, kde-format
 msgid "Default"
 msgstr "기본값"
 
-#: qml/alarm/SoundPickerPage.qml:134
+#: qml/alarm/SoundPickerPage.qml:155
 #, kde-format
 msgid "Choose an audio"
 msgstr "오디오 선택"
 
-#: qml/alarm/SoundPickerPage.qml:142
+#: qml/alarm/SoundPickerPage.qml:163
 #, kde-format
 msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 msgstr "오디오 파일 (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 
-#: qml/alarm/SoundPickerPage.qml:142
+#: qml/alarm/SoundPickerPage.qml:163
 #, kde-format
 msgid "All files (*)"
 msgstr "모든 파일 (*)"
 
-#: qml/components/BottomToolbar.qml:85 qml/components/Sidebar.qml:54
+#: qml/components/BottomToolbar.qml:84 qml/components/Sidebar.qml:58
 #: qml/time/TimePage.qml:25
 #, kde-format
 msgid "Time"
 msgstr "시간"
 
-#: qml/components/BottomToolbar.qml:95 qml/components/Sidebar.qml:72
-#: qml/timer/TimerListPage.qml:21
+#: qml/components/BottomToolbar.qml:94 qml/components/Sidebar.qml:76
+#: qml/timer/TimerListPage.qml:22
 #, kde-format
 msgid "Timers"
 msgstr "타이머"
 
-#: qml/components/BottomToolbar.qml:105 qml/components/Sidebar.qml:90
-#: qml/stopwatch/StopwatchPage.qml:23
+#: qml/components/BottomToolbar.qml:104 qml/components/Sidebar.qml:94
+#: qml/stopwatch/StopwatchPage.qml:24
 #, kde-format
 msgid "Stopwatch"
 msgstr "초시계"
@@ -359,56 +364,47 @@ msgstr "오후"
 msgid "Clock"
 msgstr "시계"
 
-#: qml/settings/SettingsPage.qml:43
+#: qml/settings/SettingsPage.qml:31
 #, kde-format
 msgid "Time Format:"
 msgstr "시간 형식:"
 
-#: qml/settings/SettingsPage.qml:44
-#, kde-format
-msgid "Select Time Format"
-msgstr "시간 형식 선택"
-
-#: qml/settings/SettingsPage.qml:48 qml/settings/SettingsPage.qml:61
+#: qml/settings/SettingsPage.qml:35
 #, kde-format
 msgid "Use System Default"
 msgstr "시스템 기본값 사용"
 
-#: qml/settings/SettingsPage.qml:50 qml/settings/SettingsPage.qml:62
+#: qml/settings/SettingsPage.qml:36
 #, kde-format
 msgid "12 Hour Time"
 msgstr "12시간제"
 
-#: qml/settings/SettingsPage.qml:52 qml/settings/SettingsPage.qml:63
+#: qml/settings/SettingsPage.qml:37
 #, kde-format
 msgid "24 Hour Time"
 msgstr "24시간제"
 
-#: qml/settings/SettingsPage.qml:83
-#, kde-format
-msgid "More Info:"
-msgstr "자세한 정보:"
+#: qml/settings/SettingsPage.qml:55
+#, fuzzy, kde-format
+#| msgid "Clock"
+msgid "About Clock"
+msgstr "시계"
 
-#: qml/settings/SettingsPage.qml:84
-#, kde-format
-msgid "About"
-msgstr "정보"
-
-#: qml/stopwatch/StopwatchPage.qml:61 qml/stopwatch/StopwatchPage.qml:127
-#: qml/timer/TimerListDelegate.qml:166 qml/timer/TimerPage.qml:54
-#: qml/timer/TimerPage.qml:103
+#: qml/stopwatch/StopwatchPage.qml:63 qml/stopwatch/StopwatchPage.qml:127
+#: qml/timer/TimerListDelegate.qml:166 qml/timer/TimerPage.qml:52
+#: qml/timer/TimerPage.qml:100
 #, kde-format
 msgid "Reset"
 msgstr "초기화"
 
 #: qml/stopwatch/StopwatchPage.qml:127 qml/timer/TimerListDelegate.qml:156
-#: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:97
+#: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
 #, kde-format
 msgid "Pause"
 msgstr "일시 정지"
 
 #: qml/stopwatch/StopwatchPage.qml:127 qml/timer/TimerListDelegate.qml:156
-#: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:97
+#: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
 #, kde-format
 msgid "Start"
 msgstr "시작"
@@ -418,12 +414,12 @@ msgstr "시작"
 msgid "Lap"
 msgstr "랩"
 
-#: qml/stopwatch/StopwatchPage.qml:239
+#: qml/stopwatch/StopwatchPage.qml:235
 #, kde-format
 msgid "#%1"
 msgstr "#%1"
 
-#: qml/time/AddLocationListView.qml:52
+#: qml/time/AddLocationListView.qml:49
 #, kde-format
 msgid "No locations found"
 msgstr "위치를 찾을 수 없음"
@@ -543,18 +539,24 @@ msgstr "사전 설정으로 저장"
 msgid "Create timer"
 msgstr "타이머 만들기"
 
-#: qml/timer/TimerListDelegate.qml:145 qml/timer/TimerPage.qml:69
-#: qml/timer/TimerPage.qml:118
+#: qml/timer/TimerListDelegate.qml:145 qml/timer/TimerPage.qml:67
+#: qml/timer/TimerPage.qml:115
 #, kde-format
 msgid "Loop Timer"
 msgstr "타이머 반복"
 
-#: qml/timer/TimerListPage.qml:27
+#: qml/timer/TimerListDelegate.qml:176 qml/timer/TimerPage.qml:58
+#: qml/timer/TimerPage.qml:106
+#, kde-format
+msgid "Delete"
+msgstr "삭제"
+
+#: qml/timer/TimerListPage.qml:29
 #, kde-format
 msgid "New Timer"
 msgstr "새 타이머"
 
-#: qml/timer/TimerListPage.qml:50
+#: qml/timer/TimerListPage.qml:49
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
@@ -562,12 +564,12 @@ msgid ""
 msgstr ""
 "clock 데몬을 찾을 수 없습니다. 타이머를 사용하려면 kclockd를 시작하십시오."
 
-#: qml/timer/TimerListPage.qml:84
+#: qml/timer/TimerListPage.qml:80
 #, kde-format
 msgid "No timers configured"
 msgstr "설정한 타이머 없음"
 
-#: qml/timer/TimerListPage.qml:89
+#: qml/timer/TimerListPage.qml:85
 #, kde-format
 msgid "Add timer"
 msgstr "타이머 추가"
@@ -674,6 +676,15 @@ msgstr "1분 안에 알람이 울립니다"
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "%1 후에 알람이 울립니다"
+
+#~ msgid "Select Time Format"
+#~ msgstr "시간 형식 선택"
+
+#~ msgid "More Info:"
+#~ msgstr "자세한 정보:"
+
+#~ msgid "About"
+#~ msgstr "정보"
 
 #, fuzzy
 #~| msgid "%1 minute"

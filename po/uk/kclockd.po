@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 01:39+0000\n"
+"POT-Creation-Date: 2023-11-11 01:45+0000\n"
 "PO-Revision-Date: 2022-09-18 09:20+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -28,25 +28,25 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
 
-#: alarm.cpp:73
-#, kde-format
-msgid "Dismiss"
-msgstr "Відкинути"
-
-#: alarm.cpp:73
-#, kde-format
-msgid "Snooze"
-msgstr "Нагадати пізніше"
-
-#: alarm.cpp:75 alarm.h:51
+#: alarm.cpp:74 alarm.h:51
 #, kde-format
 msgid "Alarm"
 msgstr "Нагадування"
 
-#: alarm.cpp:77 timer.cpp:55
+#: alarm.cpp:78 timer.cpp:58
 #, kde-format
 msgid "View"
 msgstr "Перегляд"
+
+#: alarm.cpp:81
+#, kde-format
+msgid "Dismiss"
+msgstr "Відкинути"
+
+#: alarm.cpp:84
+#, kde-format
+msgid "Snooze"
+msgstr "Нагадати пізніше"
 
 #: alarmmodel.cpp:222
 #, kde-kuit-format

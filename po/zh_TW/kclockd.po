@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 01:39+0000\n"
+"POT-Creation-Date: 2023-11-11 01:45+0000\n"
 "PO-Revision-Date: 2022-12-24 01:51+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
@@ -27,25 +27,25 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "mail@kisaragi-hiu.com"
 
-#: alarm.cpp:73
-#, kde-format
-msgid "Dismiss"
-msgstr "關閉"
-
-#: alarm.cpp:73
-#, kde-format
-msgid "Snooze"
-msgstr "貪睡"
-
-#: alarm.cpp:75 alarm.h:51
+#: alarm.cpp:74 alarm.h:51
 #, kde-format
 msgid "Alarm"
 msgstr "鬧鐘"
 
-#: alarm.cpp:77 timer.cpp:55
+#: alarm.cpp:78 timer.cpp:58
 #, kde-format
 msgid "View"
 msgstr "檢視"
+
+#: alarm.cpp:81
+#, kde-format
+msgid "Dismiss"
+msgstr "關閉"
+
+#: alarm.cpp:84
+#, kde-format
+msgid "Snooze"
+msgstr "貪睡"
 
 #: alarmmodel.cpp:222
 #, kde-kuit-format

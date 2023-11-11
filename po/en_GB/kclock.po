@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 01:39+0000\n"
+"POT-Creation-Date: 2023-11-11 01:45+0000\n"
 "PO-Revision-Date: 2023-02-26 19:46+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -27,184 +27,189 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "steve.allewell@gmail.com"
 
-#: main.cpp:43
+#: main.cpp:42
 #, kde-format
 msgid "Select opened page"
 msgstr "Select opened page"
 
-#: main.cpp:68
+#: main.cpp:65
+#, kde-format
+msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
+msgstr ""
+
+#: main.cpp:67
 #, kde-format
 msgid "© 2020-2022 KDE Community"
 msgstr "© 2020-2022 KDE Community"
 
-#: main.cpp:70
+#: main.cpp:69
 #, kde-format
 msgid "Devin Lin"
 msgstr "Devin Lin"
 
-#: main.cpp:71
+#: main.cpp:70
 #, kde-format
 msgid "Han Young"
 msgstr "Han Young"
 
-#: qml/alarm/AlarmForm.qml:90
+#: qml/alarm/AlarmForm.qml:86
 #, kde-format
 msgid "Days to repeat:"
 msgstr "Days to repeat:"
 
-#: qml/alarm/AlarmForm.qml:92
+#: qml/alarm/AlarmForm.qml:88
 #, kde-format
 msgid "Select Days to Repeat"
 msgstr "Select Days to Repeat"
 
-#: qml/alarm/AlarmForm.qml:115
+#: qml/alarm/AlarmForm.qml:111
 #, kde-format
 msgid "Alarm Name (optional):"
 msgstr "Alarm Name (optional):"
 
-#: qml/alarm/AlarmForm.qml:116
+#: qml/alarm/AlarmForm.qml:112
 #, kde-format
 msgid "Wake Up"
 msgstr "Wake Up"
 
-#: qml/alarm/AlarmForm.qml:125
+#: qml/alarm/AlarmForm.qml:121
 #, kde-format
 msgid "Ring Duration:"
 msgstr "Ring Duration:"
 
-#: qml/alarm/AlarmForm.qml:128 qml/alarm/AlarmForm.qml:139
+#: qml/alarm/AlarmForm.qml:124 qml/alarm/AlarmForm.qml:135
 #, kde-format
 msgid "None"
 msgstr "None"
 
-#: qml/alarm/AlarmForm.qml:130 qml/alarm/AlarmForm.qml:140
-#: qml/alarm/AlarmForm.qml:173 qml/alarm/AlarmForm.qml:177
+#: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:136
+#: qml/alarm/AlarmForm.qml:169 qml/alarm/AlarmForm.qml:173
 #: qml/timer/TimerComponent.qml:149
 #, kde-format
 msgid "1 minute"
 msgstr "1 minute"
 
-#: qml/alarm/AlarmForm.qml:132 qml/alarm/AlarmForm.qml:173
+#: qml/alarm/AlarmForm.qml:128 qml/alarm/AlarmForm.qml:169
 #, kde-format
 msgid "%1 minutes"
 msgstr "%1 minutes"
 
-#: qml/alarm/AlarmForm.qml:135
+#: qml/alarm/AlarmForm.qml:131
 #, kde-format
 msgid "Select Ring Duration"
 msgstr "Select Ring Duration"
 
-#: qml/alarm/AlarmForm.qml:141 qml/alarm/AlarmForm.qml:178
+#: qml/alarm/AlarmForm.qml:137 qml/alarm/AlarmForm.qml:174
 #, kde-format
 msgid "2 minutes"
 msgstr "2 minutes"
 
-#: qml/alarm/AlarmForm.qml:142 qml/alarm/AlarmForm.qml:179
+#: qml/alarm/AlarmForm.qml:138 qml/alarm/AlarmForm.qml:175
 #, kde-format
 msgid "5 minutes"
 msgstr "5 minutes"
 
-#: qml/alarm/AlarmForm.qml:143 qml/alarm/AlarmForm.qml:180
+#: qml/alarm/AlarmForm.qml:139 qml/alarm/AlarmForm.qml:176
 #, kde-format
 msgid "10 minutes"
 msgstr "10 minutes"
 
-#: qml/alarm/AlarmForm.qml:144 qml/alarm/AlarmForm.qml:181
+#: qml/alarm/AlarmForm.qml:140 qml/alarm/AlarmForm.qml:177
 #, kde-format
 msgid "15 minutes"
 msgstr "15 minutes"
 
-#: qml/alarm/AlarmForm.qml:145 qml/alarm/AlarmForm.qml:182
+#: qml/alarm/AlarmForm.qml:141 qml/alarm/AlarmForm.qml:178
 #, kde-format
 msgid "30 minutes"
 msgstr "30 minutes"
 
-#: qml/alarm/AlarmForm.qml:146 qml/alarm/AlarmForm.qml:183
+#: qml/alarm/AlarmForm.qml:142 qml/alarm/AlarmForm.qml:179
 #, kde-format
 msgid "1 hour"
 msgstr "1 hour"
 
-#: qml/alarm/AlarmForm.qml:171
+#: qml/alarm/AlarmForm.qml:167
 #, kde-format
 msgid "Snooze Length:"
 msgstr "Snooze Length:"
 
-#: qml/alarm/AlarmForm.qml:172
+#: qml/alarm/AlarmForm.qml:168
 #, kde-format
 msgid "Select Snooze Length"
 msgstr "Select Snooze Length"
 
-#: qml/alarm/AlarmForm.qml:208
+#: qml/alarm/AlarmForm.qml:204
 #, kde-format
 msgid "Ring Sound:"
 msgstr "Ring Sound:"
 
-#: qml/alarm/AlarmForm.qml:214
+#: qml/alarm/AlarmForm.qml:210
 #, kde-format
 msgid "Default Sound"
 msgstr "Default Sound"
 
-#: qml/alarm/AlarmFormPage.qml:27 qml/alarm/AlarmRingingPopup.qml:45
+#: qml/alarm/AlarmFormPage.qml:26 qml/alarm/AlarmRingingPopup.qml:45
 #, kde-format
 msgid "Alarm"
 msgstr "Alarm"
 
-#: qml/alarm/AlarmFormPage.qml:27
+#: qml/alarm/AlarmFormPage.qml:26
 #, kde-format
 msgctxt "Edit alarm page title"
 msgid "Editing %1"
 msgstr "Editing %1"
 
-#: qml/alarm/AlarmFormPage.qml:28 qml/alarm/AlarmListPage.qml:30
+#: qml/alarm/AlarmFormPage.qml:27 qml/alarm/AlarmListPage.qml:31
 #, kde-format
 msgid "New Alarm"
 msgstr "New Alarm"
 
-#: qml/alarm/AlarmFormPage.qml:40 qml/alarm/AlarmFormPage.qml:63
+#: qml/alarm/AlarmFormPage.qml:39 qml/alarm/AlarmFormPage.qml:62
 #: qml/timer/TimerFormWrapper.qml:85 qml/timer/TimerFormWrapper.qml:144
 #, kde-format
 msgid "Done"
 msgstr "Done"
 
-#: qml/alarm/AlarmFormPage.qml:69 qml/timer/TimerFormWrapper.qml:80
+#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormWrapper.qml:80
 #: qml/timer/TimerFormWrapper.qml:139
 #, kde-format
 msgid "Cancel"
 msgstr "Cancel"
 
-#: qml/alarm/AlarmListDelegate.qml:88
+#: qml/alarm/AlarmListDelegate.qml:89
 #, kde-format
 msgid "Snoozed %1 minute"
 msgid_plural "Snoozed %1 minutes"
 msgstr[0] "Snoozed %1 minute"
 msgstr[1] "Snoozed %1 minutes"
 
-#: qml/alarm/AlarmListDelegate.qml:112 qml/time/TimePageDelegate.qml:46
-#: qml/timer/TimerListDelegate.qml:176 qml/timer/TimerPage.qml:60
-#: qml/timer/TimerPage.qml:109
-#, kde-format
+#: qml/alarm/AlarmListDelegate.qml:108 qml/time/TimePageDelegate.qml:44
+#, fuzzy, kde-format
+#| msgid "Delete"
+msgctxt "@action:button"
 msgid "Delete"
 msgstr "Delete"
 
-#: qml/alarm/AlarmListPage.qml:25 qml/components/BottomToolbar.qml:115
-#: qml/components/Sidebar.qml:108
+#: qml/alarm/AlarmListPage.qml:25 qml/components/BottomToolbar.qml:114
+#: qml/components/Sidebar.qml:112
 #, kde-format
 msgid "Alarms"
 msgstr "Alarms"
 
-#: qml/alarm/AlarmListPage.qml:38 qml/time/TimePage.qml:37
+#: qml/alarm/AlarmListPage.qml:37 qml/time/TimePage.qml:37
 #, kde-format
 msgid "Edit"
 msgstr "Edit"
 
-#: qml/alarm/AlarmListPage.qml:47 qml/components/Sidebar.qml:134
-#: qml/settings/SettingsPage.qml:21 qml/stopwatch/StopwatchPage.qml:70
+#: qml/alarm/AlarmListPage.qml:46 qml/components/Sidebar.qml:138
+#: qml/settings/SettingsPage.qml:22 qml/stopwatch/StopwatchPage.qml:70
 #: qml/time/TimePage.qml:60 qml/timer/TimerListPage.qml:37
 #, kde-format
 msgid "Settings"
 msgstr "Settings"
 
-#: qml/alarm/AlarmListPage.qml:59
+#: qml/alarm/AlarmListPage.qml:57
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have alarm "
@@ -213,22 +218,22 @@ msgstr ""
 "The clock daemon was not found. Please start kclockd in order to have alarm "
 "functionality."
 
-#: qml/alarm/AlarmListPage.qml:82
+#: qml/alarm/AlarmListPage.qml:77
 #, kde-format
 msgid "No alarms configured"
 msgstr "No alarms configured"
 
-#: qml/alarm/AlarmListPage.qml:87
+#: qml/alarm/AlarmListPage.qml:82
 #, kde-format
 msgid "Add alarm"
 msgstr "Add alarm"
 
-#: qml/alarm/AlarmListPage.qml:120
+#: qml/alarm/AlarmListPage.qml:115
 #, kde-format
 msgid "alarm"
 msgstr "alarm"
 
-#: qml/alarm/AlarmListPage.qml:120
+#: qml/alarm/AlarmListPage.qml:115
 #, kde-format
 msgid "Deleted %1"
 msgstr "Deleted %1"
@@ -248,50 +253,50 @@ msgstr "Snooze"
 msgid "Dismiss"
 msgstr "Dismiss"
 
-#: qml/alarm/SoundPickerPage.qml:23
+#: qml/alarm/SoundPickerPage.qml:25
 #, kde-format
 msgid "Select Alarm Sound"
 msgstr "Select Alarm Sound"
 
-#: qml/alarm/SoundPickerPage.qml:60
+#: qml/alarm/SoundPickerPage.qml:63
 #, kde-format
 msgid "Select from files…"
 msgstr "Select from files…"
 
-#: qml/alarm/SoundPickerPage.qml:71
+#: qml/alarm/SoundPickerPage.qml:74
 #, kde-format
 msgid "Default"
 msgstr "Default"
 
-#: qml/alarm/SoundPickerPage.qml:134
+#: qml/alarm/SoundPickerPage.qml:155
 #, kde-format
 msgid "Choose an audio"
 msgstr "Choose an audio"
 
-#: qml/alarm/SoundPickerPage.qml:142
+#: qml/alarm/SoundPickerPage.qml:163
 #, kde-format
 msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 msgstr "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 
-#: qml/alarm/SoundPickerPage.qml:142
+#: qml/alarm/SoundPickerPage.qml:163
 #, kde-format
 msgid "All files (*)"
 msgstr "All files (*)"
 
-#: qml/components/BottomToolbar.qml:85 qml/components/Sidebar.qml:54
+#: qml/components/BottomToolbar.qml:84 qml/components/Sidebar.qml:58
 #: qml/time/TimePage.qml:25
 #, kde-format
 msgid "Time"
 msgstr "Time"
 
-#: qml/components/BottomToolbar.qml:95 qml/components/Sidebar.qml:72
-#: qml/timer/TimerListPage.qml:21
+#: qml/components/BottomToolbar.qml:94 qml/components/Sidebar.qml:76
+#: qml/timer/TimerListPage.qml:22
 #, kde-format
 msgid "Timers"
 msgstr "Timers"
 
-#: qml/components/BottomToolbar.qml:105 qml/components/Sidebar.qml:90
-#: qml/stopwatch/StopwatchPage.qml:23
+#: qml/components/BottomToolbar.qml:104 qml/components/Sidebar.qml:94
+#: qml/stopwatch/StopwatchPage.qml:24
 #, kde-format
 msgid "Stopwatch"
 msgstr "Stopwatch"
@@ -361,56 +366,47 @@ msgstr "PM"
 msgid "Clock"
 msgstr "Clock"
 
-#: qml/settings/SettingsPage.qml:43
+#: qml/settings/SettingsPage.qml:31
 #, kde-format
 msgid "Time Format:"
 msgstr "Time Format:"
 
-#: qml/settings/SettingsPage.qml:44
-#, kde-format
-msgid "Select Time Format"
-msgstr "Select Time Format"
-
-#: qml/settings/SettingsPage.qml:48 qml/settings/SettingsPage.qml:61
+#: qml/settings/SettingsPage.qml:35
 #, kde-format
 msgid "Use System Default"
 msgstr "Use System Default"
 
-#: qml/settings/SettingsPage.qml:50 qml/settings/SettingsPage.qml:62
+#: qml/settings/SettingsPage.qml:36
 #, kde-format
 msgid "12 Hour Time"
 msgstr "12 Hour Time"
 
-#: qml/settings/SettingsPage.qml:52 qml/settings/SettingsPage.qml:63
+#: qml/settings/SettingsPage.qml:37
 #, kde-format
 msgid "24 Hour Time"
 msgstr "24 Hour Time"
 
-#: qml/settings/SettingsPage.qml:83
-#, kde-format
-msgid "More Info:"
-msgstr "More Info:"
+#: qml/settings/SettingsPage.qml:55
+#, fuzzy, kde-format
+#| msgid "Clock"
+msgid "About Clock"
+msgstr "Clock"
 
-#: qml/settings/SettingsPage.qml:84
-#, kde-format
-msgid "About"
-msgstr "About"
-
-#: qml/stopwatch/StopwatchPage.qml:61 qml/stopwatch/StopwatchPage.qml:127
-#: qml/timer/TimerListDelegate.qml:166 qml/timer/TimerPage.qml:54
-#: qml/timer/TimerPage.qml:103
+#: qml/stopwatch/StopwatchPage.qml:63 qml/stopwatch/StopwatchPage.qml:127
+#: qml/timer/TimerListDelegate.qml:166 qml/timer/TimerPage.qml:52
+#: qml/timer/TimerPage.qml:100
 #, kde-format
 msgid "Reset"
 msgstr "Reset"
 
 #: qml/stopwatch/StopwatchPage.qml:127 qml/timer/TimerListDelegate.qml:156
-#: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:97
+#: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
 #, kde-format
 msgid "Pause"
 msgstr "Pause"
 
 #: qml/stopwatch/StopwatchPage.qml:127 qml/timer/TimerListDelegate.qml:156
-#: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:97
+#: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
 #, kde-format
 msgid "Start"
 msgstr "Start"
@@ -420,12 +416,12 @@ msgstr "Start"
 msgid "Lap"
 msgstr "Lap"
 
-#: qml/stopwatch/StopwatchPage.qml:239
+#: qml/stopwatch/StopwatchPage.qml:235
 #, kde-format
 msgid "#%1"
 msgstr "#%1"
 
-#: qml/time/AddLocationListView.qml:52
+#: qml/time/AddLocationListView.qml:49
 #, kde-format
 msgid "No locations found"
 msgstr "No locations found"
@@ -545,18 +541,24 @@ msgstr "Save As Preset"
 msgid "Create timer"
 msgstr "Create timer"
 
-#: qml/timer/TimerListDelegate.qml:145 qml/timer/TimerPage.qml:69
-#: qml/timer/TimerPage.qml:118
+#: qml/timer/TimerListDelegate.qml:145 qml/timer/TimerPage.qml:67
+#: qml/timer/TimerPage.qml:115
 #, kde-format
 msgid "Loop Timer"
 msgstr "Loop Timer"
 
-#: qml/timer/TimerListPage.qml:27
+#: qml/timer/TimerListDelegate.qml:176 qml/timer/TimerPage.qml:58
+#: qml/timer/TimerPage.qml:106
+#, kde-format
+msgid "Delete"
+msgstr "Delete"
+
+#: qml/timer/TimerListPage.qml:29
 #, kde-format
 msgid "New Timer"
 msgstr "New Timer"
 
-#: qml/timer/TimerListPage.qml:50
+#: qml/timer/TimerListPage.qml:49
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
@@ -565,12 +567,12 @@ msgstr ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
 "functionality."
 
-#: qml/timer/TimerListPage.qml:84
+#: qml/timer/TimerListPage.qml:80
 #, kde-format
 msgid "No timers configured"
 msgstr "No timers configured"
 
-#: qml/timer/TimerListPage.qml:89
+#: qml/timer/TimerListPage.qml:85
 #, kde-format
 msgid "Add timer"
 msgstr "Add timer"
@@ -680,6 +682,15 @@ msgstr "Alarm will ring in under a minute"
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "Alarm will ring in %1"
+
+#~ msgid "Select Time Format"
+#~ msgstr "Select Time Format"
+
+#~ msgid "More Info:"
+#~ msgstr "More Info:"
+
+#~ msgid "About"
+#~ msgstr "About"
 
 #~ msgid "Snoozed %1 minutes"
 #~ msgstr "Snoozed %1 minutes"
