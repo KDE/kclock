@@ -16,7 +16,6 @@
 #include <QTimeZone>
 #include <QTimer>
 
-class SavedLocationsModel;
 class AddLocationModel : public QAbstractListModel
 {
     Q_OBJECT
