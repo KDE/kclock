@@ -24,6 +24,8 @@ FormCard.FormCardPage {
 
     Kirigami.ColumnView.fillWidth: false
 
+    contentItem.transform: Translate { y: yTranslate }
+
     FormCard.FormCard {
         Layout.topMargin: Kirigami.Units.gridUnit
 

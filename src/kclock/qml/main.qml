@@ -101,15 +101,15 @@ Kirigami.ApplicationWindow {
         id: anim
         from: 0
         to: 1
-        duration: Kirigami.Units.longDuration * 2
+        duration: Kirigami.Units.veryLongDuration
         easing.type: Easing.InOutQuad
     }
     NumberAnimation {
         id: yAnim
-        from: Kirigami.Units.gridUnit * 3
+        from: Kirigami.Units.gridUnit * 2
         to: 0
         duration: Kirigami.Units.longDuration * 3
-        easing.type: Easing.OutQuint
+        easing.type: Easing.OutExpo
     }
 
     Loader {
