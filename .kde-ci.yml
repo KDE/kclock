@@ -8,11 +8,11 @@ Dependencies:
     'frameworks/kcoreaddons': '@stable'
     'frameworks/kconfig': '@stable'
     'frameworks/ki18n': '@stable'
-    'frameworks/plasma-framework': '@stable'
     'frameworks/kirigami': '@stable'
     'frameworks/kdbusaddons': '@stable'
     'frameworks/knotifications': '@stable'
     'libraries/kirigami-addons': '@latest'
+    'plasma/plasma-framework': 'kf5'
 
 - 'on': ['Linux/Qt6', 'Android/Qt6', 'FreeBSD/Qt6', 'Windows/Qt6']
   'require':
@@ -20,8 +20,8 @@ Dependencies:
     'frameworks/kcoreaddons': '@latest-kf6'
     'frameworks/kconfig': '@latest-kf6'
     'frameworks/ki18n': '@latest-kf6'
-    'frameworks/plasma-framework': '@latest-kf6'
     'frameworks/kirigami': '@latest-kf6'
     'frameworks/kdbusaddons': '@latest-kf6'
     'frameworks/knotifications': '@latest-kf6'
     'libraries/kirigami-addons': '@latest-kf6'
+    'plasma/plasma-framework': '@latest-kf6'
