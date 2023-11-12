@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-11 01:45+0000\n"
+"POT-Creation-Date: 2023-11-12 01:39+0000\n"
 "PO-Revision-Date: 2022-07-27 20:11+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -29,22 +29,22 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "karl@huftis.org"
 
-#: alarm.cpp:74 alarm.h:51
+#: alarm.cpp:73 alarm.h:51
 #, kde-format
 msgid "Alarm"
 msgstr "Alarm"
 
-#: alarm.cpp:78 timer.cpp:58
+#: alarm.cpp:77 timer.cpp:58
 #, kde-format
 msgid "View"
 msgstr "Vis"
 
-#: alarm.cpp:81
+#: alarm.cpp:80
 #, kde-format
 msgid "Dismiss"
 msgstr "Avvis"
 
-#: alarm.cpp:84
+#: alarm.cpp:83
 #, kde-format
 msgid "Snooze"
 msgstr "Slumra"

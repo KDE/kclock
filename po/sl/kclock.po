@@ -6,17 +6,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-11 01:45+0000\n"
-"PO-Revision-Date: 2023-03-12 08:21+0100\n"
+"POT-Creation-Date: 2023-11-12 01:39+0000\n"
+"PO-Revision-Date: 2023-11-11 09:21+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.2.2\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
+"X-Generator: Poedit 3.4.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -37,6 +37,7 @@ msgstr "Izberi odprto stran"
 #, kde-format
 msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr ""
+"Nastavi alarme in časomerilnike, uporabi štoparico in upravljaj svetovne ure"
 
 #: main.cpp:67
 #, kde-format
@@ -178,7 +179,7 @@ msgstr "Narejeno"
 msgid "Cancel"
 msgstr "Prekliči"
 
-#: qml/alarm/AlarmListDelegate.qml:89
+#: qml/alarm/AlarmListDelegate.qml:106
 #, kde-format
 msgid "Snoozed %1 minute"
 msgid_plural "Snoozed %1 minutes"
@@ -187,12 +188,11 @@ msgstr[1] "Dremež %1 minuti"
 msgstr[2] "Dremež %1 minute"
 msgstr[3] "Dremež %1 minut"
 
-#: qml/alarm/AlarmListDelegate.qml:108 qml/time/TimePageDelegate.qml:44
-#, fuzzy, kde-format
-#| msgid "Delete"
+#: qml/alarm/AlarmListDelegate.qml:126 qml/time/TimePageDelegate.qml:60
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete"
-msgstr "Zbriši"
+msgstr "Izbriši"
 
 #: qml/alarm/AlarmListPage.qml:25 qml/components/BottomToolbar.qml:114
 #: qml/components/Sidebar.qml:112
@@ -221,22 +221,22 @@ msgstr ""
 "Demona za clock ni bilo mogoče najti. Zaženite kclockd, da bi imeli zmožnost "
 "alarma."
 
-#: qml/alarm/AlarmListPage.qml:77
+#: qml/alarm/AlarmListPage.qml:78
 #, kde-format
 msgid "No alarms configured"
 msgstr "Ni nastavljenih alarmov"
 
-#: qml/alarm/AlarmListPage.qml:82
+#: qml/alarm/AlarmListPage.qml:83
 #, kde-format
 msgid "Add alarm"
 msgstr "Dodaj alarm"
 
-#: qml/alarm/AlarmListPage.qml:115
+#: qml/alarm/AlarmListPage.qml:116
 #, kde-format
 msgid "alarm"
 msgstr "alarm"
 
-#: qml/alarm/AlarmListPage.qml:115
+#: qml/alarm/AlarmListPage.qml:116
 #, kde-format
 msgid "Deleted %1"
 msgstr "Zbrisano %1"
@@ -354,12 +354,12 @@ msgstr "Sob, "
 msgid "Sun, "
 msgstr "Ned, "
 
-#: qml/components/TimePicker.qml:70
+#: qml/components/TimePicker.qml:92
 #, kde-format
 msgid "AM"
 msgstr "dop."
 
-#: qml/components/TimePicker.qml:70
+#: qml/components/TimePicker.qml:92
 #, kde-format
 msgid "PM"
 msgstr "pop."
@@ -369,57 +369,63 @@ msgstr "pop."
 msgid "Clock"
 msgstr "Clock"
 
-#: qml/settings/SettingsPage.qml:31
-#, kde-format
-msgid "Time Format:"
+#: qml/settings/SettingsPage.qml:34
+#, fuzzy, kde-format
+#| msgid "Time Format:"
+msgid "Time Format"
 msgstr "Oblika časa:"
 
-#: qml/settings/SettingsPage.qml:35
+#: qml/settings/SettingsPage.qml:38
 #, kde-format
 msgid "Use System Default"
 msgstr "Uporabi sistemsko obliko"
 
-#: qml/settings/SettingsPage.qml:36
+#: qml/settings/SettingsPage.qml:39
 #, kde-format
 msgid "12 Hour Time"
 msgstr "12 urni čas"
 
-#: qml/settings/SettingsPage.qml:37
+#: qml/settings/SettingsPage.qml:40
 #, kde-format
 msgid "24 Hour Time"
 msgstr "24 urni čas"
 
-#: qml/settings/SettingsPage.qml:55
-#, fuzzy, kde-format
-#| msgid "Clock"
+#: qml/settings/SettingsPage.qml:62
+#, kde-format
 msgid "About Clock"
-msgstr "Clock"
+msgstr "O programu Clock"
 
-#: qml/stopwatch/StopwatchPage.qml:63 qml/stopwatch/StopwatchPage.qml:127
+#: qml/settings/SettingsPage.qml:70
+#, fuzzy, kde-format
+#| msgid "About"
+msgid "About KDE"
+msgstr "O programu"
+
+#: qml/stopwatch/StopwatchPage.qml:63 qml/stopwatch/StopwatchPage.qml:134
 #: qml/timer/TimerListDelegate.qml:166 qml/timer/TimerPage.qml:52
 #: qml/timer/TimerPage.qml:100
 #, kde-format
 msgid "Reset"
 msgstr "Ponovno nastavi"
 
-#: qml/stopwatch/StopwatchPage.qml:127 qml/timer/TimerListDelegate.qml:156
+#: qml/stopwatch/StopwatchPage.qml:134 qml/timer/TimerListDelegate.qml:156
 #: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
 #, kde-format
 msgid "Pause"
 msgstr "Premor"
 
-#: qml/stopwatch/StopwatchPage.qml:127 qml/timer/TimerListDelegate.qml:156
+#: qml/stopwatch/StopwatchPage.qml:134 qml/timer/TimerListDelegate.qml:156
 #: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
 #, kde-format
 msgid "Start"
 msgstr "Začetek"
 
-#: qml/stopwatch/StopwatchPage.qml:145
+#: qml/stopwatch/StopwatchPage.qml:152
 #, kde-format
 msgid "Lap"
 msgstr "Krog"
 
-#: qml/stopwatch/StopwatchPage.qml:235
+#: qml/stopwatch/StopwatchPage.qml:244
 #, kde-format
 msgid "#%1"
 msgstr "#%1"
@@ -439,7 +445,7 @@ msgstr "Dodaj lokacijo"
 msgid "Add"
 msgstr "Dodaj"
 
-#: qml/time/TimePage.qml:152
+#: qml/time/TimePage.qml:153
 #, kde-format
 msgid "No locations configured"
 msgstr "Ni nastavljenih lokacij"
@@ -570,12 +576,12 @@ msgstr ""
 "Demona clock ni bilo mogoče najti. Zaženite kclockd, da bi imeli zmožnost "
 "merilnika časa."
 
-#: qml/timer/TimerListPage.qml:80
+#: qml/timer/TimerListPage.qml:87
 #, kde-format
 msgid "No timers configured"
 msgstr "Ni nastavljenih merilnikov časa"
 
-#: qml/timer/TimerListPage.qml:85
+#: qml/timer/TimerListPage.qml:92
 #, kde-format
 msgid "Add timer"
 msgstr "Dodaj merilnik časa"
@@ -600,52 +606,52 @@ msgstr "%1 je končal."
 msgid "The timer has completed."
 msgstr "Merilnik časa je končal."
 
-#: savedlocationsmodel.cpp:111
+#: savedlocationsmodel.cpp:110
 #, kde-format
 msgid "%1 hour and 30 minutes ahead"
 msgstr "%1 ura in 30 minut naprej"
 
-#: savedlocationsmodel.cpp:111
+#: savedlocationsmodel.cpp:110
 #, kde-format
 msgid "%1 hours and 30 minutes ahead"
 msgstr "%1 ur in 30 minut naprej"
 
-#: savedlocationsmodel.cpp:113
+#: savedlocationsmodel.cpp:112
 #, kde-format
 msgid "%1 hour ahead"
 msgstr "%1 ura naprej"
 
-#: savedlocationsmodel.cpp:113
+#: savedlocationsmodel.cpp:112
 #, kde-format
 msgid "%1 hours ahead"
 msgstr "%1 ur naprej"
 
-#: savedlocationsmodel.cpp:118
+#: savedlocationsmodel.cpp:117
 #, kde-format
 msgid "%1 hour and 30 minutes behind"
 msgstr "%1 ura in 30 minut nazaj"
 
-#: savedlocationsmodel.cpp:118
+#: savedlocationsmodel.cpp:117
 #, kde-format
 msgid "%1 hours and 30 minutes behind"
 msgstr "%1 ur in 30 minut nazaj"
 
-#: savedlocationsmodel.cpp:120
+#: savedlocationsmodel.cpp:119
 #, kde-format
 msgid "%1 hour behind"
 msgstr "%1 ura nazaj"
 
-#: savedlocationsmodel.cpp:120
+#: savedlocationsmodel.cpp:119
 #, kde-format
 msgid "%1 hours behind"
 msgstr "%1 ur nazaj"
 
-#: savedlocationsmodel.cpp:123
+#: savedlocationsmodel.cpp:122
 #, kde-format
 msgid "Local time"
 msgstr "Lokalni čas"
 
-#: utilmodel.cpp:72
+#: utilmodel.cpp:77
 #, kde-format
 msgid "%1 day"
 msgid_plural "%1 days"
@@ -654,17 +660,17 @@ msgstr[1] "%1 dneva"
 msgstr[2] "%1 dnevi"
 msgstr[3] "%1 dni"
 
-#: utilmodel.cpp:76
+#: utilmodel.cpp:81
 #, kde-format
 msgid ", "
 msgstr ", "
 
-#: utilmodel.cpp:78 utilmodel.cpp:84
+#: utilmodel.cpp:83 utilmodel.cpp:89
 #, kde-format
 msgid " and "
 msgstr " in "
 
-#: utilmodel.cpp:80
+#: utilmodel.cpp:85
 #, kde-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
@@ -673,7 +679,7 @@ msgstr[1] "%1 uri"
 msgstr[2] "%1 ure"
 msgstr[3] "%1 ur"
 
-#: utilmodel.cpp:86
+#: utilmodel.cpp:91
 #, kde-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -682,12 +688,12 @@ msgstr[1] "%1 minuti"
 msgstr[2] "%1 minute"
 msgstr[3] "%1 minut"
 
-#: utilmodel.cpp:90
+#: utilmodel.cpp:95
 #, kde-format
 msgid "Alarm will ring in under a minute"
 msgstr "Alarm bo zazvonil prej kot v minuti"
 
-#: utilmodel.cpp:92
+#: utilmodel.cpp:97
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "Alarm bo zazvonil po %1"
@@ -697,9 +703,6 @@ msgstr "Alarm bo zazvonil po %1"
 
 #~ msgid "More Info:"
 #~ msgstr "Več informacij:"
-
-#~ msgid "About"
-#~ msgstr "O programu"
 
 #~ msgid "Snoozed %1 minutes"
 #~ msgstr "Dremež %1 minut"

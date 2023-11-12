@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclockd\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-11 01:45+0000\n"
+"POT-Creation-Date: 2023-11-12 01:39+0000\n"
 "PO-Revision-Date: 2022-09-18 17:58+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -29,22 +29,22 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ecuadra@eloihr.net"
 
-#: alarm.cpp:74 alarm.h:51
+#: alarm.cpp:73 alarm.h:51
 #, kde-format
 msgid "Alarm"
 msgstr "Alarma"
 
-#: alarm.cpp:78 timer.cpp:58
+#: alarm.cpp:77 timer.cpp:58
 #, kde-format
 msgid "View"
 msgstr "Ver"
 
-#: alarm.cpp:81
+#: alarm.cpp:80
 #, kde-format
 msgid "Dismiss"
 msgstr "Descartar"
 
-#: alarm.cpp:84
+#: alarm.cpp:83
 #, kde-format
 msgid "Snooze"
 msgstr "Posponer"

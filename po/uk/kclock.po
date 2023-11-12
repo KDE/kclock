@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-11 01:45+0000\n"
-"PO-Revision-Date: 2023-02-06 08:13+0200\n"
+"POT-Creation-Date: 2023-11-12 01:39+0000\n"
+"PO-Revision-Date: 2023-11-11 08:48+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -39,6 +39,8 @@ msgstr "Вибрати відкриту сторінку"
 #, kde-format
 msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr ""
+"Встановіть нагадування та таймери, скористайтеся секундоміром і керуйте "
+"показом часу з усього світу"
 
 #: main.cpp:67
 #, kde-format
@@ -180,7 +182,7 @@ msgstr "Виконано"
 msgid "Cancel"
 msgstr "Скасувати"
 
-#: qml/alarm/AlarmListDelegate.qml:89
+#: qml/alarm/AlarmListDelegate.qml:106
 #, kde-format
 msgid "Snoozed %1 minute"
 msgid_plural "Snoozed %1 minutes"
@@ -189,9 +191,8 @@ msgstr[1] "Відкладено на %1 хвилини"
 msgstr[2] "Відкладено на %1 хвилин"
 msgstr[3] "Відкладено на %1 хвилин"
 
-#: qml/alarm/AlarmListDelegate.qml:108 qml/time/TimePageDelegate.qml:44
-#, fuzzy, kde-format
-#| msgid "Delete"
+#: qml/alarm/AlarmListDelegate.qml:126 qml/time/TimePageDelegate.qml:60
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "Вилучити"
@@ -223,22 +224,22 @@ msgstr ""
 "Не знайдено фонової служби годинника. Будь ласка, запустіть kclockd, щоб "
 "можна було користуватися функціональною можливістю будильника."
 
-#: qml/alarm/AlarmListPage.qml:77
+#: qml/alarm/AlarmListPage.qml:78
 #, kde-format
 msgid "No alarms configured"
 msgstr "Будильників не налаштовано"
 
-#: qml/alarm/AlarmListPage.qml:82
+#: qml/alarm/AlarmListPage.qml:83
 #, kde-format
 msgid "Add alarm"
 msgstr "Додати будильник"
 
-#: qml/alarm/AlarmListPage.qml:115
+#: qml/alarm/AlarmListPage.qml:116
 #, kde-format
 msgid "alarm"
 msgstr "будильник"
 
-#: qml/alarm/AlarmListPage.qml:115
+#: qml/alarm/AlarmListPage.qml:116
 #, kde-format
 msgid "Deleted %1"
 msgstr "Вилучено %1"
@@ -356,12 +357,12 @@ msgstr "сб, "
 msgid "Sun, "
 msgstr "нд, "
 
-#: qml/components/TimePicker.qml:70
+#: qml/components/TimePicker.qml:92
 #, kde-format
 msgid "AM"
 msgstr "д.о."
 
-#: qml/components/TimePicker.qml:70
+#: qml/components/TimePicker.qml:92
 #, kde-format
 msgid "PM"
 msgstr "п.о."
@@ -371,57 +372,63 @@ msgstr "п.о."
 msgid "Clock"
 msgstr "Годинник"
 
-#: qml/settings/SettingsPage.qml:31
-#, kde-format
-msgid "Time Format:"
+#: qml/settings/SettingsPage.qml:34
+#, fuzzy, kde-format
+#| msgid "Time Format:"
+msgid "Time Format"
 msgstr "Формат часу:"
 
-#: qml/settings/SettingsPage.qml:35
+#: qml/settings/SettingsPage.qml:38
 #, kde-format
 msgid "Use System Default"
 msgstr "Типовий системний"
 
-#: qml/settings/SettingsPage.qml:36
+#: qml/settings/SettingsPage.qml:39
 #, kde-format
 msgid "12 Hour Time"
 msgstr "12-годинний час"
 
-#: qml/settings/SettingsPage.qml:37
+#: qml/settings/SettingsPage.qml:40
 #, kde-format
 msgid "24 Hour Time"
 msgstr "24-годинний час"
 
-#: qml/settings/SettingsPage.qml:55
-#, fuzzy, kde-format
-#| msgid "Clock"
+#: qml/settings/SettingsPage.qml:62
+#, kde-format
 msgid "About Clock"
-msgstr "Годинник"
+msgstr "Про «Годинник»"
 
-#: qml/stopwatch/StopwatchPage.qml:63 qml/stopwatch/StopwatchPage.qml:127
+#: qml/settings/SettingsPage.qml:70
+#, fuzzy, kde-format
+#| msgid "About"
+msgid "About KDE"
+msgstr "Про програму"
+
+#: qml/stopwatch/StopwatchPage.qml:63 qml/stopwatch/StopwatchPage.qml:134
 #: qml/timer/TimerListDelegate.qml:166 qml/timer/TimerPage.qml:52
 #: qml/timer/TimerPage.qml:100
 #, kde-format
 msgid "Reset"
 msgstr "Скинути"
 
-#: qml/stopwatch/StopwatchPage.qml:127 qml/timer/TimerListDelegate.qml:156
+#: qml/stopwatch/StopwatchPage.qml:134 qml/timer/TimerListDelegate.qml:156
 #: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
 #, kde-format
 msgid "Pause"
 msgstr "Призупинити"
 
-#: qml/stopwatch/StopwatchPage.qml:127 qml/timer/TimerListDelegate.qml:156
+#: qml/stopwatch/StopwatchPage.qml:134 qml/timer/TimerListDelegate.qml:156
 #: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
 #, kde-format
 msgid "Start"
 msgstr "Запустити"
 
-#: qml/stopwatch/StopwatchPage.qml:145
+#: qml/stopwatch/StopwatchPage.qml:152
 #, kde-format
 msgid "Lap"
 msgstr "Оберт"
 
-#: qml/stopwatch/StopwatchPage.qml:235
+#: qml/stopwatch/StopwatchPage.qml:244
 #, kde-format
 msgid "#%1"
 msgstr "№%1"
@@ -441,7 +448,7 @@ msgstr "Додати місце"
 msgid "Add"
 msgstr "Додати"
 
-#: qml/time/TimePage.qml:152
+#: qml/time/TimePage.qml:153
 #, kde-format
 msgid "No locations configured"
 msgstr "Місць не налаштовано"
@@ -572,12 +579,12 @@ msgstr ""
 "Не знайдено фонової служби годинника. Будь ласка, запустіть kclockd, щоб "
 "можна було користуватися функціональною можливістю таймера."
 
-#: qml/timer/TimerListPage.qml:80
+#: qml/timer/TimerListPage.qml:87
 #, kde-format
 msgid "No timers configured"
 msgstr "Секундомірів не налаштовано"
 
-#: qml/timer/TimerListPage.qml:85
+#: qml/timer/TimerListPage.qml:92
 #, kde-format
 msgid "Add timer"
 msgstr "Додати таймер"
@@ -602,52 +609,52 @@ msgstr "%1 завершено."
 msgid "The timer has completed."
 msgstr "Відлік завершено."
 
-#: savedlocationsmodel.cpp:111
+#: savedlocationsmodel.cpp:110
 #, kde-format
 msgid "%1 hour and 30 minutes ahead"
 msgstr "%1 годину і 30 хвилин попереду"
 
-#: savedlocationsmodel.cpp:111
+#: savedlocationsmodel.cpp:110
 #, kde-format
 msgid "%1 hours and 30 minutes ahead"
 msgstr "%1 годин і 30 хвилин попереду"
 
-#: savedlocationsmodel.cpp:113
+#: savedlocationsmodel.cpp:112
 #, kde-format
 msgid "%1 hour ahead"
 msgstr "%1 годину попереду"
 
-#: savedlocationsmodel.cpp:113
+#: savedlocationsmodel.cpp:112
 #, kde-format
 msgid "%1 hours ahead"
 msgstr "%1 годин попереду"
 
-#: savedlocationsmodel.cpp:118
+#: savedlocationsmodel.cpp:117
 #, kde-format
 msgid "%1 hour and 30 minutes behind"
 msgstr "%1 година з половиною позаду"
 
-#: savedlocationsmodel.cpp:118
+#: savedlocationsmodel.cpp:117
 #, kde-format
 msgid "%1 hours and 30 minutes behind"
 msgstr "%1 години з половиною позаду"
 
-#: savedlocationsmodel.cpp:120
+#: savedlocationsmodel.cpp:119
 #, kde-format
 msgid "%1 hour behind"
 msgstr "%1 годину позаду"
 
-#: savedlocationsmodel.cpp:120
+#: savedlocationsmodel.cpp:119
 #, kde-format
 msgid "%1 hours behind"
 msgstr "%1 годин позаду"
 
-#: savedlocationsmodel.cpp:123
+#: savedlocationsmodel.cpp:122
 #, kde-format
 msgid "Local time"
 msgstr "Місцевий час"
 
-#: utilmodel.cpp:72
+#: utilmodel.cpp:77
 #, kde-format
 msgid "%1 day"
 msgid_plural "%1 days"
@@ -656,17 +663,17 @@ msgstr[1] "%1 дні"
 msgstr[2] "%1 днів"
 msgstr[3] "%1 день"
 
-#: utilmodel.cpp:76
+#: utilmodel.cpp:81
 #, kde-format
 msgid ", "
 msgstr ", "
 
-#: utilmodel.cpp:78 utilmodel.cpp:84
+#: utilmodel.cpp:83 utilmodel.cpp:89
 #, kde-format
 msgid " and "
 msgstr " і "
 
-#: utilmodel.cpp:80
+#: utilmodel.cpp:85
 #, kde-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
@@ -675,7 +682,7 @@ msgstr[1] "%1 години"
 msgstr[2] "%1 годин"
 msgstr[3] "%1 година"
 
-#: utilmodel.cpp:86
+#: utilmodel.cpp:91
 #, kde-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -684,12 +691,12 @@ msgstr[1] "%1 хвилини"
 msgstr[2] "%1 хвилин"
 msgstr[3] "%1 хвилина"
 
-#: utilmodel.cpp:90
+#: utilmodel.cpp:95
 #, kde-format
 msgid "Alarm will ring in under a minute"
 msgstr "Будильник буде увімкнено за менше, ніж хвилину"
 
-#: utilmodel.cpp:92
+#: utilmodel.cpp:97
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "Будильник буде увімкнено за %1"
@@ -699,9 +706,6 @@ msgstr "Будильник буде увімкнено за %1"
 
 #~ msgid "More Info:"
 #~ msgstr "Додаткова інформація:"
-
-#~ msgid "About"
-#~ msgstr "Про програму"
 
 #~ msgid "Snoozed %1 minutes"
 #~ msgstr "Приспано на %1 хвилин"
