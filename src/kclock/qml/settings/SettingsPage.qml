@@ -30,6 +30,7 @@ FormCard.FormCardPage {
         Layout.topMargin: Kirigami.Units.gridUnit
 
         FormCard.FormComboBoxDelegate {
+            id: timeFormatDelegate
             text: i18n("Time Format")
             model: ListModel {
                 // we can't use i18n with ListElement
@@ -37,6 +38,12 @@ FormCard.FormCardPage {
                     append({"name": i18n("Use System Default"), "value": "SystemDefault"});
                     append({"name": i18n("12 Hour Time"), "value": "12Hour"});
                     append({"name": i18n("24 Hour Time"), "value": "24Hour"});
+
+                    for (let i = 0; i < count; i++) {
+                        if (get(i).value === SettingsModel.timeFormat) {
+                            timeFormatDelegate.currentIndex = i;
+                        }
+                    }
                 }
             }
 
@@ -44,11 +51,6 @@ FormCard.FormCardPage {
             valueRole: "value"
 
             onCurrentValueChanged: SettingsModel.timeFormat = currentValue
-
-            Component.onCompleted: {
-                const index = indexOfValue(SettingsModel.timeFormat);
-                currentIndex = index == -1 ? 0 : index;
-            }
         }
     }
 
