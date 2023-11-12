@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-14 00:49+0000\n"
-"PO-Revision-Date: 2023-09-08 05:16+0300\n"
+"PO-Revision-Date: 2023-11-11 22:17+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -231,7 +231,7 @@ msgstr "çalar saat"
 #: qml/alarm/AlarmListPage.qml:120
 #, kde-format
 msgid "Deleted %1"
-msgstr "%1 Silindi"
+msgstr "%1 silindi"
 
 #: qml/alarm/AlarmRingingPopup.qml:27
 #, kde-format
@@ -251,7 +251,7 @@ msgstr "Kapat"
 #: qml/alarm/SoundPickerPage.qml:23
 #, kde-format
 msgid "Select Alarm Sound"
-msgstr "Saat Sesi Seç"
+msgstr "Alarm Sesi Seç"
 
 #: qml/alarm/SoundPickerPage.qml:60
 #, kde-format
@@ -266,7 +266,7 @@ msgstr "Öntanımlı"
 #: qml/alarm/SoundPickerPage.qml:134
 #, kde-format
 msgid "Choose an audio"
-msgstr "Bir ses seçin"
+msgstr "Bir ses seç"
 
 #: qml/alarm/SoundPickerPage.qml:142
 #, kde-format
@@ -384,7 +384,7 @@ msgstr "12 saatlik zaman dilimi"
 #: qml/settings/SettingsPage.qml:52 qml/settings/SettingsPage.qml:63
 #, kde-format
 msgid "24 Hour Time"
-msgstr "24 saatlit zaman dilimi"
+msgstr "24 saatlik zaman dilimi"
 
 #: qml/settings/SettingsPage.qml:83
 #, kde-format
