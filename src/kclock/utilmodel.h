@@ -14,9 +14,11 @@ class UtilModel : public QObject
 {
     Q_OBJECT
 
-    Q_PROPERTY(QString tzName READ getCurrentTimeZoneName NOTIFY propertyChanged)
+    Q_PROPERTY(QString tzName READ getCurrentTimeZoneName CONSTANT)
+    Q_PROPERTY(bool use24HourTime READ use24HourTime NOTIFY use24HourTimeChanged)
 
 public:
+    UtilModel(QObject *parent = nullptr);
     static UtilModel *instance();
 
     Q_INVOKABLE QString getDefaultAlarmFileLocation();
@@ -30,13 +32,8 @@ public:
     bool use24HourTime() const;
 
 private:
-    UtilModel(){}; // explicitly declare it private
-
     bool isLocale24HourTime() const;
 
-    bool m_applicationLoaded = false;
-
 Q_SIGNALS:
-    void propertyChanged();
-    void applicationLoadedChanged();
+    void use24HourTimeChanged();
 };

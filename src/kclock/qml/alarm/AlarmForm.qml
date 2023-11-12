@@ -61,7 +61,7 @@ Kirigami.FormLayout {
     wideMode: false
     
     // time picker
-    DateAndTime.TimePicker {
+    TimePicker {
         id: timePicker
         anchors.left: parent.left
         anchors.right: parent.right

@@ -21,6 +21,12 @@ UtilModel *UtilModel::instance()
     return singleton;
 }
 
+UtilModel::UtilModel(QObject *parent)
+    : QObject{parent}
+{
+    connect(SettingsModel::instance(), &SettingsModel::timeFormatChanged, this, &UtilModel::use24HourTimeChanged);
+}
+
 QString UtilModel::getDefaultAlarmFileLocation()
 {
     return QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("sounds/freedesktop/stereo/alarm-clock-elapsed.oga")))

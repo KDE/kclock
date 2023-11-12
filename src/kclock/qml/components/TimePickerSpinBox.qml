@@ -1,21 +1,19 @@
-/*
- * Copyright 2021 Devin Lin <devin@kde.org>
- *
- * SPDX-License-Identifier: GPL-2.0-or-later
- */
+// SPDX-FileCopyrightText: 2021 Devin Lin <devin@kde.org>
+// SPDX-License-Identifier: GPL-2.0-or-later
 
 import QtQuick
 import QtQuick.Controls
-import QtQuick.Window 2.2
+import QtQuick.Window
 import QtQuick.Layouts
-import QtQuick.Dialogs 1.3
+import QtQuick.Templates as T
 
 import org.kde.kirigami as Kirigami
 
-SpinBox {
+T.SpinBox {
     id: root
+    stepSize: 1
 
-    Kirigami.Theme.colorSet: Kirigami.Theme.View
+    Kirigami.Theme.colorSet: Kirigami.Theme.Button
     Kirigami.Theme.inherit: false
     
     font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 2)
@@ -26,20 +24,22 @@ SpinBox {
     
     readonly property color buttonColor: Kirigami.Theme.backgroundColor
     readonly property color buttonHoverColor: Qt.darker(buttonColor, 1.05)
-    readonly property color buttonPressedColor: Qt.darker(buttonColor, 1.1)
-    readonly property color buttonBorderColor: Qt.rgba(Kirigami.Theme.textColor.r, Kirigami.Theme.textColor.g, Kirigami.Theme.textColor.b, 0.1)
+    readonly property color buttonPressedColor: Qt.darker(buttonColor, 1.2)
+    readonly property color buttonBorderColor: Qt.alpha(Kirigami.Theme.textColor, 0.3)
     
     hoverEnabled: true
     
+    validator: IntValidator {
+        locale: root.locale.name
+        bottom: Math.min(root.from, root.to)
+        top: Math.max(root.from, root.to)
+    }
+
     contentItem: TextInput {
-        height: Kirigami.Units.gridUnit * 4
-        width: Kirigami.Units.gridUnit * 4
-        
-        z: 2
-        text: root.textFromValue(root.value, root.locale)
-        
+        height: implicitHeight - root.up.indicator.implicitHeight - root.down.indicator.implicitHeight 
+        text: root.displayText.length == 1 ? '0' + root.displayText : root.displayText
         font: root.font
-        
+
         color: Kirigami.Theme.textColor
         selectionColor: Kirigami.Theme.highlightColor
         selectedTextColor: Kirigami.Theme.highlightedTextColor
@@ -55,8 +55,6 @@ SpinBox {
         
         MouseArea {
             anchors.fill: parent
-            onPressed: mouse.accepted = false;
-
             property int wheelDelta: 0
 
             onExited: wheelDelta = 0
@@ -85,20 +83,38 @@ SpinBox {
     up.indicator: Kirigami.ShadowedRectangle {
         y: 0
         x: 0
+        z: 1
         implicitWidth: root.implicitWidth
-        implicitHeight: Kirigami.Units.iconSizes.small + Kirigami.Units.largeSpacing
-        color: root.up.pressed ? root.buttonPressedColor : (root.up.hovered ? root.buttonHoverColor : root.buttonColor)
+        implicitHeight: Kirigami.Units.iconSizes.smallMedium + Kirigami.Units.largeSpacing
+        color: upButton.pressed ? root.buttonPressedColor : (root.up.hovered ? root.buttonHoverColor : root.buttonColor)
         
         corners.topLeftRadius: Kirigami.Units.smallSpacing
         corners.topRightRadius: Kirigami.Units.smallSpacing
-        border.color: root.buttonBorderColor
+        border.color: 'transparent'
         border.width: 1
+
+        Rectangle {
+            anchors.bottom: parent.bottom
+            anchors.left: parent.left
+            anchors.right: parent.right
+            color: root.buttonBorderColor
+            height: 1
+        }
         
-        Text {
-            text: "+"
-            font.pixelSize: root.font.pixelSize * 2
+        AbstractButton {
+            id: upButton
             anchors.fill: parent
-            fontSizeMode: Text.Fit
+            onClicked: {
+                root.increase();
+                root.valueModified();
+            }
+        }
+
+        Label {
+            text: "+" 
+            font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.1
+            anchors.centerIn: parent
+            color: enabled ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
         }
@@ -107,20 +123,39 @@ SpinBox {
     down.indicator: Kirigami.ShadowedRectangle {
         y: root.height - implicitHeight
         x: 0
+        z: 1
         implicitWidth: root.implicitWidth
-        implicitHeight: Kirigami.Units.iconSizes.small + Kirigami.Units.largeSpacing
-        color: root.down.pressed ? root.buttonPressedColor : (root.down.hovered ? root.buttonHoverColor : root.buttonColor)
+        implicitHeight: Kirigami.Units.iconSizes.smallMedium + Kirigami.Units.largeSpacing
+        color: downButton.pressed ? root.buttonPressedColor : (root.down.hovered ? root.buttonHoverColor : root.buttonColor)
         
         corners.bottomLeftRadius: Kirigami.Units.smallSpacing
         corners.bottomRightRadius: Kirigami.Units.smallSpacing
-        border.color: root.buttonBorderColor
+        border.color: 'transparent'
         border.width: 1
-        
-        Text {
-            text: "-"
-            font.pixelSize: root.font.pixelSize * 2
+
+        Rectangle {
+            anchors.top: parent.top
+            anchors.left: parent.left
+            anchors.right: parent.right
+            color: root.buttonBorderColor
+            height: 1
+        }
+
+        AbstractButton {
+            id: downButton
             anchors.fill: parent
-            fontSizeMode: Text.Fit
+            onClicked: {
+                root.decrease();
+                root.valueModified();
+            }
+        }
+        
+        Label {
+            text: "-"
+            font.weight: Font.Light
+            font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.1
+            anchors.centerIn: parent
+            color: enabled ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
         }
