@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-12 01:39+0000\n"
-"PO-Revision-Date: 2023-11-09 15:33+0100\n"
+"PO-Revision-Date: 2023-11-12 18:12+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -185,8 +185,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: qml/alarm/AlarmListDelegate.qml:126 qml/time/TimePageDelegate.qml:60
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "Dele"
@@ -219,12 +218,12 @@ msgstr ""
 #: qml/alarm/AlarmListPage.qml:78
 #, kde-format
 msgid "No alarms configured"
-msgstr ""
+msgstr "Nule alarmas configurate"
 
 #: qml/alarm/AlarmListPage.qml:83
 #, kde-format
 msgid "Add alarm"
-msgstr ""
+msgstr "Adde alarma"
 
 #: qml/alarm/AlarmListPage.qml:116
 #, kde-format
@@ -254,12 +253,12 @@ msgstr "Abbandona"
 #: qml/alarm/SoundPickerPage.qml:25
 #, kde-format
 msgid "Select Alarm Sound"
-msgstr ""
+msgstr "Selectiona sono de alarma"
 
 #: qml/alarm/SoundPickerPage.qml:63
 #, kde-format
 msgid "Select from files…"
-msgstr ""
+msgstr "Selectiona ab files..."
 
 #: qml/alarm/SoundPickerPage.qml:74
 #, kde-format
@@ -365,10 +364,9 @@ msgid "Clock"
 msgstr "Clock (Horologio)"
 
 #: qml/settings/SettingsPage.qml:34
-#, fuzzy, kde-format
-#| msgid "Time Format:"
+#, kde-format
 msgid "Time Format"
-msgstr "Formato de Tempore:"
+msgstr "Formato de Tempore"
 
 #: qml/settings/SettingsPage.qml:38
 #, kde-format
@@ -386,16 +384,14 @@ msgid "24 Hour Time"
 msgstr "Tempore de 24 horas"
 
 #: qml/settings/SettingsPage.qml:62
-#, fuzzy, kde-format
-#| msgid "Clock"
+#, kde-format
 msgid "About Clock"
-msgstr "Clock (Horologio)"
+msgstr "Re Clock (Horologio)"
 
 #: qml/settings/SettingsPage.qml:70
-#, fuzzy, kde-format
-#| msgid "About"
+#, kde-format
 msgid "About KDE"
-msgstr "A proposito"
+msgstr "A proposito de KDE"
 
 #: qml/stopwatch/StopwatchPage.qml:63 qml/stopwatch/StopwatchPage.qml:134
 #: qml/timer/TimerListDelegate.qml:166 qml/timer/TimerPage.qml:52
@@ -519,17 +515,17 @@ msgstr "optional"
 #: qml/timer/TimerForm.qml:157
 #, kde-format
 msgid "Hide Presets"
-msgstr ""
+msgstr "Cela Preregulationes"
 
 #: qml/timer/TimerForm.qml:157
 #, kde-format
 msgid "Show Presets"
-msgstr ""
+msgstr "Monstra Preregulationes"
 
 #: qml/timer/TimerForm.qml:162
 #, kde-format
 msgid "Toggle Delete"
-msgstr ""
+msgstr "Commuta dele"
 
 #: qml/timer/TimerFormWrapper.qml:55
 #, kde-format
@@ -539,7 +535,7 @@ msgstr ""
 #: qml/timer/TimerFormWrapper.qml:73 qml/timer/TimerFormWrapper.qml:132
 #, kde-format
 msgid "Save As Preset"
-msgstr ""
+msgstr "Salveguarda como preregulate"
 
 #: qml/timer/TimerFormWrapper.qml:99
 #, kde-format

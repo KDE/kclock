@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-12 01:39+0000\n"
-"PO-Revision-Date: 2023-11-11 10:11+0100\n"
+"PO-Revision-Date: 2023-11-12 13:56+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -366,10 +366,9 @@ msgid "Clock"
 msgstr "Klok"
 
 #: qml/settings/SettingsPage.qml:34
-#, fuzzy, kde-format
-#| msgid "Time Format:"
+#, kde-format
 msgid "Time Format"
-msgstr "Tijdopmaak:"
+msgstr "Tijdopmaak"
 
 #: qml/settings/SettingsPage.qml:38
 #, kde-format
@@ -392,10 +391,9 @@ msgid "About Clock"
 msgstr "Info over Clock"
 
 #: qml/settings/SettingsPage.qml:70
-#, fuzzy, kde-format
-#| msgid "About"
+#, kde-format
 msgid "About KDE"
-msgstr "Info over"
+msgstr "Info over KDE"
 
 #: qml/stopwatch/StopwatchPage.qml:63 qml/stopwatch/StopwatchPage.qml:134
 #: qml/timer/TimerListDelegate.qml:166 qml/timer/TimerPage.qml:52

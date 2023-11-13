@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-12 01:39+0000\n"
-"PO-Revision-Date: 2023-11-11 11:11+0100\n"
+"PO-Revision-Date: 2023-11-12 16:25+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -371,10 +371,9 @@ msgid "Clock"
 msgstr "Rellotge"
 
 #: qml/settings/SettingsPage.qml:34
-#, fuzzy, kde-format
-#| msgid "Time Format:"
+#, kde-format
 msgid "Time Format"
-msgstr "Format de l'hora:"
+msgstr "Format de l'hora"
 
 #: qml/settings/SettingsPage.qml:38
 #, kde-format
@@ -397,10 +396,9 @@ msgid "About Clock"
 msgstr "Quant al rellotge"
 
 #: qml/settings/SettingsPage.qml:70
-#, fuzzy, kde-format
-#| msgid "About"
+#, kde-format
 msgid "About KDE"
-msgstr "Quant al"
+msgstr "Quant al KDE"
 
 #: qml/stopwatch/StopwatchPage.qml:63 qml/stopwatch/StopwatchPage.qml:134
 #: qml/timer/TimerListDelegate.qml:166 qml/timer/TimerPage.qml:52
@@ -692,9 +690,3 @@ msgstr "L'alarma sonarà en menys d'un minut"
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "L'alarma sonarà després de %1"
-
-#~ msgid "Select Time Format"
-#~ msgstr "Selecció del format d'hora"
-
-#~ msgid "More Info:"
-#~ msgstr "Més informació:"
