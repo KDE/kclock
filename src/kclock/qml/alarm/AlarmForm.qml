@@ -210,7 +210,7 @@ Kirigami.FormLayout {
                 return i18n("Default Sound");
             } else {
                 let split = root.formAudioPath.split('/')
-                return split[split.length - 1];
+                return split[split.length - 1].split('.')[0];
             }
         }
         
