@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-12 01:39+0000\n"
-"PO-Revision-Date: 2023-11-12 18:12+0100\n"
+"PO-Revision-Date: 2023-11-13 09:25+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -36,6 +36,8 @@ msgstr "Selige pagina aperite"
 #, kde-format
 msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr ""
+"Fixa alarmas e chronometros, usa un campana (stopwatch) e gere horologios "
+"del mundo"
 
 #: main.cpp:67
 #, kde-format
@@ -97,7 +99,7 @@ msgstr "%1 minutas"
 #: qml/alarm/AlarmForm.qml:131
 #, kde-format
 msgid "Select Ring Duration"
-msgstr ""
+msgstr "Selectiona Duration de tintinnar"
 
 #: qml/alarm/AlarmForm.qml:137 qml/alarm/AlarmForm.qml:174
 #, kde-format
@@ -132,17 +134,17 @@ msgstr "1 hora"
 #: qml/alarm/AlarmForm.qml:167
 #, kde-format
 msgid "Snooze Length:"
-msgstr ""
+msgstr "Longitude de dormettar:"
 
 #: qml/alarm/AlarmForm.qml:168
 #, kde-format
 msgid "Select Snooze Length"
-msgstr ""
+msgstr "Selige Longitude de dormettar"
 
 #: qml/alarm/AlarmForm.qml:204
 #, kde-format
 msgid "Ring Sound:"
-msgstr ""
+msgstr "Sono de tintinnar:"
 
 #: qml/alarm/AlarmForm.qml:210
 #, kde-format
@@ -181,8 +183,8 @@ msgstr "Cancella"
 #, kde-format
 msgid "Snoozed %1 minute"
 msgid_plural "Snoozed %1 minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Dormettate %1 minuta"
+msgstr[1] "Dormettate %1 minutas"
 
 #: qml/alarm/AlarmListDelegate.qml:126 qml/time/TimePageDelegate.qml:60
 #, kde-format
@@ -214,6 +216,8 @@ msgid ""
 "The clock daemon was not found. Please start kclockd in order to have alarm "
 "functionality."
 msgstr ""
+"Le demone de horologio (clock) non esseva trovate. Pro favor tu starta "
+"kclockd per haber functionalitate de alarmas."
 
 #: qml/alarm/AlarmListPage.qml:78
 #, kde-format
@@ -238,12 +242,12 @@ msgstr "Delite %1"
 #: qml/alarm/AlarmRingingPopup.qml:27
 #, kde-format
 msgid "Alarm is ringing"
-msgstr ""
+msgstr "Alarma es tintinnante"
 
 #: qml/alarm/AlarmRingingPopup.qml:55
 #, kde-format
 msgid "Snooze"
-msgstr ""
+msgstr "Snooze (Dormettar)"
 
 #: qml/alarm/AlarmRingingPopup.qml:59 qml/timer/TimerRingingPopup.qml:56
 #, kde-format
@@ -268,7 +272,7 @@ msgstr "Predefinite"
 #: qml/alarm/SoundPickerPage.qml:155
 #, kde-format
 msgid "Choose an audio"
-msgstr ""
+msgstr "Selige un audio"
 
 #: qml/alarm/SoundPickerPage.qml:163
 #, kde-format
@@ -505,7 +509,7 @@ msgstr "Chronometro"
 #: qml/timer/TimerForm.qml:138
 #, kde-format
 msgid "<b>Command at timeout:</b>"
-msgstr ""
+msgstr "<b>Commanda a tempore expirate:</b>"
 
 #: qml/timer/TimerForm.qml:141
 #, kde-format
@@ -530,7 +534,7 @@ msgstr "Commuta dele"
 #: qml/timer/TimerFormWrapper.qml:55
 #, kde-format
 msgid "<b>Create New Timer</b>"
-msgstr ""
+msgstr "<b>Crea Nove Chronometro</b>"
 
 #: qml/timer/TimerFormWrapper.qml:73 qml/timer/TimerFormWrapper.qml:132
 #, kde-format
@@ -546,7 +550,7 @@ msgstr "Crea chronometro"
 #: qml/timer/TimerPage.qml:115
 #, kde-format
 msgid "Loop Timer"
-msgstr ""
+msgstr "Chronometro de anillo (repetite)"
 
 #: qml/timer/TimerListDelegate.qml:176 qml/timer/TimerPage.qml:58
 #: qml/timer/TimerPage.qml:106
@@ -565,6 +569,8 @@ msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
 "functionality."
 msgstr ""
+"Le demone de horologio (clock) non esseva trovate. Pro favor tu starta "
+"kclockd per haber functionalitate de chronometro."
 
 #: qml/timer/TimerListPage.qml:87
 #, kde-format
@@ -584,57 +590,57 @@ msgstr "Nove chronometro"
 #: qml/timer/TimerRingingPopup.qml:27
 #, kde-format
 msgid "Timer has finished"
-msgstr ""
+msgstr "Chronometro ha terminate"
 
 #: qml/timer/TimerRingingPopup.qml:46
 #, kde-format
 msgid "%1 has completed."
-msgstr ""
+msgstr "%1 ha completate."
 
 #: qml/timer/TimerRingingPopup.qml:46
 #, kde-format
 msgid "The timer has completed."
-msgstr ""
+msgstr "Le chronometro ha completate."
 
 #: savedlocationsmodel.cpp:110
 #, kde-format
 msgid "%1 hour and 30 minutes ahead"
-msgstr ""
+msgstr "%1 hora e 30 minutas avante"
 
 #: savedlocationsmodel.cpp:110
 #, kde-format
 msgid "%1 hours and 30 minutes ahead"
-msgstr ""
+msgstr "%1 horas e 30 minutas avante"
 
 #: savedlocationsmodel.cpp:112
 #, kde-format
 msgid "%1 hour ahead"
-msgstr ""
+msgstr "%1 hora avante"
 
 #: savedlocationsmodel.cpp:112
 #, kde-format
 msgid "%1 hours ahead"
-msgstr ""
+msgstr "%1 horas avante"
 
 #: savedlocationsmodel.cpp:117
 #, kde-format
 msgid "%1 hour and 30 minutes behind"
-msgstr ""
+msgstr "%1 hora e 30 minutas retro"
 
 #: savedlocationsmodel.cpp:117
 #, kde-format
 msgid "%1 hours and 30 minutes behind"
-msgstr ""
+msgstr "%1 horas e 30 minutas retro"
 
 #: savedlocationsmodel.cpp:119
 #, kde-format
 msgid "%1 hour behind"
-msgstr ""
+msgstr "%1 hora  retro"
 
 #: savedlocationsmodel.cpp:119
 #, kde-format
 msgid "%1 hours behind"
-msgstr ""
+msgstr "%1 horas  retro"
 
 #: savedlocationsmodel.cpp:122
 #, kde-format
@@ -675,12 +681,12 @@ msgstr[1] "%1 minutas"
 #: utilmodel.cpp:95
 #, kde-format
 msgid "Alarm will ring in under a minute"
-msgstr ""
+msgstr "Alarma tintinnara in sub un minuta"
 
 #: utilmodel.cpp:97
 #, kde-format
 msgid "Alarm will ring in %1"
-msgstr ""
+msgstr "Alarma tintinnara in %1"
 
 #~ msgid "More Info:"
 #~ msgstr "Plus Information:"

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-12 01:39+0000\n"
-"PO-Revision-Date: 2023-11-09 15:35+0100\n"
+"PO-Revision-Date: 2023-11-13 09:28+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -45,7 +45,7 @@ msgstr "Abbandona"
 #: alarm.cpp:83
 #, kde-format
 msgid "Snooze"
-msgstr ""
+msgstr "Snooze (Dormettar)"
 
 #: alarmmodel.cpp:222
 #, kde-kuit-format
@@ -56,7 +56,7 @@ msgstr "Alarma: <shortcut>%1 %2</shortcut>"
 #: main.cpp:30
 #, kde-format
 msgid "Don't use PowerDevil for alarms if it is available"
-msgstr ""
+msgstr "Non usa PowerDevil per alarmas si ill es disponìbile"
 
 #: main.cpp:45
 #, kde-format
@@ -76,7 +76,7 @@ msgstr "Han Young"
 #: timer.cpp:53
 #, kde-format
 msgid "Timer complete"
-msgstr ""
+msgstr "Chronometro completa"
 
 #: timer.cpp:54
 #, kde-format
@@ -88,3 +88,5 @@ msgstr "Tu Chronometro %1 terminava!"
 msgid ""
 "Allow the clock process to be in the background and launched on startup."
 msgstr ""
+"Permitte al processo de horologio (clock) de esser in fundo e lanceate al "
+"startar."
