@@ -7,53 +7,54 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
+import org.kde.kcmutils as KCM
 
-Kirigami.FormLayout {
-    id: page
-  
+KCM.SimpleKCM {
     property alias cfg_twelveHourTime: twelveHourTime.checked
     property alias cfg_showDate: showDate.checked
     property alias cfg_showAlarms: showAlarms.checked
     property string cfg_textAlignment
 
-    CheckBox {
-        id: twelveHourTime
-        text: i18n("Use 12 hour time")
-    }
-    CheckBox {
-        id: showDate
-        text: i18n("Show date")
-    }
-    CheckBox {
-        id: showAlarms
-        text: i18n("Show alarms")
-    }
-    ComboBox {
-        id: textAlignment
-        Kirigami.FormData.label: i18n("Text alignment:")
-        textRole: 'label'
-        model: [
-            {
-                'label': i18n("Left"),
-                'name': "Left",
-            },
-            {
-                'label': i18n("Center"),
-                'name': "Center",
-            },
-            {
-                'label': i18n("Right"),
-                'name': "Right",
-            }
-        ]
-        onCurrentIndexChanged: cfg_textAlignment = model[currentIndex]["name"]
-        Component.onCompleted: {
-            if (plasmoid.configuration.textAlignment == "") {
-                plasmoid.configuration.textAlignment = "Center";
-            }
-            for (var i = 0; i < model.length; i++) {
-                if (model[i]["name"] === plasmoid.configuration.textAlignment) {
-                    textAlignment.currentIndex = i;
+    Kirigami.FormLayout {
+        CheckBox {
+            id: twelveHourTime
+            text: i18n("Use 12 hour time")
+        }
+        CheckBox {
+            id: showDate
+            text: i18n("Show date")
+        }
+        CheckBox {
+            id: showAlarms
+            text: i18n("Show alarms")
+        }
+        ComboBox {
+            id: textAlignment
+            Kirigami.FormData.label: i18n("Text alignment:")
+            textRole: 'label'
+            model: [
+                {
+                    'label': i18n("Left"),
+                    'name': "Left",
+                },
+                {
+                    'label': i18n("Center"),
+                    'name': "Center",
+                },
+                {
+                    'label': i18n("Right"),
+                    'name': "Right",
+                }
+            ]
+            onCurrentIndexChanged: cfg_textAlignment = model[currentIndex]["name"]
+            Component.onCompleted: {
+                if (plasmoid.configuration.textAlignment == "") {
+                    plasmoid.configuration.textAlignment = "Center";
+                }
+                for (var i = 0; i < model.length; i++) {
+                    if (model[i]["name"] === plasmoid.configuration.textAlignment) {
+                        textAlignment.currentIndex = i;
+                    }
                 }
             }
         }
