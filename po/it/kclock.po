@@ -1,14 +1,14 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the kclock package.
 # Paolo Zamponi <feus73@gmail.com>, 2020, 2021, 2022.
-# Vincenzo Reale <smart2128vr@gmail.com>, 2020, 2022, 2023.
+# SPDX-FileCopyrightText: 2020, 2022, 2023 Vincenzo Reale <smart2128vr@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-12 01:39+0000\n"
-"PO-Revision-Date: 2023-02-06 15:11+0100\n"
+"PO-Revision-Date: 2023-11-13 09:36+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.2\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -37,6 +37,7 @@ msgstr "Seleziona la pagina aperta"
 #, kde-format
 msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr ""
+"Imposta allarmi e timer, usa un cronometro e gestisci gli orologi del mondo"
 
 #: main.cpp:67
 #, kde-format
@@ -186,8 +187,7 @@ msgstr[0] "Posticipata di %1 minuto"
 msgstr[1] "Posticipata di %1 minuti"
 
 #: qml/alarm/AlarmListDelegate.qml:126 qml/time/TimePageDelegate.qml:60
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "Elimina"
@@ -368,10 +368,9 @@ msgid "Clock"
 msgstr "Orologio"
 
 #: qml/settings/SettingsPage.qml:34
-#, fuzzy, kde-format
-#| msgid "Time Format:"
+#, kde-format
 msgid "Time Format"
-msgstr "Formato orario:"
+msgstr "Formato orario"
 
 #: qml/settings/SettingsPage.qml:38
 #, kde-format
@@ -389,16 +388,14 @@ msgid "24 Hour Time"
 msgstr "24 ore"
 
 #: qml/settings/SettingsPage.qml:62
-#, fuzzy, kde-format
-#| msgid "Clock"
+#, kde-format
 msgid "About Clock"
-msgstr "Orologio"
+msgstr "Informazioni su Orologio"
 
 #: qml/settings/SettingsPage.qml:70
-#, fuzzy, kde-format
-#| msgid "About"
+#, kde-format
 msgid "About KDE"
-msgstr "Informazioni"
+msgstr "Informazioni su KDE"
 
 #: qml/stopwatch/StopwatchPage.qml:63 qml/stopwatch/StopwatchPage.qml:134
 #: qml/timer/TimerListDelegate.qml:166 qml/timer/TimerPage.qml:52

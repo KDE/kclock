@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-12 01:39+0000\n"
-"PO-Revision-Date: 2023-06-07 10:57-0300\n"
+"PO-Revision-Date: 2023-11-14 13:22-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -36,6 +36,8 @@ msgstr "Selecionar página aberta"
 #, kde-format
 msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr ""
+"Definir alarmes e temporizadores, use um cronômetro e gerencie relógios "
+"mundiais"
 
 #: main.cpp:67
 #, kde-format
@@ -185,8 +187,7 @@ msgstr[0] "Adiar por %1 minuto"
 msgstr[1] "Adiar por %1 minutos"
 
 #: qml/alarm/AlarmListDelegate.qml:126 qml/time/TimePageDelegate.qml:60
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "Excluir"
@@ -367,10 +368,9 @@ msgid "Clock"
 msgstr "Relógio"
 
 #: qml/settings/SettingsPage.qml:34
-#, fuzzy, kde-format
-#| msgid "Time Format:"
+#, kde-format
 msgid "Time Format"
-msgstr "Formato de hora:"
+msgstr "Formato da hora"
 
 #: qml/settings/SettingsPage.qml:38
 #, kde-format
@@ -388,16 +388,14 @@ msgid "24 Hour Time"
 msgstr "24 horas"
 
 #: qml/settings/SettingsPage.qml:62
-#, fuzzy, kde-format
-#| msgid "Clock"
+#, kde-format
 msgid "About Clock"
-msgstr "Relógio"
+msgstr "Sober o Relógio"
 
 #: qml/settings/SettingsPage.qml:70
-#, fuzzy, kde-format
-#| msgid "About"
+#, kde-format
 msgid "About KDE"
-msgstr "Sobre"
+msgstr "Sobre o KDE"
 
 #: qml/stopwatch/StopwatchPage.qml:63 qml/stopwatch/StopwatchPage.qml:134
 #: qml/timer/TimerListDelegate.qml:166 qml/timer/TimerPage.qml:52
