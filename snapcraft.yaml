@@ -138,8 +138,6 @@ parts:
         - qml-module-org-kde-kirigami-addons-treeview
         - libkf5notifications5
         - libpulse0
-        stage-snaps:
-        - khelpcenter
         source: .
         source-type: local
         cmake-parameters:
