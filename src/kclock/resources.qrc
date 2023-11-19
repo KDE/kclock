@@ -23,6 +23,7 @@
         <file>qml/components/Sidebar.qml</file>
         <file>qml/components/TimePicker.qml</file>
         <file>qml/components/TimePickerSpinBox.qml</file>
+        <file>qml/components/TimePickerSpinBoxButton.qml</file>
         
         <file>qml/settings/SettingsPage.qml</file>
         

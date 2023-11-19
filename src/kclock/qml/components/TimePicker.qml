@@ -39,7 +39,6 @@ RowLayout {
         //       for 24-hour time, we have hours from 0-23
         TimePickerSpinBox {
             id: hoursSpinbox
-            editable: true
             from: root.twelveHourTime ? 1 : 0
             to: root.twelveHourTime ? 12 : 23
             
@@ -63,7 +62,6 @@ RowLayout {
         
         TimePickerSpinBox {
             id: minutesSpinbox
-            editable: true
             from: 0
             to: 59
             
@@ -95,9 +93,15 @@ RowLayout {
 
             background: Rectangle {
                 radius: Kirigami.Units.smallSpacing
-                border.color: minutesSpinbox.buttonBorderColor
+                border.color: {
+                    if (amPmToggle.enabled && (amPmToggle.visualFocus || amPmToggle.hovered || amPmToggle.down)) {
+                        return Kirigami.Theme.focusColor
+                    } else {
+                        return Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.backgroundColor, Kirigami.Theme.textColor, 0.15)
+                    }
+                }
                 border.width: 1
-                color: amPmToggle.pressed ? minutesSpinbox.buttonPressedColor : (amPmToggle.hovered ? minutesSpinbox.buttonHoverColor : minutesSpinbox.buttonColor)
+                color: amPmToggle.down ? Kirigami.Theme.alternateBackgroundColor : Kirigami.Theme.backgroundColor
             }
 
             onClicked: {

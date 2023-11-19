@@ -12,6 +12,7 @@ import org.kde.kirigami as Kirigami
 
 Kirigami.NavigationTabBar {
     id: root
+    position: ToolBar.Footer
 
     property bool shouldShow: pageStack.layers.depth <= 1 && pageStack.depth <= 1
     onShouldShowChanged: {
