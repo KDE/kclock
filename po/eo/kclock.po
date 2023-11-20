@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-12 01:39+0000\n"
+"POT-Creation-Date: 2023-11-20 02:00+0000\n"
 "PO-Revision-Date: 2023-11-12 08:26+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -193,7 +193,7 @@ msgctxt "@action:button"
 msgid "Delete"
 msgstr "Forigi"
 
-#: qml/alarm/AlarmListPage.qml:25 qml/components/BottomToolbar.qml:114
+#: qml/alarm/AlarmListPage.qml:25 qml/components/BottomToolbar.qml:115
 #: qml/components/Sidebar.qml:112
 #, kde-format
 msgid "Alarms"
@@ -285,19 +285,19 @@ msgstr "Sondosieroj (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 msgid "All files (*)"
 msgstr "Ĉiuj dosieroj (*)"
 
-#: qml/components/BottomToolbar.qml:84 qml/components/Sidebar.qml:58
+#: qml/components/BottomToolbar.qml:85 qml/components/Sidebar.qml:58
 #: qml/time/TimePage.qml:25
 #, kde-format
 msgid "Time"
 msgstr "Tempo"
 
-#: qml/components/BottomToolbar.qml:94 qml/components/Sidebar.qml:76
+#: qml/components/BottomToolbar.qml:95 qml/components/Sidebar.qml:76
 #: qml/timer/TimerListPage.qml:22
 #, kde-format
 msgid "Timers"
 msgstr "Tempigiloj"
 
-#: qml/components/BottomToolbar.qml:104 qml/components/Sidebar.qml:94
+#: qml/components/BottomToolbar.qml:105 qml/components/Sidebar.qml:94
 #: qml/stopwatch/StopwatchPage.qml:24
 #, kde-format
 msgid "Stopwatch"
@@ -353,12 +353,12 @@ msgstr "Sab, "
 msgid "Sun, "
 msgstr "Dim, "
 
-#: qml/components/TimePicker.qml:92
+#: qml/components/TimePicker.qml:90
 #, kde-format
 msgid "AM"
 msgstr "AM"
 
-#: qml/components/TimePicker.qml:92
+#: qml/components/TimePicker.qml:90
 #, kde-format
 msgid "PM"
 msgstr "PM"
