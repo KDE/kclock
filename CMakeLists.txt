@@ -62,7 +62,7 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
     DBusAddons
     StatusNotifierItem
 )
-find_package(KF6Plasma REQUIRED)
+find_package(Plasma REQUIRED)
 
 find_package(KF6KirigamiAddons 0.6 REQUIRED)
 

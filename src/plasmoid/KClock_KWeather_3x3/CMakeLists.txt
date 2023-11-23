@@ -11,7 +11,7 @@ kcoreaddons_add_plugin(plasma_applet_kclock_kweather_3x3 SOURCES kclock_3x3.cpp 
 target_link_libraries(plasma_applet_kclock_kweather_3x3
     Qt6::Gui
     Qt6::DBus
-    KF6::Plasma
+    Plasma::Plasma
     KF6::I18n
 )
 

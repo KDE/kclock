@@ -11,7 +11,7 @@ kcoreaddons_add_plugin(org.kde.plasma.kclock_1x2 SOURCES kclock_1x2.cpp kclock_1
 target_link_libraries(org.kde.plasma.kclock_1x2
     Qt6::Gui
     Qt6::DBus
-    KF6::Plasma
+    Plasma::Plasma
     KF6::I18n
 )
 
