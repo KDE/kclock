@@ -81,44 +81,9 @@
   <summary xml:lang="x-test">xxSet alarms and timers, use a stopwatch, and manage world clocksxx</summary>
   <summary xml:lang="zh-CN">设置闹钟、倒计时、使用秒表和管理世界时钟</summary>
   <summary xml:lang="zh-TW">設定鬧鐘、計時器，使用碼錶，並管理世界時鐘</summary>
-  <developer_name>KDE Community</developer_name>
-  <developer_name xml:lang="ar">مجتمع كِيدِي</developer_name>
-  <developer_name xml:lang="ca">La comunitat KDE</developer_name>
-  <developer_name xml:lang="ca-valencia">La comunitat KDE</developer_name>
-  <developer_name xml:lang="cs">Komunita KDE</developer_name>
-  <developer_name xml:lang="de">KDE-Gemeinschaft</developer_name>
-  <developer_name xml:lang="el">Η κοινότητα του KDE</developer_name>
-  <developer_name xml:lang="en-GB">KDE Community</developer_name>
-  <developer_name xml:lang="eo">KDE-Komunumo</developer_name>
-  <developer_name xml:lang="es">Comunidad KDE</developer_name>
-  <developer_name xml:lang="et">KDE kogukond</developer_name>
-  <developer_name xml:lang="eu">KDE komunitatea</developer_name>
-  <developer_name xml:lang="fi">KDE-yhteisö</developer_name>
-  <developer_name xml:lang="fr">Communauté de KDE</developer_name>
-  <developer_name xml:lang="gl">Comunidade KDE</developer_name>
-  <developer_name xml:lang="hi">केडीई समुदाय</developer_name>
-  <developer_name xml:lang="hu">A KDE Közösség</developer_name>
-  <developer_name xml:lang="ia">Communitate de KDE</developer_name>
-  <developer_name xml:lang="id">Komunitas KDE</developer_name>
-  <developer_name xml:lang="it">Comunità KDE</developer_name>
-  <developer_name xml:lang="ka">KDE Community</developer_name>
-  <developer_name xml:lang="ko">KDE 커뮤니티</developer_name>
-  <developer_name xml:lang="nl">KDE-gemeenschap</developer_name>
-  <developer_name xml:lang="nn">KDE-fellesskapet</developer_name>
-  <developer_name xml:lang="pa">ਕੇਡੀਈ ਕਮਿਊਨਟੀ</developer_name>
-  <developer_name xml:lang="pl">Społeczność KDE</developer_name>
-  <developer_name xml:lang="pt">Comunidade do KDE</developer_name>
-  <developer_name xml:lang="pt-BR">Comunidade KDE</developer_name>
-  <developer_name xml:lang="ro">Comunitatea KDE</developer_name>
-  <developer_name xml:lang="ru">Сообщество KDE</developer_name>
-  <developer_name xml:lang="sk">KDE komunita</developer_name>
-  <developer_name xml:lang="sl">Skupnost KDE</developer_name>
-  <developer_name xml:lang="sv">KDE-gemenskapen</developer_name>
-  <developer_name xml:lang="tr">KDE Topluluğu</developer_name>
-  <developer_name xml:lang="uk">Спільнота KDE</developer_name>
-  <developer_name xml:lang="x-test">xxKDE Communityxx</developer_name>
-  <developer_name xml:lang="zh-CN">KDE 社区</developer_name>
-  <developer_name xml:lang="zh-TW">KDE 社群</developer_name>
+  <developer id="kde.org">
+    <name>KDE Community</name>
+  </developer>
   <description>
     <p>A universal clock application for desktop and mobile.</p>
     <p xml:lang="ar">تطبيق ساعة عالمي لسطح المكتب والجوال.</p>
