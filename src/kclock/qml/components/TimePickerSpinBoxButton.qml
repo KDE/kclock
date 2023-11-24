@@ -1,4 +1,3 @@
-
 // Copyright 2023 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
@@ -8,6 +7,8 @@ import org.kde.kirigami 2.19 as Kirigami
 
 QQC2.Button {
     id: root
+    autoRepeat: true
+
     required property bool isEnd
     required property bool isStart
 
