@@ -12,7 +12,7 @@ Dependencies:
     'frameworks/kdbusaddons': '@stable'
     'frameworks/knotifications': '@stable'
     'libraries/kirigami-addons': '@latest'
-    'plasma/plasma-framework': 'kf5'
+    'plasma/libplasma': 'kf5'
 
 - 'on': ['Linux/Qt6', 'Android/Qt6', 'FreeBSD/Qt6', 'Windows/Qt6']
   'require':
@@ -24,4 +24,4 @@ Dependencies:
     'frameworks/kdbusaddons': '@latest-kf6'
     'frameworks/knotifications': '@latest-kf6'
     'libraries/kirigami-addons': '@latest-kf6'
-    'plasma/plasma-framework': '@latest-kf6'
+    'plasma/libplasma': '@latest-kf6'
