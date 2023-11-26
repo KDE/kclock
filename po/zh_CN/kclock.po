@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 02:00+0000\n"
-"PO-Revision-Date: 2023-11-19 03:37\n"
+"PO-Revision-Date: 2023-11-25 02:26\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -25,7 +25,7 @@ msgstr "KDE 中国, Tyson Tan, Zhou Wenqing"
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "kde-china@kde.org, tysontan@tysontan.com, zhouwenqing655@gmail.com"
+msgstr "kde-china@kde.org, tds00@qq.com, zhouwenqing655@gmail.com"
 
 #: main.cpp:42
 #, kde-format
@@ -35,7 +35,7 @@ msgstr "选择打开的页面"
 #: main.cpp:65
 #, kde-format
 msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
-msgstr ""
+msgstr "设置闹钟、倒计时、使用秒表和管理世界时钟"
 
 #: main.cpp:67
 #, kde-format
@@ -365,7 +365,7 @@ msgstr "时钟"
 #: qml/settings/SettingsPage.qml:34
 #, kde-format
 msgid "Time Format"
-msgstr ""
+msgstr "时间格式"
 
 #: qml/settings/SettingsPage.qml:38
 #, kde-format
@@ -385,12 +385,12 @@ msgstr "24 小时制"
 #: qml/settings/SettingsPage.qml:62
 #, kde-format
 msgid "About Clock"
-msgstr ""
+msgstr "关于时钟"
 
 #: qml/settings/SettingsPage.qml:70
 #, kde-format
 msgid "About KDE"
-msgstr ""
+msgstr "关于 KDE"
 
 #: qml/stopwatch/StopwatchPage.qml:63 qml/stopwatch/StopwatchPage.qml:134
 #: qml/timer/TimerListDelegate.qml:166 qml/timer/TimerPage.qml:52
