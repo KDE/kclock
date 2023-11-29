@@ -29,7 +29,8 @@
                 "Name[tr]": "HanY",
                 "Name[uk]": "HanY",
                 "Name[x-test]": "xxHanYxx",
-                "Name[zh_CN]": "HanY"
+                "Name[zh_CN]": "HanY",
+                "Name[zh_TW]": "HanY"
             }
         ],
         "Category": "Utilities",
@@ -60,6 +61,7 @@
         "Description[uk]": "Віджет KClock (1x2)",
         "Description[x-test]": "xxKClock widget (1x2)xx",
         "Description[zh_CN]": "KClock 挂件 (1x2)",
+        "Description[zh_TW]": "KClock 元件 (1x2)",
         "EnabledByDefault": true,
         "FormFactors": [
             "tablet",
@@ -96,6 +98,7 @@
         "Name[uk]": "KClock_1x2",
         "Name[x-test]": "xxKClock_1x2xx",
         "Name[zh_CN]": "KClock_1x2",
+        "Name[zh_TW]": "KClock_1x2",
         "ServiceTypes": [
             "Plasma/Applet"
         ],
