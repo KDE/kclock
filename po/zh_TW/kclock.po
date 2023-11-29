@@ -10,15 +10,15 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 02:00+0000\n"
-"PO-Revision-Date: 2023-09-12 01:40+0900\n"
+"PO-Revision-Date: 2023-11-29 19:03+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
-"Language-Team: Chinese <zh-l10n@linux.org.tw>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.0\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -38,7 +38,7 @@ msgstr "選擇開啟頁面"
 #: main.cpp:65
 #, kde-format
 msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
-msgstr ""
+msgstr "設定鬧鐘、計時器，使用碼錶，並管理世界時鐘"
 
 #: main.cpp:67
 #, kde-format
@@ -187,8 +187,7 @@ msgid_plural "Snoozed %1 minutes"
 msgstr[0] "已貪睡 %1 分鐘"
 
 #: qml/alarm/AlarmListDelegate.qml:126 qml/time/TimePageDelegate.qml:60
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "刪除"
@@ -367,10 +366,9 @@ msgid "Clock"
 msgstr "時鐘"
 
 #: qml/settings/SettingsPage.qml:34
-#, fuzzy, kde-format
-#| msgid "Time Format:"
+#, kde-format
 msgid "Time Format"
-msgstr "時間格式："
+msgstr "時間格式"
 
 #: qml/settings/SettingsPage.qml:38
 #, kde-format
@@ -388,16 +386,14 @@ msgid "24 Hour Time"
 msgstr "24 小時制"
 
 #: qml/settings/SettingsPage.qml:62
-#, fuzzy, kde-format
-#| msgid "Clock"
+#, kde-format
 msgid "About Clock"
-msgstr "時鐘"
+msgstr "關於時鐘"
 
 #: qml/settings/SettingsPage.qml:70
-#, fuzzy, kde-format
-#| msgid "About"
+#, kde-format
 msgid "About KDE"
-msgstr "關於"
+msgstr "關於 KDE"
 
 #: qml/stopwatch/StopwatchPage.qml:63 qml/stopwatch/StopwatchPage.qml:134
 #: qml/timer/TimerListDelegate.qml:166 qml/timer/TimerPage.qml:52
