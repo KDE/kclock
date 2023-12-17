@@ -127,7 +127,6 @@ Item {
                     horizontalAlignment: Qt.AlignHCenter
                     verticalAlignment: Qt.AlignVCenter
 
-                    validator: spinBox.validator
                     inputMethodHints: Qt.ImhFormattedNumbersOnly
                     
                     function applyTextBinding() {
@@ -135,7 +134,11 @@ Item {
                     }
 
                     Component.onCompleted: applyTextBinding()
-                    onAccepted: spinBox.value = parseInt(text)
+                    onEditingFinished: {
+                        spinBox.value = parseInt(text);
+                        spinBox.valueModified();
+                        applyTextBinding();
+                    }
                 }
             }
         }

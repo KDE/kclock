@@ -18,6 +18,9 @@ QQC2.Button {
         return Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.backgroundColor, Kirigami.Theme.textColor, 0.15)
     }
 
+    topPadding: 0
+    bottomPadding: 0
+
     contentItem: Item {
         implicitHeight: Kirigami.Units.gridUnit * 2
         Kirigami.Icon {
