@@ -43,8 +43,8 @@ KClock_1x2::KClock_1x2(QObject *parent, const KPluginMetaData &metaData, const Q
         auto alarmTime = reply.value();
         if (alarmTime > 0) {
             auto dateTime = QDateTime::fromSecsSinceEpoch(alarmTime).toLocalTime();
-            m_string = m_locale.standaloneDayName(dateTime.date().dayOfWeek(), QLocale::ShortFormat) + QStringLiteral(", ")
-                + m_locale.toString(dateTime.time(), QStringLiteral("hh:mm"));
+            m_string = QStringLiteral("%1, %2").arg(m_locale.standaloneDayName(dateTime.date().dayOfWeek(), QLocale::ShortFormat),
+                                                    m_locale.toString(dateTime.time(), QStringLiteral("hh:mm")));
             m_hasAlarm = true;
         } else {
             m_hasAlarm = false;
@@ -68,8 +68,8 @@ void KClock_1x2::updateAlarm(qulonglong time)
 {
     auto dateTime = QDateTime::fromSecsSinceEpoch(time).toLocalTime();
     if (time > 0) {
-        m_string = m_locale.standaloneDayName(dateTime.date().dayOfWeek(), QLocale::ShortFormat) + QStringLiteral(", ")
-            + m_locale.toString(dateTime.time(), QStringLiteral("hh:mm"));
+        m_string = QStringLiteral("%1, %2").arg(m_locale.standaloneDayName(dateTime.date().dayOfWeek(), QLocale::ShortFormat),
+                                                m_locale.toString(dateTime.time(), QStringLiteral("hh:mm")));
         m_hasAlarm = true;
     } else {
         m_hasAlarm = false;

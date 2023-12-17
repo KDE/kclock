@@ -52,8 +52,7 @@ int Timer::length() const
 QString Timer::lengthPretty() const
 {
     qint64 len = m_length, hours = len / 60 / 60, minutes = len / 60 - hours * 60, seconds = len - hours * 60 * 60 - minutes * 60;
-    return QString::number(hours) + QStringLiteral(":") + QString::number(minutes).rightJustified(2, QLatin1Char('0')) + QStringLiteral(":")
-        + QString::number(seconds).rightJustified(2, QLatin1Char('0'));
+    return QStringLiteral("%1:%2:%3").arg(hours).arg(minutes, 2, 10, QLatin1Char('0')).arg(seconds, 2, 10, QLatin1Char('0'));
 }
 
 void Timer::setLength(int length)
@@ -69,8 +68,7 @@ int Timer::elapsed() const
 QString Timer::elapsedPretty() const
 {
     qint64 len = m_elapsed, hours = len / 60 / 60, minutes = len / 60 - hours * 60, seconds = len - hours * 60 * 60 - minutes * 60;
-    return QString::number(hours) + QStringLiteral(":") + QString::number(minutes).rightJustified(2, QLatin1Char('0')) + QStringLiteral(":")
-        + QString::number(seconds).rightJustified(2, QLatin1Char('0'));
+    return QStringLiteral("%1:%2:%3").arg(hours).arg(minutes, 2, 10, QLatin1Char('0')).arg(seconds, 2, 10, QLatin1Char('0'));
 }
 
 QString Timer::label() const

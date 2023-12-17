@@ -87,7 +87,7 @@ long long StopwatchTimer::small() const
 
 QString StopwatchTimer::displayZeroOrAmount(const int &amount)
 {
-    return amount >= 10 ? QString::number(amount) : QStringLiteral("0") + QString::number(amount);
+    return QStringLiteral("%1").arg(amount, 2, 10, QLatin1Char('0'));
 }
 
 QString StopwatchTimer::hoursDisplay() const
