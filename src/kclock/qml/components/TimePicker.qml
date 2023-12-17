@@ -17,6 +17,7 @@ RowLayout {
     
     onHoursChanged: updateHours()
     onMinutesChanged: minutesSpinbox.value = minutes
+    onTwelveHourTimeChanged: updateHours()
 
     Component.onCompleted: {
         // needs to manually be triggered because onHoursChanged doesn't emit when set to 0
@@ -24,6 +25,10 @@ RowLayout {
     }
 
     function updateHours() {
+        // manually do this instead of a binding so we can set the value without worrying about binding eval order
+        hoursSpinbox.from = root.twelveHourTime ? 1 : 0;
+        hoursSpinbox.to = root.twelveHourTime ? 12 : 23;
+
         if (twelveHourTime) {
             hoursSpinbox.value = ((hours % 12) == 0) ? 12 : hours % 12;
         } else {
@@ -39,8 +44,6 @@ RowLayout {
         //       for 24-hour time, we have hours from 0-23
         TimePickerSpinBox {
             id: hoursSpinbox
-            from: root.twelveHourTime ? 1 : 0
-            to: root.twelveHourTime ? 12 : 23
             
             onValueModified: {
                 if (root.twelveHourTime) {
