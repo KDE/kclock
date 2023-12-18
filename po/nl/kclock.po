@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-20 02:00+0000\n"
+"POT-Creation-Date: 2023-12-18 02:00+0000\n"
 "PO-Revision-Date: 2023-11-12 13:56+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -350,12 +350,12 @@ msgstr "za, "
 msgid "Sun, "
 msgstr "zo, "
 
-#: qml/components/TimePicker.qml:90
+#: qml/components/TimePicker.qml:93
 #, kde-format
 msgid "AM"
 msgstr "AM"
 
-#: qml/components/TimePicker.qml:90
+#: qml/components/TimePicker.qml:93
 #, kde-format
 msgid "PM"
 msgstr "PM"
