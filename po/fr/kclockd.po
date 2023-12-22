@@ -1,14 +1,14 @@
-# Xavier Besnard <xavier.besnard@neuf.fr>, 2020, 2021, 2022.
+# Xavier Besnard <xavier.besnard@kde.org>, 2020, 2021, 2022.
 # Simon Depiets <sdepiets@gmail.com>, 2020.
 # Noé Lopez <noelopez@free.fr>, 2022.
-# Xavier BESNARD <xavier.besnard@neuf.fr>, 2023.
+# Xavier Besnard <xavier.besnard@kde.org>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-12 01:39+0000\n"
-"PO-Revision-Date: 2022-03-17 21:46+0100\n"
-"Last-Translator: Noé Lopez <noelopez@free.fr>\n"
+"PO-Revision-Date: 2023-02-07 20:10+0100\n"
+"Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -28,7 +28,7 @@ msgstr "Simon Depiets, Xavier Besnard"
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "vpinon@kde.org, xavier.besnard@neuf.fr"
+msgstr "vpinon@kde.org, xavier.besnard@kde.org"
 
 #: alarm.cpp:73 alarm.h:51
 #, kde-format
