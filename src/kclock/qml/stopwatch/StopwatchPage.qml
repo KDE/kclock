@@ -100,9 +100,9 @@ Kirigami.ScrollablePage {
                     text: {
                         // only show hours if we have passed an hour
                         if (StopwatchTimer.hours === '00') {
-                            return StopwatchTimer.minutes + ':' + StopwatchTimer.seconds + '.';
+                            return "%1:%2.".arg(StopwatchTimer.minutes).arg(StopwatchTimer.seconds);
                         } else {
-                            return StopwatchTimer.hours + ':' + StopwatchTimer.minutes + ':' + StopwatchTimer.seconds + '.';
+                            return "%1:%2:%3.".arg(StopwatchTimer.hours).arg(StopwatchTimer.minutes).arg(StopwatchTimer.seconds);
                         }
                     }
                     font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 4.75)

@@ -130,7 +130,7 @@ Item {
                     inputMethodHints: Qt.ImhFormattedNumbersOnly
                     
                     function applyTextBinding() {
-                        text = Qt.binding(function () { return spinBox.displayText.length == 1 ? '0' + spinBox.displayText : spinBox.displayText });
+                        text = Qt.binding(function () { return spinBox.displayText.padStart(2, '0') });
                     }
 
                     Component.onCompleted: applyTextBinding()
