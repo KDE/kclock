@@ -38,6 +38,7 @@ Loader {
         bottomPadding: 0
 
         AddLocationListView {
+            clip: true
             onCloseRequested: dialog.close()
         }
 
