@@ -413,6 +413,7 @@
   </provides>
   <url type="homepage">https://invent.kde.org/plasma-mobile/kclock</url>
   <url type="bugtracker">https://bugs.kde.org/describecomponents.cgi?product=KClock</url>
+  <url type="donation">https://www.kde.org/community/donations/?app=kclock&amp;source=appdata</url>
   <releases>
     <release version="23.08.4" date="2023-12-07"/>
     <release version="23.08.3" date="2023-11-09"/>
