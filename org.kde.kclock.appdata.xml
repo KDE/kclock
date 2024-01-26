@@ -31,6 +31,7 @@
   <name xml:lang="it">Orologio</name>
   <name xml:lang="ka">საათი</name>
   <name xml:lang="ko">시계</name>
+  <name xml:lang="lv">Pulkstenis</name>
   <name xml:lang="nl">Klok</name>
   <name xml:lang="nn">Klokke</name>
   <name xml:lang="pa">ਘੜੀ</name>
@@ -66,6 +67,7 @@
   <summary xml:lang="it">Imposta allarmi e timer, usa un cronometro e gestisci gli orologi del mondo</summary>
   <summary xml:lang="ka">დააყენეთ გაფრთხილებები, წამმზომები და მაღვიძარები, მართეთ საათები</summary>
   <summary xml:lang="ko">알람과 타이머 설정, 초시계 사용, 세계 시간 관리</summary>
+  <summary xml:lang="lv">Iestatiet signālus un taimerus, izmantojiet hronometru un pārvaldiet pasaules pulksteņus</summary>
   <summary xml:lang="nl">Zet alarmen en timers, gebruik een stopwatch en beheer wereldklokken</summary>
   <summary xml:lang="nn">Still inn alarmar og nedteljing, bruk som stoppeklokke eller verdsur</summary>
   <summary xml:lang="pa">ਅਲਾਰਮ ਤੇ ਟਾਈਮਰ ਸੈੱਟ ਕਰੋ, ਸਟਾਪ-ਵਾਚ ਵਰਤੋ ਅਤੇ ਸੰਸਾਰ ਦੀਆਂ ਘੜੀਆਂ ਦਾ ਇੰਤਜ਼ਾਮ ਕਰੋ</summary>
@@ -105,6 +107,7 @@
     <p xml:lang="it">Un'applicazione universale per l'orologio per desktop e per mobile.</p>
     <p xml:lang="ka">უნივერსალური საათის პროგრამა დესკტოპისა და მობილურისთვის.</p>
     <p xml:lang="ko">데스크톱과 모바일용 다기능 시계 앱입니다.</p>
+    <p xml:lang="lv">Universāla pulksteņa programma datoram un tālrunim.</p>
     <p xml:lang="nl">Een universele kloktoepassing voor bureaublad en mobiel.</p>
     <p xml:lang="nn">Universell klokkeprogram for skrivebord og mobil.</p>
     <p xml:lang="pa">ਡੈਸਕਟਾਪ ਤੇ ਮੋਬਾਈਲ ਲਈ ਸਾਂਝੀ ਘੜੀ ਐਪਲੀਕੇਸ਼ਨ ਹੈ।</p>
@@ -139,6 +142,7 @@
     <p xml:lang="it">Contiene le funzionalità di allarme, timer, cronometro e fuso orario. Gli allarmi e i timer possono risvegliare il dispositivo dalla sospensione se si utilizza Plasma.</p>
     <p xml:lang="ka">ის განგაშის, ტაიმერის, წამზომის და დროის სარტყლის ფუნქციებს მოიცავს. მაღვიძარას და ტაიმერებს შეუძლიათ გააღვიძონ მოწყობილობა, თუ Plasma გაშვებულია.</p>
     <p xml:lang="ko">알람, 타이머, 초시계, 시간대 기능을 지원합니다. Plasma를 사용 중일 때 장치를 절전 모드에서 알람이나 타이머로 깨울 수도 있습니다.</p>
+    <p xml:lang="lv">Programmai ir signāla, taimera, hronometra un laika zonu funkcijas. Signāli un taimeri ļauj iekārtu ar„Plasma“ pamodināt no miega.</p>
     <p xml:lang="nl">Het bevat de functionaliteiten alarm, timer, stopwatch en tijdzone. Alarmen kunnen het apparaat uit status onderbroken laten ontwaken bij gebruik van Plasma.</p>
     <p xml:lang="nn">Det inneheld alarmklokke, nedteljing, stoppeklokke og støtte for ulike tidssonar. Alarmar og nedteljing kan vekkja maskina frå kvilemodus på Plasma.</p>
     <p xml:lang="pa">ਇਸ ਵਿੱਚ ਅਲਾਰਮ, ਟਾਈਮਰ, ਸਟਾਪ-ਵਾਚ ਅਤੇ ਸਮਾਂ-ਖੇਤਰ ਦੀਆਂ ਸਹੂਲਤਾਂ ਹਨ। ਪਲਾਜ਼ਮਾ ਉੱਤੇ ਅਲਾਰਮ ਤੇ ਟਾਈਮਰ ਸਸਪੈਂਡ ਤੋਂ ਡਿਵਾਈਸ ਨੂੰ ਚਾਲੂ ਕਰ ਸਕਦੇ ਹਨ।</p>
@@ -188,6 +192,7 @@
       <caption xml:lang="it">Vista mobile</caption>
       <caption xml:lang="ka">მობილური ხედი</caption>
       <caption xml:lang="ko">모바일 보기</caption>
+      <caption xml:lang="lv">Viedtālruņa skats</caption>
       <caption xml:lang="nl">Beeld op mobiel</caption>
       <caption xml:lang="nn">Mobilvising</caption>
       <caption xml:lang="pa">ਮੋਬਾਈਲ ਝਲਕ</caption>
@@ -227,6 +232,7 @@
       <caption xml:lang="it">Vista desktop</caption>
       <caption xml:lang="ka">სამუსაო მაგიდის ხედი</caption>
       <caption xml:lang="ko">데스크톱 보기</caption>
+      <caption xml:lang="lv">Datora skats</caption>
       <caption xml:lang="nl">Beeld op bureaublad</caption>
       <caption xml:lang="nn">Skrivebordsvising</caption>
       <caption xml:lang="pa">ਡੈਸਕਟਾਪ ਝਲਕ</caption>
@@ -266,6 +272,7 @@
       <caption xml:lang="it">Pagina dei timer</caption>
       <caption xml:lang="ka">წამმზომების გვერდი</caption>
       <caption xml:lang="ko">타이머 쪽</caption>
+      <caption xml:lang="lv">Taimeru lapa</caption>
       <caption xml:lang="nl">Pagina met timers</caption>
       <caption xml:lang="nn">Nedteljarside</caption>
       <caption xml:lang="pa">ਟਾਈਮਰ ਸਫ਼ਾ</caption>
@@ -305,6 +312,7 @@
       <caption xml:lang="it">Pagina del timer</caption>
       <caption xml:lang="ka">წამმზომის გვერდი</caption>
       <caption xml:lang="ko">타이머 쪽</caption>
+      <caption xml:lang="lv">Taimera lapa</caption>
       <caption xml:lang="nl">Pagina met timer</caption>
       <caption xml:lang="nn">Nedteljingsside</caption>
       <caption xml:lang="pa">ਟਾਈਮਰ ਸਫ਼ਾ</caption>
@@ -344,6 +352,7 @@
       <caption xml:lang="it">Pagina del cronometro</caption>
       <caption xml:lang="ka">სხვანაირი წამმზომის გვერდი</caption>
       <caption xml:lang="ko">초시계 쪽</caption>
+      <caption xml:lang="lv">Hronometra lapa</caption>
       <caption xml:lang="nl">Pagina met stopwatch</caption>
       <caption xml:lang="nn">Stoppeklokke-side</caption>
       <caption xml:lang="pa">ਸਟਾਪਵਾਚ ਸਫ਼ਾ</caption>
@@ -383,6 +392,7 @@
       <caption xml:lang="it">Pagina degli allarmi</caption>
       <caption xml:lang="ka">მაღვიძარის გვერდი</caption>
       <caption xml:lang="ko">알람 쪽</caption>
+      <caption xml:lang="lv">Signālu lapa</caption>
       <caption xml:lang="nl">Pagina met alarmen</caption>
       <caption xml:lang="nn">Alarmside</caption>
       <caption xml:lang="pa">ਅਲਾਰਮ ਸਫ਼ਾ</caption>
