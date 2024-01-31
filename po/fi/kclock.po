@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-18 02:00+0000\n"
-"PO-Revision-Date: 2023-03-05 17:28+0200\n"
+"PO-Revision-Date: 2023-12-11 15:18+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -36,6 +36,7 @@ msgstr "Valitse avattu sivu"
 #, kde-format
 msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr ""
+"Aseta hälytyksiä ja ajastimia, käytä sekuntikelloa ja hallitse maailmankelloa"
 
 #: main.cpp:67
 #, kde-format
@@ -185,8 +186,7 @@ msgstr[0] "Torkutettu %1 minuutti"
 msgstr[1] "Torkutettu %1 minuuttia"
 
 #: qml/alarm/AlarmListDelegate.qml:126 qml/time/TimePageDelegate.qml:60
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "Poista"
@@ -367,10 +367,9 @@ msgid "Clock"
 msgstr "Kello"
 
 #: qml/settings/SettingsPage.qml:34
-#, fuzzy, kde-format
-#| msgid "Time Format:"
+#, kde-format
 msgid "Time Format"
-msgstr "Ajan muoto:"
+msgstr "Ajan muoto"
 
 #: qml/settings/SettingsPage.qml:38
 #, kde-format
@@ -388,16 +387,14 @@ msgid "24 Hour Time"
 msgstr "24-tuntinen kello"
 
 #: qml/settings/SettingsPage.qml:62
-#, fuzzy, kde-format
-#| msgid "Clock"
+#, kde-format
 msgid "About Clock"
-msgstr "Kello"
+msgstr "Tietoa Kellosta"
 
 #: qml/settings/SettingsPage.qml:70
-#, fuzzy, kde-format
-#| msgid "About"
+#, kde-format
 msgid "About KDE"
-msgstr "Tietoa ohjelmasta"
+msgstr "Tietoa KDE:sta"
 
 #: qml/stopwatch/StopwatchPage.qml:63 qml/stopwatch/StopwatchPage.qml:134
 #: qml/timer/TimerListDelegate.qml:166 qml/timer/TimerPage.qml:52
