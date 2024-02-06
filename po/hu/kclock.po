@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kclock package.
 #
-# Kristof Kiszel <ulysses@fsf.hu>, 2022.
+# SPDX-FileCopyrightText: 2022, 2024 Kristof Kiszel <ulysses@fsf.hu>
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-18 02:00+0000\n"
-"PO-Revision-Date: 2022-02-14 09:20+0100\n"
+"PO-Revision-Date: 2024-02-05 21:59+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -15,17 +15,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 21.07.70\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Kovács Áron"
+msgstr "Kiszel Kristóf,Kovács Áron"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "aronkvh@gmail.com"
+msgstr "ulyssses@fsf.hu,aronkvh@gmail.com"
 
 #: main.cpp:42
 #, kde-format
@@ -38,10 +38,9 @@ msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr ""
 
 #: main.cpp:67
-#, fuzzy, kde-format
-#| msgid "© 2020-2021 KDE Community"
+#, kde-format
 msgid "© 2020-2022 KDE Community"
-msgstr "© A KDE közösség, 2020-2021."
+msgstr "© A KDE közösség, 2020-2022."
 
 #: main.cpp:69
 #, kde-format
@@ -131,10 +130,9 @@ msgid "1 hour"
 msgstr ""
 
 #: qml/alarm/AlarmForm.qml:167
-#, fuzzy, kde-format
-#| msgid "Snooze"
+#, kde-format
 msgid "Snooze Length:"
-msgstr "Szundi"
+msgstr "Szundi hossza:"
 
 #: qml/alarm/AlarmForm.qml:168
 #, kde-format
@@ -163,10 +161,9 @@ msgid "Editing %1"
 msgstr ""
 
 #: qml/alarm/AlarmFormPage.qml:27 qml/alarm/AlarmListPage.qml:31
-#, fuzzy, kde-format
-#| msgid "Alarm"
+#, kde-format
 msgid "New Alarm"
-msgstr "Ébresztés"
+msgstr "Új riasztás"
 
 #: qml/alarm/AlarmFormPage.qml:39 qml/alarm/AlarmFormPage.qml:62
 #: qml/timer/TimerFormWrapper.qml:85 qml/timer/TimerFormWrapper.qml:144
@@ -195,10 +192,9 @@ msgstr ""
 
 #: qml/alarm/AlarmListPage.qml:25 qml/components/BottomToolbar.qml:115
 #: qml/components/Sidebar.qml:112
-#, fuzzy, kde-format
-#| msgid "Alarm"
+#, kde-format
 msgid "Alarms"
-msgstr "Ébresztés"
+msgstr "Riasztások"
 
 #: qml/alarm/AlarmListPage.qml:37 qml/time/TimePage.qml:37
 #, kde-format
@@ -225,16 +221,14 @@ msgid "No alarms configured"
 msgstr ""
 
 #: qml/alarm/AlarmListPage.qml:83
-#, fuzzy, kde-format
-#| msgid "Alarm"
+#, kde-format
 msgid "Add alarm"
-msgstr "Ébresztés"
+msgstr "Riasztás hozzáadása"
 
 #: qml/alarm/AlarmListPage.qml:116
-#, fuzzy, kde-format
-#| msgid "Alarm"
+#, kde-format
 msgid "alarm"
-msgstr "Ébresztés"
+msgstr "riasztás"
 
 #: qml/alarm/AlarmListPage.qml:116
 #, kde-format
@@ -370,10 +364,9 @@ msgid "Clock"
 msgstr ""
 
 #: qml/settings/SettingsPage.qml:34
-#, fuzzy, kde-format
-#| msgid "Timer complete"
+#, kde-format
 msgid "Time Format"
-msgstr "Az időzítő lejárt"
+msgstr "Időformátum"
 
 #: qml/settings/SettingsPage.qml:38
 #, kde-format
@@ -589,10 +582,9 @@ msgid "New timer"
 msgstr ""
 
 #: qml/timer/TimerRingingPopup.qml:27
-#, fuzzy, kde-format
-#| msgid "Your timer %1 has finished!"
+#, kde-format
 msgid "Timer has finished"
-msgstr "Az időzítő lejárt lejárt: %1."
+msgstr "Az időzítő lejárt"
 
 #: qml/timer/TimerRingingPopup.qml:46
 #, kde-format
@@ -600,10 +592,9 @@ msgid "%1 has completed."
 msgstr ""
 
 #: qml/timer/TimerRingingPopup.qml:46
-#, fuzzy, kde-format
-#| msgid "Timer complete"
+#, kde-format
 msgid "The timer has completed."
-msgstr "Az időzítő lejárt"
+msgstr "Az időzítő befejeződött"
 
 #: savedlocationsmodel.cpp:110
 #, kde-format
