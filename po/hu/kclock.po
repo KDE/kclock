@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-18 02:00+0000\n"
+"POT-Creation-Date: 2024-02-08 00:40+0000\n"
 "PO-Revision-Date: 2024-02-05 21:59+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -190,7 +190,7 @@ msgctxt "@action:button"
 msgid "Delete"
 msgstr ""
 
-#: qml/alarm/AlarmListPage.qml:25 qml/components/BottomToolbar.qml:115
+#: qml/alarm/AlarmListPage.qml:25 qml/components/BottomToolbar.qml:118
 #: qml/components/Sidebar.qml:112
 #, kde-format
 msgid "Alarms"
@@ -280,19 +280,19 @@ msgstr ""
 msgid "All files (*)"
 msgstr ""
 
-#: qml/components/BottomToolbar.qml:85 qml/components/Sidebar.qml:58
+#: qml/components/BottomToolbar.qml:88 qml/components/Sidebar.qml:58
 #: qml/time/TimePage.qml:25
 #, kde-format
 msgid "Time"
 msgstr ""
 
-#: qml/components/BottomToolbar.qml:95 qml/components/Sidebar.qml:76
+#: qml/components/BottomToolbar.qml:98 qml/components/Sidebar.qml:76
 #: qml/timer/TimerListPage.qml:22
 #, kde-format
 msgid "Timers"
 msgstr ""
 
-#: qml/components/BottomToolbar.qml:105 qml/components/Sidebar.qml:94
+#: qml/components/BottomToolbar.qml:108 qml/components/Sidebar.qml:94
 #: qml/stopwatch/StopwatchPage.qml:24
 #, kde-format
 msgid "Stopwatch"
