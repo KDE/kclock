@@ -83,62 +83,41 @@ Kirigami.ScrollablePage {
             NumberAnimation { properties: "x,y"; duration: Kirigami.Units.longDuration; easing.type: Easing.InOutQuad }
         }
 
-        header: RowLayout {
+        header: Control {
             width: listView.width - (listView.ScrollBar.vertical ? listView.ScrollBar.vertical.width : 0)
-            height: clockItemLoader.height + Kirigami.Units.gridUnit
+            height: Kirigami.Units.gridUnit * 9
 
-            RowLayout {
-                Layout.alignment: Qt.AlignHCenter
-                Layout.maximumWidth: Kirigami.Units.gridUnit * 23
+            topPadding: 0
+            bottomPadding: 0
+            leftPadding: 0
+            rightPadding: 0
 
-                // left side - analog clock
-                Loader {
-                    id: clockItemLoader
+            background: Rectangle {
+                color: Kirigami.Theme.alternateBackgroundColor
+                Kirigami.Separator { anchors.bottom: parent.bottom; anchors.left: parent.left; anchors.right: parent.right }
+            }
 
-                    Layout.alignment: Qt.AlignHCenter
-                    width: Math.round(clockRadius * 2 + Kirigami.Units.gridUnit * 0.5)
-                    height: clockRadius * 2 + Kirigami.Units.gridUnit
-
-                    // reload clock when page opens for animation
-                    asynchronous: true
-                    Connections {
-                        target: applicationWindow().pageStack
-                        function onCurrentItemChanged(): void {
-                            clockItemLoader.active = applicationWindow().pageStack.currentItem == applicationWindow().getPage("Time");
-                        }
-                    }
-
-                    // clock item
-                    sourceComponent: Item {
-                        id: clockItem
-                        AnalogClock {
-                            id: analogClock
-                            anchors.centerIn: parent
-                            height: clockRadius * 2
-                            width: clockRadius * 2
-                        }
-                    }
-                }
-
-                Item { Layout.fillWidth: true }
-
-                // right side - digital clock + location
+            contentItem: Item {
                 ColumnLayout {
-                    Layout.alignment: Qt.AlignHCenter
-                    Layout.rightMargin: Kirigami.Units.gridUnit
+                    anchors.centerIn: parent
+                    // TODO: the clock visual doesn't show up for some reason, disable for now
                     Label {
-                        Layout.alignment: Qt.AlignRight
-                        font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 2.8)
-                        font.weight: Font.Bold
+                        id: clockLabel
+                        Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
+                        horizontalAlignment: Text.AlignHCenter
+                        font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 3)
+                        font.weight: Font.Regular
                         opacity: 0.7
                         text: KClockFormat.currentTime
-                        color: Kirigami.Theme.textColor
+                        color: Kirigami.ColorUtils.tintWithAlpha(Kirigami.Theme.textColor, Kirigami.Theme.activeTextColor, 0.5)
                     }
                     Label {
-                        Layout.alignment: Qt.AlignRight
+                        height: clockLabel.height // ensure they have the same height for alignment
+                        Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
+                        horizontalAlignment: Text.AlignHCenter
                         font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 1)
-                        text: UtilModel.tzName
                         font.weight: Font.Bold
+                        text: UtilModel.tzName
                         opacity: 0.9
                     }
                 }
