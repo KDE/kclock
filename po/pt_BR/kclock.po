@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-08 02:30+0000\n"
+"POT-Creation-Date: 2024-02-21 02:25+0000\n"
 "PO-Revision-Date: 2023-11-14 13:22-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -441,7 +441,7 @@ msgstr "Adicionar localização"
 msgid "Add"
 msgstr "Adicionar"
 
-#: qml/time/TimePage.qml:153
+#: qml/time/TimePage.qml:132
 #, kde-format
 msgid "No locations configured"
 msgstr "Nenhum local configurado"
