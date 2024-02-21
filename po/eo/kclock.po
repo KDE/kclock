@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-08 00:40+0000\n"
+"POT-Creation-Date: 2024-02-21 00:39+0000\n"
 "PO-Revision-Date: 2023-11-12 08:26+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -442,7 +442,7 @@ msgstr "Aldoni Lokon"
 msgid "Add"
 msgstr "Aldoni"
 
-#: qml/time/TimePage.qml:153
+#: qml/time/TimePage.qml:132
 #, kde-format
 msgid "No locations configured"
 msgstr "Neniuj lokoj agordis"

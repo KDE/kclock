@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-08 00:40+0000\n"
+"POT-Creation-Date: 2024-02-21 00:39+0000\n"
 "PO-Revision-Date: 2024-02-09 23:24+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -437,7 +437,7 @@ msgstr "위치 추가"
 msgid "Add"
 msgstr "추가"
 
-#: qml/time/TimePage.qml:153
+#: qml/time/TimePage.qml:132
 #, kde-format
 msgid "No locations configured"
 msgstr "설정한 위치 없음"
