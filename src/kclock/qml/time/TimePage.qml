@@ -124,13 +124,16 @@ Kirigami.ScrollablePage {
             }
         }
 
-        // no timezones placeholder
-        Kirigami.PlaceholderMessage {
-            anchors.centerIn: parent
-            anchors.verticalCenterOffset: Math.round(parent.headerItem.height / 4)
-            visible: listView.count == 0
-            text: i18n("No locations configured")
-            icon.name: "globe"
+        // backdrop
+        Kirigami.Icon {
+            opacity: 0.1
+            implicitWidth: Math.min(root.height, root.width)
+            implicitHeight: Math.min(root.height, root.width)
+            source: 'globe'
+            anchors.right: parent.right
+            anchors.bottom: parent.bottom
+            anchors.rightMargin: -root.width * 0.2
+            anchors.bottomMargin: -Math.min(root.height, root.width) * 0.4
         }
 
         // mobile action
