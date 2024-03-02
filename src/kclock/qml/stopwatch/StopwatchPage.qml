@@ -17,51 +17,28 @@ import "../components"
 import kclock
 
 Kirigami.ScrollablePage {
-    id: stopwatchpage
+    id: root
 
     property real yTranslate
 
     title: i18n("Stopwatch")
     icon.name: "chronometer"
 
-    property bool running: false
-    property int elapsedTime: StopwatchTimer.elapsedTime
-
-    Layout.fillWidth: true
-
-    function toggleStopwatch() {
-        running = !running;
-        StopwatchTimer.toggle();
-    }
-    function addLap() {
-        if (running) {
-            if (roundModel.count === 0) {
-                roundModel.append({ time: 0 }); // constantly counting lap
-                roundModel.append({ time: elapsedTime });
-            } else {
-                roundModel.insert(0, { time: 0 }); // insert constantly count lap
-                roundModel.get(1).time = elapsedTime;
-            }
-        }
-    }
-    function resetStopwatch() {
-        running = false;
-        roundModel.clear();
-        StopwatchTimer.reset();
-    }
+    readonly property bool running: !StopwatchTimer.stopped && !StopwatchTimer.paused
+    readonly property int elapsedTime: StopwatchTimer.elapsedTime
 
     // keyboard controls
-    Keys.onSpacePressed: toggleStopwatch();
-    Keys.onReturnPressed: addLap();
+    Keys.onSpacePressed: StopwatchTimer.toggle();
+    Keys.onReturnPressed: StopwatchModel.addLap();
 
     actions: [
-        // desktop action
+        // desktop resetaction
         Kirigami.Action {
             id: toggleAction
             visible: !Kirigami.Settings.isMobile
             icon.name: "chronometer-reset"
             text: i18n("Reset")
-            onTriggered: resetStopwatch()
+            onTriggered: StopwatchTimer.reset()
         },
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.IconOnly
@@ -76,18 +53,19 @@ Kirigami.ScrollablePage {
         transform: Translate { y: yTranslate }
         anchors.left: parent.left
         anchors.right: parent.right
-        spacing: Kirigami.Units.gridUnit
+        spacing: 0
 
         // clock display
         Item {
-            Layout.topMargin: Kirigami.Units.gridUnit
+            Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.alignment: Qt.AlignHCenter
             width: timeLabels.implicitWidth
             height: timeLabels.implicitHeight
 
+            // toggle when clicked
             MouseArea {
                 anchors.fill: timeLabels
-                onClicked: toggleStopwatch()
+                onClicked: StopwatchTimer.toggle()
             }
 
             Row {
@@ -118,31 +96,76 @@ Kirigami.ScrollablePage {
             }
         }
 
+        // elapsed duration for a lap
+        Label {
+            id: lapText
+            Layout.fillWidth: true
+            horizontalAlignment: Text.AlignHCenter
+
+            visible: listView.count > 0
+            opacity: 0.8
+
+            font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 1.1)
+            font.weight: Font.Bold
+
+            text: {
+                const duration = StopwatchTimer.elapsedTime - StopwatchModel.mostRecentLapTime;
+
+                const hours = UtilModel.displayTwoDigits(UtilModel.msToHoursPart(duration));
+                const minutes = UtilModel.displayTwoDigits(UtilModel.msToMinutesPart(duration));
+                const seconds = UtilModel.displayTwoDigits(UtilModel.msToSecondsPart(duration));
+                const small = UtilModel.displayTwoDigits(UtilModel.msToSmallPart(duration));
+
+                // only show hours if we have passed an hour
+                if (hours === '00') {
+                    return "%1:%2.%3".arg(minutes).arg(seconds).arg(small);
+                } else {
+                    return "%1:%2:%3.%4".arg(hours).arg(minutes).arg(seconds).arg(small);
+                }
+            }
+        }
+
         // reset button on mobile, start/pause on desktop, and lap button
         RowLayout {
             id: buttons
+            Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
-            Layout.bottomMargin: Kirigami.Units.gridUnit
 
             Item { Layout.fillWidth: true }
+
+            // on mobile -> reset button
+            // otherwise -> start/stop button
             Button {
                 implicitHeight: Kirigami.Units.gridUnit * 2
                 implicitWidth: Kirigami.Units.gridUnit * 6
                 Layout.alignment: Qt.AlignHCenter
 
-                icon.name: Kirigami.Settings.isMobile ? "chronometer-reset" : (running ? "chronometer-pause" : "chronometer-start")
-                text: Kirigami.Settings.isMobile ? i18n("Reset") : (running ? i18n("Pause") : i18n("Start"))
+                icon.name: Kirigami.Settings.isMobile ? "chronometer-reset" : (root.running ? "chronometer-pause" : "chronometer-start")
+                text: {
+                    if (Kirigami.Settings.isMobile) {
+                        return i18n("Reset");
+                    } else if (root.running) {
+                        return i18n("Pause");
+                    } else if (StopwatchTimer.paused) {
+                        return i18n("Resume")
+                    } else {
+                        return i18n("Start");
+                    }
+                }
 
                 onClicked: {
                     if (Kirigami.Settings.isMobile) {
-                        resetStopwatch();
+                        StopwatchTimer.reset();
                     } else {
-                        toggleStopwatch();
+                        StopwatchTimer.toggle();
                     }
                     focus = false; // prevent highlight
                 }
             }
+
             Item { Layout.fillWidth: true }
+
+            // add new lap button
             Button {
                 implicitHeight: Kirigami.Units.gridUnit * 2
                 implicitWidth: Kirigami.Units.gridUnit * 6
@@ -150,11 +173,48 @@ Kirigami.ScrollablePage {
 
                 icon.name: "chronometer-lap"
                 text: i18n("Lap")
-                enabled: running
+                enabled: root.running
 
                 onClicked: {
-                    addLap();
+                    StopwatchModel.addLap();
                     focus = false; // prevent highlight
+                }
+            }
+
+            Item { Layout.fillWidth: true }
+        }
+
+        // laps list header 
+        RowLayout {
+            Layout.topMargin: Kirigami.Units.gridUnit
+            Layout.bottomMargin: Kirigami.Units.largeSpacing
+            visible: listView.count > 0
+
+            Item { Layout.fillWidth: true }
+            RowLayout {
+                Layout.maximumWidth: Kirigami.Units.gridUnit * 16
+                Layout.preferredWidth: Kirigami.Units.gridUnit * 16
+
+                Label {
+                    horizontalAlignment: Text.AlignLeft
+                    text: i18n('Lap')
+                    font.pointSize: Kirigami.Theme.smallFont.pointSize
+                    font.bold: true
+                }
+
+                Label {
+                    Layout.fillWidth: true
+                    horizontalAlignment: Text.AlignHCenter
+                    text: i18n('Lap Time')
+                    font.pointSize: Kirigami.Theme.smallFont.pointSize
+                    font.bold: true
+                }
+
+                Label {
+                    horizontalAlignment: Text.AlignRight
+                    text: i18n('Total')
+                    font.pointSize: Kirigami.Theme.smallFont.pointSize
+                    font.bold: true
                 }
             }
             Item { Layout.fillWidth: true }
@@ -164,16 +224,12 @@ Kirigami.ScrollablePage {
     // lap list display
     ListView {
         id: listView
-        model: roundModel
+        model: StopwatchModel
         spacing: 0
         currentIndex: -1
         transform: Translate { y: yTranslate }
 
         reuseItems: true
-
-        ListModel {
-            id: roundModel
-        }
 
         remove: Transition {
             NumberAnimation { property: "opacity"; from: 0; to: 1.0; duration: Kirigami.Units.shortDuration }
@@ -184,22 +240,22 @@ Kirigami.ScrollablePage {
 
         // mobile action
         FloatingActionButton {
-            icon.name: stopwatchpage.running ? "chronometer-pause" : "chronometer-start"
-            onClicked: stopwatchpage.toggleStopwatch()
+            icon.name: root.running ? "chronometer-pause" : "chronometer-start"
             visible: Kirigami.Settings.isMobile
+            onClicked: StopwatchTimer.toggle()
         }
 
         // lap items
         delegate: ItemDelegate {
             id: listItem
 
-            y: -height
-
             background: null
             width: ListView.view.width
 
             ListView.onReused: opacityAnimation.restart()
             Component.onCompleted: opacityAnimation.restart()
+            Keys.onSpacePressed: StopwatchTimer.toggle()
+
             NumberAnimation on opacity {
                 id: opacityAnimation
                 duration: Kirigami.Units.shortDuration
@@ -207,23 +263,9 @@ Kirigami.ScrollablePage {
                 to: 1
             }
 
-            Keys.onSpacePressed: toggleStopwatch()
-
-            property int lapNumber: model.index == -1 ? -1 : roundModel.count - model.index
-
-            property double timeSinceLastLap: {
-                if (index === 0 && roundModel.get(1)) { // constantly updated lap (top lap)
-                    return parseFloat((elapsedTime - roundModel.get(1).time)/1000)
-                } else if (index === roundModel.count - 1) { // last lap
-                    return parseFloat(model.time / 1000)
-                } else if (model && roundModel.get(index+1)) {
-                    return parseFloat((model.time - roundModel.get(index+1).time)/1000)
-                } else {
-                    return 0;
-                }
-            }
-
-            property double timeSinceBeginning: parseFloat((index == 0 ? elapsedTime : model.time) / 1000)
+            readonly property int lapNumber: model.lapNumber
+            readonly property double timeSinceLastLap: model.lapTime
+            readonly property double timeSinceBeginning: model.lapTimeSinceBeginning
 
             contentItem: RowLayout {
                 Item { Layout.fillWidth: true }
@@ -232,37 +274,75 @@ Kirigami.ScrollablePage {
                     Layout.maximumWidth: Kirigami.Units.gridUnit * 16
                     Layout.preferredWidth: Kirigami.Units.gridUnit * 16
 
-                    // lap number
-                    Item {
-                        Layout.fillHeight: true
-                        Layout.leftMargin: Kirigami.Units.largeSpacing
-                        Layout.minimumWidth: Math.max(Kirigami.Units.gridUnit * 2, lapLabel.implicitWidth)
-                        Label {
-                            id: lapLabel
-                            anchors.verticalCenter: parent.verticalCenter
-                            font.weight: Font.Bold
-                            text: listItem.lapNumber >= 0 ? i18n("#%1", listItem.lapNumber) : ""
+                    Kirigami.Icon {
+                        implicitHeight: Kirigami.Units.iconSizes.small
+                        implicitWidth: Kirigami.Units.iconSizes.small
+                        source: {
+                            if (model.isBest && model.isWorst) {
+                                return 'flag-blue';
+                            } else if (model.isBest) {
+                                return 'flag-green';
+                            } else if (model.isWorst) {
+                                return 'flag-red';
+                            }
+                            return 'flag-blue';
                         }
+                        Layout.alignment: Qt.AlignBottom
+                    }
+
+                    // lap number
+                    Label {
+                        id: lapLabel
+                        Layout.leftMargin: Kirigami.Units.largeSpacing
+                        font.weight: Font.Bold
+                        text: listItem.lapNumber >= 0 ? i18n("#%1", listItem.lapNumber) : ""
                     }
 
                     // time since last lap
                     Label {
-                        Layout.alignment: Qt.AlignLeft
-                        text: isNaN(timeSinceLastLap) ? "" : "+" + listItem.timeSinceLastLap.toFixed(2);
+                        Layout.fillWidth: true
+                        horizontalAlignment: Text.AlignHCenter
+                        text: {
+                            if (isNaN(timeSinceLastLap)) { 
+                                return ""; 
+                            }
+
+                            const duration = listItem.timeSinceLastLap;
+                            const hours = UtilModel.displayTwoDigits(UtilModel.msToHoursPart(duration));
+                            const minutes = UtilModel.displayTwoDigits(UtilModel.msToMinutesPart(duration));
+                            const seconds = UtilModel.displayTwoDigits(UtilModel.msToSecondsPart(duration));
+                            const small = UtilModel.displayTwoDigits(UtilModel.msToSmallPart(duration));
+
+                            // only show hours if we have passed an hour
+                            if (hours === '00') {
+                                return "+%1:%2.%3".arg(minutes).arg(seconds).arg(small);
+                            } else {
+                                return "+%1:%2:%3.%4".arg(hours).arg(minutes).arg(seconds).arg(small);
+                            }
+                        }
                     }
 
-                    Item { Layout.fillWidth: true }
-
                     // time since beginning
-                    Item {
-                        Layout.fillHeight: true
-                        Layout.alignment: Qt.AlignRight
-                        Layout.minimumWidth: Kirigami.Units.gridUnit * 3
-                        Label {
-                            anchors.left: parent.left
-                            anchors.verticalCenter: parent.verticalCenter
-                            color: Kirigami.Theme.focusColor
-                            text: isNaN(timeSinceBeginning) ? "" : listItem.timeSinceBeginning.toFixed(2)
+                    Label {
+                        horizontalAlignment: Text.AlignRight
+                        color: Kirigami.Theme.focusColor
+                        text: {
+                            if (isNaN(timeSinceBeginning)) { 
+                                return ""; 
+                            }
+
+                            const duration = listItem.timeSinceBeginning;
+                            const hours = UtilModel.displayTwoDigits(UtilModel.msToHoursPart(duration));
+                            const minutes = UtilModel.displayTwoDigits(UtilModel.msToMinutesPart(duration));
+                            const seconds = UtilModel.displayTwoDigits(UtilModel.msToSecondsPart(duration));
+                            const small = UtilModel.displayTwoDigits(UtilModel.msToSmallPart(duration));
+
+                            // only show hours if we have passed an hour
+                            if (hours === '00') {
+                                return "%1:%2.%3".arg(minutes).arg(seconds).arg(small);
+                            } else {
+                                return "%1:%2:%3.%4".arg(hours).arg(minutes).arg(seconds).arg(small);
+                            }
                         }
                     }
                 }

@@ -1,9 +1,6 @@
-/*
- * Copyright 2020 Han Young <hanyoung@protonmail.com>
- * Copyright 2020-2021 Devin Lin <devin@kde.org>
- *
- * SPDX-License-Identifier: GPL-2.0-or-later
- */
+// SPDX-FileCopyrightText: 2020 Han Young <hanyoung@protonmail.com>
+// SPDX-FileCopyrightText: 2020-2024 Devin Lin <devin@kde.org>
+// SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "utilmodel.h"
 #include "settingsmodel.h"
@@ -116,4 +113,29 @@ bool UtilModel::use24HourTime() const
 bool UtilModel::isLocale24HourTime() const
 {
     return QLocale::system().timeFormat(QLocale::ShortFormat).toLower().indexOf(QStringLiteral("ap")) == -1;
+}
+
+qint64 UtilModel::msToHoursPart(qint64 ms) const
+{
+    return ms / 1000 / 60 / 60;
+}
+
+qint64 UtilModel::msToMinutesPart(qint64 ms) const
+{
+    return ms / 1000 / 60 - 60 * msToHoursPart(ms);
+}
+
+qint64 UtilModel::msToSecondsPart(qint64 ms) const
+{
+    return ms / 1000 - 60 * msToMinutesPart(ms) - 60 * 60 * msToHoursPart(ms);
+}
+
+qint64 UtilModel::msToSmallPart(qint64 ms) const
+{
+    return ms / 10 - 100 * msToSecondsPart(ms) - 100 * 60 * msToMinutesPart(ms) - 100 * 60 * 60 * msToHoursPart(ms);
+}
+
+QString UtilModel::displayTwoDigits(const qint64 &amount)
+{
+    return QStringLiteral("%1").arg(amount, 2, 10, QLatin1Char('0'));
 }

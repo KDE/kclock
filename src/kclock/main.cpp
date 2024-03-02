@@ -12,6 +12,7 @@
 #include "kclockformat.h"
 #include "savedlocationsmodel.h"
 #include "settingsmodel.h"
+#include "stopwatchmodel.h"
 #include "stopwatchtimer.h"
 #include "timer.h"
 #include "timermodel.h"
@@ -64,7 +65,7 @@ int main(int argc, char *argv[])
                          QStringLiteral(KCLOCK_VERSION_STRING),
                          i18n("Set alarms and timers, use a stopwatch, and manage world clocks"),
                          KAboutLicense::GPL,
-                         i18n("© 2020-2022 KDE Community"));
+                         i18n("© 2020-2024 KDE Community"));
     aboutData.setBugAddress("https://bugs.kde.org/describecomponents.cgi?product=KClock");
     aboutData.addAuthor(i18n("Devin Lin"), QString(), QStringLiteral("devin@kde.org"));
     aboutData.addAuthor(i18n("Han Young"), QString(), QStringLiteral("hanyoung@protonmail.com"));
@@ -91,7 +92,6 @@ int main(int argc, char *argv[])
     // ~~~ Qt application setup ~~~~
 
     // initialize models
-    auto *stopwatchTimer = new StopwatchTimer();
     auto *weekModel = new WeekModel();
 
     // register QML types
@@ -116,8 +116,11 @@ int main(int argc, char *argv[])
     qmlRegisterSingletonType<UtilModel>("kclock", 1, 0, "UtilModel", [](QQmlEngine *, QJSEngine *) -> QObject * {
         return UtilModel::instance();
     });
-    qmlRegisterSingletonType<StopwatchTimer>("kclock", 1, 0, "StopwatchTimer", [stopwatchTimer](QQmlEngine *, QJSEngine *) -> QObject * {
-        return stopwatchTimer;
+    qmlRegisterSingletonType<StopwatchTimer>("kclock", 1, 0, "StopwatchModel", [](QQmlEngine *, QJSEngine *) -> QObject * {
+        return StopwatchModel::instance();
+    });
+    qmlRegisterSingletonType<StopwatchTimer>("kclock", 1, 0, "StopwatchTimer", [](QQmlEngine *, QJSEngine *) -> QObject * {
+        return StopwatchTimer::instance();
     });
     qmlRegisterSingletonType<KclockFormat>("kclock", 1, 0, "KClockFormat", [](QQmlEngine *, QJSEngine *) -> QObject * {
         return KclockFormat::instance();

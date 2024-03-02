@@ -22,6 +22,8 @@ set(kclock_SRCS
     kclockformat.h
     settingsmodel.cpp
     settingsmodel.h
+    stopwatchmodel.cpp
+    stopwatchmodel.h
     addlocationmodel.cpp
     addlocationmodel.h
     timerpresetmodel.cpp

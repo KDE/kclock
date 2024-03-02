@@ -1,117 +1,135 @@
-/*
- * Copyright 2020 Han Young <hanyoung@protonmail.com>
- * Copyright 2020-2021 Devin Lin <devin@kde.org>
- *
- * SPDX-License-Identifier: GPL-2.0-or-later
- */
+// SPDX-FileCopyrightText: 2020 Han Young <hanyoung@protonmail.com>
+// SPDX-FileCopyrightText: 2020-2024 Devin Lin <devin@kde.org>
+// SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "stopwatchtimer.h"
+#include "utilmodel.h"
 
 #include <QDebug>
+
+const int STOPWATCH_DISPLAY_INTERVAL = 41; // 24fps
+
+StopwatchTimer *StopwatchTimer::instance()
+{
+    static StopwatchTimer *timer = new StopwatchTimer;
+    return timer;
+}
 
 StopwatchTimer::StopwatchTimer(QObject *parent)
     : QObject(parent)
     , m_timer{new QTimer{this}}
 {
-    connect(m_timer, &QTimer::timeout, this, &StopwatchTimer::updateTime);
+    connect(m_timer, &QTimer::timeout, this, &StopwatchTimer::timeChanged);
 }
 
-void StopwatchTimer::updateTime()
+bool StopwatchTimer::paused()
 {
-    Q_EMIT timeChanged();
+    return m_paused;
+}
+
+bool StopwatchTimer::stopped()
+{
+    return m_stopped;
 }
 
 void StopwatchTimer::toggle()
 {
-    if (stopped) { // start (from zero)
-        stopped = false;
-        paused = false;
+    if (m_stopped) {
+        // start (from zero)
+        m_stopped = false;
+        m_paused = false;
+        m_timerStartStamp = QDateTime::currentMSecsSinceEpoch();
 
-        timerStartStamp = QDateTime::currentMSecsSinceEpoch();
-        pausedElapsed = 0;
+        Q_EMIT stoppedChanged();
+        m_timer->start(STOPWATCH_DISPLAY_INTERVAL);
+    } else if (m_paused) {
+        // unpause
+        m_paused = false;
+        m_pausedElapsed += QDateTime::currentMSecsSinceEpoch() - m_pausedStamp;
 
-        m_timer->start(m_interval);
-    } else if (paused) { // unpause
-        paused = false;
+        m_timer->start(STOPWATCH_DISPLAY_INTERVAL);
+    } else {
+        // pause
+        m_paused = true;
+        m_pausedStamp = QDateTime::currentMSecsSinceEpoch();
 
-        pausedElapsed += QDateTime::currentMSecsSinceEpoch() - pausedStamp;
-
-        m_timer->start(m_interval);
-    } else { // pause
-        paused = true;
-        pausedStamp = QDateTime::currentMSecsSinceEpoch();
         m_timer->stop();
     }
+
+    Q_EMIT pausedChanged();
 }
 
 void StopwatchTimer::reset()
 {
     m_timer->stop();
-    pausedElapsed = 0;
-    stopped = true;
-    paused = false;
+
+    m_timerStartStamp = 0;
+    m_pausedElapsed = 0;
+    m_stopped = true;
+    m_paused = false;
+
+    Q_EMIT stoppedChanged();
+    Q_EMIT pausedChanged();
     Q_EMIT timeChanged();
+
+    Q_EMIT resetTriggered();
 }
 
 long long StopwatchTimer::elapsedTime() const
 {
-    long long cur = QDateTime::currentMSecsSinceEpoch();
-    if (stopped) {
+    qint64 currentTime = QDateTime::currentMSecsSinceEpoch();
+
+    if (m_stopped) {
         return 0;
-    } else if (paused) {
-        return cur - timerStartStamp - pausedElapsed - (cur - pausedStamp);
+    } else if (m_paused) {
+        return currentTime - m_timerStartStamp - m_pausedElapsed - (currentTime - m_pausedStamp);
     } else {
-        return cur - timerStartStamp - pausedElapsed;
+        return currentTime - m_timerStartStamp - m_pausedElapsed;
     }
 }
 
-long long StopwatchTimer::hours() const
+qint64 StopwatchTimer::hours() const
 {
-    return elapsedTime() / 3600000;
+    return UtilModel::instance()->msToHoursPart(elapsedTime());
 }
 
-long long StopwatchTimer::minutes() const
+qint64 StopwatchTimer::minutes() const
 {
-    return elapsedTime() / 1000 / 60;
+    return UtilModel::instance()->msToMinutesPart(elapsedTime());
 }
 
-long long StopwatchTimer::seconds() const
+qint64 StopwatchTimer::seconds() const
 {
-    return elapsedTime() / 1000 - 60 * minutes();
+    return UtilModel::instance()->msToSecondsPart(elapsedTime());
 }
 
-long long StopwatchTimer::small() const
+qint64 StopwatchTimer::small() const
 {
-    return elapsedTime() / 10 - 100 * seconds() - 100 * 60 * minutes();
-}
-
-QString StopwatchTimer::displayZeroOrAmount(const int &amount)
-{
-    return QStringLiteral("%1").arg(amount, 2, 10, QLatin1Char('0'));
+    return UtilModel::instance()->msToSmallPart(elapsedTime());
 }
 
 QString StopwatchTimer::hoursDisplay() const
 {
-    long long amount = hours();
-    return displayZeroOrAmount(amount);
+    qint64 amount = hours();
+    return UtilModel::instance()->displayTwoDigits(amount);
 }
 
 QString StopwatchTimer::minutesDisplay() const
 {
     // % 60 discards anything above 60 minutes. Not used in minutes() because
     // it may tamper with seconds() and small().
-    long long amount = minutes() % 60;
-    return displayZeroOrAmount(amount);
+    qint64 amount = minutes() % 60;
+    return UtilModel::instance()->displayTwoDigits(amount);
 }
 
 QString StopwatchTimer::secondsDisplay() const
 {
-    long long amount = seconds();
-    return displayZeroOrAmount(amount);
+    qint64 amount = seconds();
+    return UtilModel::instance()->displayTwoDigits(amount);
 }
 
 QString StopwatchTimer::smallDisplay() const
 {
-    long long amount = small();
-    return displayZeroOrAmount(amount);
+    qint64 amount = small();
+    return UtilModel::instance()->displayTwoDigits(amount);
 }

@@ -1,9 +1,6 @@
-/*
- * Copyright 2020 Han Young <hanyoung@protonmail.com>
- * Copyright 2020-2021 Devin Lin <devin@kde.org>
- *
- * SPDX-License-Identifier: GPL-2.0-or-later
- */
+// SPDX-FileCopyrightText: 2020 Han Young <hanyoung@protonmail.com>
+// SPDX-FileCopyrightText: 2020-2024 Devin Lin <devin@kde.org>
+// SPDX-License-Identifier: GPL-2.0-or-later
 
 #pragma once
 
@@ -30,6 +27,13 @@ public:
 
     QString timeFormat() const;
     bool use24HourTime() const;
+
+    // use to turn milliseconds -> hh:mm:ss.00
+    Q_INVOKABLE qint64 msToHoursPart(qint64 ms) const;
+    Q_INVOKABLE qint64 msToMinutesPart(qint64 ms) const;
+    Q_INVOKABLE qint64 msToSecondsPart(qint64 ms) const;
+    Q_INVOKABLE qint64 msToSmallPart(qint64 ms) const; // hundredths of second
+    Q_INVOKABLE QString displayTwoDigits(const qint64 &amount);
 
 private:
     bool isLocale24HourTime() const;
