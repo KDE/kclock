@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-21 00:39+0000\n"
+"POT-Creation-Date: 2024-03-03 00:41+0000\n"
 "PO-Revision-Date: 2021-06-12 21:25+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -27,28 +27,28 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "sstavra@gmail.com"
 
-#: main.cpp:42
+#: main.cpp:43
 #, kde-format
 msgid "Select opened page"
 msgstr "Επιλέξτε ανοιγμένη σελίδα"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-format
 msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr ""
 
-#: main.cpp:67
+#: main.cpp:68
 #, fuzzy, kde-format
 #| msgid "© 2020 KDE Community"
-msgid "© 2020-2022 KDE Community"
+msgid "© 2020-2024 KDE Community"
 msgstr "© 2020 Η Κοινότητα του KDE"
 
-#: main.cpp:69
+#: main.cpp:70
 #, kde-format
 msgid "Devin Lin"
 msgstr "Devin Lin"
 
-#: main.cpp:70
+#: main.cpp:71
 #, kde-format
 msgid "Han Young"
 msgstr "Han Young"
@@ -214,7 +214,7 @@ msgid "Edit"
 msgstr "Επεξεργασία"
 
 #: qml/alarm/AlarmListPage.qml:46 qml/components/Sidebar.qml:138
-#: qml/settings/SettingsPage.qml:22 qml/stopwatch/StopwatchPage.qml:70
+#: qml/settings/SettingsPage.qml:22 qml/stopwatch/StopwatchPage.qml:47
 #: qml/time/TimePage.qml:60 qml/timer/TimerListPage.qml:37
 #, kde-format
 msgid "Settings"
@@ -410,31 +410,36 @@ msgstr "Ρολόι"
 msgid "About KDE"
 msgstr "Περίγραμμα"
 
-#: qml/stopwatch/StopwatchPage.qml:63 qml/stopwatch/StopwatchPage.qml:134
+#: qml/stopwatch/StopwatchPage.qml:40 qml/stopwatch/StopwatchPage.qml:146
 #: qml/timer/TimerListDelegate.qml:166 qml/timer/TimerPage.qml:52
 #: qml/timer/TimerPage.qml:100
 #, kde-format
 msgid "Reset"
 msgstr "Επαναφορά"
 
-#: qml/stopwatch/StopwatchPage.qml:134 qml/timer/TimerListDelegate.qml:156
+#: qml/stopwatch/StopwatchPage.qml:148 qml/timer/TimerListDelegate.qml:156
 #: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
 #, kde-format
 msgid "Pause"
 msgstr "Παύση"
 
-#: qml/stopwatch/StopwatchPage.qml:134 qml/timer/TimerListDelegate.qml:156
+#: qml/stopwatch/StopwatchPage.qml:150
+#, kde-format
+msgid "Resume"
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:152 qml/timer/TimerListDelegate.qml:156
 #: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
 #, kde-format
 msgid "Start"
 msgstr "Έναρξη"
 
-#: qml/stopwatch/StopwatchPage.qml:152
+#: qml/stopwatch/StopwatchPage.qml:175
 #, kde-format
 msgid "Lap"
 msgstr "Γύρος"
 
-#: qml/stopwatch/StopwatchPage.qml:244
+#: qml/stopwatch/StopwatchPage.qml:298
 #, kde-format
 msgid "#%1"
 msgstr ""
@@ -454,12 +459,6 @@ msgstr "Προσθήκη ζώνης ώρας"
 #, kde-format
 msgid "Add"
 msgstr ""
-
-#: qml/time/TimePage.qml:132
-#, fuzzy, kde-format
-#| msgid "No alarms configured"
-msgid "No locations configured"
-msgstr "Δεν έχουν διαμορφωθεί συναγερμοί"
 
 #: qml/timer/PresetDurationButton.qml:23 qml/timer/TimerForm.qml:39
 #, fuzzy, kde-format
@@ -678,48 +677,53 @@ msgstr "%1 %2 πίσω"
 msgid "Local time"
 msgstr "Τοπική ώρα"
 
-#: utilmodel.cpp:77
+#: utilmodel.cpp:74
 #, kde-format
 msgid "%1 day"
 msgid_plural "%1 days"
 msgstr[0] "%1 ημέρα"
 msgstr[1] "%1 ημέρες"
 
-#: utilmodel.cpp:81
+#: utilmodel.cpp:78
 #, kde-format
 msgid ", "
 msgstr ", "
 
-#: utilmodel.cpp:83 utilmodel.cpp:89
+#: utilmodel.cpp:80 utilmodel.cpp:86
 #, kde-format
 msgid " and "
 msgstr " και "
 
-#: utilmodel.cpp:85
+#: utilmodel.cpp:82
 #, kde-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
 msgstr[0] "%1 ώρα"
 msgstr[1] "%1 ώρες"
 
-#: utilmodel.cpp:91
+#: utilmodel.cpp:88
 #, kde-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1 λεπτό"
 msgstr[1] "%1 λεπτά"
 
-#: utilmodel.cpp:95
+#: utilmodel.cpp:92
 #, fuzzy, kde-format
 #| msgid "Alarm will be rung within a minute"
 msgid "Alarm will ring in under a minute"
 msgstr "Ο συναγερμός θα ηχήσει σε ένα λεπτό"
 
-#: utilmodel.cpp:97
+#: utilmodel.cpp:94
 #, fuzzy, kde-format
 #| msgid "Alarm will be rung after %1"
 msgid "Alarm will ring in %1"
 msgstr "Ο συναγερμός θα ηχήσει μετά από %1"
+
+#, fuzzy
+#~| msgid "No alarms configured"
+#~ msgid "No locations configured"
+#~ msgstr "Δεν έχουν διαμορφωθεί συναγερμοί"
 
 #~ msgid "Snoozed %1 minutes"
 #~ msgstr "Αναβολή %1 λεπτά"

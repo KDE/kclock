@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-21 00:39+0000\n"
+"POT-Creation-Date: 2024-03-03 00:41+0000\n"
 "PO-Revision-Date: 2023-11-14 13:22-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -27,29 +27,30 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "elchevive@opensuse.org"
 
-#: main.cpp:42
+#: main.cpp:43
 #, kde-format
 msgid "Select opened page"
 msgstr "Selecionar página aberta"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-format
 msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr ""
 "Definir alarmes e temporizadores, use um cronômetro e gerencie relógios "
 "mundiais"
 
-#: main.cpp:67
-#, kde-format
-msgid "© 2020-2022 KDE Community"
+#: main.cpp:68
+#, fuzzy, kde-format
+#| msgid "© 2020-2022 KDE Community"
+msgid "© 2020-2024 KDE Community"
 msgstr "© 2020-2022 Comunidade KDE"
 
-#: main.cpp:69
+#: main.cpp:70
 #, kde-format
 msgid "Devin Lin"
 msgstr "Devin Lin"
 
-#: main.cpp:70
+#: main.cpp:71
 #, kde-format
 msgid "Han Young"
 msgstr "Han Young"
@@ -204,7 +205,7 @@ msgid "Edit"
 msgstr "Editar"
 
 #: qml/alarm/AlarmListPage.qml:46 qml/components/Sidebar.qml:138
-#: qml/settings/SettingsPage.qml:22 qml/stopwatch/StopwatchPage.qml:70
+#: qml/settings/SettingsPage.qml:22 qml/stopwatch/StopwatchPage.qml:47
 #: qml/time/TimePage.qml:60 qml/timer/TimerListPage.qml:37
 #, kde-format
 msgid "Settings"
@@ -397,31 +398,36 @@ msgstr "Sober o Relógio"
 msgid "About KDE"
 msgstr "Sobre o KDE"
 
-#: qml/stopwatch/StopwatchPage.qml:63 qml/stopwatch/StopwatchPage.qml:134
+#: qml/stopwatch/StopwatchPage.qml:40 qml/stopwatch/StopwatchPage.qml:146
 #: qml/timer/TimerListDelegate.qml:166 qml/timer/TimerPage.qml:52
 #: qml/timer/TimerPage.qml:100
 #, kde-format
 msgid "Reset"
 msgstr "Redefinir"
 
-#: qml/stopwatch/StopwatchPage.qml:134 qml/timer/TimerListDelegate.qml:156
+#: qml/stopwatch/StopwatchPage.qml:148 qml/timer/TimerListDelegate.qml:156
 #: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
 #, kde-format
 msgid "Pause"
 msgstr "Pausar"
 
-#: qml/stopwatch/StopwatchPage.qml:134 qml/timer/TimerListDelegate.qml:156
+#: qml/stopwatch/StopwatchPage.qml:150
+#, kde-format
+msgid "Resume"
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:152 qml/timer/TimerListDelegate.qml:156
 #: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
 #, kde-format
 msgid "Start"
 msgstr "Iniciar"
 
-#: qml/stopwatch/StopwatchPage.qml:152
+#: qml/stopwatch/StopwatchPage.qml:175
 #, kde-format
 msgid "Lap"
 msgstr "Volta"
 
-#: qml/stopwatch/StopwatchPage.qml:244
+#: qml/stopwatch/StopwatchPage.qml:298
 #, kde-format
 msgid "#%1"
 msgstr "#%1"
@@ -440,11 +446,6 @@ msgstr "Adicionar localização"
 #, kde-format
 msgid "Add"
 msgstr "Adicionar"
-
-#: qml/time/TimePage.qml:132
-#, kde-format
-msgid "No locations configured"
-msgstr "Nenhum local configurado"
 
 #: qml/timer/PresetDurationButton.qml:23 qml/timer/TimerForm.qml:39
 #, kde-format
@@ -647,46 +648,49 @@ msgstr "%1 horas atrás"
 msgid "Local time"
 msgstr "Hora local"
 
-#: utilmodel.cpp:77
+#: utilmodel.cpp:74
 #, kde-format
 msgid "%1 day"
 msgid_plural "%1 days"
 msgstr[0] "%1 dia"
 msgstr[1] "%1 dias"
 
-#: utilmodel.cpp:81
+#: utilmodel.cpp:78
 #, kde-format
 msgid ", "
 msgstr ", "
 
-#: utilmodel.cpp:83 utilmodel.cpp:89
+#: utilmodel.cpp:80 utilmodel.cpp:86
 #, kde-format
 msgid " and "
 msgstr " e "
 
-#: utilmodel.cpp:85
+#: utilmodel.cpp:82
 #, kde-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
 msgstr[0] "%1 hora"
 msgstr[1] "%1 horas"
 
-#: utilmodel.cpp:91
+#: utilmodel.cpp:88
 #, kde-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1 minuto"
 msgstr[1] "%1 minutos"
 
-#: utilmodel.cpp:95
+#: utilmodel.cpp:92
 #, kde-format
 msgid "Alarm will ring in under a minute"
 msgstr "O alarme tocará em menos de um minuto"
 
-#: utilmodel.cpp:97
+#: utilmodel.cpp:94
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "O alarme tocará em %1"
+
+#~ msgid "No locations configured"
+#~ msgstr "Nenhum local configurado"
 
 #~ msgid "Select Time Format"
 #~ msgstr "Selecionar formato de hora"

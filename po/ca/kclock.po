@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-21 00:39+0000\n"
+"POT-Creation-Date: 2024-03-03 00:41+0000\n"
 "PO-Revision-Date: 2023-11-12 16:25+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -30,29 +30,30 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "antonibella5@yahoo.com"
 
-#: main.cpp:42
+#: main.cpp:43
 #, kde-format
 msgid "Select opened page"
 msgstr "Selecciona la pàgina oberta"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-format
 msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr ""
 "Establiu alarmes i temporitzadors, useu un cronòmetre i gestioneu els "
 "rellotges mundials"
 
-#: main.cpp:67
-#, kde-format
-msgid "© 2020-2022 KDE Community"
+#: main.cpp:68
+#, fuzzy, kde-format
+#| msgid "© 2020-2022 KDE Community"
+msgid "© 2020-2024 KDE Community"
 msgstr "© 2020-2022 La comunitat KDE"
 
-#: main.cpp:69
+#: main.cpp:70
 #, kde-format
 msgid "Devin Lin"
 msgstr "Devin Lin"
 
-#: main.cpp:70
+#: main.cpp:71
 #, kde-format
 msgid "Han Young"
 msgstr "Han Young"
@@ -207,7 +208,7 @@ msgid "Edit"
 msgstr "Edita"
 
 #: qml/alarm/AlarmListPage.qml:46 qml/components/Sidebar.qml:138
-#: qml/settings/SettingsPage.qml:22 qml/stopwatch/StopwatchPage.qml:70
+#: qml/settings/SettingsPage.qml:22 qml/stopwatch/StopwatchPage.qml:47
 #: qml/time/TimePage.qml:60 qml/timer/TimerListPage.qml:37
 #, kde-format
 msgid "Settings"
@@ -400,31 +401,36 @@ msgstr "Quant al rellotge"
 msgid "About KDE"
 msgstr "Quant al KDE"
 
-#: qml/stopwatch/StopwatchPage.qml:63 qml/stopwatch/StopwatchPage.qml:134
+#: qml/stopwatch/StopwatchPage.qml:40 qml/stopwatch/StopwatchPage.qml:146
 #: qml/timer/TimerListDelegate.qml:166 qml/timer/TimerPage.qml:52
 #: qml/timer/TimerPage.qml:100
 #, kde-format
 msgid "Reset"
 msgstr "Reinicia"
 
-#: qml/stopwatch/StopwatchPage.qml:134 qml/timer/TimerListDelegate.qml:156
+#: qml/stopwatch/StopwatchPage.qml:148 qml/timer/TimerListDelegate.qml:156
 #: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
 #, kde-format
 msgid "Pause"
 msgstr "Pausa"
 
-#: qml/stopwatch/StopwatchPage.qml:134 qml/timer/TimerListDelegate.qml:156
+#: qml/stopwatch/StopwatchPage.qml:150
+#, kde-format
+msgid "Resume"
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:152 qml/timer/TimerListDelegate.qml:156
 #: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
 #, kde-format
 msgid "Start"
 msgstr "Inicia"
 
-#: qml/stopwatch/StopwatchPage.qml:152
+#: qml/stopwatch/StopwatchPage.qml:175
 #, kde-format
 msgid "Lap"
 msgstr "Volta"
 
-#: qml/stopwatch/StopwatchPage.qml:244
+#: qml/stopwatch/StopwatchPage.qml:298
 #, kde-format
 msgid "#%1"
 msgstr "núm. %1"
@@ -443,11 +449,6 @@ msgstr "Afegeix una ubicació"
 #, kde-format
 msgid "Add"
 msgstr "Afegeix"
-
-#: qml/time/TimePage.qml:132
-#, kde-format
-msgid "No locations configured"
-msgstr "No s'ha configurat cap ubicació"
 
 #: qml/timer/PresetDurationButton.qml:23 qml/timer/TimerForm.qml:39
 #, kde-format
@@ -650,43 +651,46 @@ msgstr "Fa %1 hores"
 msgid "Local time"
 msgstr "Hora local"
 
-#: utilmodel.cpp:77
+#: utilmodel.cpp:74
 #, kde-format
 msgid "%1 day"
 msgid_plural "%1 days"
 msgstr[0] "%1 dia"
 msgstr[1] "%1 dies"
 
-#: utilmodel.cpp:81
+#: utilmodel.cpp:78
 #, kde-format
 msgid ", "
 msgstr ", "
 
-#: utilmodel.cpp:83 utilmodel.cpp:89
+#: utilmodel.cpp:80 utilmodel.cpp:86
 #, kde-format
 msgid " and "
 msgstr " i "
 
-#: utilmodel.cpp:85
+#: utilmodel.cpp:82
 #, kde-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
 msgstr[0] "%1 hora"
 msgstr[1] "%1 hores"
 
-#: utilmodel.cpp:91
+#: utilmodel.cpp:88
 #, kde-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1 minut"
 msgstr[1] "%1 minuts"
 
-#: utilmodel.cpp:95
+#: utilmodel.cpp:92
 #, kde-format
 msgid "Alarm will ring in under a minute"
 msgstr "L'alarma sonarà en menys d'un minut"
 
-#: utilmodel.cpp:97
+#: utilmodel.cpp:94
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "L'alarma sonarà després de %1"
+
+#~ msgid "No locations configured"
+#~ msgstr "No s'ha configurat cap ubicació"

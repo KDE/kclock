@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-21 00:39+0000\n"
+"POT-Creation-Date: 2024-03-03 00:41+0000\n"
 "PO-Revision-Date: 2023-11-12 08:26+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -28,29 +28,30 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "okellogg@users.sourceforge.net"
 
-#: main.cpp:42
+#: main.cpp:43
 #, kde-format
 msgid "Select opened page"
 msgstr "Elekti malfermitan paĝon"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-format
 msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr ""
 "Agordi alarmojn kaj tempigilojn, uzi kronometron kaj administru mondajn "
 "horloĝojn"
 
-#: main.cpp:67
-#, kde-format
-msgid "© 2020-2022 KDE Community"
+#: main.cpp:68
+#, fuzzy, kde-format
+#| msgid "© 2020-2022 KDE Community"
+msgid "© 2020-2024 KDE Community"
 msgstr "© 2020-2022 KDE-Komunumo"
 
-#: main.cpp:69
+#: main.cpp:70
 #, kde-format
 msgid "Devin Lin"
 msgstr "Devin Lin"
 
-#: main.cpp:70
+#: main.cpp:71
 #, kde-format
 msgid "Han Young"
 msgstr "Han Young"
@@ -205,7 +206,7 @@ msgid "Edit"
 msgstr "Redakti"
 
 #: qml/alarm/AlarmListPage.qml:46 qml/components/Sidebar.qml:138
-#: qml/settings/SettingsPage.qml:22 qml/stopwatch/StopwatchPage.qml:70
+#: qml/settings/SettingsPage.qml:22 qml/stopwatch/StopwatchPage.qml:47
 #: qml/time/TimePage.qml:60 qml/timer/TimerListPage.qml:37
 #, kde-format
 msgid "Settings"
@@ -398,31 +399,36 @@ msgstr "Pri Clock"
 msgid "About KDE"
 msgstr "Pri KDE"
 
-#: qml/stopwatch/StopwatchPage.qml:63 qml/stopwatch/StopwatchPage.qml:134
+#: qml/stopwatch/StopwatchPage.qml:40 qml/stopwatch/StopwatchPage.qml:146
 #: qml/timer/TimerListDelegate.qml:166 qml/timer/TimerPage.qml:52
 #: qml/timer/TimerPage.qml:100
 #, kde-format
 msgid "Reset"
 msgstr "Restarigi"
 
-#: qml/stopwatch/StopwatchPage.qml:134 qml/timer/TimerListDelegate.qml:156
+#: qml/stopwatch/StopwatchPage.qml:148 qml/timer/TimerListDelegate.qml:156
 #: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
 #, kde-format
 msgid "Pause"
 msgstr "Paŭzi"
 
-#: qml/stopwatch/StopwatchPage.qml:134 qml/timer/TimerListDelegate.qml:156
+#: qml/stopwatch/StopwatchPage.qml:150
+#, kde-format
+msgid "Resume"
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:152 qml/timer/TimerListDelegate.qml:156
 #: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
 #, kde-format
 msgid "Start"
 msgstr "Komenci"
 
-#: qml/stopwatch/StopwatchPage.qml:152
+#: qml/stopwatch/StopwatchPage.qml:175
 #, kde-format
 msgid "Lap"
 msgstr "Rondiro"
 
-#: qml/stopwatch/StopwatchPage.qml:244
+#: qml/stopwatch/StopwatchPage.qml:298
 #, kde-format
 msgid "#%1"
 msgstr "#%1"
@@ -441,11 +447,6 @@ msgstr "Aldoni Lokon"
 #, kde-format
 msgid "Add"
 msgstr "Aldoni"
-
-#: qml/time/TimePage.qml:132
-#, kde-format
-msgid "No locations configured"
-msgstr "Neniuj lokoj agordis"
 
 #: qml/timer/PresetDurationButton.qml:23 qml/timer/TimerForm.qml:39
 #, kde-format
@@ -648,43 +649,46 @@ msgstr "%1 horoj malantaŭe"
 msgid "Local time"
 msgstr "Loka horo"
 
-#: utilmodel.cpp:77
+#: utilmodel.cpp:74
 #, kde-format
 msgid "%1 day"
 msgid_plural "%1 days"
 msgstr[0] "%1 tago"
 msgstr[1] "%1 tagoj"
 
-#: utilmodel.cpp:81
+#: utilmodel.cpp:78
 #, kde-format
 msgid ", "
 msgstr ", "
 
-#: utilmodel.cpp:83 utilmodel.cpp:89
+#: utilmodel.cpp:80 utilmodel.cpp:86
 #, kde-format
 msgid " and "
 msgstr " kaj "
 
-#: utilmodel.cpp:85
+#: utilmodel.cpp:82
 #, kde-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
 msgstr[0] "%1 horo"
 msgstr[1] "%1 horoj"
 
-#: utilmodel.cpp:91
+#: utilmodel.cpp:88
 #, kde-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1 minuto"
 msgstr[1] "%1 minutoj"
 
-#: utilmodel.cpp:95
+#: utilmodel.cpp:92
 #, kde-format
 msgid "Alarm will ring in under a minute"
 msgstr "La alarmo sonoros post malpli ol minuto"
 
-#: utilmodel.cpp:97
+#: utilmodel.cpp:94
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "Alarmo sonoros en %1"
+
+#~ msgid "No locations configured"
+#~ msgstr "Neniuj lokoj agordis"
