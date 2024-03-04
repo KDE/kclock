@@ -10,11 +10,12 @@ include:
 
 appstream:
   image:
-    name: archlinux:latest
+    name: ubuntu:latest
     entrypoint: [""]
   tags:
     - Linux
   stage: build
   script:
-    - pacman -Sy appstream --noconfirm
+    - apt-get update
+    - apt-get install -y appstream
     - appstreamcli validate org.kde.kclock.appdata.xml
