@@ -12,6 +12,8 @@ appstream:
   image:
     name: archlinux:latest
     entrypoint: [""]
+  tags:
+    - Linux
   stage: build
   script:
     - pacman -Sy appstream --noconfirm
