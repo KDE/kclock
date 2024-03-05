@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-03 00:41+0000\n"
-"PO-Revision-Date: 2023-11-12 08:26+0100\n"
+"PO-Revision-Date: 2024-03-04 23:34+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -41,8 +41,7 @@ msgstr ""
 "horloĝojn"
 
 #: main.cpp:68
-#, fuzzy, kde-format
-#| msgid "© 2020-2022 KDE Community"
+#, kde-format
 msgid "© 2020-2024 KDE Community"
 msgstr "© 2020-2022 KDE-Komunumo"
 
@@ -415,7 +414,7 @@ msgstr "Paŭzi"
 #: qml/stopwatch/StopwatchPage.qml:150
 #, kde-format
 msgid "Resume"
-msgstr ""
+msgstr "Daŭrigi"
 
 #: qml/stopwatch/StopwatchPage.qml:152 qml/timer/TimerListDelegate.qml:156
 #: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
@@ -689,6 +688,3 @@ msgstr "La alarmo sonoros post malpli ol minuto"
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "Alarmo sonoros en %1"
-
-#~ msgid "No locations configured"
-#~ msgstr "Neniuj lokoj agordis"
