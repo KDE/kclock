@@ -83,10 +83,8 @@
   <summary xml:lang="x-test">xxSet alarms and timers, use a stopwatch, and manage world clocksxx</summary>
   <summary xml:lang="zh-CN">设置闹钟、倒计时、使用秒表和管理世界时钟</summary>
   <summary xml:lang="zh-TW">設定鬧鐘、計時器，使用碼錶，並管理世界時鐘</summary>
-  <developer>
-    <id>kde.org</id>
-    <name>The KDE Community</name>
-    <url>https://kde.org</url>
+  <developer id="kde.org">
+    <name translate="no">KDE</name>
   </developer>
   <description>
     <p>A universal clock application for desktop and mobile.</p>
