@@ -4,13 +4,13 @@
 # This file is distributed under the same license as the kclock package.
 #
 # Automatically generated, 2022.
-# SPDX-FileCopyrightText: 2022, 2023 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2022, 2023, 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-03 00:41+0000\n"
-"PO-Revision-Date: 2023-11-29 19:03+0900\n"
+"PO-Revision-Date: 2024-03-08 03:32+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.3\n"
+"X-Generator: Lokalize 24.04.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -41,10 +41,9 @@ msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr "設定鬧鐘、計時器，使用碼錶，並管理世界時鐘"
 
 #: main.cpp:68
-#, fuzzy, kde-format
-#| msgid "© 2020-2022 KDE Community"
+#, kde-format
 msgid "© 2020-2024 KDE Community"
-msgstr "© 2020-2022 KDE 社群"
+msgstr "© 2020-2024 KDE 社群"
 
 #: main.cpp:70
 #, kde-format
@@ -412,7 +411,7 @@ msgstr "暫停"
 #: qml/stopwatch/StopwatchPage.qml:150
 #, kde-format
 msgid "Resume"
-msgstr ""
+msgstr "恢復"
 
 #: qml/stopwatch/StopwatchPage.qml:152 qml/timer/TimerListDelegate.qml:156
 #: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
