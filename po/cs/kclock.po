@@ -38,10 +38,9 @@ msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr ""
 
 #: main.cpp:68
-#, fuzzy, kde-format
-#| msgid "© 2020-2022 KDE Community"
+#, kde-format
 msgid "© 2020-2024 KDE Community"
-msgstr "© 2020-2022 Komunita KDE"
+msgstr ""
 
 #: main.cpp:70
 #, kde-format
@@ -412,7 +411,7 @@ msgstr "Pozastavit"
 #: qml/stopwatch/StopwatchPage.qml:150
 #, kde-format
 msgid "Resume"
-msgstr ""
+msgstr "Obnovit"
 
 #: qml/stopwatch/StopwatchPage.qml:152 qml/timer/TimerListDelegate.qml:156
 #: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
