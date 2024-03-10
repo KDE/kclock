@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-03 00:41+0000\n"
-"PO-Revision-Date: 2024-02-29 12:53\n"
+"PO-Revision-Date: 2024-03-09 04:46\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -38,10 +38,9 @@ msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr "设置闹钟、倒计时、使用秒表和管理世界时钟"
 
 #: main.cpp:68
-#, fuzzy, kde-format
-#| msgid "© 2020-2022 KDE Community"
+#, kde-format
 msgid "© 2020-2024 KDE Community"
-msgstr "© 2020-2022 KDE Community"
+msgstr "© 2020-2024 KDE Community"
 
 #: main.cpp:70
 #, kde-format
@@ -409,7 +408,7 @@ msgstr "暂停"
 #: qml/stopwatch/StopwatchPage.qml:150
 #, kde-format
 msgid "Resume"
-msgstr ""
+msgstr "继续"
 
 #: qml/stopwatch/StopwatchPage.qml:152 qml/timer/TimerListDelegate.qml:156
 #: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
@@ -678,6 +677,3 @@ msgstr "闹钟将在一分钟内响起"
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "闹钟将在 %1 响起"
-
-#~ msgid "No locations configured"
-#~ msgstr "未配置位置"
