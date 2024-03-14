@@ -69,17 +69,17 @@ Kirigami.ScrollablePage {
             Delegates.RoundedItemDelegate {
                 id: defaultItem
 
-                property string defaultPath: UtilModel.getDefaultAlarmFileLocation()
+                property string defaultPath: root.replacePrefix(UtilModel.getDefaultAlarmFileLocation())
 
                 text: i18n("Default")
 
-                onClicked: root.alarmForm.formAudioPath = playablePath(replacePrefix(defaultPath));
+                onClicked: root.alarmForm.formAudioPath = playablePath(defaultPath);
 
                 Connections {
                     target: root.alarmForm
 
                     function onFormAudioPathChanged() {
-                        radioButton.checked = replacePrefix(root.alarmForm.formAudioPath) == replacePrefix(defaultItem.defaultPath);
+                        radioButton.checked = replacePrefix(root.alarmForm.formAudioPath) == defaultItem.defaultPath;
                         if (radioButton.checked) {
                             root.playSound();
                         }
@@ -96,10 +96,10 @@ Kirigami.ScrollablePage {
                     RadioButton {
                         id: radioButton
 
-                        checked: replacePrefix(root.alarmForm.formAudioPath) === replacePrefix(defaultItem.defaultPath)
+                        checked: replacePrefix(root.alarmForm.formAudioPath) === defaultItem.defaultPath
                         onCheckedChanged: {
                             if (checked) {
-                                root.alarmForm.formAudioPath = playablePath(replacePrefix(defaultItem.defaultPath));
+                                root.alarmForm.formAudioPath = playablePath(defaultItem.defaultPath);
                             }
                         }
                     }
@@ -112,11 +112,10 @@ Kirigami.ScrollablePage {
             id: soundDelegate
 
             required property string ringtoneName
-            required property url sourceUrl
+            required property string sourceUrl // instead of url, so we don't have type errors
             required property int index
 
             text: ringtoneName
-
 
             onClicked: root.alarmForm.formAudioPath = playablePath(replacePrefix(sourceUrl));
 
