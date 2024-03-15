@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-03 00:41+0000\n"
+"POT-Creation-Date: 2024-03-15 00:40+0000\n"
 "PO-Revision-Date: 2024-03-03 08:36+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -274,17 +274,17 @@ msgstr "Вибрати з файлів…"
 msgid "Default"
 msgstr "Типова"
 
-#: qml/alarm/SoundPickerPage.qml:155
+#: qml/alarm/SoundPickerPage.qml:154
 #, kde-format
 msgid "Choose an audio"
 msgstr "Виберіть звук"
 
-#: qml/alarm/SoundPickerPage.qml:163
+#: qml/alarm/SoundPickerPage.qml:162
 #, kde-format
 msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 msgstr "звукові файли (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 
-#: qml/alarm/SoundPickerPage.qml:163
+#: qml/alarm/SoundPickerPage.qml:162
 #, kde-format
 msgid "All files (*)"
 msgstr "усі файли (*)"
