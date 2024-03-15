@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-21 02:25+0000\n"
+"POT-Creation-Date: 2024-03-15 03:05+0000\n"
 "PO-Revision-Date: 2021-06-12 21:25+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -279,17 +279,17 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: qml/alarm/SoundPickerPage.qml:155
+#: qml/alarm/SoundPickerPage.qml:154
 #, kde-format
 msgid "Choose an audio"
 msgstr ""
 
-#: qml/alarm/SoundPickerPage.qml:163
+#: qml/alarm/SoundPickerPage.qml:162
 #, kde-format
 msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 msgstr ""
 
-#: qml/alarm/SoundPickerPage.qml:163
+#: qml/alarm/SoundPickerPage.qml:162
 #, kde-format
 msgid "All files (*)"
 msgstr ""

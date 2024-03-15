@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-21 02:25+0000\n"
+"POT-Creation-Date: 2024-03-15 03:05+0000\n"
 "PO-Revision-Date: 2024-01-06 03:32\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -264,17 +264,17 @@ msgstr "从文件选择…"
 msgid "Default"
 msgstr "默认"
 
-#: qml/alarm/SoundPickerPage.qml:155
+#: qml/alarm/SoundPickerPage.qml:154
 #, kde-format
 msgid "Choose an audio"
 msgstr "选择音频"
 
-#: qml/alarm/SoundPickerPage.qml:163
+#: qml/alarm/SoundPickerPage.qml:162
 #, kde-format
 msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 msgstr "音频文件 (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 
-#: qml/alarm/SoundPickerPage.qml:163
+#: qml/alarm/SoundPickerPage.qml:162
 #, kde-format
 msgid "All files (*)"
 msgstr "所有文件 (*)"
