@@ -7,6 +7,10 @@
  */
 
 #include "timer.h"
+#include "alarmplayer.h"
+
+#include <QFile>
+#include <QStandardPaths>
 
 Timer::Timer(int length, const QString &label, const QString &commandTimeout, bool running, QObject *parent)
     : QObject{parent}
@@ -39,6 +43,11 @@ Timer::~Timer()
     if (!m_running) {
         // stop wakeup if timer is being deleted
         setRunning(false);
+    }
+
+    // ensure timer doesn't continue ringing after deletion
+    if (m_ringing) {
+        AlarmPlayer::instance().stop();
     }
 }
 
@@ -254,6 +263,9 @@ void Timer::ring()
 
     Utilities::pauseMprisSources();
 
+    AlarmPlayer::instance().setSource(findRingSoundLocation());
+    AlarmPlayer::instance().play();
+
     m_ringing = true;
     Q_EMIT ringingChanged();
 }
@@ -262,6 +274,8 @@ void Timer::dismiss()
 {
     qDebug() << "Timer dismissed.";
     m_notification->close();
+
+    AlarmPlayer::instance().stop();
 
     Utilities::resumeMprisSources();
 
@@ -274,4 +288,19 @@ void Timer::reschedule()
     if (m_running) {
         m_cookie = Utilities::instance().scheduleWakeup(m_startTime + m_length);
     }
+}
+
+QUrl Timer::findRingSoundLocation()
+{
+    const auto locations = QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
+    const QString path = QStringLiteral("/sounds/freedesktop/stereo/alarm-clock-elapsed.oga");
+    QString alarmSoundPath;
+
+    for (const auto &directory : locations) {
+        if (QFile(directory + path).exists()) {
+            return QUrl(directory + path);
+        }
+    }
+
+    return QUrl();
 }

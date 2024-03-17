@@ -28,8 +28,7 @@ AlarmPlayer::AlarmPlayer(QObject *parent)
 
 void AlarmPlayer::loopAudio(QMediaPlayer::PlaybackState state)
 {
-    if (!userStop
-        && state == QMediaPlayer::StoppedState /* && static_cast<int>(QDateTime::currentSecsSinceEpoch() - startPlayingTime) < settings.alarmSilenceAfter()*/) {
+    if (!m_userStop && state == QMediaPlayer::StoppedState) {
         m_player->play();
     }
 }
@@ -40,14 +39,13 @@ void AlarmPlayer::play()
         return;
     }
 
-    startPlayingTime = QDateTime::currentSecsSinceEpoch();
-    userStop = false;
+    m_userStop = false;
     m_player->play();
 }
 
 void AlarmPlayer::stop()
 {
-    userStop = true;
+    m_userStop = true;
     m_player->stop();
 }
 

@@ -35,9 +35,8 @@ protected:
 private:
     QMediaPlayer *m_player;
     QAudioOutput *m_audio;
-    quint64 startPlayingTime = 0;
 
-    bool userStop = false; // indicate if user asks to stop
+    bool m_userStop = false; // indicate if user asks to stop
 
 private Q_SLOTS:
     void loopAudio(QMediaPlayer::PlaybackState state);
