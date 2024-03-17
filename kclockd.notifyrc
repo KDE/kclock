@@ -126,8 +126,7 @@ Comment[uk]=Відлік за вашим таймером завершено!
 Comment[x-test]=xxYour timer has finished!xx
 Comment[zh_CN]=计时器已结束计时！
 Comment[zh_TW]=您的計時器已結束！
-Action=Sound|Popup
-Sound=freedesktop/stereo/alarm-clock-elapsed.oga
+Action=Popup
 
 
 [Event/alarm]
