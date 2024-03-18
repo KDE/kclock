@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-12 01:39+0000\n"
+"POT-Creation-Date: 2024-03-18 03:07+0000\n"
 "PO-Revision-Date: 2022-09-18 17:11+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -32,7 +32,7 @@ msgstr "emir_sari@icloud.com"
 msgid "Alarm"
 msgstr "Çalar Saat"
 
-#: alarm.cpp:77 timer.cpp:58
+#: alarm.cpp:77 timer.cpp:67
 #, kde-format
 msgid "View"
 msgstr "Görüntüle"
@@ -73,12 +73,12 @@ msgstr "Devin Lin"
 msgid "Han Young"
 msgstr "Han Young"
 
-#: timer.cpp:53
+#: timer.cpp:62
 #, kde-format
 msgid "Timer complete"
 msgstr "Sayaç bitti"
 
-#: timer.cpp:54
+#: timer.cpp:63
 #, kde-format
 msgid "Your timer %1 has finished!"
 msgstr "%1 sayacınız bitti!"
