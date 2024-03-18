@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-12 01:39+0000\n"
+"POT-Creation-Date: 2024-03-18 00:40+0000\n"
 "PO-Revision-Date: 2022-09-19 12:25+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -33,7 +33,7 @@ msgstr "matjaz.jeran@amis.net"
 msgid "Alarm"
 msgstr "Alarm"
 
-#: alarm.cpp:77 timer.cpp:58
+#: alarm.cpp:77 timer.cpp:67
 #, kde-format
 msgid "View"
 msgstr "Pogled"
@@ -74,12 +74,12 @@ msgstr "Devin Lin"
 msgid "Han Young"
 msgstr "Han Young"
 
-#: timer.cpp:53
+#: timer.cpp:62
 #, kde-format
 msgid "Timer complete"
 msgstr "Merilnik časa končal"
 
-#: timer.cpp:54
+#: timer.cpp:63
 #, kde-format
 msgid "Your timer %1 has finished!"
 msgstr "Vaš merilnik časa %1 je končal!"

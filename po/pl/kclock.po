@@ -1,15 +1,15 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the kclock package.
 #
-# SPDX-FileCopyrightText: 2021, 2022, 2023 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 # Grzegorz Koryga <rehork@tutamail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-15 00:40+0000\n"
-"PO-Revision-Date: 2023-11-12 11:47+0100\n"
-"Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmai.com>\n"
+"PO-Revision-Date: 2024-03-17 10:59+0100\n"
+"Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -42,10 +42,9 @@ msgstr ""
 "stron świata"
 
 #: main.cpp:68
-#, fuzzy, kde-format
-#| msgid "© 2020-2022 KDE Community"
+#, kde-format
 msgid "© 2020-2024 KDE Community"
-msgstr "© 2020-2022 Społeczność KDE"
+msgstr "© 2020-2024 Społeczność KDE"
 
 #: main.cpp:70
 #, kde-format
@@ -417,7 +416,7 @@ msgstr "Wstrzymaj"
 #: qml/stopwatch/StopwatchPage.qml:150
 #, kde-format
 msgid "Resume"
-msgstr ""
+msgstr "Wznów"
 
 #: qml/stopwatch/StopwatchPage.qml:152 qml/timer/TimerListDelegate.qml:156
 #: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-12 01:39+0000\n"
+"POT-Creation-Date: 2024-03-18 00:40+0000\n"
 "PO-Revision-Date: 2022-10-12 10:06+0200\n"
 "Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -35,7 +35,7 @@ msgstr "kde-i18n-de@kde.org"
 msgid "Alarm"
 msgstr "Erinnerung"
 
-#: alarm.cpp:77 timer.cpp:58
+#: alarm.cpp:77 timer.cpp:67
 #, kde-format
 msgid "View"
 msgstr "Ansicht"
@@ -76,12 +76,12 @@ msgstr "Devin Lin"
 msgid "Han Young"
 msgstr "Han Young"
 
-#: timer.cpp:53
+#: timer.cpp:62
 #, kde-format
 msgid "Timer complete"
 msgstr "Eieruhr abgelaufen"
 
-#: timer.cpp:54
+#: timer.cpp:63
 #, kde-format
 msgid "Your timer %1 has finished!"
 msgstr "Ihre Eieruhr %1 ist abgelaufen."

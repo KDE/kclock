@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-12 01:39+0000\n"
+"POT-Creation-Date: 2024-03-18 00:40+0000\n"
 "PO-Revision-Date: 2023-02-07 20:10+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -35,7 +35,7 @@ msgstr "vpinon@kde.org, xavier.besnard@kde.org"
 msgid "Alarm"
 msgstr "Alarme"
 
-#: alarm.cpp:77 timer.cpp:58
+#: alarm.cpp:77 timer.cpp:67
 #, kde-format
 msgid "View"
 msgstr "Afficher"
@@ -76,12 +76,12 @@ msgstr "Devin Lin"
 msgid "Han Young"
 msgstr "Han Young"
 
-#: timer.cpp:53
+#: timer.cpp:62
 #, kde-format
 msgid "Timer complete"
 msgstr "Temps écoulé"
 
-#: timer.cpp:54
+#: timer.cpp:63
 #, kde-format
 msgid "Your timer %1 has finished!"
 msgstr "Votre minuteur %1 est terminé !"
