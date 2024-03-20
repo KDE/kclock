@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-15 00:40+0000\n"
-"PO-Revision-Date: 2024-02-05 21:59+0100\n"
+"PO-Revision-Date: 2024-03-19 11:49+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.04.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -30,12 +30,14 @@ msgstr "ulyssses@fsf.hu,aronkvh@gmail.com"
 #: main.cpp:43
 #, kde-format
 msgid "Select opened page"
-msgstr ""
+msgstr "Kiválasztott oldal megnyitása"
 
 #: main.cpp:66
 #, kde-format
 msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr ""
+"Riasztások és időzítők beállítása, stopperóra használata és világórák "
+"kezelése"
 
 #: main.cpp:68
 #, fuzzy, kde-format
@@ -81,19 +83,19 @@ msgstr ""
 #: qml/alarm/AlarmForm.qml:124 qml/alarm/AlarmForm.qml:135
 #, kde-format
 msgid "None"
-msgstr ""
+msgstr "Nincs"
 
 #: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:136
 #: qml/alarm/AlarmForm.qml:169 qml/alarm/AlarmForm.qml:173
 #: qml/timer/TimerComponent.qml:149
 #, kde-format
 msgid "1 minute"
-msgstr ""
+msgstr "1 perc"
 
 #: qml/alarm/AlarmForm.qml:128 qml/alarm/AlarmForm.qml:169
 #, kde-format
 msgid "%1 minutes"
-msgstr ""
+msgstr "%1 perc"
 
 #: qml/alarm/AlarmForm.qml:131
 #, kde-format
@@ -103,7 +105,7 @@ msgstr ""
 #: qml/alarm/AlarmForm.qml:137 qml/alarm/AlarmForm.qml:174
 #, kde-format
 msgid "2 minutes"
-msgstr ""
+msgstr "2 perc"
 
 #: qml/alarm/AlarmForm.qml:138 qml/alarm/AlarmForm.qml:175
 #, kde-format
