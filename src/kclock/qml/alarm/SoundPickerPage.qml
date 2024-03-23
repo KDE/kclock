@@ -60,6 +60,7 @@ Kirigami.ScrollablePage {
 
             // choose from file
             Delegates.RoundedItemDelegate {
+                id: selectFromFileItem
                 text: i18n("Select from files…")
                 onClicked: fileDialog.open()
                 Layout.fillWidth: true
@@ -154,7 +155,7 @@ Kirigami.ScrollablePage {
             title: i18n("Choose an audio")
             currentFolder: StandardPaths.standardLocations(StandardPaths.MusicLocation)[0]
             onAccepted: {
-                root.alarmForm.formAudioPath = playablePath(replacePrefix(fileDialog.fileUrl.toString()));
+                root.alarmForm.formAudioPath = playablePath(replacePrefix(fileDialog.selectedFile.toString()));
                 root.playSound();
                 close();
             }
