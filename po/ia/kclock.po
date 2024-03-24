@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-15 00:40+0000\n"
+"POT-Creation-Date: 2024-03-24 00:40+0000\n"
 "PO-Revision-Date: 2024-03-04 11:29+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -259,27 +259,27 @@ msgstr "Abbandona"
 msgid "Select Alarm Sound"
 msgstr "Selectiona sono de alarma"
 
-#: qml/alarm/SoundPickerPage.qml:63
+#: qml/alarm/SoundPickerPage.qml:64
 #, kde-format
 msgid "Select from files…"
 msgstr "Selectiona ab files..."
 
-#: qml/alarm/SoundPickerPage.qml:74
+#: qml/alarm/SoundPickerPage.qml:75
 #, kde-format
 msgid "Default"
 msgstr "Predefinite"
 
-#: qml/alarm/SoundPickerPage.qml:154
+#: qml/alarm/SoundPickerPage.qml:155
 #, kde-format
 msgid "Choose an audio"
 msgstr "Selige un audio"
 
-#: qml/alarm/SoundPickerPage.qml:162
+#: qml/alarm/SoundPickerPage.qml:163
 #, kde-format
 msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 msgstr "Files Audio (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 
-#: qml/alarm/SoundPickerPage.qml:162
+#: qml/alarm/SoundPickerPage.qml:163
 #, kde-format
 msgid "All files (*)"
 msgstr "Omne files (*)"

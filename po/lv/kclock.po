@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-15 00:40+0000\n"
+"POT-Creation-Date: 2024-03-24 00:40+0000\n"
 "PO-Revision-Date: 2024-01-24 21:43+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -262,27 +262,27 @@ msgstr "Noraidīt"
 msgid "Select Alarm Sound"
 msgstr "Izvēlēties signāla skaņu"
 
-#: qml/alarm/SoundPickerPage.qml:63
+#: qml/alarm/SoundPickerPage.qml:64
 #, kde-format
 msgid "Select from files…"
 msgstr "Izvēlēties no datnes..."
 
-#: qml/alarm/SoundPickerPage.qml:74
+#: qml/alarm/SoundPickerPage.qml:75
 #, kde-format
 msgid "Default"
 msgstr "Noklusējuma"
 
-#: qml/alarm/SoundPickerPage.qml:154
+#: qml/alarm/SoundPickerPage.qml:155
 #, kde-format
 msgid "Choose an audio"
 msgstr "Izvēlēties audio"
 
-#: qml/alarm/SoundPickerPage.qml:162
+#: qml/alarm/SoundPickerPage.qml:163
 #, kde-format
 msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 msgstr "Audio datnes (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 
-#: qml/alarm/SoundPickerPage.qml:162
+#: qml/alarm/SoundPickerPage.qml:163
 #, kde-format
 msgid "All files (*)"
 msgstr "Visas datnes (*)"
