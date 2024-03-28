@@ -9,6 +9,7 @@
 IconName=kclock
 Name=Clock
 Name[ar]=الساعة
+Name[ast]=Reló
 Name[ca]=Rellotge
 Name[ca@valencia]=Rellotge
 Name[cs]=Hodiny
@@ -132,6 +133,7 @@ Action=Popup
 [Event/alarm]
 Name=Alarm
 Name[ar]=المنبه
+Name[ast]=Alarma
 Name[ca]=Alarma
 Name[ca@valencia]=Alarma
 Name[cs]=Alarm
