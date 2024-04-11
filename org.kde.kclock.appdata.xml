@@ -50,7 +50,7 @@
   <name xml:lang="x-test">xxClockxx</name>
   <name xml:lang="zh-CN">时钟</name>
   <name xml:lang="zh-TW">時鐘</name>
-  <summary>Set alarms and timers, use a stopwatch, and manage world clocks</summary>
+  <summary>Keep time and set alarms</summary>
   <summary xml:lang="ar">اضبط المنبهات والمؤقتات، واستخدم ساعة الإيقاف، وقم بإدارة الساعات العالمية</summary>
   <summary xml:lang="ca">Establiu alarmes i temporitzadors, useu un cronòmetre i gestioneu els rellotges mundials</summary>
   <summary xml:lang="ca-valencia">Establiu alarmes i temporitzadors, utilitzeu un cronòmetre i gestioneu els rellotges mundials</summary>
@@ -90,7 +90,7 @@
     <name translate="no">KDE</name>
   </developer>
   <description>
-    <p>A universal clock application for desktop and mobile.</p>
+    <p>A universal clock application for desktop and mobile. Clock includes a stopwatch and a world clock, and allows you to set multiple alarms and timers.</p>
     <p xml:lang="ar">تطبيق ساعة عالمي لسطح المكتب والجوال.</p>
     <p xml:lang="ca">Una aplicació universal de rellotge per a l'escriptori i mòbil.</p>
     <p xml:lang="ca-valencia">Una aplicació universal de rellotge per a l'escriptori i mòbil.</p>
