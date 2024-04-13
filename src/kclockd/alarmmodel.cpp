@@ -224,3 +224,5 @@ void AlarmModel::updateNotifierItem(quint64 time)
                                   QLocale::system().toString(dateTime.time(), QLocale::ShortFormat)));
     }
 }
+
+#include "moc_alarmmodel.cpp"

@@ -133,3 +133,5 @@ QString StopwatchTimer::smallDisplay() const
     qint64 amount = small();
     return UtilModel::instance()->displayTwoDigits(amount);
 }
+
+#include "moc_stopwatchtimer.cpp"

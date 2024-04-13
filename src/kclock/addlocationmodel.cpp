@@ -136,3 +136,5 @@ bool AddLocationSearchModel::lessThan(const QModelIndex &left, const QModelIndex
     return QVariant::compare(sourceModel()->data(left, AddLocationModel::CityRole), sourceModel()->data(right, AddLocationModel::CityRole))
         == QPartialOrdering::Less;
 }
+
+#include "moc_addlocationmodel.cpp"

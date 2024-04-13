@@ -146,3 +146,5 @@ void TimerPresetModel::deletePreset(const int index)
 
     save();
 }
+
+#include "moc_timerpresetmodel.cpp"

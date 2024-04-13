@@ -117,3 +117,5 @@ void TimerModel::setConnectedToDaemon(bool connectedToDaemon)
         Q_EMIT connectedToDaemonChanged();
     }
 }
+
+#include "moc_timermodel.cpp"

@@ -138,3 +138,5 @@ QHash<int, QByteArray> SavedLocationsModel::roleNames() const
 {
     return {{NameRole, "name"}, {TimeStringRole, "timeString"}, {RelativeTimeRole, "relativeTime"}, {CityRole, "city"}, {IdRole, "id"}};
 }
+
+#include "moc_savedlocationsmodel.cpp"

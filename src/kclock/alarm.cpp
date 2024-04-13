@@ -256,3 +256,5 @@ void Alarm::updateNextRingTime()
     m_nextRingTime = m_interface->nextRingTime();
     Q_EMIT nextRingTimeChanged();
 }
+
+#include "moc_alarm.cpp"

@@ -183,3 +183,5 @@ void AlarmModel::setConnectedToDaemon(bool connectedToDaemon)
         Q_EMIT connectedToDaemonChanged();
     }
 }
+
+#include "moc_alarmmodel.cpp"

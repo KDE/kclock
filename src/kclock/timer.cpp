@@ -189,3 +189,5 @@ void Timer::animation(bool start)
         m_animationTimer->stop();
     }
 }
+
+#include "moc_timer.cpp"

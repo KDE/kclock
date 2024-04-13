@@ -113,3 +113,5 @@ QStringList TimerModel::timers() const
     }
     return ret;
 }
+
+#include "moc_timermodel.cpp"

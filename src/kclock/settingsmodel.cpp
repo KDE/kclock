@@ -41,3 +41,5 @@ void SettingsModel::setTimeFormat(QString timeFormat)
 {
     m_interface->setProperty("timeFormat", timeFormat);
 }
+
+#include "moc_settingsmodel.cpp"

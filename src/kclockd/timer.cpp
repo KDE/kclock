@@ -304,3 +304,4 @@ QUrl Timer::findRingSoundLocation()
 
     return QUrl();
 }
+#include "moc_timer.cpp"

@@ -109,3 +109,5 @@ KClock_1x2::~KClock_1x2()
 K_PLUGIN_CLASS(KClock_1x2)
 
 #include "kclock_1x2.moc"
+
+#include "moc_kclock_1x2.cpp"

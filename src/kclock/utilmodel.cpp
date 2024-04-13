@@ -139,3 +139,5 @@ QString UtilModel::displayTwoDigits(const qint64 &amount)
 {
     return QStringLiteral("%1").arg(amount, 2, 10, QLatin1Char('0'));
 }
+
+#include "moc_utilmodel.cpp"

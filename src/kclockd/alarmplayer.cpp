@@ -71,3 +71,5 @@ void AlarmPlayer::setSource(const QUrl &path)
         m_player->setSource(path);
     }
 }
+
+#include "moc_alarmplayer.cpp"

@@ -402,3 +402,5 @@ quint64 Alarm::nextRingTime()
     }
     return m_nextRingTime;
 }
+
+#include "moc_alarm.cpp"

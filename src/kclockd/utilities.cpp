@@ -258,3 +258,5 @@ void Utilities::resumeMprisSources()
 
     m_pausedSources.clear();
 }
+
+#include "moc_utilities.cpp"

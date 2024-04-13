@@ -180,3 +180,5 @@ KClock_KWeather_3x3::~KClock_KWeather_3x3()
 K_PLUGIN_CLASS(KClock_KWeather_3x3)
 
 #include "kclock_kweather_3x3.moc"
+
+#include "moc_kclock_kweather_3x3.cpp"

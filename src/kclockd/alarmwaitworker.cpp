@@ -71,3 +71,5 @@ void AlarmWaitWorker::setNewTime(quint64 timestamp)
 
     Q_EMIT startWait(m_waitId);
 }
+
+#include "moc_alarmwaitworker.cpp"

@@ -128,3 +128,5 @@ void StopwatchModel::reset()
     m_worstLapIndex = -1;
     m_bestLapIndex = -1;
 }
+
+#include "moc_stopwatchmodel.cpp"

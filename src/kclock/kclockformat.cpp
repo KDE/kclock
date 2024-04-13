@@ -93,3 +93,5 @@ QHash<int, QByteArray> WeekModel::roleNames() const
 {
     return {{NameRole, "name"}, {FlagRole, "flag"}};
 }
+
+#include "moc_kclockformat.cpp"

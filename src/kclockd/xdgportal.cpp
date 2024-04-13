@@ -79,3 +79,5 @@ void XDGPortal::requestBackgroundResponse(uint response, const QVariantMap &resu
         qWarning() << "Failed to receive response from org.freedesktop.portal.Request.";
     }
 }
+
+#include "moc_xdgportal.cpp"
