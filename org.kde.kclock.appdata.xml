@@ -53,9 +53,13 @@
   <summary>Keep time and set alarms</summary>
   <summary xml:lang="ca">Aneu a l'hora i establiu alarmes</summary>
   <summary xml:lang="ca-valencia">Aneu fins a l'hora i establiu alarmes</summary>
+  <summary xml:lang="eo">Teni daton kaj meti alarmoj</summary>
   <summary xml:lang="es">Marque la hora y defina alarmas</summary>
+  <summary xml:lang="eu">Mantendu ordua eta alarmak ezarri</summary>
   <summary xml:lang="ia">Mantene tempore e assigna alarmas</summary>
+  <summary xml:lang="ka">ადევნეთ თვალყური დროს და დააყენეთ განგაშები</summary>
   <summary xml:lang="nl">Tijd bijhouden en wekkers zetten</summary>
+  <summary xml:lang="pl">Pilnuj czasu i ustawiaj alarmy</summary>
   <summary xml:lang="sl">Upošteva čas in nastavlja alarme</summary>
   <summary xml:lang="tr">Zamanı tutun ve alarmlar kurun</summary>
   <summary xml:lang="uk">Розклад та встановлення нагадувань</summary>
@@ -67,9 +71,13 @@
     <p>A universal clock application for desktop and mobile. Clock includes a stopwatch and a world clock, and allows you to set multiple alarms and timers.</p>
     <p xml:lang="ca">Una aplicació universal de rellotge per a l'escriptori i mòbil. El rellotge inclou un cronòmetre i un rellotge mundial, i permet establir alarmes i temporitzadors diversos.</p>
     <p xml:lang="ca-valencia">Una aplicació universal de rellotge per a l'escriptori i mòbil. El rellotge inclou un cronòmetre i un rellotge mundial, i permet establir alarmes i temporitzadors diversos.</p>
+    <p xml:lang="eo">Universala horloĝa aplikaĵo por labortablo kaj poŝtelefono. Horloĝo inkluzivas tempumilon kaj mondan horloĝon, kaj permesas vin agordi plurajn alarmojn kaj tempumilojn.</p>
     <p xml:lang="es">Una aplicación de reloj universal para el escritorio y el móvil. El reloj incluye un cronómetro y un reloj mundial, además de permitirle definir múltiples alarmas y temporizadores.</p>
+    <p xml:lang="eu">Mahaigainerako eta mugikorrerako erloju-aplikazio unibertsal bat. Erlojuak kronometroa eta munduko-erlojua ditu, eta hainbat alarma eta tenporizadore ezartzeko aukera eskaintzen dizu.</p>
     <p xml:lang="ia">Un application de horologio universal per scriptorio e mobile. Horologio include un  chronometro e un horologio mundial, e tu pote sempre fixar alarmas e timers.</p>
+    <p xml:lang="ka">უნივერსალური საათის აპლიკაცია კომპიუტერისა და მობილურისთვის. Clock შეიცავს წამზომს და მსოფლიო საათს და საშუალებას გაძლევთ, ერთზე მეტი განგაში და წამზომი დააყენოთ.</p>
     <p xml:lang="nl">Een universele kloktoepassing voor bureaublad en mobiel. Kclock omvat een stopwatch en een wereldklok en biedt u het zetten meerdere wekkers en timers.</p>
+    <p xml:lang="pl">Wszechstronny zegar na urządzenia przenośne i biurkowe. Zegar zawiera stoper oraz zegar światowy. Umożliwia ustawienie wielu alarmów i minutników.</p>
     <p xml:lang="sl">Univerzalna aplikacija ure za namizne in mobilne naprave. Ura vključuje štoparico in svetovno uro ter omogoča nastavitev več alarmov in časovnikov.</p>
     <p xml:lang="tr">Masaüstü ve taşınabilir aygıtlar için evrensel bir saat uygulaması. Saat, bir kronometre ve dünya saati içerir ve birden çok alarm ve sayaç kurmanıza olanak tanır.</p>
     <p xml:lang="uk">Універсальна програма-будильник для робочих станцій та мобільних пристроїв. Реалізовано таймер та загальносвітовий годинник, можна встановлювати декілька нагадувань та таймерів.</p>
