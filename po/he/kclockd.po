@@ -1,0 +1,90 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the kclock package.
+#
+# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: kclock\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-03-18 00:40+0000\n"
+"PO-Revision-Date: 2024-04-12 14:40+0300\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 23.08.5\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "צוות התרגום של KDE ישראל"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde-l10n-he@kde.org"
+
+#: alarm.cpp:73 alarm.h:51
+#, kde-format
+msgid "Alarm"
+msgstr "התראה"
+
+#: alarm.cpp:77 timer.cpp:67
+#, kde-format
+msgid "View"
+msgstr "תצוגה"
+
+#: alarm.cpp:80
+#, kde-format
+msgid "Dismiss"
+msgstr "התעלמות"
+
+#: alarm.cpp:83
+#, kde-format
+msgid "Snooze"
+msgstr "נודניק"
+
+#: alarmmodel.cpp:222
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Alarm: <shortcut>%1 %2</shortcut>"
+msgstr "התראה: <shortcut>%1 %2</shortcut>"
+
+#: main.cpp:30
+#, kde-format
+msgid "Don't use PowerDevil for alarms if it is available"
+msgstr ""
+
+#: main.cpp:45
+#, kde-format
+msgid "© 2020-2022 KDE Community"
+msgstr "© 2020‏-2022 קהילת KDE"
+
+#: main.cpp:46
+#, kde-format
+msgid "Devin Lin"
+msgstr "דווין לין"
+
+#: main.cpp:47
+#, kde-format
+msgid "Han Young"
+msgstr "האן יאנג"
+
+#: timer.cpp:62
+#, kde-format
+msgid "Timer complete"
+msgstr "קוצב הזמן הסתיים"
+
+#: timer.cpp:63
+#, kde-format
+msgid "Your timer %1 has finished!"
+msgstr "קוצב הזמן שלך %1 הסתיים!"
+
+#: xdgportal.cpp:34
+#, kde-format
+msgid ""
+"Allow the clock process to be in the background and launched on startup."
+msgstr ""
