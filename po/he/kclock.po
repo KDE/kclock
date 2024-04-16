@@ -1,0 +1,692 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the kclock package.
+#
+# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: kclock\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-03-24 00:40+0000\n"
+"PO-Revision-Date: 2024-04-15 15:24+0300\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
+"2 : 3);\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "צוות התרגום של KDE ישראל"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde-l10n-he@kde.org"
+
+#: main.cpp:43
+#, kde-format
+msgid "Select opened page"
+msgstr "בחירת עמוד שנפתח"
+
+#: main.cpp:66
+#, kde-format
+msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
+msgstr "הגדרת התראות וקוצבי זמן, שימוש בשעון עצר וניהול שעונים עולמיים"
+
+#: main.cpp:68
+#, kde-format
+msgid "© 2020-2024 KDE Community"
+msgstr "© 2020‏-2024 קהילת KDE"
+
+#: main.cpp:70
+#, kde-format
+msgid "Devin Lin"
+msgstr "דווין לין"
+
+#: main.cpp:71
+#, kde-format
+msgid "Han Young"
+msgstr "האן יאנג"
+
+#: qml/alarm/AlarmForm.qml:86
+#, kde-format
+msgid "Days to repeat:"
+msgstr "ימים לחזרה:"
+
+#: qml/alarm/AlarmForm.qml:88
+#, kde-format
+msgid "Select Days to Repeat"
+msgstr "בחירת ימים לחזרה"
+
+#: qml/alarm/AlarmForm.qml:111
+#, kde-format
+msgid "Alarm Name (optional):"
+msgstr "שם ההתראה (רשות):"
+
+#: qml/alarm/AlarmForm.qml:112
+#, kde-format
+msgid "Wake Up"
+msgstr "השכמה"
+
+#: qml/alarm/AlarmForm.qml:121
+#, kde-format
+msgid "Ring Duration:"
+msgstr "משך צלצול:"
+
+#: qml/alarm/AlarmForm.qml:124 qml/alarm/AlarmForm.qml:135
+#, kde-format
+msgid "None"
+msgstr "ללא"
+
+#: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:136
+#: qml/alarm/AlarmForm.qml:169 qml/alarm/AlarmForm.qml:173
+#: qml/timer/TimerComponent.qml:149
+#, kde-format
+msgid "1 minute"
+msgstr "דקה"
+
+#: qml/alarm/AlarmForm.qml:128 qml/alarm/AlarmForm.qml:169
+#, kde-format
+msgid "%1 minutes"
+msgstr "%1 דקות"
+
+#: qml/alarm/AlarmForm.qml:131
+#, kde-format
+msgid "Select Ring Duration"
+msgstr "בחירת משך צלצול"
+
+#: qml/alarm/AlarmForm.qml:137 qml/alarm/AlarmForm.qml:174
+#, kde-format
+msgid "2 minutes"
+msgstr "שתי דקות"
+
+#: qml/alarm/AlarmForm.qml:138 qml/alarm/AlarmForm.qml:175
+#, kde-format
+msgid "5 minutes"
+msgstr "5 דקות"
+
+#: qml/alarm/AlarmForm.qml:139 qml/alarm/AlarmForm.qml:176
+#, kde-format
+msgid "10 minutes"
+msgstr "10 דקות"
+
+#: qml/alarm/AlarmForm.qml:140 qml/alarm/AlarmForm.qml:177
+#, kde-format
+msgid "15 minutes"
+msgstr "15 דקות"
+
+#: qml/alarm/AlarmForm.qml:141 qml/alarm/AlarmForm.qml:178
+#, kde-format
+msgid "30 minutes"
+msgstr "30 דקות"
+
+#: qml/alarm/AlarmForm.qml:142 qml/alarm/AlarmForm.qml:179
+#, kde-format
+msgid "1 hour"
+msgstr "שעה"
+
+#: qml/alarm/AlarmForm.qml:167
+#, kde-format
+msgid "Snooze Length:"
+msgstr "משך נודניק:"
+
+#: qml/alarm/AlarmForm.qml:168
+#, kde-format
+msgid "Select Snooze Length"
+msgstr "בחירת משך נודניק"
+
+#: qml/alarm/AlarmForm.qml:204
+#, kde-format
+msgid "Ring Sound:"
+msgstr "צליל צלצול:"
+
+#: qml/alarm/AlarmForm.qml:210
+#, kde-format
+msgid "Default Sound"
+msgstr "צליל ברירת המחדל"
+
+#: qml/alarm/AlarmFormPage.qml:26 qml/alarm/AlarmRingingPopup.qml:45
+#, kde-format
+msgid "Alarm"
+msgstr "התראה"
+
+#: qml/alarm/AlarmFormPage.qml:26
+#, kde-format
+msgctxt "Edit alarm page title"
+msgid "Editing %1"
+msgstr "%1 נערך"
+
+#: qml/alarm/AlarmFormPage.qml:27 qml/alarm/AlarmListPage.qml:31
+#, kde-format
+msgid "New Alarm"
+msgstr "התראה חדשה"
+
+#: qml/alarm/AlarmFormPage.qml:39 qml/alarm/AlarmFormPage.qml:62
+#: qml/timer/TimerFormWrapper.qml:85 qml/timer/TimerFormWrapper.qml:144
+#, kde-format
+msgid "Done"
+msgstr "בוצע"
+
+#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormWrapper.qml:80
+#: qml/timer/TimerFormWrapper.qml:139
+#, kde-format
+msgid "Cancel"
+msgstr "ביטול"
+
+#: qml/alarm/AlarmListDelegate.qml:106
+#, kde-format
+msgid "Snoozed %1 minute"
+msgid_plural "Snoozed %1 minutes"
+msgstr[0] "נודניק מושהה בדקה"
+msgstr[1] "נודניק מושהה בשתי דקות"
+msgstr[2] "נודניק מושהה ב־%1 דקות"
+msgstr[3] "נודניק מושהה ב־%1 דקות"
+
+#: qml/alarm/AlarmListDelegate.qml:126 qml/time/TimePageDelegate.qml:60
+#, kde-format
+msgctxt "@action:button"
+msgid "Delete"
+msgstr "מחיקה"
+
+#: qml/alarm/AlarmListPage.qml:25 qml/components/BottomToolbar.qml:118
+#: qml/components/Sidebar.qml:112
+#, kde-format
+msgid "Alarms"
+msgstr "התראות"
+
+#: qml/alarm/AlarmListPage.qml:37 qml/time/TimePage.qml:37
+#, kde-format
+msgid "Edit"
+msgstr "עריכה"
+
+#: qml/alarm/AlarmListPage.qml:46 qml/components/Sidebar.qml:138
+#: qml/settings/SettingsPage.qml:22 qml/stopwatch/StopwatchPage.qml:47
+#: qml/time/TimePage.qml:60 qml/timer/TimerListPage.qml:37
+#, kde-format
+msgid "Settings"
+msgstr "הגדרות"
+
+#: qml/alarm/AlarmListPage.qml:57
+#, kde-format
+msgid ""
+"The clock daemon was not found. Please start kclockd in order to have alarm "
+"functionality."
+msgstr "סוכן השעון לא נמצא. נא להפעיל את kclockd כדי שההתראות תעבודנה."
+
+#: qml/alarm/AlarmListPage.qml:78
+#, kde-format
+msgid "No alarms configured"
+msgstr "לא הוגדרו התראות"
+
+#: qml/alarm/AlarmListPage.qml:83
+#, kde-format
+msgid "Add alarm"
+msgstr "הוספת התראה"
+
+#: qml/alarm/AlarmListPage.qml:116
+#, kde-format
+msgid "alarm"
+msgstr "התראה"
+
+#: qml/alarm/AlarmListPage.qml:116
+#, kde-format
+msgid "Deleted %1"
+msgstr "%1 נמחק"
+
+#: qml/alarm/AlarmRingingPopup.qml:27
+#, kde-format
+msgid "Alarm is ringing"
+msgstr "ההתראה מצלצלת"
+
+#: qml/alarm/AlarmRingingPopup.qml:55
+#, kde-format
+msgid "Snooze"
+msgstr "נודניק"
+
+#: qml/alarm/AlarmRingingPopup.qml:59 qml/timer/TimerRingingPopup.qml:56
+#, kde-format
+msgid "Dismiss"
+msgstr "התעלמות"
+
+#: qml/alarm/SoundPickerPage.qml:25
+#, kde-format
+msgid "Select Alarm Sound"
+msgstr "בחירת צליל התראה"
+
+#: qml/alarm/SoundPickerPage.qml:64
+#, kde-format
+msgid "Select from files…"
+msgstr "בחירה מקבצים…"
+
+#: qml/alarm/SoundPickerPage.qml:75
+#, kde-format
+msgid "Default"
+msgstr "ברירת מחדל"
+
+#: qml/alarm/SoundPickerPage.qml:155
+#, kde-format
+msgid "Choose an audio"
+msgstr "בחירת קטע שמע"
+
+#: qml/alarm/SoundPickerPage.qml:163
+#, kde-format
+msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
+msgstr "קובצי שמע (‎*.wav‏ ‎*.mp3‏ ‎*.ogg‏ ‎*.aac‏ ‎*.flac‏ ‎*.webm‏ ‎*.mka‏ ‎*.opus)"
+
+#: qml/alarm/SoundPickerPage.qml:163
+#, kde-format
+msgid "All files (*)"
+msgstr "כל הקבצים (*)"
+
+#: qml/components/BottomToolbar.qml:88 qml/components/Sidebar.qml:58
+#: qml/time/TimePage.qml:25
+#, kde-format
+msgid "Time"
+msgstr "שעה"
+
+#: qml/components/BottomToolbar.qml:98 qml/components/Sidebar.qml:76
+#: qml/timer/TimerListPage.qml:22
+#, kde-format
+msgid "Timers"
+msgstr "קוצבי זמן"
+
+#: qml/components/BottomToolbar.qml:108 qml/components/Sidebar.qml:94
+#: qml/stopwatch/StopwatchPage.qml:24
+#, kde-format
+msgid "Stopwatch"
+msgstr "שעון עצר"
+
+#: qml/components/formatUtil.js:11
+#, kde-format
+msgid "Only once"
+msgstr "פעם אחת בלבד"
+
+#: qml/components/formatUtil.js:16
+#, kde-format
+msgid "Everyday"
+msgstr "כל יום"
+
+#: qml/components/formatUtil.js:19
+#, kde-format
+msgid "Weekdays"
+msgstr "ימי חול"
+
+#: qml/components/formatUtil.js:22
+#, kde-format
+msgid "Mon, "
+msgstr "שני, "
+
+#: qml/components/formatUtil.js:23
+#, kde-format
+msgid "Tue, "
+msgstr "שלישי, "
+
+#: qml/components/formatUtil.js:24
+#, kde-format
+msgid "Wed, "
+msgstr "רביעי, "
+
+#: qml/components/formatUtil.js:25
+#, kde-format
+msgid "Thu, "
+msgstr "חמישי, "
+
+#: qml/components/formatUtil.js:26
+#, kde-format
+msgid "Fri, "
+msgstr "שישי, "
+
+#: qml/components/formatUtil.js:27
+#, kde-format
+msgid "Sat, "
+msgstr "שבת, "
+
+#: qml/components/formatUtil.js:28
+#, kde-format
+msgid "Sun, "
+msgstr "ראשון, "
+
+#: qml/components/TimePicker.qml:93
+#, kde-format
+msgid "AM"
+msgstr "לפני הצהריים"
+
+#: qml/components/TimePicker.qml:93
+#, kde-format
+msgid "PM"
+msgstr "PM"
+
+#: qml/main.qml:23
+#, kde-format
+msgid "Clock"
+msgstr "שעון"
+
+#: qml/settings/SettingsPage.qml:34
+#, kde-format
+msgid "Time Format"
+msgstr "תבנית שעה"
+
+#: qml/settings/SettingsPage.qml:38
+#, kde-format
+msgid "Use System Default"
+msgstr "להשתמש בברירת המחדל של המערכת"
+
+#: qml/settings/SettingsPage.qml:39
+#, kde-format
+msgid "12 Hour Time"
+msgstr "שעון 12 שעות"
+
+#: qml/settings/SettingsPage.qml:40
+#, kde-format
+msgid "24 Hour Time"
+msgstr "שעון 24 שעות"
+
+#: qml/settings/SettingsPage.qml:62
+#, kde-format
+msgid "About Clock"
+msgstr "על השעון"
+
+#: qml/settings/SettingsPage.qml:70
+#, kde-format
+msgid "About KDE"
+msgstr "על KDE"
+
+#: qml/stopwatch/StopwatchPage.qml:40 qml/stopwatch/StopwatchPage.qml:146
+#: qml/timer/TimerListDelegate.qml:166 qml/timer/TimerPage.qml:52
+#: qml/timer/TimerPage.qml:100
+#, kde-format
+msgid "Reset"
+msgstr "איפוס"
+
+#: qml/stopwatch/StopwatchPage.qml:148 qml/timer/TimerListDelegate.qml:156
+#: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
+#, kde-format
+msgid "Pause"
+msgstr "השהייה"
+
+#: qml/stopwatch/StopwatchPage.qml:150
+#, kde-format
+msgid "Resume"
+msgstr "המשך"
+
+#: qml/stopwatch/StopwatchPage.qml:152 qml/timer/TimerListDelegate.qml:156
+#: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
+#, kde-format
+msgid "Start"
+msgstr "התחלה"
+
+#: qml/stopwatch/StopwatchPage.qml:175
+#, kde-format
+msgid "Lap"
+msgstr "סיבוב"
+
+#: qml/stopwatch/StopwatchPage.qml:298
+#, kde-format
+msgid "#%1"
+msgstr "מס׳ %1"
+
+#: qml/time/AddLocationListView.qml:49
+#, kde-format
+msgid "No locations found"
+msgstr "לא נמצאו מקומות"
+
+#: qml/time/AddLocationPage.qml:17 qml/time/AddLocationWrapper.qml:33
+#, kde-format
+msgid "Add Location"
+msgstr "הוספת מקום"
+
+#: qml/time/TimePage.qml:50
+#, kde-format
+msgid "Add"
+msgstr "הוספה"
+
+#: qml/timer/PresetDurationButton.qml:23 qml/timer/TimerForm.qml:39
+#, kde-format
+msgid "1 m"
+msgstr "מטר"
+
+#: qml/timer/TimerForm.qml:47
+#, kde-format
+msgid "5 m"
+msgstr "5 מ׳"
+
+#: qml/timer/TimerForm.qml:55
+#, kde-format
+msgid "10 m"
+msgstr "10 מ׳"
+
+#: qml/timer/TimerForm.qml:67
+#, kde-format
+msgid "15 m"
+msgstr "15 מ׳"
+
+#: qml/timer/TimerForm.qml:75
+#, kde-format
+msgid "30 m"
+msgstr "30 מ׳"
+
+#: qml/timer/TimerForm.qml:83
+#, kde-format
+msgid "1 h"
+msgstr "שעה"
+
+#: qml/timer/TimerForm.qml:95
+#, kde-format
+msgid "<b>Duration:</b>"
+msgstr "<b>משך:</b>"
+
+#: qml/timer/TimerForm.qml:104
+#, kde-format
+msgid "hours"
+msgstr "שעות"
+
+#: qml/timer/TimerForm.qml:115
+#, kde-format
+msgid "minutes"
+msgstr "דקות"
+
+#: qml/timer/TimerForm.qml:126
+#, kde-format
+msgid "seconds"
+msgstr "שניות"
+
+#: qml/timer/TimerForm.qml:132
+#, kde-format
+msgid "<b>Label:</b>"
+msgstr "<b>תווית:</b>"
+
+#: qml/timer/TimerForm.qml:133
+#, kde-format
+msgid "Timer"
+msgstr "קוצב זמן"
+
+#: qml/timer/TimerForm.qml:138
+#, kde-format
+msgid "<b>Command at timeout:</b>"
+msgstr "<b>פקודה עם תום הזמן:</b>"
+
+#: qml/timer/TimerForm.qml:141
+#, kde-format
+msgid "optional"
+msgstr "רשות"
+
+#: qml/timer/TimerForm.qml:157
+#, kde-format
+msgid "Hide Presets"
+msgstr "הסתרת ערכות"
+
+#: qml/timer/TimerForm.qml:157
+#, kde-format
+msgid "Show Presets"
+msgstr "הצגת ערכות"
+
+#: qml/timer/TimerForm.qml:162
+#, kde-format
+msgid "Toggle Delete"
+msgstr "החלפת מצב מחיקה"
+
+#: qml/timer/TimerFormWrapper.qml:55
+#, kde-format
+msgid "<b>Create New Timer</b>"
+msgstr "<b>יצירת קוצב זמן חדש</b>"
+
+#: qml/timer/TimerFormWrapper.qml:73 qml/timer/TimerFormWrapper.qml:132
+#, kde-format
+msgid "Save As Preset"
+msgstr "שמירה כערכה"
+
+#: qml/timer/TimerFormWrapper.qml:99
+#, kde-format
+msgid "Create timer"
+msgstr "יצירת קוצב זמן"
+
+#: qml/timer/TimerListDelegate.qml:145 qml/timer/TimerPage.qml:67
+#: qml/timer/TimerPage.qml:115
+#, kde-format
+msgid "Loop Timer"
+msgstr "קוצב זמן שחוזר על עצמו"
+
+#: qml/timer/TimerListDelegate.qml:176 qml/timer/TimerPage.qml:58
+#: qml/timer/TimerPage.qml:106
+#, kde-format
+msgid "Delete"
+msgstr "מחיקה"
+
+#: qml/timer/TimerListPage.qml:29
+#, kde-format
+msgid "New Timer"
+msgstr "קוצב זמן חדש"
+
+#: qml/timer/TimerListPage.qml:49
+#, kde-format
+msgid ""
+"The clock daemon was not found. Please start kclockd in order to have timer "
+"functionality."
+msgstr "סוכן השעון לא נמצא. נא להפעיל את kclockd כדי שקוצבי הזמן יעבדו."
+
+#: qml/timer/TimerListPage.qml:87
+#, kde-format
+msgid "No timers configured"
+msgstr "לא מוגדרים קוצבי זמן"
+
+#: qml/timer/TimerListPage.qml:92
+#, kde-format
+msgid "Add timer"
+msgstr "הוספת קוצב זמן"
+
+#: qml/timer/TimerPage.qml:24
+#, kde-format
+msgid "New timer"
+msgstr "קוצב זמן חדש"
+
+#: qml/timer/TimerRingingPopup.qml:27
+#, kde-format
+msgid "Timer has finished"
+msgstr "קוצב הזמן הסתיים"
+
+#: qml/timer/TimerRingingPopup.qml:46
+#, kde-format
+msgid "%1 has completed."
+msgstr "%1 הושלם."
+
+#: qml/timer/TimerRingingPopup.qml:46
+#, kde-format
+msgid "The timer has completed."
+msgstr "קוצב הזמן הסתיים."
+
+#: savedlocationsmodel.cpp:110
+#, kde-format
+msgid "%1 hour and 30 minutes ahead"
+msgstr "הקדמה של שעה %1 ו־30 דקות"
+
+#: savedlocationsmodel.cpp:110
+#, kde-format
+msgid "%1 hours and 30 minutes ahead"
+msgstr "הקדמה של %1 שעות ו־30 דקות"
+
+#: savedlocationsmodel.cpp:112
+#, kde-format
+msgid "%1 hour ahead"
+msgstr "הקדמה של שעה %1"
+
+#: savedlocationsmodel.cpp:112
+#, kde-format
+msgid "%1 hours ahead"
+msgstr "הקדמה של %1 שעות"
+
+#: savedlocationsmodel.cpp:117
+#, kde-format
+msgid "%1 hour and 30 minutes behind"
+msgstr "עיכוב של שעה %1 ו־30 דקות"
+
+#: savedlocationsmodel.cpp:117
+#, kde-format
+msgid "%1 hours and 30 minutes behind"
+msgstr "עיכוב של %1 שעות ו־30 דקות"
+
+#: savedlocationsmodel.cpp:119
+#, kde-format
+msgid "%1 hour behind"
+msgstr "עיכוב של שעה %1"
+
+#: savedlocationsmodel.cpp:119
+#, kde-format
+msgid "%1 hours behind"
+msgstr "עיכוב של %1 שעות"
+
+#: savedlocationsmodel.cpp:122
+#, kde-format
+msgid "Local time"
+msgstr "השעה המקומית"
+
+#: utilmodel.cpp:74
+#, kde-format
+msgid "%1 day"
+msgid_plural "%1 days"
+msgstr[0] "יום"
+msgstr[1] "יומיים"
+msgstr[2] "%1 יום"
+msgstr[3] "%1 ימים"
+
+#: utilmodel.cpp:78
+#, kde-format
+msgid ", "
+msgstr ", "
+
+#: utilmodel.cpp:80 utilmodel.cpp:86
+#, kde-format
+msgid " and "
+msgstr " וגם "
+
+#: utilmodel.cpp:82
+#, kde-format
+msgid "%1 hour"
+msgid_plural "%1 hours"
+msgstr[0] "שעה"
+msgstr[1] "שעתיים"
+msgstr[2] "%1 שעות"
+msgstr[3] "%1 שעות"
+
+#: utilmodel.cpp:88
+#, kde-format
+msgid "%1 minute"
+msgid_plural "%1 minutes"
+msgstr[0] "דקה"
+msgstr[1] "שתי דקות"
+msgstr[2] "%1 דקות"
+msgstr[3] "%1 דקות"
+
+#: utilmodel.cpp:92
+#, kde-format
+msgid "Alarm will ring in under a minute"
+msgstr "ההתראה תצלצל תוך פחות מדקה"
+
+#: utilmodel.cpp:94
+#, kde-format
+msgid "Alarm will ring in %1"
+msgstr "ההתראה תצלצל תוך %1"
