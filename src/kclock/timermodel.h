@@ -49,7 +49,7 @@ private:
     explicit TimerModel(QObject *parent = nullptr);
 
     QList<Timer *> m_timersList;
-    OrgKdeKclockTimerModelInterface *m_interface;
+    OrgKdeKclockTimerModelInterface *const m_interface;
     QDBusServiceWatcher *m_watcher;
     bool m_connectedToDaemon = false;
 };
