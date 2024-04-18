@@ -7,7 +7,6 @@
 
 #include "alarm.h"
 
-#include "alarmmodel.h"
 #include "settingsmodel.h"
 #include "utilmodel.h"
 

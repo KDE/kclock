@@ -16,7 +16,6 @@
 
 #include "addlocationmodel.h"
 #include "kclockformat.h"
-#include "settingsmodel.h"
 #include "utilmodel.h"
 
 const QString TZ_CFG_GROUP = QStringLiteral("Timezones");

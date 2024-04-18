@@ -9,7 +9,6 @@
 #include "addlocationmodel.h"
 
 #include "savedlocationsmodel.h"
-#include "utilmodel.h"
 
 #include <KConfigGroup>
 #include <KLocalizedString>
