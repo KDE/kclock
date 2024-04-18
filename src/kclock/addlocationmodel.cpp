@@ -76,7 +76,7 @@ QVariant AddLocationModel::data(const QModelIndex &index, int role) const
         return split[split.size() - 1];
     }
     case CountryRole:
-        return QLocale::countryToString(tz.country());
+        return QLocale::territoryToString(tz.territory());
     case TimeZoneRole:
         return tz.displayName(QDateTime::currentDateTime(), QTimeZone::ShortName);
     case IdRole:
