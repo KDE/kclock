@@ -106,7 +106,7 @@ Kirigami.ScrollablePage {
                         Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
                         horizontalAlignment: Text.AlignHCenter
                         font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 3)
-                        font.weight: Font.Regular
+                        font.weight: Font.Normal
                         opacity: 0.7
                         text: KClockFormat.currentTime
                         color: Kirigami.ColorUtils.tintWithAlpha(Kirigami.Theme.textColor, Kirigami.Theme.activeTextColor, 0.5)
