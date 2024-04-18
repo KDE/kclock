@@ -15,7 +15,7 @@ class UtilModel : public QObject
     Q_PROPERTY(bool use24HourTime READ use24HourTime NOTIFY use24HourTimeChanged)
 
 public:
-    UtilModel(QObject *parent = nullptr);
+    explicit UtilModel(QObject *parent = nullptr);
     static UtilModel *instance();
 
     Q_INVOKABLE QString getDefaultAlarmFileLocation();
