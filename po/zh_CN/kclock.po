@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-24 00:40+0000\n"
+"POT-Creation-Date: 2024-04-19 00:41+0000\n"
 "PO-Revision-Date: 2024-03-30 19:37\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -595,47 +595,47 @@ msgstr "%1 已完成计时。"
 msgid "The timer has completed."
 msgstr "计时器已完成计时。"
 
-#: savedlocationsmodel.cpp:110
+#: savedlocationsmodel.cpp:109
 #, kde-format
 msgid "%1 hour and 30 minutes ahead"
 msgstr "还有 %1 小时 30 分钟"
 
-#: savedlocationsmodel.cpp:110
+#: savedlocationsmodel.cpp:109
 #, kde-format
 msgid "%1 hours and 30 minutes ahead"
 msgstr "还有 %1 小时 30 分钟"
 
-#: savedlocationsmodel.cpp:112
+#: savedlocationsmodel.cpp:111
 #, kde-format
 msgid "%1 hour ahead"
 msgstr "还有 %1 小时"
 
-#: savedlocationsmodel.cpp:112
+#: savedlocationsmodel.cpp:111
 #, kde-format
 msgid "%1 hours ahead"
 msgstr "还有 %1 小时"
 
-#: savedlocationsmodel.cpp:117
+#: savedlocationsmodel.cpp:116
 #, kde-format
 msgid "%1 hour and 30 minutes behind"
 msgstr "已经过 %1 小时 30 分钟"
 
-#: savedlocationsmodel.cpp:117
+#: savedlocationsmodel.cpp:116
 #, kde-format
 msgid "%1 hours and 30 minutes behind"
 msgstr "已经过 %1 小时 30 分钟"
 
-#: savedlocationsmodel.cpp:119
+#: savedlocationsmodel.cpp:118
 #, kde-format
 msgid "%1 hour behind"
 msgstr "已经过 %1 小时"
 
-#: savedlocationsmodel.cpp:119
+#: savedlocationsmodel.cpp:118
 #, kde-format
 msgid "%1 hours behind"
 msgstr "已经过 %1 小时"
 
-#: savedlocationsmodel.cpp:122
+#: savedlocationsmodel.cpp:121
 #, kde-format
 msgid "Local time"
 msgstr "本地时间"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-24 00:40+0000\n"
+"POT-Creation-Date: 2024-04-19 00:41+0000\n"
 "PO-Revision-Date: 2024-01-03 14:19-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -597,47 +597,47 @@ msgstr "%1 ਪੂਰਾ ਹੋਇਆ ਹੈ।"
 msgid "The timer has completed."
 msgstr "ਟਾਈਮਰ ਪੂਰਾ ਹੋਇਆ ਹੈ।"
 
-#: savedlocationsmodel.cpp:110
+#: savedlocationsmodel.cpp:109
 #, kde-format
 msgid "%1 hour and 30 minutes ahead"
 msgstr "%1 ਘੰਟਾ ਅਤੇ 30 ਮਿੰਟ ਅੱਗੇ"
 
-#: savedlocationsmodel.cpp:110
+#: savedlocationsmodel.cpp:109
 #, kde-format
 msgid "%1 hours and 30 minutes ahead"
 msgstr "%1 ਘੰਟੇ ਅਤੇ 30 ਮਿੰਟ ਅੱਗੇ"
 
-#: savedlocationsmodel.cpp:112
+#: savedlocationsmodel.cpp:111
 #, kde-format
 msgid "%1 hour ahead"
 msgstr "%1 ਘੰਟਾ ਅੱਗੇ"
 
-#: savedlocationsmodel.cpp:112
+#: savedlocationsmodel.cpp:111
 #, kde-format
 msgid "%1 hours ahead"
 msgstr "%1 ਘੰਟੇ ਅੱਗੇ"
 
-#: savedlocationsmodel.cpp:117
+#: savedlocationsmodel.cpp:116
 #, kde-format
 msgid "%1 hour and 30 minutes behind"
 msgstr "%1 ਘੰਟਾ ਅਤੇ 30 ਮਿੰਟ ਪਿੱਛੇ"
 
-#: savedlocationsmodel.cpp:117
+#: savedlocationsmodel.cpp:116
 #, kde-format
 msgid "%1 hours and 30 minutes behind"
 msgstr "%1 ਘੰਟੇ ਅਤੇ 30 ਮਿੰਟ ਪਿੱਛੇ"
 
-#: savedlocationsmodel.cpp:119
+#: savedlocationsmodel.cpp:118
 #, kde-format
 msgid "%1 hour behind"
 msgstr "%1 ਘੰਟਾ ਪਿੱਛਾ"
 
-#: savedlocationsmodel.cpp:119
+#: savedlocationsmodel.cpp:118
 #, kde-format
 msgid "%1 hours behind"
 msgstr "%1 ਘੰਟੇ ਪਿੱਛੇ"
 
-#: savedlocationsmodel.cpp:122
+#: savedlocationsmodel.cpp:121
 #, kde-format
 msgid "Local time"
 msgstr "ਲੋਕਲ ਸਮਾਂ"
