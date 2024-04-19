@@ -68,6 +68,7 @@
   <summary xml:lang="uk">Розклад та встановлення нагадувань</summary>
   <summary xml:lang="x-test">xxKeep time and set alarmsxx</summary>
   <summary xml:lang="zh-CN">显示时间和设置闹钟</summary>
+  <summary xml:lang="zh-TW">看時間並設定鬧鐘</summary>
   <developer id="kde.org">
     <name translate="no">KDE</name>
   </developer>
@@ -89,6 +90,7 @@
     <p xml:lang="uk">Універсальна програма-будильник для робочих станцій та мобільних пристроїв. Реалізовано таймер та загальносвітовий годинник, можна встановлювати декілька нагадувань та таймерів.</p>
     <p xml:lang="x-test">xxA universal clock application for desktop and mobile. Clock includes a stopwatch and a world clock, and allows you to set multiple alarms and timers.xx</p>
     <p xml:lang="zh-CN">一款同时支持桌面和手机环境的时钟应用。带有秒表和世界时钟，还可以设置多个闹钟和计时器。</p>
+    <p xml:lang="zh-TW">桌面與手機通用的時鐘應用程式。《時鐘》包含碼錶與世界時鐘功能，也讓您設定多個鬧鐘和計時器。</p>
     <p>It contains alarm, timer, stopwatch and timezone functionalities. Alarms and timers are able to wake the device from suspend on Plasma.</p>
     <p xml:lang="ar">يحتوي على وظائف التنبيه والمؤقت وساعة التوقيت والمنطقة الزمنية. المنبهات والمؤقتات قادرة على إيقاظ الجهاز من حالة التعليق على البلازما.</p>
     <p xml:lang="ca">Conté funcions d'alarma, temporitzador, cronòmetre i zona horària. Les alarmes i els temporitzadors també poden fer que el dispositiu deixi d'estar suspès en el Plasma.</p>
