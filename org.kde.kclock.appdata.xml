@@ -11,7 +11,6 @@
   <content_rating type="oars-1.1"/>
   <name>Clock</name>
   <name xml:lang="ar">الساعة</name>
-  <name xml:lang="ast">Reló</name>
   <name xml:lang="ca">Rellotge</name>
   <name xml:lang="ca-valencia">Rellotge</name>
   <name xml:lang="cs">Hodiny</name>
@@ -25,7 +24,6 @@
   <name xml:lang="fi">Kello</name>
   <name xml:lang="fr">Horloge</name>
   <name xml:lang="gl">Reloxo</name>
-  <name xml:lang="he">שעון</name>
   <name xml:lang="hi">घड़ी</name>
   <name xml:lang="hu">Óra</name>
   <name xml:lang="ia">Clock (Horologio)</name>
@@ -34,7 +32,6 @@
   <name xml:lang="ka">საათი</name>
   <name xml:lang="ko">시계</name>
   <name xml:lang="lt">Laikrodis</name>
-  <name xml:lang="lv">Pulkstenis</name>
   <name xml:lang="nl">Klok</name>
   <name xml:lang="nn">Klokke</name>
   <name xml:lang="pa">ਘੜੀ</name>
@@ -52,45 +49,11 @@
   <name xml:lang="zh-CN">时钟</name>
   <name xml:lang="zh-TW">時鐘</name>
   <summary>Keep time and set alarms</summary>
-  <summary xml:lang="ca">Aneu a l'hora i establiu alarmes</summary>
-  <summary xml:lang="ca-valencia">Aneu fins a l'hora i establiu alarmes</summary>
-  <summary xml:lang="eo">Teni daton kaj meti alarmoj</summary>
-  <summary xml:lang="es">Marque la hora y defina alarmas</summary>
-  <summary xml:lang="eu">Mantendu ordua eta alarmak ezarri</summary>
-  <summary xml:lang="fr">Conserver l'heure et définir des alarmes</summary>
-  <summary xml:lang="he">התנהלות עם הזמן והגדרת התראות</summary>
-  <summary xml:lang="ia">Mantene tempore e assigna alarmas</summary>
-  <summary xml:lang="ka">ადევნეთ თვალყური დროს და დააყენეთ განგაშები</summary>
-  <summary xml:lang="nl">Tijd bijhouden en wekkers zetten</summary>
-  <summary xml:lang="pl">Pilnuj czasu i ustawiaj alarmy</summary>
-  <summary xml:lang="sl">Upošteva čas in nastavlja alarme</summary>
-  <summary xml:lang="tr">Zamanı tutun ve alarmlar kurun</summary>
-  <summary xml:lang="uk">Розклад та встановлення нагадувань</summary>
-  <summary xml:lang="x-test">xxKeep time and set alarmsxx</summary>
-  <summary xml:lang="zh-CN">显示时间和设置闹钟</summary>
-  <summary xml:lang="zh-TW">看時間並設定鬧鐘</summary>
   <developer id="kde.org">
     <name translate="no">KDE</name>
   </developer>
   <description>
     <p>A universal clock application for desktop and mobile. Clock includes a stopwatch and a world clock, and allows you to set multiple alarms and timers.</p>
-    <p xml:lang="ca">Una aplicació universal de rellotge per a l'escriptori i mòbil. El rellotge inclou un cronòmetre i un rellotge mundial, i permet establir alarmes i temporitzadors diversos.</p>
-    <p xml:lang="ca-valencia">Una aplicació universal de rellotge per a l'escriptori i mòbil. El rellotge inclou un cronòmetre i un rellotge mundial, i permet establir alarmes i temporitzadors diversos.</p>
-    <p xml:lang="eo">Universala horloĝa aplikaĵo por labortablo kaj poŝtelefono. Horloĝo inkluzivas tempumilon kaj mondan horloĝon, kaj permesas vin agordi plurajn alarmojn kaj tempumilojn.</p>
-    <p xml:lang="es">Una aplicación de reloj universal para el escritorio y el móvil. El reloj incluye un cronómetro y un reloj mundial, además de permitirle definir múltiples alarmas y temporizadores.</p>
-    <p xml:lang="eu">Mahaigainerako eta mugikorrerako erloju-aplikazio unibertsal bat. Erlojuak kronometroa eta munduko-erlojua ditu, eta hainbat alarma eta tenporizadore ezartzeko aukera eskaintzen dizu.</p>
-    <p xml:lang="fr">Une application d’horloge universelle pour ordinateur de bureau et mobile. L’horloge comprend un chronomètre et une horloge mondiale. Elle vous permet aussi de définir plusieurs alarmes et minuteries.</p>
-    <p xml:lang="he">יישום שעון אוניברסלי למחשב ולניידים. השעון כולל שעון עצר ושעון עולמי ומאפשר להגדיר מגוון התראות וקוצבי זמן.</p>
-    <p xml:lang="ia">Un application de horologio universal per scriptorio e mobile. Horologio include un  chronometro e un horologio mundial, e tu pote sempre fixar alarmas e timers.</p>
-    <p xml:lang="ka">უნივერსალური საათის აპლიკაცია კომპიუტერისა და მობილურისთვის. Clock შეიცავს წამზომს და მსოფლიო საათს და საშუალებას გაძლევთ, ერთზე მეტი განგაში და წამზომი დააყენოთ.</p>
-    <p xml:lang="nl">Een universele kloktoepassing voor bureaublad en mobiel. Kclock omvat een stopwatch en een wereldklok en biedt u het zetten meerdere wekkers en timers.</p>
-    <p xml:lang="pl">Wszechstronny zegar na urządzenia przenośne i biurkowe. Zegar zawiera stoper oraz zegar światowy. Umożliwia ustawienie wielu alarmów i minutników.</p>
-    <p xml:lang="sl">Univerzalna aplikacija ure za namizne in mobilne naprave. Ura vključuje štoparico in svetovno uro ter omogoča nastavitev več alarmov in časovnikov.</p>
-    <p xml:lang="tr">Masaüstü ve taşınabilir aygıtlar için evrensel bir saat uygulaması. Saat, bir kronometre ve dünya saati içerir ve birden çok alarm ve sayaç kurmanıza olanak tanır.</p>
-    <p xml:lang="uk">Універсальна програма-будильник для робочих станцій та мобільних пристроїв. Реалізовано таймер та загальносвітовий годинник, можна встановлювати декілька нагадувань та таймерів.</p>
-    <p xml:lang="x-test">xxA universal clock application for desktop and mobile. Clock includes a stopwatch and a world clock, and allows you to set multiple alarms and timers.xx</p>
-    <p xml:lang="zh-CN">一款同时支持桌面和手机环境的时钟应用。带有秒表和世界时钟，还可以设置多个闹钟和计时器。</p>
-    <p xml:lang="zh-TW">桌面與手機通用的時鐘應用程式。《時鐘》包含碼錶與世界時鐘功能，也讓您設定多個鬧鐘和計時器。</p>
     <p>It contains alarm, timer, stopwatch and timezone functionalities. Alarms and timers are able to wake the device from suspend on Plasma.</p>
     <p xml:lang="ar">يحتوي على وظائف التنبيه والمؤقت وساعة التوقيت والمنطقة الزمنية. المنبهات والمؤقتات قادرة على إيقاظ الجهاز من حالة التعليق على البلازما.</p>
     <p xml:lang="ca">Conté funcions d'alarma, temporitzador, cronòmetre i zona horària. Les alarmes i els temporitzadors també poden fer que el dispositiu deixi d'estar suspès en el Plasma.</p>
@@ -103,7 +66,6 @@
     <p xml:lang="fi">Sisältää hälytys-, ajastin, sekuntikello- ja aikavyöhyketoiminnot. Hälytykset ja ajastimet voivat Plasmassa herättää laitteen keskeytystilasta.</p>
     <p xml:lang="fr">Elle contient des fonctionnalités d'alarmes, de chronomètres, de minuteurs et de fuseaux horaires. Les alarmes et minuteurs sont aussi capables de faire sortir le périphérique du mode de veille lors de l'utilisation de Plasma.</p>
     <p xml:lang="gl">Ten funcionalidades de alarma, temporizador, cronómetro, e fuso horario. As alarmas e os temporizadores poden espertar o dispositivo da suspensión en Plasma.</p>
-    <p xml:lang="he">הוא מכיל יכולות כגון התראות, קוצב זמן, שעון עצר ושעון עולמי. התראות וקוצבי זמן יכולים להעיר את המכשיר מהשהייה בפלזמה.</p>
     <p xml:lang="hi">प्लाज़्मा के लिए एक संसृत घड़ी अनुप्रयोग। इसमें अलार्म, टाइमर,  विराम घड़ी और समय क्षेत्र विषेशताएँ शामिल हैं। प्लाज़्मा का उपयोग करते समय अलार्म उपकरण को तंत्र निलंबन से जगाने में भी सक्षम होते हैं।</p>
     <p xml:lang="hu">Ébresztő, időzítő, stopper és időzóna funkciókat tartalmaz. Plasma használatakor az ébresztők és az időzítők képesek felébreszteni az eszközt felfüggesztett állapotból.</p>
     <p xml:lang="ia">Il contine functionalitate de alarmas,chronometro, campana de horologio (stopwatch) e fusos horari. Alarmas e chronometros es capace de eveliar le dispositivo ab suspensiones in Plasma. </p>
@@ -112,8 +74,7 @@
     <p xml:lang="ka">ის განგაშის, ტაიმერის, წამზომის და დროის სარტყლის ფუნქციებს მოიცავს. მაღვიძარას და ტაიმერებს შეუძლიათ გააღვიძონ მოწყობილობა, თუ Plasma გაშვებულია.</p>
     <p xml:lang="ko">알람, 타이머, 초시계, 시간대 기능을 지원합니다. Plasma를 사용 중일 때 장치를 절전 모드에서 알람이나 타이머로 깨울 수도 있습니다.</p>
     <p xml:lang="lt">Ją sudaro žadintuvo, laikmačio, chronometro ir laiko juostų funkcionalumai. Plasma aplinkoje žadintuvai ir laikmačiai turi galimybę pažadinti sistemą iš pristabdymo būsenos.</p>
-    <p xml:lang="lv">Programmai ir signāla, taimera, hronometra un laika zonu funkcijas. Signāli un taimeri ļauj iekārtu ar„Plasma“ pamodināt no miega.</p>
-    <p xml:lang="nl">Het bevat de functionaliteiten wekker, timer, stopwatch en tijdzone. Wekkers kunnen het apparaat uit status onderbroken laten ontwaken bij gebruik van Plasma.</p>
+    <p xml:lang="nl">Het bevat de functionaliteiten alarm, timer, stopwatch en tijdzone. Alarmen kunnen het apparaat uit status onderbroken laten ontwaken bij gebruik van Plasma.</p>
     <p xml:lang="nn">Det inneheld alarmklokke, nedteljing, stoppeklokke og støtte for ulike tidssonar. Alarmar og nedteljing kan vekkja maskina frå kvilemodus på Plasma.</p>
     <p xml:lang="pa">ਇਸ ਵਿੱਚ ਅਲਾਰਮ, ਟਾਈਮਰ, ਸਟਾਪ-ਵਾਚ ਅਤੇ ਸਮਾਂ-ਖੇਤਰ ਦੀਆਂ ਸਹੂਲਤਾਂ ਹਨ। ਪਲਾਜ਼ਮਾ ਉੱਤੇ ਅਲਾਰਮ ਤੇ ਟਾਈਮਰ ਸਸਪੈਂਡ ਤੋਂ ਡਿਵਾਈਸ ਨੂੰ ਚਾਲੂ ਕਰ ਸਕਦੇ ਹਨ।</p>
     <p xml:lang="pl">Zawiera alarm, czasomierz, stoper oraz różne strefy czasowe. Alarmy i czasomierze są także w stanie wybudzić urządzenie z uśpienia na Plazmie.</p>
@@ -123,7 +84,7 @@
     <p xml:lang="ru">Возможности работы с напоминаниями, таймерами, секундомером и часовыми поясами. Напоминания и таймеры позволяют возобновить работу устройства после приостановки в Plasma.</p>
     <p xml:lang="sl">Vsebuje alarm, odštevalnik časa, štoparico in funkcionalnost časovnih pasov. Alarm je sposoben tudi aktivirati napravo iz mirovanja, kadar uporablja Plasmo.</p>
     <p xml:lang="sv">Det innehåller alarm, tidtagning, stoppur och tidszonsfunktioner. Alarm och tidtagare kan också väcka enheten från viloläge när Plasma används.</p>
-    <p xml:lang="tr">Alarm, sayaç, kronometre ve zaman dilimi işlevlerini içerir. Alarmlar ve sayaçlar, aygıtı Plasma’da iken uykudan uyandırabilir.</p>
+    <p xml:lang="tr">Alarm, sayaç, kronometre ve zaman dilimi işlevlerini içerir. Alarmlar ve sayaçlar, aygıtı Plasma'da iken uykudan uyandırabilir.</p>
     <p xml:lang="uk">Передбачено будильник, таймер та секундомір, а також функціональні можливості з роботи у різних часових поясах. Будильники і таймери здатні пробуджувати пристрій зі стану сну, якщо на ньому використовується Плазма.</p>
     <p xml:lang="x-test">xxIt contains alarm, timer, stopwatch and timezone functionalities. Alarms and timers are able to wake the device from suspend on Plasma.xx</p>
     <p xml:lang="zh-CN">它包含闹钟、计时器、秒表和时区功能。闹钟和计时器能够在 Plasma 上唤醒设备。</p>
@@ -155,7 +116,6 @@
       <caption xml:lang="fi">Mobiilinäkymä</caption>
       <caption xml:lang="fr">Affichage pour mobile</caption>
       <caption xml:lang="gl">Vista de móbil.</caption>
-      <caption xml:lang="he">תצוגה לניידים</caption>
       <caption xml:lang="hi">मोबाइल दृश्य</caption>
       <caption xml:lang="hu">Mobilnézet</caption>
       <caption xml:lang="ia">Vista de Mobile</caption>
@@ -164,7 +124,6 @@
       <caption xml:lang="ka">მობილური ხედი</caption>
       <caption xml:lang="ko">모바일 보기</caption>
       <caption xml:lang="lt">Mobilusis rodinys</caption>
-      <caption xml:lang="lv">Viedtālruņa skats</caption>
       <caption xml:lang="nl">Beeld op mobiel</caption>
       <caption xml:lang="nn">Mobilvising</caption>
       <caption xml:lang="pa">ਮੋਬਾਈਲ ਝਲਕ</caption>
@@ -197,7 +156,6 @@
       <caption xml:lang="fi">Työpöytänäkymä</caption>
       <caption xml:lang="fr">Affichage de bureau</caption>
       <caption xml:lang="gl">Vista de escritorio.</caption>
-      <caption xml:lang="he">תצוגת מחשב</caption>
       <caption xml:lang="hi">डेस्कटॉप दृश्य</caption>
       <caption xml:lang="hu">Asztali nézet</caption>
       <caption xml:lang="ia">Vista de Scriptorio</caption>
@@ -206,7 +164,6 @@
       <caption xml:lang="ka">სამუსაო მაგიდის ხედი</caption>
       <caption xml:lang="ko">데스크톱 보기</caption>
       <caption xml:lang="lt">Darbalaukio rodinys</caption>
-      <caption xml:lang="lv">Datora skats</caption>
       <caption xml:lang="nl">Beeld op bureaublad</caption>
       <caption xml:lang="nn">Skrivebordsvising</caption>
       <caption xml:lang="pa">ਡੈਸਕਟਾਪ ਝਲਕ</caption>
@@ -239,7 +196,6 @@
       <caption xml:lang="fi">Ajastinsivu</caption>
       <caption xml:lang="fr">Page de chronomètres</caption>
       <caption xml:lang="gl">Páxina dos temporizadores.</caption>
-      <caption xml:lang="he">עמוד קוצבי זמן</caption>
       <caption xml:lang="hi">टाइमरों का पृष्ठ</caption>
       <caption xml:lang="hu">Időzítők oldal</caption>
       <caption xml:lang="ia">Pagina de chronometros</caption>
@@ -248,7 +204,6 @@
       <caption xml:lang="ka">წამმზომების გვერდი</caption>
       <caption xml:lang="ko">타이머 쪽</caption>
       <caption xml:lang="lt">Laikmačių puslapis</caption>
-      <caption xml:lang="lv">Taimeru lapa</caption>
       <caption xml:lang="nl">Pagina met timers</caption>
       <caption xml:lang="nn">Nedteljarside</caption>
       <caption xml:lang="pa">ਟਾਈਮਰ ਸਫ਼ਾ</caption>
@@ -281,7 +236,6 @@
       <caption xml:lang="fi">Ajastinsivu</caption>
       <caption xml:lang="fr">Page de chronomètre</caption>
       <caption xml:lang="gl">Páxina dun temporizador.</caption>
-      <caption xml:lang="he">עמוד קוצב זמן</caption>
       <caption xml:lang="hi">टाइमर पृष्ठ</caption>
       <caption xml:lang="hu">Időzítő oldal</caption>
       <caption xml:lang="ia">Pagiona de chronometro</caption>
@@ -290,7 +244,6 @@
       <caption xml:lang="ka">წამმზომის გვერდი</caption>
       <caption xml:lang="ko">타이머 쪽</caption>
       <caption xml:lang="lt">Laikmačio puslapis</caption>
-      <caption xml:lang="lv">Taimera lapa</caption>
       <caption xml:lang="nl">Pagina met timer</caption>
       <caption xml:lang="nn">Nedteljingsside</caption>
       <caption xml:lang="pa">ਟਾਈਮਰ ਸਫ਼ਾ</caption>
@@ -323,7 +276,6 @@
       <caption xml:lang="fi">Sekuntikellosivu</caption>
       <caption xml:lang="fr">Page de minuteur</caption>
       <caption xml:lang="gl">Páxina do cronómetro.</caption>
-      <caption xml:lang="he">עמוד שעון עצר</caption>
       <caption xml:lang="hi">विराम घड़ी पृष्ठ</caption>
       <caption xml:lang="hu">Stopper oldal</caption>
       <caption xml:lang="ia">Pagina de Campana de Horologio (stopwatch)</caption>
@@ -332,7 +284,6 @@
       <caption xml:lang="ka">სხვანაირი წამმზომის გვერდი</caption>
       <caption xml:lang="ko">초시계 쪽</caption>
       <caption xml:lang="lt">Chronometro puslapis</caption>
-      <caption xml:lang="lv">Hronometra lapa</caption>
       <caption xml:lang="nl">Pagina met stopwatch</caption>
       <caption xml:lang="nn">Stoppeklokke-side</caption>
       <caption xml:lang="pa">ਸਟਾਪਵਾਚ ਸਫ਼ਾ</caption>
@@ -365,7 +316,6 @@
       <caption xml:lang="fi">Hälytyssivu</caption>
       <caption xml:lang="fr">Page d'alarmes</caption>
       <caption xml:lang="gl">Páxina das alarmas.</caption>
-      <caption xml:lang="he">עמוד התראות</caption>
       <caption xml:lang="hi">अलार्मों का पृष्ठ</caption>
       <caption xml:lang="hu">Ébresztés oldal</caption>
       <caption xml:lang="ia">Pagina de alarma</caption>
@@ -374,7 +324,6 @@
       <caption xml:lang="ka">მაღვიძარის გვერდი</caption>
       <caption xml:lang="ko">알람 쪽</caption>
       <caption xml:lang="lt">Žadintuvų puslapis</caption>
-      <caption xml:lang="lv">Signālu lapa</caption>
       <caption xml:lang="nl">Pagina met alarmen</caption>
       <caption xml:lang="nn">Alarmside</caption>
       <caption xml:lang="pa">ਅਲਾਰਮ ਸਫ਼ਾ</caption>
