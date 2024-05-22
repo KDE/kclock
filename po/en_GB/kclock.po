@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kclock package.
 #
-# Steve Allewell <steve.allewell@gmail.com>, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024 Steve Allewell <steve.allewell@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-19 00:41+0000\n"
-"PO-Revision-Date: 2023-02-26 19:46+0000\n"
+"PO-Revision-Date: 2024-05-21 19:15+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -35,13 +35,12 @@ msgstr "Select opened page"
 #: main.cpp:66
 #, kde-format
 msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
-msgstr ""
+msgstr "Set alarms and timers, use a stopwatch, and manage world clocks"
 
 #: main.cpp:68
-#, fuzzy, kde-format
-#| msgid "© 2020-2022 KDE Community"
+#, kde-format
 msgid "© 2020-2024 KDE Community"
-msgstr "© 2020-2022 KDE Community"
+msgstr "© 2020-2024 KDE Community"
 
 #: main.cpp:70
 #, kde-format
@@ -186,8 +185,7 @@ msgstr[0] "Snoozed %1 minute"
 msgstr[1] "Snoozed %1 minutes"
 
 #: qml/alarm/AlarmListDelegate.qml:126 qml/time/TimePageDelegate.qml:60
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "Delete"
@@ -368,10 +366,9 @@ msgid "Clock"
 msgstr "Clock"
 
 #: qml/settings/SettingsPage.qml:34
-#, fuzzy, kde-format
-#| msgid "Time Format:"
+#, kde-format
 msgid "Time Format"
-msgstr "Time Format:"
+msgstr "Time Format"
 
 #: qml/settings/SettingsPage.qml:38
 #, kde-format
@@ -389,16 +386,14 @@ msgid "24 Hour Time"
 msgstr "24 Hour Time"
 
 #: qml/settings/SettingsPage.qml:62
-#, fuzzy, kde-format
-#| msgid "Clock"
+#, kde-format
 msgid "About Clock"
-msgstr "Clock"
+msgstr "About Clock"
 
 #: qml/settings/SettingsPage.qml:70
-#, fuzzy, kde-format
-#| msgid "About"
+#, kde-format
 msgid "About KDE"
-msgstr "About"
+msgstr "About KDE"
 
 #: qml/stopwatch/StopwatchPage.qml:40 qml/stopwatch/StopwatchPage.qml:146
 #: qml/timer/TimerListDelegate.qml:166 qml/timer/TimerPage.qml:52
@@ -416,7 +411,7 @@ msgstr "Pause"
 #: qml/stopwatch/StopwatchPage.qml:150
 #, kde-format
 msgid "Resume"
-msgstr ""
+msgstr "Resume"
 
 #: qml/stopwatch/StopwatchPage.qml:152 qml/timer/TimerListDelegate.qml:156
 #: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
