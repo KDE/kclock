@@ -68,6 +68,7 @@
   <summary xml:lang="nl">Tijd bijhouden en wekkers zetten</summary>
   <summary xml:lang="pl">Pilnuj czasu i ustawiaj alarmy</summary>
   <summary xml:lang="sl">Upošteva čas in nastavlja alarme</summary>
+  <summary xml:lang="sv">Behåll tid och ställ in alarm</summary>
   <summary xml:lang="tr">Zaman Tutucusu ve Alarm Kurucusu</summary>
   <summary xml:lang="uk">Розклад та встановлення нагадувань</summary>
   <summary xml:lang="x-test">xxKeep time and set alarmsxx</summary>
@@ -93,6 +94,7 @@
     <p xml:lang="nl">Een universele kloktoepassing voor bureaublad en mobiel. Kclock omvat een stopwatch en een wereldklok en biedt u het zetten meerdere wekkers en timers.</p>
     <p xml:lang="pl">Wszechstronny zegar na urządzenia przenośne i biurkowe. Zegar zawiera stoper oraz zegar światowy. Umożliwia ustawienie wielu alarmów i minutników.</p>
     <p xml:lang="sl">Univerzalna aplikacija ure za namizne in mobilne naprave. Ura vključuje štoparico in svetovno uro ter omogoča nastavitev več alarmov in časovnikov.</p>
+    <p xml:lang="sv">Ett universellt klockprogram för stationära datorer och mobiler. Klockan innehåller ett stoppur och en världsklocka och låter dig ställa in flera alarm och tidtagare.</p>
     <p xml:lang="tr">Masaüstü ve taşınabilir aygıtlar için evrensel bir saat uygulaması. Saat, bir kronometre ve dünya saati içerir ve birden çok alarm ve sayaç kurmanıza olanak tanır.</p>
     <p xml:lang="uk">Універсальна програма-будильник для робочих станцій та мобільних пристроїв. Реалізовано таймер та загальносвітовий годинник, можна встановлювати декілька нагадувань та таймерів.</p>
     <p xml:lang="x-test">xxA universal clock application for desktop and mobile. Clock includes a stopwatch and a world clock, and allows you to set multiple alarms and timers.xx</p>
