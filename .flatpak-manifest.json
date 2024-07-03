@@ -36,7 +36,7 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "http://people.freedesktop.org/~mccann/dist/sound-theme-freedesktop-0.8.tar.bz2",
+                    "url": "https://people.freedesktop.org/~mccann/dist/sound-theme-freedesktop-0.8.tar.bz2",
                     "sha256": "cb518b20eef05ec2e82dda1fa89a292c1760dc023aba91b8aa69bafac85e8a14"
                 }
             ]
@@ -60,24 +60,10 @@
             "sources": [ { "type": "git", "url": "https://invent.kde.org/libraries/kirigami-addons.git", "branch": "master" } ]
         },
         {
-            "name": "libplasma",
-            "config-opts": [
-                "-DBUILD_TESTING=OFF"
-            ],
-            "buildsystem": "cmake-ninja",
-            "builddir": true,
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://invent.kde.org/plasma/libplasma.git",
-                    "branch": "master"
-                }
-            ]
-        },
-        {
             "name": "kclock",
             "buildsystem": "cmake-ninja",
             "builddir": true,
+            "config-opts": [ "-DBUILD_PLASMOID=OFF" ],
             "sources": [ { "type": "dir", "path": ".", "skip": [".git"] } ]
         }
     ]

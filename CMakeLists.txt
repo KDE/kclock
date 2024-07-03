@@ -16,6 +16,8 @@ set(RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_
 
 project(kclock VERSION ${RELEASE_SERVICE_VERSION})
 
+option(BUILD_PLASMOID "Build Plasmoid" ON)
+
 set(KF_MIN_VERSION "5.240.0")
 set(QT_MIN_VERSION "6.5.0")
 
@@ -62,7 +64,9 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
     DBusAddons
     StatusNotifierItem
 )
-find_package(Plasma REQUIRED)
+if (BUILD_PLASMOID)
+    find_package(Plasma REQUIRED)
+endif()
 
 find_package(KF6KirigamiAddons 0.6 REQUIRED)
 
