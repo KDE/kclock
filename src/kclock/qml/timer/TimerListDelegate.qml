@@ -142,7 +142,7 @@ Kirigami.AbstractCard {
                     ToolButton {
                         icon.name: root.looping ? "media-repeat-all" : "media-repeat-none"
                         display: AbstractButton.IconOnly
-                        text: i18n("Loop Timer")
+                        text: i18nc("@info:tooltip", "Loop timer")
                         checked: root.looping
                         onClicked: root.timer.toggleLooping()
                         
@@ -153,7 +153,7 @@ Kirigami.AbstractCard {
                     ToolButton {
                         icon.name: root.running ? "chronometer-pause" : "chronometer-start"
                         display: AbstractButton.IconOnly
-                        text: root.running ? i18n("Pause") : i18n("Start")
+                        text: root.running ? i18nc("@info:tooltip", "Pause") : i18nc("@info:tooltip", "Start")
                         onClicked: root.timer.toggleRunning()
                         
                         ToolTip.visible: hovered && text.length > 0
@@ -163,7 +163,7 @@ Kirigami.AbstractCard {
                     ToolButton {
                         icon.name: "chronometer-reset"
                         display: AbstractButton.IconOnly
-                        text: i18n("Reset")
+                        text: i18nc("@info:tooltip", "Reset")
                         onClicked: root.timer.reset();
                         
                         ToolTip.visible: hovered && text.length > 0
@@ -173,7 +173,7 @@ Kirigami.AbstractCard {
                     ToolButton {
                         icon.name: "delete"
                         display: AbstractButton.IconOnly
-                        text: i18n("Delete")
+                        text: i18nc("@info:tooltip", "Delete")
                         onClicked: TimerModel.remove(index)
                         
                         ToolTip.visible: hovered && text.length > 0

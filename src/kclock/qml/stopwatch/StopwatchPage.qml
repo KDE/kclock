@@ -193,7 +193,7 @@ Kirigami.ScrollablePage {
 
                 Label {
                     horizontalAlignment: Text.AlignLeft
-                    text: i18n('Lap')
+                    text: i18n("Lap")
                     font.pointSize: Kirigami.Theme.smallFont.pointSize
                     font.bold: true
                 }
@@ -201,14 +201,14 @@ Kirigami.ScrollablePage {
                 Label {
                     Layout.fillWidth: true
                     horizontalAlignment: Text.AlignHCenter
-                    text: i18n('Lap Time')
+                    text: i18n("Lap Time")
                     font.pointSize: Kirigami.Theme.smallFont.pointSize
                     font.bold: true
                 }
 
                 Label {
                     horizontalAlignment: Text.AlignRight
-                    text: i18n('Total')
+                    text: i18n("Total")
                     font.pointSize: Kirigami.Theme.smallFont.pointSize
                     font.bold: true
                 }
