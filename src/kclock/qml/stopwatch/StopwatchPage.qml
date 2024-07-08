@@ -32,14 +32,6 @@ Kirigami.ScrollablePage {
     Keys.onReturnPressed: StopwatchModel.addLap();
 
     actions: [
-        // desktop resetaction
-        Kirigami.Action {
-            id: toggleAction
-            visible: !Kirigami.Settings.isMobile
-            icon.name: "chronometer-reset"
-            text: i18n("Reset")
-            onTriggered: StopwatchTimer.reset()
-        },
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.IconOnly
             visible: !applicationWindow().isWidescreen
@@ -165,18 +157,22 @@ Kirigami.ScrollablePage {
 
             Item { Layout.fillWidth: true }
 
-            // add new lap button
+            // on desktop & paused -> reset button
+            // otherwise -> lap button
             Button {
                 implicitHeight: Kirigami.Units.gridUnit * 2
                 implicitWidth: Kirigami.Units.gridUnit * 6
                 Layout.alignment: Qt.AlignHCenter
 
-                icon.name: "chronometer-lap"
-                text: i18n("Lap")
-                enabled: root.running
+                icon.name: (!Kirigami.Settings.isMobile && !root.running) ? "chronometer-reset" : "chronometer-lap";
+                text: (!Kirigami.Settings.isMobile && !root.running) ? i18n("Reset") : i18n("Lap");
 
                 onClicked: {
-                    StopwatchModel.addLap();
+                    if (!Kirigami.Settings.isMobile && !root.running) {
+                        StopwatchTimer.reset();
+                    } else {
+                        StopwatchModel.addLap();
+                    }
                     focus = false; // prevent highlight
                 }
             }
