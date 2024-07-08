@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-19 00:41+0000\n"
+"POT-Creation-Date: 2024-07-08 00:41+0000\n"
 "PO-Revision-Date: 2024-03-04 23:34+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -205,7 +205,7 @@ msgid "Edit"
 msgstr "Redakti"
 
 #: qml/alarm/AlarmListPage.qml:46 qml/components/Sidebar.qml:138
-#: qml/settings/SettingsPage.qml:22 qml/stopwatch/StopwatchPage.qml:47
+#: qml/settings/SettingsPage.qml:22 qml/stopwatch/StopwatchPage.qml:39
 #: qml/time/TimePage.qml:60 qml/timer/TimerListPage.qml:37
 #, kde-format
 msgid "Settings"
@@ -398,36 +398,36 @@ msgstr "Pri Clock"
 msgid "About KDE"
 msgstr "Pri KDE"
 
-#: qml/stopwatch/StopwatchPage.qml:40 qml/stopwatch/StopwatchPage.qml:146
+#: qml/stopwatch/StopwatchPage.qml:138 qml/stopwatch/StopwatchPage.qml:168
 #: qml/timer/TimerListDelegate.qml:166 qml/timer/TimerPage.qml:52
 #: qml/timer/TimerPage.qml:100
 #, kde-format
 msgid "Reset"
 msgstr "Restarigi"
 
-#: qml/stopwatch/StopwatchPage.qml:148 qml/timer/TimerListDelegate.qml:156
+#: qml/stopwatch/StopwatchPage.qml:140 qml/timer/TimerListDelegate.qml:156
 #: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
 #, kde-format
 msgid "Pause"
 msgstr "Paŭzi"
 
-#: qml/stopwatch/StopwatchPage.qml:150
+#: qml/stopwatch/StopwatchPage.qml:142
 #, kde-format
 msgid "Resume"
 msgstr "Daŭrigi"
 
-#: qml/stopwatch/StopwatchPage.qml:152 qml/timer/TimerListDelegate.qml:156
+#: qml/stopwatch/StopwatchPage.qml:144 qml/timer/TimerListDelegate.qml:156
 #: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
 #, kde-format
 msgid "Start"
 msgstr "Komenci"
 
-#: qml/stopwatch/StopwatchPage.qml:175
+#: qml/stopwatch/StopwatchPage.qml:168
 #, kde-format
 msgid "Lap"
 msgstr "Rondiro"
 
-#: qml/stopwatch/StopwatchPage.qml:298
+#: qml/stopwatch/StopwatchPage.qml:294
 #, kde-format
 msgid "#%1"
 msgstr "#%1"
