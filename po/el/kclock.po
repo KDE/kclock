@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-08 00:41+0000\n"
+"POT-Creation-Date: 2024-07-09 00:41+0000\n"
 "PO-Revision-Date: 2021-06-12 21:25+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -411,14 +411,13 @@ msgid "About KDE"
 msgstr "Περίγραμμα"
 
 #: qml/stopwatch/StopwatchPage.qml:138 qml/stopwatch/StopwatchPage.qml:168
-#: qml/timer/TimerListDelegate.qml:166 qml/timer/TimerPage.qml:52
-#: qml/timer/TimerPage.qml:100
+#: qml/timer/TimerPage.qml:52 qml/timer/TimerPage.qml:100
 #, kde-format
 msgid "Reset"
 msgstr "Επαναφορά"
 
-#: qml/stopwatch/StopwatchPage.qml:140 qml/timer/TimerListDelegate.qml:156
-#: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
+#: qml/stopwatch/StopwatchPage.qml:140 qml/timer/TimerPage.qml:45
+#: qml/timer/TimerPage.qml:94
 #, kde-format
 msgid "Pause"
 msgstr "Παύση"
@@ -428,16 +427,27 @@ msgstr "Παύση"
 msgid "Resume"
 msgstr ""
 
-#: qml/stopwatch/StopwatchPage.qml:144 qml/timer/TimerListDelegate.qml:156
-#: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
+#: qml/stopwatch/StopwatchPage.qml:144 qml/timer/TimerPage.qml:45
+#: qml/timer/TimerPage.qml:94
 #, kde-format
 msgid "Start"
 msgstr "Έναρξη"
 
-#: qml/stopwatch/StopwatchPage.qml:168
+#: qml/stopwatch/StopwatchPage.qml:168 qml/stopwatch/StopwatchPage.qml:196
 #, kde-format
 msgid "Lap"
 msgstr "Γύρος"
+
+#: qml/stopwatch/StopwatchPage.qml:204
+#, fuzzy, kde-format
+#| msgid "Timer"
+msgid "Lap Time"
+msgstr "Χρονόμετρο"
+
+#: qml/stopwatch/StopwatchPage.qml:211
+#, kde-format
+msgid "Total"
+msgstr ""
 
 #: qml/stopwatch/StopwatchPage.qml:294
 #, kde-format
@@ -566,16 +576,38 @@ msgstr ""
 msgid "Create timer"
 msgstr "Νέο χρονόμετρο"
 
-#: qml/timer/TimerListDelegate.qml:145 qml/timer/TimerPage.qml:67
-#: qml/timer/TimerPage.qml:115
+#: qml/timer/TimerListDelegate.qml:145
 #, fuzzy, kde-format
 #| msgid "Timer"
-msgid "Loop Timer"
+msgctxt "@info:tooltip"
+msgid "Loop timer"
 msgstr "Χρονόμετρο"
 
-#: qml/timer/TimerListDelegate.qml:176 qml/timer/TimerPage.qml:58
-#: qml/timer/TimerPage.qml:106
-#, kde-format
+#: qml/timer/TimerListDelegate.qml:156
+#, fuzzy, kde-format
+#| msgid "Pause"
+msgctxt "@info:tooltip"
+msgid "Pause"
+msgstr "Παύση"
+
+#: qml/timer/TimerListDelegate.qml:156
+#, fuzzy, kde-format
+#| msgid "Start"
+msgctxt "@info:tooltip"
+msgid "Start"
+msgstr "Έναρξη"
+
+#: qml/timer/TimerListDelegate.qml:166
+#, fuzzy, kde-format
+#| msgid "Reset"
+msgctxt "@info:tooltip"
+msgid "Reset"
+msgstr "Επαναφορά"
+
+#: qml/timer/TimerListDelegate.qml:176
+#, fuzzy, kde-format
+#| msgid "Delete"
+msgctxt "@info:tooltip"
 msgid "Delete"
 msgstr "Διαγραφή"
 
@@ -607,6 +639,17 @@ msgstr "Προσθήκη χρονομέτρου"
 #, kde-format
 msgid "New timer"
 msgstr "Νέο χρονόμετρο"
+
+#: qml/timer/TimerPage.qml:58 qml/timer/TimerPage.qml:106
+#, kde-format
+msgid "Delete"
+msgstr "Διαγραφή"
+
+#: qml/timer/TimerPage.qml:67 qml/timer/TimerPage.qml:115
+#, fuzzy, kde-format
+#| msgid "Timer"
+msgid "Loop Timer"
+msgstr "Χρονόμετρο"
 
 #: qml/timer/TimerRingingPopup.qml:27
 #, fuzzy, kde-format

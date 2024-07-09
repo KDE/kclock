@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-08 00:41+0000\n"
+"POT-Creation-Date: 2024-07-09 00:41+0000\n"
 "PO-Revision-Date: 2024-01-03 14:19-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -395,14 +395,13 @@ msgid "About KDE"
 msgstr "KDE ਬਾਰੇ"
 
 #: qml/stopwatch/StopwatchPage.qml:138 qml/stopwatch/StopwatchPage.qml:168
-#: qml/timer/TimerListDelegate.qml:166 qml/timer/TimerPage.qml:52
-#: qml/timer/TimerPage.qml:100
+#: qml/timer/TimerPage.qml:52 qml/timer/TimerPage.qml:100
 #, kde-format
 msgid "Reset"
 msgstr "ਮੁੜ-ਸੈੱਟ ਕਰੋ"
 
-#: qml/stopwatch/StopwatchPage.qml:140 qml/timer/TimerListDelegate.qml:156
-#: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
+#: qml/stopwatch/StopwatchPage.qml:140 qml/timer/TimerPage.qml:45
+#: qml/timer/TimerPage.qml:94
 #, kde-format
 msgid "Pause"
 msgstr "ਵਿਰਾਮ"
@@ -412,16 +411,27 @@ msgstr "ਵਿਰਾਮ"
 msgid "Resume"
 msgstr ""
 
-#: qml/stopwatch/StopwatchPage.qml:144 qml/timer/TimerListDelegate.qml:156
-#: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
+#: qml/stopwatch/StopwatchPage.qml:144 qml/timer/TimerPage.qml:45
+#: qml/timer/TimerPage.qml:94
 #, kde-format
 msgid "Start"
 msgstr "ਸ਼਼ੁਰੂ ਕਰੋ"
 
-#: qml/stopwatch/StopwatchPage.qml:168
+#: qml/stopwatch/StopwatchPage.qml:168 qml/stopwatch/StopwatchPage.qml:196
 #, kde-format
 msgid "Lap"
 msgstr "ਲੈਪ"
+
+#: qml/stopwatch/StopwatchPage.qml:204
+#, fuzzy, kde-format
+#| msgid "Loop Timer"
+msgid "Lap Time"
+msgstr "ਲੂਪ ਟਾਈਮਰ"
+
+#: qml/stopwatch/StopwatchPage.qml:211
+#, kde-format
+msgid "Total"
+msgstr ""
 
 #: qml/stopwatch/StopwatchPage.qml:294
 #, kde-format
@@ -543,15 +553,38 @@ msgstr "ਪ੍ਰੀ-ਸੈੱਟ ਵਜੋਂ ਸੰਭਾਲੋ"
 msgid "Create timer"
 msgstr "ਟਾਈਮਰ ਬਣਾਓ"
 
-#: qml/timer/TimerListDelegate.qml:145 qml/timer/TimerPage.qml:67
-#: qml/timer/TimerPage.qml:115
-#, kde-format
-msgid "Loop Timer"
+#: qml/timer/TimerListDelegate.qml:145
+#, fuzzy, kde-format
+#| msgid "Loop Timer"
+msgctxt "@info:tooltip"
+msgid "Loop timer"
 msgstr "ਲੂਪ ਟਾਈਮਰ"
 
-#: qml/timer/TimerListDelegate.qml:176 qml/timer/TimerPage.qml:58
-#: qml/timer/TimerPage.qml:106
-#, kde-format
+#: qml/timer/TimerListDelegate.qml:156
+#, fuzzy, kde-format
+#| msgid "Pause"
+msgctxt "@info:tooltip"
+msgid "Pause"
+msgstr "ਵਿਰਾਮ"
+
+#: qml/timer/TimerListDelegate.qml:156
+#, fuzzy, kde-format
+#| msgid "Start"
+msgctxt "@info:tooltip"
+msgid "Start"
+msgstr "ਸ਼਼ੁਰੂ ਕਰੋ"
+
+#: qml/timer/TimerListDelegate.qml:166
+#, fuzzy, kde-format
+#| msgid "Reset"
+msgctxt "@info:tooltip"
+msgid "Reset"
+msgstr "ਮੁੜ-ਸੈੱਟ ਕਰੋ"
+
+#: qml/timer/TimerListDelegate.qml:176
+#, fuzzy, kde-format
+#| msgid "Delete"
+msgctxt "@info:tooltip"
 msgid "Delete"
 msgstr "ਹਟਾਓ"
 
@@ -581,6 +614,16 @@ msgstr "ਟਾਈਮਰ ਜੋੜੋ"
 #, kde-format
 msgid "New timer"
 msgstr "ਨਵਾਂ ਟਾਈਮਰ"
+
+#: qml/timer/TimerPage.qml:58 qml/timer/TimerPage.qml:106
+#, kde-format
+msgid "Delete"
+msgstr "ਹਟਾਓ"
+
+#: qml/timer/TimerPage.qml:67 qml/timer/TimerPage.qml:115
+#, kde-format
+msgid "Loop Timer"
+msgstr "ਲੂਪ ਟਾਈਮਰ"
 
 #: qml/timer/TimerRingingPopup.qml:27
 #, kde-format

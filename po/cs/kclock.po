@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-08 00:41+0000\n"
+"POT-Creation-Date: 2024-07-09 00:41+0000\n"
 "PO-Revision-Date: 2024-04-03 11:49+0200\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -396,14 +396,13 @@ msgid "About KDE"
 msgstr "O prostředí KDE"
 
 #: qml/stopwatch/StopwatchPage.qml:138 qml/stopwatch/StopwatchPage.qml:168
-#: qml/timer/TimerListDelegate.qml:166 qml/timer/TimerPage.qml:52
-#: qml/timer/TimerPage.qml:100
+#: qml/timer/TimerPage.qml:52 qml/timer/TimerPage.qml:100
 #, kde-format
 msgid "Reset"
 msgstr "Obnovit"
 
-#: qml/stopwatch/StopwatchPage.qml:140 qml/timer/TimerListDelegate.qml:156
-#: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
+#: qml/stopwatch/StopwatchPage.qml:140 qml/timer/TimerPage.qml:45
+#: qml/timer/TimerPage.qml:94
 #, kde-format
 msgid "Pause"
 msgstr "Pozastavit"
@@ -413,15 +412,26 @@ msgstr "Pozastavit"
 msgid "Resume"
 msgstr "Obnovit"
 
-#: qml/stopwatch/StopwatchPage.qml:144 qml/timer/TimerListDelegate.qml:156
-#: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
+#: qml/stopwatch/StopwatchPage.qml:144 qml/timer/TimerPage.qml:45
+#: qml/timer/TimerPage.qml:94
 #, kde-format
 msgid "Start"
 msgstr "Spustit"
 
-#: qml/stopwatch/StopwatchPage.qml:168
+#: qml/stopwatch/StopwatchPage.qml:168 qml/stopwatch/StopwatchPage.qml:196
 #, kde-format
 msgid "Lap"
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:204
+#, fuzzy, kde-format
+#| msgid "Time"
+msgid "Lap Time"
+msgstr "Čas"
+
+#: qml/stopwatch/StopwatchPage.qml:211
+#, kde-format
+msgid "Total"
 msgstr ""
 
 #: qml/stopwatch/StopwatchPage.qml:294
@@ -544,15 +554,38 @@ msgstr ""
 msgid "Create timer"
 msgstr ""
 
-#: qml/timer/TimerListDelegate.qml:145 qml/timer/TimerPage.qml:67
-#: qml/timer/TimerPage.qml:115
-#, kde-format
-msgid "Loop Timer"
-msgstr ""
+#: qml/timer/TimerListDelegate.qml:145
+#, fuzzy, kde-format
+#| msgid "Local time"
+msgctxt "@info:tooltip"
+msgid "Loop timer"
+msgstr "Místní čas"
 
-#: qml/timer/TimerListDelegate.qml:176 qml/timer/TimerPage.qml:58
-#: qml/timer/TimerPage.qml:106
-#, kde-format
+#: qml/timer/TimerListDelegate.qml:156
+#, fuzzy, kde-format
+#| msgid "Pause"
+msgctxt "@info:tooltip"
+msgid "Pause"
+msgstr "Pozastavit"
+
+#: qml/timer/TimerListDelegate.qml:156
+#, fuzzy, kde-format
+#| msgid "Start"
+msgctxt "@info:tooltip"
+msgid "Start"
+msgstr "Spustit"
+
+#: qml/timer/TimerListDelegate.qml:166
+#, fuzzy, kde-format
+#| msgid "Reset"
+msgctxt "@info:tooltip"
+msgid "Reset"
+msgstr "Obnovit"
+
+#: qml/timer/TimerListDelegate.qml:176
+#, fuzzy, kde-format
+#| msgid "Delete"
+msgctxt "@info:tooltip"
 msgid "Delete"
 msgstr "Smazat"
 
@@ -582,6 +615,16 @@ msgstr "Přidat časovač"
 #, kde-format
 msgid "New timer"
 msgstr "Nový časovač"
+
+#: qml/timer/TimerPage.qml:58 qml/timer/TimerPage.qml:106
+#, kde-format
+msgid "Delete"
+msgstr "Smazat"
+
+#: qml/timer/TimerPage.qml:67 qml/timer/TimerPage.qml:115
+#, kde-format
+msgid "Loop Timer"
+msgstr ""
 
 #: qml/timer/TimerRingingPopup.qml:27
 #, kde-format

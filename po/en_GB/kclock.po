@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-08 00:41+0000\n"
+"POT-Creation-Date: 2024-07-09 00:41+0000\n"
 "PO-Revision-Date: 2024-05-21 19:15+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -396,14 +396,13 @@ msgid "About KDE"
 msgstr "About KDE"
 
 #: qml/stopwatch/StopwatchPage.qml:138 qml/stopwatch/StopwatchPage.qml:168
-#: qml/timer/TimerListDelegate.qml:166 qml/timer/TimerPage.qml:52
-#: qml/timer/TimerPage.qml:100
+#: qml/timer/TimerPage.qml:52 qml/timer/TimerPage.qml:100
 #, kde-format
 msgid "Reset"
 msgstr "Reset"
 
-#: qml/stopwatch/StopwatchPage.qml:140 qml/timer/TimerListDelegate.qml:156
-#: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
+#: qml/stopwatch/StopwatchPage.qml:140 qml/timer/TimerPage.qml:45
+#: qml/timer/TimerPage.qml:94
 #, kde-format
 msgid "Pause"
 msgstr "Pause"
@@ -413,16 +412,27 @@ msgstr "Pause"
 msgid "Resume"
 msgstr "Resume"
 
-#: qml/stopwatch/StopwatchPage.qml:144 qml/timer/TimerListDelegate.qml:156
-#: qml/timer/TimerPage.qml:45 qml/timer/TimerPage.qml:94
+#: qml/stopwatch/StopwatchPage.qml:144 qml/timer/TimerPage.qml:45
+#: qml/timer/TimerPage.qml:94
 #, kde-format
 msgid "Start"
 msgstr "Start"
 
-#: qml/stopwatch/StopwatchPage.qml:168
+#: qml/stopwatch/StopwatchPage.qml:168 qml/stopwatch/StopwatchPage.qml:196
 #, kde-format
 msgid "Lap"
 msgstr "Lap"
+
+#: qml/stopwatch/StopwatchPage.qml:204
+#, fuzzy, kde-format
+#| msgid "Loop Timer"
+msgid "Lap Time"
+msgstr "Loop Timer"
+
+#: qml/stopwatch/StopwatchPage.qml:211
+#, kde-format
+msgid "Total"
+msgstr ""
 
 #: qml/stopwatch/StopwatchPage.qml:294
 #, kde-format
@@ -544,15 +554,38 @@ msgstr "Save As Preset"
 msgid "Create timer"
 msgstr "Create timer"
 
-#: qml/timer/TimerListDelegate.qml:145 qml/timer/TimerPage.qml:67
-#: qml/timer/TimerPage.qml:115
-#, kde-format
-msgid "Loop Timer"
+#: qml/timer/TimerListDelegate.qml:145
+#, fuzzy, kde-format
+#| msgid "Loop Timer"
+msgctxt "@info:tooltip"
+msgid "Loop timer"
 msgstr "Loop Timer"
 
-#: qml/timer/TimerListDelegate.qml:176 qml/timer/TimerPage.qml:58
-#: qml/timer/TimerPage.qml:106
-#, kde-format
+#: qml/timer/TimerListDelegate.qml:156
+#, fuzzy, kde-format
+#| msgid "Pause"
+msgctxt "@info:tooltip"
+msgid "Pause"
+msgstr "Pause"
+
+#: qml/timer/TimerListDelegate.qml:156
+#, fuzzy, kde-format
+#| msgid "Start"
+msgctxt "@info:tooltip"
+msgid "Start"
+msgstr "Start"
+
+#: qml/timer/TimerListDelegate.qml:166
+#, fuzzy, kde-format
+#| msgid "Reset"
+msgctxt "@info:tooltip"
+msgid "Reset"
+msgstr "Reset"
+
+#: qml/timer/TimerListDelegate.qml:176
+#, fuzzy, kde-format
+#| msgid "Delete"
+msgctxt "@info:tooltip"
 msgid "Delete"
 msgstr "Delete"
 
@@ -584,6 +617,16 @@ msgstr "Add timer"
 #, kde-format
 msgid "New timer"
 msgstr "New timer"
+
+#: qml/timer/TimerPage.qml:58 qml/timer/TimerPage.qml:106
+#, kde-format
+msgid "Delete"
+msgstr "Delete"
+
+#: qml/timer/TimerPage.qml:67 qml/timer/TimerPage.qml:115
+#, kde-format
+msgid "Loop Timer"
+msgstr "Loop Timer"
 
 #: qml/timer/TimerRingingPopup.qml:27
 #, kde-format
