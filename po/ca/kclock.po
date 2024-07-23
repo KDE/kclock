@@ -727,6 +727,3 @@ msgstr "L'alarma sonarà en menys d'un minut"
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "L'alarma sonarà després de %1"
-
-#~ msgid "No locations configured"
-#~ msgstr "No s'ha configurat cap ubicació"
