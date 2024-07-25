@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-09 00:41+0000\n"
-"PO-Revision-Date: 2024-04-29 19:07+0200\n"
+"PO-Revision-Date: 2024-07-10 11:18+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -15,9 +15,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.5\n"
-"X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
+"X-Environment: kde\n"
+"X-Generator: Lokalize 23.08.5\n"
 "X-Text-Markup: kde4\n"
 
 #, kde-format
@@ -429,15 +429,14 @@ msgid "Lap"
 msgstr "Tour"
 
 #: qml/stopwatch/StopwatchPage.qml:204
-#, fuzzy, kde-format
-#| msgid "Loop Timer"
+#, kde-format
 msgid "Lap Time"
-msgstr "Minuteur de boucle"
+msgstr "Durée de boucle"
 
 #: qml/stopwatch/StopwatchPage.qml:211
 #, kde-format
 msgid "Total"
-msgstr ""
+msgstr "Total"
 
 #: qml/stopwatch/StopwatchPage.qml:294
 #, kde-format
@@ -560,36 +559,31 @@ msgid "Create timer"
 msgstr "Créer une nouvelle temporisation"
 
 #: qml/timer/TimerListDelegate.qml:145
-#, fuzzy, kde-format
-#| msgid "Loop Timer"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Loop timer"
 msgstr "Minuteur de boucle"
 
 #: qml/timer/TimerListDelegate.qml:156
-#, fuzzy, kde-format
-#| msgid "Pause"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Pause"
-msgstr "Pause"
+msgstr "Mettre en pause"
 
 #: qml/timer/TimerListDelegate.qml:156
-#, fuzzy, kde-format
-#| msgid "Start"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start"
 msgstr "Démarrer"
 
 #: qml/timer/TimerListDelegate.qml:166
-#, fuzzy, kde-format
-#| msgid "Reset"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset"
 msgstr "Réinitialiser"
 
 #: qml/timer/TimerListDelegate.qml:176
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete"
 msgstr "Supprimer"
