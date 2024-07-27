@@ -18,6 +18,7 @@
 #include <KConfig>
 #include <KLocalizedContext>
 #include <KLocalizedString>
+#include <KSandbox>
 
 #include <QApplication>
 #include <QCommandLineParser>
@@ -63,8 +64,10 @@ int main(int argc, char *argv[])
     qDebug() << "Starting kclockd" << KCLOCK_VERSION_STRING;
 
     // call org.freedesktop.portal.Background for autostart in flatpak
-    XDGPortal *portalInterface = new XDGPortal();
-    portalInterface->requestBackground();
+    if (KSandbox::isFlatpak()) {
+        XDGPortal *portalInterface = new XDGPortal();
+        portalInterface->requestBackground();
+    }
 
     // initialize models
     new KClockSettingsAdaptor(KClockSettings::self());
