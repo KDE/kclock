@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-09 00:41+0000\n"
-"PO-Revision-Date: 2024-05-25 15:38+0300\n"
+"PO-Revision-Date: 2024-07-27 20:10+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -431,15 +431,14 @@ msgid "Lap"
 msgstr "Ratas"
 
 #: qml/stopwatch/StopwatchPage.qml:204
-#, fuzzy, kde-format
-#| msgid "Loop Timer"
+#, kde-format
 msgid "Lap Time"
-msgstr "Kartoti laikmatį"
+msgstr "Rato laikas"
 
 #: qml/stopwatch/StopwatchPage.qml:211
 #, kde-format
 msgid "Total"
-msgstr ""
+msgstr "Iš viso"
 
 #: qml/stopwatch/StopwatchPage.qml:294
 #, kde-format
@@ -562,36 +561,31 @@ msgid "Create timer"
 msgstr "Sukurti laikmatį"
 
 #: qml/timer/TimerListDelegate.qml:145
-#, fuzzy, kde-format
-#| msgid "Loop Timer"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Loop timer"
 msgstr "Kartoti laikmatį"
 
 #: qml/timer/TimerListDelegate.qml:156
-#, fuzzy, kde-format
-#| msgid "Pause"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Pause"
 msgstr "Pristabdyti"
 
 #: qml/timer/TimerListDelegate.qml:156
-#, fuzzy, kde-format
-#| msgid "Start"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start"
 msgstr "Paleisti"
 
 #: qml/timer/TimerListDelegate.qml:166
-#, fuzzy, kde-format
-#| msgid "Reset"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset"
 msgstr "Atstatyti"
 
 #: qml/timer/TimerListDelegate.qml:176
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete"
 msgstr "Ištrinti"
