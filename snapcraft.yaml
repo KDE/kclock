@@ -27,24 +27,6 @@ apps:
       - usr/bin/kclockd-command-chain.sh
     plugs:
       - home
-      - desktop
-      - desktop-legacy
-      - opengl
-      - wayland
-      - x11
-      - audio-playback
-      - unity7
-      - network
-      - network-bind
-
-compression: lzo
-
-plugs:
-  gtk-3-themes:
-    interface: content
-    target: $SNAP/data-dir/themes
-    default-provider: gtk-common-themes
-
 slots:
   session-dbus-interface:
     interface: dbus
@@ -109,7 +91,8 @@ parts:
     parse-info:
       - usr/share/metainfo/org.kde.kclock.appdata.xml
     plugin: cmake
-    source: https://invent.kde.org/utilities/kclock/-/archive/v24.05.0/kclock-v24.05.0.tar.gz
+    source: .
+    source-type: local
     build-environment:
       - CMAKE_PREFIX_PATH: $CRAFT_STAGE/usr:/snap/kde-qt6-core22-sdk/current/usr:/snap/kf6-core22-sdk/current/usr${CMAKE_PREFIX_PATH:+:$CMAKE_PREFIX_PATH}
     cmake-parameters:
@@ -131,7 +114,6 @@ parts:
       - -usr/include/*
       - -usr/share/ECM/*
       - -usr/share/man/*
-      - -usr/share/icons/breeze-dark*
       - -usr/bin/X11
       - -usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0
       - -usr/lib/aspell/*
