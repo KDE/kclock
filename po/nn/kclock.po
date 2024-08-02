@@ -1,12 +1,11 @@
 # Translation of kclock to Norwegian Nynorsk
 #
-# Karl Ove Hufthammer <karl@huftis.org>, 2020, 2021, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-09 00:41+0000\n"
-"PO-Revision-Date: 2022-07-27 20:11+0200\n"
+"PO-Revision-Date: 2024-08-01 11:36+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -14,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.04.3\n"
+"X-Generator: Lokalize 24.11.70\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -37,13 +36,12 @@ msgstr "Vel opna side"
 #: main.cpp:66
 #, kde-format
 msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
-msgstr ""
+msgstr "Still inn alarmar og nedteljing, bruk som stoppeklokke eller verdsur"
 
 #: main.cpp:68
-#, fuzzy, kde-format
-#| msgid "© 2020-2022 KDE Community"
+#, kde-format
 msgid "© 2020-2024 KDE Community"
-msgstr "© 2020–2022 KDE-fellesskapet"
+msgstr "© 2020–2024 KDE-fellesskapet"
 
 #: main.cpp:70
 #, kde-format
@@ -58,12 +56,12 @@ msgstr "Han Young"
 #: qml/alarm/AlarmForm.qml:86
 #, kde-format
 msgid "Days to repeat:"
-msgstr ""
+msgstr "Dagar å gjenta:"
 
 #: qml/alarm/AlarmForm.qml:88
 #, kde-format
 msgid "Select Days to Repeat"
-msgstr ""
+msgstr "Vel dagar å gjenta"
 
 #: qml/alarm/AlarmForm.qml:111
 #, kde-format
@@ -95,7 +93,7 @@ msgstr "1 minutt"
 #: qml/alarm/AlarmForm.qml:128 qml/alarm/AlarmForm.qml:169
 #, kde-format
 msgid "%1 minutes"
-msgstr ""
+msgstr "%1 minutt"
 
 #: qml/alarm/AlarmForm.qml:131
 #, kde-format
@@ -161,7 +159,7 @@ msgstr "Alarm"
 #, kde-format
 msgctxt "Edit alarm page title"
 msgid "Editing %1"
-msgstr ""
+msgstr "Redigerer %1"
 
 #: qml/alarm/AlarmFormPage.qml:27 qml/alarm/AlarmListPage.qml:31
 #, kde-format
@@ -178,18 +176,17 @@ msgstr "Fullført"
 #: qml/timer/TimerFormWrapper.qml:139
 #, kde-format
 msgid "Cancel"
-msgstr ""
+msgstr "Avbryt"
 
 #: qml/alarm/AlarmListDelegate.qml:106
 #, kde-format
 msgid "Snoozed %1 minute"
 msgid_plural "Snoozed %1 minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Utsett i %1 minutt"
+msgstr[1] "Utsett i %1 minutt"
 
 #: qml/alarm/AlarmListDelegate.qml:126 qml/time/TimePageDelegate.qml:60
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "Slett"
