@@ -15,6 +15,7 @@
 const QString POWERDEVIL_SERVICE_NAME = QStringLiteral("org.kde.Solid.PowerManagement");
 
 class QTimer;
+class AbstractWakeupProvider;
 
 class Utilities : public QObject
 {
@@ -50,24 +51,14 @@ public Q_SLOTS:
 private:
     explicit Utilities(QObject *parent = nullptr);
 
-    void schedule(); // For AlarmWaitWorker use
-    void initWorker();
+    void initWakeupProvider();
     bool hasWakeup();
     QDBusInterface *m_interface = nullptr;
 
     bool m_hasPowerDevil;
-
-    QList<int> m_powerDevilCookies; // token for PowerDevil: https://invent.kde.org/plasma/powerdevil/-/merge_requests/13
-    QList<std::pair<int, quint64>> m_waitWorkerCookies; // <cookie, timestamp>. For AlarmWaitWorker use
-
-    int m_cookie = 1; // For AlarmWaitWorker use
-    int m_currentCookie; // For AlarmWaitWorker use
-
     std::atomic<int> m_activeTimerCount{0};
-
-    QThread *m_timerThread = nullptr;
-    AlarmWaitWorker *m_worker = nullptr;
     QTimer *m_timer = nullptr;
+    AbstractWakeupProvider *m_wakeupProvider = nullptr;
 
     // which mpris media sources were paused when the alarm/timer started ringing
     static QStringList m_pausedSources;

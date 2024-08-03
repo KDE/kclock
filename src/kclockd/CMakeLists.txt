@@ -22,6 +22,11 @@ set(kclockd_SRCS
     timer.h
     xdgportal.cpp
     xdgportal.h
+    abstractwakeupprovider.h
+    powerdevilwakeupprovider.cpp
+    powerdevilwakeupprovider.h
+    waittimerwakeupprovider.cpp
+    waittimerwakeupprovider.h
     )
 # generate KConfig class from xml
 kconfig_add_kcfg_files(kclockd_SRCS kclockdsettings.kcfgc GENERATE_MOC)
