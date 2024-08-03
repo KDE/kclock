@@ -16,28 +16,28 @@ import kclock
 
 Kirigami.Dialog {
     id: root
-    
+
     property Alarm alarm
-    
+
     readonly property string formattedTime: alarm ? alarm.formattedTime : ""
     readonly property string name: alarm ? alarm.name : ""
 
     padding: Kirigami.Units.gridUnit * 3
-    
+    preferredWidth: Kirigami.Units.gridUnit * 20
+
     title: i18n("Alarm is ringing")
     showCloseButton: false
     closePolicy: Popup.NoAutoClose
-    
+
     ColumnLayout {
         width: implicitWidth
-        implicitWidth: Kirigami.Units.gridUnit * 20
         Label {
             Layout.alignment: Qt.AlignHCenter
             font.weight: Font.Light
             font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 2)
             text: root.formattedTime
         }
-        
+
         Label {
             Layout.alignment: Qt.AlignHCenter
             font.weight: Font.Bold
@@ -46,10 +46,10 @@ Kirigami.Dialog {
             wrapMode: Text.Wrap
         }
     }
-    
+
     standardButtons: Kirigami.Dialog.NoButton
     flatFooterButtons: true
-    
+
     customFooterActions: [
         Kirigami.Action {
             text: i18n("Snooze")
