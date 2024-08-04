@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-09 00:41+0000\n"
+"POT-Creation-Date: 2024-08-04 00:42+0000\n"
 "PO-Revision-Date: 2024-07-10 00:36+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -238,7 +238,7 @@ msgstr "çalar saat"
 msgid "Deleted %1"
 msgstr "%1 silindi"
 
-#: qml/alarm/AlarmRingingPopup.qml:27
+#: qml/alarm/AlarmRingingPopup.qml:28
 #, kde-format
 msgid "Alarm is ringing"
 msgstr "Saat çalıyor"

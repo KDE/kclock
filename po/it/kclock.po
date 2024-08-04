@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-09 00:41+0000\n"
+"POT-Creation-Date: 2024-08-04 00:42+0000\n"
 "PO-Revision-Date: 2024-07-13 02:16+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -239,7 +239,7 @@ msgstr "sveglia"
 msgid "Deleted %1"
 msgstr "%1 eliminata"
 
-#: qml/alarm/AlarmRingingPopup.qml:27
+#: qml/alarm/AlarmRingingPopup.qml:28
 #, kde-format
 msgid "Alarm is ringing"
 msgstr "La sveglia sta suonando"

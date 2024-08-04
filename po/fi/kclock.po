@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-09 00:41+0000\n"
+"POT-Creation-Date: 2024-08-04 00:42+0000\n"
 "PO-Revision-Date: 2024-03-10 11:04+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -238,7 +238,7 @@ msgstr "hälytys"
 msgid "Deleted %1"
 msgstr "Poistettu %1"
 
-#: qml/alarm/AlarmRingingPopup.qml:27
+#: qml/alarm/AlarmRingingPopup.qml:28
 #, kde-format
 msgid "Alarm is ringing"
 msgstr "Hälytys soi"

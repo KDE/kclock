@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-09 00:41+0000\n"
+"POT-Creation-Date: 2024-08-04 00:42+0000\n"
 "PO-Revision-Date: 2024-07-09 08:01+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -238,7 +238,7 @@ msgstr "התראה"
 msgid "Deleted %1"
 msgstr "%1 נמחק"
 
-#: qml/alarm/AlarmRingingPopup.qml:27
+#: qml/alarm/AlarmRingingPopup.qml:28
 #, kde-format
 msgid "Alarm is ringing"
 msgstr "ההתראה מצלצלת"
