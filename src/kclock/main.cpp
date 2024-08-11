@@ -23,6 +23,7 @@
 
 #include <KAboutData>
 #include <KConfig>
+#include <KCrash>
 #include <KLocalizedContext>
 #include <KLocalizedString>
 
@@ -70,6 +71,7 @@ int main(int argc, char *argv[])
     aboutData.addAuthor(i18n("Devin Lin"), QString(), QStringLiteral("devin@kde.org"));
     aboutData.addAuthor(i18n("Han Young"), QString(), QStringLiteral("hanyoung@protonmail.com"));
     KAboutData::setApplicationData(aboutData);
+    KCrash::initialize();
 
     // ~~~~ DBus setup ~~~~
 
