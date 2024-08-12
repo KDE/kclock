@@ -74,7 +74,7 @@ find_package(KF6KirigamiAddons 0.6 REQUIRED)
 
 ki18n_install(po)
 ecm_set_disabled_deprecation_versions(QT 6.7.2
-    KF 6.4.0
+    KF 6.5.0
 )
 
 add_subdirectory(src)
