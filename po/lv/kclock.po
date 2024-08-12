@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-04 00:42+0000\n"
+"POT-Creation-Date: 2024-08-12 00:41+0000\n"
 "PO-Revision-Date: 2024-01-24 21:43+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -28,30 +28,30 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "toms.trasuns@posteo.net"
 
-#: main.cpp:43
+#: main.cpp:44
 #, kde-format
 msgid "Select opened page"
 msgstr "Izvēlēties atvērto lapu"
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-format
 msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr ""
 "Iestatiet signālus un taimerus, izmantojiet hronometru un pārvaldiet "
 "pasaules pulksteņus"
 
-#: main.cpp:68
+#: main.cpp:69
 #, fuzzy, kde-format
 #| msgid "© 2020-2022 KDE Community"
 msgid "© 2020-2024 KDE Community"
 msgstr "© 2020–2022 KDE kopiena"
 
-#: main.cpp:70
+#: main.cpp:71
 #, kde-format
 msgid "Devin Lin"
 msgstr "Devin Lin"
 
-#: main.cpp:71
+#: main.cpp:72
 #, kde-format
 msgid "Han Young"
 msgstr "Han Young"
