@@ -1,0 +1,92 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the kclock package.
+#
+# SPDX-FileCopyrightText: 2024 Kristof Kiszel <ulysses@fsf.hu>
+msgid ""
+msgstr ""
+"Project-Id-Version: kclock\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-03-18 00:40+0000\n"
+"PO-Revision-Date: 2024-08-17 21:11+0200\n"
+"Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
+"Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 24.05.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Kiszel Kristóf"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "ulysses@fsf.hu"
+
+#: alarm.cpp:73 alarm.h:51
+#, kde-format
+msgid "Alarm"
+msgstr "Riasztás"
+
+#: alarm.cpp:77 timer.cpp:67
+#, kde-format
+msgid "View"
+msgstr "Megtekintés"
+
+#: alarm.cpp:80
+#, kde-format
+msgid "Dismiss"
+msgstr "Bezárás"
+
+#: alarm.cpp:83
+#, kde-format
+msgid "Snooze"
+msgstr "Szundi"
+
+#: alarmmodel.cpp:222
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Alarm: <shortcut>%1 %2</shortcut>"
+msgstr "Riasztás: <shortcut>%1 %2</shortcut>"
+
+#: main.cpp:30
+#, kde-format
+msgid "Don't use PowerDevil for alarms if it is available"
+msgstr "Ne használja a PowerDevilt riasztásokhoz, ha elérhető"
+
+#: main.cpp:45
+#, kde-format
+msgid "© 2020-2022 KDE Community"
+msgstr "© A KDE közösség, 2020-2022."
+
+#: main.cpp:46
+#, kde-format
+msgid "Devin Lin"
+msgstr "Devin Lin"
+
+#: main.cpp:47
+#, kde-format
+msgid "Han Young"
+msgstr "Han Young"
+
+#: timer.cpp:62
+#, kde-format
+msgid "Timer complete"
+msgstr "Időzítő lejárt"
+
+#: timer.cpp:63
+#, kde-format
+msgid "Your timer %1 has finished!"
+msgstr "A(z) %1 időzítő lejárt!"
+
+#: xdgportal.cpp:34
+#, kde-format
+msgid ""
+"Allow the clock process to be in the background and launched on startup."
+msgstr ""
+"Engedélyezi, hogy az órafolyamat a háttérben legyen, és indításkor "
+"elinduljon."
