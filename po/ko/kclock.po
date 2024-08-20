@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-09 00:41+0000\n"
-"PO-Revision-Date: 2024-02-09 23:24+0100\n"
+"PO-Revision-Date: 2024-08-19 22:39+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -38,10 +38,9 @@ msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr "알람과 타이머 설정, 초시계 사용, 세계 시간 관리"
 
 #: main.cpp:68
-#, fuzzy, kde-format
-#| msgid "© 2020-2022 KDE Community"
+#, kde-format
 msgid "© 2020-2024 KDE Community"
-msgstr "© 2020-2022 KDE Community"
+msgstr "© 2020-2024 KDE Community"
 
 #: main.cpp:70
 #, kde-format
@@ -409,7 +408,7 @@ msgstr "일시 정지"
 #: qml/stopwatch/StopwatchPage.qml:142
 #, kde-format
 msgid "Resume"
-msgstr ""
+msgstr "다시 시작"
 
 #: qml/stopwatch/StopwatchPage.qml:144 qml/timer/TimerPage.qml:45
 #: qml/timer/TimerPage.qml:94
@@ -423,15 +422,14 @@ msgid "Lap"
 msgstr "랩"
 
 #: qml/stopwatch/StopwatchPage.qml:204
-#, fuzzy, kde-format
-#| msgid "Loop Timer"
+#, kde-format
 msgid "Lap Time"
-msgstr "타이머 반복"
+msgstr "랩 시간"
 
 #: qml/stopwatch/StopwatchPage.qml:211
 #, kde-format
 msgid "Total"
-msgstr ""
+msgstr "합계"
 
 #: qml/stopwatch/StopwatchPage.qml:294
 #, kde-format
@@ -554,36 +552,31 @@ msgid "Create timer"
 msgstr "타이머 만들기"
 
 #: qml/timer/TimerListDelegate.qml:145
-#, fuzzy, kde-format
-#| msgid "Loop Timer"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Loop timer"
 msgstr "타이머 반복"
 
 #: qml/timer/TimerListDelegate.qml:156
-#, fuzzy, kde-format
-#| msgid "Pause"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Pause"
 msgstr "일시 정지"
 
 #: qml/timer/TimerListDelegate.qml:156
-#, fuzzy, kde-format
-#| msgid "Start"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start"
 msgstr "시작"
 
 #: qml/timer/TimerListDelegate.qml:166
-#, fuzzy, kde-format
-#| msgid "Reset"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset"
 msgstr "초기화"
 
 #: qml/timer/TimerListDelegate.qml:176
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete"
 msgstr "삭제"
