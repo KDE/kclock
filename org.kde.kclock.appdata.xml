@@ -55,6 +55,7 @@
   <summary xml:lang="ca">Aneu a l'hora i establiu alarmes</summary>
   <summary xml:lang="ca-valencia">Aneu fins a l'hora i establiu alarmes</summary>
   <summary xml:lang="cs">Ponechat čas a nastavit upomínky</summary>
+  <summary xml:lang="de">Im Takt bleiben und Alarme festlegen</summary>
   <summary xml:lang="en-GB">Keep time and set alarms</summary>
   <summary xml:lang="eo">Teni daton kaj meti alarmoj</summary>
   <summary xml:lang="es">Marque la hora y defina alarmas</summary>
@@ -84,6 +85,7 @@
     <p>A universal clock application for desktop and mobile. Clock includes a stopwatch and a world clock, and allows you to set multiple alarms and timers.</p>
     <p xml:lang="ca">Una aplicació universal de rellotge per a l'escriptori i mòbil. El rellotge inclou un cronòmetre i un rellotge mundial, i permet establir alarmes i temporitzadors diversos.</p>
     <p xml:lang="ca-valencia">Una aplicació universal de rellotge per a l'escriptori i mòbil. El rellotge inclou un cronòmetre i un rellotge mundial, i permet establir alarmes i temporitzadors diversos.</p>
+    <p xml:lang="de">Eine universelle Uhren-Anwendung für Plasma. Clock enthält eine Stoppuhr und eine Weltzeituhr. Zudem können mehrere Alarme und Zeitlimits festgelegt werden.</p>
     <p xml:lang="en-GB">A universal clock application for desktop and mobile. Clock includes a stopwatch and a world clock, and allows you to set multiple alarms and timers.</p>
     <p xml:lang="eo">Universala horloĝa aplikaĵo por labortablo kaj poŝtelefono. Horloĝo inkluzivas tempumilon kaj mondan horloĝon, kaj permesas vin agordi plurajn alarmojn kaj tempumilojn.</p>
     <p xml:lang="es">Una aplicación de reloj universal para el escritorio y el móvil. El reloj incluye un cronómetro y un reloj mundial, además de permitirle definir múltiples alarmas y temporizadores.</p>
