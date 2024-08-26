@@ -367,7 +367,6 @@ msgstr "Klokke"
 # Trur «timer» tel ned (som eit eggeur), mens «stopwatch» tel opp (som ei stoppeklokke).
 #: qml/settings/SettingsPage.qml:34
 #, fuzzy, kde-format
-#| msgid "Timer"
 msgid "Time Format"
 msgstr "Nedteljing"
 
@@ -388,13 +387,11 @@ msgstr ""
 
 #: qml/settings/SettingsPage.qml:62
 #, fuzzy, kde-format
-#| msgid "Clock"
 msgid "About Clock"
 msgstr "Klokke"
 
 #: qml/settings/SettingsPage.qml:70
 #, fuzzy, kde-format
-#| msgid "About"
 msgid "About KDE"
 msgstr "Om"
 
@@ -428,7 +425,6 @@ msgstr "Runde"
 
 #: qml/stopwatch/StopwatchPage.qml:204
 #, fuzzy, kde-format
-#| msgid "Time"
 msgid "Lap Time"
 msgstr "Tid"
 
@@ -560,35 +556,30 @@ msgstr ""
 
 #: qml/timer/TimerListDelegate.qml:145
 #, fuzzy, kde-format
-#| msgid "Local time"
 msgctxt "@info:tooltip"
 msgid "Loop timer"
 msgstr "Lokaltid"
 
 #: qml/timer/TimerListDelegate.qml:156
 #, fuzzy, kde-format
-#| msgid "Pause"
 msgctxt "@info:tooltip"
 msgid "Pause"
 msgstr "Pause"
 
 #: qml/timer/TimerListDelegate.qml:156
 #, fuzzy, kde-format
-#| msgid "Start"
 msgctxt "@info:tooltip"
 msgid "Start"
 msgstr "Start"
 
 #: qml/timer/TimerListDelegate.qml:166
 #, fuzzy, kde-format
-#| msgid "Reset"
 msgctxt "@info:tooltip"
 msgid "Reset"
 msgstr "Nullstill"
 
 #: qml/timer/TimerListDelegate.qml:176
 #, fuzzy, kde-format
-#| msgid "Delete"
 msgctxt "@info:tooltip"
 msgid "Delete"
 msgstr "Slett"
