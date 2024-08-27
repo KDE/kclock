@@ -56,8 +56,8 @@ Rectangle {
         anchors.centerIn: parent
         
         id: timerCircle
-        implicitWidth: parent.width
-        implicitHeight: timerCircleArc.radiusX*2+5
+        implicitWidth: timerCircleArc.radiusX * 2 + timerCirclePath.strokeWidth
+        implicitHeight: timerCircleArc.radiusY * 2 + timerCirclePath.strokeWidth
         anchors.horizontalCenter: parent.horizontalCenter
         layer.enabled: true
         layer.samples: 40
