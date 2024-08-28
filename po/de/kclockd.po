@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-18 00:40+0000\n"
+"POT-Creation-Date: 2024-08-28 02:48+0000\n"
 "PO-Revision-Date: 2022-10-12 10:06+0200\n"
 "Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -56,22 +56,22 @@ msgctxt "@info"
 msgid "Alarm: <shortcut>%1 %2</shortcut>"
 msgstr "Erinnerung: <shortcut>%1 %2</shortcut>"
 
-#: main.cpp:30
+#: main.cpp:31
 #, kde-format
 msgid "Don't use PowerDevil for alarms if it is available"
 msgstr "PowerDevil, sofern vorhanden, nicht für Erinnerungen benutzen."
 
-#: main.cpp:45
+#: main.cpp:46
 #, kde-format
 msgid "© 2020-2022 KDE Community"
 msgstr "Copyright © 2020-2022 KDE-Gemeinschaft"
 
-#: main.cpp:46
+#: main.cpp:47
 #, kde-format
 msgid "Devin Lin"
 msgstr "Devin Lin"
 
-#: main.cpp:47
+#: main.cpp:48
 #, kde-format
 msgid "Han Young"
 msgstr "Han Young"
