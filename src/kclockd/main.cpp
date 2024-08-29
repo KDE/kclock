@@ -16,14 +16,14 @@
 
 #include <KAboutData>
 #include <KConfig>
+#include <KCrash>
+#include <KDBusService>
 #include <KLocalizedContext>
 #include <KLocalizedString>
 #include <KSandbox>
 
 #include <QApplication>
 #include <QCommandLineParser>
-
-#include <KDBusService>
 
 QCommandLineParser *createParser()
 {
@@ -47,6 +47,8 @@ int main(int argc, char *argv[])
     aboutData.addAuthor(i18n("Devin Lin"), QLatin1String(), QStringLiteral("devin@kde.org"));
     aboutData.addAuthor(i18n("Han Young"), QLatin1String(), QStringLiteral("hanyoung@protonmail.com"));
     KAboutData::setApplicationData(aboutData);
+
+    KCrash::initialize();
 
     // ~~~~ Parse command line arguments ~~~~
     {
