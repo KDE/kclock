@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-12 00:41+0000\n"
-"PO-Revision-Date: 2024-01-24 21:43+0200\n"
+"PO-Revision-Date: 2024-08-27 16:47+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -16,12 +16,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Liva Purmale"
+msgstr "Līva Purmale"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
@@ -41,10 +41,9 @@ msgstr ""
 "pasaules pulksteņus"
 
 #: main.cpp:69
-#, fuzzy, kde-format
-#| msgid "© 2020-2022 KDE Community"
+#, kde-format
 msgid "© 2020-2024 KDE Community"
-msgstr "© 2020–2022 KDE kopiena"
+msgstr "© 2020—2024 KDE kopiena"
 
 #: main.cpp:71
 #, kde-format
@@ -265,7 +264,7 @@ msgstr "Izvēlēties signāla skaņu"
 #: qml/alarm/SoundPickerPage.qml:64
 #, kde-format
 msgid "Select from files…"
-msgstr "Izvēlēties no datnes..."
+msgstr "Izvēlēties no datnes…"
 
 #: qml/alarm/SoundPickerPage.qml:75
 #, kde-format
@@ -415,7 +414,7 @@ msgstr "Pauze"
 #: qml/stopwatch/StopwatchPage.qml:142
 #, kde-format
 msgid "Resume"
-msgstr ""
+msgstr "Turpināt"
 
 #: qml/stopwatch/StopwatchPage.qml:144 qml/timer/TimerPage.qml:45
 #: qml/timer/TimerPage.qml:94
@@ -429,15 +428,14 @@ msgid "Lap"
 msgstr "Aplis"
 
 #: qml/stopwatch/StopwatchPage.qml:204
-#, fuzzy, kde-format
-#| msgid "Loop Timer"
+#, kde-format
 msgid "Lap Time"
-msgstr "Apļa taimeris"
+msgstr "Apļa laiks"
 
 #: qml/stopwatch/StopwatchPage.qml:211
 #, kde-format
 msgid "Total"
-msgstr ""
+msgstr "Kopā"
 
 #: qml/stopwatch/StopwatchPage.qml:294
 #, kde-format
@@ -560,39 +558,34 @@ msgid "Create timer"
 msgstr "Izveidot taimeri"
 
 #: qml/timer/TimerListDelegate.qml:145
-#, fuzzy, kde-format
-#| msgid "Loop Timer"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Loop timer"
 msgstr "Apļa taimeris"
 
 #: qml/timer/TimerListDelegate.qml:156
-#, fuzzy, kde-format
-#| msgid "Pause"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Pause"
 msgstr "Pauze"
 
 #: qml/timer/TimerListDelegate.qml:156
-#, fuzzy, kde-format
-#| msgid "Start"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start"
 msgstr "Sākt"
 
 #: qml/timer/TimerListDelegate.qml:166
-#, fuzzy, kde-format
-#| msgid "Reset"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset"
 msgstr "Atiestatīt"
 
 #: qml/timer/TimerListDelegate.qml:176
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete"
-msgstr "Izdzēst"
+msgstr "Dzēst"
 
 #: qml/timer/TimerListPage.qml:29
 #, kde-format
