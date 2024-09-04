@@ -53,4 +53,3 @@ private:
     QDBusServiceWatcher *m_watcher;
     bool m_connectedToDaemon = false;
 };
-

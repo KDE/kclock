@@ -257,7 +257,7 @@ void Timer::ring()
 {
     // if there were other ring events running, close them
     m_notification->close();
-    
+
     qDebug("Timer finished, sending notification...");
     m_notification->sendEvent();
 
