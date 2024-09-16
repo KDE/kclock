@@ -54,10 +54,9 @@ msgid "Han Young"
 msgstr "Han Young"
 
 #: qml/alarm/AlarmForm.qml:86
-#, fuzzy, kde-format
-#| msgid "Days to Repeat"
+#, kde-format
 msgid "Days to repeat:"
-msgstr "Ημέρες για επανάληψη"
+msgstr "Ημέρες για επανάληψη:"
 
 #: qml/alarm/AlarmForm.qml:88
 #, fuzzy, kde-format
@@ -196,8 +195,7 @@ msgstr[0] "Αναβολή %1 λεπτά"
 msgstr[1] "Αναβολή %1 λεπτά"
 
 #: qml/alarm/AlarmListDelegate.qml:126 qml/time/TimePageDelegate.qml:60
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "Διαγραφή"
@@ -239,10 +237,9 @@ msgid "Add alarm"
 msgstr "Συναγερμός"
 
 #: qml/alarm/AlarmListPage.qml:116
-#, fuzzy, kde-format
-#| msgid "Alarm"
+#, kde-format
 msgid "alarm"
-msgstr "Συναγερμός"
+msgstr "συναγερμός"
 
 #: qml/alarm/AlarmListPage.qml:116
 #, kde-format
@@ -584,29 +581,25 @@ msgid "Loop timer"
 msgstr "Χρονόμετρο"
 
 #: qml/timer/TimerListDelegate.qml:156
-#, fuzzy, kde-format
-#| msgid "Pause"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Pause"
 msgstr "Παύση"
 
 #: qml/timer/TimerListDelegate.qml:156
-#, fuzzy, kde-format
-#| msgid "Start"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start"
 msgstr "Έναρξη"
 
 #: qml/timer/TimerListDelegate.qml:166
-#, fuzzy, kde-format
-#| msgid "Reset"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset"
 msgstr "Επαναφορά"
 
 #: qml/timer/TimerListDelegate.qml:176
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete"
 msgstr "Διαγραφή"
