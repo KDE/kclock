@@ -40,8 +40,7 @@ Kirigami.ScrollablePage {
     ]
 
     function addTimer() {
-        newTimerForm.active = true;
-        newTimerForm.item.open();
+        newTimerForm.open();
     }
 
     header: Components.Banner {
@@ -95,9 +94,8 @@ Kirigami.ScrollablePage {
         }
 
         // create timer form
-        TimerFormWrapper {
+        TimerFormDialog {
             id: newTimerForm
-            active: false
         }
 
         // timer card delegate
