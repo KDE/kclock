@@ -33,15 +33,15 @@ Item {
 
     Kirigami.Theme.colorSet: Kirigami.Theme.Button
     Kirigami.Theme.inherit: false
-    
+
     implicitWidth: Kirigami.Units.gridUnit * 4
     implicitHeight: column.implicitHeight
-    
+
     readonly property color buttonColor: Kirigami.Theme.backgroundColor
     readonly property color buttonHoverColor: Qt.darker(buttonColor, 1.05)
     readonly property color buttonPressedColor: Qt.darker(buttonColor, 1.2)
     readonly property color buttonBorderColor: Qt.alpha(Kirigami.Theme.textColor, 0.3)
-    
+
     ColumnLayout {
         id: column
         spacing: 0
@@ -55,7 +55,7 @@ Item {
                 spinBox.increase();
                 spinBox.valueModified();
             }
-            icon.name: 'list-add-symbolic'
+            icon.name: 'arrow-up'
             isStart: true
             isEnd: false
             enabled: spinBox.value < spinBox.to
@@ -128,7 +128,7 @@ Item {
                     verticalAlignment: Qt.AlignVCenter
 
                     inputMethodHints: Qt.ImhFormattedNumbersOnly
-                    
+
                     function applyTextBinding() {
                         text = Qt.binding(function () { return spinBox.displayText.padStart(2, '0') });
                     }
@@ -149,7 +149,7 @@ Item {
                 spinBox.decrease();
                 spinBox.valueModified();
             }
-            icon.name: 'list-remove-symbolic'
+            icon.name: 'arrow-down'
             isStart: false
             isEnd: true
             enabled: spinBox.value > spinBox.from
