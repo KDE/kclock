@@ -21,6 +21,16 @@ Rectangle {
     
     color: "transparent"
     
+    function getCircleRadius(): double {
+        const totalHeight = heading.height + timeLabels.height + addMinuteButton.height;
+        const maxWidth = Math.max(heading.width, timeLabels.width, addMinuteButton.width);
+
+        const contentDiag = Math.sqrt(totalHeight ** 2 + maxWidth ** 2);
+        const maxRadius = Math.min(root.width, root.height) * (Kirigami.Settings.isMobile ? 0.3 : 0.25);
+        
+        return Math.max(maxRadius, contentDiag / 2);
+    }
+    
     function getTimeLeft() {
         return timerDuration - timerElapsed;
     }
@@ -74,7 +84,8 @@ Rectangle {
             PathAngleArc {
                 id: timerCircleArc
                 centerX: timerCircle.width / 2; centerY: timerCircle.height / 2;
-                radiusX: Math.min(root.width * (Kirigami.Settings.isMobile ? 0.3 : 0.25), root.height * (Kirigami.Settings.isMobile ? 0.3 : 0.25)); radiusY: radiusX
+                radiusX: getCircleRadius()
+                radiusY: radiusX
                 startAngle: -180
                 sweepAngle: 360
             }
@@ -137,6 +148,7 @@ Rectangle {
     }
     
     Kirigami.Heading {
+        id: heading
         level: 4
         text: timer.label
         color: timerRunning ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
@@ -146,6 +158,7 @@ Rectangle {
     }
 
     ToolButton {
+        id: addMinuteButton
         text: i18n("1 minute")
         icon.name: "list-add"
         anchors.topMargin: Kirigami.Units.smallSpacing
