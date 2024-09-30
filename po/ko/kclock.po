@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-12 00:41+0000\n"
+"POT-Creation-Date: 2024-09-30 00:42+0000\n"
 "PO-Revision-Date: 2024-08-19 22:39+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -84,7 +84,7 @@ msgstr "없음"
 
 #: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:136
 #: qml/alarm/AlarmForm.qml:169 qml/alarm/AlarmForm.qml:173
-#: qml/timer/TimerComponent.qml:149
+#: qml/timer/TimerComponent.qml:162
 #, kde-format
 msgid "1 minute"
 msgstr "1분"
@@ -166,13 +166,12 @@ msgid "New Alarm"
 msgstr "새 알람"
 
 #: qml/alarm/AlarmFormPage.qml:39 qml/alarm/AlarmFormPage.qml:62
-#: qml/timer/TimerFormWrapper.qml:85 qml/timer/TimerFormWrapper.qml:144
+#: qml/timer/TimerFormDialog.qml:71
 #, kde-format
 msgid "Done"
 msgstr "완료"
 
-#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormWrapper.qml:80
-#: qml/timer/TimerFormWrapper.qml:139
+#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormDialog.qml:66
 #, kde-format
 msgid "Cancel"
 msgstr "취소"
@@ -536,20 +535,15 @@ msgstr "사전 설정 표시"
 msgid "Toggle Delete"
 msgstr "삭제 전환"
 
-#: qml/timer/TimerFormWrapper.qml:55
-#, kde-format
-msgid "<b>Create New Timer</b>"
-msgstr "<b>새 타이머 만들기</b>"
-
-#: qml/timer/TimerFormWrapper.qml:73 qml/timer/TimerFormWrapper.qml:132
-#, kde-format
-msgid "Save As Preset"
-msgstr "사전 설정으로 저장"
-
-#: qml/timer/TimerFormWrapper.qml:99
+#: qml/timer/TimerFormDialog.qml:26
 #, kde-format
 msgid "Create timer"
 msgstr "타이머 만들기"
+
+#: qml/timer/TimerFormDialog.qml:59
+#, kde-format
+msgid "Save As Preset"
+msgstr "사전 설정으로 저장"
 
 #: qml/timer/TimerListDelegate.qml:145
 #, kde-format
@@ -586,7 +580,7 @@ msgstr "삭제"
 msgid "New Timer"
 msgstr "새 타이머"
 
-#: qml/timer/TimerListPage.qml:49
+#: qml/timer/TimerListPage.qml:48
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
@@ -594,12 +588,12 @@ msgid ""
 msgstr ""
 "clock 데몬을 찾을 수 없습니다. 타이머를 사용하려면 kclockd를 시작하십시오."
 
-#: qml/timer/TimerListPage.qml:87
+#: qml/timer/TimerListPage.qml:86
 #, kde-format
 msgid "No timers configured"
 msgstr "설정한 타이머 없음"
 
-#: qml/timer/TimerListPage.qml:92
+#: qml/timer/TimerListPage.qml:91
 #, kde-format
 msgid "Add timer"
 msgstr "타이머 추가"
@@ -716,6 +710,9 @@ msgstr "1분 안에 알람이 울립니다"
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "%1 후에 알람이 울립니다"
+
+#~ msgid "<b>Create New Timer</b>"
+#~ msgstr "<b>새 타이머 만들기</b>"
 
 #~ msgid "No locations configured"
 #~ msgstr "설정한 위치 없음"

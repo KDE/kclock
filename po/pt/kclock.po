@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-12 00:41+0000\n"
+"POT-Creation-Date: 2024-09-30 00:42+0000\n"
 "PO-Revision-Date: 2023-02-15 16:04+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -83,7 +83,7 @@ msgstr "Nenhuma"
 
 #: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:136
 #: qml/alarm/AlarmForm.qml:169 qml/alarm/AlarmForm.qml:173
-#: qml/timer/TimerComponent.qml:149
+#: qml/timer/TimerComponent.qml:162
 #, kde-format
 msgid "1 minute"
 msgstr "1 minuto"
@@ -165,13 +165,12 @@ msgid "New Alarm"
 msgstr "Novo Alarme"
 
 #: qml/alarm/AlarmFormPage.qml:39 qml/alarm/AlarmFormPage.qml:62
-#: qml/timer/TimerFormWrapper.qml:85 qml/timer/TimerFormWrapper.qml:144
+#: qml/timer/TimerFormDialog.qml:71
 #, kde-format
 msgid "Done"
 msgstr "Concluído"
 
-#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormWrapper.qml:80
-#: qml/timer/TimerFormWrapper.qml:139
+#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormDialog.qml:66
 #, kde-format
 msgid "Cancel"
 msgstr "Cancelar"
@@ -543,20 +542,15 @@ msgstr "Mostrar as Predefinições"
 msgid "Toggle Delete"
 msgstr "Comutar a Remoção"
 
-#: qml/timer/TimerFormWrapper.qml:55
-#, kde-format
-msgid "<b>Create New Timer</b>"
-msgstr "<b>Criar um Novo Temporizador</b>"
-
-#: qml/timer/TimerFormWrapper.qml:73 qml/timer/TimerFormWrapper.qml:132
-#, kde-format
-msgid "Save As Preset"
-msgstr "Gravar como Predefinição"
-
-#: qml/timer/TimerFormWrapper.qml:99
+#: qml/timer/TimerFormDialog.qml:26
 #, kde-format
 msgid "Create timer"
 msgstr "Criar um temporizador"
+
+#: qml/timer/TimerFormDialog.qml:59
+#, kde-format
+msgid "Save As Preset"
+msgstr "Gravar como Predefinição"
 
 #: qml/timer/TimerListDelegate.qml:145
 #, fuzzy, kde-format
@@ -598,7 +592,7 @@ msgstr "Apagar"
 msgid "New Timer"
 msgstr "Novo Temporizador"
 
-#: qml/timer/TimerListPage.qml:49
+#: qml/timer/TimerListPage.qml:48
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
@@ -607,12 +601,12 @@ msgstr ""
 "O serviço do relógio não foi encontrado. Por favor, inicie o 'kclockd' para "
 "ter a funcionalidade de temporizadores."
 
-#: qml/timer/TimerListPage.qml:87
+#: qml/timer/TimerListPage.qml:86
 #, kde-format
 msgid "No timers configured"
 msgstr "Sem temporizadores configurados"
 
-#: qml/timer/TimerListPage.qml:92
+#: qml/timer/TimerListPage.qml:91
 #, kde-format
 msgid "Add timer"
 msgstr "Adicionar um temporizador"
@@ -732,6 +726,9 @@ msgstr "O alarme irá tocar daqui a um minuto"
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "O alarme irá tocar daqui a %1"
+
+#~ msgid "<b>Create New Timer</b>"
+#~ msgstr "<b>Criar um Novo Temporizador</b>"
 
 #~ msgid "No locations configured"
 #~ msgstr "Sem localizações configuradas"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-12 00:41+0000\n"
+"POT-Creation-Date: 2024-09-30 00:42+0000\n"
 "PO-Revision-Date: 2024-03-10 11:04+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -85,7 +85,7 @@ msgstr "Ei mitään"
 
 #: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:136
 #: qml/alarm/AlarmForm.qml:169 qml/alarm/AlarmForm.qml:173
-#: qml/timer/TimerComponent.qml:149
+#: qml/timer/TimerComponent.qml:162
 #, kde-format
 msgid "1 minute"
 msgstr "1 minuutin"
@@ -167,13 +167,12 @@ msgid "New Alarm"
 msgstr "Uusi hälytys"
 
 #: qml/alarm/AlarmFormPage.qml:39 qml/alarm/AlarmFormPage.qml:62
-#: qml/timer/TimerFormWrapper.qml:85 qml/timer/TimerFormWrapper.qml:144
+#: qml/timer/TimerFormDialog.qml:71
 #, kde-format
 msgid "Done"
 msgstr "Valmis"
 
-#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormWrapper.qml:80
-#: qml/timer/TimerFormWrapper.qml:139
+#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormDialog.qml:66
 #, kde-format
 msgid "Cancel"
 msgstr "Peru"
@@ -541,20 +540,15 @@ msgstr "Näytä esiasetukset"
 msgid "Toggle Delete"
 msgstr "Poista tai palauta"
 
-#: qml/timer/TimerFormWrapper.qml:55
-#, kde-format
-msgid "<b>Create New Timer</b>"
-msgstr "<b>Luo uusi ajastin</b>"
-
-#: qml/timer/TimerFormWrapper.qml:73 qml/timer/TimerFormWrapper.qml:132
-#, kde-format
-msgid "Save As Preset"
-msgstr "Tallenna esiasetukseksi"
-
-#: qml/timer/TimerFormWrapper.qml:99
+#: qml/timer/TimerFormDialog.qml:26
 #, kde-format
 msgid "Create timer"
 msgstr "Luo ajastin"
+
+#: qml/timer/TimerFormDialog.qml:59
+#, kde-format
+msgid "Save As Preset"
+msgstr "Tallenna esiasetukseksi"
 
 #: qml/timer/TimerListDelegate.qml:145
 #, fuzzy, kde-format
@@ -596,7 +590,7 @@ msgstr "Poista"
 msgid "New Timer"
 msgstr "Uusi ajastin"
 
-#: qml/timer/TimerListPage.qml:49
+#: qml/timer/TimerListPage.qml:48
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
@@ -605,12 +599,12 @@ msgstr ""
 "Kellopalvelua ei löytynyt. Käynnistä kclockd mahdollistaaksesi "
 "ajastintoiminnon."
 
-#: qml/timer/TimerListPage.qml:87
+#: qml/timer/TimerListPage.qml:86
 #, kde-format
 msgid "No timers configured"
 msgstr "Ei asetettuja ajastimia"
 
-#: qml/timer/TimerListPage.qml:92
+#: qml/timer/TimerListPage.qml:91
 #, kde-format
 msgid "Add timer"
 msgstr "Lisää ajastin"
@@ -730,6 +724,9 @@ msgstr "Hälytys soi minuutin sisään"
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "Hälytys soi %1 kuluttua"
+
+#~ msgid "<b>Create New Timer</b>"
+#~ msgstr "<b>Luo uusi ajastin</b>"
 
 #~ msgid "No locations configured"
 #~ msgstr "Ei asetettuja sijainteja"

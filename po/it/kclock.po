@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-12 00:41+0000\n"
+"POT-Creation-Date: 2024-09-30 00:42+0000\n"
 "PO-Revision-Date: 2024-07-13 02:16+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -86,7 +86,7 @@ msgstr "Nessuno"
 
 #: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:136
 #: qml/alarm/AlarmForm.qml:169 qml/alarm/AlarmForm.qml:173
-#: qml/timer/TimerComponent.qml:149
+#: qml/timer/TimerComponent.qml:162
 #, kde-format
 msgid "1 minute"
 msgstr "1 minuto"
@@ -168,13 +168,12 @@ msgid "New Alarm"
 msgstr "Nuova sveglia"
 
 #: qml/alarm/AlarmFormPage.qml:39 qml/alarm/AlarmFormPage.qml:62
-#: qml/timer/TimerFormWrapper.qml:85 qml/timer/TimerFormWrapper.qml:144
+#: qml/timer/TimerFormDialog.qml:71
 #, kde-format
 msgid "Done"
 msgstr "Fatto"
 
-#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormWrapper.qml:80
-#: qml/timer/TimerFormWrapper.qml:139
+#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormDialog.qml:66
 #, kde-format
 msgid "Cancel"
 msgstr "Annulla"
@@ -540,20 +539,15 @@ msgstr "Mostra preimpostazioni"
 msgid "Toggle Delete"
 msgstr "Elimina"
 
-#: qml/timer/TimerFormWrapper.qml:55
-#, kde-format
-msgid "<b>Create New Timer</b>"
-msgstr "<b>Crea nuovo timer</b>"
-
-#: qml/timer/TimerFormWrapper.qml:73 qml/timer/TimerFormWrapper.qml:132
-#, kde-format
-msgid "Save As Preset"
-msgstr "Salva come preimpostazione"
-
-#: qml/timer/TimerFormWrapper.qml:99
+#: qml/timer/TimerFormDialog.qml:26
 #, kde-format
 msgid "Create timer"
 msgstr "Crea timer"
+
+#: qml/timer/TimerFormDialog.qml:59
+#, kde-format
+msgid "Save As Preset"
+msgstr "Salva come preimpostazione"
 
 #: qml/timer/TimerListDelegate.qml:145
 #, kde-format
@@ -590,7 +584,7 @@ msgstr "Elimina"
 msgid "New Timer"
 msgstr "Nuovo timer"
 
-#: qml/timer/TimerListPage.qml:49
+#: qml/timer/TimerListPage.qml:48
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
@@ -599,12 +593,12 @@ msgstr ""
 "Il demone dell'orologio non è stato trovato. Avvia kclockd per avere la "
 "funzionalità di timer."
 
-#: qml/timer/TimerListPage.qml:87
+#: qml/timer/TimerListPage.qml:86
 #, kde-format
 msgid "No timers configured"
 msgstr "Nessun timer configurato"
 
-#: qml/timer/TimerListPage.qml:92
+#: qml/timer/TimerListPage.qml:91
 #, kde-format
 msgid "Add timer"
 msgstr "Aggiungi timer"
@@ -724,6 +718,9 @@ msgstr "La sveglia suonerà tra meno di un minuto"
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "La sveglia suonerà dopo %1"
+
+#~ msgid "<b>Create New Timer</b>"
+#~ msgstr "<b>Crea nuovo timer</b>"
 
 #~ msgid "No locations configured"
 #~ msgstr "Nessuna località configurata"

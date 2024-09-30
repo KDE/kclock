@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-12 00:41+0000\n"
+"POT-Creation-Date: 2024-09-30 00:42+0000\n"
 "PO-Revision-Date: 2024-07-09 05:24+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -85,7 +85,7 @@ msgstr "არცერთი"
 
 #: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:136
 #: qml/alarm/AlarmForm.qml:169 qml/alarm/AlarmForm.qml:173
-#: qml/timer/TimerComponent.qml:149
+#: qml/timer/TimerComponent.qml:162
 #, kde-format
 msgid "1 minute"
 msgstr "1 წთ"
@@ -167,13 +167,12 @@ msgid "New Alarm"
 msgstr "მაღვიძარა"
 
 #: qml/alarm/AlarmFormPage.qml:39 qml/alarm/AlarmFormPage.qml:62
-#: qml/timer/TimerFormWrapper.qml:85 qml/timer/TimerFormWrapper.qml:144
+#: qml/timer/TimerFormDialog.qml:71
 #, kde-format
 msgid "Done"
 msgstr "დასრულდა"
 
-#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormWrapper.qml:80
-#: qml/timer/TimerFormWrapper.qml:139
+#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormDialog.qml:66
 #, kde-format
 msgid "Cancel"
 msgstr "გაუქმენა"
@@ -539,20 +538,15 @@ msgstr "პრესეტების ჩვენება"
 msgid "Toggle Delete"
 msgstr "წაშლის გადართვა"
 
-#: qml/timer/TimerFormWrapper.qml:55
-#, kde-format
-msgid "<b>Create New Timer</b>"
-msgstr "<b>ახალი ტაიმერის შექმნა</b>"
-
-#: qml/timer/TimerFormWrapper.qml:73 qml/timer/TimerFormWrapper.qml:132
-#, kde-format
-msgid "Save As Preset"
-msgstr "პრესეტად შენახვა"
-
-#: qml/timer/TimerFormWrapper.qml:99
+#: qml/timer/TimerFormDialog.qml:26
 #, kde-format
 msgid "Create timer"
 msgstr "ტაიმერის შექმნა"
+
+#: qml/timer/TimerFormDialog.qml:59
+#, kde-format
+msgid "Save As Preset"
+msgstr "პრესეტად შენახვა"
 
 #: qml/timer/TimerListDelegate.qml:145
 #, kde-format
@@ -589,7 +583,7 @@ msgstr "წაშლა"
 msgid "New Timer"
 msgstr "ახალი ტაიმერი"
 
-#: qml/timer/TimerListPage.qml:49
+#: qml/timer/TimerListPage.qml:48
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
@@ -597,12 +591,12 @@ msgid ""
 msgstr ""
 "საათის დემონი ვერ ვიპოვე. საათის ფუნქციონალისთვის საჭიროა kclockd-ის გაშვება."
 
-#: qml/timer/TimerListPage.qml:87
+#: qml/timer/TimerListPage.qml:86
 #, kde-format
 msgid "No timers configured"
 msgstr "ტაიმერები მორგებული არაა"
 
-#: qml/timer/TimerListPage.qml:92
+#: qml/timer/TimerListPage.qml:91
 #, kde-format
 msgid "Add timer"
 msgstr "ტაიმერის დამატება"
@@ -722,6 +716,9 @@ msgstr "ზარი წუთზე ნაკლებში დარეკა
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "ზარი დარეკავს: %1"
+
+#~ msgid "<b>Create New Timer</b>"
+#~ msgstr "<b>ახალი ტაიმერის შექმნა</b>"
 
 #~ msgid "No locations configured"
 #~ msgstr "მორგებული მდებარეობების გარეშე"

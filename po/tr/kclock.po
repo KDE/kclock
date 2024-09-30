@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-12 00:41+0000\n"
+"POT-Creation-Date: 2024-09-30 00:42+0000\n"
 "PO-Revision-Date: 2024-07-10 00:36+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -85,7 +85,7 @@ msgstr "Hiçbiri"
 
 #: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:136
 #: qml/alarm/AlarmForm.qml:169 qml/alarm/AlarmForm.qml:173
-#: qml/timer/TimerComponent.qml:149
+#: qml/timer/TimerComponent.qml:162
 #, kde-format
 msgid "1 minute"
 msgstr "1 dakika"
@@ -167,13 +167,12 @@ msgid "New Alarm"
 msgstr "Yeni Çalar Saat"
 
 #: qml/alarm/AlarmFormPage.qml:39 qml/alarm/AlarmFormPage.qml:62
-#: qml/timer/TimerFormWrapper.qml:85 qml/timer/TimerFormWrapper.qml:144
+#: qml/timer/TimerFormDialog.qml:71
 #, kde-format
 msgid "Done"
 msgstr "Bitti"
 
-#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormWrapper.qml:80
-#: qml/timer/TimerFormWrapper.qml:139
+#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormDialog.qml:66
 #, kde-format
 msgid "Cancel"
 msgstr "İptal"
@@ -539,20 +538,15 @@ msgstr "Önayarları Göster"
 msgid "Toggle Delete"
 msgstr "Silmeyi Aç/Kapat"
 
-#: qml/timer/TimerFormWrapper.qml:55
-#, kde-format
-msgid "<b>Create New Timer</b>"
-msgstr "<b>Yeni Sayaç Oluştur</b>"
-
-#: qml/timer/TimerFormWrapper.qml:73 qml/timer/TimerFormWrapper.qml:132
-#, kde-format
-msgid "Save As Preset"
-msgstr "Önayar Olarak Kaydet"
-
-#: qml/timer/TimerFormWrapper.qml:99
+#: qml/timer/TimerFormDialog.qml:26
 #, kde-format
 msgid "Create timer"
 msgstr "Sayaç Oluştur"
+
+#: qml/timer/TimerFormDialog.qml:59
+#, kde-format
+msgid "Save As Preset"
+msgstr "Önayar Olarak Kaydet"
 
 #: qml/timer/TimerListDelegate.qml:145
 #, kde-format
@@ -589,7 +583,7 @@ msgstr "Sil"
 msgid "New Timer"
 msgstr "Yeni Sayaç"
 
-#: qml/timer/TimerListPage.qml:49
+#: qml/timer/TimerListPage.qml:48
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
@@ -598,12 +592,12 @@ msgstr ""
 "Saat ardalan süreci bulunamadı. Sayaç işlevselliğine iye olmak için lütfen "
 "kclockd’yi başlatın."
 
-#: qml/timer/TimerListPage.qml:87
+#: qml/timer/TimerListPage.qml:86
 #, kde-format
 msgid "No timers configured"
 msgstr "Kurulan sayaç yok"
 
-#: qml/timer/TimerListPage.qml:92
+#: qml/timer/TimerListPage.qml:91
 #, kde-format
 msgid "Add timer"
 msgstr "Sayaç Ekle"
@@ -723,6 +717,9 @@ msgstr "Saat, bir saatten daha az bir süre içinde çalacak"
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "Saat, %1 içinde çalacak"
+
+#~ msgid "<b>Create New Timer</b>"
+#~ msgstr "<b>Yeni Sayaç Oluştur</b>"
 
 #~ msgid "No locations configured"
 #~ msgstr "Yapılandırılan konum yok"

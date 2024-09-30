@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-12 00:41+0000\n"
+"POT-Creation-Date: 2024-09-30 00:42+0000\n"
 "PO-Revision-Date: 2024-07-09 23:18+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -90,7 +90,7 @@ msgstr "Bat ere ez"
 
 #: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:136
 #: qml/alarm/AlarmForm.qml:169 qml/alarm/AlarmForm.qml:173
-#: qml/timer/TimerComponent.qml:149
+#: qml/timer/TimerComponent.qml:162
 #, kde-format
 msgid "1 minute"
 msgstr "minutu 1"
@@ -172,13 +172,12 @@ msgid "New Alarm"
 msgstr "Alarma berria"
 
 #: qml/alarm/AlarmFormPage.qml:39 qml/alarm/AlarmFormPage.qml:62
-#: qml/timer/TimerFormWrapper.qml:85 qml/timer/TimerFormWrapper.qml:144
+#: qml/timer/TimerFormDialog.qml:71
 #, kde-format
 msgid "Done"
 msgstr "Eginda"
 
-#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormWrapper.qml:80
-#: qml/timer/TimerFormWrapper.qml:139
+#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormDialog.qml:66
 #, kde-format
 msgid "Cancel"
 msgstr "Utzi"
@@ -544,20 +543,15 @@ msgstr "Erakutsi aurre-ezarpenak"
 msgid "Toggle Delete"
 msgstr "Txandakatu ezabatzea"
 
-#: qml/timer/TimerFormWrapper.qml:55
-#, kde-format
-msgid "<b>Create New Timer</b>"
-msgstr "<b>Sortu tenporizadore berria</b>"
-
-#: qml/timer/TimerFormWrapper.qml:73 qml/timer/TimerFormWrapper.qml:132
-#, kde-format
-msgid "Save As Preset"
-msgstr "Gorde aurre-ezarpen gisa"
-
-#: qml/timer/TimerFormWrapper.qml:99
+#: qml/timer/TimerFormDialog.qml:26
 #, kde-format
 msgid "Create timer"
 msgstr "Sortu tenporizadorea"
+
+#: qml/timer/TimerFormDialog.qml:59
+#, kde-format
+msgid "Save As Preset"
+msgstr "Gorde aurre-ezarpen gisa"
 
 #: qml/timer/TimerListDelegate.qml:145
 #, kde-format
@@ -594,7 +588,7 @@ msgstr "Ezabatu"
 msgid "New Timer"
 msgstr "Tenporizadore berria"
 
-#: qml/timer/TimerListPage.qml:49
+#: qml/timer/TimerListPage.qml:48
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
@@ -603,12 +597,12 @@ msgstr ""
 "Ez du aurkitu erlojuaren daimona. Mesedez abiarazi «kclockd», tenporizadore "
 "funtzionaltasuna izateko."
 
-#: qml/timer/TimerListPage.qml:87
+#: qml/timer/TimerListPage.qml:86
 #, kde-format
 msgid "No timers configured"
 msgstr "Ez da tenporizadorerik konfiguratu"
 
-#: qml/timer/TimerListPage.qml:92
+#: qml/timer/TimerListPage.qml:91
 #, kde-format
 msgid "Add timer"
 msgstr "Gehitu tenporizadorea"
@@ -728,6 +722,9 @@ msgstr "Alarma minutu bat baina gutxiagoz joko du"
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "Alarmak %1(e)an joko du"
+
+#~ msgid "<b>Create New Timer</b>"
+#~ msgstr "<b>Sortu tenporizadore berria</b>"
 
 #~ msgid "No locations configured"
 #~ msgstr "Ez da kokalekurik konfiguratu"

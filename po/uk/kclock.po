@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-12 00:41+0000\n"
+"POT-Creation-Date: 2024-09-30 00:42+0000\n"
 "PO-Revision-Date: 2024-07-09 07:33+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
@@ -89,7 +89,7 @@ msgstr "Немає"
 
 #: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:136
 #: qml/alarm/AlarmForm.qml:169 qml/alarm/AlarmForm.qml:173
-#: qml/timer/TimerComponent.qml:149
+#: qml/timer/TimerComponent.qml:162
 #, kde-format
 msgid "1 minute"
 msgstr "1 хвилина"
@@ -171,13 +171,12 @@ msgid "New Alarm"
 msgstr "Створити будильник"
 
 #: qml/alarm/AlarmFormPage.qml:39 qml/alarm/AlarmFormPage.qml:62
-#: qml/timer/TimerFormWrapper.qml:85 qml/timer/TimerFormWrapper.qml:144
+#: qml/timer/TimerFormDialog.qml:71
 #, kde-format
 msgid "Done"
 msgstr "Виконано"
 
-#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormWrapper.qml:80
-#: qml/timer/TimerFormWrapper.qml:139
+#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormDialog.qml:66
 #, kde-format
 msgid "Cancel"
 msgstr "Скасувати"
@@ -545,20 +544,15 @@ msgstr "Показати шаблони"
 msgid "Toggle Delete"
 msgstr "Перемкнути вилучення"
 
-#: qml/timer/TimerFormWrapper.qml:55
-#, kde-format
-msgid "<b>Create New Timer</b>"
-msgstr "<b>Створити таймер</b>"
-
-#: qml/timer/TimerFormWrapper.qml:73 qml/timer/TimerFormWrapper.qml:132
-#, kde-format
-msgid "Save As Preset"
-msgstr "Зберегти як шаблон"
-
-#: qml/timer/TimerFormWrapper.qml:99
+#: qml/timer/TimerFormDialog.qml:26
 #, kde-format
 msgid "Create timer"
 msgstr "Створити таймер"
+
+#: qml/timer/TimerFormDialog.qml:59
+#, kde-format
+msgid "Save As Preset"
+msgstr "Зберегти як шаблон"
 
 #: qml/timer/TimerListDelegate.qml:145
 #, kde-format
@@ -595,7 +589,7 @@ msgstr "Вилучити"
 msgid "New Timer"
 msgstr "Новий таймер"
 
-#: qml/timer/TimerListPage.qml:49
+#: qml/timer/TimerListPage.qml:48
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
@@ -604,12 +598,12 @@ msgstr ""
 "Не знайдено фонової служби годинника. Будь ласка, запустіть kclockd, щоб "
 "можна було користуватися функціональною можливістю таймера."
 
-#: qml/timer/TimerListPage.qml:87
+#: qml/timer/TimerListPage.qml:86
 #, kde-format
 msgid "No timers configured"
 msgstr "Секундомірів не налаштовано"
 
-#: qml/timer/TimerListPage.qml:92
+#: qml/timer/TimerListPage.qml:91
 #, kde-format
 msgid "Add timer"
 msgstr "Додати таймер"
@@ -735,6 +729,9 @@ msgstr "Будильник буде увімкнено за менше, ніж �
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "Будильник буде увімкнено за %1"
+
+#~ msgid "<b>Create New Timer</b>"
+#~ msgstr "<b>Створити таймер</b>"
 
 #~ msgid "No locations configured"
 #~ msgstr "Місць не налаштовано"

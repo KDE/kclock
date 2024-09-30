@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-12 00:41+0000\n"
+"POT-Creation-Date: 2024-09-30 00:42+0000\n"
 "PO-Revision-Date: 2022-06-01 15:13+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -90,7 +90,7 @@ msgstr ""
 
 #: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:136
 #: qml/alarm/AlarmForm.qml:169 qml/alarm/AlarmForm.qml:173
-#: qml/timer/TimerComponent.qml:149
+#: qml/timer/TimerComponent.qml:162
 #, kde-format
 msgid "1 minute"
 msgstr "1 minut"
@@ -177,13 +177,12 @@ msgid "New Alarm"
 msgstr "Alarmă nouă"
 
 #: qml/alarm/AlarmFormPage.qml:39 qml/alarm/AlarmFormPage.qml:62
-#: qml/timer/TimerFormWrapper.qml:85 qml/timer/TimerFormWrapper.qml:144
+#: qml/timer/TimerFormDialog.qml:71
 #, kde-format
 msgid "Done"
 msgstr "Gata"
 
-#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormWrapper.qml:80
-#: qml/timer/TimerFormWrapper.qml:139
+#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormDialog.qml:66
 #, kde-format
 msgid "Cancel"
 msgstr ""
@@ -561,22 +560,16 @@ msgstr ""
 msgid "Toggle Delete"
 msgstr "Șterge"
 
-#: qml/timer/TimerFormWrapper.qml:55
-#, fuzzy, kde-format
-#| msgid "New timer"
-msgid "<b>Create New Timer</b>"
-msgstr "Cronometru nou"
-
-#: qml/timer/TimerFormWrapper.qml:73 qml/timer/TimerFormWrapper.qml:132
-#, kde-format
-msgid "Save As Preset"
-msgstr ""
-
-#: qml/timer/TimerFormWrapper.qml:99
+#: qml/timer/TimerFormDialog.qml:26
 #, fuzzy, kde-format
 #| msgid "New timer"
 msgid "Create timer"
 msgstr "Cronometru nou"
+
+#: qml/timer/TimerFormDialog.qml:59
+#, kde-format
+msgid "Save As Preset"
+msgstr ""
 
 #: qml/timer/TimerListDelegate.qml:145
 #, fuzzy, kde-format
@@ -618,20 +611,20 @@ msgstr "Șterge"
 msgid "New Timer"
 msgstr "Cronometru nou"
 
-#: qml/timer/TimerListPage.qml:49
+#: qml/timer/TimerListPage.qml:48
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
 "functionality."
 msgstr ""
 
-#: qml/timer/TimerListPage.qml:87
+#: qml/timer/TimerListPage.qml:86
 #, fuzzy, kde-format
 #| msgid "No alarms configured"
 msgid "No timers configured"
 msgstr "Nicio alarmă configurată"
 
-#: qml/timer/TimerListPage.qml:92
+#: qml/timer/TimerListPage.qml:91
 #, fuzzy, kde-format
 #| msgid "Add a timer"
 msgid "Add timer"
@@ -767,6 +760,11 @@ msgstr "Alarma va suna în mai puțin de un minut"
 #| msgid "Alarm will be rung after %1"
 msgid "Alarm will ring in %1"
 msgstr "Alarma va suna în %1"
+
+#, fuzzy
+#~| msgid "New timer"
+#~ msgid "<b>Create New Timer</b>"
+#~ msgstr "Cronometru nou"
 
 #, fuzzy
 #~| msgid "No alarms configured"
