@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-09 00:41+0000\n"
+"POT-Creation-Date: 2024-09-30 02:33+0000\n"
 "PO-Revision-Date: 2022-01-15 20:13+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: Hindi <kde-l10n-hi@kde.org>\n"
@@ -85,7 +85,7 @@ msgstr ""
 
 #: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:136
 #: qml/alarm/AlarmForm.qml:169 qml/alarm/AlarmForm.qml:173
-#: qml/timer/TimerComponent.qml:149
+#: qml/timer/TimerComponent.qml:162
 #, kde-format
 msgid "1 minute"
 msgstr ""
