@@ -32,8 +32,6 @@
         <file>qml/time/AddLocationListView.qml</file>
         <file>qml/time/AddLocationPage.qml</file>
         <file>qml/time/AddLocationWrapper.qml</file>
-        <file>qml/time/AnalogClock.qml</file>
-        <file>qml/time/AnalogClockHand.qml</file>
         <file>qml/time/TimePage.qml</file>
         <file>qml/time/TimePageDelegate.qml</file>
 
