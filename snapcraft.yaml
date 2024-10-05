@@ -118,3 +118,16 @@ parts:
       - -usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0
       - -usr/lib/aspell/*
       - -usr/share/lintian 
+  cleanup:
+    after:
+      - kclock
+    plugin: nil
+    build-snaps:
+      - core22
+      - kf6-core22
+      - qt-common-themes
+    override-prime: |
+      set -eux
+      for snap in "core22" "kf6-core22" "qt-common-themes"; do
+          cd "/snap/$snap/current" && find . -type f,l -exec rm -rf "${CRAFT_PRIME}/{}" \;
+      done
