@@ -708,6 +708,3 @@ msgstr "闹钟将在一分钟内响起"
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "闹钟将在 %1 响起"
-
-#~ msgid "<b>Create New Timer</b>"
-#~ msgstr "<b>创建新计时器</b>"
