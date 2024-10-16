@@ -65,6 +65,7 @@
   <summary xml:lang="he">התנהלות עם הזמן והגדרת התראות</summary>
   <summary xml:lang="hu">Időmérés és riasztások beállítása</summary>
   <summary xml:lang="ia">Mantene tempore e assigna alarmas</summary>
+  <summary xml:lang="id">Jaga waktu dan setel alarm</summary>
   <summary xml:lang="it">Tieni il tempo e imposta gli allarmi</summary>
   <summary xml:lang="ka">ადევნეთ თვალყური დროს და დააყენეთ განგაშები</summary>
   <summary xml:lang="ko">시간을 보고 알람을 설정</summary>
@@ -95,6 +96,7 @@
     <p xml:lang="he">יישום שעון אוניברסלי למחשב ולניידים. השעון כולל שעון עצר ושעון עולמי ומאפשר להגדיר מגוון התראות וקוצבי זמן.</p>
     <p xml:lang="hu">Univerzális óraalkalmazás asztali és mobil eszközökre. Az óra tartalmaz egy stopperórát és világórát, valamint lehetővé teszi több riasztás és időzítők beállítását.</p>
     <p xml:lang="ia">Un application de horologio universal per scriptorio e mobile. Horologio include un  chronometro e un horologio mundial, e tu pote sempre fixar alarmas e timers.</p>
+    <p xml:lang="id">Aplikasi jam universal untuk desktop dan ponsel. Jam ini dilengkapi dengan stopwatch dan jam dunia, serta memungkinkan Anda menyetel beberapa alarm dan pengatur waktu.</p>
     <p xml:lang="it">Un'applicazione universale per l'orologio per desktop e per mobile. Orologio include un cronometro e un orologio mondiale, e ti permette di impostare più allarmi e timer.</p>
     <p xml:lang="ka">უნივერსალური საათის აპლიკაცია კომპიუტერისა და მობილურისთვის. Clock შეიცავს წამზომს და მსოფლიო საათს და საშუალებას გაძლევთ, ერთზე მეტი განგაში და წამზომი დააყენოთ.</p>
     <p xml:lang="ko">데스크톱과 모바일용 다기능 시계 앱입니다. 초시계, 세계 시간, 다중 알람과 타이머 설정 기능이 있습니다.</p>
@@ -176,7 +178,7 @@
       <caption xml:lang="hi">मोबाइल दृश्य</caption>
       <caption xml:lang="hu">Mobilnézet</caption>
       <caption xml:lang="ia">Vista de Mobile</caption>
-      <caption xml:lang="id">Tampilan mobile</caption>
+      <caption xml:lang="id">Tampilan ponsel</caption>
       <caption xml:lang="it">Vista mobile</caption>
       <caption xml:lang="ka">მობილური ხედი</caption>
       <caption xml:lang="ko">모바일 보기</caption>
