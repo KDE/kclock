@@ -21,6 +21,7 @@ class Timer : public QObject
     Q_PROPERTY(QString lengthPretty READ lengthPretty NOTIFY lengthChanged)
     Q_PROPERTY(int elapsed READ elapsed NOTIFY elapsedChanged)
     Q_PROPERTY(QString elapsedPretty READ elapsedPretty NOTIFY elapsedChanged)
+    Q_PROPERTY(QString remainingPretty READ remainingPretty NOTIFY elapsedChanged)
     Q_PROPERTY(QString label READ label WRITE setLabel NOTIFY labelChanged)
     Q_PROPERTY(QString commandTimeout READ commandTimeout WRITE setCommandTimeout NOTIFY commandTimeoutChanged)
     Q_PROPERTY(bool running READ running NOTIFY runningChanged)
@@ -38,6 +39,7 @@ public:
 
     int elapsed() const;
     QString elapsedPretty() const;
+    QString remainingPretty() const;
 
     QString toPretty(int len) const;
 

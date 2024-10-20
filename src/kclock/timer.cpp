@@ -69,6 +69,11 @@ QString Timer::elapsedPretty() const
     return toPretty(m_elapsed);
 }
 
+QString Timer::remainingPretty() const
+{
+    return toPretty(m_length - m_elapsed);
+}
+
 QString Timer::toPretty(int len) const
 {
     qint64 hours = len / 60 / 60, minutes = len / 60 - hours * 60, seconds = len - hours * 60 * 60 - minutes * 60;

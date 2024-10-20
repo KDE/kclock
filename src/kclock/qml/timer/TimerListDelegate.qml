@@ -21,7 +21,7 @@ Kirigami.AbstractCard {
     readonly property int length: timer ? timer.length : 1
     readonly property int elapsed: timer ? timer.elapsed : 0
     readonly property string lengthPretty: timer ? timer.lengthPretty : ""
-    readonly property string elapsedPretty: timer ? timer.elapsedPretty : ""
+    readonly property string remainingPretty: timer ? timer.remainingPretty : ""
     readonly property string label: timer ? timer.label : ""
     readonly property string commandTimeout: timer ? timer.commandTimeout : ""
     readonly property bool running: timer ? timer.running : false
@@ -117,7 +117,7 @@ Kirigami.AbstractCard {
                 Kirigami.Heading {
                     level: 3
                     Layout.alignment: Qt.AlignLeft
-                    text: root.elapsedPretty
+                    text: root.remainingPretty
                     color: root.running ? Kirigami.Theme.activeTextColor : Kirigami.Theme.disabledTextColor
                 }
                 Kirigami.Heading {
