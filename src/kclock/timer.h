@@ -39,6 +39,8 @@ public:
     int elapsed() const;
     QString elapsedPretty() const;
 
+    QString toPretty(int len) const;
+
     QString label() const;
     void setLabel(const QString &label);
 
