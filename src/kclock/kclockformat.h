@@ -54,7 +54,10 @@ class WeekModel : public QAbstractListModel
     Q_OBJECT
 
 public:
-    enum { NameRole = Qt::DisplayRole, FlagRole = Qt::UserRole + 1 };
+    enum {
+        NameRole = Qt::DisplayRole,
+        FlagRole = Qt::UserRole + 1
+    };
 
     explicit WeekModel(QObject *parent = nullptr);
 

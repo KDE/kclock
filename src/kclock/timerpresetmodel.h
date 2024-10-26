@@ -47,7 +47,9 @@ class TimerPresetModel : public QAbstractListModel
     Q_OBJECT
 
 public:
-    enum Roles { TimerPresetRole = Qt::UserRole };
+    enum Roles {
+        TimerPresetRole = Qt::UserRole
+    };
 
     static TimerPresetModel *instance();
 
