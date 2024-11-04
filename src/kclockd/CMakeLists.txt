@@ -71,17 +71,17 @@ qt_generate_dbus_interface(
 )
 # use generated DBus adapator xml to generate adaptor source code
 qt_add_dbus_adaptor(kclockd_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.KClockSettings.xml
-                     ${CMAKE_CURRENT_BINARY_DIR}/kclockdsettings.h KClockSettings)
+                     kclockdsettings.h KClockSettings)
 qt_add_dbus_adaptor(kclockd_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.Alarm.xml
-                     ${CMAKE_CURRENT_SOURCE_DIR}/alarm.h Alarm)
+                     alarm.h Alarm)
 qt_add_dbus_adaptor(kclockd_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.AlarmModel.xml
-                     ${CMAKE_CURRENT_SOURCE_DIR}/alarmmodel.h AlarmModel)
+                     alarmmodel.h AlarmModel)
 qt_add_dbus_adaptor(kclockd_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.TimerModel.xml
-                     ${CMAKE_CURRENT_SOURCE_DIR}/timermodel.h TimerModel)
+                     timermodel.h TimerModel)
 qt_add_dbus_adaptor(kclockd_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.Timer.xml
-                     ${CMAKE_CURRENT_SOURCE_DIR}/timer.h Timer)
+                     timer.h Timer)
 qt_add_dbus_adaptor(kclockd_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.Utility.xml
-                     ${CMAKE_CURRENT_SOURCE_DIR}/utilities.h Utilities)
+                     utilities.h Utilities)
 
 qt_add_dbus_interface(kclockd_SRCS systeminterfaces/org.mpris.MediaPlayer2.Player.xml generated/systeminterfaces/mprisplayer)
 
