@@ -34,6 +34,8 @@ ListView {
         contentItem: Kirigami.SearchField {
             id: searchField
 
+            Component.onCompleted: forceActiveFocus(Qt.PopupFocusReason)
+
             onTextChanged: {
                 AddLocationSearchModel.setFilterFixedString(text);
                 root.filterText = text;
