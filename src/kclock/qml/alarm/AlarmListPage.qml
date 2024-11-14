@@ -11,7 +11,6 @@ import QtQuick.Controls
 import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.components as Components
 
 import "../components"
 import kclock
@@ -52,10 +51,11 @@ Kirigami.ScrollablePage {
         applicationWindow().pageStack.push(Qt.resolvedUrl("AlarmFormPage.qml"));
     }
 
-    header: Components.Banner {
+    header: Kirigami.InlineMessage {
         type: Kirigami.MessageType.Error
         text: i18n("The clock daemon was not found. Please start kclockd in order to have alarm functionality.")
         visible: !AlarmModel.connectedToDaemon // by default, it's false so we need this
+        position: Kirigami.InlineMessage.Position.Header
     }
 
     ListView {

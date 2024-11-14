@@ -9,7 +9,6 @@ import QtQuick.Controls
 import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.components as Components
 
 import "../components"
 import kclock
@@ -43,10 +42,11 @@ Kirigami.ScrollablePage {
         newTimerForm.open();
     }
 
-    header: Components.Banner {
+    header: Kirigami.InlineMessage {
         type: Kirigami.MessageType.Error
         text: i18n("The clock daemon was not found. Please start kclockd in order to have timer functionality.")
         visible: !TimerModel.connectedToDaemon // by default, it's false so we need this
+        position: Kirigami.InlineMessage.Position.Header
     }
 
     ListView {
