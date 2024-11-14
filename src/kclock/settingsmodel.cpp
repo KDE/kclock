@@ -14,7 +14,15 @@
 SettingsModel::SettingsModel()
     : m_interface(new LocalKClockSettingsInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Settings"), QDBusConnection::sessionBus()))
 {
-    m_timeFormat = m_interface->timeFormat();
+    if (m_interface->isValid()) {
+        m_timeFormat = m_interface->timeFormat();
+    } else {
+        // Use system default format if kclockd isn't here
+        if (!m_interface->isValid()) {
+            m_timeFormat = QStringLiteral("SystemDefault");
+            Q_EMIT timeFormatChanged();
+        }
+    }
 
     connect(m_interface, &LocalKClockSettingsInterface::timeFormatChanged, this, [this]() {
         QString timeFormat = m_interface->timeFormat();
