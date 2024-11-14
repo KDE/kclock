@@ -60,6 +60,7 @@ FormCard.FormCardPage {
         FormCard.FormButtonDelegate {
             id: aboutClock
             text: i18n("About Clock")
+            icon.name: "help-about-symbolic"
             onClicked: applicationWindow().pageStack.push(applicationWindow().getPage("About"))
         }
 
@@ -68,6 +69,7 @@ FormCard.FormCardPage {
         FormCard.FormButtonDelegate {
             id: aboutKde
             text: i18n("About KDE")
+            icon.name: "kde-symbolic"
             onClicked: applicationWindow().pageStack.push(kdePage)
 
             Component {
