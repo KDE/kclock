@@ -32,7 +32,7 @@ QString UtilModel::getDefaultAlarmFileLocation()
 
 QString UtilModel::getCurrentTimeZoneName()
 {
-    return QString::fromStdString(QTimeZone::systemTimeZoneId().toStdString());
+    return QTimeZone::systemTimeZone().displayName(QTimeZone::GenericTime);
 }
 
 long long UtilModel::calculateNextRingTime(int hours, int minutes, int daysOfWeek, int snooze)
