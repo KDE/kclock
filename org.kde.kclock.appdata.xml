@@ -12,6 +12,7 @@
   <name>Clock</name>
   <name xml:lang="ar">الساعة</name>
   <name xml:lang="ast">Reló</name>
+  <name xml:lang="bg">Часовник</name>
   <name xml:lang="ca">Rellotge</name>
   <name xml:lang="ca-valencia">Rellotge</name>
   <name xml:lang="cs">Hodiny</name>
@@ -52,6 +53,7 @@
   <name xml:lang="zh-CN">时钟</name>
   <name xml:lang="zh-TW">時鐘</name>
   <summary>Keep time and set alarms</summary>
+  <summary xml:lang="bg">Показване на часа и задаване на аларми</summary>
   <summary xml:lang="ca">Aneu a l'hora i establiu alarmes</summary>
   <summary xml:lang="ca-valencia">Aneu fins a l'hora i establiu alarmes</summary>
   <summary xml:lang="cs">Ponechat čas a nastavit upomínky</summary>
@@ -85,6 +87,7 @@
   </developer>
   <description>
     <p>A universal clock application for desktop and mobile. Clock includes a stopwatch and a world clock, and allows you to set multiple alarms and timers.</p>
+    <p xml:lang="bg">Универсално приложение за часовник за десктоп и мобилно устройство. Часовникът включва хронометър и световен часовник и ви позволява да зададете множество аларми и таймери.</p>
     <p xml:lang="ca">Una aplicació universal de rellotge per a l'escriptori i mòbil. El rellotge inclou un cronòmetre i un rellotge mundial, i permet establir alarmes i temporitzadors diversos.</p>
     <p xml:lang="ca-valencia">Una aplicació universal de rellotge per a l'escriptori i mòbil. El rellotge inclou un cronòmetre i un rellotge mundial, i permet establir alarmes i temporitzadors diversos.</p>
     <p xml:lang="de">Eine universelle Uhren-Anwendung für Plasma. Clock enthält eine Stoppuhr und eine Weltzeituhr. Zudem können mehrere Alarme und Zeitlimits festgelegt werden.</p>
@@ -114,6 +117,7 @@
     <p xml:lang="zh-TW">桌面與手機通用的時鐘應用程式。《時鐘》包含碼錶與世界時鐘功能，也讓您設定多個鬧鐘和計時器。</p>
     <p>It contains alarm, timer, stopwatch and timezone functionalities. Alarms and timers are able to wake the device from suspend on Plasma.</p>
     <p xml:lang="ar">يحتوي على وظائف التنبيه والمؤقت وساعة التوقيت والمنطقة الزمنية. المنبهات والمؤقتات قادرة على إيقاظ الجهاز من حالة التعليق على البلازما.</p>
+    <p xml:lang="bg">Той съдържа функции за аларма, таймер, хронометър и часова зона. Алармите и таймерите могат да събудят устройството на Plasma от състояние на приспиване.</p>
     <p xml:lang="ca">Conté funcions d'alarma, temporitzador, cronòmetre i zona horària. Les alarmes i els temporitzadors també poden fer que el dispositiu deixi d'estar suspès en el Plasma.</p>
     <p xml:lang="ca-valencia">Conté funcions d'alarma, temporitzador, cronòmetre i zona horària. Les alarmes i els temporitzadors també poden fer que el dispositiu deixe d'estar suspés en Plasma.</p>
     <p xml:lang="de">Sie beinhaltet einen Erinnerungsalarm, eine Eieruhr, eine Stoppuhr und Zeitzonenfunktionen. Erinnerungen und die Eieruhr können Ihr Gerät aus dem Standby-Modus aufzuwecken, sofern Sie Plasma verwenden.</p>
@@ -164,6 +168,7 @@
     <screenshot type="default">
       <caption>Mobile view</caption>
       <caption xml:lang="ar">عرض المحمول</caption>
+      <caption xml:lang="bg">Изглед за мобилно устройство</caption>
       <caption xml:lang="ca">Vista al mòbil</caption>
       <caption xml:lang="ca-valencia">Vista en el mòbil</caption>
       <caption xml:lang="cs">Mobilní pohled</caption>
@@ -206,6 +211,7 @@
     <screenshot>
       <caption>Desktop view</caption>
       <caption xml:lang="ar">عرض سطح المكتب</caption>
+      <caption xml:lang="bg">Изглед за десктоп системи</caption>
       <caption xml:lang="ca">Vista a l'escriptori</caption>
       <caption xml:lang="ca-valencia">Vista de l'escriptori</caption>
       <caption xml:lang="cs">Pohled pracovní plochy</caption>
@@ -248,6 +254,7 @@
     <screenshot>
       <caption>Timers page</caption>
       <caption xml:lang="ar">صفحة المؤقتات</caption>
+      <caption xml:lang="bg">Страница с таймери</caption>
       <caption xml:lang="ca">Pàgina dels temporitzadors</caption>
       <caption xml:lang="ca-valencia">Pàgina dels temporitzadors</caption>
       <caption xml:lang="cs">Stránka s časovači</caption>
@@ -290,6 +297,7 @@
     <screenshot>
       <caption>Timer page</caption>
       <caption xml:lang="ar">صفحة المؤقت</caption>
+      <caption xml:lang="bg">Страница на таймера</caption>
       <caption xml:lang="ca">Pàgina del temporitzador</caption>
       <caption xml:lang="ca-valencia">Pàgina del temporitzador</caption>
       <caption xml:lang="cs">Stránka s časovačem</caption>
@@ -332,6 +340,7 @@
     <screenshot>
       <caption>Stopwatch page</caption>
       <caption xml:lang="ar">ساعة الإيقاف</caption>
+      <caption xml:lang="bg">Страница на хронометъра</caption>
       <caption xml:lang="ca">Pàgina del cronòmetre</caption>
       <caption xml:lang="ca-valencia">Pàgina del cronòmetre</caption>
       <caption xml:lang="cs">Stránka se stopkami</caption>
@@ -374,6 +383,7 @@
     <screenshot>
       <caption>Alarms page</caption>
       <caption xml:lang="ar">ساعة المنبه</caption>
+      <caption xml:lang="bg">Страница с аларми</caption>
       <caption xml:lang="ca">Pàgina de les alarmes</caption>
       <caption xml:lang="ca-valencia">Pàgina de les alarmes</caption>
       <caption xml:lang="cs">Stránka s upomínkami</caption>
