@@ -8,6 +8,7 @@
 Name=Clock
 Name[ar]=الساعة
 Name[ast]=Reló
+Name[bg]=Часовник
 Name[ca]=Rellotge
 Name[ca@valencia]=Rellotge
 Name[cs]=Hodiny
@@ -48,6 +49,7 @@ Name[zh_CN]=时钟
 Name[zh_TW]=時鐘
 Comment=A simple clock application in Kirigami.
 Comment[ar]=تطبيق ساعة بسيط مكتوب كراجامي
+Comment[bg]=Просто приложение за часовник в Kirigami.
 Comment[ca]=Una aplicació senzilla de rellotge creada amb el Kirigami.
 Comment[ca@valencia]=Una aplicació senzilla de rellotge creada amb Kirigami.
 Comment[cs]=Jednoduchá aplikace hodin v Kirigami.
