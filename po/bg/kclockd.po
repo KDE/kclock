@@ -1,0 +1,92 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the kclock package.
+#
+# SPDX-FileCopyrightText: 2024 Mincho Kondarev <mkondarev@yahoo.de>
+msgid ""
+msgstr ""
+"Project-Id-Version: kclock\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-08-07 00:43+0000\n"
+"PO-Revision-Date: 2024-11-14 21:24+0100\n"
+"Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
+"Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
+"Language: bg_BG\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 24.08.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Минчо Кондарев"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "mkondarev@yahoo.de"
+
+#: alarm.cpp:73 alarm.h:51
+#, kde-format
+msgid "Alarm"
+msgstr "Аларма"
+
+#: alarm.cpp:77 timer.cpp:67
+#, kde-format
+msgid "View"
+msgstr "Изглед"
+
+#: alarm.cpp:80
+#, kde-format
+msgid "Dismiss"
+msgstr "Отхвърляне"
+
+#: alarm.cpp:83
+#, kde-format
+msgid "Snooze"
+msgstr "Отлагане"
+
+#: alarmmodel.cpp:222
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Alarm: <shortcut>%1 %2</shortcut>"
+msgstr "Аларма: <shortcut>%1 %2</shortcut>"
+
+#: main.cpp:31
+#, kde-format
+msgid "Don't use PowerDevil for alarms if it is available"
+msgstr "Да не използва PowerDevil за аларми, ако е наличен"
+
+#: main.cpp:46
+#, kde-format
+msgid "© 2020-2022 KDE Community"
+msgstr "© 2020-2022 Общността на KDE"
+
+#: main.cpp:47
+#, kde-format
+msgid "Devin Lin"
+msgstr "Devin Lin"
+
+#: main.cpp:48
+#, kde-format
+msgid "Han Young"
+msgstr "Han Young"
+
+#: timer.cpp:62
+#, kde-format
+msgid "Timer complete"
+msgstr "Таймерът завърши"
+
+#: timer.cpp:63
+#, kde-format
+msgid "Your timer %1 has finished!"
+msgstr "Таймерът %1 завърши"
+
+#: xdgportal.cpp:34
+#, kde-format
+msgid ""
+"Allow the clock process to be in the background and launched on startup."
+msgstr ""
+"Позволяване на процеса на часовника да работи във фонов режим и да се "
+"стартира при начално зареждане."
