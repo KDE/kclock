@@ -17,7 +17,9 @@ WaitTimerWakeupProvider::WaitTimerWakeupProvider(QObject *parent)
 
 WaitTimerWakeupProvider::~WaitTimerWakeupProvider()
 {
-    delete m_worker;
+    if (m_worker) {
+        m_worker->deleteLater();
+    }
 }
 
 int WaitTimerWakeupProvider::scheduleWakeup(quint64 timestamp)
@@ -64,7 +66,7 @@ void WaitTimerWakeupProvider::schedule()
 void WaitTimerWakeupProvider::initWorker()
 {
     if (!m_timerThread) {
-        m_timerThread = new QThread(this);
+        m_timerThread = new QThread();
         m_worker = new AlarmWaitWorker();
         m_worker->moveToThread(m_timerThread);
         connect(m_worker, &AlarmWaitWorker::finished, this, [this] {
