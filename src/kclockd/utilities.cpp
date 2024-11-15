@@ -68,16 +68,19 @@ Utilities::Utilities(QObject *parent)
             qDebug() << "PowerDevil found on DBus";
             m_hasPowerDevil = hasWakeup();
             if (m_hasPowerDevil) {
-                delete m_wakeupProvider;
+                m_wakeupProvider->deleteLater();
                 m_wakeupProvider = new PowerDevilWakeupProvider(this);
+                connect(m_wakeupProvider, &AbstractWakeupProvider::wakeup, this, &Utilities::wakeup);
             }
 
             Q_EMIT needsReschedule();
         });
         connect(m_watcher, &QDBusServiceWatcher::serviceUnregistered, this, [this]() {
+            qDebug() << "PowerDevil left DBus";
             m_hasPowerDevil = false;
-            delete m_wakeupProvider;
+            m_wakeupProvider->deleteLater();
             m_wakeupProvider = new WaitTimerWakeupProvider(this);
+            connect(m_wakeupProvider, &AbstractWakeupProvider::wakeup, this, &Utilities::wakeup);
 
             Q_EMIT needsReschedule();
         });
