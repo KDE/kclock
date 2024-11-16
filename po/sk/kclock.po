@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-30 00:42+0000\n"
+"POT-Creation-Date: 2024-11-16 02:39+0000\n"
 "PO-Revision-Date: 2022-04-15 19:18+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -409,7 +409,7 @@ msgstr "Používať 24 hodinový čas"
 msgid "About Clock"
 msgstr "Hodiny"
 
-#: qml/settings/SettingsPage.qml:70
+#: qml/settings/SettingsPage.qml:71
 #, fuzzy, kde-format
 #| msgid "About"
 msgid "About KDE"

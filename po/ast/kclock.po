@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-30 00:42+0000\n"
+"POT-Creation-Date: 2024-11-16 02:39+0000\n"
 "PO-Revision-Date: 2024-03-27 22:59+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: Asturian <alministradores@softastur.org>\n"
@@ -387,7 +387,7 @@ msgstr ""
 msgid "About Clock"
 msgstr ""
 
-#: qml/settings/SettingsPage.qml:70
+#: qml/settings/SettingsPage.qml:71
 #, kde-format
 msgid "About KDE"
 msgstr ""

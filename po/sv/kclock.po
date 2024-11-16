@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-30 00:42+0000\n"
+"POT-Creation-Date: 2024-11-16 02:39+0000\n"
 "PO-Revision-Date: 2024-07-09 16:33+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -388,7 +388,7 @@ msgstr "24-timmarstid"
 msgid "About Clock"
 msgstr "Om Klocka"
 
-#: qml/settings/SettingsPage.qml:70
+#: qml/settings/SettingsPage.qml:71
 #, kde-format
 msgid "About KDE"
 msgstr "Om KDE"

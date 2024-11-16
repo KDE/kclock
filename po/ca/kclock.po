@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-30 00:42+0000\n"
+"POT-Creation-Date: 2024-11-16 02:39+0000\n"
 "PO-Revision-Date: 2024-07-09 11:20+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -394,7 +394,7 @@ msgstr "Usa l'horari de 24 hores"
 msgid "About Clock"
 msgstr "Quant al rellotge"
 
-#: qml/settings/SettingsPage.qml:70
+#: qml/settings/SettingsPage.qml:71
 #, kde-format
 msgid "About KDE"
 msgstr "Quant al KDE"
