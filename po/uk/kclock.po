@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-30 00:42+0000\n"
+"POT-Creation-Date: 2024-11-16 00:43+0000\n"
 "PO-Revision-Date: 2024-07-09 07:33+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
@@ -165,7 +165,7 @@ msgctxt "Edit alarm page title"
 msgid "Editing %1"
 msgstr "Редагування %1"
 
-#: qml/alarm/AlarmFormPage.qml:27 qml/alarm/AlarmListPage.qml:31
+#: qml/alarm/AlarmFormPage.qml:27 qml/alarm/AlarmListPage.qml:30
 #, kde-format
 msgid "New Alarm"
 msgstr "Створити будильник"
@@ -196,25 +196,25 @@ msgctxt "@action:button"
 msgid "Delete"
 msgstr "Вилучити"
 
-#: qml/alarm/AlarmListPage.qml:25 qml/components/BottomToolbar.qml:118
+#: qml/alarm/AlarmListPage.qml:24 qml/components/BottomToolbar.qml:118
 #: qml/components/Sidebar.qml:112
 #, kde-format
 msgid "Alarms"
 msgstr "Будильники"
 
-#: qml/alarm/AlarmListPage.qml:37 qml/time/TimePage.qml:37
+#: qml/alarm/AlarmListPage.qml:36 qml/time/TimePage.qml:37
 #, kde-format
 msgid "Edit"
 msgstr "Змінити"
 
-#: qml/alarm/AlarmListPage.qml:46 qml/components/Sidebar.qml:138
+#: qml/alarm/AlarmListPage.qml:45 qml/components/Sidebar.qml:138
 #: qml/settings/SettingsPage.qml:22 qml/stopwatch/StopwatchPage.qml:39
-#: qml/time/TimePage.qml:60 qml/timer/TimerListPage.qml:37
+#: qml/time/TimePage.qml:60 qml/timer/TimerListPage.qml:36
 #, kde-format
 msgid "Settings"
 msgstr "Параметри"
 
-#: qml/alarm/AlarmListPage.qml:57
+#: qml/alarm/AlarmListPage.qml:56
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have alarm "
@@ -295,7 +295,7 @@ msgid "Time"
 msgstr "Час"
 
 #: qml/components/BottomToolbar.qml:98 qml/components/Sidebar.qml:76
-#: qml/timer/TimerListPage.qml:22
+#: qml/timer/TimerListPage.qml:21
 #, kde-format
 msgid "Timers"
 msgstr "Таймери"
@@ -396,7 +396,7 @@ msgstr "24-годинний час"
 msgid "About Clock"
 msgstr "Про «Годинник»"
 
-#: qml/settings/SettingsPage.qml:70
+#: qml/settings/SettingsPage.qml:71
 #, kde-format
 msgid "About KDE"
 msgstr "Про KDE"
@@ -584,12 +584,12 @@ msgctxt "@info:tooltip"
 msgid "Delete"
 msgstr "Вилучити"
 
-#: qml/timer/TimerListPage.qml:29
+#: qml/timer/TimerListPage.qml:28
 #, kde-format
 msgid "New Timer"
 msgstr "Новий таймер"
 
-#: qml/timer/TimerListPage.qml:48
+#: qml/timer/TimerListPage.qml:47
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
