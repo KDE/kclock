@@ -4,6 +4,7 @@
             {
                 "Email": "hanyoung@protonmail.com",
                 "Name": "HanY",
+                "Name[bg]": "HanY",
                 "Name[ca@valencia]": "HanY",
                 "Name[ca]": "HanY",
                 "Name[cs]": "HanY",
@@ -41,6 +42,7 @@
         ],
         "Category": "Utilities",
         "Description": "KClock widget (3x3 with Weather info)",
+        "Description[bg]": "Уиджет KClock (3x3 с метеорологична прогноза)",
         "Description[ca@valencia]": "Giny de KClock (3x3 amb informació meteorològica)",
         "Description[ca]": "Giny del KClock (3x3 amb informació meteorològica)",
         "Description[cs]": "Widget KClock (3x3 s informacemi o počasí)",
@@ -79,6 +81,7 @@
         "Id": "org.kde.plasma.kclock_kweather_3x3",
         "License": "LGPL-2.1+",
         "Name": "KClock_KWeather_3x3",
+        "Name[bg]": "KClock_KWeather_3x3",
         "Name[ca@valencia]": "KClock_KWeather_3x3",
         "Name[ca]": "KClock_KWeather_3x3",
         "Name[cs]": "KClock_KWeather_3x3",
