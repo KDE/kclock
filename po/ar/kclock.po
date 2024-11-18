@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-16 00:43+0000\n"
+"POT-Creation-Date: 2024-11-18 00:43+0000\n"
 "PO-Revision-Date: 2024-05-09 10:48+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -441,7 +441,7 @@ msgstr ""
 msgid "#%1"
 msgstr "#%1"
 
-#: qml/time/AddLocationListView.qml:49
+#: qml/time/AddLocationListView.qml:51
 #, kde-format
 msgid "No locations found"
 msgstr "لم يعثر على موقع"
