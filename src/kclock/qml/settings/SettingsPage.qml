@@ -74,7 +74,7 @@ FormCard.FormCardPage {
 
             Component {
                 id: kdePage
-                FormCard.AboutKDE {}
+                FormCard.AboutKDEPage {}
             }
         }
     }
