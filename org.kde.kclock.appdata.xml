@@ -44,6 +44,7 @@
   <name xml:lang="pt-BR">Relógio</name>
   <name xml:lang="ro">Ceas</name>
   <name xml:lang="ru">Часы</name>
+  <name xml:lang="sa">घटिका</name>
   <name xml:lang="sk">Hodiny</name>
   <name xml:lang="sl">Clock</name>
   <name xml:lang="sv">Klocka</name>
@@ -77,6 +78,7 @@
   <summary xml:lang="nl">Tijd bijhouden en wekkers zetten</summary>
   <summary xml:lang="pl">Pilnuj czasu i ustawiaj alarmy</summary>
   <summary xml:lang="ru">Просмотр времени и установка напоминаний</summary>
+  <summary xml:lang="sa">समयं रक्षन्तु, अलार्मं च सेट् कुर्वन्तु</summary>
   <summary xml:lang="sl">Upošteva čas in nastavlja alarme</summary>
   <summary xml:lang="sv">Håll tiden och ställ in alarm</summary>
   <summary xml:lang="tr">Zaman Tutucusu ve Alarm Kurucusu</summary>
@@ -112,6 +114,7 @@
     <p xml:lang="nl">Een universele kloktoepassing voor bureaublad en mobiel. Kclock omvat een stopwatch en een wereldklok en biedt u het zetten meerdere wekkers en timers.</p>
     <p xml:lang="pl">Wszechstronny zegar na urządzenia przenośne i biurkowe. Zegar zawiera stoper oraz zegar światowy. Umożliwia ustawienie wielu alarmów i minutników.</p>
     <p xml:lang="ru">Универсальные часы для стационарных компьютеров и мобильных устройств. В программе есть секундомер и мировые часы, поддерживается установка напоминаний и таймеров.</p>
+    <p xml:lang="sa">डेस्कटॉप् तथा मोबाईल् इत्येतयोः कृते एकः सार्वभौमिकः घण्टा-अनुप्रयोगः । घण्टायां स्टॉपवॉच्, विश्वघटिका च सन्ति, तथा च बहुविधाः अलार्म-समयनिर्धारकाः सेट् कर्तुं शक्नुवन्ति ।</p>
     <p xml:lang="sl">Univerzalna aplikacija ure za namizne in mobilne naprave. Ura vključuje štoparico in svetovno uro ter omogoča nastavitev več alarmov in časovnikov.</p>
     <p xml:lang="sv">Ett universellt klockprogram för stationära datorer och mobiler. Klockan innehåller ett stoppur och en världsklocka och låter dig ställa in flera alarm och tidtagare.</p>
     <p xml:lang="tr">Masaüstü ve taşınabilir aygıtlar için evrensel bir saat uygulaması. Saat, bir kronometre ve dünya saati içerir ve birden çok alarm ve sayaç kurmanıza olanak tanır.</p>
@@ -150,6 +153,7 @@
     <p xml:lang="pt-BR">Ele contém alarme, temporizador, cronômetro e funcionalidades de fuso horário. Os alarmes e temporizadores são capazes de acordar o dispositivo da suspensão no Plasma.</p>
     <p xml:lang="ro">Are funcții de alarmă, cronometru, temporizator și fus orar. Alarmele și cronometrele pot trezi dispozitivul din somn, în Plasma.</p>
     <p xml:lang="ru">Возможности работы с напоминаниями, таймерами, секундомером и часовыми поясами. Напоминания и таймеры позволяют возобновить работу устройства после приостановки в Plasma.</p>
+    <p xml:lang="sa">अस्मिन् अलार्म, टाइमर्, स्टॉपवॉच्, टाइम्जोन् कार्यक्षमता च सन्ति । अलार्मः, टाइमर् च प्लाज्मायां निलम्बनात् यन्त्रं जागृतुं समर्थाः सन्ति ।</p>
     <p xml:lang="sl">Vsebuje alarm, odštevalnik časa, štoparico in funkcionalnost časovnih pasov. Alarm je sposoben tudi aktivirati napravo iz mirovanja, kadar uporablja Plasmo.</p>
     <p xml:lang="sv">Det innehåller alarm, tidtagning, stoppur och tidszonsfunktioner. Alarm och tidtagare kan också väcka enheten från viloläge när Plasma används.</p>
     <p xml:lang="tr">Alarm, sayaç, kronometre ve zaman dilimi işlevlerini içerir. Alarmlar ve sayaçlar, aygıtı Plasma’da iken uykudan uyandırabilir.</p>
@@ -203,6 +207,7 @@
       <caption xml:lang="pt-BR">Vista do celular</caption>
       <caption xml:lang="ro">Vizualizare mobilă</caption>
       <caption xml:lang="ru">Вид на мобильном устройстве</caption>
+      <caption xml:lang="sa">मोबाईल दृश्य</caption>
       <caption xml:lang="sl">Mobilni pogled</caption>
       <caption xml:lang="sv">Mobil vy</caption>
       <caption xml:lang="tr">Taşınabilir görünümü</caption>
@@ -246,6 +251,7 @@
       <caption xml:lang="pt-BR">Vista da área de trabalho</caption>
       <caption xml:lang="ro">Vizualizare pentru birou</caption>
       <caption xml:lang="ru">Вид на настольном ПК</caption>
+      <caption xml:lang="sa">डेस्कटॉप दृश्यम्</caption>
       <caption xml:lang="sl">Namizni pogled</caption>
       <caption xml:lang="sv">Skrivbordsvy</caption>
       <caption xml:lang="tr">Masaüstü görünümü</caption>
@@ -289,6 +295,7 @@
       <caption xml:lang="pt-BR">Página dos temporizadores</caption>
       <caption xml:lang="ro">Pagina temporizatorilor</caption>
       <caption xml:lang="ru">Страница таймеров</caption>
+      <caption xml:lang="sa">टाइमर्स पृष्ठ</caption>
       <caption xml:lang="sl">Stran merilnikov časa</caption>
       <caption xml:lang="sv">Sida med tidtagningar</caption>
       <caption xml:lang="tr">Sayaçlar sayfası</caption>
@@ -332,6 +339,7 @@
       <caption xml:lang="pt-BR">Página do temporizador</caption>
       <caption xml:lang="ro">Pagina temporizatorului</caption>
       <caption xml:lang="ru">Страница таймера</caption>
+      <caption xml:lang="sa">टाइमर पृष्ठ</caption>
       <caption xml:lang="sl">Stran merilnika časa</caption>
       <caption xml:lang="sv">Sida med tidtagning</caption>
       <caption xml:lang="tr">Sayaç sayfası</caption>
@@ -375,6 +383,7 @@
       <caption xml:lang="pt-BR">Página do cronômetro</caption>
       <caption xml:lang="ro">Pagina cronometrului</caption>
       <caption xml:lang="ru">Страница секундомера</caption>
+      <caption xml:lang="sa">स्टॉपवॉच पृष्ठ</caption>
       <caption xml:lang="sl">Stran štoparice</caption>
       <caption xml:lang="sv">Sida med stoppur</caption>
       <caption xml:lang="tr">Kronometre sayfası</caption>
@@ -418,6 +427,7 @@
       <caption xml:lang="pt-BR">Página do alarme</caption>
       <caption xml:lang="ro">Pagina alarmelor</caption>
       <caption xml:lang="ru">Страница напоминаний</caption>
+      <caption xml:lang="sa">अलार्म पृष्ठ</caption>
       <caption xml:lang="sl">Stran alarma</caption>
       <caption xml:lang="sv">Sida med alarm</caption>
       <caption xml:lang="tr">Alarmlar sayfası</caption>
