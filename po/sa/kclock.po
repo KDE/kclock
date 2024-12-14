@@ -1,723 +1,718 @@
+# Sanskrit translations for kclock package.
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kclock package.
+# Kali <EMAIL@ADDRESS>, 2024.
 #
-# SPDX-FileCopyrightText: 2024 Adrián Chaves (Gallaecio)
+# SPDX-FileCopyrightText: 2024 kali <skkalwar999@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-18 00:43+0000\n"
-"PO-Revision-Date: 2024-12-13 22:13+0100\n"
-"Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
-"Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
-"Language: gl\n"
+"PO-Revision-Date: 2024-12-13 20:20+0530\n"
+"Last-Translator: kali <skkalwar999@gmail.com>\n"
+"Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
+"Language: sa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.3\n"
+"Plural-Forms: nplurals=2; plural=(n>2);\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Adrián Chaves (Gallaecio)"
+msgstr ""
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "adrian@chaves.io"
+msgstr ""
 
 #: main.cpp:44
 #, kde-format
 msgid "Select opened page"
-msgstr "Seleccionar a páxina aberta"
+msgstr "उद्घाटितं पृष्ठं चिनोतु"
 
 #: main.cpp:67
 #, kde-format
 msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr ""
-"Defina alarmas e temporizadores, use un cronómetro, e xestione os reloxos "
-"mundiais."
+"अलार्म, टाइमर् च सेट् कुर्वन्तु, स्टॉपवॉच् इत्यस्य उपयोगं कुर्वन्तु, विश्वघटिकानां प्रबन्धनं कुर्वन्तु "
+"च"
 
 #: main.cpp:69
 #, kde-format
 msgid "© 2020-2024 KDE Community"
-msgstr "© 2020-2024 Comunidade KDE"
+msgstr "© 2020-2024 केडीई समुदाय"
 
 #: main.cpp:71
 #, kde-format
 msgid "Devin Lin"
-msgstr "Devin Lin"
+msgstr "डेविन् लिन्"
 
 #: main.cpp:72
 #, kde-format
 msgid "Han Young"
-msgstr "Han Young"
+msgstr "हान यंग"
 
 #: qml/alarm/AlarmForm.qml:86
 #, kde-format
 msgid "Days to repeat:"
-msgstr "Días para repetir:"
+msgstr "पुनरावृत्तिः कर्तुं दिवसाः : १."
 
 #: qml/alarm/AlarmForm.qml:88
 #, kde-format
 msgid "Select Days to Repeat"
-msgstr "Seleccione os días para repetir"
+msgstr "पुनरावृत्तिं कर्तुं दिवसान् चिनोतु"
 
 #: qml/alarm/AlarmForm.qml:111
 #, kde-format
 msgid "Alarm Name (optional):"
-msgstr "Nome da alarma (opcional):"
+msgstr "अलार्म नाम (वैकल्पिक): ."
 
 #: qml/alarm/AlarmForm.qml:112
 #, kde-format
 msgid "Wake Up"
-msgstr "Acordar"
+msgstr "उत्थापयति"
 
 #: qml/alarm/AlarmForm.qml:121
 #, kde-format
 msgid "Ring Duration:"
-msgstr "Duración do son:"
+msgstr "रिंग अवधिः : १."
 
 #: qml/alarm/AlarmForm.qml:124 qml/alarm/AlarmForm.qml:135
 #, kde-format
 msgid "None"
-msgstr "Ningunha"
+msgstr "न कश्चित्"
 
 #: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:136
 #: qml/alarm/AlarmForm.qml:169 qml/alarm/AlarmForm.qml:173
 #: qml/timer/TimerComponent.qml:162
 #, kde-format
 msgid "1 minute"
-msgstr "1 minuto"
+msgstr "१ मिनिट्"
 
 #: qml/alarm/AlarmForm.qml:128 qml/alarm/AlarmForm.qml:169
 #, kde-format
 msgid "%1 minutes"
-msgstr "%1 minutos"
+msgstr "%1 निमेषाः"
 
 #: qml/alarm/AlarmForm.qml:131
 #, kde-format
 msgid "Select Ring Duration"
-msgstr "Seleccionar a duración do son"
+msgstr "Ring Duration इति चिनोतु"
 
 #: qml/alarm/AlarmForm.qml:137 qml/alarm/AlarmForm.qml:174
 #, kde-format
 msgid "2 minutes"
-msgstr "2 minutos"
+msgstr "२ मिनिट्"
 
 #: qml/alarm/AlarmForm.qml:138 qml/alarm/AlarmForm.qml:175
 #, kde-format
 msgid "5 minutes"
-msgstr "5 minutos"
+msgstr "५ मिनिट्"
 
 #: qml/alarm/AlarmForm.qml:139 qml/alarm/AlarmForm.qml:176
 #, kde-format
 msgid "10 minutes"
-msgstr "10 minutos"
+msgstr "१० मिनिट्"
 
 #: qml/alarm/AlarmForm.qml:140 qml/alarm/AlarmForm.qml:177
 #, kde-format
 msgid "15 minutes"
-msgstr "15 minutos"
+msgstr "१५ मिनिट्"
 
 #: qml/alarm/AlarmForm.qml:141 qml/alarm/AlarmForm.qml:178
 #, kde-format
 msgid "30 minutes"
-msgstr "30 minutos"
+msgstr "३० मिनिट्"
 
 #: qml/alarm/AlarmForm.qml:142 qml/alarm/AlarmForm.qml:179
 #, kde-format
 msgid "1 hour"
-msgstr "1 hora"
+msgstr "१ घण्टा"
 
 #: qml/alarm/AlarmForm.qml:167
 #, kde-format
 msgid "Snooze Length:"
-msgstr "Duración do atraso:"
+msgstr "स्नूज लम्बाई : १."
 
 #: qml/alarm/AlarmForm.qml:168
 #, kde-format
 msgid "Select Snooze Length"
-msgstr "Seleccionar a duración do atraso"
+msgstr "Snooze Length इति चिनोतु"
 
 #: qml/alarm/AlarmForm.qml:204
 #, kde-format
 msgid "Ring Sound:"
-msgstr "Son:"
+msgstr "रिंग ध्वनिः : १."
 
 #: qml/alarm/AlarmForm.qml:210
 #, kde-format
 msgid "Default Sound"
-msgstr "Son predeterminado"
+msgstr "पूर्वनिर्धारित ध्वनि"
 
 #: qml/alarm/AlarmFormPage.qml:26 qml/alarm/AlarmRingingPopup.qml:45
 #, kde-format
 msgid "Alarm"
-msgstr "Alarma"
+msgstr "आपत्सङ्केत"
 
 #: qml/alarm/AlarmFormPage.qml:26
 #, kde-format
 msgctxt "Edit alarm page title"
 msgid "Editing %1"
-msgstr "Editando %1"
+msgstr ""
 
 #: qml/alarm/AlarmFormPage.qml:27 qml/alarm/AlarmListPage.qml:30
 #, kde-format
 msgid "New Alarm"
-msgstr "Nova alarma"
+msgstr "नवीन अलार्म"
 
 #: qml/alarm/AlarmFormPage.qml:39 qml/alarm/AlarmFormPage.qml:62
 #: qml/timer/TimerFormDialog.qml:71
 #, kde-format
 msgid "Done"
-msgstr "Feito"
+msgstr "कृतम्‌"
 
 #: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormDialog.qml:66
 #, kde-format
 msgid "Cancel"
-msgstr "Cancelar"
+msgstr "निरसयतु"
 
 #: qml/alarm/AlarmListDelegate.qml:106
 #, kde-format
 msgid "Snoozed %1 minute"
 msgid_plural "Snoozed %1 minutes"
-msgstr[0] "Atrasada %1 minuto"
-msgstr[1] "Atrasada %1 minutos"
+msgstr[0] ""
+msgstr[1] ""
 
 #: qml/alarm/AlarmListDelegate.qml:126 qml/time/TimePageDelegate.qml:60
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
-msgstr "Eliminar"
+msgstr "लुप्"
 
 #: qml/alarm/AlarmListPage.qml:24 qml/components/BottomToolbar.qml:118
 #: qml/components/Sidebar.qml:112
 #, kde-format
 msgid "Alarms"
-msgstr "Alarmas"
+msgstr "अलार्म"
 
 #: qml/alarm/AlarmListPage.qml:36 qml/time/TimePage.qml:37
 #, kde-format
 msgid "Edit"
-msgstr "Editar"
+msgstr "सम्पादन"
 
 #: qml/alarm/AlarmListPage.qml:45 qml/components/Sidebar.qml:138
 #: qml/settings/SettingsPage.qml:22 qml/stopwatch/StopwatchPage.qml:39
 #: qml/time/TimePage.qml:60 qml/timer/TimerListPage.qml:36
 #, kde-format
 msgid "Settings"
-msgstr "Configuración"
+msgstr "सेटिंग्स्"
 
 #: qml/alarm/AlarmListPage.qml:56
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have alarm "
 "functionality."
-msgstr ""
-"Non se atopou o servizo do reloxo. Inicie kclockd para ter a funcionalidade "
-"de alarma."
+msgstr "घटिका-दैत्यः न लब्धः । कृपया kclockd आरभत यत् अलार्म कार्यक्षमता भवतु ।"
 
 #: qml/alarm/AlarmListPage.qml:78
 #, kde-format
 msgid "No alarms configured"
-msgstr "Non hai alarmas configuradas."
+msgstr "न अलार्म विन्यस्तम्"
 
 #: qml/alarm/AlarmListPage.qml:83
 #, kde-format
 msgid "Add alarm"
-msgstr "Engadir unha alarma"
+msgstr "अलार्म योजयन्तु"
 
 #: qml/alarm/AlarmListPage.qml:116
 #, kde-format
 msgid "alarm"
-msgstr "alarma"
+msgstr "आपत्सङ्केत"
 
 #: qml/alarm/AlarmListPage.qml:116
 #, kde-format
 msgid "Deleted %1"
-msgstr "Eliminouse %1"
+msgstr "%1 विलोपितम्"
 
 #: qml/alarm/AlarmRingingPopup.qml:28
 #, kde-format
 msgid "Alarm is ringing"
-msgstr "A alarma está soando"
+msgstr "अलार्मः ध्वनितुं शक्नोति"
 
 #: qml/alarm/AlarmRingingPopup.qml:55
 #, kde-format
 msgid "Snooze"
-msgstr "Atrasar"
+msgstr "स्नूज"
 
 #: qml/alarm/AlarmRingingPopup.qml:59 qml/timer/TimerRingingPopup.qml:56
 #, kde-format
 msgid "Dismiss"
-msgstr "Descartar"
+msgstr "उत्सृज्"
 
 #: qml/alarm/SoundPickerPage.qml:25
 #, kde-format
 msgid "Select Alarm Sound"
-msgstr "Seleccionar o son da alarma"
+msgstr "Alarm Sound इति चयनं कुर्वन्तु"
 
 #: qml/alarm/SoundPickerPage.qml:64
 #, kde-format
 msgid "Select from files…"
-msgstr "Seleccionar de ficheiros…"
+msgstr "सञ्चिकाभ्यः चयनं कुर्वन्तु..."
 
 #: qml/alarm/SoundPickerPage.qml:75
 #, kde-format
 msgid "Default"
-msgstr "Predeterminado"
+msgstr "मूलभूतम्‌"
 
 #: qml/alarm/SoundPickerPage.qml:155
 #, kde-format
 msgid "Choose an audio"
-msgstr "Escoller un son"
+msgstr "एकं श्रव्यं चिनोतु"
 
 #: qml/alarm/SoundPickerPage.qml:163
 #, kde-format
 msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
-msgstr "Ficheiros de son (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
+msgstr "श्रव्य सञ्चिकाः (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 
 #: qml/alarm/SoundPickerPage.qml:163
 #, kde-format
 msgid "All files (*)"
-msgstr "Todos os ficheiros (*)"
+msgstr "सर्वाणि सञ्चिकाः (*) ."
 
 #: qml/components/BottomToolbar.qml:88 qml/components/Sidebar.qml:58
 #: qml/time/TimePage.qml:25
 #, kde-format
 msgid "Time"
-msgstr "Hora"
+msgstr "कालः"
 
 #: qml/components/BottomToolbar.qml:98 qml/components/Sidebar.qml:76
 #: qml/timer/TimerListPage.qml:21
 #, kde-format
 msgid "Timers"
-msgstr "Temporizadores"
+msgstr "समयनिर्धारकाः"
 
 #: qml/components/BottomToolbar.qml:108 qml/components/Sidebar.qml:94
 #: qml/stopwatch/StopwatchPage.qml:24
 #, kde-format
 msgid "Stopwatch"
-msgstr "Cronómetro"
+msgstr "स्टॉपवॉच"
 
 #: qml/components/formatUtil.js:11
 #, kde-format
 msgid "Only once"
-msgstr "Só unha vez"
+msgstr "एकवारमेव"
 
 #: qml/components/formatUtil.js:16
 #, kde-format
 msgid "Everyday"
-msgstr "Todos os días"
+msgstr "प्रतिदिनं"
 
 #: qml/components/formatUtil.js:19
 #, kde-format
 msgid "Weekdays"
-msgstr "Días da semana"
+msgstr "सप्ताहदिनानि"
 
 #: qml/components/formatUtil.js:22
 #, kde-format
 msgid "Mon, "
-msgstr "Lun, "
+msgstr "मम, "
 
 #: qml/components/formatUtil.js:23
 #, kde-format
 msgid "Tue, "
-msgstr "Mar, "
+msgstr "मंगल, 2019। "
 
 #: qml/components/formatUtil.js:24
 #, kde-format
 msgid "Wed, "
-msgstr "Mér, "
+msgstr "बुध, २०१८. "
 
 #: qml/components/formatUtil.js:25
 #, kde-format
 msgid "Thu, "
-msgstr "Xov, "
+msgstr "संग्रह, "
 
 #: qml/components/formatUtil.js:26
 #, kde-format
 msgid "Fri, "
-msgstr "Ven, "
+msgstr "शुक्र, 2019। "
 
 #: qml/components/formatUtil.js:27
 #, kde-format
 msgid "Sat, "
-msgstr "Sáb, "
+msgstr "उपविष्टवन्तः, "
 
 #: qml/components/formatUtil.js:28
 #, kde-format
 msgid "Sun, "
-msgstr "Dom, "
+msgstr "सूर्य, "
 
 #: qml/components/TimePicker.qml:93
 #, kde-format
 msgid "AM"
-msgstr "a.m."
+msgstr "अस्मि"
 
 #: qml/components/TimePicker.qml:93
 #, kde-format
 msgid "PM"
-msgstr "p.m."
+msgstr "PM"
 
 #: qml/main.qml:23
 #, kde-format
 msgid "Clock"
-msgstr "Reloxo"
+msgstr "घटिका"
 
 #: qml/settings/SettingsPage.qml:34
 #, kde-format
 msgid "Time Format"
-msgstr "Formato de hora"
+msgstr "समय प्रारूप"
 
 #: qml/settings/SettingsPage.qml:38
 #, kde-format
 msgid "Use System Default"
-msgstr "Usar o predeterminado do sistema."
+msgstr "System Default इत्यस्य उपयोगं कुर्वन्तु"
 
 #: qml/settings/SettingsPage.qml:39
 #, kde-format
 msgid "12 Hour Time"
-msgstr "Formato de 12 horas"
+msgstr "१२ घण्टा समयः"
 
 #: qml/settings/SettingsPage.qml:40
 #, kde-format
 msgid "24 Hour Time"
-msgstr "Formato de 24 horas"
+msgstr "२४ घण्टा समय"
 
 #: qml/settings/SettingsPage.qml:62
 #, kde-format
 msgid "About Clock"
-msgstr "Sobre o reloxo"
+msgstr "घण्टायाः विषये"
 
 #: qml/settings/SettingsPage.qml:71
 #, kde-format
 msgid "About KDE"
-msgstr "Sobre KDE"
+msgstr "KDE विषये"
 
 #: qml/stopwatch/StopwatchPage.qml:138 qml/stopwatch/StopwatchPage.qml:168
 #: qml/timer/TimerPage.qml:52 qml/timer/TimerPage.qml:100
 #, kde-format
 msgid "Reset"
-msgstr "Restabelecer"
+msgstr "पुनः सेट् करें"
 
 #: qml/stopwatch/StopwatchPage.qml:140 qml/timer/TimerPage.qml:45
 #: qml/timer/TimerPage.qml:94
 #, kde-format
 msgid "Pause"
-msgstr "Pausar"
+msgstr "विराम"
 
 #: qml/stopwatch/StopwatchPage.qml:142
 #, kde-format
 msgid "Resume"
-msgstr "Continuar"
+msgstr "पुनर्प्रारम्भय"
 
 #: qml/stopwatch/StopwatchPage.qml:144 qml/timer/TimerPage.qml:45
 #: qml/timer/TimerPage.qml:94
 #, kde-format
 msgid "Start"
-msgstr "Iniciar"
+msgstr "प्रारंभः"
 
 #: qml/stopwatch/StopwatchPage.qml:168 qml/stopwatch/StopwatchPage.qml:196
 #, kde-format
 msgid "Lap"
-msgstr "Volta"
+msgstr "उत्सङ्ग"
 
 #: qml/stopwatch/StopwatchPage.qml:204
 #, kde-format
 msgid "Lap Time"
-msgstr "Tempo da volta"
+msgstr "गोदकालः"
 
 #: qml/stopwatch/StopwatchPage.qml:211
 #, kde-format
 msgid "Total"
-msgstr "Total"
+msgstr "कुल"
 
 #: qml/stopwatch/StopwatchPage.qml:294
 #, kde-format
 msgid "#%1"
-msgstr "N.° %1"
+msgstr "#%1"
 
 #: qml/time/AddLocationListView.qml:51
 #, kde-format
 msgid "No locations found"
-msgstr "Non se atoparon localizacións."
+msgstr "न स्थानानि प्राप्तानि"
 
 #: qml/time/AddLocationPage.qml:17 qml/time/AddLocationWrapper.qml:33
 #, kde-format
 msgid "Add Location"
-msgstr "Engadir unha localización"
+msgstr "स्थानं योजयतु"
 
 #: qml/time/TimePage.qml:50
 #, kde-format
 msgid "Add"
-msgstr "Engadir"
+msgstr "संयोजयति"
 
 #: qml/timer/PresetDurationButton.qml:23 qml/timer/TimerForm.qml:39
 #, kde-format
 msgid "1 m"
-msgstr "1 m"
+msgstr "१ मी"
 
 #: qml/timer/TimerForm.qml:47
 #, kde-format
 msgid "5 m"
-msgstr "5 m"
+msgstr "५ मी"
 
 #: qml/timer/TimerForm.qml:55
 #, kde-format
 msgid "10 m"
-msgstr "10 m"
+msgstr "१० मी"
 
 #: qml/timer/TimerForm.qml:67
 #, kde-format
 msgid "15 m"
-msgstr "15 m"
+msgstr "१५ मी"
 
 #: qml/timer/TimerForm.qml:75
 #, kde-format
 msgid "30 m"
-msgstr "30 m"
+msgstr "३० मी"
 
 #: qml/timer/TimerForm.qml:83
 #, kde-format
 msgid "1 h"
-msgstr "1 h"
+msgstr "१ ज"
 
 #: qml/timer/TimerForm.qml:95
 #, kde-format
 msgid "<b>Duration:</b>"
-msgstr "<b>Duración:</b>"
+msgstr "<b>अवधि:</b>"
 
 #: qml/timer/TimerForm.qml:104
 #, kde-format
 msgid "hours"
-msgstr "horas"
+msgstr "घण्टानः"
 
 #: qml/timer/TimerForm.qml:115
 #, kde-format
 msgid "minutes"
-msgstr "minutos"
+msgstr "पन्चनिमेषः"
 
 #: qml/timer/TimerForm.qml:126
 #, kde-format
 msgid "seconds"
-msgstr "segundos"
+msgstr "सेकण्ड्"
 
 #: qml/timer/TimerForm.qml:132
 #, kde-format
 msgid "<b>Label:</b>"
-msgstr "<b>Etiqueta:</b>"
+msgstr "<b>नामपत्र:</b>"
 
 #: qml/timer/TimerForm.qml:133
 #, kde-format
 msgid "Timer"
-msgstr "Temporizador"
+msgstr "टाइमर"
 
 #: qml/timer/TimerForm.qml:138
 #, kde-format
 msgid "<b>Command at timeout:</b>"
-msgstr "<b>Orde ao superar o tempo límite:</b>"
+msgstr "<b>समयसमाप्तेः समये आदेशः : १.</b>"
 
 #: qml/timer/TimerForm.qml:141
 #, kde-format
 msgid "optional"
-msgstr "opcional"
+msgstr "वैकल्पिक"
 
 #: qml/timer/TimerForm.qml:157
 #, kde-format
 msgid "Hide Presets"
-msgstr "Agochar as predefinicións"
+msgstr "पूर्वनिर्धारितं गोपयन्तु"
 
 #: qml/timer/TimerForm.qml:157
 #, kde-format
 msgid "Show Presets"
-msgstr "Amosar as predefinicións"
+msgstr "पूर्वनिर्धारितं दर्शयतु"
 
 #: qml/timer/TimerForm.qml:162
 #, kde-format
 msgid "Toggle Delete"
-msgstr "Conmutar a eliminación"
+msgstr "Toggle Delete इति"
 
 #: qml/timer/TimerFormDialog.qml:26
 #, kde-format
 msgid "Create timer"
-msgstr "Crear un temporizador"
+msgstr "समयनिर्धारकं रचयन्तु"
 
 #: qml/timer/TimerFormDialog.qml:59
 #, kde-format
 msgid "Save As Preset"
-msgstr "Gardar como predefinición"
+msgstr "पूर्वनिर्धारितरूपेण रक्षन्तु"
 
 #: qml/timer/TimerListDelegate.qml:145
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Loop timer"
-msgstr "Temporizador en bucle"
+msgstr ""
 
 #: qml/timer/TimerListDelegate.qml:156
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Pause"
-msgstr "Pausar"
+msgstr "विराम"
 
 #: qml/timer/TimerListDelegate.qml:156
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start"
-msgstr "Iniciar"
+msgstr "प्रारंभः"
 
 #: qml/timer/TimerListDelegate.qml:166
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset"
-msgstr "Restabelecer"
+msgstr "पुनः सेट् करें"
 
 #: qml/timer/TimerListDelegate.qml:176
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete"
-msgstr "Eliminar"
+msgstr "लुप्"
 
 #: qml/timer/TimerListPage.qml:28
 #, kde-format
 msgid "New Timer"
-msgstr "Novo temporizador"
+msgstr "New Timer"
 
 #: qml/timer/TimerListPage.qml:47
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
 "functionality."
-msgstr ""
-"Non se atopou o servizo do reloxo. Inicie kclockd para ter a funcionalidade "
-"de temporizador."
+msgstr "घटिका-दैत्यः न लब्धः । कृपया kclockd आरभत यत् समयनिर्धारक कार्यक्षमता भवतु ।"
 
 #: qml/timer/TimerListPage.qml:86
 #, kde-format
 msgid "No timers configured"
-msgstr "Non hai temporizadores configurados."
+msgstr "कोऽपि समयनिर्धारकः विन्यस्तः नास्ति"
 
 #: qml/timer/TimerListPage.qml:91
 #, kde-format
 msgid "Add timer"
-msgstr "Engadir un temporizador"
+msgstr "समयनिर्धारकं योजयन्तु"
 
 #: qml/timer/TimerPage.qml:24
 #, kde-format
 msgid "New timer"
-msgstr "Novo temporizador"
+msgstr "नवीन समयनिर्धारक"
 
 #: qml/timer/TimerPage.qml:58 qml/timer/TimerPage.qml:106
 #, kde-format
 msgid "Delete"
-msgstr "Eliminar"
+msgstr "लुप्"
 
 #: qml/timer/TimerPage.qml:67 qml/timer/TimerPage.qml:115
 #, kde-format
 msgid "Loop Timer"
-msgstr "Temporizador en bucle"
+msgstr "लूप टाइमर"
 
 #: qml/timer/TimerRingingPopup.qml:27
 #, kde-format
 msgid "Timer has finished"
-msgstr "O temporizador rematou."
+msgstr "समयनिर्धारकः समाप्तः अस्ति"
 
 #: qml/timer/TimerRingingPopup.qml:46
 #, kde-format
 msgid "%1 has completed."
-msgstr "%1 completouse."
+msgstr "%1 सम्पन्नम् ।"
 
 #: qml/timer/TimerRingingPopup.qml:46
 #, kde-format
 msgid "The timer has completed."
-msgstr "O temporizador completouse."
+msgstr "समयनिर्धारकः सम्पन्नः अस्ति।"
 
 #: savedlocationsmodel.cpp:109
 #, kde-format
 msgid "%1 hour and 30 minutes ahead"
-msgstr "%1 hora e 30 minutos por diante"
+msgstr "%1 घण्टा ३० निमेषाः पुरतः"
 
 #: savedlocationsmodel.cpp:109
 #, kde-format
 msgid "%1 hours and 30 minutes ahead"
-msgstr "%1 horas e 30 minutos por diante"
+msgstr "%1 घण्टाः ३० निमेषाः च अग्रे"
 
 #: savedlocationsmodel.cpp:111
 #, kde-format
 msgid "%1 hour ahead"
-msgstr "%1 hora por diante"
+msgstr "%1 घण्टा अग्रे"
 
 #: savedlocationsmodel.cpp:111
 #, kde-format
 msgid "%1 hours ahead"
-msgstr "%1 horas por diante"
+msgstr "%1 घण्टा अग्रे"
 
 #: savedlocationsmodel.cpp:116
 #, kde-format
 msgid "%1 hour and 30 minutes behind"
-msgstr "%1 hora e 30 minutos por detrás"
+msgstr "%1 घण्टा ३० निमेषाः पृष्ठतः"
 
 #: savedlocationsmodel.cpp:116
 #, kde-format
 msgid "%1 hours and 30 minutes behind"
-msgstr "%1 horas e 30 minutos por detrás"
+msgstr "%1 घण्टा ३० निमेषाः पृष्ठतः"
 
 #: savedlocationsmodel.cpp:118
 #, kde-format
 msgid "%1 hour behind"
-msgstr "%1 hora por detrás"
+msgstr "%1 घण्टा पृष्ठतः"
 
 #: savedlocationsmodel.cpp:118
 #, kde-format
 msgid "%1 hours behind"
-msgstr "%1 horas por detrás"
+msgstr "%1 घण्टा पृष्ठतः"
 
 #: savedlocationsmodel.cpp:121
 #, kde-format
 msgid "Local time"
-msgstr "Hora local"
+msgstr "स्थानीय समय"
 
 #: utilmodel.cpp:74
 #, kde-format
 msgid "%1 day"
 msgid_plural "%1 days"
-msgstr[0] "%1 día"
-msgstr[1] "%1 días"
+msgstr[0] ""
+msgstr[1] ""
 
 #: utilmodel.cpp:78
 #, kde-format
 msgid ", "
-msgstr ", "
+msgstr ", ९. "
 
 #: utilmodel.cpp:80 utilmodel.cpp:86
 #, kde-format
 msgid " and "
-msgstr " e "
+msgstr " तथा "
 
 #: utilmodel.cpp:82
 #, kde-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
-msgstr[0] "%1 hora"
-msgstr[1] "%1 horas"
+msgstr[0] ""
+msgstr[1] ""
 
 #: utilmodel.cpp:88
 #, kde-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] "%1 minuto"
-msgstr[1] "%1 minutos"
+msgstr[0] ""
+msgstr[1] ""
 
 #: utilmodel.cpp:92
 #, kde-format
 msgid "Alarm will ring in under a minute"
-msgstr "A alarma soará en menos dun minuto."
+msgstr "एकनिमेषात् न्यूनेन समये अलार्मः ध्वनिः भविष्यति"
 
 #: utilmodel.cpp:94
 #, kde-format
 msgid "Alarm will ring in %1"
-msgstr "A alarma soará en %1."
-
-#~ msgid "<b>Create New Timer</b>"
-#~ msgstr "<b>Crear un novo temporizador</b>"
+msgstr "%1 मध्ये अलार्मः ध्वनिं करिष्यति"
