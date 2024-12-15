@@ -19,12 +19,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "भवतः नामानि"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "भवतः ईमेलपत्राणि"
 
 #: alarm.cpp:73 alarm.h:51
 #, kde-format
@@ -50,7 +50,7 @@ msgstr "स्नूज"
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Alarm: <shortcut>%1 %2</shortcut>"
-msgstr ""
+msgstr "अलार्म: <shortcut>%1 %2</shortcut>"
 
 #: main.cpp:31
 #, kde-format

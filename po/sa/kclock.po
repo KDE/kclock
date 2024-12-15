@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-18 00:43+0000\n"
-"PO-Revision-Date: 2024-12-13 20:20+0530\n"
+"PO-Revision-Date: 2024-12-14 01:48+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
@@ -22,12 +22,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "भवतः नामानि"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "भवतः ईमेलपत्राणि"
 
 #: main.cpp:44
 #, kde-format
@@ -162,7 +162,7 @@ msgstr "आपत्सङ्केत"
 #, kde-format
 msgctxt "Edit alarm page title"
 msgid "Editing %1"
-msgstr ""
+msgstr "सम्पादनम् %1"
 
 #: qml/alarm/AlarmFormPage.qml:27 qml/alarm/AlarmListPage.qml:30
 #, kde-format
@@ -184,8 +184,8 @@ msgstr "निरसयतु"
 #, kde-format
 msgid "Snoozed %1 minute"
 msgid_plural "Snoozed %1 minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 मिनिट् स्नूज् कृतवान्"
+msgstr[1] "%1 मिनिट् स्नूज् कृतवान्"
 
 #: qml/alarm/AlarmListDelegate.qml:126 qml/time/TimePageDelegate.qml:60
 #, kde-format
@@ -261,7 +261,7 @@ msgstr "Alarm Sound इति चयनं कुर्वन्तु"
 #: qml/alarm/SoundPickerPage.qml:64
 #, kde-format
 msgid "Select from files…"
-msgstr "सञ्चिकाभ्यः चयनं कुर्वन्तु..."
+msgstr "सञ्चिकाभ्यः चयनं कुर्वन्तु…"
 
 #: qml/alarm/SoundPickerPage.qml:75
 #, kde-format
@@ -553,7 +553,7 @@ msgstr "पूर्वनिर्धारितरूपेण रक्ष�
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Loop timer"
-msgstr ""
+msgstr "पाशसमयनिर्धारकः"
 
 #: qml/timer/TimerListDelegate.qml:156
 #, kde-format
@@ -680,8 +680,8 @@ msgstr "स्थानीय समय"
 #, kde-format
 msgid "%1 day"
 msgid_plural "%1 days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 दिवसः"
+msgstr[1] "%1 दिवसाः"
 
 #: utilmodel.cpp:78
 #, kde-format
@@ -697,15 +697,15 @@ msgstr " तथा "
 #, kde-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 घण्टा"
+msgstr[1] "%1 घण्टा"
 
 #: utilmodel.cpp:88
 #, kde-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 मिनिट्"
+msgstr[1] "%1 निमेषाः"
 
 #: utilmodel.cpp:92
 #, kde-format
