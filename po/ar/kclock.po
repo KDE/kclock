@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kclock package.
+# SPDX-FileCopyrightText: 2022, 2024, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
-# SPDX-FileCopyrightText: 2022, 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-16 02:39+0000\n"
-"PO-Revision-Date: 2024-05-09 10:48+0400\n"
+"PO-Revision-Date: 2025-01-17 11:33+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -16,6 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -30,7 +31,7 @@ msgstr "zayed.alsaidi@gmail.com"
 #: main.cpp:44
 #, kde-format
 msgid "Select opened page"
-msgstr ""
+msgstr "اختر الصفحة المفتوحة"
 
 #: main.cpp:67
 #, kde-format
@@ -46,27 +47,27 @@ msgstr "© 2020-2024 مجتمع كِيدِي"
 #: main.cpp:71
 #, kde-format
 msgid "Devin Lin"
-msgstr "Devin Lin"
+msgstr "ديفين لين"
 
 #: main.cpp:72
 #, kde-format
 msgid "Han Young"
-msgstr "Han Young"
+msgstr "هان يونغ"
 
 #: qml/alarm/AlarmForm.qml:86
 #, kde-format
 msgid "Days to repeat:"
-msgstr ""
+msgstr "أيام للتكرار:"
 
 #: qml/alarm/AlarmForm.qml:88
 #, kde-format
 msgid "Select Days to Repeat"
-msgstr ""
+msgstr "اختر أيام للتكرار"
 
 #: qml/alarm/AlarmForm.qml:111
 #, kde-format
 msgid "Alarm Name (optional):"
-msgstr ""
+msgstr "اسم المنبه (اختياري):"
 
 #: qml/alarm/AlarmForm.qml:112
 #, kde-format
@@ -98,7 +99,7 @@ msgstr "%1 دقائق"
 #: qml/alarm/AlarmForm.qml:131
 #, kde-format
 msgid "Select Ring Duration"
-msgstr ""
+msgstr "اختر مدة الرنين"
 
 #: qml/alarm/AlarmForm.qml:137 qml/alarm/AlarmForm.qml:174
 #, kde-format
@@ -138,17 +139,17 @@ msgstr "طول الغفوة:"
 #: qml/alarm/AlarmForm.qml:168
 #, kde-format
 msgid "Select Snooze Length"
-msgstr ""
+msgstr "حدد طول الغفوة"
 
 #: qml/alarm/AlarmForm.qml:204
 #, kde-format
 msgid "Ring Sound:"
-msgstr ""
+msgstr "صوت الرنين:"
 
 #: qml/alarm/AlarmForm.qml:210
 #, kde-format
 msgid "Default Sound"
-msgstr ""
+msgstr "الصوت الافتراضي"
 
 #: qml/alarm/AlarmFormPage.qml:26 qml/alarm/AlarmRingingPopup.qml:45
 #, kde-format
@@ -181,12 +182,12 @@ msgstr "ألغِ"
 #, kde-format
 msgid "Snoozed %1 minute"
 msgid_plural "Snoozed %1 minutes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "لم تؤجل"
+msgstr[1] "أجلت دقيقة واحدة"
+msgstr[2] "أُجلت دقيقتين"
+msgstr[3] "أُجلت %1 دقائق"
+msgstr[4] "أُجلت %1 دقيقة"
+msgstr[5] "أُجلت %1 دقيقة"
 
 #: qml/alarm/AlarmListDelegate.qml:126 qml/time/TimePageDelegate.qml:60
 #, kde-format
@@ -218,11 +219,13 @@ msgid ""
 "The clock daemon was not found. Please start kclockd in order to have alarm "
 "functionality."
 msgstr ""
+"لم يعثر على برنامج الساعة. يرجى تشغيل خدمة kclockd حتى تتمكن من تشغيل وظيفة "
+"التنبيه."
 
 #: qml/alarm/AlarmListPage.qml:78
 #, kde-format
 msgid "No alarms configured"
-msgstr ""
+msgstr "لم يضبط أي منبهات"
 
 #: qml/alarm/AlarmListPage.qml:83
 #, kde-format
@@ -242,7 +245,7 @@ msgstr "حُذف %1"
 #: qml/alarm/AlarmRingingPopup.qml:28
 #, kde-format
 msgid "Alarm is ringing"
-msgstr ""
+msgstr "رنين التنبيه"
 
 #: qml/alarm/AlarmRingingPopup.qml:55
 #, kde-format
@@ -257,12 +260,12 @@ msgstr "تجاهل"
 #: qml/alarm/SoundPickerPage.qml:25
 #, kde-format
 msgid "Select Alarm Sound"
-msgstr ""
+msgstr "حدد صوت التنبيه"
 
 #: qml/alarm/SoundPickerPage.qml:64
 #, kde-format
 msgid "Select from files…"
-msgstr ""
+msgstr "اختر من الملفات…"
 
 #: qml/alarm/SoundPickerPage.qml:75
 #, kde-format
@@ -272,12 +275,12 @@ msgstr "المبدئيّ"
 #: qml/alarm/SoundPickerPage.qml:155
 #, kde-format
 msgid "Choose an audio"
-msgstr ""
+msgstr "اختر الصوت"
 
 #: qml/alarm/SoundPickerPage.qml:163
 #, kde-format
 msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
-msgstr ""
+msgstr "ملفات الصوت (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 
 #: qml/alarm/SoundPickerPage.qml:163
 #, kde-format
@@ -423,18 +426,17 @@ msgstr "ابدأ"
 #: qml/stopwatch/StopwatchPage.qml:168 qml/stopwatch/StopwatchPage.qml:196
 #, kde-format
 msgid "Lap"
-msgstr "اقفز"
+msgstr "لفّ"
 
 #: qml/stopwatch/StopwatchPage.qml:204
-#, fuzzy, kde-format
-#| msgid "Time"
+#, kde-format
 msgid "Lap Time"
-msgstr "الوقت"
+msgstr "وقت اللفة"
 
 #: qml/stopwatch/StopwatchPage.qml:211
 #, kde-format
 msgid "Total"
-msgstr ""
+msgstr "المجموع"
 
 #: qml/stopwatch/StopwatchPage.qml:294
 #, kde-format
@@ -519,7 +521,7 @@ msgstr "المؤقّت"
 #: qml/timer/TimerForm.qml:138
 #, kde-format
 msgid "<b>Command at timeout:</b>"
-msgstr ""
+msgstr "<b>الأمر عند انتهاء المهلة:</b>"
 
 #: qml/timer/TimerForm.qml:141
 #, kde-format
@@ -529,17 +531,17 @@ msgstr "اختياري"
 #: qml/timer/TimerForm.qml:157
 #, kde-format
 msgid "Hide Presets"
-msgstr ""
+msgstr "أخفِ الإعدادات المسبقة"
 
 #: qml/timer/TimerForm.qml:157
 #, kde-format
 msgid "Show Presets"
-msgstr ""
+msgstr "أظهر الإعدادات المسبقة"
 
 #: qml/timer/TimerForm.qml:162
 #, kde-format
 msgid "Toggle Delete"
-msgstr ""
+msgstr "تبديل الحذف"
 
 #: qml/timer/TimerFormDialog.qml:26
 #, kde-format
@@ -549,39 +551,34 @@ msgstr "أنشئ مؤقت"
 #: qml/timer/TimerFormDialog.qml:59
 #, kde-format
 msgid "Save As Preset"
-msgstr ""
+msgstr "حفظ كإعداد مسبق"
 
 #: qml/timer/TimerListDelegate.qml:145
-#, fuzzy, kde-format
-#| msgid "Local time"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Loop timer"
-msgstr "التوقيت المحلي"
+msgstr "مؤقت حلقة"
 
 #: qml/timer/TimerListDelegate.qml:156
-#, fuzzy, kde-format
-#| msgid "Pause"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Pause"
 msgstr "ألبث"
 
 #: qml/timer/TimerListDelegate.qml:156
-#, fuzzy, kde-format
-#| msgid "Start"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start"
 msgstr "ابدأ"
 
 #: qml/timer/TimerListDelegate.qml:166
-#, fuzzy, kde-format
-#| msgid "Reset"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset"
 msgstr "صفّر"
 
 #: qml/timer/TimerListDelegate.qml:176
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete"
 msgstr "احذف"
@@ -597,11 +594,13 @@ msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
 "functionality."
 msgstr ""
+"لم يعثر على برنامج الساعة. يرجى تشغيل خدمة kclockd حتى تتمكن من تشغيل وظيفة "
+"المؤقت."
 
 #: qml/timer/TimerListPage.qml:86
 #, kde-format
 msgid "No timers configured"
-msgstr ""
+msgstr "لم يضبط أي مؤقتات"
 
 #: qml/timer/TimerListPage.qml:91
 #, kde-format
@@ -621,7 +620,7 @@ msgstr "احذف"
 #: qml/timer/TimerPage.qml:67 qml/timer/TimerPage.qml:115
 #, kde-format
 msgid "Loop Timer"
-msgstr ""
+msgstr "حلقة الموقت"
 
 #: qml/timer/TimerRingingPopup.qml:27
 #, kde-format
@@ -631,7 +630,7 @@ msgstr "انتهى المؤقّت"
 #: qml/timer/TimerRingingPopup.qml:46
 #, kde-format
 msgid "%1 has completed."
-msgstr ""
+msgstr "%1 اكتمل."
 
 #: qml/timer/TimerRingingPopup.qml:46
 #, kde-format
@@ -641,42 +640,42 @@ msgstr "اكتمل المؤقت."
 #: savedlocationsmodel.cpp:109
 #, kde-format
 msgid "%1 hour and 30 minutes ahead"
-msgstr ""
+msgstr "متقدم %1 ساعة و 30 دقيقة"
 
 #: savedlocationsmodel.cpp:109
 #, kde-format
 msgid "%1 hours and 30 minutes ahead"
-msgstr ""
+msgstr "متقدم %1 ساعات و 30 دقيقة"
 
 #: savedlocationsmodel.cpp:111
 #, kde-format
 msgid "%1 hour ahead"
-msgstr ""
+msgstr "متقدم %1 ساعة"
 
 #: savedlocationsmodel.cpp:111
 #, kde-format
 msgid "%1 hours ahead"
-msgstr ""
+msgstr "متقدم %1 ساعات"
 
 #: savedlocationsmodel.cpp:116
 #, kde-format
 msgid "%1 hour and 30 minutes behind"
-msgstr ""
+msgstr "متأخر %1 ساعة و 30 دقيقة"
 
 #: savedlocationsmodel.cpp:116
 #, kde-format
 msgid "%1 hours and 30 minutes behind"
-msgstr ""
+msgstr "متأخر %1 ساعات و 30 دقيقة"
 
 #: savedlocationsmodel.cpp:118
 #, kde-format
 msgid "%1 hour behind"
-msgstr ""
+msgstr "متأخر %1 ساعة"
 
 #: savedlocationsmodel.cpp:118
 #, kde-format
 msgid "%1 hours behind"
-msgstr ""
+msgstr "متأخر %1 ساعات"
 
 #: savedlocationsmodel.cpp:121
 #, kde-format
@@ -729,12 +728,12 @@ msgstr[5] "%1 دقيقة"
 #: utilmodel.cpp:92
 #, kde-format
 msgid "Alarm will ring in under a minute"
-msgstr ""
+msgstr "سوف يرن المنبه في أقل من دقيقة"
 
 #: utilmodel.cpp:94
 #, kde-format
 msgid "Alarm will ring in %1"
-msgstr ""
+msgstr "سوف يرن المنبه في %1"
 
 #~ msgid "View"
 #~ msgstr "العرض"
