@@ -54,6 +54,7 @@
   <name xml:lang="zh-CN">时钟</name>
   <name xml:lang="zh-TW">時鐘</name>
   <summary>Keep time and set alarms</summary>
+  <summary xml:lang="ar">حافظ على الوقت واضبط المنبهات</summary>
   <summary xml:lang="bg">Показване на часа и задаване на аларми</summary>
   <summary xml:lang="ca">Aneu a l'hora i establiu alarmes</summary>
   <summary xml:lang="ca-valencia">Aneu fins a l'hora i establiu alarmes</summary>
@@ -91,6 +92,7 @@
   </developer>
   <description>
     <p>A universal clock application for desktop and mobile. Clock includes a stopwatch and a world clock, and allows you to set multiple alarms and timers.</p>
+    <p xml:lang="ar">تطبيق ساعة عالمي لسطح المكتب والهاتف المحمول. يتضمن التطبيق ساعة توقيت وساعة عالمية، ويسمح لك بتعيين منبهات ومؤقتات متعددة.</p>
     <p xml:lang="bg">Универсално приложение за часовник за десктоп и мобилно устройство. Часовникът включва хронометър и световен часовник и ви позволява да зададете множество аларми и таймери.</p>
     <p xml:lang="ca">Una aplicació universal de rellotge per a l'escriptori i mòbil. El rellotge inclou un cronòmetre i un rellotge mundial, i permet establir alarmes i temporitzadors diversos.</p>
     <p xml:lang="ca-valencia">Una aplicació universal de rellotge per a l'escriptori i mòbil. El rellotge inclou un cronòmetre i un rellotge mundial, i permet establir alarmes i temporitzadors diversos.</p>
