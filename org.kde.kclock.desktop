@@ -93,6 +93,7 @@ Type=Application
 Terminal=false
 Categories=Qt;KDE;Utility;
 Keywords=kclock;timer;stopwatch;alarm;timezone;time zone;world clock;
+Keywords[ar]=ساعة;مؤقت;ساعة إيقاف;منبه;منطقة زمنية;المنطقة الزمنية;ساعة العالم;
 Keywords[bg]=kclock;таймер;хронометър;аларма;часова зона;часова зона;световен часовник;
 Keywords[ca]=kclock;temporitzador;cronòmetre;alarma;zona horària;fus horari;rellotge del món;
 Keywords[ca@valencia]=kclock;temporitzador;cronòmetre;alarma;zona horària;fus horari;rellotge del món;
