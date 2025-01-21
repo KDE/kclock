@@ -25,6 +25,7 @@
 #include <KConfig>
 #include <KCrash>
 #include <KLocalizedContext>
+#include <KLocalizedQmlContext>
 #include <KLocalizedString>
 
 #include <KDBusService>
@@ -135,8 +136,7 @@ int main(int argc, char *argv[])
     });
 
     QQmlApplicationEngine *engine = new QQmlApplicationEngine();
-
-    engine->rootContext()->setContextObject(new KLocalizedContext(engine));
+    KLocalization::setupLocalizedContext(engine);
 
     engine->load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
 

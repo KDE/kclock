@@ -18,7 +18,7 @@ project(kclock VERSION ${RELEASE_SERVICE_VERSION})
 
 option(BUILD_PLASMOID "Build Plasmoid" ON)
 
-set(KF_MIN_VERSION "6.3.0")
+set(KF_MIN_VERSION "6.8.0")
 set(QT_MIN_VERSION "6.5.0")
 
 find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
@@ -74,7 +74,7 @@ find_package(KF6KirigamiAddons 0.6 REQUIRED)
 
 ki18n_install(po)
 ecm_set_disabled_deprecation_versions(QT 6.8.0
-    KF 6.7
+    KF 6.10
 )
 
 add_subdirectory(src)

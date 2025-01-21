@@ -64,6 +64,7 @@ target_link_libraries(kclock PRIVATE
     KF6::DBusAddons
     KF6::StatusNotifierItem
     KF6::Crash
+    KF6::I18nQml
 )
 
 target_include_directories(kclock PRIVATE ${CMAKE_BINARY_DIR})
