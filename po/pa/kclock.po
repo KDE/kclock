@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-18 00:43+0000\n"
+"POT-Creation-Date: 2025-01-24 00:44+0000\n"
 "PO-Revision-Date: 2024-01-03 14:19-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -27,28 +27,28 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "aalam@punlinux.org"
 
-#: main.cpp:44
+#: main.cpp:45
 #, kde-format
 msgid "Select opened page"
 msgstr "ਖੋਲ੍ਹੇ ਸਫ਼ੇ ਨੂੰ ਚੁਣੋ"
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-format
 msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr "ਅਲਾਰਮ ਤੇ ਟਾਈਮਰ ਸੈੱਟ ਕਰੋ, ਸਟਾਪ-ਵਾਚ ਵਰਤੋ ਅਤੇ ਸੰਸਾਰ ਦੀਆਂ ਘੜੀਆਂ ਦਾ ਇੰਤਜ਼ਾਮ ਕਰੋ"
 
-#: main.cpp:69
+#: main.cpp:70
 #, fuzzy, kde-format
 #| msgid "© 2020-2022 KDE Community"
 msgid "© 2020-2024 KDE Community"
 msgstr "© 2020-2022 KDE ਕਮਿਊਨਟੀ"
 
-#: main.cpp:71
+#: main.cpp:72
 #, kde-format
 msgid "Devin Lin"
 msgstr "ਡੇਵਿਨ ਲਿਨ"
 
-#: main.cpp:72
+#: main.cpp:73
 #, kde-format
 msgid "Han Young"
 msgstr "ਹਾਂ ਯੰਗ"

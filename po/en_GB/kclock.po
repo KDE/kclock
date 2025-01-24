@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-18 00:43+0000\n"
+"POT-Creation-Date: 2025-01-24 00:44+0000\n"
 "PO-Revision-Date: 2024-08-03 13:01+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -27,27 +27,27 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "steve.allewell@gmail.com"
 
-#: main.cpp:44
+#: main.cpp:45
 #, kde-format
 msgid "Select opened page"
 msgstr "Select opened page"
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-format
 msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr "Set alarms and timers, use a stopwatch, and manage world clocks"
 
-#: main.cpp:69
+#: main.cpp:70
 #, kde-format
 msgid "© 2020-2024 KDE Community"
 msgstr "© 2020-2024 KDE Community"
 
-#: main.cpp:71
+#: main.cpp:72
 #, kde-format
 msgid "Devin Lin"
 msgstr "Devin Lin"
 
-#: main.cpp:72
+#: main.cpp:73
 #, kde-format
 msgid "Han Young"
 msgstr "Han Young"

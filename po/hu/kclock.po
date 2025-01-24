@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-18 00:43+0000\n"
+"POT-Creation-Date: 2025-01-24 00:44+0000\n"
 "PO-Revision-Date: 2024-08-17 21:29+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -27,29 +27,29 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ulyssses@fsf.hu,aronkvh@gmail.com"
 
-#: main.cpp:44
+#: main.cpp:45
 #, kde-format
 msgid "Select opened page"
 msgstr "Kiválasztott oldal megnyitása"
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-format
 msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr ""
 "Riasztások és időzítők beállítása, stopperóra használata és világórák "
 "kezelése"
 
-#: main.cpp:69
+#: main.cpp:70
 #, kde-format
 msgid "© 2020-2024 KDE Community"
 msgstr "© A KDE közösség, 2020-2024."
 
-#: main.cpp:71
+#: main.cpp:72
 #, kde-format
 msgid "Devin Lin"
 msgstr "Devin Lin"
 
-#: main.cpp:72
+#: main.cpp:73
 #, kde-format
 msgid "Han Young"
 msgstr "Han Young"
