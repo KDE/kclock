@@ -117,4 +117,4 @@ parts:
       - -usr/bin/X11
       - -usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0
       - -usr/lib/aspell/*
-      - -usr/share/lintian 
+      - -usr/share/lintian
