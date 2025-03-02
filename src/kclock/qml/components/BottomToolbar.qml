@@ -15,7 +15,7 @@ Kirigami.NavigationTabBar {
     position: ToolBar.Footer
 
     // set binding only after component has loaded, so we don't have an animation for the navigation bar coming in
-    Component.onCompleted: shouldShow = Qt.binding(() => pageStack.layers.depth <= 1 && pageStack.depth <= 1);
+    Component.onCompleted: shouldShow = Qt.binding(() => pageStack.depth <= 1);
 
     property bool shouldShow: true
     onShouldShowChanged: {

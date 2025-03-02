@@ -16,10 +16,16 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.sounds 0.1 as Sounds
 import org.kde.kirigamiaddons.delegates as Delegates
 
+import "../components"
 import kclock
 
 Kirigami.ScrollablePage {
     id: root
+    header: HeaderBar {
+        actions: root.actions
+        title: root.title
+        showBackButton: true
+    }
     property var alarmForm
 
     title: i18n("Select Alarm Sound")

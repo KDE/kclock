@@ -18,7 +18,10 @@ import kclock
 Kirigami.ScrollablePage {
     id: root
 
-    property real yTranslate: 0
+    header: HeaderBar {
+        actions: root.actions
+        title: root.title
+    }
 
     property int clockRadius: Kirigami.Units.gridUnit * 4
 
@@ -71,7 +74,6 @@ Kirigami.ScrollablePage {
         id: listView
         model: SavedLocationsModel
         currentIndex: -1 // no default selection
-        transform: Translate { y: yTranslate }
 
         add: Transition {
             NumberAnimation { property: "opacity"; from: 0; to: 1.0; duration: Kirigami.Units.shortDuration }

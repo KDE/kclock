@@ -16,8 +16,6 @@ import kclock
 Kirigami.ScrollablePage {
     id: root
 
-    property real yTranslate: 0
-
     title: i18n("Timers")
     icon.name: "player-time"
 
@@ -42,11 +40,18 @@ Kirigami.ScrollablePage {
         newTimerForm.open();
     }
 
-    header: Kirigami.InlineMessage {
-        type: Kirigami.MessageType.Error
-        text: i18n("The clock daemon was not found. Please start kclockd in order to have timer functionality.")
-        visible: !TimerModel.connectedToDaemon // by default, it's false so we need this
-        position: Kirigami.InlineMessage.Position.Header
+    header: ColumnLayout {
+        spacing: 0
+        HeaderBar {
+            actions: root.actions
+            title: root.title
+        }
+        Kirigami.InlineMessage {
+            type: Kirigami.MessageType.Error
+            text: i18n("The clock daemon was not found. Please start kclockd in order to have timer functionality.")
+            visible: !TimerModel.connectedToDaemon // by default, it's false so we need this
+            position: Kirigami.InlineMessage.Position.Header
+        }
     }
 
     ListView {
@@ -58,8 +63,6 @@ Kirigami.ScrollablePage {
         rightMargin: Kirigami.Units.gridUnit
 
         model: TimerModel
-
-        transform: Translate { y: yTranslate }
 
         // TODO: these animations seem to cause the cards to overlap when a new timer is added, possible Qt bug?
         // add: Transition {

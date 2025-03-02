@@ -9,6 +9,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
+import org.kde.kirigami.templates as KirigamiTemplates
 import org.kde.kirigamiaddons.formcard as FormCard
 
 import "../components"
@@ -16,15 +17,18 @@ import kclock
 
 FormCard.FormCardPage {
     id: root
+    header: HeaderBar {
+        actions: root.actions
+        title: root.title
+        showBackButton: !applicationWindow().isWidescreen
+    }
 
-    property real yTranslate: 0
+    Component.onCompleted: KirigamiTemplates.AppHeaderSizeGroup.items.push(this)
 
     title: i18n("Settings")
     icon.name: "settings-configure"
 
     Kirigami.ColumnView.fillWidth: false
-
-    contentItem.transform: Translate { y: yTranslate }
 
     FormCard.FormCard {
         Layout.topMargin: Kirigami.Units.gridUnit
@@ -74,7 +78,13 @@ FormCard.FormCardPage {
 
             Component {
                 id: kdePage
-                FormCard.AboutKDEPage {}
+                FormCard.AboutKDEPage {
+                    header: HeaderBar {
+                        actions: root.actions
+                        title: root.title
+                        showBackButton: true
+                    }
+                }
             }
         }
     }

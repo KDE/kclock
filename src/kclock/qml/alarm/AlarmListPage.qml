@@ -18,7 +18,6 @@ import kclock
 Kirigami.ScrollablePage {
     id: root
 
-    property real yTranslate: 0
     property bool editMode: false
 
     title: i18n("Alarms")
@@ -51,19 +50,24 @@ Kirigami.ScrollablePage {
         applicationWindow().pageStack.push(Qt.resolvedUrl("AlarmFormPage.qml"));
     }
 
-    header: Kirigami.InlineMessage {
-        type: Kirigami.MessageType.Error
-        text: i18n("The clock daemon was not found. Please start kclockd in order to have alarm functionality.")
-        visible: !AlarmModel.connectedToDaemon // by default, it's false so we need this
-        position: Kirigami.InlineMessage.Position.Header
+    header: ColumnLayout {
+        spacing: 0
+        HeaderBar {
+            actions: root.actions
+            title: root.title
+        }
+        Kirigami.InlineMessage {
+            type: Kirigami.MessageType.Error
+            text: i18n("The clock daemon was not found. Please start kclockd in order to have alarm functionality.")
+            visible: !AlarmModel.connectedToDaemon // by default, it's false so we need this
+            position: Kirigami.InlineMessage.Position.Header
+        }
     }
 
     ListView {
         id: alarmsList
         model: AlarmModel
         currentIndex: -1 // no default selection
-
-        transform: Translate { y: yTranslate }
 
         topMargin: Kirigami.Units.smallSpacing
         reuseItems: true

@@ -19,6 +19,11 @@ import kclock
 
 Kirigami.ScrollablePage {
     id: root
+    header: HeaderBar {
+        actions: root.actions
+        title: root.title
+        showBackButton: true
+    }
 
     // null if this is a new alarm page, and the alarm to edit otherwise
     property Alarm selectedAlarm: null
@@ -31,7 +36,7 @@ Kirigami.ScrollablePage {
 
     function accept() {
         form.submitForm();
-        pageStack.currentIndex--;
+        applicationWindow().pageStack.pop();
     }
 
     actions: Kirigami.Action {
@@ -67,7 +72,7 @@ Kirigami.ScrollablePage {
                 display: toolbar.opened ? AbstractButton.TextUnderIcon : AbstractButton.TextOnly
                 text: i18n("Cancel")
                 icon.name: "dialog-cancel"
-                onClicked: applicationWindow().pageStack.currentIndex--
+                onClicked: applicationWindow().pageStack.pop()
             }
             FooterToolBarButton {
                 display: toolbar.opened ? AbstractButton.TextUnderIcon : AbstractButton.TextOnly

@@ -8,10 +8,13 @@
 
 import QtQuick
 import QtQuick.Controls
+import QtQuick.Templates as T
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 
-Kirigami.ApplicationWindow {
+import "components"
+
+Kirigami.AbstractApplicationWindow {
     id: root
 
     // needs to work with 360x720 (+ panel heights)
@@ -24,19 +27,10 @@ Kirigami.ApplicationWindow {
 
     contextDrawer: Kirigami.ContextDrawer {}
 
-    pageStack {
-        globalToolBar {
-            canContainHandles: true
-            style: Kirigami.ApplicationHeaderStyle.ToolBar
-            showNavigationButtons: Kirigami.ApplicationHeaderStyle.ShowBackButton;
-        }
-        popHiddenPages: true
-
-        columnView.columnResizeMode: Kirigami.ColumnView.SingleColumn
-    }
-
     property bool isWidescreen: root.width >= 500
     onIsWidescreenChanged: changeNav(isWidescreen);
+
+    pageStack: PageStack {}
 
     Kirigami.PagePool {
         id: pagePool
@@ -50,19 +44,13 @@ Kirigami.ApplicationWindow {
 
     function switchToPage(page, depth) {
         // pop pages above depth
-        while (pageStack.depth > depth) pageStack.pop();
-        while (pageStack.layers.depth > 1) pageStack.layers.pop();
-
-        // page switch animation
-        yAnim.target = page;
-        yAnim.properties = "yTranslate";
-        anim.target = page;
-        anim.properties = "contentItem.opacity";
-        if (page.header) {
-            anim.properties += ",header.opacity";
+        while (pageStack.depth > depth) {
+            if (pageStack.depth == 1) {
+                pageStack.clear();
+            } else {
+                pageStack.pop();
+            }
         }
-        yAnim.restart();
-        anim.restart();
 
         pageStack.push(page);
     }
@@ -94,22 +82,6 @@ Kirigami.ApplicationWindow {
             let bottomToolbar = Qt.createComponent("qrc:/qml/components/BottomToolbar.qml")
             footer = bottomToolbar.createObject(root);
         }
-    }
-
-    // page switch animation
-    NumberAnimation {
-        id: anim
-        from: 0
-        to: 1
-        duration: Kirigami.Units.veryLongDuration
-        easing.type: Easing.InOutQuad
-    }
-    NumberAnimation {
-        id: yAnim
-        from: Kirigami.Units.gridUnit * 2
-        to: 0
-        duration: Kirigami.Units.longDuration * 3
-        easing.type: Easing.OutExpo
     }
 
     Loader {

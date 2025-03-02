@@ -19,8 +19,6 @@ import kclock
 Kirigami.ScrollablePage {
     id: root
 
-    property real yTranslate
-
     title: i18n("Stopwatch")
     icon.name: "chronometer"
 
@@ -42,10 +40,14 @@ Kirigami.ScrollablePage {
     ]
 
     header: ColumnLayout {
-        transform: Translate { y: yTranslate }
         anchors.left: parent.left
         anchors.right: parent.right
         spacing: 0
+
+        HeaderBar {
+            actions: root.actions
+            title: root.title
+        }
 
         // clock display
         Item {
@@ -180,7 +182,7 @@ Kirigami.ScrollablePage {
             Item { Layout.fillWidth: true }
         }
 
-        // laps list header 
+        // laps list header
         RowLayout {
             Layout.topMargin: Kirigami.Units.gridUnit
             Layout.bottomMargin: Kirigami.Units.largeSpacing
@@ -223,7 +225,6 @@ Kirigami.ScrollablePage {
         model: StopwatchModel
         spacing: 0
         currentIndex: -1
-        transform: Translate { y: yTranslate }
 
         reuseItems: true
 
@@ -299,8 +300,8 @@ Kirigami.ScrollablePage {
                         Layout.fillWidth: true
                         horizontalAlignment: Text.AlignHCenter
                         text: {
-                            if (isNaN(timeSinceLastLap)) { 
-                                return ""; 
+                            if (isNaN(timeSinceLastLap)) {
+                                return "";
                             }
 
                             const duration = listItem.timeSinceLastLap;
@@ -323,8 +324,8 @@ Kirigami.ScrollablePage {
                         horizontalAlignment: Text.AlignRight
                         color: Kirigami.Theme.focusColor
                         text: {
-                            if (isNaN(timeSinceBeginning)) { 
-                                return ""; 
+                            if (isNaN(timeSinceBeginning)) {
+                                return "";
                             }
 
                             const duration = listItem.timeSinceBeginning;
