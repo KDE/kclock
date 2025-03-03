@@ -27,24 +27,24 @@ Item {
     }
 
     function find(callback, behavior) {
-        stackView.find(callback, behavior);
+        return stackView.find(callback, behavior);
     }
 
     function get(index, behavior) {
-        stackView.get(index, behavior);
+        return stackView.get(index, behavior);
     }
 
     function pop(item, operation) {
-        let popped = stackView.pop(item, operation);
+        return stackView.pop(item, operation);
     }
 
     function push(item, properties, operation) {
         // TODO support pushing multiple pages?
-        stackView.push(__initItem(item, properties), properties, operation);
+        return stackView.push(__initItem(item, properties), properties, operation);
     }
 
     function replace(target, item, properties, operation) {
-        stackView.replace(target, __initItem(item, properties), properties, operation);
+        return stackView.replace(target, __initItem(item, properties), properties, operation);
     }
 
     function __initItem(item, properties) {
