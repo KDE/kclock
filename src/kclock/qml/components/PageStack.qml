@@ -77,12 +77,14 @@ Item {
         return page;
     }
 
+    readonly property real animationDistance: Kirigami.Units.gridUnit * 2
+
     Component {
         id: pageContainer
         PageContainer {}
     }
 
-    StackView {
+    T.StackView {
         id: stackView
         anchors.fill: parent
         focus: true
@@ -97,6 +99,7 @@ Item {
         }
 
         // Drag gesture to dismiss page
+        // TODO: this should be on the entire view, not just the current page
         DragHandler {
             acceptedDevices: PointerDevice.TouchScreen
             enabled: stackView.currentItem && stackView.currentItem.StackView.index > 0
@@ -112,27 +115,49 @@ Item {
             }
             onActiveChanged: {
                 if (active) {
-                    xAnim.stop();
+                    swipeCloseAnim.stop();
+                    swipeKeepAnim.stop();
 
                     // By default, StackView hides elements below
                     if (stackView.depth > 1) {
                         stackView.get(stackView.depth - 2).StackView.visible = true;
                     }
                 } else {
+                    // Use our own animations for gestures rather than relying on provided ones
                     if (closing) {
-                        stackView.pop();
+                        swipeCloseAnim.restart();
                     } else {
-                        xAnim.to = 0;
-                        xAnim.restart();
+                        swipeKeepAnim.restart();
                     }
                 }
             }
         }
 
+        ParallelAnimation {
+            id: swipeCloseAnim
+            onFinished: stackView.popCurrentItem(StackView.Immediate)
+
+            NumberAnimation {
+                target: stackView.currentItem
+                property: 'x'
+                to: (stackView.mirrored ? -1 : 1) * stackView.width
+                duration: Kirigami.Units.veryLongDuration
+                easing.type: Easing.OutCubic
+            }
+            NumberAnimation {
+                target: stackView.currentItem
+                property: 'opacity'
+                to: 0
+                duration: Kirigami.Units.longDuration
+                easing.type: Easing.OutCubic
+            }
+        }
+
         NumberAnimation {
-            id: xAnim
+            id: swipeKeepAnim
             target: stackView.currentItem
             property: 'x'
+            to: 0
             duration: Kirigami.Units.veryLongDuration
             easing.type: Easing.OutCubic
         }
@@ -140,7 +165,7 @@ Item {
         pushEnter: Transition {
             NumberAnimation {
                 property: "x"
-                from: (stackView.mirrored ? -0.5 : 0.5) * stackView.width
+                from: (stackView.mirrored ? -1 : 1) * root.animationDistance
                 to: 0
                 duration: Kirigami.Units.longDuration
                 easing.type: Easing.OutCubic
@@ -163,7 +188,7 @@ Item {
         popExit: Transition {
             NumberAnimation {
                 property: "x"
-                to: (stackView.mirrored ? -1 : 1) * stackView.width
+                to: (stackView.mirrored ? -1 : 1) * root.animationDistance;
                 duration: Kirigami.Units.veryLongDuration
                 easing.type: Easing.OutCubic
             }
@@ -177,7 +202,7 @@ Item {
         replaceEnter: Transition {
             NumberAnimation {
                 property: "x"
-                from: (stackView.mirrored ? -0.5 : 0.5) * stackView.width
+                from: (stackView.mirrored ? -1 : 1) * root.animationDistance
                 to: 0
                 duration: Kirigami.Units.longDuration
                 easing.type: Easing.OutCubic
@@ -193,7 +218,7 @@ Item {
             NumberAnimation {
                 property: "x"
                 from: 0
-                to: (stackView.mirrored ? -0.5 : 0.5) * -stackView.width
+                to: (stackView.mirrored ? -1 : 1) * -root.animationDistance
                 duration: Kirigami.Units.longDuration
                 easing.type: Easing.OutCubic
             }

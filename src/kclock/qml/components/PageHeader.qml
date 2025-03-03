@@ -1,3 +1,9 @@
+/*
+ * Copyright 2025 Devin Lin <devin@kde.org>
+ *
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ */
+
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
@@ -8,7 +14,7 @@ import org.kde.kirigami as Kirigami
 ToolBar {
     id: root
 
-    property string title
+    property Component titleDelegate
 
     property list<T.Action> actions
 
@@ -16,6 +22,15 @@ ToolBar {
 
     position: ToolBar.Header
     Layout.fillWidth: true
+
+    onTitleDelegateChanged: {
+        if (!titleDelegate) {
+            return;
+        }
+        let item = titleDelegate.createObject(root);
+        titleDelegateContainer.contentItem = item;
+        item.parent = titleDelegateContainer;
+    }
 
     RowLayout {
         anchors.fill: parent
@@ -43,13 +58,10 @@ ToolBar {
             implicitWidth: 0
         }
 
-        Kirigami.Heading {
+        Control {
+            id: titleDelegateContainer
+            padding: 0
             Layout.leftMargin: Kirigami.Units.largeSpacing
-            text: root.title
-            elide: Label.ElideRight
-            horizontalAlignment: Qt.AlignLeft
-            verticalAlignment: Qt.AlignVCenter
-            level: 1
         }
 
         Kirigami.ActionToolBar {
