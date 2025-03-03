@@ -40,11 +40,11 @@ Item {
 
     function push(item, properties, operation) {
         // TODO support pushing multiple pages?
-        stackView.push(__initItem(item), properties, operation);
+        stackView.push(__initItem(item, properties), properties, operation);
     }
 
     function replace(target, item, properties, operation) {
-        stackView.replace(target, __initItem(item), properties, operation);
+        stackView.replace(target, __initItem(item, properties), properties, operation);
     }
 
     function __initItem(item, properties) {
@@ -56,6 +56,7 @@ Item {
         } else if (typeof item === "object" && !(item instanceof Item) && item.toString !== undefined) {
             page = Qt.createComponent(item.toString());
         }
+
         if (page) {
             page = page.createObject(root, properties || {});
         } else {
