@@ -18,11 +18,6 @@ import kclock
 Kirigami.ScrollablePage {
     id: root
 
-    header: HeaderBar {
-        actions: root.actions
-        title: root.title
-    }
-
     property int clockRadius: Kirigami.Units.gridUnit * 4
 
     title: i18n("Time")

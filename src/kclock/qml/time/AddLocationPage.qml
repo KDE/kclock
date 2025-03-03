@@ -13,12 +13,6 @@ import kclock
 
 Kirigami.ScrollablePage {
     id: root
-    header: HeaderBar {
-        actions: root.actions
-        title: root.title
-        showBackButton: true
-    }
-
     title: i18n("Add Location")
 
     AddLocationListView {

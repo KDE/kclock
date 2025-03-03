@@ -44,11 +44,6 @@ Kirigami.ScrollablePage {
         anchors.right: parent.right
         spacing: 0
 
-        HeaderBar {
-            actions: root.actions
-            title: root.title
-        }
-
         // clock display
         Item {
             Layout.topMargin: Kirigami.Units.largeSpacing

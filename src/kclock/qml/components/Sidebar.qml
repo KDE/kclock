@@ -31,7 +31,7 @@ Kirigami.OverlayDrawer {
     contentItem: ColumnLayout {
         spacing: 0
 
-        Kirigami.AbstractApplicationHeader {
+        PageHeader {
             Layout.fillWidth: true
         }
 

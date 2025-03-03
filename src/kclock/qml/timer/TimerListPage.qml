@@ -40,18 +40,11 @@ Kirigami.ScrollablePage {
         newTimerForm.open();
     }
 
-    header: ColumnLayout {
-        spacing: 0
-        HeaderBar {
-            actions: root.actions
-            title: root.title
-        }
-        Kirigami.InlineMessage {
-            type: Kirigami.MessageType.Error
-            text: i18n("The clock daemon was not found. Please start kclockd in order to have timer functionality.")
-            visible: !TimerModel.connectedToDaemon // by default, it's false so we need this
-            position: Kirigami.InlineMessage.Position.Header
-        }
+    header: Kirigami.InlineMessage {
+        type: Kirigami.MessageType.Error
+        text: i18n("The clock daemon was not found. Please start kclockd in order to have timer functionality.")
+        visible: !TimerModel.connectedToDaemon // by default, it's false so we need this
+        position: Kirigami.InlineMessage.Position.Header
     }
 
     ListView {

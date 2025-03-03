@@ -21,11 +21,6 @@ import kclock
 
 Kirigami.ScrollablePage {
     id: root
-    header: HeaderBar {
-        actions: root.actions
-        title: root.title
-        showBackButton: true
-    }
     property var alarmForm
 
     title: i18n("Select Alarm Sound")

@@ -19,7 +19,8 @@
         <file>qml/components/DialogComboBox.qml</file>
         <file>qml/components/FooterToolBarButton.qml</file>
         <file>qml/components/FloatingActionButton.qml</file>
-        <file>qml/components/HeaderBar.qml</file>
+        <file>qml/components/PageContainer.qml</file>
+        <file>qml/components/PageHeader.qml</file>
         <file>qml/components/PageStack.qml</file>
         <file>qml/components/formatUtil.js</file>
         <file>qml/components/Sidebar.qml</file>

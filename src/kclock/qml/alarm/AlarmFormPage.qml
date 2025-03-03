@@ -19,11 +19,6 @@ import kclock
 
 Kirigami.ScrollablePage {
     id: root
-    header: HeaderBar {
-        actions: root.actions
-        title: root.title
-        showBackButton: true
-    }
 
     // null if this is a new alarm page, and the alarm to edit otherwise
     property Alarm selectedAlarm: null

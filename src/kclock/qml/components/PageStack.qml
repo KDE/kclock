@@ -10,125 +10,199 @@ import QtQuick.Templates as T
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 
-StackView {
-    id: stackView
+Item {
+    id: root
     anchors.fill: parent
-    focus: true
 
-    Shortcut {
-        sequences: [ StandardKey.Back ]
-        onActivated: {
-            if (root.pageStack.depth > 1) {
-                root.pageStack.pop();
-            }
-        }
+    property var internalStackView: stackView
+
+    // Recreation of StackView API
+    readonly property bool busy: stackView.busy
+    readonly property var currentItem: (stackView.currentItem instanceof PageContainer) ? stackView.currentItem.page : stackView.currentItem
+    readonly property int depth: stackView.depth
+    property alias initialItem: stackView.initialItem
+
+    function clear(transition) {
+        stackView.clear(transition);
     }
 
-    // Drag gesture to dismiss page
-    DragHandler {
-        enabled: stackView.currentItem && stackView.currentItem.StackView.index > 0
-        target: stackView.currentItem
-        yAxis.enabled: false
-        xAxis.enabled: true
-        xAxis.minimum: 0
-        xAxis.maximum: stackView.width
+    function find(callback, behavior) {
+        stackView.find(callback, behavior);
+    }
 
-        property bool closing: false
-        onActiveTranslationChanged: (t) => {
-            closing = t.x > 0;
+    function get(index, behavior) {
+        stackView.get(index, behavior);
+    }
+
+    function pop(item, operation) {
+        let popped = stackView.pop(item, operation);
+    }
+
+    function push(item, properties, operation) {
+        // TODO support pushing multiple pages?
+        stackView.push(__initItem(item), properties, operation);
+    }
+
+    function replace(target, item, properties, operation) {
+        stackView.replace(target, __initItem(item), properties, operation);
+    }
+
+    function __initItem(item, properties) {
+        let page;
+        if (item.createObject) {
+            page = item;
+        } else if (typeof item === "string") {
+            page = Qt.createComponent(item);
+        } else if (typeof item === "object" && !(item instanceof Item) && item.toString !== undefined) {
+            page = Qt.createComponent(item.toString());
         }
-        onActiveChanged: {
-            if (active) {
-                xAnim.stop();
+        if (page) {
+            page = page.createObject(root, properties || {});
+        } else {
+            page = item;
+            // copy properties to the page
+            for (const prop in properties) {
+                if (page.hasOwnProperty(prop)) {
+                    page[prop] = properties[prop];
+                }
+            }
+        }
 
-                // By default, StackView hides elements below
+        if (page instanceof Kirigami.Page) {
+            page = pageContainer.createObject(stackView, {
+                'page': page,
+                'showBackButton': root.depth >= 1
+            });
+        }
+        return page;
+    }
+
+    Component {
+        id: pageContainer
+        PageContainer {}
+    }
+
+    StackView {
+        id: stackView
+        anchors.fill: parent
+        focus: true
+
+        Shortcut {
+            sequences: [ StandardKey.Back ]
+            onActivated: {
                 if (stackView.depth > 1) {
-                    stackView.get(stackView.depth - 2).StackView.visible = true;
-                }
-            } else  {
-                if (closing) {
                     stackView.pop();
-                } else {
-                    xAnim.to = 0;
-                    xAnim.restart();
                 }
             }
         }
-    }
 
-    NumberAnimation {
-        id: xAnim
-        target: stackView.currentItem
-        property: 'x'
-        duration: Kirigami.Units.veryLongDuration
-        easing.type: Easing.OutCubic
-    }
+        // Drag gesture to dismiss page
+        DragHandler {
+            acceptedDevices: PointerDevice.TouchScreen
+            enabled: stackView.currentItem && stackView.currentItem.StackView.index > 0
+            target: stackView.currentItem
+            yAxis.enabled: false
+            xAxis.enabled: true
+            xAxis.minimum: 0
+            xAxis.maximum: stackView.width
 
-    pushEnter: Transition {
-        NumberAnimation {
-            property: "x"
-            from: (stackView.mirrored ? -0.5 : 0.5) * stackView.width
-            to: 0
-            duration: Kirigami.Units.longDuration
-            easing.type: Easing.OutCubic
+            property bool closing: false
+            onActiveTranslationChanged: (t) => {
+                closing = t.x > 0;
+            }
+            onActiveChanged: {
+                if (active) {
+                    xAnim.stop();
+
+                    // By default, StackView hides elements below
+                    if (stackView.depth > 1) {
+                        stackView.get(stackView.depth - 2).StackView.visible = true;
+                    }
+                } else {
+                    if (closing) {
+                        stackView.pop();
+                    } else {
+                        xAnim.to = 0;
+                        xAnim.restart();
+                    }
+                }
+            }
         }
+
         NumberAnimation {
-            property: "opacity"
-            from: 0.0; to: 1.0
-            duration: Kirigami.Units.longDuration
-            easing.type: Easing.OutCubic
-        }
-    }
-    pushExit: Transition {
-        // Ensure that page can be seen
-        NumberAnimation {
-            property: "opacity"
-            from: 1.0; to: 1.0
-        }
-    }
-    popEnter: Transition {}
-    popExit: Transition {
-        NumberAnimation {
-            property: "x"
-            to: (stackView.mirrored ? -1 : 1) * stackView.width
+            id: xAnim
+            target: stackView.currentItem
+            property: 'x'
             duration: Kirigami.Units.veryLongDuration
             easing.type: Easing.OutCubic
         }
-        NumberAnimation {
-            property: "opacity"
-            from: 1.0; to: 0.0
-            duration: Kirigami.Units.longDuration
-            easing.type: Easing.OutCubic
+
+        pushEnter: Transition {
+            NumberAnimation {
+                property: "x"
+                from: (stackView.mirrored ? -0.5 : 0.5) * stackView.width
+                to: 0
+                duration: Kirigami.Units.longDuration
+                easing.type: Easing.OutCubic
+            }
+            NumberAnimation {
+                property: "opacity"
+                from: 0.0; to: 1.0
+                duration: Kirigami.Units.longDuration
+                easing.type: Easing.OutCubic
+            }
         }
-    }
-    replaceEnter: Transition {
-        NumberAnimation {
-            property: "x"
-            from: (stackView.mirrored ? -0.5 : 0.5) * stackView.width
-            to: 0
-            duration: Kirigami.Units.longDuration
-            easing.type: Easing.OutCubic
+        pushExit: Transition {
+            // Ensure that page can be seen
+            NumberAnimation {
+                property: "opacity"
+                from: 1.0; to: 1.0
+            }
         }
-        NumberAnimation {
-            property: "opacity"
-            from: 0.0; to: 1.0
-            duration: Kirigami.Units.longDuration
-            easing.type: Easing.OutCubic
+        popEnter: Transition {}
+        popExit: Transition {
+            NumberAnimation {
+                property: "x"
+                to: (stackView.mirrored ? -1 : 1) * stackView.width
+                duration: Kirigami.Units.veryLongDuration
+                easing.type: Easing.OutCubic
+            }
+            NumberAnimation {
+                property: "opacity"
+                from: 1.0; to: 0.0
+                duration: Kirigami.Units.longDuration
+                easing.type: Easing.OutCubic
+            }
         }
-    }
-    replaceExit: Transition {
-        NumberAnimation {
-            property: "x"
-            from: 0
-            to: (stackView.mirrored ? -0.5 : 0.5) * -stackView.width
-            duration: Kirigami.Units.longDuration
-            easing.type: Easing.OutCubic
+        replaceEnter: Transition {
+            NumberAnimation {
+                property: "x"
+                from: (stackView.mirrored ? -0.5 : 0.5) * stackView.width
+                to: 0
+                duration: Kirigami.Units.longDuration
+                easing.type: Easing.OutCubic
+            }
+            NumberAnimation {
+                property: "opacity"
+                from: 0.0; to: 1.0
+                duration: Kirigami.Units.longDuration
+                easing.type: Easing.OutCubic
+            }
         }
-        NumberAnimation {
-            property: "opacity"
-            from: 1.0; to: 0.0
-            duration: Kirigami.Units.longDuration
-            easing.type: Easing.OutCubic
+        replaceExit: Transition {
+            NumberAnimation {
+                property: "x"
+                from: 0
+                to: (stackView.mirrored ? -0.5 : 0.5) * -stackView.width
+                duration: Kirigami.Units.longDuration
+                easing.type: Easing.OutCubic
+            }
+            NumberAnimation {
+                property: "opacity"
+                from: 1.0; to: 0.0
+                duration: Kirigami.Units.longDuration
+                easing.type: Easing.OutCubic
+            }
         }
     }
 }

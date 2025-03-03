@@ -17,7 +17,7 @@ import kclock
 Kirigami.AbstractCard {
     id: root
     property Timer timer
-    
+
     readonly property int length: timer ? timer.length : 1
     readonly property int elapsed: timer ? timer.elapsed : 0
     readonly property string lengthPretty: timer ? timer.lengthPretty : ""
@@ -26,13 +26,13 @@ Kirigami.AbstractCard {
     readonly property string commandTimeout: timer ? timer.commandTimeout : ""
     readonly property bool running: timer ? timer.running : false
     readonly property bool looping: timer ? timer.looping : false
-    
+
     showClickFeedback: true
     onClicked: {
         timerPageLoader.active = true;
         applicationWindow().pageStack.push(timerPageLoader.item);
     }
-    
+
     // timer page
     Loader {
         id: timerPageLoader
@@ -41,10 +41,9 @@ Kirigami.AbstractCard {
             id: timerPage
             timerIndex: index
             timer: root.timer
-            visible: false
         }
     }
-    
+
     // timer ringing popup
     Loader {
         id: popupLoader
@@ -57,7 +56,7 @@ Kirigami.AbstractCard {
                 }
             }
         }
-        
+
         Component.onCompleted: determineState()
         function determineState() {
             if (root.timer.ringing) {
@@ -67,22 +66,22 @@ Kirigami.AbstractCard {
                 popupLoader.item.close();
             }
         }
-        
+
         Connections {
             target: root.timer
             ignoreUnknownSignals: true
-            
+
             function onRingingChanged() {
                 popupLoader.determineState();
             }
         }
     }
-    
+
     // timer card contents
     contentItem: Item {
         implicitWidth: delegateLayout.implicitWidth
         implicitHeight: delegateLayout.implicitHeight
-        
+
         Column {
             id: delegateLayout
             anchors {
@@ -92,14 +91,14 @@ Kirigami.AbstractCard {
             }
             clip: true
             spacing: Kirigami.Units.smallSpacing
-            
+
             ProgressBar {
                 anchors.left: parent.left
                 anchors.right: parent.right
                 property real progress: root.elapsed / root.length
                 value: 0
                 Component.onCompleted: value = progress
-                
+
                 onProgressChanged: {
                     progressTransition.to = progress;
                     progressTransition.restart();
@@ -110,7 +109,7 @@ Kirigami.AbstractCard {
                     easing.type: Easing.InOutQuad
                 }
             }
-            
+
             RowLayout {
                 anchors.left: parent.left
                 anchors.right: parent.right
@@ -127,7 +126,7 @@ Kirigami.AbstractCard {
                     color: root.running ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
                 }
             }
-            
+
             RowLayout {
                 anchors.left: parent.left
                 anchors.right: parent.right
@@ -136,7 +135,7 @@ Kirigami.AbstractCard {
                     Layout.alignment: Qt.AlignLeft
                     text: root.label
                 }
-                
+
                 Row {
                     Layout.alignment: Qt.AlignRight
                     ToolButton {
@@ -145,7 +144,7 @@ Kirigami.AbstractCard {
                         text: i18nc("@info:tooltip", "Loop timer")
                         checked: root.looping
                         onClicked: root.timer.toggleLooping()
-                        
+
                         ToolTip.visible: hovered && text.length > 0
                         ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
                         ToolTip.text: text
@@ -155,7 +154,7 @@ Kirigami.AbstractCard {
                         display: AbstractButton.IconOnly
                         text: root.running ? i18nc("@info:tooltip", "Pause") : i18nc("@info:tooltip", "Start")
                         onClicked: root.timer.toggleRunning()
-                        
+
                         ToolTip.visible: hovered && text.length > 0
                         ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
                         ToolTip.text: text
@@ -165,7 +164,7 @@ Kirigami.AbstractCard {
                         display: AbstractButton.IconOnly
                         text: i18nc("@info:tooltip", "Reset")
                         onClicked: root.timer.reset();
-                        
+
                         ToolTip.visible: hovered && text.length > 0
                         ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
                         ToolTip.text: text
@@ -175,14 +174,14 @@ Kirigami.AbstractCard {
                         display: AbstractButton.IconOnly
                         text: i18nc("@info:tooltip", "Delete")
                         onClicked: TimerModel.remove(index)
-                        
+
                         ToolTip.visible: hovered && text.length > 0
                         ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
                         ToolTip.text: text
                     }
                 }
             }
-            
+
             RowLayout {
                 anchors.left: parent.left
                 anchors.right: parent.right

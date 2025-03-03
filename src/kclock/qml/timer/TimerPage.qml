@@ -17,11 +17,6 @@ import kclock
 
 Kirigami.Page {
     id: root
-    header: HeaderBar {
-        actions: root.actions
-        title: root.title
-        showBackButton: true
-    }
 
     property Timer timer
     property int timerIndex

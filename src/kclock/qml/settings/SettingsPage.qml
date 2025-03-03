@@ -17,11 +17,6 @@ import kclock
 
 FormCard.FormCardPage {
     id: root
-    header: HeaderBar {
-        actions: root.actions
-        title: root.title
-        showBackButton: !applicationWindow().isWidescreen
-    }
 
     Component.onCompleted: KirigamiTemplates.AppHeaderSizeGroup.items.push(this)
 
@@ -78,13 +73,7 @@ FormCard.FormCardPage {
 
             Component {
                 id: kdePage
-                FormCard.AboutKDEPage {
-                    header: HeaderBar {
-                        actions: root.actions
-                        title: root.title
-                        showBackButton: true
-                    }
-                }
+                FormCard.AboutKDEPage {}
             }
         }
     }

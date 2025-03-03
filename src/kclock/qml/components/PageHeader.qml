@@ -38,8 +38,12 @@ ToolBar {
             }
         }
 
-        Kirigami.Heading {
+        Item {
             Layout.minimumHeight: backButton.height // Keep RowLayout height to be at least button height
+            implicitWidth: 0
+        }
+
+        Kirigami.Heading {
             Layout.leftMargin: Kirigami.Units.largeSpacing
             text: root.title
             elide: Label.ElideRight
