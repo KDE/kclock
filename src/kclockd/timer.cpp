@@ -58,7 +58,7 @@ void Timer::init()
     connect(&Utilities::instance(), &Utilities::needsReschedule, this, &Timer::reschedule);
 
     // initialize notification
-    m_notification->setIconName(QStringLiteral("kclock"));
+    m_notification->setIconName(QStringLiteral("org.kde.kclock"));
     m_notification->setTitle(i18n("Timer complete"));
     m_notification->setText(i18n("Your timer %1 has finished!", label()));
     m_notification->setUrgency(KNotification::HighUrgency);
