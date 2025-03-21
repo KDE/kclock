@@ -19,7 +19,7 @@ import kclock
 
 Kirigami.FormLayout {
     id: root
-    
+
     property Alarm selectedAlarm: null
 
     // given values
@@ -30,7 +30,7 @@ Kirigami.FormLayout {
     readonly property string audioPath: selectedAlarm ? selectedAlarm.audioPath : UtilModel.getDefaultAlarmFileLocation()
     readonly property int ringDuration: selectedAlarm ? selectedAlarm.ringDuration : 5
     readonly property int snoozeDuration: selectedAlarm ? selectedAlarm.snoozeDuration : 5
-    
+
     // values currently in form
     // the editable fields have bindings that are broken by the form
     readonly property string formName: nameField.text
@@ -40,7 +40,7 @@ Kirigami.FormLayout {
     property string formAudioPath: audioPath
     property int formRingDuration: ringDuration
     property int formSnoozeDuration: snoozeDuration
-    
+
     function submitForm() {
         if (selectedAlarm) { // edit existing alarm
             selectedAlarm.name = formName;
@@ -57,9 +57,9 @@ Kirigami.FormLayout {
             showPassiveNotification(AlarmModel.timeToRingFormatted(formHours, formMinutes, formDaysOfWeek));
         }
     }
-    
+
     wideMode: false
-    
+
     // time picker
     TimePicker {
         id: timePicker
@@ -82,17 +82,17 @@ Kirigami.FormLayout {
     // repeat day picker
     DialogComboBox {
         implicitWidth: root.width
-        
+
         Kirigami.FormData.label: i18n("Days to repeat:")
         text: FormatUtil.getRepeatFormat(root.formDaysOfWeek)
         title: i18n("Select Days to Repeat")
         model: WeekModel
-        
+
         dialogDelegate: CheckDelegate {
             implicitWidth: Kirigami.Units.gridUnit * 16
             topPadding: Kirigami.Units.smallSpacing * 2
             bottomPadding: Kirigami.Units.smallSpacing * 2
-            
+
             text: name
             checkState: KClockFormat.isChecked(index, root.formDaysOfWeek) ? Qt.Checked : Qt.Unchecked
             onCheckStateChanged: {
@@ -104,7 +104,7 @@ Kirigami.FormLayout {
             }
         }
     }
-    
+
     // name field
     TextField {
         id: nameField
@@ -117,7 +117,7 @@ Kirigami.FormLayout {
     DialogComboBox {
         id: ringDurationPicker
         implicitWidth: root.width
-        
+
         Kirigami.FormData.label: i18n("Ring Duration:")
         text: {
             if (formRingDuration === -1) {
@@ -130,8 +130,14 @@ Kirigami.FormLayout {
         }
         title: i18n("Select Ring Duration")
         model: ListModel {
+            // HACK: for some reason, without this element no elements get appended by Qt
+            ListElement {
+                name: "placeholder"
+                value: 0
+            }
             // we can't use i18n with ListElement
             Component.onCompleted: {
+                clear();
                 append({"name": i18n("None"), "value": -1});
                 append({"name": i18n("1 minute"), "value": 1});
                 append({"name": i18n("2 minutes"), "value": 2});
@@ -142,12 +148,12 @@ Kirigami.FormLayout {
                 append({"name": i18n("1 hour"), "value": 60});
             }
         }
-        
+
         dialogDelegate: RadioDelegate {
             implicitWidth: Kirigami.Units.gridUnit * 16
             topPadding: Kirigami.Units.smallSpacing * 2
             bottomPadding: Kirigami.Units.smallSpacing * 2
-            
+
             text: name
             checked: root.formRingDuration == value
             onCheckedChanged: {
@@ -158,18 +164,25 @@ Kirigami.FormLayout {
         }
     }
 
-    
+
     // snooze length picker
     DialogComboBox {
         id: snoozeLengthPicker
         implicitWidth: root.width
-        
+
         Kirigami.FormData.label: i18n("Snooze Length:")
         title: i18n("Select Snooze Length")
         text: formSnoozeDuration === 1 ? i18n("1 minute") : i18n("%1 minutes", formSnoozeDuration)
         model: ListModel {
+            // HACK: for some reason, without this element no elements get appended by Qt
+            ListElement {
+                name: "placeholder"
+                value: 0
+            }
+
             // we can't use i18n with ListElement
             Component.onCompleted: {
+                clear();
                 append({"name": i18n("1 minute"), "value": 1});
                 append({"name": i18n("2 minutes"), "value": 2});
                 append({"name": i18n("5 minutes"), "value": 5});
@@ -179,12 +192,12 @@ Kirigami.FormLayout {
                 append({"name": i18n("1 hour"), "value": 60});
             }
         }
-        
+
         dialogDelegate: RadioDelegate {
             implicitWidth: Kirigami.Units.gridUnit * 16
             topPadding: Kirigami.Units.smallSpacing * 2
             bottomPadding: Kirigami.Units.smallSpacing * 2
-            
+
             text: name
             checked: root.formSnoozeDuration == value
             onCheckedChanged: {
@@ -194,17 +207,17 @@ Kirigami.FormLayout {
             }
         }
     }
-    
+
     // audio path field
     Button {
         id: audioPathField
         implicitWidth: root.width
         width: root.width
-        
+
         Kirigami.FormData.label: i18n("Ring Sound:")
-        
+
         onClicked: applicationWindow().pageStack.push(Qt.resolvedUrl("SoundPickerPage.qml"), { alarmForm: root });
-        
+
         text: {
             if (root.formAudioPath == UtilModel.getDefaultAlarmFileLocation())  {
                 return i18n("Default Sound");
@@ -213,7 +226,7 @@ Kirigami.FormLayout {
                 return split[split.length - 1].split('.')[0];
             }
         }
-        
+
         Kirigami.Icon {
             source: "go-down-symbolic"
             implicitWidth: Kirigami.Units.iconSizes.small
