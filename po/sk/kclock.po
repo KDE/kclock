@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-24 00:44+0000\n"
+"POT-Creation-Date: 2025-03-23 00:44+0000\n"
 "PO-Revision-Date: 2022-04-15 19:18+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -81,19 +81,19 @@ msgstr "Prebudiť"
 msgid "Ring Duration:"
 msgstr "Zvonenie"
 
-#: qml/alarm/AlarmForm.qml:124 qml/alarm/AlarmForm.qml:135
+#: qml/alarm/AlarmForm.qml:124 qml/alarm/AlarmForm.qml:141
 #, kde-format
 msgid "None"
 msgstr ""
 
-#: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:136
-#: qml/alarm/AlarmForm.qml:169 qml/alarm/AlarmForm.qml:173
+#: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:142
+#: qml/alarm/AlarmForm.qml:175 qml/alarm/AlarmForm.qml:186
 #: qml/timer/TimerComponent.qml:162
 #, kde-format
 msgid "1 minute"
 msgstr "1 minúta"
 
-#: qml/alarm/AlarmForm.qml:128 qml/alarm/AlarmForm.qml:169
+#: qml/alarm/AlarmForm.qml:128 qml/alarm/AlarmForm.qml:175
 #, fuzzy, kde-format
 #| msgid "%1 minute"
 #| msgid_plural "%1 minutes"
@@ -105,55 +105,55 @@ msgstr "%1 minúta"
 msgid "Select Ring Duration"
 msgstr ""
 
-#: qml/alarm/AlarmForm.qml:137 qml/alarm/AlarmForm.qml:174
+#: qml/alarm/AlarmForm.qml:143 qml/alarm/AlarmForm.qml:187
 #, kde-format
 msgid "2 minutes"
 msgstr "2 minúty"
 
-#: qml/alarm/AlarmForm.qml:138 qml/alarm/AlarmForm.qml:175
+#: qml/alarm/AlarmForm.qml:144 qml/alarm/AlarmForm.qml:188
 #, kde-format
 msgid "5 minutes"
 msgstr "5 minút"
 
-#: qml/alarm/AlarmForm.qml:139 qml/alarm/AlarmForm.qml:176
+#: qml/alarm/AlarmForm.qml:145 qml/alarm/AlarmForm.qml:189
 #, kde-format
 msgid "10 minutes"
 msgstr "10 minút"
 
-#: qml/alarm/AlarmForm.qml:140 qml/alarm/AlarmForm.qml:177
+#: qml/alarm/AlarmForm.qml:146 qml/alarm/AlarmForm.qml:190
 #, kde-format
 msgid "15 minutes"
 msgstr "15 minút"
 
-#: qml/alarm/AlarmForm.qml:141 qml/alarm/AlarmForm.qml:178
+#: qml/alarm/AlarmForm.qml:147 qml/alarm/AlarmForm.qml:191
 #, kde-format
 msgid "30 minutes"
 msgstr "30 minút"
 
-#: qml/alarm/AlarmForm.qml:142 qml/alarm/AlarmForm.qml:179
+#: qml/alarm/AlarmForm.qml:148 qml/alarm/AlarmForm.qml:192
 #, kde-format
 msgid "1 hour"
 msgstr "1 hodina"
 
-#: qml/alarm/AlarmForm.qml:167
+#: qml/alarm/AlarmForm.qml:173
 #, fuzzy, kde-format
 #| msgid "Alarm Snooze Length"
 msgid "Snooze Length:"
 msgstr "Dĺžka odloženia budíka"
 
-#: qml/alarm/AlarmForm.qml:168
+#: qml/alarm/AlarmForm.qml:174
 #, fuzzy, kde-format
 #| msgid "Alarm Snooze Length"
 msgid "Select Snooze Length"
 msgstr "Dĺžka odloženia budíka"
 
-#: qml/alarm/AlarmForm.qml:204
+#: qml/alarm/AlarmForm.qml:217
 #, fuzzy, kde-format
 #| msgid "Ringtone"
 msgid "Ring Sound:"
 msgstr "Zvonenie"
 
-#: qml/alarm/AlarmForm.qml:210
+#: qml/alarm/AlarmForm.qml:223
 #, fuzzy, kde-format
 #| msgid "default"
 msgid "Default Sound"
