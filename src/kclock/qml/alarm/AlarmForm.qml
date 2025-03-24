@@ -129,36 +129,27 @@ Kirigami.FormLayout {
             }
         }
         title: i18n("Select Ring Duration")
-        model: ListModel {
-            // HACK: for some reason, without this element no elements get appended by Qt
-            ListElement {
-                name: "placeholder"
-                value: 0
-            }
-            // we can't use i18n with ListElement
-            Component.onCompleted: {
-                clear();
-                append({"name": i18n("None"), "value": -1});
-                append({"name": i18n("1 minute"), "value": 1});
-                append({"name": i18n("2 minutes"), "value": 2});
-                append({"name": i18n("5 minutes"), "value": 5});
-                append({"name": i18n("10 minutes"), "value": 10});
-                append({"name": i18n("15 minutes"), "value": 15});
-                append({"name": i18n("30 minutes"), "value": 30});
-                append({"name": i18n("1 hour"), "value": 60});
-            }
-        }
+        model: [
+            {"name": i18n("None"), "value": -1},
+            {"name": i18n("1 minute"), "value": 1},
+            {"name": i18n("2 minutes"), "value": 2},
+            {"name": i18n("5 minutes"), "value": 5},
+            {"name": i18n("10 minutes"), "value": 10},
+            {"name": i18n("15 minutes"), "value": 15},
+            {"name": i18n("30 minutes"), "value": 30},
+            {"name": i18n("1 hour"), "value": 60}
+        ]
 
         dialogDelegate: RadioDelegate {
             implicitWidth: Kirigami.Units.gridUnit * 16
             topPadding: Kirigami.Units.smallSpacing * 2
             bottomPadding: Kirigami.Units.smallSpacing * 2
 
-            text: name
-            checked: root.formRingDuration == value
+            text: modelData.name
+            checked: root.formRingDuration == modelData.value
             onCheckedChanged: {
                 if (checked) {
-                    root.formRingDuration = value;
+                    root.formRingDuration = modelData.value;
                 }
             }
         }
@@ -173,36 +164,26 @@ Kirigami.FormLayout {
         Kirigami.FormData.label: i18n("Snooze Length:")
         title: i18n("Select Snooze Length")
         text: formSnoozeDuration === 1 ? i18n("1 minute") : i18n("%1 minutes", formSnoozeDuration)
-        model: ListModel {
-            // HACK: for some reason, without this element no elements get appended by Qt
-            ListElement {
-                name: "placeholder"
-                value: 0
-            }
-
-            // we can't use i18n with ListElement
-            Component.onCompleted: {
-                clear();
-                append({"name": i18n("1 minute"), "value": 1});
-                append({"name": i18n("2 minutes"), "value": 2});
-                append({"name": i18n("5 minutes"), "value": 5});
-                append({"name": i18n("10 minutes"), "value": 10});
-                append({"name": i18n("15 minutes"), "value": 15});
-                append({"name": i18n("30 minutes"), "value": 30});
-                append({"name": i18n("1 hour"), "value": 60});
-            }
-        }
+        model: [
+            {"name": i18n("1 minute"), "value": 1},
+            {"name": i18n("2 minutes"), "value": 2},
+            {"name": i18n("5 minutes"), "value": 5},
+            {"name": i18n("10 minutes"), "value": 10},
+            {"name": i18n("15 minutes"), "value": 15},
+            {"name": i18n("30 minutes"), "value": 30},
+            {"name": i18n("1 hour"), "value": 60},
+        ]
 
         dialogDelegate: RadioDelegate {
             implicitWidth: Kirigami.Units.gridUnit * 16
             topPadding: Kirigami.Units.smallSpacing * 2
             bottomPadding: Kirigami.Units.smallSpacing * 2
 
-            text: name
-            checked: root.formSnoozeDuration == value
+            text: modelData.name
+            checked: root.formSnoozeDuration == modelData.value
             onCheckedChanged: {
                 if (checked) {
-                    root.formSnoozeDuration = value;
+                    root.formSnoozeDuration = modelData.value;
                 }
             }
         }
