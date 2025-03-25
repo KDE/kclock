@@ -93,6 +93,7 @@ Exec=kclock
 Icon=org.kde.kclock
 Type=Application
 Terminal=false
+Actions=Timers;Stopwatch;Alarms;
 Categories=Qt;KDE;Utility;
 Keywords=kclock;timer;stopwatch;alarm;timezone;time zone;world clock;
 Keywords[ar]=ساعة;مؤقت;ساعة إيقاف;منبه;منطقة زمنية;المنطقة الزمنية;ساعة العالم;
@@ -132,3 +133,18 @@ Keywords[x-test]=xxkclockxx;xxtimerxx;xxstopwatchxx;xxalarmxx;xxtimezonexx;xxtim
 Keywords[zh_CN]=kclock;timer;stopwatch;alarm;timezone;time zone;world clock;计时器;秒表;闹钟;时区;世界时间;jishiqi;miaobiao;naozhong;shiqu;shijianzhijian;shijieshizhong;
 Keywords[zh_TW]=kclock;timer;stopwatch;alarm;timezone;time zone;world clock;時鐘;鬧鐘;鬧鈴;計時器;
 X-KDE-FormFactor=desktop;tablet;handset;
+
+[Desktop Action Timers]
+Name=Timers
+Icon=player-time
+Exec=kclock --page Timers
+
+[Desktop Action Stopwatch]
+Name=Stopwatch
+Icon=chronometer
+Exec=kclock --page Stopwatch
+
+[Desktop Action Alarms]
+Name=Alarms
+Icon=notifications
+Exec=kclock --page Alarms
