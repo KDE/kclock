@@ -6,7 +6,7 @@
 #
 
 [Global]
-IconName=kclock
+IconName=org.kde.kclock
 Name=Clock
 Name[ar]=الساعة
 Name[ast]=Reló
