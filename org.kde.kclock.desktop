@@ -95,6 +95,7 @@ Type=Application
 Terminal=false
 Actions=Timers;Stopwatch;Alarms;
 Categories=Qt;KDE;Utility;
+SingleMainWindow=true
 Keywords=kclock;timer;stopwatch;alarm;timezone;time zone;world clock;
 Keywords[ar]=ساعة;مؤقت;ساعة إيقاف;منبه;منطقة زمنية;المنطقة الزمنية;ساعة العالم;
 Keywords[bg]=kclock;таймер;хронометър;аларма;часова зона;часова зона;световен часовник;

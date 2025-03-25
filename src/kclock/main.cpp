@@ -40,6 +40,15 @@
 #include <QQuickWindow>
 #include <QStringLiteral>
 
+static void processCommandLine(const QCommandLineParser &parser, QObject *rootObject)
+{
+    if (parser.isSet(QStringLiteral("page"))) {
+        QVariant page;
+        QMetaObject::invokeMethod(rootObject, "getPage", Q_RETURN_ARG(QVariant, page), Q_ARG(QVariant, parser.value(QStringLiteral("page"))));
+        QMetaObject::invokeMethod(rootObject, "switchToPage", Q_ARG(QVariant, page), Q_ARG(QVariant, 0));
+    }
+}
+
 int main(int argc, char *argv[])
 {
     // set default style
@@ -69,10 +78,15 @@ int main(int argc, char *argv[])
     QCommandLineParser parser;
     aboutData.setupCommandLine(&parser);
     parser.addOption(QCommandLineOption(QStringLiteral("page"), i18n("Select opened page"), QStringLiteral("page")));
+    QCommandLineOption newWindowOption(QStringLiteral("new-window"), i18n("Explicitly open a new Clock window"));
+    parser.addOption(newWindowOption);
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
     // ~~~~ DBus setup ~~~~
+
+    const KDBusService::StartupOption serviceOptions = parser.isSet(newWindowOption) ? KDBusService::Multiple : KDBusService::Unique;
+    KDBusService service(serviceOptions);
 
     // ensure kclockd is up with dbus autostart, any call will do
     QDBusInterface *testInterface = new QDBusInterface(QStringLiteral("org.kde.kclockd"),
@@ -142,12 +156,19 @@ int main(int argc, char *argv[])
     app.setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.kclock")));
 
     // ~~~~ Parse command line arguments ~~~~
-    if (parser.isSet(QStringLiteral("page"))) {
-        QObject *rootObject = engine->rootObjects().first();
-        QVariant page;
-        QMetaObject::invokeMethod(rootObject, "getPage", Q_RETURN_ARG(QVariant, page), Q_ARG(QVariant, parser.value(QStringLiteral("page"))));
-        QMetaObject::invokeMethod(rootObject, "switchToPage", Q_ARG(QVariant, page), Q_ARG(QVariant, 0));
-    }
+    QQuickWindow *mainWindow = qobject_cast<QQuickWindow *>(engine->rootObjects().first());
+    processCommandLine(parser, mainWindow);
+
+    QObject::connect(&service,
+                     &KDBusService::activateRequested,
+                     mainWindow,
+                     [&parser, mainWindow](const QStringList &arguments, const QString &workingDirectory) {
+                         Q_UNUSED(workingDirectory);
+                         parser.parse(arguments);
+                         processCommandLine(parser, mainWindow);
+
+                         mainWindow->requestActivate();
+                     });
 
     return app.exec();
 }
