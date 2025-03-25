@@ -19,6 +19,7 @@ Kirigami.ScrollablePage {
     property real yTranslate: 0
 
     title: i18n("Timers")
+    readonly property string hiddenTitle: TimerModel.runningTimer?.remainingPretty ?? ""
     icon.name: "player-time"
 
     // desktop action

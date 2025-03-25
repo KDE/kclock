@@ -10,6 +10,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
+import kclock as KClock
 
 Kirigami.ApplicationWindow {
     id: root
@@ -20,7 +21,18 @@ Kirigami.ApplicationWindow {
     width: Kirigami.Settings.isMobile ? 360 : 550
     height: Kirigami.Settings.isMobile ? 720 : 500
 
-    title: i18n("Clock")
+    title: {
+        const currentPage = pageStack.currentItem
+        if (currentPage) {
+            if (!KClock.WindowExposure.exposed) {
+                if (currentPage.hiddenTitle) {
+                    return currentPage.hiddenTitle;
+                }
+            }
+            return currentPage.title;
+        }
+        return "";
+    }
 
     contextDrawer: Kirigami.ContextDrawer {}
 

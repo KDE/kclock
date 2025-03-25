@@ -23,6 +23,7 @@ Kirigami.ScrollablePage {
     property int clockRadius: Kirigami.Units.gridUnit * 4
 
     title: i18n("Time")
+    readonly property string hiddenTitle: KClockFormat.currentTime
     icon.name: "clock"
 
     actions: [newAction, editAction, settingsAction]

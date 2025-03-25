@@ -22,6 +22,7 @@ Kirigami.Page {
     property int timerIndex
 
     title: timer && timer.label !== "" ? timer.label : i18n("New timer")
+    readonly property string hiddenTitle: running ? timer.remainingPretty : ""
 
     property bool showFullscreen: false
 
