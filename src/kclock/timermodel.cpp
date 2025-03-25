@@ -87,14 +87,21 @@ void TimerModel::remove(int index)
 void TimerModel::addTimer(QString uuid)
 {
     auto *timer = new Timer(uuid.remove(QRegularExpression(QStringLiteral("[{}-]"))));
+    connect(timer, &Timer::runningChanged, this, &TimerModel::runningTimerChanged);
 
+    Timer *oldRunningTimer = runningTimer();
     Q_EMIT beginInsertRows(QModelIndex(), 0, 0);
     m_timersList.insert(0, timer);
     Q_EMIT endInsertRows();
+    if (oldRunningTimer != runningTimer()) {
+        Q_EMIT runningTimerChanged();
+    }
 }
 
 void TimerModel::removeTimer(const QString &uuid)
 {
+    Timer *oldRunningTimer = runningTimer();
+
     for (int i = 0; i < m_timersList.size(); ++i) {
         if (m_timersList[i]->uuid().toString() == uuid) {
             beginRemoveRows(QModelIndex(), i, i);
@@ -102,6 +109,10 @@ void TimerModel::removeTimer(const QString &uuid)
             m_timersList.removeAt(i);
             endRemoveRows();
         }
+    }
+
+    if (oldRunningTimer != runningTimer()) {
+        Q_EMIT runningTimerChanged();
     }
 }
 
@@ -116,6 +127,25 @@ void TimerModel::setConnectedToDaemon(bool connectedToDaemon)
         m_connectedToDaemon = connectedToDaemon;
         Q_EMIT connectedToDaemonChanged();
     }
+}
+
+Timer *TimerModel::runningTimer() const
+{
+    Timer *runningTimer = nullptr;
+    for (Timer *timer : std::as_const(m_timersList)) {
+        if (!timer->running()) {
+            continue;
+        }
+
+        if (!runningTimer) {
+            runningTimer = timer;
+        } else {
+            // More than one running timer, exit.
+            runningTimer = nullptr;
+            break;
+        }
+    }
+    return runningTimer;
 }
 
 #include "moc_timermodel.cpp"

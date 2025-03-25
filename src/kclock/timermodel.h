@@ -20,6 +20,10 @@ class TimerModel : public QAbstractListModel
 {
     Q_OBJECT
     Q_PROPERTY(bool connectedToDaemon READ connectedToDaemon NOTIFY connectedToDaemonChanged)
+    /**
+     * If there is a single running timer in the model, this property will return it.
+     */
+    Q_PROPERTY(Timer *runningTimer READ runningTimer NOTIFY runningTimerChanged)
 
 public:
     static TimerModel *instance();
@@ -38,8 +42,11 @@ public:
     bool connectedToDaemon();
     void setConnectedToDaemon(bool connectedToDaemon);
 
+    Timer *runningTimer() const;
+
 Q_SIGNALS:
     void connectedToDaemonChanged();
+    void runningTimerChanged();
 
 private Q_SLOTS:
     void addTimer(QString uuid);
