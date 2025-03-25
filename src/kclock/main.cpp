@@ -40,15 +40,6 @@
 #include <QQuickWindow>
 #include <QStringLiteral>
 
-QCommandLineParser *createParser()
-{
-    QCommandLineParser *parser = new QCommandLineParser;
-    parser->addOption(QCommandLineOption(QStringLiteral("page"), i18n("Select opened page"), QStringLiteral("page"), QStringLiteral("main")));
-    parser->addVersionOption();
-    parser->addHelpOption();
-    return parser;
-}
-
 int main(int argc, char *argv[])
 {
     // set default style
@@ -74,6 +65,12 @@ int main(int argc, char *argv[])
     aboutData.addAuthor(i18n("Han Young"), QString(), QStringLiteral("hanyoung@protonmail.com"));
     KAboutData::setApplicationData(aboutData);
     KCrash::initialize();
+
+    QCommandLineParser parser;
+    aboutData.setupCommandLine(&parser);
+    parser.addOption(QCommandLineOption(QStringLiteral("page"), i18n("Select opened page"), QStringLiteral("page")));
+    parser.process(app);
+    aboutData.processCommandLine(&parser);
 
     // ~~~~ DBus setup ~~~~
 
@@ -145,17 +142,11 @@ int main(int argc, char *argv[])
     app.setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.kclock")));
 
     // ~~~~ Parse command line arguments ~~~~
-    {
-        QScopedPointer<QCommandLineParser> parser(createParser());
-        parser->process(app);
-        if (parser->isSet(QStringLiteral("page"))) {
-            QVariant page;
-            QMetaObject::invokeMethod(engine->rootObjects().first(),
-                                      "getPage",
-                                      Q_RETURN_ARG(QVariant, page),
-                                      Q_ARG(QVariant, parser->value(QStringLiteral("page"))));
-            QMetaObject::invokeMethod(engine->rootObjects().first(), "switchToPage", Q_ARG(QVariant, page), Q_ARG(QVariant, 0));
-        }
+    if (parser.isSet(QStringLiteral("page"))) {
+        QObject *rootObject = engine->rootObjects().first();
+        QVariant page;
+        QMetaObject::invokeMethod(rootObject, "getPage", Q_RETURN_ARG(QVariant, page), Q_ARG(QVariant, parser.value(QStringLiteral("page"))));
+        QMetaObject::invokeMethod(rootObject, "switchToPage", Q_ARG(QVariant, page), Q_ARG(QVariant, 0));
     }
 
     return app.exec();
