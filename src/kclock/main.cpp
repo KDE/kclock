@@ -20,6 +20,7 @@
 #include "utilityinterface.h"
 #include "utilmodel.h"
 #include "version.h"
+#include "windowexposure.h"
 
 #include <KAboutData>
 #include <KConfig>
@@ -134,6 +135,7 @@ int main(int argc, char *argv[])
     qmlRegisterSingletonType<SettingsModel>("kclock", 1, 0, "SettingsModel", [](QQmlEngine *, QJSEngine *) -> QObject * {
         return SettingsModel::instance();
     });
+    qmlRegisterUncreatableType<WindowExposure>("kclock", 1, 0, "WindowExposure", QStringLiteral("Can only be used as attached property."));
 
     QQmlApplicationEngine *engine = new QQmlApplicationEngine();
     KLocalization::setupLocalizedContext(engine);

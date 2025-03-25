@@ -30,6 +30,8 @@ set(kclock_SRCS
     timerpresetmodel.h
     savedlocationsmodel.cpp
     savedlocationsmodel.h
+    windowexposure.cpp
+    windowexposure.h
     )
 
 set(SettingsXML ${CMAKE_CURRENT_BINARY_DIR}/../kclockd/org.kde.kclockd.KClockSettings.xml)
