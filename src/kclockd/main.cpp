@@ -8,6 +8,7 @@
 
 #include "alarmmodel.h"
 #include "kclockdsettings.h"
+#include "kclockrunner.h"
 #include "kclocksettingsadaptor.h"
 #include "timermodel.h"
 #include "utilities.h"
@@ -74,6 +75,8 @@ int main(int argc, char *argv[])
     // initialize models
     new KClockSettingsAdaptor(KClockSettings::self());
     QDBusConnection::sessionBus().registerObject(QStringLiteral("/Settings"), KClockSettings::self());
+
+    new KClockRunner(&app);
 
     // save config
     QObject::connect(KClockSettings::self(), &KClockSettings::timeFormatChanged, KClockSettings::self(), &KClockSettings::save);

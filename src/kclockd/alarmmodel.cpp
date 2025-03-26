@@ -71,6 +71,21 @@ void AlarmModel::configureWakeups()
     scheduleAlarm();
 }
 
+QList<Alarm *> AlarmModel::alarmsList() const
+{
+    return m_alarmsList;
+}
+
+Alarm *AlarmModel::alarm(const QString &uuid) const
+{
+    for (Alarm *alarm : m_alarmsList) {
+        if (alarm->uuid() == uuid) {
+            return alarm;
+        }
+    }
+    return nullptr;
+}
+
 quint64 AlarmModel::getNextAlarm()
 {
     return m_nextAlarmTime;

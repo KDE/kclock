@@ -38,6 +38,7 @@ include(KDECompilerSettings NO_POLICY_SCOPE)
 include(KDEClangFormat)
 include(KDEGitCommitHooks)
 include(ECMDeprecationSettings)
+include(ECMQtDeclareLoggingCategory)
 
 ecm_setup_version(${PROJECT_VERSION}
     VARIABLE_PREFIX KCLOCK
@@ -84,6 +85,7 @@ install(FILES org.kde.kclockd-autostart.desktop DESTINATION ${KDE_INSTALL_AUTOST
 install(FILES org.kde.kclock.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 install(FILES org.kde.kclock.svg DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/scalable/apps/)
 install(FILES kclockd.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})
+install(FILES kclock-runner.desktop DESTINATION ${KDE_INSTALL_DATAROOTDIR}/krunner/dbusplugins)
 
 ecm_install_configured_files(INPUT org.kde.kclockd.service.in DESTINATION ${KDE_INSTALL_DBUSSERVICEDIR} @ONLY)
 

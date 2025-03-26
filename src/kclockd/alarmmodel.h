@@ -25,6 +25,8 @@ public:
     void load();
     void save();
     void configureWakeups(); // needs to be called to start worker thread, or configure powerdevil (called in main)
+    QList<Alarm *> alarmsList() const;
+    Alarm *alarm(const QString &uuid) const;
 
     Q_SCRIPTABLE void removeAlarm(const QString &uuid);
     Q_SCRIPTABLE void addAlarm(const QString &name, int hours, int minutes, int daysOfWeek, const QString &audioPath, int ringDuration, int snoozeDuration);

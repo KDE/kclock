@@ -126,6 +126,21 @@ void TimerModel::remove(int index)
     save();
 }
 
+QList<Timer *> TimerModel::timerList() const
+{
+    return m_timerList;
+}
+
+Timer *TimerModel::timer(const QString &uuid) const
+{
+    for (Timer *timer : m_timerList) {
+        if (timer->uuid() == uuid) {
+            return timer;
+        }
+    }
+    return nullptr;
+}
+
 QStringList TimerModel::timers() const
 {
     QStringList ret;

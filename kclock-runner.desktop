@@ -1,0 +1,20 @@
+# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: none
+[Desktop Entry]
+# ctxt: plasma runner
+Name=Clock
+Comment=Find timers and start/stop them
+Type=Service
+Icon=org.kde.kclock
+X-KDE-PluginInfo-Author=Kai Uwe Broulik
+X-KDE-PluginInfo-Email=kde@broulik.de
+X-KDE-PluginInfo-Name=kclock
+X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-License=GPL
+X-KDE-PluginInfo-EnabledByDefault=true
+X-Plasma-API=DBus
+X-Plasma-DBusRunner-Service=org.kde.kclockd
+X-Plasma-Runner-Min-Letter-Count=3
+X-Plasma-Request-Actions-Once=true
+X-Plasma-Runner-Syntaxes=:q:,timer,alarm
+X-Plasma-Runner-Syntax-Descriptions=Finds timers whose name match :q:,Lists all timers and allows to start/stop them.,Lists all alarms and allows to enable/disable them.

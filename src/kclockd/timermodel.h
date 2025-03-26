@@ -23,6 +23,8 @@ public:
 
     void load();
     void save();
+    QList<Timer *> timerList() const;
+    Timer *timer(const QString &uuid) const;
     Q_SCRIPTABLE QStringList timers() const;
     Q_SCRIPTABLE void addTimer(int length, const QString &label, const QString &commandTimeout, bool running);
     Q_SCRIPTABLE void removeTimer(const QString &uuid);
