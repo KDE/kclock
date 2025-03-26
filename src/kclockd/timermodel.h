@@ -8,8 +8,10 @@
 #pragma once
 
 #include <QObject>
+#include <QTimer>
 
 class Timer;
+class UnityLauncher;
 
 class TimerModel : public QObject
 {
@@ -30,9 +32,13 @@ Q_SIGNALS:
     Q_SCRIPTABLE void timerRemoved(const QString &);
 
 private:
+    void connectTimer(Timer *timer);
     void remove(int index);
+    void updateUnityLauncher();
 
     explicit TimerModel();
 
     QList<Timer *> m_timerList;
+    UnityLauncher *m_unityLauncher;
+    QTimer m_updateUnityLauncherTimer;
 };

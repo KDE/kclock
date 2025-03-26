@@ -8,6 +8,7 @@
 #include "timermodel.h"
 
 #include "timer.h"
+#include "unitylauncher.h"
 
 #include <KConfigGroup>
 #include <KLocalizedString>
@@ -19,6 +20,12 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 
+#include <QtNumeric>
+
+#include <chrono>
+
+using namespace std::literals::chrono_literals;
+
 const QString TIMERS_CFG_GROUP = QStringLiteral("Timers"), TIMERS_CFG_KEY = QStringLiteral("timersList");
 
 TimerModel *TimerModel::instance()
@@ -28,7 +35,14 @@ TimerModel *TimerModel::instance()
 }
 
 TimerModel::TimerModel()
+    : QObject(nullptr)
+    , m_unityLauncher(new UnityLauncher(this))
 {
+    // Match what app uses, reduces a possible 1s gap between task bar and app
+    // when one or the other ever so slightly misses the second changing.
+    m_updateUnityLauncherTimer.setInterval(250ms);
+    m_updateUnityLauncherTimer.callOnTimeout(this, &TimerModel::updateUnityLauncher);
+
     load();
     QDBusConnection::sessionBus().registerObject(QStringLiteral("/Timers"), this, QDBusConnection::ExportScriptableContents);
 }
@@ -40,8 +54,11 @@ void TimerModel::load()
     QJsonDocument doc = QJsonDocument::fromJson(group.readEntry(TIMERS_CFG_KEY, "{}").toUtf8());
     for (QJsonValueRef r : doc.array()) {
         QJsonObject obj = r.toObject();
-        m_timerList.append(new Timer(obj, this));
+        Timer *timer = new Timer(obj, this);
+        connectTimer(timer);
+        m_timerList.append(timer);
     }
+    updateUnityLauncher();
 }
 
 void TimerModel::save()
@@ -64,11 +81,19 @@ void TimerModel::save()
 void TimerModel::addTimer(int length, const QString &label, const QString &commandTimeout, bool running)
 {
     auto *timer = new Timer(length, label, commandTimeout, running);
+    connectTimer(timer);
     m_timerList.append(timer);
 
     save();
+    updateUnityLauncher();
 
     Q_EMIT timerAdded(timer->uuid());
+}
+
+void TimerModel::connectTimer(Timer *timer)
+{
+    connect(timer, &Timer::runningChanged, this, &TimerModel::updateUnityLauncher);
+    connect(timer, &Timer::lengthChanged, this, &TimerModel::updateUnityLauncher);
 }
 
 void TimerModel::removeTimer(const QString &uuid)
@@ -97,6 +122,7 @@ void TimerModel::remove(int index)
     m_timerList.removeAt(index);
     timer->deleteLater();
 
+    updateUnityLauncher();
     save();
 }
 
@@ -112,6 +138,30 @@ QStringList TimerModel::timers() const
         ret << timer->uuid().replace(dbusfilter, QString());
     }
     return ret;
+}
+
+void TimerModel::updateUnityLauncher()
+{
+    qreal totalLength = 0;
+    qreal totalElapsed = 0;
+    for (const Timer *timer : std::as_const(m_timerList)) {
+        if (!timer->running()) {
+            continue;
+        }
+
+        totalLength += timer->length();
+        totalElapsed += timer->elapsed();
+    }
+
+    if (totalLength > 0) {
+        m_unityLauncher->setProgress(totalElapsed / totalLength);
+        if (!m_updateUnityLauncherTimer.isActive()) {
+            m_updateUnityLauncherTimer.start();
+        }
+    } else {
+        m_unityLauncher->setProgress(qQNaN());
+        m_updateUnityLauncherTimer.stop();
+    }
 }
 
 #include "moc_timermodel.cpp"

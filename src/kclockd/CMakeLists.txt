@@ -25,6 +25,8 @@ set(kclockd_SRCS
     abstractwakeupprovider.h
     powerdevilwakeupprovider.cpp
     powerdevilwakeupprovider.h
+    unitylauncher.cpp
+    unitylauncher.h
     waittimerwakeupprovider.cpp
     waittimerwakeupprovider.h
     )
