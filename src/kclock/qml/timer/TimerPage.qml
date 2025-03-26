@@ -45,6 +45,7 @@ Kirigami.Page {
         Kirigami.Action {
             text: running ? i18n("Pause") : i18n("Start")
             icon.name: running ? "chronometer-pause" : "chronometer-start"
+            displayHint: Kirigami.DisplayHint.KeepVisible
             visible: !Kirigami.Settings.isMobile
             onTriggered: root.timer.toggleRunning()
         },
