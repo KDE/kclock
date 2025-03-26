@@ -99,6 +99,11 @@ Kirigami.FormLayout {
                 id: spinBoxHours
                 value: 0 // default
                 Layout.preferredWidth: Kirigami.Units.gridUnit * 6
+                onActiveFocusChanged: {
+                    if (activeFocus) {
+                        (contentItem as TextInput)?.selectAll();
+                    }
+                }
             }
             Label {
                 text: i18n("hours")
@@ -110,6 +115,11 @@ Kirigami.FormLayout {
                 to: 59
                 value: 5 // default
                 Layout.preferredWidth: Kirigami.Units.gridUnit * 6
+                onActiveFocusChanged: {
+                    if (activeFocus) {
+                        (contentItem as TextInput)?.selectAll();
+                    }
+                }
             }
             Label {
                 text: i18n("minutes")
@@ -121,6 +131,11 @@ Kirigami.FormLayout {
                 to: 59
                 value: 0 // default
                 Layout.preferredWidth: Kirigami.Units.gridUnit * 6
+                onActiveFocusChanged: {
+                    if (activeFocus) {
+                        (contentItem as TextInput)?.selectAll();
+                    }
+                }
             }
             Label {
                 text: i18n("seconds")

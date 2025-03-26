@@ -139,6 +139,12 @@ Item {
                         spinBox.valueModified();
                         applyTextBinding();
                     }
+
+                    onActiveFocusChanged: {
+                        if (activeFocus) {
+                            selectAll();
+                        }
+                    }
                 }
             }
         }
