@@ -132,9 +132,22 @@ Kirigami.AbstractCard {
                 anchors.left: parent.left
                 anchors.right: parent.right
                 Kirigami.Heading {
+                    id: label
                     level: 4
-                    Layout.alignment: Qt.AlignLeft
+                    Layout.fillWidth: true
                     text: root.label
+                    elide: Text.ElideRight
+
+                    HoverHandler {
+                        id: labelHoverHandler
+                    }
+                    TapHandler {
+                        id: labelTapHandler
+                    }
+
+                    ToolTip.visible: (Kirigami.Settings.tabletMode ? labelTapHandler.pressed : labelHoverHandler.hovered) && ToolTip.text !== ""
+                    ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
+                    ToolTip.text: label.truncated ? label.text : ""
                 }
                 
                 Row {
