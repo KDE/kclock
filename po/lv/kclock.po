@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-25 00:44+0000\n"
+"POT-Creation-Date: 2025-03-27 00:44+0000\n"
 "PO-Revision-Date: 2024-08-27 16:47+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -28,32 +28,37 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "toms.trasuns@posteo.net"
 
-#: main.cpp:45
-#, kde-format
-msgid "Select opened page"
-msgstr "Izvēlēties atvērto lapu"
-
-#: main.cpp:68
+#: main.cpp:69
 #, kde-format
 msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr ""
 "Iestatiet signālus un taimerus, izmantojiet hronometru un pārvaldiet "
 "pasaules pulksteņus"
 
-#: main.cpp:70
+#: main.cpp:71
 #, kde-format
 msgid "© 2020-2024 KDE Community"
 msgstr "© 2020—2024 KDE kopiena"
 
-#: main.cpp:72
+#: main.cpp:73
 #, kde-format
 msgid "Devin Lin"
 msgstr "Devin Lin"
 
-#: main.cpp:73
+#: main.cpp:74
 #, kde-format
 msgid "Han Young"
 msgstr "Han Young"
+
+#: main.cpp:80
+#, kde-format
+msgid "Select opened page"
+msgstr "Izvēlēties atvērto lapu"
+
+#: main.cpp:81
+#, kde-format
+msgid "Explicitly open a new Clock window"
+msgstr ""
 
 #: qml/alarm/AlarmForm.qml:86
 #, kde-format
@@ -199,14 +204,14 @@ msgstr "Izdzēst"
 msgid "Alarms"
 msgstr "Signāli"
 
-#: qml/alarm/AlarmListPage.qml:36 qml/time/TimePage.qml:37
+#: qml/alarm/AlarmListPage.qml:36 qml/time/TimePage.qml:38
 #, kde-format
 msgid "Edit"
 msgstr "Rediģēt"
 
 #: qml/alarm/AlarmListPage.qml:45 qml/components/Sidebar.qml:138
-#: qml/settings/SettingsPage.qml:22 qml/stopwatch/StopwatchPage.qml:39
-#: qml/time/TimePage.qml:60 qml/timer/TimerListPage.qml:36
+#: qml/settings/SettingsPage.qml:22 qml/stopwatch/StopwatchPage.qml:40
+#: qml/time/TimePage.qml:61 qml/timer/TimerListPage.qml:37
 #, kde-format
 msgid "Settings"
 msgstr "Iestatījumi"
@@ -363,11 +368,6 @@ msgstr "no rīta"
 msgid "PM"
 msgstr "vakarā"
 
-#: qml/main.qml:23
-#, kde-format
-msgid "Clock"
-msgstr "Pulkstenis"
-
 #: qml/settings/SettingsPage.qml:34
 #, kde-format
 msgid "Time Format"
@@ -398,45 +398,45 @@ msgstr "Par pulksteni"
 msgid "About KDE"
 msgstr "Par KDE"
 
-#: qml/stopwatch/StopwatchPage.qml:138 qml/stopwatch/StopwatchPage.qml:168
-#: qml/timer/TimerPage.qml:52 qml/timer/TimerPage.qml:100
+#: qml/stopwatch/StopwatchPage.qml:141 qml/stopwatch/StopwatchPage.qml:171
+#: qml/timer/TimerPage.qml:53 qml/timer/TimerPage.qml:101
 #, kde-format
 msgid "Reset"
 msgstr "Atiestatīt"
 
-#: qml/stopwatch/StopwatchPage.qml:140 qml/timer/TimerPage.qml:45
-#: qml/timer/TimerPage.qml:94
+#: qml/stopwatch/StopwatchPage.qml:143 qml/timer/TimerPage.qml:46
+#: qml/timer/TimerPage.qml:95
 #, kde-format
 msgid "Pause"
 msgstr "Pauze"
 
-#: qml/stopwatch/StopwatchPage.qml:142
+#: qml/stopwatch/StopwatchPage.qml:145
 #, kde-format
 msgid "Resume"
 msgstr "Turpināt"
 
-#: qml/stopwatch/StopwatchPage.qml:144 qml/timer/TimerPage.qml:45
-#: qml/timer/TimerPage.qml:94
+#: qml/stopwatch/StopwatchPage.qml:147 qml/timer/TimerPage.qml:46
+#: qml/timer/TimerPage.qml:95
 #, kde-format
 msgid "Start"
 msgstr "Sākt"
 
-#: qml/stopwatch/StopwatchPage.qml:168 qml/stopwatch/StopwatchPage.qml:196
+#: qml/stopwatch/StopwatchPage.qml:171 qml/stopwatch/StopwatchPage.qml:199
 #, kde-format
 msgid "Lap"
 msgstr "Aplis"
 
-#: qml/stopwatch/StopwatchPage.qml:204
+#: qml/stopwatch/StopwatchPage.qml:207
 #, kde-format
 msgid "Lap Time"
 msgstr "Apļa laiks"
 
-#: qml/stopwatch/StopwatchPage.qml:211
+#: qml/stopwatch/StopwatchPage.qml:214
 #, kde-format
 msgid "Total"
 msgstr "Kopā"
 
-#: qml/stopwatch/StopwatchPage.qml:294
+#: qml/stopwatch/StopwatchPage.qml:297
 #, kde-format
 msgid "#%1"
 msgstr "#%1"
@@ -451,7 +451,7 @@ msgstr "Vieta nav atrasta"
 msgid "Add Location"
 msgstr "Pievienot vietu"
 
-#: qml/time/TimePage.qml:50
+#: qml/time/TimePage.qml:51
 #, kde-format
 msgid "Add"
 msgstr "Pievienot"
@@ -581,12 +581,12 @@ msgctxt "@info:tooltip"
 msgid "Delete"
 msgstr "Dzēst"
 
-#: qml/timer/TimerListPage.qml:28
+#: qml/timer/TimerListPage.qml:29
 #, kde-format
 msgid "New Timer"
 msgstr "Jauns taimeris"
 
-#: qml/timer/TimerListPage.qml:47
+#: qml/timer/TimerListPage.qml:48
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
@@ -595,12 +595,12 @@ msgstr ""
 "Pulksteņa dēmons nav atrasts. Palaidiet „kclockd“, lai iegūtu taimera "
 "funkciju."
 
-#: qml/timer/TimerListPage.qml:86
+#: qml/timer/TimerListPage.qml:87
 #, kde-format
 msgid "No timers configured"
 msgstr "Nav iestatīts neviens taimeris"
 
-#: qml/timer/TimerListPage.qml:91
+#: qml/timer/TimerListPage.qml:92
 #, kde-format
 msgid "Add timer"
 msgstr "Pievienot taimeri"
@@ -610,12 +610,12 @@ msgstr "Pievienot taimeri"
 msgid "New timer"
 msgstr "Jauns taimeris"
 
-#: qml/timer/TimerPage.qml:58 qml/timer/TimerPage.qml:106
+#: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:107
 #, kde-format
 msgid "Delete"
 msgstr "Izdzēst"
 
-#: qml/timer/TimerPage.qml:67 qml/timer/TimerPage.qml:115
+#: qml/timer/TimerPage.qml:68 qml/timer/TimerPage.qml:116
 #, kde-format
 msgid "Loop Timer"
 msgstr "Apļa taimeris"
@@ -723,6 +723,9 @@ msgstr "Signāls atskanēs mazāk kā pēc minūtes"
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "Signāls atskanēs pēc %1"
+
+#~ msgid "Clock"
+#~ msgstr "Pulkstenis"
 
 #~ msgid "<b>Create New Timer</b>"
 #~ msgstr "<b>Izveidot jaunu taimeri</b>"

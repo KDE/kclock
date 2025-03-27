@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-25 00:44+0000\n"
+"POT-Creation-Date: 2025-03-27 00:44+0000\n"
 "PO-Revision-Date: 2024-12-24 20:39+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -29,32 +29,37 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "skkalwar999@gmail.com"
 
-#: main.cpp:45
-#, kde-format
-msgid "Select opened page"
-msgstr "उद्घाटितं पृष्ठं चिनोतु"
-
-#: main.cpp:68
+#: main.cpp:69
 #, kde-format
 msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr ""
 "अलार्म, टाइमर् च सेट् कुर्वन्तु, स्टॉपवॉच् इत्यस्य उपयोगं कुर्वन्तु, विश्वघटिकानां प्रबन्धनं कुर्वन्तु "
 "च"
 
-#: main.cpp:70
+#: main.cpp:71
 #, kde-format
 msgid "© 2020-2024 KDE Community"
 msgstr "© 2020-2024 केडीई समुदाय"
 
-#: main.cpp:72
+#: main.cpp:73
 #, kde-format
 msgid "Devin Lin"
 msgstr "डेविन् लिन्"
 
-#: main.cpp:73
+#: main.cpp:74
 #, kde-format
 msgid "Han Young"
 msgstr "हान यंग"
+
+#: main.cpp:80
+#, kde-format
+msgid "Select opened page"
+msgstr "उद्घाटितं पृष्ठं चिनोतु"
+
+#: main.cpp:81
+#, kde-format
+msgid "Explicitly open a new Clock window"
+msgstr ""
 
 #: qml/alarm/AlarmForm.qml:86
 #, kde-format
@@ -199,14 +204,14 @@ msgstr "लुप्"
 msgid "Alarms"
 msgstr "अलार्म"
 
-#: qml/alarm/AlarmListPage.qml:36 qml/time/TimePage.qml:37
+#: qml/alarm/AlarmListPage.qml:36 qml/time/TimePage.qml:38
 #, kde-format
 msgid "Edit"
 msgstr "सम्पादन"
 
 #: qml/alarm/AlarmListPage.qml:45 qml/components/Sidebar.qml:138
-#: qml/settings/SettingsPage.qml:22 qml/stopwatch/StopwatchPage.qml:39
-#: qml/time/TimePage.qml:60 qml/timer/TimerListPage.qml:36
+#: qml/settings/SettingsPage.qml:22 qml/stopwatch/StopwatchPage.qml:40
+#: qml/time/TimePage.qml:61 qml/timer/TimerListPage.qml:37
 #, kde-format
 msgid "Settings"
 msgstr "सेटिंग्स्"
@@ -361,11 +366,6 @@ msgstr "AM"
 msgid "PM"
 msgstr "PM"
 
-#: qml/main.qml:23
-#, kde-format
-msgid "Clock"
-msgstr "घटिका"
-
 #: qml/settings/SettingsPage.qml:34
 #, kde-format
 msgid "Time Format"
@@ -396,45 +396,45 @@ msgstr "घण्टायाः विषये"
 msgid "About KDE"
 msgstr "KDE विषये"
 
-#: qml/stopwatch/StopwatchPage.qml:138 qml/stopwatch/StopwatchPage.qml:168
-#: qml/timer/TimerPage.qml:52 qml/timer/TimerPage.qml:100
+#: qml/stopwatch/StopwatchPage.qml:141 qml/stopwatch/StopwatchPage.qml:171
+#: qml/timer/TimerPage.qml:53 qml/timer/TimerPage.qml:101
 #, kde-format
 msgid "Reset"
 msgstr "पुनः सेट् करें"
 
-#: qml/stopwatch/StopwatchPage.qml:140 qml/timer/TimerPage.qml:45
-#: qml/timer/TimerPage.qml:94
+#: qml/stopwatch/StopwatchPage.qml:143 qml/timer/TimerPage.qml:46
+#: qml/timer/TimerPage.qml:95
 #, kde-format
 msgid "Pause"
 msgstr "विराम"
 
-#: qml/stopwatch/StopwatchPage.qml:142
+#: qml/stopwatch/StopwatchPage.qml:145
 #, kde-format
 msgid "Resume"
 msgstr "पुनर्प्रारम्भय"
 
-#: qml/stopwatch/StopwatchPage.qml:144 qml/timer/TimerPage.qml:45
-#: qml/timer/TimerPage.qml:94
+#: qml/stopwatch/StopwatchPage.qml:147 qml/timer/TimerPage.qml:46
+#: qml/timer/TimerPage.qml:95
 #, kde-format
 msgid "Start"
 msgstr "प्रारंभः"
 
-#: qml/stopwatch/StopwatchPage.qml:168 qml/stopwatch/StopwatchPage.qml:196
+#: qml/stopwatch/StopwatchPage.qml:171 qml/stopwatch/StopwatchPage.qml:199
 #, kde-format
 msgid "Lap"
 msgstr "उत्सङ्ग"
 
-#: qml/stopwatch/StopwatchPage.qml:204
+#: qml/stopwatch/StopwatchPage.qml:207
 #, kde-format
 msgid "Lap Time"
 msgstr "गोदकालः"
 
-#: qml/stopwatch/StopwatchPage.qml:211
+#: qml/stopwatch/StopwatchPage.qml:214
 #, kde-format
 msgid "Total"
 msgstr "कुल"
 
-#: qml/stopwatch/StopwatchPage.qml:294
+#: qml/stopwatch/StopwatchPage.qml:297
 #, kde-format
 msgid "#%1"
 msgstr "#%1"
@@ -449,7 +449,7 @@ msgstr "न स्थानानि प्राप्तानि"
 msgid "Add Location"
 msgstr "स्थानं योजयतु"
 
-#: qml/time/TimePage.qml:50
+#: qml/time/TimePage.qml:51
 #, kde-format
 msgid "Add"
 msgstr "संयोजयति"
@@ -579,24 +579,24 @@ msgctxt "@info:tooltip"
 msgid "Delete"
 msgstr "लुप्"
 
-#: qml/timer/TimerListPage.qml:28
+#: qml/timer/TimerListPage.qml:29
 #, kde-format
 msgid "New Timer"
 msgstr "New Timer"
 
-#: qml/timer/TimerListPage.qml:47
+#: qml/timer/TimerListPage.qml:48
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
 "functionality."
 msgstr "घटिका-दैत्यः न लब्धः । कृपया kclockd आरभत यत् समयनिर्धारक कार्यक्षमता भवतु ।"
 
-#: qml/timer/TimerListPage.qml:86
+#: qml/timer/TimerListPage.qml:87
 #, kde-format
 msgid "No timers configured"
 msgstr "कोऽपि समयनिर्धारकः विन्यस्तः नास्ति"
 
-#: qml/timer/TimerListPage.qml:91
+#: qml/timer/TimerListPage.qml:92
 #, kde-format
 msgid "Add timer"
 msgstr "समयनिर्धारकं योजयन्तु"
@@ -606,12 +606,12 @@ msgstr "समयनिर्धारकं योजयन्तु"
 msgid "New timer"
 msgstr "नवीन समयनिर्धारक"
 
-#: qml/timer/TimerPage.qml:58 qml/timer/TimerPage.qml:106
+#: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:107
 #, kde-format
 msgid "Delete"
 msgstr "लुप्"
 
-#: qml/timer/TimerPage.qml:67 qml/timer/TimerPage.qml:115
+#: qml/timer/TimerPage.qml:68 qml/timer/TimerPage.qml:116
 #, kde-format
 msgid "Loop Timer"
 msgstr "लूप टाइमर"
@@ -716,3 +716,6 @@ msgstr "एकनिमेषात् न्यूनेन समये अल
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "%1 मध्ये अलार्मः ध्वनिं करिष्यति"
+
+#~ msgid "Clock"
+#~ msgstr "घटिका"

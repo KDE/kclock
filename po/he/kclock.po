@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-25 00:44+0000\n"
+"POT-Creation-Date: 2025-03-27 00:44+0000\n"
 "PO-Revision-Date: 2024-07-09 08:01+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -28,30 +28,35 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde-l10n-he@kde.org"
 
-#: main.cpp:45
-#, kde-format
-msgid "Select opened page"
-msgstr "בחירת עמוד שנפתח"
-
-#: main.cpp:68
+#: main.cpp:69
 #, kde-format
 msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr "הגדרת התראות וקוצבי זמן, שימוש בשעון עצר וניהול שעונים עולמיים"
 
-#: main.cpp:70
+#: main.cpp:71
 #, kde-format
 msgid "© 2020-2024 KDE Community"
 msgstr "© 2020‏-2024 קהילת KDE"
 
-#: main.cpp:72
+#: main.cpp:73
 #, kde-format
 msgid "Devin Lin"
 msgstr "דווין לין"
 
-#: main.cpp:73
+#: main.cpp:74
 #, kde-format
 msgid "Han Young"
 msgstr "האן יאנג"
+
+#: main.cpp:80
+#, kde-format
+msgid "Select opened page"
+msgstr "בחירת עמוד שנפתח"
+
+#: main.cpp:81
+#, kde-format
+msgid "Explicitly open a new Clock window"
+msgstr ""
 
 #: qml/alarm/AlarmForm.qml:86
 #, kde-format
@@ -198,14 +203,14 @@ msgstr "מחיקה"
 msgid "Alarms"
 msgstr "התראות"
 
-#: qml/alarm/AlarmListPage.qml:36 qml/time/TimePage.qml:37
+#: qml/alarm/AlarmListPage.qml:36 qml/time/TimePage.qml:38
 #, kde-format
 msgid "Edit"
 msgstr "עריכה"
 
 #: qml/alarm/AlarmListPage.qml:45 qml/components/Sidebar.qml:138
-#: qml/settings/SettingsPage.qml:22 qml/stopwatch/StopwatchPage.qml:39
-#: qml/time/TimePage.qml:60 qml/timer/TimerListPage.qml:36
+#: qml/settings/SettingsPage.qml:22 qml/stopwatch/StopwatchPage.qml:40
+#: qml/time/TimePage.qml:61 qml/timer/TimerListPage.qml:37
 #, kde-format
 msgid "Settings"
 msgstr "הגדרות"
@@ -360,11 +365,6 @@ msgstr "לפני הצהריים"
 msgid "PM"
 msgstr "PM"
 
-#: qml/main.qml:23
-#, kde-format
-msgid "Clock"
-msgstr "שעון"
-
 #: qml/settings/SettingsPage.qml:34
 #, kde-format
 msgid "Time Format"
@@ -395,45 +395,45 @@ msgstr "על השעון"
 msgid "About KDE"
 msgstr "על KDE"
 
-#: qml/stopwatch/StopwatchPage.qml:138 qml/stopwatch/StopwatchPage.qml:168
-#: qml/timer/TimerPage.qml:52 qml/timer/TimerPage.qml:100
+#: qml/stopwatch/StopwatchPage.qml:141 qml/stopwatch/StopwatchPage.qml:171
+#: qml/timer/TimerPage.qml:53 qml/timer/TimerPage.qml:101
 #, kde-format
 msgid "Reset"
 msgstr "איפוס"
 
-#: qml/stopwatch/StopwatchPage.qml:140 qml/timer/TimerPage.qml:45
-#: qml/timer/TimerPage.qml:94
+#: qml/stopwatch/StopwatchPage.qml:143 qml/timer/TimerPage.qml:46
+#: qml/timer/TimerPage.qml:95
 #, kde-format
 msgid "Pause"
 msgstr "השהייה"
 
-#: qml/stopwatch/StopwatchPage.qml:142
+#: qml/stopwatch/StopwatchPage.qml:145
 #, kde-format
 msgid "Resume"
 msgstr "המשך"
 
-#: qml/stopwatch/StopwatchPage.qml:144 qml/timer/TimerPage.qml:45
-#: qml/timer/TimerPage.qml:94
+#: qml/stopwatch/StopwatchPage.qml:147 qml/timer/TimerPage.qml:46
+#: qml/timer/TimerPage.qml:95
 #, kde-format
 msgid "Start"
 msgstr "התחלה"
 
-#: qml/stopwatch/StopwatchPage.qml:168 qml/stopwatch/StopwatchPage.qml:196
+#: qml/stopwatch/StopwatchPage.qml:171 qml/stopwatch/StopwatchPage.qml:199
 #, kde-format
 msgid "Lap"
 msgstr "סיבוב"
 
-#: qml/stopwatch/StopwatchPage.qml:204
+#: qml/stopwatch/StopwatchPage.qml:207
 #, kde-format
 msgid "Lap Time"
 msgstr "זמן חזרה"
 
-#: qml/stopwatch/StopwatchPage.qml:211
+#: qml/stopwatch/StopwatchPage.qml:214
 #, kde-format
 msgid "Total"
 msgstr "סך הכול"
 
-#: qml/stopwatch/StopwatchPage.qml:294
+#: qml/stopwatch/StopwatchPage.qml:297
 #, kde-format
 msgid "#%1"
 msgstr "מס׳ %1"
@@ -448,7 +448,7 @@ msgstr "לא נמצאו מקומות"
 msgid "Add Location"
 msgstr "הוספת מקום"
 
-#: qml/time/TimePage.qml:50
+#: qml/time/TimePage.qml:51
 #, kde-format
 msgid "Add"
 msgstr "הוספה"
@@ -578,24 +578,24 @@ msgctxt "@info:tooltip"
 msgid "Delete"
 msgstr "מחיקה"
 
-#: qml/timer/TimerListPage.qml:28
+#: qml/timer/TimerListPage.qml:29
 #, kde-format
 msgid "New Timer"
 msgstr "קוצב זמן חדש"
 
-#: qml/timer/TimerListPage.qml:47
+#: qml/timer/TimerListPage.qml:48
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
 "functionality."
 msgstr "סוכן השעון לא נמצא. נא להפעיל את kclockd כדי שקוצבי הזמן יעבדו."
 
-#: qml/timer/TimerListPage.qml:86
+#: qml/timer/TimerListPage.qml:87
 #, kde-format
 msgid "No timers configured"
 msgstr "לא מוגדרים קוצבי זמן"
 
-#: qml/timer/TimerListPage.qml:91
+#: qml/timer/TimerListPage.qml:92
 #, kde-format
 msgid "Add timer"
 msgstr "הוספת קוצב זמן"
@@ -605,12 +605,12 @@ msgstr "הוספת קוצב זמן"
 msgid "New timer"
 msgstr "קוצב זמן חדש"
 
-#: qml/timer/TimerPage.qml:58 qml/timer/TimerPage.qml:106
+#: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:107
 #, kde-format
 msgid "Delete"
 msgstr "מחיקה"
 
-#: qml/timer/TimerPage.qml:67 qml/timer/TimerPage.qml:115
+#: qml/timer/TimerPage.qml:68 qml/timer/TimerPage.qml:116
 #, kde-format
 msgid "Loop Timer"
 msgstr "קוצב זמן שחוזר על עצמו"
@@ -721,6 +721,9 @@ msgstr "ההתראה תצלצל תוך פחות מדקה"
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "ההתראה תצלצל תוך %1"
+
+#~ msgid "Clock"
+#~ msgstr "שעון"
 
 #~ msgid "<b>Create New Timer</b>"
 #~ msgstr "<b>יצירת קוצב זמן חדש</b>"
