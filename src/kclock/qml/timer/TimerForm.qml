@@ -155,46 +155,4 @@ Kirigami.FormLayout {
         focus: true
         placeholderText: i18n("optional")
     }
-    RowLayout {
-        Layout.alignment: Qt.AlignHCenter
-        spacing: Kirigami.Units.smallSpacing
-        visible: repeater.count > 0
-        Connections {
-            target: repeater
-            function onCountChanged() {
-                // open presets every time a preset is added
-                showPresets = true;
-            }
-        }
-        
-        Button {
-            id: presetButton
-            text: showPresets ? i18n("Hide Presets") : i18n("Show Presets")
-            onClicked: showPresets = !showPresets
-        }
-        ToolButton {
-            icon.name: "delete"
-            text: i18n("Toggle Delete")
-            onClicked: showDelete = !showDelete
-            visible: showPresets
-            checkable: true
-            checked: false
-        }
-    }
-    Flow {
-        spacing: Kirigami.Units.smallSpacing
-        visible: showPresets && Kirigami.Settings.isMobile && repeater.count > 0
-        Layout.fillWidth: true
-
-        Repeater {
-            id: repeater
-            model: TimerPresetModel
-
-            Button {
-                text: showDelete ? "Delete" : preset.presetName
-                onClicked: showDelete ? TimerPresetModel.deletePreset(index) : loader.createTimer(timerForm.getDuration(), timerForm.name, timerForm.commandTimeout) & close();
-
-            }
-        }
-    }
 }

@@ -37,12 +37,32 @@ Kirigami.Dialog {
             id: timerForm
             Layout.fillWidth: true
         }
+        RowLayout {
+            Layout.alignment: Qt.AlignHCenter
+            spacing: Kirigami.Units.smallSpacing
+            visible: repeater.count > 0
+
+            Button {
+                id: presetButton
+                text: root.showPresets ? i18n("Hide Presets") : i18n("Show Presets")
+                onClicked: showPresets = !showPresets
+            }
+            ToolButton {
+                icon.name: "delete"
+                text: i18n("Toggle Delete")
+                onClicked: root.showDelete = !root.showDelete
+                visible: root.showPresets
+                checkable: true
+                checked: false
+            }
+        }
         Flow {
             spacing: Kirigami.Units.smallSpacing
             visible: showPresets
             Layout.fillWidth: true
 
             Repeater {
+                id: repeater
                 model: TimerPresetModel
 
                 Button {
@@ -59,6 +79,7 @@ Kirigami.Dialog {
             text: i18n("Save As Preset")
             onTriggered: {
                 TimerPresetModel.insertPreset(timerForm.name, timerForm.getDuration());
+                root.showPresets = true;
             }
         },
         Kirigami.Action {
