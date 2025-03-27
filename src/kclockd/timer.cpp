@@ -137,6 +137,7 @@ void Timer::setLength(int length)
         Q_EMIT lengthChanged();
 
         TimerModel::instance()->save();
+        reschedule();
     }
 }
 
