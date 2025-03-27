@@ -16,6 +16,9 @@ import kclock
 
 Kirigami.AbstractCard {
     id: root
+
+    signal editClicked()
+
     property Timer timer
     
     readonly property int length: timer ? timer.length : 1
@@ -179,6 +182,17 @@ Kirigami.AbstractCard {
                         text: i18nc("@info:tooltip", "Reset")
                         onClicked: root.timer.reset();
                         
+                        ToolTip.visible: hovered && text.length > 0
+                        ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
+                        ToolTip.text: text
+                    }
+                    ToolButton {
+                        icon.name: "edit-entry"
+                        display: AbstractButton.IconOnly
+                        text: i18nc("@info:tooltip", "Edit")
+                        enabled: !root.timer.running
+                        onClicked: root.editClicked()
+
                         ToolTip.visible: hovered && text.length > 0
                         ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
                         ToolTip.text: text

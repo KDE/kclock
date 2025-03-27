@@ -40,7 +40,13 @@ Kirigami.ScrollablePage {
     ]
 
     function addTimer() {
-        newTimerForm.open();
+        timerFormDialog.timer = null;
+        timerFormDialog.open();
+    }
+
+    function editTimer(timer) {
+        timerFormDialog.timer = timer;
+        timerFormDialog.open();
     }
 
     header: Kirigami.InlineMessage {
@@ -97,12 +103,14 @@ Kirigami.ScrollablePage {
 
         // create timer form
         TimerFormDialog {
-            id: newTimerForm
+            id: timerFormDialog
         }
 
         // timer card delegate
         delegate: TimerListDelegate {
             timer: model.timer
+
+            onEditClicked: root.editTimer(timer)
         }
     }
 }

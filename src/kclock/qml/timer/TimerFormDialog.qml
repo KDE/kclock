@@ -16,14 +16,23 @@ import kclock
 Kirigami.Dialog {
     id: root
 
-    function createTimer(duration, label, commandTimeout) {
-        TimerModel.addNew(duration, label, commandTimeout);
+    property Timer timer: null
+
+    function saveTimer(duration, label, commandTimeout) {
+        if (timer) {
+            timer.length = duration;
+            timer.label = label;
+            timer.commandTimeout = commandTimeout;
+            timer.reset();
+        } else {
+            TimerModel.addNew(duration, label, commandTimeout);
+        }
     }
 
     property bool showPresets: false
     property bool showDelete: false
 
-    title: i18n("Create timer")
+    title: timer ? i18nc("@title:window Edit timer", "Edit %1", timer.label) : i18nc("@title:window", "Create Timer")
     standardButtons: Dialog.NoButton
 
     topPadding: 0
@@ -31,6 +40,18 @@ Kirigami.Dialog {
     leftPadding: Kirigami.Units.gridUnit
     rightPadding: Kirigami.Units.gridUnit
     preferredWidth: Kirigami.Units.gridUnit * 20
+
+    onAboutToShow: {
+        if (root.timer) {
+            timerForm.setDuration(root.timer.length);
+            timerForm.name = timer.label;
+            timerForm.commandTimeout = timer.commandTimeout;
+        } else {
+            timerForm.setDuration(5 * 60); // 5 minutes default.
+            timerForm.name = i18n("Timer");
+            timerForm.commandTimeout = "";
+        }
+    }
 
     ColumnLayout {
         TimerForm {
@@ -67,7 +88,7 @@ Kirigami.Dialog {
 
                 Button {
                     text: showDelete ? "Delete" : preset.presetName
-                    onClicked: showDelete ? TimerPresetModel.deletePreset(index) : root.createTimer(timerForm.getDuration(), timerForm.name) & close();
+                    onClicked: showDelete ? TimerPresetModel.deletePreset(index) : root.saveTimer(preset.presetDuration, preset.presetName, "") & close();
                 }
             }
         }
@@ -88,10 +109,10 @@ Kirigami.Dialog {
             onTriggered: close()
         },
         Kirigami.Action {
-            icon.name: "dialog-ok"
-            text: i18n("Done")
+            icon.name: root.timer ? "document-save" : "dialog-ok"
+            text: root.timer ? i18nc("@action:button", "Save") : i18nc("@action:button", "Done")
             onTriggered: {
-                root.createTimer(timerForm.getDuration(), timerForm.name, timerForm.commandTimeout);
+                root.saveTimer(timerForm.getDuration(), timerForm.name, timerForm.commandTimeout);
                 close();
             }
         }

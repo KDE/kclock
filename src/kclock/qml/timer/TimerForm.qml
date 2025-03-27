@@ -20,9 +20,9 @@ Kirigami.FormLayout {
     property alias commandTimeout: commandTimeoutField.text
 
     function setDuration(duration) {
-        hours = duration / 60 / 60;
-        minutes = duration % (60 * 60) / 60;
-        seconds = duration % 60;
+        spinBoxHours.value = duration / 60 / 60;
+        spinBoxMinutes.value = duration % (60 * 60) / 60;
+        spinBoxSeconds.value = duration % 60;
     }
     function getDuration() {
         return spinBoxHours.value * 60 * 60 + spinBoxMinutes.value * 60 + spinBoxSeconds.value;
@@ -97,7 +97,6 @@ Kirigami.FormLayout {
         RowLayout {
             SpinBox {
                 id: spinBoxHours
-                value: 0 // default
                 Layout.preferredWidth: Kirigami.Units.gridUnit * 6
                 onActiveFocusChanged: {
                     if (activeFocus) {
@@ -113,7 +112,6 @@ Kirigami.FormLayout {
             SpinBox {
                 id: spinBoxMinutes
                 to: 59
-                value: 5 // default
                 Layout.preferredWidth: Kirigami.Units.gridUnit * 6
                 onActiveFocusChanged: {
                     if (activeFocus) {
@@ -129,7 +127,6 @@ Kirigami.FormLayout {
             SpinBox {
                 id: spinBoxSeconds
                 to: 59
-                value: 0 // default
                 Layout.preferredWidth: Kirigami.Units.gridUnit * 6
                 onActiveFocusChanged: {
                     if (activeFocus) {
@@ -145,7 +142,6 @@ Kirigami.FormLayout {
     TextField {
         id: label
         Kirigami.FormData.label: i18n("<b>Label:</b>")
-        text: i18n("Timer") // default
         focus: true
     }
     TextField {
