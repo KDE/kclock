@@ -50,6 +50,21 @@ Kirigami.ApplicationWindow {
     property bool isWidescreen: root.width >= 500
     onIsWidescreenChanged: changeNav(isWidescreen);
 
+    property Kirigami.Action settingsAction: Kirigami.Action {
+        readonly property Item page: root.getPage("Settings")
+
+        text: i18n("Settings")
+        icon.name: "settings-configure"
+        checked: root.pageStack.currentItem === page
+        shortcut: StandardKey.Preferences
+        enabled: !Kirigami.Settings.isMobile
+        onTriggered: {
+            if (root.pageStack.currentItem !== page) {
+                root.switchToPage(page, 0);
+            }
+        }
+    }
+
     Kirigami.PagePool {
         id: pagePool
     }

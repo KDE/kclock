@@ -130,21 +130,8 @@ Kirigami.OverlayDrawer {
         }
 
         Kirigami.NavigationTabButton {
-            property var page: applicationWindow().getPage("Settings")
-
             Layout.fillWidth: true
-            width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
-
-            text: i18n("Settings")
-            icon.name: "settings-configure"
-            checked: pageStack.currentItem === page
-            onClicked: {
-                if (applicationWindow().pageStack.currentItem !== page) {
-                    applicationWindow().switchToPage(page, 0);
-                } else {
-                    checked = Qt.binding(function() { return applicationWindow().pageStack.currentItem === page; });
-                }
-            }
+            action: applicationWindow().settingsAction
         }
     }
 }
