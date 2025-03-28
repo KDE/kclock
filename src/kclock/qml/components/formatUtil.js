@@ -18,15 +18,14 @@ function getRepeatFormat(dayOfWeek) {
     if (dayOfWeek == monday + tuesday + wednesday + thursday + friday)
         return i18n("Weekdays");
 
-    let str = "";
-    if (dayOfWeek & monday) str += i18n("Mon, ");
-    if (dayOfWeek & tuesday) str += i18n("Tue, ");
-    if (dayOfWeek & wednesday) str += i18n("Wed, ");
-    if (dayOfWeek & thursday) str += i18n("Thu, ");
-    if (dayOfWeek & friday) str += i18n("Fri, ");
-    if (dayOfWeek & saturday) str += i18n("Sat, ");
-    if (dayOfWeek & sunday) str += i18n("Sun, ");
-    return str.substring(0, str.length - 2);
+    let days = []
+    for (let day = 0; day < 7; ++day) {
+        if (dayOfWeek & (1 << day)) {
+            // 0 in QLocale is Sunday.
+            days.push(Qt.locale().standaloneDayName(day + 1, Locale.ShortFormat));
+        }
+    }
+    return days.join(i18n(", "));
 }
 
 // auxiliary function to convert 24 hours to 12
