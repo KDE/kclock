@@ -97,6 +97,7 @@ Kirigami.ScrollablePage {
 
         // mobile action
         FloatingActionButton {
+            text: i18nc("@action:button", "New Alarm")
             icon.name: "list-add"
             onClicked: root.addAlarm()
             visible: Kirigami.Settings.isMobile

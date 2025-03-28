@@ -239,6 +239,15 @@ Kirigami.ScrollablePage {
 
         // mobile action
         FloatingActionButton {
+            text: {
+                if (root.running) {
+                    return i18nc("@action:button", "Pause");
+                } else if (StopwatchTimer.paused) {
+                    return i18nc("@action:button", "Resume");
+                } else {
+                    return i18nc("@action:button", "Start");
+                }
+            }
             icon.name: root.running ? "chronometer-pause" : "chronometer-start"
             visible: Kirigami.Settings.isMobile
             onClicked: StopwatchTimer.toggle()

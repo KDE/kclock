@@ -75,6 +75,7 @@ Kirigami.ScrollablePage {
 
         // mobile action
         FloatingActionButton {
+            text: i18nc("@action:button", "New Timer")
             icon.name: "list-add"
             onClicked: root.addTimer()
             visible: Kirigami.Settings.isMobile

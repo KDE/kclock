@@ -74,4 +74,8 @@ T.RoundButton {
             implicitHeight: Kirigami.Units.iconSizes.smallMedium
         }
     }
+
+    Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
+    Controls.ToolTip.visible: Kirigami.Settings.tabletMode ? pressed : hovered
+    Controls.ToolTip.text: text
 }

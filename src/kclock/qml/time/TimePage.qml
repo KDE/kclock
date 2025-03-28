@@ -139,6 +139,7 @@ Kirigami.ScrollablePage {
 
         // mobile action
         FloatingActionButton {
+            text: i18nc("@action:button", "Add Location")
             icon.name: "globe"
             onClicked: root.openAddSheet()
             visible: Kirigami.Settings.isMobile
