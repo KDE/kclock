@@ -1,5 +1,6 @@
 // SPDX-FileCopyrightText: 2020 Han Young <hanyoung@protonmail.com>
 // SPDX-FileCopyrightText: 2020-2024 Devin Lin <devin@kde.org>
+// SPDX-FileCopyrightText: 2025 Kai Uwe Broulik <kde@broulik.de>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "stopwatchtimer.h"
@@ -17,56 +18,48 @@ StopwatchTimer *StopwatchTimer::instance()
 
 StopwatchTimer::StopwatchTimer(QObject *parent)
     : QObject(parent)
-    , m_timer{new QTimer{this}}
 {
-    connect(m_timer, &QTimer::timeout, this, &StopwatchTimer::timeChanged);
+    m_reportTimer.setInterval(STOPWATCH_DISPLAY_INTERVAL);
+    m_reportTimer.callOnTimeout(this, &StopwatchTimer::timeChanged);
 }
 
-bool StopwatchTimer::paused()
+bool StopwatchTimer::paused() const
 {
-    return m_paused;
+    return !m_elapsedTimer.isValid() && m_pausedTime.has_value();
 }
 
-bool StopwatchTimer::stopped()
+bool StopwatchTimer::stopped() const
 {
-    return m_stopped;
+    return !m_elapsedTimer.isValid() && !m_pausedTime.has_value();
 }
 
 void StopwatchTimer::toggle()
 {
-    if (m_stopped) {
-        // start (from zero)
-        m_stopped = false;
-        m_paused = false;
-        m_timerStartStamp = QDateTime::currentMSecsSinceEpoch();
-
-        Q_EMIT stoppedChanged();
-        m_timer->start(STOPWATCH_DISPLAY_INTERVAL);
-    } else if (m_paused) {
-        // unpause
-        m_paused = false;
-        m_pausedElapsed += QDateTime::currentMSecsSinceEpoch() - m_pausedStamp;
-
-        m_timer->start(STOPWATCH_DISPLAY_INTERVAL);
+    if (m_elapsedTimer.isValid()) {
+        // pause.
+        m_pausedTime = m_pausedTime.value_or(0) + m_elapsedTimer.elapsed();
+        m_elapsedTimer.invalidate();
+        Q_EMIT pausedChanged();
+        m_reportTimer.stop();
+        Q_EMIT timeChanged();
     } else {
-        // pause
-        m_paused = true;
-        m_pausedStamp = QDateTime::currentMSecsSinceEpoch();
-
-        m_timer->stop();
+        // start or resume.
+        m_elapsedTimer.start();
+        if (m_pausedTime) {
+            Q_EMIT pausedChanged();
+        } else {
+            Q_EMIT stoppedChanged();
+        }
+        m_reportTimer.start();
+        Q_EMIT timeChanged();
     }
-
-    Q_EMIT pausedChanged();
 }
 
 void StopwatchTimer::reset()
 {
-    m_timer->stop();
-
-    m_timerStartStamp = 0;
-    m_pausedElapsed = 0;
-    m_stopped = true;
-    m_paused = false;
+    m_elapsedTimer.invalidate();
+    m_pausedTime.reset();
+    m_reportTimer.stop();
 
     Q_EMIT stoppedChanged();
     Q_EMIT pausedChanged();
@@ -77,15 +70,14 @@ void StopwatchTimer::reset()
 
 long long StopwatchTimer::elapsedTime() const
 {
-    qint64 currentTime = QDateTime::currentMSecsSinceEpoch();
-
-    if (m_stopped) {
-        return 0;
-    } else if (m_paused) {
-        return currentTime - m_timerStartStamp - m_pausedElapsed - (currentTime - m_pausedStamp);
-    } else {
-        return currentTime - m_timerStartStamp - m_pausedElapsed;
+    long long time = 0;
+    if (m_elapsedTimer.isValid()) {
+        time += m_elapsedTimer.elapsed();
     }
+    if (m_pausedTime) {
+        time += *m_pausedTime;
+    }
+    return time;
 }
 
 qint64 StopwatchTimer::hours() const

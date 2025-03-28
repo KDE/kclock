@@ -1,12 +1,15 @@
 // SPDX-FileCopyrightText: 2020 Han Young <hanyoung@protonmail.com>
 // SPDX-FileCopyrightText: 2020-2024 Devin Lin <devin@kde.org>
+// SPDX-FileCopyrightText: 2025 Kai Uwe Broulik <kde@broulik.de>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #pragma once
 
-#include <QDateTime>
+#include <QElapsedTimer>
 #include <QObject>
 #include <QTimer>
+
+#include <optional>
 
 // class for the timer that manages the stopwatch
 class StopwatchTimer : public QObject
@@ -24,8 +27,8 @@ public:
     static StopwatchTimer *instance();
     explicit StopwatchTimer(QObject *parent = nullptr);
 
-    bool paused();
-    bool stopped();
+    bool paused() const;
+    bool stopped() const;
 
     qint64 hours() const;
     qint64 minutes() const;
@@ -48,20 +51,9 @@ Q_SIGNALS:
     void resetTriggered();
 
 private:
-    // when the stopwatch started
-    qint64 m_timerStartStamp = 0;
+    QElapsedTimer m_elapsedTimer;
 
-    // when the last pause started
-    qint64 m_pausedStamp = 0;
+    std::optional<qint64> m_pausedTime;
 
-    // how much total time has been spent paused since the stopwatch started
-    qint64 m_pausedElapsed = 0;
-
-    // whether the stopwatch is fully stopped (laps cleared, start at 0)
-    bool m_stopped = true;
-
-    // whether the stopwatch is stopped or paused
-    bool m_paused = false;
-
-    QTimer *m_timer = nullptr;
+    QTimer m_reportTimer;
 };
