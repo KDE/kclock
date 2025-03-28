@@ -66,6 +66,7 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
     DBusAddons
     Crash
     StatusNotifierItem
+    Svg
 )
 if (BUILD_PLASMOID)
     find_package(Plasma REQUIRED)

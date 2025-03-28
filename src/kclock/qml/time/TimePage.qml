@@ -85,10 +85,15 @@ Kirigami.ScrollablePage {
         }
 
         header: RowLayout {
+            id: headerRow
+
+            readonly property bool showAnalogClock: width > clockItemLoader.width + digitalColumn.width + spacing + Kirigami.Units.gridUnit
+
             width: listView.width - (listView.ScrollBar.vertical ? listView.ScrollBar.vertical.width : 0)
             height: clockItemLoader.height + Kirigami.Units.gridUnit
 
             RowLayout {
+                id: clockRow
                 Layout.alignment: Qt.AlignHCenter
                 Layout.maximumWidth: Kirigami.Units.gridUnit * 23
 
@@ -100,18 +105,11 @@ Kirigami.ScrollablePage {
                     width: Math.round(clockRadius * 2 + Kirigami.Units.gridUnit * 0.5)
                     height: clockRadius * 2 + Kirigami.Units.gridUnit
 
-                    // reload clock when page opens for animation
                     asynchronous: true
-                    Connections {
-                        target: applicationWindow().pageStack
-                        function onCurrentItemChanged(): void {
-                            clockItemLoader.active = applicationWindow().pageStack.currentItem == applicationWindow().getPage("Time");
-                        }
-                    }
+                    visible: headerRow.showAnalogClock
 
                     // clock item
                     sourceComponent: Item {
-                        id: clockItem
                         AnalogClock {
                             id: analogClock
                             anchors.centerIn: parent
@@ -121,27 +119,31 @@ Kirigami.ScrollablePage {
                     }
                 }
 
-                Item { Layout.fillWidth: true }
+                Item { // spacer
+                    Layout.fillWidth: true
+                    visible: headerRow.showAnalogClock
+                }
 
                 // right side - digital clock + location
                 ColumnLayout {
+                    id: digitalColumn
                     Layout.alignment: Qt.AlignHCenter
-                    Layout.rightMargin: Kirigami.Units.gridUnit
+                    Layout.rightMargin: headerRow.showAnalogClock ? Kirigami.Units.gridUnit : 0
                     Label {
                         id: clockLabel
-                        Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
-                        horizontalAlignment: Text.AlignHCenter
+                        Layout.alignment: headerRow.showAnalogClock ? Qt.AlignRight : Qt.AlignHCenter
                         font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 3)
                         font.weight: Font.Normal
                         opacity: 0.7
                         text: KClockFormat.currentTime
-                        color: Kirigami.Theme.textColor
+                        color: Kirigami.ColorUtils.tintWithAlpha(Kirigami.Theme.textColor, Kirigami.Theme.activeTextColor, 0.5)
                     }
                     Label {
-                        Layout.alignment: Qt.AlignRight
+                        height: clockLabel.height // ensure they have the same height for alignment
+                        Layout.alignment: headerRow.showAnalogClock ? Qt.AlignRight : Qt.AlignHCenter
                         font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 1)
-                        text: UtilModel.tzName
                         font.weight: Font.Bold
+                        text: UtilModel.tzName
                         opacity: 0.9
                     }
                 }

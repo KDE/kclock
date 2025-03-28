@@ -7,6 +7,13 @@
 #include <QObject>
 #include <QString>
 
+#include <KSvg/ImageSet>
+
+namespace KSvg
+{
+class Svg;
+};
+
 class UtilModel : public QObject
 {
     Q_OBJECT
@@ -35,9 +42,14 @@ public:
     Q_INVOKABLE qint64 msToSmallPart(qint64 ms) const; // hundredths of second
     Q_INVOKABLE QString displayTwoDigits(const qint64 &amount);
 
+    Q_INVOKABLE void applyPlasmaImageSet(KSvg::Svg *svg);
+
 private:
     bool isLocale24HourTime() const;
 
 Q_SIGNALS:
     void use24HourTimeChanged();
+
+private:
+    KSvg::ImageSet *m_plasmaImageSet = nullptr;
 };
