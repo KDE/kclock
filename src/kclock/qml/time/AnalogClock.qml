@@ -12,6 +12,8 @@ import QtQuick.Controls
 
 import org.kde.ksvg as KSvg
 
+import kclock as KClock
+
 Item {
     id: representation
 
@@ -22,45 +24,81 @@ Item {
     property int realHours
     property int realMinutes
     property int realSeconds
+
+    onVisibleChanged: {
+        if (visible) {
+            updateRealTime();
+            showAnimation.restart();
+        }
+    }
+
+    Component.onCompleted: {
+        updateRealTime();
+        showAnimation.start();
+    }
+
+    function updateRealTime() {
+        const date = new Date();
+        realHours = date.getHours();
+        realMinutes = date.getMinutes();
+        realSeconds = date.getSeconds();
+    }
     
     // update time each second
     Timer {
-        running: true
+        running: representation.visible
         repeat: true
         triggeredOnStart: true
         interval: 1000
-        onTriggered: {
-            let date = new Date();
-            realHours = date.getHours();
-            realMinutes = date.getMinutes();
-            realSeconds = date.getSeconds();
-        }
+        onTriggered: representation.updateRealTime()
     }
     
     // open dial hands moving animation
-    NumberAnimation on hours {
-        id: hoursShowAnimation
-        to: new Date().getHours()
-        running: true
-        duration: 1500
-        easing.type: Easing.OutQuint
-        onFinished: representation.hours = Qt.binding(() => representation.realHours)
-    }
-    NumberAnimation on minutes {
-        id: minutesShowAnimation
-        to: new Date().getMinutes()
-        running: true
-        duration: 1500
-        easing.type: Easing.OutQuint
-        onFinished: representation.minutes = Qt.binding(() => representation.realMinutes)
-    }
-    NumberAnimation on seconds {
-        id: secondsShowAnimation
-        to: new Date().getSeconds()
-        running: true
-        duration: 1500
-        easing.type: Easing.OutQuint
-        onFinished: representation.seconds = Qt.binding(() => representation.realSeconds)
+    SequentialAnimation {
+        id: showAnimation
+
+        ScriptAction {
+            script: clock.animateHands = false
+        }
+
+        ParallelAnimation {
+            NumberAnimation {
+                target: representation
+                property: "hours"
+                from: 0
+                to: representation.realHours
+                duration: 1500
+                easing.type: Easing.OutQuint
+            }
+            NumberAnimation {
+                target: representation
+                property: "minutes"
+                from: 0
+                to: representation.realMinutes
+                duration: 1500
+                easing.type: Easing.OutQuint
+            }
+            NumberAnimation {
+                target: representation
+                property: "seconds"
+                from: 0
+                // By the time the animation finishes, the clock will have advanced a bit.
+                to: (representation.realSeconds + 1) % 60
+                duration: 1500
+                easing.type: Easing.OutQuint
+            }
+        }
+
+        ScriptAction {
+            script: {
+                representation.updateRealTime();
+                clock.animateHands = true;
+
+                representation.hours = Qt.binding(() => representation.realHours);
+                representation.minutes = Qt.binding(() => representation.realMinutes);
+                representation.seconds = Qt.binding(() => representation.realSeconds);
+            }
+        }
     }
 
     KSvg.Svg {
@@ -94,6 +132,10 @@ Item {
             naturalHorizontalHandShadowOffset = estimateHorizontalHandShadowOffset();
             naturalVerticalHandShadowOffset = estimateVerticalHandShadowOffset();
         }
+
+        Component.onCompleted: {
+            KClock.UtilModel.applyPlasmaImageSet(this);
+        }
     }
 
     Item {
@@ -104,6 +146,7 @@ Item {
             Math.round(clockSvg.naturalHorizontalHandShadowOffset * svgScale) + Math.round(clockSvg.naturalHorizontalHandShadowOffset * svgScale) % 2
         readonly property double verticalShadowOffset:
             Math.round(clockSvg.naturalVerticalHandShadowOffset * svgScale) + Math.round(clockSvg.naturalVerticalHandShadowOffset * svgScale) % 2
+        property bool animateHands: false
 
         KSvg.SvgItem {
             id: face
@@ -119,16 +162,16 @@ Item {
             rotationCenterHintId: "hint-hourhandshadow-rotation-center-offset"
             horizontalRotationOffset: clock.horizontalShadowOffset
             verticalRotationOffset: clock.verticalShadowOffset
-            rotation: 180 + hours * 30 + (minutes/2)
+            rotation: 180 + representation.hours * 30 + (minutes/2)
             svgScale: clock.svgScale
-            animateRotation: !hoursShowAnimation.running
+            animateRotation: clock.animateHands
         }
         AnalogClockHand {
             elementId: "HourHand"
             rotationCenterHintId: "hint-hourhand-rotation-center-offset"
-            rotation: 180 + hours * 30 + (minutes/2)
+            rotation: 180 + representation.hours * 30 + (minutes/2)
             svgScale: clock.svgScale
-            animateRotation: !hoursShowAnimation.running
+            animateRotation: clock.animateHands
         }
 
         AnalogClockHand {
@@ -136,16 +179,16 @@ Item {
             rotationCenterHintId: "hint-minutehandshadow-rotation-center-offset"
             horizontalRotationOffset: clock.horizontalShadowOffset
             verticalRotationOffset: clock.verticalShadowOffset
-            rotation: 180 + minutes * 6
+            rotation: 180 + representation.minutes * 6
             svgScale: clock.svgScale
-            animateRotation: !minutesShowAnimation.running
+            animateRotation: clock.animateHands
         }
         AnalogClockHand {
             elementId: "MinuteHand"
             rotationCenterHintId: "hint-minutehand-rotation-center-offset"
-            rotation: 180 + minutes * 6
+            rotation: 180 + representation.minutes * 6
             svgScale: clock.svgScale
-            animateRotation: !minutesShowAnimation.running
+            animateRotation: clock.animateHands
         }
 
         AnalogClockHand {
@@ -153,16 +196,16 @@ Item {
             rotationCenterHintId: "hint-secondhandshadow-rotation-center-offset"
             horizontalRotationOffset: clock.horizontalShadowOffset
             verticalRotationOffset: clock.verticalShadowOffset
-            rotation: 180 + seconds * 6
+            rotation: 180 + representation.seconds * 6
             svgScale: clock.svgScale
-            animateRotation: !secondsShowAnimation.running
+            animateRotation: clock.animateHands
         }
         AnalogClockHand {
             elementId: "SecondHand"
             rotationCenterHintId: "hint-secondhand-rotation-center-offset"
-            rotation: 180 + seconds * 6
+            rotation: 180 + representation.seconds * 6
             svgScale: clock.svgScale
-            animateRotation: !secondsShowAnimation.running
+            animateRotation: clock.animateHands
         }
 
         KSvg.SvgItem {

@@ -10,7 +10,11 @@
 #include <QTimeZone>
 #include <QUrl>
 
+#include <KConfigGroup>
 #include <KLocalizedString>
+#include <KSharedConfig>
+
+#include <KSvg/Svg>
 
 UtilModel *UtilModel::instance()
 {
@@ -138,6 +142,19 @@ qint64 UtilModel::msToSmallPart(qint64 ms) const
 QString UtilModel::displayTwoDigits(const qint64 &amount)
 {
     return QStringLiteral("%1").arg(amount, 2, 10, QLatin1Char('0'));
+}
+
+void UtilModel::applyPlasmaImageSet(KSvg::Svg *svg)
+{
+    if (!m_plasmaImageSet) {
+        m_plasmaImageSet = new KSvg::ImageSet(this);
+        m_plasmaImageSet->setBasePath(QStringLiteral("plasma/desktoptheme"));
+    }
+
+    KSharedConfig::Ptr plasmaRc = KSharedConfig::openConfig(QStringLiteral("plasmarc"));
+    const auto themeGroup = plasmaRc->group(QStringLiteral("Theme"));
+    m_plasmaImageSet->setImageSetName(themeGroup.readEntry("name", QString()));
+    svg->setImageSet(m_plasmaImageSet);
 }
 
 #include "moc_utilmodel.cpp"

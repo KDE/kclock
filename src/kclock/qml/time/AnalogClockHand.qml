@@ -14,7 +14,7 @@ import org.kde.ksvg as KSvg
 KSvg.SvgItem {
     id: handRoot
 
-    property bool animateRotation: true
+    property alias animateRotation: angleBehavior.enabled
 
     property alias rotation: rotation.angle
     property double svgScale
@@ -58,11 +58,11 @@ KSvg.SvgItem {
             y: handRoot.verticalRotationCenter
         }
         Behavior on angle {
+            id: angleBehavior
             RotationAnimation {
-                id: anim
-                duration: animateRotation ? 400 : 0
+                duration: 400
                 direction: RotationAnimation.Clockwise
-                easing.type: animateRotation ? Easing.OutElastic : Easing.Linear
+                easing.type: Easing.OutElastic
                 easing.overshoot: 0.5
             }
         }
