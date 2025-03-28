@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kclock package.
 #
-# SPDX-FileCopyrightText: 2022, 2023, 2024 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-27 00:44+0000\n"
-"PO-Revision-Date: 2024-07-10 00:36+0300\n"
+"POT-Creation-Date: 2025-03-28 00:45+0000\n"
+"PO-Revision-Date: 2025-03-27 20:14+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.07.70\n"
+"X-Generator: Lokalize 25.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -56,7 +56,7 @@ msgstr "Açılan sayfayı seç"
 #: main.cpp:81
 #, kde-format
 msgid "Explicitly open a new Clock window"
-msgstr ""
+msgstr "Yeni bir saat penceresi aç"
 
 #: qml/alarm/AlarmForm.qml:86
 #, kde-format
@@ -396,13 +396,13 @@ msgid "About KDE"
 msgstr "KDE Hakkında"
 
 #: qml/stopwatch/StopwatchPage.qml:141 qml/stopwatch/StopwatchPage.qml:171
-#: qml/timer/TimerPage.qml:53 qml/timer/TimerPage.qml:101
+#: qml/timer/TimerPage.qml:54 qml/timer/TimerPage.qml:102
 #, kde-format
 msgid "Reset"
 msgstr "Sıfırla"
 
 #: qml/stopwatch/StopwatchPage.qml:143 qml/timer/TimerPage.qml:46
-#: qml/timer/TimerPage.qml:95
+#: qml/timer/TimerPage.qml:96
 #, kde-format
 msgid "Pause"
 msgstr "Duraklat"
@@ -413,7 +413,7 @@ msgid "Resume"
 msgstr "Sürdür"
 
 #: qml/stopwatch/StopwatchPage.qml:147 qml/timer/TimerPage.qml:46
-#: qml/timer/TimerPage.qml:95
+#: qml/timer/TimerPage.qml:96
 #, kde-format
 msgid "Start"
 msgstr "Başlat"
@@ -488,52 +488,52 @@ msgstr "1 sa"
 msgid "<b>Duration:</b>"
 msgstr "<b>Süre:</b>"
 
-#: qml/timer/TimerForm.qml:104
+#: qml/timer/TimerForm.qml:109
 #, kde-format
 msgid "hours"
 msgstr "saat"
 
-#: qml/timer/TimerForm.qml:115
+#: qml/timer/TimerForm.qml:125
 #, kde-format
 msgid "minutes"
 msgstr "dakika"
 
-#: qml/timer/TimerForm.qml:126
+#: qml/timer/TimerForm.qml:141
 #, kde-format
 msgid "seconds"
 msgstr "saniye"
 
-#: qml/timer/TimerForm.qml:132
+#: qml/timer/TimerForm.qml:147
 #, kde-format
 msgid "<b>Label:</b>"
 msgstr "<b>Etiket:</b>"
 
-#: qml/timer/TimerForm.qml:133
+#: qml/timer/TimerForm.qml:148
 #, kde-format
 msgid "Timer"
 msgstr "Sayaç"
 
-#: qml/timer/TimerForm.qml:138
+#: qml/timer/TimerForm.qml:153
 #, kde-format
 msgid "<b>Command at timeout:</b>"
 msgstr "<b>Zaman aşımındaki komut:</b>"
 
-#: qml/timer/TimerForm.qml:141
+#: qml/timer/TimerForm.qml:156
 #, kde-format
 msgid "optional"
 msgstr "isteğe bağlı"
 
-#: qml/timer/TimerForm.qml:157
+#: qml/timer/TimerForm.qml:172
 #, kde-format
 msgid "Hide Presets"
 msgstr "Önayarları Gizle"
 
-#: qml/timer/TimerForm.qml:157
+#: qml/timer/TimerForm.qml:172
 #, kde-format
 msgid "Show Presets"
 msgstr "Önayarları Göster"
 
-#: qml/timer/TimerForm.qml:162
+#: qml/timer/TimerForm.qml:177
 #, kde-format
 msgid "Toggle Delete"
 msgstr "Silmeyi Aç/Kapat"
@@ -548,31 +548,31 @@ msgstr "Sayaç Oluştur"
 msgid "Save As Preset"
 msgstr "Önayar Olarak Kaydet"
 
-#: qml/timer/TimerListDelegate.qml:145
+#: qml/timer/TimerListDelegate.qml:158
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Loop timer"
 msgstr "Sayacı döngüle"
 
-#: qml/timer/TimerListDelegate.qml:156
+#: qml/timer/TimerListDelegate.qml:169
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Pause"
 msgstr "Duraklat"
 
-#: qml/timer/TimerListDelegate.qml:156
+#: qml/timer/TimerListDelegate.qml:169
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start"
 msgstr "Başlat"
 
-#: qml/timer/TimerListDelegate.qml:166
+#: qml/timer/TimerListDelegate.qml:179
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset"
 msgstr "Sıfırla"
 
-#: qml/timer/TimerListDelegate.qml:176
+#: qml/timer/TimerListDelegate.qml:189
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete"
@@ -607,12 +607,12 @@ msgstr "Sayaç Ekle"
 msgid "New timer"
 msgstr "Yeni Sayaç"
 
-#: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:107
+#: qml/timer/TimerPage.qml:60 qml/timer/TimerPage.qml:108
 #, kde-format
 msgid "Delete"
 msgstr "Sil"
 
-#: qml/timer/TimerPage.qml:68 qml/timer/TimerPage.qml:116
+#: qml/timer/TimerPage.qml:69 qml/timer/TimerPage.qml:117
 #, kde-format
 msgid "Loop Timer"
 msgstr "Sayacı Döngüle"

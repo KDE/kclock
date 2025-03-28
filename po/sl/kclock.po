@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-27 00:44+0000\n"
-"PO-Revision-Date: 2024-07-09 06:39+0200\n"
+"POT-Creation-Date: 2025-03-28 00:45+0000\n"
+"PO-Revision-Date: 2025-03-27 07:01+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -57,7 +57,7 @@ msgstr "Izberi odprto stran"
 #: main.cpp:81
 #, kde-format
 msgid "Explicitly open a new Clock window"
-msgstr ""
+msgstr "Izrecno odpri novo okno ure"
 
 #: qml/alarm/AlarmForm.qml:86
 #, kde-format
@@ -399,13 +399,13 @@ msgid "About KDE"
 msgstr "O KDE"
 
 #: qml/stopwatch/StopwatchPage.qml:141 qml/stopwatch/StopwatchPage.qml:171
-#: qml/timer/TimerPage.qml:53 qml/timer/TimerPage.qml:101
+#: qml/timer/TimerPage.qml:54 qml/timer/TimerPage.qml:102
 #, kde-format
 msgid "Reset"
 msgstr "Ponovno nastavi"
 
 #: qml/stopwatch/StopwatchPage.qml:143 qml/timer/TimerPage.qml:46
-#: qml/timer/TimerPage.qml:95
+#: qml/timer/TimerPage.qml:96
 #, kde-format
 msgid "Pause"
 msgstr "Premor"
@@ -416,7 +416,7 @@ msgid "Resume"
 msgstr "Nadaljuj"
 
 #: qml/stopwatch/StopwatchPage.qml:147 qml/timer/TimerPage.qml:46
-#: qml/timer/TimerPage.qml:95
+#: qml/timer/TimerPage.qml:96
 #, kde-format
 msgid "Start"
 msgstr "Začetek"
@@ -491,52 +491,52 @@ msgstr "1 h"
 msgid "<b>Duration:</b>"
 msgstr "<b>Trajanje:</b>"
 
-#: qml/timer/TimerForm.qml:104
+#: qml/timer/TimerForm.qml:109
 #, kde-format
 msgid "hours"
 msgstr "ur"
 
-#: qml/timer/TimerForm.qml:115
+#: qml/timer/TimerForm.qml:125
 #, kde-format
 msgid "minutes"
 msgstr "minut"
 
-#: qml/timer/TimerForm.qml:126
+#: qml/timer/TimerForm.qml:141
 #, kde-format
 msgid "seconds"
 msgstr "sekund"
 
-#: qml/timer/TimerForm.qml:132
+#: qml/timer/TimerForm.qml:147
 #, kde-format
 msgid "<b>Label:</b>"
 msgstr "<b>Oznaka:</b>"
 
-#: qml/timer/TimerForm.qml:133
+#: qml/timer/TimerForm.qml:148
 #, kde-format
 msgid "Timer"
 msgstr "Odštevalnik časa"
 
-#: qml/timer/TimerForm.qml:138
+#: qml/timer/TimerForm.qml:153
 #, kde-format
 msgid "<b>Command at timeout:</b>"
 msgstr "<b>Ukaz ob poteku časa:</b>"
 
-#: qml/timer/TimerForm.qml:141
+#: qml/timer/TimerForm.qml:156
 #, kde-format
 msgid "optional"
 msgstr "neobvezno"
 
-#: qml/timer/TimerForm.qml:157
+#: qml/timer/TimerForm.qml:172
 #, kde-format
 msgid "Hide Presets"
 msgstr "Skrij prednastavitve"
 
-#: qml/timer/TimerForm.qml:157
+#: qml/timer/TimerForm.qml:172
 #, kde-format
 msgid "Show Presets"
 msgstr "Prikaži prednastavitve"
 
-#: qml/timer/TimerForm.qml:162
+#: qml/timer/TimerForm.qml:177
 #, kde-format
 msgid "Toggle Delete"
 msgstr "Preklopi brisanje"
@@ -551,31 +551,31 @@ msgstr "Ustvari merilnik časa"
 msgid "Save As Preset"
 msgstr "Shrani kot prednastavitev"
 
-#: qml/timer/TimerListDelegate.qml:145
+#: qml/timer/TimerListDelegate.qml:158
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Loop timer"
 msgstr "Časomerilnik v zanki"
 
-#: qml/timer/TimerListDelegate.qml:156
+#: qml/timer/TimerListDelegate.qml:169
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Pause"
 msgstr "Premor"
 
-#: qml/timer/TimerListDelegate.qml:156
+#: qml/timer/TimerListDelegate.qml:169
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start"
 msgstr "Začetek"
 
-#: qml/timer/TimerListDelegate.qml:166
+#: qml/timer/TimerListDelegate.qml:179
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset"
 msgstr "Ponovno nastavi"
 
-#: qml/timer/TimerListDelegate.qml:176
+#: qml/timer/TimerListDelegate.qml:189
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete"
@@ -610,12 +610,12 @@ msgstr "Dodaj merilnik časa"
 msgid "New timer"
 msgstr "Nov merilnik časa"
 
-#: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:107
+#: qml/timer/TimerPage.qml:60 qml/timer/TimerPage.qml:108
 #, kde-format
 msgid "Delete"
 msgstr "Zbriši"
 
-#: qml/timer/TimerPage.qml:68 qml/timer/TimerPage.qml:116
+#: qml/timer/TimerPage.qml:69 qml/timer/TimerPage.qml:117
 #, kde-format
 msgid "Loop Timer"
 msgstr "Časomerilnik v zanki"

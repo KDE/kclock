@@ -4,13 +4,13 @@
 # This file is distributed under the same license as the kclock package.
 #
 # Automatically generated, 2022.
-# SPDX-FileCopyrightText: 2022, 2023, 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-27 00:44+0000\n"
-"PO-Revision-Date: 2024-07-12 04:13+0900\n"
+"POT-Creation-Date: 2025-03-28 00:45+0000\n"
+"PO-Revision-Date: 2025-03-27 21:46+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.04.70\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -58,7 +58,7 @@ msgstr "選擇開啟頁面"
 #: main.cpp:81
 #, kde-format
 msgid "Explicitly open a new Clock window"
-msgstr ""
+msgstr "明示開啟新的時鐘視窗"
 
 #: qml/alarm/AlarmForm.qml:86
 #, kde-format
@@ -395,13 +395,13 @@ msgid "About KDE"
 msgstr "關於 KDE"
 
 #: qml/stopwatch/StopwatchPage.qml:141 qml/stopwatch/StopwatchPage.qml:171
-#: qml/timer/TimerPage.qml:53 qml/timer/TimerPage.qml:101
+#: qml/timer/TimerPage.qml:54 qml/timer/TimerPage.qml:102
 #, kde-format
 msgid "Reset"
 msgstr "重設"
 
 #: qml/stopwatch/StopwatchPage.qml:143 qml/timer/TimerPage.qml:46
-#: qml/timer/TimerPage.qml:95
+#: qml/timer/TimerPage.qml:96
 #, kde-format
 msgid "Pause"
 msgstr "暫停"
@@ -412,7 +412,7 @@ msgid "Resume"
 msgstr "恢復"
 
 #: qml/stopwatch/StopwatchPage.qml:147 qml/timer/TimerPage.qml:46
-#: qml/timer/TimerPage.qml:95
+#: qml/timer/TimerPage.qml:96
 #, kde-format
 msgid "Start"
 msgstr "開始"
@@ -487,52 +487,52 @@ msgstr "1 小時"
 msgid "<b>Duration:</b>"
 msgstr "<b>時長：</b>"
 
-#: qml/timer/TimerForm.qml:104
+#: qml/timer/TimerForm.qml:109
 #, kde-format
 msgid "hours"
 msgstr "小時"
 
-#: qml/timer/TimerForm.qml:115
+#: qml/timer/TimerForm.qml:125
 #, kde-format
 msgid "minutes"
 msgstr "分"
 
-#: qml/timer/TimerForm.qml:126
+#: qml/timer/TimerForm.qml:141
 #, kde-format
 msgid "seconds"
 msgstr "秒"
 
-#: qml/timer/TimerForm.qml:132
+#: qml/timer/TimerForm.qml:147
 #, kde-format
 msgid "<b>Label:</b>"
 msgstr "<b>標籤：</b>"
 
-#: qml/timer/TimerForm.qml:133
+#: qml/timer/TimerForm.qml:148
 #, kde-format
 msgid "Timer"
 msgstr "計時器"
 
-#: qml/timer/TimerForm.qml:138
+#: qml/timer/TimerForm.qml:153
 #, kde-format
 msgid "<b>Command at timeout:</b>"
 msgstr "<b>完成時執行命令：</b>"
 
-#: qml/timer/TimerForm.qml:141
+#: qml/timer/TimerForm.qml:156
 #, kde-format
 msgid "optional"
 msgstr "可選"
 
-#: qml/timer/TimerForm.qml:157
+#: qml/timer/TimerForm.qml:172
 #, kde-format
 msgid "Hide Presets"
 msgstr "隱藏預設檔"
 
-#: qml/timer/TimerForm.qml:157
+#: qml/timer/TimerForm.qml:172
 #, kde-format
 msgid "Show Presets"
 msgstr "顯示預設檔"
 
-#: qml/timer/TimerForm.qml:162
+#: qml/timer/TimerForm.qml:177
 #, kde-format
 msgid "Toggle Delete"
 msgstr "切換刪除"
@@ -547,31 +547,31 @@ msgstr "建立計時器"
 msgid "Save As Preset"
 msgstr "儲存為預設檔"
 
-#: qml/timer/TimerListDelegate.qml:145
+#: qml/timer/TimerListDelegate.qml:158
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Loop timer"
 msgstr "循環計時器"
 
-#: qml/timer/TimerListDelegate.qml:156
+#: qml/timer/TimerListDelegate.qml:169
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Pause"
 msgstr "暫停"
 
-#: qml/timer/TimerListDelegate.qml:156
+#: qml/timer/TimerListDelegate.qml:169
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start"
 msgstr "開始"
 
-#: qml/timer/TimerListDelegate.qml:166
+#: qml/timer/TimerListDelegate.qml:179
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset"
 msgstr "重設"
 
-#: qml/timer/TimerListDelegate.qml:176
+#: qml/timer/TimerListDelegate.qml:189
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete"
@@ -604,12 +604,12 @@ msgstr "新增計時器"
 msgid "New timer"
 msgstr "新計時器"
 
-#: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:107
+#: qml/timer/TimerPage.qml:60 qml/timer/TimerPage.qml:108
 #, kde-format
 msgid "Delete"
 msgstr "刪除"
 
-#: qml/timer/TimerPage.qml:68 qml/timer/TimerPage.qml:116
+#: qml/timer/TimerPage.qml:69 qml/timer/TimerPage.qml:117
 #, kde-format
 msgid "Loop Timer"
 msgstr "循環計時器"

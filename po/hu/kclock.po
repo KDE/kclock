@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-27 00:44+0000\n"
+"POT-Creation-Date: 2025-03-28 00:45+0000\n"
 "PO-Revision-Date: 2024-08-17 21:29+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -397,13 +397,13 @@ msgid "About KDE"
 msgstr "A KDE névjegye"
 
 #: qml/stopwatch/StopwatchPage.qml:141 qml/stopwatch/StopwatchPage.qml:171
-#: qml/timer/TimerPage.qml:53 qml/timer/TimerPage.qml:101
+#: qml/timer/TimerPage.qml:54 qml/timer/TimerPage.qml:102
 #, kde-format
 msgid "Reset"
 msgstr "Visszaállítás"
 
 #: qml/stopwatch/StopwatchPage.qml:143 qml/timer/TimerPage.qml:46
-#: qml/timer/TimerPage.qml:95
+#: qml/timer/TimerPage.qml:96
 #, kde-format
 msgid "Pause"
 msgstr "Szünet"
@@ -414,7 +414,7 @@ msgid "Resume"
 msgstr "Folytatás"
 
 #: qml/stopwatch/StopwatchPage.qml:147 qml/timer/TimerPage.qml:46
-#: qml/timer/TimerPage.qml:95
+#: qml/timer/TimerPage.qml:96
 #, kde-format
 msgid "Start"
 msgstr "Indítás"
@@ -489,52 +489,52 @@ msgstr "1 ó"
 msgid "<b>Duration:</b>"
 msgstr "<b>Időtartam:</b>"
 
-#: qml/timer/TimerForm.qml:104
+#: qml/timer/TimerForm.qml:109
 #, kde-format
 msgid "hours"
 msgstr "óra"
 
-#: qml/timer/TimerForm.qml:115
+#: qml/timer/TimerForm.qml:125
 #, kde-format
 msgid "minutes"
 msgstr "perc"
 
-#: qml/timer/TimerForm.qml:126
+#: qml/timer/TimerForm.qml:141
 #, kde-format
 msgid "seconds"
 msgstr "másodperc"
 
-#: qml/timer/TimerForm.qml:132
+#: qml/timer/TimerForm.qml:147
 #, kde-format
 msgid "<b>Label:</b>"
 msgstr "<b>Címke:</b>"
 
-#: qml/timer/TimerForm.qml:133
+#: qml/timer/TimerForm.qml:148
 #, kde-format
 msgid "Timer"
 msgstr "Időzítő"
 
-#: qml/timer/TimerForm.qml:138
+#: qml/timer/TimerForm.qml:153
 #, kde-format
 msgid "<b>Command at timeout:</b>"
 msgstr "<b>Lejáratkor végrehajtandó parancs:</b>"
 
-#: qml/timer/TimerForm.qml:141
+#: qml/timer/TimerForm.qml:156
 #, kde-format
 msgid "optional"
 msgstr "opcionális"
 
-#: qml/timer/TimerForm.qml:157
+#: qml/timer/TimerForm.qml:172
 #, kde-format
 msgid "Hide Presets"
 msgstr "Előbeállítások elrejtése"
 
-#: qml/timer/TimerForm.qml:157
+#: qml/timer/TimerForm.qml:172
 #, kde-format
 msgid "Show Presets"
 msgstr "Előbeállítások megjelenítése"
 
-#: qml/timer/TimerForm.qml:162
+#: qml/timer/TimerForm.qml:177
 #, kde-format
 msgid "Toggle Delete"
 msgstr "Törlés kapcsolása"
@@ -549,31 +549,31 @@ msgstr "Időzítő létrehozása"
 msgid "Save As Preset"
 msgstr "Mentés előbeállításként"
 
-#: qml/timer/TimerListDelegate.qml:145
+#: qml/timer/TimerListDelegate.qml:158
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Loop timer"
 msgstr "Ismétlés"
 
-#: qml/timer/TimerListDelegate.qml:156
+#: qml/timer/TimerListDelegate.qml:169
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Pause"
 msgstr "Szünet"
 
-#: qml/timer/TimerListDelegate.qml:156
+#: qml/timer/TimerListDelegate.qml:169
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start"
 msgstr "Indítás"
 
-#: qml/timer/TimerListDelegate.qml:166
+#: qml/timer/TimerListDelegate.qml:179
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset"
 msgstr "Visszaállítás"
 
-#: qml/timer/TimerListDelegate.qml:176
+#: qml/timer/TimerListDelegate.qml:189
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete"
@@ -608,12 +608,12 @@ msgstr "Időzítő hozzáadása"
 msgid "New timer"
 msgstr "Új időzítő"
 
-#: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:107
+#: qml/timer/TimerPage.qml:60 qml/timer/TimerPage.qml:108
 #, kde-format
 msgid "Delete"
 msgstr "Törlés"
 
-#: qml/timer/TimerPage.qml:68 qml/timer/TimerPage.qml:116
+#: qml/timer/TimerPage.qml:69 qml/timer/TimerPage.qml:117
 #, kde-format
 msgid "Loop Timer"
 msgstr "Ismétlés"

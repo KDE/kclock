@@ -3,15 +3,15 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2021, 2022, 2023, 2024.
+# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2021, 2022, 2023, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-27 00:44+0000\n"
-"PO-Revision-Date: 2024-07-09 07:33+0300\n"
+"POT-Creation-Date: 2025-03-28 00:45+0000\n"
+"PO-Revision-Date: 2025-03-27 09:00+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
-"Language-Team: Ukrainian\n"
+"Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -60,7 +60,7 @@ msgstr "Вибрати відкриту сторінку"
 #: main.cpp:81
 #, kde-format
 msgid "Explicitly open a new Clock window"
-msgstr ""
+msgstr "Явним чином відкрити вікно нового годинника"
 
 #: qml/alarm/AlarmForm.qml:86
 #, kde-format
@@ -402,13 +402,13 @@ msgid "About KDE"
 msgstr "Про KDE"
 
 #: qml/stopwatch/StopwatchPage.qml:141 qml/stopwatch/StopwatchPage.qml:171
-#: qml/timer/TimerPage.qml:53 qml/timer/TimerPage.qml:101
+#: qml/timer/TimerPage.qml:54 qml/timer/TimerPage.qml:102
 #, kde-format
 msgid "Reset"
 msgstr "Скинути"
 
 #: qml/stopwatch/StopwatchPage.qml:143 qml/timer/TimerPage.qml:46
-#: qml/timer/TimerPage.qml:95
+#: qml/timer/TimerPage.qml:96
 #, kde-format
 msgid "Pause"
 msgstr "Призупинити"
@@ -419,7 +419,7 @@ msgid "Resume"
 msgstr "Поновити"
 
 #: qml/stopwatch/StopwatchPage.qml:147 qml/timer/TimerPage.qml:46
-#: qml/timer/TimerPage.qml:95
+#: qml/timer/TimerPage.qml:96
 #, kde-format
 msgid "Start"
 msgstr "Запустити"
@@ -494,52 +494,52 @@ msgstr "1 год."
 msgid "<b>Duration:</b>"
 msgstr "<b>Тривалість:</b>"
 
-#: qml/timer/TimerForm.qml:104
+#: qml/timer/TimerForm.qml:109
 #, kde-format
 msgid "hours"
 msgstr "годин"
 
-#: qml/timer/TimerForm.qml:115
+#: qml/timer/TimerForm.qml:125
 #, kde-format
 msgid "minutes"
 msgstr "хвилин"
 
-#: qml/timer/TimerForm.qml:126
+#: qml/timer/TimerForm.qml:141
 #, kde-format
 msgid "seconds"
 msgstr "секунд"
 
-#: qml/timer/TimerForm.qml:132
+#: qml/timer/TimerForm.qml:147
 #, kde-format
 msgid "<b>Label:</b>"
 msgstr "<b>Мітка:</b>"
 
-#: qml/timer/TimerForm.qml:133
+#: qml/timer/TimerForm.qml:148
 #, kde-format
 msgid "Timer"
 msgstr "Таймер"
 
-#: qml/timer/TimerForm.qml:138
+#: qml/timer/TimerForm.qml:153
 #, kde-format
 msgid "<b>Command at timeout:</b>"
 msgstr "<b>Команда при перевищенні часу очікування:</b>"
 
-#: qml/timer/TimerForm.qml:141
+#: qml/timer/TimerForm.qml:156
 #, kde-format
 msgid "optional"
 msgstr "необов'язкове"
 
-#: qml/timer/TimerForm.qml:157
+#: qml/timer/TimerForm.qml:172
 #, kde-format
 msgid "Hide Presets"
 msgstr "Приховати шаблони"
 
-#: qml/timer/TimerForm.qml:157
+#: qml/timer/TimerForm.qml:172
 #, kde-format
 msgid "Show Presets"
 msgstr "Показати шаблони"
 
-#: qml/timer/TimerForm.qml:162
+#: qml/timer/TimerForm.qml:177
 #, kde-format
 msgid "Toggle Delete"
 msgstr "Перемкнути вилучення"
@@ -554,31 +554,31 @@ msgstr "Створити таймер"
 msgid "Save As Preset"
 msgstr "Зберегти як шаблон"
 
-#: qml/timer/TimerListDelegate.qml:145
+#: qml/timer/TimerListDelegate.qml:158
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Loop timer"
 msgstr "Таймер кіл"
 
-#: qml/timer/TimerListDelegate.qml:156
+#: qml/timer/TimerListDelegate.qml:169
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Pause"
 msgstr "Призупинити"
 
-#: qml/timer/TimerListDelegate.qml:156
+#: qml/timer/TimerListDelegate.qml:169
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start"
 msgstr "Запустити"
 
-#: qml/timer/TimerListDelegate.qml:166
+#: qml/timer/TimerListDelegate.qml:179
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset"
 msgstr "Скинути"
 
-#: qml/timer/TimerListDelegate.qml:176
+#: qml/timer/TimerListDelegate.qml:189
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete"
@@ -613,12 +613,12 @@ msgstr "Додати таймер"
 msgid "New timer"
 msgstr "Новий таймер"
 
-#: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:107
+#: qml/timer/TimerPage.qml:60 qml/timer/TimerPage.qml:108
 #, kde-format
 msgid "Delete"
 msgstr "Вилучити"
 
-#: qml/timer/TimerPage.qml:68 qml/timer/TimerPage.qml:116
+#: qml/timer/TimerPage.qml:69 qml/timer/TimerPage.qml:117
 #, kde-format
 msgid "Loop Timer"
 msgstr "Таймер кіл"
