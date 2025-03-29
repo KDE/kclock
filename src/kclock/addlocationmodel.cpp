@@ -49,7 +49,7 @@ void AddLocationModel::load()
         m_list.append(QTimeZone(id));
 
         if (shown) {
-            m_addedLocations.insert(QString::fromStdString(id.toStdString()));
+            m_addedLocations.insert(id);
         }
     }
 
@@ -67,13 +67,13 @@ QVariant AddLocationModel::data(const QModelIndex &index, int role) const
     if (!index.isValid())
         return QVariant();
 
-    auto tz = m_list[index.row()];
-    QString id = QString::fromStdString(tz.id().replace("_", " ").toStdString());
+    const QTimeZone &tz = m_list.at(index.row());
+    const QByteArray id = tz.id().replace("_", " ");
 
     switch (role) {
     case CityRole: {
-        auto split = id.split(QLatin1Char('/'));
-        return split[split.size() - 1];
+        const int lastSlashIdx = id.lastIndexOf('/');
+        return id.mid(lastSlashIdx + 1);
     }
     case CountryRole:
         return QLocale::territoryToString(tz.territory());
@@ -82,7 +82,7 @@ QVariant AddLocationModel::data(const QModelIndex &index, int role) const
     case IdRole:
         return id;
     case AddedRole:
-        return m_addedLocations.find(id) != m_addedLocations.end();
+        return m_addedLocations.contains(id);
     case CurrentTimeRole: {
         QDateTime time = QDateTime::currentDateTime();
         time = time.toTimeZone(tz);
@@ -133,11 +133,12 @@ void AddLocationSearchModel::setQuery(const QString &query)
     Q_EMIT queryChanged(query);
 }
 
-void AddLocationSearchModel::addLocation(int index)
+void AddLocationSearchModel::addLocation(int row)
 {
     auto config = KSharedConfig::openConfig();
     KConfigGroup timezoneGroup = config->group(TZ_CFG_GROUP);
-    QString ianaId = data(this->index(index, 0), AddLocationModel::IdRole).toString().replace(QStringLiteral(" "), QStringLiteral("_"));
+    const QModelIndex locationIndex = index(row, 0);
+    const QString ianaId = locationIndex.data(AddLocationModel::IdRole).toString().replace(QStringLiteral(" "), QStringLiteral("_"));
     timezoneGroup.writeEntry(ianaId, true);
     config->sync();
 

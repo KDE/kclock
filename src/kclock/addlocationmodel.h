@@ -44,7 +44,7 @@ public Q_SLOTS:
 
 private:
     QList<QTimeZone> m_list;
-    QSet<QString> m_addedLocations;
+    QSet<QByteArray> m_addedLocations;
 };
 
 class AddLocationSearchModel : public QSortFilterProxyModel
@@ -62,7 +62,7 @@ public:
     void setQuery(const QString &query);
     Q_SIGNAL void queryChanged(const QString &query);
 
-    Q_INVOKABLE void addLocation(int index);
+    Q_INVOKABLE void addLocation(int row);
 
 protected:
     bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const override;
