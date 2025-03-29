@@ -11,15 +11,13 @@ import QtQuick.Shapes 1.12
 
 import org.kde.kirigami as Kirigami
 
-Rectangle {
+Item {
     id: root
     property int timerDuration
     property int timerElapsed
     property bool timerRunning
     
     signal requestAddMinute()
-    
-    color: "transparent"
     
     function getCircleRadius(): double {
         const totalHeight = heading.height + timeLabels.height + addMinuteButton.height;
