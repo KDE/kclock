@@ -36,6 +36,7 @@ QCommandLineParser *createParser()
 
 int main(int argc, char *argv[])
 {
+    QApplication::setDesktopSettingsAware(false);
     QApplication app(argc, argv);
 
     KLocalizedString::setApplicationDomain("kclockd");
