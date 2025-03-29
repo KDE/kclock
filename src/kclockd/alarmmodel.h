@@ -42,6 +42,7 @@ public Q_SLOTS:
     void wakeupCallback(int cookie);
 
 private Q_SLOTS:
+    void notifierItemActivated();
     void updateNotifierItem(quint64 time); // update notify icon in systemtray
 
 private:
