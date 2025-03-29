@@ -114,8 +114,23 @@ AddLocationSearchModel::AddLocationSearchModel(QObject *parent)
 {
     setFilterCaseSensitivity(Qt::CaseInsensitive);
     setSourceModel(AddLocationModel::instance());
-    setFilterRole(AddLocationModel::IdRole);
     sort(0);
+}
+
+QString AddLocationSearchModel::query() const
+{
+    return m_query;
+}
+
+void AddLocationSearchModel::setQuery(const QString &query)
+{
+    if (m_query == query) {
+        return;
+    }
+
+    m_query = query;
+    invalidateFilter();
+    Q_EMIT queryChanged(query);
 }
 
 void AddLocationSearchModel::addLocation(int index)
@@ -128,6 +143,23 @@ void AddLocationSearchModel::addLocation(int index)
 
     AddLocationModel::instance()->load();
     SavedLocationsModel::instance()->load();
+}
+
+bool AddLocationSearchModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
+{
+    if (!m_query.isEmpty()) {
+        const QModelIndex sourceIndex = sourceModel()->index(source_row, 0, source_parent);
+
+        const QString timezoneId = sourceIndex.data(AddLocationModel::IdRole).toString();
+        const QString city = sourceIndex.data(AddLocationModel::CityRole).toString();
+        const QString country = sourceIndex.data(AddLocationModel::CountryRole).toString();
+        if (!timezoneId.contains(m_query, Qt::CaseInsensitive) && !city.contains(m_query, Qt::CaseInsensitive)
+            && !country.contains(m_query, Qt::CaseInsensitive)) {
+            return false;
+        }
+    }
+
+    return true;
 }
 
 bool AddLocationSearchModel::lessThan(const QModelIndex &left, const QModelIndex &right) const

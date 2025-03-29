@@ -51,13 +51,23 @@ class AddLocationSearchModel : public QSortFilterProxyModel
 {
     Q_OBJECT
 
+    Q_PROPERTY(QString query READ query WRITE setQuery NOTIFY queryChanged)
+
 public:
     static AddLocationSearchModel *instance();
 
     explicit AddLocationSearchModel(QObject *parent = nullptr);
 
+    QString query() const;
+    void setQuery(const QString &query);
+    Q_SIGNAL void queryChanged(const QString &query);
+
     Q_INVOKABLE void addLocation(int index);
 
 protected:
+    bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const override;
     bool lessThan(const QModelIndex &left, const QModelIndex &right) const override;
+
+private:
+    QString m_query;
 };

@@ -17,11 +17,7 @@ import kclock
 ListView {
     id: root
 
-    property string filterText: ""
-
     signal closeRequested()
-
-    Component.onCompleted: root.filterText = "";
 
     currentIndex: -1
     reuseItems: true
@@ -37,10 +33,14 @@ ListView {
             Component.onCompleted: forceActiveFocus(Qt.PopupFocusReason)
 
             onTextChanged: {
-                AddLocationSearchModel.setFilterFixedString(text);
-                root.filterText = text;
                 forceActiveFocus();
                 focus = true;
+            }
+
+            Binding {
+                target: AddLocationSearchModel
+                property: "query"
+                value: searchField.text
             }
         }
     }
