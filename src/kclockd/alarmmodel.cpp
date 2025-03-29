@@ -18,6 +18,8 @@
 #include <QDBusReply>
 #include <QDebug>
 #include <QLocale>
+#include <QProcess>
+#include <QStandardPaths>
 
 AlarmModel *AlarmModel::instance()
 {
@@ -216,7 +218,23 @@ void AlarmModel::initNotifierItem()
         m_item->setStandardActionsEnabled(false);
         m_item->setCategory(KStatusNotifierItem::SystemServices);
         m_item->setStatus(KStatusNotifierItem::Passive);
+        connect(m_item, &KStatusNotifierItem::activateRequested, this, &AlarmModel::notifierItemActivated);
     }
+}
+
+void AlarmModel::notifierItemActivated()
+{
+    // Don't want to pull in KIO just for CommandLauncherJob...
+    QProcess process;
+    process.setProgram(QStandardPaths::findExecutable(QStringLiteral("kclock")));
+    process.setArguments({QStringLiteral("--page"), QStringLiteral("Alarms")});
+    process.setProcessChannelMode(QProcess::ForwardedChannels);
+
+    QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+    env.insert(QStringLiteral("XDG_ACTIVATION_TOKEN"), m_item->providedToken());
+    process.setProcessEnvironment(env);
+
+    process.startDetached();
 }
 
 void AlarmModel::updateNotifierItem(quint64 time)
