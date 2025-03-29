@@ -41,6 +41,7 @@ public:
 
 public Q_SLOTS:
     void load();
+    void updateAddedLocations();
 
 private:
     QList<QTimeZone> m_list;

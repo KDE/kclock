@@ -44,7 +44,7 @@ Q_INVOKABLE void SavedLocationsModel::removeLocation(int index)
     timezoneGroup.deleteEntry(ianaId);
     config->sync();
 
-    AddLocationModel::instance()->load();
+    AddLocationModel::instance()->updateAddedLocations();
 
     beginRemoveRows(QModelIndex(), index, index);
     m_timeZones.erase(m_timeZones.begin() + index);

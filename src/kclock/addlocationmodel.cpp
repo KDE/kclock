@@ -39,21 +39,48 @@ void AddLocationModel::load()
     beginResetModel();
 
     m_list.clear();
+    m_addedLocations.clear();
 
     auto config = KSharedConfig::openConfig();
     KConfigGroup timezoneGroup = config->group(TZ_CFG_GROUP);
 
-    // add other configured time zones
-    for (QByteArray id : QTimeZone::availableTimeZoneIds()) {
-        bool shown = timezoneGroup.readEntry(id.data(), false);
+    const auto timeZoneIds = QTimeZone::availableTimeZoneIds();
+    m_list.reserve(timeZoneIds.count());
+    for (const QByteArray &id : timeZoneIds) {
         m_list.append(QTimeZone(id));
 
+        const bool shown = timezoneGroup.readEntry(id.constData(), false);
         if (shown) {
             m_addedLocations.insert(id);
         }
     }
 
     endResetModel();
+}
+
+void AddLocationModel::updateAddedLocations()
+{
+    const KConfigGroup timezoneGroup = KSharedConfig::openConfig()->group(TZ_CFG_GROUP);
+    for (int i = 0; i < m_list.count(); ++i) {
+        const QTimeZone &timeZone = m_list.at(i);
+        const QByteArray timeZoneId = timeZone.id();
+
+        const bool wasShown = m_addedLocations.contains(timeZoneId);
+        const bool shown = timezoneGroup.readEntry(timeZoneId.constData(), false);
+
+        if (shown == wasShown) {
+            continue;
+        }
+
+        if (shown && !wasShown) {
+            m_addedLocations.insert(timeZoneId);
+        } else if (!shown && wasShown) {
+            m_addedLocations.remove(timeZoneId);
+        }
+
+        const QModelIndex changedIndex = index(i, 0);
+        Q_EMIT dataChanged(changedIndex, changedIndex, {AddLocationModel::AddedRole});
+    }
 }
 
 int AddLocationModel::rowCount(const QModelIndex &parent) const
@@ -142,7 +169,7 @@ void AddLocationSearchModel::addLocation(int row)
     timezoneGroup.writeEntry(ianaId, true);
     config->sync();
 
-    AddLocationModel::instance()->load();
+    AddLocationModel::instance()->updateAddedLocations();
     SavedLocationsModel::instance()->load();
 }
 

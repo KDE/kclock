@@ -61,8 +61,13 @@ ListView {
         required property string city
         required property string country
         required property string currentTime
+        required property bool added
 
         text: city
+        enabled: !added
+        // TODO Fix RoundedItemDelegate to not highlight disabled entries.
+        highlighted: enabled && delegate.ListView.isCurrentItem
+        hoverEnabled: enabled && !Kirigami.Settings.isMobile
 
         onClicked: {
             AddLocationSearchModel.addLocation(index);
@@ -76,6 +81,13 @@ ListView {
                 itemDelegate: delegate
                 subtitle: delegate.country
                 Layout.fillWidth: true
+            }
+
+            Kirigami.Icon {
+                Layout.preferredWidth: Kirigami.Units.iconSizes.smallMedium
+                Layout.preferredHeight: Kirigami.Units.iconSizes.smallMedium
+                source: delegate.added ? "dialog-ok-symbolic" : ""
+                visible: valid
             }
 
             Label {
