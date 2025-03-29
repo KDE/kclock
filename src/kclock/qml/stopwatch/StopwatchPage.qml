@@ -50,72 +50,77 @@ Kirigami.ScrollablePage {
 
         // clock display
         Item {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.alignment: Qt.AlignHCenter
-            width: timeLabels.implicitWidth
-            height: timeLabels.implicitHeight
+            Layout.fillWidth: true
+            height: timeLabels.implicitHeight + lapText.implicitHeight
 
-            // toggle when clicked
-            MouseArea {
-                anchors.fill: timeLabels
-                onClicked: StopwatchTimer.toggle()
-            }
-
-            Row {
-                id: timeLabels
+            Column {
                 anchors.horizontalCenter: parent.horizontalCenter
-                spacing: Math.round(Kirigami.Units.smallSpacing / 2)
+                y: Math.round((parent.height - height) / 2)
+                Behavior on y {
+                    NumberAnimation { duration: Kirigami.Units.longDuration; easing.type: Easing.InOutQuad }
+                }
 
-                Label {
-                    id: text
-                    text: formatDuration() + "."
-                    font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 4.75)
-                    font.weight: Font.ExtraLight
+                // toggle when clicked
+                MouseArea {
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    width: timeLabels.implicitWidth
+                    height: timeLabels.implicitHeight
+                    onClicked: StopwatchTimer.toggle()
 
-                    function formatDuration() : string {
-                        // only show hours if we have passed an hour
-                        if (StopwatchTimer.hours === '00') {
-                            return "%1:%2".arg(StopwatchTimer.minutes).arg(StopwatchTimer.seconds);
-                        } else {
-                            return "%1:%2:%3".arg(StopwatchTimer.hours).arg(StopwatchTimer.minutes).arg(StopwatchTimer.seconds);
+                    Row {
+                        id: timeLabels
+                        spacing: Math.round(Kirigami.Units.smallSpacing / 2)
+
+                        Label {
+                            id: text
+                            text: formatDuration() + "."
+                            font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 4.75)
+                            font.weight: Font.ExtraLight
+
+                            function formatDuration() : string {
+                                // only show hours if we have passed an hour
+                                if (StopwatchTimer.hours === '00') {
+                                    return "%1:%2".arg(StopwatchTimer.minutes).arg(StopwatchTimer.seconds);
+                                } else {
+                                    return "%1:%2:%3".arg(StopwatchTimer.hours).arg(StopwatchTimer.minutes).arg(StopwatchTimer.seconds);
+                                }
+                            }
+                        }
+                        Label {
+                            id: secondsText
+                            anchors.baseline: text.baseline
+                            text: StopwatchTimer.small
+                            font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 3.75)
+                            font.weight: Font.ExtraLight
                         }
                     }
                 }
+
+                // elapsed duration for a lap
                 Label {
-                    id: secondsText
-                    anchors.baseline: text.baseline
-                    text: StopwatchTimer.small
-                    font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 3.75)
-                    font.weight: Font.ExtraLight
-                }
-            }
-        }
+                    id: lapText
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    visible: listView.count > 0
+                    opacity: 0.8
 
-        // elapsed duration for a lap
-        Label {
-            id: lapText
-            Layout.fillWidth: true
-            horizontalAlignment: Text.AlignHCenter
+                    font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 1.1)
+                    font.weight: Font.Bold
 
-            visible: listView.count > 0
-            opacity: 0.8
+                    text: {
+                        const duration = StopwatchTimer.elapsedTime - StopwatchModel.mostRecentLapTime;
 
-            font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 1.1)
-            font.weight: Font.Bold
+                        const hours = UtilModel.displayTwoDigits(UtilModel.msToHoursPart(duration));
+                        const minutes = UtilModel.displayTwoDigits(UtilModel.msToMinutesPart(duration));
+                        const seconds = UtilModel.displayTwoDigits(UtilModel.msToSecondsPart(duration));
+                        const small = UtilModel.displayTwoDigits(UtilModel.msToSmallPart(duration));
 
-            text: {
-                const duration = StopwatchTimer.elapsedTime - StopwatchModel.mostRecentLapTime;
-
-                const hours = UtilModel.displayTwoDigits(UtilModel.msToHoursPart(duration));
-                const minutes = UtilModel.displayTwoDigits(UtilModel.msToMinutesPart(duration));
-                const seconds = UtilModel.displayTwoDigits(UtilModel.msToSecondsPart(duration));
-                const small = UtilModel.displayTwoDigits(UtilModel.msToSmallPart(duration));
-
-                // only show hours if we have passed an hour
-                if (hours === '00') {
-                    return "%1:%2.%3".arg(minutes).arg(seconds).arg(small);
-                } else {
-                    return "%1:%2:%3.%4".arg(hours).arg(minutes).arg(seconds).arg(small);
+                        // only show hours if we have passed an hour
+                        if (hours === '00') {
+                            return "%1:%2.%3".arg(minutes).arg(seconds).arg(small);
+                        } else {
+                            return "%1:%2:%3.%4".arg(hours).arg(minutes).arg(seconds).arg(small);
+                        }
+                    }
                 }
             }
         }
@@ -128,55 +133,65 @@ Kirigami.ScrollablePage {
 
             Item { Layout.fillWidth: true }
 
-            // on mobile -> reset button
-            // otherwise -> start/stop button
-            Button {
-                implicitHeight: Kirigami.Units.gridUnit * 2
-                implicitWidth: Kirigami.Units.gridUnit * 6
-                Layout.alignment: Qt.AlignHCenter
+            Item {
+                Layout.preferredWidth: Kirigami.Units.gridUnit * 6
+                Layout.preferredHeight: startButton.implicitHeight
 
-                icon.name: Kirigami.Settings.isMobile ? "chronometer-reset" : (root.running ? "chronometer-pause" : "chronometer-start")
-                text: {
-                    if (Kirigami.Settings.isMobile) {
-                        return i18n("Reset");
-                    } else if (root.running) {
-                        return i18n("Pause");
-                    } else if (StopwatchTimer.paused) {
-                        return i18n("Resume")
-                    } else {
-                        return i18n("Start");
-                    }
-                }
+                // on mobile -> reset button
+                // otherwise -> start/stop button
+                Button {
+                    id: startButton
+                    anchors.centerIn: parent
+                    width: Math.max(Kirigami.Units.gridUnit * 6, implicitWidth)
 
-                onClicked: {
-                    if (Kirigami.Settings.isMobile) {
-                        StopwatchTimer.reset();
-                    } else {
-                        StopwatchTimer.toggle();
+                    icon.name: Kirigami.Settings.isMobile ? "chronometer-reset" : (root.running ? "chronometer-pause" : "chronometer-start")
+                    text: {
+                        if (Kirigami.Settings.isMobile) {
+                            return i18n("Reset");
+                        } else if (root.running) {
+                            return i18n("Pause");
+                        } else if (StopwatchTimer.paused) {
+                            return i18n("Resume")
+                        } else {
+                            return i18n("Start");
+                        }
                     }
-                    focus = false; // prevent highlight
+
+                    onClicked: {
+                        if (Kirigami.Settings.isMobile) {
+                            StopwatchTimer.reset();
+                        } else {
+                            StopwatchTimer.toggle();
+                        }
+                        focus = false; // prevent highlight
+                    }
                 }
             }
 
             Item { Layout.fillWidth: true }
 
-            // on desktop & paused -> reset button
-            // otherwise -> lap button
-            Button {
-                implicitHeight: Kirigami.Units.gridUnit * 2
-                implicitWidth: Kirigami.Units.gridUnit * 6
-                Layout.alignment: Qt.AlignHCenter
+            Item {
+                Layout.preferredWidth: Kirigami.Units.gridUnit * 6
+                Layout.preferredHeight: resetButton.implicitHeight
 
-                icon.name: (!Kirigami.Settings.isMobile && !root.running) ? "chronometer-reset" : "chronometer-lap";
-                text: (!Kirigami.Settings.isMobile && !root.running) ? i18n("Reset") : i18n("Lap");
+                // on desktop & paused -> reset button
+                // otherwise -> lap button
+                Button {
+                    id: resetButton
+                    anchors.centerIn: parent
+                    width: Math.max(Kirigami.Units.gridUnit * 6, implicitWidth)
 
-                onClicked: {
-                    if (!Kirigami.Settings.isMobile && !root.running) {
-                        StopwatchTimer.reset();
-                    } else {
-                        StopwatchModel.addLap();
+                    icon.name: (!Kirigami.Settings.isMobile && !root.running) ? "chronometer-reset" : "chronometer-lap";
+                    text: (!Kirigami.Settings.isMobile && !root.running) ? i18n("Reset") : i18n("Lap");
+
+                    onClicked: {
+                        if (!Kirigami.Settings.isMobile && !root.running) {
+                            StopwatchTimer.reset();
+                        } else {
+                            StopwatchModel.addLap();
+                        }
+                        focus = false; // prevent highlight
                     }
-                    focus = false; // prevent highlight
                 }
             }
 
