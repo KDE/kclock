@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-28 00:45+0000\n"
+"POT-Creation-Date: 2025-03-29 00:45+0000\n"
 "PO-Revision-Date: 2024-07-09 23:18+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -177,12 +177,11 @@ msgid "New Alarm"
 msgstr "Alarma berria"
 
 #: qml/alarm/AlarmFormPage.qml:39 qml/alarm/AlarmFormPage.qml:62
-#: qml/timer/TimerFormDialog.qml:71
 #, kde-format
 msgid "Done"
 msgstr "Eginda"
 
-#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormDialog.qml:66
+#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormDialog.qml:108
 #, kde-format
 msgid "Cancel"
 msgstr "Utzi"
@@ -211,7 +210,7 @@ msgstr "Alarmak"
 msgid "Edit"
 msgstr "Editatu"
 
-#: qml/alarm/AlarmListPage.qml:45 qml/components/Sidebar.qml:138
+#: qml/alarm/AlarmListPage.qml:45 qml/main.qml:56
 #: qml/settings/SettingsPage.qml:22 qml/stopwatch/StopwatchPage.qml:40
 #: qml/time/TimePage.qml:61 qml/timer/TimerListPage.qml:37
 #, kde-format
@@ -237,12 +236,19 @@ msgstr "Ez da alarmarik konfiguratu"
 msgid "Add alarm"
 msgstr "Gehitu alarma"
 
-#: qml/alarm/AlarmListPage.qml:116
+#: qml/alarm/AlarmListPage.qml:100
+#, fuzzy, kde-format
+#| msgid "New Alarm"
+msgctxt "@action:button"
+msgid "New Alarm"
+msgstr "Alarma berria"
+
+#: qml/alarm/AlarmListPage.qml:117
 #, kde-format
 msgid "alarm"
 msgstr "alarma"
 
-#: qml/alarm/AlarmListPage.qml:116
+#: qml/alarm/AlarmListPage.qml:117
 #, kde-format
 msgid "Deleted %1"
 msgstr "Ezabatu %1"
@@ -325,40 +331,10 @@ msgstr "Egunero"
 msgid "Weekdays"
 msgstr "Astegunetan"
 
-#: qml/components/formatUtil.js:22
+#: qml/components/formatUtil.js:28 utilmodel.cpp:78
 #, kde-format
-msgid "Mon, "
-msgstr "Asl, "
-
-#: qml/components/formatUtil.js:23
-#, kde-format
-msgid "Tue, "
-msgstr "Asr, "
-
-#: qml/components/formatUtil.js:24
-#, kde-format
-msgid "Wed, "
-msgstr "Asz, "
-
-#: qml/components/formatUtil.js:25
-#, kde-format
-msgid "Thu, "
-msgstr "Osg, "
-
-#: qml/components/formatUtil.js:26
-#, kde-format
-msgid "Fri, "
-msgstr "Osr, "
-
-#: qml/components/formatUtil.js:27
-#, kde-format
-msgid "Sat, "
-msgstr "Lar, "
-
-#: qml/components/formatUtil.js:28
-#, kde-format
-msgid "Sun, "
-msgstr "Iga, "
+msgid ", "
+msgstr ", "
 
 #: qml/components/TimePicker.qml:93
 #, kde-format
@@ -438,7 +414,28 @@ msgstr "Itzuliko denbora"
 msgid "Total"
 msgstr "Guztira"
 
-#: qml/stopwatch/StopwatchPage.qml:297
+#: qml/stopwatch/StopwatchPage.qml:244
+#, fuzzy, kde-format
+#| msgid "Pause"
+msgctxt "@action:button"
+msgid "Pause"
+msgstr "Eten"
+
+#: qml/stopwatch/StopwatchPage.qml:246
+#, fuzzy, kde-format
+#| msgid "Resume"
+msgctxt "@action:button"
+msgid "Resume"
+msgstr "Berrekin"
+
+#: qml/stopwatch/StopwatchPage.qml:248
+#, fuzzy, kde-format
+#| msgid "Start"
+msgctxt "@action:button"
+msgid "Start"
+msgstr "Abiarazi"
+
+#: qml/stopwatch/StopwatchPage.qml:306
 #, kde-format
 msgid "#%1"
 msgstr "#%1"
@@ -457,6 +454,13 @@ msgstr "Gehitu kokalekua"
 #, kde-format
 msgid "Add"
 msgstr "Gehitu"
+
+#: qml/time/TimePage.qml:142
+#, fuzzy, kde-format
+#| msgid "Add Location"
+msgctxt "@action:button"
+msgid "Add Location"
+msgstr "Gehitu kokalekua"
 
 #: qml/timer/PresetDurationButton.qml:23 qml/timer/TimerForm.qml:39
 #, kde-format
@@ -493,91 +497,121 @@ msgstr "ordu 1"
 msgid "<b>Duration:</b>"
 msgstr "<b>Iraupena:</b>"
 
-#: qml/timer/TimerForm.qml:109
+#: qml/timer/TimerForm.qml:108
 #, kde-format
 msgid "hours"
 msgstr "ordu"
 
-#: qml/timer/TimerForm.qml:125
+#: qml/timer/TimerForm.qml:123
 #, kde-format
 msgid "minutes"
 msgstr "minutu"
 
-#: qml/timer/TimerForm.qml:141
+#: qml/timer/TimerForm.qml:138
 #, kde-format
 msgid "seconds"
 msgstr "segundo"
 
-#: qml/timer/TimerForm.qml:147
+#: qml/timer/TimerForm.qml:144
 #, kde-format
 msgid "<b>Label:</b>"
 msgstr "<b>Etiketa</b>"
 
-#: qml/timer/TimerForm.qml:148
-#, kde-format
-msgid "Timer"
-msgstr "Tenporizadorea"
-
-#: qml/timer/TimerForm.qml:153
+#: qml/timer/TimerForm.qml:149
 #, kde-format
 msgid "<b>Command at timeout:</b>"
 msgstr "<b>Denbora-muga betetzean, komandoa:</b>"
 
-#: qml/timer/TimerForm.qml:156
+#: qml/timer/TimerForm.qml:152
 #, kde-format
 msgid "optional"
 msgstr "aukerakoa"
 
-#: qml/timer/TimerForm.qml:172
+#: qml/timer/TimerFormDialog.qml:35
+#, fuzzy, kde-format
+#| msgctxt "Edit alarm page title"
+#| msgid "Editing %1"
+msgctxt "@title:window Edit timer"
+msgid "Edit %1"
+msgstr "%1 editatzea"
+
+#: qml/timer/TimerFormDialog.qml:35
+#, fuzzy, kde-format
+#| msgid "Create timer"
+msgctxt "@title:window"
+msgid "Create Timer"
+msgstr "Sortu tenporizadorea"
+
+#: qml/timer/TimerFormDialog.qml:51
+#, kde-format
+msgid "Timer"
+msgstr "Tenporizadorea"
+
+#: qml/timer/TimerFormDialog.qml:68
 #, kde-format
 msgid "Hide Presets"
 msgstr "Ezkutatu aurre-ezarpenak"
 
-#: qml/timer/TimerForm.qml:172
+#: qml/timer/TimerFormDialog.qml:68
 #, kde-format
 msgid "Show Presets"
 msgstr "Erakutsi aurre-ezarpenak"
 
-#: qml/timer/TimerForm.qml:177
+#: qml/timer/TimerFormDialog.qml:73
 #, kde-format
 msgid "Toggle Delete"
 msgstr "Txandakatu ezabatzea"
 
-#: qml/timer/TimerFormDialog.qml:26
-#, kde-format
-msgid "Create timer"
-msgstr "Sortu tenporizadorea"
-
-#: qml/timer/TimerFormDialog.qml:59
+#: qml/timer/TimerFormDialog.qml:100
 #, kde-format
 msgid "Save As Preset"
 msgstr "Gorde aurre-ezarpen gisa"
 
-#: qml/timer/TimerListDelegate.qml:158
+#: qml/timer/TimerFormDialog.qml:113
+#, kde-format
+msgctxt "@action:button"
+msgid "Save"
+msgstr ""
+
+#: qml/timer/TimerFormDialog.qml:113
+#, fuzzy, kde-format
+#| msgid "Done"
+msgctxt "@action:button"
+msgid "Done"
+msgstr "Eginda"
+
+#: qml/timer/TimerListDelegate.qml:161
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Loop timer"
 msgstr "Begizta-tenporizadorea"
 
-#: qml/timer/TimerListDelegate.qml:169
+#: qml/timer/TimerListDelegate.qml:172
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Pause"
 msgstr "Etenaldia"
 
-#: qml/timer/TimerListDelegate.qml:169
+#: qml/timer/TimerListDelegate.qml:172
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start"
 msgstr "Abiatu"
 
-#: qml/timer/TimerListDelegate.qml:179
+#: qml/timer/TimerListDelegate.qml:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset"
 msgstr "Berrezarri"
 
-#: qml/timer/TimerListDelegate.qml:189
+#: qml/timer/TimerListDelegate.qml:192
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@info:tooltip"
+msgid "Edit"
+msgstr "Editatu"
+
+#: qml/timer/TimerListDelegate.qml:203
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete"
@@ -588,7 +622,7 @@ msgstr "Ezabatu"
 msgid "New Timer"
 msgstr "Tenporizadore berria"
 
-#: qml/timer/TimerListPage.qml:48
+#: qml/timer/TimerListPage.qml:54
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
@@ -597,12 +631,19 @@ msgstr ""
 "Ez du aurkitu erlojuaren daimona. Mesedez abiarazi «kclockd», tenporizadore "
 "funtzionaltasuna izateko."
 
-#: qml/timer/TimerListPage.qml:87
+#: qml/timer/TimerListPage.qml:84
+#, fuzzy, kde-format
+#| msgid "New Timer"
+msgctxt "@action:button"
+msgid "New Timer"
+msgstr "Tenporizadore berria"
+
+#: qml/timer/TimerListPage.qml:94
 #, kde-format
 msgid "No timers configured"
 msgstr "Ez da tenporizadorerik konfiguratu"
 
-#: qml/timer/TimerListPage.qml:92
+#: qml/timer/TimerListPage.qml:99
 #, kde-format
 msgid "Add timer"
 msgstr "Gehitu tenporizadorea"
@@ -689,11 +730,6 @@ msgid_plural "%1 days"
 msgstr[0] "eguna %1"
 msgstr[1] "%1 egun"
 
-#: utilmodel.cpp:78
-#, kde-format
-msgid ", "
-msgstr ", "
-
 #: utilmodel.cpp:80 utilmodel.cpp:86
 #, kde-format
 msgid " and "
@@ -722,6 +758,27 @@ msgstr "Alarma minutu bat baina gutxiagoz joko du"
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "Alarmak %1(e)an joko du"
+
+#~ msgid "Mon, "
+#~ msgstr "Asl, "
+
+#~ msgid "Tue, "
+#~ msgstr "Asr, "
+
+#~ msgid "Wed, "
+#~ msgstr "Asz, "
+
+#~ msgid "Thu, "
+#~ msgstr "Osg, "
+
+#~ msgid "Fri, "
+#~ msgstr "Osr, "
+
+#~ msgid "Sat, "
+#~ msgstr "Lar, "
+
+#~ msgid "Sun, "
+#~ msgstr "Iga, "
 
 #~ msgid "Clock"
 #~ msgstr "Erlojua"

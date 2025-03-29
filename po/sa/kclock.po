@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-28 00:45+0000\n"
+"POT-Creation-Date: 2025-03-29 00:45+0000\n"
 "PO-Revision-Date: 2024-12-24 20:39+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -175,12 +175,11 @@ msgid "New Alarm"
 msgstr "नवीन अलार्म"
 
 #: qml/alarm/AlarmFormPage.qml:39 qml/alarm/AlarmFormPage.qml:62
-#: qml/timer/TimerFormDialog.qml:71
 #, kde-format
 msgid "Done"
 msgstr "कृतम्‌"
 
-#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormDialog.qml:66
+#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormDialog.qml:108
 #, kde-format
 msgid "Cancel"
 msgstr "निरसयतु"
@@ -209,7 +208,7 @@ msgstr "अलार्म"
 msgid "Edit"
 msgstr "सम्पादन"
 
-#: qml/alarm/AlarmListPage.qml:45 qml/components/Sidebar.qml:138
+#: qml/alarm/AlarmListPage.qml:45 qml/main.qml:56
 #: qml/settings/SettingsPage.qml:22 qml/stopwatch/StopwatchPage.qml:40
 #: qml/time/TimePage.qml:61 qml/timer/TimerListPage.qml:37
 #, kde-format
@@ -233,12 +232,19 @@ msgstr "न अलार्म विन्यस्तम्"
 msgid "Add alarm"
 msgstr "अलार्म योजयन्तु"
 
-#: qml/alarm/AlarmListPage.qml:116
+#: qml/alarm/AlarmListPage.qml:100
+#, fuzzy, kde-format
+#| msgid "New Alarm"
+msgctxt "@action:button"
+msgid "New Alarm"
+msgstr "नवीन अलार्म"
+
+#: qml/alarm/AlarmListPage.qml:117
 #, kde-format
 msgid "alarm"
 msgstr "आपत्सङ्केत"
 
-#: qml/alarm/AlarmListPage.qml:116
+#: qml/alarm/AlarmListPage.qml:117
 #, kde-format
 msgid "Deleted %1"
 msgstr "%1 विलोपितम्"
@@ -321,40 +327,10 @@ msgstr "प्रतिदिनं"
 msgid "Weekdays"
 msgstr "सप्ताहदिनानि"
 
-#: qml/components/formatUtil.js:22
+#: qml/components/formatUtil.js:28 utilmodel.cpp:78
 #, kde-format
-msgid "Mon, "
-msgstr "सोम, "
-
-#: qml/components/formatUtil.js:23
-#, kde-format
-msgid "Tue, "
-msgstr "मंगल, "
-
-#: qml/components/formatUtil.js:24
-#, kde-format
-msgid "Wed, "
-msgstr "बुध, "
-
-#: qml/components/formatUtil.js:25
-#, kde-format
-msgid "Thu, "
-msgstr "बृहस्पति, "
-
-#: qml/components/formatUtil.js:26
-#, kde-format
-msgid "Fri, "
-msgstr "शुक्र, "
-
-#: qml/components/formatUtil.js:27
-#, kde-format
-msgid "Sat, "
-msgstr "शनि, "
-
-#: qml/components/formatUtil.js:28
-#, kde-format
-msgid "Sun, "
-msgstr "सूर्य, "
+msgid ", "
+msgstr ", "
 
 #: qml/components/TimePicker.qml:93
 #, kde-format
@@ -434,7 +410,28 @@ msgstr "गोदकालः"
 msgid "Total"
 msgstr "कुल"
 
-#: qml/stopwatch/StopwatchPage.qml:297
+#: qml/stopwatch/StopwatchPage.qml:244
+#, fuzzy, kde-format
+#| msgid "Pause"
+msgctxt "@action:button"
+msgid "Pause"
+msgstr "विराम"
+
+#: qml/stopwatch/StopwatchPage.qml:246
+#, fuzzy, kde-format
+#| msgid "Resume"
+msgctxt "@action:button"
+msgid "Resume"
+msgstr "पुनर्प्रारम्भय"
+
+#: qml/stopwatch/StopwatchPage.qml:248
+#, fuzzy, kde-format
+#| msgid "Start"
+msgctxt "@action:button"
+msgid "Start"
+msgstr "प्रारंभः"
+
+#: qml/stopwatch/StopwatchPage.qml:306
 #, kde-format
 msgid "#%1"
 msgstr "#%1"
@@ -453,6 +450,13 @@ msgstr "स्थानं योजयतु"
 #, kde-format
 msgid "Add"
 msgstr "संयोजयति"
+
+#: qml/time/TimePage.qml:142
+#, fuzzy, kde-format
+#| msgid "Add Location"
+msgctxt "@action:button"
+msgid "Add Location"
+msgstr "स्थानं योजयतु"
 
 #: qml/timer/PresetDurationButton.qml:23 qml/timer/TimerForm.qml:39
 #, kde-format
@@ -489,91 +493,121 @@ msgstr "१ ज"
 msgid "<b>Duration:</b>"
 msgstr "<b>अवधि:</b>"
 
-#: qml/timer/TimerForm.qml:109
+#: qml/timer/TimerForm.qml:108
 #, kde-format
 msgid "hours"
 msgstr "घण्टानः"
 
-#: qml/timer/TimerForm.qml:125
+#: qml/timer/TimerForm.qml:123
 #, kde-format
 msgid "minutes"
 msgstr "पन्चनिमेषः"
 
-#: qml/timer/TimerForm.qml:141
+#: qml/timer/TimerForm.qml:138
 #, kde-format
 msgid "seconds"
 msgstr "सेकण्ड्"
 
-#: qml/timer/TimerForm.qml:147
+#: qml/timer/TimerForm.qml:144
 #, kde-format
 msgid "<b>Label:</b>"
 msgstr "<b>नामपत्र:</b>"
 
-#: qml/timer/TimerForm.qml:148
-#, kde-format
-msgid "Timer"
-msgstr "टाइमर"
-
-#: qml/timer/TimerForm.qml:153
+#: qml/timer/TimerForm.qml:149
 #, kde-format
 msgid "<b>Command at timeout:</b>"
 msgstr "<b>समयसमाप्तेः समये आदेशः : १.</b>"
 
-#: qml/timer/TimerForm.qml:156
+#: qml/timer/TimerForm.qml:152
 #, kde-format
 msgid "optional"
 msgstr "वैकल्पिक"
 
-#: qml/timer/TimerForm.qml:172
+#: qml/timer/TimerFormDialog.qml:35
+#, fuzzy, kde-format
+#| msgctxt "Edit alarm page title"
+#| msgid "Editing %1"
+msgctxt "@title:window Edit timer"
+msgid "Edit %1"
+msgstr "सम्पादनम् %1"
+
+#: qml/timer/TimerFormDialog.qml:35
+#, fuzzy, kde-format
+#| msgid "Create timer"
+msgctxt "@title:window"
+msgid "Create Timer"
+msgstr "समयनिर्धारकं रचयन्तु"
+
+#: qml/timer/TimerFormDialog.qml:51
+#, kde-format
+msgid "Timer"
+msgstr "टाइमर"
+
+#: qml/timer/TimerFormDialog.qml:68
 #, kde-format
 msgid "Hide Presets"
 msgstr "पूर्वनिर्धारितं गोपयन्तु"
 
-#: qml/timer/TimerForm.qml:172
+#: qml/timer/TimerFormDialog.qml:68
 #, kde-format
 msgid "Show Presets"
 msgstr "पूर्वनिर्धारितं दर्शयतु"
 
-#: qml/timer/TimerForm.qml:177
+#: qml/timer/TimerFormDialog.qml:73
 #, kde-format
 msgid "Toggle Delete"
 msgstr "Toggle Delete इति"
 
-#: qml/timer/TimerFormDialog.qml:26
-#, kde-format
-msgid "Create timer"
-msgstr "समयनिर्धारकं रचयन्तु"
-
-#: qml/timer/TimerFormDialog.qml:59
+#: qml/timer/TimerFormDialog.qml:100
 #, kde-format
 msgid "Save As Preset"
 msgstr "पूर्वनिर्धारितरूपेण रक्षन्तु"
 
-#: qml/timer/TimerListDelegate.qml:158
+#: qml/timer/TimerFormDialog.qml:113
+#, kde-format
+msgctxt "@action:button"
+msgid "Save"
+msgstr ""
+
+#: qml/timer/TimerFormDialog.qml:113
+#, fuzzy, kde-format
+#| msgid "Done"
+msgctxt "@action:button"
+msgid "Done"
+msgstr "कृतम्‌"
+
+#: qml/timer/TimerListDelegate.qml:161
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Loop timer"
 msgstr "पाशसमयनिर्धारकः"
 
-#: qml/timer/TimerListDelegate.qml:169
+#: qml/timer/TimerListDelegate.qml:172
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Pause"
 msgstr "विराम"
 
-#: qml/timer/TimerListDelegate.qml:169
+#: qml/timer/TimerListDelegate.qml:172
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start"
 msgstr "प्रारंभः"
 
-#: qml/timer/TimerListDelegate.qml:179
+#: qml/timer/TimerListDelegate.qml:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset"
 msgstr "पुनः सेट् करें"
 
-#: qml/timer/TimerListDelegate.qml:189
+#: qml/timer/TimerListDelegate.qml:192
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@info:tooltip"
+msgid "Edit"
+msgstr "सम्पादन"
+
+#: qml/timer/TimerListDelegate.qml:203
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete"
@@ -584,19 +618,26 @@ msgstr "लुप्"
 msgid "New Timer"
 msgstr "New Timer"
 
-#: qml/timer/TimerListPage.qml:48
+#: qml/timer/TimerListPage.qml:54
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
 "functionality."
 msgstr "घटिका-दैत्यः न लब्धः । कृपया kclockd आरभत यत् समयनिर्धारक कार्यक्षमता भवतु ।"
 
-#: qml/timer/TimerListPage.qml:87
+#: qml/timer/TimerListPage.qml:84
+#, fuzzy, kde-format
+#| msgid "New Timer"
+msgctxt "@action:button"
+msgid "New Timer"
+msgstr "New Timer"
+
+#: qml/timer/TimerListPage.qml:94
 #, kde-format
 msgid "No timers configured"
 msgstr "कोऽपि समयनिर्धारकः विन्यस्तः नास्ति"
 
-#: qml/timer/TimerListPage.qml:92
+#: qml/timer/TimerListPage.qml:99
 #, kde-format
 msgid "Add timer"
 msgstr "समयनिर्धारकं योजयन्तु"
@@ -683,11 +724,6 @@ msgid_plural "%1 days"
 msgstr[0] "%1 दिवसः"
 msgstr[1] "%1 दिवसाः"
 
-#: utilmodel.cpp:78
-#, kde-format
-msgid ", "
-msgstr ", "
-
 #: utilmodel.cpp:80 utilmodel.cpp:86
 #, kde-format
 msgid " and "
@@ -716,6 +752,27 @@ msgstr "एकनिमेषात् न्यूनेन समये अल
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "%1 मध्ये अलार्मः ध्वनिं करिष्यति"
+
+#~ msgid "Mon, "
+#~ msgstr "सोम, "
+
+#~ msgid "Tue, "
+#~ msgstr "मंगल, "
+
+#~ msgid "Wed, "
+#~ msgstr "बुध, "
+
+#~ msgid "Thu, "
+#~ msgstr "बृहस्पति, "
+
+#~ msgid "Fri, "
+#~ msgstr "शुक्र, "
+
+#~ msgid "Sat, "
+#~ msgstr "शनि, "
+
+#~ msgid "Sun, "
+#~ msgstr "सूर्य, "
 
 #~ msgid "Clock"
 #~ msgstr "घटिका"

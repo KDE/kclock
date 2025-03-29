@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-28 00:45+0000\n"
+"POT-Creation-Date: 2025-03-29 00:45+0000\n"
 "PO-Revision-Date: 2025-03-27 20:14+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -172,12 +172,11 @@ msgid "New Alarm"
 msgstr "Yeni Çalar Saat"
 
 #: qml/alarm/AlarmFormPage.qml:39 qml/alarm/AlarmFormPage.qml:62
-#: qml/timer/TimerFormDialog.qml:71
 #, kde-format
 msgid "Done"
 msgstr "Bitti"
 
-#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormDialog.qml:66
+#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormDialog.qml:108
 #, kde-format
 msgid "Cancel"
 msgstr "İptal"
@@ -206,7 +205,7 @@ msgstr "Çalar Saatler"
 msgid "Edit"
 msgstr "Düzenle"
 
-#: qml/alarm/AlarmListPage.qml:45 qml/components/Sidebar.qml:138
+#: qml/alarm/AlarmListPage.qml:45 qml/main.qml:56
 #: qml/settings/SettingsPage.qml:22 qml/stopwatch/StopwatchPage.qml:40
 #: qml/time/TimePage.qml:61 qml/timer/TimerListPage.qml:37
 #, kde-format
@@ -232,12 +231,19 @@ msgstr "Kurulan çalar saat yok"
 msgid "Add alarm"
 msgstr "Çalar Saat Ekle"
 
-#: qml/alarm/AlarmListPage.qml:116
+#: qml/alarm/AlarmListPage.qml:100
+#, fuzzy, kde-format
+#| msgid "New Alarm"
+msgctxt "@action:button"
+msgid "New Alarm"
+msgstr "Yeni Çalar Saat"
+
+#: qml/alarm/AlarmListPage.qml:117
 #, kde-format
 msgid "alarm"
 msgstr "çalar saat"
 
-#: qml/alarm/AlarmListPage.qml:116
+#: qml/alarm/AlarmListPage.qml:117
 #, kde-format
 msgid "Deleted %1"
 msgstr "%1 silindi"
@@ -320,40 +326,10 @@ msgstr "Her gün"
 msgid "Weekdays"
 msgstr "Hafta içi"
 
-#: qml/components/formatUtil.js:22
+#: qml/components/formatUtil.js:28 utilmodel.cpp:78
 #, kde-format
-msgid "Mon, "
-msgstr "Paz,"
-
-#: qml/components/formatUtil.js:23
-#, kde-format
-msgid "Tue, "
-msgstr "Sal,"
-
-#: qml/components/formatUtil.js:24
-#, kde-format
-msgid "Wed, "
-msgstr "Çar,"
-
-#: qml/components/formatUtil.js:25
-#, kde-format
-msgid "Thu, "
-msgstr "Per,"
-
-#: qml/components/formatUtil.js:26
-#, kde-format
-msgid "Fri, "
-msgstr "Cum,"
-
-#: qml/components/formatUtil.js:27
-#, kde-format
-msgid "Sat, "
-msgstr "Cts,"
-
-#: qml/components/formatUtil.js:28
-#, kde-format
-msgid "Sun, "
-msgstr "Paz,"
+msgid ", "
+msgstr ", "
 
 #: qml/components/TimePicker.qml:93
 #, kde-format
@@ -433,7 +409,28 @@ msgstr "Tur Zamanı"
 msgid "Total"
 msgstr "Toplam"
 
-#: qml/stopwatch/StopwatchPage.qml:297
+#: qml/stopwatch/StopwatchPage.qml:244
+#, fuzzy, kde-format
+#| msgid "Pause"
+msgctxt "@action:button"
+msgid "Pause"
+msgstr "Duraklat"
+
+#: qml/stopwatch/StopwatchPage.qml:246
+#, fuzzy, kde-format
+#| msgid "Resume"
+msgctxt "@action:button"
+msgid "Resume"
+msgstr "Sürdür"
+
+#: qml/stopwatch/StopwatchPage.qml:248
+#, fuzzy, kde-format
+#| msgid "Start"
+msgctxt "@action:button"
+msgid "Start"
+msgstr "Başlat"
+
+#: qml/stopwatch/StopwatchPage.qml:306
 #, kde-format
 msgid "#%1"
 msgstr "\t#%1"
@@ -452,6 +449,13 @@ msgstr "Konum Ekle"
 #, kde-format
 msgid "Add"
 msgstr "Ekle"
+
+#: qml/time/TimePage.qml:142
+#, fuzzy, kde-format
+#| msgid "Add Location"
+msgctxt "@action:button"
+msgid "Add Location"
+msgstr "Konum Ekle"
 
 #: qml/timer/PresetDurationButton.qml:23 qml/timer/TimerForm.qml:39
 #, kde-format
@@ -488,91 +492,121 @@ msgstr "1 sa"
 msgid "<b>Duration:</b>"
 msgstr "<b>Süre:</b>"
 
-#: qml/timer/TimerForm.qml:109
+#: qml/timer/TimerForm.qml:108
 #, kde-format
 msgid "hours"
 msgstr "saat"
 
-#: qml/timer/TimerForm.qml:125
+#: qml/timer/TimerForm.qml:123
 #, kde-format
 msgid "minutes"
 msgstr "dakika"
 
-#: qml/timer/TimerForm.qml:141
+#: qml/timer/TimerForm.qml:138
 #, kde-format
 msgid "seconds"
 msgstr "saniye"
 
-#: qml/timer/TimerForm.qml:147
+#: qml/timer/TimerForm.qml:144
 #, kde-format
 msgid "<b>Label:</b>"
 msgstr "<b>Etiket:</b>"
 
-#: qml/timer/TimerForm.qml:148
-#, kde-format
-msgid "Timer"
-msgstr "Sayaç"
-
-#: qml/timer/TimerForm.qml:153
+#: qml/timer/TimerForm.qml:149
 #, kde-format
 msgid "<b>Command at timeout:</b>"
 msgstr "<b>Zaman aşımındaki komut:</b>"
 
-#: qml/timer/TimerForm.qml:156
+#: qml/timer/TimerForm.qml:152
 #, kde-format
 msgid "optional"
 msgstr "isteğe bağlı"
 
-#: qml/timer/TimerForm.qml:172
+#: qml/timer/TimerFormDialog.qml:35
+#, fuzzy, kde-format
+#| msgctxt "Edit alarm page title"
+#| msgid "Editing %1"
+msgctxt "@title:window Edit timer"
+msgid "Edit %1"
+msgstr "%1 Düzenleniyor"
+
+#: qml/timer/TimerFormDialog.qml:35
+#, fuzzy, kde-format
+#| msgid "Create timer"
+msgctxt "@title:window"
+msgid "Create Timer"
+msgstr "Sayaç Oluştur"
+
+#: qml/timer/TimerFormDialog.qml:51
+#, kde-format
+msgid "Timer"
+msgstr "Sayaç"
+
+#: qml/timer/TimerFormDialog.qml:68
 #, kde-format
 msgid "Hide Presets"
 msgstr "Önayarları Gizle"
 
-#: qml/timer/TimerForm.qml:172
+#: qml/timer/TimerFormDialog.qml:68
 #, kde-format
 msgid "Show Presets"
 msgstr "Önayarları Göster"
 
-#: qml/timer/TimerForm.qml:177
+#: qml/timer/TimerFormDialog.qml:73
 #, kde-format
 msgid "Toggle Delete"
 msgstr "Silmeyi Aç/Kapat"
 
-#: qml/timer/TimerFormDialog.qml:26
-#, kde-format
-msgid "Create timer"
-msgstr "Sayaç Oluştur"
-
-#: qml/timer/TimerFormDialog.qml:59
+#: qml/timer/TimerFormDialog.qml:100
 #, kde-format
 msgid "Save As Preset"
 msgstr "Önayar Olarak Kaydet"
 
-#: qml/timer/TimerListDelegate.qml:158
+#: qml/timer/TimerFormDialog.qml:113
+#, kde-format
+msgctxt "@action:button"
+msgid "Save"
+msgstr ""
+
+#: qml/timer/TimerFormDialog.qml:113
+#, fuzzy, kde-format
+#| msgid "Done"
+msgctxt "@action:button"
+msgid "Done"
+msgstr "Bitti"
+
+#: qml/timer/TimerListDelegate.qml:161
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Loop timer"
 msgstr "Sayacı döngüle"
 
-#: qml/timer/TimerListDelegate.qml:169
+#: qml/timer/TimerListDelegate.qml:172
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Pause"
 msgstr "Duraklat"
 
-#: qml/timer/TimerListDelegate.qml:169
+#: qml/timer/TimerListDelegate.qml:172
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start"
 msgstr "Başlat"
 
-#: qml/timer/TimerListDelegate.qml:179
+#: qml/timer/TimerListDelegate.qml:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset"
 msgstr "Sıfırla"
 
-#: qml/timer/TimerListDelegate.qml:189
+#: qml/timer/TimerListDelegate.qml:192
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@info:tooltip"
+msgid "Edit"
+msgstr "Düzenle"
+
+#: qml/timer/TimerListDelegate.qml:203
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete"
@@ -583,7 +617,7 @@ msgstr "Sil"
 msgid "New Timer"
 msgstr "Yeni Sayaç"
 
-#: qml/timer/TimerListPage.qml:48
+#: qml/timer/TimerListPage.qml:54
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
@@ -592,12 +626,19 @@ msgstr ""
 "Saat ardalan süreci bulunamadı. Sayaç işlevselliğine iye olmak için lütfen "
 "kclockd’yi başlatın."
 
-#: qml/timer/TimerListPage.qml:87
+#: qml/timer/TimerListPage.qml:84
+#, fuzzy, kde-format
+#| msgid "New Timer"
+msgctxt "@action:button"
+msgid "New Timer"
+msgstr "Yeni Sayaç"
+
+#: qml/timer/TimerListPage.qml:94
 #, kde-format
 msgid "No timers configured"
 msgstr "Kurulan sayaç yok"
 
-#: qml/timer/TimerListPage.qml:92
+#: qml/timer/TimerListPage.qml:99
 #, kde-format
 msgid "Add timer"
 msgstr "Sayaç Ekle"
@@ -684,11 +725,6 @@ msgid_plural "%1 days"
 msgstr[0] "%1 gün"
 msgstr[1] "%1 gün"
 
-#: utilmodel.cpp:78
-#, kde-format
-msgid ", "
-msgstr ", "
-
 #: utilmodel.cpp:80 utilmodel.cpp:86
 #, kde-format
 msgid " and "
@@ -717,6 +753,27 @@ msgstr "Saat, bir saatten daha az bir süre içinde çalacak"
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "Saat, %1 içinde çalacak"
+
+#~ msgid "Mon, "
+#~ msgstr "Paz,"
+
+#~ msgid "Tue, "
+#~ msgstr "Sal,"
+
+#~ msgid "Wed, "
+#~ msgstr "Çar,"
+
+#~ msgid "Thu, "
+#~ msgstr "Per,"
+
+#~ msgid "Fri, "
+#~ msgstr "Cum,"
+
+#~ msgid "Sat, "
+#~ msgstr "Cts,"
+
+#~ msgid "Sun, "
+#~ msgstr "Paz,"
 
 #~ msgid "Clock"
 #~ msgstr "Saat"

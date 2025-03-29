@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-28 00:45+0000\n"
+"POT-Creation-Date: 2025-03-29 00:45+0000\n"
 "PO-Revision-Date: 2020-06-13 17:20-0700\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -168,12 +168,11 @@ msgid "New Alarm"
 msgstr ""
 
 #: qml/alarm/AlarmFormPage.qml:39 qml/alarm/AlarmFormPage.qml:62
-#: qml/timer/TimerFormDialog.qml:71
 #, kde-format
 msgid "Done"
 msgstr ""
 
-#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormDialog.qml:66
+#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormDialog.qml:108
 #, kde-format
 msgid "Cancel"
 msgstr ""
@@ -201,7 +200,7 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: qml/alarm/AlarmListPage.qml:45 qml/components/Sidebar.qml:138
+#: qml/alarm/AlarmListPage.qml:45 qml/main.qml:56
 #: qml/settings/SettingsPage.qml:22 qml/stopwatch/StopwatchPage.qml:40
 #: qml/time/TimePage.qml:61 qml/timer/TimerListPage.qml:37
 #, kde-format
@@ -225,12 +224,18 @@ msgstr ""
 msgid "Add alarm"
 msgstr ""
 
-#: qml/alarm/AlarmListPage.qml:116
+#: qml/alarm/AlarmListPage.qml:100
+#, kde-format
+msgctxt "@action:button"
+msgid "New Alarm"
+msgstr ""
+
+#: qml/alarm/AlarmListPage.qml:117
 #, kde-format
 msgid "alarm"
 msgstr ""
 
-#: qml/alarm/AlarmListPage.qml:116
+#: qml/alarm/AlarmListPage.qml:117
 #, kde-format
 msgid "Deleted %1"
 msgstr ""
@@ -313,39 +318,9 @@ msgstr ""
 msgid "Weekdays"
 msgstr ""
 
-#: qml/components/formatUtil.js:22
+#: qml/components/formatUtil.js:28 utilmodel.cpp:78
 #, kde-format
-msgid "Mon, "
-msgstr ""
-
-#: qml/components/formatUtil.js:23
-#, kde-format
-msgid "Tue, "
-msgstr ""
-
-#: qml/components/formatUtil.js:24
-#, kde-format
-msgid "Wed, "
-msgstr ""
-
-#: qml/components/formatUtil.js:25
-#, kde-format
-msgid "Thu, "
-msgstr ""
-
-#: qml/components/formatUtil.js:26
-#, kde-format
-msgid "Fri, "
-msgstr ""
-
-#: qml/components/formatUtil.js:27
-#, kde-format
-msgid "Sat, "
-msgstr ""
-
-#: qml/components/formatUtil.js:28
-#, kde-format
-msgid "Sun, "
+msgid ", "
 msgstr ""
 
 #: qml/components/TimePicker.qml:93
@@ -426,7 +401,25 @@ msgstr ""
 msgid "Total"
 msgstr ""
 
-#: qml/stopwatch/StopwatchPage.qml:297
+#: qml/stopwatch/StopwatchPage.qml:244
+#, kde-format
+msgctxt "@action:button"
+msgid "Pause"
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:246
+#, kde-format
+msgctxt "@action:button"
+msgid "Resume"
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:248
+#, kde-format
+msgctxt "@action:button"
+msgid "Start"
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:306
 #, kde-format
 msgid "#%1"
 msgstr ""
@@ -444,6 +437,12 @@ msgstr ""
 #: qml/time/TimePage.qml:51
 #, kde-format
 msgid "Add"
+msgstr ""
+
+#: qml/time/TimePage.qml:142
+#, kde-format
+msgctxt "@action:button"
+msgid "Add Location"
 msgstr ""
 
 #: qml/timer/PresetDurationButton.qml:23 qml/timer/TimerForm.qml:39
@@ -481,91 +480,116 @@ msgstr ""
 msgid "<b>Duration:</b>"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:109
+#: qml/timer/TimerForm.qml:108
 #, kde-format
 msgid "hours"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:125
+#: qml/timer/TimerForm.qml:123
 #, kde-format
 msgid "minutes"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:141
+#: qml/timer/TimerForm.qml:138
 #, kde-format
 msgid "seconds"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:147
+#: qml/timer/TimerForm.qml:144
 #, kde-format
 msgid "<b>Label:</b>"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:148
-#, kde-format
-msgid "Timer"
-msgstr ""
-
-#: qml/timer/TimerForm.qml:153
+#: qml/timer/TimerForm.qml:149
 #, kde-format
 msgid "<b>Command at timeout:</b>"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:156
+#: qml/timer/TimerForm.qml:152
 #, kde-format
 msgid "optional"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:172
+#: qml/timer/TimerFormDialog.qml:35
+#, kde-format
+msgctxt "@title:window Edit timer"
+msgid "Edit %1"
+msgstr ""
+
+#: qml/timer/TimerFormDialog.qml:35
+#, kde-format
+msgctxt "@title:window"
+msgid "Create Timer"
+msgstr ""
+
+#: qml/timer/TimerFormDialog.qml:51
+#, kde-format
+msgid "Timer"
+msgstr ""
+
+#: qml/timer/TimerFormDialog.qml:68
 #, kde-format
 msgid "Hide Presets"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:172
+#: qml/timer/TimerFormDialog.qml:68
 #, kde-format
 msgid "Show Presets"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:177
+#: qml/timer/TimerFormDialog.qml:73
 #, kde-format
 msgid "Toggle Delete"
 msgstr ""
 
-#: qml/timer/TimerFormDialog.qml:26
-#, kde-format
-msgid "Create timer"
-msgstr ""
-
-#: qml/timer/TimerFormDialog.qml:59
+#: qml/timer/TimerFormDialog.qml:100
 #, kde-format
 msgid "Save As Preset"
 msgstr ""
 
-#: qml/timer/TimerListDelegate.qml:158
+#: qml/timer/TimerFormDialog.qml:113
+#, kde-format
+msgctxt "@action:button"
+msgid "Save"
+msgstr ""
+
+#: qml/timer/TimerFormDialog.qml:113
+#, kde-format
+msgctxt "@action:button"
+msgid "Done"
+msgstr ""
+
+#: qml/timer/TimerListDelegate.qml:161
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Loop timer"
 msgstr ""
 
-#: qml/timer/TimerListDelegate.qml:169
+#: qml/timer/TimerListDelegate.qml:172
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Pause"
 msgstr ""
 
-#: qml/timer/TimerListDelegate.qml:169
+#: qml/timer/TimerListDelegate.qml:172
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start"
 msgstr ""
 
-#: qml/timer/TimerListDelegate.qml:179
+#: qml/timer/TimerListDelegate.qml:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset"
 msgstr ""
 
-#: qml/timer/TimerListDelegate.qml:189
+#: qml/timer/TimerListDelegate.qml:192
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Edit"
+msgstr ""
+
+#: qml/timer/TimerListDelegate.qml:203
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete"
@@ -576,19 +600,25 @@ msgstr ""
 msgid "New Timer"
 msgstr ""
 
-#: qml/timer/TimerListPage.qml:48
+#: qml/timer/TimerListPage.qml:54
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
 "functionality."
 msgstr ""
 
-#: qml/timer/TimerListPage.qml:87
+#: qml/timer/TimerListPage.qml:84
+#, kde-format
+msgctxt "@action:button"
+msgid "New Timer"
+msgstr ""
+
+#: qml/timer/TimerListPage.qml:94
 #, kde-format
 msgid "No timers configured"
 msgstr ""
 
-#: qml/timer/TimerListPage.qml:92
+#: qml/timer/TimerListPage.qml:99
 #, kde-format
 msgid "Add timer"
 msgstr ""
@@ -673,11 +703,6 @@ msgstr ""
 msgid "%1 day"
 msgid_plural "%1 days"
 msgstr[0] ""
-
-#: utilmodel.cpp:78
-#, kde-format
-msgid ", "
-msgstr ""
 
 #: utilmodel.cpp:80 utilmodel.cpp:86
 #, kde-format
