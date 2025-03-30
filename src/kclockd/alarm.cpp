@@ -74,7 +74,7 @@ void Alarm::init(AlarmModel *parent)
     m_notification->setText(QLocale::system().toString(QTime::currentTime(), QLocale::ShortFormat));
     m_notification->setAutoDelete(false); // don't auto-delete when closing
 
-    auto defaultAction = m_notification->addDefaultAction(i18n("View"));
+    auto defaultAction = m_notification->addDefaultAction(i18nc("@action:button", "Dismiss"));
     connect(defaultAction, &KNotificationAction::activated, this, &Alarm::dismiss);
 
     auto dismissAction = m_notification->addAction(i18n("Dismiss"));
