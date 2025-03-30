@@ -32,25 +32,17 @@ FormCard.FormCardPage {
         FormCard.FormComboBoxDelegate {
             id: timeFormatDelegate
             text: i18n("Time Format")
-            model: ListModel {
-                // we can't use i18n with ListElement
-                Component.onCompleted: {
-                    append({"name": i18n("Use System Default"), "value": "SystemDefault"});
-                    append({"name": i18n("12 Hour Time"), "value": "12Hour"});
-                    append({"name": i18n("24 Hour Time"), "value": "24Hour"});
-
-                    for (let i = 0; i < count; i++) {
-                        if (get(i).value === SettingsModel.timeFormat) {
-                            timeFormatDelegate.currentIndex = i;
-                        }
-                    }
-                }
-            }
+            model: [
+                {name: i18n("Use System Default"), value: "SystemDefault"},
+                {name: i18n("12 Hour Time"), value: "12Hour"},
+                {name: i18n("24 Hour Time"), value: "24Hour"},
+            ]
+            currentIndex: model.findIndex(item => item.value === SettingsModel.timeFormat)
 
             textRole: "name"
             valueRole: "value"
 
-            onCurrentValueChanged: SettingsModel.timeFormat = currentValue
+            onActivated: SettingsModel.timeFormat = currentValue
         }
     }
 
