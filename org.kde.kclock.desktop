@@ -137,6 +137,7 @@ X-KDE-FormFactor=desktop;tablet;handset;
 
 [Desktop Action Timers]
 Name=Timers
+Name[bg]=Таймери
 Name[ca]=Temporitzadors
 Name[ca@valencia]=Temporitzadors
 Name[es]=Temporizadores
@@ -147,12 +148,14 @@ Name[sl]=Merilniki
 Name[tr]=Sayaçlar
 Name[uk]=Таймери
 Name[x-test]=xxTimersxx
+Name[zh_CN]=计时器
 Name[zh_TW]=計時器
 Icon=player-time
 Exec=kclock --page Timers
 
 [Desktop Action Stopwatch]
 Name=Stopwatch
+Name[bg]=Хронометър
 Name[ca]=Cronòmetre
 Name[ca@valencia]=Cronòmetre
 Name[es]=Cronómetro
@@ -163,12 +166,14 @@ Name[sl]=Štoparica
 Name[tr]=Kronometre
 Name[uk]=Секундомір
 Name[x-test]=xxStopwatchxx
+Name[zh_CN]=秒表
 Name[zh_TW]=碼錶
 Icon=chronometer
 Exec=kclock --page Stopwatch
 
 [Desktop Action Alarms]
 Name=Alarms
+Name[bg]=Аларма
 Name[ca]=Alarmes
 Name[ca@valencia]=Alarmes
 Name[es]=Alarmas
@@ -179,6 +184,7 @@ Name[sl]=Alarmi
 Name[tr]=Çalar Saatler
 Name[uk]=Будильники
 Name[x-test]=xxAlarmsxx
+Name[zh_CN]=闹钟
 Name[zh_TW]=鬧鐘
 Icon=notifications
 Exec=kclock --page Alarms
