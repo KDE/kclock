@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the kclock package.
 #
-# Freek de Kruijf <freekdekruijf@kde.nl>, 2022.
+# SPDX-FileCopyrightText: 2022, 2025 Freek de Kruijf <freekdekruijf@kde.nl>
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-29 00:45+0000\n"
-"PO-Revision-Date: 2022-09-18 16:38+0200\n"
+"POT-Creation-Date: 2025-03-30 00:45+0000\n"
+"PO-Revision-Date: 2025-03-29 13:24+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,12 +15,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.08.1\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Freek de Kruijf - 2022"
+msgstr "Freek de Kruijf - 2022 t/m 2025"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
@@ -47,7 +47,7 @@ msgstr "Wegdoen"
 msgid "Snooze"
 msgstr "Indutten "
 
-#: alarmmodel.cpp:237
+#: alarmmodel.cpp:255
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Alarm: <shortcut>%1 %2</shortcut>"
@@ -57,111 +57,108 @@ msgstr "Alarm: <shortcut>%1 %2</shortcut>"
 #, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "+1 Minute"
-msgstr ""
+msgstr "+1 minuut"
 
 #: kclockrunner.cpp:79
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset Timer"
-msgstr ""
+msgstr "Timer resetten"
 
 #: kclockrunner.cpp:86
 #, kde-format
 msgctxt "Note this is a KRunner keyword"
 msgid "timer"
-msgstr ""
+msgstr "tijdklok"
 
 #: kclockrunner.cpp:103
 #, kde-format
 msgctxt "Timer running or paused (remaining time)"
 msgid "%1 (%2 Remaining)"
-msgstr ""
+msgstr "%1 (%2 resterend)"
 
 #: kclockrunner.cpp:105
 #, kde-format
 msgctxt "Timer not running (timer length)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: kclockrunner.cpp:116
 #, kde-format
 msgctxt "KRunner category"
 msgid "Timer"
-msgstr ""
+msgstr "Timer"
 
 #: kclockrunner.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "Pause"
-msgstr ""
+msgstr "Pauzeren"
 
 #: kclockrunner.cpp:122
 #, kde-format
 msgctxt "@action"
 msgid "Resume"
-msgstr ""
+msgstr "Hervatten"
 
 #: kclockrunner.cpp:124
 #, kde-format
 msgctxt "@action"
 msgid "Start Timer"
-msgstr ""
+msgstr "Timer starten"
 
 #: kclockrunner.cpp:139
-#, fuzzy, kde-format
-#| msgid "Alarm"
+#, kde-format
 msgctxt "Note this is a KRunner keyword"
 msgid "alarm"
-msgstr "Alarm"
+msgstr "alarm"
 
 #: kclockrunner.cpp:161
 #, kde-format
 msgctxt "Alarm name (time)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: kclockrunner.cpp:171
-#, fuzzy, kde-format
-#| msgid "Alarm"
+#, kde-format
 msgctxt "KRunner category"
 msgid "Alarm"
 msgstr "Alarm"
 
 #: kclockrunner.cpp:175
-#, fuzzy, kde-format
-#| msgid "Dismiss"
+#, kde-format
 msgctxt "@action Dismiss Alarm"
 msgid "Dismiss"
-msgstr "Wegdoen"
+msgstr "Verwerpen"
 
 #: kclockrunner.cpp:178
 #, kde-format
 msgctxt "Disable timer (rings in time)"
 msgid "Disable (Rings in %1)"
-msgstr ""
+msgstr "Uitschakelen (geeft geluid na %1)"
 
 #: kclockrunner.cpp:180
 #, kde-format
 msgctxt "@action Enable Alarm"
 msgid "Enable"
-msgstr ""
+msgstr "Inschakelen"
 
 #: main.cpp:32
 #, kde-format
 msgid "Don't use PowerDevil for alarms if it is available"
 msgstr "PowerDevil niet voor alarmen gebruiken als het beschikbaar is"
 
-#: main.cpp:47
+#: main.cpp:48
 #, kde-format
 msgid "© 2020-2022 KDE Community"
 msgstr "© 2020-2022 De KDE gemeenschap"
 
-#: main.cpp:48
+#: main.cpp:49
 #, kde-format
 msgid "Devin Lin"
 msgstr "Devin Lin"
 
-#: main.cpp:49
+#: main.cpp:50
 #, kde-format
 msgid "Han Young"
 msgstr "Han Young"

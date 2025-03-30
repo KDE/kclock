@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-29 00:45+0000\n"
+"POT-Creation-Date: 2025-03-30 00:45+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -47,7 +47,7 @@ msgstr "关闭"
 msgid "Snooze"
 msgstr "推迟"
 
-#: alarmmodel.cpp:237
+#: alarmmodel.cpp:255
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Alarm: <shortcut>%1 %2</shortcut>"
@@ -108,11 +108,10 @@ msgid "Start Timer"
 msgstr ""
 
 #: kclockrunner.cpp:139
-#, fuzzy, kde-format
-#| msgid "Alarm"
+#, kde-format
 msgctxt "Note this is a KRunner keyword"
 msgid "alarm"
-msgstr "闹钟"
+msgstr ""
 
 #: kclockrunner.cpp:161
 #, kde-format
@@ -121,15 +120,13 @@ msgid "%1 (%2)"
 msgstr ""
 
 #: kclockrunner.cpp:171
-#, fuzzy, kde-format
-#| msgid "Alarm"
+#, kde-format
 msgctxt "KRunner category"
 msgid "Alarm"
 msgstr "闹钟"
 
 #: kclockrunner.cpp:175
-#, fuzzy, kde-format
-#| msgid "Dismiss"
+#, kde-format
 msgctxt "@action Dismiss Alarm"
 msgid "Dismiss"
 msgstr "关闭"
@@ -151,17 +148,17 @@ msgstr ""
 msgid "Don't use PowerDevil for alarms if it is available"
 msgstr "PowerDevil 可用时，不要把它作用于闹钟"
 
-#: main.cpp:47
+#: main.cpp:48
 #, kde-format
 msgid "© 2020-2022 KDE Community"
 msgstr "© 2020-2022 KDE Community"
 
-#: main.cpp:48
+#: main.cpp:49
 #, kde-format
 msgid "Devin Lin"
 msgstr "Devin Lin"
 
-#: main.cpp:49
+#: main.cpp:50
 #, kde-format
 msgid "Han Young"
 msgstr "Han Young"

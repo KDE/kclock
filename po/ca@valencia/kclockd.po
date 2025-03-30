@@ -1,15 +1,15 @@
 # Translation of kclockd.po to Catalan (Valencian)
-# Copyright (C) 2022 This_file_is_part_of_KDE
+# Copyright (C) 2022-2025 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Josep M. Ferrer <txemaq@gmail.com>, 2022.
+# Josep M. Ferrer <txemaq@gmail.com>, 2022, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-29 00:45+0000\n"
-"PO-Revision-Date: 2022-09-18 12:27+0200\n"
+"POT-Creation-Date: 2025-03-30 00:45+0000\n"
+"PO-Revision-Date: 2025-03-29 14:15+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -49,7 +49,7 @@ msgstr "Descarta"
 msgid "Snooze"
 msgstr "Posposa"
 
-#: alarmmodel.cpp:237
+#: alarmmodel.cpp:255
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Alarm: <shortcut>%1 %2</shortcut>"
@@ -59,59 +59,58 @@ msgstr "Alarma: <shortcut>%1 %2</shortcut>"
 #, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "+1 Minute"
-msgstr ""
+msgstr "+1 minut"
 
 #: kclockrunner.cpp:79
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset Timer"
-msgstr ""
+msgstr "Reinicia el temporitzador"
 
 #: kclockrunner.cpp:86
 #, kde-format
 msgctxt "Note this is a KRunner keyword"
 msgid "timer"
-msgstr ""
+msgstr "temporitzador"
 
 #: kclockrunner.cpp:103
 #, kde-format
 msgctxt "Timer running or paused (remaining time)"
 msgid "%1 (%2 Remaining)"
-msgstr ""
+msgstr "%1 (resta %2)"
 
 #: kclockrunner.cpp:105
 #, kde-format
 msgctxt "Timer not running (timer length)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: kclockrunner.cpp:116
 #, kde-format
 msgctxt "KRunner category"
 msgid "Timer"
-msgstr ""
+msgstr "Temporitzador"
 
 #: kclockrunner.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "Pause"
-msgstr ""
+msgstr "Pausa"
 
 #: kclockrunner.cpp:122
 #, kde-format
 msgctxt "@action"
 msgid "Resume"
-msgstr ""
+msgstr "Reprén"
 
 #: kclockrunner.cpp:124
 #, kde-format
 msgctxt "@action"
 msgid "Start Timer"
-msgstr ""
+msgstr "Inicia el temporitzador"
 
 #: kclockrunner.cpp:139
-#, fuzzy, kde-format
-#| msgid "Alarm"
+#, kde-format
 msgctxt "Note this is a KRunner keyword"
 msgid "alarm"
 msgstr "alarma"
@@ -120,18 +119,16 @@ msgstr "alarma"
 #, kde-format
 msgctxt "Alarm name (time)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: kclockrunner.cpp:171
-#, fuzzy, kde-format
-#| msgid "Alarm"
+#, kde-format
 msgctxt "KRunner category"
 msgid "Alarm"
-msgstr "alarma"
+msgstr "Alarma"
 
 #: kclockrunner.cpp:175
-#, fuzzy, kde-format
-#| msgid "Dismiss"
+#, kde-format
 msgctxt "@action Dismiss Alarm"
 msgid "Dismiss"
 msgstr "Descarta"
@@ -140,30 +137,30 @@ msgstr "Descarta"
 #, kde-format
 msgctxt "Disable timer (rings in time)"
 msgid "Disable (Rings in %1)"
-msgstr ""
+msgstr "Desactiva (sona d'ací a %1)"
 
 #: kclockrunner.cpp:180
 #, kde-format
 msgctxt "@action Enable Alarm"
 msgid "Enable"
-msgstr ""
+msgstr "Activa"
 
 #: main.cpp:32
 #, kde-format
 msgid "Don't use PowerDevil for alarms if it is available"
 msgstr "No utilitza PowerDevil per a les alarmes si està disponible"
 
-#: main.cpp:47
+#: main.cpp:48
 #, kde-format
 msgid "© 2020-2022 KDE Community"
 msgstr "© 2020-2022 Comunitat KDE"
 
-#: main.cpp:48
+#: main.cpp:49
 #, kde-format
 msgid "Devin Lin"
 msgstr "Devin Lin"
 
-#: main.cpp:49
+#: main.cpp:50
 #, kde-format
 msgid "Han Young"
 msgstr "Han Young"

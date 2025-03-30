@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-29 00:45+0000\n"
+"POT-Creation-Date: 2025-03-30 00:45+0000\n"
 "PO-Revision-Date: 2024-02-04 10:22-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -47,7 +47,7 @@ msgstr "ਖ਼ਾਰਜ ਕਰੋ"
 msgid "Snooze"
 msgstr "ਟਾਲੋ"
 
-#: alarmmodel.cpp:237
+#: alarmmodel.cpp:255
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Alarm: <shortcut>%1 %2</shortcut>"
@@ -151,17 +151,17 @@ msgstr ""
 msgid "Don't use PowerDevil for alarms if it is available"
 msgstr "ਜੇ ਉਪਲੱਬਧ ਹੈ ਤਾਂ ਆਲਰਮਾਂ ਲਈ ਪਾਵਰ-ਡਿਵੇਲ ਨਾ ਵਰਤੋਂ"
 
-#: main.cpp:47
+#: main.cpp:48
 #, kde-format
 msgid "© 2020-2022 KDE Community"
 msgstr "© 2020-2022 KDE ਕਮਿਊਨਟੀ"
 
-#: main.cpp:48
+#: main.cpp:49
 #, kde-format
 msgid "Devin Lin"
 msgstr "ਡੇਵਿਨ ਲਿਨ"
 
-#: main.cpp:49
+#: main.cpp:50
 #, kde-format
 msgid "Han Young"
 msgstr "ਹਾਂ ਯੰਗ"

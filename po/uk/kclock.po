@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-29 00:45+0000\n"
-"PO-Revision-Date: 2025-03-27 09:00+0200\n"
+"POT-Creation-Date: 2025-03-30 00:45+0000\n"
+"PO-Revision-Date: 2025-03-29 12:22+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -94,7 +94,7 @@ msgstr "Немає"
 
 #: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:134
 #: qml/alarm/AlarmForm.qml:166 qml/alarm/AlarmForm.qml:168
-#: qml/timer/TimerComponent.qml:162
+#: qml/timer/TimerComponent.qml:160
 #, kde-format
 msgid "1 minute"
 msgstr "1 хвилина"
@@ -238,8 +238,7 @@ msgid "Add alarm"
 msgstr "Додати будильник"
 
 #: qml/alarm/AlarmListPage.qml:100
-#, fuzzy, kde-format
-#| msgid "New Alarm"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Alarm"
 msgstr "Створити будильник"
@@ -332,7 +331,7 @@ msgstr "Щодня"
 msgid "Weekdays"
 msgstr "Дні тижня"
 
-#: qml/components/formatUtil.js:28 utilmodel.cpp:78
+#: qml/components/formatUtil.js:28 utilmodel.cpp:82
 #, kde-format
 msgid ", "
 msgstr ", "
@@ -377,66 +376,63 @@ msgstr "Про «Годинник»"
 msgid "About KDE"
 msgstr "Про KDE"
 
-#: qml/stopwatch/StopwatchPage.qml:141 qml/stopwatch/StopwatchPage.qml:171
+#: qml/stopwatch/StopwatchPage.qml:150 qml/stopwatch/StopwatchPage.qml:185
 #: qml/timer/TimerPage.qml:54 qml/timer/TimerPage.qml:102
 #, kde-format
 msgid "Reset"
 msgstr "Скинути"
 
-#: qml/stopwatch/StopwatchPage.qml:143 qml/timer/TimerPage.qml:46
+#: qml/stopwatch/StopwatchPage.qml:152 qml/timer/TimerPage.qml:46
 #: qml/timer/TimerPage.qml:96
 #, kde-format
 msgid "Pause"
 msgstr "Призупинити"
 
-#: qml/stopwatch/StopwatchPage.qml:145
+#: qml/stopwatch/StopwatchPage.qml:154
 #, kde-format
 msgid "Resume"
 msgstr "Поновити"
 
-#: qml/stopwatch/StopwatchPage.qml:147 qml/timer/TimerPage.qml:46
+#: qml/stopwatch/StopwatchPage.qml:156 qml/timer/TimerPage.qml:46
 #: qml/timer/TimerPage.qml:96
 #, kde-format
 msgid "Start"
 msgstr "Запустити"
 
-#: qml/stopwatch/StopwatchPage.qml:171 qml/stopwatch/StopwatchPage.qml:199
+#: qml/stopwatch/StopwatchPage.qml:185 qml/stopwatch/StopwatchPage.qml:214
 #, kde-format
 msgid "Lap"
 msgstr "Оберт"
 
-#: qml/stopwatch/StopwatchPage.qml:207
+#: qml/stopwatch/StopwatchPage.qml:222
 #, kde-format
 msgid "Lap Time"
 msgstr "Час кола"
 
-#: qml/stopwatch/StopwatchPage.qml:214
+#: qml/stopwatch/StopwatchPage.qml:229
 #, kde-format
 msgid "Total"
 msgstr "Загалом"
 
-#: qml/stopwatch/StopwatchPage.qml:244
-#, fuzzy, kde-format
-#| msgid "Pause"
+#: qml/stopwatch/StopwatchPage.qml:259
+#, kde-format
 msgctxt "@action:button"
 msgid "Pause"
 msgstr "Призупинити"
 
-#: qml/stopwatch/StopwatchPage.qml:246
-#, fuzzy, kde-format
-#| msgid "Resume"
+#: qml/stopwatch/StopwatchPage.qml:261
+#, kde-format
 msgctxt "@action:button"
 msgid "Resume"
 msgstr "Поновити"
 
-#: qml/stopwatch/StopwatchPage.qml:248
-#, fuzzy, kde-format
-#| msgid "Start"
+#: qml/stopwatch/StopwatchPage.qml:263
+#, kde-format
 msgctxt "@action:button"
 msgid "Start"
-msgstr "Запустити"
+msgstr "Почати"
 
-#: qml/stopwatch/StopwatchPage.qml:306
+#: qml/stopwatch/StopwatchPage.qml:321
 #, kde-format
 msgid "#%1"
 msgstr "№%1"
@@ -456,9 +452,8 @@ msgstr "Додати місце"
 msgid "Add"
 msgstr "Додати"
 
-#: qml/time/TimePage.qml:142
-#, fuzzy, kde-format
-#| msgid "Add Location"
+#: qml/time/TimePage.qml:167
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Location"
 msgstr "Додати місце"
@@ -529,16 +524,13 @@ msgid "optional"
 msgstr "необов'язкове"
 
 #: qml/timer/TimerFormDialog.qml:35
-#, fuzzy, kde-format
-#| msgctxt "Edit alarm page title"
-#| msgid "Editing %1"
+#, kde-format
 msgctxt "@title:window Edit timer"
 msgid "Edit %1"
-msgstr "Редагування %1"
+msgstr "Зміна %1"
 
 #: qml/timer/TimerFormDialog.qml:35
-#, fuzzy, kde-format
-#| msgid "Create timer"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Timer"
 msgstr "Створити таймер"
@@ -572,11 +564,10 @@ msgstr "Зберегти як шаблон"
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr ""
+msgstr "Зберегти"
 
 #: qml/timer/TimerFormDialog.qml:113
-#, fuzzy, kde-format
-#| msgid "Done"
+#, kde-format
 msgctxt "@action:button"
 msgid "Done"
 msgstr "Виконано"
@@ -606,8 +597,7 @@ msgid "Reset"
 msgstr "Скинути"
 
 #: qml/timer/TimerListDelegate.qml:192
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit"
 msgstr "Змінити"
@@ -633,8 +623,7 @@ msgstr ""
 "можна було користуватися функціональною можливістю таймера."
 
 #: qml/timer/TimerListPage.qml:84
-#, fuzzy, kde-format
-#| msgid "New Timer"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Timer"
 msgstr "Новий таймер"
@@ -724,7 +713,7 @@ msgstr "%1 годин позаду"
 msgid "Local time"
 msgstr "Місцевий час"
 
-#: utilmodel.cpp:74
+#: utilmodel.cpp:78
 #, kde-format
 msgid "%1 day"
 msgid_plural "%1 days"
@@ -733,12 +722,12 @@ msgstr[1] "%1 дні"
 msgstr[2] "%1 днів"
 msgstr[3] "%1 день"
 
-#: utilmodel.cpp:80 utilmodel.cpp:86
+#: utilmodel.cpp:84 utilmodel.cpp:90
 #, kde-format
 msgid " and "
 msgstr " і "
 
-#: utilmodel.cpp:82
+#: utilmodel.cpp:86
 #, kde-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
@@ -747,7 +736,7 @@ msgstr[1] "%1 години"
 msgstr[2] "%1 годин"
 msgstr[3] "%1 година"
 
-#: utilmodel.cpp:88
+#: utilmodel.cpp:92
 #, kde-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -756,12 +745,12 @@ msgstr[1] "%1 хвилини"
 msgstr[2] "%1 хвилин"
 msgstr[3] "%1 хвилина"
 
-#: utilmodel.cpp:92
+#: utilmodel.cpp:96
 #, kde-format
 msgid "Alarm will ring in under a minute"
 msgstr "Будильник буде увімкнено за менше, ніж хвилину"
 
-#: utilmodel.cpp:94
+#: utilmodel.cpp:98
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "Будильник буде увімкнено за %1"

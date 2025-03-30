@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-29 00:45+0000\n"
-"PO-Revision-Date: 2025-03-27 04:09+0100\n"
+"POT-Creation-Date: 2025-03-30 00:45+0000\n"
+"PO-Revision-Date: 2025-03-29 02:42+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -90,7 +90,7 @@ msgstr "არცერთი"
 
 #: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:134
 #: qml/alarm/AlarmForm.qml:166 qml/alarm/AlarmForm.qml:168
-#: qml/timer/TimerComponent.qml:162
+#: qml/timer/TimerComponent.qml:160
 #, kde-format
 msgid "1 minute"
 msgstr "1 წთ"
@@ -158,7 +158,7 @@ msgstr "ნაგულისხმები ხმა"
 #: qml/alarm/AlarmFormPage.qml:26 qml/alarm/AlarmRingingPopup.qml:45
 #, kde-format
 msgid "Alarm"
-msgstr "მაღვიძარა"
+msgstr "განგაში"
 
 #: qml/alarm/AlarmFormPage.qml:26
 #, kde-format
@@ -169,7 +169,7 @@ msgstr "%1-ის ჩასწორება"
 #: qml/alarm/AlarmFormPage.qml:27 qml/alarm/AlarmListPage.qml:30
 #, kde-format
 msgid "New Alarm"
-msgstr "მაღვიძარა"
+msgstr "ახალი განგაში"
 
 #: qml/alarm/AlarmFormPage.qml:39 qml/alarm/AlarmFormPage.qml:62
 #, kde-format
@@ -198,7 +198,7 @@ msgstr "წაშლა"
 #: qml/components/Sidebar.qml:112
 #, kde-format
 msgid "Alarms"
-msgstr "მაღვიძარა"
+msgstr "განგაშები"
 
 #: qml/alarm/AlarmListPage.qml:36 qml/time/TimePage.qml:38
 #, kde-format
@@ -229,14 +229,13 @@ msgstr "მაღვიძარა გამართული არაა"
 #: qml/alarm/AlarmListPage.qml:83
 #, kde-format
 msgid "Add alarm"
-msgstr "მაღვიძარა"
+msgstr "განგაშის დამატება"
 
 #: qml/alarm/AlarmListPage.qml:100
-#, fuzzy, kde-format
-#| msgid "New Alarm"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Alarm"
-msgstr "მაღვიძარა"
+msgstr "ახალი განგაში"
 
 #: qml/alarm/AlarmListPage.qml:117
 #, kde-format
@@ -326,7 +325,7 @@ msgstr "ყოველ დღე"
 msgid "Weekdays"
 msgstr "სამუშაო დღეებში"
 
-#: qml/components/formatUtil.js:28 utilmodel.cpp:78
+#: qml/components/formatUtil.js:28 utilmodel.cpp:82
 #, kde-format
 msgid ", "
 msgstr ", "
@@ -371,66 +370,63 @@ msgstr "საათის შესახებ"
 msgid "About KDE"
 msgstr "KDE-ის შესახებ"
 
-#: qml/stopwatch/StopwatchPage.qml:141 qml/stopwatch/StopwatchPage.qml:171
+#: qml/stopwatch/StopwatchPage.qml:150 qml/stopwatch/StopwatchPage.qml:185
 #: qml/timer/TimerPage.qml:54 qml/timer/TimerPage.qml:102
 #, kde-format
 msgid "Reset"
 msgstr "საწყის მნიშვნელობებზე დაბრუნება"
 
-#: qml/stopwatch/StopwatchPage.qml:143 qml/timer/TimerPage.qml:46
+#: qml/stopwatch/StopwatchPage.qml:152 qml/timer/TimerPage.qml:46
 #: qml/timer/TimerPage.qml:96
 #, kde-format
 msgid "Pause"
 msgstr "შეჩერება"
 
-#: qml/stopwatch/StopwatchPage.qml:145
+#: qml/stopwatch/StopwatchPage.qml:154
 #, kde-format
 msgid "Resume"
 msgstr "გაგრძელება"
 
-#: qml/stopwatch/StopwatchPage.qml:147 qml/timer/TimerPage.qml:46
+#: qml/stopwatch/StopwatchPage.qml:156 qml/timer/TimerPage.qml:46
 #: qml/timer/TimerPage.qml:96
 #, kde-format
 msgid "Start"
-msgstr "გაშვება"
+msgstr "დაწყება"
 
-#: qml/stopwatch/StopwatchPage.qml:171 qml/stopwatch/StopwatchPage.qml:199
+#: qml/stopwatch/StopwatchPage.qml:185 qml/stopwatch/StopwatchPage.qml:214
 #, kde-format
 msgid "Lap"
 msgstr "წრე"
 
-#: qml/stopwatch/StopwatchPage.qml:207
+#: qml/stopwatch/StopwatchPage.qml:222
 #, kde-format
 msgid "Lap Time"
 msgstr "წრის დრო"
 
-#: qml/stopwatch/StopwatchPage.qml:214
+#: qml/stopwatch/StopwatchPage.qml:229
 #, kde-format
 msgid "Total"
 msgstr "ჯამში"
 
-#: qml/stopwatch/StopwatchPage.qml:244
-#, fuzzy, kde-format
-#| msgid "Pause"
+#: qml/stopwatch/StopwatchPage.qml:259
+#, kde-format
 msgctxt "@action:button"
 msgid "Pause"
 msgstr "შეჩერება"
 
-#: qml/stopwatch/StopwatchPage.qml:246
-#, fuzzy, kde-format
-#| msgid "Resume"
+#: qml/stopwatch/StopwatchPage.qml:261
+#, kde-format
 msgctxt "@action:button"
 msgid "Resume"
 msgstr "გაგრძელება"
 
-#: qml/stopwatch/StopwatchPage.qml:248
-#, fuzzy, kde-format
-#| msgid "Start"
+#: qml/stopwatch/StopwatchPage.qml:263
+#, kde-format
 msgctxt "@action:button"
 msgid "Start"
-msgstr "გაშვება"
+msgstr "დაწყება"
 
-#: qml/stopwatch/StopwatchPage.qml:306
+#: qml/stopwatch/StopwatchPage.qml:321
 #, kde-format
 msgid "#%1"
 msgstr "#%1"
@@ -450,9 +446,8 @@ msgstr "მდებარეობის დამატება"
 msgid "Add"
 msgstr "დამატება"
 
-#: qml/time/TimePage.qml:142
-#, fuzzy, kde-format
-#| msgid "Add Location"
+#: qml/time/TimePage.qml:167
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Location"
 msgstr "მდებარეობის დამატება"
@@ -523,16 +518,13 @@ msgid "optional"
 msgstr "არასავალდებულო"
 
 #: qml/timer/TimerFormDialog.qml:35
-#, fuzzy, kde-format
-#| msgctxt "Edit alarm page title"
-#| msgid "Editing %1"
+#, kde-format
 msgctxt "@title:window Edit timer"
 msgid "Edit %1"
 msgstr "%1-ის ჩასწორება"
 
 #: qml/timer/TimerFormDialog.qml:35
-#, fuzzy, kde-format
-#| msgid "Create timer"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Timer"
 msgstr "ტაიმერის შექმნა"
@@ -566,14 +558,13 @@ msgstr "პრესეტად შენახვა"
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr ""
+msgstr "შენახვა"
 
 #: qml/timer/TimerFormDialog.qml:113
-#, fuzzy, kde-format
-#| msgid "Done"
+#, kde-format
 msgctxt "@action:button"
 msgid "Done"
-msgstr "დასრულდა"
+msgstr "დასრულებული"
 
 #: qml/timer/TimerListDelegate.qml:161
 #, kde-format
@@ -591,7 +582,7 @@ msgstr "დაპაუზება"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start"
-msgstr "გაშვება"
+msgstr "დაწყება"
 
 #: qml/timer/TimerListDelegate.qml:182
 #, kde-format
@@ -600,8 +591,7 @@ msgid "Reset"
 msgstr "ჩამოყრა"
 
 #: qml/timer/TimerListDelegate.qml:192
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit"
 msgstr "ჩასწორება"
@@ -626,8 +616,7 @@ msgstr ""
 "საათის დემონი ვერ ვიპოვე. საათის ფუნქციონალისთვის საჭიროა kclockd-ის გაშვება."
 
 #: qml/timer/TimerListPage.qml:84
-#, fuzzy, kde-format
-#| msgid "New Timer"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Timer"
 msgstr "ახალი ტაიმერი"
@@ -717,38 +706,38 @@ msgstr "%1 საათის წინ"
 msgid "Local time"
 msgstr "ლოკალური დრო"
 
-#: utilmodel.cpp:74
+#: utilmodel.cpp:78
 #, kde-format
 msgid "%1 day"
 msgid_plural "%1 days"
 msgstr[0] "%1 დღე"
 msgstr[1] "%1 დღე"
 
-#: utilmodel.cpp:80 utilmodel.cpp:86
+#: utilmodel.cpp:84 utilmodel.cpp:90
 #, kde-format
 msgid " and "
 msgstr " და "
 
-#: utilmodel.cpp:82
+#: utilmodel.cpp:86
 #, kde-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
 msgstr[0] "%1 საათი"
 msgstr[1] "%1 საათი"
 
-#: utilmodel.cpp:88
+#: utilmodel.cpp:92
 #, kde-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "1 წუთი"
 msgstr[1] "%1 წუთი"
 
-#: utilmodel.cpp:92
+#: utilmodel.cpp:96
 #, kde-format
 msgid "Alarm will ring in under a minute"
 msgstr "ზარი წუთზე ნაკლებში დარეკავს"
 
-#: utilmodel.cpp:94
+#: utilmodel.cpp:98
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "ზარი დარეკავს: %1"

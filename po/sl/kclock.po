@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-29 00:45+0000\n"
-"PO-Revision-Date: 2025-03-27 07:01+0100\n"
+"POT-Creation-Date: 2025-03-30 00:45+0000\n"
+"PO-Revision-Date: 2025-03-29 11:40+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -91,7 +91,7 @@ msgstr "Nič"
 
 #: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:134
 #: qml/alarm/AlarmForm.qml:166 qml/alarm/AlarmForm.qml:168
-#: qml/timer/TimerComponent.qml:162
+#: qml/timer/TimerComponent.qml:160
 #, kde-format
 msgid "1 minute"
 msgstr "1 minuta"
@@ -235,8 +235,7 @@ msgid "Add alarm"
 msgstr "Dodaj alarm"
 
 #: qml/alarm/AlarmListPage.qml:100
-#, fuzzy, kde-format
-#| msgid "New Alarm"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Alarm"
 msgstr "Nov alarm"
@@ -329,7 +328,7 @@ msgstr "Vsak dan"
 msgid "Weekdays"
 msgstr "Ob delavnikih"
 
-#: qml/components/formatUtil.js:28 utilmodel.cpp:78
+#: qml/components/formatUtil.js:28 utilmodel.cpp:82
 #, kde-format
 msgid ", "
 msgstr ", "
@@ -374,66 +373,63 @@ msgstr "O programu Clock"
 msgid "About KDE"
 msgstr "O KDE"
 
-#: qml/stopwatch/StopwatchPage.qml:141 qml/stopwatch/StopwatchPage.qml:171
+#: qml/stopwatch/StopwatchPage.qml:150 qml/stopwatch/StopwatchPage.qml:185
 #: qml/timer/TimerPage.qml:54 qml/timer/TimerPage.qml:102
 #, kde-format
 msgid "Reset"
 msgstr "Ponovno nastavi"
 
-#: qml/stopwatch/StopwatchPage.qml:143 qml/timer/TimerPage.qml:46
+#: qml/stopwatch/StopwatchPage.qml:152 qml/timer/TimerPage.qml:46
 #: qml/timer/TimerPage.qml:96
 #, kde-format
 msgid "Pause"
 msgstr "Premor"
 
-#: qml/stopwatch/StopwatchPage.qml:145
+#: qml/stopwatch/StopwatchPage.qml:154
 #, kde-format
 msgid "Resume"
 msgstr "Nadaljuj"
 
-#: qml/stopwatch/StopwatchPage.qml:147 qml/timer/TimerPage.qml:46
+#: qml/stopwatch/StopwatchPage.qml:156 qml/timer/TimerPage.qml:46
 #: qml/timer/TimerPage.qml:96
 #, kde-format
 msgid "Start"
 msgstr "Začetek"
 
-#: qml/stopwatch/StopwatchPage.qml:171 qml/stopwatch/StopwatchPage.qml:199
+#: qml/stopwatch/StopwatchPage.qml:185 qml/stopwatch/StopwatchPage.qml:214
 #, kde-format
 msgid "Lap"
 msgstr "Krog"
 
-#: qml/stopwatch/StopwatchPage.qml:207
+#: qml/stopwatch/StopwatchPage.qml:222
 #, kde-format
 msgid "Lap Time"
 msgstr "Vmesni čas"
 
-#: qml/stopwatch/StopwatchPage.qml:214
+#: qml/stopwatch/StopwatchPage.qml:229
 #, kde-format
 msgid "Total"
 msgstr "Skupaj"
 
-#: qml/stopwatch/StopwatchPage.qml:244
-#, fuzzy, kde-format
-#| msgid "Pause"
+#: qml/stopwatch/StopwatchPage.qml:259
+#, kde-format
 msgctxt "@action:button"
 msgid "Pause"
 msgstr "Premor"
 
-#: qml/stopwatch/StopwatchPage.qml:246
-#, fuzzy, kde-format
-#| msgid "Resume"
+#: qml/stopwatch/StopwatchPage.qml:261
+#, kde-format
 msgctxt "@action:button"
 msgid "Resume"
 msgstr "Nadaljuj"
 
-#: qml/stopwatch/StopwatchPage.qml:248
-#, fuzzy, kde-format
-#| msgid "Start"
+#: qml/stopwatch/StopwatchPage.qml:263
+#, kde-format
 msgctxt "@action:button"
 msgid "Start"
 msgstr "Začetek"
 
-#: qml/stopwatch/StopwatchPage.qml:306
+#: qml/stopwatch/StopwatchPage.qml:321
 #, kde-format
 msgid "#%1"
 msgstr "#%1"
@@ -453,9 +449,8 @@ msgstr "Dodaj lokacijo"
 msgid "Add"
 msgstr "Dodaj"
 
-#: qml/time/TimePage.qml:142
-#, fuzzy, kde-format
-#| msgid "Add Location"
+#: qml/time/TimePage.qml:167
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Location"
 msgstr "Dodaj lokacijo"
@@ -526,16 +521,13 @@ msgid "optional"
 msgstr "neobvezno"
 
 #: qml/timer/TimerFormDialog.qml:35
-#, fuzzy, kde-format
-#| msgctxt "Edit alarm page title"
-#| msgid "Editing %1"
+#, kde-format
 msgctxt "@title:window Edit timer"
 msgid "Edit %1"
-msgstr "Urejam %1"
+msgstr "Uredi %1"
 
 #: qml/timer/TimerFormDialog.qml:35
-#, fuzzy, kde-format
-#| msgid "Create timer"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Timer"
 msgstr "Ustvari merilnik časa"
@@ -569,11 +561,10 @@ msgstr "Shrani kot prednastavitev"
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr ""
+msgstr "Shrani"
 
 #: qml/timer/TimerFormDialog.qml:113
-#, fuzzy, kde-format
-#| msgid "Done"
+#, kde-format
 msgctxt "@action:button"
 msgid "Done"
 msgstr "Narejeno"
@@ -603,8 +594,7 @@ msgid "Reset"
 msgstr "Ponovno nastavi"
 
 #: qml/timer/TimerListDelegate.qml:192
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit"
 msgstr "Uredi"
@@ -630,8 +620,7 @@ msgstr ""
 "merilnika časa."
 
 #: qml/timer/TimerListPage.qml:84
-#, fuzzy, kde-format
-#| msgid "New Timer"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Timer"
 msgstr "Novi merilnik časa"
@@ -721,7 +710,7 @@ msgstr "%1 ur nazaj"
 msgid "Local time"
 msgstr "Lokalni čas"
 
-#: utilmodel.cpp:74
+#: utilmodel.cpp:78
 #, kde-format
 msgid "%1 day"
 msgid_plural "%1 days"
@@ -730,12 +719,12 @@ msgstr[1] "%1 dneva"
 msgstr[2] "%1 dnevi"
 msgstr[3] "%1 dni"
 
-#: utilmodel.cpp:80 utilmodel.cpp:86
+#: utilmodel.cpp:84 utilmodel.cpp:90
 #, kde-format
 msgid " and "
 msgstr " in "
 
-#: utilmodel.cpp:82
+#: utilmodel.cpp:86
 #, kde-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
@@ -744,7 +733,7 @@ msgstr[1] "%1 uri"
 msgstr[2] "%1 ure"
 msgstr[3] "%1 ur"
 
-#: utilmodel.cpp:88
+#: utilmodel.cpp:92
 #, kde-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -753,12 +742,12 @@ msgstr[1] "%1 minuti"
 msgstr[2] "%1 minute"
 msgstr[3] "%1 minut"
 
-#: utilmodel.cpp:92
+#: utilmodel.cpp:96
 #, kde-format
 msgid "Alarm will ring in under a minute"
 msgstr "Alarm bo zazvonil prej kot v minuti"
 
-#: utilmodel.cpp:94
+#: utilmodel.cpp:98
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "Alarm bo zazvonil po %1"

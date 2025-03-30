@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-29 00:45+0000\n"
+"POT-Creation-Date: 2025-03-30 00:45+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -55,7 +55,7 @@ msgstr "选择打开的页面"
 #: main.cpp:81
 #, kde-format
 msgid "Explicitly open a new Clock window"
-msgstr ""
+msgstr "明确地打开新时钟窗口"
 
 #: qml/alarm/AlarmForm.qml:86
 #, kde-format
@@ -89,7 +89,7 @@ msgstr "无"
 
 #: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:134
 #: qml/alarm/AlarmForm.qml:166 qml/alarm/AlarmForm.qml:168
-#: qml/timer/TimerComponent.qml:162
+#: qml/timer/TimerComponent.qml:160
 #, kde-format
 msgid "1 minute"
 msgstr "1 分钟"
@@ -228,8 +228,7 @@ msgid "Add alarm"
 msgstr "添加闹钟"
 
 #: qml/alarm/AlarmListPage.qml:100
-#, fuzzy, kde-format
-#| msgid "New Alarm"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Alarm"
 msgstr "新闹钟"
@@ -322,7 +321,7 @@ msgstr "每天"
 msgid "Weekdays"
 msgstr "工作日"
 
-#: qml/components/formatUtil.js:28 utilmodel.cpp:78
+#: qml/components/formatUtil.js:28 utilmodel.cpp:82
 #, kde-format
 msgid ", "
 msgstr "、"
@@ -367,66 +366,63 @@ msgstr "关于时钟"
 msgid "About KDE"
 msgstr "关于 KDE"
 
-#: qml/stopwatch/StopwatchPage.qml:141 qml/stopwatch/StopwatchPage.qml:171
+#: qml/stopwatch/StopwatchPage.qml:150 qml/stopwatch/StopwatchPage.qml:185
 #: qml/timer/TimerPage.qml:54 qml/timer/TimerPage.qml:102
 #, kde-format
 msgid "Reset"
 msgstr "重置"
 
-#: qml/stopwatch/StopwatchPage.qml:143 qml/timer/TimerPage.qml:46
+#: qml/stopwatch/StopwatchPage.qml:152 qml/timer/TimerPage.qml:46
 #: qml/timer/TimerPage.qml:96
 #, kde-format
 msgid "Pause"
 msgstr "暂停"
 
-#: qml/stopwatch/StopwatchPage.qml:145
+#: qml/stopwatch/StopwatchPage.qml:154
 #, kde-format
 msgid "Resume"
 msgstr "继续"
 
-#: qml/stopwatch/StopwatchPage.qml:147 qml/timer/TimerPage.qml:46
+#: qml/stopwatch/StopwatchPage.qml:156 qml/timer/TimerPage.qml:46
 #: qml/timer/TimerPage.qml:96
 #, kde-format
 msgid "Start"
 msgstr "开始"
 
-#: qml/stopwatch/StopwatchPage.qml:171 qml/stopwatch/StopwatchPage.qml:199
+#: qml/stopwatch/StopwatchPage.qml:185 qml/stopwatch/StopwatchPage.qml:214
 #, kde-format
 msgid "Lap"
 msgstr "圈"
 
-#: qml/stopwatch/StopwatchPage.qml:207
+#: qml/stopwatch/StopwatchPage.qml:222
 #, kde-format
 msgid "Lap Time"
 msgstr "单圈时间"
 
-#: qml/stopwatch/StopwatchPage.qml:214
+#: qml/stopwatch/StopwatchPage.qml:229
 #, kde-format
 msgid "Total"
 msgstr "总计时间"
 
-#: qml/stopwatch/StopwatchPage.qml:244
-#, fuzzy, kde-format
-#| msgid "Pause"
+#: qml/stopwatch/StopwatchPage.qml:259
+#, kde-format
 msgctxt "@action:button"
 msgid "Pause"
 msgstr "暂停"
 
-#: qml/stopwatch/StopwatchPage.qml:246
-#, fuzzy, kde-format
-#| msgid "Resume"
+#: qml/stopwatch/StopwatchPage.qml:261
+#, kde-format
 msgctxt "@action:button"
 msgid "Resume"
-msgstr "继续"
+msgstr ""
 
-#: qml/stopwatch/StopwatchPage.qml:248
-#, fuzzy, kde-format
-#| msgid "Start"
+#: qml/stopwatch/StopwatchPage.qml:263
+#, kde-format
 msgctxt "@action:button"
 msgid "Start"
 msgstr "开始"
 
-#: qml/stopwatch/StopwatchPage.qml:306
+#: qml/stopwatch/StopwatchPage.qml:321
 #, kde-format
 msgid "#%1"
 msgstr "#%1"
@@ -446,9 +442,8 @@ msgstr "添加位置"
 msgid "Add"
 msgstr "添加"
 
-#: qml/time/TimePage.qml:142
-#, fuzzy, kde-format
-#| msgid "Add Location"
+#: qml/time/TimePage.qml:167
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Location"
 msgstr "添加位置"
@@ -519,19 +514,16 @@ msgid "optional"
 msgstr "可选"
 
 #: qml/timer/TimerFormDialog.qml:35
-#, fuzzy, kde-format
-#| msgctxt "Edit alarm page title"
-#| msgid "Editing %1"
+#, kde-format
 msgctxt "@title:window Edit timer"
 msgid "Edit %1"
-msgstr "正在编辑 %1"
+msgstr ""
 
 #: qml/timer/TimerFormDialog.qml:35
-#, fuzzy, kde-format
-#| msgid "Create timer"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Timer"
-msgstr "创建计时器"
+msgstr ""
 
 #: qml/timer/TimerFormDialog.qml:51
 #, kde-format
@@ -565,8 +557,7 @@ msgid "Save"
 msgstr ""
 
 #: qml/timer/TimerFormDialog.qml:113
-#, fuzzy, kde-format
-#| msgid "Done"
+#, kde-format
 msgctxt "@action:button"
 msgid "Done"
 msgstr "完成"
@@ -596,8 +587,7 @@ msgid "Reset"
 msgstr "重置"
 
 #: qml/timer/TimerListDelegate.qml:192
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit"
 msgstr "编辑"
@@ -621,8 +611,7 @@ msgid ""
 msgstr "找不到时钟守护进程。请启动 kclockd 以获得计时器功能。"
 
 #: qml/timer/TimerListPage.qml:84
-#, fuzzy, kde-format
-#| msgid "New Timer"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Timer"
 msgstr "新计时器"
@@ -712,56 +701,35 @@ msgstr "已经过 %1 小时"
 msgid "Local time"
 msgstr "本地时间"
 
-#: utilmodel.cpp:74
+#: utilmodel.cpp:78
 #, kde-format
 msgid "%1 day"
 msgid_plural "%1 days"
 msgstr[0] "%1 天"
 
-#: utilmodel.cpp:80 utilmodel.cpp:86
+#: utilmodel.cpp:84 utilmodel.cpp:90
 #, kde-format
 msgid " and "
 msgstr " 和 "
 
-#: utilmodel.cpp:82
+#: utilmodel.cpp:86
 #, kde-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
 msgstr[0] "%1 小时"
 
-#: utilmodel.cpp:88
+#: utilmodel.cpp:92
 #, kde-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1 分钟 "
 
-#: utilmodel.cpp:92
+#: utilmodel.cpp:96
 #, kde-format
 msgid "Alarm will ring in under a minute"
 msgstr "闹钟将在一分钟内响起"
 
-#: utilmodel.cpp:94
+#: utilmodel.cpp:98
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "闹钟将在 %1 响起"
-
-#~ msgid "Mon, "
-#~ msgstr "周一、"
-
-#~ msgid "Tue, "
-#~ msgstr "周二、"
-
-#~ msgid "Wed, "
-#~ msgstr "周三、"
-
-#~ msgid "Thu, "
-#~ msgstr "周四、"
-
-#~ msgid "Fri, "
-#~ msgstr "周五、"
-
-#~ msgid "Sat, "
-#~ msgstr "周六、"
-
-#~ msgid "Sun, "
-#~ msgstr "周日、"

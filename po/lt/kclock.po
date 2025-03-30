@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-29 00:45+0000\n"
+"POT-Creation-Date: 2025-03-30 00:45+0000\n"
 "PO-Revision-Date: 2024-07-27 20:10+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -93,7 +93,7 @@ msgstr "Nėra"
 
 #: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:134
 #: qml/alarm/AlarmForm.qml:166 qml/alarm/AlarmForm.qml:168
-#: qml/timer/TimerComponent.qml:162
+#: qml/timer/TimerComponent.qml:160
 #, kde-format
 msgid "1 minute"
 msgstr "1 minutė"
@@ -332,7 +332,7 @@ msgstr "Kasdieną"
 msgid "Weekdays"
 msgstr "Šiokiadieniais"
 
-#: qml/components/formatUtil.js:28 utilmodel.cpp:78
+#: qml/components/formatUtil.js:28 utilmodel.cpp:82
 #, kde-format
 msgid ", "
 msgstr ", "
@@ -377,66 +377,66 @@ msgstr "Apie laikrodį"
 msgid "About KDE"
 msgstr "Apie KDE"
 
-#: qml/stopwatch/StopwatchPage.qml:141 qml/stopwatch/StopwatchPage.qml:171
+#: qml/stopwatch/StopwatchPage.qml:150 qml/stopwatch/StopwatchPage.qml:185
 #: qml/timer/TimerPage.qml:54 qml/timer/TimerPage.qml:102
 #, kde-format
 msgid "Reset"
 msgstr "Atstatyti"
 
-#: qml/stopwatch/StopwatchPage.qml:143 qml/timer/TimerPage.qml:46
+#: qml/stopwatch/StopwatchPage.qml:152 qml/timer/TimerPage.qml:46
 #: qml/timer/TimerPage.qml:96
 #, kde-format
 msgid "Pause"
 msgstr "Pristabdyti"
 
-#: qml/stopwatch/StopwatchPage.qml:145
+#: qml/stopwatch/StopwatchPage.qml:154
 #, kde-format
 msgid "Resume"
 msgstr "Pratęsti"
 
-#: qml/stopwatch/StopwatchPage.qml:147 qml/timer/TimerPage.qml:46
+#: qml/stopwatch/StopwatchPage.qml:156 qml/timer/TimerPage.qml:46
 #: qml/timer/TimerPage.qml:96
 #, kde-format
 msgid "Start"
 msgstr "Paleisti"
 
-#: qml/stopwatch/StopwatchPage.qml:171 qml/stopwatch/StopwatchPage.qml:199
+#: qml/stopwatch/StopwatchPage.qml:185 qml/stopwatch/StopwatchPage.qml:214
 #, kde-format
 msgid "Lap"
 msgstr "Ratas"
 
-#: qml/stopwatch/StopwatchPage.qml:207
+#: qml/stopwatch/StopwatchPage.qml:222
 #, kde-format
 msgid "Lap Time"
 msgstr "Rato laikas"
 
-#: qml/stopwatch/StopwatchPage.qml:214
+#: qml/stopwatch/StopwatchPage.qml:229
 #, kde-format
 msgid "Total"
 msgstr "Iš viso"
 
-#: qml/stopwatch/StopwatchPage.qml:244
+#: qml/stopwatch/StopwatchPage.qml:259
 #, fuzzy, kde-format
 #| msgid "Pause"
 msgctxt "@action:button"
 msgid "Pause"
 msgstr "Pristabdyti"
 
-#: qml/stopwatch/StopwatchPage.qml:246
+#: qml/stopwatch/StopwatchPage.qml:261
 #, fuzzy, kde-format
 #| msgid "Resume"
 msgctxt "@action:button"
 msgid "Resume"
 msgstr "Pratęsti"
 
-#: qml/stopwatch/StopwatchPage.qml:248
+#: qml/stopwatch/StopwatchPage.qml:263
 #, fuzzy, kde-format
 #| msgid "Start"
 msgctxt "@action:button"
 msgid "Start"
 msgstr "Paleisti"
 
-#: qml/stopwatch/StopwatchPage.qml:306
+#: qml/stopwatch/StopwatchPage.qml:321
 #, kde-format
 msgid "#%1"
 msgstr "#%1"
@@ -456,7 +456,7 @@ msgstr "Pridėti vietą"
 msgid "Add"
 msgstr "Pridėti"
 
-#: qml/time/TimePage.qml:142
+#: qml/time/TimePage.qml:167
 #, fuzzy, kde-format
 #| msgid "Add Location"
 msgctxt "@action:button"
@@ -724,7 +724,7 @@ msgstr "%1 val. atsilieka"
 msgid "Local time"
 msgstr "Vietinis laikas"
 
-#: utilmodel.cpp:74
+#: utilmodel.cpp:78
 #, kde-format
 msgid "%1 day"
 msgid_plural "%1 days"
@@ -733,12 +733,12 @@ msgstr[1] "%1 dienos"
 msgstr[2] "%1 dienų"
 msgstr[3] "%1 diena"
 
-#: utilmodel.cpp:80 utilmodel.cpp:86
+#: utilmodel.cpp:84 utilmodel.cpp:90
 #, kde-format
 msgid " and "
 msgstr " ir "
 
-#: utilmodel.cpp:82
+#: utilmodel.cpp:86
 #, kde-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
@@ -747,7 +747,7 @@ msgstr[1] "%1 valandos"
 msgstr[2] "%1 valandų"
 msgstr[3] "%1 valanda"
 
-#: utilmodel.cpp:88
+#: utilmodel.cpp:92
 #, kde-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -756,12 +756,12 @@ msgstr[1] "%1 minutės"
 msgstr[2] "%1 minučių"
 msgstr[3] "%1 minutė"
 
-#: utilmodel.cpp:92
+#: utilmodel.cpp:96
 #, kde-format
 msgid "Alarm will ring in under a minute"
 msgstr "Žadintuvas skambės po mažiau nei minutės"
 
-#: utilmodel.cpp:94
+#: utilmodel.cpp:98
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "Žadintuvas skambės po %1"
