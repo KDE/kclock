@@ -16,12 +16,10 @@ SettingsModel::SettingsModel()
 {
     if (m_interface->isValid()) {
         m_timeFormat = m_interface->timeFormat();
+        m_timerNotification = static_cast<KClockSettings::EnumTimerNotification>(m_interface->timerNotification());
     } else {
         // Use system default format if kclockd isn't here
-        if (!m_interface->isValid()) {
-            m_timeFormat = QStringLiteral("SystemDefault");
-            Q_EMIT timeFormatChanged();
-        }
+        m_timeFormat = QStringLiteral("SystemDefault");
     }
 
     connect(m_interface, &LocalKClockSettingsInterface::timeFormatChanged, this, [this]() {
@@ -30,6 +28,14 @@ SettingsModel::SettingsModel()
         if (timeFormat != m_timeFormat) {
             m_timeFormat = timeFormat;
             Q_EMIT timeFormatChanged();
+        }
+    });
+
+    connect(m_interface, &LocalKClockSettingsInterface::timerNotificationChanged, this, [this] {
+        const auto timerNotification = static_cast<KClockSettings::EnumTimerNotification>(m_interface->timerNotification());
+        if (m_timerNotification != timerNotification) {
+            m_timerNotification = timerNotification;
+            Q_EMIT timerNotificationChanged(timerNotification);
         }
     });
 }
@@ -48,6 +54,16 @@ QString SettingsModel::timeFormat() const
 void SettingsModel::setTimeFormat(QString timeFormat)
 {
     m_interface->setProperty("timeFormat", timeFormat);
+}
+
+KClockSettings::EnumTimerNotification SettingsModel::timerNotification() const
+{
+    return m_timerNotification;
+}
+
+void SettingsModel::setTimerNotification(KClockSettings::EnumTimerNotification timerNotification)
+{
+    m_interface->setProperty("timerNotification", static_cast<int>(timerNotification));
 }
 
 #include "moc_settingsmodel.cpp"

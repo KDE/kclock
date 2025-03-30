@@ -112,6 +112,12 @@ target_link_libraries(kclockd PRIVATE
     KF6::Crash
 )
 
+ecm_qt_declare_logging_category(kclockd HEADER debug_timermodel.h
+    IDENTIFIER TIMERMODEL_DEBUG
+    CATEGORY_NAME org.kde.kclockd.timermodel
+    DESCRIPTION "KClockd TimerModel"
+)
+
 ecm_qt_declare_logging_category(kclockd HEADER debug_runner.h
     IDENTIFIER RUNNER_DEBUG
     CATEGORY_NAME org.kde.kclock.runner

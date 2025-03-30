@@ -7,11 +7,15 @@
 
 #pragma once
 
+#include <QDBusServiceWatcher>
+#include <QHash>
 #include <QObject>
 #include <QTimer>
 
 class Timer;
 class UnityLauncher;
+
+class KNotification;
 
 class TimerModel : public QObject
 {
@@ -36,11 +40,27 @@ Q_SIGNALS:
 private:
     void connectTimer(Timer *timer);
     void remove(int index);
-    void updateUnityLauncher();
+    void timerRunningChanged();
+    void updateIndicators();
+
+    void maybeCreateNotification(Timer *timer);
+    void updateNotification(Timer *timer);
+    void sendOrClearAllNotifications();
+
+    void onServiceRegistered(const QString &service);
+    void onServiceUnregistered(const QString &service);
+    void onTimerNotificationSettingChanged();
+
+    static void launchKClock(const QString &xdgActivationToken);
 
     explicit TimerModel();
 
     QList<Timer *> m_timerList;
+
+    QDBusServiceWatcher m_kclockWatcher;
+    bool m_kclockRunning = false;
+
     UnityLauncher *m_unityLauncher;
-    QTimer m_updateUnityLauncherTimer;
+    QHash<Timer *, KNotification *> m_notifications;
+    QTimer m_updateIndicatorsTimer;
 };

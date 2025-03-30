@@ -9,18 +9,25 @@
 
 #include "kclocksettingsinterface.h"
 
+#include "kclockdsettings.h"
+
 #include <QObject>
 
 class SettingsModel : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QString timeFormat READ timeFormat WRITE setTimeFormat NOTIFY timeFormatChanged)
+    Q_PROPERTY(KClockSettings::EnumTimerNotification timerNotification READ timerNotification WRITE setTimerNotification NOTIFY timerNotificationChanged)
 
 public:
     static SettingsModel *instance();
 
     QString timeFormat() const;
     void setTimeFormat(QString timeFormat);
+
+    KClockSettings::EnumTimerNotification timerNotification() const;
+    void setTimerNotification(KClockSettings::EnumTimerNotification timerNotification);
+    Q_SIGNAL void timerNotificationChanged(KClockSettings::EnumTimerNotification TimerNotification);
 
 Q_SIGNALS:
     void timeFormatChanged();
@@ -31,4 +38,5 @@ private:
     QSettings m_settings;
 
     QString m_timeFormat;
+    KClockSettings::EnumTimerNotification m_timerNotification = KClockSettings::EnumTimerNotification::WhenKClockNotRunning;
 };

@@ -34,7 +34,10 @@ set(kclock_SRCS
     windowexposure.h
     )
 
+# So we can share the enums.
+kconfig_add_kcfg_files(kclock_SRCS ../kclockd/kclockdsettings.kcfgc GENERATE_MOC)
 set(SettingsXML ${CMAKE_CURRENT_BINARY_DIR}/../kclockd/org.kde.kclockd.KClockSettings.xml)
+
 set(AlarmXML ${CMAKE_CURRENT_BINARY_DIR}/../kclockd/org.kde.kclockd.Alarm.xml)
 set(AlarmModelXML ${CMAKE_CURRENT_BINARY_DIR}/../kclockd/org.kde.kclockd.AlarmModel.xml)
 set(TimermModelXML ${CMAKE_CURRENT_BINARY_DIR}/../kclockd/org.kde.kclockd.TimerModel.xml)

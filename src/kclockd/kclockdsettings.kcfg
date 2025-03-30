@@ -14,5 +14,14 @@
       <label>Whether to use 24 hour or 12 hour time in the UI.</label>
       <default>SystemDefault</default>
     </entry>
+    <entry name="timerNotification" type="Enum">
+      <label>Whether to show a notification for a running timer.</label>
+      <default>WhenKClockNotRunning</default>
+      <choices>
+        <choice name="Never"/>
+        <choice name="WhenKClockNotRunning"/>
+        <choice name="Always"/>
+      </choices>
+    </entry>
   </group>
 </kcfg>

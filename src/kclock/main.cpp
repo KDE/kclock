@@ -9,6 +9,7 @@
 #include "addlocationmodel.h"
 #include "alarm.h"
 #include "alarmmodel.h"
+#include "kclockdsettings.h"
 #include "kclockformat.h"
 #include "savedlocationsmodel.h"
 #include "settingsmodel.h"
@@ -146,6 +147,7 @@ int main(int argc, char *argv[])
     qmlRegisterSingletonType<SettingsModel>("kclock", 1, 0, "SettingsModel", [](QQmlEngine *, QJSEngine *) -> QObject * {
         return SettingsModel::instance();
     });
+    qmlRegisterUncreatableType<KClockSettings>("kclock", 1, 0, "Settings", QStringLiteral("Only used for enums"));
     qmlRegisterUncreatableType<WindowExposure>("kclock", 1, 0, "WindowExposure", QStringLiteral("Can only be used as attached property."));
 
     QQmlApplicationEngine *engine = new QQmlApplicationEngine();

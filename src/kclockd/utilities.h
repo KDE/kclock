@@ -12,6 +12,8 @@
 #include <QObject>
 #include <QStringList>
 
+#include <chrono>
+
 const QString POWERDEVIL_SERVICE_NAME = QStringLiteral("org.kde.Solid.PowerManagement");
 
 class QTimer;
@@ -38,6 +40,8 @@ public:
 
     static void pauseMprisSources();
     static void resumeMprisSources();
+
+    static QString formatDuration(const std::chrono::seconds &duration);
 
 Q_SIGNALS:
     void wakeup(int cookie);

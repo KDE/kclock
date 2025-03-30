@@ -56,6 +56,7 @@ public:
 
     int length() const;
     void setLength(int length);
+    void addMinute();
 
     QString label() const;
     void setLabel(const QString &label);

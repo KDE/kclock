@@ -81,6 +81,7 @@ int main(int argc, char *argv[])
 
     // save config
     QObject::connect(KClockSettings::self(), &KClockSettings::timeFormatChanged, KClockSettings::self(), &KClockSettings::save);
+    QObject::connect(KClockSettings::self(), &KClockSettings::timerNotificationChanged, KClockSettings::self(), &KClockSettings::save);
 
     // start alarm polling
     AlarmModel::instance()->configureWakeups();

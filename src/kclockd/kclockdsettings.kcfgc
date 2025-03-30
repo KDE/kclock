@@ -4,4 +4,4 @@ DefaultValueGetters=true
 GenerateProperties=true
 Singleton=true
 Mutators=true
- 
+GlobalEnums=true

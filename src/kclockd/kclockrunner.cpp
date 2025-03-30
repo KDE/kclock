@@ -20,21 +20,12 @@
 #include "alarmmodel.h"
 #include "timer.h"
 #include "timermodel.h"
+#include "utilities.h"
 
 #include <chrono>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace std::literals::chrono_literals;
-
-static QString formatDuration(const std::chrono::seconds &duration)
-{
-    const auto hours = std::chrono::duration_cast<std::chrono::hours>(duration);
-    const auto minutes = std::chrono::duration_cast<std::chrono::minutes>(duration - hours);
-    const auto seconds = std::chrono::duration_cast<std::chrono::seconds>(duration - hours - minutes);
-
-    return hours.count() > 0 ? u"%1:%2:%3"_s.arg(hours.count()).arg(minutes.count(), 2, 10, '0'_L1).arg(seconds.count(), 2, 10, '0'_L1)
-                             : u"%1:%2"_s.arg(minutes.count()).arg(seconds.count(), 2, 10, '0'_L1);
-}
 
 static constexpr QLatin1String timerPrefix()
 {
@@ -100,9 +91,9 @@ RemoteMatches KClockRunner::Match(const QString &searchTerm)
         const auto elapsed = std::chrono::seconds{timer->elapsed()};
         const auto remaining = length - elapsed;
         if (timer->running() || timer->elapsed()) {
-            match.text = i18nc("Timer running or paused (remaining time)", "%1 (%2 Remaining)", timer->label(), formatDuration(remaining));
+            match.text = i18nc("Timer running or paused (remaining time)", "%1 (%2 Remaining)", timer->label(), Utilities::formatDuration(remaining));
         } else {
-            match.text = i18nc("Timer not running (timer length)", "%1 (%2)", timer->label(), formatDuration(length));
+            match.text = i18nc("Timer not running (timer length)", "%1 (%2)", timer->label(), Utilities::formatDuration(length));
         }
 
         match.relevance = 0.5;
@@ -175,7 +166,7 @@ RemoteMatches KClockRunner::Match(const QString &searchTerm)
             subtext = i18nc("@action Dismiss Alarm", "Dismiss");
         } else if (alarm->enabled()) {
             const auto nextRingTimeDelta = std::chrono::seconds{alarm->nextRingTime()} - std::chrono::seconds{QDateTime::currentSecsSinceEpoch()};
-            subtext = i18nc("Disable timer (rings in time)", "Disable (Rings in %1)", formatDuration(nextRingTimeDelta));
+            subtext = i18nc("Disable timer (rings in time)", "Disable (Rings in %1)", Utilities::formatDuration(nextRingTimeDelta));
         } else {
             subtext = i18nc("@action Enable Alarm", "Enable");
         }

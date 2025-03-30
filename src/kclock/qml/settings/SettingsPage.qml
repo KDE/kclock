@@ -44,6 +44,30 @@ FormCard.FormCardPage {
 
             onActivated: SettingsModel.timeFormat = currentValue
         }
+
+        FormCard.FormDelegateSeparator { above: timeFormatDelegate; below: timerNotificationDelegate }
+
+        FormCard.FormComboBoxDelegate {
+            id: timerNotificationDelegate
+            text: i18n("Notifications for running timers")
+            model: [{
+                name: i18n("Always"),
+                value: Settings.Always
+            }, {
+                name: i18nc("When the app is not running", "When %1 is not running", Application.displayName),
+                value: Settings.WhenKClockNotRunning
+            }, {
+                name: i18n("Never"),
+                value: Settings.Never
+            }]
+            description: currentValue !== Settings.Never ? i18n("Lets you pause and resume timers from the notification area.") : ""
+            currentIndex: model.findIndex(item => item.value === SettingsModel.timerNotification)
+
+            textRole: "name"
+            valueRole: "value"
+
+            onActivated: SettingsModel.timerNotification = currentValue
+        }
     }
 
     FormCard.FormCard {

@@ -7,8 +7,12 @@
 
 #include "timermodel.h"
 
+#include "debug_timermodel.h"
+
+#include "kclockdsettings.h"
 #include "timer.h"
 #include "unitylauncher.h"
+#include "utilities.h"
 
 #include <KConfigGroup>
 #include <KLocalizedString>
@@ -16,15 +20,19 @@
 #include <KSharedConfig>
 
 #include <QDBusConnection>
+#include <QDBusConnectionInterface>
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <QProcess>
+#include <QProcessEnvironment>
 
 #include <QtNumeric>
 
 #include <chrono>
 
 using namespace std::literals::chrono_literals;
+using namespace Qt::Literals::StringLiterals;
 
 const QString TIMERS_CFG_GROUP = QStringLiteral("Timers"), TIMERS_CFG_KEY = QStringLiteral("timersList");
 
@@ -36,12 +44,21 @@ TimerModel *TimerModel::instance()
 
 TimerModel::TimerModel()
     : QObject(nullptr)
+    , m_kclockWatcher(u"org.kde.kclock"_s,
+                      QDBusConnection::sessionBus(),
+                      QDBusServiceWatcher::WatchForRegistration | QDBusServiceWatcher::WatchForUnregistration)
     , m_unityLauncher(new UnityLauncher(this))
 {
     // Match what app uses, reduces a possible 1s gap between task bar and app
     // when one or the other ever so slightly misses the second changing.
-    m_updateUnityLauncherTimer.setInterval(250ms);
-    m_updateUnityLauncherTimer.callOnTimeout(this, &TimerModel::updateUnityLauncher);
+    m_updateIndicatorsTimer.setInterval(250ms);
+    m_updateIndicatorsTimer.callOnTimeout(this, &TimerModel::updateIndicators);
+
+    connect(&m_kclockWatcher, &QDBusServiceWatcher::serviceRegistered, this, &TimerModel::onServiceRegistered);
+    connect(&m_kclockWatcher, &QDBusServiceWatcher::serviceUnregistered, this, &TimerModel::onServiceUnregistered);
+    m_kclockRunning = QDBusConnection::sessionBus().interface()->isServiceRegistered(m_kclockWatcher.watchedServices().constFirst());
+
+    connect(KClockSettings::self(), &KClockSettings::timerNotificationChanged, this, &TimerModel::onTimerNotificationSettingChanged);
 
     load();
     QDBusConnection::sessionBus().registerObject(QStringLiteral("/Timers"), this, QDBusConnection::ExportScriptableContents);
@@ -55,10 +72,11 @@ void TimerModel::load()
     for (QJsonValueRef r : doc.array()) {
         QJsonObject obj = r.toObject();
         Timer *timer = new Timer(obj, this);
+        Q_ASSERT(!timer->running());
         connectTimer(timer);
         m_timerList.append(timer);
     }
-    updateUnityLauncher();
+    updateIndicators();
 }
 
 void TimerModel::save()
@@ -83,17 +101,29 @@ void TimerModel::addTimer(int length, const QString &label, const QString &comma
     auto *timer = new Timer(length, label, commandTimeout, running);
     connectTimer(timer);
     m_timerList.append(timer);
+    maybeCreateNotification(timer);
 
     save();
-    updateUnityLauncher();
+    updateIndicators();
 
     Q_EMIT timerAdded(timer->uuid());
 }
 
 void TimerModel::connectTimer(Timer *timer)
 {
-    connect(timer, &Timer::runningChanged, this, &TimerModel::updateUnityLauncher);
-    connect(timer, &Timer::lengthChanged, this, &TimerModel::updateUnityLauncher);
+    connect(timer, &Timer::runningChanged, this, [this, timer] {
+        if (timer->running()) {
+            maybeCreateNotification(timer);
+            // if no elapsed, it was reset, if elapsed equals length timer is finished.
+        } else if (!timer->elapsed() || timer->elapsed() == timer->length()) {
+            if (auto *notification = m_notifications.value(timer)) {
+                notification->close();
+                m_notifications.remove(timer);
+            }
+        }
+        updateIndicators();
+    });
+    connect(timer, &Timer::lengthChanged, this, &TimerModel::updateIndicators);
 }
 
 void TimerModel::removeTimer(const QString &uuid)
@@ -122,7 +152,7 @@ void TimerModel::remove(int index)
     m_timerList.removeAt(index);
     timer->deleteLater();
 
-    updateUnityLauncher();
+    updateIndicators();
     save();
 }
 
@@ -155,28 +185,154 @@ QStringList TimerModel::timers() const
     return ret;
 }
 
-void TimerModel::updateUnityLauncher()
+void TimerModel::updateIndicators()
 {
     qreal totalLength = 0;
     qreal totalElapsed = 0;
-    for (const Timer *timer : std::as_const(m_timerList)) {
-        if (!timer->running()) {
-            continue;
+    for (Timer *timer : std::as_const(m_timerList)) {
+        if (timer->running()) {
+            totalLength += timer->length();
+            totalElapsed += timer->elapsed();
         }
 
-        totalLength += timer->length();
-        totalElapsed += timer->elapsed();
+        // Notification could have been closed by the user.
+        // It will only re-open when restarting the timer.
+        if (m_notifications.contains(timer)) {
+            updateNotification(timer);
+        }
     }
 
     if (totalLength > 0) {
-        m_unityLauncher->setProgress(totalElapsed / totalLength);
-        if (!m_updateUnityLauncherTimer.isActive()) {
-            m_updateUnityLauncherTimer.start();
+        if (!m_updateIndicatorsTimer.isActive()) {
+            m_updateIndicatorsTimer.start();
         }
+
+        m_unityLauncher->setProgress(totalElapsed / totalLength);
     } else {
+        m_updateIndicatorsTimer.stop();
+
         m_unityLauncher->setProgress(qQNaN());
-        m_updateUnityLauncherTimer.stop();
+        Q_ASSERT(m_notifications.isEmpty());
     }
+}
+
+void TimerModel::maybeCreateNotification(Timer *timer)
+{
+    if (!timer->running()) {
+        return;
+    }
+
+    if (m_notifications.value(timer)) {
+        return;
+    }
+
+    if (KClockSettings::self()->timerNotification() == KClockSettings::EnumTimerNotification::Never
+        || (KClockSettings::self()->timerNotification() == KClockSettings::EnumTimerNotification::WhenKClockNotRunning && m_kclockRunning)) {
+        return;
+    }
+
+    auto *notification = new KNotification{u"timer"_s, KNotification::Persistent, timer};
+    notification->setHint(u"resident"_s, true);
+    connect(notification, &KNotification::closed, this, [this, timer] {
+        m_notifications.remove(timer);
+    });
+
+    auto *defaultAction = notification->addDefaultAction(i18nc("@action:button Open kclock app", "Open Clock"));
+    connect(defaultAction, &KNotificationAction::activated, notification, [notification] {
+        launchKClock(notification->xdgActivationToken());
+    });
+
+    auto *plus1MinuteAction = notification->addAction(i18nc("@action:button Add minute to timer", "+1 Minute"));
+    connect(plus1MinuteAction, &KNotificationAction::activated, timer, &Timer::addMinute);
+
+    auto *resetAction = notification->addAction(i18nc("@action:button Reset timer", "Reset"));
+    connect(resetAction, &KNotificationAction::activated, timer, &Timer::reset);
+
+    auto *pauseAction = notification->addAction(i18nc("@action:button Pause timer", "Pause"));
+    notification->setProperty("pauseAction", QVariant::fromValue(pauseAction));
+    connect(pauseAction, &KNotificationAction::activated, timer, &Timer::toggleRunning);
+
+    m_notifications.insert(timer, notification);
+    updateNotification(timer);
+    notification->sendEvent();
+}
+
+void TimerModel::updateNotification(Timer *timer)
+{
+    KNotification *notification = m_notifications.value(timer);
+    Q_ASSERT(notification);
+
+    const auto remaining = std::chrono::seconds{timer->length()} - std::chrono::seconds{timer->elapsed()};
+    if (timer->running()) {
+        notification->setTitle(timer->label());
+    } else {
+        notification->setTitle(i18nc("@title:notification Timer name (paused)", "%1 (Paused)", timer->label()));
+    }
+
+    notification->setText(Utilities::formatDuration(remaining));
+
+    auto *pauseAction = notification->property("pauseAction").value<KNotificationAction *>();
+    if (timer->running()) {
+        pauseAction->setLabel(i18nc("@action:button Pause timer", "Pause"));
+    } else {
+        pauseAction->setLabel(i18nc("@action:button Resume timer", "Resume"));
+    }
+}
+
+void TimerModel::onServiceRegistered(const QString &service)
+{
+    Q_UNUSED(service);
+    m_kclockRunning = true;
+    sendOrClearAllNotifications();
+}
+
+void TimerModel::onServiceUnregistered(const QString &service)
+{
+    Q_UNUSED(service);
+    m_kclockRunning = false;
+    sendOrClearAllNotifications();
+}
+
+void TimerModel::onTimerNotificationSettingChanged()
+{
+    sendOrClearAllNotifications();
+}
+
+void TimerModel::sendOrClearAllNotifications()
+{
+    if (KClockSettings::self()->timerNotification() == KClockSettings::EnumTimerNotification::Never
+        || (KClockSettings::self()->timerNotification() == KClockSettings::EnumTimerNotification::WhenKClockNotRunning && m_kclockRunning)) {
+        qCDebug(TIMERMODEL_DEBUG) << "Removing all timer notifications";
+        // close might cause it to be removed from m_notifications, take a copy.
+        const auto notifications = m_notifications;
+        for (auto *notification : notifications) {
+            notification->close();
+        }
+        m_notifications.clear();
+
+    } else if (KClockSettings::self()->timerNotification() == KClockSettings::EnumTimerNotification::Always
+               || (KClockSettings::self()->timerNotification() == KClockSettings::EnumTimerNotification::WhenKClockNotRunning && !m_kclockRunning)) {
+        qCDebug(TIMERMODEL_DEBUG) << "Sending all timer notifications";
+
+        for (Timer *timer : std::as_const(m_timerList)) {
+            maybeCreateNotification(timer);
+        }
+    }
+}
+
+void TimerModel::launchKClock(const QString &xdgActivationToken)
+{
+    // Don't want to pull in KIO just for CommandLauncherJob...
+    QProcess process;
+    process.setProgram(QStandardPaths::findExecutable(QStringLiteral("kclock")));
+    process.setArguments({QStringLiteral("--page"), QStringLiteral("Timers")});
+    process.setProcessChannelMode(QProcess::ForwardedChannels);
+
+    QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+    env.insert(QStringLiteral("XDG_ACTIVATION_TOKEN"), xdgActivationToken);
+    process.setProcessEnvironment(env);
+
+    process.startDetached();
 }
 
 #include "moc_timermodel.cpp"

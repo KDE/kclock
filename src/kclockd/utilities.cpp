@@ -17,6 +17,8 @@
 
 #include "generated/systeminterfaces/mprisplayer.h"
 
+using namespace Qt::Literals::StringLiterals;
+
 // manually disable powerdevil, even if found
 static bool noPowerDevil = false;
 
@@ -208,6 +210,16 @@ void Utilities::resumeMprisSources()
     }
 
     m_pausedSources.clear();
+}
+
+QString Utilities::formatDuration(const std::chrono::seconds &duration)
+{
+    const auto hours = std::chrono::duration_cast<std::chrono::hours>(duration);
+    const auto minutes = std::chrono::duration_cast<std::chrono::minutes>(duration - hours);
+    const auto seconds = std::chrono::duration_cast<std::chrono::seconds>(duration - hours - minutes);
+
+    return hours.count() > 0 ? u"%1:%2:%3"_s.arg(hours.count()).arg(minutes.count(), 2, 10, '0'_L1).arg(seconds.count(), 2, 10, '0'_L1)
+                             : u"%1:%2"_s.arg(minutes.count()).arg(seconds.count(), 2, 10, '0'_L1);
 }
 
 #include "moc_utilities.cpp"

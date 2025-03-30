@@ -141,6 +141,11 @@ void Timer::setLength(int length)
     }
 }
 
+void Timer::addMinute()
+{
+    setLength(m_length + 60);
+}
+
 QString Timer::label() const
 {
     return m_label;
