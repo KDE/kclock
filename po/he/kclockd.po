@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kclock package.
 #
-# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2024, 2025 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-30 00:45+0000\n"
-"PO-Revision-Date: 2024-04-15 14:59+0300\n"
+"PO-Revision-Date: 2025-03-30 08:45+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.12.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -58,59 +58,58 @@ msgstr "התראה: <shortcut>%1 %2</shortcut>"
 #, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "+1 Minute"
-msgstr ""
+msgstr "+דקה"
 
 #: kclockrunner.cpp:79
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset Timer"
-msgstr ""
+msgstr "איפוס קוצב הזמן"
 
 #: kclockrunner.cpp:86
 #, kde-format
 msgctxt "Note this is a KRunner keyword"
 msgid "timer"
-msgstr ""
+msgstr "קוצב זמן"
 
 #: kclockrunner.cpp:103
 #, kde-format
 msgctxt "Timer running or paused (remaining time)"
 msgid "%1 (%2 Remaining)"
-msgstr ""
+msgstr "%1 (נותרו %2)"
 
 #: kclockrunner.cpp:105
 #, kde-format
 msgctxt "Timer not running (timer length)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: kclockrunner.cpp:116
 #, kde-format
 msgctxt "KRunner category"
 msgid "Timer"
-msgstr ""
+msgstr "קוצב זמן"
 
 #: kclockrunner.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "Pause"
-msgstr ""
+msgstr "השהיה"
 
 #: kclockrunner.cpp:122
 #, kde-format
 msgctxt "@action"
 msgid "Resume"
-msgstr ""
+msgstr "המשך"
 
 #: kclockrunner.cpp:124
 #, kde-format
 msgctxt "@action"
 msgid "Start Timer"
-msgstr ""
+msgstr "התחלת שעון עצר"
 
 #: kclockrunner.cpp:139
-#, fuzzy, kde-format
-#| msgid "Alarm"
+#, kde-format
 msgctxt "Note this is a KRunner keyword"
 msgid "alarm"
 msgstr "התראה"
@@ -119,18 +118,16 @@ msgstr "התראה"
 #, kde-format
 msgctxt "Alarm name (time)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: kclockrunner.cpp:171
-#, fuzzy, kde-format
-#| msgid "Alarm"
+#, kde-format
 msgctxt "KRunner category"
 msgid "Alarm"
 msgstr "התראה"
 
 #: kclockrunner.cpp:175
-#, fuzzy, kde-format
-#| msgid "Dismiss"
+#, kde-format
 msgctxt "@action Dismiss Alarm"
 msgid "Dismiss"
 msgstr "התעלמות"
@@ -139,13 +136,13 @@ msgstr "התעלמות"
 #, kde-format
 msgctxt "Disable timer (rings in time)"
 msgid "Disable (Rings in %1)"
-msgstr ""
+msgstr "השבתה (צלצול בעוד %1)"
 
 #: kclockrunner.cpp:180
 #, kde-format
 msgctxt "@action Enable Alarm"
 msgid "Enable"
-msgstr ""
+msgstr "הפעלה"
 
 #: main.cpp:32
 #, kde-format

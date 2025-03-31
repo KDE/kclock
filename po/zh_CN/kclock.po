@@ -414,7 +414,7 @@ msgstr "暂停"
 #, kde-format
 msgctxt "@action:button"
 msgid "Resume"
-msgstr ""
+msgstr "继续"
 
 #: qml/stopwatch/StopwatchPage.qml:263
 #, kde-format
@@ -517,13 +517,13 @@ msgstr "可选"
 #, kde-format
 msgctxt "@title:window Edit timer"
 msgid "Edit %1"
-msgstr ""
+msgstr "编辑 %1"
 
 #: qml/timer/TimerFormDialog.qml:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Timer"
-msgstr ""
+msgstr "新建计时器"
 
 #: qml/timer/TimerFormDialog.qml:51
 #, kde-format
@@ -554,7 +554,7 @@ msgstr "保存为预设"
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr ""
+msgstr "保存"
 
 #: qml/timer/TimerFormDialog.qml:113
 #, kde-format

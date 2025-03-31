@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-30 00:45+0000\n"
-"PO-Revision-Date: 2025-03-28 22:30+0300\n"
+"PO-Revision-Date: 2025-03-30 08:43+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -232,8 +232,7 @@ msgid "Add alarm"
 msgstr "הוספת התראה"
 
 #: qml/alarm/AlarmListPage.qml:100
-#, fuzzy, kde-format
-#| msgid "New Alarm"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Alarm"
 msgstr "התראה חדשה"
@@ -410,22 +409,19 @@ msgid "Total"
 msgstr "סך הכול"
 
 #: qml/stopwatch/StopwatchPage.qml:259
-#, fuzzy, kde-format
-#| msgid "Pause"
+#, kde-format
 msgctxt "@action:button"
 msgid "Pause"
-msgstr "השהייה"
+msgstr "השהיה"
 
 #: qml/stopwatch/StopwatchPage.qml:261
-#, fuzzy, kde-format
-#| msgid "Resume"
+#, kde-format
 msgctxt "@action:button"
 msgid "Resume"
 msgstr "המשך"
 
 #: qml/stopwatch/StopwatchPage.qml:263
-#, fuzzy, kde-format
-#| msgid "Start"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start"
 msgstr "התחלה"
@@ -451,8 +447,7 @@ msgid "Add"
 msgstr "הוספה"
 
 #: qml/time/TimePage.qml:167
-#, fuzzy, kde-format
-#| msgid "Add Location"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Location"
 msgstr "הוספת מקום"
@@ -523,16 +518,13 @@ msgid "optional"
 msgstr "רשות"
 
 #: qml/timer/TimerFormDialog.qml:35
-#, fuzzy, kde-format
-#| msgctxt "Edit alarm page title"
-#| msgid "Editing %1"
+#, kde-format
 msgctxt "@title:window Edit timer"
 msgid "Edit %1"
-msgstr "%1 נערך"
+msgstr "עריכת %1"
 
 #: qml/timer/TimerFormDialog.qml:35
-#, fuzzy, kde-format
-#| msgid "Create timer"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Timer"
 msgstr "יצירת קוצב זמן"
@@ -566,11 +558,10 @@ msgstr "שמירה כערכה"
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr ""
+msgstr "שמירה"
 
 #: qml/timer/TimerFormDialog.qml:113
-#, fuzzy, kde-format
-#| msgid "Done"
+#, kde-format
 msgctxt "@action:button"
 msgid "Done"
 msgstr "בוצע"
@@ -600,8 +591,7 @@ msgid "Reset"
 msgstr "איפוס"
 
 #: qml/timer/TimerListDelegate.qml:192
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit"
 msgstr "עריכה"
@@ -625,8 +615,7 @@ msgid ""
 msgstr "סוכן השעון לא נמצא. נא להפעיל את kclockd כדי שקוצבי הזמן יעבדו."
 
 #: qml/timer/TimerListPage.qml:84
-#, fuzzy, kde-format
-#| msgid "New Timer"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Timer"
 msgstr "קוצב זמן חדש"

@@ -57,67 +57,67 @@ msgstr "闹钟：<shortcut>%1 %2</shortcut>"
 #, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "+1 Minute"
-msgstr ""
+msgstr "+1 分钟"
 
 #: kclockrunner.cpp:79
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset Timer"
-msgstr ""
+msgstr "重置计时器"
 
 #: kclockrunner.cpp:86
 #, kde-format
 msgctxt "Note this is a KRunner keyword"
 msgid "timer"
-msgstr ""
+msgstr "计时器"
 
 #: kclockrunner.cpp:103
 #, kde-format
 msgctxt "Timer running or paused (remaining time)"
 msgid "%1 (%2 Remaining)"
-msgstr ""
+msgstr "%1 (剩余 %2)"
 
 #: kclockrunner.cpp:105
 #, kde-format
 msgctxt "Timer not running (timer length)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: kclockrunner.cpp:116
 #, kde-format
 msgctxt "KRunner category"
 msgid "Timer"
-msgstr ""
+msgstr "计时器"
 
 #: kclockrunner.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "Pause"
-msgstr ""
+msgstr "暂停"
 
 #: kclockrunner.cpp:122
 #, kde-format
 msgctxt "@action"
 msgid "Resume"
-msgstr ""
+msgstr "继续"
 
 #: kclockrunner.cpp:124
 #, kde-format
 msgctxt "@action"
 msgid "Start Timer"
-msgstr ""
+msgstr "开始计时"
 
 #: kclockrunner.cpp:139
 #, kde-format
 msgctxt "Note this is a KRunner keyword"
 msgid "alarm"
-msgstr ""
+msgstr "闹钟"
 
 #: kclockrunner.cpp:161
 #, kde-format
 msgctxt "Alarm name (time)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: kclockrunner.cpp:171
 #, kde-format
@@ -135,13 +135,13 @@ msgstr "关闭"
 #, kde-format
 msgctxt "Disable timer (rings in time)"
 msgid "Disable (Rings in %1)"
-msgstr ""
+msgstr "禁用 (%1 响起)"
 
 #: kclockrunner.cpp:180
 #, kde-format
 msgctxt "@action Enable Alarm"
 msgid "Enable"
-msgstr ""
+msgstr "启用"
 
 #: main.cpp:32
 #, kde-format
