@@ -15,6 +15,8 @@ import kclock as KClock
 Kirigami.ApplicationWindow {
     id: root
 
+    required property string initialPage
+
     // needs to work with 360x720 (+ panel heights)
     minimumWidth: 300
     minimumHeight: minimumWidth + 1
@@ -71,7 +73,12 @@ Kirigami.ApplicationWindow {
 
     Component.onCompleted: {
         // initial page and nav type
-        switchToPage(getPage("Time"), 1);
+        let page = getPage(root.initialPage);
+        if (!page) {
+            console.warn("Unknown initial page", root.initialPage);
+            page = getPage("Time");
+        }
+        switchToPage(page, 1);
         changeNav(isWidescreen);
     }
 

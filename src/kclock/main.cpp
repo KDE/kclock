@@ -41,15 +41,6 @@
 #include <QQuickWindow>
 #include <QStringLiteral>
 
-static void processCommandLine(const QCommandLineParser &parser, QObject *rootObject)
-{
-    if (parser.isSet(QStringLiteral("page"))) {
-        QVariant page;
-        QMetaObject::invokeMethod(rootObject, "getPage", Q_RETURN_ARG(QVariant, page), Q_ARG(QVariant, parser.value(QStringLiteral("page"))));
-        QMetaObject::invokeMethod(rootObject, "switchToPage", Q_ARG(QVariant, page), Q_ARG(QVariant, 0));
-    }
-}
-
 int main(int argc, char *argv[])
 {
     // set default style
@@ -78,7 +69,8 @@ int main(int argc, char *argv[])
 
     QCommandLineParser parser;
     aboutData.setupCommandLine(&parser);
-    parser.addOption(QCommandLineOption(QStringLiteral("page"), i18n("Select opened page"), QStringLiteral("page")));
+    QCommandLineOption pageOption(QStringLiteral("page"), i18n("Select opened page"), QStringLiteral("page"));
+    parser.addOption(pageOption);
     QCommandLineOption newWindowOption(QStringLiteral("new-window"), i18n("Explicitly open a new Clock window"));
     parser.addOption(newWindowOption);
     parser.process(app);
@@ -153,13 +145,17 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine *engine = new QQmlApplicationEngine();
     KLocalization::setupLocalizedContext(engine);
 
+    // ~~~~ Parse command line arguments ~~~~
+    const QString initialPage = parser.isSet(pageOption) ? parser.value(pageOption) : QStringLiteral("Time");
+    engine->setInitialProperties({{QStringLiteral("initialPage"), initialPage}});
     engine->load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
 
     app.setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.kclock")));
 
-    // ~~~~ Parse command line arguments ~~~~
     QQuickWindow *mainWindow = qobject_cast<QQuickWindow *>(engine->rootObjects().first());
-    processCommandLine(parser, mainWindow);
+    if (!mainWindow) {
+        qFatal() << "Failed to create main window";
+    }
 
     QObject::connect(&service,
                      &KDBusService::activateRequested,
@@ -167,7 +163,17 @@ int main(int argc, char *argv[])
                      [&parser, mainWindow](const QStringList &arguments, const QString &workingDirectory) {
                          Q_UNUSED(workingDirectory);
                          parser.parse(arguments);
-                         processCommandLine(parser, mainWindow);
+
+                         if (parser.isSet(QStringLiteral("page"))) {
+                             const QString pageName = parser.value(QStringLiteral("page"));
+                             QVariant page;
+                             QMetaObject::invokeMethod(mainWindow, "getPage", qReturnArg(page), QVariant(pageName));
+                             if (page.isNull()) {
+                                 qWarning() << "Unknown page to switch to" << pageName;
+                             } else {
+                                 QMetaObject::invokeMethod(mainWindow, "switchToPage", QVariant(page), QVariant(0));
+                             }
+                         }
 
                          mainWindow->requestActivate();
                      });
