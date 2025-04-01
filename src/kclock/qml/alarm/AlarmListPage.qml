@@ -21,6 +21,7 @@ Kirigami.ScrollablePage {
     property real yTranslate: 0
     property bool editMode: false
 
+    objectName: "Alarms"
     title: i18n("Alarms")
     icon.name: "notifications"
 

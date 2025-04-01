@@ -50,73 +50,61 @@ Kirigami.OverlayDrawer {
                 spacing: 0
 
                 Kirigami.NavigationTabButton {
-                    property var page: applicationWindow().getPage("Time")
-
                     Layout.fillWidth: true
                     width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
 
                     text: i18n("Time")
                     icon.name: "clock"
-                    checked: pageStack.currentItem === page
+                    checked: pageStack.currentItem?.objectName === "Time"
                     onClicked: {
-                        if (applicationWindow().pageStack.currentItem !== page) {
+                        if (pageStack.currentItem?.objectName !== "Time") {
+                            const page = applicationWindow().getPage("Time");
                             applicationWindow().switchToPage(page, 0);
-                        } else {
-                            checked = Qt.binding(function() { return applicationWindow().pageStack.currentItem === page; });
                         }
                     }
                 }
 
                 Kirigami.NavigationTabButton {
-                    property var page: applicationWindow().getPage("Timers")
-
                     Layout.fillWidth: true
                     width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
 
                     text: i18n("Timers")
                     icon.name: "player-time"
-                    checked: pageStack.currentItem === page
+                    checked: pageStack.currentItem?.objectName === "Timers"
                     onClicked: {
-                        if (applicationWindow().pageStack.currentItem !== page) {
+                        if (pageStack.currentItem?.objectName !== "Timers") {
+                            const page = applicationWindow().getPage("Timers");
                             applicationWindow().switchToPage(page, 0);
-                        } else {
-                            checked = Qt.binding(function() { return applicationWindow().pageStack.currentItem === page; });
                         }
                     }
                 }
 
                 Kirigami.NavigationTabButton {
-                    property var page: applicationWindow().getPage("Stopwatch")
-
                     Layout.fillWidth: true
                     width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
 
                     text: i18n("Stopwatch")
                     icon.name: "chronometer"
-                    checked: pageStack.currentItem === page
+                    checked: pageStack.currentItem?.objectName === "Stopwatch"
                     onClicked: {
-                        if (applicationWindow().pageStack.currentItem !== page) {
+                        if (pageStack.currentItem?.objectName !== "Stopwatch") {
+                            const page = applicationWindow().getPage("Stopwatch");
                             applicationWindow().switchToPage(page, 0);
-                        } else {
-                            checked = Qt.binding(function() { return applicationWindow().pageStack.currentItem === page; });
                         }
                     }
                 }
 
                 Kirigami.NavigationTabButton {
-                    property var page: applicationWindow().getPage("Alarms")
-
                     Layout.fillWidth: true
                     width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
 
                     text: i18n("Alarms")
                     icon.name: "notifications"
-                    checked: pageStack.currentItem === page
+                    checked: pageStack.currentItem?.objectName === "Alarms"
                     onClicked: {
-                        if (applicationWindow().pageStack.currentItem !== page) {
+                        if (pageStack.currentItem?.objectName !== "Alarms") {
+                            const page = applicationWindow().getPage("Alarms");
                             applicationWindow().switchToPage(page, 0);
-                        } else {
-                            checked = Qt.binding(function() { return applicationWindow().pageStack.currentItem === page; });
                         }
                     }
                 }

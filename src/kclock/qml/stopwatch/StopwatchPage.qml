@@ -21,6 +21,7 @@ Kirigami.ScrollablePage {
 
     property real yTranslate
 
+    objectName: "Stopwatch"
     title: i18n("Stopwatch")
     readonly property string hiddenTitle: running ? text.formatDuration() : ""
     icon.name: "chronometer"

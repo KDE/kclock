@@ -19,6 +19,7 @@ FormCard.FormCardPage {
 
     property real yTranslate: 0
 
+    objectName: "Settings"
     title: i18n("Settings")
     icon.name: "settings-configure"
 

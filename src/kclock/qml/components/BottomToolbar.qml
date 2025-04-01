@@ -69,57 +69,48 @@ Kirigami.NavigationTabBar {
 
     property var pageStack: applicationWindow().pageStack
 
-    function getTimePage() {
-        return applicationWindow().getPage("Time");
-    }
-    function getTimersPage() {
-        return applicationWindow().getPage("Timers");
-    }
-    function getStopwatchPage() {
-        return applicationWindow().getPage("Stopwatch");
-    }
-    function getAlarmsPage() {
-        return applicationWindow().getPage("Alarms");
-    }
-
     actions: [
         Kirigami.Action {
             icon.name: "clock"
             text: i18n("Time")
-            checked: getTimePage() === pageStack.currentItem
+            checked: pageStack.currentItem?.objectName === "Time"
             onTriggered: {
-                if (getTimePage()  !== pageStack.currentItem) {
-                    applicationWindow().switchToPage(getTimePage(), 0);
+                if (pageStack.currentItem?.objectName !== "Time") {
+                    const page = applicationWindow().getPage("Time");
+                    applicationWindow().switchToPage(page, 0);
                 }
             }
         },
         Kirigami.Action {
             icon.name: "player-time"
             text: i18n("Timers")
-            checked: getTimersPage() === pageStack.currentItem
+            checked: pageStack.currentItem?.objectName === "Timers"
             onTriggered: {
-                if (getTimersPage() !== pageStack.currentItem) {
-                    applicationWindow().switchToPage(getTimersPage(), 0);
+                if (pageStack.currentItem?.objectName !== "Timers") {
+                    const page = applicationWindow().getPage("Timers");
+                    applicationWindow().switchToPage(page, 0);
                 }
             }
         },
         Kirigami.Action {
             icon.name: "chronometer"
             text: i18n("Stopwatch")
-            checked: getStopwatchPage() === pageStack.currentItem
+            checked: pageStack.currentItem?.objectName === "Stopwatch"
             onTriggered: {
-                if (getStopwatchPage() !== pageStack.currentItem) {
-                    applicationWindow().switchToPage(getStopwatchPage(), 0);
+                if (pageStack.currentItem?.objectName !== "Stopwatch") {
+                    const page = applicationWindow().getPage("Stopwatch");
+                    applicationWindow().switchToPage(page, 0);
                 }
             }
         },
         Kirigami.Action {
             icon.name: "notifications"
             text: i18n("Alarms")
-            checked: getAlarmsPage() === pageStack.currentItem
+            checked: pageStack.currentItem?.objectName === "Alarms"
             onTriggered: {
-                if (getAlarmsPage() !== pageStack.currentItem) {
-                    applicationWindow().switchToPage(getAlarmsPage(), 0);
+                if (pageStack.currentItem?.objectName !== "Alarms") {
+                    const page = applicationWindow().getPage("Alarms");
+                    applicationWindow().switchToPage(page, 0);
                 }
             }
         }
