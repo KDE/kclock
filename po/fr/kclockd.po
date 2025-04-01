@@ -1,4 +1,4 @@
-# Xavier Besnard <xavier.besnard@kde.org>, 2020, 2021, 2022.
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2025 Xavier Besnard <xavier.besnard@kde.org>
 # Simon Depiets <sdepiets@gmail.com>, 2020.
 # Noé Lopez <noelopez@free.fr>, 2022.
 # Xavier Besnard <xavier.besnard@kde.org>, 2023.
@@ -6,18 +6,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-30 00:45+0000\n"
-"PO-Revision-Date: 2023-02-07 20:10+0100\n"
+"POT-Creation-Date: 2025-04-01 00:44+0000\n"
+"PO-Revision-Date: 2025-03-30 11:27+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
-"Language-Team: French <kde-francophone@kde.org>\n"
+"Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.1\n"
-"X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
+"X-Environment: kde\n"
+"X-Generator: Lokalize 24.12.3\n"
 "X-Text-Markup: kde4\n"
 
 #, kde-format
@@ -36,9 +36,11 @@ msgid "Alarm"
 msgstr "Alarme"
 
 #: alarm.cpp:77 timer.cpp:67
-#, kde-format
-msgid "View"
-msgstr "Afficher"
+#, fuzzy, kde-format
+#| msgid "Dismiss"
+msgctxt "@action:button"
+msgid "Dismiss"
+msgstr "Rejeter"
 
 #: alarm.cpp:80
 #, kde-format
@@ -60,79 +62,76 @@ msgstr "Alarme : <shortcut>%1 %2</shortcut>"
 #, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "+1 Minute"
-msgstr ""
+msgstr "+1 minute"
 
 #: kclockrunner.cpp:79
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset Timer"
-msgstr ""
+msgstr "Réinitialiser un chronomètre"
 
 #: kclockrunner.cpp:86
 #, kde-format
 msgctxt "Note this is a KRunner keyword"
 msgid "timer"
-msgstr ""
+msgstr "chronomètre"
 
 #: kclockrunner.cpp:103
 #, kde-format
 msgctxt "Timer running or paused (remaining time)"
 msgid "%1 (%2 Remaining)"
-msgstr ""
+msgstr "%1 (%2 restant)"
 
 #: kclockrunner.cpp:105
 #, kde-format
 msgctxt "Timer not running (timer length)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: kclockrunner.cpp:116
 #, kde-format
 msgctxt "KRunner category"
 msgid "Timer"
-msgstr ""
+msgstr "Chronomètre"
 
 #: kclockrunner.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "Pause"
-msgstr ""
+msgstr "Mettre en pause"
 
 #: kclockrunner.cpp:122
 #, kde-format
 msgctxt "@action"
 msgid "Resume"
-msgstr ""
+msgstr "Reprendre"
 
 #: kclockrunner.cpp:124
 #, kde-format
 msgctxt "@action"
 msgid "Start Timer"
-msgstr ""
+msgstr "Démarrer un chronomètre"
 
 #: kclockrunner.cpp:139
-#, fuzzy, kde-format
-#| msgid "Alarm"
+#, kde-format
 msgctxt "Note this is a KRunner keyword"
 msgid "alarm"
-msgstr "Alarme"
+msgstr "alarme"
 
 #: kclockrunner.cpp:161
 #, kde-format
 msgctxt "Alarm name (time)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: kclockrunner.cpp:171
-#, fuzzy, kde-format
-#| msgid "Alarm"
+#, kde-format
 msgctxt "KRunner category"
 msgid "Alarm"
 msgstr "Alarme"
 
 #: kclockrunner.cpp:175
-#, fuzzy, kde-format
-#| msgid "Dismiss"
+#, kde-format
 msgctxt "@action Dismiss Alarm"
 msgid "Dismiss"
 msgstr "Rejeter"
@@ -141,13 +140,13 @@ msgstr "Rejeter"
 #, kde-format
 msgctxt "Disable timer (rings in time)"
 msgid "Disable (Rings in %1)"
-msgstr ""
+msgstr "Désactiver (Sonneries dans %1)"
 
 #: kclockrunner.cpp:180
 #, kde-format
 msgctxt "@action Enable Alarm"
 msgid "Enable"
-msgstr ""
+msgstr "Activer"
 
 #: main.cpp:32
 #, kde-format
@@ -177,7 +176,7 @@ msgstr "Temps écoulé"
 #: timer.cpp:63
 #, kde-format
 msgid "Your timer %1 has finished!"
-msgstr "Votre minuteur %1 est terminé !"
+msgstr "Votre chronomètre %1 est terminé !"
 
 #: xdgportal.cpp:34
 #, kde-format
@@ -186,3 +185,6 @@ msgid ""
 msgstr ""
 "Permettre au processus d'horloge de s'exécuter en arrière-plan et d'être "
 "lancé au démarrage."
+
+#~ msgid "View"
+#~ msgstr "Afficher"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-30 00:45+0000\n"
+"POT-Creation-Date: 2025-04-01 00:44+0000\n"
 "PO-Revision-Date: 2024-08-17 21:11+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -33,9 +33,11 @@ msgid "Alarm"
 msgstr "Riasztás"
 
 #: alarm.cpp:77 timer.cpp:67
-#, kde-format
-msgid "View"
-msgstr "Megtekintés"
+#, fuzzy, kde-format
+#| msgid "Dismiss"
+msgctxt "@action:button"
+msgid "Dismiss"
+msgstr "Bezárás"
 
 #: alarm.cpp:80
 #, kde-format
@@ -183,3 +185,6 @@ msgid ""
 msgstr ""
 "Engedélyezi, hogy az órafolyamat a háttérben legyen, és indításkor "
 "elinduljon."
+
+#~ msgid "View"
+#~ msgstr "Megtekintés"

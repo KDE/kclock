@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclockd\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-30 00:45+0000\n"
+"POT-Creation-Date: 2025-04-01 00:44+0000\n"
 "PO-Revision-Date: 2023-02-09 01:02+0100\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -36,9 +36,11 @@ msgid "Alarm"
 msgstr "Erinnerung"
 
 #: alarm.cpp:77 timer.cpp:67
-#, kde-format
-msgid "View"
-msgstr "Ansicht"
+#, fuzzy, kde-format
+#| msgid "Dismiss"
+msgctxt "@action:button"
+msgid "Dismiss"
+msgstr "Schließen"
 
 #: alarm.cpp:80
 #, kde-format
@@ -186,3 +188,6 @@ msgid ""
 msgstr ""
 "Dem Uhren-Prozess erlauben, im Hintergrund ausgeführt und beim Systemstart "
 "gestartet zu werden."
+
+#~ msgid "View"
+#~ msgstr "Ansicht"

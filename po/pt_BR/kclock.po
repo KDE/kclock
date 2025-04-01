@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-30 00:45+0000\n"
+"POT-Creation-Date: 2025-04-01 00:44+0000\n"
 "PO-Revision-Date: 2025-02-18 18:34-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -348,27 +348,27 @@ msgstr "PM"
 msgid "Time Format"
 msgstr "Formato da hora"
 
-#: qml/settings/SettingsPage.qml:38
+#: qml/settings/SettingsPage.qml:36
 #, kde-format
 msgid "Use System Default"
 msgstr "Usar padrão do sistema"
 
-#: qml/settings/SettingsPage.qml:39
+#: qml/settings/SettingsPage.qml:37
 #, kde-format
 msgid "12 Hour Time"
 msgstr "12 horas"
 
-#: qml/settings/SettingsPage.qml:40
+#: qml/settings/SettingsPage.qml:38
 #, kde-format
 msgid "24 Hour Time"
 msgstr "24 horas"
 
-#: qml/settings/SettingsPage.qml:62
+#: qml/settings/SettingsPage.qml:54
 #, kde-format
 msgid "About Clock"
 msgstr "Sober o Relógio"
 
-#: qml/settings/SettingsPage.qml:71
+#: qml/settings/SettingsPage.qml:63
 #, kde-format
 msgid "About KDE"
 msgstr "Sobre o KDE"

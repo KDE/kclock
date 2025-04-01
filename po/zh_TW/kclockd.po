@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-30 00:45+0000\n"
+"POT-Creation-Date: 2025-04-01 00:44+0000\n"
 "PO-Revision-Date: 2022-12-24 01:51+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
@@ -33,9 +33,11 @@ msgid "Alarm"
 msgstr "鬧鐘"
 
 #: alarm.cpp:77 timer.cpp:67
-#, kde-format
-msgid "View"
-msgstr "檢視"
+#, fuzzy, kde-format
+#| msgid "Dismiss"
+msgctxt "@action:button"
+msgid "Dismiss"
+msgstr "關閉"
 
 #: alarm.cpp:80
 #, kde-format
@@ -181,3 +183,6 @@ msgstr "您的計時器 %1 已結束！"
 msgid ""
 "Allow the clock process to be in the background and launched on startup."
 msgstr "允許時鐘行程在背景執行並於啟動時執行。"
+
+#~ msgid "View"
+#~ msgstr "檢視"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-30 00:45+0000\n"
+"POT-Creation-Date: 2025-04-01 00:44+0000\n"
 "PO-Revision-Date: 2024-08-27 16:47+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -349,27 +349,27 @@ msgstr "vakarā"
 msgid "Time Format"
 msgstr "Laika formāts"
 
-#: qml/settings/SettingsPage.qml:38
+#: qml/settings/SettingsPage.qml:36
 #, kde-format
 msgid "Use System Default"
 msgstr "Lietot sistēmas noklusēto"
 
-#: qml/settings/SettingsPage.qml:39
+#: qml/settings/SettingsPage.qml:37
 #, kde-format
 msgid "12 Hour Time"
 msgstr "12 stundu laiks"
 
-#: qml/settings/SettingsPage.qml:40
+#: qml/settings/SettingsPage.qml:38
 #, kde-format
 msgid "24 Hour Time"
 msgstr "24 stundu laiks"
 
-#: qml/settings/SettingsPage.qml:62
+#: qml/settings/SettingsPage.qml:54
 #, kde-format
 msgid "About Clock"
 msgstr "Par pulksteni"
 
-#: qml/settings/SettingsPage.qml:71
+#: qml/settings/SettingsPage.qml:63
 #, kde-format
 msgid "About KDE"
 msgstr "Par KDE"

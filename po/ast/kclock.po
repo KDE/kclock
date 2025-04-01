@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-30 00:45+0000\n"
+"POT-Creation-Date: 2025-04-01 00:44+0000\n"
 "PO-Revision-Date: 2024-03-27 22:59+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: Asturian <alministradores@softastur.org>\n"
@@ -342,27 +342,27 @@ msgstr ""
 msgid "Time Format"
 msgstr ""
 
-#: qml/settings/SettingsPage.qml:38
+#: qml/settings/SettingsPage.qml:36
 #, kde-format
 msgid "Use System Default"
 msgstr ""
 
-#: qml/settings/SettingsPage.qml:39
+#: qml/settings/SettingsPage.qml:37
 #, kde-format
 msgid "12 Hour Time"
 msgstr ""
 
-#: qml/settings/SettingsPage.qml:40
+#: qml/settings/SettingsPage.qml:38
 #, kde-format
 msgid "24 Hour Time"
 msgstr ""
 
-#: qml/settings/SettingsPage.qml:62
+#: qml/settings/SettingsPage.qml:54
 #, kde-format
 msgid "About Clock"
 msgstr ""
 
-#: qml/settings/SettingsPage.qml:71
+#: qml/settings/SettingsPage.qml:63
 #, kde-format
 msgid "About KDE"
 msgstr ""

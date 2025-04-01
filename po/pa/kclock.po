@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-30 00:45+0000\n"
+"POT-Creation-Date: 2025-04-01 00:44+0000\n"
 "PO-Revision-Date: 2024-01-03 14:19-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -344,27 +344,27 @@ msgstr "ਸ਼ਾਮ"
 msgid "Time Format"
 msgstr "ਸਮਾਂ ਫਾਰਮੈਟ"
 
-#: qml/settings/SettingsPage.qml:38
+#: qml/settings/SettingsPage.qml:36
 #, kde-format
 msgid "Use System Default"
 msgstr "ਸਿਸਟਮ ਦੇ ਮੂਲ ਨੂੰ ਵਰਤੋਂ"
 
-#: qml/settings/SettingsPage.qml:39
+#: qml/settings/SettingsPage.qml:37
 #, kde-format
 msgid "12 Hour Time"
 msgstr "12 ਘੰਟੇ ਦਾ ਸਮਾਂ"
 
-#: qml/settings/SettingsPage.qml:40
+#: qml/settings/SettingsPage.qml:38
 #, kde-format
 msgid "24 Hour Time"
 msgstr "24 ਘੰਟੇ ਦਾ ਸਮਾਂ"
 
-#: qml/settings/SettingsPage.qml:62
+#: qml/settings/SettingsPage.qml:54
 #, kde-format
 msgid "About Clock"
 msgstr "ਕਲਾਕ ਬਾਰੇ"
 
-#: qml/settings/SettingsPage.qml:71
+#: qml/settings/SettingsPage.qml:63
 #, kde-format
 msgid "About KDE"
 msgstr "KDE ਬਾਰੇ"

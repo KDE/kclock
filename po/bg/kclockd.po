@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-30 00:45+0000\n"
+"POT-Creation-Date: 2025-04-01 00:44+0000\n"
 "PO-Revision-Date: 2025-03-29 18:57+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -33,9 +33,11 @@ msgid "Alarm"
 msgstr "Аларма"
 
 #: alarm.cpp:77 timer.cpp:67
-#, kde-format
-msgid "View"
-msgstr "Изглед"
+#, fuzzy, kde-format
+#| msgid "Dismiss"
+msgctxt "@action:button"
+msgid "Dismiss"
+msgstr "Отхвърляне"
 
 #: alarm.cpp:80
 #, kde-format
@@ -180,3 +182,6 @@ msgid ""
 msgstr ""
 "Позволяване на процеса на часовника да работи във фонов режим и да се "
 "стартира при начално зареждане."
+
+#~ msgid "View"
+#~ msgstr "Изглед"

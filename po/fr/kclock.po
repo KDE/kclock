@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-30 00:45+0000\n"
-"PO-Revision-Date: 2025-03-28 09:48+0100\n"
+"POT-Creation-Date: 2025-04-01 00:44+0000\n"
+"PO-Revision-Date: 2025-03-30 11:24+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -236,8 +236,7 @@ msgid "Add alarm"
 msgstr "Ajouter une alarme"
 
 #: qml/alarm/AlarmListPage.qml:100
-#, fuzzy, kde-format
-#| msgid "New Alarm"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Alarm"
 msgstr "Nouvelle alarme"
@@ -350,27 +349,27 @@ msgstr "PM"
 msgid "Time Format"
 msgstr "Format d'heure"
 
-#: qml/settings/SettingsPage.qml:38
+#: qml/settings/SettingsPage.qml:36
 #, kde-format
 msgid "Use System Default"
 msgstr "Utiliser les paramètres par défaut du système"
 
-#: qml/settings/SettingsPage.qml:39
+#: qml/settings/SettingsPage.qml:37
 #, kde-format
 msgid "12 Hour Time"
 msgstr "Heure sur 12 heures"
 
-#: qml/settings/SettingsPage.qml:40
+#: qml/settings/SettingsPage.qml:38
 #, kde-format
 msgid "24 Hour Time"
 msgstr "Heure sur 24 heures"
 
-#: qml/settings/SettingsPage.qml:62
+#: qml/settings/SettingsPage.qml:54
 #, kde-format
 msgid "About Clock"
 msgstr "À propos de KClock"
 
-#: qml/settings/SettingsPage.qml:71
+#: qml/settings/SettingsPage.qml:63
 #, kde-format
 msgid "About KDE"
 msgstr "À propos de KDE"
@@ -414,22 +413,19 @@ msgid "Total"
 msgstr "Total"
 
 #: qml/stopwatch/StopwatchPage.qml:259
-#, fuzzy, kde-format
-#| msgid "Pause"
+#, kde-format
 msgctxt "@action:button"
 msgid "Pause"
-msgstr "Pause"
+msgstr "Mettre en pause"
 
 #: qml/stopwatch/StopwatchPage.qml:261
-#, fuzzy, kde-format
-#| msgid "Resume"
+#, kde-format
 msgctxt "@action:button"
 msgid "Resume"
 msgstr "Reprendre"
 
 #: qml/stopwatch/StopwatchPage.qml:263
-#, fuzzy, kde-format
-#| msgid "Start"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start"
 msgstr "Démarrer"
@@ -455,8 +451,7 @@ msgid "Add"
 msgstr "Ajouter"
 
 #: qml/time/TimePage.qml:167
-#, fuzzy, kde-format
-#| msgid "Add Location"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Location"
 msgstr "Ajouter un emplacement"
@@ -527,19 +522,16 @@ msgid "optional"
 msgstr "Optionnel"
 
 #: qml/timer/TimerFormDialog.qml:35
-#, fuzzy, kde-format
-#| msgctxt "Edit alarm page title"
-#| msgid "Editing %1"
+#, kde-format
 msgctxt "@title:window Edit timer"
 msgid "Edit %1"
 msgstr "Modifier %1"
 
 #: qml/timer/TimerFormDialog.qml:35
-#, fuzzy, kde-format
-#| msgid "Create timer"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Timer"
-msgstr "Créer une nouvelle temporisation"
+msgstr "Créer un nouveau chronomètre"
 
 #: qml/timer/TimerFormDialog.qml:51
 #, kde-format
@@ -570,14 +562,13 @@ msgstr "Enregistrer comme préréglages"
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr ""
+msgstr "Enregistrer"
 
 #: qml/timer/TimerFormDialog.qml:113
-#, fuzzy, kde-format
-#| msgid "Done"
+#, kde-format
 msgctxt "@action:button"
 msgid "Done"
-msgstr "Fait"
+msgstr "Terminé"
 
 #: qml/timer/TimerListDelegate.qml:161
 #, kde-format
@@ -604,8 +595,7 @@ msgid "Reset"
 msgstr "Réinitialiser"
 
 #: qml/timer/TimerListDelegate.qml:192
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit"
 msgstr "Modifier"
@@ -619,7 +609,7 @@ msgstr "Supprimer"
 #: qml/timer/TimerListPage.qml:29
 #, kde-format
 msgid "New Timer"
-msgstr "Nouveau minuteur"
+msgstr "Nouveau chronomètre"
 
 #: qml/timer/TimerListPage.qml:54
 #, kde-format
@@ -631,11 +621,10 @@ msgstr ""
 "« kclockd » pour avoir la fonctionnalité d'alarme."
 
 #: qml/timer/TimerListPage.qml:84
-#, fuzzy, kde-format
-#| msgid "New Timer"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Timer"
-msgstr "Nouveau minuteur"
+msgstr "Nouveau chronomètre"
 
 #: qml/timer/TimerListPage.qml:94
 #, kde-format
@@ -645,12 +634,12 @@ msgstr "Aucune alarme configurée"
 #: qml/timer/TimerListPage.qml:99
 #, kde-format
 msgid "Add timer"
-msgstr "Ajouter un minuteur"
+msgstr "Ajouter un chronomètre"
 
 #: qml/timer/TimerPage.qml:24
 #, kde-format
 msgid "New timer"
-msgstr "Nouveau minuteur"
+msgstr "Nouveau chronomètre"
 
 #: qml/timer/TimerPage.qml:60 qml/timer/TimerPage.qml:108
 #, kde-format
@@ -665,7 +654,7 @@ msgstr "Minuteur de boucle"
 #: qml/timer/TimerRingingPopup.qml:27
 #, kde-format
 msgid "Timer has finished"
-msgstr "Le minuteur est terminé."
+msgstr "Le chronomètre est terminé."
 
 #: qml/timer/TimerRingingPopup.qml:46
 #, kde-format
@@ -675,7 +664,7 @@ msgstr "%1 est terminé."
 #: qml/timer/TimerRingingPopup.qml:46
 #, kde-format
 msgid "The timer has completed."
-msgstr "Le minuteur a terminé."
+msgstr "Le chronomètre a terminé."
 
 #: savedlocationsmodel.cpp:109
 #, kde-format

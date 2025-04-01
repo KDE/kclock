@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-30 00:45+0000\n"
+"POT-Creation-Date: 2025-04-01 00:44+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -33,9 +33,11 @@ msgid "Alarm"
 msgstr "闹钟"
 
 #: alarm.cpp:77 timer.cpp:67
-#, kde-format
-msgid "View"
-msgstr "查看"
+#, fuzzy, kde-format
+#| msgid "Dismiss"
+msgctxt "@action:button"
+msgid "Dismiss"
+msgstr "关闭"
 
 #: alarm.cpp:80
 #, kde-format
@@ -178,3 +180,6 @@ msgstr "计时器 %1 已完成计时！"
 msgid ""
 "Allow the clock process to be in the background and launched on startup."
 msgstr "允许时钟进程在后台运行并在开机时启动。"
+
+#~ msgid "View"
+#~ msgstr "查看"

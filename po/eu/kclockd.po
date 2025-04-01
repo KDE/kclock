@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-30 00:45+0000\n"
+"POT-Creation-Date: 2025-04-01 00:44+0000\n"
 "PO-Revision-Date: 2022-09-20 21:06+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -36,9 +36,11 @@ msgid "Alarm"
 msgstr "Alarma"
 
 #: alarm.cpp:77 timer.cpp:67
-#, kde-format
-msgid "View"
-msgstr "Ikuspegia"
+#, fuzzy, kde-format
+#| msgid "Dismiss"
+msgctxt "@action:button"
+msgid "Dismiss"
+msgstr "Baztertu"
 
 #: alarm.cpp:80
 #, kde-format
@@ -184,3 +186,6 @@ msgstr "Zure %1 tenporizadoreak amaitu du!"
 msgid ""
 "Allow the clock process to be in the background and launched on startup."
 msgstr "Baimendu erloju prozesua atzeko planoan egoten eta abioan abiaraztea."
+
+#~ msgid "View"
+#~ msgstr "Ikuspegia"

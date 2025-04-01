@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-30 00:45+0000\n"
+"POT-Creation-Date: 2025-04-01 00:44+0000\n"
 "PO-Revision-Date: 2022-04-15 23:10+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -33,9 +33,11 @@ msgid "Alarm"
 msgstr "알람"
 
 #: alarm.cpp:77 timer.cpp:67
-#, kde-format
-msgid "View"
-msgstr "보기"
+#, fuzzy, kde-format
+#| msgid "Dismiss"
+msgctxt "@action:button"
+msgid "Dismiss"
+msgstr "끄기"
 
 #: alarm.cpp:80
 #, kde-format
@@ -182,3 +184,6 @@ msgid ""
 "Allow the clock process to be in the background and launched on startup."
 msgstr ""
 "시계 프로세스가 시동 시 실행되고 백그라운드에 머물 수 있도록 허용합니다."
+
+#~ msgid "View"
+#~ msgstr "보기"

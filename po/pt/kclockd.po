@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-30 00:45+0000\n"
+"POT-Creation-Date: 2025-04-01 00:44+0000\n"
 "PO-Revision-Date: 2022-09-18 23:20+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -29,9 +29,11 @@ msgid "Alarm"
 msgstr "Alarme"
 
 #: alarm.cpp:77 timer.cpp:67
-#, kde-format
-msgid "View"
-msgstr "Ver"
+#, fuzzy, kde-format
+#| msgid "Dismiss"
+msgctxt "@action:button"
+msgid "Dismiss"
+msgstr "Esquecer"
 
 #: alarm.cpp:80
 #, kde-format
@@ -179,3 +181,6 @@ msgid ""
 msgstr ""
 "Permitir ao processo do relógio estar em segundo plano e ser lançado no "
 "arranque."
+
+#~ msgid "View"
+#~ msgstr "Ver"

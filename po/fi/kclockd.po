@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-30 00:45+0000\n"
+"POT-Creation-Date: 2025-04-01 00:44+0000\n"
 "PO-Revision-Date: 2022-04-15 23:10+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -32,9 +32,11 @@ msgid "Alarm"
 msgstr "Hälytys"
 
 #: alarm.cpp:77 timer.cpp:67
-#, kde-format
-msgid "View"
-msgstr "Näkymä"
+#, fuzzy, kde-format
+#| msgid "Dismiss"
+msgctxt "@action:button"
+msgid "Dismiss"
+msgstr "Merkitse nähdyksi"
 
 #: alarm.cpp:80
 #, kde-format
@@ -180,3 +182,6 @@ msgstr "Ajastus %1 on päättynyt!"
 msgid ""
 "Allow the clock process to be in the background and launched on startup."
 msgstr "Salli kelloprosessin olla taustalla ja käynnistyä kirjauduttaessa."
+
+#~ msgid "View"
+#~ msgstr "Näkymä"

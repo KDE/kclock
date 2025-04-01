@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-30 00:45+0000\n"
+"POT-Creation-Date: 2025-04-01 00:44+0000\n"
 "PO-Revision-Date: 2023-11-10 19:09+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -34,9 +34,11 @@ msgid "Alarm"
 msgstr "Alarmo"
 
 #: alarm.cpp:77 timer.cpp:67
-#, kde-format
-msgid "View"
-msgstr "Vido"
+#, fuzzy, kde-format
+#| msgid "Dismiss"
+msgctxt "@action:button"
+msgid "Dismiss"
+msgstr "Forĵeti"
 
 #: alarm.cpp:80
 #, kde-format
@@ -183,3 +185,6 @@ msgid ""
 "Allow the clock process to be in the background and launched on startup."
 msgstr ""
 "Permesi la horloĝan procezon esti en la fono kaj lanĉita dum ekfunkciigo."
+
+#~ msgid "View"
+#~ msgstr "Vido"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-30 00:45+0000\n"
+"POT-Creation-Date: 2025-04-01 00:44+0000\n"
 "PO-Revision-Date: 2024-05-12 14:25+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -33,9 +33,11 @@ msgid "Alarm"
 msgstr "Alarma"
 
 #: alarm.cpp:77 timer.cpp:67
-#, kde-format
-msgid "View"
-msgstr "Vista"
+#, fuzzy, kde-format
+#| msgid "Dismiss"
+msgctxt "@action:button"
+msgid "Dismiss"
+msgstr "Descartar"
 
 #: alarm.cpp:80
 #, kde-format
@@ -183,3 +185,6 @@ msgid ""
 msgstr ""
 "Permitir que o proceso de reloxo se execute en segundo plano e se inicie co "
 "sistema."
+
+#~ msgid "View"
+#~ msgstr "Vista"
