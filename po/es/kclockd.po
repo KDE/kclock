@@ -1,5 +1,5 @@
 # Spanish translations for kclockd.po package.
-# Copyright (C) 2022 This file is copyright:
+# Copyright (C) 2022-2025 This file is copyright:
 # This file is distributed under the same license as the kclock package.
 #
 # Automatically generated, 2022.
@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kclockd\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-01 00:44+0000\n"
-"PO-Revision-Date: 2025-03-30 01:20+0100\n"
+"PO-Revision-Date: 2025-04-02 00:56+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -35,8 +35,7 @@ msgid "Alarm"
 msgstr "Alarma"
 
 #: alarm.cpp:77 timer.cpp:67
-#, fuzzy, kde-format
-#| msgid "Dismiss"
+#, kde-format
 msgctxt "@action:button"
 msgid "Dismiss"
 msgstr "Descartar"
@@ -184,6 +183,3 @@ msgid ""
 msgstr ""
 "Permitir que el proceso del reloj se ejecute en segundo plano y se lance "
 "durante el arranque."
-
-#~ msgid "View"
-#~ msgstr "Ver"
