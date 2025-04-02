@@ -34,6 +34,8 @@
 
 #include <QApplication>
 #include <QCommandLineParser>
+#include <QDBusConnection>
+#include <QDBusMessage>
 #include <QMetaObject>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
@@ -82,13 +84,13 @@ int main(int argc, char *argv[])
     KDBusService service(serviceOptions);
 
     // ensure kclockd is up with dbus autostart, any call will do
-    QDBusInterface *testInterface = new QDBusInterface(QStringLiteral("org.kde.kclockd"),
-                                                       QStringLiteral("/Alarms"),
-                                                       QStringLiteral("org.freedesktop.DBus.Introspectable"),
-                                                       QDBusConnection::sessionBus(),
-                                                       nullptr);
-    testInterface->call(QStringLiteral("Introspect"));
-    testInterface->deleteLater();
+    {
+        const QDBusMessage testMessage = QDBusMessage::createMethodCall(QStringLiteral("org.kde.kclockd"),
+                                                                        QStringLiteral("/"),
+                                                                        QStringLiteral("org.freedesktop.DBus.Peer"),
+                                                                        QStringLiteral("Ping"));
+        QDBusConnection::sessionBus().call(testMessage);
+    }
 
     OrgKdePowerManagementInterface *interface =
         new OrgKdePowerManagementInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Utility"), QDBusConnection::sessionBus());
