@@ -16,7 +16,8 @@
 #include <KStatusNotifierItem>
 
 #include <QDBusConnection>
-#include <QDBusInterface>
+#include <QDBusMessage>
+#include <QDBusPendingCallWatcher>
 #include <QDBusReply>
 #include <QLocale>
 #include <QThread>
@@ -56,25 +57,47 @@ AlarmModel::AlarmModel(QObject *parent)
 void AlarmModel::load()
 {
     // load from dbus
-    QDBusInterface *interface = new QDBusInterface(QStringLiteral("org.kde.kclockd"),
-                                                   QStringLiteral("/Alarms"),
-                                                   QStringLiteral("org.freedesktop.DBus.Introspectable"),
-                                                   QDBusConnection::sessionBus(),
-                                                   this);
-    QDBusReply<QString> reply = interface->call(QStringLiteral("Introspect"));
-    if (reply.isValid()) {
-        QXmlStreamReader xml(reply.value());
-        while (!xml.atEnd()) {
-            xml.readNext();
-            if (xml.name() == QStringLiteral("node") && xml.attributes().hasAttribute(QStringLiteral("name"))) {
-                if (xml.attributes().value(QStringLiteral("name")).toString().indexOf(QStringLiteral("org")) == -1) {
-                    this->addAlarmInternal(xml.attributes().value(QStringLiteral("name")).toString());
+
+    m_busy = true;
+    Q_EMIT busyChanged(m_busy);
+
+    // Unfortunately, Qt DBus doesn't support DBus ObjectManager.
+    QDBusMessage message = QDBusMessage::createMethodCall(QStringLiteral("org.kde.kclockd"),
+                                                          QStringLiteral("/Alarms"),
+                                                          QStringLiteral("org.freedesktop.DBus.Introspectable"),
+                                                          QStringLiteral("Introspect"));
+    QDBusPendingCall call = QDBusConnection::sessionBus().asyncCall(message);
+    auto *watcher = new QDBusPendingCallWatcher(call, this);
+    connect(watcher, &QDBusPendingCallWatcher::finished, this, [this, watcher] {
+        QDBusPendingReply<QString> reply = *watcher;
+
+        if (reply.isError()) {
+            // TODO show error in UI.
+            qWarning() << "Failed to fetch alarms" << reply.error().name() << reply.error().message();
+        } else {
+            beginResetModel();
+            QXmlStreamReader xml(reply.value());
+            while (!xml.atEnd()) {
+                xml.readNext();
+                if (xml.isStartElement() && xml.name() == QLatin1String("node")) {
+                    const auto name = xml.attributes().value(QLatin1String("name"));
+                    if (!name.isEmpty() && !name.contains(QLatin1String("org"))) {
+                        addAlarmInternal(name.toString());
+                    }
                 }
             }
+            endResetModel();
         }
-    }
 
-    interface->deleteLater();
+        m_busy = false;
+        Q_EMIT busyChanged(m_busy);
+        watcher->deleteLater();
+    });
+}
+
+bool AlarmModel::busy() const
+{
+    return m_busy;
 }
 
 QHash<int, QByteArray> AlarmModel::roleNames() const

@@ -17,6 +17,7 @@ class AlarmModel : public QAbstractListModel
 {
     Q_OBJECT
     Q_PROPERTY(bool connectedToDaemon READ connectedToDaemon NOTIFY connectedToDaemonChanged)
+    Q_PROPERTY(bool busy READ busy NOTIFY busyChanged)
 
 public:
     static AlarmModel *instance();
@@ -26,6 +27,9 @@ public:
     };
 
     void load();
+
+    bool busy() const;
+    Q_SIGNAL void busyChanged(bool busy);
 
     int rowCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role) const override;
@@ -58,6 +62,7 @@ private:
     org::kde::kclock::AlarmModel *m_interface;
     QDBusServiceWatcher *m_watcher;
     bool m_connectedToDaemon = false;
+    bool m_busy = false;
 
     explicit AlarmModel(QObject *parent = nullptr);
     QList<Alarm *> alarmsList;

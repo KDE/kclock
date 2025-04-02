@@ -75,7 +75,7 @@ Kirigami.ScrollablePage {
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.margins: Kirigami.Units.largeSpacing
-            visible: alarmsList.count == 0
+            visible: alarmsList.count === 0 && !AlarmModel.busy
             text: i18n("No alarms configured")
             icon.name: "notifications"
 
@@ -84,6 +84,15 @@ Kirigami.ScrollablePage {
                 text: i18n("Add alarm")
                 onTriggered: root.addAlarm()
             }
+        }
+
+        Kirigami.PlaceholderMessage {
+            anchors.centerIn: parent
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.margins: Kirigami.Units.largeSpacing
+            visible: alarmsList.count === 0 && AlarmModel.busy
+            text: i18n("Loading…")
         }
 
         add: Transition {
