@@ -60,3 +60,5 @@ void PowerDevilWakeupProvider::wakeupCallback(int cookie)
         Q_EMIT wakeup(cookie);
     }
 }
+
+#include "moc_powerdevilwakeupprovider.cpp"

@@ -77,3 +77,5 @@ void WaitTimerWakeupProvider::initWorker()
     }
     m_timerThread->start();
 }
+
+#include "moc_waittimerwakeupprovider.cpp"

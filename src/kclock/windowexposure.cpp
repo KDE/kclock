@@ -43,3 +43,5 @@ bool WindowExposure::isExposed() const
 {
     return m_exposed;
 }
+
+#include "moc_windowexposure.cpp"
