@@ -9,7 +9,13 @@
 
 #include <QDateTime>
 #include <QFile>
+#include <QFileInfo>
 #include <QStandardPaths>
+
+#include <KConfigGroup>
+#include <KSharedConfig>
+
+using namespace Qt::Literals::StringLiterals;
 
 AlarmPlayer &AlarmPlayer::instance()
 {
@@ -21,6 +27,7 @@ AlarmPlayer::AlarmPlayer(QObject *parent)
     : QObject{parent}
     , m_player(new QMediaPlayer(this))
     , m_audio(new QAudioOutput)
+    , m_soundThemeWatcher(KConfigWatcher::create(KSharedConfig::openConfig(QStringLiteral("kdeglobals"))))
 {
     m_player->setAudioOutput(m_audio);
     connect(m_player, &QMediaPlayer::playbackStateChanged, this, &AlarmPlayer::loopAudio);
@@ -60,16 +67,37 @@ void AlarmPlayer::setVolume(int volume)
     Q_EMIT volumeChanged();
 }
 
-void AlarmPlayer::setSource(const QUrl &path)
+void AlarmPlayer::setSource(const QString &path)
 {
-    // if user set a invalid audio path or doesn't even specified a path, resort to default
-    if (!path.isValid() || !QFile::exists(path.toLocalFile())) {
-        const QUrl url = QUrl::fromLocalFile(
-            QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("sounds/freedesktop/stereo/alarm-clock-elapsed.oga")));
-        m_player->setSource(url);
+    if (path.isEmpty() || !QFileInfo::exists(path)) {
+        m_player->setSource(QUrl::fromLocalFile(defaultAlarmSoundPath()));
     } else {
-        m_player->setSource(path);
+        m_player->setSource(QUrl::fromLocalFile(path));
     }
+}
+
+QString AlarmPlayer::soundThemeName() const
+{
+    const KConfigGroup soundGroup = m_soundThemeWatcher->config()->group(QStringLiteral("Sounds"));
+    const QString themeName = soundGroup.readEntry(QStringLiteral("Theme"), QStringLiteral("ocean"));
+    return themeName;
+}
+
+QString AlarmPlayer::defaultAlarmSoundPath() const
+{
+    const QString soundPath = QStringLiteral("sounds/%1/stereo/alarm-clock-elapsed.%2");
+
+    for (const QString &theme : {soundThemeName(), u"freedesktop"_s}) {
+        for (const QLatin1String extension : {"wav"_L1, "oga"_L1, "ogg"_L1}) {
+            const QString path = QStandardPaths::locate(QStandardPaths::GenericDataLocation, soundPath.arg(theme, extension));
+            if (!path.isEmpty()) {
+                return path;
+            }
+        }
+    }
+
+    qCritical() << "Failed to find any alarm clock sound!";
+    return QString();
 }
 
 #include "moc_alarmplayer.cpp"

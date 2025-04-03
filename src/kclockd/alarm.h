@@ -52,7 +52,7 @@ public:
                    int hours = 0,
                    int minutes = 0,
                    int daysOfWeek = 0,
-                   QString audioPath = QString{},
+                   const QString &audioPath = QString{},
                    int ringDuration = 5,
                    int snoozeDuration = 5,
                    AlarmModel *parent = nullptr);
@@ -82,7 +82,7 @@ public:
     void setDaysOfWeek(int daysOfWeek);
 
     QString audioPath() const;
-    void setAudioPath(QString path);
+    void setAudioPath(const QString &path);
 
     int ringDuration() const;
     void setRingDuration(int ringDuration);
@@ -148,7 +148,7 @@ private:
     int m_daysOfWeek;
 
     // the path to the audio file to ring
-    QUrl m_audioPath;
+    QString m_audioPath;
 
     // the amount of time the alarm rings for, in minutes
     int m_ringDuration;

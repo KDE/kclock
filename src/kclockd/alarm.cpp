@@ -34,7 +34,7 @@ Alarm::Alarm(const QString &serialized, AlarmModel *parent)
         m_hours = obj[QStringLiteral("hours")].toInt();
         m_minutes = obj[QStringLiteral("minutes")].toInt();
         m_daysOfWeek = obj[QStringLiteral("daysOfWeek")].toInt();
-        m_audioPath = QUrl::fromLocalFile(obj[QStringLiteral("audioPath")].toString());
+        setAudioPath(m_audioPath);
         m_ringDuration = obj[QStringLiteral("ringDuration")].toInt(5);
         m_snoozeDuration = obj[QStringLiteral("snoozeDuration")].toInt(5);
         m_snoozedLength = obj[QStringLiteral("snoozedLength")].toInt();
@@ -43,7 +43,7 @@ Alarm::Alarm(const QString &serialized, AlarmModel *parent)
     init(parent);
 }
 
-Alarm::Alarm(const QString &name, int hours, int minutes, int daysOfWeek, QString audioPath, int ringDuration, int snoozeDuration, AlarmModel *parent)
+Alarm::Alarm(const QString &name, int hours, int minutes, int daysOfWeek, const QString &audioPath, int ringDuration, int snoozeDuration, AlarmModel *parent)
     : QObject{parent}
     , m_uuid{QUuid::createUuid()}
     , m_name{name}
@@ -51,10 +51,10 @@ Alarm::Alarm(const QString &name, int hours, int minutes, int daysOfWeek, QStrin
     , m_hours{hours}
     , m_minutes{minutes}
     , m_daysOfWeek{daysOfWeek}
-    , m_audioPath{QUrl::fromLocalFile(audioPath.replace(QStringLiteral("file://"), QString()))}
     , m_ringDuration{ringDuration}
     , m_snoozeDuration{snoozeDuration}
 {
+    setAudioPath(audioPath);
     init(parent);
 }
 
@@ -118,7 +118,7 @@ QString Alarm::serialize()
     obj[QStringLiteral("hours")] = m_hours;
     obj[QStringLiteral("minutes")] = m_minutes;
     obj[QStringLiteral("daysOfWeek")] = m_daysOfWeek;
-    obj[QStringLiteral("audioPath")] = m_audioPath.toLocalFile();
+    obj[QStringLiteral("audioPath")] = m_audioPath;
     obj[QStringLiteral("ringDuration")] = m_ringDuration;
     obj[QStringLiteral("snoozeDuration")] = m_snoozeDuration;
     obj[QStringLiteral("snoozedLength")] = m_snoozedLength;
@@ -204,14 +204,17 @@ void Alarm::setDaysOfWeek(int daysOfWeek)
 
 QString Alarm::audioPath() const
 {
-    return m_audioPath.toLocalFile();
+    return m_audioPath;
 }
 
-void Alarm::setAudioPath(QString path)
+void Alarm::setAudioPath(const QString &path)
 {
-    if (m_audioPath.path() != path) {
-        path = path.replace(QStringLiteral("file://"), QString());
-        m_audioPath = QUrl::fromLocalFile(path);
+    // Support both (legacy) file:// and regular paths.
+    const QLatin1String filePrefix("file://");
+    const QString cleanPath = path.startsWith(filePrefix) ? path.mid(filePrefix.size()) : path;
+
+    if (m_audioPath != cleanPath) {
+        m_audioPath = cleanPath;
         Q_EMIT audioPathChanged();
     }
 }

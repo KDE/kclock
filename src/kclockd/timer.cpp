@@ -269,7 +269,7 @@ void Timer::ring()
 
     Utilities::pauseMprisSources();
 
-    AlarmPlayer::instance().setSource(findRingSoundLocation());
+    AlarmPlayer::instance().setSource(QString()); // Use default.
     AlarmPlayer::instance().play();
 
     m_ringing = true;
@@ -296,18 +296,4 @@ void Timer::reschedule()
     }
 }
 
-QUrl Timer::findRingSoundLocation()
-{
-    const auto locations = QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
-    const QString path = QStringLiteral("/sounds/freedesktop/stereo/alarm-clock-elapsed.oga");
-    QString alarmSoundPath;
-
-    for (const auto &directory : locations) {
-        if (QFile(directory + path).exists()) {
-            return QUrl(directory + path);
-        }
-    }
-
-    return QUrl();
-}
 #include "moc_timer.cpp"
