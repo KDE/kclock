@@ -90,7 +90,7 @@ RemoteMatches KClockRunner::Match(const QString &searchTerm)
         const auto length = std::chrono::seconds{timer->length()};
         const auto elapsed = std::chrono::seconds{timer->elapsed()};
         const auto remaining = length - elapsed;
-        if (timer->running() || timer->elapsed()) {
+        if (timer->running() || (timer->elapsed() && timer->elapsed() < timer->length())) {
             match.text = i18nc("Timer running or paused (remaining time)", "%1 (%2 Remaining)", timer->label(), Utilities::formatDuration(remaining));
         } else {
             match.text = i18nc("Timer not running (timer length)", "%1 (%2)", timer->label(), Utilities::formatDuration(length));
@@ -109,7 +109,7 @@ RemoteMatches KClockRunner::Match(const QString &searchTerm)
         QString subtext;
         if (timer->running()) {
             subtext = i18nc("@action", "Pause");
-        } else if (timer->elapsed()) {
+        } else if (timer->elapsed() && timer->elapsed() < timer->length()) {
             subtext = i18nc("@action", "Resume");
         } else {
             subtext = i18nc("@action", "Start Timer");
