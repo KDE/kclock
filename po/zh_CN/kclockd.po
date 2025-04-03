@@ -33,8 +33,7 @@ msgid "Alarm"
 msgstr "闹钟"
 
 #: alarm.cpp:77 timer.cpp:67
-#, fuzzy, kde-format
-#| msgid "Dismiss"
+#, kde-format
 msgctxt "@action:button"
 msgid "Dismiss"
 msgstr "关闭"
@@ -180,6 +179,3 @@ msgstr "计时器 %1 已完成计时！"
 msgid ""
 "Allow the clock process to be in the background and launched on startup."
 msgstr "允许时钟进程在后台运行并在开机时启动。"
-
-#~ msgid "View"
-#~ msgstr "查看"

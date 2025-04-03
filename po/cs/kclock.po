@@ -423,8 +423,7 @@ msgid "Resume"
 msgstr "Obnovit"
 
 #: qml/stopwatch/StopwatchPage.qml:263
-#, fuzzy, kde-format
-#| msgid "Start"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start"
 msgstr "Spustit"
@@ -565,11 +564,10 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr ""
+msgstr "Uložit"
 
 #: qml/timer/TimerFormDialog.qml:113
-#, fuzzy, kde-format
-#| msgid "Done"
+#, kde-format
 msgctxt "@action:button"
 msgid "Done"
 msgstr "Hotovo"

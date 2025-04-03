@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kclock package.
 #
-# SPDX-FileCopyrightText: 2023, 2024 giovanni <g.sora@tiscali.it>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 giovanni <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-01 00:44+0000\n"
-"PO-Revision-Date: 2024-07-09 11:05+0200\n"
+"PO-Revision-Date: 2025-04-02 16:30+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -57,7 +57,7 @@ msgstr "Selige pagina aperite"
 #: main.cpp:81
 #, kde-format
 msgid "Explicitly open a new Clock window"
-msgstr ""
+msgstr "Aperi explicitemente un nove fenestra de Horologio"
 
 #: qml/alarm/AlarmForm.qml:86
 #, kde-format
@@ -233,8 +233,7 @@ msgid "Add alarm"
 msgstr "Adde alarma"
 
 #: qml/alarm/AlarmListPage.qml:100
-#, fuzzy, kde-format
-#| msgid "New Alarm"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Alarm"
 msgstr "Nove alarma"
@@ -411,25 +410,22 @@ msgid "Total"
 msgstr "Total"
 
 #: qml/stopwatch/StopwatchPage.qml:259
-#, fuzzy, kde-format
-#| msgid "Pause"
+#, kde-format
 msgctxt "@action:button"
 msgid "Pause"
 msgstr "Pausa"
 
 #: qml/stopwatch/StopwatchPage.qml:261
-#, fuzzy, kde-format
-#| msgid "Resume"
+#, kde-format
 msgctxt "@action:button"
 msgid "Resume"
 msgstr "Reprende"
 
 #: qml/stopwatch/StopwatchPage.qml:263
-#, fuzzy, kde-format
-#| msgid "Start"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start"
-msgstr "Initia"
+msgstr "Starta"
 
 #: qml/stopwatch/StopwatchPage.qml:321
 #, kde-format
@@ -452,8 +448,7 @@ msgid "Add"
 msgstr "Adde"
 
 #: qml/time/TimePage.qml:167
-#, fuzzy, kde-format
-#| msgid "Add Location"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Location"
 msgstr "Adde location"
@@ -524,19 +519,16 @@ msgid "optional"
 msgstr "optional"
 
 #: qml/timer/TimerFormDialog.qml:35
-#, fuzzy, kde-format
-#| msgctxt "Edit alarm page title"
-#| msgid "Editing %1"
+#, kde-format
 msgctxt "@title:window Edit timer"
 msgid "Edit %1"
-msgstr "Editar %1"
+msgstr "Modifica %1"
 
 #: qml/timer/TimerFormDialog.qml:35
-#, fuzzy, kde-format
-#| msgid "Create timer"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Timer"
-msgstr "Crea chronometro"
+msgstr "Crea chronometro (horologio)"
 
 #: qml/timer/TimerFormDialog.qml:51
 #, kde-format
@@ -567,11 +559,10 @@ msgstr "Salveguarda como preregulate"
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr ""
+msgstr "Salveguarda"
 
 #: qml/timer/TimerFormDialog.qml:113
-#, fuzzy, kde-format
-#| msgid "Done"
+#, kde-format
 msgctxt "@action:button"
 msgid "Done"
 msgstr "Facite"
@@ -601,8 +592,7 @@ msgid "Reset"
 msgstr "Reinitialisa"
 
 #: qml/timer/TimerListDelegate.qml:192
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit"
 msgstr "Modifica"
@@ -628,8 +618,7 @@ msgstr ""
 "kclockd per haber functionalitate de chronometro."
 
 #: qml/timer/TimerListPage.qml:84
-#, fuzzy, kde-format
-#| msgid "New Timer"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Timer"
 msgstr "Nove chronometro"
