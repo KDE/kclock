@@ -30,8 +30,11 @@ QString KclockFormat::currentTime() const
 
 void KclockFormat::updateCurrentTime()
 {
-    m_currentTime = QLocale::system().toString(QTime::currentTime(), UtilModel::instance()->timeFormat());
-    Q_EMIT timeChanged();
+    const QString newTime = QLocale::system().toString(QTime::currentTime(), UtilModel::instance()->timeFormat());
+    if (m_currentTime != newTime) {
+        m_currentTime = newTime;
+        Q_EMIT timeChanged();
+    }
 }
 
 QString KclockFormat::formatTimeString(int hours, int minutes)
