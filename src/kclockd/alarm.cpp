@@ -69,7 +69,6 @@ Alarm::~Alarm()
 void Alarm::init(AlarmModel *parent)
 {
     // setup notification
-    m_notification->setIconName(QStringLiteral("org.kde.kclock"));
     m_notification->setTitle(name() == QString() ? i18n("Alarm") : name());
     m_notification->setText(QLocale::system().toString(QTime::currentTime(), QLocale::ShortFormat));
     m_notification->setAutoDelete(false); // don't auto-delete when closing

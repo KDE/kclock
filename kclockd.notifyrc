@@ -189,6 +189,7 @@ Name[zh_CN]=闹钟
 Name[zh_TW]=鬧鐘
 Action=Popup
 Urgency=Critical
+IconName=notification-active
 
 [Event/timer]
 Name=Timer running
