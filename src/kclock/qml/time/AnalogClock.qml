@@ -46,7 +46,7 @@ Item {
     
     // update time each second
     Timer {
-        running: representation.visible
+        running: representation.visible && applicationWindow().KClock.WindowExposure.exposed
         repeat: true
         triggeredOnStart: true
         interval: 1000
