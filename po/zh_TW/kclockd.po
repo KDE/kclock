@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-01 00:44+0000\n"
+"POT-Creation-Date: 2025-04-04 00:44+0000\n"
 "PO-Revision-Date: 2022-12-24 01:51+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
@@ -55,94 +55,94 @@ msgctxt "@info"
 msgid "Alarm: <shortcut>%1 %2</shortcut>"
 msgstr "鬧鐘：<shortcut>%1 %2</shortcut>"
 
-#: kclockrunner.cpp:78
+#: kclockrunner.cpp:69
 #, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "+1 Minute"
 msgstr ""
 
-#: kclockrunner.cpp:79
+#: kclockrunner.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset Timer"
 msgstr ""
 
-#: kclockrunner.cpp:86
+#: kclockrunner.cpp:77
 #, kde-format
 msgctxt "Note this is a KRunner keyword"
 msgid "timer"
 msgstr ""
 
-#: kclockrunner.cpp:103
+#: kclockrunner.cpp:94
 #, kde-format
 msgctxt "Timer running or paused (remaining time)"
 msgid "%1 (%2 Remaining)"
 msgstr ""
 
-#: kclockrunner.cpp:105
+#: kclockrunner.cpp:96
 #, kde-format
 msgctxt "Timer not running (timer length)"
 msgid "%1 (%2)"
 msgstr ""
 
-#: kclockrunner.cpp:116
+#: kclockrunner.cpp:107
 #, kde-format
 msgctxt "KRunner category"
 msgid "Timer"
 msgstr ""
 
-#: kclockrunner.cpp:120
+#: kclockrunner.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Pause"
 msgstr ""
 
-#: kclockrunner.cpp:122
+#: kclockrunner.cpp:113
 #, kde-format
 msgctxt "@action"
 msgid "Resume"
 msgstr ""
 
-#: kclockrunner.cpp:124
+#: kclockrunner.cpp:115
 #, kde-format
 msgctxt "@action"
 msgid "Start Timer"
 msgstr ""
 
-#: kclockrunner.cpp:139
+#: kclockrunner.cpp:130
 #, fuzzy, kde-format
 #| msgid "Alarm"
 msgctxt "Note this is a KRunner keyword"
 msgid "alarm"
 msgstr "鬧鐘"
 
-#: kclockrunner.cpp:161
+#: kclockrunner.cpp:152
 #, kde-format
 msgctxt "Alarm name (time)"
 msgid "%1 (%2)"
 msgstr ""
 
-#: kclockrunner.cpp:171
+#: kclockrunner.cpp:162
 #, fuzzy, kde-format
 #| msgid "Alarm"
 msgctxt "KRunner category"
 msgid "Alarm"
 msgstr "鬧鐘"
 
-#: kclockrunner.cpp:175
+#: kclockrunner.cpp:166
 #, fuzzy, kde-format
 #| msgid "Dismiss"
 msgctxt "@action Dismiss Alarm"
 msgid "Dismiss"
 msgstr "關閉"
 
-#: kclockrunner.cpp:178
+#: kclockrunner.cpp:169
 #, kde-format
 msgctxt "Disable timer (rings in time)"
 msgid "Disable (Rings in %1)"
 msgstr ""
 
-#: kclockrunner.cpp:180
+#: kclockrunner.cpp:171
 #, kde-format
 msgctxt "@action Enable Alarm"
 msgid "Enable"
@@ -177,6 +177,42 @@ msgstr "計時器完成"
 #, kde-format
 msgid "Your timer %1 has finished!"
 msgstr "您的計時器 %1 已結束！"
+
+#: timermodel.cpp:240
+#, kde-format
+msgctxt "@action:button Open kclock app"
+msgid "Open Clock"
+msgstr ""
+
+#: timermodel.cpp:245
+#, kde-format
+msgctxt "@action:button Add minute to timer"
+msgid "+1 Minute"
+msgstr ""
+
+#: timermodel.cpp:248
+#, kde-format
+msgctxt "@action:button Reset timer"
+msgid "Reset"
+msgstr ""
+
+#: timermodel.cpp:251 timermodel.cpp:276
+#, kde-format
+msgctxt "@action:button Pause timer"
+msgid "Pause"
+msgstr ""
+
+#: timermodel.cpp:269
+#, kde-format
+msgctxt "@title:notification Timer name (paused)"
+msgid "%1 (Paused)"
+msgstr ""
+
+#: timermodel.cpp:278
+#, kde-format
+msgctxt "@action:button Resume timer"
+msgid "Resume"
+msgstr ""
 
 #: xdgportal.cpp:34
 #, kde-format

@@ -1,14 +1,14 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kclock package.
 #
-# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
+# SPDX-FileCopyrightText: 2024, 2025 Toms Trasuns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-01 00:44+0000\n"
-"PO-Revision-Date: 2024-01-24 21:38+0200\n"
-"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"POT-Creation-Date: 2025-04-04 00:44+0000\n"
+"PO-Revision-Date: 2025-04-02 19:16+0300\n"
+"Last-Translator: Toms Trasūns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
@@ -16,12 +16,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Liva Purmale"
+msgstr "Līva Purmale-Trasūns"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
@@ -34,8 +34,7 @@ msgid "Alarm"
 msgstr "Signāls"
 
 #: alarm.cpp:77 timer.cpp:67
-#, fuzzy, kde-format
-#| msgid "Dismiss"
+#, kde-format
 msgctxt "@action:button"
 msgid "Dismiss"
 msgstr "Noraidīt"
@@ -56,108 +55,105 @@ msgctxt "@info"
 msgid "Alarm: <shortcut>%1 %2</shortcut>"
 msgstr "Signāls:<shortcut>%1 %2</shortcut>"
 
-#: kclockrunner.cpp:78
+#: kclockrunner.cpp:69
 #, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "+1 Minute"
-msgstr ""
+msgstr "+1 minūte"
 
-#: kclockrunner.cpp:79
+#: kclockrunner.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset Timer"
-msgstr ""
+msgstr "Atiestatīt taimeri"
 
-#: kclockrunner.cpp:86
+#: kclockrunner.cpp:77
 #, kde-format
 msgctxt "Note this is a KRunner keyword"
 msgid "timer"
-msgstr ""
+msgstr "taimeris"
 
-#: kclockrunner.cpp:103
+#: kclockrunner.cpp:94
 #, kde-format
 msgctxt "Timer running or paused (remaining time)"
 msgid "%1 (%2 Remaining)"
-msgstr ""
+msgstr "%1 (%2 atlikušas)"
 
-#: kclockrunner.cpp:105
+#: kclockrunner.cpp:96
 #, kde-format
 msgctxt "Timer not running (timer length)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
-#: kclockrunner.cpp:116
+#: kclockrunner.cpp:107
 #, kde-format
 msgctxt "KRunner category"
 msgid "Timer"
-msgstr ""
+msgstr "Taimeris"
 
-#: kclockrunner.cpp:120
+#: kclockrunner.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Pause"
-msgstr ""
+msgstr "Pauze"
 
-#: kclockrunner.cpp:122
+#: kclockrunner.cpp:113
 #, kde-format
 msgctxt "@action"
 msgid "Resume"
-msgstr ""
+msgstr "Turpināt"
 
-#: kclockrunner.cpp:124
+#: kclockrunner.cpp:115
 #, kde-format
 msgctxt "@action"
 msgid "Start Timer"
-msgstr ""
+msgstr "Sākt taimeri"
 
-#: kclockrunner.cpp:139
-#, fuzzy, kde-format
-#| msgid "Alarm"
+#: kclockrunner.cpp:130
+#, kde-format
 msgctxt "Note this is a KRunner keyword"
 msgid "alarm"
-msgstr "Signāls"
+msgstr "signāls"
 
-#: kclockrunner.cpp:161
+#: kclockrunner.cpp:152
 #, kde-format
 msgctxt "Alarm name (time)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
-#: kclockrunner.cpp:171
-#, fuzzy, kde-format
-#| msgid "Alarm"
+#: kclockrunner.cpp:162
+#, kde-format
 msgctxt "KRunner category"
 msgid "Alarm"
 msgstr "Signāls"
 
-#: kclockrunner.cpp:175
-#, fuzzy, kde-format
-#| msgid "Dismiss"
+#: kclockrunner.cpp:166
+#, kde-format
 msgctxt "@action Dismiss Alarm"
 msgid "Dismiss"
 msgstr "Noraidīt"
 
-#: kclockrunner.cpp:178
+#: kclockrunner.cpp:169
 #, kde-format
 msgctxt "Disable timer (rings in time)"
 msgid "Disable (Rings in %1)"
-msgstr ""
+msgstr "Izslēgt (zvanīs pēc %1)"
 
-#: kclockrunner.cpp:180
+#: kclockrunner.cpp:171
 #, kde-format
 msgctxt "@action Enable Alarm"
 msgid "Enable"
-msgstr ""
+msgstr "Ieslēgt"
 
 #: main.cpp:32
 #, kde-format
 msgid "Don't use PowerDevil for alarms if it is available"
-msgstr "Neizmantot „PowerDevil“ signālam, ja tas ir pieejams"
+msgstr "Ja ir pieejams, signāliem neizmantot „PowerDevil“"
 
 #: main.cpp:48
 #, kde-format
 msgid "© 2020-2022 KDE Community"
-msgstr "© 2020–2022 KDE kopiena"
+msgstr "© 2020—2022 KDE kopiena"
 
 #: main.cpp:49
 #, kde-format
@@ -178,6 +174,52 @@ msgstr "Taimera laiks ir beidzies"
 #, kde-format
 msgid "Your timer %1 has finished!"
 msgstr "Tava taimera „%1“ laiks ir beidzies!"
+
+#: timermodel.cpp:240
+#, kde-format
+msgctxt "@action:button Open kclock app"
+msgid "Open Clock"
+msgstr ""
+
+#: timermodel.cpp:245
+#, fuzzy, kde-format
+#| msgctxt "@action:button Add 1 minute to timer"
+#| msgid "+1 Minute"
+msgctxt "@action:button Add minute to timer"
+msgid "+1 Minute"
+msgstr "+1 minūte"
+
+#: timermodel.cpp:248
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Reset Timer"
+msgctxt "@action:button Reset timer"
+msgid "Reset"
+msgstr "Atiestatīt taimeri"
+
+#: timermodel.cpp:251 timermodel.cpp:276
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Pause"
+msgctxt "@action:button Pause timer"
+msgid "Pause"
+msgstr "Pauze"
+
+#: timermodel.cpp:269
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Pause"
+msgctxt "@title:notification Timer name (paused)"
+msgid "%1 (Paused)"
+msgstr "Pauze"
+
+#: timermodel.cpp:278
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Resume"
+msgctxt "@action:button Resume timer"
+msgid "Resume"
+msgstr "Turpināt"
 
 #: xdgportal.cpp:34
 #, kde-format
