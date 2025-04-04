@@ -28,62 +28,30 @@ Kirigami.FormLayout {
         return spinBoxHours.value * 60 * 60 + spinBoxMinutes.value * 60 + spinBoxSeconds.value;
     }
 
-    ColumnLayout {
+    GridLayout {
         anchors.horizontalCenter: parent.horizontalCenter
-        spacing: Kirigami.Units.smallSpacing
+        rowSpacing: Kirigami.Units.smallSpacing
+        columnSpacing: Kirigami.Units.smallSpacing
+        columns: 3
 
-        RowLayout {
-            Layout.alignment: Qt.AlignHCenter
-            spacing: Kirigami.Units.smallSpacing
+        Repeater {
+            model: [
+                {label: i18n("1 min"), h: 0, m: 1},
+                {label: i18n("5 min"), h: 0, m: 5},
+                {label: i18n("10 min"), h: 0, m: 10},
+                {label: i18n("15 min"), h: 0, m: 15},
+                {label: i18n("30 min"), h: 0, m: 30},
+                {label: i18n("1 h"), h: 1, m: 0},
+            ]
+
             PresetDurationButton {
-                text: i18n("1 m")
-                hours: 0
-                minutes: 1
-                hoursSpinBox: spinBoxHours 
-                minutesSpinBox: spinBoxMinutes
-                secondsSpinBox: spinBoxSeconds
-            }
-            PresetDurationButton {
-                text: i18n("5 m")
-                hours: 0
-                minutes: 5
-                hoursSpinBox: spinBoxHours 
-                minutesSpinBox: spinBoxMinutes
-                secondsSpinBox: spinBoxSeconds
-            }
-            PresetDurationButton {
-                text: i18n("10 m")
-                hours: 0
-                minutes: 10
-                hoursSpinBox: spinBoxHours 
-                minutesSpinBox: spinBoxMinutes
-                secondsSpinBox: spinBoxSeconds
-            }
-        }
-        RowLayout {
-            Layout.alignment: Qt.AlignHCenter
-            spacing: Kirigami.Units.smallSpacing
-            PresetDurationButton {
-                text: i18n("15 m")
-                hours: 0
-                minutes: 15
-                hoursSpinBox: spinBoxHours 
-                minutesSpinBox: spinBoxMinutes
-                secondsSpinBox: spinBoxSeconds
-            }
-            PresetDurationButton {
-                text: i18n("30 m")
-                hours: 0
-                minutes: 30
-                hoursSpinBox: spinBoxHours 
-                minutesSpinBox: spinBoxMinutes
-                secondsSpinBox: spinBoxSeconds
-            }
-            PresetDurationButton {
-                text: i18n("1 h")
-                hours: 1
-                minutes: 0
-                hoursSpinBox: spinBoxHours 
+                required property string label
+                required property int h
+                required property int m
+                text: label
+                hours: h
+                minutes: m
+                hoursSpinBox: spinBoxHours
                 minutesSpinBox: spinBoxMinutes
                 secondsSpinBox: spinBoxSeconds
             }
