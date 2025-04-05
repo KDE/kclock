@@ -236,7 +236,6 @@ msgstr ""
 
 #: qml/alarm/AlarmListPage.qml:110
 #, fuzzy, kde-format
-#| msgid "New Alarm"
 msgctxt "@action:button"
 msgid "New Alarm"
 msgstr "Ny alarm"
@@ -441,7 +440,6 @@ msgstr ""
 
 #: qml/stopwatch/StopwatchPage.qml:260
 #, fuzzy, kde-format
-#| msgid "Pause"
 msgctxt "@action:button"
 msgid "Pause"
 msgstr "Pause"
@@ -454,7 +452,6 @@ msgstr ""
 
 #: qml/stopwatch/StopwatchPage.qml:264
 #, fuzzy, kde-format
-#| msgid "Start"
 msgctxt "@action:button"
 msgid "Start"
 msgstr "Start"
@@ -552,15 +549,12 @@ msgstr ""
 
 #: qml/timer/TimerFormDialog.qml:35
 #, fuzzy, kde-format
-#| msgctxt "Edit alarm page title"
-#| msgid "Editing %1"
 msgctxt "@title:window Edit timer"
 msgid "Edit %1"
 msgstr "Redigerer %1"
 
 #: qml/timer/TimerFormDialog.qml:35
 #, fuzzy, kde-format
-#| msgid "New Timer"
 msgctxt "@title:window"
 msgid "Create Timer"
 msgstr "Ny nedteljing"
@@ -599,7 +593,6 @@ msgstr ""
 
 #: qml/timer/TimerFormDialog.qml:113
 #, fuzzy, kde-format
-#| msgid "Done"
 msgctxt "@action:button"
 msgid "Done"
 msgstr "Fullført"
@@ -630,7 +623,6 @@ msgstr "Nullstill"
 
 #: qml/timer/TimerListDelegate.qml:192
 #, fuzzy, kde-format
-#| msgid "Edit"
 msgctxt "@info:tooltip"
 msgid "Edit"
 msgstr "Rediger"
@@ -655,7 +647,6 @@ msgstr ""
 
 #: qml/timer/TimerListPage.qml:85
 #, fuzzy, kde-format
-#| msgid "New Timer"
 msgctxt "@action:button"
 msgid "New Timer"
 msgstr "Ny nedteljing"

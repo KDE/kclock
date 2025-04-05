@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-04 00:44+0000\n"
-"PO-Revision-Date: 2025-03-29 12:22+0200\n"
+"PO-Revision-Date: 2025-04-04 09:39+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -240,7 +240,7 @@ msgstr "Додати будильник"
 #: qml/alarm/AlarmListPage.qml:95
 #, kde-format
 msgid "Loading…"
-msgstr ""
+msgstr "Завантаження…"
 
 #: qml/alarm/AlarmListPage.qml:110
 #, kde-format
@@ -374,18 +374,18 @@ msgstr "24-годинний час"
 #: qml/settings/SettingsPage.qml:53
 #, kde-format
 msgid "Notifications for running timers"
-msgstr ""
+msgstr "Сповіщення для запущених таймерів"
 
 #: qml/settings/SettingsPage.qml:55
 #, kde-format
 msgid "Always"
-msgstr ""
+msgstr "Завжди"
 
 #: qml/settings/SettingsPage.qml:58
 #, kde-format
 msgctxt "When the app is not running"
 msgid "When %1 is not running"
-msgstr ""
+msgstr "Якщо %1 не запущено"
 
 #: qml/settings/SettingsPage.qml:61
 #, kde-format
@@ -396,6 +396,8 @@ msgstr "Ніколи"
 #, kde-format
 msgid "Lets you pause and resume timers from the notification area."
 msgstr ""
+"Надає вам змогу призупиняти і відновлювати відлік таймерів з області "
+"сповіщень."
 
 #: qml/settings/SettingsPage.qml:79
 #, kde-format

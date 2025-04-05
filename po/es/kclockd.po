@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kclockd\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-04 00:44+0000\n"
-"PO-Revision-Date: 2025-04-02 00:56+0100\n"
+"PO-Revision-Date: 2025-04-05 00:22+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -180,44 +180,34 @@ msgstr "El temporizador %1 ha terminado"
 #, kde-format
 msgctxt "@action:button Open kclock app"
 msgid "Open Clock"
-msgstr ""
+msgstr "Abrir el reloj"
 
 #: timermodel.cpp:245
-#, fuzzy, kde-format
-#| msgctxt "@action:button Add 1 minute to timer"
-#| msgid "+1 Minute"
+#, kde-format
 msgctxt "@action:button Add minute to timer"
 msgid "+1 Minute"
 msgstr "+1 minuto"
 
 #: timermodel.cpp:248
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Reset Timer"
+#, kde-format
 msgctxt "@action:button Reset timer"
 msgid "Reset"
-msgstr "Reiniciar temporizador"
+msgstr "Reiniciar"
 
 #: timermodel.cpp:251 timermodel.cpp:276
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Pause"
+#, kde-format
 msgctxt "@action:button Pause timer"
 msgid "Pause"
-msgstr "Pausa"
+msgstr "Pausar"
 
 #: timermodel.cpp:269
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Pause"
+#, kde-format
 msgctxt "@title:notification Timer name (paused)"
 msgid "%1 (Paused)"
-msgstr "Pausa"
+msgstr "%1 (en pausa)"
 
 #: timermodel.cpp:278
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Resume"
+#, kde-format
 msgctxt "@action:button Resume timer"
 msgid "Resume"
 msgstr "Reanudar"

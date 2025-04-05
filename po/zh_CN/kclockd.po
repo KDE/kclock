@@ -181,44 +181,34 @@ msgid "Open Clock"
 msgstr ""
 
 #: timermodel.cpp:245
-#, fuzzy, kde-format
-#| msgctxt "@action:button Add 1 minute to timer"
-#| msgid "+1 Minute"
+#, kde-format
 msgctxt "@action:button Add minute to timer"
 msgid "+1 Minute"
-msgstr "+1 分钟"
+msgstr ""
 
 #: timermodel.cpp:248
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Reset Timer"
+#, kde-format
 msgctxt "@action:button Reset timer"
 msgid "Reset"
-msgstr "重置计时器"
+msgstr ""
 
 #: timermodel.cpp:251 timermodel.cpp:276
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Pause"
+#, kde-format
 msgctxt "@action:button Pause timer"
 msgid "Pause"
-msgstr "暂停"
+msgstr ""
 
 #: timermodel.cpp:269
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Pause"
+#, kde-format
 msgctxt "@title:notification Timer name (paused)"
 msgid "%1 (Paused)"
-msgstr "暂停"
+msgstr ""
 
 #: timermodel.cpp:278
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Resume"
+#, kde-format
 msgctxt "@action:button Resume timer"
 msgid "Resume"
-msgstr "继续"
+msgstr ""
 
 #: xdgportal.cpp:34
 #, kde-format

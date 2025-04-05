@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-04 00:44+0000\n"
-"PO-Revision-Date: 2025-04-01 05:02+0200\n"
+"PO-Revision-Date: 2025-04-04 04:10+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -179,44 +179,34 @@ msgstr "თქვენი წამზომი დასრულდა: %1!"
 #, kde-format
 msgctxt "@action:button Open kclock app"
 msgid "Open Clock"
-msgstr ""
+msgstr "საათის გახსნა"
 
 #: timermodel.cpp:245
-#, fuzzy, kde-format
-#| msgctxt "@action:button Add 1 minute to timer"
-#| msgid "+1 Minute"
+#, kde-format
 msgctxt "@action:button Add minute to timer"
 msgid "+1 Minute"
 msgstr "+1 წუთი"
 
 #: timermodel.cpp:248
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Reset Timer"
+#, kde-format
 msgctxt "@action:button Reset timer"
 msgid "Reset"
-msgstr "ტაიმერის ჩამოყრა"
+msgstr "ჩამოყრა"
 
 #: timermodel.cpp:251 timermodel.cpp:276
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Pause"
+#, kde-format
 msgctxt "@action:button Pause timer"
 msgid "Pause"
 msgstr "შეჩერება"
 
 #: timermodel.cpp:269
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Pause"
+#, kde-format
 msgctxt "@title:notification Timer name (paused)"
 msgid "%1 (Paused)"
-msgstr "შეჩერება"
+msgstr "%1 (შეჩერებულია)"
 
 #: timermodel.cpp:278
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Resume"
+#, kde-format
 msgctxt "@action:button Resume timer"
 msgid "Resume"
 msgstr "გაგრძელება"

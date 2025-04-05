@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-04 00:44+0000\n"
-"PO-Revision-Date: 2025-03-29 11:40+0100\n"
+"PO-Revision-Date: 2025-04-04 06:58+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -165,7 +165,7 @@ msgstr "Budilka"
 #, kde-format
 msgctxt "Edit alarm page title"
 msgid "Editing %1"
-msgstr "Urejam %1"
+msgstr "Urejanje %1"
 
 #: qml/alarm/AlarmFormPage.qml:27 qml/alarm/AlarmListPage.qml:31
 #, kde-format
@@ -237,7 +237,7 @@ msgstr "Dodaj alarm"
 #: qml/alarm/AlarmListPage.qml:95
 #, kde-format
 msgid "Loading…"
-msgstr ""
+msgstr "Nalaganje…"
 
 #: qml/alarm/AlarmListPage.qml:110
 #, kde-format
@@ -371,18 +371,18 @@ msgstr "24 urni čas"
 #: qml/settings/SettingsPage.qml:53
 #, kde-format
 msgid "Notifications for running timers"
-msgstr ""
+msgstr "Obvestila za tekoče časovnike"
 
 #: qml/settings/SettingsPage.qml:55
 #, kde-format
 msgid "Always"
-msgstr ""
+msgstr "Vedno"
 
 #: qml/settings/SettingsPage.qml:58
 #, kde-format
 msgctxt "When the app is not running"
 msgid "When %1 is not running"
-msgstr ""
+msgstr "Ko %1 ne teče"
 
 #: qml/settings/SettingsPage.qml:61
 #, kde-format
@@ -393,6 +393,7 @@ msgstr "Nikoli"
 #, kde-format
 msgid "Lets you pause and resume timers from the notification area."
 msgstr ""
+"Omogoča zaustavitev in nadaljevanje časovnikov iz območja za obvestila."
 
 #: qml/settings/SettingsPage.qml:79
 #, kde-format

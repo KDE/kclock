@@ -36,7 +36,6 @@ msgstr "Alarm"
 
 #: alarm.cpp:77 timer.cpp:67
 #, fuzzy, kde-format
-#| msgid "Dismiss"
 msgctxt "@action:button"
 msgid "Dismiss"
 msgstr "Avvis"
@@ -113,7 +112,6 @@ msgstr ""
 
 #: kclockrunner.cpp:130
 #, fuzzy, kde-format
-#| msgid "Alarm"
 msgctxt "Note this is a KRunner keyword"
 msgid "alarm"
 msgstr "Alarm"
@@ -126,14 +124,12 @@ msgstr ""
 
 #: kclockrunner.cpp:162
 #, fuzzy, kde-format
-#| msgid "Alarm"
 msgctxt "KRunner category"
 msgid "Alarm"
 msgstr "Alarm"
 
 #: kclockrunner.cpp:166
 #, fuzzy, kde-format
-#| msgid "Dismiss"
 msgctxt "@action Dismiss Alarm"
 msgid "Dismiss"
 msgstr "Avvis"

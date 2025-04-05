@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-04 00:44+0000\n"
-"PO-Revision-Date: 2025-04-01 07:14+0200\n"
+"PO-Revision-Date: 2025-04-04 06:56+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -179,44 +179,34 @@ msgstr "Vaš merilnik časa %1 je končal!"
 #, kde-format
 msgctxt "@action:button Open kclock app"
 msgid "Open Clock"
-msgstr ""
+msgstr "Odpri uro"
 
 #: timermodel.cpp:245
-#, fuzzy, kde-format
-#| msgctxt "@action:button Add 1 minute to timer"
-#| msgid "+1 Minute"
+#, kde-format
 msgctxt "@action:button Add minute to timer"
 msgid "+1 Minute"
 msgstr "+1 Minuta"
 
 #: timermodel.cpp:248
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Reset Timer"
+#, kde-format
 msgctxt "@action:button Reset timer"
 msgid "Reset"
-msgstr "Ponastavi merilnik časa"
+msgstr "Ponastavi"
 
 #: timermodel.cpp:251 timermodel.cpp:276
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Pause"
+#, kde-format
 msgctxt "@action:button Pause timer"
 msgid "Pause"
 msgstr "Premor"
 
 #: timermodel.cpp:269
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Pause"
+#, kde-format
 msgctxt "@title:notification Timer name (paused)"
 msgid "%1 (Paused)"
-msgstr "Premor"
+msgstr "%1 (V premoru)"
 
 #: timermodel.cpp:278
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Resume"
+#, kde-format
 msgctxt "@action:button Resume timer"
 msgid "Resume"
 msgstr "Nadaljuj"

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-04 00:44+0000\n"
-"PO-Revision-Date: 2025-04-02 16:30+0200\n"
+"PO-Revision-Date: 2025-04-04 11:48+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -235,7 +235,7 @@ msgstr "Adde alarma"
 #: qml/alarm/AlarmListPage.qml:95
 #, kde-format
 msgid "Loading…"
-msgstr ""
+msgstr "Cargante..."
 
 #: qml/alarm/AlarmListPage.qml:110
 #, kde-format
@@ -369,28 +369,30 @@ msgstr "Tempore de 24 horas"
 #: qml/settings/SettingsPage.qml:53
 #, kde-format
 msgid "Notifications for running timers"
-msgstr ""
+msgstr "Notificationes per chronometros temporisator executante"
 
 #: qml/settings/SettingsPage.qml:55
 #, kde-format
 msgid "Always"
-msgstr ""
+msgstr "Sempre"
 
 #: qml/settings/SettingsPage.qml:58
 #, kde-format
 msgctxt "When the app is not running"
 msgid "When %1 is not running"
-msgstr ""
+msgstr "Qyando %1 non es executante"
 
 #: qml/settings/SettingsPage.qml:61
 #, kde-format
 msgid "Never"
-msgstr ""
+msgstr "Jammais"
 
 #: qml/settings/SettingsPage.qml:64
 #, kde-format
 msgid "Lets you pause and resume timers from the notification area."
 msgstr ""
+"Te pemitte poner in pausa e reprender chronometros temporisator  ab le area "
+"de notification."
 
 #: qml/settings/SettingsPage.qml:79
 #, kde-format
@@ -564,7 +566,7 @@ msgstr "Crea chronometro (horologio)"
 #: qml/timer/TimerFormDialog.qml:51
 #, kde-format
 msgid "Timer"
-msgstr "Chronometro"
+msgstr "Temporisator o Chronometro"
 
 #: qml/timer/TimerFormDialog.qml:68
 #, kde-format

@@ -386,7 +386,8 @@ msgid "When %1 is not running"
 msgstr ""
 
 #: qml/settings/SettingsPage.qml:61
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Never"
 msgid "Never"
 msgstr "Jamais"
 
