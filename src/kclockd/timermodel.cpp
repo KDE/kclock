@@ -117,6 +117,8 @@ void TimerModel::connectTimer(Timer *timer)
             // if no elapsed, it was reset, if elapsed equals length timer is finished.
         } else if (!timer->elapsed() || timer->elapsed() == timer->length()) {
             if (auto *notification = m_notifications.value(timer)) {
+                // Avoid closed signal to remove it when a new one has just been sent again (looping timer).
+                disconnect(notification, &KNotification::closed, this, nullptr);
                 notification->close();
                 m_notifications.remove(timer);
             }
@@ -303,9 +305,8 @@ void TimerModel::sendOrClearAllNotifications()
     if (KClockSettings::self()->timerNotification() == KClockSettings::EnumTimerNotification::Never
         || (KClockSettings::self()->timerNotification() == KClockSettings::EnumTimerNotification::WhenKClockNotRunning && m_kclockRunning)) {
         qCDebug(TIMERMODEL_DEBUG) << "Removing all timer notifications";
-        // close might cause it to be removed from m_notifications, take a copy.
-        const auto notifications = m_notifications;
-        for (auto *notification : notifications) {
+        for (auto *notification : std::as_const(m_notifications)) {
+            disconnect(notification, &KNotification::closed, this, nullptr);
             notification->close();
         }
         m_notifications.clear();
