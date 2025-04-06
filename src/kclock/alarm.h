@@ -16,9 +16,13 @@
 #include <QUrl>
 #include <QUuid>
 
+#include <qqmlregistration.h>
+
 class Alarm : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_UNCREATABLE("Managed by AlarmModel")
     Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
     Q_PROPERTY(bool enabled READ enabled WRITE setEnabled NOTIFY enabledChanged)
     Q_PROPERTY(QString formattedTime READ formattedTime NOTIFY formattedTimeChanged)

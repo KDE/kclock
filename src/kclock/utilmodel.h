@@ -9,6 +9,11 @@
 
 #include <KSvg/ImageSet>
 
+#include <qqmlintegration.h>
+
+class QJSEngine;
+class QQmlEngine;
+
 namespace KSvg
 {
 class Svg;
@@ -17,13 +22,15 @@ class Svg;
 class UtilModel : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
 
     Q_PROPERTY(QString tzName READ getCurrentTimeZoneName CONSTANT)
     Q_PROPERTY(bool use24HourTime READ use24HourTime NOTIFY use24HourTimeChanged)
 
 public:
-    explicit UtilModel(QObject *parent = nullptr);
     static UtilModel *instance();
+    static UtilModel *create(QQmlEngine *qmlEngine, QJSEngine *jsEngine);
 
     Q_INVOKABLE QString getDefaultAlarmFileLocation();
 
@@ -46,6 +53,8 @@ public:
     Q_INVOKABLE void applyPlasmaImageSet(KSvg::Svg *svg);
 
 private:
+    explicit UtilModel(QObject *parent = nullptr);
+
     bool isLocale24HourTime() const;
 
 Q_SIGNALS:

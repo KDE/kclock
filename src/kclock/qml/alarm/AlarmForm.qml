@@ -13,8 +13,7 @@ import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.dateandtime as DateAndTime
 
-import "../components"
-import kclock
+import org.kde.kclock
 
 Kirigami.FormLayout {
     id: root

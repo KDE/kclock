@@ -7,12 +7,22 @@
 #include "utilmodel.h"
 
 #include <QDebug>
+#include <QQmlEngine>
 
 const int STOPWATCH_DISPLAY_INTERVAL = 41; // 24fps
 
 StopwatchTimer *StopwatchTimer::instance()
 {
     static StopwatchTimer *timer = new StopwatchTimer;
+    return timer;
+}
+
+StopwatchTimer *StopwatchTimer::create(QQmlEngine *qmlEngine, QJSEngine *jsEngine)
+{
+    Q_UNUSED(qmlEngine);
+    Q_UNUSED(jsEngine);
+    auto *timer = instance();
+    QQmlEngine::setObjectOwnership(timer, QQmlEngine::CppOwnership);
     return timer;
 }
 

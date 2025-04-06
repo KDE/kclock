@@ -9,6 +9,7 @@
 #include <QDebug>
 #include <QJsonArray>
 #include <QJsonDocument>
+#include <QQmlEngine>
 
 const QString TIMERPRESETS_CFG_GROUP = QStringLiteral("TimerPresets"), TIMERPRESETS_CFG_KEY = QStringLiteral("timerPresets");
 
@@ -64,6 +65,15 @@ TimerPresetModel *TimerPresetModel::instance()
 {
     static TimerPresetModel *s_presetModel = new TimerPresetModel(qApp);
     return s_presetModel;
+}
+
+TimerPresetModel *TimerPresetModel::create(QQmlEngine *qmlEngine, QJSEngine *jsEngine)
+{
+    Q_UNUSED(qmlEngine);
+    Q_UNUSED(jsEngine);
+    auto *model = instance();
+    QQmlEngine::setObjectOwnership(model, QQmlEngine::CppOwnership);
+    return model;
 }
 
 TimerPresetModel::TimerPresetModel(QObject *parent)

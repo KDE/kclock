@@ -6,22 +6,9 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#include "addlocationmodel.h"
-#include "alarm.h"
-#include "alarmmodel.h"
 #include "kclockdsettings.h"
-#include "kclockformat.h"
-#include "savedlocationsmodel.h"
-#include "settingsmodel.h"
-#include "stopwatchmodel.h"
-#include "stopwatchtimer.h"
-#include "timer.h"
-#include "timermodel.h"
-#include "timerpresetmodel.h"
 #include "utilityinterface.h"
-#include "utilmodel.h"
 #include "version.h"
-#include "windowexposure.h"
 
 #include <KAboutData>
 #include <KConfig>
@@ -101,60 +88,17 @@ int main(int argc, char *argv[])
 
     // ~~~ Qt application setup ~~~~
 
-    // initialize models
-    auto *weekModel = new WeekModel();
-
-    // register QML types
-    qmlRegisterType<Alarm>("kclock", 1, 0, "Alarm");
-    qmlRegisterType<Timer>("kclock", 1, 0, "Timer");
-
-    qmlRegisterSingletonType<AddLocationSearchModel>("kclock", 1, 0, "AddLocationSearchModel", [](QQmlEngine *, QJSEngine *) -> QObject * {
-        return AddLocationSearchModel::instance();
-    });
-    qmlRegisterSingletonType<SavedLocationsModel>("kclock", 1, 0, "SavedLocationsModel", [](QQmlEngine *, QJSEngine *) -> QObject * {
-        return SavedLocationsModel::instance();
-    });
-    qmlRegisterSingletonType<TimerPresetModel>("kclock", 1, 0, "TimerPresetModel", [](QQmlEngine *, QJSEngine *) -> QObject * {
-        return TimerPresetModel::instance();
-    });
-    qmlRegisterSingletonType<TimerModel>("kclock", 1, 0, "TimerModel", [](QQmlEngine *, QJSEngine *) -> QObject * {
-        return TimerModel::instance();
-    });
-    qmlRegisterSingletonType<AlarmModel>("kclock", 1, 0, "AlarmModel", [](QQmlEngine *, QJSEngine *) -> QObject * {
-        return AlarmModel::instance();
-    });
-    qmlRegisterSingletonType<UtilModel>("kclock", 1, 0, "UtilModel", [](QQmlEngine *, QJSEngine *) -> QObject * {
-        return UtilModel::instance();
-    });
-    qmlRegisterSingletonType<StopwatchTimer>("kclock", 1, 0, "StopwatchModel", [](QQmlEngine *, QJSEngine *) -> QObject * {
-        return StopwatchModel::instance();
-    });
-    qmlRegisterSingletonType<StopwatchTimer>("kclock", 1, 0, "StopwatchTimer", [](QQmlEngine *, QJSEngine *) -> QObject * {
-        return StopwatchTimer::instance();
-    });
-    qmlRegisterSingletonType<KclockFormat>("kclock", 1, 0, "KClockFormat", [](QQmlEngine *, QJSEngine *) -> QObject * {
-        return KclockFormat::instance();
-    });
-    qmlRegisterSingletonType<WeekModel>("kclock", 1, 0, "WeekModel", [weekModel](QQmlEngine *, QJSEngine *) -> QObject * {
-        return weekModel;
-    });
-    qmlRegisterSingletonType<SettingsModel>("kclock", 1, 0, "SettingsModel", [](QQmlEngine *, QJSEngine *) -> QObject * {
-        return SettingsModel::instance();
-    });
-    qmlRegisterUncreatableType<KClockSettings>("kclock", 1, 0, "Settings", QStringLiteral("Only used for enums"));
-    qmlRegisterUncreatableType<WindowExposure>("kclock", 1, 0, "WindowExposure", QStringLiteral("Can only be used as attached property."));
-
-    QQmlApplicationEngine *engine = new QQmlApplicationEngine();
-    KLocalization::setupLocalizedContext(engine);
+    QQmlApplicationEngine engine;
+    KLocalization::setupLocalizedContext(&engine);
 
     // ~~~~ Parse command line arguments ~~~~
     const QString initialPage = parser.isSet(pageOption) ? parser.value(pageOption) : QStringLiteral("Time");
-    engine->setInitialProperties({{QStringLiteral("initialPage"), initialPage}});
-    engine->load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
+    engine.setInitialProperties({{QStringLiteral("initialPage"), initialPage}});
+    engine.loadFromModule(QStringLiteral("org.kde.kclock"), QStringLiteral("Main"));
 
     app.setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.kclock")));
 
-    QQuickWindow *mainWindow = qobject_cast<QQuickWindow *>(engine->rootObjects().first());
+    QQuickWindow *mainWindow = qobject_cast<QQuickWindow *>(engine.rootObjects().first());
     if (!mainWindow) {
         qFatal() << "Failed to create main window";
     }

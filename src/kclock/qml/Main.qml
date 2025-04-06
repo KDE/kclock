@@ -10,7 +10,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
-import kclock as KClock
+import org.kde.kclock as KClock
 
 Kirigami.ApplicationWindow {
     id: root
@@ -101,12 +101,12 @@ Kirigami.ApplicationWindow {
 
     function getPage(name) {
         switch (name) {
-            case "Time": return pagePool.loadPage("qrc:/qml/time/TimePage.qml");
-            case "Timers": return pagePool.loadPage("qrc:/qml/timer/TimerListPage.qml");
-            case "Stopwatch": return pagePool.loadPage("qrc:/qml/stopwatch/StopwatchPage.qml");
-            case "Alarms": return pagePool.loadPage("qrc:/qml/alarm/AlarmListPage.qml");
-            case "Settings": return pagePool.loadPage("qrc:/qml/settings/SettingsPage.qml");
-            case "About": return pagePool.loadPage("qrc:/qml/components/AboutPage.qml");
+            case "Time": return pagePool.loadPage(Qt.resolvedUrl("time/TimePage.qml"));
+            case "Timers": return pagePool.loadPage(Qt.resolvedUrl("timer/TimerListPage.qml"));
+            case "Stopwatch": return pagePool.loadPage(Qt.resolvedUrl("stopwatch/StopwatchPage.qml"));
+            case "Alarms": return pagePool.loadPage(Qt.resolvedUrl("alarm/AlarmListPage.qml"));
+            case "Settings": return pagePool.loadPage(Qt.resolvedUrl("settings/SettingsPage.qml"));
+            case "About": return pagePool.loadPage(Qt.resolvedUrl("components/AboutPage.qml"));
         }
     }
 
@@ -123,7 +123,7 @@ Kirigami.ApplicationWindow {
             sidebarLoader.active = false;
             globalDrawer = null;
 
-            let bottomToolbar = Qt.createComponent("qrc:/qml/components/BottomToolbar.qml")
+            let bottomToolbar = Qt.createComponent(Qt.resolvedUrl("components/BottomToolbar.qml"));
             footer = bottomToolbar.createObject(root);
         }
     }
@@ -146,7 +146,7 @@ Kirigami.ApplicationWindow {
 
     Loader {
         id: sidebarLoader
-        source: "qrc:/qml/components/Sidebar.qml"
+        source: Qt.resolvedUrl("components/Sidebar.qml")
         active: false
     }
 }

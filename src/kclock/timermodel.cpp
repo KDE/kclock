@@ -14,12 +14,22 @@
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <QQmlEngine>
 #include <QtGlobal>
 
 TimerModel *TimerModel::instance()
 {
     static TimerModel *singleton = new TimerModel();
     return singleton;
+}
+
+TimerModel *TimerModel::create(QQmlEngine *qmlEngine, QJSEngine *jsEngine)
+{
+    Q_UNUSED(qmlEngine);
+    Q_UNUSED(jsEngine);
+    auto *model = instance();
+    QQmlEngine::setObjectOwnership(model, QQmlEngine::CppOwnership);
+    return model;
 }
 
 TimerModel::TimerModel(QObject *parent)

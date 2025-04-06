@@ -20,6 +20,7 @@
 #include <QDBusPendingCallWatcher>
 #include <QDBusReply>
 #include <QLocale>
+#include <QQmlEngine>
 #include <QThread>
 #include <QXmlStreamReader>
 
@@ -27,6 +28,15 @@ AlarmModel *AlarmModel::instance()
 {
     static AlarmModel *singleton = new AlarmModel();
     return singleton;
+}
+
+AlarmModel *AlarmModel::create(QQmlEngine *qmlEngine, QJSEngine *jsEngine)
+{
+    Q_UNUSED(qmlEngine);
+    Q_UNUSED(jsEngine);
+    auto *model = instance();
+    QQmlEngine::setObjectOwnership(model, QQmlEngine::CppOwnership);
+    return model;
 }
 
 AlarmModel::AlarmModel(QObject *parent)

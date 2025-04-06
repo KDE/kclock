@@ -14,9 +14,13 @@
 #include <QTimer>
 #include <QUuid>
 
+#include <qqmlintegration.h>
+
 class Timer : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_UNCREATABLE("Managed by TimerModel")
     Q_PROPERTY(int length READ length WRITE setLength NOTIFY lengthChanged)
     Q_PROPERTY(QString lengthPretty READ lengthPretty NOTIFY lengthChanged)
     Q_PROPERTY(int elapsed READ elapsed NOTIFY elapsedChanged)

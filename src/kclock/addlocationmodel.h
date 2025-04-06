@@ -16,6 +16,11 @@
 #include <QTimeZone>
 #include <QTimer>
 
+#include <qqmlintegration.h>
+
+class QJSEngine;
+class QQmlEngine;
+
 class AddLocationModel : public QAbstractListModel
 {
     Q_OBJECT
@@ -51,13 +56,14 @@ private:
 class AddLocationSearchModel : public QSortFilterProxyModel
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
 
     Q_PROPERTY(QString query READ query WRITE setQuery NOTIFY queryChanged)
 
 public:
     static AddLocationSearchModel *instance();
-
-    explicit AddLocationSearchModel(QObject *parent = nullptr);
+    static AddLocationSearchModel *create(QQmlEngine *qmlEngine, QJSEngine *jsEngine);
 
     QString query() const;
     void setQuery(const QString &query);
@@ -70,5 +76,7 @@ protected:
     bool lessThan(const QModelIndex &left, const QModelIndex &right) const override;
 
 private:
+    explicit AddLocationSearchModel(QObject *parent = nullptr);
+
     QString m_query;
 };

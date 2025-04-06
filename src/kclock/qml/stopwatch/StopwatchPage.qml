@@ -13,8 +13,7 @@ import QtQuick.Window
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
 
-import "../components"
-import kclock
+import org.kde.kclock
 
 Kirigami.ScrollablePage {
     id: root

@@ -11,8 +11,7 @@ import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
 
-import "../components"
-import kclock
+import org.kde.kclock
 
 Kirigami.AbstractCard {
     id: root

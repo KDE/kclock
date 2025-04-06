@@ -51,10 +51,51 @@ qt_add_dbus_interface(kclock_SRCS ${TimermModelXML} timermodelinterface )
 qt_add_dbus_interface(kclock_SRCS ${TimerXML} timerinterface )
 qt_add_dbus_interface(kclock_SRCS ${UtilityXML} utilityinterface )
 
-qt_add_resources(RESOURCES resources.qrc)
-
 add_executable(kclock main.cpp ${kclock_SRCS} ${RESOURCES})
 add_dependencies(kclock kclockd)
+
+ecm_add_qml_module(kclock URI org.kde.kclock QML_FILES
+    qml/Main.qml
+
+    qml/alarm/AlarmForm.qml
+    qml/alarm/AlarmFormPage.qml
+    qml/alarm/AlarmListPage.qml
+    qml/alarm/AlarmListDelegate.qml
+    qml/alarm/AlarmRingingPopup.qml
+    qml/alarm/SoundPickerPage.qml
+
+    qml/components/AboutPage.qml
+    qml/components/BottomToolbar.qml
+    qml/components/DialogComboBox.qml
+    qml/components/FooterToolBarButton.qml
+    qml/components/FloatingActionButton.qml
+    qml/components/Sidebar.qml
+    qml/components/TimePicker.qml
+    qml/components/TimePickerSpinBox.qml
+    qml/components/TimePickerSpinBoxButton.qml
+
+    qml/timer/PresetDurationButton.qml
+    qml/timer/TimerComponent.qml
+    qml/timer/TimerForm.qml
+    qml/timer/TimerFormDialog.qml
+    qml/timer/TimerListDelegate.qml
+    qml/timer/TimerListPage.qml
+    qml/timer/TimerPage.qml
+    qml/timer/TimerRingingPopup.qml
+
+    qml/settings/SettingsPage.qml
+
+    qml/stopwatch/StopwatchPage.qml
+
+    qml/time/AddLocationListView.qml
+    qml/time/AddLocationPage.qml
+    qml/time/AddLocationWrapper.qml
+    qml/time/AnalogClock.qml
+    qml/time/AnalogClockHand.qml
+    qml/time/TimePage.qml
+    qml/time/TimePageDelegate.qml
+)
+
 target_link_libraries(kclock PRIVATE
     Qt6::Qml
     Qt6::Gui

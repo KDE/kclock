@@ -11,7 +11,7 @@ import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
 
-import kclock
+import org.kde.kclock
 
 Control {
     id: root

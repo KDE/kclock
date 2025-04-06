@@ -11,8 +11,7 @@ import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 
-import "../components"
-import kclock
+import org.kde.kclock
 
 FormCard.FormCardPage {
     id: root

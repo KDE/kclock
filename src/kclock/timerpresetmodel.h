@@ -15,6 +15,11 @@
 #include <KLocalizedString>
 #include <KSharedConfig>
 
+#include <qqmlintegration.h>
+
+class QQmlEngine;
+class QJSEngine;
+
 class TimerPreset : public QObject
 {
     Q_OBJECT
@@ -45,6 +50,8 @@ Q_SIGNALS:
 class TimerPresetModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
 
 public:
     enum Roles {
@@ -52,6 +59,7 @@ public:
     };
 
     static TimerPresetModel *instance();
+    static TimerPresetModel *create(QQmlEngine *qmlEngine, QJSEngine *jsEngine);
 
     void load();
     void save();

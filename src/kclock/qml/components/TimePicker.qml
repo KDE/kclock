@@ -6,7 +6,8 @@ import QtQuick.Controls
 import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
-import kclock
+
+import org.kde.kclock
 
 RowLayout {
     id: root

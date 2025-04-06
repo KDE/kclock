@@ -12,7 +12,7 @@ import QtQuick.Controls
 
 import org.kde.ksvg as KSvg
 
-import kclock as KClock
+import org.kde.kclock as KClock
 
 Item {
     id: representation

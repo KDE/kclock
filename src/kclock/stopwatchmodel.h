@@ -5,14 +5,22 @@
 
 #include <QAbstractListModel>
 
+#include <qqmlintegration.h>
+
+class QJSEngine;
+class QQmlEngine;
+
 // model for stopwatch laps
 class StopwatchModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
     Q_PROPERTY(qint64 mostRecentLapTime READ mostRecentLapTime NOTIFY mostRecentLapTimeChanged)
 
 public:
     static StopwatchModel *instance();
+    static StopwatchModel *create(QQmlEngine *qmlEngine, QJSEngine *jsEngine);
 
     struct StopwatchLap {
         int lapNumber;
@@ -27,8 +35,6 @@ public:
         IsBest,
         IsWorst,
     };
-
-    explicit StopwatchModel(QObject *parent = nullptr);
 
     int rowCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role) const override;
@@ -45,6 +51,8 @@ private Q_SLOTS:
     void reset();
 
 private:
+    explicit StopwatchModel(QObject *parent = nullptr);
+
     QList<StopwatchLap> m_laps; // sorted from newest to oldest
     qint64 m_mostRecentLapTime = 0;
 

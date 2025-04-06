@@ -11,10 +11,18 @@
 
 #include <optional>
 
+#include <qqmlintegration.h>
+
+class QJSEngine;
+class QQmlEngine;
+
 // class for the timer that manages the stopwatch
 class StopwatchTimer : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
+
     Q_PROPERTY(bool paused READ paused NOTIFY pausedChanged)
     Q_PROPERTY(bool stopped READ stopped NOTIFY stoppedChanged)
     Q_PROPERTY(qint64 elapsedTime READ elapsedTime NOTIFY timeChanged)
@@ -25,7 +33,7 @@ class StopwatchTimer : public QObject
 
 public:
     static StopwatchTimer *instance();
-    explicit StopwatchTimer(QObject *parent = nullptr);
+    static StopwatchTimer *create(QQmlEngine *qmlEngine, QJSEngine *jsEngine);
 
     bool paused() const;
     bool stopped() const;
@@ -51,6 +59,8 @@ Q_SIGNALS:
     void resetTriggered();
 
 private:
+    explicit StopwatchTimer(QObject *parent = nullptr);
+
     QElapsedTimer m_elapsedTimer;
 
     std::optional<qint64> m_pausedTime;

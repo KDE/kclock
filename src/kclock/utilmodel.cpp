@@ -6,6 +6,7 @@
 #include "settingsmodel.h"
 
 #include <QLocale>
+#include <QQmlEngine>
 #include <QStandardPaths>
 #include <QTimeZone>
 #include <QUrl>
@@ -20,6 +21,15 @@ UtilModel *UtilModel::instance()
 {
     static UtilModel *singleton = new UtilModel;
     return singleton;
+}
+
+UtilModel *UtilModel::create(QQmlEngine *qmlEngine, QJSEngine *jsEngine)
+{
+    Q_UNUSED(qmlEngine);
+    Q_UNUSED(jsEngine);
+    auto *model = instance();
+    QQmlEngine::setObjectOwnership(model, QQmlEngine::CppOwnership);
+    return model;
 }
 
 UtilModel::UtilModel(QObject *parent)

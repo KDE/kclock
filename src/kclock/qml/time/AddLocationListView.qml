@@ -12,7 +12,7 @@ import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
 
-import kclock
+import org.kde.kclock
 
 ListView {
     id: root

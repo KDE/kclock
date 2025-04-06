@@ -20,7 +20,10 @@ class QWindow;
 class WindowExposure : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_UNCREATABLE("Can only be used as attached property")
     QML_ATTACHED(WindowExposure)
+
     Q_PROPERTY(bool exposed READ isExposed NOTIFY exposedChanged)
 
 public:

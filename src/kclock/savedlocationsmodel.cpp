@@ -9,6 +9,7 @@
 #include "savedlocationsmodel.h"
 
 #include <QDebug>
+#include <QQmlEngine>
 
 #include <KConfigGroup>
 #include <KLocalizedString>
@@ -24,6 +25,15 @@ SavedLocationsModel *SavedLocationsModel::instance()
 {
     static SavedLocationsModel *singleton = new SavedLocationsModel;
     return singleton;
+}
+
+SavedLocationsModel *SavedLocationsModel::create(QQmlEngine *qmlEngine, QJSEngine *jsEngine)
+{
+    Q_UNUSED(qmlEngine);
+    Q_UNUSED(jsEngine);
+    auto *model = instance();
+    QQmlEngine::setObjectOwnership(model, QQmlEngine::CppOwnership);
+    return model;
 }
 
 SavedLocationsModel::SavedLocationsModel(QObject *parent)

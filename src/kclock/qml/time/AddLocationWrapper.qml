@@ -8,7 +8,8 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
-import kclock
+
+import org.kde.kclock
 
 Loader {
     id: loader
@@ -18,7 +19,7 @@ Loader {
         loader.active = false;
         AddLocationSearchModel.setFilterFixedString("");
         if (Kirigami.Settings.isMobile) {
-            applicationWindow().pageStack.push("qrc:/qml/time/AddLocationPage.qml");
+            applicationWindow().pageStack.push(Qt.resolvedUrl("AddLocationPage.qml"));
         } else {
             loader.active = true;
             loader.item.open();

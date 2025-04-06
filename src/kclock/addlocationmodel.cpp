@@ -15,6 +15,7 @@
 #include <KSharedConfig>
 
 #include <QDebug>
+#include <QQmlEngine>
 
 const QString TZ_CFG_GROUP = QStringLiteral("Timezones");
 
@@ -113,7 +114,7 @@ QVariant AddLocationModel::data(const QModelIndex &index, int role) const
     case CurrentTimeRole: {
         QDateTime time = QDateTime::currentDateTime();
         time = time.toTimeZone(tz);
-        return KclockFormat().formatTimeString(time.time().hour(), time.time().minute());
+        return KclockFormat::instance()->formatTimeString(time.time().hour(), time.time().minute());
     }
     }
     return QVariant();
@@ -134,6 +135,15 @@ AddLocationSearchModel *AddLocationSearchModel::instance()
 {
     static auto singleton = new AddLocationSearchModel;
     return singleton;
+}
+
+AddLocationSearchModel *AddLocationSearchModel::create(QQmlEngine *qmlEngine, QJSEngine *jsEngine)
+{
+    Q_UNUSED(qmlEngine);
+    Q_UNUSED(jsEngine);
+    auto *model = instance();
+    QQmlEngine::setObjectOwnership(model, QQmlEngine::CppOwnership);
+    return model;
 }
 
 AddLocationSearchModel::AddLocationSearchModel(QObject *parent)

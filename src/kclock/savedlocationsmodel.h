@@ -12,12 +12,20 @@
 #include <QSettings>
 #include <QTimeZone>
 
+#include <qqmlintegration.h>
+
+class QJSEngine;
+class QQmlEngine;
+
 class SavedLocationsModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
 
 public:
     static SavedLocationsModel *instance();
+    static SavedLocationsModel *create(QQmlEngine *qmlEngine, QJSEngine *jsEngine);
 
     enum Roles {
         NameRole = Qt::DisplayRole,
@@ -26,8 +34,6 @@ public:
         CityRole,
         IdRole,
     };
-
-    explicit SavedLocationsModel(QObject *parent = nullptr);
 
     Q_INVOKABLE void removeLocation(int index);
 
@@ -39,6 +45,8 @@ public Q_SLOTS:
     void load();
 
 private:
+    explicit SavedLocationsModel(QObject *parent = nullptr);
+
     std::vector<QTimeZone> m_timeZones;
     QSettings m_settings;
 };

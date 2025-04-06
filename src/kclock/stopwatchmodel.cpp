@@ -4,10 +4,21 @@
 #include "stopwatchmodel.h"
 #include "stopwatchtimer.h"
 
+#include <QQmlEngine>
+
 StopwatchModel *StopwatchModel::instance()
 {
     static StopwatchModel *instance = new StopwatchModel;
     return instance;
+}
+
+StopwatchModel *StopwatchModel::create(QQmlEngine *qmlEngine, QJSEngine *jsEngine)
+{
+    Q_UNUSED(qmlEngine);
+    Q_UNUSED(jsEngine);
+    auto *model = instance();
+    QQmlEngine::setObjectOwnership(model, QQmlEngine::CppOwnership);
+    return model;
 }
 
 StopwatchModel::StopwatchModel(QObject *parent)

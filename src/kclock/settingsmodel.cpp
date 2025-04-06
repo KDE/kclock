@@ -10,6 +10,7 @@
 #include <KLocalizedString>
 
 #include <QDebug>
+#include <QQmlEngine>
 
 SettingsModel::SettingsModel()
     : m_interface(new LocalKClockSettingsInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Settings"), QDBusConnection::sessionBus()))
@@ -44,6 +45,15 @@ SettingsModel *SettingsModel::instance()
 {
     static SettingsModel *singleton = new SettingsModel();
     return singleton;
+}
+
+SettingsModel *SettingsModel::create(QQmlEngine *qmlEngine, QJSEngine *jsEngine)
+{
+    Q_UNUSED(qmlEngine);
+    Q_UNUSED(jsEngine);
+    auto *model = instance();
+    QQmlEngine::setObjectOwnership(model, QQmlEngine::CppOwnership);
+    return model;
 }
 
 QString SettingsModel::timeFormat() const

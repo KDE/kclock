@@ -13,14 +13,23 @@
 #include <QAbstractListModel>
 #include <QObject>
 
+#include <qqmlregistration.h>
+
+class QJSEngine;
+class QQmlEngine;
+
 class AlarmModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
+
     Q_PROPERTY(bool connectedToDaemon READ connectedToDaemon NOTIFY connectedToDaemonChanged)
     Q_PROPERTY(bool busy READ busy NOTIFY busyChanged)
 
 public:
     static AlarmModel *instance();
+    static AlarmModel *create(QQmlEngine *qmlEngine, QJSEngine *jsEngine);
 
     enum {
         AlarmRole,

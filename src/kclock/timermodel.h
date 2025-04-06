@@ -13,12 +13,19 @@
 #include <QAbstractListModel>
 #include <QObject>
 
+#include <qqmlintegration.h>
+
 #include "timermodelinterface.h"
+
+class QQmlEngine;
+class QJSEngine;
 
 class Timer;
 class TimerModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
     Q_PROPERTY(bool connectedToDaemon READ connectedToDaemon NOTIFY connectedToDaemonChanged)
     /**
      * If there is a single running timer in the model, this property will return it.
@@ -27,6 +34,7 @@ class TimerModel : public QAbstractListModel
 
 public:
     static TimerModel *instance();
+    static TimerModel *create(QQmlEngine *qmlengine, QJSEngine *jsEngine);
 
     enum {
         TimerRole,

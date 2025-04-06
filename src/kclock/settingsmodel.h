@@ -13,14 +13,30 @@
 
 #include <QObject>
 
+#include <qqmlregistration.h>
+
+class QJSEngine;
+class QQmlEngine;
+
+struct KClockSettingsForeign {
+    Q_GADGET
+    QML_NAMED_ELEMENT(Settings)
+    QML_UNCREATABLE("Only used for enums")
+    QML_FOREIGN(KClockSettings)
+};
+
 class SettingsModel : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
+
     Q_PROPERTY(QString timeFormat READ timeFormat WRITE setTimeFormat NOTIFY timeFormatChanged)
     Q_PROPERTY(KClockSettings::EnumTimerNotification timerNotification READ timerNotification WRITE setTimerNotification NOTIFY timerNotificationChanged)
 
 public:
     static SettingsModel *instance();
+    static SettingsModel *create(QQmlEngine *qmlEngine, QJSEngine *jsEngine);
 
     QString timeFormat() const;
     void setTimeFormat(QString timeFormat);

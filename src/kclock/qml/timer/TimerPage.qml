@@ -12,8 +12,7 @@ import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
 
-import "../components"
-import kclock
+import org.kde.kclock
 
 Kirigami.Page {
     id: root
