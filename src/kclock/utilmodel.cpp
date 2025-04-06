@@ -144,6 +144,40 @@ QString UtilModel::displayTwoDigits(const qint64 &amount)
     return QStringLiteral("%1").arg(amount, 2, 10, QLatin1Char('0'));
 }
 
+QString UtilModel::repeatFormat(int dayOfWeek) const
+{
+    if (!dayOfWeek) {
+        return i18nc("Repeat", "Only once");
+    }
+    if (dayOfWeek == (1 << 7) - 1) {
+        return i18nc("Repeat", "Everyday");
+    }
+    if (dayOfWeek == (1 << 5) - 1) {
+        return i18nc("Repeat", "Weekdays");
+    }
+
+    QLocale locale;
+
+    QList<QString> days;
+    days.reserve(7);
+    int lastDay = -1;
+    for (int day = 0; day < 7; ++day) {
+        if (dayOfWeek & (1 << day)) {
+            // 0 in QLocale is Sunday.
+            const QString dayName = locale.standaloneDayName(day + 1, QLocale::ShortFormat);
+            days.append(dayName);
+            lastDay = day;
+        }
+    }
+
+    // Single day, show full name.
+    if (days.count() == 1) {
+        return locale.standaloneDayName(lastDay + 1, QLocale::LongFormat);
+    } else {
+        return days.join(i18n(", "));
+    }
+}
+
 void UtilModel::applyPlasmaImageSet(KSvg::Svg *svg)
 {
     if (!m_plasmaImageSet) {

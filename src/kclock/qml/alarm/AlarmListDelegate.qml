@@ -14,8 +14,6 @@ import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
 
-import "../components/formatUtil.js" as FormatUtil
-
 import kclock
 
 Delegates.RoundedItemDelegate {
@@ -99,7 +97,7 @@ Delegates.RoundedItemDelegate {
                         subtitleString = subtitleString + root.name + " - ";
                     }
 
-                    subtitleString += FormatUtil.getRepeatFormat(root.daysOfWeek);
+                    subtitleString += UtilModel.repeatFormat(root.daysOfWeek);
 
                     if (root.snoozedLength > 0) {
                         subtitleString += "\n"

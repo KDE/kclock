@@ -11,7 +11,6 @@ import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 
 import "../components"
-import "../components/formatUtil.js" as FormatUtil
 import kclock
 
 Kirigami.Dialog {

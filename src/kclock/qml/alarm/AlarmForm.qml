@@ -14,7 +14,6 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.dateandtime as DateAndTime
 
 import "../components"
-import "../components/formatUtil.js" as FormatUtil
 import kclock
 
 Kirigami.FormLayout {
@@ -84,7 +83,7 @@ Kirigami.FormLayout {
         implicitWidth: root.width
 
         Kirigami.FormData.label: i18n("Days to repeat:")
-        text: FormatUtil.getRepeatFormat(root.formDaysOfWeek)
+        text: UtilModel.repeatFormat(root.formDaysOfWeek)
         title: i18n("Select Days to Repeat")
         model: WeekModel
 
