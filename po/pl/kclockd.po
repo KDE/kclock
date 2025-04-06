@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-04 00:44+0000\n"
+"POT-Creation-Date: 2025-04-06 00:45+0000\n"
 "PO-Revision-Date: 2022-10-18 17:19+0200\n"
 "Last-Translator: Grzegorz Koryga <rehork@tutamail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -27,24 +27,24 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "rehork@tutamail.com"
 
-#: alarm.cpp:73 alarm.h:51
+#: alarm.cpp:72 alarm.h:51
 #, kde-format
 msgid "Alarm"
 msgstr "Alarm"
 
-#: alarm.cpp:77 timer.cpp:67
+#: alarm.cpp:76 timer.cpp:67
 #, fuzzy, kde-format
 #| msgid "Dismiss"
 msgctxt "@action:button"
 msgid "Dismiss"
 msgstr "Odrzuć"
 
-#: alarm.cpp:80
+#: alarm.cpp:79
 #, kde-format
 msgid "Dismiss"
 msgstr "Odrzuć"
 
-#: alarm.cpp:83
+#: alarm.cpp:82
 #, kde-format
 msgid "Snooze"
 msgstr "Drzemka"

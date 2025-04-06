@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-04 00:44+0000\n"
-"PO-Revision-Date: 2025-01-17 11:33+0400\n"
+"POT-Creation-Date: 2025-04-06 00:45+0000\n"
+"PO-Revision-Date: 2025-04-05 13:54+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -57,7 +57,7 @@ msgstr "اختر الصفحة المفتوحة"
 #: main.cpp:76
 #, kde-format
 msgid "Explicitly open a new Clock window"
-msgstr ""
+msgstr "افتح نافذة ساعة جديدة صراحةً"
 
 #: qml/alarm/AlarmForm.qml:86
 #, kde-format
@@ -239,11 +239,10 @@ msgstr "أضف منبه"
 #: qml/alarm/AlarmListPage.qml:95
 #, kde-format
 msgid "Loading…"
-msgstr ""
+msgstr "يحمّل..."
 
 #: qml/alarm/AlarmListPage.qml:110
-#, fuzzy, kde-format
-#| msgid "New Alarm"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Alarm"
 msgstr "منبّه جديد"
@@ -374,28 +373,28 @@ msgstr "وقت 24 ساعة"
 #: qml/settings/SettingsPage.qml:53
 #, kde-format
 msgid "Notifications for running timers"
-msgstr ""
+msgstr "إخطارات للمؤقتات التي تعمل"
 
 #: qml/settings/SettingsPage.qml:55
 #, kde-format
 msgid "Always"
-msgstr ""
+msgstr "دائمًا"
 
 #: qml/settings/SettingsPage.qml:58
 #, kde-format
 msgctxt "When the app is not running"
 msgid "When %1 is not running"
-msgstr ""
+msgstr "عندما لا يعمل %1"
 
 #: qml/settings/SettingsPage.qml:61
 #, kde-format
 msgid "Never"
-msgstr ""
+msgstr "البتة"
 
 #: qml/settings/SettingsPage.qml:64
 #, kde-format
 msgid "Lets you pause and resume timers from the notification area."
-msgstr ""
+msgstr "يتيح لك إيقاف المؤقتات مؤقتًا واستئنافها من منطقة الإخطارات."
 
 #: qml/settings/SettingsPage.qml:79
 #, kde-format
@@ -446,22 +445,19 @@ msgid "Total"
 msgstr "المجموع"
 
 #: qml/stopwatch/StopwatchPage.qml:260
-#, fuzzy, kde-format
-#| msgid "Pause"
+#, kde-format
 msgctxt "@action:button"
 msgid "Pause"
 msgstr "ألبث"
 
 #: qml/stopwatch/StopwatchPage.qml:262
-#, fuzzy, kde-format
-#| msgid "Resume"
+#, kde-format
 msgctxt "@action:button"
 msgid "Resume"
 msgstr "استكمل"
 
 #: qml/stopwatch/StopwatchPage.qml:264
-#, fuzzy, kde-format
-#| msgid "Start"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start"
 msgstr "ابدأ"
@@ -487,88 +483,94 @@ msgid "Add"
 msgstr "أضف"
 
 #: qml/time/TimePage.qml:168
-#, fuzzy, kde-format
-#| msgid "Add Location"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Location"
 msgstr "أضف موقعًا"
 
-#: qml/timer/PresetDurationButton.qml:23 qml/timer/TimerForm.qml:39
+#: qml/timer/PresetDurationButton.qml:23
 #, kde-format
 msgid "1 m"
 msgstr "1 د"
 
-#: qml/timer/TimerForm.qml:47
-#, kde-format
-msgid "5 m"
-msgstr "5 د"
+#: qml/timer/TimerForm.qml:39
+#, fuzzy, kde-format
+#| msgid "1 minute"
+msgid "1 min"
+msgstr "دقيقة واحدة"
 
-#: qml/timer/TimerForm.qml:55
-#, kde-format
-msgid "10 m"
+#: qml/timer/TimerForm.qml:40
+#, fuzzy, kde-format
+#| msgid "5 minutes"
+msgid "5 min"
+msgstr "5 دقائق"
+
+#: qml/timer/TimerForm.qml:41
+#, fuzzy, kde-format
+#| msgid "10 m"
+msgid "10 min"
 msgstr "10 د"
 
-#: qml/timer/TimerForm.qml:67
-#, kde-format
-msgid "15 m"
+#: qml/timer/TimerForm.qml:42
+#, fuzzy, kde-format
+#| msgid "15 m"
+msgid "15 min"
 msgstr "15 د"
 
-#: qml/timer/TimerForm.qml:75
-#, kde-format
-msgid "30 m"
+#: qml/timer/TimerForm.qml:43
+#, fuzzy, kde-format
+#| msgid "30 m"
+msgid "30 min"
 msgstr "30 د"
 
-#: qml/timer/TimerForm.qml:83
+#: qml/timer/TimerForm.qml:44
 #, kde-format
 msgid "1 h"
 msgstr "1 س"
 
-#: qml/timer/TimerForm.qml:95
+#: qml/timer/TimerForm.qml:63
 #, kde-format
 msgid "<b>Duration:</b>"
 msgstr "<b>المدّة:</b>"
 
-#: qml/timer/TimerForm.qml:108
+#: qml/timer/TimerForm.qml:76
 #, kde-format
 msgid "hours"
 msgstr "ساعة"
 
-#: qml/timer/TimerForm.qml:123
+#: qml/timer/TimerForm.qml:91
 #, kde-format
 msgid "minutes"
 msgstr "دقيقة"
 
-#: qml/timer/TimerForm.qml:138
+#: qml/timer/TimerForm.qml:106
 #, kde-format
 msgid "seconds"
 msgstr "ثانية"
 
-#: qml/timer/TimerForm.qml:144
+#: qml/timer/TimerForm.qml:112
 #, kde-format
 msgid "<b>Label:</b>"
 msgstr "<b>الوصف:</b>"
 
-#: qml/timer/TimerForm.qml:149
+#: qml/timer/TimerForm.qml:117
 #, kde-format
 msgid "<b>Command at timeout:</b>"
 msgstr "<b>الأمر عند انتهاء المهلة:</b>"
 
-#: qml/timer/TimerForm.qml:152
+#: qml/timer/TimerForm.qml:120
 #, kde-format
 msgid "optional"
 msgstr "اختياري"
 
 #: qml/timer/TimerFormDialog.qml:35
-#, fuzzy, kde-format
-#| msgctxt "Edit alarm page title"
-#| msgid "Editing %1"
+#, kde-format
 msgctxt "@title:window Edit timer"
 msgid "Edit %1"
-msgstr "يحرّر %1"
+msgstr "حرّر %1"
 
 #: qml/timer/TimerFormDialog.qml:35
-#, fuzzy, kde-format
-#| msgid "Create timer"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Timer"
 msgstr "أنشئ مؤقت"
@@ -602,11 +604,10 @@ msgstr "حفظ كإعداد مسبق"
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr ""
+msgstr "احفظ"
 
 #: qml/timer/TimerFormDialog.qml:113
-#, fuzzy, kde-format
-#| msgid "Done"
+#, kde-format
 msgctxt "@action:button"
 msgid "Done"
 msgstr "تمّ"
@@ -636,8 +637,7 @@ msgid "Reset"
 msgstr "صفّر"
 
 #: qml/timer/TimerListDelegate.qml:192
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit"
 msgstr "حرّر"
@@ -663,8 +663,7 @@ msgstr ""
 "المؤقت."
 
 #: qml/timer/TimerListPage.qml:85
-#, fuzzy, kde-format
-#| msgid "New Timer"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Timer"
 msgstr "مؤقت جديد"
@@ -801,6 +800,9 @@ msgstr "سوف يرن المنبه في أقل من دقيقة"
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "سوف يرن المنبه في %1"
+
+#~ msgid "5 m"
+#~ msgstr "5 د"
 
 #~ msgid "Mon, "
 #~ msgstr "الإثنين، "

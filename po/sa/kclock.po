@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-04 00:44+0000\n"
+"POT-Creation-Date: 2025-04-06 00:45+0000\n"
 "PO-Revision-Date: 2024-12-24 20:39+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -489,67 +489,77 @@ msgctxt "@action:button"
 msgid "Add Location"
 msgstr "स्थानं योजयतु"
 
-#: qml/timer/PresetDurationButton.qml:23 qml/timer/TimerForm.qml:39
+#: qml/timer/PresetDurationButton.qml:23
 #, kde-format
 msgid "1 m"
 msgstr "१ मी"
 
-#: qml/timer/TimerForm.qml:47
-#, kde-format
-msgid "5 m"
-msgstr "५ मी"
+#: qml/timer/TimerForm.qml:39
+#, fuzzy, kde-format
+#| msgid "1 minute"
+msgid "1 min"
+msgstr "१ मिनिट्"
 
-#: qml/timer/TimerForm.qml:55
-#, kde-format
-msgid "10 m"
+#: qml/timer/TimerForm.qml:40
+#, fuzzy, kde-format
+#| msgid "5 minutes"
+msgid "5 min"
+msgstr "५ मिनिट्"
+
+#: qml/timer/TimerForm.qml:41
+#, fuzzy, kde-format
+#| msgid "10 m"
+msgid "10 min"
 msgstr "१० मी"
 
-#: qml/timer/TimerForm.qml:67
-#, kde-format
-msgid "15 m"
+#: qml/timer/TimerForm.qml:42
+#, fuzzy, kde-format
+#| msgid "15 m"
+msgid "15 min"
 msgstr "१५ मी"
 
-#: qml/timer/TimerForm.qml:75
-#, kde-format
-msgid "30 m"
+#: qml/timer/TimerForm.qml:43
+#, fuzzy, kde-format
+#| msgid "30 m"
+msgid "30 min"
 msgstr "३० मी"
 
-#: qml/timer/TimerForm.qml:83
+#: qml/timer/TimerForm.qml:44
 #, kde-format
 msgid "1 h"
 msgstr "१ ज"
 
-#: qml/timer/TimerForm.qml:95
+#: qml/timer/TimerForm.qml:63
 #, kde-format
 msgid "<b>Duration:</b>"
 msgstr "<b>अवधि:</b>"
 
-#: qml/timer/TimerForm.qml:108
+#: qml/timer/TimerForm.qml:76
 #, kde-format
 msgid "hours"
 msgstr "घण्टानः"
 
-#: qml/timer/TimerForm.qml:123
+#: qml/timer/TimerForm.qml:91
 #, kde-format
 msgid "minutes"
 msgstr "पन्चनिमेषः"
 
-#: qml/timer/TimerForm.qml:138
+#: qml/timer/TimerForm.qml:106
 #, kde-format
 msgid "seconds"
 msgstr "सेकण्ड्"
 
-#: qml/timer/TimerForm.qml:144
+#: qml/timer/TimerForm.qml:112
 #, kde-format
 msgid "<b>Label:</b>"
 msgstr "<b>नामपत्र:</b>"
 
-#: qml/timer/TimerForm.qml:149
+#: qml/timer/TimerForm.qml:117
 #, kde-format
 msgid "<b>Command at timeout:</b>"
 msgstr "<b>समयसमाप्तेः समये आदेशः : १.</b>"
 
-#: qml/timer/TimerForm.qml:152
+#: qml/timer/TimerForm.qml:120
 #, kde-format
 msgid "optional"
 msgstr "वैकल्पिक"
@@ -783,6 +793,9 @@ msgstr "एकनिमेषात् न्यूनेन समये अल
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "%1 मध्ये अलार्मः ध्वनिं करिष्यति"
+
+#~ msgid "5 m"
+#~ msgstr "५ मी"
 
 #~ msgid "Mon, "
 #~ msgstr "सोम, "

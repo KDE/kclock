@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-04 00:44+0000\n"
-"PO-Revision-Date: 2025-04-01 08:13+0300\n"
+"POT-Creation-Date: 2025-04-06 00:45+0000\n"
+"PO-Revision-Date: 2025-04-05 15:00+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -28,23 +28,23 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde-l10n-he@kde.org"
 
-#: alarm.cpp:73 alarm.h:51
+#: alarm.cpp:72 alarm.h:51
 #, kde-format
 msgid "Alarm"
 msgstr "התראה"
 
-#: alarm.cpp:77 timer.cpp:67
+#: alarm.cpp:76 timer.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Dismiss"
 msgstr "התעלמות"
 
-#: alarm.cpp:80
+#: alarm.cpp:79
 #, kde-format
 msgid "Dismiss"
 msgstr "התעלמות"
 
-#: alarm.cpp:83
+#: alarm.cpp:82
 #, kde-format
 msgid "Snooze"
 msgstr "נודניק"
@@ -179,44 +179,34 @@ msgstr "קוצב הזמן שלך %1 הסתיים!"
 #, kde-format
 msgctxt "@action:button Open kclock app"
 msgid "Open Clock"
-msgstr ""
+msgstr "פתיחת שעון"
 
 #: timermodel.cpp:245
-#, fuzzy, kde-format
-#| msgctxt "@action:button Add 1 minute to timer"
-#| msgid "+1 Minute"
+#, kde-format
 msgctxt "@action:button Add minute to timer"
 msgid "+1 Minute"
 msgstr "+דקה"
 
 #: timermodel.cpp:248
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Reset Timer"
+#, kde-format
 msgctxt "@action:button Reset timer"
 msgid "Reset"
-msgstr "איפוס קוצב הזמן"
+msgstr "איפוס"
 
 #: timermodel.cpp:251 timermodel.cpp:276
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Pause"
+#, kde-format
 msgctxt "@action:button Pause timer"
 msgid "Pause"
 msgstr "השהיה"
 
 #: timermodel.cpp:269
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Pause"
+#, kde-format
 msgctxt "@title:notification Timer name (paused)"
 msgid "%1 (Paused)"
-msgstr "השהיה"
+msgstr "%1 (מושהה)"
 
 #: timermodel.cpp:278
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Resume"
+#, kde-format
 msgctxt "@action:button Resume timer"
 msgid "Resume"
 msgstr "המשך"

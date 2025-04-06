@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-04 00:44+0000\n"
+"POT-Creation-Date: 2025-04-06 00:45+0000\n"
 "PO-Revision-Date: 2020-06-13 17:20-0700\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -476,67 +476,72 @@ msgctxt "@action:button"
 msgid "Add Location"
 msgstr ""
 
-#: qml/timer/PresetDurationButton.qml:23 qml/timer/TimerForm.qml:39
+#: qml/timer/PresetDurationButton.qml:23
 #, kde-format
 msgid "1 m"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:47
+#: qml/timer/TimerForm.qml:39
 #, kde-format
-msgid "5 m"
+msgid "1 min"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:55
+#: qml/timer/TimerForm.qml:40
 #, kde-format
-msgid "10 m"
+msgid "5 min"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:67
+#: qml/timer/TimerForm.qml:41
 #, kde-format
-msgid "15 m"
+msgid "10 min"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:75
+#: qml/timer/TimerForm.qml:42
 #, kde-format
-msgid "30 m"
+msgid "15 min"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:83
+#: qml/timer/TimerForm.qml:43
+#, kde-format
+msgid "30 min"
+msgstr ""
+
+#: qml/timer/TimerForm.qml:44
 #, kde-format
 msgid "1 h"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:95
+#: qml/timer/TimerForm.qml:63
 #, kde-format
 msgid "<b>Duration:</b>"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:108
+#: qml/timer/TimerForm.qml:76
 #, kde-format
 msgid "hours"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:123
+#: qml/timer/TimerForm.qml:91
 #, kde-format
 msgid "minutes"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:138
+#: qml/timer/TimerForm.qml:106
 #, kde-format
 msgid "seconds"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:144
+#: qml/timer/TimerForm.qml:112
 #, kde-format
 msgid "<b>Label:</b>"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:149
+#: qml/timer/TimerForm.qml:117
 #, kde-format
 msgid "<b>Command at timeout:</b>"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:152
+#: qml/timer/TimerForm.qml:120
 #, kde-format
 msgid "optional"
 msgstr ""

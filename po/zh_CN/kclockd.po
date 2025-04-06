@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-04 00:44+0000\n"
+"POT-Creation-Date: 2025-04-06 00:45+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -27,23 +27,23 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "tds00@qq.com"
 
-#: alarm.cpp:73 alarm.h:51
+#: alarm.cpp:72 alarm.h:51
 #, kde-format
 msgid "Alarm"
 msgstr "闹钟"
 
-#: alarm.cpp:77 timer.cpp:67
+#: alarm.cpp:76 timer.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Dismiss"
 msgstr "关闭"
 
-#: alarm.cpp:80
+#: alarm.cpp:79
 #, kde-format
 msgid "Dismiss"
 msgstr "关闭"
 
-#: alarm.cpp:83
+#: alarm.cpp:82
 #, kde-format
 msgid "Snooze"
 msgstr "推迟"
@@ -178,37 +178,37 @@ msgstr "计时器 %1 已完成计时！"
 #, kde-format
 msgctxt "@action:button Open kclock app"
 msgid "Open Clock"
-msgstr ""
+msgstr "打开时钟"
 
 #: timermodel.cpp:245
 #, kde-format
 msgctxt "@action:button Add minute to timer"
 msgid "+1 Minute"
-msgstr ""
+msgstr "+1 分钟"
 
 #: timermodel.cpp:248
 #, kde-format
 msgctxt "@action:button Reset timer"
 msgid "Reset"
-msgstr ""
+msgstr "重置"
 
 #: timermodel.cpp:251 timermodel.cpp:276
 #, kde-format
 msgctxt "@action:button Pause timer"
 msgid "Pause"
-msgstr ""
+msgstr "暂停"
 
 #: timermodel.cpp:269
 #, kde-format
 msgctxt "@title:notification Timer name (paused)"
 msgid "%1 (Paused)"
-msgstr ""
+msgstr "%1 (已暂停)"
 
 #: timermodel.cpp:278
 #, kde-format
 msgctxt "@action:button Resume timer"
 msgid "Resume"
-msgstr ""
+msgstr "继续"
 
 #: xdgportal.cpp:34
 #, kde-format

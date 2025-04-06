@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-04 00:44+0000\n"
+"POT-Creation-Date: 2025-04-06 00:45+0000\n"
 "PO-Revision-Date: 2021-06-12 21:25+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -500,70 +500,80 @@ msgctxt "@action:button"
 msgid "Add Location"
 msgstr "Προσθήκη ζώνης ώρας"
 
-#: qml/timer/PresetDurationButton.qml:23 qml/timer/TimerForm.qml:39
+#: qml/timer/PresetDurationButton.qml:23
 #, fuzzy, kde-format
 #| msgid "1 hour"
 msgid "1 m"
 msgstr "1 ώρα"
 
-#: qml/timer/TimerForm.qml:47
-#, kde-format
-msgid "5 m"
-msgstr ""
+#: qml/timer/TimerForm.qml:39
+#, fuzzy, kde-format
+#| msgid "1 minute"
+msgid "1 min"
+msgstr "1 λεπτό"
 
-#: qml/timer/TimerForm.qml:55
-#, kde-format
-msgid "10 m"
-msgstr ""
+#: qml/timer/TimerForm.qml:40
+#, fuzzy, kde-format
+#| msgid "5 minutes"
+msgid "5 min"
+msgstr "5 λεπτά"
 
-#: qml/timer/TimerForm.qml:67
-#, kde-format
-msgid "15 m"
-msgstr ""
+#: qml/timer/TimerForm.qml:41
+#, fuzzy, kde-format
+#| msgid "10 minutes"
+msgid "10 min"
+msgstr "10 λεπτά"
 
-#: qml/timer/TimerForm.qml:75
-#, kde-format
-msgid "30 m"
-msgstr ""
+#: qml/timer/TimerForm.qml:42
+#, fuzzy, kde-format
+#| msgid "15 minutes"
+msgid "15 min"
+msgstr "15 λεπτά"
 
-#: qml/timer/TimerForm.qml:83
+#: qml/timer/TimerForm.qml:43
+#, fuzzy, kde-format
+#| msgid "30 minutes"
+msgid "30 min"
+msgstr "30 λεπτά"
+
+#: qml/timer/TimerForm.qml:44
 #, fuzzy, kde-format
 #| msgid "1 hour"
 msgid "1 h"
 msgstr "1 ώρα"
 
-#: qml/timer/TimerForm.qml:95
+#: qml/timer/TimerForm.qml:63
 #, fuzzy, kde-format
 #| msgid "Timezones"
 msgid "<b>Duration:</b>"
 msgstr "Ζώνες ώρας"
 
-#: qml/timer/TimerForm.qml:108
+#: qml/timer/TimerForm.qml:76
 #, kde-format
 msgid "hours"
 msgstr "ώρες"
 
-#: qml/timer/TimerForm.qml:123
+#: qml/timer/TimerForm.qml:91
 #, kde-format
 msgid "minutes"
 msgstr "λεπτά"
 
-#: qml/timer/TimerForm.qml:138
+#: qml/timer/TimerForm.qml:106
 #, kde-format
 msgid "seconds"
 msgstr "δευτερόλεπτα"
 
-#: qml/timer/TimerForm.qml:144
+#: qml/timer/TimerForm.qml:112
 #, kde-format
 msgid "<b>Label:</b>"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:149
+#: qml/timer/TimerForm.qml:117
 #, kde-format
 msgid "<b>Command at timeout:</b>"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:152
+#: qml/timer/TimerForm.qml:120
 #, kde-format
 msgid "optional"
 msgstr ""

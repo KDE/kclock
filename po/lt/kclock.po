@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-04 00:44+0000\n"
+"POT-Creation-Date: 2025-04-06 00:45+0000\n"
 "PO-Revision-Date: 2024-07-27 20:10+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -494,67 +494,77 @@ msgctxt "@action:button"
 msgid "Add Location"
 msgstr "Pridėti vietą"
 
-#: qml/timer/PresetDurationButton.qml:23 qml/timer/TimerForm.qml:39
+#: qml/timer/PresetDurationButton.qml:23
 #, kde-format
 msgid "1 m"
 msgstr "1 min."
 
-#: qml/timer/TimerForm.qml:47
-#, kde-format
-msgid "5 m"
-msgstr "5 min."
+#: qml/timer/TimerForm.qml:39
+#, fuzzy, kde-format
+#| msgid "1 minute"
+msgid "1 min"
+msgstr "1 minutė"
 
-#: qml/timer/TimerForm.qml:55
-#, kde-format
-msgid "10 m"
+#: qml/timer/TimerForm.qml:40
+#, fuzzy, kde-format
+#| msgid "5 minutes"
+msgid "5 min"
+msgstr "5 minutės"
+
+#: qml/timer/TimerForm.qml:41
+#, fuzzy, kde-format
+#| msgid "10 m"
+msgid "10 min"
 msgstr "10 min."
 
-#: qml/timer/TimerForm.qml:67
-#, kde-format
-msgid "15 m"
+#: qml/timer/TimerForm.qml:42
+#, fuzzy, kde-format
+#| msgid "15 m"
+msgid "15 min"
 msgstr "15 min."
 
-#: qml/timer/TimerForm.qml:75
-#, kde-format
-msgid "30 m"
+#: qml/timer/TimerForm.qml:43
+#, fuzzy, kde-format
+#| msgid "30 m"
+msgid "30 min"
 msgstr "30 min."
 
-#: qml/timer/TimerForm.qml:83
+#: qml/timer/TimerForm.qml:44
 #, kde-format
 msgid "1 h"
 msgstr "1 val."
 
-#: qml/timer/TimerForm.qml:95
+#: qml/timer/TimerForm.qml:63
 #, kde-format
 msgid "<b>Duration:</b>"
 msgstr "<b>Trukmė:</b>"
 
-#: qml/timer/TimerForm.qml:108
+#: qml/timer/TimerForm.qml:76
 #, kde-format
 msgid "hours"
 msgstr "valandos"
 
-#: qml/timer/TimerForm.qml:123
+#: qml/timer/TimerForm.qml:91
 #, kde-format
 msgid "minutes"
 msgstr "minutės"
 
-#: qml/timer/TimerForm.qml:138
+#: qml/timer/TimerForm.qml:106
 #, kde-format
 msgid "seconds"
 msgstr "sekundės"
 
-#: qml/timer/TimerForm.qml:144
+#: qml/timer/TimerForm.qml:112
 #, kde-format
 msgid "<b>Label:</b>"
 msgstr "<b>Etiketė:</b>"
 
-#: qml/timer/TimerForm.qml:149
+#: qml/timer/TimerForm.qml:117
 #, kde-format
 msgid "<b>Command at timeout:</b>"
 msgstr "<b>Komanda pasibaigus laikui:</b>"
 
-#: qml/timer/TimerForm.qml:152
+#: qml/timer/TimerForm.qml:120
 #, kde-format
 msgid "optional"
 msgstr "nebūtina"
@@ -796,6 +806,9 @@ msgstr "Žadintuvas skambės po mažiau nei minutės"
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "Žadintuvas skambės po %1"
+
+#~ msgid "5 m"
+#~ msgstr "5 min."
 
 #~ msgid "Mon, "
 #~ msgstr "Pir, "
