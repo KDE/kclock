@@ -27,8 +27,3 @@ function getRepeatFormat(dayOfWeek) {
     }
     return days.join(i18n(", "));
 }
-
-// auxiliary function to convert 24 hours to 12
-function hoursTo12(hours) {
-    return (hours >= 12) ? (hours - 12) : hours;
-}
