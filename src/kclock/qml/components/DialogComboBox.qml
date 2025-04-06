@@ -6,9 +6,7 @@
 
 import QtQuick
 import QtQuick.Controls
-import QtQuick.Window
 import QtQuick.Layouts
-import QtQuick.Dialogs
 
 import org.kde.kirigami as Kirigami
 
