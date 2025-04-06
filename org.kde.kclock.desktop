@@ -137,6 +137,7 @@ X-KDE-FormFactor=desktop;tablet;handset;
 
 [Desktop Action Timers]
 Name=Timers
+Name[ar]=المؤقّتات
 Name[bg]=Таймери
 Name[ca]=Temporitzadors
 Name[ca@valencia]=Temporitzadors
@@ -159,6 +160,7 @@ Exec=kclock --page Timers
 
 [Desktop Action Stopwatch]
 Name=Stopwatch
+Name[ar]=مؤقت
 Name[bg]=Хронометър
 Name[ca]=Cronòmetre
 Name[ca@valencia]=Cronòmetre
@@ -181,6 +183,7 @@ Exec=kclock --page Stopwatch
 
 [Desktop Action Alarms]
 Name=Alarms
+Name[ar]=المنبّهات
 Name[bg]=Аларма
 Name[ca]=Alarmes
 Name[ca@valencia]=Alarmes

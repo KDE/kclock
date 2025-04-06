@@ -3,6 +3,7 @@
 [Desktop Entry]
 # ctxt: plasma runner
 Name=Clock
+Name[ar]=الساعة
 Name[bg]=Часовник
 Name[ca]=Rellotge
 Name[ca@valencia]=Rellotge
@@ -20,6 +21,7 @@ Name[uk]=Годинник
 Name[x-test]=xxClockxx
 Name[zh_CN]=时钟
 Comment=Find timers and start/stop them
+Comment[ar]=ابحث عن المؤقتات وقم ببدء تشغيلها/إيقافها
 Comment[bg]=Намиране, стартиране и спиране на таймери
 Comment[ca]=Cerca temporitzadors i els inicia/atura
 Comment[ca@valencia]=Busca temporitzadors i els inicia/para
@@ -50,6 +52,7 @@ X-Plasma-Runner-Min-Letter-Count=3
 X-Plasma-Request-Actions-Once=true
 X-Plasma-Runner-Syntaxes=:q:,timer,alarm
 X-Plasma-Runner-Syntax-Descriptions=Finds timers whose name match :q:,Lists all timers and allows to start/stop them.,Lists all alarms and allows to enable/disable them.
+X-Plasma-Runner-Syntax-Descriptions[ar]=يبحث عن المؤقتات التي يتطابق اسمها مع :q:، ويسرد جميع المؤقتات ويسمح ببدء تشغيلها/إيقافها، ويسرد جميع التنبيهات ويسمح بتمكينها/تعطيلها.
 X-Plasma-Runner-Syntax-Descriptions[bg]=Намира таймери, чието име съвпада с :q:.Показва всички таймери и позволява да ги стартирате/спирате. Показва всички аларми и позволява да ги активирате/деактивирате.
 X-Plasma-Runner-Syntax-Descriptions[ca]=Troba temporitzadors el nom dels quals coincideixi amb :q:,Llista tots els temporitzadors i permet iniciar/aturar-los.,Llista totes les alarmes i permet activar/desactivar-les.
 X-Plasma-Runner-Syntax-Descriptions[ca@valencia]=Troba temporitzadors el nom dels quals coincidisca amb :q:,Llista tots els temporitzadors i permet iniciar/parar-los.,Llista totes les alarmes i permet activar i desactivar-les.
