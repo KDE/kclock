@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kclock package.
 #
-# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024 Stefan Asserhäll <stefan.asserhall@gmail.com>
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024, 2025 Stefan Asserhäll <stefan.asserhall@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-06 00:45+0000\n"
-"PO-Revision-Date: 2024-07-09 16:33+0200\n"
+"PO-Revision-Date: 2025-04-06 10:05+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -56,7 +56,7 @@ msgstr "Välj öppnad sida"
 #: main.cpp:76
 #, kde-format
 msgid "Explicitly open a new Clock window"
-msgstr ""
+msgstr "Öppna explicit ett nytt klockfönster"
 
 #: qml/alarm/AlarmForm.qml:86
 #, kde-format
@@ -232,11 +232,10 @@ msgstr "Lägg till alarm"
 #: qml/alarm/AlarmListPage.qml:95
 #, kde-format
 msgid "Loading…"
-msgstr ""
+msgstr "Läser in…"
 
 #: qml/alarm/AlarmListPage.qml:110
-#, fuzzy, kde-format
-#| msgid "New Alarm"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Alarm"
 msgstr "Nytt alarm"
@@ -306,7 +305,7 @@ msgstr "Tid"
 #: qml/timer/TimerListPage.qml:22
 #, kde-format
 msgid "Timers"
-msgstr "Tidtagare"
+msgstr "Timers"
 
 #: qml/components/BottomToolbar.qml:97 qml/components/Sidebar.qml:86
 #: qml/stopwatch/StopwatchPage.qml:25
@@ -367,18 +366,18 @@ msgstr "24-timmarstid"
 #: qml/settings/SettingsPage.qml:53
 #, kde-format
 msgid "Notifications for running timers"
-msgstr ""
+msgstr "Underrättelser om pågående tidtagningar"
 
 #: qml/settings/SettingsPage.qml:55
 #, kde-format
 msgid "Always"
-msgstr ""
+msgstr "Alltid"
 
 #: qml/settings/SettingsPage.qml:58
 #, kde-format
 msgctxt "When the app is not running"
 msgid "When %1 is not running"
-msgstr ""
+msgstr "När %1 inte kör"
 
 #: qml/settings/SettingsPage.qml:61
 #, kde-format
@@ -388,7 +387,7 @@ msgstr "Aldrig"
 #: qml/settings/SettingsPage.qml:64
 #, kde-format
 msgid "Lets you pause and resume timers from the notification area."
-msgstr ""
+msgstr "Låter dig pausa och återuppta tidtagning från underrättelseområdet."
 
 #: qml/settings/SettingsPage.qml:79
 #, kde-format
@@ -439,22 +438,19 @@ msgid "Total"
 msgstr "Totalt"
 
 #: qml/stopwatch/StopwatchPage.qml:260
-#, fuzzy, kde-format
-#| msgid "Pause"
+#, kde-format
 msgctxt "@action:button"
 msgid "Pause"
 msgstr "Paus"
 
 #: qml/stopwatch/StopwatchPage.qml:262
-#, fuzzy, kde-format
-#| msgid "Resume"
+#, kde-format
 msgctxt "@action:button"
 msgid "Resume"
 msgstr "Återuppta"
 
 #: qml/stopwatch/StopwatchPage.qml:264
-#, fuzzy, kde-format
-#| msgid "Start"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start"
 msgstr "Starta"
@@ -480,8 +476,7 @@ msgid "Add"
 msgstr "Lägg till"
 
 #: qml/time/TimePage.qml:168
-#, fuzzy, kde-format
-#| msgid "Add Location"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Location"
 msgstr "Lägg till plats"
@@ -492,34 +487,29 @@ msgid "1 m"
 msgstr "1 m"
 
 #: qml/timer/TimerForm.qml:39
-#, fuzzy, kde-format
-#| msgid "1 minute"
+#, kde-format
 msgid "1 min"
-msgstr "1 minut"
+msgstr "1 min"
 
 #: qml/timer/TimerForm.qml:40
-#, fuzzy, kde-format
-#| msgid "5 minutes"
+#, kde-format
 msgid "5 min"
-msgstr "5 minuter"
+msgstr "5 min"
 
 #: qml/timer/TimerForm.qml:41
-#, fuzzy, kde-format
-#| msgid "10 m"
+#, kde-format
 msgid "10 min"
-msgstr "10 m"
+msgstr "10 min"
 
 #: qml/timer/TimerForm.qml:42
-#, fuzzy, kde-format
-#| msgid "15 m"
+#, kde-format
 msgid "15 min"
-msgstr "15 m"
+msgstr "15 min"
 
 #: qml/timer/TimerForm.qml:43
-#, fuzzy, kde-format
-#| msgid "30 m"
+#, kde-format
 msgid "30 min"
-msgstr "30 m"
+msgstr "30 min"
 
 #: qml/timer/TimerForm.qml:44
 #, kde-format
@@ -562,24 +552,21 @@ msgid "optional"
 msgstr "valfritt"
 
 #: qml/timer/TimerFormDialog.qml:35
-#, fuzzy, kde-format
-#| msgctxt "Edit alarm page title"
-#| msgid "Editing %1"
+#, kde-format
 msgctxt "@title:window Edit timer"
 msgid "Edit %1"
-msgstr "Redigerar %1"
+msgstr "Redigera %1"
 
 #: qml/timer/TimerFormDialog.qml:35
-#, fuzzy, kde-format
-#| msgid "Create timer"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Timer"
-msgstr "Skapa tidtagare"
+msgstr "Skapa tidtagning"
 
 #: qml/timer/TimerFormDialog.qml:51
 #, kde-format
 msgid "Timer"
-msgstr "Tidtagare"
+msgstr "Timer"
 
 #: qml/timer/TimerFormDialog.qml:68
 #, kde-format
@@ -605,11 +592,10 @@ msgstr "Spara som förinställning"
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr ""
+msgstr "Spara"
 
 #: qml/timer/TimerFormDialog.qml:113
-#, fuzzy, kde-format
-#| msgid "Done"
+#, kde-format
 msgctxt "@action:button"
 msgid "Done"
 msgstr "Klar"
@@ -639,8 +625,7 @@ msgid "Reset"
 msgstr "Nollställ"
 
 #: qml/timer/TimerListDelegate.qml:192
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit"
 msgstr "Redigera"
@@ -654,7 +639,7 @@ msgstr "Ta bort"
 #: qml/timer/TimerListPage.qml:30
 #, kde-format
 msgid "New Timer"
-msgstr "Ny tidtagare"
+msgstr "Ny timer"
 
 #: qml/timer/TimerListPage.qml:55
 #, kde-format
@@ -665,11 +650,10 @@ msgstr ""
 "Klockdemonen hittades inte. Start kclockd för att få tidtagningsfunktion."
 
 #: qml/timer/TimerListPage.qml:85
-#, fuzzy, kde-format
-#| msgid "New Timer"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Timer"
-msgstr "Ny tidtagare"
+msgstr "Ny timer"
 
 #: qml/timer/TimerListPage.qml:95
 #, kde-format

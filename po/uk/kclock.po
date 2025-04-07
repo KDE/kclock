@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-06 00:45+0000\n"
-"PO-Revision-Date: 2025-04-04 09:39+0300\n"
+"PO-Revision-Date: 2025-04-06 09:12+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -497,32 +497,27 @@ msgid "1 m"
 msgstr "1 хв."
 
 #: qml/timer/TimerForm.qml:39
-#, fuzzy, kde-format
-#| msgid "1 minute"
+#, kde-format
 msgid "1 min"
-msgstr "1 хвилина"
+msgstr "1 хв."
 
 #: qml/timer/TimerForm.qml:40
-#, fuzzy, kde-format
-#| msgid "5 minutes"
+#, kde-format
 msgid "5 min"
-msgstr "5 хвилин"
+msgstr "5 хв."
 
 #: qml/timer/TimerForm.qml:41
-#, fuzzy, kde-format
-#| msgid "10 m"
+#, kde-format
 msgid "10 min"
 msgstr "10 хв."
 
 #: qml/timer/TimerForm.qml:42
-#, fuzzy, kde-format
-#| msgid "15 m"
+#, kde-format
 msgid "15 min"
 msgstr "15 хв."
 
 #: qml/timer/TimerForm.qml:43
-#, fuzzy, kde-format
-#| msgid "30 m"
+#, kde-format
 msgid "30 min"
 msgstr "30 хв."
 

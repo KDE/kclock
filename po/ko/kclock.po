@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kclock package.
-# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024 Shinjo Park <kde@peremen.name>
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024, 2025 Shinjo Park <kde@peremen.name>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-06 00:45+0000\n"
-"PO-Revision-Date: 2024-08-19 22:39+0200\n"
+"PO-Revision-Date: 2025-04-06 22:29+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -55,7 +55,7 @@ msgstr "열 페이지 선택"
 #: main.cpp:76
 #, kde-format
 msgid "Explicitly open a new Clock window"
-msgstr ""
+msgstr "새 시계 창을 명시적으로 열기"
 
 #: qml/alarm/AlarmForm.qml:86
 #, kde-format
@@ -231,11 +231,10 @@ msgstr "알람 추가"
 #: qml/alarm/AlarmListPage.qml:95
 #, kde-format
 msgid "Loading…"
-msgstr ""
+msgstr "불러오는 중…"
 
 #: qml/alarm/AlarmListPage.qml:110
-#, fuzzy, kde-format
-#| msgid "New Alarm"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Alarm"
 msgstr "새 알람"
@@ -366,18 +365,18 @@ msgstr "24시간제"
 #: qml/settings/SettingsPage.qml:53
 #, kde-format
 msgid "Notifications for running timers"
-msgstr ""
+msgstr "실행 중인 타이머 알림"
 
 #: qml/settings/SettingsPage.qml:55
 #, kde-format
 msgid "Always"
-msgstr ""
+msgstr "항상"
 
 #: qml/settings/SettingsPage.qml:58
 #, kde-format
 msgctxt "When the app is not running"
 msgid "When %1 is not running"
-msgstr ""
+msgstr "%1이(가) 실행 중이 아닐 때"
 
 #: qml/settings/SettingsPage.qml:61
 #, kde-format
@@ -387,7 +386,7 @@ msgstr "하지 않음"
 #: qml/settings/SettingsPage.qml:64
 #, kde-format
 msgid "Lets you pause and resume timers from the notification area."
-msgstr ""
+msgstr "알림 영역에서 타이머를 일시 중지하고 다시 시작할 수 있도록 합니다."
 
 #: qml/settings/SettingsPage.qml:79
 #, kde-format
@@ -438,22 +437,19 @@ msgid "Total"
 msgstr "합계"
 
 #: qml/stopwatch/StopwatchPage.qml:260
-#, fuzzy, kde-format
-#| msgid "Pause"
+#, kde-format
 msgctxt "@action:button"
 msgid "Pause"
 msgstr "일시 정지"
 
 #: qml/stopwatch/StopwatchPage.qml:262
-#, fuzzy, kde-format
-#| msgid "Resume"
+#, kde-format
 msgctxt "@action:button"
 msgid "Resume"
 msgstr "다시 시작"
 
 #: qml/stopwatch/StopwatchPage.qml:264
-#, fuzzy, kde-format
-#| msgid "Start"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start"
 msgstr "시작"
@@ -479,8 +475,7 @@ msgid "Add"
 msgstr "추가"
 
 #: qml/time/TimePage.qml:168
-#, fuzzy, kde-format
-#| msgid "Add Location"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Location"
 msgstr "위치 추가"
@@ -561,16 +556,13 @@ msgid "optional"
 msgstr "선택 사항"
 
 #: qml/timer/TimerFormDialog.qml:35
-#, fuzzy, kde-format
-#| msgctxt "Edit alarm page title"
-#| msgid "Editing %1"
+#, kde-format
 msgctxt "@title:window Edit timer"
 msgid "Edit %1"
 msgstr "%1 편집"
 
 #: qml/timer/TimerFormDialog.qml:35
-#, fuzzy, kde-format
-#| msgid "Create timer"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Timer"
 msgstr "타이머 만들기"
@@ -604,11 +596,10 @@ msgstr "사전 설정으로 저장"
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr ""
+msgstr "저장"
 
 #: qml/timer/TimerFormDialog.qml:113
-#, fuzzy, kde-format
-#| msgid "Done"
+#, kde-format
 msgctxt "@action:button"
 msgid "Done"
 msgstr "완료"
@@ -638,8 +629,7 @@ msgid "Reset"
 msgstr "초기화"
 
 #: qml/timer/TimerListDelegate.qml:192
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit"
 msgstr "편집"
@@ -664,8 +654,7 @@ msgstr ""
 "clock 데몬을 찾을 수 없습니다. 타이머를 사용하려면 kclockd를 시작하십시오."
 
 #: qml/timer/TimerListPage.qml:85
-#, fuzzy, kde-format
-#| msgid "New Timer"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Timer"
 msgstr "새 타이머"

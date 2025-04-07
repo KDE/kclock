@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-06 00:45+0000\n"
-"PO-Revision-Date: 2025-03-29 14:20+0100\n"
+"PO-Revision-Date: 2025-04-06 16:54+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -235,7 +235,7 @@ msgstr "Добавете аларма"
 #: qml/alarm/AlarmListPage.qml:95
 #, kde-format
 msgid "Loading…"
-msgstr ""
+msgstr "Зареждане…"
 
 #: qml/alarm/AlarmListPage.qml:110
 #, kde-format
@@ -369,28 +369,30 @@ msgstr "24 часов формат"
 #: qml/settings/SettingsPage.qml:53
 #, kde-format
 msgid "Notifications for running timers"
-msgstr ""
+msgstr "Известия за активни таймери"
 
 #: qml/settings/SettingsPage.qml:55
 #, kde-format
 msgid "Always"
-msgstr ""
+msgstr "Винаги"
 
 #: qml/settings/SettingsPage.qml:58
 #, kde-format
 msgctxt "When the app is not running"
 msgid "When %1 is not running"
-msgstr ""
+msgstr "Когато %1 не се изпълнява"
 
 #: qml/settings/SettingsPage.qml:61
 #, kde-format
 msgid "Never"
-msgstr ""
+msgstr "Никога"
 
 #: qml/settings/SettingsPage.qml:64
 #, kde-format
 msgid "Lets you pause and resume timers from the notification area."
 msgstr ""
+"Позволява ви да поставите на пауза и да възобновите таймерите от областта за "
+"уведомяване."
 
 #: qml/settings/SettingsPage.qml:79
 #, kde-format
@@ -490,34 +492,29 @@ msgid "1 m"
 msgstr "1 м"
 
 #: qml/timer/TimerForm.qml:39
-#, fuzzy, kde-format
-#| msgid "1 minute"
+#, kde-format
 msgid "1 min"
 msgstr "1 минута"
 
 #: qml/timer/TimerForm.qml:40
-#, fuzzy, kde-format
-#| msgid "5 minutes"
+#, kde-format
 msgid "5 min"
 msgstr "5 минути"
 
 #: qml/timer/TimerForm.qml:41
-#, fuzzy, kde-format
-#| msgid "10 m"
+#, kde-format
 msgid "10 min"
-msgstr "10 м"
+msgstr "10 минути"
 
 #: qml/timer/TimerForm.qml:42
-#, fuzzy, kde-format
-#| msgid "15 m"
+#, kde-format
 msgid "15 min"
-msgstr "15 м"
+msgstr "15 минути"
 
 #: qml/timer/TimerForm.qml:43
-#, fuzzy, kde-format
-#| msgid "30 m"
+#, kde-format
 msgid "30 min"
-msgstr "3 м"
+msgstr "30 минути"
 
 #: qml/timer/TimerForm.qml:44
 #, kde-format

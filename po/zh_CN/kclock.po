@@ -485,34 +485,29 @@ msgid "1 m"
 msgstr "1 分钟"
 
 #: qml/timer/TimerForm.qml:39
-#, fuzzy, kde-format
-#| msgid "1 minute"
+#, kde-format
 msgid "1 min"
-msgstr "1 分钟"
+msgstr ""
 
 #: qml/timer/TimerForm.qml:40
-#, fuzzy, kde-format
-#| msgid "5 minutes"
+#, kde-format
 msgid "5 min"
-msgstr "5 分钟"
+msgstr ""
 
 #: qml/timer/TimerForm.qml:41
-#, fuzzy, kde-format
-#| msgid "10 m"
+#, kde-format
 msgid "10 min"
-msgstr "10 分钟"
+msgstr ""
 
 #: qml/timer/TimerForm.qml:42
-#, fuzzy, kde-format
-#| msgid "15 m"
+#, kde-format
 msgid "15 min"
-msgstr "15 分钟"
+msgstr ""
 
 #: qml/timer/TimerForm.qml:43
-#, fuzzy, kde-format
-#| msgid "30 m"
+#, kde-format
 msgid "30 min"
-msgstr "30 分钟"
+msgstr ""
 
 #: qml/timer/TimerForm.qml:44
 #, kde-format
@@ -774,6 +769,3 @@ msgstr "闹钟将在一分钟内响起"
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "闹钟将在 %1 响起"
-
-#~ msgid "5 m"
-#~ msgstr "5 分钟"
