@@ -127,5 +127,5 @@ Keywords[tr]=kclock;sayaç;kronometre;alarm;çalar saat;zaman dilimi;dünya saat
 Keywords[uk]=kclock;timer;stopwatch;alarm;timezone;time zone;world clock;кклок;таймер;секундомір;нагадування;сигнал;попередження;часовий пояс;пояс;годинник;
 Keywords[x-test]=xxkclockxx;xxtimerxx;xxstopwatchxx;xxalarmxx;xxtimezonexx;xxtime zonexx;xxworld clockxx;
 Keywords[zh_CN]=kclock;timer;stopwatch;alarm;timezone;time zone;world clock;计时器;秒表;闹钟;时区;世界时间;jishiqi;miaobiao;naozhong;shiqu;shijianzhijian;shijieshizhong;
-Keywords[zh_TW]=kclock;timer;stopwatch;alarm;timezone;time zone;world clock;時鐘;鬧鐘;鬧鈴;計時器;
+Keywords[zh_TW]=kclock;timer;stopwatch;alarm;timezone;time zone;world clock;時鐘;鬧鐘;鬧鈴;計時器;世界時鐘;
 X-KDE-FormFactor=desktop;tablet;handset;
