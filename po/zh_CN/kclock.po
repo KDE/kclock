@@ -487,27 +487,27 @@ msgstr "1 分钟"
 #: qml/timer/TimerForm.qml:39
 #, kde-format
 msgid "1 min"
-msgstr ""
+msgstr "1 分钟"
 
 #: qml/timer/TimerForm.qml:40
 #, kde-format
 msgid "5 min"
-msgstr ""
+msgstr "5 分钟"
 
 #: qml/timer/TimerForm.qml:41
 #, kde-format
 msgid "10 min"
-msgstr ""
+msgstr "10 分钟"
 
 #: qml/timer/TimerForm.qml:42
 #, kde-format
 msgid "15 min"
-msgstr ""
+msgstr "15 分钟"
 
 #: qml/timer/TimerForm.qml:43
 #, kde-format
 msgid "30 min"
-msgstr ""
+msgstr "30 分钟"
 
 #: qml/timer/TimerForm.qml:44
 #, kde-format

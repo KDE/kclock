@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclockd\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-06 00:45+0000\n"
+"POT-Creation-Date: 2025-04-08 00:44+0000\n"
 "PO-Revision-Date: 2022-09-21 19:05+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -176,37 +176,37 @@ msgstr "Časovač je dokončený"
 msgid "Your timer %1 has finished!"
 msgstr "Váš časovač %1 sa skončil!"
 
-#: timermodel.cpp:240
+#: timermodel.cpp:242
 #, kde-format
 msgctxt "@action:button Open kclock app"
 msgid "Open Clock"
 msgstr ""
 
-#: timermodel.cpp:245
+#: timermodel.cpp:247
 #, kde-format
 msgctxt "@action:button Add minute to timer"
 msgid "+1 Minute"
 msgstr ""
 
-#: timermodel.cpp:248
+#: timermodel.cpp:250
 #, kde-format
 msgctxt "@action:button Reset timer"
 msgid "Reset"
 msgstr ""
 
-#: timermodel.cpp:251 timermodel.cpp:276
+#: timermodel.cpp:253 timermodel.cpp:278
 #, kde-format
 msgctxt "@action:button Pause timer"
 msgid "Pause"
 msgstr ""
 
-#: timermodel.cpp:269
+#: timermodel.cpp:271
 #, kde-format
 msgctxt "@title:notification Timer name (paused)"
 msgid "%1 (Paused)"
 msgstr ""
 
-#: timermodel.cpp:278
+#: timermodel.cpp:280
 #, kde-format
 msgctxt "@action:button Resume timer"
 msgid "Resume"
