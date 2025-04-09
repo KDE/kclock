@@ -17,6 +17,7 @@ Kirigami.FormLayout {
     id: form
 
     property alias name: label.text
+    property alias looping: loopingCheckBox.checked
     property alias commandTimeout: commandTimeoutField.text
 
     function setDuration(duration) {
@@ -107,6 +108,13 @@ Kirigami.FormLayout {
             }
         }
     }
+
+    CheckBox {
+        id: loopingCheckBox
+        text: i18n("Loop Timer")
+        icon.name: "media-repeat-all"
+    }
+
     TextField {
         id: label
         Kirigami.FormData.label: i18n("<b>Label:</b>")

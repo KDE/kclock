@@ -133,6 +133,26 @@ Kirigami.AbstractCard {
             RowLayout {
                 anchors.left: parent.left
                 anchors.right: parent.right
+
+                Kirigami.Icon {
+                    Layout.preferredWidth: Kirigami.Units.iconSizes.small
+                    Layout.preferredHeight: Kirigami.Units.iconSizes.small
+                    source: "media-repeat-all"
+                    visible: root.timer.looping
+                    Accessible.name: i18n("Loop Timer")
+
+                    HoverHandler {
+                        id: loopingHoverHandler
+                    }
+                    TapHandler {
+                        id: loopingTapHandler
+                    }
+
+                    ToolTip.visible: (Kirigami.Settings.tabletMode ? loopingTapHandler.pressed : loopingHoverHandler.hovered)
+                    ToolTip.delay: Kirigami.Units.toolTipDelay
+                    ToolTip.text: Accessible.name
+                }
+
                 Kirigami.Heading {
                     id: label
                     level: 4
@@ -154,17 +174,6 @@ Kirigami.AbstractCard {
                 
                 Row {
                     Layout.alignment: Qt.AlignRight
-                    ToolButton {
-                        icon.name: root.looping ? "media-repeat-all" : "media-repeat-none"
-                        display: AbstractButton.IconOnly
-                        text: i18nc("@info:tooltip", "Loop timer")
-                        checked: root.looping
-                        onClicked: root.timer.toggleLooping()
-                        
-                        ToolTip.visible: hovered && text.length > 0
-                        ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
-                        ToolTip.text: text
-                    }
                     ToolButton {
                         icon.name: root.running ? "chronometer-pause" : "chronometer-start"
                         display: AbstractButton.IconOnly

@@ -96,9 +96,9 @@ void TimerModel::save()
     group.sync();
 }
 
-void TimerModel::addTimer(int length, const QString &label, const QString &commandTimeout, bool running)
+void TimerModel::addTimer(int length, const QString &label, bool looping, const QString &commandTimeout, bool running)
 {
-    auto *timer = new Timer(length, label, commandTimeout, running);
+    auto *timer = new Timer(length, label, looping, commandTimeout, running);
     connectTimer(timer);
     m_timerList.append(timer);
     maybeCreateNotification(timer);

@@ -44,7 +44,7 @@ public:
     QVariant data(const QModelIndex &index, int role) const override;
     QHash<int, QByteArray> roleNames() const override;
 
-    Q_INVOKABLE void addNew(int length, QString label, QString commandTimeout);
+    Q_INVOKABLE void addNew(int length, const QString &label, bool looping, const QString &commandTimeout);
     Q_INVOKABLE void remove(int index);
 
     bool connectedToDaemon();

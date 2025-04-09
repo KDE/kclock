@@ -29,12 +29,13 @@ class Timer : public QObject
     Q_PROPERTY(QString label READ label WRITE setLabel NOTIFY labelChanged)
     Q_PROPERTY(QString commandTimeout READ commandTimeout WRITE setCommandTimeout NOTIFY commandTimeoutChanged)
     Q_PROPERTY(bool running READ running NOTIFY runningChanged)
-    Q_PROPERTY(bool looping READ looping NOTIFY loopingChanged)
+    Q_PROPERTY(bool looping READ looping WRITE setLooping NOTIFY loopingChanged)
     Q_PROPERTY(bool ringing READ ringing NOTIFY ringingChanged)
 
 public:
     explicit Timer(int length = 0,
                    const QString &label = QString{},
+                   bool looping = false,
                    const QString &commandTimeout = QString{},
                    bool running = false,
                    QObject *parent = nullptr);
@@ -65,6 +66,8 @@ public:
     void setCommandTimeout(const QString &commandTimeout);
 
     bool looping() const;
+    void setLooping(bool looping);
+
     bool running() const;
     bool ringing() const;
     Q_SCRIPTABLE void dismiss();

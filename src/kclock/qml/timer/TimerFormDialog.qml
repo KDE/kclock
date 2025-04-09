@@ -18,14 +18,15 @@ Kirigami.Dialog {
 
     property Timer timer: null
 
-    function saveTimer(duration, label, commandTimeout) {
+    function saveTimer(duration, label, looping, commandTimeout) {
         if (timer) {
             timer.length = duration;
             timer.label = label;
             timer.commandTimeout = commandTimeout;
+            timer.looping = looping;
             timer.reset();
         } else {
-            TimerModel.addNew(duration, label, commandTimeout);
+            TimerModel.addNew(duration, label, looping, commandTimeout);
         }
     }
 
@@ -45,10 +46,12 @@ Kirigami.Dialog {
         if (root.timer) {
             timerForm.setDuration(root.timer.length);
             timerForm.name = timer.label;
+            timerForm.looping = timer.looping;
             timerForm.commandTimeout = timer.commandTimeout;
         } else {
             timerForm.setDuration(5 * 60); // 5 minutes default.
             timerForm.name = i18n("Timer");
+            timerForm.looping = false;
             timerForm.commandTimeout = "";
         }
     }
@@ -88,7 +91,7 @@ Kirigami.Dialog {
 
                 Button {
                     text: showDelete ? "Delete" : preset.presetName
-                    onClicked: showDelete ? TimerPresetModel.deletePreset(index) : root.saveTimer(preset.presetDuration, preset.presetName, "") & close();
+                    onClicked: showDelete ? TimerPresetModel.deletePreset(index) : root.saveTimer(preset.presetDuration, preset.presetName, false, "") & close();
                 }
             }
         }
@@ -112,7 +115,7 @@ Kirigami.Dialog {
             icon.name: root.timer ? "document-save" : "dialog-ok"
             text: root.timer ? i18nc("@action:button", "Save") : i18nc("@action:button", "Done")
             onTriggered: {
-                root.saveTimer(timerForm.getDuration(), timerForm.name, timerForm.commandTimeout);
+                root.saveTimer(timerForm.getDuration(), timerForm.name, timerForm.looping, timerForm.commandTimeout);
                 close();
             }
         }

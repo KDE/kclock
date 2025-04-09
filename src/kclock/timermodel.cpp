@@ -82,9 +82,9 @@ QHash<int, QByteArray> TimerModel::roleNames() const
     return {{TimerRole, "timer"}};
 }
 
-void TimerModel::addNew(int length, QString label, QString commandTimeout)
+void TimerModel::addNew(int length, const QString &label, bool looping, const QString &commandTimeout)
 {
-    m_interface->addTimer(length, label, commandTimeout, false);
+    m_interface->addTimer(length, label, looping, commandTimeout, false);
 }
 
 void TimerModel::remove(int index)

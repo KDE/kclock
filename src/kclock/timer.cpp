@@ -110,6 +110,11 @@ bool Timer::looping() const
     return m_looping;
 }
 
+void Timer::setLooping(bool looping)
+{
+    m_interface->setLooping(looping);
+}
+
 bool Timer::ringing() const
 {
     return m_ringing;

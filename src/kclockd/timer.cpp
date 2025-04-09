@@ -12,12 +12,13 @@
 #include <QFile>
 #include <QStandardPaths>
 
-Timer::Timer(int length, const QString &label, const QString &commandTimeout, bool running, QObject *parent)
+Timer::Timer(int length, const QString &label, bool looping, const QString &commandTimeout, bool running, QObject *parent)
     : QObject{parent}
     , m_uuid{QUuid::createUuid()}
     , m_length{length}
     , m_label{label}
     , m_commandTimeout{commandTimeout}
+    , m_looping{looping}
 {
     init();
 
@@ -96,9 +97,7 @@ void Timer::toggleRunning()
 
 void Timer::toggleLooping()
 {
-    m_looping = !m_looping;
-    Q_EMIT loopingChanged();
-
+    setLooping(!m_looping);
     TimerModel::instance()->save();
 }
 
@@ -179,6 +178,14 @@ void Timer::setCommandTimeout(const QString &commandTimeout)
 bool Timer::looping() const
 {
     return m_looping;
+}
+
+void Timer::setLooping(bool looping)
+{
+    if (m_looping != looping) {
+        m_looping = looping;
+        Q_EMIT loopingChanged();
+    }
 }
 
 bool Timer::running() const
