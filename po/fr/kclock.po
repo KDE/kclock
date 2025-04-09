@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-06 00:45+0000\n"
-"PO-Revision-Date: 2025-04-05 17:35+0200\n"
+"PO-Revision-Date: 2025-04-07 08:17+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -495,34 +495,29 @@ msgid "1 m"
 msgstr "1 m"
 
 #: qml/timer/TimerForm.qml:39
-#, fuzzy, kde-format
-#| msgid "1 minute"
+#, kde-format
 msgid "1 min"
 msgstr "1 minute"
 
 #: qml/timer/TimerForm.qml:40
-#, fuzzy, kde-format
-#| msgid "5 minutes"
+#, kde-format
 msgid "5 min"
 msgstr "5 minutes"
 
 #: qml/timer/TimerForm.qml:41
-#, fuzzy, kde-format
-#| msgid "10 m"
+#, kde-format
 msgid "10 min"
-msgstr "10 m"
+msgstr "10 minutes"
 
 #: qml/timer/TimerForm.qml:42
-#, fuzzy, kde-format
-#| msgid "15 m"
+#, kde-format
 msgid "15 min"
-msgstr "15 m"
+msgstr "15 minutes"
 
 #: qml/timer/TimerForm.qml:43
-#, fuzzy, kde-format
-#| msgid "30 m"
+#, kde-format
 msgid "30 min"
-msgstr "30 m"
+msgstr "30 minutes"
 
 #: qml/timer/TimerForm.qml:44
 #, kde-format
