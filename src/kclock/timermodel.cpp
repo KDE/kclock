@@ -61,7 +61,9 @@ TimerModel::TimerModel(QObject *parent)
 
 int TimerModel::rowCount(const QModelIndex &parent) const
 {
-    Q_UNUSED(parent);
+    if (parent.isValid()) {
+        return 0;
+    }
     return m_timersList.size();
 }
 

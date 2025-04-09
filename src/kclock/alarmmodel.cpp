@@ -117,7 +117,7 @@ QHash<int, QByteArray> AlarmModel::roleNames() const
 
 QVariant AlarmModel::data(const QModelIndex &index, int role) const
 {
-    if (!index.isValid() || index.row() >= alarmsList.count()) {
+    if (!index.isValid() || index.row() >= alarmsList.count() || role != AlarmRole) {
         return QVariant();
     }
 
@@ -127,7 +127,9 @@ QVariant AlarmModel::data(const QModelIndex &index, int role) const
 
 int AlarmModel::rowCount(const QModelIndex &parent) const
 {
-    Q_UNUSED(parent);
+    if (parent.isValid()) {
+        return 0;
+    }
     return alarmsList.size();
 }
 
