@@ -69,7 +69,7 @@ Kirigami.Dialog {
             Button {
                 id: presetButton
                 text: root.showPresets ? i18n("Hide Presets") : i18n("Show Presets")
-                onClicked: showPresets = !showPresets
+                onClicked: root.showPresets = !root.showPresets
             }
             ToolButton {
                 icon.name: "delete"
@@ -82,7 +82,7 @@ Kirigami.Dialog {
         }
         Flow {
             spacing: Kirigami.Units.smallSpacing
-            visible: showPresets
+            visible: root.showPresets
             Layout.fillWidth: true
 
             Repeater {
@@ -90,8 +90,8 @@ Kirigami.Dialog {
                 model: TimerPresetModel
 
                 Button {
-                    text: showDelete ? "Delete" : preset.presetName
-                    onClicked: showDelete ? TimerPresetModel.deletePreset(index) : root.saveTimer(preset.presetDuration, preset.presetName, false, "") & close();
+                    text: root.showDelete ? "Delete" : preset.presetName
+                    onClicked: root.showDelete ? TimerPresetModel.deletePreset(index) : root.saveTimer(preset.presetDuration, preset.presetName, false, "") & close();
                 }
             }
         }
@@ -109,14 +109,14 @@ Kirigami.Dialog {
         Kirigami.Action {
             icon.name: "dialog-cancel"
             text: i18n("Cancel")
-            onTriggered: close()
+            onTriggered: root.close()
         },
         Kirigami.Action {
             icon.name: root.timer ? "document-save" : "dialog-ok"
             text: root.timer ? i18nc("@action:button", "Save") : i18nc("@action:button", "Done")
             onTriggered: {
                 root.saveTimer(timerForm.getDuration(), timerForm.name, timerForm.looping, timerForm.commandTimeout);
-                close();
+                root.close();
             }
         }
     ]

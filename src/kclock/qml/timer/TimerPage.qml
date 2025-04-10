@@ -42,8 +42,8 @@ Kirigami.Page {
     // topbar action
     actions: [
         Kirigami.Action {
-            text: running ? i18n("Pause") : i18n("Start")
-            icon.name: running ? "chronometer-pause" : "chronometer-start"
+            text: root.running ? i18n("Pause") : i18n("Start")
+            icon.name: root.running ? "chronometer-pause" : "chronometer-start"
             displayHint: Kirigami.DisplayHint.KeepVisible
             visible: !Kirigami.Settings.isMobile
             onTriggered: root.timer.toggleRunning()
@@ -60,7 +60,7 @@ Kirigami.Page {
             visible: !Kirigami.Settings.isMobile
             onTriggered: {
                 applicationWindow().pageStack.pop();
-                TimerModel.remove(timerIndex);
+                TimerModel.remove(root.timerIndex);
             }
         },
         Kirigami.Action {
@@ -108,7 +108,7 @@ Kirigami.Page {
                 icon.name: "delete"
                 onClicked: {
                     applicationWindow().pageStack.pop();
-                    TimerModel.remove(timerIndex);
+                    TimerModel.remove(root.timerIndex);
                 }
             }
             FooterToolBarButton {
@@ -130,9 +130,10 @@ Kirigami.Page {
 
     TimerComponent {
         anchors.fill: parent
-        timerDuration: duration
-        timerElapsed: elapsed
-        timerRunning: running
+        timerLabel: root.timer.label
+        timerDuration: root.duration
+        timerElapsed: root.elapsed
+        timerRunning: root.running
 
         onRequestAddMinute: {
             root.timer.addMinute();
@@ -144,13 +145,13 @@ Kirigami.Page {
         anchors.bottom: parent.bottom
         Kirigami.Icon {
             source: "dialog-scripts"
-            visible: isCommandTimeout
+            visible: root.isCommandTimeout
             implicitWidth: Kirigami.Units.iconSizes.sizeForLabels * 1.5
             implicitHeight: Kirigami.Units.iconSizes.sizeForLabels * 1.5
             color: Kirigami.Theme.disabledTextColor
         }
         Label {
-            visible: isCommandTimeout
+            visible: root.isCommandTimeout
             font.family: "Monospace"
             text: root.commandTimeout
             color: Kirigami.Theme.disabledTextColor

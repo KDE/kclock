@@ -53,7 +53,7 @@ Kirigami.Dialog {
         Kirigami.Action {
             text: i18n("Dismiss")
             onTriggered: {
-                timer.dismiss();
+                root.timer.dismiss();
                 root.close();
             }
         }

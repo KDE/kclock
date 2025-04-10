@@ -6,7 +6,6 @@
 
 import QtQuick
 import QtQuick.Controls as Controls
-import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 
 Controls.AbstractButton {
@@ -20,7 +19,7 @@ Controls.AbstractButton {
     background: Rectangle {
         Kirigami.Theme.colorSet: Kirigami.Theme.Button
         Kirigami.Theme.inherit: false
-        color: (button.checked || button.pressed) ? activeColor : (hoverHandler.hovered ? hoverColor : "transparent")
+        color: (button.checked || button.pressed) ? button.activeColor : (hoverHandler.hovered ? button.hoverColor : "transparent")
     }
     
     contentItem: Item {

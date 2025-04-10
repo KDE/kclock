@@ -11,7 +11,6 @@ import QtQuick.Layouts
 import QtQuick.Window
 
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.delegates as Delegates
 
 import org.kde.kclock
 
@@ -43,7 +42,7 @@ Kirigami.ScrollablePage {
     ]
 
     header: ColumnLayout {
-        transform: Translate { y: yTranslate }
+        transform: Translate { y: root.yTranslate }
         anchors.left: parent.left
         anchors.right: parent.right
         spacing: 0
@@ -241,7 +240,7 @@ Kirigami.ScrollablePage {
         model: StopwatchModel
         spacing: 0
         currentIndex: -1
-        transform: Translate { y: yTranslate }
+        transform: Translate { y: root.yTranslate }
 
         reuseItems: true
 

@@ -11,15 +11,13 @@ import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
 
-import org.kde.kclock
-
 Control {
     id: root
 
     property bool editMode
-    property string city
-    property string relativeTime
-    property string timeString
+    required property string city
+    required property string relativeTime
+    required property string timeString
 
     signal deleteRequested()
 

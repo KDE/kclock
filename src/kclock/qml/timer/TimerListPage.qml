@@ -5,8 +5,6 @@
  */
 
 import QtQuick
-import QtQuick.Controls
-import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
 
@@ -66,7 +64,7 @@ Kirigami.ScrollablePage {
 
         model: TimerModel
 
-        transform: Translate { y: yTranslate }
+        transform: Translate { y: root.yTranslate }
 
         // TODO: these animations seem to cause the cards to overlap when a new timer is added, possible Qt bug?
         // add: Transition {

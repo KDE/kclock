@@ -7,7 +7,6 @@
 
 import QtQuick
 import QtQuick.Controls
-import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 
 Kirigami.NavigationTabBar {
@@ -73,9 +72,9 @@ Kirigami.NavigationTabBar {
         Kirigami.Action {
             icon.name: "clock"
             text: i18n("Time")
-            checked: pageStack.currentItem?.objectName === "Time"
+            checked: root.pageStack.currentItem?.objectName === "Time"
             onTriggered: {
-                if (pageStack.currentItem?.objectName !== "Time") {
+                if (root.pageStack.currentItem?.objectName !== "Time") {
                     const page = applicationWindow().getPage("Time");
                     applicationWindow().switchToPage(page, 0);
                 }
@@ -84,9 +83,9 @@ Kirigami.NavigationTabBar {
         Kirigami.Action {
             icon.name: "player-time"
             text: i18n("Timers")
-            checked: pageStack.currentItem?.objectName === "Timers"
+            checked: root.pageStack.currentItem?.objectName === "Timers"
             onTriggered: {
-                if (pageStack.currentItem?.objectName !== "Timers") {
+                if (root.pageStack.currentItem?.objectName !== "Timers") {
                     const page = applicationWindow().getPage("Timers");
                     applicationWindow().switchToPage(page, 0);
                 }
@@ -95,9 +94,9 @@ Kirigami.NavigationTabBar {
         Kirigami.Action {
             icon.name: "chronometer"
             text: i18n("Stopwatch")
-            checked: pageStack.currentItem?.objectName === "Stopwatch"
+            checked: root.pageStack.currentItem?.objectName === "Stopwatch"
             onTriggered: {
-                if (pageStack.currentItem?.objectName !== "Stopwatch") {
+                if (root.pageStack.currentItem?.objectName !== "Stopwatch") {
                     const page = applicationWindow().getPage("Stopwatch");
                     applicationWindow().switchToPage(page, 0);
                 }
@@ -106,9 +105,9 @@ Kirigami.NavigationTabBar {
         Kirigami.Action {
             icon.name: "notifications"
             text: i18n("Alarms")
-            checked: pageStack.currentItem?.objectName === "Alarms"
+            checked: root.pageStack.currentItem?.objectName === "Alarms"
             onTriggered: {
-                if (pageStack.currentItem?.objectName !== "Alarms") {
+                if (root.pageStack.currentItem?.objectName !== "Alarms") {
                     const page = applicationWindow().getPage("Alarms");
                     applicationWindow().switchToPage(page, 0);
                 }

@@ -6,7 +6,6 @@
 
 import QtQuick
 import QtQuick.Controls
-import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
 
@@ -29,28 +28,28 @@ Button {
     }
     
     Connections {
-        target: hoursSpinBox
+        target: root.hoursSpinBox
         function onValueChanged() {
             root.checked = root.shouldBeChecked();
         }
     }
     Connections {
-        target: minutesSpinBox
+        target: root.minutesSpinBox
         function onValueChanged() {
             root.checked = root.shouldBeChecked();
         }
     }
     Connections {
-        target: secondsSpinBox
+        target: root.secondsSpinBox
         function onValueChanged() {
             root.checked = root.shouldBeChecked();
         }
     }
     
     onClicked: {
-        spinBoxHours.value = hours;
-        spinBoxMinutes.value = minutes;
-        spinBoxSeconds.value = 0;
+        root.hoursSpinBox.value = hours;
+        root.minutesSpinBox.value = minutes;
+        root.secondsSpinBox.value = 0;
         focus = false;
     }
 }

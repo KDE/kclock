@@ -49,7 +49,6 @@ KSvg.SvgItem {
         leftMargin: -horizontalRotationCenter + horizontalRotationOffset
     }
 
-    svg: clockSvg
     transform: Rotation {
         id: rotation
         angle: 0
