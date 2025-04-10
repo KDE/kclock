@@ -92,7 +92,6 @@ Kirigami.AbstractCard {
                 top: parent.top
                 right: parent.right
             }
-            clip: true
             spacing: Kirigami.Units.smallSpacing
             
             ProgressBar {
