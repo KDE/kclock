@@ -2,8 +2,6 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 import QtQuick
-import QtQuick.Controls
-import QtQuick.Window
 import QtQuick.Layouts
 import QtQuick.Templates as T
 
@@ -129,7 +127,7 @@ Item {
 
                     inputMethodHints: Qt.ImhFormattedNumbersOnly
 
-                    function applyTextBinding() {
+                    function applyTextBinding() : void {
                         text = Qt.binding(function () { return spinBox.displayText.padStart(2, '0') });
                     }
 

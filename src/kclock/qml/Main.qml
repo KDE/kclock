@@ -7,8 +7,6 @@
  */
 
 import QtQuick
-import QtQuick.Controls
-import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.kclock as KClock
 
@@ -111,7 +109,7 @@ Kirigami.ApplicationWindow {
     }
 
     // switch between bottom toolbar and sidebar
-    function changeNav(toWidescreen) {
+    function changeNav(toWidescreen : bool) : void {
         if (toWidescreen) {
             if (footer !== null) {
                 footer.destroy();

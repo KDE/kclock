@@ -25,15 +25,15 @@ RowLayout {
         updateHours();
     }
 
-    function updateHours() {
+    function updateHours() : void {
         // manually do this instead of a binding so we can set the value without worrying about binding eval order
         hoursSpinbox.from = root.twelveHourTime ? 1 : 0;
         hoursSpinbox.to = root.twelveHourTime ? 12 : 23;
 
         if (twelveHourTime) {
-            hoursSpinbox.value = ((hours % 12) == 0) ? 12 : hours % 12;
+            hoursSpinbox.value = ((root.hours % 12) === 0) ? 12 : root.hours % 12;
         } else {
-            hoursSpinbox.value = hours;
+            hoursSpinbox.value = root.hours;
         }
     }
     
@@ -91,7 +91,7 @@ RowLayout {
                     anchors.centerIn: parent
                     font.weight: Font.Light
                     font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.3
-                    text: i18n(hours < 12 ? i18n("AM") : i18n("PM"))
+                    text: i18n(root.hours < 12 ? i18n("AM") : i18n("PM"))
                 }
             }
 

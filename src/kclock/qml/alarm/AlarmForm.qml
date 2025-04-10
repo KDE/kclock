@@ -8,10 +8,8 @@
 
 import QtQuick
 import QtQuick.Controls
-import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.dateandtime as DateAndTime
 
 import org.kde.kclock
 
@@ -39,17 +37,17 @@ Kirigami.FormLayout {
     property int formRingDuration: ringDuration
     property int formSnoozeDuration: snoozeDuration
 
-    function submitForm() {
-        if (selectedAlarm) { // edit existing alarm
-            selectedAlarm.name = formName;
-            selectedAlarm.hours = formHours;
-            selectedAlarm.minutes = formMinutes;
-            selectedAlarm.daysOfWeek = formDaysOfWeek;
-            selectedAlarm.audioPath = formAudioPath;
-            selectedAlarm.ringDuration = formRingDuration;
-            selectedAlarm.snoozeDuration = formSnoozeDuration;
-            selectedAlarm.enabled = true;
-            showPassiveNotification(selectedAlarm.timeToRingFormatted());
+    function submitForm() : void {
+        if (root.selectedAlarm) { // edit existing alarm
+            root.selectedAlarm.name = formName;
+            root.selectedAlarm.hours = formHours;
+            root.selectedAlarm.minutes = formMinutes;
+            root.selectedAlarm.daysOfWeek = formDaysOfWeek;
+            root.selectedAlarm.audioPath = formAudioPath;
+            root.selectedAlarm.ringDuration = formRingDuration;
+            root.selectedAlarm.snoozeDuration = formSnoozeDuration;
+            root.selectedAlarm.enabled = true;
+            showPassiveNotification(root.selectedAlarm.timeToRingFormatted());
         } else { // create new alarm
             AlarmModel.addAlarm(formName, formHours, formMinutes, formDaysOfWeek, formAudioPath, formRingDuration, formSnoozeDuration);
             showPassiveNotification(AlarmModel.timeToRingFormatted(formHours, formMinutes, formDaysOfWeek));
@@ -69,7 +67,7 @@ Kirigami.FormLayout {
         minutes: root.minutes
 
         Component.onCompleted: {
-            if (!selectedAlarm) { // new alarm
+            if (!root.selectedAlarm) { // new alarm
                 let date = new Date();
                 hours = date.getHours();
                 minutes = date.getMinutes();
@@ -87,6 +85,10 @@ Kirigami.FormLayout {
         model: WeekModel
 
         dialogDelegate: CheckDelegate {
+            required property int index
+            required property string name
+            required property int flag
+
             implicitWidth: Kirigami.Units.gridUnit * 16
             topPadding: Kirigami.Units.smallSpacing * 2
             bottomPadding: Kirigami.Units.smallSpacing * 2
@@ -118,12 +120,12 @@ Kirigami.FormLayout {
 
         Kirigami.FormData.label: i18n("Ring Duration:")
         text: {
-            if (formRingDuration === -1) {
+            if (root.formRingDuration === -1) {
                 return i18n("None");
-            } else if (formRingDuration === 1) {
+            } else if (root.formRingDuration === 1) {
                 return i18n("1 minute");
             } else {
-                return i18n("%1 minutes", formRingDuration);
+                return i18n("%1 minutes", root.formRingDuration);
             }
         }
         title: i18n("Select Ring Duration")
@@ -139,20 +141,22 @@ Kirigami.FormLayout {
         ]
 
         dialogDelegate: RadioDelegate {
+            required property string name
+            required property int value
+
             implicitWidth: Kirigami.Units.gridUnit * 16
             topPadding: Kirigami.Units.smallSpacing * 2
             bottomPadding: Kirigami.Units.smallSpacing * 2
 
-            text: modelData.name
-            checked: root.formRingDuration == modelData.value
+            text: name
+            checked: root.formRingDuration === value
             onCheckedChanged: {
                 if (checked) {
-                    root.formRingDuration = modelData.value;
+                    root.formRingDuration = value;
                 }
             }
         }
     }
-
 
     // snooze length picker
     DialogComboBox {
@@ -161,7 +165,7 @@ Kirigami.FormLayout {
 
         Kirigami.FormData.label: i18n("Snooze Length:")
         title: i18n("Select Snooze Length")
-        text: formSnoozeDuration === 1 ? i18n("1 minute") : i18n("%1 minutes", formSnoozeDuration)
+        text: root.formSnoozeDuration === 1 ? i18n("1 minute") : i18n("%1 minutes", root.formSnoozeDuration)
         model: [
             {"name": i18n("1 minute"), "value": 1},
             {"name": i18n("2 minutes"), "value": 2},
@@ -173,15 +177,18 @@ Kirigami.FormLayout {
         ]
 
         dialogDelegate: RadioDelegate {
+            required property string name
+            required property int value
+
             implicitWidth: Kirigami.Units.gridUnit * 16
             topPadding: Kirigami.Units.smallSpacing * 2
             bottomPadding: Kirigami.Units.smallSpacing * 2
 
-            text: modelData.name
-            checked: root.formSnoozeDuration == modelData.value
+            text: name
+            checked: root.formSnoozeDuration === value
             onCheckedChanged: {
                 if (checked) {
-                    root.formSnoozeDuration = modelData.value;
+                    root.formSnoozeDuration = value;
                 }
             }
         }

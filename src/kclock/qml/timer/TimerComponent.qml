@@ -13,6 +13,7 @@ import org.kde.kirigami as Kirigami
 
 Item {
     id: root
+    property alias timerLabel: heading.text
     property int timerDuration
     property int timerElapsed
     property bool timerRunning
@@ -30,7 +31,7 @@ Item {
     }
     
     function getTimeLeft() {
-        return timerDuration - timerElapsed;
+        return root.timerDuration - root.timerElapsed;
     }
     function getHours() {
         return ("0" + parseInt(getTimeLeft() / 60 / 60).toFixed(0)).slice(-2);
@@ -82,7 +83,7 @@ Item {
             PathAngleArc {
                 id: timerCircleArc
                 centerX: timerCircle.width / 2; centerY: timerCircle.height / 2;
-                radiusX: getCircleRadius()
+                radiusX: root.getCircleRadius()
                 radiusY: radiusX
                 startAngle: -180
                 sweepAngle: 360
@@ -99,7 +100,7 @@ Item {
                 centerX: timerCircleArc.centerX; centerY: timerCircleArc.centerY
                 radiusX: timerCircleArc.radiusX; radiusY: timerCircleArc.radiusY
                 startAngle: -90
-                sweepAngle: elapsedSweepAngle
+                sweepAngle: root.elapsedSweepAngle
             }
         }
     }
@@ -111,45 +112,44 @@ Item {
 
         Label {
             id: hoursText
-            text: getHours()
+            text: root.getHours()
             font.pointSize: Kirigami.Theme.defaultFont.pointSize*3
             font.weight: Font.Light
-            color: timerRunning ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
-            visible: text != "00"
+            color: root.timerRunning ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
+            visible: text !== "00"
         }
         Label {
             text: ":"
             font.pointSize: Kirigami.Theme.defaultFont.pointSize*3
             font.weight: Font.Light
-            color: timerRunning ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
-            visible: getHours() != "00"
+            color: root.timerRunning ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
+            visible: root.getHours() !== "00"
         }
         Label {
             id: minutesText
-            text: getMinutes()
+            text: root.getMinutes()
             font.pointSize: Kirigami.Theme.defaultFont.pointSize*3
             font.weight: Font.Light
-            color: timerRunning ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
+            color: root.timerRunning ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
         }
         Label {
             text: ":"
             font.pointSize: Kirigami.Theme.defaultFont.pointSize*3
             font.weight: Font.Light
-            color: timerRunning ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
+            color: root.timerRunning ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
         }
         Label {
-            text: getSeconds()
+            text: root.getSeconds()
             font.pointSize: Kirigami.Theme.defaultFont.pointSize*3
             font.weight: Font.Light
-            color: timerRunning ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
+            color: root.timerRunning ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
         }
     }
     
     Kirigami.Heading {
         id: heading
         level: 4
-        text: timer.label
-        color: timerRunning ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
+        color: root.timerRunning ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
         textFormat: Text.PlainText
         anchors.bottom: timeLabels.top
         anchors.bottomMargin: Kirigami.Units.smallSpacing

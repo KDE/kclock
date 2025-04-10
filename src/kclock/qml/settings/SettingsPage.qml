@@ -6,7 +6,6 @@
  */
 
 import QtQuick
-import QtQuick.Controls
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
@@ -24,7 +23,7 @@ FormCard.FormCardPage {
 
     Kirigami.ColumnView.fillWidth: false
 
-    contentItem.transform: Translate { y: yTranslate }
+    contentItem.transform: Translate { y: root.yTranslate }
 
     FormCard.FormCard {
         Layout.topMargin: Kirigami.Units.gridUnit

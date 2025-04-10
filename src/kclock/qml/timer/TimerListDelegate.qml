@@ -61,7 +61,7 @@ Kirigami.AbstractCard {
         }
         
         Component.onCompleted: determineState()
-        function determineState() {
+        function determineState() : void {
             if (root.timer.ringing) {
                 popupLoader.active = true;
                 popupLoader.item.open();

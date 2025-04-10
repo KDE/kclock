@@ -37,7 +37,7 @@ Item {
         showAnimation.start();
     }
 
-    function updateRealTime() {
+    function updateRealTime() : void {
         const date = new Date();
         realHours = date.getHours();
         realMinutes = date.getMinutes();
@@ -162,14 +162,16 @@ Item {
             rotationCenterHintId: "hint-hourhandshadow-rotation-center-offset"
             horizontalRotationOffset: clock.horizontalShadowOffset
             verticalRotationOffset: clock.verticalShadowOffset
-            rotation: 180 + representation.hours * 30 + (minutes/2)
+            rotation: 180 + representation.hours * 30 + (representation.minutes / 2)
+            svg: clockSvg
             svgScale: clock.svgScale
             animateRotation: clock.animateHands
         }
         AnalogClockHand {
             elementId: "HourHand"
             rotationCenterHintId: "hint-hourhand-rotation-center-offset"
-            rotation: 180 + representation.hours * 30 + (minutes/2)
+            rotation: 180 + representation.hours * 30 + (representation.minutes / 2)
+            svg: clockSvg
             svgScale: clock.svgScale
             animateRotation: clock.animateHands
         }
@@ -180,6 +182,7 @@ Item {
             horizontalRotationOffset: clock.horizontalShadowOffset
             verticalRotationOffset: clock.verticalShadowOffset
             rotation: 180 + representation.minutes * 6
+            svg: clockSvg
             svgScale: clock.svgScale
             animateRotation: clock.animateHands
         }
@@ -187,6 +190,7 @@ Item {
             elementId: "MinuteHand"
             rotationCenterHintId: "hint-minutehand-rotation-center-offset"
             rotation: 180 + representation.minutes * 6
+            svg: clockSvg
             svgScale: clock.svgScale
             animateRotation: clock.animateHands
         }
@@ -197,6 +201,7 @@ Item {
             horizontalRotationOffset: clock.horizontalShadowOffset
             verticalRotationOffset: clock.verticalShadowOffset
             rotation: 180 + representation.seconds * 6
+            svg: clockSvg
             svgScale: clock.svgScale
             animateRotation: clock.animateHands
         }
@@ -204,6 +209,7 @@ Item {
             elementId: "SecondHand"
             rotationCenterHintId: "hint-secondhand-rotation-center-offset"
             rotation: 180 + representation.seconds * 6
+            svg: clockSvg
             svgScale: clock.svgScale
             animateRotation: clock.animateHands
         }

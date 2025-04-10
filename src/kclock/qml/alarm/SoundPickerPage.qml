@@ -26,7 +26,7 @@ Kirigami.ScrollablePage {
 
     readonly property int delegateVerticalPadding: Kirigami.Settings.isMobile ? (Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing) : Kirigami.Units.largeSpacing
 
-    function playSound() {
+    function playSound() : void {
         audioPlayer.play();
     }
 

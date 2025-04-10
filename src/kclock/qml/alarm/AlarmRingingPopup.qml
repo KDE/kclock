@@ -51,12 +51,12 @@ Kirigami.Dialog {
     customFooterActions: [
         Kirigami.Action {
             text: i18n("Snooze")
-            onTriggered: alarm.snooze()
+            onTriggered: root.alarm.snooze()
         },
         Kirigami.Action {
             text: i18n("Dismiss")
             onTriggered: {
-                alarm.dismiss();
+                root.alarm.dismiss();
             }
         }
     ]

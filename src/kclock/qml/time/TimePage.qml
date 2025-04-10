@@ -28,7 +28,7 @@ Kirigami.ScrollablePage {
 
     actions: [newAction, editAction, settingsAction]
 
-    function openAddSheet() {
+    function openAddSheet() : void {
         timeZoneSelect.open();
     }
 
@@ -72,7 +72,7 @@ Kirigami.ScrollablePage {
         id: listView
         model: SavedLocationsModel
         currentIndex: -1 // no default selection
-        transform: Translate { y: yTranslate }
+        transform: Translate { y: root.yTranslate }
 
         add: Transition {
             NumberAnimation { property: "opacity"; from: 0; to: 1.0; duration: Kirigami.Units.shortDuration }
@@ -102,8 +102,8 @@ Kirigami.ScrollablePage {
                     id: clockItemLoader
 
                     Layout.alignment: Qt.AlignHCenter
-                    width: Math.round(clockRadius * 2 + Kirigami.Units.gridUnit * 0.5)
-                    height: clockRadius * 2 + Kirigami.Units.gridUnit
+                    width: Math.round(root.clockRadius * 2 + Kirigami.Units.gridUnit * 0.5)
+                    height: root.clockRadius * 2 + Kirigami.Units.gridUnit
 
                     asynchronous: true
                     visible: headerRow.showAnalogClock
@@ -113,8 +113,8 @@ Kirigami.ScrollablePage {
                         AnalogClock {
                             id: analogClock
                             anchors.centerIn: parent
-                            height: clockRadius * 2
-                            width: clockRadius * 2
+                            height: root.clockRadius * 2
+                            width: root.clockRadius * 2
                         }
                     }
                 }
@@ -171,14 +171,11 @@ Kirigami.ScrollablePage {
         }
 
         delegate: TimePageDelegate {
+            required property int index
+
             width: listView.width
             editMode: editAction.checked
-
-            city: model.city
-            relativeTime: model.relativeTime
-            timeString: model.timeString
-
-            onDeleteRequested: SavedLocationsModel.removeLocation(model.index)
+            onDeleteRequested: SavedLocationsModel.removeLocation(index)
         }
     }
 }

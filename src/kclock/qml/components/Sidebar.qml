@@ -51,8 +51,6 @@ Kirigami.OverlayDrawer {
 
                 Kirigami.NavigationTabButton {
                     Layout.fillWidth: true
-                    width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
-
                     text: i18n("Time")
                     icon.name: "clock"
                     checked: pageStack.currentItem?.objectName === "Time"
@@ -66,8 +64,6 @@ Kirigami.OverlayDrawer {
 
                 Kirigami.NavigationTabButton {
                     Layout.fillWidth: true
-                    width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
-
                     text: i18n("Timers")
                     icon.name: "player-time"
                     checked: pageStack.currentItem?.objectName === "Timers"
@@ -81,8 +77,6 @@ Kirigami.OverlayDrawer {
 
                 Kirigami.NavigationTabButton {
                     Layout.fillWidth: true
-                    width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
-
                     text: i18n("Stopwatch")
                     icon.name: "chronometer"
                     checked: pageStack.currentItem?.objectName === "Stopwatch"
@@ -96,8 +90,6 @@ Kirigami.OverlayDrawer {
 
                 Kirigami.NavigationTabButton {
                     Layout.fillWidth: true
-                    width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
-
                     text: i18n("Alarms")
                     icon.name: "notifications"
                     checked: pageStack.currentItem?.objectName === "Alarms"

@@ -7,8 +7,6 @@
  */
 
 import QtQuick
-import QtQuick.Controls
-import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
 
@@ -47,7 +45,7 @@ Kirigami.ScrollablePage {
         }
     ]
 
-    function addAlarm() {
+    function addAlarm() : void {
         applicationWindow().pageStack.push(Qt.resolvedUrl("AlarmFormPage.qml"));
     }
 
@@ -63,7 +61,7 @@ Kirigami.ScrollablePage {
         model: AlarmModel
         currentIndex: -1 // no default selection
 
-        transform: Translate { y: yTranslate }
+        transform: Translate { y: root.yTranslate }
 
         topMargin: Kirigami.Units.smallSpacing
         reuseItems: true

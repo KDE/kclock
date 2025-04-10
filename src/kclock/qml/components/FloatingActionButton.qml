@@ -4,7 +4,6 @@
 import QtQuick
 import QtQuick.Controls as Controls
 import QtQuick.Templates 2.15 as T
-import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
 
@@ -18,7 +17,6 @@ import org.kde.kirigami as Kirigami
  * Example usage:
  * @code{.qml}
  * import QtQuick
- * import QtQuick.Layouts
  * import org.kde.kirigami as Kirigami
  * 
  * Kirigami.ScrollablePage {

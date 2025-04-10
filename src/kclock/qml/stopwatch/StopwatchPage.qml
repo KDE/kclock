@@ -11,7 +11,6 @@ import QtQuick.Layouts
 import QtQuick.Window
 
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.delegates as Delegates
 
 import org.kde.kclock
 
@@ -43,7 +42,7 @@ Kirigami.ScrollablePage {
     ]
 
     header: ColumnLayout {
-        transform: Translate { y: yTranslate }
+        transform: Translate { y: root.yTranslate }
         anchors.left: parent.left
         anchors.right: parent.right
         spacing: 0
@@ -241,7 +240,7 @@ Kirigami.ScrollablePage {
         model: StopwatchModel
         spacing: 0
         currentIndex: -1
-        transform: Translate { y: yTranslate }
+        transform: Translate { y: root.yTranslate }
 
         reuseItems: true
 
@@ -272,6 +271,12 @@ Kirigami.ScrollablePage {
         delegate: ItemDelegate {
             id: listItem
 
+            required property int lapNumber
+            required property double lapTime
+            required property double lapTimeSinceBeginning
+            required property bool isBest
+            required property bool isWorst
+
             background: null
             width: ListView.view.width
 
@@ -286,10 +291,6 @@ Kirigami.ScrollablePage {
                 to: 1
             }
 
-            readonly property int lapNumber: model.lapNumber
-            readonly property double timeSinceLastLap: model.lapTime
-            readonly property double timeSinceBeginning: model.lapTimeSinceBeginning
-
             contentItem: RowLayout {
                 Item { Layout.fillWidth: true }
 
@@ -301,11 +302,11 @@ Kirigami.ScrollablePage {
                         implicitHeight: Kirigami.Units.iconSizes.small
                         implicitWidth: Kirigami.Units.iconSizes.small
                         source: {
-                            if (model.isBest && model.isWorst) {
+                            if (listItem.isBest && listItem.isWorst) {
                                 return 'flag-blue';
-                            } else if (model.isBest) {
+                            } else if (listItem.isBest) {
                                 return 'flag-green';
-                            } else if (model.isWorst) {
+                            } else if (listItem.isWorst) {
                                 return 'flag-red';
                             }
                             return 'flag-blue';
@@ -326,11 +327,11 @@ Kirigami.ScrollablePage {
                         Layout.fillWidth: true
                         horizontalAlignment: Text.AlignHCenter
                         text: {
-                            if (isNaN(timeSinceLastLap)) { 
+                            if (isNaN(listItem.lapTime)) {
                                 return ""; 
                             }
 
-                            const duration = listItem.timeSinceLastLap;
+                            const duration = listItem.lapTime;
                             const hours = UtilModel.displayTwoDigits(UtilModel.msToHoursPart(duration));
                             const minutes = UtilModel.displayTwoDigits(UtilModel.msToMinutesPart(duration));
                             const seconds = UtilModel.displayTwoDigits(UtilModel.msToSecondsPart(duration));
@@ -350,11 +351,11 @@ Kirigami.ScrollablePage {
                         horizontalAlignment: Text.AlignRight
                         color: Kirigami.Theme.focusColor
                         text: {
-                            if (isNaN(timeSinceBeginning)) { 
+                            if (isNaN(listItem.lapTimeSinceBeginning)) {
                                 return ""; 
                             }
 
-                            const duration = listItem.timeSinceBeginning;
+                            const duration = listItem.lapTimeSinceBeginning;
                             const hours = UtilModel.displayTwoDigits(UtilModel.msToHoursPart(duration));
                             const minutes = UtilModel.displayTwoDigits(UtilModel.msToMinutesPart(duration));
                             const seconds = UtilModel.displayTwoDigits(UtilModel.msToSecondsPart(duration));

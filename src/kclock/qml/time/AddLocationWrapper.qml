@@ -15,7 +15,7 @@ Loader {
     id: loader
     active: false
 
-    function open() {
+    function open() : void {
         loader.active = false;
         AddLocationSearchModel.setFilterFixedString("");
         if (Kirigami.Settings.isMobile) {
