@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-06 00:45+0000\n"
+"POT-Creation-Date: 2025-04-10 00:44+0000\n"
 "PO-Revision-Date: 2025-04-06 11:47+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -30,193 +30,193 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "antonibella5@yahoo.com"
 
-#: main.cpp:63
+#: main.cpp:50
 #, kde-format
 msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr ""
 "Establiu alarmes i temporitzadors, utilitzeu un cronòmetre i gestioneu els "
 "rellotges mundials"
 
-#: main.cpp:65
+#: main.cpp:52
 #, kde-format
 msgid "© 2020-2024 KDE Community"
 msgstr "© 2020-2024 La comunitat KDE"
 
-#: main.cpp:67
+#: main.cpp:54
 #, kde-format
 msgid "Devin Lin"
 msgstr "Devin Lin"
 
-#: main.cpp:68
+#: main.cpp:55
 #, kde-format
 msgid "Han Young"
 msgstr "Han Young"
 
-#: main.cpp:74
+#: main.cpp:61
 #, kde-format
 msgid "Select opened page"
 msgstr "Selecciona la pàgina oberta"
 
-#: main.cpp:76
+#: main.cpp:63
 #, kde-format
 msgid "Explicitly open a new Clock window"
 msgstr "Obri explícitament una finestra nova del Rellotge"
 
-#: qml/alarm/AlarmForm.qml:86
+#: qml/alarm/AlarmForm.qml:84
 #, kde-format
 msgid "Days to repeat:"
 msgstr "Dies a repetir:"
 
-#: qml/alarm/AlarmForm.qml:88
+#: qml/alarm/AlarmForm.qml:86
 #, kde-format
 msgid "Select Days to Repeat"
 msgstr "Seleccioneu els dies que s'han de repetir"
 
-#: qml/alarm/AlarmForm.qml:111
+#: qml/alarm/AlarmForm.qml:109
 #, kde-format
 msgid "Alarm Name (optional):"
 msgstr "Nom de l'alarma (opcional):"
 
-#: qml/alarm/AlarmForm.qml:112
+#: qml/alarm/AlarmForm.qml:110
 #, kde-format
 msgid "Wake Up"
 msgstr "Desperta"
 
-#: qml/alarm/AlarmForm.qml:121
+#: qml/alarm/AlarmForm.qml:119
 #, kde-format
 msgid "Ring Duration:"
 msgstr "Duració de l'alarma:"
 
-#: qml/alarm/AlarmForm.qml:124 qml/alarm/AlarmForm.qml:133
+#: qml/alarm/AlarmForm.qml:122 qml/alarm/AlarmForm.qml:131
 #, kde-format
 msgid "None"
 msgstr "Cap"
 
-#: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:134
-#: qml/alarm/AlarmForm.qml:166 qml/alarm/AlarmForm.qml:168
+#: qml/alarm/AlarmForm.qml:124 qml/alarm/AlarmForm.qml:132
+#: qml/alarm/AlarmForm.qml:164 qml/alarm/AlarmForm.qml:166
 #: qml/timer/TimerComponent.qml:160
 #, kde-format
 msgid "1 minute"
 msgstr "1 minut"
 
-#: qml/alarm/AlarmForm.qml:128 qml/alarm/AlarmForm.qml:166
+#: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:164
 #, kde-format
 msgid "%1 minutes"
 msgstr "%1 minuts"
 
-#: qml/alarm/AlarmForm.qml:131
+#: qml/alarm/AlarmForm.qml:129
 #, kde-format
 msgid "Select Ring Duration"
 msgstr "Seleccioneu la duració de l'alarma"
 
-#: qml/alarm/AlarmForm.qml:135 qml/alarm/AlarmForm.qml:169
+#: qml/alarm/AlarmForm.qml:133 qml/alarm/AlarmForm.qml:167
 #, kde-format
 msgid "2 minutes"
 msgstr "2 minuts"
 
-#: qml/alarm/AlarmForm.qml:136 qml/alarm/AlarmForm.qml:170
+#: qml/alarm/AlarmForm.qml:134 qml/alarm/AlarmForm.qml:168
 #, kde-format
 msgid "5 minutes"
 msgstr "5 minuts"
 
-#: qml/alarm/AlarmForm.qml:137 qml/alarm/AlarmForm.qml:171
+#: qml/alarm/AlarmForm.qml:135 qml/alarm/AlarmForm.qml:169
 #, kde-format
 msgid "10 minutes"
 msgstr "10 minuts"
 
-#: qml/alarm/AlarmForm.qml:138 qml/alarm/AlarmForm.qml:172
+#: qml/alarm/AlarmForm.qml:136 qml/alarm/AlarmForm.qml:170
 #, kde-format
 msgid "15 minutes"
 msgstr "15 minuts"
 
-#: qml/alarm/AlarmForm.qml:139 qml/alarm/AlarmForm.qml:173
+#: qml/alarm/AlarmForm.qml:137 qml/alarm/AlarmForm.qml:171
 #, kde-format
 msgid "30 minutes"
 msgstr "30 minuts"
 
-#: qml/alarm/AlarmForm.qml:140 qml/alarm/AlarmForm.qml:174
+#: qml/alarm/AlarmForm.qml:138 qml/alarm/AlarmForm.qml:172
 #, kde-format
 msgid "1 hour"
 msgstr "1 hora"
 
-#: qml/alarm/AlarmForm.qml:164
+#: qml/alarm/AlarmForm.qml:162
 #, kde-format
 msgid "Snooze Length:"
 msgstr "Duració del posposament:"
 
-#: qml/alarm/AlarmForm.qml:165
+#: qml/alarm/AlarmForm.qml:163
 #, kde-format
 msgid "Select Snooze Length"
 msgstr "Duració del posposament de l'alarma"
 
-#: qml/alarm/AlarmForm.qml:198
+#: qml/alarm/AlarmForm.qml:196
 #, kde-format
 msgid "Ring Sound:"
 msgstr "So de la tocada:"
 
-#: qml/alarm/AlarmForm.qml:204
+#: qml/alarm/AlarmForm.qml:202
 #, kde-format
 msgid "Default Sound"
 msgstr "So predeterminat"
 
-#: qml/alarm/AlarmFormPage.qml:26 qml/alarm/AlarmRingingPopup.qml:45
+#: qml/alarm/AlarmFormPage.qml:25 qml/alarm/AlarmRingingPopup.qml:43
 #, kde-format
 msgid "Alarm"
 msgstr "Alarma"
 
-#: qml/alarm/AlarmFormPage.qml:26
+#: qml/alarm/AlarmFormPage.qml:25
 #, kde-format
 msgctxt "Edit alarm page title"
 msgid "Editing %1"
 msgstr "Edició de %1"
 
-#: qml/alarm/AlarmFormPage.qml:27 qml/alarm/AlarmListPage.qml:31
+#: qml/alarm/AlarmFormPage.qml:26 qml/alarm/AlarmListPage.qml:30
 #, kde-format
 msgid "New Alarm"
 msgstr "Alarma nova"
 
-#: qml/alarm/AlarmFormPage.qml:39 qml/alarm/AlarmFormPage.qml:62
+#: qml/alarm/AlarmFormPage.qml:38 qml/alarm/AlarmFormPage.qml:61
 #, kde-format
 msgid "Done"
 msgstr "Fet"
 
-#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormDialog.qml:108
+#: qml/alarm/AlarmFormPage.qml:67 qml/timer/TimerFormDialog.qml:108
 #, kde-format
 msgid "Cancel"
 msgstr "Cancel·la"
 
-#: qml/alarm/AlarmListDelegate.qml:106
+#: qml/alarm/AlarmListDelegate.qml:104
 #, kde-format
 msgid "Snoozed %1 minute"
 msgid_plural "Snoozed %1 minutes"
 msgstr[0] "S'ha posposat %1 minut"
 msgstr[1] "S'ha posposat %1 minuts"
 
-#: qml/alarm/AlarmListDelegate.qml:126 qml/time/TimePageDelegate.qml:60
+#: qml/alarm/AlarmListDelegate.qml:124 qml/time/TimePageDelegate.qml:60
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "Suprimix"
 
-#: qml/alarm/AlarmListPage.qml:25 qml/components/BottomToolbar.qml:108
+#: qml/alarm/AlarmListPage.qml:24 qml/components/BottomToolbar.qml:108
 #: qml/components/Sidebar.qml:101
 #, kde-format
 msgid "Alarms"
 msgstr "Alarmes"
 
-#: qml/alarm/AlarmListPage.qml:37 qml/time/TimePage.qml:39
+#: qml/alarm/AlarmListPage.qml:36 qml/time/TimePage.qml:38
 #, kde-format
 msgid "Edit"
 msgstr "Edita"
 
-#: qml/alarm/AlarmListPage.qml:46 qml/main.qml:56
-#: qml/settings/SettingsPage.qml:23 qml/stopwatch/StopwatchPage.qml:41
-#: qml/time/TimePage.qml:62 qml/timer/TimerListPage.qml:38
+#: qml/alarm/AlarmListPage.qml:45 qml/Main.qml:56
+#: qml/settings/SettingsPage.qml:22 qml/stopwatch/StopwatchPage.qml:40
+#: qml/time/TimePage.qml:61 qml/timer/TimerListPage.qml:37
 #, kde-format
 msgid "Settings"
 msgstr "Configuració"
 
-#: qml/alarm/AlarmListPage.qml:57
+#: qml/alarm/AlarmListPage.qml:56
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have alarm "
@@ -225,48 +225,48 @@ msgstr ""
 "No s'ha trobat el dimoni «clock». Inicieu el «kclockd» per tal de tindre la "
 "funció d'alarma."
 
-#: qml/alarm/AlarmListPage.qml:79
+#: qml/alarm/AlarmListPage.qml:78
 #, kde-format
 msgid "No alarms configured"
 msgstr "No s'ha configurat cap alarma"
 
-#: qml/alarm/AlarmListPage.qml:84
+#: qml/alarm/AlarmListPage.qml:83
 #, kde-format
 msgid "Add alarm"
 msgstr "Afig una alarma"
 
-#: qml/alarm/AlarmListPage.qml:95
+#: qml/alarm/AlarmListPage.qml:94
 #, kde-format
 msgid "Loading…"
 msgstr "S'està carregant…"
 
-#: qml/alarm/AlarmListPage.qml:110
+#: qml/alarm/AlarmListPage.qml:109
 #, kde-format
 msgctxt "@action:button"
 msgid "New Alarm"
 msgstr "Alarma nova"
 
-#: qml/alarm/AlarmListPage.qml:127
+#: qml/alarm/AlarmListPage.qml:126
 #, kde-format
 msgid "alarm"
 msgstr "alarma"
 
-#: qml/alarm/AlarmListPage.qml:127
+#: qml/alarm/AlarmListPage.qml:126
 #, kde-format
 msgid "Deleted %1"
 msgstr "S'ha suprimit %1"
 
-#: qml/alarm/AlarmRingingPopup.qml:28
+#: qml/alarm/AlarmRingingPopup.qml:26
 #, kde-format
 msgid "Alarm is ringing"
 msgstr "L'alarma està sonant"
 
-#: qml/alarm/AlarmRingingPopup.qml:55
+#: qml/alarm/AlarmRingingPopup.qml:53
 #, kde-format
 msgid "Snooze"
 msgstr "Posposa"
 
-#: qml/alarm/AlarmRingingPopup.qml:59 qml/timer/TimerRingingPopup.qml:56
+#: qml/alarm/AlarmRingingPopup.qml:57 qml/timer/TimerRingingPopup.qml:54
 #, kde-format
 msgid "Dismiss"
 msgstr "Descarta"
@@ -302,168 +302,148 @@ msgid "All files (*)"
 msgstr "Tots els fitxers (*)"
 
 #: qml/components/BottomToolbar.qml:75 qml/components/Sidebar.qml:56
-#: qml/time/TimePage.qml:26
+#: qml/time/TimePage.qml:25
 #, kde-format
 msgid "Time"
 msgstr "Hora"
 
 #: qml/components/BottomToolbar.qml:86 qml/components/Sidebar.qml:71
-#: qml/timer/TimerListPage.qml:22
+#: qml/timer/TimerListPage.qml:21
 #, kde-format
 msgid "Timers"
 msgstr "Temporitzadors"
 
 #: qml/components/BottomToolbar.qml:97 qml/components/Sidebar.qml:86
-#: qml/stopwatch/StopwatchPage.qml:25
+#: qml/stopwatch/StopwatchPage.qml:24
 #, kde-format
 msgid "Stopwatch"
 msgstr "Cronòmetre"
 
-#: qml/components/formatUtil.js:11
-#, kde-format
-msgid "Only once"
-msgstr "Només una vegada"
-
-#: qml/components/formatUtil.js:16
-#, kde-format
-msgid "Everyday"
-msgstr "Cada dia"
-
-#: qml/components/formatUtil.js:19
-#, kde-format
-msgid "Weekdays"
-msgstr "Dies de la setmana"
-
-#: qml/components/formatUtil.js:28 utilmodel.cpp:82
-#, kde-format
-msgid ", "
-msgstr ", "
-
-#: qml/components/TimePicker.qml:93
+#: qml/components/TimePicker.qml:94
 #, kde-format
 msgid "AM"
 msgstr "AM"
 
-#: qml/components/TimePicker.qml:93
+#: qml/components/TimePicker.qml:94
 #, kde-format
 msgid "PM"
 msgstr "PM"
 
-#: qml/settings/SettingsPage.qml:35
+#: qml/settings/SettingsPage.qml:34
 #, kde-format
 msgid "Time Format"
 msgstr "Format de l'hora"
 
-#: qml/settings/SettingsPage.qml:37
+#: qml/settings/SettingsPage.qml:36
 #, kde-format
 msgid "Use System Default"
 msgstr "Utilitza el predeterminat del sistema"
 
-#: qml/settings/SettingsPage.qml:38
+#: qml/settings/SettingsPage.qml:37
 #, kde-format
 msgid "12 Hour Time"
 msgstr "Utilitza l'horari de 12 hores"
 
-#: qml/settings/SettingsPage.qml:39
+#: qml/settings/SettingsPage.qml:38
 #, kde-format
 msgid "24 Hour Time"
 msgstr "Utilitza l'horari de 24 hores"
 
-#: qml/settings/SettingsPage.qml:53
+#: qml/settings/SettingsPage.qml:52
 #, kde-format
 msgid "Notifications for running timers"
 msgstr "Notificacions per las temporitzadors en execució"
 
-#: qml/settings/SettingsPage.qml:55
+#: qml/settings/SettingsPage.qml:54
 #, kde-format
 msgid "Always"
 msgstr "Sempre"
 
-#: qml/settings/SettingsPage.qml:58
+#: qml/settings/SettingsPage.qml:57
 #, kde-format
 msgctxt "When the app is not running"
 msgid "When %1 is not running"
 msgstr "Quan no s'està executant %1"
 
-#: qml/settings/SettingsPage.qml:61
+#: qml/settings/SettingsPage.qml:60
 #, kde-format
 msgid "Never"
 msgstr "Mai"
 
-#: qml/settings/SettingsPage.qml:64
+#: qml/settings/SettingsPage.qml:63
 #, kde-format
 msgid "Lets you pause and resume timers from the notification area."
 msgstr ""
 "Permet fer una pausa i reprendre els temporitzadors des de l'àrea de "
 "notificacions."
 
-#: qml/settings/SettingsPage.qml:79
+#: qml/settings/SettingsPage.qml:78
 #, kde-format
 msgid "About Clock"
 msgstr "Quant a rellotge"
 
-#: qml/settings/SettingsPage.qml:88
+#: qml/settings/SettingsPage.qml:87
 #, kde-format
 msgid "About KDE"
 msgstr "Quant a KDE"
 
-#: qml/stopwatch/StopwatchPage.qml:151 qml/stopwatch/StopwatchPage.qml:186
-#: qml/timer/TimerPage.qml:54 qml/timer/TimerPage.qml:102
+#: qml/stopwatch/StopwatchPage.qml:150 qml/stopwatch/StopwatchPage.qml:185
+#: qml/timer/TimerPage.qml:53 qml/timer/TimerPage.qml:101
 #, kde-format
 msgid "Reset"
 msgstr "Reinicia"
 
-#: qml/stopwatch/StopwatchPage.qml:153 qml/timer/TimerPage.qml:46
-#: qml/timer/TimerPage.qml:96
+#: qml/stopwatch/StopwatchPage.qml:152 qml/timer/TimerPage.qml:45
+#: qml/timer/TimerPage.qml:95
 #, kde-format
 msgid "Pause"
 msgstr "Pausa"
 
-#: qml/stopwatch/StopwatchPage.qml:155
+#: qml/stopwatch/StopwatchPage.qml:154
 #, kde-format
 msgid "Resume"
 msgstr "Reprén"
 
-#: qml/stopwatch/StopwatchPage.qml:157 qml/timer/TimerPage.qml:46
-#: qml/timer/TimerPage.qml:96
+#: qml/stopwatch/StopwatchPage.qml:156 qml/timer/TimerPage.qml:45
+#: qml/timer/TimerPage.qml:95
 #, kde-format
 msgid "Start"
 msgstr "Inicia"
 
-#: qml/stopwatch/StopwatchPage.qml:186 qml/stopwatch/StopwatchPage.qml:215
+#: qml/stopwatch/StopwatchPage.qml:185 qml/stopwatch/StopwatchPage.qml:214
 #, kde-format
 msgid "Lap"
 msgstr "Volta"
 
-#: qml/stopwatch/StopwatchPage.qml:223
+#: qml/stopwatch/StopwatchPage.qml:222
 #, kde-format
 msgid "Lap Time"
 msgstr "Temps de volta"
 
-#: qml/stopwatch/StopwatchPage.qml:230
+#: qml/stopwatch/StopwatchPage.qml:229
 #, kde-format
 msgid "Total"
 msgstr "Total"
 
-#: qml/stopwatch/StopwatchPage.qml:260
+#: qml/stopwatch/StopwatchPage.qml:259
 #, kde-format
 msgctxt "@action:button"
 msgid "Pause"
 msgstr "Pausa"
 
-#: qml/stopwatch/StopwatchPage.qml:262
+#: qml/stopwatch/StopwatchPage.qml:261
 #, kde-format
 msgctxt "@action:button"
 msgid "Resume"
 msgstr "Reprén"
 
-#: qml/stopwatch/StopwatchPage.qml:264
+#: qml/stopwatch/StopwatchPage.qml:263
 #, kde-format
 msgctxt "@action:button"
 msgid "Start"
 msgstr "Inicia"
 
-#: qml/stopwatch/StopwatchPage.qml:322
+#: qml/stopwatch/StopwatchPage.qml:321
 #, kde-format
 msgid "#%1"
 msgstr "núm. %1"
@@ -473,17 +453,17 @@ msgstr "núm. %1"
 msgid "No locations found"
 msgstr "No s'ha trobat cap ubicació"
 
-#: qml/time/AddLocationPage.qml:17 qml/time/AddLocationWrapper.qml:33
+#: qml/time/AddLocationPage.qml:16 qml/time/AddLocationWrapper.qml:34
 #, kde-format
 msgid "Add Location"
 msgstr "Afig una ubicació"
 
-#: qml/time/TimePage.qml:52
+#: qml/time/TimePage.qml:51
 #, kde-format
 msgid "Add"
 msgstr "Afig"
 
-#: qml/time/TimePage.qml:168
+#: qml/time/TimePage.qml:167
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Location"
@@ -608,48 +588,48 @@ msgctxt "@action:button"
 msgid "Done"
 msgstr "Fet"
 
-#: qml/timer/TimerListDelegate.qml:161
+#: qml/timer/TimerListDelegate.qml:160
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Loop timer"
 msgstr "Temporitzador de volta"
 
-#: qml/timer/TimerListDelegate.qml:172
+#: qml/timer/TimerListDelegate.qml:171
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Pause"
 msgstr "Pausa"
 
-#: qml/timer/TimerListDelegate.qml:172
+#: qml/timer/TimerListDelegate.qml:171
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start"
 msgstr "Inicia"
 
-#: qml/timer/TimerListDelegate.qml:182
+#: qml/timer/TimerListDelegate.qml:181
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset"
 msgstr "Restablix"
 
-#: qml/timer/TimerListDelegate.qml:192
+#: qml/timer/TimerListDelegate.qml:191
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit"
 msgstr "Edita"
 
-#: qml/timer/TimerListDelegate.qml:203
+#: qml/timer/TimerListDelegate.qml:202
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete"
 msgstr "Suprimix"
 
-#: qml/timer/TimerListPage.qml:30
+#: qml/timer/TimerListPage.qml:29
 #, kde-format
 msgid "New Timer"
 msgstr "Temporitzador nou"
 
-#: qml/timer/TimerListPage.qml:55
+#: qml/timer/TimerListPage.qml:54
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
@@ -658,129 +638,155 @@ msgstr ""
 "No s'ha trobat el dimoni «clock». Inicieu el «kclockd» per tal de tindre la "
 "funció de temporitzador."
 
-#: qml/timer/TimerListPage.qml:85
+#: qml/timer/TimerListPage.qml:84
 #, kde-format
 msgctxt "@action:button"
 msgid "New Timer"
 msgstr "Temporitzador nou"
 
-#: qml/timer/TimerListPage.qml:95
+#: qml/timer/TimerListPage.qml:94
 #, kde-format
 msgid "No timers configured"
 msgstr "No s'ha configurat cap temporitzador"
 
-#: qml/timer/TimerListPage.qml:100
+#: qml/timer/TimerListPage.qml:99
 #, kde-format
 msgid "Add timer"
 msgstr "Afig un temporitzador"
 
-#: qml/timer/TimerPage.qml:24
+#: qml/timer/TimerPage.qml:23
 #, kde-format
 msgid "New timer"
 msgstr "Temporitzador nou"
 
-#: qml/timer/TimerPage.qml:60 qml/timer/TimerPage.qml:108
+#: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:107
 #, kde-format
 msgid "Delete"
 msgstr "Suprimix"
 
-#: qml/timer/TimerPage.qml:69 qml/timer/TimerPage.qml:117
+#: qml/timer/TimerPage.qml:68 qml/timer/TimerPage.qml:116
 #, kde-format
 msgid "Loop Timer"
 msgstr "Temporitzador de volta"
 
-#: qml/timer/TimerRingingPopup.qml:27
+#: qml/timer/TimerRingingPopup.qml:25
 #, kde-format
 msgid "Timer has finished"
 msgstr "El temporitzador ha finalitzat"
 
-#: qml/timer/TimerRingingPopup.qml:46
+#: qml/timer/TimerRingingPopup.qml:44
 #, kde-format
 msgid "%1 has completed."
 msgstr "S'ha completat %1."
 
-#: qml/timer/TimerRingingPopup.qml:46
+#: qml/timer/TimerRingingPopup.qml:44
 #, kde-format
 msgid "The timer has completed."
 msgstr "El temporitzador s'ha completat."
 
-#: savedlocationsmodel.cpp:109
+#: savedlocationsmodel.cpp:119
 #, kde-format
 msgid "%1 hour and 30 minutes ahead"
 msgstr "D'ací a %1 hora i 30 minuts"
 
-#: savedlocationsmodel.cpp:109
+#: savedlocationsmodel.cpp:119
 #, kde-format
 msgid "%1 hours and 30 minutes ahead"
 msgstr "D'ací a %1 hores i 30 minuts"
 
-#: savedlocationsmodel.cpp:111
+#: savedlocationsmodel.cpp:121
 #, kde-format
 msgid "%1 hour ahead"
 msgstr "D'ací a %1 hora"
 
-#: savedlocationsmodel.cpp:111
+#: savedlocationsmodel.cpp:121
 #, kde-format
 msgid "%1 hours ahead"
 msgstr "D'ací a %1 hores"
 
-#: savedlocationsmodel.cpp:116
+#: savedlocationsmodel.cpp:126
 #, kde-format
 msgid "%1 hour and 30 minutes behind"
 msgstr "Fa %1 hora i 30 minuts"
 
-#: savedlocationsmodel.cpp:116
+#: savedlocationsmodel.cpp:126
 #, kde-format
 msgid "%1 hours and 30 minutes behind"
 msgstr "Fa %1 hores i 30 minuts"
 
-#: savedlocationsmodel.cpp:118
+#: savedlocationsmodel.cpp:128
 #, kde-format
 msgid "%1 hour behind"
 msgstr "Fa %1 hora"
 
-#: savedlocationsmodel.cpp:118
+#: savedlocationsmodel.cpp:128
 #, kde-format
 msgid "%1 hours behind"
 msgstr "Fa %1 hores"
 
-#: savedlocationsmodel.cpp:121
+#: savedlocationsmodel.cpp:131
 #, kde-format
 msgid "Local time"
 msgstr "Hora local"
 
-#: utilmodel.cpp:78
+#: utilmodel.cpp:88
 #, kde-format
 msgid "%1 day"
 msgid_plural "%1 days"
 msgstr[0] "%1 dia"
 msgstr[1] "%1 dies"
 
-#: utilmodel.cpp:84 utilmodel.cpp:90
+#: utilmodel.cpp:92 utilmodel.cpp:187
+#, kde-format
+msgid ", "
+msgstr ", "
+
+#: utilmodel.cpp:94 utilmodel.cpp:100
 #, kde-format
 msgid " and "
 msgstr " i "
 
-#: utilmodel.cpp:86
+#: utilmodel.cpp:96
 #, kde-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
 msgstr[0] "%1 hora"
 msgstr[1] "%1 hores"
 
-#: utilmodel.cpp:92
+#: utilmodel.cpp:102
 #, kde-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1 minut"
 msgstr[1] "%1 minuts"
 
-#: utilmodel.cpp:96
+#: utilmodel.cpp:106
 #, kde-format
 msgid "Alarm will ring in under a minute"
 msgstr "L'alarma sonarà en menys d'un minut"
 
-#: utilmodel.cpp:98
+#: utilmodel.cpp:108
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "L'alarma sonarà després de %1"
+
+#: utilmodel.cpp:160
+#, fuzzy, kde-format
+#| msgid "Only once"
+msgctxt "Repeat"
+msgid "Only once"
+msgstr "Només una vegada"
+
+#: utilmodel.cpp:163
+#, fuzzy, kde-format
+#| msgid "Everyday"
+msgctxt "Repeat"
+msgid "Everyday"
+msgstr "Cada dia"
+
+#: utilmodel.cpp:166
+#, fuzzy, kde-format
+#| msgid "Weekdays"
+msgctxt "Repeat"
+msgid "Weekdays"
+msgstr "Dies de la setmana"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-06 00:45+0000\n"
+"POT-Creation-Date: 2025-04-10 00:44+0000\n"
 "PO-Revision-Date: 2024-07-27 20:10+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -29,162 +29,162 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "<>"
 
-#: main.cpp:63
+#: main.cpp:50
 #, kde-format
 msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr ""
 "Nustatykite žadintuvus ir laikmačius, naudokite chronometrą ir tvarkykite "
 "pasaulio laikrodžius"
 
-#: main.cpp:65
+#: main.cpp:52
 #, kde-format
 msgid "© 2020-2024 KDE Community"
 msgstr "© 2020–2024 KDE bendruomenė"
 
-#: main.cpp:67
+#: main.cpp:54
 #, kde-format
 msgid "Devin Lin"
 msgstr "Devin Lin"
 
-#: main.cpp:68
+#: main.cpp:55
 #, kde-format
 msgid "Han Young"
 msgstr "Han Young"
 
-#: main.cpp:74
+#: main.cpp:61
 #, kde-format
 msgid "Select opened page"
 msgstr "Pasirinkite atveriamą puslapį"
 
-#: main.cpp:76
+#: main.cpp:63
 #, kde-format
 msgid "Explicitly open a new Clock window"
 msgstr ""
 
-#: qml/alarm/AlarmForm.qml:86
+#: qml/alarm/AlarmForm.qml:84
 #, kde-format
 msgid "Days to repeat:"
 msgstr "Dienos, kuriomis kartoti:"
 
-#: qml/alarm/AlarmForm.qml:88
+#: qml/alarm/AlarmForm.qml:86
 #, kde-format
 msgid "Select Days to Repeat"
 msgstr "Pažymėkite dienas, kuriomis kartoti"
 
-#: qml/alarm/AlarmForm.qml:111
+#: qml/alarm/AlarmForm.qml:109
 #, kde-format
 msgid "Alarm Name (optional):"
 msgstr "Žadintuvo pavadinimas (nebūtina):"
 
-#: qml/alarm/AlarmForm.qml:112
+#: qml/alarm/AlarmForm.qml:110
 #, kde-format
 msgid "Wake Up"
 msgstr "Keltis"
 
-#: qml/alarm/AlarmForm.qml:121
+#: qml/alarm/AlarmForm.qml:119
 #, kde-format
 msgid "Ring Duration:"
 msgstr "Skambučio trukmė:"
 
-#: qml/alarm/AlarmForm.qml:124 qml/alarm/AlarmForm.qml:133
+#: qml/alarm/AlarmForm.qml:122 qml/alarm/AlarmForm.qml:131
 #, kde-format
 msgid "None"
 msgstr "Nėra"
 
-#: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:134
-#: qml/alarm/AlarmForm.qml:166 qml/alarm/AlarmForm.qml:168
+#: qml/alarm/AlarmForm.qml:124 qml/alarm/AlarmForm.qml:132
+#: qml/alarm/AlarmForm.qml:164 qml/alarm/AlarmForm.qml:166
 #: qml/timer/TimerComponent.qml:160
 #, kde-format
 msgid "1 minute"
 msgstr "1 minutė"
 
-#: qml/alarm/AlarmForm.qml:128 qml/alarm/AlarmForm.qml:166
+#: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:164
 #, kde-format
 msgid "%1 minutes"
 msgstr "%1 min."
 
-#: qml/alarm/AlarmForm.qml:131
+#: qml/alarm/AlarmForm.qml:129
 #, kde-format
 msgid "Select Ring Duration"
 msgstr "Pasirinkite skambučio trukmę"
 
-#: qml/alarm/AlarmForm.qml:135 qml/alarm/AlarmForm.qml:169
+#: qml/alarm/AlarmForm.qml:133 qml/alarm/AlarmForm.qml:167
 #, kde-format
 msgid "2 minutes"
 msgstr "2 minutės"
 
-#: qml/alarm/AlarmForm.qml:136 qml/alarm/AlarmForm.qml:170
+#: qml/alarm/AlarmForm.qml:134 qml/alarm/AlarmForm.qml:168
 #, kde-format
 msgid "5 minutes"
 msgstr "5 minutės"
 
-#: qml/alarm/AlarmForm.qml:137 qml/alarm/AlarmForm.qml:171
+#: qml/alarm/AlarmForm.qml:135 qml/alarm/AlarmForm.qml:169
 #, kde-format
 msgid "10 minutes"
 msgstr "10 minučių"
 
-#: qml/alarm/AlarmForm.qml:138 qml/alarm/AlarmForm.qml:172
+#: qml/alarm/AlarmForm.qml:136 qml/alarm/AlarmForm.qml:170
 #, kde-format
 msgid "15 minutes"
 msgstr "15 minučių"
 
-#: qml/alarm/AlarmForm.qml:139 qml/alarm/AlarmForm.qml:173
+#: qml/alarm/AlarmForm.qml:137 qml/alarm/AlarmForm.qml:171
 #, kde-format
 msgid "30 minutes"
 msgstr "30 minučių"
 
-#: qml/alarm/AlarmForm.qml:140 qml/alarm/AlarmForm.qml:174
+#: qml/alarm/AlarmForm.qml:138 qml/alarm/AlarmForm.qml:172
 #, kde-format
 msgid "1 hour"
 msgstr "1 valanda"
 
-#: qml/alarm/AlarmForm.qml:164
+#: qml/alarm/AlarmForm.qml:162
 #, kde-format
 msgid "Snooze Length:"
 msgstr "Snaudimo trukmė:"
 
-#: qml/alarm/AlarmForm.qml:165
+#: qml/alarm/AlarmForm.qml:163
 #, kde-format
 msgid "Select Snooze Length"
 msgstr "Pasirinkite snaudimo trukmę"
 
-#: qml/alarm/AlarmForm.qml:198
+#: qml/alarm/AlarmForm.qml:196
 #, kde-format
 msgid "Ring Sound:"
 msgstr "Skambučio garsas:"
 
-#: qml/alarm/AlarmForm.qml:204
+#: qml/alarm/AlarmForm.qml:202
 #, kde-format
 msgid "Default Sound"
 msgstr "Numatytasis garsas"
 
-#: qml/alarm/AlarmFormPage.qml:26 qml/alarm/AlarmRingingPopup.qml:45
+#: qml/alarm/AlarmFormPage.qml:25 qml/alarm/AlarmRingingPopup.qml:43
 #, kde-format
 msgid "Alarm"
 msgstr "Žadintuvas"
 
-#: qml/alarm/AlarmFormPage.qml:26
+#: qml/alarm/AlarmFormPage.qml:25
 #, kde-format
 msgctxt "Edit alarm page title"
 msgid "Editing %1"
 msgstr "Taisomas %1"
 
-#: qml/alarm/AlarmFormPage.qml:27 qml/alarm/AlarmListPage.qml:31
+#: qml/alarm/AlarmFormPage.qml:26 qml/alarm/AlarmListPage.qml:30
 #, kde-format
 msgid "New Alarm"
 msgstr "Naujas žadintuvas"
 
-#: qml/alarm/AlarmFormPage.qml:39 qml/alarm/AlarmFormPage.qml:62
+#: qml/alarm/AlarmFormPage.qml:38 qml/alarm/AlarmFormPage.qml:61
 #, kde-format
 msgid "Done"
 msgstr "Atlikta"
 
-#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormDialog.qml:108
+#: qml/alarm/AlarmFormPage.qml:67 qml/timer/TimerFormDialog.qml:108
 #, kde-format
 msgid "Cancel"
 msgstr "Atsisakyti"
 
-#: qml/alarm/AlarmListDelegate.qml:106
+#: qml/alarm/AlarmListDelegate.qml:104
 #, kde-format
 msgid "Snoozed %1 minute"
 msgid_plural "Snoozed %1 minutes"
@@ -193,31 +193,31 @@ msgstr[1] "Nusnausta %1 minutėms"
 msgstr[2] "Nusnausta %1 minučių"
 msgstr[3] "Nusnausta %1 minutei"
 
-#: qml/alarm/AlarmListDelegate.qml:126 qml/time/TimePageDelegate.qml:60
+#: qml/alarm/AlarmListDelegate.qml:124 qml/time/TimePageDelegate.qml:60
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "Ištrinti"
 
-#: qml/alarm/AlarmListPage.qml:25 qml/components/BottomToolbar.qml:108
+#: qml/alarm/AlarmListPage.qml:24 qml/components/BottomToolbar.qml:108
 #: qml/components/Sidebar.qml:101
 #, kde-format
 msgid "Alarms"
 msgstr "Žadintuvai"
 
-#: qml/alarm/AlarmListPage.qml:37 qml/time/TimePage.qml:39
+#: qml/alarm/AlarmListPage.qml:36 qml/time/TimePage.qml:38
 #, kde-format
 msgid "Edit"
 msgstr "Taisyti"
 
-#: qml/alarm/AlarmListPage.qml:46 qml/main.qml:56
-#: qml/settings/SettingsPage.qml:23 qml/stopwatch/StopwatchPage.qml:41
-#: qml/time/TimePage.qml:62 qml/timer/TimerListPage.qml:38
+#: qml/alarm/AlarmListPage.qml:45 qml/Main.qml:56
+#: qml/settings/SettingsPage.qml:22 qml/stopwatch/StopwatchPage.qml:40
+#: qml/time/TimePage.qml:61 qml/timer/TimerListPage.qml:37
 #, kde-format
 msgid "Settings"
 msgstr "Nuostatos"
 
-#: qml/alarm/AlarmListPage.qml:57
+#: qml/alarm/AlarmListPage.qml:56
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have alarm "
@@ -226,49 +226,49 @@ msgstr ""
 "Nerasta laikrodžio tarnybos. Paleiskite kclockd, kad galėtumėte naudotis "
 "žadintuvo funkcionalumu."
 
-#: qml/alarm/AlarmListPage.qml:79
+#: qml/alarm/AlarmListPage.qml:78
 #, kde-format
 msgid "No alarms configured"
 msgstr "Nėra sukonfigūruotų žadintuvų"
 
-#: qml/alarm/AlarmListPage.qml:84
+#: qml/alarm/AlarmListPage.qml:83
 #, kde-format
 msgid "Add alarm"
 msgstr "Pridėti žadintuvą"
 
-#: qml/alarm/AlarmListPage.qml:95
+#: qml/alarm/AlarmListPage.qml:94
 #, kde-format
 msgid "Loading…"
 msgstr ""
 
-#: qml/alarm/AlarmListPage.qml:110
+#: qml/alarm/AlarmListPage.qml:109
 #, fuzzy, kde-format
 #| msgid "New Alarm"
 msgctxt "@action:button"
 msgid "New Alarm"
 msgstr "Naujas žadintuvas"
 
-#: qml/alarm/AlarmListPage.qml:127
+#: qml/alarm/AlarmListPage.qml:126
 #, kde-format
 msgid "alarm"
 msgstr "žadintuvas"
 
-#: qml/alarm/AlarmListPage.qml:127
+#: qml/alarm/AlarmListPage.qml:126
 #, kde-format
 msgid "Deleted %1"
 msgstr "Ištrintas %1"
 
-#: qml/alarm/AlarmRingingPopup.qml:28
+#: qml/alarm/AlarmRingingPopup.qml:26
 #, kde-format
 msgid "Alarm is ringing"
 msgstr "Skambina žadintuvas"
 
-#: qml/alarm/AlarmRingingPopup.qml:55
+#: qml/alarm/AlarmRingingPopup.qml:53
 #, kde-format
 msgid "Snooze"
 msgstr "Snausti"
 
-#: qml/alarm/AlarmRingingPopup.qml:59 qml/timer/TimerRingingPopup.qml:56
+#: qml/alarm/AlarmRingingPopup.qml:57 qml/timer/TimerRingingPopup.qml:54
 #, kde-format
 msgid "Dismiss"
 msgstr "Atmesti"
@@ -305,169 +305,149 @@ msgid "All files (*)"
 msgstr "Visi failai (*)"
 
 #: qml/components/BottomToolbar.qml:75 qml/components/Sidebar.qml:56
-#: qml/time/TimePage.qml:26
+#: qml/time/TimePage.qml:25
 #, kde-format
 msgid "Time"
 msgstr "Laikas"
 
 #: qml/components/BottomToolbar.qml:86 qml/components/Sidebar.qml:71
-#: qml/timer/TimerListPage.qml:22
+#: qml/timer/TimerListPage.qml:21
 #, kde-format
 msgid "Timers"
 msgstr "Laikmačiai"
 
 #: qml/components/BottomToolbar.qml:97 qml/components/Sidebar.qml:86
-#: qml/stopwatch/StopwatchPage.qml:25
+#: qml/stopwatch/StopwatchPage.qml:24
 #, kde-format
 msgid "Stopwatch"
 msgstr "Chronometras"
 
-#: qml/components/formatUtil.js:11
-#, kde-format
-msgid "Only once"
-msgstr "Tik kartą"
-
-#: qml/components/formatUtil.js:16
-#, kde-format
-msgid "Everyday"
-msgstr "Kasdieną"
-
-#: qml/components/formatUtil.js:19
-#, kde-format
-msgid "Weekdays"
-msgstr "Šiokiadieniais"
-
-#: qml/components/formatUtil.js:28 utilmodel.cpp:82
-#, kde-format
-msgid ", "
-msgstr ", "
-
-#: qml/components/TimePicker.qml:93
+#: qml/components/TimePicker.qml:94
 #, kde-format
 msgid "AM"
 msgstr "AM"
 
-#: qml/components/TimePicker.qml:93
+#: qml/components/TimePicker.qml:94
 #, kde-format
 msgid "PM"
 msgstr "PM"
 
-#: qml/settings/SettingsPage.qml:35
+#: qml/settings/SettingsPage.qml:34
 #, kde-format
 msgid "Time Format"
 msgstr "Laiko formatas"
 
-#: qml/settings/SettingsPage.qml:37
+#: qml/settings/SettingsPage.qml:36
 #, kde-format
 msgid "Use System Default"
 msgstr "Naudoti sistemos numatytąjį"
 
-#: qml/settings/SettingsPage.qml:38
+#: qml/settings/SettingsPage.qml:37
 #, kde-format
 msgid "12 Hour Time"
 msgstr "12 valandų laikas"
 
-#: qml/settings/SettingsPage.qml:39
+#: qml/settings/SettingsPage.qml:38
 #, kde-format
 msgid "24 Hour Time"
 msgstr "24 valandų laikas"
 
-#: qml/settings/SettingsPage.qml:53
+#: qml/settings/SettingsPage.qml:52
 #, kde-format
 msgid "Notifications for running timers"
 msgstr ""
 
-#: qml/settings/SettingsPage.qml:55
+#: qml/settings/SettingsPage.qml:54
 #, kde-format
 msgid "Always"
 msgstr ""
 
-#: qml/settings/SettingsPage.qml:58
+#: qml/settings/SettingsPage.qml:57
 #, kde-format
 msgctxt "When the app is not running"
 msgid "When %1 is not running"
 msgstr ""
 
-#: qml/settings/SettingsPage.qml:61
+#: qml/settings/SettingsPage.qml:60
 #, kde-format
 msgid "Never"
 msgstr ""
 
-#: qml/settings/SettingsPage.qml:64
+#: qml/settings/SettingsPage.qml:63
 #, kde-format
 msgid "Lets you pause and resume timers from the notification area."
 msgstr ""
 
-#: qml/settings/SettingsPage.qml:79
+#: qml/settings/SettingsPage.qml:78
 #, kde-format
 msgid "About Clock"
 msgstr "Apie laikrodį"
 
-#: qml/settings/SettingsPage.qml:88
+#: qml/settings/SettingsPage.qml:87
 #, kde-format
 msgid "About KDE"
 msgstr "Apie KDE"
 
-#: qml/stopwatch/StopwatchPage.qml:151 qml/stopwatch/StopwatchPage.qml:186
-#: qml/timer/TimerPage.qml:54 qml/timer/TimerPage.qml:102
+#: qml/stopwatch/StopwatchPage.qml:150 qml/stopwatch/StopwatchPage.qml:185
+#: qml/timer/TimerPage.qml:53 qml/timer/TimerPage.qml:101
 #, kde-format
 msgid "Reset"
 msgstr "Atstatyti"
 
-#: qml/stopwatch/StopwatchPage.qml:153 qml/timer/TimerPage.qml:46
-#: qml/timer/TimerPage.qml:96
+#: qml/stopwatch/StopwatchPage.qml:152 qml/timer/TimerPage.qml:45
+#: qml/timer/TimerPage.qml:95
 #, kde-format
 msgid "Pause"
 msgstr "Pristabdyti"
 
-#: qml/stopwatch/StopwatchPage.qml:155
+#: qml/stopwatch/StopwatchPage.qml:154
 #, kde-format
 msgid "Resume"
 msgstr "Pratęsti"
 
-#: qml/stopwatch/StopwatchPage.qml:157 qml/timer/TimerPage.qml:46
-#: qml/timer/TimerPage.qml:96
+#: qml/stopwatch/StopwatchPage.qml:156 qml/timer/TimerPage.qml:45
+#: qml/timer/TimerPage.qml:95
 #, kde-format
 msgid "Start"
 msgstr "Paleisti"
 
-#: qml/stopwatch/StopwatchPage.qml:186 qml/stopwatch/StopwatchPage.qml:215
+#: qml/stopwatch/StopwatchPage.qml:185 qml/stopwatch/StopwatchPage.qml:214
 #, kde-format
 msgid "Lap"
 msgstr "Ratas"
 
-#: qml/stopwatch/StopwatchPage.qml:223
+#: qml/stopwatch/StopwatchPage.qml:222
 #, kde-format
 msgid "Lap Time"
 msgstr "Rato laikas"
 
-#: qml/stopwatch/StopwatchPage.qml:230
+#: qml/stopwatch/StopwatchPage.qml:229
 #, kde-format
 msgid "Total"
 msgstr "Iš viso"
 
-#: qml/stopwatch/StopwatchPage.qml:260
+#: qml/stopwatch/StopwatchPage.qml:259
 #, fuzzy, kde-format
 #| msgid "Pause"
 msgctxt "@action:button"
 msgid "Pause"
 msgstr "Pristabdyti"
 
-#: qml/stopwatch/StopwatchPage.qml:262
+#: qml/stopwatch/StopwatchPage.qml:261
 #, fuzzy, kde-format
 #| msgid "Resume"
 msgctxt "@action:button"
 msgid "Resume"
 msgstr "Pratęsti"
 
-#: qml/stopwatch/StopwatchPage.qml:264
+#: qml/stopwatch/StopwatchPage.qml:263
 #, fuzzy, kde-format
 #| msgid "Start"
 msgctxt "@action:button"
 msgid "Start"
 msgstr "Paleisti"
 
-#: qml/stopwatch/StopwatchPage.qml:322
+#: qml/stopwatch/StopwatchPage.qml:321
 #, kde-format
 msgid "#%1"
 msgstr "#%1"
@@ -477,17 +457,17 @@ msgstr "#%1"
 msgid "No locations found"
 msgstr "Nerasta vietų"
 
-#: qml/time/AddLocationPage.qml:17 qml/time/AddLocationWrapper.qml:33
+#: qml/time/AddLocationPage.qml:16 qml/time/AddLocationWrapper.qml:34
 #, kde-format
 msgid "Add Location"
 msgstr "Pridėti vietą"
 
-#: qml/time/TimePage.qml:52
+#: qml/time/TimePage.qml:51
 #, kde-format
 msgid "Add"
 msgstr "Pridėti"
 
-#: qml/time/TimePage.qml:168
+#: qml/time/TimePage.qml:167
 #, fuzzy, kde-format
 #| msgid "Add Location"
 msgctxt "@action:button"
@@ -622,49 +602,49 @@ msgctxt "@action:button"
 msgid "Done"
 msgstr "Atlikta"
 
-#: qml/timer/TimerListDelegate.qml:161
+#: qml/timer/TimerListDelegate.qml:160
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Loop timer"
 msgstr "Kartoti laikmatį"
 
-#: qml/timer/TimerListDelegate.qml:172
+#: qml/timer/TimerListDelegate.qml:171
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Pause"
 msgstr "Pristabdyti"
 
-#: qml/timer/TimerListDelegate.qml:172
+#: qml/timer/TimerListDelegate.qml:171
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start"
 msgstr "Paleisti"
 
-#: qml/timer/TimerListDelegate.qml:182
+#: qml/timer/TimerListDelegate.qml:181
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset"
 msgstr "Atstatyti"
 
-#: qml/timer/TimerListDelegate.qml:192
+#: qml/timer/TimerListDelegate.qml:191
 #, fuzzy, kde-format
 #| msgid "Edit"
 msgctxt "@info:tooltip"
 msgid "Edit"
 msgstr "Taisyti"
 
-#: qml/timer/TimerListDelegate.qml:203
+#: qml/timer/TimerListDelegate.qml:202
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete"
 msgstr "Ištrinti"
 
-#: qml/timer/TimerListPage.qml:30
+#: qml/timer/TimerListPage.qml:29
 #, kde-format
 msgid "New Timer"
 msgstr "Naujas laikmatis"
 
-#: qml/timer/TimerListPage.qml:55
+#: qml/timer/TimerListPage.qml:54
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
@@ -673,99 +653,99 @@ msgstr ""
 "Nerasta laikrodžio tarnybos. Paleiskite kclockd, kad galėtumėte naudotis "
 "laikmačio funkcionalumu."
 
-#: qml/timer/TimerListPage.qml:85
+#: qml/timer/TimerListPage.qml:84
 #, fuzzy, kde-format
 #| msgid "New Timer"
 msgctxt "@action:button"
 msgid "New Timer"
 msgstr "Naujas laikmatis"
 
-#: qml/timer/TimerListPage.qml:95
+#: qml/timer/TimerListPage.qml:94
 #, kde-format
 msgid "No timers configured"
 msgstr "Nėra sukonfigūruotų laikmačių"
 
-#: qml/timer/TimerListPage.qml:100
+#: qml/timer/TimerListPage.qml:99
 #, kde-format
 msgid "Add timer"
 msgstr "Pridėti laikmatį"
 
-#: qml/timer/TimerPage.qml:24
+#: qml/timer/TimerPage.qml:23
 #, kde-format
 msgid "New timer"
 msgstr "Naujas laikmatis"
 
-#: qml/timer/TimerPage.qml:60 qml/timer/TimerPage.qml:108
+#: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:107
 #, kde-format
 msgid "Delete"
 msgstr "Ištrinti"
 
-#: qml/timer/TimerPage.qml:69 qml/timer/TimerPage.qml:117
+#: qml/timer/TimerPage.qml:68 qml/timer/TimerPage.qml:116
 #, kde-format
 msgid "Loop Timer"
 msgstr "Kartoti laikmatį"
 
-#: qml/timer/TimerRingingPopup.qml:27
+#: qml/timer/TimerRingingPopup.qml:25
 #, kde-format
 msgid "Timer has finished"
 msgstr "Pasibaigė nustatyto laikmačio laikas"
 
-#: qml/timer/TimerRingingPopup.qml:46
+#: qml/timer/TimerRingingPopup.qml:44
 #, kde-format
 msgid "%1 has completed."
 msgstr "%1 laikas pasibaigė."
 
-#: qml/timer/TimerRingingPopup.qml:46
+#: qml/timer/TimerRingingPopup.qml:44
 #, kde-format
 msgid "The timer has completed."
 msgstr "Pasibaigė nustatyto laikmačio laikas."
 
-#: savedlocationsmodel.cpp:109
+#: savedlocationsmodel.cpp:119
 #, kde-format
 msgid "%1 hour and 30 minutes ahead"
 msgstr "%1 val. ir 30 min. skuba"
 
-#: savedlocationsmodel.cpp:109
+#: savedlocationsmodel.cpp:119
 #, kde-format
 msgid "%1 hours and 30 minutes ahead"
 msgstr "%1 val. ir 30 min. skuba"
 
-#: savedlocationsmodel.cpp:111
+#: savedlocationsmodel.cpp:121
 #, kde-format
 msgid "%1 hour ahead"
 msgstr "%1 val. skuba"
 
-#: savedlocationsmodel.cpp:111
+#: savedlocationsmodel.cpp:121
 #, kde-format
 msgid "%1 hours ahead"
 msgstr "%1 val. skuba"
 
-#: savedlocationsmodel.cpp:116
+#: savedlocationsmodel.cpp:126
 #, kde-format
 msgid "%1 hour and 30 minutes behind"
 msgstr "%1 val. ir 30 min. atsilieka"
 
-#: savedlocationsmodel.cpp:116
+#: savedlocationsmodel.cpp:126
 #, kde-format
 msgid "%1 hours and 30 minutes behind"
 msgstr "%1 val. ir 30 min. atsilieka"
 
-#: savedlocationsmodel.cpp:118
+#: savedlocationsmodel.cpp:128
 #, kde-format
 msgid "%1 hour behind"
 msgstr "%1 val. atsilieka"
 
-#: savedlocationsmodel.cpp:118
+#: savedlocationsmodel.cpp:128
 #, kde-format
 msgid "%1 hours behind"
 msgstr "%1 val. atsilieka"
 
-#: savedlocationsmodel.cpp:121
+#: savedlocationsmodel.cpp:131
 #, kde-format
 msgid "Local time"
 msgstr "Vietinis laikas"
 
-#: utilmodel.cpp:78
+#: utilmodel.cpp:88
 #, kde-format
 msgid "%1 day"
 msgid_plural "%1 days"
@@ -774,12 +754,17 @@ msgstr[1] "%1 dienos"
 msgstr[2] "%1 dienų"
 msgstr[3] "%1 diena"
 
-#: utilmodel.cpp:84 utilmodel.cpp:90
+#: utilmodel.cpp:92 utilmodel.cpp:187
+#, kde-format
+msgid ", "
+msgstr ", "
+
+#: utilmodel.cpp:94 utilmodel.cpp:100
 #, kde-format
 msgid " and "
 msgstr " ir "
 
-#: utilmodel.cpp:86
+#: utilmodel.cpp:96
 #, kde-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
@@ -788,7 +773,7 @@ msgstr[1] "%1 valandos"
 msgstr[2] "%1 valandų"
 msgstr[3] "%1 valanda"
 
-#: utilmodel.cpp:92
+#: utilmodel.cpp:102
 #, kde-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -797,15 +782,36 @@ msgstr[1] "%1 minutės"
 msgstr[2] "%1 minučių"
 msgstr[3] "%1 minutė"
 
-#: utilmodel.cpp:96
+#: utilmodel.cpp:106
 #, kde-format
 msgid "Alarm will ring in under a minute"
 msgstr "Žadintuvas skambės po mažiau nei minutės"
 
-#: utilmodel.cpp:98
+#: utilmodel.cpp:108
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "Žadintuvas skambės po %1"
+
+#: utilmodel.cpp:160
+#, fuzzy, kde-format
+#| msgid "Only once"
+msgctxt "Repeat"
+msgid "Only once"
+msgstr "Tik kartą"
+
+#: utilmodel.cpp:163
+#, fuzzy, kde-format
+#| msgid "Everyday"
+msgctxt "Repeat"
+msgid "Everyday"
+msgstr "Kasdieną"
+
+#: utilmodel.cpp:166
+#, fuzzy, kde-format
+#| msgid "Weekdays"
+msgctxt "Repeat"
+msgid "Weekdays"
+msgstr "Šiokiadieniais"
 
 #~ msgid "5 m"
 #~ msgstr "5 min."
