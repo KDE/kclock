@@ -106,9 +106,7 @@ target_link_libraries(kclock PRIVATE
     KF6::ConfigCore
     KF6::ConfigGui
     KF6::CoreAddons
-    KF6::Notifications
     KF6::DBusAddons
-    KF6::StatusNotifierItem
     KF6::Crash
     KF6::I18nQml
     KF6::Svg

@@ -13,15 +13,11 @@
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
-#include <KStatusNotifierItem>
 
 #include <QDBusConnection>
 #include <QDBusMessage>
 #include <QDBusPendingCallWatcher>
-#include <QDBusReply>
-#include <QLocale>
 #include <QQmlEngine>
-#include <QThread>
 #include <QXmlStreamReader>
 
 AlarmModel *AlarmModel::instance()
