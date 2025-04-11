@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-10 00:44+0000\n"
+"POT-Creation-Date: 2025-04-11 00:44+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -175,7 +175,7 @@ msgstr "新闹钟"
 msgid "Done"
 msgstr "完成"
 
-#: qml/alarm/AlarmFormPage.qml:67 qml/timer/TimerFormDialog.qml:108
+#: qml/alarm/AlarmFormPage.qml:67 qml/timer/TimerFormDialog.qml:111
 #, kde-format
 msgid "Cancel"
 msgstr "取消"
@@ -464,151 +464,151 @@ msgstr "添加位置"
 msgid "1 m"
 msgstr "1 分钟"
 
-#: qml/timer/TimerForm.qml:39
+#: qml/timer/TimerForm.qml:40
 #, kde-format
 msgid "1 min"
 msgstr "1 分钟"
 
-#: qml/timer/TimerForm.qml:40
+#: qml/timer/TimerForm.qml:41
 #, kde-format
 msgid "5 min"
 msgstr "5 分钟"
 
-#: qml/timer/TimerForm.qml:41
+#: qml/timer/TimerForm.qml:42
 #, kde-format
 msgid "10 min"
 msgstr "10 分钟"
 
-#: qml/timer/TimerForm.qml:42
+#: qml/timer/TimerForm.qml:43
 #, kde-format
 msgid "15 min"
 msgstr "15 分钟"
 
-#: qml/timer/TimerForm.qml:43
+#: qml/timer/TimerForm.qml:44
 #, kde-format
 msgid "30 min"
 msgstr "30 分钟"
 
-#: qml/timer/TimerForm.qml:44
+#: qml/timer/TimerForm.qml:45
 #, kde-format
 msgid "1 h"
 msgstr "1 小时"
 
-#: qml/timer/TimerForm.qml:63
+#: qml/timer/TimerForm.qml:64
 #, kde-format
 msgid "<b>Duration:</b>"
 msgstr "<b>持续时间：</b>"
 
-#: qml/timer/TimerForm.qml:76
+#: qml/timer/TimerForm.qml:77
 #, kde-format
 msgid "hours"
 msgstr " 小时"
 
-#: qml/timer/TimerForm.qml:91
+#: qml/timer/TimerForm.qml:92
 #, kde-format
 msgid "minutes"
 msgstr " 分钟"
 
-#: qml/timer/TimerForm.qml:106
+#: qml/timer/TimerForm.qml:107
 #, kde-format
 msgid "seconds"
 msgstr "秒"
 
-#: qml/timer/TimerForm.qml:112
+#: qml/timer/TimerForm.qml:114 qml/timer/TimerListDelegate.qml:142
+#: qml/timer/TimerPage.qml:68 qml/timer/TimerPage.qml:116
+#, kde-format
+msgid "Loop Timer"
+msgstr "循环计时器"
+
+#: qml/timer/TimerForm.qml:120
 #, kde-format
 msgid "<b>Label:</b>"
 msgstr "<b>标签：</b>"
 
-#: qml/timer/TimerForm.qml:117
+#: qml/timer/TimerForm.qml:125
 #, kde-format
 msgid "<b>Command at timeout:</b>"
 msgstr "<b>超时后执行命令：</b>"
 
-#: qml/timer/TimerForm.qml:120
+#: qml/timer/TimerForm.qml:128
 #, kde-format
 msgid "optional"
 msgstr "可选"
 
-#: qml/timer/TimerFormDialog.qml:35
+#: qml/timer/TimerFormDialog.qml:36
 #, kde-format
 msgctxt "@title:window Edit timer"
 msgid "Edit %1"
 msgstr "编辑 %1"
 
-#: qml/timer/TimerFormDialog.qml:35
+#: qml/timer/TimerFormDialog.qml:36
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Timer"
 msgstr "新建计时器"
 
-#: qml/timer/TimerFormDialog.qml:51
+#: qml/timer/TimerFormDialog.qml:53
 #, kde-format
 msgid "Timer"
 msgstr "计时器"
 
-#: qml/timer/TimerFormDialog.qml:68
+#: qml/timer/TimerFormDialog.qml:71
 #, kde-format
 msgid "Hide Presets"
 msgstr "隐藏预设"
 
-#: qml/timer/TimerFormDialog.qml:68
+#: qml/timer/TimerFormDialog.qml:71
 #, kde-format
 msgid "Show Presets"
 msgstr "显示预设"
 
-#: qml/timer/TimerFormDialog.qml:73
+#: qml/timer/TimerFormDialog.qml:76
 #, kde-format
 msgid "Toggle Delete"
 msgstr "切换删除"
 
-#: qml/timer/TimerFormDialog.qml:100
+#: qml/timer/TimerFormDialog.qml:103
 #, kde-format
 msgid "Save As Preset"
 msgstr "保存为预设"
 
-#: qml/timer/TimerFormDialog.qml:113
+#: qml/timer/TimerFormDialog.qml:116
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
 msgstr "保存"
 
-#: qml/timer/TimerFormDialog.qml:113
+#: qml/timer/TimerFormDialog.qml:116
 #, kde-format
 msgctxt "@action:button"
 msgid "Done"
 msgstr "完成"
 
-#: qml/timer/TimerListDelegate.qml:160
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Loop timer"
-msgstr "循环计时器"
-
-#: qml/timer/TimerListDelegate.qml:171
+#: qml/timer/TimerListDelegate.qml:180
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Pause"
 msgstr "暂停"
 
-#: qml/timer/TimerListDelegate.qml:171
+#: qml/timer/TimerListDelegate.qml:180
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start"
 msgstr "开始"
 
-#: qml/timer/TimerListDelegate.qml:181
+#: qml/timer/TimerListDelegate.qml:190
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset"
 msgstr "重置"
 
-#: qml/timer/TimerListDelegate.qml:191
+#: qml/timer/TimerListDelegate.qml:200
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit"
 msgstr "编辑"
 
-#: qml/timer/TimerListDelegate.qml:202
+#: qml/timer/TimerListDelegate.qml:211
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete"
@@ -652,11 +652,6 @@ msgstr "新计时器"
 msgid "Delete"
 msgstr "删除"
 
-#: qml/timer/TimerPage.qml:68 qml/timer/TimerPage.qml:116
-#, kde-format
-msgid "Loop Timer"
-msgstr "循环计时器"
-
 #: qml/timer/TimerRingingPopup.qml:25
 #, kde-format
 msgid "Timer has finished"
@@ -672,47 +667,47 @@ msgstr "%1 已完成计时。"
 msgid "The timer has completed."
 msgstr "计时器已完成计时。"
 
-#: savedlocationsmodel.cpp:119
+#: savedlocationsmodel.cpp:121
 #, kde-format
 msgid "%1 hour and 30 minutes ahead"
 msgstr "还有 %1 小时 30 分钟"
 
-#: savedlocationsmodel.cpp:119
+#: savedlocationsmodel.cpp:121
 #, kde-format
 msgid "%1 hours and 30 minutes ahead"
 msgstr "还有 %1 小时 30 分钟"
 
-#: savedlocationsmodel.cpp:121
+#: savedlocationsmodel.cpp:123
 #, kde-format
 msgid "%1 hour ahead"
 msgstr "还有 %1 小时"
 
-#: savedlocationsmodel.cpp:121
+#: savedlocationsmodel.cpp:123
 #, kde-format
 msgid "%1 hours ahead"
 msgstr "还有 %1 小时"
 
-#: savedlocationsmodel.cpp:126
+#: savedlocationsmodel.cpp:128
 #, kde-format
 msgid "%1 hour and 30 minutes behind"
 msgstr "已经过 %1 小时 30 分钟"
 
-#: savedlocationsmodel.cpp:126
+#: savedlocationsmodel.cpp:128
 #, kde-format
 msgid "%1 hours and 30 minutes behind"
 msgstr "已经过 %1 小时 30 分钟"
 
-#: savedlocationsmodel.cpp:128
+#: savedlocationsmodel.cpp:130
 #, kde-format
 msgid "%1 hour behind"
 msgstr "已经过 %1 小时"
 
-#: savedlocationsmodel.cpp:128
+#: savedlocationsmodel.cpp:130
 #, kde-format
 msgid "%1 hours behind"
 msgstr "已经过 %1 小时"
 
-#: savedlocationsmodel.cpp:131
+#: savedlocationsmodel.cpp:133
 #, kde-format
 msgid "Local time"
 msgstr "本地时间"
@@ -775,3 +770,7 @@ msgstr "每天"
 msgctxt "Repeat"
 msgid "Weekdays"
 msgstr "工作日"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Loop timer"
+#~ msgstr "循环计时器"

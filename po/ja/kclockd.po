@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-08 00:44+0000\n"
+"POT-Creation-Date: 2025-04-11 00:44+0000\n"
 "PO-Revision-Date: 2020-06-13 17:20-0700\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -29,7 +29,7 @@ msgstr ""
 msgid "Alarm"
 msgstr ""
 
-#: alarm.cpp:76 timer.cpp:67
+#: alarm.cpp:76 timer.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Dismiss"
@@ -161,12 +161,12 @@ msgstr ""
 msgid "Han Young"
 msgstr ""
 
-#: timer.cpp:62
+#: timer.cpp:63
 #, kde-format
 msgid "Timer complete"
 msgstr ""
 
-#: timer.cpp:63
+#: timer.cpp:64
 #, kde-format
 msgid "Your timer %1 has finished!"
 msgstr ""

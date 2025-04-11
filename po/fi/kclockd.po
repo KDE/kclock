@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-08 00:44+0000\n"
+"POT-Creation-Date: 2025-04-11 00:44+0000\n"
 "PO-Revision-Date: 2022-04-15 23:10+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -31,7 +31,7 @@ msgstr "translator@legisign.org"
 msgid "Alarm"
 msgstr "Hälytys"
 
-#: alarm.cpp:76 timer.cpp:67
+#: alarm.cpp:76 timer.cpp:68
 #, fuzzy, kde-format
 #| msgid "Dismiss"
 msgctxt "@action:button"
@@ -167,12 +167,12 @@ msgstr "Devin Lin"
 msgid "Han Young"
 msgstr "Han Young"
 
-#: timer.cpp:62
+#: timer.cpp:63
 #, kde-format
 msgid "Timer complete"
 msgstr "Ajastus on päättynyt"
 
-#: timer.cpp:63
+#: timer.cpp:64
 #, kde-format
 msgid "Your timer %1 has finished!"
 msgstr "Ajastus %1 on päättynyt!"

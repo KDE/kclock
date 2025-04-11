@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-08 00:44+0000\n"
+"POT-Creation-Date: 2025-04-11 00:44+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -32,7 +32,7 @@ msgstr "tds00@qq.com"
 msgid "Alarm"
 msgstr "闹钟"
 
-#: alarm.cpp:76 timer.cpp:67
+#: alarm.cpp:76 timer.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Dismiss"
@@ -164,12 +164,12 @@ msgstr "Devin Lin"
 msgid "Han Young"
 msgstr "Han Young"
 
-#: timer.cpp:62
+#: timer.cpp:63
 #, kde-format
 msgid "Timer complete"
 msgstr "计时器完成计时"
 
-#: timer.cpp:63
+#: timer.cpp:64
 #, kde-format
 msgid "Your timer %1 has finished!"
 msgstr "计时器 %1 已完成计时！"

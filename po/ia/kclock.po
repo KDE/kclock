@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-10 00:44+0000\n"
-"PO-Revision-Date: 2025-04-07 10:54+0200\n"
+"POT-Creation-Date: 2025-04-11 00:44+0000\n"
+"PO-Revision-Date: 2025-04-10 14:54+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -178,7 +178,7 @@ msgstr "Nove alarma"
 msgid "Done"
 msgstr "Facite"
 
-#: qml/alarm/AlarmFormPage.qml:67 qml/timer/TimerFormDialog.qml:108
+#: qml/alarm/AlarmFormPage.qml:67 qml/timer/TimerFormDialog.qml:111
 #, kde-format
 msgid "Cancel"
 msgstr "Cancella"
@@ -472,151 +472,151 @@ msgstr "Adde location"
 msgid "1 m"
 msgstr "1 m"
 
-#: qml/timer/TimerForm.qml:39
+#: qml/timer/TimerForm.qml:40
 #, kde-format
 msgid "1 min"
 msgstr "1 min"
 
-#: qml/timer/TimerForm.qml:40
+#: qml/timer/TimerForm.qml:41
 #, kde-format
 msgid "5 min"
 msgstr "5 min"
 
-#: qml/timer/TimerForm.qml:41
+#: qml/timer/TimerForm.qml:42
 #, kde-format
 msgid "10 min"
 msgstr "10 min"
 
-#: qml/timer/TimerForm.qml:42
+#: qml/timer/TimerForm.qml:43
 #, kde-format
 msgid "15 min"
 msgstr "15 min"
 
-#: qml/timer/TimerForm.qml:43
+#: qml/timer/TimerForm.qml:44
 #, kde-format
 msgid "30 min"
 msgstr "30 min"
 
-#: qml/timer/TimerForm.qml:44
+#: qml/timer/TimerForm.qml:45
 #, kde-format
 msgid "1 h"
 msgstr "1 h"
 
-#: qml/timer/TimerForm.qml:63
+#: qml/timer/TimerForm.qml:64
 #, kde-format
 msgid "<b>Duration:</b>"
 msgstr "<b>Duration:</b>"
 
-#: qml/timer/TimerForm.qml:76
+#: qml/timer/TimerForm.qml:77
 #, kde-format
 msgid "hours"
 msgstr "horas"
 
-#: qml/timer/TimerForm.qml:91
+#: qml/timer/TimerForm.qml:92
 #, kde-format
 msgid "minutes"
 msgstr "minutas"
 
-#: qml/timer/TimerForm.qml:106
+#: qml/timer/TimerForm.qml:107
 #, kde-format
 msgid "seconds"
 msgstr "secundas"
 
-#: qml/timer/TimerForm.qml:112
+#: qml/timer/TimerForm.qml:114 qml/timer/TimerListDelegate.qml:142
+#: qml/timer/TimerPage.qml:68 qml/timer/TimerPage.qml:116
+#, kde-format
+msgid "Loop Timer"
+msgstr "Chronometro de anillo (repetite)"
+
+#: qml/timer/TimerForm.qml:120
 #, kde-format
 msgid "<b>Label:</b>"
 msgstr "<b>Etiquetta:</b>"
 
-#: qml/timer/TimerForm.qml:117
+#: qml/timer/TimerForm.qml:125
 #, kde-format
 msgid "<b>Command at timeout:</b>"
 msgstr "<b>Commanda a tempore expirate:</b>"
 
-#: qml/timer/TimerForm.qml:120
+#: qml/timer/TimerForm.qml:128
 #, kde-format
 msgid "optional"
 msgstr "optional"
 
-#: qml/timer/TimerFormDialog.qml:35
+#: qml/timer/TimerFormDialog.qml:36
 #, kde-format
 msgctxt "@title:window Edit timer"
 msgid "Edit %1"
 msgstr "Modifica %1"
 
-#: qml/timer/TimerFormDialog.qml:35
+#: qml/timer/TimerFormDialog.qml:36
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Timer"
 msgstr "Crea chronometro (horologio)"
 
-#: qml/timer/TimerFormDialog.qml:51
+#: qml/timer/TimerFormDialog.qml:53
 #, kde-format
 msgid "Timer"
 msgstr "Temporisator o Chronometro"
 
-#: qml/timer/TimerFormDialog.qml:68
+#: qml/timer/TimerFormDialog.qml:71
 #, kde-format
 msgid "Hide Presets"
 msgstr "Cela Preregulationes"
 
-#: qml/timer/TimerFormDialog.qml:68
+#: qml/timer/TimerFormDialog.qml:71
 #, kde-format
 msgid "Show Presets"
 msgstr "Monstra Preregulationes"
 
-#: qml/timer/TimerFormDialog.qml:73
+#: qml/timer/TimerFormDialog.qml:76
 #, kde-format
 msgid "Toggle Delete"
 msgstr "Commuta dele"
 
-#: qml/timer/TimerFormDialog.qml:100
+#: qml/timer/TimerFormDialog.qml:103
 #, kde-format
 msgid "Save As Preset"
 msgstr "Salveguarda como preregulate"
 
-#: qml/timer/TimerFormDialog.qml:113
+#: qml/timer/TimerFormDialog.qml:116
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
 msgstr "Salveguarda"
 
-#: qml/timer/TimerFormDialog.qml:113
+#: qml/timer/TimerFormDialog.qml:116
 #, kde-format
 msgctxt "@action:button"
 msgid "Done"
 msgstr "Facite"
 
-#: qml/timer/TimerListDelegate.qml:160
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Loop timer"
-msgstr "Chronometro de anillo (repetite)"
-
-#: qml/timer/TimerListDelegate.qml:171
+#: qml/timer/TimerListDelegate.qml:180
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Pause"
 msgstr "Pausa"
 
-#: qml/timer/TimerListDelegate.qml:171
+#: qml/timer/TimerListDelegate.qml:180
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start"
 msgstr "Initia"
 
-#: qml/timer/TimerListDelegate.qml:181
+#: qml/timer/TimerListDelegate.qml:190
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset"
 msgstr "Reinitialisa"
 
-#: qml/timer/TimerListDelegate.qml:191
+#: qml/timer/TimerListDelegate.qml:200
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit"
 msgstr "Modifica"
 
-#: qml/timer/TimerListDelegate.qml:202
+#: qml/timer/TimerListDelegate.qml:211
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete"
@@ -662,11 +662,6 @@ msgstr "Nove chronometro"
 msgid "Delete"
 msgstr "Dele"
 
-#: qml/timer/TimerPage.qml:68 qml/timer/TimerPage.qml:116
-#, kde-format
-msgid "Loop Timer"
-msgstr "Chronometro de anillo (repetite)"
-
 #: qml/timer/TimerRingingPopup.qml:25
 #, kde-format
 msgid "Timer has finished"
@@ -682,47 +677,47 @@ msgstr "%1 ha completate."
 msgid "The timer has completed."
 msgstr "Le chronometro ha completate."
 
-#: savedlocationsmodel.cpp:119
+#: savedlocationsmodel.cpp:121
 #, kde-format
 msgid "%1 hour and 30 minutes ahead"
 msgstr "%1 hora e 30 minutas avante"
 
-#: savedlocationsmodel.cpp:119
+#: savedlocationsmodel.cpp:121
 #, kde-format
 msgid "%1 hours and 30 minutes ahead"
 msgstr "%1 horas e 30 minutas avante"
 
-#: savedlocationsmodel.cpp:121
+#: savedlocationsmodel.cpp:123
 #, kde-format
 msgid "%1 hour ahead"
 msgstr "%1 hora avante"
 
-#: savedlocationsmodel.cpp:121
+#: savedlocationsmodel.cpp:123
 #, kde-format
 msgid "%1 hours ahead"
 msgstr "%1 horas avante"
 
-#: savedlocationsmodel.cpp:126
+#: savedlocationsmodel.cpp:128
 #, kde-format
 msgid "%1 hour and 30 minutes behind"
 msgstr "%1 hora e 30 minutas retro"
 
-#: savedlocationsmodel.cpp:126
+#: savedlocationsmodel.cpp:128
 #, kde-format
 msgid "%1 hours and 30 minutes behind"
 msgstr "%1 horas e 30 minutas retro"
 
-#: savedlocationsmodel.cpp:128
+#: savedlocationsmodel.cpp:130
 #, kde-format
 msgid "%1 hour behind"
 msgstr "%1 hora  retro"
 
-#: savedlocationsmodel.cpp:128
+#: savedlocationsmodel.cpp:130
 #, kde-format
 msgid "%1 hours behind"
 msgstr "%1 horas  retro"
 
-#: savedlocationsmodel.cpp:131
+#: savedlocationsmodel.cpp:133
 #, kde-format
 msgid "Local time"
 msgstr "Tempore Local"
@@ -769,25 +764,26 @@ msgid "Alarm will ring in %1"
 msgstr "Alarma tintinnara in %1"
 
 #: utilmodel.cpp:160
-#, fuzzy, kde-format
-#| msgid "Only once"
+#, kde-format
 msgctxt "Repeat"
 msgid "Only once"
 msgstr "Solmente olim"
 
 #: utilmodel.cpp:163
-#, fuzzy, kde-format
-#| msgid "Everyday"
+#, kde-format
 msgctxt "Repeat"
 msgid "Everyday"
 msgstr "Quotidian"
 
 #: utilmodel.cpp:166
-#, fuzzy, kde-format
-#| msgid "Weekdays"
+#, kde-format
 msgctxt "Repeat"
 msgid "Weekdays"
 msgstr "Dies de septimana "
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Loop timer"
+#~ msgstr "Chronometro de anillo (repetite)"
 
 #~ msgid "5 m"
 #~ msgstr "5 m"
