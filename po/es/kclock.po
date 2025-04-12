@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-11 00:44+0000\n"
-"PO-Revision-Date: 2025-04-06 12:55+0100\n"
+"PO-Revision-Date: 2025-04-11 20:30+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -763,26 +763,19 @@ msgid "Alarm will ring in %1"
 msgstr "La alarma sonará en %1"
 
 #: utilmodel.cpp:160
-#, fuzzy, kde-format
-#| msgid "Only once"
+#, kde-format
 msgctxt "Repeat"
 msgid "Only once"
 msgstr "Solo una vez"
 
 #: utilmodel.cpp:163
-#, fuzzy, kde-format
-#| msgid "Everyday"
+#, kde-format
 msgctxt "Repeat"
 msgid "Everyday"
 msgstr "Cada día"
 
 #: utilmodel.cpp:166
-#, fuzzy, kde-format
-#| msgid "Weekdays"
+#, kde-format
 msgctxt "Repeat"
 msgid "Weekdays"
 msgstr "Días de la semana"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Loop timer"
-#~ msgstr "Temporizador de bucle"

@@ -751,26 +751,19 @@ msgid "Alarm will ring in %1"
 msgstr "闹钟将在 %1 响起"
 
 #: utilmodel.cpp:160
-#, fuzzy, kde-format
-#| msgid "Only once"
+#, kde-format
 msgctxt "Repeat"
 msgid "Only once"
 msgstr "仅一次"
 
 #: utilmodel.cpp:163
-#, fuzzy, kde-format
-#| msgid "Everyday"
+#, kde-format
 msgctxt "Repeat"
 msgid "Everyday"
 msgstr "每天"
 
 #: utilmodel.cpp:166
-#, fuzzy, kde-format
-#| msgid "Weekdays"
+#, kde-format
 msgctxt "Repeat"
 msgid "Weekdays"
 msgstr "工作日"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Loop timer"
-#~ msgstr "循环计时器"

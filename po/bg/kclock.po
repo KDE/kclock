@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-11 00:44+0000\n"
-"PO-Revision-Date: 2025-04-06 16:54+0200\n"
+"PO-Revision-Date: 2025-04-11 21:08+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -763,22 +763,19 @@ msgid "Alarm will ring in %1"
 msgstr "Алармата ще звънне след %1"
 
 #: utilmodel.cpp:160
-#, fuzzy, kde-format
-#| msgid "Only once"
+#, kde-format
 msgctxt "Repeat"
 msgid "Only once"
 msgstr "Само веднъж"
 
 #: utilmodel.cpp:163
-#, fuzzy, kde-format
-#| msgid "Everyday"
+#, kde-format
 msgctxt "Repeat"
 msgid "Everyday"
 msgstr "Всеки ден"
 
 #: utilmodel.cpp:166
-#, fuzzy, kde-format
-#| msgid "Weekdays"
+#, kde-format
 msgctxt "Repeat"
 msgid "Weekdays"
 msgstr "Делнични дни"
