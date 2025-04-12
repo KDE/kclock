@@ -105,6 +105,7 @@ Delegates.RoundedItemDelegate {
                     }
                     return subtitleString;
                 }
+                textFormat: Text.PlainText
             }
         }
 

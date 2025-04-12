@@ -158,6 +158,7 @@ Kirigami.AbstractCard {
                     Layout.fillWidth: true
                     text: root.label
                     elide: Text.ElideRight
+                    textFormat: Text.PlainText
 
                     HoverHandler {
                         id: labelHoverHandler

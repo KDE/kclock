@@ -150,6 +150,7 @@ Item {
         level: 4
         text: timer.label
         color: timerRunning ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
+        textFormat: Text.PlainText
         anchors.bottom: timeLabels.top
         anchors.bottomMargin: Kirigami.Units.smallSpacing
         anchors.horizontalCenter: parent.horizontalCenter
