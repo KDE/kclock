@@ -16,8 +16,8 @@ class KClock_1x2 : public Plasma::Applet
     Q_OBJECT
     Q_PROPERTY(QDateTime datetime READ datetime NOTIFY timeChanged)
     Q_PROPERTY(QString date READ date NOTIFY timeChanged)
-    Q_PROPERTY(QString alarmTime READ alarmTime NOTIFY propertyChanged)
-    Q_PROPERTY(bool hasAlarm READ hasAlarm NOTIFY propertyChanged)
+    Q_PROPERTY(QString alarmTime READ alarmTime NOTIFY alarmTimeChanged)
+    Q_PROPERTY(bool hasAlarm READ hasAlarm NOTIFY hasAlarmChanged)
 
 public:
     KClock_1x2(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args);
@@ -25,13 +25,14 @@ public:
 
     QString date() const;
     QDateTime datetime() const;
-    QString alarmTime();
-    bool hasAlarm();
+    QString alarmTime() const;
+    bool hasAlarm() const;
     Q_INVOKABLE void openKClock();
 
 Q_SIGNALS:
-    void propertyChanged();
     void timeChanged();
+    void alarmTimeChanged();
+    void hasAlarmChanged();
 
 private Q_SLOTS:
     void updateAlarm(qulonglong time);

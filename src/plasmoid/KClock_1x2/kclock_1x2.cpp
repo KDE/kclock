@@ -9,8 +9,8 @@
 #include <KLocalizedString>
 
 #include <QDBusConnection>
-#include <QDBusInterface>
-#include <QDBusReply>
+#include <QDBusPendingCallWatcher>
+#include <QDBusPendingReply>
 
 KClock_1x2::KClock_1x2(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args)
     : Plasma::Applet(parent, metaData, args)
@@ -32,34 +32,40 @@ KClock_1x2::KClock_1x2(QObject *parent, const KPluginMetaData &metaData, const Q
         m_string = QStringLiteral("connection to kclockd failed");
     }
 
-    QDBusInterface *interface = new QDBusInterface(QStringLiteral("org.kde.kclockd"),
-                                                   QStringLiteral("/Alarms"),
-                                                   QStringLiteral("org.kde.kclock.AlarmModel"),
-                                                   QDBusConnection::sessionBus(),
-                                                   this);
-    QDBusReply<quint64> reply = interface->call(QStringLiteral("getNextAlarm"));
+    QDBusMessage message = QDBusMessage::createMethodCall(QStringLiteral("org.kde.kclockd"),
+                                                          QStringLiteral("/Alarms"),
+                                                          QStringLiteral("org.kde.kclock.AlarmModel"),
+                                                          QStringLiteral("getNextAlarm"));
 
-    if (reply.isValid()) {
-        auto alarmTime = reply.value();
-        if (alarmTime > 0) {
-            auto dateTime = QDateTime::fromSecsSinceEpoch(alarmTime).toLocalTime();
-            m_string = QStringLiteral("%1, %2").arg(m_locale.standaloneDayName(dateTime.date().dayOfWeek(), QLocale::ShortFormat),
-                                                    m_locale.toString(dateTime.time(), QStringLiteral("hh:mm")));
-            m_hasAlarm = true;
+    QDBusPendingCall call = QDBusConnection::sessionBus().asyncCall(message);
+    auto *watcher = new QDBusPendingCallWatcher(call, this);
+    connect(watcher, &QDBusPendingCallWatcher::finished, this, [this, watcher] {
+        QDBusPendingReply<quint64> reply = *watcher;
+
+        if (reply.isError()) {
+            qWarning() << "Failed to fetch next alarm" << reply.error().name() << reply.error().message();
         } else {
-            m_hasAlarm = false;
+            const auto alarmTime = reply.value();
+            if (alarmTime > 0) {
+                auto dateTime = QDateTime::fromSecsSinceEpoch(alarmTime).toLocalTime();
+                m_string = QStringLiteral("%1, %2").arg(m_locale.standaloneDayName(dateTime.date().dayOfWeek(), QLocale::ShortFormat),
+                                                        m_locale.toString(dateTime.time(), QStringLiteral("hh:mm")));
+                Q_EMIT alarmTimeChanged();
+                m_hasAlarm = true;
+                Q_EMIT hasAlarmChanged();
+            }
         }
-    }
 
-    Q_EMIT propertyChanged();
+        watcher->deleteLater();
+    });
 }
 
-QString KClock_1x2::alarmTime()
+QString KClock_1x2::alarmTime() const
 {
     return m_string;
-};
+}
 
-bool KClock_1x2::hasAlarm()
+bool KClock_1x2::hasAlarm() const
 {
     return m_hasAlarm;
 }
@@ -67,14 +73,17 @@ bool KClock_1x2::hasAlarm()
 void KClock_1x2::updateAlarm(qulonglong time)
 {
     auto dateTime = QDateTime::fromSecsSinceEpoch(time).toLocalTime();
-    if (time > 0) {
+    const bool hasAlarm = time > 0;
+    if (hasAlarm) {
         m_string = QStringLiteral("%1, %2").arg(m_locale.standaloneDayName(dateTime.date().dayOfWeek(), QLocale::ShortFormat),
                                                 m_locale.toString(dateTime.time(), QStringLiteral("hh:mm")));
-        m_hasAlarm = true;
-    } else {
-        m_hasAlarm = false;
+        Q_EMIT alarmTimeChanged();
     }
-    Q_EMIT propertyChanged();
+
+    if (m_hasAlarm != hasAlarm) {
+        m_hasAlarm = hasAlarm;
+        Q_EMIT hasAlarmChanged();
+    }
 }
 
 void KClock_1x2::openKClock()
