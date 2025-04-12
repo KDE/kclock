@@ -53,6 +53,7 @@ int main(int argc, char *argv[])
     aboutData.setBugAddress("https://bugs.kde.org/describecomponents.cgi?product=KClock");
     aboutData.addAuthor(i18n("Devin Lin"), QString(), QStringLiteral("devin@kde.org"));
     aboutData.addAuthor(i18n("Han Young"), QString(), QStringLiteral("hanyoung@protonmail.com"));
+    aboutData.addAuthor(i18n("Kai Uwe Broulik"), i18nc("Author", "Desktop Integration"), QStringLiteral("kde@broulik.de"));
     KAboutData::setApplicationData(aboutData);
     KCrash::initialize();
 
