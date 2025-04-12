@@ -13,6 +13,8 @@ target_link_libraries(org.kde.plasma.kclock_1x2
     Qt6::DBus
     Plasma::Plasma
     KF6::I18n
+    KF6::JobWidgets
+    KF6::KIOGui
 )
 
 install(FILES kclock_plasmoid_1x2.svg DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/scalable/apps/)

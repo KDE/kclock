@@ -7,6 +7,9 @@
 #include "kclock_1x2.h"
 
 #include <KLocalizedString>
+#include <KNotificationJobUiDelegate>
+
+#include <KIO/ApplicationLauncherJob>
 
 #include <QDBusConnection>
 #include <QDBusPendingCallWatcher>
@@ -88,8 +91,10 @@ void KClock_1x2::updateAlarm(qulonglong time)
 
 void KClock_1x2::openKClock()
 {
-    m_process = new QProcess(this);
-    m_process->start(QStringLiteral("kclock"), QStringList());
+    auto kclockService = KService::serviceByDesktopName(QStringLiteral("org.kde.kclock"));
+    auto *job = new KIO::ApplicationLauncherJob(kclockService);
+    job->setUiDelegate(new KNotificationJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled));
+    job->start();
 }
 
 void KClock_1x2::initialTimeUpdate()

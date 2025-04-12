@@ -70,6 +70,7 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
     Svg
 )
 if (BUILD_PLASMOID)
+    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS KIO JobWidgets)
     find_package(Plasma REQUIRED)
 endif()
 
