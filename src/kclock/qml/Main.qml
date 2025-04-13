@@ -21,6 +21,8 @@ Kirigami.ApplicationWindow {
     width: Kirigami.Settings.isMobile ? 360 : 550
     height: Kirigami.Settings.isMobile ? 720 : 500
 
+    Kirigami.Theme.colorSet: Kirigami.Theme.View
+
     title: {
         const currentPage = pageStack.currentItem
         if (currentPage) {

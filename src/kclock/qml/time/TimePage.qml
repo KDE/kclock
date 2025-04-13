@@ -25,6 +25,7 @@ Kirigami.ScrollablePage {
     title: i18n("Time")
     readonly property string hiddenTitle: KClockFormat.currentTime
     icon.name: "clock"
+    background: null
 
     actions: [newAction, editAction, settingsAction]
 

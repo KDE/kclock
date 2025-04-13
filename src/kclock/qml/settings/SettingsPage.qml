@@ -20,6 +20,7 @@ FormCard.FormCardPage {
     objectName: "Settings"
     title: i18n("Settings")
     icon.name: "settings-configure"
+    background: null
 
     Kirigami.ColumnView.fillWidth: false
 

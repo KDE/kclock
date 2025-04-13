@@ -21,6 +21,7 @@ Kirigami.ScrollablePage {
     objectName: "Alarms"
     title: i18n("Alarms")
     icon.name: "notifications"
+    background: null
 
     actions: [
         Kirigami.Action {

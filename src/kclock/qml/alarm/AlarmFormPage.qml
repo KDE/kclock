@@ -24,9 +24,7 @@ Kirigami.ScrollablePage {
 
     title: selectedAlarm ? i18nc("Edit alarm page title", "Editing %1", selectedAlarm.name === "" ? i18n("Alarm") : selectedAlarm.name)
                          : i18n("New Alarm");
-
-    Kirigami.Theme.colorSet: Kirigami.Theme.View
-    Kirigami.Theme.inherit: false
+    background: null
 
     function accept() {
         form.submitForm();

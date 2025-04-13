@@ -22,6 +22,7 @@ Kirigami.Page {
 
     title: timer && timer.label !== "" ? timer.label : i18n("New timer")
     readonly property string hiddenTitle: running ? timer.remainingPretty : ""
+    background: null
 
     property bool showFullscreen: false
 
@@ -35,9 +36,6 @@ Kirigami.Page {
     // keyboard controls
     Keys.onSpacePressed: timer.toggleRunning();
     Keys.onReturnPressed: timer.toggleRunning();
-
-    Kirigami.Theme.inherit: false
-    Kirigami.Theme.colorSet: Kirigami.Theme.View
 
     // topbar action
     actions: [

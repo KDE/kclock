@@ -23,6 +23,7 @@ Kirigami.ScrollablePage {
     title: i18n("Stopwatch")
     readonly property string hiddenTitle: running ? text.formatDuration() : ""
     icon.name: "chronometer"
+    background: null
 
     readonly property bool running: !StopwatchTimer.stopped && !StopwatchTimer.paused
     readonly property int elapsedTime: StopwatchTimer.elapsedTime
