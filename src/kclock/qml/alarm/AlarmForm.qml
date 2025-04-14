@@ -119,15 +119,7 @@ Kirigami.FormLayout {
         implicitWidth: root.width
 
         Kirigami.FormData.label: i18n("Ring Duration:")
-        text: {
-            if (root.formRingDuration === -1) {
-                return i18n("None");
-            } else if (root.formRingDuration === 1) {
-                return i18n("1 minute");
-            } else {
-                return i18n("%1 minutes", root.formRingDuration);
-            }
-        }
+        text: root.formRingDuration === -1 ? i18n("None") : i18np("%1 minute", "%1 minutes", root.formRingDuration);
         title: i18n("Select Ring Duration")
         model: [
             {"name": i18n("None"), "value": -1},
@@ -165,7 +157,7 @@ Kirigami.FormLayout {
 
         Kirigami.FormData.label: i18n("Snooze Length:")
         title: i18n("Select Snooze Length")
-        text: root.formSnoozeDuration === 1 ? i18n("1 minute") : i18n("%1 minutes", root.formSnoozeDuration)
+        text: i18np("%1 minute", "%1 minutes", root.formSnoozeDuration)
         model: [
             {"name": i18n("1 minute"), "value": 1},
             {"name": i18n("2 minutes"), "value": 2},
