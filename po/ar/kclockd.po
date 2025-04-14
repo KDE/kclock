@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-11 00:44+0000\n"
+"POT-Creation-Date: 2025-04-14 00:43+0000\n"
 "PO-Revision-Date: 2025-04-05 13:52+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -164,6 +164,17 @@ msgstr "ديفين لين"
 #, kde-format
 msgid "Han Young"
 msgstr "هان يونغ"
+
+#: main.cpp:51
+#, kde-format
+msgid "Kai Uwe Broulik"
+msgstr ""
+
+#: main.cpp:51
+#, kde-format
+msgctxt "Author"
+msgid "Desktop Integration"
+msgstr ""
 
 #: timer.cpp:63
 #, kde-format

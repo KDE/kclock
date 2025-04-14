@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-11 00:44+0000\n"
+"POT-Creation-Date: 2025-04-14 00:43+0000\n"
 "PO-Revision-Date: 2025-04-10 14:20+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -52,12 +52,23 @@ msgstr "Devin Lin"
 msgid "Han Young"
 msgstr "Han Young"
 
-#: main.cpp:61
+#: main.cpp:56
+#, kde-format
+msgid "Kai Uwe Broulik"
+msgstr ""
+
+#: main.cpp:56
+#, kde-format
+msgctxt "Author"
+msgid "Desktop Integration"
+msgstr ""
+
+#: main.cpp:62
 #, kde-format
 msgid "Select opened page"
 msgstr "Вибрати відкриту сторінку"
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-format
 msgid "Explicitly open a new Clock window"
 msgstr "Явним чином відкрити вікно нового годинника"
@@ -94,7 +105,7 @@ msgstr "Немає"
 
 #: qml/alarm/AlarmForm.qml:124 qml/alarm/AlarmForm.qml:132
 #: qml/alarm/AlarmForm.qml:164 qml/alarm/AlarmForm.qml:166
-#: qml/timer/TimerComponent.qml:160
+#: qml/timer/TimerComponent.qml:161
 #, kde-format
 msgid "1 minute"
 msgstr "1 хвилина"
@@ -194,7 +205,7 @@ msgstr[1] "Відкладено на %1 хвилини"
 msgstr[2] "Відкладено на %1 хвилин"
 msgstr[3] "Відкладено на %1 хвилин"
 
-#: qml/alarm/AlarmListDelegate.qml:124 qml/time/TimePageDelegate.qml:60
+#: qml/alarm/AlarmListDelegate.qml:125 qml/time/TimePageDelegate.qml:60
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
@@ -526,7 +537,7 @@ msgstr "хвилин"
 msgid "seconds"
 msgstr "секунд"
 
-#: qml/timer/TimerForm.qml:114 qml/timer/TimerListDelegate.qml:142
+#: qml/timer/TimerForm.qml:114 qml/timer/TimerListDelegate.qml:141
 #: qml/timer/TimerPage.qml:68 qml/timer/TimerPage.qml:116
 #, kde-format
 msgid "Loop Timer"

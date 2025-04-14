@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-11 00:44+0000\n"
+"POT-Creation-Date: 2025-04-14 00:43+0000\n"
 "PO-Revision-Date: 2025-04-05 13:54+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -49,12 +49,23 @@ msgstr "ديفين لين"
 msgid "Han Young"
 msgstr "هان يونغ"
 
-#: main.cpp:61
+#: main.cpp:56
+#, kde-format
+msgid "Kai Uwe Broulik"
+msgstr ""
+
+#: main.cpp:56
+#, kde-format
+msgctxt "Author"
+msgid "Desktop Integration"
+msgstr ""
+
+#: main.cpp:62
 #, kde-format
 msgid "Select opened page"
 msgstr "اختر الصفحة المفتوحة"
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-format
 msgid "Explicitly open a new Clock window"
 msgstr "افتح نافذة ساعة جديدة صراحةً"
@@ -91,7 +102,7 @@ msgstr "لا شيء"
 
 #: qml/alarm/AlarmForm.qml:124 qml/alarm/AlarmForm.qml:132
 #: qml/alarm/AlarmForm.qml:164 qml/alarm/AlarmForm.qml:166
-#: qml/timer/TimerComponent.qml:160
+#: qml/timer/TimerComponent.qml:161
 #, kde-format
 msgid "1 minute"
 msgstr "دقيقة واحدة"
@@ -193,7 +204,7 @@ msgstr[3] "أُجلت %1 دقائق"
 msgstr[4] "أُجلت %1 دقيقة"
 msgstr[5] "أُجلت %1 دقيقة"
 
-#: qml/alarm/AlarmListDelegate.qml:124 qml/time/TimePageDelegate.qml:60
+#: qml/alarm/AlarmListDelegate.qml:125 qml/time/TimePageDelegate.qml:60
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
@@ -528,7 +539,7 @@ msgstr "دقيقة"
 msgid "seconds"
 msgstr "ثانية"
 
-#: qml/timer/TimerForm.qml:114 qml/timer/TimerListDelegate.qml:142
+#: qml/timer/TimerForm.qml:114 qml/timer/TimerListDelegate.qml:141
 #: qml/timer/TimerPage.qml:68 qml/timer/TimerPage.qml:116
 #, kde-format
 msgid "Loop Timer"
