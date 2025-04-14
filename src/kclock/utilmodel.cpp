@@ -83,29 +83,21 @@ QString UtilModel::timeToRingFormatted(const long long &timestamp)
     int day = remaining / (24 * 3600);
     int hour = remaining / 3600 - day * 24;
     int minute = remaining / 60 - day * 24 * 60 - hour * 60;
-    QString arg;
+    QStringList parts;
     if (day > 0) {
-        arg += i18np("%1 day", "%1 days", day);
+        parts << i18np("%1 day", "%1 days", day);
     }
     if (hour > 0) {
-        if (day > 0 && minute > 0) {
-            arg += i18n(", ");
-        } else if (day > 0) {
-            arg += i18n(" and ");
-        }
-        arg += i18np("%1 hour", "%1 hours", hour);
+        parts << i18np("%1 hour", "%1 hours", hour);
     }
     if (minute > 0) {
-        if (day > 0 || hour > 0) {
-            arg += i18n(" and ");
-        }
-        arg += i18np("%1 minute", "%1 minutes", minute);
+        parts << i18np("%1 minute", "%1 minutes", minute);
     }
 
     if (day <= 0 && hour <= 0 && minute <= 0) {
         return i18n("Alarm will ring in under a minute");
     } else {
-        return i18n("Alarm will ring in %1", arg);
+        return i18n("Alarm will ring in %1", QLocale().createSeparatedList(parts));
     }
 }
 
