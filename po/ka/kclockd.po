@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-14 00:43+0000\n"
-"PO-Revision-Date: 2025-04-04 04:10+0200\n"
+"PO-Revision-Date: 2025-04-14 03:41+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -168,13 +168,13 @@ msgstr "ჰან იანგი"
 #: main.cpp:51
 #, kde-format
 msgid "Kai Uwe Broulik"
-msgstr ""
+msgstr "კაი უვე ბროულიკი"
 
 #: main.cpp:51
 #, kde-format
 msgctxt "Author"
 msgid "Desktop Integration"
-msgstr ""
+msgstr "სამუშაო მაგიდის ინტეგრაცია"
 
 #: timer.cpp:63
 #, kde-format

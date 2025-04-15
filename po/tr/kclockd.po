@@ -167,13 +167,13 @@ msgstr "Han Young"
 #: main.cpp:51
 #, kde-format
 msgid "Kai Uwe Broulik"
-msgstr ""
+msgstr "Kai Uwe Broulik"
 
 #: main.cpp:51
 #, kde-format
 msgctxt "Author"
 msgid "Desktop Integration"
-msgstr ""
+msgstr "Masaüstü tümleştirmesi"
 
 #: timer.cpp:63
 #, kde-format
@@ -227,6 +227,3 @@ msgid ""
 "Allow the clock process to be in the background and launched on startup."
 msgstr ""
 "Saat sürecinin arka planda olmasına ve başlangıçta çalıştırılmasına izin ver."
-
-#~ msgid "View"
-#~ msgstr "Görüntüle"
