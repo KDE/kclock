@@ -1,17 +1,17 @@
 # Translation for kclock.po to Euskara/Basque (eu).
-# Copyright (C) 2020-2024 This file is copyright:
+# Copyright (C) 2020-2025 This file is copyright:
 # This file is distributed under the same license as the kclock package.
-# SPDX-FileCopyrightText: 2023, 2024 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Translators:
 # Ander Elortondo <ander.elor@gmail.com>, 2020.
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2020, 2021, 2022, 2023, 2024.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2020, 2021, 2022, 2023, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-15 00:44+0000\n"
-"PO-Revision-Date: 2024-07-09 23:18+0200\n"
+"POT-Creation-Date: 2025-04-16 00:44+0000\n"
+"PO-Revision-Date: 2025-04-15 10:17+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -56,13 +56,13 @@ msgstr "Han Young"
 #: main.cpp:56
 #, kde-format
 msgid "Kai Uwe Broulik"
-msgstr ""
+msgstr "Kai Uwe Broulik"
 
 #: main.cpp:56
 #, kde-format
 msgctxt "Author"
 msgid "Desktop Integration"
-msgstr ""
+msgstr "Mahaigainean bateratzea"
 
 #: main.cpp:62
 #, kde-format
@@ -72,7 +72,7 @@ msgstr "Hautatu irekitako orrialdea"
 #: main.cpp:64
 #, kde-format
 msgid "Explicitly open a new Clock window"
-msgstr ""
+msgstr "Erloju-leiho berri bat esplizituki ireki"
 
 #: qml/alarm/AlarmForm.qml:82
 #, kde-format
@@ -99,74 +99,75 @@ msgstr "Esnatu"
 msgid "Ring Duration:"
 msgstr "Txirrinaren iraupena:"
 
-#: qml/alarm/AlarmForm.qml:124 qml/alarm/AlarmForm.qml:133
+#: qml/alarm/AlarmForm.qml:122 qml/alarm/AlarmForm.qml:125
 #, kde-format
 msgid "None"
 msgstr "Bat ere ez"
 
-#: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:134
-#: qml/alarm/AlarmForm.qml:168 qml/alarm/AlarmForm.qml:170
+#: qml/alarm/AlarmForm.qml:122 qml/alarm/AlarmForm.qml:160 utilmodel.cpp:94
+#, kde-format
+msgid "%1 minute"
+msgid_plural "%1 minutes"
+msgstr[0] "minutu %1"
+msgstr[1] "%1 minutu"
+
+#: qml/alarm/AlarmForm.qml:123
+#, kde-format
+msgid "Select Ring Duration"
+msgstr "Aukeratu txirrinaren iraupena"
+
+#: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:162
 #: qml/timer/TimerComponent.qml:161
 #, kde-format
 msgid "1 minute"
 msgstr "minutu 1"
 
-#: qml/alarm/AlarmForm.qml:128 qml/alarm/AlarmForm.qml:168
-#, kde-format
-msgid "%1 minutes"
-msgstr "%1 minutu"
-
-#: qml/alarm/AlarmForm.qml:131
-#, kde-format
-msgid "Select Ring Duration"
-msgstr "Aukeratu txirrinaren iraupena"
-
-#: qml/alarm/AlarmForm.qml:135 qml/alarm/AlarmForm.qml:171
+#: qml/alarm/AlarmForm.qml:127 qml/alarm/AlarmForm.qml:163
 #, kde-format
 msgid "2 minutes"
 msgstr "2 minutu"
 
-#: qml/alarm/AlarmForm.qml:136 qml/alarm/AlarmForm.qml:172
+#: qml/alarm/AlarmForm.qml:128 qml/alarm/AlarmForm.qml:164
 #, kde-format
 msgid "5 minutes"
 msgstr "5 minutu"
 
-#: qml/alarm/AlarmForm.qml:137 qml/alarm/AlarmForm.qml:173
+#: qml/alarm/AlarmForm.qml:129 qml/alarm/AlarmForm.qml:165
 #, kde-format
 msgid "10 minutes"
 msgstr "10 minutu"
 
-#: qml/alarm/AlarmForm.qml:138 qml/alarm/AlarmForm.qml:174
+#: qml/alarm/AlarmForm.qml:130 qml/alarm/AlarmForm.qml:166
 #, kde-format
 msgid "15 minutes"
 msgstr "15 minutu"
 
-#: qml/alarm/AlarmForm.qml:139 qml/alarm/AlarmForm.qml:175
+#: qml/alarm/AlarmForm.qml:131 qml/alarm/AlarmForm.qml:167
 #, kde-format
 msgid "30 minutes"
 msgstr "30 minutu"
 
-#: qml/alarm/AlarmForm.qml:140 qml/alarm/AlarmForm.qml:176
+#: qml/alarm/AlarmForm.qml:132 qml/alarm/AlarmForm.qml:168
 #, kde-format
 msgid "1 hour"
 msgstr "ordu 1"
 
-#: qml/alarm/AlarmForm.qml:166
+#: qml/alarm/AlarmForm.qml:158
 #, kde-format
 msgid "Snooze Length:"
 msgstr "Kuluxkaren iraupena:"
 
-#: qml/alarm/AlarmForm.qml:167
+#: qml/alarm/AlarmForm.qml:159
 #, kde-format
 msgid "Select Snooze Length"
 msgstr "Aukeratu kuluxkaren iraupena"
 
-#: qml/alarm/AlarmForm.qml:203
+#: qml/alarm/AlarmForm.qml:195
 #, kde-format
 msgid "Ring Sound:"
 msgstr "Txirrinaren hotsa:"
 
-#: qml/alarm/AlarmForm.qml:209
+#: qml/alarm/AlarmForm.qml:201
 #, kde-format
 msgid "Default Sound"
 msgstr "Soinu lehenetsia"
@@ -250,11 +251,10 @@ msgstr "Gehitu alarma"
 #: qml/alarm/AlarmListPage.qml:92
 #, kde-format
 msgid "Loading…"
-msgstr ""
+msgstr "Zamatzen..."
 
 #: qml/alarm/AlarmListPage.qml:107
-#, fuzzy, kde-format
-#| msgid "New Alarm"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Alarm"
 msgstr "Alarma berria"
@@ -365,18 +365,18 @@ msgstr "24 orduko ordua"
 #: qml/settings/SettingsPage.qml:51
 #, kde-format
 msgid "Notifications for running timers"
-msgstr ""
+msgstr "Martxan dauden tenporizadoreentzako jakinarazpenak"
 
 #: qml/settings/SettingsPage.qml:53
 #, kde-format
 msgid "Always"
-msgstr ""
+msgstr "Beti"
 
 #: qml/settings/SettingsPage.qml:56
 #, kde-format
 msgctxt "When the app is not running"
 msgid "When %1 is not running"
-msgstr ""
+msgstr "%1 martxan ez dagoenean"
 
 #: qml/settings/SettingsPage.qml:59
 #, kde-format
@@ -387,6 +387,7 @@ msgstr "Inoiz ez"
 #, kde-format
 msgid "Lets you pause and resume timers from the notification area."
 msgstr ""
+"Jakinarazpen eremutik tenporizadoreak eteten eta berrekiten uzten dizu."
 
 #: qml/settings/SettingsPage.qml:77
 #, kde-format
@@ -437,22 +438,19 @@ msgid "Total"
 msgstr "Guztira"
 
 #: qml/stopwatch/StopwatchPage.qml:258
-#, fuzzy, kde-format
-#| msgid "Pause"
+#, kde-format
 msgctxt "@action:button"
 msgid "Pause"
-msgstr "Eten"
+msgstr "Etenaldia"
 
 #: qml/stopwatch/StopwatchPage.qml:260
-#, fuzzy, kde-format
-#| msgid "Resume"
+#, kde-format
 msgctxt "@action:button"
 msgid "Resume"
 msgstr "Berrekin"
 
 #: qml/stopwatch/StopwatchPage.qml:262
-#, fuzzy, kde-format
-#| msgid "Start"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start"
 msgstr "Abiarazi"
@@ -478,8 +476,7 @@ msgid "Add"
 msgstr "Gehitu"
 
 #: qml/time/TimePage.qml:167
-#, fuzzy, kde-format
-#| msgid "Add Location"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Location"
 msgstr "Gehitu kokalekua"
@@ -490,34 +487,29 @@ msgid "1 m"
 msgstr "m 1"
 
 #: qml/timer/TimerForm.qml:40
-#, fuzzy, kde-format
-#| msgid "1 minute"
+#, kde-format
 msgid "1 min"
-msgstr "minutu 1"
+msgstr "min 1"
 
 #: qml/timer/TimerForm.qml:41
-#, fuzzy, kde-format
-#| msgid "5 minutes"
+#, kde-format
 msgid "5 min"
-msgstr "5 minutu"
+msgstr "5 min"
 
 #: qml/timer/TimerForm.qml:42
-#, fuzzy, kde-format
-#| msgid "10 m"
+#, kde-format
 msgid "10 min"
-msgstr "10 m"
+msgstr "10 min"
 
 #: qml/timer/TimerForm.qml:43
-#, fuzzy, kde-format
-#| msgid "15 m"
+#, kde-format
 msgid "15 min"
-msgstr "15 m"
+msgstr "15 min"
 
 #: qml/timer/TimerForm.qml:44
-#, fuzzy, kde-format
-#| msgid "30 m"
+#, kde-format
 msgid "30 min"
-msgstr "30 m"
+msgstr "30 min"
 
 #: qml/timer/TimerForm.qml:45
 #, kde-format
@@ -566,16 +558,13 @@ msgid "optional"
 msgstr "aukerakoa"
 
 #: qml/timer/TimerFormDialog.qml:36
-#, fuzzy, kde-format
-#| msgctxt "Edit alarm page title"
-#| msgid "Editing %1"
+#, kde-format
 msgctxt "@title:window Edit timer"
 msgid "Edit %1"
-msgstr "%1 editatzea"
+msgstr "Editatu %1"
 
 #: qml/timer/TimerFormDialog.qml:36
-#, fuzzy, kde-format
-#| msgid "Create timer"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Timer"
 msgstr "Sortu tenporizadorea"
@@ -609,11 +598,10 @@ msgstr "Gorde aurre-ezarpen gisa"
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr ""
+msgstr "Gorde"
 
 #: qml/timer/TimerFormDialog.qml:116
-#, fuzzy, kde-format
-#| msgid "Done"
+#, kde-format
 msgctxt "@action:button"
 msgid "Done"
 msgstr "Eginda"
@@ -637,8 +625,7 @@ msgid "Reset"
 msgstr "Berrezarri"
 
 #: qml/timer/TimerListDelegate.qml:200
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit"
 msgstr "Editatu"
@@ -664,8 +651,7 @@ msgstr ""
 "funtzionaltasuna izateko."
 
 #: qml/timer/TimerListPage.qml:82
-#, fuzzy, kde-format
-#| msgid "New Timer"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Timer"
 msgstr "Tenporizadore berria"
@@ -757,60 +743,51 @@ msgid_plural "%1 days"
 msgstr[0] "eguna %1"
 msgstr[1] "%1 egun"
 
-#: utilmodel.cpp:92 utilmodel.cpp:187
-#, kde-format
-msgid ", "
-msgstr ", "
-
-#: utilmodel.cpp:94 utilmodel.cpp:100
-#, kde-format
-msgid " and "
-msgstr "eta"
-
-#: utilmodel.cpp:96
+#: utilmodel.cpp:91
 #, kde-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
 msgstr[0] "ordu %1"
 msgstr[1] "%1 ordu"
 
-#: utilmodel.cpp:102
-#, kde-format
-msgid "%1 minute"
-msgid_plural "%1 minutes"
-msgstr[0] "minutu %1"
-msgstr[1] "%1 minutu"
-
-#: utilmodel.cpp:106
+#: utilmodel.cpp:98
 #, kde-format
 msgid "Alarm will ring in under a minute"
 msgstr "Alarma minutu bat baina gutxiagoz joko du"
 
-#: utilmodel.cpp:108
+#: utilmodel.cpp:100
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "Alarmak %1(e)an joko du"
 
-#: utilmodel.cpp:160
-#, fuzzy, kde-format
-#| msgid "Only once"
+#: utilmodel.cpp:152
+#, kde-format
 msgctxt "Repeat"
 msgid "Only once"
 msgstr "Behin bakarrik"
 
-#: utilmodel.cpp:163
-#, fuzzy, kde-format
-#| msgid "Everyday"
+#: utilmodel.cpp:155
+#, kde-format
 msgctxt "Repeat"
 msgid "Everyday"
 msgstr "Egunero"
 
-#: utilmodel.cpp:166
-#, fuzzy, kde-format
-#| msgid "Weekdays"
+#: utilmodel.cpp:158
+#, kde-format
 msgctxt "Repeat"
 msgid "Weekdays"
 msgstr "Astegunetan"
+
+#: utilmodel.cpp:179
+#, kde-format
+msgid ", "
+msgstr ", "
+
+#~ msgid "%1 minutes"
+#~ msgstr "%1 minutu"
+
+#~ msgid " and "
+#~ msgstr "eta"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Loop timer"

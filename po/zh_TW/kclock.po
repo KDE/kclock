@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-15 00:44+0000\n"
+"POT-Creation-Date: 2025-04-16 00:44+0000\n"
 "PO-Revision-Date: 2025-04-07 14:01+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -96,74 +96,74 @@ msgstr "起床"
 msgid "Ring Duration:"
 msgstr "鬧鈴持續時間："
 
-#: qml/alarm/AlarmForm.qml:124 qml/alarm/AlarmForm.qml:133
+#: qml/alarm/AlarmForm.qml:122 qml/alarm/AlarmForm.qml:125
 #, kde-format
 msgid "None"
 msgstr "無"
 
-#: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:134
-#: qml/alarm/AlarmForm.qml:168 qml/alarm/AlarmForm.qml:170
+#: qml/alarm/AlarmForm.qml:122 qml/alarm/AlarmForm.qml:160 utilmodel.cpp:94
+#, kde-format
+msgid "%1 minute"
+msgid_plural "%1 minutes"
+msgstr[0] "%1 分鐘"
+
+#: qml/alarm/AlarmForm.qml:123
+#, kde-format
+msgid "Select Ring Duration"
+msgstr "選擇鬧鈴持續時間"
+
+#: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:162
 #: qml/timer/TimerComponent.qml:161
 #, kde-format
 msgid "1 minute"
 msgstr "1 分鐘"
 
-#: qml/alarm/AlarmForm.qml:128 qml/alarm/AlarmForm.qml:168
-#, kde-format
-msgid "%1 minutes"
-msgstr "%1 分鐘"
-
-#: qml/alarm/AlarmForm.qml:131
-#, kde-format
-msgid "Select Ring Duration"
-msgstr "選擇鬧鈴持續時間"
-
-#: qml/alarm/AlarmForm.qml:135 qml/alarm/AlarmForm.qml:171
+#: qml/alarm/AlarmForm.qml:127 qml/alarm/AlarmForm.qml:163
 #, kde-format
 msgid "2 minutes"
 msgstr "2 分鐘"
 
-#: qml/alarm/AlarmForm.qml:136 qml/alarm/AlarmForm.qml:172
+#: qml/alarm/AlarmForm.qml:128 qml/alarm/AlarmForm.qml:164
 #, kde-format
 msgid "5 minutes"
 msgstr "5 分鐘"
 
-#: qml/alarm/AlarmForm.qml:137 qml/alarm/AlarmForm.qml:173
+#: qml/alarm/AlarmForm.qml:129 qml/alarm/AlarmForm.qml:165
 #, kde-format
 msgid "10 minutes"
 msgstr "10 分鐘"
 
-#: qml/alarm/AlarmForm.qml:138 qml/alarm/AlarmForm.qml:174
+#: qml/alarm/AlarmForm.qml:130 qml/alarm/AlarmForm.qml:166
 #, kde-format
 msgid "15 minutes"
 msgstr "15 分鐘"
 
-#: qml/alarm/AlarmForm.qml:139 qml/alarm/AlarmForm.qml:175
+#: qml/alarm/AlarmForm.qml:131 qml/alarm/AlarmForm.qml:167
 #, kde-format
 msgid "30 minutes"
 msgstr "30 分鐘"
 
-#: qml/alarm/AlarmForm.qml:140 qml/alarm/AlarmForm.qml:176
+#: qml/alarm/AlarmForm.qml:132 qml/alarm/AlarmForm.qml:168
 #, kde-format
 msgid "1 hour"
 msgstr "1 小時"
 
-#: qml/alarm/AlarmForm.qml:166
+#: qml/alarm/AlarmForm.qml:158
 #, kde-format
 msgid "Snooze Length:"
 msgstr "貪睡長度："
 
-#: qml/alarm/AlarmForm.qml:167
+#: qml/alarm/AlarmForm.qml:159
 #, kde-format
 msgid "Select Snooze Length"
 msgstr "選擇貪睡時間長度"
 
-#: qml/alarm/AlarmForm.qml:203
+#: qml/alarm/AlarmForm.qml:195
 #, kde-format
 msgid "Ring Sound:"
 msgstr "鬧鈴聲："
 
-#: qml/alarm/AlarmForm.qml:209
+#: qml/alarm/AlarmForm.qml:201
 #, kde-format
 msgid "Default Sound"
 msgstr "預設聲音"
@@ -732,58 +732,53 @@ msgid "%1 day"
 msgid_plural "%1 days"
 msgstr[0] "%1 天"
 
-#: utilmodel.cpp:92 utilmodel.cpp:187
-#, kde-format
-msgid ", "
-msgstr ", "
-
-#: utilmodel.cpp:94 utilmodel.cpp:100
-#, kde-format
-msgid " and "
-msgstr " 又 "
-
-#: utilmodel.cpp:96
+#: utilmodel.cpp:91
 #, kde-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
 msgstr[0] "%1 小時"
 
-#: utilmodel.cpp:102
-#, kde-format
-msgid "%1 minute"
-msgid_plural "%1 minutes"
-msgstr[0] "%1 分鐘"
-
-#: utilmodel.cpp:106
+#: utilmodel.cpp:98
 #, kde-format
 msgid "Alarm will ring in under a minute"
 msgstr "鬧鐘將在一分鐘內響起"
 
-#: utilmodel.cpp:108
+#: utilmodel.cpp:100
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "鬧鐘將在 %1 後響起"
 
-#: utilmodel.cpp:160
+#: utilmodel.cpp:152
 #, fuzzy, kde-format
 #| msgid "Only once"
 msgctxt "Repeat"
 msgid "Only once"
 msgstr "僅一次"
 
-#: utilmodel.cpp:163
+#: utilmodel.cpp:155
 #, fuzzy, kde-format
 #| msgid "Everyday"
 msgctxt "Repeat"
 msgid "Everyday"
 msgstr "每天"
 
-#: utilmodel.cpp:166
+#: utilmodel.cpp:158
 #, fuzzy, kde-format
 #| msgid "Weekdays"
 msgctxt "Repeat"
 msgid "Weekdays"
 msgstr "工作日"
+
+#: utilmodel.cpp:179
+#, kde-format
+msgid ", "
+msgstr ", "
+
+#~ msgid "%1 minutes"
+#~ msgstr "%1 分鐘"
+
+#~ msgid " and "
+#~ msgstr " 又 "
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Loop timer"

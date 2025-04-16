@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-15 00:44+0000\n"
-"PO-Revision-Date: 2025-04-11 08:50+0200\n"
+"POT-Creation-Date: 2025-04-16 00:44+0000\n"
+"PO-Revision-Date: 2025-04-15 08:14+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -55,13 +55,13 @@ msgstr "Han Young"
 #: main.cpp:56
 #, kde-format
 msgid "Kai Uwe Broulik"
-msgstr ""
+msgstr "Kai Uwe Broulik"
 
 #: main.cpp:56
 #, kde-format
 msgctxt "Author"
 msgid "Desktop Integration"
-msgstr ""
+msgstr "Intégration au bureau"
 
 #: main.cpp:62
 #, kde-format
@@ -98,74 +98,75 @@ msgstr "Réveil"
 msgid "Ring Duration:"
 msgstr "Durée de sonnerie :"
 
-#: qml/alarm/AlarmForm.qml:124 qml/alarm/AlarmForm.qml:133
+#: qml/alarm/AlarmForm.qml:122 qml/alarm/AlarmForm.qml:125
 #, kde-format
 msgid "None"
 msgstr "Aucun"
 
-#: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:134
-#: qml/alarm/AlarmForm.qml:168 qml/alarm/AlarmForm.qml:170
+#: qml/alarm/AlarmForm.qml:122 qml/alarm/AlarmForm.qml:160 utilmodel.cpp:94
+#, kde-format
+msgid "%1 minute"
+msgid_plural "%1 minutes"
+msgstr[0] "%1 minute"
+msgstr[1] "%1 minutes"
+
+#: qml/alarm/AlarmForm.qml:123
+#, kde-format
+msgid "Select Ring Duration"
+msgstr "Sélectionner une durée de sonnerie"
+
+#: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:162
 #: qml/timer/TimerComponent.qml:161
 #, kde-format
 msgid "1 minute"
 msgstr "1 minute"
 
-#: qml/alarm/AlarmForm.qml:128 qml/alarm/AlarmForm.qml:168
-#, kde-format
-msgid "%1 minutes"
-msgstr "%1 minutes"
-
-#: qml/alarm/AlarmForm.qml:131
-#, kde-format
-msgid "Select Ring Duration"
-msgstr "Sélectionner une durée de sonnerie"
-
-#: qml/alarm/AlarmForm.qml:135 qml/alarm/AlarmForm.qml:171
+#: qml/alarm/AlarmForm.qml:127 qml/alarm/AlarmForm.qml:163
 #, kde-format
 msgid "2 minutes"
 msgstr "2 minutes"
 
-#: qml/alarm/AlarmForm.qml:136 qml/alarm/AlarmForm.qml:172
+#: qml/alarm/AlarmForm.qml:128 qml/alarm/AlarmForm.qml:164
 #, kde-format
 msgid "5 minutes"
 msgstr "5 minutes"
 
-#: qml/alarm/AlarmForm.qml:137 qml/alarm/AlarmForm.qml:173
+#: qml/alarm/AlarmForm.qml:129 qml/alarm/AlarmForm.qml:165
 #, kde-format
 msgid "10 minutes"
 msgstr "10 minutes"
 
-#: qml/alarm/AlarmForm.qml:138 qml/alarm/AlarmForm.qml:174
+#: qml/alarm/AlarmForm.qml:130 qml/alarm/AlarmForm.qml:166
 #, kde-format
 msgid "15 minutes"
 msgstr "15 minutes"
 
-#: qml/alarm/AlarmForm.qml:139 qml/alarm/AlarmForm.qml:175
+#: qml/alarm/AlarmForm.qml:131 qml/alarm/AlarmForm.qml:167
 #, kde-format
 msgid "30 minutes"
 msgstr "30 minutes"
 
-#: qml/alarm/AlarmForm.qml:140 qml/alarm/AlarmForm.qml:176
+#: qml/alarm/AlarmForm.qml:132 qml/alarm/AlarmForm.qml:168
 #, kde-format
 msgid "1 hour"
 msgstr "1 heure"
 
-#: qml/alarm/AlarmForm.qml:166
+#: qml/alarm/AlarmForm.qml:158
 #, kde-format
 msgid "Snooze Length:"
 msgstr "Durée de l'alarme :"
 
-#: qml/alarm/AlarmForm.qml:167
+#: qml/alarm/AlarmForm.qml:159
 #, kde-format
 msgid "Select Snooze Length"
 msgstr "Sélectionner la durée de l'alarme"
 
-#: qml/alarm/AlarmForm.qml:203
+#: qml/alarm/AlarmForm.qml:195
 #, kde-format
 msgid "Ring Sound:"
 msgstr "Son de sonnerie :"
 
-#: qml/alarm/AlarmForm.qml:209
+#: qml/alarm/AlarmForm.qml:201
 #, kde-format
 msgid "Default Sound"
 msgstr "Son par défaut"
@@ -742,57 +743,51 @@ msgid_plural "%1 days"
 msgstr[0] "%1 jour"
 msgstr[1] "%1 jours"
 
-#: utilmodel.cpp:92 utilmodel.cpp:187
-#, kde-format
-msgid ", "
-msgstr ", "
-
-#: utilmodel.cpp:94 utilmodel.cpp:100
-#, kde-format
-msgid " and "
-msgstr " et"
-
-#: utilmodel.cpp:96
+#: utilmodel.cpp:91
 #, kde-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
 msgstr[0] "%1 heure"
 msgstr[1] "%1 heures"
 
-#: utilmodel.cpp:102
-#, kde-format
-msgid "%1 minute"
-msgid_plural "%1 minutes"
-msgstr[0] "%1 minute"
-msgstr[1] "%1 minutes"
-
-#: utilmodel.cpp:106
+#: utilmodel.cpp:98
 #, kde-format
 msgid "Alarm will ring in under a minute"
 msgstr "L'alarme sonnera dans moins de une minute"
 
-#: utilmodel.cpp:108
+#: utilmodel.cpp:100
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "L'alarme sera déclenchée dans %1"
 
-#: utilmodel.cpp:160
+#: utilmodel.cpp:152
 #, kde-format
 msgctxt "Repeat"
 msgid "Only once"
 msgstr "Une fois seulement"
 
-#: utilmodel.cpp:163
+#: utilmodel.cpp:155
 #, kde-format
 msgctxt "Repeat"
 msgid "Everyday"
 msgstr "Chaque jour"
 
-#: utilmodel.cpp:166
+#: utilmodel.cpp:158
 #, kde-format
 msgctxt "Repeat"
 msgid "Weekdays"
 msgstr "Jours ouvrables"
+
+#: utilmodel.cpp:179
+#, kde-format
+msgid ", "
+msgstr ", "
+
+#~ msgid "%1 minutes"
+#~ msgstr "%1 minutes"
+
+#~ msgid " and "
+#~ msgstr " et"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Loop timer"
