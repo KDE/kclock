@@ -767,9 +767,3 @@ msgstr "工作日"
 #, kde-format
 msgid ", "
 msgstr "、"
-
-#~ msgid "%1 minutes"
-#~ msgstr "%1 分钟"
-
-#~ msgid " and "
-#~ msgstr " 和 "

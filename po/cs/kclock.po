@@ -50,7 +50,7 @@ msgstr "Han Young"
 #: main.cpp:56
 #, kde-format
 msgid "Kai Uwe Broulik"
-msgstr ""
+msgstr "Kai Uwe Broulik"
 
 #: main.cpp:56
 #, kde-format
@@ -246,7 +246,7 @@ msgstr "Přidat budík"
 #: qml/alarm/AlarmListPage.qml:92
 #, kde-format
 msgid "Loading…"
-msgstr ""
+msgstr "Probíhá načítání…"
 
 #: qml/alarm/AlarmListPage.qml:107
 #, fuzzy, kde-format
@@ -366,7 +366,7 @@ msgstr ""
 #: qml/settings/SettingsPage.qml:53
 #, kde-format
 msgid "Always"
-msgstr ""
+msgstr "Vždy"
 
 #: qml/settings/SettingsPage.qml:56
 #, kde-format
@@ -377,7 +377,7 @@ msgstr ""
 #: qml/settings/SettingsPage.qml:59
 #, kde-format
 msgid "Never"
-msgstr ""
+msgstr "Nikdy"
 
 #: qml/settings/SettingsPage.qml:62
 #, kde-format
@@ -485,34 +485,29 @@ msgid "1 m"
 msgstr "1 m"
 
 #: qml/timer/TimerForm.qml:40
-#, fuzzy, kde-format
-#| msgid "1 minute"
+#, kde-format
 msgid "1 min"
-msgstr "1 minuta"
+msgstr "1 min"
 
 #: qml/timer/TimerForm.qml:41
-#, fuzzy, kde-format
-#| msgid "5 minutes"
+#, kde-format
 msgid "5 min"
-msgstr "5 minut"
+msgstr "5 min"
 
 #: qml/timer/TimerForm.qml:42
-#, fuzzy, kde-format
-#| msgid "10 m"
+#, kde-format
 msgid "10 min"
-msgstr "10 m"
+msgstr "10 min"
 
 #: qml/timer/TimerForm.qml:43
-#, fuzzy, kde-format
-#| msgid "15 m"
+#, kde-format
 msgid "15 min"
-msgstr "15 m"
+msgstr "15 min"
 
 #: qml/timer/TimerForm.qml:44
-#, fuzzy, kde-format
-#| msgid "30 m"
+#, kde-format
 msgid "30 min"
-msgstr "30 m"
+msgstr "30 min"
 
 #: qml/timer/TimerForm.qml:45
 #, kde-format
