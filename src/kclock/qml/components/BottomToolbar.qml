@@ -8,6 +8,7 @@
 import QtQuick
 import QtQuick.Controls
 import org.kde.kirigami as Kirigami
+import org.kde.kclock as KClock
 
 Kirigami.NavigationTabBar {
     id: root
@@ -81,8 +82,21 @@ Kirigami.NavigationTabBar {
             }
         },
         Kirigami.Action {
+            readonly property bool showTime: !checked && KClock.TimerModel.runningTimersCount > 0
+
             icon.name: "player-time"
-            text: i18n("Timers")
+            text: {
+                if (showTime) {
+                    const count = KClock.TimerModel.runningTimersCount;
+                    if (count > 1) {
+                        return i18np("%1 Timer", "%1 Timers", count);
+                    } else if (KClock.TimerModel.runningTimer) {
+                        return KClock.TimerModel.runningTimer.remainingPretty;
+                    }
+                }
+                return i18n("Timers");
+            }
+            tooltip: showTime ? i18n("Timers") : ""
             checked: root.pageStack.currentItem?.objectName === "Timers"
             onTriggered: {
                 if (root.pageStack.currentItem?.objectName !== "Timers") {
@@ -92,8 +106,11 @@ Kirigami.NavigationTabBar {
             }
         },
         Kirigami.Action {
+            readonly property bool showTime: !checked && !KClock.StopwatchTimer.stopped && !KClock.StopwatchTimer.paused
+
             icon.name: "chronometer"
-            text: i18n("Stopwatch")
+            text: showTime ? KClock.StopwatchTimer.display : i18n("Stopwatch")
+            tooltip: showTime ? i18n("Stopwatch") : ""
             checked: root.pageStack.currentItem?.objectName === "Stopwatch"
             onTriggered: {
                 if (root.pageStack.currentItem?.objectName !== "Stopwatch") {
