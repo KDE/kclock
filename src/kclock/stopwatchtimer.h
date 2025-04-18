@@ -26,6 +26,7 @@ class StopwatchTimer : public QObject
     Q_PROPERTY(bool paused READ paused NOTIFY pausedChanged)
     Q_PROPERTY(bool stopped READ stopped NOTIFY stoppedChanged)
     Q_PROPERTY(qint64 elapsedTime READ elapsedTime NOTIFY timeChanged)
+    Q_PROPERTY(QString display READ display NOTIFY timeChanged)
     Q_PROPERTY(QString hours READ hoursDisplay NOTIFY timeChanged)
     Q_PROPERTY(QString minutes READ minutesDisplay NOTIFY timeChanged)
     Q_PROPERTY(QString seconds READ secondsDisplay NOTIFY timeChanged)
@@ -42,6 +43,7 @@ public:
     qint64 minutes() const;
     qint64 seconds() const;
     qint64 small() const;
+    QString display() const;
     QString hoursDisplay() const;
     QString minutesDisplay() const;
     QString secondsDisplay() const;

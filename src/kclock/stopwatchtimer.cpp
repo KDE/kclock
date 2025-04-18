@@ -110,6 +110,16 @@ qint64 StopwatchTimer::small() const
     return UtilModel::instance()->msToSmallPart(elapsedTime());
 }
 
+QString StopwatchTimer::display() const
+{
+    // Only show hours if we have passed an hour.
+    if (hours() > 0) {
+        return QStringLiteral("%1:%2:%3").arg(hoursDisplay(), minutesDisplay(), secondsDisplay());
+    } else {
+        return QStringLiteral("%1:%2").arg(minutesDisplay(), secondsDisplay());
+    }
+}
+
 QString StopwatchTimer::hoursDisplay() const
 {
     qint64 amount = hours();

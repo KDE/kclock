@@ -21,7 +21,7 @@ Kirigami.ScrollablePage {
 
     objectName: "Stopwatch"
     title: i18n("Stopwatch")
-    readonly property string hiddenTitle: running ? text.formatDuration() : ""
+    readonly property string hiddenTitle: running ? StopwatchTimer.display : ""
     icon.name: "chronometer"
     background: null
 
@@ -88,18 +88,9 @@ Kirigami.ScrollablePage {
 
                         Label {
                             id: text
-                            text: formatDuration() + "."
+                            text: StopwatchTimer.display + "."
                             font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 4.75)
                             font.weight: Font.ExtraLight
-
-                            function formatDuration() : string {
-                                // only show hours if we have passed an hour
-                                if (StopwatchTimer.hours === '00') {
-                                    return "%1:%2".arg(StopwatchTimer.minutes).arg(StopwatchTimer.seconds);
-                                } else {
-                                    return "%1:%2:%3".arg(StopwatchTimer.hours).arg(StopwatchTimer.minutes).arg(StopwatchTimer.seconds);
-                                }
-                            }
                         }
                         Label {
                             id: secondsText
