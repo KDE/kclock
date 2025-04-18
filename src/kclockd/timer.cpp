@@ -74,9 +74,6 @@ void Timer::init()
     QDBusConnection::sessionBus().registerObject(QStringLiteral("/Timers/") + m_uuid.toString(QUuid::Id128),
                                                  this,
                                                  QDBusConnection::ExportScriptableContents | QDBusConnection::ExportAllProperties);
-    connect(this, &QObject::destroyed, [this] {
-        QDBusConnection::sessionBus().unregisterObject(QStringLiteral("/Timers/") + m_uuid.toString(QUuid::Id128), QDBusConnection::UnregisterNode);
-    });
 }
 
 QJsonObject Timer::serialize()

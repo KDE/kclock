@@ -97,9 +97,6 @@ void Alarm::init(AlarmModel *parent)
     // setup dbus
     new AlarmAdaptor(this);
     QDBusConnection::sessionBus().registerObject(QStringLiteral("/Alarms/") + m_uuid.toString(QUuid::Id128), this);
-    connect(this, &QObject::destroyed, [this] {
-        QDBusConnection::sessionBus().unregisterObject(QStringLiteral("/Alarms/") + m_uuid.toString(QUuid::Id128), QDBusConnection::UnregisterNode);
-    });
 
     // setup ringing length timer
     connect(m_ringTimer, &QTimer::timeout, this, []() {
