@@ -301,7 +301,8 @@ void Alarm::ring()
 
     // play sound (it will loop)
     qDebug() << "Alarm sound: " << m_audioPath;
-    AlarmPlayer::instance().setSource(m_audioPath);
+    // TODO clean up usage of audio path as URL.
+    AlarmPlayer::instance().setSource(m_audioPath.toLocalFile());
     AlarmPlayer::instance().play();
     setRinging(true);
 

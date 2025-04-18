@@ -85,7 +85,6 @@ private Q_SLOTS:
     void reschedule();
 
 private:
-    QUrl findRingSoundLocation();
     void setRunning(bool running);
     void ring();
 
