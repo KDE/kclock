@@ -12,6 +12,8 @@
 
 #include <QAudioOutput>
 
+#include <KConfigWatcher>
+
 class AlarmPlayer : public QObject
 {
     Q_OBJECT
@@ -22,9 +24,12 @@ public:
 
     int volume();
     Q_INVOKABLE void setVolume(int volume);
-    Q_INVOKABLE void setSource(const QUrl &path);
+    Q_INVOKABLE void setSource(const QString &path);
     Q_INVOKABLE void play();
     Q_INVOKABLE void stop();
+
+    QString soundThemeName() const;
+    QString defaultAlarmSoundPath() const;
 
 Q_SIGNALS:
     void volumeChanged();
@@ -35,6 +40,7 @@ protected:
 private:
     QMediaPlayer *m_player;
     QAudioOutput *m_audio;
+    KConfigWatcher::Ptr m_soundThemeWatcher;
 
     bool m_userStop = false; // indicate if user asks to stop
 
