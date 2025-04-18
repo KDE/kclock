@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-16 00:44+0000\n"
+"POT-Creation-Date: 2025-04-18 00:44+0000\n"
 "PO-Revision-Date: 2024-10-22 18:35+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -178,17 +178,17 @@ msgctxt "Edit alarm page title"
 msgid "Editing %1"
 msgstr "Muokataan: %1"
 
-#: qml/alarm/AlarmFormPage.qml:26 qml/alarm/AlarmListPage.qml:28
+#: qml/alarm/AlarmFormPage.qml:26 qml/alarm/AlarmListPage.qml:29
 #, kde-format
 msgid "New Alarm"
 msgstr "Uusi hälytys"
 
-#: qml/alarm/AlarmFormPage.qml:38 qml/alarm/AlarmFormPage.qml:61
+#: qml/alarm/AlarmFormPage.qml:36 qml/alarm/AlarmFormPage.qml:59
 #, kde-format
 msgid "Done"
 msgstr "Valmis"
 
-#: qml/alarm/AlarmFormPage.qml:67 qml/timer/TimerFormDialog.qml:111
+#: qml/alarm/AlarmFormPage.qml:65 qml/timer/TimerFormDialog.qml:111
 #, kde-format
 msgid "Cancel"
 msgstr "Peru"
@@ -212,19 +212,19 @@ msgstr "Poista"
 msgid "Alarms"
 msgstr "Hälytykset"
 
-#: qml/alarm/AlarmListPage.qml:34 qml/time/TimePage.qml:38
+#: qml/alarm/AlarmListPage.qml:35 qml/time/TimePage.qml:39
 #, kde-format
 msgid "Edit"
 msgstr "Muokkaa"
 
-#: qml/alarm/AlarmListPage.qml:43 qml/Main.qml:54
-#: qml/settings/SettingsPage.qml:21 qml/stopwatch/StopwatchPage.qml:39
-#: qml/time/TimePage.qml:61 qml/timer/TimerListPage.qml:35
+#: qml/alarm/AlarmListPage.qml:44 qml/Main.qml:56
+#: qml/settings/SettingsPage.qml:21 qml/stopwatch/StopwatchPage.qml:40
+#: qml/time/TimePage.qml:62 qml/timer/TimerListPage.qml:36
 #, kde-format
 msgid "Settings"
 msgstr "Asetukset"
 
-#: qml/alarm/AlarmListPage.qml:54
+#: qml/alarm/AlarmListPage.qml:55
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have alarm "
@@ -233,34 +233,34 @@ msgstr ""
 "Kellopalvelua ei löytynyt. Käynnistä kclockd mahdollistaaksesi "
 "hälytystoiminnon."
 
-#: qml/alarm/AlarmListPage.qml:76
+#: qml/alarm/AlarmListPage.qml:77
 #, kde-format
 msgid "No alarms configured"
 msgstr "Ei asetettuja hälytyksiä"
 
-#: qml/alarm/AlarmListPage.qml:81
+#: qml/alarm/AlarmListPage.qml:82
 #, kde-format
 msgid "Add alarm"
 msgstr "Lisää hälytys"
 
-#: qml/alarm/AlarmListPage.qml:92
+#: qml/alarm/AlarmListPage.qml:93
 #, kde-format
 msgid "Loading…"
 msgstr ""
 
-#: qml/alarm/AlarmListPage.qml:107
+#: qml/alarm/AlarmListPage.qml:108
 #, fuzzy, kde-format
 #| msgid "New Alarm"
 msgctxt "@action:button"
 msgid "New Alarm"
 msgstr "Uusi hälytys"
 
-#: qml/alarm/AlarmListPage.qml:124
+#: qml/alarm/AlarmListPage.qml:125
 #, kde-format
 msgid "alarm"
 msgstr "hälytys"
 
-#: qml/alarm/AlarmListPage.qml:124
+#: qml/alarm/AlarmListPage.qml:125
 #, kde-format
 msgid "Deleted %1"
 msgstr "Poistettu %1"
@@ -338,123 +338,123 @@ msgstr "ap."
 msgid "PM"
 msgstr "ip."
 
-#: qml/settings/SettingsPage.qml:33
+#: qml/settings/SettingsPage.qml:34
 #, kde-format
 msgid "Time Format"
 msgstr "Ajan muoto"
 
-#: qml/settings/SettingsPage.qml:35
+#: qml/settings/SettingsPage.qml:36
 #, kde-format
 msgid "Use System Default"
 msgstr "Käytä järjestelmän oletusta"
 
-#: qml/settings/SettingsPage.qml:36
+#: qml/settings/SettingsPage.qml:37
 #, kde-format
 msgid "12 Hour Time"
 msgstr "12-tuntinen kello"
 
-#: qml/settings/SettingsPage.qml:37
+#: qml/settings/SettingsPage.qml:38
 #, kde-format
 msgid "24 Hour Time"
 msgstr "24-tuntinen kello"
 
-#: qml/settings/SettingsPage.qml:51
+#: qml/settings/SettingsPage.qml:52
 #, kde-format
 msgid "Notifications for running timers"
 msgstr ""
 
-#: qml/settings/SettingsPage.qml:53
+#: qml/settings/SettingsPage.qml:54
 #, kde-format
 msgid "Always"
 msgstr ""
 
-#: qml/settings/SettingsPage.qml:56
+#: qml/settings/SettingsPage.qml:57
 #, kde-format
 msgctxt "When the app is not running"
 msgid "When %1 is not running"
 msgstr ""
 
-#: qml/settings/SettingsPage.qml:59
+#: qml/settings/SettingsPage.qml:60
 #, fuzzy, kde-format
 #| msgid "Never"
 msgid "Never"
 msgstr "Ei koskaan"
 
-#: qml/settings/SettingsPage.qml:62
+#: qml/settings/SettingsPage.qml:63
 #, kde-format
 msgid "Lets you pause and resume timers from the notification area."
 msgstr ""
 
-#: qml/settings/SettingsPage.qml:77
+#: qml/settings/SettingsPage.qml:78
 #, kde-format
 msgid "About Clock"
 msgstr "Tietoa Kellosta"
 
-#: qml/settings/SettingsPage.qml:86
+#: qml/settings/SettingsPage.qml:87
 #, kde-format
 msgid "About KDE"
 msgstr "Tietoa KDE:sta"
 
-#: qml/stopwatch/StopwatchPage.qml:149 qml/stopwatch/StopwatchPage.qml:184
-#: qml/timer/TimerPage.qml:53 qml/timer/TimerPage.qml:101
+#: qml/stopwatch/StopwatchPage.qml:150 qml/stopwatch/StopwatchPage.qml:185
+#: qml/timer/TimerPage.qml:51 qml/timer/TimerPage.qml:99
 #, kde-format
 msgid "Reset"
 msgstr "Nollaa"
 
-#: qml/stopwatch/StopwatchPage.qml:151 qml/timer/TimerPage.qml:45
-#: qml/timer/TimerPage.qml:95
+#: qml/stopwatch/StopwatchPage.qml:152 qml/timer/TimerPage.qml:43
+#: qml/timer/TimerPage.qml:93
 #, kde-format
 msgid "Pause"
 msgstr "Tauko"
 
-#: qml/stopwatch/StopwatchPage.qml:153
+#: qml/stopwatch/StopwatchPage.qml:154
 #, kde-format
 msgid "Resume"
 msgstr "Jatka"
 
-#: qml/stopwatch/StopwatchPage.qml:155 qml/timer/TimerPage.qml:45
-#: qml/timer/TimerPage.qml:95
+#: qml/stopwatch/StopwatchPage.qml:156 qml/timer/TimerPage.qml:43
+#: qml/timer/TimerPage.qml:93
 #, kde-format
 msgid "Start"
 msgstr "Käynnistä"
 
-#: qml/stopwatch/StopwatchPage.qml:184 qml/stopwatch/StopwatchPage.qml:213
+#: qml/stopwatch/StopwatchPage.qml:185 qml/stopwatch/StopwatchPage.qml:214
 #, kde-format
 msgid "Lap"
 msgstr "Kierros"
 
-#: qml/stopwatch/StopwatchPage.qml:221
+#: qml/stopwatch/StopwatchPage.qml:222
 #, kde-format
 msgid "Lap Time"
 msgstr "Kierrosaika"
 
-#: qml/stopwatch/StopwatchPage.qml:228
+#: qml/stopwatch/StopwatchPage.qml:229
 #, kde-format
 msgid "Total"
 msgstr "Kaikkiaan"
 
-#: qml/stopwatch/StopwatchPage.qml:258
+#: qml/stopwatch/StopwatchPage.qml:259
 #, fuzzy, kde-format
 #| msgid "Pause"
 msgctxt "@action:button"
 msgid "Pause"
 msgstr "Tauko"
 
-#: qml/stopwatch/StopwatchPage.qml:260
+#: qml/stopwatch/StopwatchPage.qml:261
 #, fuzzy, kde-format
 #| msgid "Resume"
 msgctxt "@action:button"
 msgid "Resume"
 msgstr "Jatka"
 
-#: qml/stopwatch/StopwatchPage.qml:262
+#: qml/stopwatch/StopwatchPage.qml:263
 #, fuzzy, kde-format
 #| msgid "Start"
 msgctxt "@action:button"
 msgid "Start"
 msgstr "Käynnistä"
 
-#: qml/stopwatch/StopwatchPage.qml:322
+#: qml/stopwatch/StopwatchPage.qml:323
 #, kde-format
 msgid "#%1"
 msgstr "# %1"
@@ -469,12 +469,12 @@ msgstr "Sijainteja ei löytynyt"
 msgid "Add Location"
 msgstr "Lisää sijainti"
 
-#: qml/time/TimePage.qml:51
+#: qml/time/TimePage.qml:52
 #, kde-format
 msgid "Add"
 msgstr "Lisää"
 
-#: qml/time/TimePage.qml:167
+#: qml/time/TimePage.qml:168
 #, fuzzy, kde-format
 #| msgid "Add Location"
 msgctxt "@action:button"
@@ -542,7 +542,7 @@ msgid "seconds"
 msgstr "sekuntia"
 
 #: qml/timer/TimerForm.qml:114 qml/timer/TimerListDelegate.qml:141
-#: qml/timer/TimerPage.qml:68 qml/timer/TimerPage.qml:116
+#: qml/timer/TimerPage.qml:66 qml/timer/TimerPage.qml:114
 #, kde-format
 msgid "Loop Timer"
 msgstr "Ajastinsilmukka"
@@ -647,12 +647,12 @@ msgctxt "@info:tooltip"
 msgid "Delete"
 msgstr "Poista"
 
-#: qml/timer/TimerListPage.qml:27
+#: qml/timer/TimerListPage.qml:28
 #, kde-format
 msgid "New Timer"
 msgstr "Uusi ajastin"
 
-#: qml/timer/TimerListPage.qml:52
+#: qml/timer/TimerListPage.qml:53
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
@@ -661,19 +661,19 @@ msgstr ""
 "Kellopalvelua ei löytynyt. Käynnistä kclockd mahdollistaaksesi "
 "ajastintoiminnon."
 
-#: qml/timer/TimerListPage.qml:82
+#: qml/timer/TimerListPage.qml:83
 #, fuzzy, kde-format
 #| msgid "New Timer"
 msgctxt "@action:button"
 msgid "New Timer"
 msgstr "Uusi ajastin"
 
-#: qml/timer/TimerListPage.qml:92
+#: qml/timer/TimerListPage.qml:93
 #, kde-format
 msgid "No timers configured"
 msgstr "Ei asetettuja ajastimia"
 
-#: qml/timer/TimerListPage.qml:97
+#: qml/timer/TimerListPage.qml:98
 #, kde-format
 msgid "Add timer"
 msgstr "Lisää ajastin"
@@ -683,7 +683,7 @@ msgstr "Lisää ajastin"
 msgid "New timer"
 msgstr "Uusi ajastin"
 
-#: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:107
+#: qml/timer/TimerPage.qml:57 qml/timer/TimerPage.qml:105
 #, kde-format
 msgid "Delete"
 msgstr "Poista"
