@@ -35,6 +35,17 @@ Kirigami.ScrollablePage {
             StopwatchModel.addLap();
         }
     }
+    Keys.onDeletePressed: {
+        if (!running) {
+            StopwatchTimer.reset();
+        }
+    }
+    Keys.onPressed: (event) => {
+        if (event.key === Qt.Key_Backspace && !running) {
+            StopwatchTimer.reset();
+            event.accepted = true;
+        }
+    }
 
     actions: [
         Kirigami.Action {
