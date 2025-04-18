@@ -17,6 +17,8 @@
 #include <QQmlEngine>
 #include <QtGlobal>
 
+#include <algorithm>
+
 TimerModel *TimerModel::instance()
 {
     static TimerModel *singleton = new TimerModel();
@@ -100,19 +102,25 @@ void TimerModel::addTimer(QString uuid)
 {
     auto *timer = new Timer(uuid.remove(QRegularExpression(QStringLiteral("[{}-]"))));
     connect(timer, &Timer::runningChanged, this, &TimerModel::runningTimerChanged);
+    connect(timer, &Timer::runningChanged, this, &TimerModel::runningTimersCountChanged);
 
     Timer *oldRunningTimer = runningTimer();
+    const int oldRunningTimersCount = runningTimersCount();
     Q_EMIT beginInsertRows(QModelIndex(), 0, 0);
     m_timersList.insert(0, timer);
     Q_EMIT endInsertRows();
     if (oldRunningTimer != runningTimer()) {
         Q_EMIT runningTimerChanged();
     }
+    if (oldRunningTimersCount != runningTimersCount()) {
+        Q_EMIT runningTimersCountChanged();
+    }
 }
 
 void TimerModel::removeTimer(const QString &uuid)
 {
     Timer *oldRunningTimer = runningTimer();
+    const int oldRunningTimersCount = runningTimersCount();
 
     for (int i = 0; i < m_timersList.size(); ++i) {
         if (m_timersList[i]->uuid().toString() == uuid) {
@@ -125,6 +133,9 @@ void TimerModel::removeTimer(const QString &uuid)
 
     if (oldRunningTimer != runningTimer()) {
         Q_EMIT runningTimerChanged();
+    }
+    if (oldRunningTimersCount != runningTimersCount()) {
+        Q_EMIT runningTimersCountChanged();
     }
 }
 
@@ -158,6 +169,13 @@ Timer *TimerModel::runningTimer() const
         }
     }
     return runningTimer;
+}
+
+int TimerModel::runningTimersCount() const
+{
+    return std::count_if(m_timersList.cbegin(), m_timersList.cend(), [](Timer *timer) {
+        return timer->running();
+    });
 }
 
 #include "moc_timermodel.cpp"

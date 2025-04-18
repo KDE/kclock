@@ -31,6 +31,7 @@ class TimerModel : public QAbstractListModel
      * If there is a single running timer in the model, this property will return it.
      */
     Q_PROPERTY(Timer *runningTimer READ runningTimer NOTIFY runningTimerChanged)
+    Q_PROPERTY(int runningTimersCount READ runningTimersCount NOTIFY runningTimersCountChanged)
 
 public:
     static TimerModel *instance();
@@ -52,9 +53,12 @@ public:
 
     Timer *runningTimer() const;
 
+    int runningTimersCount() const;
+
 Q_SIGNALS:
     void connectedToDaemonChanged();
     void runningTimerChanged();
+    void runningTimersCountChanged();
 
 private Q_SLOTS:
     void addTimer(QString uuid);
