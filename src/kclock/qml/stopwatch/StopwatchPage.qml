@@ -30,7 +30,11 @@ Kirigami.ScrollablePage {
 
     // keyboard controls
     Keys.onSpacePressed: StopwatchTimer.toggle();
-    Keys.onReturnPressed: StopwatchModel.addLap();
+    Keys.onReturnPressed: {
+        if (running) {
+            StopwatchModel.addLap();
+        }
+    }
 
     actions: [
         Kirigami.Action {
