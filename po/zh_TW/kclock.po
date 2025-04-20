@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-18 00:44+0000\n"
-"PO-Revision-Date: 2025-04-07 14:01+0900\n"
+"PO-Revision-Date: 2025-04-19 15:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -53,13 +53,13 @@ msgstr "Han Young"
 #: main.cpp:56
 #, kde-format
 msgid "Kai Uwe Broulik"
-msgstr ""
+msgstr "Kai Uwe Broulik"
 
 #: main.cpp:56
 #, kde-format
 msgctxt "Author"
 msgid "Desktop Integration"
-msgstr ""
+msgstr "桌面整合"
 
 #: main.cpp:62
 #, kde-format
@@ -749,22 +749,19 @@ msgid "Alarm will ring in %1"
 msgstr "鬧鐘將在 %1 後響起"
 
 #: utilmodel.cpp:152
-#, fuzzy, kde-format
-#| msgid "Only once"
+#, kde-format
 msgctxt "Repeat"
 msgid "Only once"
 msgstr "僅一次"
 
 #: utilmodel.cpp:155
-#, fuzzy, kde-format
-#| msgid "Everyday"
+#, kde-format
 msgctxt "Repeat"
 msgid "Everyday"
 msgstr "每天"
 
 #: utilmodel.cpp:158
-#, fuzzy, kde-format
-#| msgid "Weekdays"
+#, kde-format
 msgctxt "Repeat"
 msgid "Weekdays"
 msgstr "工作日"
