@@ -4,7 +4,7 @@
 # SPDX-FileCopyrightText: 2025 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Translators:
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2022, 2025.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2022, 2025 .
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
