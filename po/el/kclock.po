@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-18 00:44+0000\n"
+"POT-Creation-Date: 2025-04-22 00:44+0000\n"
 "PO-Revision-Date: 2021-06-12 21:25+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -225,7 +225,7 @@ msgid "Edit"
 msgstr "Επεξεργασία"
 
 #: qml/alarm/AlarmListPage.qml:44 qml/Main.qml:56
-#: qml/settings/SettingsPage.qml:21 qml/stopwatch/StopwatchPage.qml:40
+#: qml/settings/SettingsPage.qml:21 qml/stopwatch/StopwatchPage.qml:55
 #: qml/time/TimePage.qml:62 qml/timer/TimerListPage.qml:36
 #, kde-format
 msgid "Settings"
@@ -403,66 +403,66 @@ msgstr "Ρολόι"
 msgid "About KDE"
 msgstr "Περίγραμμα"
 
-#: qml/stopwatch/StopwatchPage.qml:150 qml/stopwatch/StopwatchPage.qml:185
+#: qml/stopwatch/StopwatchPage.qml:165 qml/stopwatch/StopwatchPage.qml:200
 #: qml/timer/TimerPage.qml:51 qml/timer/TimerPage.qml:99
 #, kde-format
 msgid "Reset"
 msgstr "Επαναφορά"
 
-#: qml/stopwatch/StopwatchPage.qml:152 qml/timer/TimerPage.qml:43
+#: qml/stopwatch/StopwatchPage.qml:167 qml/timer/TimerPage.qml:43
 #: qml/timer/TimerPage.qml:93
 #, kde-format
 msgid "Pause"
 msgstr "Παύση"
 
-#: qml/stopwatch/StopwatchPage.qml:154
+#: qml/stopwatch/StopwatchPage.qml:169
 #, kde-format
 msgid "Resume"
 msgstr ""
 
-#: qml/stopwatch/StopwatchPage.qml:156 qml/timer/TimerPage.qml:43
+#: qml/stopwatch/StopwatchPage.qml:171 qml/timer/TimerPage.qml:43
 #: qml/timer/TimerPage.qml:93
 #, kde-format
 msgid "Start"
 msgstr "Έναρξη"
 
-#: qml/stopwatch/StopwatchPage.qml:185 qml/stopwatch/StopwatchPage.qml:214
+#: qml/stopwatch/StopwatchPage.qml:200 qml/stopwatch/StopwatchPage.qml:229
 #, kde-format
 msgid "Lap"
 msgstr "Γύρος"
 
-#: qml/stopwatch/StopwatchPage.qml:222
+#: qml/stopwatch/StopwatchPage.qml:237
 #, fuzzy, kde-format
 #| msgid "Timer"
 msgid "Lap Time"
 msgstr "Χρονόμετρο"
 
-#: qml/stopwatch/StopwatchPage.qml:229
+#: qml/stopwatch/StopwatchPage.qml:244
 #, kde-format
 msgid "Total"
 msgstr ""
 
-#: qml/stopwatch/StopwatchPage.qml:259
+#: qml/stopwatch/StopwatchPage.qml:274
 #, fuzzy, kde-format
 #| msgid "Pause"
 msgctxt "@action:button"
 msgid "Pause"
 msgstr "Παύση"
 
-#: qml/stopwatch/StopwatchPage.qml:261
+#: qml/stopwatch/StopwatchPage.qml:276
 #, kde-format
 msgctxt "@action:button"
 msgid "Resume"
 msgstr ""
 
-#: qml/stopwatch/StopwatchPage.qml:263
+#: qml/stopwatch/StopwatchPage.qml:278
 #, fuzzy, kde-format
 #| msgid "Start"
 msgctxt "@action:button"
 msgid "Start"
 msgstr "Έναρξη"
 
-#: qml/stopwatch/StopwatchPage.qml:323
+#: qml/stopwatch/StopwatchPage.qml:338
 #, kde-format
 msgid "#%1"
 msgstr ""

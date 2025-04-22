@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-18 00:44+0000\n"
+"POT-Creation-Date: 2025-04-22 00:44+0000\n"
 "PO-Revision-Date: 2025-04-19 15:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -218,7 +218,7 @@ msgid "Edit"
 msgstr "編輯"
 
 #: qml/alarm/AlarmListPage.qml:44 qml/Main.qml:56
-#: qml/settings/SettingsPage.qml:21 qml/stopwatch/StopwatchPage.qml:40
+#: qml/settings/SettingsPage.qml:21 qml/stopwatch/StopwatchPage.qml:55
 #: qml/time/TimePage.qml:62 qml/timer/TimerListPage.qml:36
 #, kde-format
 msgid "Settings"
@@ -391,63 +391,63 @@ msgstr "關於時鐘"
 msgid "About KDE"
 msgstr "關於 KDE"
 
-#: qml/stopwatch/StopwatchPage.qml:150 qml/stopwatch/StopwatchPage.qml:185
+#: qml/stopwatch/StopwatchPage.qml:165 qml/stopwatch/StopwatchPage.qml:200
 #: qml/timer/TimerPage.qml:51 qml/timer/TimerPage.qml:99
 #, kde-format
 msgid "Reset"
 msgstr "重設"
 
-#: qml/stopwatch/StopwatchPage.qml:152 qml/timer/TimerPage.qml:43
+#: qml/stopwatch/StopwatchPage.qml:167 qml/timer/TimerPage.qml:43
 #: qml/timer/TimerPage.qml:93
 #, kde-format
 msgid "Pause"
 msgstr "暫停"
 
-#: qml/stopwatch/StopwatchPage.qml:154
+#: qml/stopwatch/StopwatchPage.qml:169
 #, kde-format
 msgid "Resume"
 msgstr "恢復"
 
-#: qml/stopwatch/StopwatchPage.qml:156 qml/timer/TimerPage.qml:43
+#: qml/stopwatch/StopwatchPage.qml:171 qml/timer/TimerPage.qml:43
 #: qml/timer/TimerPage.qml:93
 #, kde-format
 msgid "Start"
 msgstr "開始"
 
-#: qml/stopwatch/StopwatchPage.qml:185 qml/stopwatch/StopwatchPage.qml:214
+#: qml/stopwatch/StopwatchPage.qml:200 qml/stopwatch/StopwatchPage.qml:229
 #, kde-format
 msgid "Lap"
 msgstr "單圈"
 
-#: qml/stopwatch/StopwatchPage.qml:222
+#: qml/stopwatch/StopwatchPage.qml:237
 #, kde-format
 msgid "Lap Time"
 msgstr "單圈時間"
 
-#: qml/stopwatch/StopwatchPage.qml:229
+#: qml/stopwatch/StopwatchPage.qml:244
 #, kde-format
 msgid "Total"
 msgstr "總計"
 
-#: qml/stopwatch/StopwatchPage.qml:259
+#: qml/stopwatch/StopwatchPage.qml:274
 #, kde-format
 msgctxt "@action:button"
 msgid "Pause"
 msgstr "暫停"
 
-#: qml/stopwatch/StopwatchPage.qml:261
+#: qml/stopwatch/StopwatchPage.qml:276
 #, kde-format
 msgctxt "@action:button"
 msgid "Resume"
 msgstr "繼續"
 
-#: qml/stopwatch/StopwatchPage.qml:263
+#: qml/stopwatch/StopwatchPage.qml:278
 #, kde-format
 msgctxt "@action:button"
 msgid "Start"
 msgstr "開始"
 
-#: qml/stopwatch/StopwatchPage.qml:323
+#: qml/stopwatch/StopwatchPage.qml:338
 #, kde-format
 msgid "#%1"
 msgstr "#%1"
