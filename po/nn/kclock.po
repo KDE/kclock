@@ -782,9 +782,3 @@ msgstr "Kvardagar"
 #, kde-format
 msgid ", "
 msgstr ", "
-
-#~ msgid "%1 minutes"
-#~ msgstr "%1 minutt"
-
-#~ msgid " and "
-#~ msgstr " og "
