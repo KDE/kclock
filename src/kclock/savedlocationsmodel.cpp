@@ -93,6 +93,9 @@ int SavedLocationsModel::rowCount(const QModelIndex &parent) const
 QVariant SavedLocationsModel::data(const QModelIndex &index, int role) const
 {
     const int row = index.row();
+    if (row < 0 || row >= m_timeZones.size()) {
+        return {};
+    }
 
     switch (role) {
     case NameRole: {
