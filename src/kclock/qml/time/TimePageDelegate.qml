@@ -17,6 +17,7 @@ Control {
     property bool editMode
     required property string city
     required property string relativeTime
+    required property int relativeDays
     required property string timeString
 
     signal deleteRequested()
@@ -40,7 +41,16 @@ Control {
             }
             Label {
                 Layout.fillWidth: true
-                text: root.relativeTime
+                text: {
+                    let parts = [];
+                    if (root.relativeDays === -1) {
+                        parts.push(i18n("Yesterday"));
+                    } else if (root.relativeDays === +1) {
+                        parts.push(i18n("Tomorrow"));
+                    }
+                    parts.push(root.relativeTime);
+                    return parts.join(" · ");
+                }
                 font: Kirigami.Theme.smallFont
             }
         }

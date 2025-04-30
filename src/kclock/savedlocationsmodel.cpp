@@ -136,6 +136,11 @@ QVariant SavedLocationsModel::data(const QModelIndex &index, int role) const
             return QVariant(i18n("Local time"));
         }
     }
+    case RelativeDaysRole: {
+        const QTimeZone &timeZone = m_timeZones.at(row);
+        const QDateTime now = QDateTime::currentDateTime();
+        return now.daysTo(now.toTimeZone(timeZone));
+    }
     case CityRole: {
         auto split = m_timeZones[row].id().replace("_", " ").split('/');
         return split[split.length() - 1];
@@ -150,7 +155,12 @@ QVariant SavedLocationsModel::data(const QModelIndex &index, int role) const
 
 QHash<int, QByteArray> SavedLocationsModel::roleNames() const
 {
-    return {{NameRole, "name"}, {TimeStringRole, "timeString"}, {RelativeTimeRole, "relativeTime"}, {CityRole, "city"}, {IdRole, "id"}};
+    return {{NameRole, "name"},
+            {TimeStringRole, "timeString"},
+            {RelativeTimeRole, "relativeTime"},
+            {RelativeDaysRole, "relativeDays"},
+            {CityRole, "city"},
+            {IdRole, "id"}};
 }
 
 #include "moc_savedlocationsmodel.cpp"
