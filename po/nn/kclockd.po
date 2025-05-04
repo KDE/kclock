@@ -1,12 +1,11 @@
 # Translation of kclockd to Norwegian Nynorsk
 #
-# Karl Ove Hufthammer <karl@huftis.org>, 2020, 2021, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-14 00:43+0000\n"
-"PO-Revision-Date: 2022-07-27 20:11+0200\n"
+"PO-Revision-Date: 2025-05-03 11:18+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -14,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.04.3\n"
+"X-Generator: Lokalize 25.07.70\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -35,7 +34,7 @@ msgid "Alarm"
 msgstr "Alarm"
 
 #: alarm.cpp:76 timer.cpp:68
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button"
 msgid "Dismiss"
 msgstr "Avvis"
@@ -60,76 +59,76 @@ msgstr "Alarm: <shortcut>%1 %2</shortcut>"
 #, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "+1 Minute"
-msgstr ""
+msgstr "+1 minutt"
 
 #: kclockrunner.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset Timer"
-msgstr ""
+msgstr "Nullstill nedteljing"
 
 #: kclockrunner.cpp:77
 #, kde-format
 msgctxt "Note this is a KRunner keyword"
 msgid "timer"
-msgstr ""
+msgstr "nedteljing"
 
 #: kclockrunner.cpp:94
 #, kde-format
 msgctxt "Timer running or paused (remaining time)"
 msgid "%1 (%2 Remaining)"
-msgstr ""
+msgstr "%1 (%2 att)"
 
 #: kclockrunner.cpp:96
 #, kde-format
 msgctxt "Timer not running (timer length)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: kclockrunner.cpp:107
 #, kde-format
 msgctxt "KRunner category"
 msgid "Timer"
-msgstr ""
+msgstr "Nedteljing"
 
 #: kclockrunner.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Pause"
-msgstr ""
+msgstr "Pause"
 
 #: kclockrunner.cpp:113
 #, kde-format
 msgctxt "@action"
 msgid "Resume"
-msgstr ""
+msgstr "Hald fram"
 
 #: kclockrunner.cpp:115
 #, kde-format
 msgctxt "@action"
 msgid "Start Timer"
-msgstr ""
+msgstr "Start nedteljing"
 
 #: kclockrunner.cpp:130
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Note this is a KRunner keyword"
 msgid "alarm"
-msgstr "Alarm"
+msgstr "alarm"
 
 #: kclockrunner.cpp:152
 #, kde-format
 msgctxt "Alarm name (time)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: kclockrunner.cpp:162
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "KRunner category"
 msgid "Alarm"
 msgstr "Alarm"
 
 #: kclockrunner.cpp:166
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action Dismiss Alarm"
 msgid "Dismiss"
 msgstr "Avvis"
@@ -138,13 +137,13 @@ msgstr "Avvis"
 #, kde-format
 msgctxt "Disable timer (rings in time)"
 msgid "Disable (Rings in %1)"
-msgstr ""
+msgstr "Slå (ringjer om %1)"
 
 #: kclockrunner.cpp:171
 #, kde-format
 msgctxt "@action Enable Alarm"
 msgid "Enable"
-msgstr ""
+msgstr "Slå på"
 
 #: main.cpp:32
 #, kde-format
@@ -169,13 +168,13 @@ msgstr "Han Young"
 #: main.cpp:51
 #, kde-format
 msgid "Kai Uwe Broulik"
-msgstr ""
+msgstr "Kai Uwe Broulik"
 
 #: main.cpp:51
 #, kde-format
 msgctxt "Author"
 msgid "Desktop Integration"
-msgstr ""
+msgstr "Skrivebordsintegrering"
 
 #: timer.cpp:63
 #, kde-format
@@ -191,37 +190,37 @@ msgstr "Nedteljinga %1 er ferdig!"
 #, kde-format
 msgctxt "@action:button Open kclock app"
 msgid "Open Clock"
-msgstr ""
+msgstr "Opna klokka"
 
 #: timermodel.cpp:247
 #, kde-format
 msgctxt "@action:button Add minute to timer"
 msgid "+1 Minute"
-msgstr ""
+msgstr "+1 minutt"
 
 #: timermodel.cpp:250
 #, kde-format
 msgctxt "@action:button Reset timer"
 msgid "Reset"
-msgstr ""
+msgstr "Nullstill"
 
 #: timermodel.cpp:253 timermodel.cpp:278
 #, kde-format
 msgctxt "@action:button Pause timer"
 msgid "Pause"
-msgstr ""
+msgstr "Pause"
 
 #: timermodel.cpp:271
 #, kde-format
 msgctxt "@title:notification Timer name (paused)"
 msgid "%1 (Paused)"
-msgstr ""
+msgstr "%1 (pause)"
 
 #: timermodel.cpp:280
 #, kde-format
 msgctxt "@action:button Resume timer"
 msgid "Resume"
-msgstr ""
+msgstr "Hald fram"
 
 #: xdgportal.cpp:34
 #, kde-format
