@@ -40,6 +40,8 @@ TimerModel::TimerModel(QObject *parent)
         // connect timer signals
         connect(m_interface, SIGNAL(timerAdded(QString)), this, SLOT(addTimer(QString)));
         connect(m_interface, SIGNAL(timerRemoved(QString)), this, SLOT(removeTimer(QString)));
+        connect(m_interface, SIGNAL(defaultAudioLocationChanged()), this, SLOT(updateDefaultAudioLocation()));
+        updateDefaultAudioLocation();
     }
 
     // load timers
@@ -139,6 +141,22 @@ void TimerModel::setConnectedToDaemon(bool connectedToDaemon)
         m_connectedToDaemon = connectedToDaemon;
         Q_EMIT connectedToDaemonChanged();
     }
+}
+
+QString TimerModel::defaultAudioLocation() const
+{
+    return m_defaultAudioLocation;
+}
+
+void TimerModel::setDefaultAudioLocation(const QString &location)
+{
+    m_interface->setProperty("defaultAudioLocation", location);
+}
+
+void TimerModel::updateDefaultAudioLocation()
+{
+    m_defaultAudioLocation = m_interface->defaultAudioLocation();
+    Q_EMIT defaultAudioLocationChanged();
 }
 
 Timer *TimerModel::runningTimer() const

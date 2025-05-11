@@ -11,6 +11,7 @@
 #include <QHash>
 #include <QObject>
 #include <QTimer>
+#include <QUrl>
 
 class Timer;
 class UnityLauncher;
@@ -21,6 +22,7 @@ class TimerModel : public QObject
 {
     Q_OBJECT
     Q_CLASSINFO("D-Bus Interface", "org.kde.kclock.TimerModel")
+    Q_PROPERTY(QString defaultAudioLocation READ defaultAudioLocation WRITE setDefaultAudioLocation NOTIFY defaultAudioLocationChanged)
 
 public:
     static TimerModel *instance();
@@ -33,9 +35,13 @@ public:
     Q_SCRIPTABLE void addTimer(int length, const QString &label, bool looping, const QString &commandTimeout, bool running);
     Q_SCRIPTABLE void removeTimer(const QString &uuid);
 
+    QString defaultAudioLocation() const;
+    void setDefaultAudioLocation(QString location);
+
 Q_SIGNALS:
     Q_SCRIPTABLE void timerAdded(const QString &);
     Q_SCRIPTABLE void timerRemoved(const QString &);
+    Q_SCRIPTABLE void defaultAudioLocationChanged();
 
 private:
     void connectTimer(Timer *timer);
@@ -58,6 +64,7 @@ private:
     QList<Timer *> m_timerList;
 
     QDBusServiceWatcher m_kclockWatcher;
+    QUrl m_defaultAudioLocation;
     bool m_kclockRunning = false;
 
     UnityLauncher *m_unityLauncher;

@@ -27,6 +27,7 @@ class TimerModel : public QAbstractListModel
     QML_ELEMENT
     QML_SINGLETON
     Q_PROPERTY(bool connectedToDaemon READ connectedToDaemon NOTIFY connectedToDaemonChanged)
+    Q_PROPERTY(QString defaultAudioLocation READ defaultAudioLocation WRITE setDefaultAudioLocation NOTIFY defaultAudioLocationChanged)
     /**
      * If there is a single running timer in the model, this property will return it.
      */
@@ -50,15 +51,20 @@ public:
     bool connectedToDaemon();
     void setConnectedToDaemon(bool connectedToDaemon);
 
+    QString defaultAudioLocation() const;
+    void setDefaultAudioLocation(const QString &location);
+
     Timer *runningTimer() const;
 
 Q_SIGNALS:
     void connectedToDaemonChanged();
     void runningTimerChanged();
+    void defaultAudioLocationChanged();
 
 private Q_SLOTS:
     void addTimer(QString uuid);
     void removeTimer(const QString &uuid);
+    void updateDefaultAudioLocation();
 
 private:
     explicit TimerModel(QObject *parent = nullptr);
@@ -66,5 +72,6 @@ private:
     QList<Timer *> m_timersList;
     OrgKdeKclockTimerModelInterface *const m_interface;
     QDBusServiceWatcher *m_watcher;
+    QString m_defaultAudioLocation;
     bool m_connectedToDaemon = false;
 };
