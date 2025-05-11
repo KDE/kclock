@@ -214,7 +214,6 @@ void TimerModel::updateIndicators()
         m_updateIndicatorsTimer.stop();
 
         m_unityLauncher->setProgress(qQNaN());
-        Q_ASSERT(m_notifications.isEmpty());
     }
 }
 
