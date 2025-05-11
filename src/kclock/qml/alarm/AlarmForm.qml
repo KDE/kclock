@@ -194,7 +194,7 @@ Kirigami.FormLayout {
 
         Kirigami.FormData.label: i18n("Ring Sound:")
 
-        onClicked: applicationWindow().pageStack.push(Qt.resolvedUrl("SoundPickerPage.qml"), { alarmForm: root });
+        onClicked: applicationWindow().pageStack.push(Qt.resolvedUrl("../components/SoundPickerPage.qml"), { alarmForm: root });
 
         text: {
             if (root.formAudioPath == UtilModel.getDefaultAlarmFileLocation())  {

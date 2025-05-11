@@ -7,6 +7,7 @@
 
 #include "timermodel.h"
 
+#include "alarmplayer.h"
 #include "debug_timermodel.h"
 
 #include "kclockdsettings.h"
@@ -30,11 +31,13 @@
 #include <QtNumeric>
 
 #include <chrono>
+#include <qstringliteral.h>
 
 using namespace std::literals::chrono_literals;
 using namespace Qt::Literals::StringLiterals;
 
-const QString TIMERS_CFG_GROUP = QStringLiteral("Timers"), TIMERS_CFG_KEY = QStringLiteral("timersList");
+const QString TIMERS_CFG_GROUP = QStringLiteral("Timers"), TIMERS_CFG_KEY = QStringLiteral("timersList"),
+              TIMERS_CFG_DEFAULT_AUDIO_KEY = QStringLiteral("defaultAudio");
 
 TimerModel *TimerModel::instance()
 {
@@ -68,6 +71,12 @@ void TimerModel::load()
 {
     auto config = KSharedConfig::openConfig();
     KConfigGroup group = config->group(TIMERS_CFG_GROUP);
+
+    QString audioLocation = group.readEntry(TIMERS_CFG_DEFAULT_AUDIO_KEY);
+    if (!audioLocation.isEmpty()) {
+        m_defaultAudioLocation = QUrl::fromLocalFile(audioLocation);
+    }
+
     QJsonDocument doc = QJsonDocument::fromJson(group.readEntry(TIMERS_CFG_KEY, "{}").toUtf8());
     for (QJsonValueRef r : doc.array()) {
         QJsonObject obj = r.toObject();
@@ -92,6 +101,7 @@ void TimerModel::save()
     KConfigGroup group = config->group(TIMERS_CFG_GROUP);
     QByteArray data = QJsonDocument(arr).toJson(QJsonDocument::Compact);
     group.writeEntry(TIMERS_CFG_KEY, QString::fromStdString(data.toStdString()));
+    group.writeEntry(TIMERS_CFG_DEFAULT_AUDIO_KEY, m_defaultAudioLocation);
 
     group.sync();
 }
@@ -156,6 +166,24 @@ void TimerModel::remove(int index)
 
     updateIndicators();
     save();
+}
+
+QString TimerModel::defaultAudioLocation() const
+{
+    if (m_defaultAudioLocation.isEmpty()) {
+        return AlarmPlayer::instance().defaultAlarmSoundPath();
+    }
+    return m_defaultAudioLocation.toLocalFile();
+}
+
+void TimerModel::setDefaultAudioLocation(QString location)
+{
+    if (m_defaultAudioLocation.path() != location) {
+        location = location.replace(QStringLiteral("file://"), QString());
+        m_defaultAudioLocation = QUrl::fromLocalFile(location);
+        Q_EMIT defaultAudioLocationChanged();
+        save();
+    }
 }
 
 QList<Timer *> TimerModel::timerList() const

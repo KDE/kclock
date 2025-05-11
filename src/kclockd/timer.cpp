@@ -8,6 +8,7 @@
 
 #include "timer.h"
 #include "alarmplayer.h"
+#include "timermodel.h"
 
 #include <QFile>
 #include <QStandardPaths>
@@ -273,7 +274,7 @@ void Timer::ring()
 
     Utilities::pauseMprisSources();
 
-    AlarmPlayer::instance().setSource(QString()); // use default.
+    AlarmPlayer::instance().setSource(TimerModel::instance()->defaultAudioLocation());
     AlarmPlayer::instance().play();
 
     m_ringing = true;

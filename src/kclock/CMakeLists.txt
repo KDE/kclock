@@ -62,8 +62,8 @@ ecm_add_qml_module(kclock URI org.kde.kclock QML_FILES
     qml/alarm/AlarmListPage.qml
     qml/alarm/AlarmListDelegate.qml
     qml/alarm/AlarmRingingPopup.qml
-    qml/alarm/SoundPickerPage.qml
 
+    qml/components/SoundPickerPage.qml
     qml/components/AboutPage.qml
     qml/components/BottomToolbar.qml
     qml/components/DialogComboBox.qml

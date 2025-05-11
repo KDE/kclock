@@ -21,8 +21,9 @@ import org.kde.kclock
 Kirigami.ScrollablePage {
     id: root
     property var alarmForm
+    property string titleText: i18n("Select Alarm Sound")
 
-    title: i18n("Select Alarm Sound")
+    title: titleText
 
     readonly property int delegateVerticalPadding: Kirigami.Settings.isMobile ? (Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing) : Kirigami.Units.largeSpacing
 

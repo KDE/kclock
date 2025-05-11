@@ -16,6 +16,13 @@ FormCard.FormCardPage {
     id: root
 
     property real yTranslate: 0
+    property string formAudioPath: TimerModel.defaultAudioLocation
+
+    Binding {
+        target: TimerModel
+        property: "defaultAudioLocation"
+        value: formAudioPath
+    }
 
     objectName: "Settings"
     title: i18n("Settings")
@@ -67,6 +74,23 @@ FormCard.FormCardPage {
             valueRole: "value"
 
             onActivated: SettingsModel.timerNotification = currentValue
+        }
+
+        FormCard.FormDelegateSeparator { above: timerNotificationDelegate; below: defaultTimerAudioDelegate }
+
+        FormCard.FormButtonDelegate {
+            id: defaultTimerAudioDelegate
+            description: {
+                let split = root.formAudioPath.split('/');
+                if (split.length < 1) {
+                    return i18n("Default");
+                }
+                return split[split.length - 1].split('.')[0];
+            }
+
+            onClicked: applicationWindow().pageStack.push(Qt.resolvedUrl("../components/SoundPickerPage.qml"), { alarmForm: root, titleText: i18n("Select Timer Sound") });
+
+            text: i18n("Default timer ring sound")
         }
     }
 
