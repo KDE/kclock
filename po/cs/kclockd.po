@@ -33,11 +33,10 @@ msgid "Alarm"
 msgstr "Alarm"
 
 #: alarm.cpp:76 timer.cpp:68
-#, fuzzy, kde-format
-#| msgid "Dismiss"
+#, kde-format
 msgctxt "@action:button"
 msgid "Dismiss"
-msgstr "Zahodit"
+msgstr ""
 
 #: alarm.cpp:79
 #, kde-format
@@ -110,11 +109,10 @@ msgid "Start Timer"
 msgstr ""
 
 #: kclockrunner.cpp:130
-#, fuzzy, kde-format
-#| msgid "Alarm"
+#, kde-format
 msgctxt "Note this is a KRunner keyword"
 msgid "alarm"
-msgstr "Alarm"
+msgstr ""
 
 #: kclockrunner.cpp:152
 #, kde-format
@@ -123,18 +121,16 @@ msgid "%1 (%2)"
 msgstr ""
 
 #: kclockrunner.cpp:162
-#, fuzzy, kde-format
-#| msgid "Alarm"
+#, kde-format
 msgctxt "KRunner category"
 msgid "Alarm"
-msgstr "Alarm"
+msgstr ""
 
 #: kclockrunner.cpp:166
-#, fuzzy, kde-format
-#| msgid "Dismiss"
+#, kde-format
 msgctxt "@action Dismiss Alarm"
 msgid "Dismiss"
-msgstr "Zahodit"
+msgstr ""
 
 #: kclockrunner.cpp:169
 #, kde-format
@@ -208,20 +204,16 @@ msgid "Reset"
 msgstr ""
 
 #: timermodel.cpp:253 timermodel.cpp:278
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Pause"
+#, kde-format
 msgctxt "@action:button Pause timer"
 msgid "Pause"
-msgstr "Pozastavit"
+msgstr ""
 
 #: timermodel.cpp:271
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Pause"
+#, kde-format
 msgctxt "@title:notification Timer name (paused)"
 msgid "%1 (Paused)"
-msgstr "Pozastavit"
+msgstr ""
 
 #: timermodel.cpp:280
 #, kde-format
@@ -234,6 +226,3 @@ msgstr ""
 msgid ""
 "Allow the clock process to be in the background and launched on startup."
 msgstr ""
-
-#~ msgid "View"
-#~ msgstr "Pohled"

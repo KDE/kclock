@@ -249,11 +249,10 @@ msgid "Loading…"
 msgstr "Probíhá načítání…"
 
 #: qml/alarm/AlarmListPage.qml:108
-#, fuzzy, kde-format
-#| msgid "New Alarm"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Alarm"
-msgstr "&Nová upomínka"
+msgstr ""
 
 #: qml/alarm/AlarmListPage.qml:125
 #, kde-format
@@ -433,18 +432,16 @@ msgid "Total"
 msgstr "Celkem"
 
 #: qml/stopwatch/StopwatchPage.qml:274
-#, fuzzy, kde-format
-#| msgid "Pause"
+#, kde-format
 msgctxt "@action:button"
 msgid "Pause"
-msgstr "Pozastavit"
+msgstr ""
 
 #: qml/stopwatch/StopwatchPage.qml:276
-#, fuzzy, kde-format
-#| msgid "Resume"
+#, kde-format
 msgctxt "@action:button"
 msgid "Resume"
-msgstr "Obnovit"
+msgstr ""
 
 #: qml/stopwatch/StopwatchPage.qml:278
 #, kde-format
@@ -473,11 +470,10 @@ msgid "Add"
 msgstr "Přidat"
 
 #: qml/time/TimePage.qml:168
-#, fuzzy, kde-format
-#| msgid "Add Location"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Location"
-msgstr "Přidat umístění"
+msgstr ""
 
 #: qml/timer/PresetDurationButton.qml:22
 #, kde-format
@@ -556,19 +552,16 @@ msgid "optional"
 msgstr "volitelné"
 
 #: qml/timer/TimerFormDialog.qml:36
-#, fuzzy, kde-format
-#| msgctxt "Edit alarm page title"
-#| msgid "Editing %1"
+#, kde-format
 msgctxt "@title:window Edit timer"
 msgid "Edit %1"
-msgstr "Úprava %1"
+msgstr ""
 
 #: qml/timer/TimerFormDialog.qml:36
-#, fuzzy, kde-format
-#| msgid "Lap Time"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Timer"
-msgstr "Čas kola"
+msgstr ""
 
 #: qml/timer/TimerFormDialog.qml:53
 #, kde-format
@@ -626,11 +619,10 @@ msgid "Reset"
 msgstr "Obnovit"
 
 #: qml/timer/TimerListDelegate.qml:200
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit"
-msgstr "Upravit"
+msgstr ""
 
 #: qml/timer/TimerListDelegate.qml:211
 #, kde-format
@@ -651,11 +643,10 @@ msgid ""
 msgstr ""
 
 #: qml/timer/TimerListPage.qml:83
-#, fuzzy, kde-format
-#| msgid "New timer"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Timer"
-msgstr "Nový časovač"
+msgstr ""
 
 #: qml/timer/TimerListPage.qml:93
 #, kde-format
@@ -764,60 +755,24 @@ msgid "Alarm will ring in %1"
 msgstr ""
 
 #: utilmodel.cpp:152
-#, fuzzy, kde-format
-#| msgid "Only once"
+#, kde-format
 msgctxt "Repeat"
 msgid "Only once"
-msgstr "Pouze jednou"
+msgstr ""
 
 #: utilmodel.cpp:155
-#, fuzzy, kde-format
-#| msgid "Everyday"
+#, kde-format
 msgctxt "Repeat"
 msgid "Everyday"
-msgstr "Každý den"
+msgstr ""
 
 #: utilmodel.cpp:158
-#, fuzzy, kde-format
-#| msgid "Weekdays"
+#, kde-format
 msgctxt "Repeat"
 msgid "Weekdays"
-msgstr "Dny týdne"
+msgstr ""
 
 #: utilmodel.cpp:179
 #, kde-format
 msgid ", "
 msgstr ", "
-
-#~ msgid "%1 minutes"
-#~ msgstr "%1 minut"
-
-#~ msgid " and "
-#~ msgstr " a "
-
-#~ msgid "5 m"
-#~ msgstr "5 m"
-
-#~ msgid "Mon, "
-#~ msgstr "Po, "
-
-#~ msgid "Tue, "
-#~ msgstr "Út, "
-
-#~ msgid "Wed, "
-#~ msgstr "St, "
-
-#~ msgid "Thu, "
-#~ msgstr "Čt, "
-
-#~ msgid "Fri, "
-#~ msgstr "Pá, "
-
-#~ msgid "Sat, "
-#~ msgstr "So, "
-
-#~ msgid "Sun, "
-#~ msgstr "Slunce, "
-
-#~ msgid "Clock"
-#~ msgstr "Hodiny"
