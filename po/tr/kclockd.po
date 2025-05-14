@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-14 00:43+0000\n"
+"POT-Creation-Date: 2025-05-14 00:46+0000\n"
 "PO-Revision-Date: 2025-04-04 18:03+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -185,37 +185,37 @@ msgstr "Sayaç bitti"
 msgid "Your timer %1 has finished!"
 msgstr "%1 sayacınız bitti!"
 
-#: timermodel.cpp:242
+#: timermodel.cpp:241
 #, kde-format
 msgctxt "@action:button Open kclock app"
 msgid "Open Clock"
 msgstr "Saati Aç"
 
-#: timermodel.cpp:247
+#: timermodel.cpp:246
 #, kde-format
 msgctxt "@action:button Add minute to timer"
 msgid "+1 Minute"
 msgstr "+1 Dakika"
 
-#: timermodel.cpp:250
+#: timermodel.cpp:249
 #, kde-format
 msgctxt "@action:button Reset timer"
 msgid "Reset"
 msgstr "Sıfırla"
 
-#: timermodel.cpp:253 timermodel.cpp:278
+#: timermodel.cpp:252 timermodel.cpp:277
 #, kde-format
 msgctxt "@action:button Pause timer"
 msgid "Pause"
 msgstr "Duraklat"
 
-#: timermodel.cpp:271
+#: timermodel.cpp:270
 #, kde-format
 msgctxt "@title:notification Timer name (paused)"
 msgid "%1 (Paused)"
 msgstr "%1 (Duraklatıldı)"
 
-#: timermodel.cpp:280
+#: timermodel.cpp:279
 #, kde-format
 msgctxt "@action:button Resume timer"
 msgid "Resume"

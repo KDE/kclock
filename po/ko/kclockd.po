@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-14 00:43+0000\n"
+"POT-Creation-Date: 2025-05-14 00:46+0000\n"
 "PO-Revision-Date: 2025-04-15 23:37+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -185,37 +185,37 @@ msgstr "타이머 완료됨"
 msgid "Your timer %1 has finished!"
 msgstr "타이머 %1이(가) 완료되었습니다!"
 
-#: timermodel.cpp:242
+#: timermodel.cpp:241
 #, kde-format
 msgctxt "@action:button Open kclock app"
 msgid "Open Clock"
 msgstr "시계 열기"
 
-#: timermodel.cpp:247
+#: timermodel.cpp:246
 #, kde-format
 msgctxt "@action:button Add minute to timer"
 msgid "+1 Minute"
 msgstr "+1분"
 
-#: timermodel.cpp:250
+#: timermodel.cpp:249
 #, kde-format
 msgctxt "@action:button Reset timer"
 msgid "Reset"
 msgstr "초기화"
 
-#: timermodel.cpp:253 timermodel.cpp:278
+#: timermodel.cpp:252 timermodel.cpp:277
 #, kde-format
 msgctxt "@action:button Pause timer"
 msgid "Pause"
 msgstr "일시 정지"
 
-#: timermodel.cpp:271
+#: timermodel.cpp:270
 #, kde-format
 msgctxt "@title:notification Timer name (paused)"
 msgid "%1 (Paused)"
 msgstr "%1(일시 정지됨)"
 
-#: timermodel.cpp:280
+#: timermodel.cpp:279
 #, kde-format
 msgctxt "@action:button Resume timer"
 msgid "Resume"
