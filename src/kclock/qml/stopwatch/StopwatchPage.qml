@@ -213,6 +213,18 @@ Kirigami.ScrollablePage {
             Item { Layout.fillWidth: true }
         }
 
+        Label {
+            Layout.alignment: Qt.AlignHCenter
+            Layout.preferredWidth: Kirigami.Units.gridUnit * 18
+            Layout.topMargin: Kirigami.Units.gridUnit
+            horizontalAlignment: Text.AlignHCenter
+            text: i18n("Press Space to start or pause the stopwatch. Delete or Backspace resets it. Enter adds a lap.")
+            color: Kirigami.Theme.disabledTextColor
+            font: Kirigami.Theme.smallFont
+            wrapMode: Text.WordWrap
+            visible: !Kirigami.Settings.isMobile && listView.count === 0
+        }
+
         // laps list header 
         RowLayout {
             Layout.topMargin: Kirigami.Units.gridUnit
