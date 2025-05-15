@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-22 00:44+0000\n"
+"POT-Creation-Date: 2025-05-15 00:46+0000\n"
 "PO-Revision-Date: 2024-09-03 08:51+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -202,7 +202,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: qml/alarm/AlarmListDelegate.qml:125 qml/time/TimePageDelegate.qml:58
+#: qml/alarm/AlarmListDelegate.qml:125 qml/time/TimePageDelegate.qml:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
@@ -475,6 +475,16 @@ msgctxt "@action:button"
 msgid "Add Location"
 msgstr ""
 
+#: qml/time/TimePageDelegate.qml:47
+#, kde-format
+msgid "Yesterday"
+msgstr ""
+
+#: qml/time/TimePageDelegate.qml:49
+#, kde-format
+msgid "Tomorrow"
+msgstr ""
+
 #: qml/timer/PresetDurationButton.qml:22
 #, kde-format
 msgid "1 m"
@@ -683,47 +693,47 @@ msgstr ""
 msgid "The timer has completed."
 msgstr ""
 
-#: savedlocationsmodel.cpp:121
+#: savedlocationsmodel.cpp:124
 #, kde-format
 msgid "%1 hour and 30 minutes ahead"
 msgstr ""
 
-#: savedlocationsmodel.cpp:121
+#: savedlocationsmodel.cpp:124
 #, kde-format
 msgid "%1 hours and 30 minutes ahead"
 msgstr ""
 
-#: savedlocationsmodel.cpp:123
+#: savedlocationsmodel.cpp:126
 #, kde-format
 msgid "%1 hour ahead"
 msgstr ""
 
-#: savedlocationsmodel.cpp:123
+#: savedlocationsmodel.cpp:126
 #, kde-format
 msgid "%1 hours ahead"
 msgstr ""
 
-#: savedlocationsmodel.cpp:128
+#: savedlocationsmodel.cpp:131
 #, kde-format
 msgid "%1 hour and 30 minutes behind"
 msgstr ""
 
-#: savedlocationsmodel.cpp:128
+#: savedlocationsmodel.cpp:131
 #, kde-format
 msgid "%1 hours and 30 minutes behind"
 msgstr ""
 
-#: savedlocationsmodel.cpp:130
+#: savedlocationsmodel.cpp:133
 #, kde-format
 msgid "%1 hour behind"
 msgstr ""
 
-#: savedlocationsmodel.cpp:130
+#: savedlocationsmodel.cpp:133
 #, kde-format
 msgid "%1 hours behind"
 msgstr ""
 
-#: savedlocationsmodel.cpp:133
+#: savedlocationsmodel.cpp:136
 #, kde-format
 msgid "Local time"
 msgstr "Místní čas"

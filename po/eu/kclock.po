@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-22 00:44+0000\n"
+"POT-Creation-Date: 2025-05-15 00:46+0000\n"
 "PO-Revision-Date: 2025-04-15 10:17+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -205,7 +205,7 @@ msgid_plural "Snoozed %1 minutes"
 msgstr[0] "Minutu %1eko kuluxka egin du"
 msgstr[1] "%1 minutuko kuluxka egin du"
 
-#: qml/alarm/AlarmListDelegate.qml:125 qml/time/TimePageDelegate.qml:58
+#: qml/alarm/AlarmListDelegate.qml:125 qml/time/TimePageDelegate.qml:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
@@ -481,6 +481,16 @@ msgctxt "@action:button"
 msgid "Add Location"
 msgstr "Gehitu kokalekua"
 
+#: qml/time/TimePageDelegate.qml:47
+#, kde-format
+msgid "Yesterday"
+msgstr ""
+
+#: qml/time/TimePageDelegate.qml:49
+#, kde-format
+msgid "Tomorrow"
+msgstr ""
+
 #: qml/timer/PresetDurationButton.qml:22
 #, kde-format
 msgid "1 m"
@@ -691,47 +701,47 @@ msgstr "%1 osatu da."
 msgid "The timer has completed."
 msgstr "Tenporizadoreak bukatu du."
 
-#: savedlocationsmodel.cpp:121
+#: savedlocationsmodel.cpp:124
 #, kde-format
 msgid "%1 hour and 30 minutes ahead"
 msgstr "ordu %1 eta 30 minutuko aurrerapena"
 
-#: savedlocationsmodel.cpp:121
+#: savedlocationsmodel.cpp:124
 #, kde-format
 msgid "%1 hours and 30 minutes ahead"
 msgstr "%1 ordu eta 30 minutuko aurrerapena"
 
-#: savedlocationsmodel.cpp:123
+#: savedlocationsmodel.cpp:126
 #, kde-format
 msgid "%1 hour ahead"
 msgstr "Ordu %1(e)ko aurrerapena"
 
-#: savedlocationsmodel.cpp:123
+#: savedlocationsmodel.cpp:126
 #, kde-format
 msgid "%1 hours ahead"
 msgstr "%1 ordukoko aurrerapena"
 
-#: savedlocationsmodel.cpp:128
+#: savedlocationsmodel.cpp:131
 #, kde-format
 msgid "%1 hour and 30 minutes behind"
 msgstr "Ordu %1 eta erdiko atzerapena"
 
-#: savedlocationsmodel.cpp:128
+#: savedlocationsmodel.cpp:131
 #, kde-format
 msgid "%1 hours and 30 minutes behind"
 msgstr "%1 ordu eta 30 minutuko atzerapena"
 
-#: savedlocationsmodel.cpp:130
+#: savedlocationsmodel.cpp:133
 #, kde-format
 msgid "%1 hour behind"
 msgstr "Ordu %1(e)ko atzerapena"
 
-#: savedlocationsmodel.cpp:130
+#: savedlocationsmodel.cpp:133
 #, kde-format
 msgid "%1 hours behind"
 msgstr "%1 orduko atzerapena"
 
-#: savedlocationsmodel.cpp:133
+#: savedlocationsmodel.cpp:136
 #, kde-format
 msgid "Local time"
 msgstr "Ordu lokala"

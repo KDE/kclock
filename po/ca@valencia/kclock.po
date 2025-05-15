@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-22 00:44+0000\n"
+"POT-Creation-Date: 2025-05-15 00:46+0000\n"
 "PO-Revision-Date: 2025-04-14 11:49+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -204,7 +204,7 @@ msgid_plural "Snoozed %1 minutes"
 msgstr[0] "S'ha posposat %1 minut"
 msgstr[1] "S'ha posposat %1 minuts"
 
-#: qml/alarm/AlarmListDelegate.qml:125 qml/time/TimePageDelegate.qml:58
+#: qml/alarm/AlarmListDelegate.qml:125 qml/time/TimePageDelegate.qml:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
@@ -481,6 +481,16 @@ msgctxt "@action:button"
 msgid "Add Location"
 msgstr "Afig una ubicació"
 
+#: qml/time/TimePageDelegate.qml:47
+#, kde-format
+msgid "Yesterday"
+msgstr ""
+
+#: qml/time/TimePageDelegate.qml:49
+#, kde-format
+msgid "Tomorrow"
+msgstr ""
+
 #: qml/timer/PresetDurationButton.qml:22
 #, kde-format
 msgid "1 m"
@@ -691,47 +701,47 @@ msgstr "S'ha completat %1."
 msgid "The timer has completed."
 msgstr "El temporitzador s'ha completat."
 
-#: savedlocationsmodel.cpp:121
+#: savedlocationsmodel.cpp:124
 #, kde-format
 msgid "%1 hour and 30 minutes ahead"
 msgstr "D'ací a %1 hora i 30 minuts"
 
-#: savedlocationsmodel.cpp:121
+#: savedlocationsmodel.cpp:124
 #, kde-format
 msgid "%1 hours and 30 minutes ahead"
 msgstr "D'ací a %1 hores i 30 minuts"
 
-#: savedlocationsmodel.cpp:123
+#: savedlocationsmodel.cpp:126
 #, kde-format
 msgid "%1 hour ahead"
 msgstr "D'ací a %1 hora"
 
-#: savedlocationsmodel.cpp:123
+#: savedlocationsmodel.cpp:126
 #, kde-format
 msgid "%1 hours ahead"
 msgstr "D'ací a %1 hores"
 
-#: savedlocationsmodel.cpp:128
+#: savedlocationsmodel.cpp:131
 #, kde-format
 msgid "%1 hour and 30 minutes behind"
 msgstr "Fa %1 hora i 30 minuts"
 
-#: savedlocationsmodel.cpp:128
+#: savedlocationsmodel.cpp:131
 #, kde-format
 msgid "%1 hours and 30 minutes behind"
 msgstr "Fa %1 hores i 30 minuts"
 
-#: savedlocationsmodel.cpp:130
+#: savedlocationsmodel.cpp:133
 #, kde-format
 msgid "%1 hour behind"
 msgstr "Fa %1 hora"
 
-#: savedlocationsmodel.cpp:130
+#: savedlocationsmodel.cpp:133
 #, kde-format
 msgid "%1 hours behind"
 msgstr "Fa %1 hores"
 
-#: savedlocationsmodel.cpp:133
+#: savedlocationsmodel.cpp:136
 #, kde-format
 msgid "Local time"
 msgstr "Hora local"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-22 00:44+0000\n"
+"POT-Creation-Date: 2025-05-15 00:46+0000\n"
 "PO-Revision-Date: 2021-06-12 21:25+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -207,7 +207,7 @@ msgid_plural "Snoozed %1 minutes"
 msgstr[0] "Αναβολή %1 λεπτά"
 msgstr[1] "Αναβολή %1 λεπτά"
 
-#: qml/alarm/AlarmListDelegate.qml:125 qml/time/TimePageDelegate.qml:58
+#: qml/alarm/AlarmListDelegate.qml:125 qml/time/TimePageDelegate.qml:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
@@ -490,6 +490,16 @@ msgctxt "@action:button"
 msgid "Add Location"
 msgstr "Προσθήκη ζώνης ώρας"
 
+#: qml/time/TimePageDelegate.qml:47
+#, kde-format
+msgid "Yesterday"
+msgstr ""
+
+#: qml/time/TimePageDelegate.qml:49
+#, kde-format
+msgid "Tomorrow"
+msgstr ""
+
 #: qml/timer/PresetDurationButton.qml:22
 #, fuzzy, kde-format
 #| msgid "1 hour"
@@ -717,54 +727,54 @@ msgstr ""
 msgid "The timer has completed."
 msgstr "Τέλος χρόνου"
 
-#: savedlocationsmodel.cpp:121
+#: savedlocationsmodel.cpp:124
 #, fuzzy, kde-format
 #| msgid "%1 and a half hours ahead"
 msgid "%1 hour and 30 minutes ahead"
 msgstr "%1 και μισή ώρες μπροστά"
 
-#: savedlocationsmodel.cpp:121
+#: savedlocationsmodel.cpp:124
 #, kde-format
 msgid "%1 hours and 30 minutes ahead"
 msgstr ""
 
-#: savedlocationsmodel.cpp:123
+#: savedlocationsmodel.cpp:126
 #, fuzzy, kde-format
 #| msgid "%1 %2 ahead"
 msgid "%1 hour ahead"
 msgstr "%1 %2 μπροστά"
 
-#: savedlocationsmodel.cpp:123
+#: savedlocationsmodel.cpp:126
 #, fuzzy, kde-format
 #| msgid "%1 %2 ahead"
 msgid "%1 hours ahead"
 msgstr "%1 %2 μπροστά"
 
-#: savedlocationsmodel.cpp:128
+#: savedlocationsmodel.cpp:131
 #, fuzzy, kde-format
 #| msgid "%1 and a half hours behind"
 msgid "%1 hour and 30 minutes behind"
 msgstr "%1 και μισή ώρες πίσω"
 
-#: savedlocationsmodel.cpp:128
+#: savedlocationsmodel.cpp:131
 #, fuzzy, kde-format
 #| msgid "%1 and a half hours behind"
 msgid "%1 hours and 30 minutes behind"
 msgstr "%1 και μισή ώρες πίσω"
 
-#: savedlocationsmodel.cpp:130
+#: savedlocationsmodel.cpp:133
 #, fuzzy, kde-format
 #| msgid "%1 %2 behind"
 msgid "%1 hour behind"
 msgstr "%1 %2 πίσω"
 
-#: savedlocationsmodel.cpp:130
+#: savedlocationsmodel.cpp:133
 #, fuzzy, kde-format
 #| msgid "%1 %2 behind"
 msgid "%1 hours behind"
 msgstr "%1 %2 πίσω"
 
-#: savedlocationsmodel.cpp:133
+#: savedlocationsmodel.cpp:136
 #, kde-format
 msgid "Local time"
 msgstr "Τοπική ώρα"
