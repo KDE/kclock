@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-15 00:46+0000\n"
-"PO-Revision-Date: 2025-04-17 10:57+0400\n"
+"PO-Revision-Date: 2025-05-15 18:09+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -487,12 +487,12 @@ msgstr "أضف موقعًا"
 #: qml/time/TimePageDelegate.qml:47
 #, kde-format
 msgid "Yesterday"
-msgstr ""
+msgstr "الأمس"
 
 #: qml/time/TimePageDelegate.qml:49
 #, kde-format
 msgid "Tomorrow"
-msgstr ""
+msgstr "الغد"
 
 #: qml/timer/PresetDurationButton.qml:22
 #, kde-format

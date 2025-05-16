@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the kclock package.
-# Tommi Nieminen <translator@legisign.org>, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2025 Tommi Nieminen <translator@legisign.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-14 00:46+0000\n"
-"PO-Revision-Date: 2022-04-15 23:10+0300\n"
+"PO-Revision-Date: 2025-04-20 16:27+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15,6 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -32,8 +33,7 @@ msgid "Alarm"
 msgstr "Hälytys"
 
 #: alarm.cpp:76 timer.cpp:68
-#, fuzzy, kde-format
-#| msgid "Dismiss"
+#, kde-format
 msgctxt "@action:button"
 msgid "Dismiss"
 msgstr "Merkitse nähdyksi"
@@ -58,79 +58,76 @@ msgstr "Hälytys: <shortcut>%1 %2</shortcut>"
 #, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "+1 Minute"
-msgstr ""
+msgstr "+1 minuutti"
 
 #: kclockrunner.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset Timer"
-msgstr ""
+msgstr "Nollaa ajastin"
 
 #: kclockrunner.cpp:77
 #, kde-format
 msgctxt "Note this is a KRunner keyword"
 msgid "timer"
-msgstr ""
+msgstr "ajastin"
 
 #: kclockrunner.cpp:94
 #, kde-format
 msgctxt "Timer running or paused (remaining time)"
 msgid "%1 (%2 Remaining)"
-msgstr ""
+msgstr "%1 (jäljellä %2)"
 
 #: kclockrunner.cpp:96
 #, kde-format
 msgctxt "Timer not running (timer length)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: kclockrunner.cpp:107
 #, kde-format
 msgctxt "KRunner category"
 msgid "Timer"
-msgstr ""
+msgstr "Ajastin"
 
 #: kclockrunner.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Pause"
-msgstr ""
+msgstr "Keskeytä"
 
 #: kclockrunner.cpp:113
 #, kde-format
 msgctxt "@action"
 msgid "Resume"
-msgstr ""
+msgstr "Jatka"
 
 #: kclockrunner.cpp:115
 #, kde-format
 msgctxt "@action"
 msgid "Start Timer"
-msgstr ""
+msgstr "Käynnistä ajastin"
 
 #: kclockrunner.cpp:130
-#, fuzzy, kde-format
-#| msgid "Alarm"
+#, kde-format
 msgctxt "Note this is a KRunner keyword"
 msgid "alarm"
-msgstr "Hälytys"
+msgstr "hälytys"
 
 #: kclockrunner.cpp:152
 #, kde-format
 msgctxt "Alarm name (time)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: kclockrunner.cpp:162
-#, fuzzy, kde-format
-#| msgid "Alarm"
+#, kde-format
 msgctxt "KRunner category"
 msgid "Alarm"
 msgstr "Hälytys"
 
 #: kclockrunner.cpp:166
-#, fuzzy, kde-format
-#| msgid "Dismiss"
+#, kde-format
 msgctxt "@action Dismiss Alarm"
 msgid "Dismiss"
 msgstr "Merkitse nähdyksi"
@@ -139,13 +136,13 @@ msgstr "Merkitse nähdyksi"
 #, kde-format
 msgctxt "Disable timer (rings in time)"
 msgid "Disable (Rings in %1)"
-msgstr ""
+msgstr "Poista käytöstä (soi %1 kuluttua)"
 
 #: kclockrunner.cpp:171
 #, kde-format
 msgctxt "@action Enable Alarm"
 msgid "Enable"
-msgstr ""
+msgstr "Ota käyttöön"
 
 #: main.cpp:32
 #, kde-format
@@ -192,37 +189,37 @@ msgstr "Ajastus %1 on päättynyt!"
 #, kde-format
 msgctxt "@action:button Open kclock app"
 msgid "Open Clock"
-msgstr ""
+msgstr "Avaa kello"
 
 #: timermodel.cpp:246
 #, kde-format
 msgctxt "@action:button Add minute to timer"
 msgid "+1 Minute"
-msgstr ""
+msgstr "+1 minuutti"
 
 #: timermodel.cpp:249
 #, kde-format
 msgctxt "@action:button Reset timer"
 msgid "Reset"
-msgstr ""
+msgstr "Nollaa"
 
 #: timermodel.cpp:252 timermodel.cpp:277
 #, kde-format
 msgctxt "@action:button Pause timer"
 msgid "Pause"
-msgstr ""
+msgstr "Keskeytä"
 
 #: timermodel.cpp:270
 #, kde-format
 msgctxt "@title:notification Timer name (paused)"
 msgid "%1 (Paused)"
-msgstr ""
+msgstr "%1 (keskeytetty)"
 
 #: timermodel.cpp:279
 #, kde-format
 msgctxt "@action:button Resume timer"
 msgid "Resume"
-msgstr ""
+msgstr "Jatka"
 
 #: xdgportal.cpp:34
 #, kde-format

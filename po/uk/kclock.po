@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-15 00:46+0000\n"
-"PO-Revision-Date: 2025-04-14 10:05+0300\n"
+"PO-Revision-Date: 2025-05-15 17:45+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -488,12 +488,12 @@ msgstr "Додати місце"
 #: qml/time/TimePageDelegate.qml:47
 #, kde-format
 msgid "Yesterday"
-msgstr ""
+msgstr "Вчора"
 
 #: qml/time/TimePageDelegate.qml:49
 #, kde-format
 msgid "Tomorrow"
-msgstr ""
+msgstr "Завтра"
 
 #: qml/timer/PresetDurationButton.qml:22
 #, kde-format
