@@ -473,12 +473,12 @@ msgstr "添加位置"
 #: qml/time/TimePageDelegate.qml:47
 #, kde-format
 msgid "Yesterday"
-msgstr ""
+msgstr "昨天"
 
 #: qml/time/TimePageDelegate.qml:49
 #, kde-format
 msgid "Tomorrow"
-msgstr ""
+msgstr "明天"
 
 #: qml/timer/PresetDurationButton.qml:22
 #, kde-format
