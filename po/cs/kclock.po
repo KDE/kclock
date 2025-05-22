@@ -478,12 +478,12 @@ msgstr ""
 #: qml/time/TimePageDelegate.qml:47
 #, kde-format
 msgid "Yesterday"
-msgstr ""
+msgstr "Včera"
 
 #: qml/time/TimePageDelegate.qml:49
 #, kde-format
 msgid "Tomorrow"
-msgstr ""
+msgstr "Zítra"
 
 #: qml/timer/PresetDurationButton.qml:22
 #, kde-format
