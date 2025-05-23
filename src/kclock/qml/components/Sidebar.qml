@@ -9,6 +9,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
+import org.kde.kclock as KClock
 
 Kirigami.OverlayDrawer {
     id: drawer
@@ -76,8 +77,11 @@ Kirigami.OverlayDrawer {
                 }
 
                 Kirigami.NavigationTabButton {
+                    readonly property bool showTime: !checked && !KClock.StopwatchTimer.stopped && !KClock.StopwatchTimer.paused
+
                     Layout.fillWidth: true
-                    text: i18n("Stopwatch")
+                    text: showTime ? KClock.StopwatchTimer.display : Accessible.name
+                    Accessible.name: i18n("Stopwatch")
                     icon.name: "chronometer"
                     checked: pageStack.currentItem?.objectName === "Stopwatch"
                     onClicked: {
@@ -86,6 +90,10 @@ Kirigami.OverlayDrawer {
                             applicationWindow().switchToPage(page, 0);
                         }
                     }
+
+                    QQC2.ToolTip.text: showTime ? Accessible.name : ""
+                    QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                    QQC2.ToolTip.visible: (Kirigami.Settings.tabletMode ? pressed : hovered) && QQC2.ToolTip.text !== ""
                 }
 
                 Kirigami.NavigationTabButton {
