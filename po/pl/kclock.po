@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-15 00:46+0000\n"
+"POT-Creation-Date: 2025-05-23 00:45+0000\n"
 "PO-Revision-Date: 2024-07-14 13:37+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -422,43 +422,50 @@ msgstr "Wznów"
 msgid "Start"
 msgstr "Rozpocznij"
 
-#: qml/stopwatch/StopwatchPage.qml:200 qml/stopwatch/StopwatchPage.qml:229
+#: qml/stopwatch/StopwatchPage.qml:200 qml/stopwatch/StopwatchPage.qml:241
 #, kde-format
 msgid "Lap"
 msgstr "Międzyczas"
 
-#: qml/stopwatch/StopwatchPage.qml:237
+#: qml/stopwatch/StopwatchPage.qml:221
+#, kde-format
+msgid ""
+"Press Space to start or pause the stopwatch. Delete or Backspace resets it. "
+"Enter adds a lap."
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:249
 #, kde-format
 msgid "Lap Time"
 msgstr "Czas okrążenia"
 
-#: qml/stopwatch/StopwatchPage.qml:244
+#: qml/stopwatch/StopwatchPage.qml:256
 #, kde-format
 msgid "Total"
 msgstr "Łącznie"
 
-#: qml/stopwatch/StopwatchPage.qml:274
+#: qml/stopwatch/StopwatchPage.qml:286
 #, fuzzy, kde-format
 #| msgid "Pause"
 msgctxt "@action:button"
 msgid "Pause"
 msgstr "Wstrzymaj"
 
-#: qml/stopwatch/StopwatchPage.qml:276
+#: qml/stopwatch/StopwatchPage.qml:288
 #, fuzzy, kde-format
 #| msgid "Resume"
 msgctxt "@action:button"
 msgid "Resume"
 msgstr "Wznów"
 
-#: qml/stopwatch/StopwatchPage.qml:278
+#: qml/stopwatch/StopwatchPage.qml:290
 #, fuzzy, kde-format
 #| msgid "Start"
 msgctxt "@action:button"
 msgid "Start"
 msgstr "Rozpocznij"
 
-#: qml/stopwatch/StopwatchPage.qml:338
+#: qml/stopwatch/StopwatchPage.qml:350
 #, kde-format
 msgid "#%1"
 msgstr "#%1"
