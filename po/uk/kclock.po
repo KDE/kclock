@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-23 00:45+0000\n"
-"PO-Revision-Date: 2025-05-15 17:45+0300\n"
+"PO-Revision-Date: 2025-05-23 09:11+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -437,6 +437,8 @@ msgid ""
 "Press Space to start or pause the stopwatch. Delete or Backspace resets it. "
 "Enter adds a lap."
 msgstr ""
+"Натисніть клавішу пробілу, щоб розпочати або призупинити таймер. Натискання "
+"клавіш Delete та Backspace призводить до скидання відліку. Enter додає коло."
 
 #: qml/stopwatch/StopwatchPage.qml:249
 #, kde-format

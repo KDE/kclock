@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-23 00:45+0000\n"
-"PO-Revision-Date: 2025-05-15 04:22+0200\n"
+"PO-Revision-Date: 2025-05-23 04:06+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -428,6 +428,8 @@ msgid ""
 "Press Space to start or pause the stopwatch. Delete or Backspace resets it. "
 "Enter adds a lap."
 msgstr ""
+"დააჭირეთ ჰარეს ტაიმერის გასაშვებად, ან დასაპაუზებლად. გამოიყენეთ ღილაკი "
+"Delete ან Backspace ჩამოსაყრელად. Enter ნახტომს დაამატებს."
 
 #: qml/stopwatch/StopwatchPage.qml:249
 #, kde-format

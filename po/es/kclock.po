@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-23 00:45+0000\n"
-"PO-Revision-Date: 2025-05-15 19:49+0100\n"
+"PO-Revision-Date: 2025-05-24 01:30+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -430,6 +430,8 @@ msgid ""
 "Press Space to start or pause the stopwatch. Delete or Backspace resets it. "
 "Enter adds a lap."
 msgstr ""
+"Pulse «Espacio» para iniciar o detener el cronómetro. «Suprimir» o "
+"«Retroceso» lo reinician. «Intro» añade una vuelta."
 
 #: qml/stopwatch/StopwatchPage.qml:249
 #, kde-format

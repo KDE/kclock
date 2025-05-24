@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-23 00:45+0000\n"
-"PO-Revision-Date: 2025-05-15 16:19+0200\n"
+"PO-Revision-Date: 2025-05-23 12:58+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -426,6 +426,8 @@ msgid ""
 "Press Space to start or pause the stopwatch. Delete or Backspace resets it. "
 "Enter adds a lap."
 msgstr ""
+"Druk op de Spatiebalk om de stopwatch te starten of te pauzeren. Drukken op "
+"Del of Backspace reset het. Toets Enter voegt een ronde toe."
 
 #: qml/stopwatch/StopwatchPage.qml:249
 #, kde-format
