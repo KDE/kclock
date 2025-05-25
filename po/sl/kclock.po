@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-23 00:45+0000\n"
+"POT-Creation-Date: 2025-05-25 00:46+0000\n"
 "PO-Revision-Date: 2025-05-23 07:08+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -211,8 +211,8 @@ msgctxt "@action:button"
 msgid "Delete"
 msgstr "Izbriši"
 
-#: qml/alarm/AlarmListPage.qml:22 qml/components/BottomToolbar.qml:107
-#: qml/components/Sidebar.qml:93
+#: qml/alarm/AlarmListPage.qml:22 qml/components/BottomToolbar.qml:111
+#: qml/components/Sidebar.qml:101
 #, kde-format
 msgid "Alarms"
 msgstr "Alarmi"
@@ -223,7 +223,7 @@ msgid "Edit"
 msgstr "Uredi"
 
 #: qml/alarm/AlarmListPage.qml:44 qml/Main.qml:56
-#: qml/settings/SettingsPage.qml:21 qml/stopwatch/StopwatchPage.qml:55
+#: qml/settings/SettingsPage.qml:28 qml/stopwatch/StopwatchPage.qml:55
 #: qml/time/TimePage.qml:62 qml/timer/TimerListPage.qml:36
 #, kde-format
 msgid "Settings"
@@ -284,53 +284,53 @@ msgstr "Dremež"
 msgid "Dismiss"
 msgstr "Odpusti"
 
-#: qml/alarm/SoundPickerPage.qml:25
-#, kde-format
-msgid "Select Alarm Sound"
-msgstr "Izberi zvok zvonjenja"
-
-#: qml/alarm/SoundPickerPage.qml:64
-#, kde-format
-msgid "Select from files…"
-msgstr "Izberi iz datotek…"
-
-#: qml/alarm/SoundPickerPage.qml:75
-#, kde-format
-msgid "Default"
-msgstr "Privzeto"
-
-#: qml/alarm/SoundPickerPage.qml:155
-#, kde-format
-msgid "Choose an audio"
-msgstr "Izberi zvok"
-
-#: qml/alarm/SoundPickerPage.qml:163
-#, kde-format
-msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
-msgstr "Zvočne datoteke (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
-
-#: qml/alarm/SoundPickerPage.qml:163
-#, kde-format
-msgid "All files (*)"
-msgstr "Vse datoteke (*)"
-
-#: qml/components/BottomToolbar.qml:74 qml/components/Sidebar.qml:54
+#: qml/components/BottomToolbar.qml:75 qml/components/Sidebar.qml:55
 #: qml/time/TimePage.qml:25
 #, kde-format
 msgid "Time"
 msgstr "Čas"
 
-#: qml/components/BottomToolbar.qml:85 qml/components/Sidebar.qml:67
+#: qml/components/BottomToolbar.qml:86 qml/components/Sidebar.qml:68
 #: qml/timer/TimerListPage.qml:19
 #, kde-format
 msgid "Timers"
 msgstr "Merilniki časa"
 
-#: qml/components/BottomToolbar.qml:96 qml/components/Sidebar.qml:80
-#: qml/stopwatch/StopwatchPage.qml:23
+#: qml/components/BottomToolbar.qml:99 qml/components/BottomToolbar.qml:100
+#: qml/components/Sidebar.qml:84 qml/stopwatch/StopwatchPage.qml:23
 #, kde-format
 msgid "Stopwatch"
 msgstr "Štoparica"
+
+#: qml/components/SoundPickerPage.qml:24
+#, kde-format
+msgid "Select Alarm Sound"
+msgstr "Izberi zvok zvonjenja"
+
+#: qml/components/SoundPickerPage.qml:65
+#, kde-format
+msgid "Select from files…"
+msgstr "Izberi iz datotek…"
+
+#: qml/components/SoundPickerPage.qml:76 qml/settings/SettingsPage.qml:86
+#, kde-format
+msgid "Default"
+msgstr "Privzeto"
+
+#: qml/components/SoundPickerPage.qml:156
+#, kde-format
+msgid "Choose an audio"
+msgstr "Izberi zvok"
+
+#: qml/components/SoundPickerPage.qml:164
+#, kde-format
+msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
+msgstr "Zvočne datoteke (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
+
+#: qml/components/SoundPickerPage.qml:164
+#, kde-format
+msgid "All files (*)"
+msgstr "Vse datoteke (*)"
 
 #: qml/components/TimePicker.qml:94
 #, kde-format
@@ -342,92 +342,104 @@ msgstr "dop."
 msgid "PM"
 msgstr "pop."
 
-#: qml/settings/SettingsPage.qml:34
+#: qml/settings/SettingsPage.qml:41
 #, kde-format
 msgid "Time Format"
 msgstr "Oblika časa"
 
-#: qml/settings/SettingsPage.qml:36
+#: qml/settings/SettingsPage.qml:43
 #, kde-format
 msgid "Use System Default"
 msgstr "Uporabi sistemsko obliko"
 
-#: qml/settings/SettingsPage.qml:37
+#: qml/settings/SettingsPage.qml:44
 #, kde-format
 msgid "12 Hour Time"
 msgstr "12 urni čas"
 
-#: qml/settings/SettingsPage.qml:38
+#: qml/settings/SettingsPage.qml:45
 #, kde-format
 msgid "24 Hour Time"
 msgstr "24 urni čas"
 
-#: qml/settings/SettingsPage.qml:52
+#: qml/settings/SettingsPage.qml:59
 #, kde-format
 msgid "Notifications for running timers"
 msgstr "Obvestila za tekoče časovnike"
 
-#: qml/settings/SettingsPage.qml:54
+#: qml/settings/SettingsPage.qml:61
 #, kde-format
 msgid "Always"
 msgstr "Vedno"
 
-#: qml/settings/SettingsPage.qml:57
+#: qml/settings/SettingsPage.qml:64
 #, kde-format
 msgctxt "When the app is not running"
 msgid "When %1 is not running"
 msgstr "Ko %1 ne teče"
 
-#: qml/settings/SettingsPage.qml:60
+#: qml/settings/SettingsPage.qml:67
 #, kde-format
 msgid "Never"
 msgstr "Nikoli"
 
-#: qml/settings/SettingsPage.qml:63
+#: qml/settings/SettingsPage.qml:70
 #, kde-format
 msgid "Lets you pause and resume timers from the notification area."
 msgstr ""
 "Omogoča zaustavitev in nadaljevanje časovnikov iz območja za obvestila."
 
-#: qml/settings/SettingsPage.qml:78
+#: qml/settings/SettingsPage.qml:91
+#, fuzzy, kde-format
+#| msgid "Select Alarm Sound"
+msgid "Select Timer Sound"
+msgstr "Izberi zvok zvonjenja"
+
+#: qml/settings/SettingsPage.qml:93
+#, fuzzy, kde-format
+#| msgid "Default Sound"
+msgid "Default timer ring sound"
+msgstr "Privzeti zvok"
+
+#: qml/settings/SettingsPage.qml:102
 #, kde-format
 msgid "About Clock"
 msgstr "O programu Clock"
 
-#: qml/settings/SettingsPage.qml:87
+#: qml/settings/SettingsPage.qml:111
 #, kde-format
 msgid "About KDE"
 msgstr "O KDE"
 
-#: qml/stopwatch/StopwatchPage.qml:165 qml/stopwatch/StopwatchPage.qml:200
+#: qml/stopwatch/StopwatchPage.qml:156 qml/stopwatch/StopwatchPage.qml:191
 #: qml/timer/TimerPage.qml:51 qml/timer/TimerPage.qml:99
 #, kde-format
 msgid "Reset"
 msgstr "Ponovno nastavi"
 
-#: qml/stopwatch/StopwatchPage.qml:167 qml/timer/TimerPage.qml:43
+#: qml/stopwatch/StopwatchPage.qml:158 qml/timer/TimerPage.qml:43
 #: qml/timer/TimerPage.qml:93
 #, kde-format
 msgid "Pause"
 msgstr "Premor"
 
-#: qml/stopwatch/StopwatchPage.qml:169
+#: qml/stopwatch/StopwatchPage.qml:160
 #, kde-format
 msgid "Resume"
 msgstr "Nadaljuj"
 
-#: qml/stopwatch/StopwatchPage.qml:171 qml/timer/TimerPage.qml:43
+#: qml/stopwatch/StopwatchPage.qml:162 qml/timer/TimerPage.qml:43
 #: qml/timer/TimerPage.qml:93
 #, kde-format
 msgid "Start"
 msgstr "Začetek"
 
-#: qml/stopwatch/StopwatchPage.qml:200 qml/stopwatch/StopwatchPage.qml:241
+#: qml/stopwatch/StopwatchPage.qml:191 qml/stopwatch/StopwatchPage.qml:232
 #, kde-format
 msgid "Lap"
 msgstr "Krog"
 
-#: qml/stopwatch/StopwatchPage.qml:221
+#: qml/stopwatch/StopwatchPage.qml:212
 #, kde-format
 msgid ""
 "Press Space to start or pause the stopwatch. Delete or Backspace resets it. "
@@ -436,35 +448,35 @@ msgstr ""
 "Pritisnite preslednico, da zaženete ali začasno ustavite štoparico. S tipko "
 "Delete ali Backspace jo ponastavite. S tipko Enter dodate krog."
 
-#: qml/stopwatch/StopwatchPage.qml:249
+#: qml/stopwatch/StopwatchPage.qml:240
 #, kde-format
 msgid "Lap Time"
 msgstr "Vmesni čas"
 
-#: qml/stopwatch/StopwatchPage.qml:256
+#: qml/stopwatch/StopwatchPage.qml:247
 #, kde-format
 msgid "Total"
 msgstr "Skupaj"
 
-#: qml/stopwatch/StopwatchPage.qml:286
+#: qml/stopwatch/StopwatchPage.qml:277
 #, kde-format
 msgctxt "@action:button"
 msgid "Pause"
 msgstr "Premor"
 
-#: qml/stopwatch/StopwatchPage.qml:288
+#: qml/stopwatch/StopwatchPage.qml:279
 #, kde-format
 msgctxt "@action:button"
 msgid "Resume"
 msgstr "Nadaljuj"
 
-#: qml/stopwatch/StopwatchPage.qml:290
+#: qml/stopwatch/StopwatchPage.qml:281
 #, kde-format
 msgctxt "@action:button"
 msgid "Start"
 msgstr "Začetek"
 
-#: qml/stopwatch/StopwatchPage.qml:350
+#: qml/stopwatch/StopwatchPage.qml:341
 #, kde-format
 msgid "#%1"
 msgstr "#%1"

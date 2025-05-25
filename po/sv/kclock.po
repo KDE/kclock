@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-23 00:45+0000\n"
+"POT-Creation-Date: 2025-05-25 00:46+0000\n"
 "PO-Revision-Date: 2025-04-17 12:17+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -206,8 +206,8 @@ msgctxt "@action:button"
 msgid "Delete"
 msgstr "Ta bort"
 
-#: qml/alarm/AlarmListPage.qml:22 qml/components/BottomToolbar.qml:107
-#: qml/components/Sidebar.qml:93
+#: qml/alarm/AlarmListPage.qml:22 qml/components/BottomToolbar.qml:111
+#: qml/components/Sidebar.qml:101
 #, kde-format
 msgid "Alarms"
 msgstr "Alarm"
@@ -218,7 +218,7 @@ msgid "Edit"
 msgstr "Redigera"
 
 #: qml/alarm/AlarmListPage.qml:44 qml/Main.qml:56
-#: qml/settings/SettingsPage.qml:21 qml/stopwatch/StopwatchPage.qml:55
+#: qml/settings/SettingsPage.qml:28 qml/stopwatch/StopwatchPage.qml:55
 #: qml/time/TimePage.qml:62 qml/timer/TimerListPage.qml:36
 #, kde-format
 msgid "Settings"
@@ -277,53 +277,53 @@ msgstr "Slumra"
 msgid "Dismiss"
 msgstr "Stoppa"
 
-#: qml/alarm/SoundPickerPage.qml:25
-#, kde-format
-msgid "Select Alarm Sound"
-msgstr "Välj alarmljud"
-
-#: qml/alarm/SoundPickerPage.qml:64
-#, kde-format
-msgid "Select from files…"
-msgstr "Välj från filer…"
-
-#: qml/alarm/SoundPickerPage.qml:75
-#, kde-format
-msgid "Default"
-msgstr "Förval"
-
-#: qml/alarm/SoundPickerPage.qml:155
-#, kde-format
-msgid "Choose an audio"
-msgstr "Välj ljud"
-
-#: qml/alarm/SoundPickerPage.qml:163
-#, kde-format
-msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
-msgstr "Ljudfiler (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
-
-#: qml/alarm/SoundPickerPage.qml:163
-#, kde-format
-msgid "All files (*)"
-msgstr "Alla filer (*)"
-
-#: qml/components/BottomToolbar.qml:74 qml/components/Sidebar.qml:54
+#: qml/components/BottomToolbar.qml:75 qml/components/Sidebar.qml:55
 #: qml/time/TimePage.qml:25
 #, kde-format
 msgid "Time"
 msgstr "Tid"
 
-#: qml/components/BottomToolbar.qml:85 qml/components/Sidebar.qml:67
+#: qml/components/BottomToolbar.qml:86 qml/components/Sidebar.qml:68
 #: qml/timer/TimerListPage.qml:19
 #, kde-format
 msgid "Timers"
 msgstr "Timers"
 
-#: qml/components/BottomToolbar.qml:96 qml/components/Sidebar.qml:80
-#: qml/stopwatch/StopwatchPage.qml:23
+#: qml/components/BottomToolbar.qml:99 qml/components/BottomToolbar.qml:100
+#: qml/components/Sidebar.qml:84 qml/stopwatch/StopwatchPage.qml:23
 #, kde-format
 msgid "Stopwatch"
 msgstr "Tidtagarur"
+
+#: qml/components/SoundPickerPage.qml:24
+#, kde-format
+msgid "Select Alarm Sound"
+msgstr "Välj alarmljud"
+
+#: qml/components/SoundPickerPage.qml:65
+#, kde-format
+msgid "Select from files…"
+msgstr "Välj från filer…"
+
+#: qml/components/SoundPickerPage.qml:76 qml/settings/SettingsPage.qml:86
+#, kde-format
+msgid "Default"
+msgstr "Förval"
+
+#: qml/components/SoundPickerPage.qml:156
+#, kde-format
+msgid "Choose an audio"
+msgstr "Välj ljud"
+
+#: qml/components/SoundPickerPage.qml:164
+#, kde-format
+msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
+msgstr "Ljudfiler (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
+
+#: qml/components/SoundPickerPage.qml:164
+#, kde-format
+msgid "All files (*)"
+msgstr "Alla filer (*)"
 
 #: qml/components/TimePicker.qml:94
 #, kde-format
@@ -335,126 +335,138 @@ msgstr "FM"
 msgid "PM"
 msgstr "EM"
 
-#: qml/settings/SettingsPage.qml:34
+#: qml/settings/SettingsPage.qml:41
 #, kde-format
 msgid "Time Format"
 msgstr "Tidsformat"
 
-#: qml/settings/SettingsPage.qml:36
+#: qml/settings/SettingsPage.qml:43
 #, kde-format
 msgid "Use System Default"
 msgstr "Använda systemstandard"
 
-#: qml/settings/SettingsPage.qml:37
+#: qml/settings/SettingsPage.qml:44
 #, kde-format
 msgid "12 Hour Time"
 msgstr "12-timmarstid"
 
-#: qml/settings/SettingsPage.qml:38
+#: qml/settings/SettingsPage.qml:45
 #, kde-format
 msgid "24 Hour Time"
 msgstr "24-timmarstid"
 
-#: qml/settings/SettingsPage.qml:52
+#: qml/settings/SettingsPage.qml:59
 #, kde-format
 msgid "Notifications for running timers"
 msgstr "Underrättelser om pågående tidtagningar"
 
-#: qml/settings/SettingsPage.qml:54
+#: qml/settings/SettingsPage.qml:61
 #, kde-format
 msgid "Always"
 msgstr "Alltid"
 
-#: qml/settings/SettingsPage.qml:57
+#: qml/settings/SettingsPage.qml:64
 #, kde-format
 msgctxt "When the app is not running"
 msgid "When %1 is not running"
 msgstr "När %1 inte kör"
 
-#: qml/settings/SettingsPage.qml:60
+#: qml/settings/SettingsPage.qml:67
 #, kde-format
 msgid "Never"
 msgstr "Aldrig"
 
-#: qml/settings/SettingsPage.qml:63
+#: qml/settings/SettingsPage.qml:70
 #, kde-format
 msgid "Lets you pause and resume timers from the notification area."
 msgstr "Låter dig pausa och återuppta tidtagning från underrättelseområdet."
 
-#: qml/settings/SettingsPage.qml:78
+#: qml/settings/SettingsPage.qml:91
+#, fuzzy, kde-format
+#| msgid "Select Alarm Sound"
+msgid "Select Timer Sound"
+msgstr "Välj alarmljud"
+
+#: qml/settings/SettingsPage.qml:93
+#, fuzzy, kde-format
+#| msgid "Default Sound"
+msgid "Default timer ring sound"
+msgstr "Förvalt ljud"
+
+#: qml/settings/SettingsPage.qml:102
 #, kde-format
 msgid "About Clock"
 msgstr "Om Klocka"
 
-#: qml/settings/SettingsPage.qml:87
+#: qml/settings/SettingsPage.qml:111
 #, kde-format
 msgid "About KDE"
 msgstr "Om KDE"
 
-#: qml/stopwatch/StopwatchPage.qml:165 qml/stopwatch/StopwatchPage.qml:200
+#: qml/stopwatch/StopwatchPage.qml:156 qml/stopwatch/StopwatchPage.qml:191
 #: qml/timer/TimerPage.qml:51 qml/timer/TimerPage.qml:99
 #, kde-format
 msgid "Reset"
 msgstr "Nollställ"
 
-#: qml/stopwatch/StopwatchPage.qml:167 qml/timer/TimerPage.qml:43
+#: qml/stopwatch/StopwatchPage.qml:158 qml/timer/TimerPage.qml:43
 #: qml/timer/TimerPage.qml:93
 #, kde-format
 msgid "Pause"
 msgstr "Paus"
 
-#: qml/stopwatch/StopwatchPage.qml:169
+#: qml/stopwatch/StopwatchPage.qml:160
 #, kde-format
 msgid "Resume"
 msgstr "Återuppta"
 
-#: qml/stopwatch/StopwatchPage.qml:171 qml/timer/TimerPage.qml:43
+#: qml/stopwatch/StopwatchPage.qml:162 qml/timer/TimerPage.qml:43
 #: qml/timer/TimerPage.qml:93
 #, kde-format
 msgid "Start"
 msgstr "Starta"
 
-#: qml/stopwatch/StopwatchPage.qml:200 qml/stopwatch/StopwatchPage.qml:241
+#: qml/stopwatch/StopwatchPage.qml:191 qml/stopwatch/StopwatchPage.qml:232
 #, kde-format
 msgid "Lap"
 msgstr "Varv"
 
-#: qml/stopwatch/StopwatchPage.qml:221
+#: qml/stopwatch/StopwatchPage.qml:212
 #, kde-format
 msgid ""
 "Press Space to start or pause the stopwatch. Delete or Backspace resets it. "
 "Enter adds a lap."
 msgstr ""
 
-#: qml/stopwatch/StopwatchPage.qml:249
+#: qml/stopwatch/StopwatchPage.qml:240
 #, kde-format
 msgid "Lap Time"
 msgstr "Varvtid"
 
-#: qml/stopwatch/StopwatchPage.qml:256
+#: qml/stopwatch/StopwatchPage.qml:247
 #, kde-format
 msgid "Total"
 msgstr "Totalt"
 
-#: qml/stopwatch/StopwatchPage.qml:286
+#: qml/stopwatch/StopwatchPage.qml:277
 #, kde-format
 msgctxt "@action:button"
 msgid "Pause"
 msgstr "Paus"
 
-#: qml/stopwatch/StopwatchPage.qml:288
+#: qml/stopwatch/StopwatchPage.qml:279
 #, kde-format
 msgctxt "@action:button"
 msgid "Resume"
 msgstr "Återuppta"
 
-#: qml/stopwatch/StopwatchPage.qml:290
+#: qml/stopwatch/StopwatchPage.qml:281
 #, kde-format
 msgctxt "@action:button"
 msgid "Start"
 msgstr "Starta"
 
-#: qml/stopwatch/StopwatchPage.qml:350
+#: qml/stopwatch/StopwatchPage.qml:341
 #, kde-format
 msgid "#%1"
 msgstr "Nr. %1"

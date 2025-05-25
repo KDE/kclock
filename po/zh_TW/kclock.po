@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-23 00:45+0000\n"
-"PO-Revision-Date: 2025-05-16 15:42+0900\n"
+"POT-Creation-Date: 2025-05-25 00:46+0000\n"
+"PO-Revision-Date: 2025-05-24 21:24+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -206,8 +206,8 @@ msgctxt "@action:button"
 msgid "Delete"
 msgstr "刪除"
 
-#: qml/alarm/AlarmListPage.qml:22 qml/components/BottomToolbar.qml:107
-#: qml/components/Sidebar.qml:93
+#: qml/alarm/AlarmListPage.qml:22 qml/components/BottomToolbar.qml:111
+#: qml/components/Sidebar.qml:101
 #, kde-format
 msgid "Alarms"
 msgstr "鬧鐘"
@@ -218,7 +218,7 @@ msgid "Edit"
 msgstr "編輯"
 
 #: qml/alarm/AlarmListPage.qml:44 qml/Main.qml:56
-#: qml/settings/SettingsPage.qml:21 qml/stopwatch/StopwatchPage.qml:55
+#: qml/settings/SettingsPage.qml:28 qml/stopwatch/StopwatchPage.qml:55
 #: qml/time/TimePage.qml:62 qml/timer/TimerListPage.qml:36
 #, kde-format
 msgid "Settings"
@@ -277,53 +277,53 @@ msgstr "貪睡"
 msgid "Dismiss"
 msgstr "關閉"
 
-#: qml/alarm/SoundPickerPage.qml:25
-#, kde-format
-msgid "Select Alarm Sound"
-msgstr "選擇鬧鈴聲"
-
-#: qml/alarm/SoundPickerPage.qml:64
-#, kde-format
-msgid "Select from files…"
-msgstr "從檔案選取…"
-
-#: qml/alarm/SoundPickerPage.qml:75
-#, kde-format
-msgid "Default"
-msgstr "預設"
-
-#: qml/alarm/SoundPickerPage.qml:155
-#, kde-format
-msgid "Choose an audio"
-msgstr "選擇音效"
-
-#: qml/alarm/SoundPickerPage.qml:163
-#, kde-format
-msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
-msgstr "音效檔 (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
-
-#: qml/alarm/SoundPickerPage.qml:163
-#, kde-format
-msgid "All files (*)"
-msgstr "所有檔案 (*)"
-
-#: qml/components/BottomToolbar.qml:74 qml/components/Sidebar.qml:54
+#: qml/components/BottomToolbar.qml:75 qml/components/Sidebar.qml:55
 #: qml/time/TimePage.qml:25
 #, kde-format
 msgid "Time"
 msgstr "時間"
 
-#: qml/components/BottomToolbar.qml:85 qml/components/Sidebar.qml:67
+#: qml/components/BottomToolbar.qml:86 qml/components/Sidebar.qml:68
 #: qml/timer/TimerListPage.qml:19
 #, kde-format
 msgid "Timers"
 msgstr "計時器列表"
 
-#: qml/components/BottomToolbar.qml:96 qml/components/Sidebar.qml:80
-#: qml/stopwatch/StopwatchPage.qml:23
+#: qml/components/BottomToolbar.qml:99 qml/components/BottomToolbar.qml:100
+#: qml/components/Sidebar.qml:84 qml/stopwatch/StopwatchPage.qml:23
 #, kde-format
 msgid "Stopwatch"
 msgstr "碼錶"
+
+#: qml/components/SoundPickerPage.qml:24
+#, kde-format
+msgid "Select Alarm Sound"
+msgstr "選擇鬧鈴聲"
+
+#: qml/components/SoundPickerPage.qml:65
+#, kde-format
+msgid "Select from files…"
+msgstr "從檔案選取…"
+
+#: qml/components/SoundPickerPage.qml:76 qml/settings/SettingsPage.qml:86
+#, kde-format
+msgid "Default"
+msgstr "預設"
+
+#: qml/components/SoundPickerPage.qml:156
+#, kde-format
+msgid "Choose an audio"
+msgstr "選擇音效"
+
+#: qml/components/SoundPickerPage.qml:164
+#, kde-format
+msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
+msgstr "音效檔 (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
+
+#: qml/components/SoundPickerPage.qml:164
+#, kde-format
+msgid "All files (*)"
+msgstr "所有檔案 (*)"
 
 #: qml/components/TimePicker.qml:94
 #, kde-format
@@ -335,126 +335,140 @@ msgstr "上午"
 msgid "PM"
 msgstr "下午"
 
-#: qml/settings/SettingsPage.qml:34
+#: qml/settings/SettingsPage.qml:41
 #, kde-format
 msgid "Time Format"
 msgstr "時間格式"
 
-#: qml/settings/SettingsPage.qml:36
+#: qml/settings/SettingsPage.qml:43
 #, kde-format
 msgid "Use System Default"
 msgstr "使用系統預設"
 
-#: qml/settings/SettingsPage.qml:37
+#: qml/settings/SettingsPage.qml:44
 #, kde-format
 msgid "12 Hour Time"
 msgstr "12 小時制"
 
-#: qml/settings/SettingsPage.qml:38
+#: qml/settings/SettingsPage.qml:45
 #, kde-format
 msgid "24 Hour Time"
 msgstr "24 小時制"
 
-#: qml/settings/SettingsPage.qml:52
+#: qml/settings/SettingsPage.qml:59
 #, kde-format
 msgid "Notifications for running timers"
 msgstr "顯示進行中計時器的通知"
 
-#: qml/settings/SettingsPage.qml:54
+#: qml/settings/SettingsPage.qml:61
 #, kde-format
 msgid "Always"
 msgstr "總是"
 
-#: qml/settings/SettingsPage.qml:57
+#: qml/settings/SettingsPage.qml:64
 #, kde-format
 msgctxt "When the app is not running"
 msgid "When %1 is not running"
 msgstr "%1 未執行的時候"
 
-#: qml/settings/SettingsPage.qml:60
+#: qml/settings/SettingsPage.qml:67
 #, kde-format
 msgid "Never"
 msgstr "永不"
 
-#: qml/settings/SettingsPage.qml:63
+#: qml/settings/SettingsPage.qml:70
 #, kde-format
 msgid "Lets you pause and resume timers from the notification area."
 msgstr "讓您可以從通知區域暫停或繼續計時器。"
 
-#: qml/settings/SettingsPage.qml:78
+#: qml/settings/SettingsPage.qml:91
+#, fuzzy, kde-format
+#| msgid "Select Alarm Sound"
+msgid "Select Timer Sound"
+msgstr "選擇鬧鈴聲"
+
+#: qml/settings/SettingsPage.qml:93
+#, fuzzy, kde-format
+#| msgid "Default Sound"
+msgid "Default timer ring sound"
+msgstr "預設聲音"
+
+#: qml/settings/SettingsPage.qml:102
 #, kde-format
 msgid "About Clock"
 msgstr "關於時鐘"
 
-#: qml/settings/SettingsPage.qml:87
+#: qml/settings/SettingsPage.qml:111
 #, kde-format
 msgid "About KDE"
 msgstr "關於 KDE"
 
-#: qml/stopwatch/StopwatchPage.qml:165 qml/stopwatch/StopwatchPage.qml:200
+#: qml/stopwatch/StopwatchPage.qml:156 qml/stopwatch/StopwatchPage.qml:191
 #: qml/timer/TimerPage.qml:51 qml/timer/TimerPage.qml:99
 #, kde-format
 msgid "Reset"
 msgstr "重設"
 
-#: qml/stopwatch/StopwatchPage.qml:167 qml/timer/TimerPage.qml:43
+#: qml/stopwatch/StopwatchPage.qml:158 qml/timer/TimerPage.qml:43
 #: qml/timer/TimerPage.qml:93
 #, kde-format
 msgid "Pause"
 msgstr "暫停"
 
-#: qml/stopwatch/StopwatchPage.qml:169
+#: qml/stopwatch/StopwatchPage.qml:160
 #, kde-format
 msgid "Resume"
 msgstr "恢復"
 
-#: qml/stopwatch/StopwatchPage.qml:171 qml/timer/TimerPage.qml:43
+#: qml/stopwatch/StopwatchPage.qml:162 qml/timer/TimerPage.qml:43
 #: qml/timer/TimerPage.qml:93
 #, kde-format
 msgid "Start"
 msgstr "開始"
 
-#: qml/stopwatch/StopwatchPage.qml:200 qml/stopwatch/StopwatchPage.qml:241
+#: qml/stopwatch/StopwatchPage.qml:191 qml/stopwatch/StopwatchPage.qml:232
 #, kde-format
 msgid "Lap"
 msgstr "單圈"
 
-#: qml/stopwatch/StopwatchPage.qml:221
+#: qml/stopwatch/StopwatchPage.qml:212
 #, kde-format
 msgid ""
 "Press Space to start or pause the stopwatch. Delete or Backspace resets it. "
 "Enter adds a lap."
 msgstr ""
+"按下空白鍵開始倒數計時或暫停。Delete 或 Backspace 鍵會重設計時。Enter 鍵會記"
+"錄單圈。"
 
-#: qml/stopwatch/StopwatchPage.qml:249
+#: qml/stopwatch/StopwatchPage.qml:240
 #, kde-format
 msgid "Lap Time"
 msgstr "單圈時間"
 
-#: qml/stopwatch/StopwatchPage.qml:256
+#: qml/stopwatch/StopwatchPage.qml:247
 #, kde-format
 msgid "Total"
 msgstr "總計"
 
-#: qml/stopwatch/StopwatchPage.qml:286
+#: qml/stopwatch/StopwatchPage.qml:277
 #, kde-format
 msgctxt "@action:button"
 msgid "Pause"
 msgstr "暫停"
 
-#: qml/stopwatch/StopwatchPage.qml:288
+#: qml/stopwatch/StopwatchPage.qml:279
 #, kde-format
 msgctxt "@action:button"
 msgid "Resume"
 msgstr "繼續"
 
-#: qml/stopwatch/StopwatchPage.qml:290
+#: qml/stopwatch/StopwatchPage.qml:281
 #, kde-format
 msgctxt "@action:button"
 msgid "Start"
 msgstr "開始"
 
-#: qml/stopwatch/StopwatchPage.qml:350
+#: qml/stopwatch/StopwatchPage.qml:341
 #, kde-format
 msgid "#%1"
 msgstr "#%1"
