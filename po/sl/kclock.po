@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-25 00:46+0000\n"
-"PO-Revision-Date: 2025-05-23 07:08+0200\n"
+"PO-Revision-Date: 2025-05-25 05:49+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -390,16 +390,14 @@ msgstr ""
 "Omogoča zaustavitev in nadaljevanje časovnikov iz območja za obvestila."
 
 #: qml/settings/SettingsPage.qml:91
-#, fuzzy, kde-format
-#| msgid "Select Alarm Sound"
+#, kde-format
 msgid "Select Timer Sound"
-msgstr "Izberi zvok zvonjenja"
+msgstr "Izberi zvok časomerilnika"
 
 #: qml/settings/SettingsPage.qml:93
-#, fuzzy, kde-format
-#| msgid "Default Sound"
+#, kde-format
 msgid "Default timer ring sound"
-msgstr "Privzeti zvok"
+msgstr "Privzeti zvok zvonjenja časomerilnika"
 
 #: qml/settings/SettingsPage.qml:102
 #, kde-format

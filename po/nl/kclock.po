@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-25 00:46+0000\n"
-"PO-Revision-Date: 2025-05-23 12:58+0200\n"
+"PO-Revision-Date: 2025-05-25 14:06+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -383,16 +383,14 @@ msgid "Lets you pause and resume timers from the notification area."
 msgstr "Laat u timers pauzeren en herstarten vanuit het meldingengebied."
 
 #: qml/settings/SettingsPage.qml:91
-#, fuzzy, kde-format
-#| msgid "Select Alarm Sound"
+#, kde-format
 msgid "Select Timer Sound"
-msgstr "Geluidssignaal selecteren"
+msgstr "Timergeluid selecteren"
 
 #: qml/settings/SettingsPage.qml:93
-#, fuzzy, kde-format
-#| msgid "Default Sound"
+#, kde-format
 msgid "Default timer ring sound"
-msgstr "Standaard geluid"
+msgstr "Standaard timersignaalgeluid"
 
 #: qml/settings/SettingsPage.qml:102
 #, kde-format

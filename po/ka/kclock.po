@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-25 00:46+0000\n"
-"PO-Revision-Date: 2025-05-23 04:06+0200\n"
+"PO-Revision-Date: 2025-05-25 04:07+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -165,7 +165,7 @@ msgstr "ზარის ხმა:"
 #: qml/alarm/AlarmForm.qml:201
 #, kde-format
 msgid "Default Sound"
-msgstr "ნაგულისხმები ხმა"
+msgstr "ნაგულისხმევი ხმა"
 
 #: qml/alarm/AlarmFormPage.qml:25 qml/alarm/AlarmRingingPopup.qml:43
 #, kde-format
@@ -310,7 +310,7 @@ msgstr "ფაილებიდან არჩევა…"
 #: qml/components/SoundPickerPage.qml:76 qml/settings/SettingsPage.qml:86
 #, kde-format
 msgid "Default"
-msgstr "ნაგულისხმები"
+msgstr "ნაგულისხმევი"
 
 #: qml/components/SoundPickerPage.qml:156
 #, kde-format
@@ -345,7 +345,7 @@ msgstr "დროის ფორმატი"
 #: qml/settings/SettingsPage.qml:43
 #, kde-format
 msgid "Use System Default"
-msgstr "სისტემის ნაგულისხმების გამოყენება"
+msgstr "სისტემის ნაგულისხმევის გამოყენება"
 
 #: qml/settings/SettingsPage.qml:44
 #, kde-format
@@ -385,16 +385,14 @@ msgstr ""
 "საშუალებას გაძლევთ, დააპაუზოთ და გააგრძელოთ ტაიმერები სისტემური კუთხიდან."
 
 #: qml/settings/SettingsPage.qml:91
-#, fuzzy, kde-format
-#| msgid "Select Alarm Sound"
+#, kde-format
 msgid "Select Timer Sound"
-msgstr "აირჩიეთ მაღვიძარის ხმა"
+msgstr "აირჩიეთ ტაიმერის ხმა"
 
 #: qml/settings/SettingsPage.qml:93
-#, fuzzy, kde-format
-#| msgid "Default Sound"
+#, kde-format
 msgid "Default timer ring sound"
-msgstr "ნაგულისხმები ხმა"
+msgstr "ტაიმერის რეკვის ნაგულისხმევი ხმა"
 
 #: qml/settings/SettingsPage.qml:102
 #, kde-format

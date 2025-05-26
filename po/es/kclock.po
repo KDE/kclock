@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-25 00:46+0000\n"
-"PO-Revision-Date: 2025-05-24 01:30+0100\n"
+"PO-Revision-Date: 2025-05-25 23:45+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -387,16 +387,14 @@ msgstr ""
 "Le permite pausar y reanudar temporizadores desde el área de notificación."
 
 #: qml/settings/SettingsPage.qml:91
-#, fuzzy, kde-format
-#| msgid "Select Alarm Sound"
+#, kde-format
 msgid "Select Timer Sound"
-msgstr "Seleccionar el sonido de la alarma"
+msgstr "Seleccionar el sonido del temporizador"
 
 #: qml/settings/SettingsPage.qml:93
-#, fuzzy, kde-format
-#| msgid "Default Sound"
+#, kde-format
 msgid "Default timer ring sound"
-msgstr "Sonido predeterminado"
+msgstr "Sonido predeterminado del temporizador"
 
 #: qml/settings/SettingsPage.qml:102
 #, kde-format

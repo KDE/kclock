@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-25 00:46+0000\n"
-"PO-Revision-Date: 2025-05-24 19:20+0300\n"
+"PO-Revision-Date: 2025-05-25 19:36+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -385,16 +385,14 @@ msgstr ""
 "Sayaçları bildirim alanından duraklatmanıza ve sürdürmenize olanak tanır."
 
 #: qml/settings/SettingsPage.qml:91
-#, fuzzy, kde-format
-#| msgid "Select Alarm Sound"
+#, kde-format
 msgid "Select Timer Sound"
-msgstr "Çalar Saat Sesi Seç"
+msgstr "Sayaç Sesi Seç"
 
 #: qml/settings/SettingsPage.qml:93
-#, fuzzy, kde-format
-#| msgid "Default Sound"
+#, kde-format
 msgid "Default timer ring sound"
-msgstr "Öntanımlı Ses"
+msgstr "Öntanımlı sayaç çalma sesi"
 
 #: qml/settings/SettingsPage.qml:102
 #, kde-format
@@ -474,7 +472,7 @@ msgstr "Başlat"
 #: qml/stopwatch/StopwatchPage.qml:341
 #, kde-format
 msgid "#%1"
-msgstr "\t#%1"
+msgstr "№%1"
 
 #: qml/time/AddLocationListView.qml:51
 #, kde-format
