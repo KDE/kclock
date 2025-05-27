@@ -379,16 +379,14 @@ msgid "Lets you pause and resume timers from the notification area."
 msgstr "在通知区域暂停/继续计时器的计时。"
 
 #: qml/settings/SettingsPage.qml:91
-#, fuzzy, kde-format
-#| msgid "Select Alarm Sound"
+#, kde-format
 msgid "Select Timer Sound"
-msgstr "选择闹钟声音"
+msgstr ""
 
 #: qml/settings/SettingsPage.qml:93
-#, fuzzy, kde-format
-#| msgid "Default Sound"
+#, kde-format
 msgid "Default timer ring sound"
-msgstr "默认声音"
+msgstr ""
 
 #: qml/settings/SettingsPage.qml:102
 #, kde-format
@@ -434,6 +432,7 @@ msgid ""
 "Press Space to start or pause the stopwatch. Delete or Backspace resets it. "
 "Enter adds a lap."
 msgstr ""
+"按空格键可开始或暂停秒表，按删除键或退格键可重置秒表，按回车键可增加一圈。"
 
 #: qml/stopwatch/StopwatchPage.qml:240
 #, kde-format

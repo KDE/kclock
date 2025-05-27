@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-25 00:46+0000\n"
-"PO-Revision-Date: 2025-05-22 13:13+0200\n"
+"PO-Revision-Date: 2025-05-26 08:48+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -386,16 +386,14 @@ msgstr ""
 "Permítelle pausar e continuar temporizadores desde a área de notificación."
 
 #: qml/settings/SettingsPage.qml:91
-#, fuzzy, kde-format
-#| msgid "Select Alarm Sound"
+#, kde-format
 msgid "Select Timer Sound"
-msgstr "Seleccionar o son da alarma"
+msgstr "Seleccionar o son do temporizador"
 
 #: qml/settings/SettingsPage.qml:93
-#, fuzzy, kde-format
-#| msgid "Default Sound"
+#, kde-format
 msgid "Default timer ring sound"
-msgstr "Son predeterminado"
+msgstr "Son predeterminado de remate de temporizador"
 
 #: qml/settings/SettingsPage.qml:102
 #, kde-format
@@ -441,6 +439,8 @@ msgid ""
 "Press Space to start or pause the stopwatch. Delete or Backspace resets it. "
 "Enter adds a lap."
 msgstr ""
+"Prema Espazo para iniciar ou pausar o cronómetro. Suprimir ou Retroceder "
+"restabeléceo. Intro engade unha volta."
 
 #: qml/stopwatch/StopwatchPage.qml:240
 #, kde-format
