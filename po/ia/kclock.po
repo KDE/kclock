@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-25 00:46+0000\n"
-"PO-Revision-Date: 2025-04-15 15:14+0200\n"
+"PO-Revision-Date: 2025-05-27 11:33+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -388,16 +388,14 @@ msgstr ""
 "de notification."
 
 #: qml/settings/SettingsPage.qml:91
-#, fuzzy, kde-format
-#| msgid "Select Alarm Sound"
+#, kde-format
 msgid "Select Timer Sound"
-msgstr "Selectiona sono de alarma"
+msgstr "Selectiona sono de horologio (Timer)"
 
 #: qml/settings/SettingsPage.qml:93
-#, fuzzy, kde-format
-#| msgid "Default Sound"
+#, kde-format
 msgid "Default timer ring sound"
-msgstr "Sono predefinite"
+msgstr "Sono predefinitede tintinnar de horologio (timer)"
 
 #: qml/settings/SettingsPage.qml:102
 #, kde-format
@@ -443,6 +441,8 @@ msgid ""
 "Press Space to start or pause the stopwatch. Delete or Backspace resets it. "
 "Enter adds a lap."
 msgstr ""
+"Pressa Spatio per startar o pausar le chronometro. Dele o RetroSpatio per "
+"reinitialisar lo. Enter (clave de Insertar) adde un giro."
 
 #: qml/stopwatch/StopwatchPage.qml:240
 #, kde-format
@@ -501,12 +501,12 @@ msgstr "Adde location"
 #: qml/time/TimePageDelegate.qml:47
 #, kde-format
 msgid "Yesterday"
-msgstr ""
+msgstr "Heri"
 
 #: qml/time/TimePageDelegate.qml:49
 #, kde-format
 msgid "Tomorrow"
-msgstr ""
+msgstr "Deman"
 
 #: qml/timer/PresetDurationButton.qml:22
 #, kde-format

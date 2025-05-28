@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-25 00:46+0000\n"
-"PO-Revision-Date: 2025-05-15 18:09+0400\n"
+"PO-Revision-Date: 2025-05-27 18:18+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -393,16 +393,14 @@ msgid "Lets you pause and resume timers from the notification area."
 msgstr "يتيح لك إيقاف المؤقتات مؤقتًا واستئنافها من منطقة الإخطارات."
 
 #: qml/settings/SettingsPage.qml:91
-#, fuzzy, kde-format
-#| msgid "Select Alarm Sound"
+#, kde-format
 msgid "Select Timer Sound"
-msgstr "حدد صوت التنبيه"
+msgstr "حدد صوت المؤقت"
 
 #: qml/settings/SettingsPage.qml:93
-#, fuzzy, kde-format
-#| msgid "Default Sound"
+#, kde-format
 msgid "Default timer ring sound"
-msgstr "الصوت الافتراضي"
+msgstr "صوت منبه المؤقت المبدئي"
 
 #: qml/settings/SettingsPage.qml:102
 #, kde-format
@@ -448,6 +446,8 @@ msgid ""
 "Press Space to start or pause the stopwatch. Delete or Backspace resets it. "
 "Enter adds a lap."
 msgstr ""
+"اضغط على Space لبدء ساعة الإيقاف أو لبثها. اضغط على زر الحذف أو Backspace "
+"لتصفيرها. اضغط زر الإدخال  لتضيف لفة."
 
 #: qml/stopwatch/StopwatchPage.qml:240
 #, kde-format
