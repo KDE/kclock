@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-25 00:46+0000\n"
-"PO-Revision-Date: 2025-04-20 10:35+0300\n"
+"PO-Revision-Date: 2025-05-28 17:08+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -51,13 +51,13 @@ msgstr "Han Young"
 #: main.cpp:56
 #, kde-format
 msgid "Kai Uwe Broulik"
-msgstr ""
+msgstr "Kai Uwe Broulik"
 
 #: main.cpp:56
 #, kde-format
 msgctxt "Author"
 msgid "Desktop Integration"
-msgstr ""
+msgstr "Työpöytäeheytys"
 
 #: main.cpp:62
 #, kde-format
@@ -384,16 +384,14 @@ msgid "Lets you pause and resume timers from the notification area."
 msgstr "Antaa keskeyttää ja jatkaa ajastimia ilmoitusalueelta."
 
 #: qml/settings/SettingsPage.qml:91
-#, fuzzy, kde-format
-#| msgid "Select Alarm Sound"
+#, kde-format
 msgid "Select Timer Sound"
-msgstr "Valitse hälytysääni"
+msgstr "Valitse ajastinääni"
 
 #: qml/settings/SettingsPage.qml:93
-#, fuzzy, kde-format
-#| msgid "Default Sound"
+#, kde-format
 msgid "Default timer ring sound"
-msgstr "Oletusääni"
+msgstr "Ajastimen oletussoittoääni"
 
 #: qml/settings/SettingsPage.qml:102
 #, kde-format
@@ -439,6 +437,8 @@ msgid ""
 "Press Space to start or pause the stopwatch. Delete or Backspace resets it. "
 "Enter adds a lap."
 msgstr ""
+"Käynnistä tai keskeytä sekuntikello välilyönnillä. Del tai askelpalautin "
+"nollaa ajan. Enter lisää kierroksen."
 
 #: qml/stopwatch/StopwatchPage.qml:240
 #, kde-format
@@ -497,12 +497,12 @@ msgstr "Lisää sijainti"
 #: qml/time/TimePageDelegate.qml:47
 #, kde-format
 msgid "Yesterday"
-msgstr ""
+msgstr "Eilen"
 
 #: qml/time/TimePageDelegate.qml:49
 #, kde-format
 msgid "Tomorrow"
-msgstr ""
+msgstr "Huomenna"
 
 #: qml/timer/PresetDurationButton.qml:22
 #, kde-format
@@ -785,22 +785,19 @@ msgid "Alarm will ring in %1"
 msgstr "Hälytys soi %1 kuluttua"
 
 #: utilmodel.cpp:152
-#, fuzzy, kde-format
-#| msgid "Only once"
+#, kde-format
 msgctxt "Repeat"
 msgid "Only once"
 msgstr "Vain kerran"
 
 #: utilmodel.cpp:155
-#, fuzzy, kde-format
-#| msgid "Everyday"
+#, kde-format
 msgctxt "Repeat"
 msgid "Everyday"
 msgstr "Päivittäin"
 
 #: utilmodel.cpp:158
-#, fuzzy, kde-format
-#| msgid "Weekdays"
+#, kde-format
 msgctxt "Repeat"
 msgid "Weekdays"
 msgstr "Arkipäivisin"

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-25 00:46+0000\n"
-"PO-Revision-Date: 2025-05-24 21:24+0900\n"
+"PO-Revision-Date: 2025-05-28 23:20+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -382,16 +382,14 @@ msgid "Lets you pause and resume timers from the notification area."
 msgstr "讓您可以從通知區域暫停或繼續計時器。"
 
 #: qml/settings/SettingsPage.qml:91
-#, fuzzy, kde-format
-#| msgid "Select Alarm Sound"
+#, kde-format
 msgid "Select Timer Sound"
-msgstr "選擇鬧鈴聲"
+msgstr "選擇計時器音效"
 
 #: qml/settings/SettingsPage.qml:93
-#, fuzzy, kde-format
-#| msgid "Default Sound"
+#, kde-format
 msgid "Default timer ring sound"
-msgstr "預設聲音"
+msgstr "預設計時器響鈴音效"
 
 #: qml/settings/SettingsPage.qml:102
 #, kde-format

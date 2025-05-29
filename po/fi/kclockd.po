@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-25 00:46+0000\n"
-"PO-Revision-Date: 2025-04-20 16:27+0300\n"
+"PO-Revision-Date: 2025-05-28 17:09+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -167,13 +167,13 @@ msgstr "Han Young"
 #: main.cpp:51
 #, kde-format
 msgid "Kai Uwe Broulik"
-msgstr ""
+msgstr "Kai Uwe Broulik"
 
 #: main.cpp:51
 #, kde-format
 msgctxt "Author"
 msgid "Desktop Integration"
-msgstr ""
+msgstr "Työpöytäeheytys"
 
 #: timer.cpp:64
 #, kde-format
