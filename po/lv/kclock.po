@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-25 00:46+0000\n"
-"PO-Revision-Date: 2025-04-17 16:02+0300\n"
+"PO-Revision-Date: 2025-05-26 17:53+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 25.04.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -388,16 +388,14 @@ msgid "Lets you pause and resume timers from the notification area."
 msgstr "Ļauj pauzēt un atsākt taimerus no paziņojumu zonas."
 
 #: qml/settings/SettingsPage.qml:91
-#, fuzzy, kde-format
-#| msgid "Select Alarm Sound"
+#, kde-format
 msgid "Select Timer Sound"
-msgstr "Izvēlēties signāla skaņu"
+msgstr "Izvēlēties taimera skaņu"
 
 #: qml/settings/SettingsPage.qml:93
-#, fuzzy, kde-format
-#| msgid "Default Sound"
+#, kde-format
 msgid "Default timer ring sound"
-msgstr "Iebūvētā skaņa"
+msgstr "Noklusējuma taimera zvana skaņa"
 
 #: qml/settings/SettingsPage.qml:102
 #, kde-format
@@ -443,6 +441,8 @@ msgid ""
 "Press Space to start or pause the stopwatch. Delete or Backspace resets it. "
 "Enter adds a lap."
 msgstr ""
+"Lai sāktu vai apturētu hronometru, spiediet atstarpes taustiņu. „Delete“ un "
+"„Backspace“ taustiņš to atiestata. „Enter“ taustiņš pievieno apli"
 
 #: qml/stopwatch/StopwatchPage.qml:240
 #, kde-format
@@ -501,12 +501,12 @@ msgstr "Pievienot vietu"
 #: qml/time/TimePageDelegate.qml:47
 #, kde-format
 msgid "Yesterday"
-msgstr ""
+msgstr "Vakar"
 
 #: qml/time/TimePageDelegate.qml:49
 #, kde-format
 msgid "Tomorrow"
-msgstr ""
+msgstr "Rīt"
 
 #: qml/timer/PresetDurationButton.qml:22
 #, kde-format
