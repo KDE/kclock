@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-25 00:46+0000\n"
-"PO-Revision-Date: 2025-05-18 12:02+0200\n"
+"PO-Revision-Date: 2025-05-26 19:32+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -387,16 +387,14 @@ msgstr ""
 "уведомяване."
 
 #: qml/settings/SettingsPage.qml:91
-#, fuzzy, kde-format
-#| msgid "Select Alarm Sound"
+#, kde-format
 msgid "Select Timer Sound"
-msgstr "Изберете Звук на алармата"
+msgstr "Избиране на звук за таймера"
 
 #: qml/settings/SettingsPage.qml:93
-#, fuzzy, kde-format
-#| msgid "Default Sound"
+#, kde-format
 msgid "Default timer ring sound"
-msgstr "Звук по подразбиране"
+msgstr "Звук по подразбиране на таймера"
 
 #: qml/settings/SettingsPage.qml:102
 #, kde-format
@@ -442,6 +440,8 @@ msgid ""
 "Press Space to start or pause the stopwatch. Delete or Backspace resets it. "
 "Enter adds a lap."
 msgstr ""
+"Натиснете интервал, за да стартирате или спрете хронометъра. Delete или "
+"Backspace го нулират. Enter добавя цикъл."
 
 #: qml/stopwatch/StopwatchPage.qml:240
 #, kde-format
