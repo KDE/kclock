@@ -32,6 +32,9 @@ set(kclock_SRCS
     savedlocationsmodel.h
     windowexposure.cpp
     windowexposure.h
+
+    wayland/pipshellsurface.cpp
+    wayland/pipshellsurface.h
     )
 
 # So we can share the enums.
@@ -96,10 +99,19 @@ ecm_add_qml_module(kclock URI org.kde.kclock QML_FILES
     qml/time/TimePageDelegate.qml
 )
 
+qt6_generate_wayland_protocol_client_sources(kclock
+    PRIVATE_CODE
+    FILES
+        ${CMAKE_CURRENT_SOURCE_DIR}/wayland/xx-pip-v1.xml
+        ${WaylandProtocols_DATADIR}/stable/xdg-shell/xdg-shell.xml
+        ${Wayland_DATADIR}/wayland.xml
+)
+
 target_link_libraries(kclock PRIVATE
     Qt6::Qml
     Qt6::Gui
     Qt6::QuickControls2
+    Qt6::WaylandClientPrivate
     Qt6::Widgets
     Qt6::Multimedia
     KF6::I18n

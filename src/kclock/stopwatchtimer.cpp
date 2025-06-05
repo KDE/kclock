@@ -9,6 +9,8 @@
 #include <QDebug>
 #include <QQmlEngine>
 
+#include "wayland/pipshellsurface.h"
+
 const int STOPWATCH_DISPLAY_INTERVAL = 41; // 24fps
 
 StopwatchTimer *StopwatchTimer::instance()
@@ -144,6 +146,12 @@ QString StopwatchTimer::smallDisplay() const
 {
     qint64 amount = small();
     return UtilModel::instance()->displayTwoDigits(amount);
+}
+
+void StopwatchTimer::makePipWindow(QWindow *window)
+{
+    qCritical() << "MAKE PIP" << window;
+    PipShellIntegration::assignPipRole(window);
 }
 
 #include "moc_stopwatchtimer.cpp"

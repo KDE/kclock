@@ -49,6 +49,17 @@ Kirigami.ScrollablePage {
 
     actions: [
         Kirigami.Action {
+            icon.name: "window-duplicate"
+            text: i18nc("@action", "Pop out")
+            displayHint: Kirigami.DisplayHint.IconOnly
+            checkable: true
+            checked: false
+            onTriggered: {
+                StopwatchTimer.makePipWindow(pipWindow);
+                pipWindow.show();
+            }
+        },
+        Kirigami.Action {
             displayHint: Kirigami.DisplayHint.IconOnly
             visible: !applicationWindow().isWidescreen
             icon.name: "settings-configure"
@@ -56,6 +67,23 @@ Kirigami.ScrollablePage {
             onTriggered: applicationWindow().pageStack.push(applicationWindow().getPage("Settings"))
         }
     ]
+
+    Window {
+        id: pipWindow
+        //visible: pipAction.checked
+        width: 300
+        height: 300
+        color: "salmon"
+
+        Component.onCompleted: {
+
+        }
+
+        Text {
+            text: StopwatchTimer.display + "." + StopwatchTimer.small
+            font.pointSize: 30
+        }
+    }
 
     header: ColumnLayout {
         transform: Translate { y: root.yTranslate }
@@ -77,6 +105,7 @@ Kirigami.ScrollablePage {
 
                 // toggle when clicked
                 MouseArea {
+                    id: stopwatchArea
                     anchors.horizontalCenter: parent.horizontalCenter
                     width: timeLabels.implicitWidth
                     height: timeLabels.implicitHeight
