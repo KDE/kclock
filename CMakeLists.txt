@@ -55,6 +55,7 @@ find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS
     QuickControls2
     Multimedia
     DBus
+    WaylandClient
     Widgets
 )
 
@@ -72,6 +73,12 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
 if (BUILD_PLASMOID)
     find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS KIO JobWidgets)
     find_package(Plasma REQUIRED)
+endif()
+
+find_package(WaylandProtocols 1.21 REQUIRED)
+
+if (Qt6WaylandClient_VERSION VERSION_GREATER_EQUAL "6.10.0")
+    find_package(Qt6WaylandClientPrivate ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE)
 endif()
 
 find_package(KF6KirigamiAddons 0.6 REQUIRED)

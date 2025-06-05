@@ -32,6 +32,11 @@ set(kclock_SRCS
     savedlocationsmodel.h
     windowexposure.cpp
     windowexposure.h
+
+    wayland/pipshellsurface.cpp
+    wayland/pipshellsurface.h
+    pipwindow.cpp
+    pipwindow.h
     )
 
 # So we can share the enums.
@@ -54,6 +59,8 @@ qt_add_dbus_interface(kclock_SRCS ${UtilityXML} utilityinterface )
 add_executable(kclock main.cpp ${kclock_SRCS} ${RESOURCES})
 add_dependencies(kclock kclockd)
 
+set_source_files_properties(qml/components/PipHandler.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
+
 ecm_add_qml_module(kclock URI org.kde.kclock QML_FILES
     qml/Main.qml
 
@@ -69,6 +76,7 @@ ecm_add_qml_module(kclock URI org.kde.kclock QML_FILES
     qml/components/DialogComboBox.qml
     qml/components/FooterToolBarButton.qml
     qml/components/FloatingActionButton.qml
+    qml/components/PipHandler.qml
     qml/components/Sidebar.qml
     qml/components/TimePicker.qml
     qml/components/TimePickerSpinBox.qml
@@ -96,10 +104,19 @@ ecm_add_qml_module(kclock URI org.kde.kclock QML_FILES
     qml/time/TimePageDelegate.qml
 )
 
+qt6_generate_wayland_protocol_client_sources(kclock
+    PRIVATE_CODE
+    FILES
+        ${CMAKE_CURRENT_SOURCE_DIR}/wayland/xx-pip-v1.xml
+        ${WaylandProtocols_DATADIR}/stable/xdg-shell/xdg-shell.xml
+        ${Wayland_DATADIR}/wayland.xml
+)
+
 target_link_libraries(kclock PRIVATE
     Qt6::Qml
     Qt6::Gui
     Qt6::QuickControls2
+    Qt6::WaylandClientPrivate
     Qt6::Widgets
     Qt6::Multimedia
     KF6::I18n

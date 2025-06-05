@@ -17,6 +17,8 @@ import org.kde.kclock
 Kirigami.Page {
     id: root
 
+    objectName: "Timer"
+
     required property Timer timer
 
     title: timer && timer.label !== "" ? timer.label : i18n("New timer")
@@ -24,6 +26,7 @@ Kirigami.Page {
     background: null
 
     property bool showFullscreen: false
+    readonly property bool minimizedToPip: (PipHandler.currentItem?.objectName === "TimerPip" && PipHandler.currentItem?.timer === root.timer) ?? false
 
     property bool running: timer ? timer.running : 0
     property bool looping: timer ? timer.looping : 0
@@ -65,6 +68,20 @@ Kirigami.Page {
             checked: looping
             visible: !Kirigami.Settings.isMobile
             onTriggered: root.timer.toggleLooping()
+        },
+        Kirigami.Action {
+            id: pipAction
+            icon.name: root.minimizedToPip ? "window-restore-pip" : "window-minimize-pip"
+            text: root.minimizedToPip ? i18nc("@action", "Restore") : i18nc("@action", "Pop out")
+            displayHint: Kirigami.DisplayHint.IconOnly | Kirigami.DisplayHint.KeepVisible
+            visible: PipHandler.supported
+            onTriggered: {
+                if (root.minimizedToPip) {
+                    PipHandler.hide();
+                } else {
+                    PipHandler.show(timerPipComponent, {timer: root.timer});
+                }
+            }
         }
     ]
 
@@ -123,9 +140,57 @@ Kirigami.Page {
         }
     }
 
+    Component {
+        id: timerPipComponent
+
+        MouseArea {
+            id: pipArea
+            objectName: "TimerPip"
+
+            // property alias doesn't work with required property timer on TimerComponent...
+            required property Timer timer
+
+            onClicked: root.timer.toggleRunning()
+
+            TimerComponent {
+                id: pipTimer
+                timer: pipArea.timer
+                anchors {
+                    fill: parent
+                    margins: Kirigami.Units.largeSpacing
+                }
+
+                maximizedCircle: true
+
+                actions: [
+                    Kirigami.Action {
+                        text: i18nc("@action:button Add 1 minute to timer", "+1:00")
+                        icon.name: "list-add"
+                        displayHint: Kirigami.DisplayHint.IconOnly
+                        onTriggered: root.timer.addMinute()
+                    },
+                    Kirigami.Action {
+                        text: root.running ? i18nc("@action:button", "Pause") : i18nc("@action:button", "Start")
+                        icon.name: root.running ? "chronometer-pause" : "chronometer-start"
+                        displayHint: Kirigami.DisplayHint.IconOnly
+                        onTriggered: root.timer.toggleRunning()
+                    },
+                    Kirigami.Action {
+                        text: i18nc("@action:button", "Reset")
+                        icon.name: "chronometer-reset"
+                        displayHint: Kirigami.DisplayHint.IconOnly
+                        onTriggered: root.timer.reset()
+                    }
+                ]
+                actionsVisible: PipHandler.hovered
+            }
+        }
+    }
+
     TimerComponent {
         anchors.fill: parent
         timer: root.timer
+        visible: !root.minimizedToPip
 
         actions: [
             Kirigami.Action {
@@ -134,6 +199,19 @@ Kirigami.Page {
                 onTriggered: root.timer.addMinute()
             }
         ]
+    }
+
+    Kirigami.PlaceholderMessage {
+        width: parent.width
+        anchors.verticalCenter: parent.verticalCenter
+        text: i18n("This timer is in Picture-in-Picture mode.")
+        icon.name: "window-minimize-pip"
+        visible: root.minimizedToPip
+        helpfulAction: Kirigami.Action {
+            icon.name: "window-restore-pip"
+            text: i18nc("@action:button Restore (unminimize) from pip mode", "Restore")
+            onTriggered: PipHandler.hide()
+        }
     }
 
     RowLayout {

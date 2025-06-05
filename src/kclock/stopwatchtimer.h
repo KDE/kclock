@@ -8,6 +8,7 @@
 #include <QElapsedTimer>
 #include <QObject>
 #include <QTimer>
+#include <QWindow>
 
 #include <optional>
 

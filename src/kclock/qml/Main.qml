@@ -96,7 +96,7 @@ Kirigami.ApplicationWindow {
         yAnim.restart();
         anim.restart();
 
-        pageStack.push(page);
+        return pageStack.push(page);
     }
 
     function getPage(name) {
@@ -125,6 +125,35 @@ Kirigami.ApplicationWindow {
 
             let bottomToolbar = Qt.createComponent(Qt.resolvedUrl("components/BottomToolbar.qml"));
             footer = bottomToolbar.createObject(root);
+        }
+    }
+
+    Connections {
+        target: KClock.PipHandler
+        function onRestoreClicked(pipPage) {
+            if (!root.visible) {
+                root.show();
+            }
+            // FIXME Doesn't work, just blinks in taskbar.
+            root.requestActivate();
+
+            const currentPage = pageStack.currentItem?.objectName;
+
+            if (pipPage.objectName === "StopwatchPip") {
+                if (currentPage !== "Stopwatch") {
+                    const page = root.getPage("Stopwatch");
+                    switchToPage(page, 0);
+                }
+            } else if (pipPage.objectName === "TimerPip") {
+                if (currentPage === "Timer") {
+                    pageStack.currentItem.timer = pipPage.timer;
+                } else if (currentPage === "Timers") {
+                    pageStack.currentItem.openTimer(pipPage.timer);
+                } else {
+                    const timersPage = switchToPage(root.getPage("Timers"), 0);
+                    timersPage.openTimer(pipPage.timer);
+                }
+            }
         }
     }
 
