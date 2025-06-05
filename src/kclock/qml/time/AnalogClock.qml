@@ -141,7 +141,7 @@ Item {
     Item {
         id: clock
         anchors.fill: parent
-        readonly property double svgScale: face.width / face.naturalSize.width
+        readonly property double svgScale: face.width / (face.naturalSize.width || 1)
         readonly property double horizontalShadowOffset:
             Math.round(clockSvg.naturalHorizontalHandShadowOffset * svgScale) + Math.round(clockSvg.naturalHorizontalHandShadowOffset * svgScale) % 2
         readonly property double verticalShadowOffset:

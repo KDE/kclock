@@ -9,6 +9,8 @@
 #include <QDebug>
 #include <QQmlEngine>
 
+#include "wayland/pipshellsurface.h"
+
 const int STOPWATCH_DISPLAY_INTERVAL = 41; // 24fps
 
 StopwatchTimer *StopwatchTimer::instance()
