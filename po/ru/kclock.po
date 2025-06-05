@@ -1,23 +1,23 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kclock package.
 #
-# Alexander Yavorsky <kekcuha@gmail.com>, 2021, 2023.
+# SPDX-FileCopyrightText: 2021, 2023, 2025 Alexander Yavorsky <kekcuha@gmail.com>
 # SPDX-FileCopyrightText: 2021, 2024 Olesya Gerasimenko <translation-team@basealt.ru>
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-25 00:46+0000\n"
-"PO-Revision-Date: 2024-12-10 11:41+0300\n"
-"Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
-"Language-Team: Basealt Translation Team\n"
+"PO-Revision-Date: 2025-06-04 19:58+0200\n"
+"Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.04.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -54,13 +54,13 @@ msgstr "Han Young"
 #: main.cpp:56
 #, kde-format
 msgid "Kai Uwe Broulik"
-msgstr ""
+msgstr "Kai Uwe Broulik"
 
 #: main.cpp:56
 #, kde-format
 msgctxt "Author"
 msgid "Desktop Integration"
-msgstr ""
+msgstr "Интеграция с рабочей средой"
 
 #: main.cpp:62
 #, kde-format
@@ -70,7 +70,7 @@ msgstr "Выбрать открытую страницу"
 #: main.cpp:64
 #, kde-format
 msgid "Explicitly open a new Clock window"
-msgstr ""
+msgstr "Принудительно открыть новое окно «Часы»"
 
 #: qml/alarm/AlarmForm.qml:82
 #, kde-format
@@ -253,11 +253,10 @@ msgstr "Добавить напоминание"
 #: qml/alarm/AlarmListPage.qml:93
 #, kde-format
 msgid "Loading…"
-msgstr ""
+msgstr "Загрузка…"
 
 #: qml/alarm/AlarmListPage.qml:108
-#, fuzzy, kde-format
-#| msgid "New Alarm"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Alarm"
 msgstr "Создать напоминание"
@@ -368,18 +367,18 @@ msgstr "24-часовой"
 #: qml/settings/SettingsPage.qml:59
 #, kde-format
 msgid "Notifications for running timers"
-msgstr ""
+msgstr "Уведомления запущенных таймеров"
 
 #: qml/settings/SettingsPage.qml:61
 #, kde-format
 msgid "Always"
-msgstr ""
+msgstr "Всегда"
 
 #: qml/settings/SettingsPage.qml:64
 #, kde-format
 msgctxt "When the app is not running"
 msgid "When %1 is not running"
-msgstr ""
+msgstr "Если %1 не запущен"
 
 #: qml/settings/SettingsPage.qml:67
 #, kde-format
@@ -390,18 +389,17 @@ msgstr "Никогда"
 #, kde-format
 msgid "Lets you pause and resume timers from the notification area."
 msgstr ""
+"Позволяет приостанавливать и возобновлять таймеры из области уведомлений"
 
 #: qml/settings/SettingsPage.qml:91
-#, fuzzy, kde-format
-#| msgid "Select Alarm Sound"
+#, kde-format
 msgid "Select Timer Sound"
-msgstr "Выбор звука напоминания"
+msgstr "Выбор звука срабатывания таймера"
 
 #: qml/settings/SettingsPage.qml:93
-#, fuzzy, kde-format
-#| msgid "Default Sound"
+#, kde-format
 msgid "Default timer ring sound"
-msgstr "Звук по умолчанию"
+msgstr "Звук таймера по умолчанию"
 
 #: qml/settings/SettingsPage.qml:102
 #, kde-format
@@ -459,22 +457,19 @@ msgid "Total"
 msgstr "Всего"
 
 #: qml/stopwatch/StopwatchPage.qml:277
-#, fuzzy, kde-format
-#| msgid "Pause"
+#, kde-format
 msgctxt "@action:button"
 msgid "Pause"
 msgstr "Приостановить"
 
 #: qml/stopwatch/StopwatchPage.qml:279
-#, fuzzy, kde-format
-#| msgid "Resume"
+#, kde-format
 msgctxt "@action:button"
 msgid "Resume"
 msgstr "Продолжить"
 
 #: qml/stopwatch/StopwatchPage.qml:281
-#, fuzzy, kde-format
-#| msgid "Start"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start"
 msgstr "Запустить"
@@ -500,21 +495,20 @@ msgid "Add"
 msgstr "Добавить"
 
 #: qml/time/TimePage.qml:168
-#, fuzzy, kde-format
-#| msgid "Add Location"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Location"
-msgstr "Добавление местоположения"
+msgstr "Добавить местоположение"
 
 #: qml/time/TimePageDelegate.qml:47
 #, kde-format
 msgid "Yesterday"
-msgstr ""
+msgstr "Вчера"
 
 #: qml/time/TimePageDelegate.qml:49
 #, kde-format
 msgid "Tomorrow"
-msgstr ""
+msgstr "Завтра"
 
 #: qml/timer/PresetDurationButton.qml:22
 #, kde-format
@@ -522,34 +516,29 @@ msgid "1 m"
 msgstr "1 мин"
 
 #: qml/timer/TimerForm.qml:40
-#, fuzzy, kde-format
-#| msgid "1 minute"
+#, kde-format
 msgid "1 min"
 msgstr "1 минута"
 
 #: qml/timer/TimerForm.qml:41
-#, fuzzy, kde-format
-#| msgid "5 minutes"
+#, kde-format
 msgid "5 min"
 msgstr "5 минут"
 
 #: qml/timer/TimerForm.qml:42
-#, fuzzy, kde-format
-#| msgid "10 m"
+#, kde-format
 msgid "10 min"
-msgstr "10 мин"
+msgstr "10 минут"
 
 #: qml/timer/TimerForm.qml:43
-#, fuzzy, kde-format
-#| msgid "15 m"
+#, kde-format
 msgid "15 min"
-msgstr "15 мин"
+msgstr "15 минут"
 
 #: qml/timer/TimerForm.qml:44
-#, fuzzy, kde-format
-#| msgid "30 m"
+#, kde-format
 msgid "30 min"
-msgstr "30 мин"
+msgstr "30 минут"
 
 #: qml/timer/TimerForm.qml:45
 #, kde-format
@@ -598,16 +587,13 @@ msgid "optional"
 msgstr "необязательно"
 
 #: qml/timer/TimerFormDialog.qml:36
-#, fuzzy, kde-format
-#| msgctxt "Edit alarm page title"
-#| msgid "Editing %1"
+#, kde-format
 msgctxt "@title:window Edit timer"
 msgid "Edit %1"
 msgstr "Изменение %1"
 
 #: qml/timer/TimerFormDialog.qml:36
-#, fuzzy, kde-format
-#| msgid "Create timer"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Timer"
 msgstr "Создание таймера"
@@ -641,11 +627,10 @@ msgstr "Сохранить как шаблон"
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr ""
+msgstr "Сохранить"
 
 #: qml/timer/TimerFormDialog.qml:116
-#, fuzzy, kde-format
-#| msgid "Done"
+#, kde-format
 msgctxt "@action:button"
 msgid "Done"
 msgstr "Готово"
@@ -669,8 +654,7 @@ msgid "Reset"
 msgstr "Сбросить"
 
 #: qml/timer/TimerListDelegate.qml:200
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit"
 msgstr "Изменить"
@@ -696,8 +680,7 @@ msgstr ""
 "таймера."
 
 #: qml/timer/TimerListPage.qml:83
-#, fuzzy, kde-format
-#| msgid "New Timer"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Timer"
 msgstr "Создать таймер"
@@ -811,22 +794,19 @@ msgid "Alarm will ring in %1"
 msgstr "Сигнал напоминания сработает через %1"
 
 #: utilmodel.cpp:152
-#, fuzzy, kde-format
-#| msgid "Only once"
+#, kde-format
 msgctxt "Repeat"
 msgid "Only once"
 msgstr "Только один раз"
 
 #: utilmodel.cpp:155
-#, fuzzy, kde-format
-#| msgid "Everyday"
+#, kde-format
 msgctxt "Repeat"
 msgid "Everyday"
 msgstr "Ежедневно"
 
 #: utilmodel.cpp:158
-#, fuzzy, kde-format
-#| msgid "Weekdays"
+#, kde-format
 msgctxt "Repeat"
 msgid "Weekdays"
 msgstr "В указанные дни недели"
