@@ -49,15 +49,12 @@ Kirigami.ScrollablePage {
 
     actions: [
         Kirigami.Action {
+            id: pipAction
             icon.name: "window-duplicate"
             text: i18nc("@action", "Pop out")
             displayHint: Kirigami.DisplayHint.IconOnly
             checkable: true
             checked: false
-            onTriggered: {
-                StopwatchTimer.makePipWindow(pipWindow);
-                pipWindow.show();
-            }
         },
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.IconOnly
@@ -68,20 +65,34 @@ Kirigami.ScrollablePage {
         }
     ]
 
-    Window {
+    PipWindow {
         id: pipWindow
-        //visible: pipAction.checked
+        visible: pipAction.checked
         width: 300
         height: 300
-        color: "salmon"
 
-        Component.onCompleted: {
+        // need to forward margins here
 
-        }
+        Kirigami.ShadowedRectangle {
+            anchors.fill: parent
+            anchors.margins: 10
+            color: "salmon"
+            shadow.size: 10
+            radius: 15
 
-        Text {
-            text: StopwatchTimer.display + "." + StopwatchTimer.small
-            font.pointSize: 30
+            Item {
+                anchors.fill: parent
+                anchors.margins: 10
+                Button {
+                    text: "hello"
+                }
+
+                Text {
+                    text: StopwatchTimer.display + "." + StopwatchTimer.small
+                    font.pointSize: 30
+                }
+            }
+
         }
     }
 

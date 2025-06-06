@@ -148,10 +148,4 @@ QString StopwatchTimer::smallDisplay() const
     return UtilModel::instance()->displayTwoDigits(amount);
 }
 
-void StopwatchTimer::makePipWindow(QWindow *window)
-{
-    qCritical() << "MAKE PIP" << window;
-    PipShellIntegration::assignPipRole(window);
-}
-
 #include "moc_stopwatchtimer.cpp"

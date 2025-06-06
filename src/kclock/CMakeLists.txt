@@ -35,6 +35,10 @@ set(kclock_SRCS
 
     wayland/pipshellsurface.cpp
     wayland/pipshellsurface.h
+    wayland/windowresizehandler.cpp
+    wayland/windowresizehandler.h
+    pipwindow.cpp
+    pipwindow.h
     )
 
 # So we can share the enums.

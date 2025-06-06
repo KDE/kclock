@@ -55,8 +55,6 @@ public:
     Q_INVOKABLE void reset();
     Q_INVOKABLE void toggle();
 
-    Q_INVOKABLE void makePipWindow(QWindow *window);
-
 Q_SIGNALS:
     void pausedChanged();
     void stoppedChanged();
