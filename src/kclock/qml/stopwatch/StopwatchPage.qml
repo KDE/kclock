@@ -76,7 +76,7 @@ Kirigami.ScrollablePage {
         Kirigami.ShadowedRectangle {
             anchors.fill: parent
             anchors.margins: 10
-            color: "salmon"
+            // color: "salmon"
             shadow.size: 10
             radius: 15
 
