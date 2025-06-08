@@ -381,12 +381,12 @@ msgstr "在通知区域暂停/继续计时器的计时。"
 #: qml/settings/SettingsPage.qml:91
 #, kde-format
 msgid "Select Timer Sound"
-msgstr ""
+msgstr "选择计时器声音"
 
 #: qml/settings/SettingsPage.qml:93
 #, kde-format
 msgid "Default timer ring sound"
-msgstr ""
+msgstr "默认计时器铃声"
 
 #: qml/settings/SettingsPage.qml:102
 #, kde-format
