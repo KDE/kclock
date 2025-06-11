@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-25 00:46+0000\n"
-"PO-Revision-Date: 2025-04-15 23:37+0200\n"
+"PO-Revision-Date: 2025-06-10 23:53+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -380,16 +380,14 @@ msgid "Lets you pause and resume timers from the notification area."
 msgstr "알림 영역에서 타이머를 일시 중지하고 다시 시작할 수 있도록 합니다."
 
 #: qml/settings/SettingsPage.qml:91
-#, fuzzy, kde-format
-#| msgid "Select Alarm Sound"
+#, kde-format
 msgid "Select Timer Sound"
-msgstr "알람 소리 선택"
+msgstr "타이머 소리 선택"
 
 #: qml/settings/SettingsPage.qml:93
-#, fuzzy, kde-format
-#| msgid "Default Sound"
+#, kde-format
 msgid "Default timer ring sound"
-msgstr "기본 소리"
+msgstr "기본 타이머 알림 소리"
 
 #: qml/settings/SettingsPage.qml:102
 #, kde-format
@@ -435,6 +433,8 @@ msgid ""
 "Press Space to start or pause the stopwatch. Delete or Backspace resets it. "
 "Enter adds a lap."
 msgstr ""
+"Space 키를 누르면 초시계를 시작하거나 일시 정지합니다. Delete 키나 Backspace "
+"키를 누르면 초기화합니다. Enter 키를 누르면 랩을 추가합니다."
 
 #: qml/stopwatch/StopwatchPage.qml:240
 #, kde-format
@@ -493,12 +493,12 @@ msgstr "위치 추가"
 #: qml/time/TimePageDelegate.qml:47
 #, kde-format
 msgid "Yesterday"
-msgstr ""
+msgstr "어제"
 
 #: qml/time/TimePageDelegate.qml:49
 #, kde-format
 msgid "Tomorrow"
-msgstr ""
+msgstr "내일"
 
 #: qml/timer/PresetDurationButton.qml:22
 #, kde-format
