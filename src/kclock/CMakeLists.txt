@@ -61,6 +61,8 @@ qt_add_dbus_interface(kclock_SRCS ${UtilityXML} utilityinterface )
 add_executable(kclock main.cpp ${kclock_SRCS} ${RESOURCES})
 add_dependencies(kclock kclockd)
 
+set_source_files_properties(qml/components/PipHandler.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
+
 ecm_add_qml_module(kclock URI org.kde.kclock QML_FILES
     qml/Main.qml
 
@@ -76,6 +78,7 @@ ecm_add_qml_module(kclock URI org.kde.kclock QML_FILES
     qml/components/DialogComboBox.qml
     qml/components/FooterToolBarButton.qml
     qml/components/FloatingActionButton.qml
+    qml/components/PipHandler.qml
     qml/components/Sidebar.qml
     qml/components/TimePicker.qml
     qml/components/TimePickerSpinBox.qml
