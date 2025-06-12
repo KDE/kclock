@@ -8,9 +8,13 @@ class PipWindow : public QQuickWindow
 {
     Q_OBJECT
     QML_ELEMENT
+    Q_PROPERTY(bool supported READ isSupported CONSTANT)
 public:
     explicit PipWindow();
     ~PipWindow();
+
+    bool isSupported() const;
+
     bool event(QEvent *event) override;
 
 private:

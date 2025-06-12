@@ -23,8 +23,19 @@ XXPipShell::XXPipShell()
 {
     initialize();
     if (!isActive()) {
-        qFatal("The xx-pip-v1 protocol is unsupported by the compositor");
+        qInfo("The xx-pip-v1 protocol is unsupported by the compositor");
     }
+}
+
+PipShellIntegration &PipShellIntegration::instance()
+{
+    static PipShellIntegration s_instance;
+    return s_instance;
+}
+
+bool PipShellIntegration::xxPipShellAvailable()
+{
+    return instance().m_xxPipShell->isActive();
 }
 
 void PipShellIntegration::assignPipRole(QWindow *window)
@@ -36,12 +47,7 @@ void PipShellIntegration::assignPipRole(QWindow *window)
         return;
     }
 
-    static PipShellIntegration *shellIntegration = nullptr;
-    if (!shellIntegration) {
-        shellIntegration = new PipShellIntegration();
-    }
-
-    waylandWindow->setShellIntegration(shellIntegration);
+    waylandWindow->setShellIntegration(&instance());
 }
 
 PipShellIntegration::PipShellIntegration()

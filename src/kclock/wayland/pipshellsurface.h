@@ -38,7 +38,10 @@ public:
     bool initialize(QtWaylandClient::QWaylandDisplay *display) override;
     QtWaylandClient::QWaylandShellSurface *createShellSurface(QtWaylandClient::QWaylandWindow *window) override;
 
-    static void assignPipRole(QWindow *window);
+    static PipShellIntegration &instance();
+
+    bool xxPipShellAvailable();
+    void assignPipRole(QWindow *window);
 
 private:
     std::unique_ptr<XdgWmBase> m_xdgWmBase;
