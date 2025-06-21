@@ -82,6 +82,7 @@ Kirigami.FormLayout {
     // repeat day picker
     DialogComboBox {
         implicitWidth: root.width
+        Layout.maximumWidth: 540
 
         Kirigami.FormData.label: i18n("Days to repeat:")
         text: FormatUtil.getRepeatFormat(root.formDaysOfWeek)
@@ -117,6 +118,7 @@ Kirigami.FormLayout {
     DialogComboBox {
         id: ringDurationPicker
         implicitWidth: root.width
+        Layout.maximumWidth: 540
 
         Kirigami.FormData.label: i18n("Ring Duration:")
         text: {
@@ -160,6 +162,7 @@ Kirigami.FormLayout {
     DialogComboBox {
         id: snoozeLengthPicker
         implicitWidth: root.width
+        Layout.maximumWidth: 540
 
         Kirigami.FormData.label: i18n("Snooze Length:")
         title: i18n("Select Snooze Length")
@@ -194,6 +197,7 @@ Kirigami.FormLayout {
         id: audioPathField
         implicitWidth: root.width
         width: root.width
+        Layout.maximumWidth: 540
 
         Kirigami.FormData.label: i18n("Ring Sound:")
 
