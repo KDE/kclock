@@ -8,6 +8,7 @@
 
 import QtQuick
 import QtQuick.Controls
+import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
 
@@ -78,6 +79,7 @@ Kirigami.FormLayout {
     // repeat day picker
     DialogComboBox {
         implicitWidth: root.width
+        Layout.maximumWidth: 540
 
         Kirigami.FormData.label: i18n("Days to repeat:")
         text: UtilModel.repeatFormat(root.formDaysOfWeek)
@@ -117,6 +119,7 @@ Kirigami.FormLayout {
     DialogComboBox {
         id: ringDurationPicker
         implicitWidth: root.width
+        Layout.maximumWidth: 540
 
         Kirigami.FormData.label: i18n("Ring Duration:")
         text: root.formRingDuration === -1 ? i18n("None") : i18np("%1 minute", "%1 minutes", root.formRingDuration);
@@ -154,6 +157,7 @@ Kirigami.FormLayout {
     DialogComboBox {
         id: snoozeLengthPicker
         implicitWidth: root.width
+        Layout.maximumWidth: 540
 
         Kirigami.FormData.label: i18n("Snooze Length:")
         title: i18n("Select Snooze Length")
@@ -191,6 +195,7 @@ Kirigami.FormLayout {
         id: audioPathField
         implicitWidth: root.width
         width: root.width
+        Layout.maximumWidth: 540
 
         Kirigami.FormData.label: i18n("Ring Sound:")
 
