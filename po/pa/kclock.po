@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-25 02:36+0000\n"
+"POT-Creation-Date: 2025-06-22 02:47+0000\n"
 "PO-Revision-Date: 2024-01-03 14:19-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -53,99 +53,99 @@ msgstr "ਡੇਵਿਨ ਲਿਨ"
 msgid "Han Young"
 msgstr "ਹਾਂ ਯੰਗ"
 
-#: qml/alarm/AlarmForm.qml:86
+#: qml/alarm/AlarmForm.qml:87
 #, kde-format
 msgid "Days to repeat:"
 msgstr "ਦੁਰਹਾਉਣ ਲਈ ਦਿਨ:"
 
-#: qml/alarm/AlarmForm.qml:88
+#: qml/alarm/AlarmForm.qml:89
 #, kde-format
 msgid "Select Days to Repeat"
 msgstr "ਦਰਹਾਉਣ ਲਈ ਦਿਨ ਚੁਣੋ"
 
-#: qml/alarm/AlarmForm.qml:111
+#: qml/alarm/AlarmForm.qml:112
 #, kde-format
 msgid "Alarm Name (optional):"
 msgstr "ਅਲਾਰਮ ਦਾ ਨਾਂ (ਚੋਣਵਾਂ):"
 
-#: qml/alarm/AlarmForm.qml:112
+#: qml/alarm/AlarmForm.qml:113
 #, kde-format
 msgid "Wake Up"
 msgstr "ਜਗਾਓ"
 
-#: qml/alarm/AlarmForm.qml:121
+#: qml/alarm/AlarmForm.qml:123
 #, kde-format
 msgid "Ring Duration:"
 msgstr "ਰਿੰਗਟੋਨ ਅੰਤਰਾਲ:"
 
-#: qml/alarm/AlarmForm.qml:124 qml/alarm/AlarmForm.qml:133
+#: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:135
 #, kde-format
 msgid "None"
 msgstr "ਕੋਈ ਨਹੀਂ"
 
-#: qml/alarm/AlarmForm.qml:126 qml/alarm/AlarmForm.qml:134
-#: qml/alarm/AlarmForm.qml:166 qml/alarm/AlarmForm.qml:168
+#: qml/alarm/AlarmForm.qml:128 qml/alarm/AlarmForm.qml:136
+#: qml/alarm/AlarmForm.qml:169 qml/alarm/AlarmForm.qml:171
 #: qml/timer/TimerComponent.qml:162
 #, kde-format
 msgid "1 minute"
 msgstr "1 ਮਿੰਟ"
 
-#: qml/alarm/AlarmForm.qml:128 qml/alarm/AlarmForm.qml:166
+#: qml/alarm/AlarmForm.qml:130 qml/alarm/AlarmForm.qml:169
 #, kde-format
 msgid "%1 minutes"
 msgstr "%1 ਮਿੰਟ"
 
-#: qml/alarm/AlarmForm.qml:131
+#: qml/alarm/AlarmForm.qml:133
 #, kde-format
 msgid "Select Ring Duration"
 msgstr "ਘੰਟੀ ਵੱਜਣ ਦਾ ਸਮਾਂ ਚੁਣੋ"
 
-#: qml/alarm/AlarmForm.qml:135 qml/alarm/AlarmForm.qml:169
+#: qml/alarm/AlarmForm.qml:137 qml/alarm/AlarmForm.qml:172
 #, kde-format
 msgid "2 minutes"
 msgstr "2 ਮਿੰਟ"
 
-#: qml/alarm/AlarmForm.qml:136 qml/alarm/AlarmForm.qml:170
+#: qml/alarm/AlarmForm.qml:138 qml/alarm/AlarmForm.qml:173
 #, kde-format
 msgid "5 minutes"
 msgstr "5 ਮਿੰਟ"
 
-#: qml/alarm/AlarmForm.qml:137 qml/alarm/AlarmForm.qml:171
+#: qml/alarm/AlarmForm.qml:139 qml/alarm/AlarmForm.qml:174
 #, kde-format
 msgid "10 minutes"
 msgstr "10 ਮਿੰਟ"
 
-#: qml/alarm/AlarmForm.qml:138 qml/alarm/AlarmForm.qml:172
+#: qml/alarm/AlarmForm.qml:140 qml/alarm/AlarmForm.qml:175
 #, kde-format
 msgid "15 minutes"
 msgstr "15 ਮਿੰਟ"
 
-#: qml/alarm/AlarmForm.qml:139 qml/alarm/AlarmForm.qml:173
+#: qml/alarm/AlarmForm.qml:141 qml/alarm/AlarmForm.qml:176
 #, kde-format
 msgid "30 minutes"
 msgstr "30 ਮਿੰਟ"
 
-#: qml/alarm/AlarmForm.qml:140 qml/alarm/AlarmForm.qml:174
+#: qml/alarm/AlarmForm.qml:142 qml/alarm/AlarmForm.qml:177
 #, kde-format
 msgid "1 hour"
 msgstr "1 ਘੰਟਾ"
 
-#: qml/alarm/AlarmForm.qml:164
+#: qml/alarm/AlarmForm.qml:167
 #, kde-format
 msgid "Snooze Length:"
 msgstr "ਟਾਲਣ ਦੀ ਲੰਬਾਈ:"
 
-#: qml/alarm/AlarmForm.qml:165
+#: qml/alarm/AlarmForm.qml:168
 #, kde-format
 msgid "Select Snooze Length"
 msgstr "ਟਾਲਣ ਦੀ ਲੰਬਾਈ ਨੂੰ ਚੁਣੋ"
 
-#: qml/alarm/AlarmForm.qml:198
+#: qml/alarm/AlarmForm.qml:202
 #, kde-format
 msgid "Ring Sound:"
 msgstr "ਘੰਟੀ ਦੀ ਸਾਊਂਡ:"
 
-#: qml/alarm/AlarmForm.qml:204
+#: qml/alarm/AlarmForm.qml:208
 #, kde-format
 msgid "Default Sound"
 msgstr "ਮੂਲ ਸਾਊਂਡ"
