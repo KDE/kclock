@@ -11,15 +11,17 @@ import QtQuick.Shapes 1.12
 
 import org.kde.kirigami as Kirigami
 
+import org.kde.kclock as KClock
+
 Item {
     id: root
-    property alias timerLabel: heading.text
-    property int timerDuration
-    property int timerElapsed
-    property bool timerRunning
-    
-    signal requestAddMinute()
-    
+
+    required property KClock.Timer timer
+
+    readonly property int timerDuration: timer.length
+    readonly property int timerElapsed: timer.elapsed
+    readonly property bool timerRunning: timer.running
+
     function getCircleRadius(): double {
         const totalHeight = heading.height + timeLabels.height + addMinuteButton.height;
         const maxWidth = Math.max(heading.width, timeLabels.width, addMinuteButton.width);
@@ -150,6 +152,7 @@ Item {
         id: heading
         level: 4
         color: root.timerRunning ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
+        text: root.timer.label
         textFormat: Text.PlainText
         anchors.bottom: timeLabels.top
         anchors.bottomMargin: Kirigami.Units.smallSpacing
@@ -165,7 +168,7 @@ Item {
         anchors.horizontalCenter: parent.horizontalCenter
         implicitHeight: Kirigami.Units.gridUnit * 2
         onClicked: {
-            root.requestAddMinute();
+            root.timer.addMinute();
         }
     }
 }

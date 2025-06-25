@@ -25,8 +25,6 @@ Kirigami.Page {
 
     property bool showFullscreen: false
 
-    property int elapsed: timer ? timer.elapsed : 0
-    property int duration: timer ? timer.length : 0
     property bool running: timer ? timer.running : 0
     property bool looping: timer ? timer.looping : 0
     property string commandTimeout: timer ? timer.commandTimeout : ""
@@ -127,14 +125,7 @@ Kirigami.Page {
 
     TimerComponent {
         anchors.fill: parent
-        timerLabel: root.timer.label
-        timerDuration: root.duration
-        timerElapsed: root.elapsed
-        timerRunning: root.running
-
-        onRequestAddMinute: {
-            root.timer.addMinute();
-        }
+        timer: root.timer
     }
 
     RowLayout {
