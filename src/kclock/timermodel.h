@@ -46,7 +46,7 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
     Q_INVOKABLE void addNew(int length, const QString &label, bool looping, const QString &commandTimeout);
-    Q_INVOKABLE void remove(int index);
+    Q_INVOKABLE void remove(Timer *timer);
 
     bool connectedToDaemon();
     void setConnectedToDaemon(bool connectedToDaemon);

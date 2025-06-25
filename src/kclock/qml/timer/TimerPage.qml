@@ -17,8 +17,7 @@ import org.kde.kclock
 Kirigami.Page {
     id: root
 
-    property Timer timer
-    property int timerIndex
+    required property Timer timer
 
     title: timer && timer.label !== "" ? timer.label : i18n("New timer")
     readonly property string hiddenTitle: running ? timer.remainingPretty : ""
@@ -58,7 +57,7 @@ Kirigami.Page {
             visible: !Kirigami.Settings.isMobile
             onTriggered: {
                 applicationWindow().pageStack.pop();
-                TimerModel.remove(root.timerIndex);
+                TimerModel.remove(root.timer);
             }
         },
         Kirigami.Action {
@@ -106,7 +105,7 @@ Kirigami.Page {
                 icon.name: "delete"
                 onClicked: {
                     applicationWindow().pageStack.pop();
-                    TimerModel.remove(root.timerIndex);
+                    TimerModel.remove(root.timer);
                 }
             }
             FooterToolBarButton {

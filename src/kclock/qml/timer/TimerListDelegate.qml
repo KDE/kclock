@@ -30,23 +30,7 @@ Kirigami.AbstractCard {
     readonly property bool looping: timer ? timer.looping : false
     
     showClickFeedback: true
-    onClicked: {
-        timerPageLoader.active = true;
-        applicationWindow().pageStack.push(timerPageLoader.item);
-    }
-    
-    // timer page
-    Loader {
-        id: timerPageLoader
-        active: false
-        sourceComponent: TimerPage {
-            id: timerPage
-            timerIndex: index
-            timer: root.timer
-            visible: false
-        }
-    }
-    
+
     // timer ringing popup
     Loader {
         id: popupLoader
@@ -209,7 +193,7 @@ Kirigami.AbstractCard {
                         icon.name: "delete"
                         display: AbstractButton.IconOnly
                         text: i18nc("@info:tooltip", "Delete")
-                        onClicked: TimerModel.remove(index)
+                        onClicked: TimerModel.remove(root.timer)
                         
                         ToolTip.visible: hovered && text.length > 0
                         ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval

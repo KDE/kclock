@@ -89,13 +89,12 @@ void TimerModel::addNew(int length, const QString &label, bool looping, const QS
     m_interface->addTimer(length, label, looping, commandTimeout, false);
 }
 
-void TimerModel::remove(int index)
+void TimerModel::remove(Timer *timer)
 {
-    if (index < 0 || index >= m_timersList.size())
-        return;
-
-    // request kclockd to remove timer, which will trigger a signal back to remove it from the UI
-    m_interface->removeTimer(m_timersList.at(index)->uuid().toString());
+    if (timer) {
+        // request kclockd to remove timer, which will trigger a signal back to remove it from the UI
+        m_interface->removeTimer(timer->uuid().toString());
+    }
 }
 
 void TimerModel::addTimer(QString uuid)

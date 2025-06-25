@@ -48,11 +48,22 @@ Kirigami.ScrollablePage {
         timerFormDialog.open();
     }
 
+    function openTimer(timer : Timer) : void {
+        applicationWindow().pageStack.push(timerPageComponent, {
+            timer
+        });
+    }
+
     header: Kirigami.InlineMessage {
         type: Kirigami.MessageType.Error
         text: i18n("The clock daemon was not found. Please start kclockd in order to have timer functionality.")
         visible: !TimerModel.connectedToDaemon // by default, it's false so we need this
         position: Kirigami.InlineMessage.Position.Header
+    }
+
+    Component {
+        id: timerPageComponent
+        TimerPage {}
     }
 
     ListView {
@@ -109,6 +120,7 @@ Kirigami.ScrollablePage {
         delegate: TimerListDelegate {
             timer: model.timer
 
+            onClicked: root.openTimer(timer)
             onEditClicked: root.editTimer(timer)
         }
     }
