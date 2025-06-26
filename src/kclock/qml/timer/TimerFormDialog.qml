@@ -16,10 +16,6 @@ import kclock
 Kirigami.Dialog {
     id: root
 
-    function createTimer(duration, label, commandTimeout) {
-        TimerModel.addNew(duration, label, commandTimeout);
-    }
-
     property bool showPresets: false
     property bool showDelete: false
 
@@ -36,20 +32,6 @@ Kirigami.Dialog {
         TimerForm {
             id: timerForm
             Layout.fillWidth: true
-        }
-        Flow {
-            spacing: Kirigami.Units.smallSpacing
-            visible: showPresets
-            Layout.fillWidth: true
-
-            Repeater {
-                model: TimerPresetModel
-
-                Button {
-                    text: showDelete ? "Delete" : preset.presetName
-                    onClicked: showDelete ? TimerPresetModel.deletePreset(index) : root.createTimer(timerForm.getDuration(), timerForm.name) & close();
-                }
-            }
         }
     }
 
@@ -70,7 +52,7 @@ Kirigami.Dialog {
             icon.name: "dialog-ok"
             text: i18n("Done")
             onTriggered: {
-                root.createTimer(timerForm.getDuration(), timerForm.name, timerForm.commandTimeout);
+                TimerModel.addNew(timerForm.getDuration(), timerForm.name, timerForm.commandTimeout);
                 close();
             }
         }

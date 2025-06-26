@@ -19,6 +19,8 @@ Kirigami.FormLayout {
     property alias name: label.text
     property alias commandTimeout: commandTimeoutField.text
 
+    signal closeFormRequested()
+
     function setDuration(duration) {
         hours = duration / 60 / 60;
         minutes = duration % (60 * 60) / 60;
@@ -39,7 +41,7 @@ Kirigami.FormLayout {
                 text: i18n("1 m")
                 hours: 0
                 minutes: 1
-                hoursSpinBox: spinBoxHours 
+                hoursSpinBox: spinBoxHours
                 minutesSpinBox: spinBoxMinutes
                 secondsSpinBox: spinBoxSeconds
             }
@@ -47,7 +49,7 @@ Kirigami.FormLayout {
                 text: i18n("5 m")
                 hours: 0
                 minutes: 5
-                hoursSpinBox: spinBoxHours 
+                hoursSpinBox: spinBoxHours
                 minutesSpinBox: spinBoxMinutes
                 secondsSpinBox: spinBoxSeconds
             }
@@ -55,7 +57,7 @@ Kirigami.FormLayout {
                 text: i18n("10 m")
                 hours: 0
                 minutes: 10
-                hoursSpinBox: spinBoxHours 
+                hoursSpinBox: spinBoxHours
                 minutesSpinBox: spinBoxMinutes
                 secondsSpinBox: spinBoxSeconds
             }
@@ -67,7 +69,7 @@ Kirigami.FormLayout {
                 text: i18n("15 m")
                 hours: 0
                 minutes: 15
-                hoursSpinBox: spinBoxHours 
+                hoursSpinBox: spinBoxHours
                 minutesSpinBox: spinBoxMinutes
                 secondsSpinBox: spinBoxSeconds
             }
@@ -75,7 +77,7 @@ Kirigami.FormLayout {
                 text: i18n("30 m")
                 hours: 0
                 minutes: 30
-                hoursSpinBox: spinBoxHours 
+                hoursSpinBox: spinBoxHours
                 minutesSpinBox: spinBoxMinutes
                 secondsSpinBox: spinBoxSeconds
             }
@@ -83,7 +85,7 @@ Kirigami.FormLayout {
                 text: i18n("1 h")
                 hours: 1
                 minutes: 0
-                hoursSpinBox: spinBoxHours 
+                hoursSpinBox: spinBoxHours
                 minutesSpinBox: spinBoxMinutes
                 secondsSpinBox: spinBoxSeconds
             }
@@ -151,7 +153,7 @@ Kirigami.FormLayout {
                 showPresets = true;
             }
         }
-        
+
         Button {
             id: presetButton
             text: showPresets ? i18n("Hide Presets") : i18n("Show Presets")
@@ -168,7 +170,7 @@ Kirigami.FormLayout {
     }
     Flow {
         spacing: Kirigami.Units.smallSpacing
-        visible: showPresets && Kirigami.Settings.isMobile && repeater.count > 0
+        visible: showPresets && repeater.count > 0
         Layout.fillWidth: true
 
         Repeater {
@@ -177,8 +179,14 @@ Kirigami.FormLayout {
 
             Button {
                 text: showDelete ? "Delete" : preset.presetName
-                onClicked: showDelete ? TimerPresetModel.deletePreset(index) : loader.createTimer(timerForm.getDuration(), timerForm.name, timerForm.commandTimeout) & close();
-
+                onClicked: {
+                    if (showDelete) {
+                        TimerPresetModel.deletePreset(index);
+                    } else {
+                        TimerModel.addNew(preset.presetDuration, preset.presetName, timerForm.commandTimeout);
+                        root.closeFormRequested();
+                    }
+                }
             }
         }
     }
