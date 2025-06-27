@@ -126,6 +126,14 @@ Kirigami.Page {
     TimerComponent {
         anchors.fill: parent
         timer: root.timer
+
+        actions: [
+            Kirigami.Action {
+                text: i18nc("@action:button Add 1 minute to timer", "1 minute")
+                icon.name: "list-add"
+                onTriggered: root.timer.addMinute()
+            }
+        ]
     }
 
     RowLayout {

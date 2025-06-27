@@ -22,9 +22,11 @@ Item {
     readonly property int timerElapsed: timer.elapsed
     readonly property bool timerRunning: timer.running
 
+    property alias actions: actionToolBar.actions
+
     function getCircleRadius(): double {
-        const totalHeight = heading.height + timeLabels.height + addMinuteButton.height;
-        const maxWidth = Math.max(heading.width, timeLabels.width, addMinuteButton.width);
+        const totalHeight = heading.implicitHeight + timeLabels.implicitHeight + actionToolBar.implicitHeight
+        const maxWidth = Math.max(heading.implicitWidth, timeLabels.implicitWidth, actionToolBar.implicitWidth);
 
         const contentDiag = Math.sqrt(totalHeight ** 2 + maxWidth ** 2);
         const maxRadius = Math.min(root.width, root.height) * (Kirigami.Settings.isMobile ? 0.3 : 0.25);
@@ -159,16 +161,10 @@ Item {
         anchors.horizontalCenter: parent.horizontalCenter
     }
 
-    ToolButton {
-        id: addMinuteButton
-        text: i18n("1 minute")
-        icon.name: "list-add"
+    Kirigami.ActionToolBar {
+        id: actionToolBar
         anchors.topMargin: Kirigami.Units.smallSpacing
         anchors.top: timeLabels.bottom
         anchors.horizontalCenter: parent.horizontalCenter
-        implicitHeight: Kirigami.Units.gridUnit * 2
-        onClicked: {
-            root.timer.addMinute();
-        }
     }
 }
