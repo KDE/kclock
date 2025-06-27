@@ -23,6 +23,10 @@ Item {
     readonly property bool timerRunning: timer.running
 
     property alias actions: actionToolBar.actions
+    property bool actionsVisible: true
+
+    // Whether to make the circle fill the item.
+    property bool maximizedCircle: false
 
     function getCircleRadius(): double {
         const totalHeight = heading.implicitHeight + timeLabels.implicitHeight + actionToolBar.implicitHeight
@@ -87,7 +91,7 @@ Item {
             PathAngleArc {
                 id: timerCircleArc
                 centerX: timerCircle.width / 2; centerY: timerCircle.height / 2;
-                radiusX: root.getCircleRadius()
+                radiusX: root.maximizedCircle ? Math.min(root.width, root.height) / 2 : root.getCircleRadius()
                 radiusY: radiusX
                 startAngle: -180
                 sweepAngle: 360
@@ -175,6 +179,9 @@ Item {
         color: root.timerRunning ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
         text: root.timer.label
         textFormat: Text.PlainText
+        horizontalAlignment: Text.AlignHCenter
+        elide: Text.ElideRight
+        width: Math.round(timerCircleArc.radiusX * 2 * 0.85)
         anchors.bottom: timeLabels.top
         anchors.bottomMargin: Kirigami.Units.smallSpacing
         anchors.horizontalCenter: parent.horizontalCenter
@@ -185,5 +192,15 @@ Item {
         anchors.topMargin: Kirigami.Units.largeSpacing
         anchors.top: timerCircle.bottom
         anchors.horizontalCenter: parent.horizontalCenter
+
+        opacity: root.actionsVisible ? 1 : 0
+        visible: opacity > 0
+
+        Behavior on opacity {
+            NumberAnimation {
+                duration: Kirigami.Units.longDuration
+                easing.type: Easing.InOutQuad
+            }
+        }
     }
 }
