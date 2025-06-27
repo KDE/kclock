@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-22 02:47+0000\n"
+"POT-Creation-Date: 2025-06-27 02:39+0000\n"
 "PO-Revision-Date: 2024-11-14 21:17+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -168,12 +168,12 @@ msgid "New Alarm"
 msgstr "Нова аларма"
 
 #: qml/alarm/AlarmFormPage.qml:39 qml/alarm/AlarmFormPage.qml:62
-#: qml/timer/TimerFormDialog.qml:71
+#: qml/timer/TimerFormDialog.qml:53
 #, kde-format
 msgid "Done"
 msgstr "Готово"
 
-#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormDialog.qml:66
+#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormDialog.qml:48
 #, kde-format
 msgid "Cancel"
 msgstr "Отказ"
@@ -454,97 +454,97 @@ msgstr "Добавяне на местоположение"
 msgid "Add"
 msgstr "Добавяне"
 
-#: qml/timer/PresetDurationButton.qml:23 qml/timer/TimerForm.qml:39
+#: qml/timer/PresetDurationButton.qml:23 qml/timer/TimerForm.qml:41
 #, kde-format
 msgid "1 m"
 msgstr "1 м"
 
-#: qml/timer/TimerForm.qml:47
+#: qml/timer/TimerForm.qml:49
 #, kde-format
 msgid "5 m"
 msgstr "5 м"
 
-#: qml/timer/TimerForm.qml:55
+#: qml/timer/TimerForm.qml:57
 #, kde-format
 msgid "10 m"
 msgstr "10 м"
 
-#: qml/timer/TimerForm.qml:67
+#: qml/timer/TimerForm.qml:69
 #, kde-format
 msgid "15 m"
 msgstr "15 м"
 
-#: qml/timer/TimerForm.qml:75
+#: qml/timer/TimerForm.qml:77
 #, kde-format
 msgid "30 m"
 msgstr "3 м"
 
-#: qml/timer/TimerForm.qml:83
+#: qml/timer/TimerForm.qml:85
 #, kde-format
 msgid "1 h"
 msgstr "1 ч"
 
-#: qml/timer/TimerForm.qml:95
+#: qml/timer/TimerForm.qml:97
 #, kde-format
 msgid "<b>Duration:</b>"
 msgstr "<b>Продължителност:</b>"
 
-#: qml/timer/TimerForm.qml:104
+#: qml/timer/TimerForm.qml:106
 #, kde-format
 msgid "hours"
 msgstr "часа"
 
-#: qml/timer/TimerForm.qml:115
+#: qml/timer/TimerForm.qml:117
 #, kde-format
 msgid "minutes"
 msgstr "минути"
 
-#: qml/timer/TimerForm.qml:126
+#: qml/timer/TimerForm.qml:128
 #, kde-format
 msgid "seconds"
 msgstr "секунди"
 
-#: qml/timer/TimerForm.qml:132
+#: qml/timer/TimerForm.qml:134
 #, kde-format
 msgid "<b>Label:</b>"
 msgstr "<b>Етикет: </b> "
 
-#: qml/timer/TimerForm.qml:133
+#: qml/timer/TimerForm.qml:135
 #, kde-format
 msgid "Timer"
 msgstr "Таймер"
 
-#: qml/timer/TimerForm.qml:138
+#: qml/timer/TimerForm.qml:140
 #, kde-format
 msgid "<b>Command at timeout:</b>"
 msgstr "<b>Команда при изтичане на времето:</b>"
 
-#: qml/timer/TimerForm.qml:141
+#: qml/timer/TimerForm.qml:143
 #, kde-format
 msgid "optional"
 msgstr "незадължително"
 
-#: qml/timer/TimerForm.qml:157
+#: qml/timer/TimerForm.qml:159
 #, kde-format
 msgid "Hide Presets"
 msgstr "Скриване на предварително зададени настройки"
 
-#: qml/timer/TimerForm.qml:157
+#: qml/timer/TimerForm.qml:159
 #, kde-format
 msgid "Show Presets"
 msgstr "Показване на предварително зададени настройки"
 
-#: qml/timer/TimerForm.qml:162
+#: qml/timer/TimerForm.qml:164
 #, kde-format
 msgid "Toggle Delete"
 msgstr "Превключване на Изтриване"
 
-#: qml/timer/TimerFormDialog.qml:26
+#: qml/timer/TimerFormDialog.qml:22
 #, kde-format
 msgid "Create timer"
 msgstr "Създаване на таймер"
 
-#: qml/timer/TimerFormDialog.qml:59
+#: qml/timer/TimerFormDialog.qml:41
 #, kde-format
 msgid "Save As Preset"
 msgstr "Запазване като предварително зададено"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-22 02:47+0000\n"
+"POT-Creation-Date: 2025-06-27 02:39+0000\n"
 "PO-Revision-Date: 2022-01-15 20:13+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: Hindi <kde-l10n-hi@kde.org>\n"
@@ -169,12 +169,12 @@ msgid "New Alarm"
 msgstr "अलारम"
 
 #: qml/alarm/AlarmFormPage.qml:39 qml/alarm/AlarmFormPage.qml:62
-#: qml/timer/TimerFormDialog.qml:71
+#: qml/timer/TimerFormDialog.qml:53
 #, kde-format
 msgid "Done"
 msgstr ""
 
-#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormDialog.qml:66
+#: qml/alarm/AlarmFormPage.qml:68 qml/timer/TimerFormDialog.qml:48
 #, kde-format
 msgid "Cancel"
 msgstr ""
@@ -457,97 +457,97 @@ msgstr ""
 msgid "Add"
 msgstr ""
 
-#: qml/timer/PresetDurationButton.qml:23 qml/timer/TimerForm.qml:39
+#: qml/timer/PresetDurationButton.qml:23 qml/timer/TimerForm.qml:41
 #, kde-format
 msgid "1 m"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:47
+#: qml/timer/TimerForm.qml:49
 #, kde-format
 msgid "5 m"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:55
+#: qml/timer/TimerForm.qml:57
 #, kde-format
 msgid "10 m"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:67
+#: qml/timer/TimerForm.qml:69
 #, kde-format
 msgid "15 m"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:75
+#: qml/timer/TimerForm.qml:77
 #, kde-format
 msgid "30 m"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:83
+#: qml/timer/TimerForm.qml:85
 #, kde-format
 msgid "1 h"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:95
+#: qml/timer/TimerForm.qml:97
 #, kde-format
 msgid "<b>Duration:</b>"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:104
+#: qml/timer/TimerForm.qml:106
 #, kde-format
 msgid "hours"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:115
+#: qml/timer/TimerForm.qml:117
 #, kde-format
 msgid "minutes"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:126
+#: qml/timer/TimerForm.qml:128
 #, kde-format
 msgid "seconds"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:132
+#: qml/timer/TimerForm.qml:134
 #, kde-format
 msgid "<b>Label:</b>"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:133
+#: qml/timer/TimerForm.qml:135
 #, kde-format
 msgid "Timer"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:138
+#: qml/timer/TimerForm.qml:140
 #, kde-format
 msgid "<b>Command at timeout:</b>"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:141
+#: qml/timer/TimerForm.qml:143
 #, kde-format
 msgid "optional"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:157
+#: qml/timer/TimerForm.qml:159
 #, kde-format
 msgid "Hide Presets"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:157
+#: qml/timer/TimerForm.qml:159
 #, kde-format
 msgid "Show Presets"
 msgstr ""
 
-#: qml/timer/TimerForm.qml:162
+#: qml/timer/TimerForm.qml:164
 #, kde-format
 msgid "Toggle Delete"
 msgstr ""
 
-#: qml/timer/TimerFormDialog.qml:26
+#: qml/timer/TimerFormDialog.qml:22
 #, kde-format
 msgid "Create timer"
 msgstr ""
 
-#: qml/timer/TimerFormDialog.qml:59
+#: qml/timer/TimerFormDialog.qml:41
 #, kde-format
 msgid "Save As Preset"
 msgstr ""
