@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-22 00:46+0000\n"
+"POT-Creation-Date: 2025-06-27 00:46+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -110,7 +110,7 @@ msgid "Select Ring Duration"
 msgstr "选择铃声持续时间"
 
 #: qml/alarm/AlarmForm.qml:129 qml/alarm/AlarmForm.qml:166
-#: qml/timer/TimerComponent.qml:161
+#: qml/timer/TimerComponent.qml:164
 #, kde-format
 msgid "1 minute"
 msgstr "1 分钟"
@@ -399,13 +399,13 @@ msgid "About KDE"
 msgstr "关于 KDE"
 
 #: qml/stopwatch/StopwatchPage.qml:156 qml/stopwatch/StopwatchPage.qml:191
-#: qml/timer/TimerPage.qml:51 qml/timer/TimerPage.qml:99
+#: qml/timer/TimerPage.qml:48 qml/timer/TimerPage.qml:96
 #, kde-format
 msgid "Reset"
 msgstr "重置"
 
-#: qml/stopwatch/StopwatchPage.qml:158 qml/timer/TimerPage.qml:43
-#: qml/timer/TimerPage.qml:93
+#: qml/stopwatch/StopwatchPage.qml:158 qml/timer/TimerPage.qml:40
+#: qml/timer/TimerPage.qml:90
 #, kde-format
 msgid "Pause"
 msgstr "暂停"
@@ -415,8 +415,8 @@ msgstr "暂停"
 msgid "Resume"
 msgstr "继续"
 
-#: qml/stopwatch/StopwatchPage.qml:162 qml/timer/TimerPage.qml:43
-#: qml/timer/TimerPage.qml:93
+#: qml/stopwatch/StopwatchPage.qml:162 qml/timer/TimerPage.qml:40
+#: qml/timer/TimerPage.qml:90
 #, kde-format
 msgid "Start"
 msgstr "开始"
@@ -553,8 +553,8 @@ msgstr " 分钟"
 msgid "seconds"
 msgstr "秒"
 
-#: qml/timer/TimerForm.qml:114 qml/timer/TimerListDelegate.qml:141
-#: qml/timer/TimerPage.qml:66 qml/timer/TimerPage.qml:114
+#: qml/timer/TimerForm.qml:114 qml/timer/TimerListDelegate.qml:125
+#: qml/timer/TimerPage.qml:63 qml/timer/TimerPage.qml:111
 #, kde-format
 msgid "Loop Timer"
 msgstr "循环计时器"
@@ -623,31 +623,31 @@ msgctxt "@action:button"
 msgid "Done"
 msgstr "完成"
 
-#: qml/timer/TimerListDelegate.qml:180
+#: qml/timer/TimerListDelegate.qml:164
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Pause"
 msgstr "暂停"
 
-#: qml/timer/TimerListDelegate.qml:180
+#: qml/timer/TimerListDelegate.qml:164
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start"
 msgstr "开始"
 
-#: qml/timer/TimerListDelegate.qml:190
+#: qml/timer/TimerListDelegate.qml:174
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset"
 msgstr "重置"
 
-#: qml/timer/TimerListDelegate.qml:200
+#: qml/timer/TimerListDelegate.qml:184
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit"
 msgstr "编辑"
 
-#: qml/timer/TimerListDelegate.qml:211
+#: qml/timer/TimerListDelegate.qml:195
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete"
@@ -658,35 +658,35 @@ msgstr "删除"
 msgid "New Timer"
 msgstr "新计时器"
 
-#: qml/timer/TimerListPage.qml:53
+#: qml/timer/TimerListPage.qml:59
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
 "functionality."
 msgstr "找不到时钟守护进程。请启动 kclockd 以获得计时器功能。"
 
-#: qml/timer/TimerListPage.qml:83
+#: qml/timer/TimerListPage.qml:94
 #, kde-format
 msgctxt "@action:button"
 msgid "New Timer"
 msgstr "新计时器"
 
-#: qml/timer/TimerListPage.qml:93
+#: qml/timer/TimerListPage.qml:104
 #, kde-format
 msgid "No timers configured"
 msgstr "未配置计时器"
 
-#: qml/timer/TimerListPage.qml:98
+#: qml/timer/TimerListPage.qml:109
 #, kde-format
 msgid "Add timer"
 msgstr "添加计时器"
 
-#: qml/timer/TimerPage.qml:23
+#: qml/timer/TimerPage.qml:22
 #, kde-format
 msgid "New timer"
 msgstr "新计时器"
 
-#: qml/timer/TimerPage.qml:57 qml/timer/TimerPage.qml:105
+#: qml/timer/TimerPage.qml:54 qml/timer/TimerPage.qml:102
 #, kde-format
 msgid "Delete"
 msgstr "删除"

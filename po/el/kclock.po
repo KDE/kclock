@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-22 00:46+0000\n"
+"POT-Creation-Date: 2025-06-27 00:46+0000\n"
 "PO-Revision-Date: 2021-06-12 21:25+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -115,7 +115,7 @@ msgid "Select Ring Duration"
 msgstr ""
 
 #: qml/alarm/AlarmForm.qml:129 qml/alarm/AlarmForm.qml:166
-#: qml/timer/TimerComponent.qml:161
+#: qml/timer/TimerComponent.qml:164
 #, kde-format
 msgid "1 minute"
 msgstr "1 λεπτό"
@@ -414,13 +414,13 @@ msgid "About KDE"
 msgstr "Περίγραμμα"
 
 #: qml/stopwatch/StopwatchPage.qml:156 qml/stopwatch/StopwatchPage.qml:191
-#: qml/timer/TimerPage.qml:51 qml/timer/TimerPage.qml:99
+#: qml/timer/TimerPage.qml:48 qml/timer/TimerPage.qml:96
 #, kde-format
 msgid "Reset"
 msgstr "Επαναφορά"
 
-#: qml/stopwatch/StopwatchPage.qml:158 qml/timer/TimerPage.qml:43
-#: qml/timer/TimerPage.qml:93
+#: qml/stopwatch/StopwatchPage.qml:158 qml/timer/TimerPage.qml:40
+#: qml/timer/TimerPage.qml:90
 #, kde-format
 msgid "Pause"
 msgstr "Παύση"
@@ -430,8 +430,8 @@ msgstr "Παύση"
 msgid "Resume"
 msgstr ""
 
-#: qml/stopwatch/StopwatchPage.qml:162 qml/timer/TimerPage.qml:43
-#: qml/timer/TimerPage.qml:93
+#: qml/stopwatch/StopwatchPage.qml:162 qml/timer/TimerPage.qml:40
+#: qml/timer/TimerPage.qml:90
 #, kde-format
 msgid "Start"
 msgstr "Έναρξη"
@@ -580,8 +580,8 @@ msgstr "λεπτά"
 msgid "seconds"
 msgstr "δευτερόλεπτα"
 
-#: qml/timer/TimerForm.qml:114 qml/timer/TimerListDelegate.qml:141
-#: qml/timer/TimerPage.qml:66 qml/timer/TimerPage.qml:114
+#: qml/timer/TimerForm.qml:114 qml/timer/TimerListDelegate.qml:125
+#: qml/timer/TimerPage.qml:63 qml/timer/TimerPage.qml:111
 #, fuzzy, kde-format
 #| msgid "Timer"
 msgid "Loop Timer"
@@ -655,32 +655,32 @@ msgctxt "@action:button"
 msgid "Done"
 msgstr "Έγινε"
 
-#: qml/timer/TimerListDelegate.qml:180
+#: qml/timer/TimerListDelegate.qml:164
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Pause"
 msgstr "Παύση"
 
-#: qml/timer/TimerListDelegate.qml:180
+#: qml/timer/TimerListDelegate.qml:164
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start"
 msgstr "Έναρξη"
 
-#: qml/timer/TimerListDelegate.qml:190
+#: qml/timer/TimerListDelegate.qml:174
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset"
 msgstr "Επαναφορά"
 
-#: qml/timer/TimerListDelegate.qml:200
+#: qml/timer/TimerListDelegate.qml:184
 #, fuzzy, kde-format
 #| msgid "Edit"
 msgctxt "@info:tooltip"
 msgid "Edit"
 msgstr "Επεξεργασία"
 
-#: qml/timer/TimerListDelegate.qml:211
+#: qml/timer/TimerListDelegate.qml:195
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete"
@@ -691,38 +691,38 @@ msgstr "Διαγραφή"
 msgid "New Timer"
 msgstr "Νέο χρονόμετρο"
 
-#: qml/timer/TimerListPage.qml:53
+#: qml/timer/TimerListPage.qml:59
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
 "functionality."
 msgstr ""
 
-#: qml/timer/TimerListPage.qml:83
+#: qml/timer/TimerListPage.qml:94
 #, fuzzy, kde-format
 #| msgid "New Timer"
 msgctxt "@action:button"
 msgid "New Timer"
 msgstr "Νέο χρονόμετρο"
 
-#: qml/timer/TimerListPage.qml:93
+#: qml/timer/TimerListPage.qml:104
 #, fuzzy, kde-format
 #| msgid "No alarms configured"
 msgid "No timers configured"
 msgstr "Δεν έχουν διαμορφωθεί συναγερμοί"
 
-#: qml/timer/TimerListPage.qml:98
+#: qml/timer/TimerListPage.qml:109
 #, fuzzy, kde-format
 #| msgid "Add a timer"
 msgid "Add timer"
 msgstr "Προσθήκη χρονομέτρου"
 
-#: qml/timer/TimerPage.qml:23
+#: qml/timer/TimerPage.qml:22
 #, kde-format
 msgid "New timer"
 msgstr "Νέο χρονόμετρο"
 
-#: qml/timer/TimerPage.qml:57 qml/timer/TimerPage.qml:105
+#: qml/timer/TimerPage.qml:54 qml/timer/TimerPage.qml:102
 #, kde-format
 msgid "Delete"
 msgstr "Διαγραφή"
