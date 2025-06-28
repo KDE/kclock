@@ -129,9 +129,6 @@
         "Name[x-test]": "xxKClock_1x2xx",
         "Name[zh_CN]": "KClock_1x2",
         "Name[zh_TW]": "KClock_1x2",
-        "ServiceTypes": [
-            "Plasma/Applet"
-        ],
         "Version": "1.0",
         "Website": "https://apps.kde.org/kclock"
     },
@@ -142,5 +139,6 @@
     "X-Plasma-NotificationAreaCategory": "ApplicationStatus",
     "X-Plasma-Provides": [
         "org.kde.plasma.time"
-    ]
+    ],
+    "KPackageStructure": "Plasma/Applet"
 }
