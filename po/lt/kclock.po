@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-27 00:46+0000\n"
+"POT-Creation-Date: 2025-06-28 00:45+0000\n"
 "PO-Revision-Date: 2024-07-27 20:10+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -117,7 +117,6 @@ msgid "Select Ring Duration"
 msgstr "Pasirinkite skambučio trukmę"
 
 #: qml/alarm/AlarmForm.qml:129 qml/alarm/AlarmForm.qml:166
-#: qml/timer/TimerComponent.qml:164
 #, kde-format
 msgid "1 minute"
 msgstr "1 minutė"
@@ -722,6 +721,13 @@ msgstr "Naujas laikmatis"
 #, kde-format
 msgid "Delete"
 msgstr "Ištrinti"
+
+#: qml/timer/TimerPage.qml:132
+#, fuzzy, kde-format
+#| msgid "1 minute"
+msgctxt "@action:button Add 1 minute to timer"
+msgid "1 minute"
+msgstr "1 minutė"
 
 #: qml/timer/TimerRingingPopup.qml:25
 #, kde-format

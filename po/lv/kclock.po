@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-27 00:46+0000\n"
+"POT-Creation-Date: 2025-06-28 00:45+0000\n"
 "PO-Revision-Date: 2025-05-26 17:53+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -115,7 +115,6 @@ msgid "Select Ring Duration"
 msgstr "Izvēlēties signāla ilgumu"
 
 #: qml/alarm/AlarmForm.qml:129 qml/alarm/AlarmForm.qml:166
-#: qml/timer/TimerComponent.qml:164
 #, kde-format
 msgid "1 minute"
 msgstr "1 minūte"
@@ -702,6 +701,13 @@ msgstr "Jauns taimeris"
 #, kde-format
 msgid "Delete"
 msgstr "Izdzēst"
+
+#: qml/timer/TimerPage.qml:132
+#, fuzzy, kde-format
+#| msgid "1 minute"
+msgctxt "@action:button Add 1 minute to timer"
+msgid "1 minute"
+msgstr "1 minūte"
 
 #: qml/timer/TimerRingingPopup.qml:25
 #, kde-format

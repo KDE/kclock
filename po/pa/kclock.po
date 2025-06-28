@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-27 00:46+0000\n"
+"POT-Creation-Date: 2025-06-28 00:45+0000\n"
 "PO-Revision-Date: 2024-01-03 14:19-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -112,7 +112,6 @@ msgid "Select Ring Duration"
 msgstr "ਘੰਟੀ ਵੱਜਣ ਦਾ ਸਮਾਂ ਚੁਣੋ"
 
 #: qml/alarm/AlarmForm.qml:129 qml/alarm/AlarmForm.qml:166
-#: qml/timer/TimerComponent.qml:164
 #, kde-format
 msgid "1 minute"
 msgstr "1 ਮਿੰਟ"
@@ -714,6 +713,13 @@ msgstr "ਨਵਾਂ ਟਾਈਮਰ"
 #, kde-format
 msgid "Delete"
 msgstr "ਹਟਾਓ"
+
+#: qml/timer/TimerPage.qml:132
+#, fuzzy, kde-format
+#| msgid "1 minute"
+msgctxt "@action:button Add 1 minute to timer"
+msgid "1 minute"
+msgstr "1 ਮਿੰਟ"
 
 #: qml/timer/TimerRingingPopup.qml:25
 #, kde-format

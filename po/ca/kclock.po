@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-27 00:46+0000\n"
+"POT-Creation-Date: 2025-06-28 00:45+0000\n"
 "PO-Revision-Date: 2025-05-25 11:13+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -116,7 +116,6 @@ msgid "Select Ring Duration"
 msgstr "Selecció de la durada de l'alarma"
 
 #: qml/alarm/AlarmForm.qml:129 qml/alarm/AlarmForm.qml:166
-#: qml/timer/TimerComponent.qml:164
 #, kde-format
 msgid "1 minute"
 msgstr "1 minut"
@@ -704,6 +703,13 @@ msgstr "Temporitzador nou"
 #, kde-format
 msgid "Delete"
 msgstr "Suprimeix"
+
+#: qml/timer/TimerPage.qml:132
+#, fuzzy, kde-format
+#| msgid "1 minute"
+msgctxt "@action:button Add 1 minute to timer"
+msgid "1 minute"
+msgstr "1 minut"
 
 #: qml/timer/TimerRingingPopup.qml:25
 #, kde-format
