@@ -45,7 +45,7 @@
             }
         ],
         "Category": "Utilities",
-        "Description": "KClock widget (1x2)",
+        "Description": "KClock widget",
         "Description[ar]": "ودجة ساعتك (1x2)",
         "Description[bg]": "Уиджет KClock (1x2)",
         "Description[ca@valencia]": "Giny de KClock (1x2)",
@@ -92,7 +92,7 @@
         "Icon": "kclock_plasmoid_1x2",
         "Id": "org.kde.plasma.kclock_1x2",
         "License": "LGPL-2.1+",
-        "Name": "KClock_1x2",
+        "Name": "KClock",
         "Name[ar]": "ساعتك_1x2",
         "Name[bg]": "KClock_1x2",
         "Name[ca@valencia]": "KClock_1x2",
