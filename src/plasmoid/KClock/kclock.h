@@ -11,7 +11,7 @@
 #include <QProcess>
 #include <QTimer>
 
-class KClock_1x2 : public Plasma::Applet
+class KClock : public Plasma::Applet
 {
     Q_OBJECT
     Q_PROPERTY(QDateTime datetime READ datetime NOTIFY timeChanged)
@@ -20,8 +20,8 @@ class KClock_1x2 : public Plasma::Applet
     Q_PROPERTY(bool hasAlarm READ hasAlarm NOTIFY hasAlarmChanged)
 
 public:
-    KClock_1x2(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args);
-    ~KClock_1x2();
+    KClock(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args);
+    ~KClock();
 
     QString date() const;
     QDateTime datetime() const;

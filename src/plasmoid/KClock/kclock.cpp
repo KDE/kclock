@@ -4,7 +4,7 @@
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
-#include "kclock_1x2.h"
+#include "kclock.h"
 
 #include <KLocalizedString>
 #include <KNotificationJobUiDelegate>
@@ -15,11 +15,11 @@
 #include <QDBusPendingCallWatcher>
 #include <QDBusPendingReply>
 
-KClock_1x2::KClock_1x2(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args)
+KClock::KClock(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args)
     : Plasma::Applet(parent, metaData, args)
 {
     m_timer = new QTimer(this);
-    connect(m_timer, &QTimer::timeout, this, &KClock_1x2::initialTimeUpdate);
+    connect(m_timer, &QTimer::timeout, this, &KClock::initialTimeUpdate);
     m_timer->setSingleShot(true);
 
     // initial interval is milliseconds to next minute
@@ -63,17 +63,17 @@ KClock_1x2::KClock_1x2(QObject *parent, const KPluginMetaData &metaData, const Q
     });
 }
 
-QString KClock_1x2::alarmTime() const
+QString KClock::alarmTime() const
 {
     return m_string;
 }
 
-bool KClock_1x2::hasAlarm() const
+bool KClock::hasAlarm() const
 {
     return m_hasAlarm;
 }
 
-void KClock_1x2::updateAlarm(qulonglong time)
+void KClock::updateAlarm(qulonglong time)
 {
     auto dateTime = QDateTime::fromSecsSinceEpoch(time).toLocalTime();
     const bool hasAlarm = time > 0;
@@ -89,7 +89,7 @@ void KClock_1x2::updateAlarm(qulonglong time)
     }
 }
 
-void KClock_1x2::openKClock()
+void KClock::openKClock()
 {
     auto kclockService = KService::serviceByDesktopName(QStringLiteral("org.kde.kclock"));
     auto *job = new KIO::ApplicationLauncherJob(kclockService);
@@ -97,31 +97,31 @@ void KClock_1x2::openKClock()
     job->start();
 }
 
-void KClock_1x2::initialTimeUpdate()
+void KClock::initialTimeUpdate()
 {
     Q_EMIT timeChanged();
-    disconnect(m_timer, &QTimer::timeout, this, &KClock_1x2::initialTimeUpdate); // disconnect
+    disconnect(m_timer, &QTimer::timeout, this, &KClock::initialTimeUpdate); // disconnect
     m_timer->setSingleShot(false);
-    connect(m_timer, &QTimer::timeout, this, &KClock_1x2::timeChanged);
+    connect(m_timer, &QTimer::timeout, this, &KClock::timeChanged);
     m_timer->start(60000); // update every minute
 }
 
-QString KClock_1x2::date() const
+QString KClock::date() const
 {
     return m_locale.toString(QDate::currentDate(), QStringLiteral("ddd, MMM d"));
 }
 
-QDateTime KClock_1x2::datetime() const
+QDateTime KClock::datetime() const
 {
     return QDateTime::currentDateTime();
 }
 
-KClock_1x2::~KClock_1x2()
+KClock::~KClock()
 {
 }
 
-K_PLUGIN_CLASS(KClock_1x2)
+K_PLUGIN_CLASS(KClock)
 
-#include "kclock_1x2.moc"
+#include "kclock.moc"
 
-#include "moc_kclock_1x2.cpp"
+#include "moc_kclock.cpp"
