@@ -1,4 +1,5 @@
 {
+    "KPackageStructure": "Plasma/Applet",
     "KPlugin": {
         "Authors": [
             {
@@ -133,13 +134,12 @@
         "Website": "https://apps.kde.org/kclock"
     },
     "X-Plasma-API": "declarativeappletscript",
+    "X-Plasma-API-Minimum-Version": "6.0",
     "X-Plasma-DBusActivationService": "org.kde.kclock.*",
     "X-Plasma-MainScript": "ui/main.qml",
     "X-Plasma-NotificationArea": "true",
     "X-Plasma-NotificationAreaCategory": "ApplicationStatus",
     "X-Plasma-Provides": [
         "org.kde.plasma.time"
-    ],
-    "X-Plasma-API-Minimum-Version": "6.0",
-    "KPackageStructure": "Plasma/Applet"
+    ]
 }
