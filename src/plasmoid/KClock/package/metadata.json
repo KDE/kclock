@@ -61,7 +61,7 @@
             "handset",
             "desktop"
         ],
-        "Icon": "kclock_plasmoid_1x2",
+        "Icon": "kclock_plasmoid",
         "Id": "org.kde.plasma.kclock_1x2",
         "License": "LGPL-2.1+",
         "Name": "KClock",
