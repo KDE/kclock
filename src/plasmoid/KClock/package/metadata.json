@@ -55,6 +55,7 @@
         "Description[sv]": "Klockkomponent",
         "Description[uk]": "Віджет KClock",
         "Description[x-test]": "xxKClock widgetxx",
+        "Description[zh_TW]": "KClock 元件",
         "EnabledByDefault": true,
         "FormFactors": [
             "tablet",
@@ -74,6 +75,7 @@
         "Name[sv]": "Klocka",
         "Name[uk]": "KClock",
         "Name[x-test]": "xxKClockxx",
+        "Name[zh_TW]": "KClock",
         "Version": "1.0",
         "Website": "https://apps.kde.org/kclock"
     },
