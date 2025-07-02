@@ -691,8 +691,7 @@ msgid "Delete"
 msgstr "删除"
 
 #: qml/timer/TimerPage.qml:132
-#, fuzzy, kde-format
-#| msgid "1 minute"
+#, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "1 minute"
 msgstr "1 分钟"
