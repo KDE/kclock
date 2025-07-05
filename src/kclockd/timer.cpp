@@ -117,6 +117,11 @@ int Timer::elapsed() const
     }
 }
 
+int Timer::timeCompleted() const
+{
+    return m_length + QDateTime::currentSecsSinceEpoch() - elapsed();
+}
+
 QString Timer::uuid() const
 {
     return m_uuid.toString();
@@ -132,6 +137,7 @@ void Timer::setLength(int length)
     if (length != m_length) {
         m_length = length;
         Q_EMIT lengthChanged();
+        Q_EMIT timeCompletedChanged();
 
         TimerModel::instance()->save();
         reschedule();
@@ -260,6 +266,7 @@ void Timer::setRunning(bool running)
 
     m_running = running;
     Q_EMIT runningChanged();
+    Q_EMIT timeCompletedChanged();
 
     TimerModel::instance()->save();
 }

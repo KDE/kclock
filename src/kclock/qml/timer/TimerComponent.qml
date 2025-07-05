@@ -149,6 +149,25 @@ Item {
             color: root.timerRunning ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
         }
     }
+    Rectangle {
+        id: timeCompletedBox
+        radius: Kirigami.Units.cornerRadius
+        Kirigami.Heading {
+            id: timeCompletedHeading
+            level: 3
+            color: root.timerRunning ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
+            text: root.timer.timeCompletedPretty
+            anchors.centerIn: parent
+            textFormat: Text.PlainText
+        }
+        implicitWidth: timeCompletedHeading.implicitWidth + Kirigami.Units.smallSpacing * 2
+        implicitHeight: timeCompletedHeading.implicitHeight + Kirigami.Units.smallSpacing * 2
+        color: Kirigami.Theme.neutralBackgroundColor
+        anchors.top: timeLabels.bottom
+        anchors.bottomMargin: Kirigami.Units.smallSpacing
+        anchors.horizontalCenter: parent.horizontalCenter
+        visible: root.timerRunning
+    }
     
     Kirigami.Heading {
         id: heading
@@ -164,7 +183,7 @@ Item {
     Kirigami.ActionToolBar {
         id: actionToolBar
         anchors.topMargin: Kirigami.Units.smallSpacing
-        anchors.top: timeLabels.bottom
+        anchors.top: timeCompletedBox.bottom
         anchors.horizontalCenter: parent.horizontalCenter
     }
 }

@@ -26,6 +26,7 @@ class Timer : public QObject
     Q_OBJECT
     Q_CLASSINFO("D-Bus Interface", "org.kde.kclock.Timer")
     Q_PROPERTY(int length READ length WRITE setLength NOTIFY lengthChanged)
+    Q_PROPERTY(int timeCompleted READ timeCompleted NOTIFY timeCompletedChanged)
     Q_PROPERTY(QString label READ label WRITE setLabel NOTIFY labelChanged)
     Q_PROPERTY(QString commandTimeout READ commandTimeout WRITE setCommandTimeout NOTIFY commandTimeoutChanged)
     Q_PROPERTY(bool running READ running NOTIFY runningChanged)
@@ -55,6 +56,7 @@ public:
 
     Q_SCRIPTABLE QString uuid() const;
 
+    Q_SCRIPTABLE int timeCompleted() const;
     int length() const;
     void setLength(int length);
     void addMinute();
@@ -73,6 +75,7 @@ public:
     Q_SCRIPTABLE void dismiss();
 
 Q_SIGNALS:
+    Q_SCRIPTABLE void timeCompletedChanged();
     Q_SCRIPTABLE void lengthChanged();
     Q_SCRIPTABLE void labelChanged();
     Q_SCRIPTABLE void commandTimeoutChanged();

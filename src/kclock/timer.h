@@ -24,6 +24,8 @@ class Timer : public QObject
     Q_PROPERTY(int length READ length WRITE setLength NOTIFY lengthChanged)
     Q_PROPERTY(QString lengthPretty READ lengthPretty NOTIFY lengthChanged)
     Q_PROPERTY(int elapsed READ elapsed NOTIFY elapsedChanged)
+    Q_PROPERTY(int timeCompleted READ timeCompleted NOTIFY timeCompletedChanged)
+    Q_PROPERTY(QString timeCompletedPretty READ timeCompletedPretty NOTIFY timeCompletedChanged)
     Q_PROPERTY(QString elapsedPretty READ elapsedPretty NOTIFY elapsedChanged)
     Q_PROPERTY(QString remainingPretty READ remainingPretty NOTIFY elapsedChanged)
     Q_PROPERTY(QString label READ label WRITE setLabel NOTIFY labelChanged)
@@ -40,6 +42,9 @@ public:
     int length() const;
     QString lengthPretty() const;
     void setLength(int length);
+
+    int timeCompleted() const;
+    QString timeCompletedPretty() const;
 
     int elapsed() const;
     QString elapsedPretty() const;
@@ -68,6 +73,7 @@ public:
 
 Q_SIGNALS:
     void lengthChanged();
+    void timeCompletedChanged();
     void elapsedChanged();
     void labelChanged();
     void commandTimeoutChanged();
@@ -77,6 +83,7 @@ Q_SIGNALS:
 
 private Q_SLOTS:
     void updateLength();
+    void updateTimeCompleted();
     void updateElapsed();
     void updateLabel();
     void updateCommandTimeout();
@@ -88,6 +95,7 @@ private:
     void animation(bool start);
 
     int m_length;
+    int m_timeCompleted;
     int m_elapsed;
 
     QString m_label;
@@ -102,4 +110,5 @@ private:
     org::kde::kclock::Timer *m_interface;
 
     QTimer *m_animationTimer;
+    QTimer *m_completedTimeTimer;
 };

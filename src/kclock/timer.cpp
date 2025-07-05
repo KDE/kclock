@@ -7,12 +7,14 @@
  */
 
 #include "timer.h"
+#include "utilmodel.h"
 
 /* ~ Timer ~ */
 Timer::Timer(const QString &uuid, QObject *parent)
     : QObject{parent}
     , m_interface{new OrgKdeKclockTimerInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Timers/") + uuid, QDBusConnection::sessionBus(), this)}
     , m_animationTimer{new QTimer(this)}
+    , m_completedTimeTimer{new QTimer(this)}
 {
     // update the timer UI at set intervals, rather than as fast as possible
     connect(m_animationTimer, &QTimer::timeout, [this] {
@@ -20,8 +22,14 @@ Timer::Timer(const QString &uuid, QObject *parent)
         Q_EMIT elapsedChanged();
     });
 
+    connect(m_completedTimeTimer, &QTimer::timeout, [this] {
+        m_timeCompleted = m_interface->timeCompleted();
+        Q_EMIT timeCompletedChanged();
+    });
+
     if (m_interface->isValid()) {
         connect(m_interface, &OrgKdeKclockTimerInterface::lengthChanged, this, &Timer::updateLength);
+        connect(m_interface, &OrgKdeKclockTimerInterface::timeCompletedChanged, this, &Timer::updateTimeCompleted);
         connect(m_interface, &OrgKdeKclockTimerInterface::labelChanged, this, &Timer::updateLabel);
         connect(m_interface, &OrgKdeKclockTimerInterface::commandTimeoutChanged, this, &Timer::updateCommandTimeout);
         connect(m_interface, &OrgKdeKclockTimerInterface::runningChanged, this, &Timer::updateRunning);
@@ -31,6 +39,7 @@ Timer::Timer(const QString &uuid, QObject *parent)
         m_uuid = QUuid(m_interface->uuid().value());
         updateLength();
         updateElapsed();
+        updateTimeCompleted();
         updateLabel();
         updateCommandTimeout();
         updateRunning(); // start animation
@@ -57,6 +66,16 @@ QString Timer::lengthPretty() const
 void Timer::setLength(int length)
 {
     m_interface->setLength(length);
+}
+
+int Timer::timeCompleted() const
+{
+    return m_timeCompleted;
+}
+
+QString Timer::timeCompletedPretty() const
+{
+    return QLocale::system().toString(QDateTime::fromSecsSinceEpoch(m_timeCompleted).toLocalTime().time(), UtilModel::instance()->timeFormat());
 }
 
 int Timer::elapsed() const
@@ -155,6 +174,12 @@ void Timer::updateLength()
     Q_EMIT lengthChanged();
 }
 
+void Timer::updateTimeCompleted()
+{
+    m_timeCompleted = m_interface->timeCompleted();
+    Q_EMIT timeCompletedChanged();
+}
+
 void Timer::updateElapsed()
 {
     m_elapsed = m_interface->elapsed();
@@ -199,8 +224,10 @@ void Timer::animation(bool start)
 {
     if (start) {
         m_animationTimer->start(250);
+        m_completedTimeTimer->start(60000);
     } else {
         m_animationTimer->stop();
+        m_completedTimeTimer->stop();
     }
 }
 
