@@ -30,10 +30,10 @@ Item {
 
         const contentDiag = Math.sqrt(totalHeight ** 2 + maxWidth ** 2);
         const maxRadius = Math.min(root.width, root.height) * (Kirigami.Settings.isMobile ? 0.3 : 0.25);
-        
+
         return Math.max(maxRadius, contentDiag / 2);
     }
-    
+
     function getTimeLeft() {
         return root.timerDuration - root.timerElapsed;
     }
@@ -46,7 +46,7 @@ Item {
     function getSeconds() {
         return ("0" + parseInt(getTimeLeft() - 60 * getMinutes())).slice(-2);
     }
-    
+
     // elapsed sweep angle animation (progress circle)
     property int elapsedSweepAngle
     NumberAnimation on elapsedSweepAngle {
@@ -58,25 +58,25 @@ Item {
         elapsedSweepAnimation.to = 360 * timerElapsed / timerDuration
         elapsedSweepAnimation.start();
     }
-    
+
     // set initial values
     Component.onCompleted: {
         elapsedSweepAngle = 360 * timerElapsed / timerDuration;
     }
-    
+
     // timer circle
     Shape {
         anchors.centerIn: parent
-        
+
         id: timerCircle
         implicitWidth: timerCircleArc.radiusX * 2 + timerCirclePath.strokeWidth
         implicitHeight: timerCircleArc.radiusY * 2 + timerCirclePath.strokeWidth
         anchors.horizontalCenter: parent.horizontalCenter
         layer.enabled: true
         layer.samples: 40
-        
+
         Kirigami.Theme.colorSet: Kirigami.Theme.Button
-        
+
         // base circle
         ShapePath {
             id: timerCirclePath
@@ -93,7 +93,7 @@ Item {
                 sweepAngle: 360
             }
         }
-        
+
         // progress circle
         ShapePath {
             strokeColor: Kirigami.Theme.highlightColor
@@ -108,7 +108,7 @@ Item {
             }
         }
     }
-    
+
     // clock display
     RowLayout {
         id: timeLabels
@@ -168,7 +168,7 @@ Item {
         anchors.horizontalCenter: parent.horizontalCenter
         visible: root.timerRunning
     }
-    
+
     Kirigami.Heading {
         id: heading
         level: 4
@@ -182,8 +182,8 @@ Item {
 
     Kirigami.ActionToolBar {
         id: actionToolBar
-        anchors.topMargin: Kirigami.Units.smallSpacing
-        anchors.top: timeCompletedBox.bottom
+        anchors.topMargin: Kirigami.Units.largeSpacing
+        anchors.top: timerCircle.bottom
         anchors.horizontalCenter: parent.horizontalCenter
     }
 }
