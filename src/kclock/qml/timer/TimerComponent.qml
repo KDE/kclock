@@ -182,8 +182,14 @@ Item {
 
     Kirigami.ActionToolBar {
         id: actionToolBar
-        anchors.topMargin: Kirigami.Units.largeSpacing
-        anchors.top: timerCircle.bottom
+        property bool outsideTimerCircle: implicitWidth > timerCircle.implicitWidth * 0.5
+        anchors.topMargin: outsideTimerCircle ? Kirigami.Units.largeSpacing : Kirigami.Units.smallSpacing
+        anchors.top: {
+            if (outsideTimerCircle) {
+                return timerCircle.bottom;
+            }
+            return timeCompletedBox.visible ? timeCompletedBox.bottom : timeLabels.bottom;
+        }
         anchors.horizontalCenter: parent.horizontalCenter
     }
 }
