@@ -88,15 +88,30 @@ bool PipShellSurface::isExposed() const
 
 void PipShellSurface::applyConfigure()
 {
-    QSize size = window()->windowContentGeometry().size();
+    const QSize normalSize = window()->windowContentGeometry().size();
+
+    QSize surfaceSize;
     if (m_pendingSize.width() > 0) {
-        size.setWidth(m_pendingSize.width());
-    }
-    if (m_pendingSize.height() > 0) {
-        size.setHeight(m_pendingSize.height());
+        surfaceSize.setWidth(m_pendingSize.width());
+    } else {
+        int width = normalSize.width();
+        if (!m_pendingBounds.isEmpty()) {
+            width = std::min(width, m_pendingBounds.width());
+        }
+        surfaceSize.setWidth(width);
     }
 
-    window()->resizeFromApplyConfigure(size);
+    if (m_pendingSize.height() > 0) {
+        surfaceSize.setHeight(m_pendingSize.height());
+    } else {
+        int height = normalSize.height();
+        if (!m_pendingSize.isEmpty()) {
+            height = std::min(height, m_pendingBounds.height());
+        }
+        surfaceSize.setHeight(height);
+    }
+
+    window()->resizeFromApplyConfigure(surfaceSize.grownBy(window()->windowContentMargins()));
 }
 
 #if QT_VERSION < QT_VERSION_CHECK(6, 9, 0)
@@ -159,6 +174,7 @@ void PipShellSurface::xdg_surface_configure(uint32_t serial)
 
 void PipShellSurface::xx_pip_v1_configure_bounds(int32_t width, int32_t height)
 {
+    m_pendingBounds = QSize(width, height);
 }
 
 void PipShellSurface::xx_pip_v1_configure_size(int32_t width, int32_t height)

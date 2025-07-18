@@ -74,5 +74,6 @@ private:
 
     QRect m_contentGeometry;
     QSize m_pendingSize;
+    QSize m_pendingBounds;
     bool m_configured = false;
 };
