@@ -99,9 +99,17 @@ void PipShellSurface::applyConfigure()
     window()->resizeFromApplyConfigure(size);
 }
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 9, 0)
 void PipShellSurface::setWindowGeometry(const QRect &rect)
+#else
+void PipShellSurface::setContentGeometry(const QRect &rect)
+#endif
 {
-    if (window()->isExposed()) {
+    if (!isExposed()) {
+        return;
+    }
+    if (m_contentGeometry != rect) {
+        m_contentGeometry = rect;
         xdg_surface::set_window_geometry(rect.x(), rect.y(), rect.width(), rect.height());
     }
 }
@@ -140,7 +148,13 @@ void PipShellSurface::xdg_surface_configure(uint32_t serial)
         window()->applyConfigureWhenPossible();
     }
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 9, 0)
+    setWindowGeometry(window()->windowContentGeometry());
+    window()->sendRecursiveExposeEvent();
+#else
+    setContentGeometry(window()->windowContentGeometry());
     window()->updateExposure();
+#endif
 }
 
 void PipShellSurface::xx_pip_v1_configure_bounds(int32_t width, int32_t height)

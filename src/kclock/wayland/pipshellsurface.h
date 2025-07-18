@@ -58,7 +58,11 @@ public:
 
     bool isExposed() const override;
     void applyConfigure() override;
+#if QT_VERSION < QT_VERSION_CHECK(6, 9, 0)
     void setWindowGeometry(const QRect &rect) override;
+#else
+    void setContentGeometry(const QRect &rect) override;
+#endif
     bool move(QtWaylandClient::QWaylandInputDevice *inputDevice) override;
     bool resize(QtWaylandClient::QWaylandInputDevice *inputDevice, Qt::Edges edges) override;
 
@@ -68,6 +72,7 @@ private:
     void xx_pip_v1_configure_bounds(int32_t width, int32_t height) override;
     void xx_pip_v1_configure_size(int32_t width, int32_t height) override;
 
+    QRect m_contentGeometry;
     QSize m_pendingSize;
     bool m_configured = false;
 };
