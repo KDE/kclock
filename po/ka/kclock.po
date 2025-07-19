@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-28 00:45+0000\n"
+"POT-Creation-Date: 2025-07-19 05:24+0000\n"
 "PO-Revision-Date: 2025-06-28 03:47+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -217,7 +217,7 @@ msgid "Edit"
 msgstr "ჩასწორება"
 
 #: qml/alarm/AlarmListPage.qml:44 qml/Main.qml:56
-#: qml/settings/SettingsPage.qml:28 qml/stopwatch/StopwatchPage.qml:55
+#: qml/settings/SettingsPage.qml:28 qml/stopwatch/StopwatchPage.qml:70
 #: qml/time/TimePage.qml:62 qml/timer/TimerListPage.qml:36
 #, kde-format
 msgid "Settings"
@@ -295,6 +295,20 @@ msgstr "ტაიმერები"
 #, kde-format
 msgid "Stopwatch"
 msgstr "წამმზომის გვერდი"
+
+#: qml/components/PipHandler.qml:105
+#, kde-format
+msgctxt ""
+"@action:button Close pip and return to the page where the content was popped "
+"out from"
+msgid "Back to app"
+msgstr ""
+
+#: qml/components/PipHandler.qml:123
+#, kde-format
+msgctxt "@action:button"
+msgid "Close"
+msgstr ""
 
 #: qml/components/SoundPickerPage.qml:24
 #, kde-format
@@ -403,35 +417,81 @@ msgstr "საათის შესახებ"
 msgid "About KDE"
 msgstr "KDE-ის შესახებ"
 
-#: qml/stopwatch/StopwatchPage.qml:156 qml/stopwatch/StopwatchPage.qml:191
-#: qml/timer/TimerPage.qml:48 qml/timer/TimerPage.qml:96
+#: qml/stopwatch/StopwatchPage.qml:55 qml/timer/TimerPage.qml:75
+#, kde-format
+msgctxt "@action"
+msgid "Restore"
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:55 qml/timer/TimerPage.qml:75
+#, kde-format
+msgctxt "@action"
+msgid "Pop out"
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:108 qml/stopwatch/StopwatchPage.qml:372
+#: qml/timer/TimerPage.qml:173
+#, kde-format
+msgctxt "@action:button"
+msgid "Pause"
+msgstr "შეჩერება"
+
+#: qml/stopwatch/StopwatchPage.qml:110 qml/stopwatch/StopwatchPage.qml:374
+#, kde-format
+msgctxt "@action:button"
+msgid "Resume"
+msgstr "გაგრძელება"
+
+#: qml/stopwatch/StopwatchPage.qml:112 qml/stopwatch/StopwatchPage.qml:376
+#: qml/timer/TimerPage.qml:173
+#, kde-format
+msgctxt "@action:button"
+msgid "Start"
+msgstr "დაწყება"
+
+#: qml/stopwatch/StopwatchPage.qml:122
+#, fuzzy, kde-format
+#| msgid "Lap"
+msgctxt "@action:button"
+msgid "Lap"
+msgstr "წრე"
+
+#: qml/stopwatch/StopwatchPage.qml:122 qml/timer/TimerPage.qml:179
+#, fuzzy, kde-format
+#| msgid "Reset"
+msgctxt "@action:button"
+msgid "Reset"
+msgstr "საწყის მნიშვნელობებზე დაბრუნება"
+
+#: qml/stopwatch/StopwatchPage.qml:237 qml/stopwatch/StopwatchPage.qml:272
+#: qml/timer/TimerPage.qml:51 qml/timer/TimerPage.qml:113
 #, kde-format
 msgid "Reset"
 msgstr "საწყის მნიშვნელობებზე დაბრუნება"
 
-#: qml/stopwatch/StopwatchPage.qml:158 qml/timer/TimerPage.qml:40
-#: qml/timer/TimerPage.qml:90
+#: qml/stopwatch/StopwatchPage.qml:239 qml/timer/TimerPage.qml:43
+#: qml/timer/TimerPage.qml:107
 #, kde-format
 msgid "Pause"
 msgstr "შეჩერება"
 
-#: qml/stopwatch/StopwatchPage.qml:160
+#: qml/stopwatch/StopwatchPage.qml:241
 #, kde-format
 msgid "Resume"
 msgstr "გაგრძელება"
 
-#: qml/stopwatch/StopwatchPage.qml:162 qml/timer/TimerPage.qml:40
-#: qml/timer/TimerPage.qml:90
+#: qml/stopwatch/StopwatchPage.qml:243 qml/timer/TimerPage.qml:43
+#: qml/timer/TimerPage.qml:107
 #, kde-format
 msgid "Start"
 msgstr "დაწყება"
 
-#: qml/stopwatch/StopwatchPage.qml:191 qml/stopwatch/StopwatchPage.qml:232
+#: qml/stopwatch/StopwatchPage.qml:272 qml/stopwatch/StopwatchPage.qml:313
 #, kde-format
 msgid "Lap"
 msgstr "წრე"
 
-#: qml/stopwatch/StopwatchPage.qml:212
+#: qml/stopwatch/StopwatchPage.qml:293
 #, kde-format
 msgid ""
 "Press Space to start or pause the stopwatch. Delete or Backspace resets it. "
@@ -440,35 +500,28 @@ msgstr ""
 "დააჭირეთ ჰარეს ტაიმერის გასაშვებად, ან დასაპაუზებლად. გამოიყენეთ ღილაკი "
 "Delete ან Backspace ჩამოსაყრელად. Enter ნახტომს დაამატებს."
 
-#: qml/stopwatch/StopwatchPage.qml:240
+#: qml/stopwatch/StopwatchPage.qml:321
 #, kde-format
 msgid "Lap Time"
 msgstr "წრის დრო"
 
-#: qml/stopwatch/StopwatchPage.qml:247
+#: qml/stopwatch/StopwatchPage.qml:328
 #, kde-format
 msgid "Total"
 msgstr "ჯამში"
 
-#: qml/stopwatch/StopwatchPage.qml:277
+#: qml/stopwatch/StopwatchPage.qml:358
 #, kde-format
-msgctxt "@action:button"
-msgid "Pause"
-msgstr "შეჩერება"
+msgid "Stopwatch is in Picture-in-Picture mode."
+msgstr ""
 
-#: qml/stopwatch/StopwatchPage.qml:279
+#: qml/stopwatch/StopwatchPage.qml:363 qml/timer/TimerPage.qml:212
 #, kde-format
-msgctxt "@action:button"
-msgid "Resume"
-msgstr "გაგრძელება"
+msgctxt "@action:button Restore (unminimize) from pip mode"
+msgid "Restore"
+msgstr ""
 
-#: qml/stopwatch/StopwatchPage.qml:281
-#, kde-format
-msgctxt "@action:button"
-msgid "Start"
-msgstr "დაწყება"
-
-#: qml/stopwatch/StopwatchPage.qml:341
+#: qml/stopwatch/StopwatchPage.qml:436
 #, kde-format
 msgid "#%1"
 msgstr "#%1"
@@ -560,7 +613,7 @@ msgid "seconds"
 msgstr "წამი"
 
 #: qml/timer/TimerForm.qml:114 qml/timer/TimerListDelegate.qml:125
-#: qml/timer/TimerPage.qml:63 qml/timer/TimerPage.qml:111
+#: qml/timer/TimerPage.qml:66 qml/timer/TimerPage.qml:128
 #, kde-format
 msgid "Loop Timer"
 msgstr "გამეორებადი ტაიმერი"
@@ -688,21 +741,32 @@ msgstr "ტაიმერები მორგებული არაა"
 msgid "Add timer"
 msgstr "ტაიმერის დამატება"
 
-#: qml/timer/TimerPage.qml:22
+#: qml/timer/TimerPage.qml:24
 #, kde-format
 msgid "New timer"
 msgstr "ახალი ტაიმერი"
 
-#: qml/timer/TimerPage.qml:54 qml/timer/TimerPage.qml:102
+#: qml/timer/TimerPage.qml:57 qml/timer/TimerPage.qml:119
 #, kde-format
 msgid "Delete"
 msgstr "წაშლა"
 
-#: qml/timer/TimerPage.qml:132
+#: qml/timer/TimerPage.qml:167
+#, kde-format
+msgctxt "@action:button Add 1 minute to timer"
+msgid "+1:00"
+msgstr ""
+
+#: qml/timer/TimerPage.qml:197
 #, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "1 minute"
 msgstr "1 წთ"
+
+#: qml/timer/TimerPage.qml:207
+#, kde-format
+msgid "This timer is in Picture-in-Picture mode."
+msgstr ""
 
 #: qml/timer/TimerRingingPopup.qml:25
 #, kde-format

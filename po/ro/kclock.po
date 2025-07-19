@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-28 00:45+0000\n"
+"POT-Creation-Date: 2025-07-19 05:24+0000\n"
 "PO-Revision-Date: 2022-06-01 15:13+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -229,7 +229,7 @@ msgid "Edit"
 msgstr "Modifică"
 
 #: qml/alarm/AlarmListPage.qml:44 qml/Main.qml:56
-#: qml/settings/SettingsPage.qml:28 qml/stopwatch/StopwatchPage.qml:55
+#: qml/settings/SettingsPage.qml:28 qml/stopwatch/StopwatchPage.qml:70
 #: qml/time/TimePage.qml:62 qml/timer/TimerListPage.qml:36
 #, kde-format
 msgid "Settings"
@@ -308,6 +308,20 @@ msgstr "Cronometre"
 #, kde-format
 msgid "Stopwatch"
 msgstr "Temporizator"
+
+#: qml/components/PipHandler.qml:105
+#, kde-format
+msgctxt ""
+"@action:button Close pip and return to the page where the content was popped "
+"out from"
+msgid "Back to app"
+msgstr ""
+
+#: qml/components/PipHandler.qml:123
+#, kde-format
+msgctxt "@action:button"
+msgid "Close"
+msgstr ""
 
 #: qml/components/SoundPickerPage.qml:24
 #, kde-format
@@ -418,73 +432,112 @@ msgstr "Ceas"
 msgid "About KDE"
 msgstr "Despre"
 
-#: qml/stopwatch/StopwatchPage.qml:156 qml/stopwatch/StopwatchPage.qml:191
-#: qml/timer/TimerPage.qml:48 qml/timer/TimerPage.qml:96
+#: qml/stopwatch/StopwatchPage.qml:55 qml/timer/TimerPage.qml:75
 #, kde-format
-msgid "Reset"
-msgstr "Reinițializează"
-
-#: qml/stopwatch/StopwatchPage.qml:158 qml/timer/TimerPage.qml:40
-#: qml/timer/TimerPage.qml:90
-#, kde-format
-msgid "Pause"
-msgstr "Întrerupe"
-
-#: qml/stopwatch/StopwatchPage.qml:160
-#, kde-format
-msgid "Resume"
+msgctxt "@action"
+msgid "Restore"
 msgstr ""
 
-#: qml/stopwatch/StopwatchPage.qml:162 qml/timer/TimerPage.qml:40
-#: qml/timer/TimerPage.qml:90
+#: qml/stopwatch/StopwatchPage.qml:55 qml/timer/TimerPage.qml:75
 #, kde-format
-msgid "Start"
-msgstr "Pornește"
-
-#: qml/stopwatch/StopwatchPage.qml:191 qml/stopwatch/StopwatchPage.qml:232
-#, kde-format
-msgid "Lap"
-msgstr "Tur"
-
-#: qml/stopwatch/StopwatchPage.qml:212
-#, kde-format
-msgid ""
-"Press Space to start or pause the stopwatch. Delete or Backspace resets it. "
-"Enter adds a lap."
+msgctxt "@action"
+msgid "Pop out"
 msgstr ""
 
-#: qml/stopwatch/StopwatchPage.qml:240
-#, fuzzy, kde-format
-#| msgid "Timer"
-msgid "Lap Time"
-msgstr "Cronometru"
-
-#: qml/stopwatch/StopwatchPage.qml:247
-#, kde-format
-msgid "Total"
-msgstr ""
-
-#: qml/stopwatch/StopwatchPage.qml:277
+#: qml/stopwatch/StopwatchPage.qml:108 qml/stopwatch/StopwatchPage.qml:372
+#: qml/timer/TimerPage.qml:173
 #, fuzzy, kde-format
 #| msgid "Pause"
 msgctxt "@action:button"
 msgid "Pause"
 msgstr "Întrerupe"
 
-#: qml/stopwatch/StopwatchPage.qml:279
+#: qml/stopwatch/StopwatchPage.qml:110 qml/stopwatch/StopwatchPage.qml:374
 #, kde-format
 msgctxt "@action:button"
 msgid "Resume"
 msgstr ""
 
-#: qml/stopwatch/StopwatchPage.qml:281
+#: qml/stopwatch/StopwatchPage.qml:112 qml/stopwatch/StopwatchPage.qml:376
+#: qml/timer/TimerPage.qml:173
 #, fuzzy, kde-format
 #| msgid "Start"
 msgctxt "@action:button"
 msgid "Start"
 msgstr "Pornește"
 
-#: qml/stopwatch/StopwatchPage.qml:341
+#: qml/stopwatch/StopwatchPage.qml:122
+#, fuzzy, kde-format
+#| msgid "Lap"
+msgctxt "@action:button"
+msgid "Lap"
+msgstr "Tur"
+
+#: qml/stopwatch/StopwatchPage.qml:122 qml/timer/TimerPage.qml:179
+#, fuzzy, kde-format
+#| msgid "Reset"
+msgctxt "@action:button"
+msgid "Reset"
+msgstr "Reinițializează"
+
+#: qml/stopwatch/StopwatchPage.qml:237 qml/stopwatch/StopwatchPage.qml:272
+#: qml/timer/TimerPage.qml:51 qml/timer/TimerPage.qml:113
+#, kde-format
+msgid "Reset"
+msgstr "Reinițializează"
+
+#: qml/stopwatch/StopwatchPage.qml:239 qml/timer/TimerPage.qml:43
+#: qml/timer/TimerPage.qml:107
+#, kde-format
+msgid "Pause"
+msgstr "Întrerupe"
+
+#: qml/stopwatch/StopwatchPage.qml:241
+#, kde-format
+msgid "Resume"
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:243 qml/timer/TimerPage.qml:43
+#: qml/timer/TimerPage.qml:107
+#, kde-format
+msgid "Start"
+msgstr "Pornește"
+
+#: qml/stopwatch/StopwatchPage.qml:272 qml/stopwatch/StopwatchPage.qml:313
+#, kde-format
+msgid "Lap"
+msgstr "Tur"
+
+#: qml/stopwatch/StopwatchPage.qml:293
+#, kde-format
+msgid ""
+"Press Space to start or pause the stopwatch. Delete or Backspace resets it. "
+"Enter adds a lap."
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:321
+#, fuzzy, kde-format
+#| msgid "Timer"
+msgid "Lap Time"
+msgstr "Cronometru"
+
+#: qml/stopwatch/StopwatchPage.qml:328
+#, kde-format
+msgid "Total"
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:358
+#, kde-format
+msgid "Stopwatch is in Picture-in-Picture mode."
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:363 qml/timer/TimerPage.qml:212
+#, kde-format
+msgctxt "@action:button Restore (unminimize) from pip mode"
+msgid "Restore"
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:436
 #, kde-format
 msgid "#%1"
 msgstr ""
@@ -586,7 +639,7 @@ msgid "seconds"
 msgstr "secunde"
 
 #: qml/timer/TimerForm.qml:114 qml/timer/TimerListDelegate.qml:125
-#: qml/timer/TimerPage.qml:63 qml/timer/TimerPage.qml:111
+#: qml/timer/TimerPage.qml:66 qml/timer/TimerPage.qml:128
 #, fuzzy, kde-format
 #| msgid "Timer"
 msgid "Loop Timer"
@@ -726,22 +779,33 @@ msgstr "Nicio alarmă configurată"
 msgid "Add timer"
 msgstr "Adaugă un cronometru"
 
-#: qml/timer/TimerPage.qml:22
+#: qml/timer/TimerPage.qml:24
 #, kde-format
 msgid "New timer"
 msgstr "Cronometru nou"
 
-#: qml/timer/TimerPage.qml:54 qml/timer/TimerPage.qml:102
+#: qml/timer/TimerPage.qml:57 qml/timer/TimerPage.qml:119
 #, kde-format
 msgid "Delete"
 msgstr "Șterge"
 
-#: qml/timer/TimerPage.qml:132
+#: qml/timer/TimerPage.qml:167
+#, kde-format
+msgctxt "@action:button Add 1 minute to timer"
+msgid "+1:00"
+msgstr ""
+
+#: qml/timer/TimerPage.qml:197
 #, fuzzy, kde-format
 #| msgid "1 minute"
 msgctxt "@action:button Add 1 minute to timer"
 msgid "1 minute"
 msgstr "1 minut"
+
+#: qml/timer/TimerPage.qml:207
+#, kde-format
+msgid "This timer is in Picture-in-Picture mode."
+msgstr ""
 
 #: qml/timer/TimerRingingPopup.qml:25
 #, fuzzy, kde-format

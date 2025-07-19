@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-28 00:45+0000\n"
+"POT-Creation-Date: 2025-07-19 05:24+0000\n"
 "PO-Revision-Date: 2025-06-28 18:42+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -216,7 +216,7 @@ msgid "Edit"
 msgstr "Bewerken"
 
 #: qml/alarm/AlarmListPage.qml:44 qml/Main.qml:56
-#: qml/settings/SettingsPage.qml:28 qml/stopwatch/StopwatchPage.qml:55
+#: qml/settings/SettingsPage.qml:28 qml/stopwatch/StopwatchPage.qml:70
 #: qml/time/TimePage.qml:62 qml/timer/TimerListPage.qml:36
 #, kde-format
 msgid "Settings"
@@ -294,6 +294,20 @@ msgstr "Timers"
 #, kde-format
 msgid "Stopwatch"
 msgstr "Stopwatch"
+
+#: qml/components/PipHandler.qml:105
+#, kde-format
+msgctxt ""
+"@action:button Close pip and return to the page where the content was popped "
+"out from"
+msgid "Back to app"
+msgstr ""
+
+#: qml/components/PipHandler.qml:123
+#, kde-format
+msgctxt "@action:button"
+msgid "Close"
+msgstr ""
 
 #: qml/components/SoundPickerPage.qml:24
 #, kde-format
@@ -401,35 +415,81 @@ msgstr "Info over Clock"
 msgid "About KDE"
 msgstr "Info over KDE"
 
-#: qml/stopwatch/StopwatchPage.qml:156 qml/stopwatch/StopwatchPage.qml:191
-#: qml/timer/TimerPage.qml:48 qml/timer/TimerPage.qml:96
+#: qml/stopwatch/StopwatchPage.qml:55 qml/timer/TimerPage.qml:75
+#, kde-format
+msgctxt "@action"
+msgid "Restore"
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:55 qml/timer/TimerPage.qml:75
+#, kde-format
+msgctxt "@action"
+msgid "Pop out"
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:108 qml/stopwatch/StopwatchPage.qml:372
+#: qml/timer/TimerPage.qml:173
+#, kde-format
+msgctxt "@action:button"
+msgid "Pause"
+msgstr "Pauzeren"
+
+#: qml/stopwatch/StopwatchPage.qml:110 qml/stopwatch/StopwatchPage.qml:374
+#, kde-format
+msgctxt "@action:button"
+msgid "Resume"
+msgstr "Hervatten"
+
+#: qml/stopwatch/StopwatchPage.qml:112 qml/stopwatch/StopwatchPage.qml:376
+#: qml/timer/TimerPage.qml:173
+#, kde-format
+msgctxt "@action:button"
+msgid "Start"
+msgstr "Starten"
+
+#: qml/stopwatch/StopwatchPage.qml:122
+#, fuzzy, kde-format
+#| msgid "Lap"
+msgctxt "@action:button"
+msgid "Lap"
+msgstr "Ronde"
+
+#: qml/stopwatch/StopwatchPage.qml:122 qml/timer/TimerPage.qml:179
+#, fuzzy, kde-format
+#| msgid "Reset"
+msgctxt "@action:button"
+msgid "Reset"
+msgstr "Resetten"
+
+#: qml/stopwatch/StopwatchPage.qml:237 qml/stopwatch/StopwatchPage.qml:272
+#: qml/timer/TimerPage.qml:51 qml/timer/TimerPage.qml:113
 #, kde-format
 msgid "Reset"
 msgstr "Resetten"
 
-#: qml/stopwatch/StopwatchPage.qml:158 qml/timer/TimerPage.qml:40
-#: qml/timer/TimerPage.qml:90
+#: qml/stopwatch/StopwatchPage.qml:239 qml/timer/TimerPage.qml:43
+#: qml/timer/TimerPage.qml:107
 #, kde-format
 msgid "Pause"
 msgstr "Pauzeren"
 
-#: qml/stopwatch/StopwatchPage.qml:160
+#: qml/stopwatch/StopwatchPage.qml:241
 #, kde-format
 msgid "Resume"
 msgstr "Hervatten"
 
-#: qml/stopwatch/StopwatchPage.qml:162 qml/timer/TimerPage.qml:40
-#: qml/timer/TimerPage.qml:90
+#: qml/stopwatch/StopwatchPage.qml:243 qml/timer/TimerPage.qml:43
+#: qml/timer/TimerPage.qml:107
 #, kde-format
 msgid "Start"
 msgstr "Starten"
 
-#: qml/stopwatch/StopwatchPage.qml:191 qml/stopwatch/StopwatchPage.qml:232
+#: qml/stopwatch/StopwatchPage.qml:272 qml/stopwatch/StopwatchPage.qml:313
 #, kde-format
 msgid "Lap"
 msgstr "Ronde"
 
-#: qml/stopwatch/StopwatchPage.qml:212
+#: qml/stopwatch/StopwatchPage.qml:293
 #, kde-format
 msgid ""
 "Press Space to start or pause the stopwatch. Delete or Backspace resets it. "
@@ -438,35 +498,28 @@ msgstr ""
 "Druk op de Spatiebalk om de stopwatch te starten of te pauzeren. Drukken op "
 "Del of Backspace reset het. Toets Enter voegt een ronde toe."
 
-#: qml/stopwatch/StopwatchPage.qml:240
+#: qml/stopwatch/StopwatchPage.qml:321
 #, kde-format
 msgid "Lap Time"
 msgstr "Rondetijd"
 
-#: qml/stopwatch/StopwatchPage.qml:247
+#: qml/stopwatch/StopwatchPage.qml:328
 #, kde-format
 msgid "Total"
 msgstr "Totaal"
 
-#: qml/stopwatch/StopwatchPage.qml:277
+#: qml/stopwatch/StopwatchPage.qml:358
 #, kde-format
-msgctxt "@action:button"
-msgid "Pause"
-msgstr "Pauzeren"
+msgid "Stopwatch is in Picture-in-Picture mode."
+msgstr ""
 
-#: qml/stopwatch/StopwatchPage.qml:279
+#: qml/stopwatch/StopwatchPage.qml:363 qml/timer/TimerPage.qml:212
 #, kde-format
-msgctxt "@action:button"
-msgid "Resume"
-msgstr "Hervatten"
+msgctxt "@action:button Restore (unminimize) from pip mode"
+msgid "Restore"
+msgstr ""
 
-#: qml/stopwatch/StopwatchPage.qml:281
-#, kde-format
-msgctxt "@action:button"
-msgid "Start"
-msgstr "Starten"
-
-#: qml/stopwatch/StopwatchPage.qml:341
+#: qml/stopwatch/StopwatchPage.qml:436
 #, kde-format
 msgid "#%1"
 msgstr "#%1"
@@ -558,7 +611,7 @@ msgid "seconds"
 msgstr "seconden"
 
 #: qml/timer/TimerForm.qml:114 qml/timer/TimerListDelegate.qml:125
-#: qml/timer/TimerPage.qml:63 qml/timer/TimerPage.qml:111
+#: qml/timer/TimerPage.qml:66 qml/timer/TimerPage.qml:128
 #, kde-format
 msgid "Loop Timer"
 msgstr "Timer in lus"
@@ -687,21 +740,32 @@ msgstr "Geen timers geconfigureerd"
 msgid "Add timer"
 msgstr "Timer toevoegen"
 
-#: qml/timer/TimerPage.qml:22
+#: qml/timer/TimerPage.qml:24
 #, kde-format
 msgid "New timer"
 msgstr "Nieuwe timer"
 
-#: qml/timer/TimerPage.qml:54 qml/timer/TimerPage.qml:102
+#: qml/timer/TimerPage.qml:57 qml/timer/TimerPage.qml:119
 #, kde-format
 msgid "Delete"
 msgstr "Verwijderen"
 
-#: qml/timer/TimerPage.qml:132
+#: qml/timer/TimerPage.qml:167
+#, kde-format
+msgctxt "@action:button Add 1 minute to timer"
+msgid "+1:00"
+msgstr ""
+
+#: qml/timer/TimerPage.qml:197
 #, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "1 minute"
 msgstr "1 minuut"
+
+#: qml/timer/TimerPage.qml:207
+#, kde-format
+msgid "This timer is in Picture-in-Picture mode."
+msgstr ""
 
 #: qml/timer/TimerRingingPopup.qml:25
 #, kde-format
