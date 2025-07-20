@@ -444,15 +444,13 @@ msgid "Start"
 msgstr "开始"
 
 #: qml/stopwatch/StopwatchPage.qml:122
-#, fuzzy, kde-format
-#| msgid "Lap"
+#, kde-format
 msgctxt "@action:button"
 msgid "Lap"
 msgstr "圈"
 
 #: qml/stopwatch/StopwatchPage.qml:122 qml/timer/TimerPage.qml:179
-#, fuzzy, kde-format
-#| msgid "Reset"
+#, kde-format
 msgctxt "@action:button"
 msgid "Reset"
 msgstr "重置"
