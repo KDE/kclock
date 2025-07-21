@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-19 05:24+0000\n"
-"PO-Revision-Date: 2025-06-28 13:06+0300\n"
+"PO-Revision-Date: 2025-07-20 16:39+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -310,13 +310,13 @@ msgctxt ""
 "@action:button Close pip and return to the page where the content was popped "
 "out from"
 msgid "Back to app"
-msgstr ""
+msgstr "Повернутися до програми"
 
 #: qml/components/PipHandler.qml:123
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
-msgstr ""
+msgstr "Закрити"
 
 #: qml/components/SoundPickerPage.qml:24
 #, kde-format
@@ -430,13 +430,13 @@ msgstr "Про KDE"
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
-msgstr ""
+msgstr "Відновити"
 
 #: qml/stopwatch/StopwatchPage.qml:55 qml/timer/TimerPage.qml:75
 #, kde-format
 msgctxt "@action"
 msgid "Pop out"
-msgstr ""
+msgstr "Виокремити"
 
 #: qml/stopwatch/StopwatchPage.qml:108 qml/stopwatch/StopwatchPage.qml:372
 #: qml/timer/TimerPage.qml:173
@@ -459,15 +459,13 @@ msgid "Start"
 msgstr "Почати"
 
 #: qml/stopwatch/StopwatchPage.qml:122
-#, fuzzy, kde-format
-#| msgid "Lap"
+#, kde-format
 msgctxt "@action:button"
 msgid "Lap"
 msgstr "Оберт"
 
 #: qml/stopwatch/StopwatchPage.qml:122 qml/timer/TimerPage.qml:179
-#, fuzzy, kde-format
-#| msgid "Reset"
+#, kde-format
 msgctxt "@action:button"
 msgid "Reset"
 msgstr "Скинути"
@@ -522,13 +520,13 @@ msgstr "Загалом"
 #: qml/stopwatch/StopwatchPage.qml:358
 #, kde-format
 msgid "Stopwatch is in Picture-in-Picture mode."
-msgstr ""
+msgstr "Таймер працює у режимі зображення-у-зображенні."
 
 #: qml/stopwatch/StopwatchPage.qml:363 qml/timer/TimerPage.qml:212
 #, kde-format
 msgctxt "@action:button Restore (unminimize) from pip mode"
 msgid "Restore"
-msgstr ""
+msgstr "Відновити"
 
 #: qml/stopwatch/StopwatchPage.qml:436
 #, kde-format
@@ -765,7 +763,7 @@ msgstr "Вилучити"
 #, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "+1:00"
-msgstr ""
+msgstr "+1:00"
 
 #: qml/timer/TimerPage.qml:197
 #, kde-format
@@ -776,7 +774,7 @@ msgstr "1 хвилина"
 #: qml/timer/TimerPage.qml:207
 #, kde-format
 msgid "This timer is in Picture-in-Picture mode."
-msgstr ""
+msgstr "Цей таймер працює у режимі зображення-у-зображенні."
 
 #: qml/timer/TimerRingingPopup.qml:25
 #, kde-format

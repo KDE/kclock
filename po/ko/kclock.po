@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-19 05:24+0000\n"
-"PO-Revision-Date: 2025-06-10 23:53+0200\n"
+"PO-Revision-Date: 2025-07-21 00:58+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -298,13 +298,13 @@ msgctxt ""
 "@action:button Close pip and return to the page where the content was popped "
 "out from"
 msgid "Back to app"
-msgstr ""
+msgstr "앱으로 돌아가기"
 
 #: qml/components/PipHandler.qml:123
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
-msgstr ""
+msgstr "닫기"
 
 #: qml/components/SoundPickerPage.qml:24
 #, kde-format
@@ -416,13 +416,13 @@ msgstr "KDE 정보"
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
-msgstr ""
+msgstr "복원"
 
 #: qml/stopwatch/StopwatchPage.qml:55 qml/timer/TimerPage.qml:75
 #, kde-format
 msgctxt "@action"
 msgid "Pop out"
-msgstr ""
+msgstr "떼내기"
 
 #: qml/stopwatch/StopwatchPage.qml:108 qml/stopwatch/StopwatchPage.qml:372
 #: qml/timer/TimerPage.qml:173
@@ -445,15 +445,13 @@ msgid "Start"
 msgstr "시작"
 
 #: qml/stopwatch/StopwatchPage.qml:122
-#, fuzzy, kde-format
-#| msgid "Lap"
+#, kde-format
 msgctxt "@action:button"
 msgid "Lap"
 msgstr "랩"
 
 #: qml/stopwatch/StopwatchPage.qml:122 qml/timer/TimerPage.qml:179
-#, fuzzy, kde-format
-#| msgid "Reset"
+#, kde-format
 msgctxt "@action:button"
 msgid "Reset"
 msgstr "초기화"
@@ -508,13 +506,13 @@ msgstr "합계"
 #: qml/stopwatch/StopwatchPage.qml:358
 #, kde-format
 msgid "Stopwatch is in Picture-in-Picture mode."
-msgstr ""
+msgstr "초시계가 PIP 모드에 있습니다."
 
 #: qml/stopwatch/StopwatchPage.qml:363 qml/timer/TimerPage.qml:212
 #, kde-format
 msgctxt "@action:button Restore (unminimize) from pip mode"
 msgid "Restore"
-msgstr ""
+msgstr "복원"
 
 #: qml/stopwatch/StopwatchPage.qml:436
 #, kde-format
@@ -750,11 +748,10 @@ msgstr "삭제"
 #, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "+1:00"
-msgstr ""
+msgstr "+1:00"
 
 #: qml/timer/TimerPage.qml:197
-#, fuzzy, kde-format
-#| msgid "1 minute"
+#, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "1 minute"
 msgstr "1분"
@@ -762,7 +759,7 @@ msgstr "1분"
 #: qml/timer/TimerPage.qml:207
 #, kde-format
 msgid "This timer is in Picture-in-Picture mode."
-msgstr ""
+msgstr "이 타이머가 PIP 모드에 있습니다."
 
 #: qml/timer/TimerRingingPopup.qml:25
 #, kde-format
