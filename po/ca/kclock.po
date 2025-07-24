@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-19 05:24+0000\n"
-"PO-Revision-Date: 2025-07-19 18:46+0200\n"
+"PO-Revision-Date: 2025-07-23 22:46+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -849,7 +849,7 @@ msgstr[1] "%1 hores"
 #: utilmodel.cpp:98
 #, kde-format
 msgid "Alarm will ring in under a minute"
-msgstr "L'alarma sonarà en menys d'un minut"
+msgstr "L'alarma sonarà d'aquí a menys d'un minut"
 
 #: utilmodel.cpp:100
 #, kde-format

@@ -308,7 +308,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
-msgstr ""
+msgstr "Zavřít"
 
 #: qml/components/SoundPickerPage.qml:24
 #, kde-format
@@ -421,7 +421,7 @@ msgstr "O prostředí KDE"
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
-msgstr ""
+msgstr "Obnovit"
 
 #: qml/stopwatch/StopwatchPage.qml:55 qml/timer/TimerPage.qml:75
 #, kde-format
@@ -456,8 +456,7 @@ msgid "Lap"
 msgstr ""
 
 #: qml/stopwatch/StopwatchPage.qml:122 qml/timer/TimerPage.qml:179
-#, fuzzy, kde-format
-#| msgid "Reset"
+#, kde-format
 msgctxt "@action:button"
 msgid "Reset"
 msgstr "Obnovit"
