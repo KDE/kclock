@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-19 05:24+0000\n"
-"PO-Revision-Date: 2025-06-28 19:53+0200\n"
+"PO-Revision-Date: 2025-07-28 18:07+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 25.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -300,13 +300,13 @@ msgctxt ""
 "@action:button Close pip and return to the page where the content was popped "
 "out from"
 msgid "Back to app"
-msgstr ""
+msgstr "Tillbaka till programmet"
 
 #: qml/components/PipHandler.qml:123
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
-msgstr ""
+msgstr "Stäng"
 
 #: qml/components/SoundPickerPage.qml:24
 #, kde-format
@@ -418,13 +418,13 @@ msgstr "Om KDE"
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
-msgstr ""
+msgstr "Återställ"
 
 #: qml/stopwatch/StopwatchPage.qml:55 qml/timer/TimerPage.qml:75
 #, kde-format
 msgctxt "@action"
 msgid "Pop out"
-msgstr ""
+msgstr "Koppla loss"
 
 #: qml/stopwatch/StopwatchPage.qml:108 qml/stopwatch/StopwatchPage.qml:372
 #: qml/timer/TimerPage.qml:173
@@ -447,15 +447,13 @@ msgid "Start"
 msgstr "Starta"
 
 #: qml/stopwatch/StopwatchPage.qml:122
-#, fuzzy, kde-format
-#| msgid "Lap"
+#, kde-format
 msgctxt "@action:button"
 msgid "Lap"
 msgstr "Varv"
 
 #: qml/stopwatch/StopwatchPage.qml:122 qml/timer/TimerPage.qml:179
-#, fuzzy, kde-format
-#| msgid "Reset"
+#, kde-format
 msgctxt "@action:button"
 msgid "Reset"
 msgstr "Nollställ"
@@ -510,13 +508,13 @@ msgstr "Totalt"
 #: qml/stopwatch/StopwatchPage.qml:358
 #, kde-format
 msgid "Stopwatch is in Picture-in-Picture mode."
-msgstr ""
+msgstr "Tidtagaruret är i bild-i-bild läge."
 
 #: qml/stopwatch/StopwatchPage.qml:363 qml/timer/TimerPage.qml:212
 #, kde-format
 msgctxt "@action:button Restore (unminimize) from pip mode"
 msgid "Restore"
-msgstr ""
+msgstr "Återställ"
 
 #: qml/stopwatch/StopwatchPage.qml:436
 #, kde-format
@@ -752,7 +750,7 @@ msgstr "Ta bort"
 #, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "+1:00"
-msgstr ""
+msgstr "+1:00"
 
 #: qml/timer/TimerPage.qml:197
 #, kde-format
@@ -763,7 +761,7 @@ msgstr "1 minut"
 #: qml/timer/TimerPage.qml:207
 #, kde-format
 msgid "This timer is in Picture-in-Picture mode."
-msgstr ""
+msgstr "Tidtagning är i bild-i-bild läge."
 
 #: qml/timer/TimerRingingPopup.qml:25
 #, kde-format
