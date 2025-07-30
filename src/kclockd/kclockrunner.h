@@ -24,5 +24,11 @@ public:
     void Teardown();
     RemoteActions Actions() const;
     RemoteMatches Match(const QString &searchTerm);
+    void SetActivationToken(const QString &token);
     void Run(const QString &id, const QString &actionId);
+
+private:
+    void openKAlarmPage(const QString &page);
+
+    QString m_activationToken;
 };

@@ -37,18 +37,6 @@ static constexpr QLatin1String alarmPrefix()
     return "alarm_"_L1;
 }
 
-static void openKAlarmPage(const QString &page)
-{
-    // Bring KClock to the front, if running, basically what KDBusService would be doing.
-    QDBusMessage msg = QDBusMessage::createMethodCall(u"org.kde.kclock"_s, u"/org/kde/kclock"_s, u"org.kde.KDBusService"_s, u"CommandLine"_s);
-    msg.setArguments({
-        QStringList{u"kclock"_s, u"--page"_s, page},
-        QDir::currentPath(),
-        QVariantMap{}, // TODO Figure out XDG Activation for DBus runner.
-    });
-    QDBusConnection::sessionBus().call(msg, QDBus::NoBlock);
-}
-
 KClockRunner::KClockRunner(QObject *parent)
     : QObject(parent)
 {
@@ -62,6 +50,23 @@ KClockRunner::KClockRunner(QObject *parent)
 
 void KClockRunner::Teardown()
 {
+}
+
+void KClockRunner::openKAlarmPage(const QString &page)
+{
+    // Bring KClock to the front, if running, basically what KDBusService would be doing.
+    QVariantMap platform_data;
+    if (!m_activationToken.isEmpty()) {
+        platform_data.insert(QStringLiteral("activation-token"), m_activationToken);
+        m_activationToken.clear();
+    }
+    QDBusMessage msg = QDBusMessage::createMethodCall(u"org.kde.kclock"_s, u"/org/kde/kclock"_s, u"org.kde.KDBusService"_s, u"CommandLine"_s);
+    msg.setArguments({
+        QStringList{u"kclock"_s, u"--page"_s, page},
+        QDir::currentPath(),
+        platform_data,
+    });
+    QDBusConnection::sessionBus().call(msg, QDBus::NoBlock);
 }
 
 RemoteActions KClockRunner::Actions() const
@@ -179,6 +184,11 @@ RemoteMatches KClockRunner::Match(const QString &searchTerm)
     }
 
     return matches;
+}
+
+void KClockRunner::SetActivationToken(const QString &token)
+{
+    m_activationToken = token;
 }
 
 void KClockRunner::Run(const QString &id, const QString &actionId)
