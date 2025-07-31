@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclockd\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-25 00:46+0000\n"
+"POT-Creation-Date: 2025-07-31 00:45+0000\n"
 "PO-Revision-Date: 2022-09-21 19:05+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -53,94 +53,94 @@ msgctxt "@info"
 msgid "Alarm: <shortcut>%1 %2</shortcut>"
 msgstr "Budík: <shortcut>%1 %2</shortcut>"
 
-#: kclockrunner.cpp:69
+#: kclockrunner.cpp:74
 #, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "+1 Minute"
 msgstr ""
 
-#: kclockrunner.cpp:70
+#: kclockrunner.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset Timer"
 msgstr ""
 
-#: kclockrunner.cpp:77
+#: kclockrunner.cpp:82
 #, kde-format
 msgctxt "Note this is a KRunner keyword"
 msgid "timer"
 msgstr ""
 
-#: kclockrunner.cpp:94
+#: kclockrunner.cpp:99
 #, kde-format
 msgctxt "Timer running or paused (remaining time)"
 msgid "%1 (%2 Remaining)"
 msgstr ""
 
-#: kclockrunner.cpp:96
+#: kclockrunner.cpp:101
 #, kde-format
 msgctxt "Timer not running (timer length)"
 msgid "%1 (%2)"
 msgstr ""
 
-#: kclockrunner.cpp:107
+#: kclockrunner.cpp:112
 #, kde-format
 msgctxt "KRunner category"
 msgid "Timer"
 msgstr ""
 
-#: kclockrunner.cpp:111
+#: kclockrunner.cpp:116
 #, kde-format
 msgctxt "@action"
 msgid "Pause"
 msgstr ""
 
-#: kclockrunner.cpp:113
+#: kclockrunner.cpp:118
 #, kde-format
 msgctxt "@action"
 msgid "Resume"
 msgstr ""
 
-#: kclockrunner.cpp:115
+#: kclockrunner.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "Start Timer"
 msgstr ""
 
-#: kclockrunner.cpp:130
+#: kclockrunner.cpp:135
 #, fuzzy, kde-format
 #| msgid "Alarm"
 msgctxt "Note this is a KRunner keyword"
 msgid "alarm"
 msgstr "Poplach"
 
-#: kclockrunner.cpp:152
+#: kclockrunner.cpp:157
 #, kde-format
 msgctxt "Alarm name (time)"
 msgid "%1 (%2)"
 msgstr ""
 
-#: kclockrunner.cpp:162
+#: kclockrunner.cpp:167
 #, fuzzy, kde-format
 #| msgid "Alarm"
 msgctxt "KRunner category"
 msgid "Alarm"
 msgstr "Poplach"
 
-#: kclockrunner.cpp:166
+#: kclockrunner.cpp:171
 #, fuzzy, kde-format
 #| msgid "Dismiss"
 msgctxt "@action Dismiss Alarm"
 msgid "Dismiss"
 msgstr "Zamietnuť"
 
-#: kclockrunner.cpp:169
+#: kclockrunner.cpp:174
 #, kde-format
 msgctxt "Disable timer (rings in time)"
 msgid "Disable (Rings in %1)"
 msgstr ""
 
-#: kclockrunner.cpp:171
+#: kclockrunner.cpp:176
 #, kde-format
 msgctxt "@action Enable Alarm"
 msgid "Enable"
