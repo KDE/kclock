@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-28 00:45+0000\n"
-"PO-Revision-Date: 2025-05-27 11:33+0200\n"
+"PO-Revision-Date: 2025-07-30 18:24+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -703,8 +703,7 @@ msgid "Delete"
 msgstr "Dele"
 
 #: qml/timer/TimerPage.qml:132
-#, fuzzy, kde-format
-#| msgid "1 minute"
+#, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "1 minute"
 msgstr "1 minuta"
