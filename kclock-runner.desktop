@@ -67,7 +67,6 @@ X-KDE-PluginInfo-License=GPL
 X-KDE-PluginInfo-EnabledByDefault=true
 X-Plasma-API=DBus
 X-Plasma-DBusRunner-Service=org.kde.kclockd
-X-Plasma-Runner-Min-Letter-Count=3
 X-Plasma-Request-Actions-Once=true
 X-Plasma-Runner-Syntaxes=:q:,timer,alarm
 X-Plasma-Runner-Syntax-Descriptions=Finds timers whose name match :q:,Lists all timers and allows to start/stop them.,Lists all alarms and allows to enable/disable them.
