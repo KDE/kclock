@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-28 00:45+0000\n"
-"PO-Revision-Date: 2025-06-28 17:02+0400\n"
+"PO-Revision-Date: 2025-08-04 18:35+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -169,7 +169,7 @@ msgstr "صوت الرنين:"
 #: qml/alarm/AlarmForm.qml:206
 #, kde-format
 msgid "Default Sound"
-msgstr "الصوت الافتراضي"
+msgstr "الصوت المبدئي"
 
 #: qml/alarm/AlarmFormPage.qml:25 qml/alarm/AlarmRingingPopup.qml:43
 #, kde-format
@@ -353,7 +353,7 @@ msgstr "تنسيق الوقت"
 #: qml/settings/SettingsPage.qml:43
 #, kde-format
 msgid "Use System Default"
-msgstr "استخدام افتراضيات النظام"
+msgstr "استخدام مبدئيات النظام"
 
 #: qml/settings/SettingsPage.qml:44
 #, kde-format
@@ -368,7 +368,7 @@ msgstr "وقت 24 ساعة"
 #: qml/settings/SettingsPage.qml:59
 #, kde-format
 msgid "Notifications for running timers"
-msgstr "إخطارات للمؤقتات التي تعمل"
+msgstr "إشعارات للمؤقتات التي تعمل"
 
 #: qml/settings/SettingsPage.qml:61
 #, kde-format
@@ -389,7 +389,7 @@ msgstr "البتة"
 #: qml/settings/SettingsPage.qml:70
 #, kde-format
 msgid "Lets you pause and resume timers from the notification area."
-msgstr "يتيح لك إيقاف المؤقتات مؤقتًا واستئنافها من منطقة الإخطارات."
+msgstr "يتيح لك إيقاف المؤقتات مؤقتًا واستئنافها من منطقة الإشعارات."
 
 #: qml/settings/SettingsPage.qml:91
 #, kde-format
