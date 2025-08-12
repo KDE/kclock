@@ -14,7 +14,7 @@ XdgWmBase::XdgWmBase()
 {
     initialize();
     if (!isActive()) {
-        qFatal("The xdg-shell protocol is unsupported by the compositor");
+        qInfo("The xdg-shell protocol is unsupported by the compositor");
     }
 }
 
