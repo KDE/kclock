@@ -42,8 +42,11 @@ PipWindow::PipWindow()
     , d(new PipWindowPrivate(this))
 {
     setFlags(Qt::FramelessWindowHint);
-    setFlags(Qt::WindowStaysOnTopHint); // for X11
-    PipShellIntegration::instance().assignPipRole(this); // for Wayland
+    if (qApp->nativeInterface<QNativeInterface::QWaylandApplication>()) {
+        PipShellIntegration::instance().assignPipRole(this); // for Wayland
+    } else {
+        setFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint); // for X11
+    }
     setColor(Qt::transparent);
 
     // need to set windowContentMargins in sync with our shadow
@@ -56,8 +59,11 @@ PipWindow::~PipWindow()
 
 bool PipWindow::isSupported() const
 {
-    // FIXME always supported on !wayland
-    return PipShellIntegration::instance().xxPipShellAvailable();
+    if (qGuiApp->nativeInterface<QNativeInterface::QWaylandApplication>()) {
+        return PipShellIntegration::instance().xxPipShellAvailable();
+    } else {
+        return true;
+    }
 }
 
 // most of this (except move) is taken from libplasma's WindowResizeHandler
