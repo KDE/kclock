@@ -57,6 +57,7 @@ Item {
             isStart: true
             isEnd: false
             enabled: spinBox.value < spinBox.to
+            activeFocusOnTab: false
         }
 
         Rectangle {
@@ -138,6 +139,7 @@ Item {
                         applyTextBinding();
                     }
 
+                    activeFocusOnTab: true
                     onActiveFocusChanged: {
                         if (activeFocus) {
                             selectAll();
@@ -157,6 +159,7 @@ Item {
             isStart: false
             isEnd: true
             enabled: spinBox.value > spinBox.from
+            activeFocusOnTab: false
         }
     }
 }
