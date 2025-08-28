@@ -402,10 +402,9 @@ msgid "Select Timer Sound"
 msgstr ""
 
 #: qml/settings/SettingsPage.qml:93
-#, fuzzy, kde-format
-#| msgid "Default Sound"
+#, kde-format
 msgid "Default timer ring sound"
-msgstr "Výchozí zvuk"
+msgstr ""
 
 #: qml/settings/SettingsPage.qml:102
 #, kde-format
@@ -753,11 +752,10 @@ msgid "+1:00"
 msgstr ""
 
 #: qml/timer/TimerPage.qml:197
-#, fuzzy, kde-format
-#| msgid "1 minute"
+#, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "1 minute"
-msgstr "1 minuta"
+msgstr ""
 
 #: qml/timer/TimerPage.qml:207
 #, kde-format
