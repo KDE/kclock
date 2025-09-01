@@ -66,7 +66,7 @@ msgstr "Integració d'escriptori"
 #: main.cpp:62
 #, kde-format
 msgid "Select opened page"
-msgstr "Selecciona la pàgina oberta"
+msgstr "Tria la pàgina oberta"
 
 #: main.cpp:64
 #, kde-format
@@ -81,7 +81,7 @@ msgstr "Dies a repetir:"
 #: qml/alarm/AlarmForm.qml:86
 #, kde-format
 msgid "Select Days to Repeat"
-msgstr "Seleccioneu els dies que s'han de repetir"
+msgstr "Trieu els dies que s'han de repetir"
 
 #: qml/alarm/AlarmForm.qml:113
 #, kde-format
@@ -113,7 +113,7 @@ msgstr[1] "%1 minuts"
 #: qml/alarm/AlarmForm.qml:126
 #, kde-format
 msgid "Select Ring Duration"
-msgstr "Seleccioneu la duració de l'alarma"
+msgstr "Trieu la duració de l'alarma"
 
 #: qml/alarm/AlarmForm.qml:129 qml/alarm/AlarmForm.qml:166
 #, kde-format
@@ -303,7 +303,7 @@ msgstr "Cronòmetre"
 #: qml/components/SoundPickerPage.qml:24
 #, kde-format
 msgid "Select Alarm Sound"
-msgstr "Seleccioneu el so d'alarma"
+msgstr "Trieu el so d'alarma"
 
 #: qml/components/SoundPickerPage.qml:65
 #, kde-format
@@ -318,7 +318,7 @@ msgstr "Predeterminat"
 #: qml/components/SoundPickerPage.qml:156
 #, kde-format
 msgid "Choose an audio"
-msgstr "Seleccioneu un àudio"
+msgstr "Trieu un àudio"
 
 #: qml/components/SoundPickerPage.qml:164
 #, kde-format
@@ -391,7 +391,7 @@ msgstr ""
 #: qml/settings/SettingsPage.qml:91
 #, kde-format
 msgid "Select Timer Sound"
-msgstr "Seleccioneu el so de temporitzador"
+msgstr "Trieu el so de temporitzador"
 
 #: qml/settings/SettingsPage.qml:93
 #, kde-format
