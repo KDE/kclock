@@ -1,22 +1,23 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the kclock package.
-#
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 # Grzegorz Koryga <rehork@tutamail.com>, 2022.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-19 05:24+0000\n"
-"PO-Revision-Date: 2024-07-14 13:37+0200\n"
+"PO-Revision-Date: 2025-09-06 05:48+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
-"Language-Team: Polish <kde-i18n-doc@kde.org>\n"
+"Language-Team: pl\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -53,13 +54,13 @@ msgstr "Han Young"
 #: main.cpp:56
 #, kde-format
 msgid "Kai Uwe Broulik"
-msgstr ""
+msgstr "Kai Uwe Broulik"
 
 #: main.cpp:56
 #, kde-format
 msgctxt "Author"
 msgid "Desktop Integration"
-msgstr ""
+msgstr "Integracja z pulpitem"
 
 #: main.cpp:62
 #, kde-format
@@ -69,7 +70,7 @@ msgstr "Wybierz otwartą stronę"
 #: main.cpp:64
 #, kde-format
 msgid "Explicitly open a new Clock window"
-msgstr ""
+msgstr "Jednoznacznie otwórz nowe okno zegara"
 
 #: qml/alarm/AlarmForm.qml:84
 #, kde-format
@@ -249,11 +250,10 @@ msgstr "Dodaj alarm"
 #: qml/alarm/AlarmListPage.qml:93
 #, kde-format
 msgid "Loading…"
-msgstr ""
+msgstr "Wczytywanie…"
 
 #: qml/alarm/AlarmListPage.qml:108
-#, fuzzy, kde-format
-#| msgid "New Alarm"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Alarm"
 msgstr "Nowy alarm"
@@ -307,13 +307,13 @@ msgctxt ""
 "@action:button Close pip and return to the page where the content was popped "
 "out from"
 msgid "Back to app"
-msgstr ""
+msgstr "Z powrotem do aplikacji"
 
 #: qml/components/PipHandler.qml:123
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
-msgstr ""
+msgstr "Zamknij"
 
 #: qml/components/SoundPickerPage.qml:24
 #, kde-format
@@ -323,7 +323,7 @@ msgstr "Wybierz dźwięk dla alarmu"
 #: qml/components/SoundPickerPage.qml:65
 #, kde-format
 msgid "Select from files…"
-msgstr "Wybierz z pliku..."
+msgstr "Wybierz z pliku…"
 
 #: qml/components/SoundPickerPage.qml:76 qml/settings/SettingsPage.qml:86
 #, kde-format
@@ -378,40 +378,39 @@ msgstr "24-godzinny format"
 #: qml/settings/SettingsPage.qml:59
 #, kde-format
 msgid "Notifications for running timers"
-msgstr ""
+msgstr "Powiadomienia dla odliczających czasomierzy"
 
 #: qml/settings/SettingsPage.qml:61
 #, kde-format
 msgid "Always"
-msgstr ""
+msgstr "Zawsze"
 
 #: qml/settings/SettingsPage.qml:64
 #, kde-format
 msgctxt "When the app is not running"
 msgid "When %1 is not running"
-msgstr ""
+msgstr "Gdy %1 nie odlicza"
 
 #: qml/settings/SettingsPage.qml:67
 #, kde-format
 msgid "Never"
-msgstr ""
+msgstr "Nigdy"
 
 #: qml/settings/SettingsPage.qml:70
 #, kde-format
 msgid "Lets you pause and resume timers from the notification area."
 msgstr ""
+"Umożliwia wstrzymywanie i wznawianie czasomierzy z obszaru powiadamiania."
 
 #: qml/settings/SettingsPage.qml:91
-#, fuzzy, kde-format
-#| msgid "Select Alarm Sound"
+#, kde-format
 msgid "Select Timer Sound"
-msgstr "Wybierz dźwięk dla alarmu"
+msgstr "Wybierz dźwięk czasomierza"
 
 #: qml/settings/SettingsPage.qml:93
-#, fuzzy, kde-format
-#| msgid "Default Sound"
+#, kde-format
 msgid "Default timer ring sound"
-msgstr "Domyślny dźwięk"
+msgstr "Domyślny dźwięk dzwonka czasomierza"
 
 #: qml/settings/SettingsPage.qml:102
 #, kde-format
@@ -427,47 +426,42 @@ msgstr "O KDE"
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
-msgstr ""
+msgstr "Przywróć"
 
 #: qml/stopwatch/StopwatchPage.qml:55 qml/timer/TimerPage.qml:75
 #, kde-format
 msgctxt "@action"
 msgid "Pop out"
-msgstr ""
+msgstr "Odczep"
 
 #: qml/stopwatch/StopwatchPage.qml:108 qml/stopwatch/StopwatchPage.qml:372
 #: qml/timer/TimerPage.qml:173
-#, fuzzy, kde-format
-#| msgid "Pause"
+#, kde-format
 msgctxt "@action:button"
 msgid "Pause"
 msgstr "Wstrzymaj"
 
 #: qml/stopwatch/StopwatchPage.qml:110 qml/stopwatch/StopwatchPage.qml:374
-#, fuzzy, kde-format
-#| msgid "Resume"
+#, kde-format
 msgctxt "@action:button"
 msgid "Resume"
 msgstr "Wznów"
 
 #: qml/stopwatch/StopwatchPage.qml:112 qml/stopwatch/StopwatchPage.qml:376
 #: qml/timer/TimerPage.qml:173
-#, fuzzy, kde-format
-#| msgid "Start"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start"
-msgstr "Rozpocznij"
+msgstr "Uruchom"
 
 #: qml/stopwatch/StopwatchPage.qml:122
-#, fuzzy, kde-format
-#| msgid "Lap"
+#, kde-format
 msgctxt "@action:button"
 msgid "Lap"
 msgstr "Międzyczas"
 
 #: qml/stopwatch/StopwatchPage.qml:122 qml/timer/TimerPage.qml:179
-#, fuzzy, kde-format
-#| msgid "Reset"
+#, kde-format
 msgctxt "@action:button"
 msgid "Reset"
 msgstr "Wyzeruj"
@@ -506,6 +500,8 @@ msgid ""
 "Press Space to start or pause the stopwatch. Delete or Backspace resets it. "
 "Enter adds a lap."
 msgstr ""
+"Naciśnij Spację, aby uruchomić lub wstrzymać stoper. Klawisz delete lub "
+"backspace zeruje go. Klawisz enter dodaje okrążenie."
 
 #: qml/stopwatch/StopwatchPage.qml:321
 #, kde-format
@@ -520,13 +516,13 @@ msgstr "Łącznie"
 #: qml/stopwatch/StopwatchPage.qml:358
 #, kde-format
 msgid "Stopwatch is in Picture-in-Picture mode."
-msgstr ""
+msgstr "Stoper jest w trybie obrazu-w-obrazie."
 
 #: qml/stopwatch/StopwatchPage.qml:363 qml/timer/TimerPage.qml:212
 #, kde-format
 msgctxt "@action:button Restore (unminimize) from pip mode"
 msgid "Restore"
-msgstr ""
+msgstr "Przywróć"
 
 #: qml/stopwatch/StopwatchPage.qml:436
 #, kde-format
@@ -536,12 +532,12 @@ msgstr "#%1"
 #: qml/time/AddLocationListView.qml:51
 #, kde-format
 msgid "No locations found"
-msgstr "Nie odnaleziono żadnych lokalizacji"
+msgstr "Nie odnaleziono żadnego położenia"
 
 #: qml/time/AddLocationPage.qml:13 qml/time/AddLocationWrapper.qml:34
 #, kde-format
 msgid "Add Location"
-msgstr "Dodaj lokalizacje"
+msgstr "Dodaj położenie"
 
 #: qml/time/TimePage.qml:52
 #, kde-format
@@ -549,21 +545,20 @@ msgid "Add"
 msgstr "Dodaj"
 
 #: qml/time/TimePage.qml:168
-#, fuzzy, kde-format
-#| msgid "Add Location"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Location"
-msgstr "Dodaj lokalizacje"
+msgstr "Dodaj położenie"
 
 #: qml/time/TimePageDelegate.qml:47
 #, kde-format
 msgid "Yesterday"
-msgstr ""
+msgstr "Wczoraj"
 
 #: qml/time/TimePageDelegate.qml:49
 #, kde-format
 msgid "Tomorrow"
-msgstr ""
+msgstr "Jutro"
 
 #: qml/timer/PresetDurationButton.qml:22
 #, kde-format
@@ -571,34 +566,29 @@ msgid "1 m"
 msgstr "1 m"
 
 #: qml/timer/TimerForm.qml:40
-#, fuzzy, kde-format
-#| msgid "1 minute"
+#, kde-format
 msgid "1 min"
-msgstr "1 minuta"
+msgstr "1 min"
 
 #: qml/timer/TimerForm.qml:41
-#, fuzzy, kde-format
-#| msgid "5 minutes"
+#, kde-format
 msgid "5 min"
-msgstr "5 minut"
+msgstr "5 min"
 
 #: qml/timer/TimerForm.qml:42
-#, fuzzy, kde-format
-#| msgid "10 m"
+#, kde-format
 msgid "10 min"
-msgstr "10 m"
+msgstr "10 min"
 
 #: qml/timer/TimerForm.qml:43
-#, fuzzy, kde-format
-#| msgid "15 m"
+#, kde-format
 msgid "15 min"
-msgstr "15 m"
+msgstr "15 min"
 
 #: qml/timer/TimerForm.qml:44
-#, fuzzy, kde-format
-#| msgid "30 m"
+#, kde-format
 msgid "30 min"
-msgstr "30 m"
+msgstr "30 min"
 
 #: qml/timer/TimerForm.qml:45
 #, kde-format
@@ -647,16 +637,13 @@ msgid "optional"
 msgstr "opcjonalnie"
 
 #: qml/timer/TimerFormDialog.qml:36
-#, fuzzy, kde-format
-#| msgctxt "Edit alarm page title"
-#| msgid "Editing %1"
+#, kde-format
 msgctxt "@title:window Edit timer"
 msgid "Edit %1"
-msgstr "Edycja %1"
+msgstr "Zmień %1"
 
 #: qml/timer/TimerFormDialog.qml:36
-#, fuzzy, kde-format
-#| msgid "Create timer"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Timer"
 msgstr "Utwórz czasomierz"
@@ -690,11 +677,10 @@ msgstr "Zapisz jako nastawę"
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr ""
+msgstr "Zapisz"
 
 #: qml/timer/TimerFormDialog.qml:116
-#, fuzzy, kde-format
-#| msgid "Done"
+#, kde-format
 msgctxt "@action:button"
 msgid "Done"
 msgstr "Gotowe"
@@ -718,8 +704,7 @@ msgid "Reset"
 msgstr "Wyzeruj"
 
 #: qml/timer/TimerListDelegate.qml:184
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit"
 msgstr "Edytuj"
@@ -745,8 +730,7 @@ msgstr ""
 "funkcjonalność zegara."
 
 #: qml/timer/TimerListPage.qml:94
-#, fuzzy, kde-format
-#| msgid "New Timer"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Timer"
 msgstr "Nowy czasomierz"
@@ -775,11 +759,10 @@ msgstr "Usuń"
 #, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "+1:00"
-msgstr ""
+msgstr "+1:00"
 
 #: qml/timer/TimerPage.qml:197
-#, fuzzy, kde-format
-#| msgid "1 minute"
+#, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "1 minute"
 msgstr "1 minuta"
@@ -787,7 +770,7 @@ msgstr "1 minuta"
 #: qml/timer/TimerPage.qml:207
 #, kde-format
 msgid "This timer is in Picture-in-Picture mode."
-msgstr ""
+msgstr "Ten czasomierz jest w trybie obrazu-w-obrazie."
 
 #: qml/timer/TimerRingingPopup.qml:25
 #, kde-format
@@ -876,22 +859,19 @@ msgid "Alarm will ring in %1"
 msgstr "Alarm zadzwoni za %1"
 
 #: utilmodel.cpp:152
-#, fuzzy, kde-format
-#| msgid "Only once"
+#, kde-format
 msgctxt "Repeat"
 msgid "Only once"
 msgstr "Tylko raz"
 
 #: utilmodel.cpp:155
-#, fuzzy, kde-format
-#| msgid "Everyday"
+#, kde-format
 msgctxt "Repeat"
 msgid "Everyday"
 msgstr "Każdy dzień"
 
 #: utilmodel.cpp:158
-#, fuzzy, kde-format
-#| msgid "Weekdays"
+#, kde-format
 msgctxt "Repeat"
 msgid "Weekdays"
 msgstr "Dni powszednie"
