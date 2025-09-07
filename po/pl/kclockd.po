@@ -1,21 +1,23 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the kclock package.
-#
 # Grzegorz Koryga <rehork@tutamail.com>, 2022.
+# SPDX-FileCopyrightText: 2025 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-25 00:46+0000\n"
-"PO-Revision-Date: 2022-10-18 17:19+0200\n"
-"Last-Translator: Grzegorz Koryga <rehork@tutamail.com>\n"
-"Language-Team: Polish <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2025-09-06 05:49+0200\n"
+"Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
+"Language-Team: pl\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -33,8 +35,7 @@ msgid "Alarm"
 msgstr "Alarm"
 
 #: alarm.cpp:76 timer.cpp:69
-#, fuzzy, kde-format
-#| msgid "Dismiss"
+#, kde-format
 msgctxt "@action:button"
 msgid "Dismiss"
 msgstr "Odrzuć"
@@ -59,79 +60,76 @@ msgstr "Alarm: <shortcut>%1 %2</shortcut>"
 #, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "+1 Minute"
-msgstr ""
+msgstr "+1 minuta"
 
 #: kclockrunner.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset Timer"
-msgstr ""
+msgstr "Wyzeruj czasomierz"
 
 #: kclockrunner.cpp:77
 #, kde-format
 msgctxt "Note this is a KRunner keyword"
 msgid "timer"
-msgstr ""
+msgstr "czasomierz"
 
 #: kclockrunner.cpp:94
 #, kde-format
 msgctxt "Timer running or paused (remaining time)"
 msgid "%1 (%2 Remaining)"
-msgstr ""
+msgstr "%1 (Pozostało %2)"
 
 #: kclockrunner.cpp:96
 #, kde-format
 msgctxt "Timer not running (timer length)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: kclockrunner.cpp:107
 #, kde-format
 msgctxt "KRunner category"
 msgid "Timer"
-msgstr ""
+msgstr "Czasomierz"
 
 #: kclockrunner.cpp:111
 #, kde-format
 msgctxt "@action"
 msgid "Pause"
-msgstr ""
+msgstr "Wstrzymaj"
 
 #: kclockrunner.cpp:113
 #, kde-format
 msgctxt "@action"
 msgid "Resume"
-msgstr ""
+msgstr "Wznów"
 
 #: kclockrunner.cpp:115
 #, kde-format
 msgctxt "@action"
 msgid "Start Timer"
-msgstr ""
+msgstr "Uruchom czasomierz"
 
 #: kclockrunner.cpp:130
-#, fuzzy, kde-format
-#| msgid "Alarm"
+#, kde-format
 msgctxt "Note this is a KRunner keyword"
 msgid "alarm"
-msgstr "Alarm"
+msgstr "alarm"
 
 #: kclockrunner.cpp:152
 #, kde-format
 msgctxt "Alarm name (time)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: kclockrunner.cpp:162
-#, fuzzy, kde-format
-#| msgid "Alarm"
+#, kde-format
 msgctxt "KRunner category"
 msgid "Alarm"
 msgstr "Alarm"
 
 #: kclockrunner.cpp:166
-#, fuzzy, kde-format
-#| msgid "Dismiss"
+#, kde-format
 msgctxt "@action Dismiss Alarm"
 msgid "Dismiss"
 msgstr "Odrzuć"
@@ -140,13 +138,13 @@ msgstr "Odrzuć"
 #, kde-format
 msgctxt "Disable timer (rings in time)"
 msgid "Disable (Rings in %1)"
-msgstr ""
+msgstr "Wyłącz (Zadzwoni za %1)"
 
 #: kclockrunner.cpp:171
 #, kde-format
 msgctxt "@action Enable Alarm"
 msgid "Enable"
-msgstr ""
+msgstr "Włącz"
 
 #: main.cpp:32
 #, kde-format
@@ -171,13 +169,13 @@ msgstr "Han Young"
 #: main.cpp:51
 #, kde-format
 msgid "Kai Uwe Broulik"
-msgstr ""
+msgstr "Kai Uwe Broulik"
 
 #: main.cpp:51
 #, kde-format
 msgctxt "Author"
 msgid "Desktop Integration"
-msgstr ""
+msgstr "Integracja z pulpitem"
 
 #: timer.cpp:64
 #, kde-format
@@ -193,37 +191,37 @@ msgstr "Twój czasomierz %1 zakończył pracę!"
 #, kde-format
 msgctxt "@action:button Open kclock app"
 msgid "Open Clock"
-msgstr ""
+msgstr "Otwórz zegar"
 
 #: timermodel.cpp:274
 #, kde-format
 msgctxt "@action:button Add minute to timer"
 msgid "+1 Minute"
-msgstr ""
+msgstr "+1 minuta"
 
 #: timermodel.cpp:277
 #, kde-format
 msgctxt "@action:button Reset timer"
 msgid "Reset"
-msgstr ""
+msgstr "Wyzeruj"
 
 #: timermodel.cpp:280 timermodel.cpp:305
 #, kde-format
 msgctxt "@action:button Pause timer"
 msgid "Pause"
-msgstr ""
+msgstr "Wstrzymaj"
 
 #: timermodel.cpp:298
 #, kde-format
 msgctxt "@title:notification Timer name (paused)"
 msgid "%1 (Paused)"
-msgstr ""
+msgstr "%1 (wstrzymany)"
 
 #: timermodel.cpp:307
 #, kde-format
 msgctxt "@action:button Resume timer"
 msgid "Resume"
-msgstr ""
+msgstr "Wznów"
 
 #: xdgportal.cpp:34
 #, kde-format
