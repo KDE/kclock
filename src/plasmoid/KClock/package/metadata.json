@@ -39,7 +39,6 @@
                 "Name[sv]": "HanY",
                 "Name[tr]": "HanY",
                 "Name[uk]": "HanY",
-                "Name[x-test]": "xxHanYxx",
                 "Name[zh_CN]": "HanY",
                 "Name[zh_TW]": "HanY"
             }
@@ -67,7 +66,6 @@
         "Description[sv]": "Klockkomponent",
         "Description[tr]": "K Saat araç takımı",
         "Description[uk]": "Віджет KClock",
-        "Description[x-test]": "xxKClock widgetxx",
         "Description[zh_CN]": "KClock 时钟挂件",
         "Description[zh_TW]": "KClock 元件",
         "EnabledByDefault": true,
@@ -101,7 +99,6 @@
         "Name[sv]": "Klocka",
         "Name[tr]": "K Saat",
         "Name[uk]": "KClock",
-        "Name[x-test]": "xxKClockxx",
         "Name[zh_CN]": "KClock 时钟",
         "Name[zh_TW]": "KClock",
         "Version": "1.0",
