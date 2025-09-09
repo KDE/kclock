@@ -50,7 +50,6 @@
   <name xml:lang="sv">Klocka</name>
   <name xml:lang="tr">Saat</name>
   <name xml:lang="uk">Годинник</name>
-  <name xml:lang="x-test">xxClockxx</name>
   <name xml:lang="zh-CN">时钟</name>
   <name xml:lang="zh-TW">時鐘</name>
   <summary>Keep time and set alarms</summary>
@@ -86,7 +85,6 @@
   <summary xml:lang="sv">Håll tiden och ställ in alarm</summary>
   <summary xml:lang="tr">Zaman Tutucusu ve Alarm Kurucusu</summary>
   <summary xml:lang="uk">Розклад та встановлення нагадувань</summary>
-  <summary xml:lang="x-test">xxKeep time and set alarmsxx</summary>
   <summary xml:lang="zh-CN">显示时间和设置闹钟</summary>
   <summary xml:lang="zh-TW">看時間並設定鬧鐘</summary>
   <developer id="kde.org">
@@ -125,7 +123,6 @@
     <p xml:lang="sv">Ett universellt klockprogram för stationära datorer och mobiler. Klockan innehåller ett stoppur och en världsklocka och låter dig ställa in flera alarm och tidtagare.</p>
     <p xml:lang="tr">Masaüstü ve taşınabilir aygıtlar için evrensel bir saat uygulaması. Saat, bir kronometre ve dünya saati içerir ve birden çok alarm ve sayaç kurmanıza olanak tanır.</p>
     <p xml:lang="uk">Універсальна програма-будильник для робочих станцій та мобільних пристроїв. Реалізовано таймер та загальносвітовий годинник, можна встановлювати декілька нагадувань та таймерів.</p>
-    <p xml:lang="x-test">xxA universal clock application for desktop and mobile. Clock includes a stopwatch and a world clock, and allows you to set multiple alarms and timers.xx</p>
     <p xml:lang="zh-CN">一款同时支持桌面和手机环境的时钟应用。带有秒表和世界时钟，还可以设置多个闹钟和计时器。</p>
     <p xml:lang="zh-TW">桌面與手機通用的時鐘應用程式。《時鐘》包含碼錶與世界時鐘功能，也讓您設定多個鬧鐘和計時器。</p>
     <p>It contains alarm, timer, stopwatch and timezone functionalities. Alarms and timers are able to wake the device from suspend on Plasma.</p>
@@ -164,7 +161,6 @@
     <p xml:lang="sv">Det innehåller alarm, tidtagning, stoppur och tidszonsfunktioner. Alarm och tidtagare kan också väcka enheten från viloläge när Plasma används.</p>
     <p xml:lang="tr">Alarm, sayaç, kronometre ve zaman dilimi işlevlerini içerir. Alarmlar ve sayaçlar, aygıtı Plasma’da iken uykudan uyandırabilir.</p>
     <p xml:lang="uk">Передбачено будильник, таймер та секундомір, а також функціональні можливості з роботи у різних часових поясах. Будильники і таймери здатні пробуджувати пристрій зі стану сну, якщо на ньому використовується Плазма.</p>
-    <p xml:lang="x-test">xxIt contains alarm, timer, stopwatch and timezone functionalities. Alarms and timers are able to wake the device from suspend on Plasma.xx</p>
     <p xml:lang="zh-CN">它包含闹钟、计时器、秒表和时区功能。闹钟和计时器能够在 Plasma 上唤醒设备。</p>
     <p xml:lang="zh-TW">它包含鬧鐘、計時器、碼錶與時區的功能。鬧鐘和計時器在使用 Plasma 時可以將裝置從睡眠中喚醒。</p>
   </description>
@@ -218,7 +214,6 @@
       <caption xml:lang="sv">Mobil vy</caption>
       <caption xml:lang="tr">Taşınabilir görünümü</caption>
       <caption xml:lang="uk">Вигляд на мобільному пристрої</caption>
-      <caption xml:lang="x-test">xxMobile viewxx</caption>
       <caption xml:lang="zh-CN">移动设备视图</caption>
       <caption xml:lang="zh-TW">行動版檢視</caption>
       <image>https://cdn.kde.org/screenshots/kclock/kclock-mobile-timezones.png</image>
@@ -262,7 +257,6 @@
       <caption xml:lang="sv">Skrivbordsvy</caption>
       <caption xml:lang="tr">Masaüstü görünümü</caption>
       <caption xml:lang="uk">Вигляд на комп'ютері</caption>
-      <caption xml:lang="x-test">xxDesktop viewxx</caption>
       <caption xml:lang="zh-CN">桌面视图</caption>
       <caption xml:lang="zh-TW">桌面版檢視</caption>
       <image>https://cdn.kde.org/screenshots/kclock/kclock-desktop-timezones.png</image>
@@ -306,7 +300,6 @@
       <caption xml:lang="sv">Sida med tidtagningar</caption>
       <caption xml:lang="tr">Sayaçlar sayfası</caption>
       <caption xml:lang="uk">Сторінка таймерів</caption>
-      <caption xml:lang="x-test">xxTimers pagexx</caption>
       <caption xml:lang="zh-CN">计时器页面</caption>
       <caption xml:lang="zh-TW">計時器列表頁面</caption>
       <image>https://cdn.kde.org/screenshots/kclock/kclock-mobile-timers.png</image>
@@ -350,7 +343,6 @@
       <caption xml:lang="sv">Sida med tidtagning</caption>
       <caption xml:lang="tr">Sayaç sayfası</caption>
       <caption xml:lang="uk">Сторінка таймера</caption>
-      <caption xml:lang="x-test">xxTimer pagexx</caption>
       <caption xml:lang="zh-CN">计时器页面</caption>
       <caption xml:lang="zh-TW">計時器頁面</caption>
       <image>https://cdn.kde.org/screenshots/kclock/kclock-desktop-timer.png</image>
@@ -394,7 +386,6 @@
       <caption xml:lang="sv">Sida med stoppur</caption>
       <caption xml:lang="tr">Kronometre sayfası</caption>
       <caption xml:lang="uk">Сторінка секундоміра</caption>
-      <caption xml:lang="x-test">xxStopwatch pagexx</caption>
       <caption xml:lang="zh-CN">秒表页面</caption>
       <caption xml:lang="zh-TW">碼錶頁面</caption>
       <image>https://cdn.kde.org/screenshots/kclock/kclock-mobile-stopwatch.png</image>
@@ -438,7 +429,6 @@
       <caption xml:lang="sv">Sida med alarm</caption>
       <caption xml:lang="tr">Alarmlar sayfası</caption>
       <caption xml:lang="uk">Сторінка будильників</caption>
-      <caption xml:lang="x-test">xxAlarms pagexx</caption>
       <caption xml:lang="zh-CN">闹钟页面</caption>
       <caption xml:lang="zh-TW">鬧鐘頁面</caption>
       <image>https://cdn.kde.org/screenshots/kclock/kclock-mobile-alarms.png</image>
