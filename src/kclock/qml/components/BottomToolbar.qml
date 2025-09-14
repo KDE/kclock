@@ -14,6 +14,13 @@ Kirigami.NavigationTabBar {
     id: root
     position: ToolBar.Footer
 
+    onImplicitHeightChanged: {
+        // If implicit height changes, make sure we animate to it
+        if (shouldShow) {
+            showAnim.restart();
+        }
+    }
+
     // set binding only after component has loaded, so we don't have an animation for the navigation bar coming in
     Component.onCompleted: shouldShow = Qt.binding(() => pageStack.layers.depth <= 1 && pageStack.depth <= 1);
 
