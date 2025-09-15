@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-19 05:24+0000\n"
+"POT-Creation-Date: 2025-09-15 00:45+0000\n"
 "PO-Revision-Date: 2025-07-19 22:17+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -205,7 +205,7 @@ msgctxt "@action:button"
 msgid "Delete"
 msgstr "Sil"
 
-#: qml/alarm/AlarmListPage.qml:22 qml/components/BottomToolbar.qml:111
+#: qml/alarm/AlarmListPage.qml:22 qml/components/BottomToolbar.qml:118
 #: qml/components/Sidebar.qml:101
 #, kde-format
 msgid "Alarms"
@@ -278,19 +278,19 @@ msgstr "Ertele"
 msgid "Dismiss"
 msgstr "Kapat"
 
-#: qml/components/BottomToolbar.qml:75 qml/components/Sidebar.qml:55
+#: qml/components/BottomToolbar.qml:82 qml/components/Sidebar.qml:55
 #: qml/time/TimePage.qml:25
 #, kde-format
 msgid "Time"
 msgstr "Zaman"
 
-#: qml/components/BottomToolbar.qml:86 qml/components/Sidebar.qml:68
+#: qml/components/BottomToolbar.qml:93 qml/components/Sidebar.qml:68
 #: qml/timer/TimerListPage.qml:19
 #, kde-format
 msgid "Timers"
 msgstr "Sayaçlar"
 
-#: qml/components/BottomToolbar.qml:99 qml/components/BottomToolbar.qml:100
+#: qml/components/BottomToolbar.qml:106 qml/components/BottomToolbar.qml:107
 #: qml/components/Sidebar.qml:84 qml/stopwatch/StopwatchPage.qml:23
 #, kde-format
 msgid "Stopwatch"
