@@ -16,7 +16,7 @@
   <name xml:lang="ca">Rellotge</name>
   <name xml:lang="ca-valencia">Rellotge</name>
   <name xml:lang="cs">Hodiny</name>
-  <name xml:lang="de">Clock</name>
+  <name xml:lang="de">Uhr</name>
   <name xml:lang="el">Ρολόι</name>
   <name xml:lang="en-GB">Clock</name>
   <name xml:lang="eo">Horloĝo</name>
@@ -130,7 +130,7 @@
     <p xml:lang="bg">Той съдържа функции за аларма, таймер, хронометър и часова зона. Алармите и таймерите могат да събудят устройството на Plasma от състояние на приспиване.</p>
     <p xml:lang="ca">Conté funcions d'alarma, temporitzador, cronòmetre i zona horària. Les alarmes i els temporitzadors també poden fer que el dispositiu deixi d'estar suspès en el Plasma.</p>
     <p xml:lang="ca-valencia">Conté funcions d'alarma, temporitzador, cronòmetre i zona horària. Les alarmes i els temporitzadors també poden fer que el dispositiu deixe d'estar suspés en Plasma.</p>
-    <p xml:lang="de">Sie beinhaltet einen Erinnerungsalarm, eine Eieruhr, eine Stoppuhr und Zeitzonenfunktionen. Erinnerungen und die Eieruhr können Ihr Gerät aus dem Standby-Modus aufzuwecken, sofern Sie Plasma verwenden.</p>
+    <p xml:lang="de">Sie beinhaltet einen Wecker, einen Timer, eine Stoppuhr und Zeitzonenfunktionen. Der Wecker und der Timer können Ihr Gerät aus dem Standby-Modus aufzuwecken, sofern Sie Plasma verwenden.</p>
     <p xml:lang="en-GB">It contains alarm, timer, stopwatch and timezone functionalities. Alarms and timers are able to wake the device from suspend on Plasma.</p>
     <p xml:lang="eo">Ĝi enhavas alarmon, tempigilon, kronometron kaj horzonajn funkciojn. Alarmoj kaj tempigiloj kapablas veki la aparaton de suspendo sur Plasma.</p>
     <p xml:lang="es">Contiene las funciones de alarma, temporizador, cronómetro y zona horaria. Las alarmas y los temporizadores pueden despertar el dispositivo del estado de suspensión en Plasma.</p>
@@ -268,7 +268,7 @@
       <caption xml:lang="ca">Pàgina dels temporitzadors</caption>
       <caption xml:lang="ca-valencia">Pàgina dels temporitzadors</caption>
       <caption xml:lang="cs">Stránka s časovači</caption>
-      <caption xml:lang="de">Eieruhrseite</caption>
+      <caption xml:lang="de">Timer-Seite</caption>
       <caption xml:lang="el">Σελίδα χρονοδιακοπτών</caption>
       <caption xml:lang="en-GB">Timers page</caption>
       <caption xml:lang="eo">Temporiziloj paĝo</caption>
@@ -311,7 +311,7 @@
       <caption xml:lang="ca">Pàgina del temporitzador</caption>
       <caption xml:lang="ca-valencia">Pàgina del temporitzador</caption>
       <caption xml:lang="cs">Stránka s časovačem</caption>
-      <caption xml:lang="de">Eieruhrseite</caption>
+      <caption xml:lang="de">Timer-Seite</caption>
       <caption xml:lang="el">Σελίδα χρονοδιακόπτη</caption>
       <caption xml:lang="en-GB">Timer page</caption>
       <caption xml:lang="eo">Timer-paĝo</caption>
@@ -397,7 +397,7 @@
       <caption xml:lang="ca">Pàgina de les alarmes</caption>
       <caption xml:lang="ca-valencia">Pàgina de les alarmes</caption>
       <caption xml:lang="cs">Stránka s upomínkami</caption>
-      <caption xml:lang="de">Erinnerungsseite</caption>
+      <caption xml:lang="de">Weckerseite</caption>
       <caption xml:lang="el">Σελίδα συναγερμών</caption>
       <caption xml:lang="en-GB">Alarms page</caption>
       <caption xml:lang="eo">Paĝo de alarmoj</caption>
