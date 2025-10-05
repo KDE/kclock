@@ -39,33 +39,28 @@ AlarmModel::AlarmModel(QObject *parent)
     : QAbstractListModel{parent}
     , m_interface{new org::kde::kclock::AlarmModel(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Alarms"), QDBusConnection::sessionBus(), this)}
 {
-    if (m_interface->isValid()) {
-        connect(m_interface, SIGNAL(alarmAdded(QString)), this, SLOT(addAlarmInternal(QString)));
-        connect(m_interface, SIGNAL(alarmRemoved(QString)), this, SLOT(removeAlarm(QString)));
-    }
-    setConnectedToDaemon(m_interface->isValid());
-    load();
+    connect(m_interface, &OrgKdeKclockAlarmModelInterface::alarmAdded, this, &AlarmModel::addAlarmInternal);
+    connect(m_interface, &OrgKdeKclockAlarmModelInterface::alarmRemoved, this, &AlarmModel::removeAlarm);
 
     // watch for kclockd
     m_watcher = new QDBusServiceWatcher(QStringLiteral("org.kde.kclockd"), QDBusConnection::sessionBus(), QDBusServiceWatcher::WatchForOwnerChange, this);
     connect(m_watcher, &QDBusServiceWatcher::serviceRegistered, this, [this]() -> void {
-        setConnectedToDaemon(true);
-        if (m_interface->isValid()) {
-            connect(m_interface, SIGNAL(alarmAdded(QString)), this, SLOT(addAlarmInternal(QString)));
-            connect(m_interface, SIGNAL(alarmRemoved(QString)), this, SLOT(removeAlarm(QString)));
-        }
+        load();
     });
     connect(m_watcher, &QDBusServiceWatcher::serviceUnregistered, this, [this]() -> void {
-        setConnectedToDaemon(false);
+        clear();
+        setStatus(Status::NotConnected);
+        setErrorString({});
     });
+
+    load();
 }
 
 void AlarmModel::load()
 {
     // load from dbus
-
-    m_busy = true;
-    Q_EMIT busyChanged(m_busy);
+    setStatus(Status::Loading);
+    setErrorString({});
 
     // Unfortunately, Qt DBus doesn't support DBus ObjectManager.
     QDBusMessage message = QDBusMessage::createMethodCall(QStringLiteral("org.kde.kclockd"),
@@ -78,10 +73,19 @@ void AlarmModel::load()
         QDBusPendingReply<QString> reply = *watcher;
 
         if (reply.isError()) {
-            // TODO show error in UI.
             qWarning() << "Failed to fetch alarms" << reply.error().name() << reply.error().message();
+            clear();
+            if (reply.error().type() == QDBusError::ServiceUnknown) {
+                setStatus(Status::NotConnected);
+            } else {
+                setErrorString(reply.error().message());
+                setStatus(Status::Error);
+            }
         } else {
             beginResetModel();
+            qDeleteAll(alarmsList);
+            alarmsList.clear();
+
             QXmlStreamReader xml(reply.value());
             while (!xml.atEnd()) {
                 xml.readNext();
@@ -93,17 +97,37 @@ void AlarmModel::load()
                 }
             }
             endResetModel();
+            setStatus(Status::Ready);
         }
 
-        m_busy = false;
-        Q_EMIT busyChanged(m_busy);
         watcher->deleteLater();
     });
 }
 
-bool AlarmModel::busy() const
+AlarmModel::Status AlarmModel::status() const
 {
-    return m_busy;
+    return m_status;
+}
+
+void AlarmModel::setStatus(AlarmModel::Status status)
+{
+    if (m_status != status) {
+        m_status = status;
+        Q_EMIT statusChanged(status);
+    }
+}
+
+QString AlarmModel::errorString() const
+{
+    return m_errorString;
+}
+
+void AlarmModel::setErrorString(const QString &errorString)
+{
+    if (m_errorString != errorString) {
+        m_errorString = errorString;
+        Q_EMIT errorStringChanged(errorString);
+    }
 }
 
 QHash<int, QByteArray> AlarmModel::roleNames() const
@@ -202,17 +226,12 @@ void AlarmModel::removeAlarm(const QString &uuid)
     ptr->deleteLater();
 }
 
-bool AlarmModel::connectedToDaemon()
+void AlarmModel::clear()
 {
-    return m_connectedToDaemon;
-}
-
-void AlarmModel::setConnectedToDaemon(bool connectedToDaemon)
-{
-    if (m_connectedToDaemon != connectedToDaemon) {
-        m_connectedToDaemon = connectedToDaemon;
-        Q_EMIT connectedToDaemonChanged();
-    }
+    beginResetModel();
+    qDeleteAll(alarmsList);
+    alarmsList.clear();
+    endResetModel();
 }
 
 #include "moc_alarmmodel.cpp"

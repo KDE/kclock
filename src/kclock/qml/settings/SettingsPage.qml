@@ -91,6 +91,7 @@ FormCard.FormCardPage {
             onClicked: applicationWindow().pageStack.push(Qt.resolvedUrl("../components/SoundPickerPage.qml"), { alarmForm: root, titleText: i18n("Select Timer Sound") });
 
             text: i18n("Default timer ring sound")
+            enabled: TimerModel.status === TimerModel.Status.Ready
         }
     }
 

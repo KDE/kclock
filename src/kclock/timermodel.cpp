@@ -36,29 +36,103 @@ TimerModel::TimerModel(QObject *parent)
     : QAbstractListModel{parent}
     , m_interface(new OrgKdeKclockTimerModelInterface(QStringLiteral("org.kde.kclockd"), QStringLiteral("/Timers"), QDBusConnection::sessionBus(), this))
 {
-    if (m_interface->isValid()) {
-        // connect timer signals
-        connect(m_interface, SIGNAL(timerAdded(QString)), this, SLOT(addTimer(QString)));
-        connect(m_interface, SIGNAL(timerRemoved(QString)), this, SLOT(removeTimer(QString)));
-        connect(m_interface, SIGNAL(defaultAudioLocationChanged()), this, SLOT(updateDefaultAudioLocation()));
-        updateDefaultAudioLocation();
-    }
+    // connect timer signals
+    connect(m_interface, &OrgKdeKclockTimerModelInterface::timerAdded, this, &TimerModel::addTimer);
+    connect(m_interface, &OrgKdeKclockTimerModelInterface::timerRemoved, this, &TimerModel::removeTimer);
+    connect(m_interface, &OrgKdeKclockTimerModelInterface::defaultAudioLocationChanged, this, [this](const QString &location) {
+        m_defaultAudioLocation = location;
+        Q_EMIT defaultAudioLocationChanged();
+    });
 
-    // load timers
-    const QStringList timers = m_interface->timers();
-    for (const QString &timerId : timers) {
-        addTimer(timerId);
-    }
-
-    // watch for kclockd's status
-    setConnectedToDaemon(m_interface->isValid());
+    // watch for kclockd
     m_watcher = new QDBusServiceWatcher(QStringLiteral("org.kde.kclockd"), QDBusConnection::sessionBus(), QDBusServiceWatcher::WatchForOwnerChange, this);
     connect(m_watcher, &QDBusServiceWatcher::serviceRegistered, this, [this]() -> void {
-        setConnectedToDaemon(true);
+        load();
     });
     connect(m_watcher, &QDBusServiceWatcher::serviceUnregistered, this, [this]() -> void {
-        setConnectedToDaemon(false);
+        clear();
+        setStatus(Status::NotConnected);
+        setErrorString({});
     });
+
+    load();
+}
+
+void TimerModel::load()
+{
+    // load from dbus
+    setStatus(Status::Loading);
+    setErrorString({});
+
+    auto timersCall = m_interface->timers();
+    auto *watcher = new QDBusPendingCallWatcher(timersCall, this);
+    connect(watcher, &QDBusPendingCallWatcher::finished, this, [this, watcher] {
+        QDBusPendingReply<QStringList> reply = *watcher;
+
+        if (reply.isError()) {
+            qWarning() << "Failed to fetch timers" << reply.error().name() << reply.error().message();
+            clear();
+            if (reply.error().type() == QDBusError::ServiceUnknown) {
+                setStatus(Status::NotConnected);
+            } else {
+                setErrorString(reply.error().message());
+                setStatus(Status::Error);
+            }
+        } else {
+            beginResetModel();
+            qDeleteAll(m_timersList);
+            m_timersList.clear();
+
+            Timer *oldRunningTimer = runningTimer();
+            const QStringList timerIds = reply.value();
+            for (QString timerId : timerIds) {
+                auto *timer = new Timer(timerId.remove(QRegularExpression(QStringLiteral("[{}-]"))));
+                connect(timer, &Timer::runningChanged, this, &TimerModel::runningTimerChanged);
+                m_timersList.append(timer);
+            }
+
+            endResetModel();
+            if (oldRunningTimer != runningTimer()) {
+                Q_EMIT runningTimerChanged();
+            }
+            setStatus(Status::Ready);
+
+            // TODO async.
+            const QString defaultAudioLocation = m_interface->defaultAudioLocation();
+            if (m_defaultAudioLocation != defaultAudioLocation) {
+                m_defaultAudioLocation = defaultAudioLocation;
+                Q_EMIT defaultAudioLocationChanged();
+            }
+        }
+
+        watcher->deleteLater();
+    });
+}
+
+TimerModel::Status TimerModel::status() const
+{
+    return m_status;
+}
+
+void TimerModel::setStatus(TimerModel::Status status)
+{
+    if (m_status != status) {
+        m_status = status;
+        Q_EMIT statusChanged(status);
+    }
+}
+
+QString TimerModel::errorString() const
+{
+    return m_errorString;
+}
+
+void TimerModel::setErrorString(const QString &errorString)
+{
+    if (m_errorString != errorString) {
+        m_errorString = errorString;
+        Q_EMIT errorStringChanged(errorString);
+    }
 }
 
 int TimerModel::rowCount(const QModelIndex &parent) const
@@ -103,9 +177,9 @@ void TimerModel::addTimer(QString uuid)
     connect(timer, &Timer::runningChanged, this, &TimerModel::runningTimerChanged);
 
     Timer *oldRunningTimer = runningTimer();
-    Q_EMIT beginInsertRows(QModelIndex(), 0, 0);
+    beginInsertRows(QModelIndex(), 0, 0);
     m_timersList.insert(0, timer);
-    Q_EMIT endInsertRows();
+    endInsertRows();
     if (oldRunningTimer != runningTimer()) {
         Q_EMIT runningTimerChanged();
     }
@@ -129,17 +203,12 @@ void TimerModel::removeTimer(const QString &uuid)
     }
 }
 
-bool TimerModel::connectedToDaemon()
+void TimerModel::clear()
 {
-    return m_connectedToDaemon;
-}
-
-void TimerModel::setConnectedToDaemon(bool connectedToDaemon)
-{
-    if (m_connectedToDaemon != connectedToDaemon) {
-        m_connectedToDaemon = connectedToDaemon;
-        Q_EMIT connectedToDaemonChanged();
-    }
+    beginResetModel();
+    qDeleteAll(m_timersList);
+    m_timersList.clear();
+    endResetModel();
 }
 
 QString TimerModel::defaultAudioLocation() const
@@ -149,13 +218,7 @@ QString TimerModel::defaultAudioLocation() const
 
 void TimerModel::setDefaultAudioLocation(const QString &location)
 {
-    m_interface->setProperty("defaultAudioLocation", location);
-}
-
-void TimerModel::updateDefaultAudioLocation()
-{
-    m_defaultAudioLocation = m_interface->defaultAudioLocation();
-    Q_EMIT defaultAudioLocationChanged();
+    m_interface->setDefaultAudioLocation(location);
 }
 
 Timer *TimerModel::runningTimer() const

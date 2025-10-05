@@ -26,7 +26,10 @@ class TimerModel : public QAbstractListModel
     Q_OBJECT
     QML_ELEMENT
     QML_SINGLETON
-    Q_PROPERTY(bool connectedToDaemon READ connectedToDaemon NOTIFY connectedToDaemonChanged)
+
+    Q_PROPERTY(Status status READ status NOTIFY statusChanged)
+    Q_PROPERTY(QString errorString READ errorString NOTIFY errorStringChanged)
+
     Q_PROPERTY(QString defaultAudioLocation READ defaultAudioLocation WRITE setDefaultAudioLocation NOTIFY defaultAudioLocationChanged)
     /**
      * If there is a single running timer in the model, this property will return it.
@@ -37,9 +40,26 @@ public:
     static TimerModel *instance();
     static TimerModel *create(QQmlEngine *qmlengine, QJSEngine *jsEngine);
 
-    enum {
-        TimerRole,
+    enum class Status {
+        None,
+        Ready,
+        Loading,
+        NotConnected,
+        Error,
     };
+    Q_ENUM(Status)
+
+    enum Roles {
+        TimerRole = Qt::UserRole,
+    };
+
+    void load();
+
+    Status status() const;
+    Q_SIGNAL void statusChanged(Status status);
+
+    QString errorString() const;
+    Q_SIGNAL void errorStringChanged(const QString &errorString);
 
     int rowCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role) const override;
@@ -48,30 +68,32 @@ public:
     Q_INVOKABLE void addNew(int length, const QString &label, bool looping, const QString &commandTimeout);
     Q_INVOKABLE void remove(Timer *timer);
 
-    bool connectedToDaemon();
-    void setConnectedToDaemon(bool connectedToDaemon);
-
     QString defaultAudioLocation() const;
     void setDefaultAudioLocation(const QString &location);
 
     Timer *runningTimer() const;
 
 Q_SIGNALS:
-    void connectedToDaemonChanged();
     void runningTimerChanged();
     void defaultAudioLocationChanged();
 
 private Q_SLOTS:
     void addTimer(QString uuid);
     void removeTimer(const QString &uuid);
-    void updateDefaultAudioLocation();
 
 private:
     explicit TimerModel(QObject *parent = nullptr);
+
+    void clear();
+
+    void setStatus(Status status);
+    void setErrorString(const QString &errorString);
 
     QList<Timer *> m_timersList;
     OrgKdeKclockTimerModelInterface *const m_interface;
     QDBusServiceWatcher *m_watcher;
     QString m_defaultAudioLocation;
-    bool m_connectedToDaemon = false;
+
+    Status m_status = Status::None;
+    QString m_errorString;
 };

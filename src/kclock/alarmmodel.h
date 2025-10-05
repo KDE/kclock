@@ -24,21 +24,33 @@ class AlarmModel : public QAbstractListModel
     QML_ELEMENT
     QML_SINGLETON
 
-    Q_PROPERTY(bool connectedToDaemon READ connectedToDaemon NOTIFY connectedToDaemonChanged)
-    Q_PROPERTY(bool busy READ busy NOTIFY busyChanged)
+    Q_PROPERTY(Status status READ status NOTIFY statusChanged)
+    Q_PROPERTY(QString errorString READ errorString NOTIFY errorStringChanged)
 
 public:
     static AlarmModel *instance();
     static AlarmModel *create(QQmlEngine *qmlEngine, QJSEngine *jsEngine);
 
-    enum {
-        AlarmRole,
+    enum class Status {
+        None,
+        Ready,
+        Loading,
+        NotConnected,
+        Error,
+    };
+    Q_ENUM(Status)
+
+    enum Roles {
+        AlarmRole = Qt::UserRole,
     };
 
     void load();
 
-    bool busy() const;
-    Q_SIGNAL void busyChanged(bool busy);
+    Status status() const;
+    Q_SIGNAL void statusChanged(Status status);
+
+    QString errorString() const;
+    Q_SIGNAL void errorStringChanged(const QString &errorString);
 
     int rowCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role) const override;
@@ -57,21 +69,21 @@ public:
 
     Q_INVOKABLE QString timeToRingFormatted(int hours, int minutes, int daysOfWeek); // for new alarm use
 
-    bool connectedToDaemon();
-    void setConnectedToDaemon(bool connectedToDaemon);
-
-Q_SIGNALS:
-    void connectedToDaemonChanged();
-
 private Q_SLOTS:
     void addAlarmInternal(QString uuid);
     void removeAlarm(const QString &uuid);
 
 private:
+    void clear();
+
+    void setStatus(Status status);
+    void setErrorString(const QString &errorString);
+
     org::kde::kclock::AlarmModel *m_interface;
     QDBusServiceWatcher *m_watcher;
-    bool m_connectedToDaemon = false;
-    bool m_busy = false;
+
+    Status m_status = Status::None;
+    QString m_errorString;
 
     explicit AlarmModel(QObject *parent = nullptr);
     QList<Alarm *> alarmsList;

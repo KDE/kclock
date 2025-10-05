@@ -28,6 +28,7 @@ Kirigami.ScrollablePage {
             icon.name: "list-add"
             text: i18n("New Alarm")
             onTriggered: root.addAlarm()
+            enabled: AlarmModel.status === AlarmModel.Status.Ready
             visible: !Kirigami.Settings.isMobile
         },
         Kirigami.Action {
@@ -52,8 +53,16 @@ Kirigami.ScrollablePage {
 
     header: Kirigami.InlineMessage {
         type: Kirigami.MessageType.Error
-        text: i18n("The clock daemon was not found. Please start kclockd in order to have alarm functionality.")
-        visible: !AlarmModel.connectedToDaemon // by default, it's false so we need this
+        text: {
+            if (AlarmModel.status === AlarmModel.Status.NotConnected) {
+                return i18n("The clock daemon was not found. Please start kclockd in order to have alarm functionality.");
+            } else if (AlarmModel.status === AlarmModel.Status.Error) {
+                return i18n("Failed to load the list of alarms: %1", AlarmModel.errorString);
+            } else {
+                return "";
+            }
+        }
+        visible: text !== ""
         position: Kirigami.InlineMessage.Position.Header
     }
 
@@ -73,9 +82,10 @@ Kirigami.ScrollablePage {
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.margins: Kirigami.Units.largeSpacing
-            visible: alarmsList.count === 0 && !AlarmModel.busy
+            visible: alarmsList.count === 0 && AlarmModel.status !== AlarmModel.Status.Loading
             text: i18n("No alarms configured")
             icon.name: "notifications"
+            enabled: AlarmModel.status === AlarmModel.Status.Ready
 
             helpfulAction: Kirigami.Action {
                 icon.name: "list-add"
@@ -89,7 +99,7 @@ Kirigami.ScrollablePage {
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.margins: Kirigami.Units.largeSpacing
-            visible: alarmsList.count === 0 && AlarmModel.busy
+            visible: alarmsList.count === 0 && AlarmModel.status === AlarmModel.Status.Loading
             text: i18n("Loading…")
         }
 
@@ -108,6 +118,7 @@ Kirigami.ScrollablePage {
             text: i18nc("@action:button", "New Alarm")
             icon.name: "list-add"
             onClicked: root.addAlarm()
+            enabled: AlarmModel.status === AlarmModel.Status.Ready
             visible: Kirigami.Settings.isMobile
         }
 

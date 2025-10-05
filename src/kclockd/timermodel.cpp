@@ -181,7 +181,7 @@ void TimerModel::setDefaultAudioLocation(QString location)
     if (m_defaultAudioLocation.path() != location) {
         location = location.replace(QStringLiteral("file://"), QString());
         m_defaultAudioLocation = QUrl::fromLocalFile(location);
-        Q_EMIT defaultAudioLocationChanged();
+        Q_EMIT defaultAudioLocationChanged(defaultAudioLocation());
         save();
     }
 }

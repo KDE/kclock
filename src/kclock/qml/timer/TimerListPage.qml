@@ -27,6 +27,7 @@ Kirigami.ScrollablePage {
             icon.name: "list-add"
             text: i18n("New Timer")
             onTriggered: root.addTimer()
+            enabled: TimerModel.status === TimerModel.Status.Ready
             visible: !Kirigami.Settings.isMobile
         },
         Kirigami.Action {
@@ -56,8 +57,16 @@ Kirigami.ScrollablePage {
 
     header: Kirigami.InlineMessage {
         type: Kirigami.MessageType.Error
-        text: i18n("The clock daemon was not found. Please start kclockd in order to have timer functionality.")
-        visible: !TimerModel.connectedToDaemon // by default, it's false so we need this
+        text: {
+            if (TimerModel.status === TimerModel.Status.NotConnected) {
+                return i18n("The clock daemon was not found. Please start kclockd in order to have timer functionality.");
+            } else if (TimerModel.status === TimerModel.Status.Error) {
+                return i18n("Failed to load the list of timers: %1", TimerModel.errorString);
+            } else {
+                return "";
+            }
+        }
+        visible: text !== ""
         position: Kirigami.InlineMessage.Position.Header
     }
 
@@ -93,6 +102,7 @@ Kirigami.ScrollablePage {
         FloatingActionButton {
             text: i18nc("@action:button", "New Timer")
             icon.name: "list-add"
+            enabled: TimerModel.status === TimerModel.Status.Ready
             onClicked: root.addTimer()
             visible: Kirigami.Settings.isMobile
         }
@@ -100,15 +110,25 @@ Kirigami.ScrollablePage {
         // no timer placeholder
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
-            visible: timersList.count === 0
+            visible: timersList.count === 0 && TimerModel.status !== TimerModel.Status.Loading
             text: i18n("No timers configured")
             icon.name: "player-time"
+            enabled: TimerModel.status === TimerModel.Status.Ready
 
             helpfulAction: Kirigami.Action {
                 icon.name: "list-add"
                 text: i18n("Add timer")
                 onTriggered: root.addTimer()
             }
+        }
+
+        Kirigami.PlaceholderMessage {
+            anchors.centerIn: parent
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.margins: Kirigami.Units.largeSpacing
+            visible: timersList.count === 0 && TimerModel.status === TimerModel.Status.Loading
+            text: i18n("Loading…")
         }
 
         // create timer form

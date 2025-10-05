@@ -41,7 +41,7 @@ public:
 Q_SIGNALS:
     Q_SCRIPTABLE void timerAdded(const QString &);
     Q_SCRIPTABLE void timerRemoved(const QString &);
-    Q_SCRIPTABLE void defaultAudioLocationChanged();
+    Q_SCRIPTABLE void defaultAudioLocationChanged(const QString &);
 
 private:
     void connectTimer(Timer *timer);
