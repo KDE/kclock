@@ -57,7 +57,6 @@ Kirigami.ApplicationWindow {
         icon.name: "settings-configure"
         checked: root.pageStack.currentItem?.objectName === "Settings"
         shortcut: StandardKey.Preferences
-        enabled: !Kirigami.Settings.isMobile
         onTriggered: {
             if (root.pageStack.currentItem?.objectName !== "Settings") {
                 root.switchToPage(root.getPage("Settings"), 0);
