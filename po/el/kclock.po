@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-15 00:45+0000\n"
+"POT-Creation-Date: 2025-10-12 00:45+0000\n"
 "PO-Revision-Date: 2021-06-12 21:25+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -218,54 +218,59 @@ msgstr "Διαγραφή"
 msgid "Alarms"
 msgstr "Συναγερμοί"
 
-#: qml/alarm/AlarmListPage.qml:35 qml/time/TimePage.qml:39
+#: qml/alarm/AlarmListPage.qml:36 qml/time/TimePage.qml:39
 #, kde-format
 msgid "Edit"
 msgstr "Επεξεργασία"
 
-#: qml/alarm/AlarmListPage.qml:44 qml/Main.qml:56
+#: qml/alarm/AlarmListPage.qml:45 qml/Main.qml:56
 #: qml/settings/SettingsPage.qml:28 qml/stopwatch/StopwatchPage.qml:70
-#: qml/time/TimePage.qml:62 qml/timer/TimerListPage.qml:36
+#: qml/time/TimePage.qml:62 qml/timer/TimerListPage.qml:37
 #, kde-format
 msgid "Settings"
 msgstr "Ρυθμίσεις"
 
-#: qml/alarm/AlarmListPage.qml:55
+#: qml/alarm/AlarmListPage.qml:58
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have alarm "
 "functionality."
 msgstr ""
 
-#: qml/alarm/AlarmListPage.qml:77
+#: qml/alarm/AlarmListPage.qml:60
+#, kde-format
+msgid "Failed to load the list of alarms: %1"
+msgstr ""
+
+#: qml/alarm/AlarmListPage.qml:86
 #, kde-format
 msgid "No alarms configured"
 msgstr "Δεν έχουν διαμορφωθεί συναγερμοί"
 
-#: qml/alarm/AlarmListPage.qml:82
+#: qml/alarm/AlarmListPage.qml:92
 #, fuzzy, kde-format
 #| msgid "Alarm"
 msgid "Add alarm"
 msgstr "Συναγερμός"
 
-#: qml/alarm/AlarmListPage.qml:93
+#: qml/alarm/AlarmListPage.qml:103 qml/timer/TimerListPage.qml:131
 #, kde-format
 msgid "Loading…"
 msgstr ""
 
-#: qml/alarm/AlarmListPage.qml:108
+#: qml/alarm/AlarmListPage.qml:118
 #, fuzzy, kde-format
 #| msgid "New Alarm"
 msgctxt "@action:button"
 msgid "New Alarm"
 msgstr "Νέος συναγερμός"
 
-#: qml/alarm/AlarmListPage.qml:125
+#: qml/alarm/AlarmListPage.qml:136
 #, kde-format
 msgid "alarm"
 msgstr "συναγερμός"
 
-#: qml/alarm/AlarmListPage.qml:125
+#: qml/alarm/AlarmListPage.qml:136
 #, kde-format
 msgid "Deleted %1"
 msgstr "Διαγράφηκε %1"
@@ -414,13 +419,13 @@ msgstr ""
 msgid "Default timer ring sound"
 msgstr ""
 
-#: qml/settings/SettingsPage.qml:102
+#: qml/settings/SettingsPage.qml:103
 #, fuzzy, kde-format
 #| msgid "Clock"
 msgid "About Clock"
 msgstr "Ρολόι"
 
-#: qml/settings/SettingsPage.qml:111
+#: qml/settings/SettingsPage.qml:112
 #, fuzzy, kde-format
 #| msgid "About"
 msgid "About KDE"
@@ -743,27 +748,32 @@ msgstr "Διαγραφή"
 msgid "New Timer"
 msgstr "Νέο χρονόμετρο"
 
-#: qml/timer/TimerListPage.qml:59
+#: qml/timer/TimerListPage.qml:62
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
 "functionality."
 msgstr ""
 
-#: qml/timer/TimerListPage.qml:94
+#: qml/timer/TimerListPage.qml:64
+#, kde-format
+msgid "Failed to load the list of timers: %1"
+msgstr ""
+
+#: qml/timer/TimerListPage.qml:103
 #, fuzzy, kde-format
 #| msgid "New Timer"
 msgctxt "@action:button"
 msgid "New Timer"
 msgstr "Νέο χρονόμετρο"
 
-#: qml/timer/TimerListPage.qml:104
+#: qml/timer/TimerListPage.qml:114
 #, fuzzy, kde-format
 #| msgid "No alarms configured"
 msgid "No timers configured"
 msgstr "Δεν έχουν διαμορφωθεί συναγερμοί"
 
-#: qml/timer/TimerListPage.qml:109
+#: qml/timer/TimerListPage.qml:120
 #, fuzzy, kde-format
 #| msgid "Add a timer"
 msgid "Add timer"

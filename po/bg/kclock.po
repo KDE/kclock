@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-15 00:45+0000\n"
+"POT-Creation-Date: 2025-10-12 00:45+0000\n"
 "PO-Revision-Date: 2025-07-28 19:51+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -212,19 +212,19 @@ msgstr "Изтриване"
 msgid "Alarms"
 msgstr "Аларми"
 
-#: qml/alarm/AlarmListPage.qml:35 qml/time/TimePage.qml:39
+#: qml/alarm/AlarmListPage.qml:36 qml/time/TimePage.qml:39
 #, kde-format
 msgid "Edit"
 msgstr "Редактиране"
 
-#: qml/alarm/AlarmListPage.qml:44 qml/Main.qml:56
+#: qml/alarm/AlarmListPage.qml:45 qml/Main.qml:56
 #: qml/settings/SettingsPage.qml:28 qml/stopwatch/StopwatchPage.qml:70
-#: qml/time/TimePage.qml:62 qml/timer/TimerListPage.qml:36
+#: qml/time/TimePage.qml:62 qml/timer/TimerListPage.qml:37
 #, kde-format
 msgid "Settings"
 msgstr "Настройки"
 
-#: qml/alarm/AlarmListPage.qml:55
+#: qml/alarm/AlarmListPage.qml:58
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have alarm "
@@ -233,33 +233,38 @@ msgstr ""
 "Демонът на часовника не беше намерен. Моля, стартирайте kclockd, за да имате "
 "функция за аларма."
 
-#: qml/alarm/AlarmListPage.qml:77
+#: qml/alarm/AlarmListPage.qml:60
+#, kde-format
+msgid "Failed to load the list of alarms: %1"
+msgstr ""
+
+#: qml/alarm/AlarmListPage.qml:86
 #, kde-format
 msgid "No alarms configured"
 msgstr "Няма конфигурирани аларми"
 
-#: qml/alarm/AlarmListPage.qml:82
+#: qml/alarm/AlarmListPage.qml:92
 #, kde-format
 msgid "Add alarm"
 msgstr "Добавете аларма"
 
-#: qml/alarm/AlarmListPage.qml:93
+#: qml/alarm/AlarmListPage.qml:103 qml/timer/TimerListPage.qml:131
 #, kde-format
 msgid "Loading…"
 msgstr "Зареждане…"
 
-#: qml/alarm/AlarmListPage.qml:108
+#: qml/alarm/AlarmListPage.qml:118
 #, kde-format
 msgctxt "@action:button"
 msgid "New Alarm"
 msgstr "Нова аларма"
 
-#: qml/alarm/AlarmListPage.qml:125
+#: qml/alarm/AlarmListPage.qml:136
 #, kde-format
 msgid "alarm"
 msgstr "aларма"
 
-#: qml/alarm/AlarmListPage.qml:125
+#: qml/alarm/AlarmListPage.qml:136
 #, kde-format
 msgid "Deleted %1"
 msgstr "Изтрито %1"
@@ -409,12 +414,12 @@ msgstr "Избиране на звук за таймера"
 msgid "Default timer ring sound"
 msgstr "Звук по подразбиране на таймера"
 
-#: qml/settings/SettingsPage.qml:102
+#: qml/settings/SettingsPage.qml:103
 #, kde-format
 msgid "About Clock"
 msgstr "Относно Часовник"
 
-#: qml/settings/SettingsPage.qml:111
+#: qml/settings/SettingsPage.qml:112
 #, kde-format
 msgid "About KDE"
 msgstr "Относно KDE"
@@ -717,7 +722,7 @@ msgstr "Изтриване"
 msgid "New Timer"
 msgstr "Нов таймер"
 
-#: qml/timer/TimerListPage.qml:59
+#: qml/timer/TimerListPage.qml:62
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
@@ -726,18 +731,23 @@ msgstr ""
 "Демонът на часовника не беше намерен. Моля, стартирайте kclockd, за да имате "
 "функционалност на таймера."
 
-#: qml/timer/TimerListPage.qml:94
+#: qml/timer/TimerListPage.qml:64
+#, kde-format
+msgid "Failed to load the list of timers: %1"
+msgstr ""
+
+#: qml/timer/TimerListPage.qml:103
 #, kde-format
 msgctxt "@action:button"
 msgid "New Timer"
 msgstr "Нов таймер"
 
-#: qml/timer/TimerListPage.qml:104
+#: qml/timer/TimerListPage.qml:114
 #, kde-format
 msgid "No timers configured"
 msgstr "Няма конфигурирани таймери"
 
-#: qml/timer/TimerListPage.qml:109
+#: qml/timer/TimerListPage.qml:120
 #, kde-format
 msgid "Add timer"
 msgstr "Добавете таймер"

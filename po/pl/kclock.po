@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-15 00:45+0000\n"
+"POT-Creation-Date: 2025-10-12 00:45+0000\n"
 "PO-Revision-Date: 2025-09-06 05:48+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -216,19 +216,19 @@ msgstr "Usuń"
 msgid "Alarms"
 msgstr "Alarmy"
 
-#: qml/alarm/AlarmListPage.qml:35 qml/time/TimePage.qml:39
+#: qml/alarm/AlarmListPage.qml:36 qml/time/TimePage.qml:39
 #, kde-format
 msgid "Edit"
 msgstr "Edytuj"
 
-#: qml/alarm/AlarmListPage.qml:44 qml/Main.qml:56
+#: qml/alarm/AlarmListPage.qml:45 qml/Main.qml:56
 #: qml/settings/SettingsPage.qml:28 qml/stopwatch/StopwatchPage.qml:70
-#: qml/time/TimePage.qml:62 qml/timer/TimerListPage.qml:36
+#: qml/time/TimePage.qml:62 qml/timer/TimerListPage.qml:37
 #, kde-format
 msgid "Settings"
 msgstr "Ustawienia"
 
-#: qml/alarm/AlarmListPage.qml:55
+#: qml/alarm/AlarmListPage.qml:58
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have alarm "
@@ -237,33 +237,38 @@ msgstr ""
 "Nie znaleziono usługi zegara. Proszę uruchomić kclockd, aby mieć  "
 "funkcjonalność alarmu."
 
-#: qml/alarm/AlarmListPage.qml:77
+#: qml/alarm/AlarmListPage.qml:60
+#, kde-format
+msgid "Failed to load the list of alarms: %1"
+msgstr ""
+
+#: qml/alarm/AlarmListPage.qml:86
 #, kde-format
 msgid "No alarms configured"
 msgstr "Brak ustawionych alarmów"
 
-#: qml/alarm/AlarmListPage.qml:82
+#: qml/alarm/AlarmListPage.qml:92
 #, kde-format
 msgid "Add alarm"
 msgstr "Dodaj alarm"
 
-#: qml/alarm/AlarmListPage.qml:93
+#: qml/alarm/AlarmListPage.qml:103 qml/timer/TimerListPage.qml:131
 #, kde-format
 msgid "Loading…"
 msgstr "Wczytywanie…"
 
-#: qml/alarm/AlarmListPage.qml:108
+#: qml/alarm/AlarmListPage.qml:118
 #, kde-format
 msgctxt "@action:button"
 msgid "New Alarm"
 msgstr "Nowy alarm"
 
-#: qml/alarm/AlarmListPage.qml:125
+#: qml/alarm/AlarmListPage.qml:136
 #, kde-format
 msgid "alarm"
 msgstr "alarm"
 
-#: qml/alarm/AlarmListPage.qml:125
+#: qml/alarm/AlarmListPage.qml:136
 #, kde-format
 msgid "Deleted %1"
 msgstr "Usunięto %1"
@@ -412,12 +417,12 @@ msgstr "Wybierz dźwięk czasomierza"
 msgid "Default timer ring sound"
 msgstr "Domyślny dźwięk dzwonka czasomierza"
 
-#: qml/settings/SettingsPage.qml:102
+#: qml/settings/SettingsPage.qml:103
 #, kde-format
 msgid "About Clock"
 msgstr "O Zegarze"
 
-#: qml/settings/SettingsPage.qml:111
+#: qml/settings/SettingsPage.qml:112
 #, kde-format
 msgid "About KDE"
 msgstr "O KDE"
@@ -720,7 +725,7 @@ msgstr "Usuń"
 msgid "New Timer"
 msgstr "Nowy czasomierz"
 
-#: qml/timer/TimerListPage.qml:59
+#: qml/timer/TimerListPage.qml:62
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
@@ -729,18 +734,23 @@ msgstr ""
 "Nie znaleziono usługi zegara. Proszę uruchomić kclockd, aby mieć "
 "funkcjonalność zegara."
 
-#: qml/timer/TimerListPage.qml:94
+#: qml/timer/TimerListPage.qml:64
+#, kde-format
+msgid "Failed to load the list of timers: %1"
+msgstr ""
+
+#: qml/timer/TimerListPage.qml:103
 #, kde-format
 msgctxt "@action:button"
 msgid "New Timer"
 msgstr "Nowy czasomierz"
 
-#: qml/timer/TimerListPage.qml:104
+#: qml/timer/TimerListPage.qml:114
 #, kde-format
 msgid "No timers configured"
 msgstr "Brak ustawionych czasomierzy"
 
-#: qml/timer/TimerListPage.qml:109
+#: qml/timer/TimerListPage.qml:120
 #, kde-format
 msgid "Add timer"
 msgstr "Dodaj czasomierz"
