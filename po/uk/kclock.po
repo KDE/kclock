@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-12 00:45+0000\n"
-"PO-Revision-Date: 2025-07-20 16:39+0300\n"
+"PO-Revision-Date: 2025-10-12 16:10+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -243,7 +243,7 @@ msgstr ""
 #: qml/alarm/AlarmListPage.qml:60
 #, kde-format
 msgid "Failed to load the list of alarms: %1"
-msgstr ""
+msgstr "Не вдалося завантажити список будильників: %1"
 
 #: qml/alarm/AlarmListPage.qml:86
 #, kde-format
@@ -741,7 +741,7 @@ msgstr ""
 #: qml/timer/TimerListPage.qml:64
 #, kde-format
 msgid "Failed to load the list of timers: %1"
-msgstr ""
+msgstr "Не вдалося завантажити список таймерів: %1"
 
 #: qml/timer/TimerListPage.qml:103
 #, kde-format
