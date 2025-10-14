@@ -217,3 +217,5 @@ bool PipWindowPrivate::hitTestBottom(const QPointF &pos)
     const QRectF rect(geometry.x(), geometry.y() + geometry.height() - margins.bottom(), geometry.width(), margins.bottom());
     return rect.contains(pos);
 }
+
+#include "moc_pipwindow.cpp"
