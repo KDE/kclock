@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-12 00:45+0000\n"
-"PO-Revision-Date: 2025-07-19 22:17+0300\n"
+"PO-Revision-Date: 2025-10-14 15:55+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -235,7 +235,7 @@ msgstr ""
 #: qml/alarm/AlarmListPage.qml:60
 #, kde-format
 msgid "Failed to load the list of alarms: %1"
-msgstr ""
+msgstr "Alarmların listesi yüklenemedi: %1"
 
 #: qml/alarm/AlarmListPage.qml:86
 #, kde-format
@@ -732,7 +732,7 @@ msgstr ""
 #: qml/timer/TimerListPage.qml:64
 #, kde-format
 msgid "Failed to load the list of timers: %1"
-msgstr ""
+msgstr "Sayaçların listesi yüklenemedi: %1"
 
 #: qml/timer/TimerListPage.qml:103
 #, kde-format

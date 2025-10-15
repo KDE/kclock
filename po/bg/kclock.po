@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-12 00:45+0000\n"
-"PO-Revision-Date: 2025-07-28 19:51+0200\n"
+"PO-Revision-Date: 2025-10-14 22:06+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -236,7 +236,7 @@ msgstr ""
 #: qml/alarm/AlarmListPage.qml:60
 #, kde-format
 msgid "Failed to load the list of alarms: %1"
-msgstr ""
+msgstr "Неуспешно зареждане на списъка с аларми: %1"
 
 #: qml/alarm/AlarmListPage.qml:86
 #, kde-format
@@ -734,7 +734,7 @@ msgstr ""
 #: qml/timer/TimerListPage.qml:64
 #, kde-format
 msgid "Failed to load the list of timers: %1"
-msgstr ""
+msgstr "Неуспешно зареждане на списъка с таймери: %1"
 
 #: qml/timer/TimerListPage.qml:103
 #, kde-format
