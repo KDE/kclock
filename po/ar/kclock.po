@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-12 00:45+0000\n"
-"PO-Revision-Date: 2025-08-04 18:35+0400\n"
+"PO-Revision-Date: 2025-10-15 21:06+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -244,7 +244,7 @@ msgstr ""
 #: qml/alarm/AlarmListPage.qml:60
 #, kde-format
 msgid "Failed to load the list of alarms: %1"
-msgstr ""
+msgstr "فشل تحميل قائمة التنبيهات: %1"
 
 #: qml/alarm/AlarmListPage.qml:86
 #, kde-format
@@ -740,7 +740,7 @@ msgstr ""
 #: qml/timer/TimerListPage.qml:64
 #, kde-format
 msgid "Failed to load the list of timers: %1"
-msgstr ""
+msgstr "فشل تحميل قائمة المؤقتات: %1"
 
 #: qml/timer/TimerListPage.qml:103
 #, kde-format
