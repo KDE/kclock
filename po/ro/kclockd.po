@@ -1,0 +1,231 @@
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the kclock package.
+# SPDX-FileCopyrightText: 2025 Sergiu Bivol <sergiu@cip.md>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kclock\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-05-25 00:46+0000\n"
+"PO-Revision-Date: 2025-10-18 14:34+0100\n"
+"Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
+"Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2;\n"
+"X-Generator: Lokalize 25.08.1\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Sergiu Bivol"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sergiu@cip.md"
+
+#: alarm.cpp:72 alarm.h:51
+#, kde-format
+msgid "Alarm"
+msgstr "Alarmă"
+
+#: alarm.cpp:76 timer.cpp:69
+#, kde-format
+msgctxt "@action:button"
+msgid "Dismiss"
+msgstr "Oprește"
+
+#: alarm.cpp:79
+#, kde-format
+msgid "Dismiss"
+msgstr "Oprește"
+
+#: alarm.cpp:82
+#, kde-format
+msgid "Snooze"
+msgstr "Ațipește"
+
+#: alarmmodel.cpp:255
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Alarm: <shortcut>%1 %2</shortcut>"
+msgstr "Alarmă: <shortcut>%1 %2</shortcut>"
+
+#: kclockrunner.cpp:69
+#, kde-format
+msgctxt "@action:button Add 1 minute to timer"
+msgid "+1 Minute"
+msgstr "+1 minut"
+
+#: kclockrunner.cpp:70
+#, kde-format
+msgctxt "@action:button"
+msgid "Reset Timer"
+msgstr "Reinițializează temporizatorul"
+
+#: kclockrunner.cpp:77
+#, kde-format
+msgctxt "Note this is a KRunner keyword"
+msgid "timer"
+msgstr "temporizator"
+
+#: kclockrunner.cpp:94
+#, kde-format
+msgctxt "Timer running or paused (remaining time)"
+msgid "%1 (%2 Remaining)"
+msgstr "%1 (%2 rămase)"
+
+#: kclockrunner.cpp:96
+#, kde-format
+msgctxt "Timer not running (timer length)"
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
+#: kclockrunner.cpp:107
+#, kde-format
+msgctxt "KRunner category"
+msgid "Timer"
+msgstr "Temporizator"
+
+#: kclockrunner.cpp:111
+#, kde-format
+msgctxt "@action"
+msgid "Pause"
+msgstr "Întrerupe"
+
+#: kclockrunner.cpp:113
+#, kde-format
+msgctxt "@action"
+msgid "Resume"
+msgstr "Reia"
+
+#: kclockrunner.cpp:115
+#, kde-format
+msgctxt "@action"
+msgid "Start Timer"
+msgstr "Pornește temporizatorul"
+
+#: kclockrunner.cpp:130
+#, kde-format
+msgctxt "Note this is a KRunner keyword"
+msgid "alarm"
+msgstr "alarmă"
+
+#: kclockrunner.cpp:152
+#, kde-format
+msgctxt "Alarm name (time)"
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
+#: kclockrunner.cpp:162
+#, kde-format
+msgctxt "KRunner category"
+msgid "Alarm"
+msgstr "Alarmă"
+
+#: kclockrunner.cpp:166
+#, kde-format
+msgctxt "@action Dismiss Alarm"
+msgid "Dismiss"
+msgstr "Oprește"
+
+#: kclockrunner.cpp:169
+#, kde-format
+msgctxt "Disable timer (rings in time)"
+msgid "Disable (Rings in %1)"
+msgstr "Dezactivează (sună în %1)"
+
+#: kclockrunner.cpp:171
+#, kde-format
+msgctxt "@action Enable Alarm"
+msgid "Enable"
+msgstr "Activează"
+
+#: main.cpp:32
+#, kde-format
+msgid "Don't use PowerDevil for alarms if it is available"
+msgstr "Nu folosi PowerDevil pentru alarme dacă e disponibil"
+
+#: main.cpp:48
+#, kde-format
+msgid "© 2020-2022 KDE Community"
+msgstr "© 2020-2022 Comunitatea KDE"
+
+#: main.cpp:49
+#, kde-format
+msgid "Devin Lin"
+msgstr "Devin Lin"
+
+#: main.cpp:50
+#, kde-format
+msgid "Han Young"
+msgstr "Han Young"
+
+#: main.cpp:51
+#, kde-format
+msgid "Kai Uwe Broulik"
+msgstr "Kai Uwe Broulik"
+
+#: main.cpp:51
+#, kde-format
+msgctxt "Author"
+msgid "Desktop Integration"
+msgstr "Integrare cu biroul"
+
+#: timer.cpp:64
+#, kde-format
+msgid "Timer complete"
+msgstr "Temporizator consumat"
+
+#: timer.cpp:65
+#, kde-format
+msgid "Your timer %1 has finished!"
+msgstr "Temporizatorul %1 a expirat!"
+
+#: timermodel.cpp:269
+#, kde-format
+msgctxt "@action:button Open kclock app"
+msgid "Open Clock"
+msgstr "Deschide ceasul"
+
+#: timermodel.cpp:274
+#, kde-format
+msgctxt "@action:button Add minute to timer"
+msgid "+1 Minute"
+msgstr "+1 minut"
+
+#: timermodel.cpp:277
+#, kde-format
+msgctxt "@action:button Reset timer"
+msgid "Reset"
+msgstr "Reinițializează"
+
+#: timermodel.cpp:280 timermodel.cpp:305
+#, kde-format
+msgctxt "@action:button Pause timer"
+msgid "Pause"
+msgstr "Întrerupe"
+
+#: timermodel.cpp:298
+#, kde-format
+msgctxt "@title:notification Timer name (paused)"
+msgid "%1 (Paused)"
+msgstr "%1 (întrerupt)"
+
+#: timermodel.cpp:307
+#, kde-format
+msgctxt "@action:button Resume timer"
+msgid "Resume"
+msgstr "Reia"
+
+#: xdgportal.cpp:34
+#, kde-format
+msgid ""
+"Allow the clock process to be in the background and launched on startup."
+msgstr ""
+"Permite rularea procesului ceasului în fundal și lansarea acestuia la "
+"pornire."
