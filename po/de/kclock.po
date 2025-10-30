@@ -521,7 +521,7 @@ msgstr "Gesamt"
 #: qml/stopwatch/StopwatchPage.qml:358
 #, kde-format
 msgid "Stopwatch is in Picture-in-Picture mode."
-msgstr "Die Stoppuhr befindet sich im Bild-in-Bild-Modus."
+msgstr "Die Stoppuhr befindet sich im Bild-im-Bild-Modus."
 
 #: qml/stopwatch/StopwatchPage.qml:363 qml/timer/TimerPage.qml:212
 #, kde-format
@@ -780,7 +780,7 @@ msgstr "1 Minute"
 #: qml/timer/TimerPage.qml:207
 #, kde-format
 msgid "This timer is in Picture-in-Picture mode."
-msgstr "Dieser Timer befindet sich im Bild-in-Bild-Modus."
+msgstr "Dieser Timer befindet sich im Bild-im-Bild-Modus."
 
 #: qml/timer/TimerRingingPopup.qml:25
 #, kde-format

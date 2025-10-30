@@ -149,7 +149,7 @@ msgstr "Aktivieren"
 #: main.cpp:32
 #, kde-format
 msgid "Don't use PowerDevil for alarms if it is available"
-msgstr "PowerDevil, sofern vorhanden, nicht für Wecker benutzen."
+msgstr "PowerDevil, sofern vorhanden, nicht für Wecker benutzen"
 
 #: main.cpp:48
 #, kde-format
