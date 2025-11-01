@@ -95,7 +95,9 @@ install(FILES org.kde.kclockd-autostart.desktop DESTINATION ${KDE_INSTALL_AUTOST
 install(FILES org.kde.kclock.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 install(FILES org.kde.kclock.svg DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/scalable/apps/)
 install(FILES kclockd.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})
-install(FILES kclock-runner.desktop DESTINATION ${KDE_INSTALL_DATAROOTDIR}/krunner/dbusplugins)
+
+# Flatpak exports needs the desktop file to be the app ID
+install(FILES kclock-runner.desktop DESTINATION ${KDE_INSTALL_DATAROOTDIR}/krunner/dbusplugins RENAME org.kde.kclock.desktop)
 
 ecm_install_configured_files(INPUT org.kde.kclockd.service.in DESTINATION ${KDE_INSTALL_DBUSSERVICEDIR} @ONLY)
 
