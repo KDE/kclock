@@ -16,6 +16,7 @@
   <name xml:lang="ca">Rellotge</name>
   <name xml:lang="ca-valencia">Rellotge</name>
   <name xml:lang="cs">Hodiny</name>
+  <name xml:lang="da">Ur</name>
   <name xml:lang="de">Uhr</name>
   <name xml:lang="el">Ρολόι</name>
   <name xml:lang="en-GB">Clock</name>
@@ -58,6 +59,7 @@
   <summary xml:lang="ca">Aneu a l'hora i establiu alarmes</summary>
   <summary xml:lang="ca-valencia">Aneu fins a l'hora i establiu alarmes</summary>
   <summary xml:lang="cs">Ponechat čas a nastavit upomínky</summary>
+  <summary xml:lang="da">Hold styr på tiden og indstil alarmer</summary>
   <summary xml:lang="de">Im Takt bleiben und Alarme festlegen</summary>
   <summary xml:lang="en-GB">Keep time and set alarms</summary>
   <summary xml:lang="eo">Teni daton kaj meti alarmoj</summary>
@@ -270,6 +272,7 @@
       <caption xml:lang="ca">Pàgina dels temporitzadors</caption>
       <caption xml:lang="ca-valencia">Pàgina dels temporitzadors</caption>
       <caption xml:lang="cs">Stránka s časovači</caption>
+      <caption xml:lang="da">Timersiden</caption>
       <caption xml:lang="de">Timer-Seite</caption>
       <caption xml:lang="el">Σελίδα χρονοδιακοπτών</caption>
       <caption xml:lang="en-GB">Timers page</caption>
@@ -313,6 +316,7 @@
       <caption xml:lang="ca">Pàgina del temporitzador</caption>
       <caption xml:lang="ca-valencia">Pàgina del temporitzador</caption>
       <caption xml:lang="cs">Stránka s časovačem</caption>
+      <caption xml:lang="da">Timersiden</caption>
       <caption xml:lang="de">Timer-Seite</caption>
       <caption xml:lang="el">Σελίδα χρονοδιακόπτη</caption>
       <caption xml:lang="en-GB">Timer page</caption>
@@ -356,6 +360,7 @@
       <caption xml:lang="ca">Pàgina del cronòmetre</caption>
       <caption xml:lang="ca-valencia">Pàgina del cronòmetre</caption>
       <caption xml:lang="cs">Stránka se stopkami</caption>
+      <caption xml:lang="da">Stopursiden</caption>
       <caption xml:lang="de">Stoppuhrseite</caption>
       <caption xml:lang="el">Σελίδα χρονομέτρου</caption>
       <caption xml:lang="en-GB">Stopwatch page</caption>
@@ -399,6 +404,7 @@
       <caption xml:lang="ca">Pàgina de les alarmes</caption>
       <caption xml:lang="ca-valencia">Pàgina de les alarmes</caption>
       <caption xml:lang="cs">Stránka s upomínkami</caption>
+      <caption xml:lang="da">Alarmersiden</caption>
       <caption xml:lang="de">Weckerseite</caption>
       <caption xml:lang="el">Σελίδα συναγερμών</caption>
       <caption xml:lang="en-GB">Alarms page</caption>
