@@ -30,8 +30,8 @@
 
 #include <QtNumeric>
 
+#include <QStringLiteral>
 #include <chrono>
-#include <qstringliteral.h>
 
 using namespace std::literals::chrono_literals;
 using namespace Qt::Literals::StringLiterals;
