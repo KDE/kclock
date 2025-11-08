@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-12 00:45+0000\n"
+"POT-Creation-Date: 2025-11-08 00:45+0000\n"
 "PO-Revision-Date: 2025-10-12 03:29+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -177,17 +177,17 @@ msgctxt "Edit alarm page title"
 msgid "Editing %1"
 msgstr "%1-ის ჩასწორება"
 
-#: qml/alarm/AlarmFormPage.qml:26 qml/alarm/AlarmListPage.qml:29
+#: qml/alarm/AlarmFormPage.qml:26 qml/alarm/AlarmListPage.qml:28
 #, kde-format
 msgid "New Alarm"
 msgstr "ახალი განგაში"
 
-#: qml/alarm/AlarmFormPage.qml:36 qml/alarm/AlarmFormPage.qml:59
+#: qml/alarm/AlarmFormPage.qml:38 qml/alarm/AlarmFormPage.qml:61
 #, kde-format
 msgid "Done"
 msgstr "დასრულდა"
 
-#: qml/alarm/AlarmFormPage.qml:65 qml/timer/TimerFormDialog.qml:111
+#: qml/alarm/AlarmFormPage.qml:67 qml/timer/TimerFormDialog.qml:111
 #, kde-format
 msgid "Cancel"
 msgstr "გაუქმენა"
@@ -211,19 +211,19 @@ msgstr "წაშლა"
 msgid "Alarms"
 msgstr "განგაშები"
 
-#: qml/alarm/AlarmListPage.qml:36 qml/time/TimePage.qml:39
+#: qml/alarm/AlarmListPage.qml:35 qml/time/TimePage.qml:38
 #, kde-format
 msgid "Edit"
 msgstr "ჩასწორება"
 
-#: qml/alarm/AlarmListPage.qml:45 qml/Main.qml:56
-#: qml/settings/SettingsPage.qml:28 qml/stopwatch/StopwatchPage.qml:70
-#: qml/time/TimePage.qml:62 qml/timer/TimerListPage.qml:37
+#: qml/alarm/AlarmListPage.qml:44 qml/Main.qml:54
+#: qml/settings/SettingsPage.qml:28 qml/stopwatch/StopwatchPage.qml:69
+#: qml/time/TimePage.qml:61 qml/timer/TimerListPage.qml:36
 #, kde-format
 msgid "Settings"
 msgstr "&მორგება"
 
-#: qml/alarm/AlarmListPage.qml:58
+#: qml/alarm/AlarmListPage.qml:57
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have alarm "
@@ -232,38 +232,38 @@ msgstr ""
 "საათის დემონი ვერ ვიპოვე. მაღვიძარის ფუნქციონალისთვის, გთხოვთ დააყენოთ "
 "kclockd."
 
-#: qml/alarm/AlarmListPage.qml:60
+#: qml/alarm/AlarmListPage.qml:59
 #, kde-format
 msgid "Failed to load the list of alarms: %1"
 msgstr "ჩატვირთვის შეცდომა განგაშების სიისთვის: %1"
 
-#: qml/alarm/AlarmListPage.qml:86
+#: qml/alarm/AlarmListPage.qml:85
 #, kde-format
 msgid "No alarms configured"
 msgstr "მაღვიძარა გამართული არაა"
 
-#: qml/alarm/AlarmListPage.qml:92
+#: qml/alarm/AlarmListPage.qml:91
 #, kde-format
 msgid "Add alarm"
 msgstr "განგაშის დამატება"
 
-#: qml/alarm/AlarmListPage.qml:103 qml/timer/TimerListPage.qml:131
+#: qml/alarm/AlarmListPage.qml:102 qml/timer/TimerListPage.qml:130
 #, kde-format
 msgid "Loading…"
 msgstr "ჩატვირთვა…"
 
-#: qml/alarm/AlarmListPage.qml:118
+#: qml/alarm/AlarmListPage.qml:117
 #, kde-format
 msgctxt "@action:button"
 msgid "New Alarm"
 msgstr "ახალი განგაში"
 
-#: qml/alarm/AlarmListPage.qml:136
+#: qml/alarm/AlarmListPage.qml:135
 #, kde-format
 msgid "alarm"
 msgstr "მაღვიძარა"
 
-#: qml/alarm/AlarmListPage.qml:136
+#: qml/alarm/AlarmListPage.qml:135
 #, kde-format
 msgid "Deleted %1"
 msgstr "%1 წაშლილია"
@@ -325,7 +325,7 @@ msgstr "აირჩიეთ მაღვიძარის ხმა"
 msgid "Select from files…"
 msgstr "ფაილებიდან არჩევა…"
 
-#: qml/components/SoundPickerPage.qml:76 qml/settings/SettingsPage.qml:86
+#: qml/components/SoundPickerPage.qml:76 qml/settings/SettingsPage.qml:85
 #, kde-format
 msgid "Default"
 msgstr "ნაგულისხმევი"
@@ -355,146 +355,146 @@ msgstr "AM"
 msgid "PM"
 msgstr "PM"
 
-#: qml/settings/SettingsPage.qml:41
+#: qml/settings/SettingsPage.qml:40
 #, kde-format
 msgid "Time Format"
 msgstr "დროის ფორმატი"
 
-#: qml/settings/SettingsPage.qml:43
+#: qml/settings/SettingsPage.qml:42
 #, kde-format
 msgid "Use System Default"
 msgstr "სისტემის ნაგულისხმევის გამოყენება"
 
-#: qml/settings/SettingsPage.qml:44
+#: qml/settings/SettingsPage.qml:43
 #, kde-format
 msgid "12 Hour Time"
 msgstr "12 საათიანი დრო"
 
-#: qml/settings/SettingsPage.qml:45
+#: qml/settings/SettingsPage.qml:44
 #, kde-format
 msgid "24 Hour Time"
 msgstr "24 საათიანი დრო"
 
-#: qml/settings/SettingsPage.qml:59
+#: qml/settings/SettingsPage.qml:58
 #, kde-format
 msgid "Notifications for running timers"
 msgstr "გაფრთხილებები გაშვებული ტაიმერებისთვის"
 
-#: qml/settings/SettingsPage.qml:61
+#: qml/settings/SettingsPage.qml:60
 #, kde-format
 msgid "Always"
 msgstr "ყოველთვის"
 
-#: qml/settings/SettingsPage.qml:64
+#: qml/settings/SettingsPage.qml:63
 #, kde-format
 msgctxt "When the app is not running"
 msgid "When %1 is not running"
 msgstr "როცა %1 გაშვებული არაა"
 
-#: qml/settings/SettingsPage.qml:67
+#: qml/settings/SettingsPage.qml:66
 #, kde-format
 msgid "Never"
 msgstr "არასდროს"
 
-#: qml/settings/SettingsPage.qml:70
+#: qml/settings/SettingsPage.qml:69
 #, kde-format
 msgid "Lets you pause and resume timers from the notification area."
 msgstr ""
 "საშუალებას გაძლევთ, დააპაუზოთ და გააგრძელოთ ტაიმერები სისტემური კუთხიდან."
 
-#: qml/settings/SettingsPage.qml:91
+#: qml/settings/SettingsPage.qml:90
 #, kde-format
 msgid "Select Timer Sound"
 msgstr "აირჩიეთ ტაიმერის ხმა"
 
-#: qml/settings/SettingsPage.qml:93
+#: qml/settings/SettingsPage.qml:92
 #, kde-format
 msgid "Default timer ring sound"
 msgstr "ტაიმერის რეკვის ნაგულისხმევი ხმა"
 
-#: qml/settings/SettingsPage.qml:103
+#: qml/settings/SettingsPage.qml:102
 #, kde-format
 msgid "About Clock"
 msgstr "საათის შესახებ"
 
-#: qml/settings/SettingsPage.qml:112
+#: qml/settings/SettingsPage.qml:111
 #, kde-format
 msgid "About KDE"
 msgstr "KDE-ის შესახებ"
 
-#: qml/stopwatch/StopwatchPage.qml:55 qml/timer/TimerPage.qml:75
+#: qml/stopwatch/StopwatchPage.qml:54 qml/timer/TimerPage.qml:77
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "აღდგენა"
 
-#: qml/stopwatch/StopwatchPage.qml:55 qml/timer/TimerPage.qml:75
+#: qml/stopwatch/StopwatchPage.qml:54 qml/timer/TimerPage.qml:77
 #, kde-format
 msgctxt "@action"
 msgid "Pop out"
 msgstr "გატანა"
 
-#: qml/stopwatch/StopwatchPage.qml:108 qml/stopwatch/StopwatchPage.qml:372
-#: qml/timer/TimerPage.qml:173
+#: qml/stopwatch/StopwatchPage.qml:107 qml/stopwatch/StopwatchPage.qml:371
+#: qml/timer/TimerPage.qml:175
 #, kde-format
 msgctxt "@action:button"
 msgid "Pause"
 msgstr "შეჩერება"
 
-#: qml/stopwatch/StopwatchPage.qml:110 qml/stopwatch/StopwatchPage.qml:374
+#: qml/stopwatch/StopwatchPage.qml:109 qml/stopwatch/StopwatchPage.qml:373
 #, kde-format
 msgctxt "@action:button"
 msgid "Resume"
 msgstr "გაგრძელება"
 
-#: qml/stopwatch/StopwatchPage.qml:112 qml/stopwatch/StopwatchPage.qml:376
-#: qml/timer/TimerPage.qml:173
+#: qml/stopwatch/StopwatchPage.qml:111 qml/stopwatch/StopwatchPage.qml:375
+#: qml/timer/TimerPage.qml:175
 #, kde-format
 msgctxt "@action:button"
 msgid "Start"
 msgstr "დაწყება"
 
-#: qml/stopwatch/StopwatchPage.qml:122
+#: qml/stopwatch/StopwatchPage.qml:121
 #, kde-format
 msgctxt "@action:button"
 msgid "Lap"
 msgstr "წრე"
 
-#: qml/stopwatch/StopwatchPage.qml:122 qml/timer/TimerPage.qml:179
+#: qml/stopwatch/StopwatchPage.qml:121 qml/timer/TimerPage.qml:181
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset"
 msgstr "ჩამოყრა"
 
-#: qml/stopwatch/StopwatchPage.qml:237 qml/stopwatch/StopwatchPage.qml:272
-#: qml/timer/TimerPage.qml:51 qml/timer/TimerPage.qml:113
+#: qml/stopwatch/StopwatchPage.qml:236 qml/stopwatch/StopwatchPage.qml:271
+#: qml/timer/TimerPage.qml:53 qml/timer/TimerPage.qml:115
 #, kde-format
 msgid "Reset"
 msgstr "ჩამოყრა"
 
-#: qml/stopwatch/StopwatchPage.qml:239 qml/timer/TimerPage.qml:43
-#: qml/timer/TimerPage.qml:107
+#: qml/stopwatch/StopwatchPage.qml:238 qml/timer/TimerPage.qml:45
+#: qml/timer/TimerPage.qml:109
 #, kde-format
 msgid "Pause"
 msgstr "შეჩერება"
 
-#: qml/stopwatch/StopwatchPage.qml:241
+#: qml/stopwatch/StopwatchPage.qml:240
 #, kde-format
 msgid "Resume"
 msgstr "გაგრძელება"
 
-#: qml/stopwatch/StopwatchPage.qml:243 qml/timer/TimerPage.qml:43
-#: qml/timer/TimerPage.qml:107
+#: qml/stopwatch/StopwatchPage.qml:242 qml/timer/TimerPage.qml:45
+#: qml/timer/TimerPage.qml:109
 #, kde-format
 msgid "Start"
 msgstr "დაწყება"
 
-#: qml/stopwatch/StopwatchPage.qml:272 qml/stopwatch/StopwatchPage.qml:313
+#: qml/stopwatch/StopwatchPage.qml:271 qml/stopwatch/StopwatchPage.qml:312
 #, kde-format
 msgid "Lap"
 msgstr "წრე"
 
-#: qml/stopwatch/StopwatchPage.qml:293
+#: qml/stopwatch/StopwatchPage.qml:292
 #, kde-format
 msgid ""
 "Press Space to start or pause the stopwatch. Delete or Backspace resets it. "
@@ -503,28 +503,28 @@ msgstr ""
 "დააჭირეთ ჰარეს ტაიმერის გასაშვებად, ან დასაპაუზებლად. გამოიყენეთ ღილაკი "
 "Delete ან Backspace ჩამოსაყრელად. Enter ნახტომს დაამატებს."
 
-#: qml/stopwatch/StopwatchPage.qml:321
+#: qml/stopwatch/StopwatchPage.qml:320
 #, kde-format
 msgid "Lap Time"
 msgstr "წრის დრო"
 
-#: qml/stopwatch/StopwatchPage.qml:328
+#: qml/stopwatch/StopwatchPage.qml:327
 #, kde-format
 msgid "Total"
 msgstr "ჯამში"
 
-#: qml/stopwatch/StopwatchPage.qml:358
+#: qml/stopwatch/StopwatchPage.qml:357
 #, kde-format
 msgid "Stopwatch is in Picture-in-Picture mode."
 msgstr "წამზომი 'სურათი-სურათში' რეჟიმშია."
 
-#: qml/stopwatch/StopwatchPage.qml:363 qml/timer/TimerPage.qml:212
+#: qml/stopwatch/StopwatchPage.qml:362 qml/timer/TimerPage.qml:214
 #, kde-format
 msgctxt "@action:button Restore (unminimize) from pip mode"
 msgid "Restore"
 msgstr "აღდგენა"
 
-#: qml/stopwatch/StopwatchPage.qml:436
+#: qml/stopwatch/StopwatchPage.qml:435
 #, kde-format
 msgid "#%1"
 msgstr "#%1"
@@ -539,12 +539,12 @@ msgstr "მდებარეობები ვერ მოიძებნა"
 msgid "Add Location"
 msgstr "მდებარეობის დამატება"
 
-#: qml/time/TimePage.qml:52
+#: qml/time/TimePage.qml:51
 #, kde-format
 msgid "Add"
 msgstr "დამატება"
 
-#: qml/time/TimePage.qml:168
+#: qml/time/TimePage.qml:167
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Location"
@@ -616,7 +616,7 @@ msgid "seconds"
 msgstr "წამი"
 
 #: qml/timer/TimerForm.qml:114 qml/timer/TimerListDelegate.qml:125
-#: qml/timer/TimerPage.qml:66 qml/timer/TimerPage.qml:128
+#: qml/timer/TimerPage.qml:68 qml/timer/TimerPage.qml:130
 #, kde-format
 msgid "Loop Timer"
 msgstr "გამეორებადი ტაიმერი"
@@ -715,12 +715,12 @@ msgctxt "@info:tooltip"
 msgid "Delete"
 msgstr "წაშლა"
 
-#: qml/timer/TimerListPage.qml:28
+#: qml/timer/TimerListPage.qml:27
 #, kde-format
 msgid "New Timer"
 msgstr "ახალი ტაიმერი"
 
-#: qml/timer/TimerListPage.qml:62
+#: qml/timer/TimerListPage.qml:61
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
@@ -728,23 +728,23 @@ msgid ""
 msgstr ""
 "საათის დემონი ვერ ვიპოვე. საათის ფუნქციონალისთვის საჭიროა kclockd-ის გაშვება."
 
-#: qml/timer/TimerListPage.qml:64
+#: qml/timer/TimerListPage.qml:63
 #, kde-format
 msgid "Failed to load the list of timers: %1"
 msgstr "ჩატვირთვის შეცდომა ტაიმერების სიისთვის: %1"
 
-#: qml/timer/TimerListPage.qml:103
+#: qml/timer/TimerListPage.qml:102
 #, kde-format
 msgctxt "@action:button"
 msgid "New Timer"
 msgstr "ახალი ტაიმერი"
 
-#: qml/timer/TimerListPage.qml:114
+#: qml/timer/TimerListPage.qml:113
 #, kde-format
 msgid "No timers configured"
 msgstr "ტაიმერები მორგებული არაა"
 
-#: qml/timer/TimerListPage.qml:120
+#: qml/timer/TimerListPage.qml:119
 #, kde-format
 msgid "Add timer"
 msgstr "ტაიმერის დამატება"
@@ -754,24 +754,24 @@ msgstr "ტაიმერის დამატება"
 msgid "New timer"
 msgstr "ახალი ტაიმერი"
 
-#: qml/timer/TimerPage.qml:57 qml/timer/TimerPage.qml:119
+#: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:121
 #, kde-format
 msgid "Delete"
 msgstr "წაშლა"
 
-#: qml/timer/TimerPage.qml:167
+#: qml/timer/TimerPage.qml:169
 #, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "+1:00"
 msgstr "+1:00"
 
-#: qml/timer/TimerPage.qml:197
+#: qml/timer/TimerPage.qml:199
 #, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "1 minute"
 msgstr "1 წთ"
 
-#: qml/timer/TimerPage.qml:207
+#: qml/timer/TimerPage.qml:209
 #, kde-format
 msgid "This timer is in Picture-in-Picture mode."
 msgstr "ეს წამზომი 'სურათი-სურათში' რეჟიმშია."

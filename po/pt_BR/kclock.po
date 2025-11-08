@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-12 00:45+0000\n"
+"POT-Creation-Date: 2025-11-08 00:45+0000\n"
 "PO-Revision-Date: 2025-10-12 07:28-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -180,17 +180,17 @@ msgctxt "Edit alarm page title"
 msgid "Editing %1"
 msgstr "Editando %1"
 
-#: qml/alarm/AlarmFormPage.qml:26 qml/alarm/AlarmListPage.qml:29
+#: qml/alarm/AlarmFormPage.qml:26 qml/alarm/AlarmListPage.qml:28
 #, kde-format
 msgid "New Alarm"
 msgstr "Novo alarme"
 
-#: qml/alarm/AlarmFormPage.qml:36 qml/alarm/AlarmFormPage.qml:59
+#: qml/alarm/AlarmFormPage.qml:38 qml/alarm/AlarmFormPage.qml:61
 #, kde-format
 msgid "Done"
 msgstr "Concluído"
 
-#: qml/alarm/AlarmFormPage.qml:65 qml/timer/TimerFormDialog.qml:111
+#: qml/alarm/AlarmFormPage.qml:67 qml/timer/TimerFormDialog.qml:111
 #, kde-format
 msgid "Cancel"
 msgstr "Cancelar"
@@ -214,19 +214,19 @@ msgstr "Excluir"
 msgid "Alarms"
 msgstr "Alarmes"
 
-#: qml/alarm/AlarmListPage.qml:36 qml/time/TimePage.qml:39
+#: qml/alarm/AlarmListPage.qml:35 qml/time/TimePage.qml:38
 #, kde-format
 msgid "Edit"
 msgstr "Editar"
 
-#: qml/alarm/AlarmListPage.qml:45 qml/Main.qml:56
-#: qml/settings/SettingsPage.qml:28 qml/stopwatch/StopwatchPage.qml:70
-#: qml/time/TimePage.qml:62 qml/timer/TimerListPage.qml:37
+#: qml/alarm/AlarmListPage.qml:44 qml/Main.qml:54
+#: qml/settings/SettingsPage.qml:28 qml/stopwatch/StopwatchPage.qml:69
+#: qml/time/TimePage.qml:61 qml/timer/TimerListPage.qml:36
 #, kde-format
 msgid "Settings"
 msgstr "Configurações"
 
-#: qml/alarm/AlarmListPage.qml:58
+#: qml/alarm/AlarmListPage.qml:57
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have alarm "
@@ -235,38 +235,38 @@ msgstr ""
 "O daemon do relógio não foi encontrado. Inicie o kclockd para ter a "
 "funcionalidade de alarme."
 
-#: qml/alarm/AlarmListPage.qml:60
+#: qml/alarm/AlarmListPage.qml:59
 #, kde-format
 msgid "Failed to load the list of alarms: %1"
 msgstr "Falha ao carregar a lista de alarmes: %1"
 
-#: qml/alarm/AlarmListPage.qml:86
+#: qml/alarm/AlarmListPage.qml:85
 #, kde-format
 msgid "No alarms configured"
 msgstr "Nenhum alarme configurado"
 
-#: qml/alarm/AlarmListPage.qml:92
+#: qml/alarm/AlarmListPage.qml:91
 #, kde-format
 msgid "Add alarm"
 msgstr "Adicionar alarme"
 
-#: qml/alarm/AlarmListPage.qml:103 qml/timer/TimerListPage.qml:131
+#: qml/alarm/AlarmListPage.qml:102 qml/timer/TimerListPage.qml:130
 #, kde-format
 msgid "Loading…"
 msgstr "Carregando…"
 
-#: qml/alarm/AlarmListPage.qml:118
+#: qml/alarm/AlarmListPage.qml:117
 #, kde-format
 msgctxt "@action:button"
 msgid "New Alarm"
 msgstr "Novo alarme"
 
-#: qml/alarm/AlarmListPage.qml:136
+#: qml/alarm/AlarmListPage.qml:135
 #, kde-format
 msgid "alarm"
 msgstr "alarme"
 
-#: qml/alarm/AlarmListPage.qml:136
+#: qml/alarm/AlarmListPage.qml:135
 #, kde-format
 msgid "Deleted %1"
 msgstr "Excluído %1"
@@ -328,7 +328,7 @@ msgstr "Selecionar som do alarme"
 msgid "Select from files…"
 msgstr "Selecionar a partir de arquivos..."
 
-#: qml/components/SoundPickerPage.qml:76 qml/settings/SettingsPage.qml:86
+#: qml/components/SoundPickerPage.qml:76 qml/settings/SettingsPage.qml:85
 #, kde-format
 msgid "Default"
 msgstr "Padrão"
@@ -358,145 +358,145 @@ msgstr "AM"
 msgid "PM"
 msgstr "PM"
 
-#: qml/settings/SettingsPage.qml:41
+#: qml/settings/SettingsPage.qml:40
 #, kde-format
 msgid "Time Format"
 msgstr "Formato da hora"
 
-#: qml/settings/SettingsPage.qml:43
+#: qml/settings/SettingsPage.qml:42
 #, kde-format
 msgid "Use System Default"
 msgstr "Usar padrão do sistema"
 
-#: qml/settings/SettingsPage.qml:44
+#: qml/settings/SettingsPage.qml:43
 #, kde-format
 msgid "12 Hour Time"
 msgstr "12 horas"
 
-#: qml/settings/SettingsPage.qml:45
+#: qml/settings/SettingsPage.qml:44
 #, kde-format
 msgid "24 Hour Time"
 msgstr "24 horas"
 
-#: qml/settings/SettingsPage.qml:59
+#: qml/settings/SettingsPage.qml:58
 #, kde-format
 msgid "Notifications for running timers"
 msgstr "Notificações para temporizadores em execução"
 
-#: qml/settings/SettingsPage.qml:61
+#: qml/settings/SettingsPage.qml:60
 #, kde-format
 msgid "Always"
 msgstr "Sempre"
 
-#: qml/settings/SettingsPage.qml:64
+#: qml/settings/SettingsPage.qml:63
 #, kde-format
 msgctxt "When the app is not running"
 msgid "When %1 is not running"
 msgstr "Quando %1 não está em execução"
 
-#: qml/settings/SettingsPage.qml:67
+#: qml/settings/SettingsPage.qml:66
 #, kde-format
 msgid "Never"
 msgstr "Nunca"
 
-#: qml/settings/SettingsPage.qml:70
+#: qml/settings/SettingsPage.qml:69
 #, kde-format
 msgid "Lets you pause and resume timers from the notification area."
 msgstr "Permite pausar e retomar temporizadores na área de notificação."
 
-#: qml/settings/SettingsPage.qml:91
+#: qml/settings/SettingsPage.qml:90
 #, kde-format
 msgid "Select Timer Sound"
 msgstr "Selecionar som do temporizador"
 
-#: qml/settings/SettingsPage.qml:93
+#: qml/settings/SettingsPage.qml:92
 #, kde-format
 msgid "Default timer ring sound"
 msgstr "Som de toque do temporizador padrão"
 
-#: qml/settings/SettingsPage.qml:103
+#: qml/settings/SettingsPage.qml:102
 #, kde-format
 msgid "About Clock"
 msgstr "Sobre o Relógio"
 
-#: qml/settings/SettingsPage.qml:112
+#: qml/settings/SettingsPage.qml:111
 #, kde-format
 msgid "About KDE"
 msgstr "Sobre o KDE"
 
-#: qml/stopwatch/StopwatchPage.qml:55 qml/timer/TimerPage.qml:75
+#: qml/stopwatch/StopwatchPage.qml:54 qml/timer/TimerPage.qml:77
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "Restaurar"
 
-#: qml/stopwatch/StopwatchPage.qml:55 qml/timer/TimerPage.qml:75
+#: qml/stopwatch/StopwatchPage.qml:54 qml/timer/TimerPage.qml:77
 #, kde-format
 msgctxt "@action"
 msgid "Pop out"
 msgstr "Sair"
 
-#: qml/stopwatch/StopwatchPage.qml:108 qml/stopwatch/StopwatchPage.qml:372
-#: qml/timer/TimerPage.qml:173
+#: qml/stopwatch/StopwatchPage.qml:107 qml/stopwatch/StopwatchPage.qml:371
+#: qml/timer/TimerPage.qml:175
 #, kde-format
 msgctxt "@action:button"
 msgid "Pause"
 msgstr "Pausar"
 
-#: qml/stopwatch/StopwatchPage.qml:110 qml/stopwatch/StopwatchPage.qml:374
+#: qml/stopwatch/StopwatchPage.qml:109 qml/stopwatch/StopwatchPage.qml:373
 #, kde-format
 msgctxt "@action:button"
 msgid "Resume"
 msgstr "Continuar"
 
-#: qml/stopwatch/StopwatchPage.qml:112 qml/stopwatch/StopwatchPage.qml:376
-#: qml/timer/TimerPage.qml:173
+#: qml/stopwatch/StopwatchPage.qml:111 qml/stopwatch/StopwatchPage.qml:375
+#: qml/timer/TimerPage.qml:175
 #, kde-format
 msgctxt "@action:button"
 msgid "Start"
 msgstr "Iniciar"
 
-#: qml/stopwatch/StopwatchPage.qml:122
+#: qml/stopwatch/StopwatchPage.qml:121
 #, kde-format
 msgctxt "@action:button"
 msgid "Lap"
 msgstr "Volta"
 
-#: qml/stopwatch/StopwatchPage.qml:122 qml/timer/TimerPage.qml:179
+#: qml/stopwatch/StopwatchPage.qml:121 qml/timer/TimerPage.qml:181
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset"
 msgstr "Redefinir"
 
-#: qml/stopwatch/StopwatchPage.qml:237 qml/stopwatch/StopwatchPage.qml:272
-#: qml/timer/TimerPage.qml:51 qml/timer/TimerPage.qml:113
+#: qml/stopwatch/StopwatchPage.qml:236 qml/stopwatch/StopwatchPage.qml:271
+#: qml/timer/TimerPage.qml:53 qml/timer/TimerPage.qml:115
 #, kde-format
 msgid "Reset"
 msgstr "Redefinir"
 
-#: qml/stopwatch/StopwatchPage.qml:239 qml/timer/TimerPage.qml:43
-#: qml/timer/TimerPage.qml:107
+#: qml/stopwatch/StopwatchPage.qml:238 qml/timer/TimerPage.qml:45
+#: qml/timer/TimerPage.qml:109
 #, kde-format
 msgid "Pause"
 msgstr "Pausar"
 
-#: qml/stopwatch/StopwatchPage.qml:241
+#: qml/stopwatch/StopwatchPage.qml:240
 #, kde-format
 msgid "Resume"
 msgstr "Continuar"
 
-#: qml/stopwatch/StopwatchPage.qml:243 qml/timer/TimerPage.qml:43
-#: qml/timer/TimerPage.qml:107
+#: qml/stopwatch/StopwatchPage.qml:242 qml/timer/TimerPage.qml:45
+#: qml/timer/TimerPage.qml:109
 #, kde-format
 msgid "Start"
 msgstr "Iniciar"
 
-#: qml/stopwatch/StopwatchPage.qml:272 qml/stopwatch/StopwatchPage.qml:313
+#: qml/stopwatch/StopwatchPage.qml:271 qml/stopwatch/StopwatchPage.qml:312
 #, kde-format
 msgid "Lap"
 msgstr "Volta"
 
-#: qml/stopwatch/StopwatchPage.qml:293
+#: qml/stopwatch/StopwatchPage.qml:292
 #, kde-format
 msgid ""
 "Press Space to start or pause the stopwatch. Delete or Backspace resets it. "
@@ -505,28 +505,28 @@ msgstr ""
 "Pressione Espaço para iniciar ou pausar o cronômetro. Delete ou Backspace o "
 "zera. Enter adiciona uma volta."
 
-#: qml/stopwatch/StopwatchPage.qml:321
+#: qml/stopwatch/StopwatchPage.qml:320
 #, kde-format
 msgid "Lap Time"
 msgstr "Tempo da volta"
 
-#: qml/stopwatch/StopwatchPage.qml:328
+#: qml/stopwatch/StopwatchPage.qml:327
 #, kde-format
 msgid "Total"
 msgstr "Total"
 
-#: qml/stopwatch/StopwatchPage.qml:358
+#: qml/stopwatch/StopwatchPage.qml:357
 #, kde-format
 msgid "Stopwatch is in Picture-in-Picture mode."
 msgstr "O cronômetro está no modo Picture-in-Picture."
 
-#: qml/stopwatch/StopwatchPage.qml:363 qml/timer/TimerPage.qml:212
+#: qml/stopwatch/StopwatchPage.qml:362 qml/timer/TimerPage.qml:214
 #, kde-format
 msgctxt "@action:button Restore (unminimize) from pip mode"
 msgid "Restore"
 msgstr "Restaurar"
 
-#: qml/stopwatch/StopwatchPage.qml:436
+#: qml/stopwatch/StopwatchPage.qml:435
 #, kde-format
 msgid "#%1"
 msgstr "#%1"
@@ -541,12 +541,12 @@ msgstr "Nenhum local encontrado"
 msgid "Add Location"
 msgstr "Adicionar localização"
 
-#: qml/time/TimePage.qml:52
+#: qml/time/TimePage.qml:51
 #, kde-format
 msgid "Add"
 msgstr "Adicionar"
 
-#: qml/time/TimePage.qml:168
+#: qml/time/TimePage.qml:167
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Location"
@@ -618,7 +618,7 @@ msgid "seconds"
 msgstr "segundos"
 
 #: qml/timer/TimerForm.qml:114 qml/timer/TimerListDelegate.qml:125
-#: qml/timer/TimerPage.qml:66 qml/timer/TimerPage.qml:128
+#: qml/timer/TimerPage.qml:68 qml/timer/TimerPage.qml:130
 #, kde-format
 msgid "Loop Timer"
 msgstr "Temporizador de loop"
@@ -717,12 +717,12 @@ msgctxt "@info:tooltip"
 msgid "Delete"
 msgstr "Excluir"
 
-#: qml/timer/TimerListPage.qml:28
+#: qml/timer/TimerListPage.qml:27
 #, kde-format
 msgid "New Timer"
 msgstr "Novo temporizador"
 
-#: qml/timer/TimerListPage.qml:62
+#: qml/timer/TimerListPage.qml:61
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
@@ -731,23 +731,23 @@ msgstr ""
 "O daemon do relógio não foi encontrado. Inicie o kclockd para ter a "
 "funcionalidade do temporizador."
 
-#: qml/timer/TimerListPage.qml:64
+#: qml/timer/TimerListPage.qml:63
 #, kde-format
 msgid "Failed to load the list of timers: %1"
 msgstr "Falha ao carregar a lista de temporizadores: %1"
 
-#: qml/timer/TimerListPage.qml:103
+#: qml/timer/TimerListPage.qml:102
 #, kde-format
 msgctxt "@action:button"
 msgid "New Timer"
 msgstr "Novo temporizador"
 
-#: qml/timer/TimerListPage.qml:114
+#: qml/timer/TimerListPage.qml:113
 #, kde-format
 msgid "No timers configured"
 msgstr "Nenhum temporizador configurado"
 
-#: qml/timer/TimerListPage.qml:120
+#: qml/timer/TimerListPage.qml:119
 #, kde-format
 msgid "Add timer"
 msgstr "Adicionar temporizador"
@@ -757,24 +757,24 @@ msgstr "Adicionar temporizador"
 msgid "New timer"
 msgstr "Novo temporizador"
 
-#: qml/timer/TimerPage.qml:57 qml/timer/TimerPage.qml:119
+#: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:121
 #, kde-format
 msgid "Delete"
 msgstr "Excluir"
 
-#: qml/timer/TimerPage.qml:167
+#: qml/timer/TimerPage.qml:169
 #, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "+1:00"
 msgstr "+1:00"
 
-#: qml/timer/TimerPage.qml:197
+#: qml/timer/TimerPage.qml:199
 #, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "1 minute"
 msgstr "1 minuto"
 
-#: qml/timer/TimerPage.qml:207
+#: qml/timer/TimerPage.qml:209
 #, kde-format
 msgid "This timer is in Picture-in-Picture mode."
 msgstr "Este temporizador está no modo Picture-in-Picture."
