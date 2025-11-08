@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-12 00:45+0000\n"
+"POT-Creation-Date: 2025-11-08 02:38+0000\n"
 "PO-Revision-Date: 2025-10-14 22:06+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -178,17 +178,17 @@ msgctxt "Edit alarm page title"
 msgid "Editing %1"
 msgstr "Редактиране %1"
 
-#: qml/alarm/AlarmFormPage.qml:26 qml/alarm/AlarmListPage.qml:29
+#: qml/alarm/AlarmFormPage.qml:26 qml/alarm/AlarmListPage.qml:28
 #, kde-format
 msgid "New Alarm"
 msgstr "Нова аларма"
 
-#: qml/alarm/AlarmFormPage.qml:36 qml/alarm/AlarmFormPage.qml:59
+#: qml/alarm/AlarmFormPage.qml:38 qml/alarm/AlarmFormPage.qml:61
 #, kde-format
 msgid "Done"
 msgstr "Готово"
 
-#: qml/alarm/AlarmFormPage.qml:65 qml/timer/TimerFormDialog.qml:111
+#: qml/alarm/AlarmFormPage.qml:67 qml/timer/TimerFormDialog.qml:111
 #, kde-format
 msgid "Cancel"
 msgstr "Отказ"
@@ -212,19 +212,19 @@ msgstr "Изтриване"
 msgid "Alarms"
 msgstr "Аларми"
 
-#: qml/alarm/AlarmListPage.qml:36 qml/time/TimePage.qml:39
+#: qml/alarm/AlarmListPage.qml:35 qml/time/TimePage.qml:38
 #, kde-format
 msgid "Edit"
 msgstr "Редактиране"
 
-#: qml/alarm/AlarmListPage.qml:45 qml/Main.qml:56
-#: qml/settings/SettingsPage.qml:28 qml/stopwatch/StopwatchPage.qml:70
-#: qml/time/TimePage.qml:62 qml/timer/TimerListPage.qml:37
+#: qml/alarm/AlarmListPage.qml:44 qml/Main.qml:54
+#: qml/settings/SettingsPage.qml:28 qml/stopwatch/StopwatchPage.qml:69
+#: qml/time/TimePage.qml:61 qml/timer/TimerListPage.qml:36
 #, kde-format
 msgid "Settings"
 msgstr "Настройки"
 
-#: qml/alarm/AlarmListPage.qml:58
+#: qml/alarm/AlarmListPage.qml:57
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have alarm "
@@ -233,38 +233,38 @@ msgstr ""
 "Демонът на часовника не беше намерен. Моля, стартирайте kclockd, за да имате "
 "функция за аларма."
 
-#: qml/alarm/AlarmListPage.qml:60
+#: qml/alarm/AlarmListPage.qml:59
 #, kde-format
 msgid "Failed to load the list of alarms: %1"
 msgstr "Неуспешно зареждане на списъка с аларми: %1"
 
-#: qml/alarm/AlarmListPage.qml:86
+#: qml/alarm/AlarmListPage.qml:85
 #, kde-format
 msgid "No alarms configured"
 msgstr "Няма конфигурирани аларми"
 
-#: qml/alarm/AlarmListPage.qml:92
+#: qml/alarm/AlarmListPage.qml:91
 #, kde-format
 msgid "Add alarm"
 msgstr "Добавете аларма"
 
-#: qml/alarm/AlarmListPage.qml:103 qml/timer/TimerListPage.qml:131
+#: qml/alarm/AlarmListPage.qml:102 qml/timer/TimerListPage.qml:130
 #, kde-format
 msgid "Loading…"
 msgstr "Зареждане…"
 
-#: qml/alarm/AlarmListPage.qml:118
+#: qml/alarm/AlarmListPage.qml:117
 #, kde-format
 msgctxt "@action:button"
 msgid "New Alarm"
 msgstr "Нова аларма"
 
-#: qml/alarm/AlarmListPage.qml:136
+#: qml/alarm/AlarmListPage.qml:135
 #, kde-format
 msgid "alarm"
 msgstr "aларма"
 
-#: qml/alarm/AlarmListPage.qml:136
+#: qml/alarm/AlarmListPage.qml:135
 #, kde-format
 msgid "Deleted %1"
 msgstr "Изтрито %1"
@@ -326,7 +326,7 @@ msgstr "Изберете Звук на алармата"
 msgid "Select from files…"
 msgstr "Изберете от файлове..."
 
-#: qml/components/SoundPickerPage.qml:76 qml/settings/SettingsPage.qml:86
+#: qml/components/SoundPickerPage.qml:76 qml/settings/SettingsPage.qml:85
 #, kde-format
 msgid "Default"
 msgstr "По подразбиране"
@@ -356,147 +356,147 @@ msgstr "AM"
 msgid "PM"
 msgstr "PM"
 
-#: qml/settings/SettingsPage.qml:41
+#: qml/settings/SettingsPage.qml:40
 #, kde-format
 msgid "Time Format"
 msgstr "Формат на времето"
 
-#: qml/settings/SettingsPage.qml:43
+#: qml/settings/SettingsPage.qml:42
 #, kde-format
 msgid "Use System Default"
 msgstr "Използване на системата по подразбиране"
 
-#: qml/settings/SettingsPage.qml:44
+#: qml/settings/SettingsPage.qml:43
 #, kde-format
 msgid "12 Hour Time"
 msgstr "12 часов формат"
 
-#: qml/settings/SettingsPage.qml:45
+#: qml/settings/SettingsPage.qml:44
 #, kde-format
 msgid "24 Hour Time"
 msgstr "24 часов формат"
 
-#: qml/settings/SettingsPage.qml:59
+#: qml/settings/SettingsPage.qml:58
 #, kde-format
 msgid "Notifications for running timers"
 msgstr "Известия за активни таймери"
 
-#: qml/settings/SettingsPage.qml:61
+#: qml/settings/SettingsPage.qml:60
 #, kde-format
 msgid "Always"
 msgstr "Винаги"
 
-#: qml/settings/SettingsPage.qml:64
+#: qml/settings/SettingsPage.qml:63
 #, kde-format
 msgctxt "When the app is not running"
 msgid "When %1 is not running"
 msgstr "Когато %1 не се изпълнява"
 
-#: qml/settings/SettingsPage.qml:67
+#: qml/settings/SettingsPage.qml:66
 #, kde-format
 msgid "Never"
 msgstr "Никога"
 
-#: qml/settings/SettingsPage.qml:70
+#: qml/settings/SettingsPage.qml:69
 #, kde-format
 msgid "Lets you pause and resume timers from the notification area."
 msgstr ""
 "Позволява ви да поставите на пауза и да възобновите таймерите от областта за "
 "уведомяване."
 
-#: qml/settings/SettingsPage.qml:91
+#: qml/settings/SettingsPage.qml:90
 #, kde-format
 msgid "Select Timer Sound"
 msgstr "Избиране на звук за таймера"
 
-#: qml/settings/SettingsPage.qml:93
+#: qml/settings/SettingsPage.qml:92
 #, kde-format
 msgid "Default timer ring sound"
 msgstr "Звук по подразбиране на таймера"
 
-#: qml/settings/SettingsPage.qml:103
+#: qml/settings/SettingsPage.qml:102
 #, kde-format
 msgid "About Clock"
 msgstr "Относно Часовник"
 
-#: qml/settings/SettingsPage.qml:112
+#: qml/settings/SettingsPage.qml:111
 #, kde-format
 msgid "About KDE"
 msgstr "Относно KDE"
 
-#: qml/stopwatch/StopwatchPage.qml:55 qml/timer/TimerPage.qml:75
+#: qml/stopwatch/StopwatchPage.qml:54 qml/timer/TimerPage.qml:77
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "Възстановяване"
 
-#: qml/stopwatch/StopwatchPage.qml:55 qml/timer/TimerPage.qml:75
+#: qml/stopwatch/StopwatchPage.qml:54 qml/timer/TimerPage.qml:77
 #, kde-format
 msgctxt "@action"
 msgid "Pop out"
 msgstr "Извеждане в нов прозорец"
 
-#: qml/stopwatch/StopwatchPage.qml:108 qml/stopwatch/StopwatchPage.qml:372
-#: qml/timer/TimerPage.qml:173
+#: qml/stopwatch/StopwatchPage.qml:107 qml/stopwatch/StopwatchPage.qml:371
+#: qml/timer/TimerPage.qml:175
 #, kde-format
 msgctxt "@action:button"
 msgid "Pause"
 msgstr "Пауза"
 
-#: qml/stopwatch/StopwatchPage.qml:110 qml/stopwatch/StopwatchPage.qml:374
+#: qml/stopwatch/StopwatchPage.qml:109 qml/stopwatch/StopwatchPage.qml:373
 #, kde-format
 msgctxt "@action:button"
 msgid "Resume"
 msgstr "Възобновяване"
 
-#: qml/stopwatch/StopwatchPage.qml:112 qml/stopwatch/StopwatchPage.qml:376
-#: qml/timer/TimerPage.qml:173
+#: qml/stopwatch/StopwatchPage.qml:111 qml/stopwatch/StopwatchPage.qml:375
+#: qml/timer/TimerPage.qml:175
 #, kde-format
 msgctxt "@action:button"
 msgid "Start"
 msgstr "Начало"
 
-#: qml/stopwatch/StopwatchPage.qml:122
+#: qml/stopwatch/StopwatchPage.qml:121
 #, kde-format
 msgctxt "@action:button"
 msgid "Lap"
 msgstr "Етап"
 
-#: qml/stopwatch/StopwatchPage.qml:122 qml/timer/TimerPage.qml:179
+#: qml/stopwatch/StopwatchPage.qml:121 qml/timer/TimerPage.qml:181
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset"
 msgstr "Нулиране"
 
-#: qml/stopwatch/StopwatchPage.qml:237 qml/stopwatch/StopwatchPage.qml:272
-#: qml/timer/TimerPage.qml:51 qml/timer/TimerPage.qml:113
+#: qml/stopwatch/StopwatchPage.qml:236 qml/stopwatch/StopwatchPage.qml:271
+#: qml/timer/TimerPage.qml:53 qml/timer/TimerPage.qml:115
 #, kde-format
 msgid "Reset"
 msgstr "Нулиране"
 
-#: qml/stopwatch/StopwatchPage.qml:239 qml/timer/TimerPage.qml:43
-#: qml/timer/TimerPage.qml:107
+#: qml/stopwatch/StopwatchPage.qml:238 qml/timer/TimerPage.qml:45
+#: qml/timer/TimerPage.qml:109
 #, kde-format
 msgid "Pause"
 msgstr "Пауза"
 
-#: qml/stopwatch/StopwatchPage.qml:241
+#: qml/stopwatch/StopwatchPage.qml:240
 #, kde-format
 msgid "Resume"
 msgstr "Възобновяване"
 
-#: qml/stopwatch/StopwatchPage.qml:243 qml/timer/TimerPage.qml:43
-#: qml/timer/TimerPage.qml:107
+#: qml/stopwatch/StopwatchPage.qml:242 qml/timer/TimerPage.qml:45
+#: qml/timer/TimerPage.qml:109
 #, kde-format
 msgid "Start"
 msgstr "Начало"
 
-#: qml/stopwatch/StopwatchPage.qml:272 qml/stopwatch/StopwatchPage.qml:313
+#: qml/stopwatch/StopwatchPage.qml:271 qml/stopwatch/StopwatchPage.qml:312
 #, kde-format
 msgid "Lap"
 msgstr "Етап"
 
-#: qml/stopwatch/StopwatchPage.qml:293
+#: qml/stopwatch/StopwatchPage.qml:292
 #, kde-format
 msgid ""
 "Press Space to start or pause the stopwatch. Delete or Backspace resets it. "
@@ -505,28 +505,28 @@ msgstr ""
 "Натиснете интервал, за да стартирате или спрете хронометъра. Delete или "
 "Backspace го нулират. Enter добавя цикъл."
 
-#: qml/stopwatch/StopwatchPage.qml:321
+#: qml/stopwatch/StopwatchPage.qml:320
 #, kde-format
 msgid "Lap Time"
 msgstr "Време на етапа"
 
-#: qml/stopwatch/StopwatchPage.qml:328
+#: qml/stopwatch/StopwatchPage.qml:327
 #, kde-format
 msgid "Total"
 msgstr "Общо"
 
-#: qml/stopwatch/StopwatchPage.qml:358
+#: qml/stopwatch/StopwatchPage.qml:357
 #, kde-format
 msgid "Stopwatch is in Picture-in-Picture mode."
 msgstr "Хронометърът е в режим „Картина в картина“."
 
-#: qml/stopwatch/StopwatchPage.qml:363 qml/timer/TimerPage.qml:212
+#: qml/stopwatch/StopwatchPage.qml:362 qml/timer/TimerPage.qml:214
 #, kde-format
 msgctxt "@action:button Restore (unminimize) from pip mode"
 msgid "Restore"
 msgstr "Възстановяване"
 
-#: qml/stopwatch/StopwatchPage.qml:436
+#: qml/stopwatch/StopwatchPage.qml:435
 #, kde-format
 msgid "#%1"
 msgstr "#%1"
@@ -541,12 +541,12 @@ msgstr "Няма намерени местоположения"
 msgid "Add Location"
 msgstr "Добавяне на местоположение"
 
-#: qml/time/TimePage.qml:52
+#: qml/time/TimePage.qml:51
 #, kde-format
 msgid "Add"
 msgstr "Добавяне"
 
-#: qml/time/TimePage.qml:168
+#: qml/time/TimePage.qml:167
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Location"
@@ -618,7 +618,7 @@ msgid "seconds"
 msgstr "секунди"
 
 #: qml/timer/TimerForm.qml:114 qml/timer/TimerListDelegate.qml:125
-#: qml/timer/TimerPage.qml:66 qml/timer/TimerPage.qml:128
+#: qml/timer/TimerPage.qml:68 qml/timer/TimerPage.qml:130
 #, kde-format
 msgid "Loop Timer"
 msgstr "Таймер за цикъл"
@@ -717,12 +717,12 @@ msgctxt "@info:tooltip"
 msgid "Delete"
 msgstr "Изтриване"
 
-#: qml/timer/TimerListPage.qml:28
+#: qml/timer/TimerListPage.qml:27
 #, kde-format
 msgid "New Timer"
 msgstr "Нов таймер"
 
-#: qml/timer/TimerListPage.qml:62
+#: qml/timer/TimerListPage.qml:61
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
@@ -731,23 +731,23 @@ msgstr ""
 "Демонът на часовника не беше намерен. Моля, стартирайте kclockd, за да имате "
 "функционалност на таймера."
 
-#: qml/timer/TimerListPage.qml:64
+#: qml/timer/TimerListPage.qml:63
 #, kde-format
 msgid "Failed to load the list of timers: %1"
 msgstr "Неуспешно зареждане на списъка с таймери: %1"
 
-#: qml/timer/TimerListPage.qml:103
+#: qml/timer/TimerListPage.qml:102
 #, kde-format
 msgctxt "@action:button"
 msgid "New Timer"
 msgstr "Нов таймер"
 
-#: qml/timer/TimerListPage.qml:114
+#: qml/timer/TimerListPage.qml:113
 #, kde-format
 msgid "No timers configured"
 msgstr "Няма конфигурирани таймери"
 
-#: qml/timer/TimerListPage.qml:120
+#: qml/timer/TimerListPage.qml:119
 #, kde-format
 msgid "Add timer"
 msgstr "Добавете таймер"
@@ -757,24 +757,24 @@ msgstr "Добавете таймер"
 msgid "New timer"
 msgstr "Нов таймер"
 
-#: qml/timer/TimerPage.qml:57 qml/timer/TimerPage.qml:119
+#: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:121
 #, kde-format
 msgid "Delete"
 msgstr "Изтриване"
 
-#: qml/timer/TimerPage.qml:167
+#: qml/timer/TimerPage.qml:169
 #, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "+1:00"
 msgstr "+1:00"
 
-#: qml/timer/TimerPage.qml:197
+#: qml/timer/TimerPage.qml:199
 #, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "1 minute"
 msgstr "1 минута"
 
-#: qml/timer/TimerPage.qml:207
+#: qml/timer/TimerPage.qml:209
 #, kde-format
 msgid "This timer is in Picture-in-Picture mode."
 msgstr "Таймерът е в режим „Картина в картина“."
