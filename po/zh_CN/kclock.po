@@ -230,7 +230,7 @@ msgstr "找不到时钟守护进程。请启动 kclockd 以获得闹钟功能。
 #: qml/alarm/AlarmListPage.qml:59
 #, kde-format
 msgid "Failed to load the list of alarms: %1"
-msgstr ""
+msgstr "加载闹钟列表失败：%1"
 
 #: qml/alarm/AlarmListPage.qml:85
 #, kde-format
@@ -723,7 +723,7 @@ msgstr "找不到时钟守护进程。请启动 kclockd 以获得计时器功能
 #: qml/timer/TimerListPage.qml:63
 #, kde-format
 msgid "Failed to load the list of timers: %1"
-msgstr ""
+msgstr "加载计时器列表失败：%1"
 
 #: qml/timer/TimerListPage.qml:102
 #, kde-format
