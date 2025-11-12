@@ -156,6 +156,7 @@ Kirigami.ScrollablePage {
                     Label {
                         id: text
                         text: StopwatchTimer.display + "."
+                        font.features: { "tnum": 1 }
                         font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 4.75)
                         font.weight: Font.ExtraLight
                     }
@@ -163,6 +164,7 @@ Kirigami.ScrollablePage {
                         id: secondsText
                         anchors.baseline: text.baseline
                         text: StopwatchTimer.small
+                        font.features: { "tnum": 1 }
                         font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 3.75)
                         font.weight: Font.ExtraLight
                     }
