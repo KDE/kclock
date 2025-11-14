@@ -95,7 +95,7 @@ Name[th]=หมดเวลา
 Name[tr]=Sayaç Bitti
 Name[uk]=Відлік завершено
 Name[zh_CN]=计时器结束
-Name[zh_TW]=計時器已結束
+Name[zh_TW]=時間到！
 Comment=Your timer has finished!
 Comment[ar]=انتهى المؤقّت!
 Comment[bg]=Таймерът завърши!
@@ -138,7 +138,7 @@ Comment[th]=หมดเวลาแล้ว
 Comment[tr]=Sayaç bitti!
 Comment[uk]=Відлік за вашим таймером завершено!
 Comment[zh_CN]=计时器已结束计时！
-Comment[zh_TW]=您的計時器已結束！
+Comment[zh_TW]=您的計時器時間已到！
 Action=Popup
 
 
