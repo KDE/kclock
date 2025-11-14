@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-08 00:45+0000\n"
+"POT-Creation-Date: 2025-11-14 00:45+0000\n"
 "PO-Revision-Date: 2025-10-18 16:20+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -439,20 +439,20 @@ msgctxt "@action"
 msgid "Pop out"
 msgstr "Gaineratu"
 
-#: qml/stopwatch/StopwatchPage.qml:107 qml/stopwatch/StopwatchPage.qml:371
+#: qml/stopwatch/StopwatchPage.qml:107 qml/stopwatch/StopwatchPage.qml:373
 #: qml/timer/TimerPage.qml:175
 #, kde-format
 msgctxt "@action:button"
 msgid "Pause"
 msgstr "Etenaldia"
 
-#: qml/stopwatch/StopwatchPage.qml:109 qml/stopwatch/StopwatchPage.qml:373
+#: qml/stopwatch/StopwatchPage.qml:109 qml/stopwatch/StopwatchPage.qml:375
 #, kde-format
 msgctxt "@action:button"
 msgid "Resume"
 msgstr "Berrekin"
 
-#: qml/stopwatch/StopwatchPage.qml:111 qml/stopwatch/StopwatchPage.qml:375
+#: qml/stopwatch/StopwatchPage.qml:111 qml/stopwatch/StopwatchPage.qml:377
 #: qml/timer/TimerPage.qml:175
 #, kde-format
 msgctxt "@action:button"
@@ -471,35 +471,35 @@ msgctxt "@action:button"
 msgid "Reset"
 msgstr "Berrezarri"
 
-#: qml/stopwatch/StopwatchPage.qml:236 qml/stopwatch/StopwatchPage.qml:271
+#: qml/stopwatch/StopwatchPage.qml:238 qml/stopwatch/StopwatchPage.qml:273
 #: qml/timer/TimerPage.qml:53 qml/timer/TimerPage.qml:115
 #, kde-format
 msgid "Reset"
 msgstr "Berrezarri"
 
-#: qml/stopwatch/StopwatchPage.qml:238 qml/timer/TimerPage.qml:45
+#: qml/stopwatch/StopwatchPage.qml:240 qml/timer/TimerPage.qml:45
 #: qml/timer/TimerPage.qml:109
 #, kde-format
 msgid "Pause"
 msgstr "Eten"
 
-#: qml/stopwatch/StopwatchPage.qml:240
+#: qml/stopwatch/StopwatchPage.qml:242
 #, kde-format
 msgid "Resume"
 msgstr "Berrekin"
 
-#: qml/stopwatch/StopwatchPage.qml:242 qml/timer/TimerPage.qml:45
+#: qml/stopwatch/StopwatchPage.qml:244 qml/timer/TimerPage.qml:45
 #: qml/timer/TimerPage.qml:109
 #, kde-format
 msgid "Start"
 msgstr "Abiarazi"
 
-#: qml/stopwatch/StopwatchPage.qml:271 qml/stopwatch/StopwatchPage.qml:312
+#: qml/stopwatch/StopwatchPage.qml:273 qml/stopwatch/StopwatchPage.qml:314
 #, kde-format
 msgid "Lap"
 msgstr "Itzulia"
 
-#: qml/stopwatch/StopwatchPage.qml:292
+#: qml/stopwatch/StopwatchPage.qml:294
 #, kde-format
 msgid ""
 "Press Space to start or pause the stopwatch. Delete or Backspace resets it. "
@@ -508,28 +508,28 @@ msgstr ""
 "Sakatu Zuriunea kronometroa abiatzeko edo etenarazteko. Ezabatuk edo atzera-"
 "teklak berrezartzen dute. Sartuk itzulikoa gehitzen du."
 
-#: qml/stopwatch/StopwatchPage.qml:320
+#: qml/stopwatch/StopwatchPage.qml:322
 #, kde-format
 msgid "Lap Time"
 msgstr "Itzuliko denbora"
 
-#: qml/stopwatch/StopwatchPage.qml:327
+#: qml/stopwatch/StopwatchPage.qml:329
 #, kde-format
 msgid "Total"
 msgstr "Guztira"
 
-#: qml/stopwatch/StopwatchPage.qml:357
+#: qml/stopwatch/StopwatchPage.qml:359
 #, kde-format
 msgid "Stopwatch is in Picture-in-Picture mode."
 msgstr "Kronometroa PiP (Picture-in-Picture) moduan dago."
 
-#: qml/stopwatch/StopwatchPage.qml:362 qml/timer/TimerPage.qml:214
+#: qml/stopwatch/StopwatchPage.qml:364 qml/timer/TimerPage.qml:214
 #, kde-format
 msgctxt "@action:button Restore (unminimize) from pip mode"
 msgid "Restore"
 msgstr "Lehengoratu"
 
-#: qml/stopwatch/StopwatchPage.qml:435
+#: qml/stopwatch/StopwatchPage.qml:437
 #, kde-format
 msgid "#%1"
 msgstr "#%1"
