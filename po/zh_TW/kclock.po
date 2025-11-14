@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-08 02:38+0000\n"
-"PO-Revision-Date: 2025-08-08 02:37+0900\n"
+"PO-Revision-Date: 2025-11-13 22:28+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 25.07.70\n"
+"X-Generator: Lokalize 25.11.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -233,7 +233,7 @@ msgstr "找不到時鐘守護程式。請啟動 kclockd 以啟用鬧鐘功能。
 #: qml/alarm/AlarmListPage.qml:59
 #, kde-format
 msgid "Failed to load the list of alarms: %1"
-msgstr ""
+msgstr "載入鬧鐘清單失敗：%1"
 
 #: qml/alarm/AlarmListPage.qml:85
 #, kde-format
@@ -727,7 +727,7 @@ msgstr "找不到時鐘守護程式。請啟動 kclockd 以啟用計時器功能
 #: qml/timer/TimerListPage.qml:63
 #, kde-format
 msgid "Failed to load the list of timers: %1"
-msgstr ""
+msgstr "載入計時器清單失敗：%1"
 
 #: qml/timer/TimerListPage.qml:102
 #, kde-format
@@ -775,7 +775,7 @@ msgstr "這個計時器目前使用子母畫面。"
 #: qml/timer/TimerRingingPopup.qml:25
 #, kde-format
 msgid "Timer has finished"
-msgstr "計時器已結束"
+msgstr "時間到！"
 
 #: qml/timer/TimerRingingPopup.qml:44
 #, kde-format
