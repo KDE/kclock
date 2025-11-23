@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:55+0000\n"
-"PO-Revision-Date: 2025-10-15 17:45+0100\n"
+"PO-Revision-Date: 2025-11-22 19:16+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -483,7 +483,7 @@ msgstr "Pausar"
 #: qml/stopwatch/StopwatchPage.qml:242
 #, kde-format
 msgid "Resume"
-msgstr "Continuar"
+msgstr "Reanudar"
 
 #: qml/stopwatch/StopwatchPage.qml:244 qml/timer/TimerPage.qml:45
 #: qml/timer/TimerPage.qml:109
@@ -685,7 +685,7 @@ msgstr "Guardar"
 #, kde-format
 msgctxt "@action:button"
 msgid "Done"
-msgstr "Hecho"
+msgstr "Terminado"
 
 #: qml/timer/TimerListDelegate.qml:164
 #, kde-format
