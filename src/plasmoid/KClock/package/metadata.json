@@ -73,7 +73,7 @@
         "Description[sv]": "Klockkomponent",
         "Description[tr]": "K Saat araç takımı",
         "Description[uk]": "Віджет KClock",
-        "Description[zh_CN]": "KClock 时钟挂件",
+        "Description[zh_CN]": "KClock 时钟小部件",
         "Description[zh_TW]": "KClock 元件",
         "EnabledByDefault": true,
         "FormFactors": [
