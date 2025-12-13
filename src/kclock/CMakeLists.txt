@@ -35,6 +35,10 @@ set(kclock_SRCS
 
     wayland/pipshellsurface.cpp
     wayland/pipshellsurface.h
+    wayland/WaylandAboveLockscreen.cpp
+    wayland/WaylandAboveLockscreen.h
+    utils/LockscreenUtils.cpp
+    utils/LockscreenUtils.h
     pipwindow.cpp
     pipwindow.h
     )
@@ -69,6 +73,7 @@ ecm_add_qml_module(kclock URI org.kde.kclock QML_FILES
     qml/alarm/AlarmListPage.qml
     qml/alarm/AlarmListDelegate.qml
     qml/alarm/AlarmRingingPopup.qml
+    qml/alarm/AlarmLockscreenPopup.qml
 
     qml/components/SoundPickerPage.qml
     qml/components/AboutPage.qml
@@ -112,6 +117,32 @@ qt6_generate_wayland_protocol_client_sources(kclock
         ${Wayland_DATADIR}/wayland.xml
 )
 
+
+if (KCLOCK_BUILD_SHELL_OVERLAY)
+    find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED Gui WaylandClient)
+
+    if (Qt6Gui_VERSION VERSION_GREATER_EQUAL "6.10.0")
+        find_package(Qt6 REQUIRED COMPONENTS GuiPrivate WaylandClientPrivate)
+    else()
+        find_package(Qt6Gui ${QT_MIN_VERSION} CONFIG REQUIRED Private)
+        find_package(Qt6WaylandClient ${QT_MIN_VERSION} COMPONENTS CONFIG REQUIRED Private)
+    endif()
+
+    find_package(Wayland REQUIRED)
+    find_package(PlasmaWaylandProtocols 1.8 CONFIG)
+    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS WindowSystem)
+    set_package_properties(PlasmaWaylandProtocols PROPERTIES
+        TYPE REQUIRED
+        PURPOSE "Collection of Plasma-specific Wayland protocols"
+        URL "https://invent.kde.org/libraries/plasma-wayland-protocols/"
+    )
+    find_package(QtWaylandScanner)
+    set_package_properties(QtWaylandScanner PROPERTIES
+        TYPE REQUIRED
+        PURPOSE "Required for building with Wayland above-lock-screen support"
+    )
+
+endif() # KCLOCK_BUILD_SHELL_OVERLAY
 target_link_libraries(kclock PRIVATE
     Qt6::Qml
     Qt6::Gui
@@ -129,5 +160,24 @@ target_link_libraries(kclock PRIVATE
     KF6::Svg
 )
 
+if(KCLOCK_BUILD_SHELL_OVERLAY)
+    
+    target_link_libraries(kclock PRIVATE
+        Qt6::GuiPrivate
+        Qt6::WaylandClient
+        Wayland::Client
+        KF6::WindowSystem
+    )
+
+    if (Qt6_VERSION VERSION_GREATER_EQUAL "6.8.0")
+        set(private_code_option  "PRIVATE_CODE")
+    endif()
+
+    qt6_generate_wayland_protocol_client_sources(kclock FILES
+        ${PLASMA_WAYLAND_PROTOCOLS_DIR}/kde-lockscreen-overlay-v1.xml
+        ${private_code_option}
+    )
+
+endif() # KCLOCK_BUILD_SHELL_OVERLAY
 target_include_directories(kclock PRIVATE ${CMAKE_BINARY_DIR})
 install(TARGETS kclock ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

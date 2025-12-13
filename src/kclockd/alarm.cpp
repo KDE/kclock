@@ -1,6 +1,7 @@
 /*
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
  * Copyright 2020-2022 Devin Lin <devin@kde.org>
+ * Copyright 2025 Tushar Gupta <tushar.197712@gmail.com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
@@ -10,6 +11,7 @@
 #include "alarmadaptor.h"
 #include "kclockdsettings.h"
 #include "utilities.h"
+#include "utils/ScreenSaverUtils.h"
 
 #include <KConfigGroup>
 #include <KSharedConfig>
@@ -19,6 +21,7 @@
 #include <QDateTime>
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <QProcess>
 
 // alarm from json (loaded from storage)
 Alarm::Alarm(const QString &serialized, AlarmModel *parent)
@@ -286,6 +289,17 @@ void Alarm::ring()
         m_originalRingTime = m_nextRingTime;
     }
 
+#ifdef KCLOCK_BUILD_SHELL_OVERLAY
+    if (ScreenSaverUtils::getActive()) {
+        QString program = QStringLiteral("kclock");
+        QStringList args;
+        args << QStringLiteral("--alarm-lockscreen-popup") << m_uuid.toString();
+        bool ok = QProcess::startDetached(program, args);
+        if (!ok) {
+            qWarning() << "Failed to start kclock";
+        }
+    }
+#endif
     // reset snoozed length (if snooze happens, this will get set again)
     setSnoozedLength(0);
 

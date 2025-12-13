@@ -145,6 +145,15 @@ QVariant AlarmModel::data(const QModelIndex &index, int role) const
     return alarm ? QVariant::fromValue(alarm) : QVariant();
 }
 
+Alarm *AlarmModel::alarmByUuid(const QString &uuid) const
+{
+    for (Alarm *a : alarmsList) {
+        if (a->uuid().toString() == uuid)
+            return a;
+    }
+    return nullptr;
+}
+
 int AlarmModel::rowCount(const QModelIndex &parent) const
 {
     if (parent.isValid()) {
@@ -203,7 +212,6 @@ void AlarmModel::addAlarmInternal(QString uuid)
     alarmsList.insert(index, alarm);
     Q_EMIT endInsertRows();
 }
-
 void AlarmModel::removeAlarm(const QString &uuid)
 {
     auto index = 0;

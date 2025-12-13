@@ -18,6 +18,11 @@ project(kclock VERSION ${RELEASE_SERVICE_VERSION})
 
 option(BUILD_PLASMOID "Build Plasmoid" ON)
 
+option(KCLOCK_BUILD_SHELL_OVERLAY "Enable building of lockscreen overlay functionality" ON)
+if (KCLOCK_BUILD_SHELL_OVERLAY)
+    add_definitions(-DKCLOCK_BUILD_SHELL_OVERLAY)
+endif() # KCLOCK_BUILD_SHELL_OVERLAY
+
 set(KF_MIN_VERSION "6.8.0")
 set(QT_MIN_VERSION "6.5.0")
 

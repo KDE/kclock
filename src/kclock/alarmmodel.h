@@ -68,6 +68,7 @@ public:
                               int snoozeDuration); // in 24 hours units, ringTone could be chosen from a list
 
     Q_INVOKABLE QString timeToRingFormatted(int hours, int minutes, int daysOfWeek); // for new alarm use
+    Q_INVOKABLE Alarm *alarmByUuid(const QString &uuid) const;
 
 private Q_SLOTS:
     void addAlarmInternal(QString uuid);

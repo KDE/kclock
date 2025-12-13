@@ -1,6 +1,7 @@
 #
 # Copyright 2020 Han Young <hanyoung@protonmail.com>
 # Copyright 2020 Devin Lin <espidev@gmail.com>
+# Copyright 2025 Tushar Gupta <tushar.197712@gmail.com>
 #
 # SPDX-License-Identifier: GPL-2.0-or-later
 #
@@ -31,6 +32,9 @@ set(kclockd_SRCS
     unitylauncher.h
     waittimerwakeupprovider.cpp
     waittimerwakeupprovider.h
+
+    utils/ScreenSaverUtils.h
+    utils/ScreenSaverUtils.cpp
     )
 # generate KConfig class from xml
 kconfig_add_kcfg_files(kclockd_SRCS kclockdsettings.kcfgc GENERATE_MOC)

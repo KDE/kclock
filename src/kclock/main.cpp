@@ -2,13 +2,16 @@
  * Copyright 2020 Han Young <hanyoung@protonmail.com>
  * Copyright 2020 Devin Lin <espidev@gmail.com>
  * Copyright 2019 Nick Reitemeyer <nick.reitemeyer@web.de>
+ * Copyright 2025 Tushar Gupta <tushar.197712@gmail.com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
 #include "kclockdsettings.h"
 #include "utilityinterface.h"
+#include "utils/LockscreenUtils.h"
 #include "version.h"
+#include "wayland/WaylandAboveLockscreen.h"
 
 #include <KAboutData>
 #include <KConfig>
@@ -63,12 +66,23 @@ int main(int argc, char *argv[])
     parser.addOption(pageOption);
     QCommandLineOption newWindowOption(QStringLiteral("new-window"), i18n("Explicitly open a new Clock window"));
     parser.addOption(newWindowOption);
+    QCommandLineOption alarmLockscreenPopupOption(QStringLiteral("alarm-lockscreen-popup"),
+                                                  QStringLiteral("Open alarm popup on lockscreen using specific alarm id."),
+                                                  QStringLiteral("alarm-id"));
+    parser.addOption(alarmLockscreenPopupOption);
     parser.process(app);
     aboutData.processCommandLine(&parser);
+    bool isAlarmPopup = parser.isSet(alarmLockscreenPopupOption);
+    QString alarmPopupId;
 
+    if (isAlarmPopup) {
+        alarmPopupId = parser.value(alarmLockscreenPopupOption);
+        qDebug() << "Starting in alarm popup mode with ID:" << alarmPopupId;
+    }
     // ~~~~ DBus setup ~~~~
 
-    const KDBusService::StartupOption serviceOptions = parser.isSet(newWindowOption) ? KDBusService::Multiple : KDBusService::Unique;
+    const KDBusService::StartupOption serviceOptions =
+        (parser.isSet(newWindowOption) || parser.isSet(alarmLockscreenPopupOption)) ? KDBusService::Multiple : KDBusService::Unique;
     KDBusService service(serviceOptions);
 
     // ensure kclockd is up with dbus autostart, any call will do
@@ -94,36 +108,67 @@ int main(int argc, char *argv[])
 
     // ~~~~ Parse command line arguments ~~~~
     const QString initialPage = parser.isSet(pageOption) ? parser.value(pageOption) : QStringLiteral("Time");
-    engine.setInitialProperties({{QStringLiteral("initialPage"), initialPage}});
-    engine.loadFromModule(QStringLiteral("org.kde.kclock"), QStringLiteral("Main"));
+
+    if (isAlarmPopup) {
+        qDebug() << alarmPopupId;
+        engine.loadFromModule(QStringLiteral("org.kde.kclock"), QStringLiteral("AlarmLockscreenPopup"));
+    } else {
+        engine.setInitialProperties({{QStringLiteral("initialPage"), initialPage}});
+        engine.loadFromModule(QStringLiteral("org.kde.kclock"), QStringLiteral("Main"));
+    }
 
     app.setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.kclock")));
 
-    QQuickWindow *mainWindow = qobject_cast<QQuickWindow *>(engine.rootObjects().first());
-    if (!mainWindow) {
-        qFatal() << "Failed to create main window";
+    QQuickWindow *mainWindow = nullptr;
+    if (!isAlarmPopup) {
+        mainWindow = qobject_cast<QQuickWindow *>(engine.rootObjects().first());
+        Q_ASSERT(mainWindow);
     }
 
-    QObject::connect(&service,
-                     &KDBusService::activateRequested,
-                     mainWindow,
-                     [&parser, mainWindow](const QStringList &arguments, const QString &workingDirectory) {
-                         Q_UNUSED(workingDirectory);
-                         parser.parse(arguments);
+#ifdef KCLOCK_BUILD_SHELL_OVERLAY
+    if (isAlarmPopup) {
+        QQuickWindow *lockscreenWindow = nullptr;
+        for (QObject *obj : engine.rootObjects()) {
+            QQuickWindow *window = qobject_cast<QQuickWindow *>(obj);
+            if (!window)
+                continue;
+            if (window->objectName() == QStringLiteral("AlarmLockscreenPopup")) {
+                lockscreenWindow = window;
+                lockscreenWindow->setProperty("alarmPopupId", QVariant::fromValue(alarmPopupId));
+            }
+        }
 
-                         if (parser.isSet(QStringLiteral("page"))) {
-                             const QString pageName = parser.value(QStringLiteral("page"));
-                             QVariant page;
-                             QMetaObject::invokeMethod(mainWindow, "getPage", qReturnArg(page), QVariant(pageName));
-                             if (page.isNull()) {
-                                 qWarning() << "Unknown page to switch to" << pageName;
-                             } else {
-                                 QMetaObject::invokeMethod(mainWindow, "switchToPage", QVariant(page), QVariant(0));
+        lockscreenWindow->setVisible(false);
+
+        WaylandAboveLockscreen overlay;
+        allowAboveLockscreen(lockscreenWindow, &overlay);
+        raiseWindow(lockscreenWindow);
+
+        lockscreenWindow->setVisible(true);
+    }
+#endif
+    if (mainWindow) {
+        mainWindow->setVisible(true);
+        QObject::connect(&service,
+                         &KDBusService::activateRequested,
+                         mainWindow,
+                         [&parser, mainWindow](const QStringList &arguments, const QString &workingDirectory) {
+                             Q_UNUSED(workingDirectory);
+                             parser.parse(arguments);
+
+                             if (parser.isSet(QStringLiteral("page"))) {
+                                 const QString pageName = parser.value(QStringLiteral("page"));
+                                 QVariant page;
+                                 QMetaObject::invokeMethod(mainWindow, "getPage", qReturnArg(page), QVariant(pageName));
+                                 if (page.isNull()) {
+                                     qWarning() << "Unknown page to switch to" << pageName;
+                                 } else {
+                                     QMetaObject::invokeMethod(mainWindow, "switchToPage", QVariant(page), QVariant(0));
+                                 }
                              }
-                         }
 
-                         mainWindow->requestActivate();
-                     });
-
+                             mainWindow->requestActivate();
+                         });
+    }
     return app.exec();
 }

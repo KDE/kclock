@@ -137,6 +137,8 @@ Keywords[zh_CN]=kclock;timer;stopwatch;alarm;timezone;time zone;world clock;计�
 Keywords[zh_TW]=kclock;timer;stopwatch;alarm;timezone;time zone;world clock;時鐘;鬧鐘;鬧鈴;計時器;世界時鐘;
 X-KDE-FormFactor=desktop;tablet;handset;
 
+X-KDE-Wayland-Interfaces=kde_lockscreen_overlay_v1
+
 [Desktop Action Timers]
 Name=Timers
 Name[ar]=المؤقّتات
