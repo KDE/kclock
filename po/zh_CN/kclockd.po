@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:55+0000\n"
+"POT-Creation-Date: 2025-12-14 00:45+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -27,23 +27,23 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "tds00@qq.com"
 
-#: alarm.cpp:72 alarm.h:51
+#: alarm.cpp:75 alarm.h:51
 #, kde-format
 msgid "Alarm"
 msgstr "闹钟"
 
-#: alarm.cpp:76 timer.cpp:69
+#: alarm.cpp:79 timer.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Dismiss"
 msgstr "关闭"
 
-#: alarm.cpp:79
+#: alarm.cpp:82
 #, kde-format
 msgid "Dismiss"
 msgstr "关闭"
 
-#: alarm.cpp:82
+#: alarm.cpp:85
 #, kde-format
 msgid "Snooze"
 msgstr "推迟"

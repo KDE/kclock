@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:55+0000\n"
+"POT-Creation-Date: 2025-12-14 00:45+0000\n"
 "PO-Revision-Date: 2025-10-12 08:55+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -28,43 +28,43 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde-l10n-he@kde.org"
 
-#: main.cpp:50
+#: main.cpp:53
 #, kde-format
 msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr "הגדרת התראות וקוצבי זמן, שימוש בשעון עצר וניהול שעונים עולמיים"
 
-#: main.cpp:52
+#: main.cpp:55
 #, kde-format
 msgid "© 2020-2024 KDE Community"
 msgstr "© 2020‏-2024 קהילת KDE"
 
-#: main.cpp:54
+#: main.cpp:57
 #, kde-format
 msgid "Devin Lin"
 msgstr "דווין לין"
 
-#: main.cpp:55
+#: main.cpp:58
 #, kde-format
 msgid "Han Young"
 msgstr "האן יאנג"
 
-#: main.cpp:56
+#: main.cpp:59
 #, kde-format
 msgid "Kai Uwe Broulik"
 msgstr "קאי אווה ברוליק"
 
-#: main.cpp:56
+#: main.cpp:59
 #, kde-format
 msgctxt "Author"
 msgid "Desktop Integration"
 msgstr "שילוב עם שולחן העבודה"
 
-#: main.cpp:62
+#: main.cpp:65
 #, kde-format
 msgid "Select opened page"
 msgstr "בחירת עמוד שנפתח"
 
-#: main.cpp:64
+#: main.cpp:67
 #, kde-format
 msgid "Explicitly open a new Clock window"
 msgstr "לפתחות חלון שעון חדש במפורש"
@@ -270,15 +270,27 @@ msgstr "התראה"
 msgid "Deleted %1"
 msgstr "%1 נמחק"
 
-#: qml/alarm/AlarmRingingPopup.qml:26
+#: qml/alarm/AlarmLockscreenPopup.qml:22 qml/alarm/AlarmRingingPopup.qml:26
 #, kde-format
 msgid "Alarm is ringing"
 msgstr "ההתראה מצלצלת"
 
-#: qml/alarm/AlarmRingingPopup.qml:53
+#: qml/alarm/AlarmLockscreenPopup.qml:51
+#, fuzzy, kde-format
+#| msgid "Select Alarm Sound"
+msgid "Alarm not found"
+msgstr "בחירת צליל התראה"
+
+#: qml/alarm/AlarmLockscreenPopup.qml:75 qml/alarm/AlarmRingingPopup.qml:53
 #, kde-format
 msgid "Snooze"
 msgstr "נודניק"
+
+#: qml/alarm/AlarmLockscreenPopup.qml:102
+#, fuzzy, kde-format
+#| msgid "Stopwatch"
+msgid "Stop"
+msgstr "שעון עצר"
 
 #: qml/alarm/AlarmRingingPopup.qml:57 qml/timer/TimerRingingPopup.qml:54
 #, kde-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:55+0000\n"
+"POT-Creation-Date: 2025-12-14 00:45+0000\n"
 "PO-Revision-Date: 2025-10-12 09:09+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -28,44 +28,44 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "matjaz.jeran@amis.net"
 
-#: main.cpp:50
+#: main.cpp:53
 #, kde-format
 msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr ""
 "Nastavi alarme in časomerilnike, uporabi štoparico in upravljaj svetovne ure"
 
-#: main.cpp:52
+#: main.cpp:55
 #, kde-format
 msgid "© 2020-2024 KDE Community"
 msgstr "© 2020-2024 skupnost KDE"
 
-#: main.cpp:54
+#: main.cpp:57
 #, kde-format
 msgid "Devin Lin"
 msgstr "Devin Lin"
 
-#: main.cpp:55
+#: main.cpp:58
 #, kde-format
 msgid "Han Young"
 msgstr "Han Young"
 
-#: main.cpp:56
+#: main.cpp:59
 #, kde-format
 msgid "Kai Uwe Broulik"
 msgstr "Kai Uwe Broulik"
 
-#: main.cpp:56
+#: main.cpp:59
 #, kde-format
 msgctxt "Author"
 msgid "Desktop Integration"
 msgstr "Integracija namizja"
 
-#: main.cpp:62
+#: main.cpp:65
 #, kde-format
 msgid "Select opened page"
 msgstr "Izberi odprto stran"
 
-#: main.cpp:64
+#: main.cpp:67
 #, kde-format
 msgid "Explicitly open a new Clock window"
 msgstr "Izrecno odpri novo okno ure"
@@ -273,15 +273,27 @@ msgstr "alarm"
 msgid "Deleted %1"
 msgstr "Zbrisano %1"
 
-#: qml/alarm/AlarmRingingPopup.qml:26
+#: qml/alarm/AlarmLockscreenPopup.qml:22 qml/alarm/AlarmRingingPopup.qml:26
 #, kde-format
 msgid "Alarm is ringing"
 msgstr "Alarm zvoni"
 
-#: qml/alarm/AlarmRingingPopup.qml:53
+#: qml/alarm/AlarmLockscreenPopup.qml:51
+#, fuzzy, kde-format
+#| msgid "Select Alarm Sound"
+msgid "Alarm not found"
+msgstr "Izberi zvok zvonjenja"
+
+#: qml/alarm/AlarmLockscreenPopup.qml:75 qml/alarm/AlarmRingingPopup.qml:53
 #, kde-format
 msgid "Snooze"
 msgstr "Dremež"
+
+#: qml/alarm/AlarmLockscreenPopup.qml:102
+#, fuzzy, kde-format
+#| msgid "Stopwatch"
+msgid "Stop"
+msgstr "Štoparica"
 
 #: qml/alarm/AlarmRingingPopup.qml:57 qml/timer/TimerRingingPopup.qml:54
 #, kde-format

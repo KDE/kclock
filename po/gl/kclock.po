@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:55+0000\n"
+"POT-Creation-Date: 2025-12-14 00:45+0000\n"
 "PO-Revision-Date: 2025-05-26 08:48+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -27,45 +27,45 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "adrian@chaves.gal"
 
-#: main.cpp:50
+#: main.cpp:53
 #, kde-format
 msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr ""
 "Defina alarmas e temporizadores, use un cronómetro, e xestione os reloxos "
 "mundiais."
 
-#: main.cpp:52
+#: main.cpp:55
 #, kde-format
 msgid "© 2020-2024 KDE Community"
 msgstr "© 2020-2024 Comunidade KDE"
 
-#: main.cpp:54
+#: main.cpp:57
 #, kde-format
 msgid "Devin Lin"
 msgstr "Devin Lin"
 
-#: main.cpp:55
+#: main.cpp:58
 #, kde-format
 msgid "Han Young"
 msgstr "Han Young"
 
-#: main.cpp:56
+#: main.cpp:59
 #, kde-format
 msgid "Kai Uwe Broulik"
 msgstr "Kai Uwe Broulik"
 
-#: main.cpp:56
+#: main.cpp:59
 #, kde-format
 msgctxt "Author"
 msgid "Desktop Integration"
 msgstr "Integración co escritorio."
 
-#: main.cpp:62
+#: main.cpp:65
 #, kde-format
 msgid "Select opened page"
 msgstr "Seleccionar a páxina aberta"
 
-#: main.cpp:64
+#: main.cpp:67
 #, kde-format
 msgid "Explicitly open a new Clock window"
 msgstr "Abrir explicitamente unha nova xanela de reloxo."
@@ -269,15 +269,27 @@ msgstr "alarma"
 msgid "Deleted %1"
 msgstr "Eliminouse %1"
 
-#: qml/alarm/AlarmRingingPopup.qml:26
+#: qml/alarm/AlarmLockscreenPopup.qml:22 qml/alarm/AlarmRingingPopup.qml:26
 #, kde-format
 msgid "Alarm is ringing"
 msgstr "A alarma está soando"
 
-#: qml/alarm/AlarmRingingPopup.qml:53
+#: qml/alarm/AlarmLockscreenPopup.qml:51
+#, fuzzy, kde-format
+#| msgid "Select Alarm Sound"
+msgid "Alarm not found"
+msgstr "Seleccionar o son da alarma"
+
+#: qml/alarm/AlarmLockscreenPopup.qml:75 qml/alarm/AlarmRingingPopup.qml:53
 #, kde-format
 msgid "Snooze"
 msgstr "Atrasar"
+
+#: qml/alarm/AlarmLockscreenPopup.qml:102
+#, fuzzy, kde-format
+#| msgid "Stopwatch"
+msgid "Stop"
+msgstr "Cronómetro"
 
 #: qml/alarm/AlarmRingingPopup.qml:57 qml/timer/TimerRingingPopup.qml:54
 #, kde-format
