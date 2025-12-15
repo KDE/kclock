@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-14 00:45+0000\n"
-"PO-Revision-Date: 2025-10-12 18:00+0200\n"
+"PO-Revision-Date: 2025-12-14 14:35+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -273,10 +273,9 @@ msgid "Alarm is ringing"
 msgstr "Alarm geeft geluidssignaal"
 
 #: qml/alarm/AlarmLockscreenPopup.qml:51
-#, fuzzy, kde-format
-#| msgid "Select Alarm Sound"
+#, kde-format
 msgid "Alarm not found"
-msgstr "Geluidssignaal selecteren"
+msgstr "Alarm niet gevonden"
 
 #: qml/alarm/AlarmLockscreenPopup.qml:75 qml/alarm/AlarmRingingPopup.qml:53
 #, kde-format
@@ -284,10 +283,9 @@ msgid "Snooze"
 msgstr "Indutten "
 
 #: qml/alarm/AlarmLockscreenPopup.qml:102
-#, fuzzy, kde-format
-#| msgid "Stopwatch"
+#, kde-format
 msgid "Stop"
-msgstr "Stopwatch"
+msgstr "Stoppen"
 
 #: qml/alarm/AlarmRingingPopup.qml:57 qml/timer/TimerRingingPopup.qml:54
 #, kde-format

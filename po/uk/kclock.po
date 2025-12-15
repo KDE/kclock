@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-14 00:45+0000\n"
-"PO-Revision-Date: 2025-10-12 16:10+0300\n"
+"PO-Revision-Date: 2025-12-14 17:12+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -282,10 +282,9 @@ msgid "Alarm is ringing"
 msgstr "Відтворюється дзвінок"
 
 #: qml/alarm/AlarmLockscreenPopup.qml:51
-#, fuzzy, kde-format
-#| msgid "Select Alarm Sound"
+#, kde-format
 msgid "Alarm not found"
-msgstr "Виберіть мелодію будильника"
+msgstr "Дзвінок не знайдено"
 
 #: qml/alarm/AlarmLockscreenPopup.qml:75 qml/alarm/AlarmRingingPopup.qml:53
 #, kde-format
@@ -293,10 +292,9 @@ msgid "Snooze"
 msgstr "Нагадати пізніше"
 
 #: qml/alarm/AlarmLockscreenPopup.qml:102
-#, fuzzy, kde-format
-#| msgid "Stopwatch"
+#, kde-format
 msgid "Stop"
-msgstr "Хронометр"
+msgstr "Зупинити"
 
 #: qml/alarm/AlarmRingingPopup.qml:57 qml/timer/TimerRingingPopup.qml:54
 #, kde-format
