@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-14 00:45+0000\n"
-"PO-Revision-Date: 2025-10-13 08:04+0200\n"
+"PO-Revision-Date: 2025-12-15 00:30+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.2\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -275,10 +275,9 @@ msgid "Alarm is ringing"
 msgstr "La sveglia sta suonando"
 
 #: qml/alarm/AlarmLockscreenPopup.qml:51
-#, fuzzy, kde-format
-#| msgid "Select Alarm Sound"
+#, kde-format
 msgid "Alarm not found"
-msgstr "Seleziona il suono della sveglia"
+msgstr "Sveglia non trovata"
 
 #: qml/alarm/AlarmLockscreenPopup.qml:75 qml/alarm/AlarmRingingPopup.qml:53
 #, kde-format
@@ -286,10 +285,9 @@ msgid "Snooze"
 msgstr "Posticipa"
 
 #: qml/alarm/AlarmLockscreenPopup.qml:102
-#, fuzzy, kde-format
-#| msgid "Stopwatch"
+#, kde-format
 msgid "Stop"
-msgstr "Cronometro"
+msgstr "Ferma"
 
 #: qml/alarm/AlarmRingingPopup.qml:57 qml/timer/TimerRingingPopup.qml:54
 #, kde-format
