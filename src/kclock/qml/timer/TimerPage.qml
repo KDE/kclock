@@ -192,6 +192,7 @@ Kirigami.Page {
     TimerComponent {
         anchors.fill: parent
         timer: root.timer
+        labelEditable: true
         visible: !root.minimizedToPip
 
         actions: [

@@ -25,6 +25,8 @@ Item {
     property alias actions: actionToolBar.actions
     property bool actionsVisible: true
 
+    property bool labelEditable
+
     // Whether to make the circle fill the item.
     property bool maximizedCircle: false
 
@@ -185,6 +187,46 @@ Item {
         anchors.bottom: timeLabels.top
         anchors.bottomMargin: Kirigami.Units.smallSpacing
         anchors.horizontalCenter: parent.horizontalCenter
+        visible: !labelField.activeFocus
+
+        MouseArea {
+            anchors.fill: parent
+            hoverEnabled: true // for ToolTip
+            Accessible.name: i18n("Click to edit timer name")
+            visible: !root.timerRunning && root.labelEditable
+            cursorShape: Qt.IBeamCursor
+            onClicked: {
+                labelField.text = root.timer.label;
+                labelField.forceActiveFocus();
+                labelField.selectAll();
+            }
+
+            ToolTip {
+                text: parent.Accessible.name
+            }
+        }
+    }
+
+    TextField {
+        id: labelField
+        anchors.fill: heading
+        horizontalAlignment: Text.AlignHCenter
+        background: null
+        topPadding: 0
+        leftPadding: 0
+        rightPadding: 0
+        bottomPadding: 0
+        font: heading.font
+        visible: activeFocus
+
+        // NOTE This is not onAccepted to prevent the Keys.onReturnPressed
+        // on TimerPage from getting the event.
+        Keys.onReturnPressed: {
+            root.timer.label = text;
+            root.forceActiveFocus();
+        }
+        Keys.onEnterPressed: (event) => Keys.returnPressed(event)
+        Keys.onEscapePressed: root.forceActiveFocus()
     }
 
     Kirigami.ActionToolBar {
