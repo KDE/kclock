@@ -177,7 +177,7 @@ Item {
         id: heading
         level: 4
         color: root.timerRunning ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
-        text: root.timer.label
+        text: root.timer.label || i18n("New timer")
         textFormat: Text.PlainText
         horizontalAlignment: Text.AlignHCenter
         elide: Text.ElideRight

@@ -140,7 +140,7 @@ Kirigami.AbstractCard {
                     id: label
                     level: 4
                     Layout.fillWidth: true
-                    text: root.label
+                    text: root.label || i18n("New timer")
                     elide: Text.ElideRight
                     textFormat: Text.PlainText
 
