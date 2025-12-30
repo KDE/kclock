@@ -1,0 +1,228 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the kclock package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kclock\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-12-14 00:45+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: alarm.cpp:75 alarm.h:51
+#, kde-format
+msgid "Alarm"
+msgstr ""
+
+#: alarm.cpp:79 timer.cpp:69
+#, kde-format
+msgctxt "@action:button"
+msgid "Dismiss"
+msgstr ""
+
+#: alarm.cpp:82
+#, kde-format
+msgid "Dismiss"
+msgstr ""
+
+#: alarm.cpp:85
+#, kde-format
+msgid "Snooze"
+msgstr ""
+
+#: alarmmodel.cpp:255
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Alarm: <shortcut>%1 %2</shortcut>"
+msgstr ""
+
+#: kclockrunner.cpp:74
+#, kde-format
+msgctxt "@action:button Add 1 minute to timer"
+msgid "+1 Minute"
+msgstr ""
+
+#: kclockrunner.cpp:75
+#, kde-format
+msgctxt "@action:button"
+msgid "Reset Timer"
+msgstr ""
+
+#: kclockrunner.cpp:82
+#, kde-format
+msgctxt "Note this is a KRunner keyword"
+msgid "timer"
+msgstr ""
+
+#: kclockrunner.cpp:99
+#, kde-format
+msgctxt "Timer running or paused (remaining time)"
+msgid "%1 (%2 Remaining)"
+msgstr ""
+
+#: kclockrunner.cpp:101
+#, kde-format
+msgctxt "Timer not running (timer length)"
+msgid "%1 (%2)"
+msgstr ""
+
+#: kclockrunner.cpp:112
+#, kde-format
+msgctxt "KRunner category"
+msgid "Timer"
+msgstr ""
+
+#: kclockrunner.cpp:116
+#, kde-format
+msgctxt "@action"
+msgid "Pause"
+msgstr ""
+
+#: kclockrunner.cpp:118
+#, kde-format
+msgctxt "@action"
+msgid "Resume"
+msgstr ""
+
+#: kclockrunner.cpp:120
+#, kde-format
+msgctxt "@action"
+msgid "Start Timer"
+msgstr ""
+
+#: kclockrunner.cpp:135
+#, kde-format
+msgctxt "Note this is a KRunner keyword"
+msgid "alarm"
+msgstr ""
+
+#: kclockrunner.cpp:157
+#, kde-format
+msgctxt "Alarm name (time)"
+msgid "%1 (%2)"
+msgstr ""
+
+#: kclockrunner.cpp:167
+#, kde-format
+msgctxt "KRunner category"
+msgid "Alarm"
+msgstr ""
+
+#: kclockrunner.cpp:171
+#, kde-format
+msgctxt "@action Dismiss Alarm"
+msgid "Dismiss"
+msgstr ""
+
+#: kclockrunner.cpp:174
+#, kde-format
+msgctxt "Disable timer (rings in time)"
+msgid "Disable (Rings in %1)"
+msgstr ""
+
+#: kclockrunner.cpp:176
+#, kde-format
+msgctxt "@action Enable Alarm"
+msgid "Enable"
+msgstr ""
+
+#: main.cpp:32
+#, kde-format
+msgid "Don't use PowerDevil for alarms if it is available"
+msgstr ""
+
+#: main.cpp:48
+#, kde-format
+msgid "© 2020-2022 KDE Community"
+msgstr ""
+
+#: main.cpp:49
+#, kde-format
+msgid "Devin Lin"
+msgstr ""
+
+#: main.cpp:50
+#, kde-format
+msgid "Han Young"
+msgstr ""
+
+#: main.cpp:51
+#, kde-format
+msgid "Kai Uwe Broulik"
+msgstr ""
+
+#: main.cpp:51
+#, kde-format
+msgctxt "Author"
+msgid "Desktop Integration"
+msgstr ""
+
+#: timer.cpp:64
+#, kde-format
+msgid "Timer complete"
+msgstr ""
+
+#: timer.cpp:65
+#, kde-format
+msgid "Your timer %1 has finished!"
+msgstr ""
+
+#: timermodel.cpp:269
+#, kde-format
+msgctxt "@action:button Open kclock app"
+msgid "Open Clock"
+msgstr ""
+
+#: timermodel.cpp:274
+#, kde-format
+msgctxt "@action:button Add minute to timer"
+msgid "+1 Minute"
+msgstr ""
+
+#: timermodel.cpp:277
+#, kde-format
+msgctxt "@action:button Reset timer"
+msgid "Reset"
+msgstr ""
+
+#: timermodel.cpp:280 timermodel.cpp:305
+#, kde-format
+msgctxt "@action:button Pause timer"
+msgid "Pause"
+msgstr ""
+
+#: timermodel.cpp:298
+#, kde-format
+msgctxt "@title:notification Timer name (paused)"
+msgid "%1 (Paused)"
+msgstr ""
+
+#: timermodel.cpp:307
+#, kde-format
+msgctxt "@action:button Resume timer"
+msgid "Resume"
+msgstr ""
+
+#: xdgportal.cpp:34
+#, kde-format
+msgid ""
+"Allow the clock process to be in the background and launched on startup."
+msgstr ""

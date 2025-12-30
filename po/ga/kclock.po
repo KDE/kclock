@@ -1,0 +1,889 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the kclock package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kclock\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-12-14 00:45+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
+"3 : 4\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: main.cpp:53
+#, kde-format
+msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
+msgstr ""
+
+#: main.cpp:55
+#, kde-format
+msgid "© 2020-2024 KDE Community"
+msgstr ""
+
+#: main.cpp:57
+#, kde-format
+msgid "Devin Lin"
+msgstr ""
+
+#: main.cpp:58
+#, kde-format
+msgid "Han Young"
+msgstr ""
+
+#: main.cpp:59
+#, kde-format
+msgid "Kai Uwe Broulik"
+msgstr ""
+
+#: main.cpp:59
+#, kde-format
+msgctxt "Author"
+msgid "Desktop Integration"
+msgstr ""
+
+#: main.cpp:65
+#, kde-format
+msgid "Select opened page"
+msgstr ""
+
+#: main.cpp:67
+#, kde-format
+msgid "Explicitly open a new Clock window"
+msgstr ""
+
+#: qml/alarm/AlarmForm.qml:84
+#, kde-format
+msgid "Days to repeat:"
+msgstr ""
+
+#: qml/alarm/AlarmForm.qml:86
+#, kde-format
+msgid "Select Days to Repeat"
+msgstr ""
+
+#: qml/alarm/AlarmForm.qml:113
+#, kde-format
+msgid "Alarm Name (optional):"
+msgstr ""
+
+#: qml/alarm/AlarmForm.qml:114
+#, kde-format
+msgid "Wake Up"
+msgstr ""
+
+#: qml/alarm/AlarmForm.qml:124
+#, kde-format
+msgid "Ring Duration:"
+msgstr ""
+
+#: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:128
+#, kde-format
+msgid "None"
+msgstr ""
+
+#: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:164 utilmodel.cpp:94
+#, kde-format
+msgid "%1 minute"
+msgid_plural "%1 minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: qml/alarm/AlarmForm.qml:126
+#, kde-format
+msgid "Select Ring Duration"
+msgstr ""
+
+#: qml/alarm/AlarmForm.qml:129 qml/alarm/AlarmForm.qml:166
+#, kde-format
+msgid "1 minute"
+msgstr ""
+
+#: qml/alarm/AlarmForm.qml:130 qml/alarm/AlarmForm.qml:167
+#, kde-format
+msgid "2 minutes"
+msgstr ""
+
+#: qml/alarm/AlarmForm.qml:131 qml/alarm/AlarmForm.qml:168
+#, kde-format
+msgid "5 minutes"
+msgstr ""
+
+#: qml/alarm/AlarmForm.qml:132 qml/alarm/AlarmForm.qml:169
+#, kde-format
+msgid "10 minutes"
+msgstr ""
+
+#: qml/alarm/AlarmForm.qml:133 qml/alarm/AlarmForm.qml:170
+#, kde-format
+msgid "15 minutes"
+msgstr ""
+
+#: qml/alarm/AlarmForm.qml:134 qml/alarm/AlarmForm.qml:171
+#, kde-format
+msgid "30 minutes"
+msgstr ""
+
+#: qml/alarm/AlarmForm.qml:135 qml/alarm/AlarmForm.qml:172
+#, kde-format
+msgid "1 hour"
+msgstr ""
+
+#: qml/alarm/AlarmForm.qml:162
+#, kde-format
+msgid "Snooze Length:"
+msgstr ""
+
+#: qml/alarm/AlarmForm.qml:163
+#, kde-format
+msgid "Select Snooze Length"
+msgstr ""
+
+#: qml/alarm/AlarmForm.qml:200
+#, kde-format
+msgid "Ring Sound:"
+msgstr ""
+
+#: qml/alarm/AlarmForm.qml:206
+#, kde-format
+msgid "Default Sound"
+msgstr ""
+
+#: qml/alarm/AlarmFormPage.qml:25 qml/alarm/AlarmRingingPopup.qml:43
+#, kde-format
+msgid "Alarm"
+msgstr ""
+
+#: qml/alarm/AlarmFormPage.qml:25
+#, kde-format
+msgctxt "Edit alarm page title"
+msgid "Editing %1"
+msgstr ""
+
+#: qml/alarm/AlarmFormPage.qml:26 qml/alarm/AlarmListPage.qml:28
+#, kde-format
+msgid "New Alarm"
+msgstr ""
+
+#: qml/alarm/AlarmFormPage.qml:38 qml/alarm/AlarmFormPage.qml:61
+#, kde-format
+msgid "Done"
+msgstr ""
+
+#: qml/alarm/AlarmFormPage.qml:67 qml/timer/TimerFormDialog.qml:111
+#, kde-format
+msgid "Cancel"
+msgstr ""
+
+#: qml/alarm/AlarmListDelegate.qml:104
+#, kde-format
+msgid "Snoozed %1 minute"
+msgid_plural "Snoozed %1 minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: qml/alarm/AlarmListDelegate.qml:125 qml/time/TimePageDelegate.qml:68
+#, kde-format
+msgctxt "@action:button"
+msgid "Delete"
+msgstr ""
+
+#: qml/alarm/AlarmListPage.qml:22 qml/components/BottomToolbar.qml:118
+#: qml/components/Sidebar.qml:101
+#, kde-format
+msgid "Alarms"
+msgstr ""
+
+#: qml/alarm/AlarmListPage.qml:35 qml/time/TimePage.qml:38
+#, kde-format
+msgid "Edit"
+msgstr ""
+
+#: qml/alarm/AlarmListPage.qml:44 qml/Main.qml:54
+#: qml/settings/SettingsPage.qml:28 qml/stopwatch/StopwatchPage.qml:69
+#: qml/time/TimePage.qml:61 qml/timer/TimerListPage.qml:36
+#, kde-format
+msgid "Settings"
+msgstr ""
+
+#: qml/alarm/AlarmListPage.qml:57
+#, kde-format
+msgid ""
+"The clock daemon was not found. Please start kclockd in order to have alarm "
+"functionality."
+msgstr ""
+
+#: qml/alarm/AlarmListPage.qml:59
+#, kde-format
+msgid "Failed to load the list of alarms: %1"
+msgstr ""
+
+#: qml/alarm/AlarmListPage.qml:85
+#, kde-format
+msgid "No alarms configured"
+msgstr ""
+
+#: qml/alarm/AlarmListPage.qml:91
+#, kde-format
+msgid "Add alarm"
+msgstr ""
+
+#: qml/alarm/AlarmListPage.qml:102 qml/timer/TimerListPage.qml:130
+#, kde-format
+msgid "Loading…"
+msgstr ""
+
+#: qml/alarm/AlarmListPage.qml:117
+#, kde-format
+msgctxt "@action:button"
+msgid "New Alarm"
+msgstr ""
+
+#: qml/alarm/AlarmListPage.qml:135
+#, kde-format
+msgid "alarm"
+msgstr ""
+
+#: qml/alarm/AlarmListPage.qml:135
+#, kde-format
+msgid "Deleted %1"
+msgstr ""
+
+#: qml/alarm/AlarmLockscreenPopup.qml:22 qml/alarm/AlarmRingingPopup.qml:26
+#, kde-format
+msgid "Alarm is ringing"
+msgstr ""
+
+#: qml/alarm/AlarmLockscreenPopup.qml:51
+#, kde-format
+msgid "Alarm not found"
+msgstr ""
+
+#: qml/alarm/AlarmLockscreenPopup.qml:75 qml/alarm/AlarmRingingPopup.qml:53
+#, kde-format
+msgid "Snooze"
+msgstr ""
+
+#: qml/alarm/AlarmLockscreenPopup.qml:102
+#, kde-format
+msgid "Stop"
+msgstr ""
+
+#: qml/alarm/AlarmRingingPopup.qml:57 qml/timer/TimerRingingPopup.qml:54
+#, kde-format
+msgid "Dismiss"
+msgstr ""
+
+#: qml/components/BottomToolbar.qml:82 qml/components/Sidebar.qml:55
+#: qml/time/TimePage.qml:25
+#, kde-format
+msgid "Time"
+msgstr ""
+
+#: qml/components/BottomToolbar.qml:93 qml/components/Sidebar.qml:68
+#: qml/timer/TimerListPage.qml:19
+#, kde-format
+msgid "Timers"
+msgstr ""
+
+#: qml/components/BottomToolbar.qml:106 qml/components/BottomToolbar.qml:107
+#: qml/components/Sidebar.qml:84 qml/stopwatch/StopwatchPage.qml:23
+#, kde-format
+msgid "Stopwatch"
+msgstr ""
+
+#: qml/components/PipHandler.qml:105
+#, kde-format
+msgctxt ""
+"@action:button Close pip and return to the page where the content was popped "
+"out from"
+msgid "Back to app"
+msgstr ""
+
+#: qml/components/PipHandler.qml:123
+#, kde-format
+msgctxt "@action:button"
+msgid "Close"
+msgstr ""
+
+#: qml/components/SoundPickerPage.qml:24
+#, kde-format
+msgid "Select Alarm Sound"
+msgstr ""
+
+#: qml/components/SoundPickerPage.qml:65
+#, kde-format
+msgid "Select from files…"
+msgstr ""
+
+#: qml/components/SoundPickerPage.qml:76 qml/settings/SettingsPage.qml:85
+#, kde-format
+msgid "Default"
+msgstr ""
+
+#: qml/components/SoundPickerPage.qml:156
+#, kde-format
+msgid "Choose an audio"
+msgstr ""
+
+#: qml/components/SoundPickerPage.qml:164
+#, kde-format
+msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
+msgstr ""
+
+#: qml/components/SoundPickerPage.qml:164
+#, kde-format
+msgid "All files (*)"
+msgstr ""
+
+#: qml/components/TimePicker.qml:94
+#, kde-format
+msgid "AM"
+msgstr ""
+
+#: qml/components/TimePicker.qml:94
+#, kde-format
+msgid "PM"
+msgstr ""
+
+#: qml/settings/SettingsPage.qml:40
+#, kde-format
+msgid "Time Format"
+msgstr ""
+
+#: qml/settings/SettingsPage.qml:42
+#, kde-format
+msgid "Use System Default"
+msgstr ""
+
+#: qml/settings/SettingsPage.qml:43
+#, kde-format
+msgid "12 Hour Time"
+msgstr ""
+
+#: qml/settings/SettingsPage.qml:44
+#, kde-format
+msgid "24 Hour Time"
+msgstr ""
+
+#: qml/settings/SettingsPage.qml:58
+#, kde-format
+msgid "Notifications for running timers"
+msgstr ""
+
+#: qml/settings/SettingsPage.qml:60
+#, kde-format
+msgid "Always"
+msgstr ""
+
+#: qml/settings/SettingsPage.qml:63
+#, kde-format
+msgctxt "When the app is not running"
+msgid "When %1 is not running"
+msgstr ""
+
+#: qml/settings/SettingsPage.qml:66
+#, kde-format
+msgid "Never"
+msgstr ""
+
+#: qml/settings/SettingsPage.qml:69
+#, kde-format
+msgid "Lets you pause and resume timers from the notification area."
+msgstr ""
+
+#: qml/settings/SettingsPage.qml:90
+#, kde-format
+msgid "Select Timer Sound"
+msgstr ""
+
+#: qml/settings/SettingsPage.qml:92
+#, kde-format
+msgid "Default timer ring sound"
+msgstr ""
+
+#: qml/settings/SettingsPage.qml:102
+#, kde-format
+msgid "About Clock"
+msgstr ""
+
+#: qml/settings/SettingsPage.qml:111
+#, kde-format
+msgid "About KDE"
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:54 qml/timer/TimerPage.qml:77
+#, kde-format
+msgctxt "@action"
+msgid "Restore"
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:54 qml/timer/TimerPage.qml:77
+#, kde-format
+msgctxt "@action"
+msgid "Pop out"
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:107 qml/stopwatch/StopwatchPage.qml:373
+#: qml/timer/TimerPage.qml:175
+#, kde-format
+msgctxt "@action:button"
+msgid "Pause"
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:109 qml/stopwatch/StopwatchPage.qml:375
+#, kde-format
+msgctxt "@action:button"
+msgid "Resume"
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:111 qml/stopwatch/StopwatchPage.qml:377
+#: qml/timer/TimerPage.qml:175
+#, kde-format
+msgctxt "@action:button"
+msgid "Start"
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:121
+#, kde-format
+msgctxt "@action:button"
+msgid "Lap"
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:121 qml/timer/TimerPage.qml:181
+#, kde-format
+msgctxt "@action:button"
+msgid "Reset"
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:238 qml/stopwatch/StopwatchPage.qml:273
+#: qml/timer/TimerPage.qml:53 qml/timer/TimerPage.qml:115
+#, kde-format
+msgid "Reset"
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:240 qml/timer/TimerPage.qml:45
+#: qml/timer/TimerPage.qml:109
+#, kde-format
+msgid "Pause"
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:242
+#, kde-format
+msgid "Resume"
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:244 qml/timer/TimerPage.qml:45
+#: qml/timer/TimerPage.qml:109
+#, kde-format
+msgid "Start"
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:273 qml/stopwatch/StopwatchPage.qml:314
+#, kde-format
+msgid "Lap"
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:294
+#, kde-format
+msgid ""
+"Press Space to start or pause the stopwatch. Delete or Backspace resets it. "
+"Enter adds a lap."
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:322
+#, kde-format
+msgid "Lap Time"
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:329
+#, kde-format
+msgid "Total"
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:359
+#, kde-format
+msgid "Stopwatch is in Picture-in-Picture mode."
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:364 qml/timer/TimerPage.qml:214
+#, kde-format
+msgctxt "@action:button Restore (unminimize) from pip mode"
+msgid "Restore"
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:437
+#, kde-format
+msgid "#%1"
+msgstr ""
+
+#: qml/time/AddLocationListView.qml:51
+#, kde-format
+msgid "No locations found"
+msgstr ""
+
+#: qml/time/AddLocationPage.qml:13 qml/time/AddLocationWrapper.qml:34
+#, kde-format
+msgid "Add Location"
+msgstr ""
+
+#: qml/time/TimePage.qml:51
+#, kde-format
+msgid "Add"
+msgstr ""
+
+#: qml/time/TimePage.qml:167
+#, kde-format
+msgctxt "@action:button"
+msgid "Add Location"
+msgstr ""
+
+#: qml/time/TimePageDelegate.qml:47
+#, kde-format
+msgid "Yesterday"
+msgstr ""
+
+#: qml/time/TimePageDelegate.qml:49
+#, kde-format
+msgid "Tomorrow"
+msgstr ""
+
+#: qml/timer/PresetDurationButton.qml:22
+#, kde-format
+msgid "1 m"
+msgstr ""
+
+#: qml/timer/TimerForm.qml:40
+#, kde-format
+msgid "1 min"
+msgstr ""
+
+#: qml/timer/TimerForm.qml:41
+#, kde-format
+msgid "5 min"
+msgstr ""
+
+#: qml/timer/TimerForm.qml:42
+#, kde-format
+msgid "10 min"
+msgstr ""
+
+#: qml/timer/TimerForm.qml:43
+#, kde-format
+msgid "15 min"
+msgstr ""
+
+#: qml/timer/TimerForm.qml:44
+#, kde-format
+msgid "30 min"
+msgstr ""
+
+#: qml/timer/TimerForm.qml:45
+#, kde-format
+msgid "1 h"
+msgstr ""
+
+#: qml/timer/TimerForm.qml:64
+#, kde-format
+msgid "<b>Duration:</b>"
+msgstr ""
+
+#: qml/timer/TimerForm.qml:77
+#, kde-format
+msgid "hours"
+msgstr ""
+
+#: qml/timer/TimerForm.qml:92
+#, kde-format
+msgid "minutes"
+msgstr ""
+
+#: qml/timer/TimerForm.qml:107
+#, kde-format
+msgid "seconds"
+msgstr ""
+
+#: qml/timer/TimerForm.qml:114 qml/timer/TimerListDelegate.qml:125
+#: qml/timer/TimerPage.qml:68 qml/timer/TimerPage.qml:130
+#, kde-format
+msgid "Loop Timer"
+msgstr ""
+
+#: qml/timer/TimerForm.qml:120
+#, kde-format
+msgid "<b>Label:</b>"
+msgstr ""
+
+#: qml/timer/TimerForm.qml:125
+#, kde-format
+msgid "<b>Command at timeout:</b>"
+msgstr ""
+
+#: qml/timer/TimerForm.qml:128
+#, kde-format
+msgid "optional"
+msgstr ""
+
+#: qml/timer/TimerFormDialog.qml:36
+#, kde-format
+msgctxt "@title:window Edit timer"
+msgid "Edit %1"
+msgstr ""
+
+#: qml/timer/TimerFormDialog.qml:36
+#, kde-format
+msgctxt "@title:window"
+msgid "Create Timer"
+msgstr ""
+
+#: qml/timer/TimerFormDialog.qml:53
+#, kde-format
+msgid "Timer"
+msgstr ""
+
+#: qml/timer/TimerFormDialog.qml:71
+#, kde-format
+msgid "Hide Presets"
+msgstr ""
+
+#: qml/timer/TimerFormDialog.qml:71
+#, kde-format
+msgid "Show Presets"
+msgstr ""
+
+#: qml/timer/TimerFormDialog.qml:76
+#, kde-format
+msgid "Toggle Delete"
+msgstr ""
+
+#: qml/timer/TimerFormDialog.qml:103
+#, kde-format
+msgid "Save As Preset"
+msgstr ""
+
+#: qml/timer/TimerFormDialog.qml:116
+#, kde-format
+msgctxt "@action:button"
+msgid "Save"
+msgstr ""
+
+#: qml/timer/TimerFormDialog.qml:116
+#, kde-format
+msgctxt "@action:button"
+msgid "Done"
+msgstr ""
+
+#: qml/timer/TimerListDelegate.qml:164
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Pause"
+msgstr ""
+
+#: qml/timer/TimerListDelegate.qml:164
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Start"
+msgstr ""
+
+#: qml/timer/TimerListDelegate.qml:174
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Reset"
+msgstr ""
+
+#: qml/timer/TimerListDelegate.qml:184
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Edit"
+msgstr ""
+
+#: qml/timer/TimerListDelegate.qml:195
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Delete"
+msgstr ""
+
+#: qml/timer/TimerListPage.qml:27
+#, kde-format
+msgid "New Timer"
+msgstr ""
+
+#: qml/timer/TimerListPage.qml:61
+#, kde-format
+msgid ""
+"The clock daemon was not found. Please start kclockd in order to have timer "
+"functionality."
+msgstr ""
+
+#: qml/timer/TimerListPage.qml:63
+#, kde-format
+msgid "Failed to load the list of timers: %1"
+msgstr ""
+
+#: qml/timer/TimerListPage.qml:102
+#, kde-format
+msgctxt "@action:button"
+msgid "New Timer"
+msgstr ""
+
+#: qml/timer/TimerListPage.qml:113
+#, kde-format
+msgid "No timers configured"
+msgstr ""
+
+#: qml/timer/TimerListPage.qml:119
+#, kde-format
+msgid "Add timer"
+msgstr ""
+
+#: qml/timer/TimerPage.qml:24
+#, kde-format
+msgid "New timer"
+msgstr ""
+
+#: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:121
+#, kde-format
+msgid "Delete"
+msgstr ""
+
+#: qml/timer/TimerPage.qml:169
+#, kde-format
+msgctxt "@action:button Add 1 minute to timer"
+msgid "+1:00"
+msgstr ""
+
+#: qml/timer/TimerPage.qml:199
+#, kde-format
+msgctxt "@action:button Add 1 minute to timer"
+msgid "1 minute"
+msgstr ""
+
+#: qml/timer/TimerPage.qml:209
+#, kde-format
+msgid "This timer is in Picture-in-Picture mode."
+msgstr ""
+
+#: qml/timer/TimerRingingPopup.qml:25
+#, kde-format
+msgid "Timer has finished"
+msgstr ""
+
+#: qml/timer/TimerRingingPopup.qml:44
+#, kde-format
+msgid "%1 has completed."
+msgstr ""
+
+#: qml/timer/TimerRingingPopup.qml:44
+#, kde-format
+msgid "The timer has completed."
+msgstr ""
+
+#: savedlocationsmodel.cpp:124
+#, kde-format
+msgid "%1 hour and 30 minutes ahead"
+msgstr ""
+
+#: savedlocationsmodel.cpp:124
+#, kde-format
+msgid "%1 hours and 30 minutes ahead"
+msgstr ""
+
+#: savedlocationsmodel.cpp:126
+#, kde-format
+msgid "%1 hour ahead"
+msgstr ""
+
+#: savedlocationsmodel.cpp:126
+#, kde-format
+msgid "%1 hours ahead"
+msgstr ""
+
+#: savedlocationsmodel.cpp:131
+#, kde-format
+msgid "%1 hour and 30 minutes behind"
+msgstr ""
+
+#: savedlocationsmodel.cpp:131
+#, kde-format
+msgid "%1 hours and 30 minutes behind"
+msgstr ""
+
+#: savedlocationsmodel.cpp:133
+#, kde-format
+msgid "%1 hour behind"
+msgstr ""
+
+#: savedlocationsmodel.cpp:133
+#, kde-format
+msgid "%1 hours behind"
+msgstr ""
+
+#: savedlocationsmodel.cpp:136
+#, kde-format
+msgid "Local time"
+msgstr ""
+
+#: utilmodel.cpp:88
+#, kde-format
+msgid "%1 day"
+msgid_plural "%1 days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: utilmodel.cpp:91
+#, kde-format
+msgid "%1 hour"
+msgid_plural "%1 hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: utilmodel.cpp:98
+#, kde-format
+msgid "Alarm will ring in under a minute"
+msgstr ""
+
+#: utilmodel.cpp:100
+#, kde-format
+msgid "Alarm will ring in %1"
+msgstr ""
+
+#: utilmodel.cpp:152
+#, kde-format
+msgctxt "Repeat"
+msgid "Only once"
+msgstr ""
+
+#: utilmodel.cpp:155
+#, kde-format
+msgctxt "Repeat"
+msgid "Everyday"
+msgstr ""
+
+#: utilmodel.cpp:158
+#, kde-format
+msgctxt "Repeat"
+msgid "Weekdays"
+msgstr ""
+
+#: utilmodel.cpp:179
+#, kde-format
+msgid ", "
+msgstr ""
