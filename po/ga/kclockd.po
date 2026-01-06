@@ -1,0 +1,229 @@
+# Copyright (C) 2026 This file is copyright:
+# This file is distributed under the same license as the kclock package.
+# SPDX-FileCopyrightText: 2026 Charlotte <altronic25@protonmail.com>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kclock\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 14:43+0000\n"
+"PO-Revision-Date: 2026-01-04 13:10+0000\n"
+"Last-Translator: Charlotte <altronic25@protonmail.com>\n"
+"Language-Team: Irish\n"
+"Language: ga\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
+"3 : 4\n"
+"X-Generator: Lokalize 25.12.0\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Charlotte"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "altronic25@protonmail.com"
+
+#: alarm.cpp:72 alarm.h:51
+#, kde-format
+msgid "Alarm"
+msgstr "Aláram"
+
+#: alarm.cpp:76 timer.cpp:69
+#, kde-format
+msgctxt "@action:button"
+msgid "Dismiss"
+msgstr "Diúltaigh"
+
+#: alarm.cpp:79
+#, kde-format
+msgid "Dismiss"
+msgstr "Diúltaigh"
+
+#: alarm.cpp:82
+#, kde-format
+msgid "Snooze"
+msgstr "Suan"
+
+#: alarmmodel.cpp:255
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Alarm: <shortcut>%1 %2</shortcut>"
+msgstr "Aláram: <shortcut>%1 %2</shortcut>"
+
+#: kclockrunner.cpp:74
+#, kde-format
+msgctxt "@action:button Add 1 minute to timer"
+msgid "+1 Minute"
+msgstr "+1 Nóiméad"
+
+#: kclockrunner.cpp:75
+#, kde-format
+msgctxt "@action:button"
+msgid "Reset Timer"
+msgstr "Athshocraigh Uaineadóir"
+
+#: kclockrunner.cpp:82
+#, kde-format
+msgctxt "Note this is a KRunner keyword"
+msgid "timer"
+msgstr "uaineadóir"
+
+#: kclockrunner.cpp:99
+#, kde-format
+msgctxt "Timer running or paused (remaining time)"
+msgid "%1 (%2 Remaining)"
+msgstr "%1 (%2 Atá Fágtha)"
+
+#: kclockrunner.cpp:101
+#, kde-format
+msgctxt "Timer not running (timer length)"
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
+#: kclockrunner.cpp:112
+#, kde-format
+msgctxt "KRunner category"
+msgid "Timer"
+msgstr "Uaineadóir"
+
+#: kclockrunner.cpp:116
+#, kde-format
+msgctxt "@action"
+msgid "Pause"
+msgstr "Sos"
+
+#: kclockrunner.cpp:118
+#, kde-format
+msgctxt "@action"
+msgid "Resume"
+msgstr "Atosaigh"
+
+#: kclockrunner.cpp:120
+#, kde-format
+msgctxt "@action"
+msgid "Start Timer"
+msgstr "Tosaigh Uaineadóir"
+
+#: kclockrunner.cpp:135
+#, kde-format
+msgctxt "Note this is a KRunner keyword"
+msgid "alarm"
+msgstr "aláram"
+
+#: kclockrunner.cpp:157
+#, kde-format
+msgctxt "Alarm name (time)"
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
+#: kclockrunner.cpp:167
+#, kde-format
+msgctxt "KRunner category"
+msgid "Alarm"
+msgstr "Aláram"
+
+#: kclockrunner.cpp:171
+#, kde-format
+msgctxt "@action Dismiss Alarm"
+msgid "Dismiss"
+msgstr "Diúltaigh"
+
+#: kclockrunner.cpp:174
+#, kde-format
+msgctxt "Disable timer (rings in time)"
+msgid "Disable (Rings in %1)"
+msgstr "Díchumasaigh (Clogfaidh tar éis %1)"
+
+#: kclockrunner.cpp:176
+#, kde-format
+msgctxt "@action Enable Alarm"
+msgid "Enable"
+msgstr "Cumasaigh"
+
+#: main.cpp:32
+#, kde-format
+msgid "Don't use PowerDevil for alarms if it is available"
+msgstr "Ná húsáid PowerDevil den aláraim má tá sé ar fáil"
+
+#: main.cpp:48
+#, kde-format
+msgid "© 2020-2022 KDE Community"
+msgstr "© 2020-2022 Pobal KDE"
+
+#: main.cpp:49
+#, kde-format
+msgid "Devin Lin"
+msgstr "Devin Lin"
+
+#: main.cpp:50
+#, kde-format
+msgid "Han Young"
+msgstr "Han Young"
+
+#: main.cpp:51
+#, kde-format
+msgid "Kai Uwe Broulik"
+msgstr "Kai Uwe Broulik"
+
+#: main.cpp:51
+#, kde-format
+msgctxt "Author"
+msgid "Desktop Integration"
+msgstr ""
+
+#: timer.cpp:64
+#, kde-format
+msgid "Timer complete"
+msgstr "Uaineadóir ag críochnaithe"
+
+#: timer.cpp:65
+#, kde-format
+msgid "Your timer %1 has finished!"
+msgstr "Tá do uaineadóir %1 ag críochnaithe!"
+
+#: timermodel.cpp:269
+#, kde-format
+msgctxt "@action:button Open kclock app"
+msgid "Open Clock"
+msgstr "Oscail Clog"
+
+#: timermodel.cpp:274
+#, kde-format
+msgctxt "@action:button Add minute to timer"
+msgid "+1 Minute"
+msgstr "+1 Nóiméad"
+
+#: timermodel.cpp:277
+#, kde-format
+msgctxt "@action:button Reset timer"
+msgid "Reset"
+msgstr "Athshocraigh"
+
+#: timermodel.cpp:280 timermodel.cpp:305
+#, kde-format
+msgctxt "@action:button Pause timer"
+msgid "Pause"
+msgstr "Sos"
+
+#: timermodel.cpp:298
+#, kde-format
+msgctxt "@title:notification Timer name (paused)"
+msgid "%1 (Paused)"
+msgstr "%1 (Stadta)"
+
+#: timermodel.cpp:307
+#, kde-format
+msgctxt "@action:button Resume timer"
+msgid "Resume"
+msgstr "Atosaigh"
+
+#: xdgportal.cpp:34
+#, kde-format
+msgid ""
+"Allow the clock process to be in the background and launched on startup."
+msgstr ""

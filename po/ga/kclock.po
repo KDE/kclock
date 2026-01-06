@@ -1,33 +1,32 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the kclock package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SPDX-FileCopyrightText: 2026 Charlotte <altronic25@protonmail.com>
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 14:43+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2026-01-04 15:33+0000\n"
+"Last-Translator: Charlotte <altronic25@protonmail.com>\n"
+"Language-Team: Irish\n"
+"Language: ga\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
 "3 : 4\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Charlotte"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "altronic25@protonmail.com"
 
 #: main.cpp:50
 #, kde-format
@@ -37,22 +36,22 @@ msgstr ""
 #: main.cpp:52
 #, kde-format
 msgid "© 2020-2024 KDE Community"
-msgstr ""
+msgstr "© 2020-2024 Pobal KDE"
 
 #: main.cpp:54
 #, kde-format
 msgid "Devin Lin"
-msgstr ""
+msgstr "Devin Lin"
 
 #: main.cpp:55
 #, kde-format
 msgid "Han Young"
-msgstr ""
+msgstr "Han Young"
 
 #: main.cpp:56
 #, kde-format
 msgid "Kai Uwe Broulik"
-msgstr ""
+msgstr "Kai Uwe Broulik"
 
 #: main.cpp:56
 #, kde-format
@@ -83,7 +82,7 @@ msgstr ""
 #: qml/alarm/AlarmForm.qml:113
 #, kde-format
 msgid "Alarm Name (optional):"
-msgstr ""
+msgstr "Ainm Aláraim (roghnach):"
 
 #: qml/alarm/AlarmForm.qml:114
 #, kde-format
@@ -93,7 +92,7 @@ msgstr ""
 #: qml/alarm/AlarmForm.qml:124
 #, kde-format
 msgid "Ring Duration:"
-msgstr ""
+msgstr "Achar an Ghlao:"
 
 #: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:128
 #, kde-format
@@ -104,48 +103,51 @@ msgstr ""
 #, kde-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 nóiméad"
+msgstr[1] "%1 nóiméad"
+msgstr[2] "%1 nóiméad"
+msgstr[3] "%1 nóiméad"
+msgstr[4] "%1 nóiméad"
 
 #: qml/alarm/AlarmForm.qml:126
 #, kde-format
 msgid "Select Ring Duration"
-msgstr ""
+msgstr "Roghnaigh Achar an Ghlao"
 
 #: qml/alarm/AlarmForm.qml:129 qml/alarm/AlarmForm.qml:166
 #, kde-format
 msgid "1 minute"
-msgstr ""
+msgstr "1 nóiméad"
 
 #: qml/alarm/AlarmForm.qml:130 qml/alarm/AlarmForm.qml:167
 #, kde-format
 msgid "2 minutes"
-msgstr ""
+msgstr "2 nóiméad"
 
 #: qml/alarm/AlarmForm.qml:131 qml/alarm/AlarmForm.qml:168
 #, kde-format
 msgid "5 minutes"
-msgstr ""
+msgstr "5 nóiméad"
 
 #: qml/alarm/AlarmForm.qml:132 qml/alarm/AlarmForm.qml:169
 #, kde-format
 msgid "10 minutes"
-msgstr ""
+msgstr "10 nóiméad"
 
 #: qml/alarm/AlarmForm.qml:133 qml/alarm/AlarmForm.qml:170
 #, kde-format
 msgid "15 minutes"
-msgstr ""
+msgstr "15 nóiméad"
 
 #: qml/alarm/AlarmForm.qml:134 qml/alarm/AlarmForm.qml:171
 #, kde-format
 msgid "30 minutes"
-msgstr ""
+msgstr "30 nóiméad"
 
 #: qml/alarm/AlarmForm.qml:135 qml/alarm/AlarmForm.qml:172
 #, kde-format
 msgid "1 hour"
-msgstr ""
+msgstr "1 uair"
 
 #: qml/alarm/AlarmForm.qml:162
 #, kde-format
@@ -170,18 +172,18 @@ msgstr ""
 #: qml/alarm/AlarmFormPage.qml:25 qml/alarm/AlarmRingingPopup.qml:43
 #, kde-format
 msgid "Alarm"
-msgstr ""
+msgstr "Aláram"
 
 #: qml/alarm/AlarmFormPage.qml:25
 #, kde-format
 msgctxt "Edit alarm page title"
 msgid "Editing %1"
-msgstr ""
+msgstr "%1 á Chur in Eagar"
 
 #: qml/alarm/AlarmFormPage.qml:26 qml/alarm/AlarmListPage.qml:28
 #, kde-format
 msgid "New Alarm"
-msgstr ""
+msgstr "Aláram Nua"
 
 #: qml/alarm/AlarmFormPage.qml:38 qml/alarm/AlarmFormPage.qml:61
 #, kde-format
@@ -191,7 +193,7 @@ msgstr ""
 #: qml/alarm/AlarmFormPage.qml:67 qml/timer/TimerFormDialog.qml:111
 #, kde-format
 msgid "Cancel"
-msgstr ""
+msgstr "Cealaigh"
 
 #: qml/alarm/AlarmListDelegate.qml:104
 #, kde-format
@@ -204,25 +206,25 @@ msgstr[1] ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
-msgstr ""
+msgstr "Scrios"
 
 #: qml/alarm/AlarmListPage.qml:22 qml/components/BottomToolbar.qml:118
 #: qml/components/Sidebar.qml:101
 #, kde-format
 msgid "Alarms"
-msgstr ""
+msgstr "Aláraim"
 
 #: qml/alarm/AlarmListPage.qml:35 qml/time/TimePage.qml:38
 #, kde-format
 msgid "Edit"
-msgstr ""
+msgstr "Eagar"
 
 #: qml/alarm/AlarmListPage.qml:44 qml/Main.qml:54
 #: qml/settings/SettingsPage.qml:28 qml/stopwatch/StopwatchPage.qml:69
 #: qml/time/TimePage.qml:61 qml/timer/TimerListPage.qml:36
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "Socruithe"
 
 #: qml/alarm/AlarmListPage.qml:57
 #, kde-format
@@ -249,33 +251,33 @@ msgstr ""
 #: qml/alarm/AlarmListPage.qml:102 qml/timer/TimerListPage.qml:130
 #, kde-format
 msgid "Loading…"
-msgstr ""
+msgstr "Á Luchtú..."
 
 #: qml/alarm/AlarmListPage.qml:117
 #, kde-format
 msgctxt "@action:button"
 msgid "New Alarm"
-msgstr ""
+msgstr "Aláram Nua"
 
 #: qml/alarm/AlarmListPage.qml:135
 #, kde-format
 msgid "alarm"
-msgstr ""
+msgstr "aláram"
 
 #: qml/alarm/AlarmListPage.qml:135
 #, kde-format
 msgid "Deleted %1"
-msgstr ""
+msgstr "%1 ag scriosta"
 
 #: qml/alarm/AlarmRingingPopup.qml:26
 #, kde-format
 msgid "Alarm is ringing"
-msgstr ""
+msgstr "Aláram ag clogadh"
 
 #: qml/alarm/AlarmRingingPopup.qml:53
 #, kde-format
 msgid "Snooze"
-msgstr ""
+msgstr "Suan"
 
 #: qml/alarm/AlarmRingingPopup.qml:57 qml/timer/TimerRingingPopup.qml:54
 #, kde-format
@@ -286,19 +288,19 @@ msgstr ""
 #: qml/time/TimePage.qml:25
 #, kde-format
 msgid "Time"
-msgstr ""
+msgstr "Am"
 
 #: qml/components/BottomToolbar.qml:93 qml/components/Sidebar.qml:68
 #: qml/timer/TimerListPage.qml:19
 #, kde-format
 msgid "Timers"
-msgstr ""
+msgstr "Uaineadóir"
 
 #: qml/components/BottomToolbar.qml:106 qml/components/BottomToolbar.qml:107
 #: qml/components/Sidebar.qml:84 qml/stopwatch/StopwatchPage.qml:23
 #, kde-format
 msgid "Stopwatch"
-msgstr ""
+msgstr "Staduaireadóir"
 
 #: qml/components/PipHandler.qml:105
 #, kde-format
@@ -312,7 +314,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
-msgstr ""
+msgstr "Dún"
 
 #: qml/components/SoundPickerPage.qml:24
 #, kde-format
@@ -337,22 +339,22 @@ msgstr ""
 #: qml/components/SoundPickerPage.qml:164
 #, kde-format
 msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
-msgstr ""
+msgstr "Comhaid fuaime (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 
 #: qml/components/SoundPickerPage.qml:164
 #, kde-format
 msgid "All files (*)"
-msgstr ""
+msgstr "Gach comhad (*)"
 
 #: qml/components/TimePicker.qml:94
 #, kde-format
 msgid "AM"
-msgstr ""
+msgstr "RN"
 
 #: qml/components/TimePicker.qml:94
 #, kde-format
 msgid "PM"
-msgstr ""
+msgstr "IN"
 
 #: qml/settings/SettingsPage.qml:40
 #, kde-format
@@ -367,12 +369,12 @@ msgstr ""
 #: qml/settings/SettingsPage.qml:43
 #, kde-format
 msgid "12 Hour Time"
-msgstr ""
+msgstr "Am 12 Uair"
 
 #: qml/settings/SettingsPage.qml:44
 #, kde-format
 msgid "24 Hour Time"
-msgstr ""
+msgstr "Am 24 Uair"
 
 #: qml/settings/SettingsPage.qml:58
 #, kde-format
@@ -403,7 +405,7 @@ msgstr ""
 #: qml/settings/SettingsPage.qml:90
 #, kde-format
 msgid "Select Timer Sound"
-msgstr ""
+msgstr "Roghnaigh Fuaim Uaineadóra"
 
 #: qml/settings/SettingsPage.qml:92
 #, kde-format
@@ -413,12 +415,12 @@ msgstr ""
 #: qml/settings/SettingsPage.qml:102
 #, kde-format
 msgid "About Clock"
-msgstr ""
+msgstr "Maidir Le Clog"
 
 #: qml/settings/SettingsPage.qml:111
 #, kde-format
 msgid "About KDE"
-msgstr ""
+msgstr "Maidir Le KDE"
 
 #: qml/stopwatch/StopwatchPage.qml:54 qml/timer/TimerPage.qml:77
 #, kde-format
@@ -437,60 +439,60 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Pause"
-msgstr ""
+msgstr "Sos"
 
 #: qml/stopwatch/StopwatchPage.qml:109 qml/stopwatch/StopwatchPage.qml:373
 #, kde-format
 msgctxt "@action:button"
 msgid "Resume"
-msgstr ""
+msgstr "Atosaigh"
 
 #: qml/stopwatch/StopwatchPage.qml:111 qml/stopwatch/StopwatchPage.qml:375
 #: qml/timer/TimerPage.qml:175
 #, kde-format
 msgctxt "@action:button"
 msgid "Start"
-msgstr ""
+msgstr "Tosaigh"
 
 #: qml/stopwatch/StopwatchPage.qml:121
 #, kde-format
 msgctxt "@action:button"
 msgid "Lap"
-msgstr ""
+msgstr "Cuairt"
 
 #: qml/stopwatch/StopwatchPage.qml:121 qml/timer/TimerPage.qml:181
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset"
-msgstr ""
+msgstr "Athshocraigh"
 
 #: qml/stopwatch/StopwatchPage.qml:236 qml/stopwatch/StopwatchPage.qml:271
 #: qml/timer/TimerPage.qml:53 qml/timer/TimerPage.qml:115
 #, kde-format
 msgid "Reset"
-msgstr ""
+msgstr "Athshocraigh"
 
 #: qml/stopwatch/StopwatchPage.qml:238 qml/timer/TimerPage.qml:45
 #: qml/timer/TimerPage.qml:109
 #, kde-format
 msgid "Pause"
-msgstr ""
+msgstr "Sos"
 
 #: qml/stopwatch/StopwatchPage.qml:240
 #, kde-format
 msgid "Resume"
-msgstr ""
+msgstr "Atosaigh"
 
 #: qml/stopwatch/StopwatchPage.qml:242 qml/timer/TimerPage.qml:45
 #: qml/timer/TimerPage.qml:109
 #, kde-format
 msgid "Start"
-msgstr ""
+msgstr "Tosaigh"
 
 #: qml/stopwatch/StopwatchPage.qml:271 qml/stopwatch/StopwatchPage.qml:312
 #, kde-format
 msgid "Lap"
-msgstr ""
+msgstr "Cuairt"
 
 #: qml/stopwatch/StopwatchPage.qml:292
 #, kde-format
@@ -502,12 +504,12 @@ msgstr ""
 #: qml/stopwatch/StopwatchPage.qml:320
 #, kde-format
 msgid "Lap Time"
-msgstr ""
+msgstr "Am Cuarta"
 
 #: qml/stopwatch/StopwatchPage.qml:327
 #, kde-format
 msgid "Total"
-msgstr ""
+msgstr "Iomlán"
 
 #: qml/stopwatch/StopwatchPage.qml:357
 #, kde-format
@@ -523,28 +525,28 @@ msgstr ""
 #: qml/stopwatch/StopwatchPage.qml:435
 #, kde-format
 msgid "#%1"
-msgstr ""
+msgstr "#%1"
 
 #: qml/time/AddLocationListView.qml:51
 #, kde-format
 msgid "No locations found"
-msgstr ""
+msgstr "Gan suíomh a fáil"
 
 #: qml/time/AddLocationPage.qml:13 qml/time/AddLocationWrapper.qml:34
 #, kde-format
 msgid "Add Location"
-msgstr ""
+msgstr "Cuir Suíomh Leis"
 
 #: qml/time/TimePage.qml:51
 #, kde-format
 msgid "Add"
-msgstr ""
+msgstr "Cuir Leis"
 
 #: qml/time/TimePage.qml:167
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Location"
-msgstr ""
+msgstr "Cuir Suíomh Leis"
 
 #: qml/time/TimePageDelegate.qml:47
 #, kde-format
@@ -559,37 +561,37 @@ msgstr ""
 #: qml/timer/PresetDurationButton.qml:22
 #, kde-format
 msgid "1 m"
-msgstr ""
+msgstr "1n"
 
 #: qml/timer/TimerForm.qml:40
 #, kde-format
 msgid "1 min"
-msgstr ""
+msgstr "1 nóim"
 
 #: qml/timer/TimerForm.qml:41
 #, kde-format
 msgid "5 min"
-msgstr ""
+msgstr "5 nóim"
 
 #: qml/timer/TimerForm.qml:42
 #, kde-format
 msgid "10 min"
-msgstr ""
+msgstr "10 nóim"
 
 #: qml/timer/TimerForm.qml:43
 #, kde-format
 msgid "15 min"
-msgstr ""
+msgstr "15 nóim"
 
 #: qml/timer/TimerForm.qml:44
 #, kde-format
 msgid "30 min"
-msgstr ""
+msgstr "30 nóim"
 
 #: qml/timer/TimerForm.qml:45
 #, kde-format
 msgid "1 h"
-msgstr ""
+msgstr "1u"
 
 #: qml/timer/TimerForm.qml:64
 #, kde-format
@@ -599,17 +601,17 @@ msgstr ""
 #: qml/timer/TimerForm.qml:77
 #, kde-format
 msgid "hours"
-msgstr ""
+msgstr "uaire"
 
 #: qml/timer/TimerForm.qml:92
 #, kde-format
 msgid "minutes"
-msgstr ""
+msgstr "nóiméid"
 
 #: qml/timer/TimerForm.qml:107
 #, kde-format
 msgid "seconds"
-msgstr ""
+msgstr "soicindí"
 
 #: qml/timer/TimerForm.qml:114 qml/timer/TimerListDelegate.qml:125
 #: qml/timer/TimerPage.qml:68 qml/timer/TimerPage.qml:130
@@ -636,18 +638,18 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window Edit timer"
 msgid "Edit %1"
-msgstr ""
+msgstr "Cuir %1 in Eagar"
 
 #: qml/timer/TimerFormDialog.qml:36
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Timer"
-msgstr ""
+msgstr "Cruthaigh Uaineadóir"
 
 #: qml/timer/TimerFormDialog.qml:53
 #, kde-format
 msgid "Timer"
-msgstr ""
+msgstr "Uaineadóir"
 
 #: qml/timer/TimerFormDialog.qml:71
 #, kde-format
@@ -667,54 +669,54 @@ msgstr ""
 #: qml/timer/TimerFormDialog.qml:103
 #, kde-format
 msgid "Save As Preset"
-msgstr ""
+msgstr "Sábháil mar Réamhshocruithe"
 
 #: qml/timer/TimerFormDialog.qml:116
 #, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr ""
+msgstr "Sábháil"
 
 #: qml/timer/TimerFormDialog.qml:116
 #, kde-format
 msgctxt "@action:button"
 msgid "Done"
-msgstr ""
+msgstr "Críochnaithe"
 
 #: qml/timer/TimerListDelegate.qml:164
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Pause"
-msgstr ""
+msgstr "Sos"
 
 #: qml/timer/TimerListDelegate.qml:164
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start"
-msgstr ""
+msgstr "Tosaigh"
 
 #: qml/timer/TimerListDelegate.qml:174
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset"
-msgstr ""
+msgstr "Athshocraigh"
 
 #: qml/timer/TimerListDelegate.qml:184
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit"
-msgstr ""
+msgstr "Eagar"
 
 #: qml/timer/TimerListDelegate.qml:195
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete"
-msgstr ""
+msgstr "Scrios"
 
 #: qml/timer/TimerListPage.qml:27
 #, kde-format
 msgid "New Timer"
-msgstr ""
+msgstr "Uaineadóir Nua"
 
 #: qml/timer/TimerListPage.qml:61
 #, kde-format
@@ -732,7 +734,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "New Timer"
-msgstr ""
+msgstr "Uaineadóir Nua"
 
 #: qml/timer/TimerListPage.qml:113
 #, kde-format
@@ -747,24 +749,24 @@ msgstr ""
 #: qml/timer/TimerPage.qml:24
 #, kde-format
 msgid "New timer"
-msgstr ""
+msgstr "Uaineadóir nua"
 
 #: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:121
 #, kde-format
 msgid "Delete"
-msgstr ""
+msgstr "Scrios"
 
 #: qml/timer/TimerPage.qml:169
 #, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "+1:00"
-msgstr ""
+msgstr "+1:00"
 
 #: qml/timer/TimerPage.qml:199
 #, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "1 minute"
-msgstr ""
+msgstr "1 nóiméad"
 
 #: qml/timer/TimerPage.qml:209
 #, kde-format
@@ -774,17 +776,17 @@ msgstr ""
 #: qml/timer/TimerRingingPopup.qml:25
 #, kde-format
 msgid "Timer has finished"
-msgstr ""
+msgstr "Tá uaineadóir ag críochnaithe"
 
 #: qml/timer/TimerRingingPopup.qml:44
 #, kde-format
 msgid "%1 has completed."
-msgstr ""
+msgstr "Tá %1 ag críochnaithe."
 
 #: qml/timer/TimerRingingPopup.qml:44
 #, kde-format
 msgid "The timer has completed."
-msgstr ""
+msgstr "Tá an uaineadóir ag críochnaithe."
 
 #: savedlocationsmodel.cpp:124
 #, kde-format
@@ -835,15 +837,21 @@ msgstr ""
 #, kde-format
 msgid "%1 day"
 msgid_plural "%1 days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 lá"
+msgstr[1] "%1 lá"
+msgstr[2] "%1 lá"
+msgstr[3] "%1 lá"
+msgstr[4] "%1 lá"
 
 #: utilmodel.cpp:91
 #, kde-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 uair"
+msgstr[1] "%1 uair"
+msgstr[2] "%1 huair"
+msgstr[3] "%1 nuair"
+msgstr[4] "%1 uair"
 
 #: utilmodel.cpp:98
 #, kde-format
@@ -865,15 +873,15 @@ msgstr ""
 #, kde-format
 msgctxt "Repeat"
 msgid "Everyday"
-msgstr ""
+msgstr "Laethúil"
 
 #: utilmodel.cpp:158
 #, kde-format
 msgctxt "Repeat"
 msgid "Weekdays"
-msgstr ""
+msgstr "Laethanta i rith na seachtaine"
 
 #: utilmodel.cpp:179
 #, kde-format
 msgid ", "
-msgstr ""
+msgstr ", "
