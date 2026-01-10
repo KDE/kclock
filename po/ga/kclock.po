@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 14:43+0000\n"
-"PO-Revision-Date: 2026-01-04 15:33+0000\n"
+"PO-Revision-Date: 2026-01-09 18:31+0000\n"
 "Last-Translator: Charlotte <altronic25@protonmail.com>\n"
 "Language-Team: Irish\n"
 "Language: ga\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
 "3 : 4\n"
-"X-Generator: Lokalize 25.12.0\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -188,7 +188,7 @@ msgstr "Aláram Nua"
 #: qml/alarm/AlarmFormPage.qml:38 qml/alarm/AlarmFormPage.qml:61
 #, kde-format
 msgid "Done"
-msgstr ""
+msgstr "Críochnaithe"
 
 #: qml/alarm/AlarmFormPage.qml:67 qml/timer/TimerFormDialog.qml:111
 #, kde-format
@@ -199,8 +199,11 @@ msgstr "Cealaigh"
 #, kde-format
 msgid "Snoozed %1 minute"
 msgid_plural "Snoozed %1 minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Déan suan ar feadh %1 nóiméad"
+msgstr[1] "Déan suan ar feadh %1 nóiméad"
+msgstr[2] "Déan suan ar feadh %1 nóiméad"
+msgstr[3] "Déan suan ar feadh %1 nóiméad"
+msgstr[4] "Déan suan ar feadh %1 nóiméad"
 
 #: qml/alarm/AlarmListDelegate.qml:125 qml/time/TimePageDelegate.qml:68
 #, kde-format
@@ -324,7 +327,7 @@ msgstr ""
 #: qml/components/SoundPickerPage.qml:65
 #, kde-format
 msgid "Select from files…"
-msgstr ""
+msgstr "Roghnaigh as comhaid..."
 
 #: qml/components/SoundPickerPage.qml:76 qml/settings/SettingsPage.qml:85
 #, kde-format
@@ -566,27 +569,27 @@ msgstr "1n"
 #: qml/timer/TimerForm.qml:40
 #, kde-format
 msgid "1 min"
-msgstr "1 nóim"
+msgstr "1 nóiméad"
 
 #: qml/timer/TimerForm.qml:41
 #, kde-format
 msgid "5 min"
-msgstr "5 nóim"
+msgstr "5 nóiméad"
 
 #: qml/timer/TimerForm.qml:42
 #, kde-format
 msgid "10 min"
-msgstr "10 nóim"
+msgstr "10 nóiméad"
 
 #: qml/timer/TimerForm.qml:43
 #, kde-format
 msgid "15 min"
-msgstr "15 nóim"
+msgstr "15 nóiméad"
 
 #: qml/timer/TimerForm.qml:44
 #, kde-format
 msgid "30 min"
-msgstr "30 nóim"
+msgstr "30 nóiméad"
 
 #: qml/timer/TimerForm.qml:45
 #, kde-format
@@ -769,9 +772,10 @@ msgid "1 minute"
 msgstr "1 nóiméad"
 
 #: qml/timer/TimerPage.qml:209
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "This timer is in Picture-in-Picture mode."
 msgid "This timer is in Picture-in-Picture mode."
-msgstr ""
+msgstr "Tá an uaineadóir seo "
 
 #: qml/timer/TimerRingingPopup.qml:25
 #, kde-format
@@ -791,47 +795,47 @@ msgstr "Tá an uaineadóir ag críochnaithe."
 #: savedlocationsmodel.cpp:124
 #, kde-format
 msgid "%1 hour and 30 minutes ahead"
-msgstr ""
+msgstr "%1 uair agus 30 nóiméad chun cinn"
 
 #: savedlocationsmodel.cpp:124
 #, kde-format
 msgid "%1 hours and 30 minutes ahead"
-msgstr ""
+msgstr "%1 uair agus 30 nóiméad chun cinn"
 
 #: savedlocationsmodel.cpp:126
 #, kde-format
 msgid "%1 hour ahead"
-msgstr ""
+msgstr "%1 uair chun cinn"
 
 #: savedlocationsmodel.cpp:126
 #, kde-format
 msgid "%1 hours ahead"
-msgstr ""
+msgstr "%1 uair chun cinn"
 
 #: savedlocationsmodel.cpp:131
 #, kde-format
 msgid "%1 hour and 30 minutes behind"
-msgstr ""
+msgstr "%1 uair agus 30 nóiméad ar chúl"
 
 #: savedlocationsmodel.cpp:131
 #, kde-format
 msgid "%1 hours and 30 minutes behind"
-msgstr ""
+msgstr "%1 uair agus 30 nóiméad ar chúl"
 
 #: savedlocationsmodel.cpp:133
 #, kde-format
 msgid "%1 hour behind"
-msgstr ""
+msgstr "%1 uair ar chúl"
 
 #: savedlocationsmodel.cpp:133
 #, kde-format
 msgid "%1 hours behind"
-msgstr ""
+msgstr "%1 uair ar chúl"
 
 #: savedlocationsmodel.cpp:136
 #, kde-format
 msgid "Local time"
-msgstr ""
+msgstr "Am áitiúil"
 
 #: utilmodel.cpp:88
 #, kde-format
@@ -856,12 +860,12 @@ msgstr[4] "%1 uair"
 #: utilmodel.cpp:98
 #, kde-format
 msgid "Alarm will ring in under a minute"
-msgstr ""
+msgstr "Clogfaidh aláram tar éis "
 
 #: utilmodel.cpp:100
 #, kde-format
 msgid "Alarm will ring in %1"
-msgstr ""
+msgstr "Clogfaidh aláram tar éis %1"
 
 #: utilmodel.cpp:152
 #, kde-format
