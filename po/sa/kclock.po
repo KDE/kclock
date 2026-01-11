@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:45+0000\n"
+"POT-Creation-Date: 2026-01-11 00:46+0000\n"
 "PO-Revision-Date: 2024-12-24 20:39+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -536,7 +536,7 @@ msgstr "कुल"
 msgid "Stopwatch is in Picture-in-Picture mode."
 msgstr ""
 
-#: qml/stopwatch/StopwatchPage.qml:364 qml/timer/TimerPage.qml:214
+#: qml/stopwatch/StopwatchPage.qml:364 qml/timer/TimerPage.qml:215
 #, kde-format
 msgctxt "@action:button Restore (unminimize) from pip mode"
 msgid "Restore"
@@ -583,6 +583,17 @@ msgstr ""
 #, kde-format
 msgid "1 m"
 msgstr "१ मी"
+
+#: qml/timer/TimerComponent.qml:182 qml/timer/TimerListDelegate.qml:143
+#: qml/timer/TimerPage.qml:24
+#, kde-format
+msgid "New timer"
+msgstr "नवीन समयनिर्धारक"
+
+#: qml/timer/TimerComponent.qml:195
+#, kde-format
+msgid "Click to edit timer name"
+msgstr ""
 
 #: qml/timer/TimerForm.qml:40
 #, fuzzy, kde-format
@@ -778,11 +789,6 @@ msgstr "कोऽपि समयनिर्धारकः विन्यस�
 msgid "Add timer"
 msgstr "समयनिर्धारकं योजयन्तु"
 
-#: qml/timer/TimerPage.qml:24
-#, kde-format
-msgid "New timer"
-msgstr "नवीन समयनिर्धारक"
-
 #: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:121
 #, kde-format
 msgid "Delete"
@@ -794,14 +800,14 @@ msgctxt "@action:button Add 1 minute to timer"
 msgid "+1:00"
 msgstr ""
 
-#: qml/timer/TimerPage.qml:199
+#: qml/timer/TimerPage.qml:200
 #, fuzzy, kde-format
 #| msgid "1 minute"
 msgctxt "@action:button Add 1 minute to timer"
 msgid "1 minute"
 msgstr "१ मिनिट्"
 
-#: qml/timer/TimerPage.qml:209
+#: qml/timer/TimerPage.qml:210
 #, kde-format
 msgid "This timer is in Picture-in-Picture mode."
 msgstr ""

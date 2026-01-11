@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:45+0000\n"
+"POT-Creation-Date: 2026-01-11 00:46+0000\n"
 "PO-Revision-Date: 2025-12-14 06:49-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -531,7 +531,7 @@ msgstr "Total"
 msgid "Stopwatch is in Picture-in-Picture mode."
 msgstr "O cronômetro está no modo Picture-in-Picture."
 
-#: qml/stopwatch/StopwatchPage.qml:364 qml/timer/TimerPage.qml:214
+#: qml/stopwatch/StopwatchPage.qml:364 qml/timer/TimerPage.qml:215
 #, kde-format
 msgctxt "@action:button Restore (unminimize) from pip mode"
 msgid "Restore"
@@ -577,6 +577,17 @@ msgstr "Amanhã"
 #, kde-format
 msgid "1 m"
 msgstr "1 m"
+
+#: qml/timer/TimerComponent.qml:182 qml/timer/TimerListDelegate.qml:143
+#: qml/timer/TimerPage.qml:24
+#, kde-format
+msgid "New timer"
+msgstr "Novo temporizador"
+
+#: qml/timer/TimerComponent.qml:195
+#, kde-format
+msgid "Click to edit timer name"
+msgstr ""
 
 #: qml/timer/TimerForm.qml:40
 #, kde-format
@@ -763,11 +774,6 @@ msgstr "Nenhum temporizador configurado"
 msgid "Add timer"
 msgstr "Adicionar temporizador"
 
-#: qml/timer/TimerPage.qml:24
-#, kde-format
-msgid "New timer"
-msgstr "Novo temporizador"
-
 #: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:121
 #, kde-format
 msgid "Delete"
@@ -779,13 +785,13 @@ msgctxt "@action:button Add 1 minute to timer"
 msgid "+1:00"
 msgstr "+1:00"
 
-#: qml/timer/TimerPage.qml:199
+#: qml/timer/TimerPage.qml:200
 #, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "1 minute"
 msgstr "1 minuto"
 
-#: qml/timer/TimerPage.qml:209
+#: qml/timer/TimerPage.qml:210
 #, kde-format
 msgid "This timer is in Picture-in-Picture mode."
 msgstr "Este temporizador está no modo Picture-in-Picture."

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:45+0000\n"
+"POT-Creation-Date: 2026-01-11 00:46+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -521,7 +521,7 @@ msgstr "总计时间"
 msgid "Stopwatch is in Picture-in-Picture mode."
 msgstr "秒表处于画中画模式。"
 
-#: qml/stopwatch/StopwatchPage.qml:364 qml/timer/TimerPage.qml:214
+#: qml/stopwatch/StopwatchPage.qml:364 qml/timer/TimerPage.qml:215
 #, kde-format
 msgctxt "@action:button Restore (unminimize) from pip mode"
 msgid "Restore"
@@ -567,6 +567,17 @@ msgstr "明天"
 #, kde-format
 msgid "1 m"
 msgstr "1 分钟"
+
+#: qml/timer/TimerComponent.qml:182 qml/timer/TimerListDelegate.qml:143
+#: qml/timer/TimerPage.qml:24
+#, kde-format
+msgid "New timer"
+msgstr "新计时器"
+
+#: qml/timer/TimerComponent.qml:195
+#, kde-format
+msgid "Click to edit timer name"
+msgstr ""
 
 #: qml/timer/TimerForm.qml:40
 #, kde-format
@@ -751,11 +762,6 @@ msgstr "未配置计时器"
 msgid "Add timer"
 msgstr "添加计时器"
 
-#: qml/timer/TimerPage.qml:24
-#, kde-format
-msgid "New timer"
-msgstr "新计时器"
-
 #: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:121
 #, kde-format
 msgid "Delete"
@@ -767,13 +773,13 @@ msgctxt "@action:button Add 1 minute to timer"
 msgid "+1:00"
 msgstr "+1:00"
 
-#: qml/timer/TimerPage.qml:199
+#: qml/timer/TimerPage.qml:200
 #, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "1 minute"
 msgstr "1 分钟"
 
-#: qml/timer/TimerPage.qml:209
+#: qml/timer/TimerPage.qml:210
 #, kde-format
 msgid "This timer is in Picture-in-Picture mode."
 msgstr "此计时器处于画中画模式。"

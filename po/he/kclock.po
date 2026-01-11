@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:45+0000\n"
+"POT-Creation-Date: 2026-01-11 00:46+0000\n"
 "PO-Revision-Date: 2025-12-14 14:40+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -529,7 +529,7 @@ msgstr "סך הכול"
 msgid "Stopwatch is in Picture-in-Picture mode."
 msgstr "Stopwatch נמצא במצב חלונית צפה."
 
-#: qml/stopwatch/StopwatchPage.qml:364 qml/timer/TimerPage.qml:214
+#: qml/stopwatch/StopwatchPage.qml:364 qml/timer/TimerPage.qml:215
 #, kde-format
 msgctxt "@action:button Restore (unminimize) from pip mode"
 msgid "Restore"
@@ -575,6 +575,17 @@ msgstr "מחר"
 #, kde-format
 msgid "1 m"
 msgstr "מטר"
+
+#: qml/timer/TimerComponent.qml:182 qml/timer/TimerListDelegate.qml:143
+#: qml/timer/TimerPage.qml:24
+#, kde-format
+msgid "New timer"
+msgstr "קוצב זמן חדש"
+
+#: qml/timer/TimerComponent.qml:195
+#, kde-format
+msgid "Click to edit timer name"
+msgstr ""
 
 #: qml/timer/TimerForm.qml:40
 #, kde-format
@@ -759,11 +770,6 @@ msgstr "לא מוגדרים קוצבי זמן"
 msgid "Add timer"
 msgstr "הוספת קוצב זמן"
 
-#: qml/timer/TimerPage.qml:24
-#, kde-format
-msgid "New timer"
-msgstr "קוצב זמן חדש"
-
 #: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:121
 #, kde-format
 msgid "Delete"
@@ -775,13 +781,13 @@ msgctxt "@action:button Add 1 minute to timer"
 msgid "+1:00"
 msgstr "+1:00"
 
-#: qml/timer/TimerPage.qml:199
+#: qml/timer/TimerPage.qml:200
 #, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "1 minute"
 msgstr "דקה"
 
-#: qml/timer/TimerPage.qml:209
+#: qml/timer/TimerPage.qml:210
 #, kde-format
 msgid "This timer is in Picture-in-Picture mode."
 msgstr "המתזמן נמצא במצב חלונית צפה."
