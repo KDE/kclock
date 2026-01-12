@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-11 00:46+0000\n"
-"PO-Revision-Date: 2026-01-10 21:40+0000\n"
+"PO-Revision-Date: 2026-01-10 22:36+0000\n"
 "Last-Translator: Charlotte <altronic25@protonmail.com>\n"
 "Language-Team: Irish\n"
 "Language: ga\n"
@@ -97,7 +97,7 @@ msgstr "Achar an Ghlao:"
 #: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:128
 #, kde-format
 msgid "None"
-msgstr "Gan Aon"
+msgstr "Neamhní"
 
 #: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:164 utilmodel.cpp:94
 #, kde-format
@@ -564,12 +564,12 @@ msgstr "Cuir Suíomh Leis"
 #: qml/time/TimePageDelegate.qml:47
 #, kde-format
 msgid "Yesterday"
-msgstr ""
+msgstr "Inné"
 
 #: qml/time/TimePageDelegate.qml:49
 #, kde-format
 msgid "Tomorrow"
-msgstr ""
+msgstr "Amárach"
 
 #: qml/timer/PresetDurationButton.qml:22
 #, kde-format
@@ -646,7 +646,7 @@ msgstr ""
 #: qml/timer/TimerForm.qml:120
 #, kde-format
 msgid "<b>Label:</b>"
-msgstr ""
+msgstr "<b>Lipéid:</b>"
 
 #: qml/timer/TimerForm.qml:125
 #, kde-format

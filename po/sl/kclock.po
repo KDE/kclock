@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-11 00:46+0000\n"
-"PO-Revision-Date: 2025-12-14 08:13+0100\n"
+"PO-Revision-Date: 2026-01-11 08:57+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -589,7 +589,7 @@ msgstr "Nov merilnik časa"
 #: qml/timer/TimerComponent.qml:195
 #, kde-format
 msgid "Click to edit timer name"
-msgstr ""
+msgstr "Kliknite za urejanje imena merilnika časa"
 
 #: qml/timer/TimerForm.qml:40
 #, kde-format
