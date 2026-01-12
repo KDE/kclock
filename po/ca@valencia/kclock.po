@@ -239,7 +239,7 @@ msgstr ""
 #: qml/alarm/AlarmListPage.qml:59
 #, kde-format
 msgid "Failed to load the list of alarms: %1"
-msgstr "No s'ha pogut carregar la llista d'alarmes: %1"
+msgstr "Ha fallat mentre es carregava la llista d'alarmes: %1"
 
 #: qml/alarm/AlarmListPage.qml:85
 #, kde-format
@@ -521,7 +521,7 @@ msgstr "Total"
 #: qml/stopwatch/StopwatchPage.qml:357
 #, kde-format
 msgid "Stopwatch is in Picture-in-Picture mode."
-msgstr "El cronòmetre es troba en el mode imatge a la imatge."
+msgstr "El cronòmetre es troba en el mode imatge en la imatge."
 
 #: qml/stopwatch/StopwatchPage.qml:362 qml/timer/TimerPage.qml:214
 #, kde-format
@@ -737,7 +737,7 @@ msgstr ""
 #: qml/timer/TimerListPage.qml:63
 #, kde-format
 msgid "Failed to load the list of timers: %1"
-msgstr "No s'ha pogut carregar la llista de temporitzadors: %1"
+msgstr "Ha fallat mentre es carregava la llista de temporitzadors: %1"
 
 #: qml/timer/TimerListPage.qml:102
 #, kde-format
@@ -780,7 +780,7 @@ msgstr "1 minut"
 #: qml/timer/TimerPage.qml:209
 #, kde-format
 msgid "This timer is in Picture-in-Picture mode."
-msgstr "Este temporitzador es troba en el mode imatge a la imatge."
+msgstr "Este temporitzador es troba en el mode imatge en la imatge."
 
 #: qml/timer/TimerRingingPopup.qml:25
 #, kde-format
