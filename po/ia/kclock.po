@@ -1,14 +1,14 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kclock package.
 #
-# SPDX-FileCopyrightText: 2023, 2024, 2025 giovanni <g.sora@tiscali.it>
+# SPDX-FileCopyrightText: 2023, 2024, 2025, 2026 giovanni <g.sora@tiscali.it>
 # giovanni <g.sora@tiscali.it>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-11 00:46+0000\n"
-"PO-Revision-Date: 2025-10-27 16:09+0100\n"
+"PO-Revision-Date: 2026-01-14 12:28+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -276,10 +276,9 @@ msgid "Alarm is ringing"
 msgstr "Alarma es tintinnante"
 
 #: qml/alarm/AlarmLockscreenPopup.qml:51
-#, fuzzy, kde-format
-#| msgid "Select Alarm Sound"
+#, kde-format
 msgid "Alarm not found"
-msgstr "Selectiona sono de alarma"
+msgstr "Alarma non trovate"
 
 #: qml/alarm/AlarmLockscreenPopup.qml:75 qml/alarm/AlarmRingingPopup.qml:53
 #, kde-format
@@ -287,10 +286,9 @@ msgid "Snooze"
 msgstr "Snooze (Dormettar)"
 
 #: qml/alarm/AlarmLockscreenPopup.qml:102
-#, fuzzy, kde-format
-#| msgid "Stopwatch"
+#, kde-format
 msgid "Stop"
-msgstr "Chronometro"
+msgstr "Stoppa"
 
 #: qml/alarm/AlarmRingingPopup.qml:57 qml/timer/TimerRingingPopup.qml:54
 #, kde-format
@@ -589,7 +587,7 @@ msgstr "Nove chronometro"
 #: qml/timer/TimerComponent.qml:195
 #, kde-format
 msgid "Click to edit timer name"
-msgstr ""
+msgstr "Pulsa pro editar nomine de chronometro"
 
 #: qml/timer/TimerForm.qml:40
 #, kde-format

@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kclock package.
-# SPDX-FileCopyrightText: 2022, 2024, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2022, 2024, 2025, 2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-11 00:46+0000\n"
-"PO-Revision-Date: 2025-12-18 10:17+0400\n"
+"PO-Revision-Date: 2026-01-14 07:25+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -592,7 +592,7 @@ msgstr "مؤقت جديد"
 #: qml/timer/TimerComponent.qml:195
 #, kde-format
 msgid "Click to edit timer name"
-msgstr ""
+msgstr "انقر لتحرير اسم المؤقت"
 
 #: qml/timer/TimerForm.qml:40
 #, kde-format
