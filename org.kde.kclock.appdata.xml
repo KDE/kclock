@@ -100,6 +100,7 @@
     <p xml:lang="bg">Универсално приложение за часовник за десктоп и мобилно устройство. Часовникът включва хронометър и световен часовник и ви позволява да зададете множество аларми и таймери.</p>
     <p xml:lang="ca">Una aplicació universal de rellotge per a l'escriptori i mòbil. El rellotge inclou un cronòmetre i un rellotge mundial, i permet establir alarmes i temporitzadors diversos.</p>
     <p xml:lang="ca-valencia">Una aplicació universal de rellotge per a l'escriptori i mòbil. El rellotge inclou un cronòmetre i un rellotge mundial, i permet establir alarmes i temporitzadors diversos.</p>
+    <p xml:lang="cs">Univerzální aplikace hodin pro stolní počítače a mobilní zařízení. Hodiny obsahují stopky a světové hodiny a umožňují nastavit více budíků a časovačů.</p>
     <p xml:lang="de">Eine universelle Uhren-Anwendung für Plasma. Clock enthält eine Stoppuhr und eine Weltzeituhr. Zudem können mehrere Alarme und Zeitlimits festgelegt werden.</p>
     <p xml:lang="en-GB">A universal clock application for desktop and mobile. Clock includes a stopwatch and a world clock, and allows you to set multiple alarms and timers.</p>
     <p xml:lang="eo">Universala horloĝa aplikaĵo por labortablo kaj poŝtelefono. Horloĝo inkluzivas tempumilon kaj mondan horloĝon, kaj permesas vin agordi plurajn alarmojn kaj tempumilojn.</p>
@@ -135,6 +136,7 @@
     <p xml:lang="bg">Той съдържа функции за аларма, таймер, хронометър и часова зона. Алармите и таймерите могат да събудят устройството на Plasma от състояние на приспиване.</p>
     <p xml:lang="ca">Conté funcions d'alarma, temporitzador, cronòmetre i zona horària. Les alarmes i els temporitzadors també poden fer que el dispositiu deixi d'estar suspès en el Plasma.</p>
     <p xml:lang="ca-valencia">Conté funcions d'alarma, temporitzador, cronòmetre i zona horària. Les alarmes i els temporitzadors també poden fer que el dispositiu deixe d'estar suspés en Plasma.</p>
+    <p xml:lang="cs">Obsahuje funkce budíku, časovače, stopek a časového pásma. Budíky a časovače jsou schopny probudit zařízení z režimu spánku v prostředí Plasma.</p>
     <p xml:lang="de">Sie beinhaltet einen Wecker, einen Timer, eine Stoppuhr und Zeitzonenfunktionen. Der Wecker und der Timer können Ihr Gerät aus dem Standby-Modus aufzuwecken, sofern Sie Plasma verwenden.</p>
     <p xml:lang="en-GB">It contains alarm, timer, stopwatch and timezone functionalities. Alarms and timers are able to wake the device from suspend on Plasma.</p>
     <p xml:lang="eo">Ĝi enhavas alarmon, tempigilon, kronometron kaj horzonajn funkciojn. Alarmoj kaj tempigiloj kapablas veki la aparaton de suspendo sur Plasma.</p>
