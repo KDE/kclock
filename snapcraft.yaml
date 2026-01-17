@@ -1,5 +1,5 @@
 # * Copyright 2024 Soumyadeep Ghosh (সৌম্যদীপ ঘোষ) <soumyadeepghosh2004@zohomail.in>
-# * Copyright 2023-2025 Scarlett Moore <sgmoore@kde.org>
+# * Copyright 2023-2026 Scarlett Moore <sgmoore@kde.org>
 # * SPDX-License-Identifier: GPL-2.0-or-later
 name: kclock
 confinement: strict
@@ -36,16 +36,15 @@ slots:
 parts:
   libplasma:
     plugin: cmake
-    source: https://invent.kde.org/plasma/libplasma/-/archive/v6.0.3/libplasma-v6.0.3.tar.gz
+    source: https://invent.kde.org/plasma/libplasma.git
     cmake-parameters:
       - -DCMAKE_INSTALL_PREFIX=/usr
       - -DCMAKE_BUILD_TYPE=Release
       - -DBUILD_DESKTOPTHEMES=OFF
       - -DBUILD_TESTING=OFF
-    build-environment:
-      - CMAKE_PREFIX_PATH: $CRAFT_STAGE/usr:/snap/kde-qt6--sdk/current/usr:/snap/kf6-core24-sdk/current/usr${CMAKE_PREFIX_PATH:+:$CMAKE_PREFIX_PATH}
-      - LD_LIBRARY_PATH: >
-         "/snap/mesa-2404/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:/snap/kde-qt6-core24-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/libproxy:$LD_LIBRARY_PATH"
+    build-snaps:
+      - kde-qt6-core24-sdk/latest/beta
+      - kf6-core24-sdk/latest/beta
     build-packages:
       - libxcb-composite0-dev
       - libxcb-damage0-dev
@@ -82,15 +81,14 @@ parts:
       - -usr/share/lintain
 
   plasma-mobile-sounds:
-    source: https://download.kde.org/stable/plasma-mobile-sounds/0.1/plasma-mobile-sounds-0.1.tar.xz
+    source: https://invent.kde.org/plasma-mobile/plasma-mobile-sounds.git
     plugin: cmake
     cmake-parameters:
       - -DCMAKE_INSTALL_PREFIX=/usr
       - -DCMAKE_BUILD_TYPE=Release
-    build-environment:
-      - CMAKE_PREFIX_PATH: $CRAFT_STAGE/usr:/snap/kde-qt6--sdk/current/usr:/snap/kf6-core24-sdk/current/usr${CMAKE_PREFIX_PATH:+:$CMAKE_PREFIX_PATH}
-      - LD_LIBRARY_PATH: >
-         "/snap/mesa-2404/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:/snap/kde-qt6-core24-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/libproxy:$LD_LIBRARY_PATH"
+    build-snaps:
+      - kde-qt6-core24-sdk/latest/beta
+      - kf6-core24-sdk/latest/beta
 
   kclock:
     after: [plasma-mobile-sounds, libplasma]
@@ -99,15 +97,14 @@ parts:
     plugin: cmake
     source: .
     source-type: local
-    build-environment:
-      - CMAKE_PREFIX_PATH: $CRAFT_STAGE/usr:/snap/kde-qt6--sdk/current/usr:/snap/kf6-core24-sdk/current/usr${CMAKE_PREFIX_PATH:+:$CMAKE_PREFIX_PATH}
-      - LD_LIBRARY_PATH: >
-         "/snap/mesa-2404/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:/snap/kde-qt6-core24-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/libproxy:$LD_LIBRARY_PATH"
     cmake-parameters:
       - -DCMAKE_INSTALL_PREFIX=/usr
       - -DCMAKE_BUILD_TYPE=Release
       - -DENABLE_TESTING=OFF
       - -DBUILD_TESTING=OFF
+    build-snaps:
+      - kde-qt6-core24-sdk/latest/beta
+      - kf6-core24-sdk/latest/beta
     build-packages:
       - libpulse-dev
     override-build: |
