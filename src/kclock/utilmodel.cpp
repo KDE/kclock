@@ -17,6 +17,8 @@
 
 #include <KSvg/Svg>
 
+using namespace Qt::StringLiterals;
+
 UtilModel *UtilModel::instance()
 {
     static UtilModel *singleton = new UtilModel;
@@ -38,10 +40,22 @@ UtilModel::UtilModel(QObject *parent)
     connect(SettingsModel::instance(), &SettingsModel::timeFormatChanged, this, &UtilModel::use24HourTimeChanged);
 }
 
+bool UtilModel::systemHasOceanSoundTheme()
+{
+    const QString oceanPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, u"sounds/ocean"_s, QStandardPaths::LocateDirectory);
+    return !oceanPath.isEmpty();
+}
+
+bool UtilModel::systemHasPlasmaMobileSoundTheme()
+{
+    const QString mobileThemePath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, u"sounds/plasma-mobile"_s, QStandardPaths::LocateDirectory);
+    return !mobileThemePath.isEmpty();
+}
+
 QString UtilModel::getDefaultAlarmFileLocation()
 {
-    return QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("sounds/freedesktop/stereo/alarm-clock-elapsed.oga")))
-        .path();
+    QString theme = systemHasOceanSoundTheme() ? u"ocean"_s : u"freedesktop"_s;
+    return QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, u"sounds/"_s + theme + u"/stereo/alarm-clock-elapsed.oga"_s)).path();
 }
 
 QString UtilModel::getCurrentTimeZoneName()

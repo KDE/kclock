@@ -32,6 +32,8 @@ public:
     static UtilModel *instance();
     static UtilModel *create(QQmlEngine *qmlEngine, QJSEngine *jsEngine);
 
+    Q_INVOKABLE bool systemHasPlasmaMobileSoundTheme();
+    Q_INVOKABLE bool systemHasOceanSoundTheme();
     Q_INVOKABLE QString getDefaultAlarmFileLocation();
 
     QString getCurrentTimeZoneName();

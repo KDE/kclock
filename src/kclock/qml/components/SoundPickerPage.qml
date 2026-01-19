@@ -45,7 +45,15 @@ Kirigami.ScrollablePage {
         model: Sounds.SoundsModel {
             id: soundsModel
             notification: false
-            theme: 'freedesktop'
+            theme: {
+                if (UtilModel.systemHasPlasmaMobileSoundTheme()) {
+                    return "plasma-mobile";
+                }
+                if (UtilModel.systemHasOceanSoundTheme()) {
+                    return "ocean";
+                }
+                return "freedesktop";
+            }
         }
         currentIndex: -1
 
