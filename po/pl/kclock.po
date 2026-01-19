@@ -1,6 +1,6 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the kclock package.
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025, 2026 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 # Grzegorz Koryga <rehork@tutamail.com>, 2022.
 #
 msgid ""
@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 14:43+0000\n"
-"PO-Revision-Date: 2025-10-25 09:35+0200\n"
+"PO-Revision-Date: 2026-01-18 15:12+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
 "Language: pl\n"
@@ -383,7 +383,7 @@ msgstr "24-godzinny format"
 #: qml/settings/SettingsPage.qml:58
 #, kde-format
 msgid "Notifications for running timers"
-msgstr "Powiadomienia dla odliczających czasomierzy"
+msgstr "Powiadomienia dla odliczających minutników"
 
 #: qml/settings/SettingsPage.qml:60
 #, kde-format
@@ -405,17 +405,17 @@ msgstr "Nigdy"
 #, kde-format
 msgid "Lets you pause and resume timers from the notification area."
 msgstr ""
-"Umożliwia wstrzymywanie i wznawianie czasomierzy z obszaru powiadamiania."
+"Umożliwia wstrzymywanie i wznawianie minutników z obszaru powiadamiania."
 
 #: qml/settings/SettingsPage.qml:90
 #, kde-format
 msgid "Select Timer Sound"
-msgstr "Wybierz dźwięk czasomierza"
+msgstr "Wybierz dźwięk minutnika"
 
 #: qml/settings/SettingsPage.qml:92
 #, kde-format
 msgid "Default timer ring sound"
-msgstr "Domyślny dźwięk dzwonka czasomierza"
+msgstr "Domyślny dźwięk dzwonka minutnika"
 
 #: qml/settings/SettingsPage.qml:102
 #, kde-format
@@ -651,12 +651,12 @@ msgstr "Zmień %1"
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Timer"
-msgstr "Utwórz czasomierz"
+msgstr "Utwórz minutnik"
 
 #: qml/timer/TimerFormDialog.qml:53
 #, kde-format
 msgid "Timer"
-msgstr "Czasomierz"
+msgstr "Minutnik"
 
 #: qml/timer/TimerFormDialog.qml:71
 #, kde-format
@@ -723,7 +723,7 @@ msgstr "Usuń"
 #: qml/timer/TimerListPage.qml:27
 #, kde-format
 msgid "New Timer"
-msgstr "Nowy czasomierz"
+msgstr "Nowy minutnik"
 
 #: qml/timer/TimerListPage.qml:61
 #, kde-format
@@ -743,22 +743,22 @@ msgstr "Nie udało się wczytać listy minutników: %1"
 #, kde-format
 msgctxt "@action:button"
 msgid "New Timer"
-msgstr "Nowy czasomierz"
+msgstr "Nowy minutnik"
 
 #: qml/timer/TimerListPage.qml:113
 #, kde-format
 msgid "No timers configured"
-msgstr "Brak ustawionych czasomierzy"
+msgstr "Brak ustawionych minutników"
 
 #: qml/timer/TimerListPage.qml:119
 #, kde-format
 msgid "Add timer"
-msgstr "Dodaj czasomierz"
+msgstr "Dodaj minutnik"
 
 #: qml/timer/TimerPage.qml:24
 #, kde-format
 msgid "New timer"
-msgstr "Nowy czasomierz"
+msgstr "Nowy minutnik"
 
 #: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:121
 #, kde-format
@@ -780,12 +780,12 @@ msgstr "1 minuta"
 #: qml/timer/TimerPage.qml:209
 #, kde-format
 msgid "This timer is in Picture-in-Picture mode."
-msgstr "Ten czasomierz jest w trybie obrazu-w-obrazie."
+msgstr "Ten minutnik jest w trybie obrazu-w-obrazie."
 
 #: qml/timer/TimerRingingPopup.qml:25
 #, kde-format
 msgid "Timer has finished"
-msgstr "Czasomierz zakończył pracę"
+msgstr "Minutnik zakończył pracę"
 
 #: qml/timer/TimerRingingPopup.qml:44
 #, kde-format
@@ -795,7 +795,7 @@ msgstr "%1 zakończył pracę."
 #: qml/timer/TimerRingingPopup.qml:44
 #, kde-format
 msgid "The timer has completed."
-msgstr "Czasomierz zakończył pracę."
+msgstr "Minutnik zakończył pracę."
 
 #: savedlocationsmodel.cpp:124
 #, kde-format

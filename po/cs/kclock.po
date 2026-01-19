@@ -1,21 +1,21 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the kclock package.
-# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024 Vit Pelcak <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024, 2026 Vit Pelcak <vit@pelcak.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 14:43+0000\n"
-"PO-Revision-Date: 2024-09-03 08:51+0200\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-01-15 08:46+0100\n"
+"Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -31,6 +31,7 @@ msgstr "vit@pelcak.org"
 #, kde-format
 msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr ""
+"Nastavujte budíky a časovače, používejte stopky a spravujte světové hodiny"
 
 #: main.cpp:52
 #, kde-format
@@ -56,32 +57,32 @@ msgstr "Kai Uwe Broulik"
 #, kde-format
 msgctxt "Author"
 msgid "Desktop Integration"
-msgstr ""
+msgstr "Integrace s desktopem"
 
 #: main.cpp:62
 #, kde-format
 msgid "Select opened page"
-msgstr ""
+msgstr "Vybrat otevřenou stránku"
 
 #: main.cpp:64
 #, kde-format
 msgid "Explicitly open a new Clock window"
-msgstr ""
+msgstr "Explicitně otevřít nové okno aplikace Hodiny"
 
 #: qml/alarm/AlarmForm.qml:84
 #, kde-format
 msgid "Days to repeat:"
-msgstr ""
+msgstr "Počet dní opakování:"
 
 #: qml/alarm/AlarmForm.qml:86
 #, kde-format
 msgid "Select Days to Repeat"
-msgstr ""
+msgstr "Vybrat dny opakování"
 
 #: qml/alarm/AlarmForm.qml:113
 #, kde-format
 msgid "Alarm Name (optional):"
-msgstr ""
+msgstr "Název budíku (volitelné):"
 
 #: qml/alarm/AlarmForm.qml:114
 #, kde-format
@@ -91,7 +92,7 @@ msgstr "Probudit"
 #: qml/alarm/AlarmForm.qml:124
 #, kde-format
 msgid "Ring Duration:"
-msgstr "Doba trvání prstence:"
+msgstr "Doba trvání vyzvánění:"
 
 # žádné parametry funkce v inspektoru funkcí
 #: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:128
@@ -110,7 +111,7 @@ msgstr[2] "%1 minut"
 #: qml/alarm/AlarmForm.qml:126
 #, kde-format
 msgid "Select Ring Duration"
-msgstr ""
+msgstr "Vybrat délku vyzvánění"
 
 #: qml/alarm/AlarmForm.qml:129 qml/alarm/AlarmForm.qml:166
 #, kde-format
@@ -150,17 +151,17 @@ msgstr "1 hodina"
 #: qml/alarm/AlarmForm.qml:162
 #, kde-format
 msgid "Snooze Length:"
-msgstr ""
+msgstr "Délka odložení:"
 
 #: qml/alarm/AlarmForm.qml:163
 #, kde-format
 msgid "Select Snooze Length"
-msgstr ""
+msgstr "Vybrat délku odložení"
 
 #: qml/alarm/AlarmForm.qml:200
 #, kde-format
 msgid "Ring Sound:"
-msgstr ""
+msgstr "Zvuk vyzvánění:"
 
 #: qml/alarm/AlarmForm.qml:206
 #, kde-format
@@ -197,9 +198,9 @@ msgstr "Zrušit"
 #, kde-format
 msgid "Snoozed %1 minute"
 msgid_plural "Snoozed %1 minutes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Odloženo %1 minutu"
+msgstr[1] "Odloženo %1 minuty"
+msgstr[2] "Odloženo %1 minut"
 
 #: qml/alarm/AlarmListDelegate.qml:125 qml/time/TimePageDelegate.qml:68
 #, kde-format
@@ -231,16 +232,18 @@ msgid ""
 "The clock daemon was not found. Please start kclockd in order to have alarm "
 "functionality."
 msgstr ""
+"Démon hodin nebyl nalezen. Spusťte prosím kclockd, aby byla k dispozici "
+"funkce budíku."
 
 #: qml/alarm/AlarmListPage.qml:59
 #, kde-format
 msgid "Failed to load the list of alarms: %1"
-msgstr ""
+msgstr "Nepodařilo se načíst seznam budíků: %1"
 
 #: qml/alarm/AlarmListPage.qml:85
 #, kde-format
 msgid "No alarms configured"
-msgstr ""
+msgstr "Není nastaven žádný budík"
 
 #: qml/alarm/AlarmListPage.qml:91
 #, kde-format
@@ -256,7 +259,7 @@ msgstr "Probíhá načítání…"
 #, kde-format
 msgctxt "@action:button"
 msgid "New Alarm"
-msgstr ""
+msgstr "Nový budík"
 
 #: qml/alarm/AlarmListPage.qml:135
 #, kde-format
@@ -271,7 +274,7 @@ msgstr "Smazáno %1"
 #: qml/alarm/AlarmRingingPopup.qml:26
 #, kde-format
 msgid "Alarm is ringing"
-msgstr ""
+msgstr "Budík vyzvání"
 
 #: qml/alarm/AlarmRingingPopup.qml:53
 #, kde-format
@@ -307,7 +310,7 @@ msgctxt ""
 "@action:button Close pip and return to the page where the content was popped "
 "out from"
 msgid "Back to app"
-msgstr ""
+msgstr "Zpět do aplikace"
 
 #: qml/components/PipHandler.qml:123
 #, kde-format
@@ -318,12 +321,12 @@ msgstr "Zavřít"
 #: qml/components/SoundPickerPage.qml:24
 #, kde-format
 msgid "Select Alarm Sound"
-msgstr ""
+msgstr "Vybrat zvuk vyzvánění budíku"
 
 #: qml/components/SoundPickerPage.qml:65
 #, kde-format
 msgid "Select from files…"
-msgstr ""
+msgstr "Vybrat ze souborů..."
 
 #: qml/components/SoundPickerPage.qml:76 qml/settings/SettingsPage.qml:85
 #, kde-format
@@ -333,7 +336,7 @@ msgstr "Výchozí"
 #: qml/components/SoundPickerPage.qml:156
 #, kde-format
 msgid "Choose an audio"
-msgstr ""
+msgstr "Vybrat audio"
 
 #: qml/components/SoundPickerPage.qml:164
 #, kde-format
@@ -368,17 +371,17 @@ msgstr "Použít výchozí systémový"
 #: qml/settings/SettingsPage.qml:43
 #, kde-format
 msgid "12 Hour Time"
-msgstr ""
+msgstr "12 hodinový čas"
 
 #: qml/settings/SettingsPage.qml:44
 #, kde-format
 msgid "24 Hour Time"
-msgstr ""
+msgstr "24 hodinový čas"
 
 #: qml/settings/SettingsPage.qml:58
 #, kde-format
 msgid "Notifications for running timers"
-msgstr ""
+msgstr "Oznámení o spuštěných časovačích"
 
 #: qml/settings/SettingsPage.qml:60
 #, kde-format
@@ -389,7 +392,7 @@ msgstr "Vždy"
 #, kde-format
 msgctxt "When the app is not running"
 msgid "When %1 is not running"
-msgstr ""
+msgstr "Když %1 neběží"
 
 #: qml/settings/SettingsPage.qml:66
 #, kde-format
@@ -399,17 +402,17 @@ msgstr "Nikdy"
 #: qml/settings/SettingsPage.qml:69
 #, kde-format
 msgid "Lets you pause and resume timers from the notification area."
-msgstr ""
+msgstr "Umožňuje pozastavit a obnovit časovače z oznamovací oblasti."
 
 #: qml/settings/SettingsPage.qml:90
 #, kde-format
 msgid "Select Timer Sound"
-msgstr ""
+msgstr "Vybrat zvuk vyzvánění časovače"
 
 #: qml/settings/SettingsPage.qml:92
 #, kde-format
 msgid "Default timer ring sound"
-msgstr ""
+msgstr "Výchozí zvuk vyzvánění časovače"
 
 #: qml/settings/SettingsPage.qml:102
 #, kde-format
@@ -431,20 +434,20 @@ msgstr "Obnovit"
 #, kde-format
 msgctxt "@action"
 msgid "Pop out"
-msgstr ""
+msgstr "Vytáhnout"
 
 #: qml/stopwatch/StopwatchPage.qml:107 qml/stopwatch/StopwatchPage.qml:371
 #: qml/timer/TimerPage.qml:175
 #, kde-format
 msgctxt "@action:button"
 msgid "Pause"
-msgstr ""
+msgstr "Pozastavit"
 
 #: qml/stopwatch/StopwatchPage.qml:109 qml/stopwatch/StopwatchPage.qml:373
 #, kde-format
 msgctxt "@action:button"
 msgid "Resume"
-msgstr ""
+msgstr "Obnovit"
 
 #: qml/stopwatch/StopwatchPage.qml:111 qml/stopwatch/StopwatchPage.qml:375
 #: qml/timer/TimerPage.qml:175
@@ -457,7 +460,7 @@ msgstr "Spustit"
 #, kde-format
 msgctxt "@action:button"
 msgid "Lap"
-msgstr ""
+msgstr "Kolo"
 
 #: qml/stopwatch/StopwatchPage.qml:121 qml/timer/TimerPage.qml:181
 #, kde-format
@@ -491,7 +494,7 @@ msgstr "Spustit"
 #: qml/stopwatch/StopwatchPage.qml:271 qml/stopwatch/StopwatchPage.qml:312
 #, kde-format
 msgid "Lap"
-msgstr ""
+msgstr "Kolo"
 
 #: qml/stopwatch/StopwatchPage.qml:292
 #, kde-format
@@ -499,6 +502,8 @@ msgid ""
 "Press Space to start or pause the stopwatch. Delete or Backspace resets it. "
 "Enter adds a lap."
 msgstr ""
+"Stisknutím mezerníku spustíte nebo pozastavíte stopky. Klávesou Delete nebo "
+"Backspace je resetujete. Klávesou Enter přidáte kolo."
 
 #: qml/stopwatch/StopwatchPage.qml:320
 #, kde-format
@@ -513,13 +518,13 @@ msgstr "Celkem"
 #: qml/stopwatch/StopwatchPage.qml:357
 #, kde-format
 msgid "Stopwatch is in Picture-in-Picture mode."
-msgstr ""
+msgstr "Stopky jsou v režimu obraz v obraze."
 
 #: qml/stopwatch/StopwatchPage.qml:362 qml/timer/TimerPage.qml:214
 #, kde-format
 msgctxt "@action:button Restore (unminimize) from pip mode"
 msgid "Restore"
-msgstr ""
+msgstr "Obnovit"
 
 #: qml/stopwatch/StopwatchPage.qml:435
 #, kde-format
@@ -545,7 +550,7 @@ msgstr "Přidat"
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Location"
-msgstr ""
+msgstr "Přidat umístění"
 
 #: qml/time/TimePageDelegate.qml:47
 #, kde-format
@@ -616,7 +621,7 @@ msgstr "sekund"
 #: qml/timer/TimerPage.qml:68 qml/timer/TimerPage.qml:130
 #, kde-format
 msgid "Loop Timer"
-msgstr ""
+msgstr "Smyčkový časovač"
 
 #: qml/timer/TimerForm.qml:120
 #, kde-format
@@ -626,7 +631,7 @@ msgstr "<b>Popisek:</b>"
 #: qml/timer/TimerForm.qml:125
 #, kde-format
 msgid "<b>Command at timeout:</b>"
-msgstr ""
+msgstr "<b>Příkaz při vypršení časového limitu:</b>"
 
 #: qml/timer/TimerForm.qml:128
 #, kde-format
@@ -637,13 +642,13 @@ msgstr "volitelné"
 #, kde-format
 msgctxt "@title:window Edit timer"
 msgid "Edit %1"
-msgstr ""
+msgstr "Upravit %1"
 
 #: qml/timer/TimerFormDialog.qml:36
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Timer"
-msgstr ""
+msgstr "Vytvořit časovač"
 
 #: qml/timer/TimerFormDialog.qml:53
 #, kde-format
@@ -653,7 +658,7 @@ msgstr "Časovač"
 #: qml/timer/TimerFormDialog.qml:71
 #, kde-format
 msgid "Hide Presets"
-msgstr ""
+msgstr "Skrýt přednastavení"
 
 #: qml/timer/TimerFormDialog.qml:71
 #, kde-format
@@ -663,12 +668,12 @@ msgstr "Zobrazit přednastavení"
 #: qml/timer/TimerFormDialog.qml:76
 #, kde-format
 msgid "Toggle Delete"
-msgstr ""
+msgstr "Vymazat"
 
 #: qml/timer/TimerFormDialog.qml:103
 #, kde-format
 msgid "Save As Preset"
-msgstr ""
+msgstr "Uložit jako přednastavení"
 
 #: qml/timer/TimerFormDialog.qml:116
 #, kde-format
@@ -704,7 +709,7 @@ msgstr "Obnovit"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit"
-msgstr ""
+msgstr "Upravit"
 
 #: qml/timer/TimerListDelegate.qml:195
 #, kde-format
@@ -715,7 +720,7 @@ msgstr "Smazat"
 #: qml/timer/TimerListPage.qml:27
 #, kde-format
 msgid "New Timer"
-msgstr ""
+msgstr "Nový časovač"
 
 #: qml/timer/TimerListPage.qml:61
 #, kde-format
@@ -723,22 +728,24 @@ msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
 "functionality."
 msgstr ""
+"Démon hodin nebyl nalezen. Spusťte prosím kclockd, aby byla k dispozici "
+"funkce časovače."
 
 #: qml/timer/TimerListPage.qml:63
 #, kde-format
 msgid "Failed to load the list of timers: %1"
-msgstr ""
+msgstr "Nepodařilo se načíst seznam časovačů: %1"
 
 #: qml/timer/TimerListPage.qml:102
 #, kde-format
 msgctxt "@action:button"
 msgid "New Timer"
-msgstr ""
+msgstr "Nový časovač"
 
 #: qml/timer/TimerListPage.qml:113
 #, kde-format
 msgid "No timers configured"
-msgstr ""
+msgstr "Není nastaven žádný časovač"
 
 #: qml/timer/TimerListPage.qml:119
 #, kde-format
@@ -759,18 +766,18 @@ msgstr "Smazat"
 #, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "+1:00"
-msgstr ""
+msgstr "+1:00"
 
 #: qml/timer/TimerPage.qml:199
 #, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "1 minute"
-msgstr ""
+msgstr "1 minuta"
 
 #: qml/timer/TimerPage.qml:209
 #, kde-format
 msgid "This timer is in Picture-in-Picture mode."
-msgstr ""
+msgstr "Časovač je v režimu obraz v obraze."
 
 #: qml/timer/TimerRingingPopup.qml:25
 #, kde-format
@@ -780,52 +787,52 @@ msgstr "Časovač skončil"
 #: qml/timer/TimerRingingPopup.qml:44
 #, kde-format
 msgid "%1 has completed."
-msgstr ""
+msgstr "%1 skončil."
 
 #: qml/timer/TimerRingingPopup.qml:44
 #, kde-format
 msgid "The timer has completed."
-msgstr ""
+msgstr "Časovač skončil."
 
 #: savedlocationsmodel.cpp:124
 #, kde-format
 msgid "%1 hour and 30 minutes ahead"
-msgstr ""
+msgstr "%1 hodina a 30 minut předem"
 
 #: savedlocationsmodel.cpp:124
 #, kde-format
 msgid "%1 hours and 30 minutes ahead"
-msgstr ""
+msgstr "%1 hodin a 30 minut předem"
 
 #: savedlocationsmodel.cpp:126
 #, kde-format
 msgid "%1 hour ahead"
-msgstr ""
+msgstr "%1 hodina předem"
 
 #: savedlocationsmodel.cpp:126
 #, kde-format
 msgid "%1 hours ahead"
-msgstr ""
+msgstr "%1 hodin předem"
 
 #: savedlocationsmodel.cpp:131
 #, kde-format
 msgid "%1 hour and 30 minutes behind"
-msgstr ""
+msgstr "%1 hodinu a 30 minut později"
 
 #: savedlocationsmodel.cpp:131
 #, kde-format
 msgid "%1 hours and 30 minutes behind"
-msgstr ""
+msgstr "%1 hodin a 30 minut později"
 
 #: savedlocationsmodel.cpp:133
 #, kde-format
 msgid "%1 hour behind"
-msgstr ""
+msgstr "%1 hodina později"
 
 #: savedlocationsmodel.cpp:133
 #, kde-format
 msgid "%1 hours behind"
-msgstr ""
+msgstr "%1 hodin později"
 
 #: savedlocationsmodel.cpp:136
 #, kde-format
@@ -851,30 +858,30 @@ msgstr[2] "%1 hodin"
 #: utilmodel.cpp:98
 #, kde-format
 msgid "Alarm will ring in under a minute"
-msgstr ""
+msgstr "Budík zazvoní za méně než minutu."
 
 #: utilmodel.cpp:100
 #, kde-format
 msgid "Alarm will ring in %1"
-msgstr ""
+msgstr "Budík zazvoní za %1"
 
 #: utilmodel.cpp:152
 #, kde-format
 msgctxt "Repeat"
 msgid "Only once"
-msgstr ""
+msgstr "Pouze jednou"
 
 #: utilmodel.cpp:155
 #, kde-format
 msgctxt "Repeat"
 msgid "Everyday"
-msgstr ""
+msgstr "Každý den"
 
 #: utilmodel.cpp:158
 #, kde-format
 msgctxt "Repeat"
 msgid "Weekdays"
-msgstr ""
+msgstr "Pracovní dny"
 
 #: utilmodel.cpp:179
 #, kde-format
