@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-11 00:46+0000\n"
+"POT-Creation-Date: 2026-01-20 00:46+0000\n"
 "PO-Revision-Date: 2026-01-12 10:17+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
@@ -103,7 +103,7 @@ msgstr "Durée de sonnerie :"
 msgid "None"
 msgstr "Aucun"
 
-#: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:164 utilmodel.cpp:94
+#: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:164 utilmodel.cpp:108
 #, kde-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -334,27 +334,27 @@ msgstr "Fermer"
 msgid "Select Alarm Sound"
 msgstr "Sélectionnez un son d'alarme"
 
-#: qml/components/SoundPickerPage.qml:65
+#: qml/components/SoundPickerPage.qml:73
 #, kde-format
 msgid "Select from files…"
 msgstr " Sélectionner à partir de fichiers…"
 
-#: qml/components/SoundPickerPage.qml:76 qml/settings/SettingsPage.qml:85
+#: qml/components/SoundPickerPage.qml:84 qml/settings/SettingsPage.qml:85
 #, kde-format
 msgid "Default"
 msgstr "Par défaut"
 
-#: qml/components/SoundPickerPage.qml:156
+#: qml/components/SoundPickerPage.qml:164
 #, kde-format
 msgid "Choose an audio"
 msgstr "Sélectionner un fichier audio"
 
-#: qml/components/SoundPickerPage.qml:164
+#: qml/components/SoundPickerPage.qml:172
 #, kde-format
 msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 msgstr "Fichiers audio (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 
-#: qml/components/SoundPickerPage.qml:164
+#: qml/components/SoundPickerPage.qml:172
 #, kde-format
 msgid "All files (*)"
 msgstr "Tous les fichiers (*)"
@@ -859,49 +859,49 @@ msgstr "%1 heures en arrière"
 msgid "Local time"
 msgstr "Heure locale"
 
-#: utilmodel.cpp:88
+#: utilmodel.cpp:102
 #, kde-format
 msgid "%1 day"
 msgid_plural "%1 days"
 msgstr[0] "%1 jour"
 msgstr[1] "%1 jours"
 
-#: utilmodel.cpp:91
+#: utilmodel.cpp:105
 #, kde-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
 msgstr[0] "%1 heure"
 msgstr[1] "%1 heures"
 
-#: utilmodel.cpp:98
+#: utilmodel.cpp:112
 #, kde-format
 msgid "Alarm will ring in under a minute"
 msgstr "L'alarme sonnera dans moins de une minute"
 
-#: utilmodel.cpp:100
+#: utilmodel.cpp:114
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "L'alarme sera déclenchée dans %1"
 
-#: utilmodel.cpp:152
+#: utilmodel.cpp:166
 #, kde-format
 msgctxt "Repeat"
 msgid "Only once"
 msgstr "Une fois seulement"
 
-#: utilmodel.cpp:155
+#: utilmodel.cpp:169
 #, kde-format
 msgctxt "Repeat"
 msgid "Everyday"
 msgstr "Chaque jour"
 
-#: utilmodel.cpp:158
+#: utilmodel.cpp:172
 #, kde-format
 msgctxt "Repeat"
 msgid "Weekdays"
 msgstr "Jours ouvrables"
 
-#: utilmodel.cpp:179
+#: utilmodel.cpp:193
 #, kde-format
 msgid ", "
 msgstr ", "

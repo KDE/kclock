@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-11 00:46+0000\n"
+"POT-Creation-Date: 2026-01-20 00:46+0000\n"
 "PO-Revision-Date: 2026-01-12 03:16+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -103,7 +103,7 @@ msgstr "Тривалість кільця:"
 msgid "None"
 msgstr "Немає"
 
-#: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:164 utilmodel.cpp:94
+#: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:164 utilmodel.cpp:108
 #, kde-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -338,27 +338,27 @@ msgstr "Закрити"
 msgid "Select Alarm Sound"
 msgstr "Виберіть мелодію будильника"
 
-#: qml/components/SoundPickerPage.qml:65
+#: qml/components/SoundPickerPage.qml:73
 #, kde-format
 msgid "Select from files…"
 msgstr "Вибрати з файлів…"
 
-#: qml/components/SoundPickerPage.qml:76 qml/settings/SettingsPage.qml:85
+#: qml/components/SoundPickerPage.qml:84 qml/settings/SettingsPage.qml:85
 #, kde-format
 msgid "Default"
 msgstr "Типова"
 
-#: qml/components/SoundPickerPage.qml:156
+#: qml/components/SoundPickerPage.qml:164
 #, kde-format
 msgid "Choose an audio"
 msgstr "Виберіть звук"
 
-#: qml/components/SoundPickerPage.qml:164
+#: qml/components/SoundPickerPage.qml:172
 #, kde-format
 msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 msgstr "звукові файли (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 
-#: qml/components/SoundPickerPage.qml:164
+#: qml/components/SoundPickerPage.qml:172
 #, kde-format
 msgid "All files (*)"
 msgstr "усі файли (*)"
@@ -862,7 +862,7 @@ msgstr "%1 годин позаду"
 msgid "Local time"
 msgstr "Місцевий час"
 
-#: utilmodel.cpp:88
+#: utilmodel.cpp:102
 #, kde-format
 msgid "%1 day"
 msgid_plural "%1 days"
@@ -871,7 +871,7 @@ msgstr[1] "%1 дні"
 msgstr[2] "%1 днів"
 msgstr[3] "%1 день"
 
-#: utilmodel.cpp:91
+#: utilmodel.cpp:105
 #, kde-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
@@ -880,35 +880,35 @@ msgstr[1] "%1 години"
 msgstr[2] "%1 годин"
 msgstr[3] "%1 година"
 
-#: utilmodel.cpp:98
+#: utilmodel.cpp:112
 #, kde-format
 msgid "Alarm will ring in under a minute"
 msgstr "Будильник буде увімкнено за менше, ніж хвилину"
 
-#: utilmodel.cpp:100
+#: utilmodel.cpp:114
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "Будильник буде увімкнено за %1"
 
-#: utilmodel.cpp:152
+#: utilmodel.cpp:166
 #, kde-format
 msgctxt "Repeat"
 msgid "Only once"
 msgstr "Лише раз"
 
-#: utilmodel.cpp:155
+#: utilmodel.cpp:169
 #, kde-format
 msgctxt "Repeat"
 msgid "Everyday"
 msgstr "Щодня"
 
-#: utilmodel.cpp:158
+#: utilmodel.cpp:172
 #, kde-format
 msgctxt "Repeat"
 msgid "Weekdays"
 msgstr "Щотижня"
 
-#: utilmodel.cpp:179
+#: utilmodel.cpp:193
 #, kde-format
 msgid ", "
 msgstr ", "

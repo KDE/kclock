@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-11 00:46+0000\n"
+"POT-Creation-Date: 2026-01-20 00:46+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -98,7 +98,7 @@ msgstr "铃声持续时间："
 msgid "None"
 msgstr "无"
 
-#: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:164 utilmodel.cpp:94
+#: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:164 utilmodel.cpp:108
 #, kde-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -325,27 +325,27 @@ msgstr "关闭"
 msgid "Select Alarm Sound"
 msgstr "选择闹钟声音"
 
-#: qml/components/SoundPickerPage.qml:65
+#: qml/components/SoundPickerPage.qml:73
 #, kde-format
 msgid "Select from files…"
 msgstr "从文件选择…"
 
-#: qml/components/SoundPickerPage.qml:76 qml/settings/SettingsPage.qml:85
+#: qml/components/SoundPickerPage.qml:84 qml/settings/SettingsPage.qml:85
 #, kde-format
 msgid "Default"
 msgstr "默认"
 
-#: qml/components/SoundPickerPage.qml:156
+#: qml/components/SoundPickerPage.qml:164
 #, kde-format
 msgid "Choose an audio"
 msgstr "选择音频"
 
-#: qml/components/SoundPickerPage.qml:164
+#: qml/components/SoundPickerPage.qml:172
 #, kde-format
 msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 msgstr "音频文件 (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 
-#: qml/components/SoundPickerPage.qml:164
+#: qml/components/SoundPickerPage.qml:172
 #, kde-format
 msgid "All files (*)"
 msgstr "所有文件 (*)"
@@ -844,47 +844,47 @@ msgstr "已经过 %1 小时"
 msgid "Local time"
 msgstr "本地时间"
 
-#: utilmodel.cpp:88
+#: utilmodel.cpp:102
 #, kde-format
 msgid "%1 day"
 msgid_plural "%1 days"
 msgstr[0] "%1 天"
 
-#: utilmodel.cpp:91
+#: utilmodel.cpp:105
 #, kde-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
 msgstr[0] "%1 小时"
 
-#: utilmodel.cpp:98
+#: utilmodel.cpp:112
 #, kde-format
 msgid "Alarm will ring in under a minute"
 msgstr "闹钟将在一分钟内响起"
 
-#: utilmodel.cpp:100
+#: utilmodel.cpp:114
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "闹钟将在 %1 响起"
 
-#: utilmodel.cpp:152
+#: utilmodel.cpp:166
 #, kde-format
 msgctxt "Repeat"
 msgid "Only once"
 msgstr "仅一次"
 
-#: utilmodel.cpp:155
+#: utilmodel.cpp:169
 #, kde-format
 msgctxt "Repeat"
 msgid "Everyday"
 msgstr "每天"
 
-#: utilmodel.cpp:158
+#: utilmodel.cpp:172
 #, kde-format
 msgctxt "Repeat"
 msgid "Weekdays"
 msgstr "工作日"
 
-#: utilmodel.cpp:179
+#: utilmodel.cpp:193
 #, kde-format
 msgid ", "
 msgstr "、"
