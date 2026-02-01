@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-20 00:46+0000\n"
-"PO-Revision-Date: 2026-01-28 20:29+0200\n"
-"Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
+"PO-Revision-Date: 2026-01-31 11:13+0300\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -281,10 +281,9 @@ msgid "Alarm is ringing"
 msgstr "Сигнал напоминания"
 
 #: qml/alarm/AlarmLockscreenPopup.qml:51
-#, fuzzy, kde-format
-#| msgid "Select Alarm Sound"
+#, kde-format
 msgid "Alarm not found"
-msgstr "Выбор звука напоминания"
+msgstr "Напоминание не найдено."
 
 #: qml/alarm/AlarmLockscreenPopup.qml:75 qml/alarm/AlarmRingingPopup.qml:53
 #, kde-format
@@ -292,10 +291,9 @@ msgid "Snooze"
 msgstr "Отложить"
 
 #: qml/alarm/AlarmLockscreenPopup.qml:102
-#, fuzzy, kde-format
-#| msgid "Stopwatch"
+#, kde-format
 msgid "Stop"
-msgstr "Секундомер"
+msgstr "Остановить"
 
 #: qml/alarm/AlarmRingingPopup.qml:57 qml/timer/TimerRingingPopup.qml:54
 #, kde-format
@@ -593,7 +591,7 @@ msgstr "Создать таймер"
 #: qml/timer/TimerComponent.qml:195
 #, kde-format
 msgid "Click to edit timer name"
-msgstr ""
+msgstr "Нажмите, чтобы изменить название таймера"
 
 #: qml/timer/TimerForm.qml:40
 #, kde-format
