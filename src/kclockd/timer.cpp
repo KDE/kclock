@@ -62,7 +62,6 @@ void Timer::init()
     // initialize notification
     m_notification->setIconName(QStringLiteral("org.kde.kclock"));
     m_notification->setTitle(i18n("Timer complete"));
-    m_notification->setText(i18n("Your timer %1 has finished!", label()));
     m_notification->setUrgency(KNotification::HighUrgency);
     m_notification->setAutoDelete(false); // don't auto-delete when closing
 
@@ -275,6 +274,8 @@ void Timer::ring()
 {
     // if there were other ring events running, close them
     m_notification->close();
+
+    m_notification->setText(i18n("Your timer %1 has finished!", label()));
 
     qDebug("Timer finished, sending notification...");
     m_notification->sendEvent();
