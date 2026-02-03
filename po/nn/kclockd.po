@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:45+0000\n"
+"POT-Creation-Date: 2026-02-03 00:50+0000\n"
 "PO-Revision-Date: 2025-05-03 11:18+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -33,7 +33,7 @@ msgstr "karl@huftis.org"
 msgid "Alarm"
 msgstr "Alarm"
 
-#: alarm.cpp:79 timer.cpp:69
+#: alarm.cpp:79 timer.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Dismiss"
@@ -181,7 +181,7 @@ msgstr "Skrivebordsintegrering"
 msgid "Timer complete"
 msgstr "Nedteljing fullført"
 
-#: timer.cpp:65
+#: timer.cpp:278
 #, kde-format
 msgid "Your timer %1 has finished!"
 msgstr "Nedteljinga %1 er ferdig!"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:45+0000\n"
+"POT-Creation-Date: 2026-02-03 00:50+0000\n"
 "PO-Revision-Date: 2025-04-15 23:37+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -32,7 +32,7 @@ msgstr "kde@peremen.name"
 msgid "Alarm"
 msgstr "알람"
 
-#: alarm.cpp:79 timer.cpp:69
+#: alarm.cpp:79 timer.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Dismiss"
@@ -180,7 +180,7 @@ msgstr "데스크톱 통합"
 msgid "Timer complete"
 msgstr "타이머 완료됨"
 
-#: timer.cpp:65
+#: timer.cpp:278
 #, kde-format
 msgid "Your timer %1 has finished!"
 msgstr "타이머 %1이(가) 완료되었습니다!"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:45+0000\n"
+"POT-Creation-Date: 2026-02-03 00:50+0000\n"
 "PO-Revision-Date: 2024-02-04 10:22-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -32,7 +32,7 @@ msgstr "aalam@punlinux.org"
 msgid "Alarm"
 msgstr "ਅਲਾਰਮ"
 
-#: alarm.cpp:79 timer.cpp:69
+#: alarm.cpp:79 timer.cpp:68
 #, fuzzy, kde-format
 #| msgid "Dismiss"
 msgctxt "@action:button"
@@ -184,7 +184,7 @@ msgstr ""
 msgid "Timer complete"
 msgstr "ਟਾਈਮਰ ਪੂਰਾ"
 
-#: timer.cpp:65
+#: timer.cpp:278
 #, kde-format
 msgid "Your timer %1 has finished!"
 msgstr "ਤੁਹਾਡਾ %1 ਟਾਈਮਰ ਪੂਰਾ ਹੋਇਆ!"

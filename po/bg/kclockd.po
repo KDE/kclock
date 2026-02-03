@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:45+0000\n"
+"POT-Creation-Date: 2026-02-03 00:50+0000\n"
 "PO-Revision-Date: 2025-04-19 11:48+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -32,7 +32,7 @@ msgstr "mkondarev@yahoo.de"
 msgid "Alarm"
 msgstr "Аларма"
 
-#: alarm.cpp:79 timer.cpp:69
+#: alarm.cpp:79 timer.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Dismiss"
@@ -180,7 +180,7 @@ msgstr "Интеграция с работния плот"
 msgid "Timer complete"
 msgstr "Таймерът завърши"
 
-#: timer.cpp:65
+#: timer.cpp:278
 #, kde-format
 msgid "Your timer %1 has finished!"
 msgstr "Таймерът %1 завърши"
