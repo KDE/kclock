@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-20 00:46+0000\n"
-"PO-Revision-Date: 2026-01-03 14:41+0000\n"
+"PO-Revision-Date: 2026-02-04 13:06+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
@@ -589,7 +589,7 @@ msgstr "Cronometru nou"
 #: qml/timer/TimerComponent.qml:195
 #, kde-format
 msgid "Click to edit timer name"
-msgstr ""
+msgstr "Apăsați pentru a redacta denumirea temporizatorului"
 
 #: qml/timer/TimerForm.qml:40
 #, kde-format
