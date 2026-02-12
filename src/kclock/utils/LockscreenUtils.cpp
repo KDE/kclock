@@ -13,7 +13,6 @@
 void allowAboveLockscreen(QWindow *window, WaylandAboveLockscreen *overlay)
 {
     if (KWindowSystem::isPlatformWayland()) {
-        Q_ASSERT(!window->isVisible());
         if (!overlay->isInitialized()) {
             qWarning() << "Compositor does NOT support kde-lockscreen-overlay-v1. Skipping above-lockscreen feature.";
             return;

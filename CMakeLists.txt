@@ -95,7 +95,8 @@ ecm_set_disabled_deprecation_versions(QT 6.10.0
 
 add_subdirectory(src)
 
-install(PROGRAMS org.kde.kclock.desktop DESTINATION ${KDE_INSTALL_APPDIR})
+configure_file(org.kde.kclock.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclock.desktop @ONLY)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclock.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 install(FILES org.kde.kclockd-autostart.desktop DESTINATION ${KDE_INSTALL_AUTOSTARTDIR})
 install(FILES org.kde.kclock.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 install(FILES org.kde.kclock.svg DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/scalable/apps/)

@@ -138,13 +138,9 @@ int main(int argc, char *argv[])
             }
         }
 
-        lockscreenWindow->setVisible(false);
-
         WaylandAboveLockscreen overlay;
         allowAboveLockscreen(lockscreenWindow, &overlay);
         raiseWindow(lockscreenWindow);
-
-        lockscreenWindow->setVisible(true);
     }
 #endif
     if (mainWindow) {

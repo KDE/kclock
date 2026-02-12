@@ -91,7 +91,7 @@ Comment[tr]=Çalar saatler ve sayaçlar kurun, kronometreyi kullanın ve dünya 
 Comment[uk]=Встановіть нагадування та таймери, скористайтеся секундоміром і керуйте показом часу з усього світу
 Comment[zh_CN]=设置闹钟、倒计时、使用秒表和管理世界时钟
 Comment[zh_TW]=設定鬧鐘、計時器，使用碼錶，並管理世界時鐘
-Exec=kclock
+Exec=@CMAKE_INSTALL_FULL_BINDIR@/kclock
 Icon=org.kde.kclock
 Type=Application
 Terminal=false
@@ -178,7 +178,7 @@ Name[uk]=Таймери
 Name[zh_CN]=计时器
 Name[zh_TW]=計時器
 Icon=player-time
-Exec=kclock --page Timers
+Exec=@CMAKE_INSTALL_FULL_BINDIR@/kclock --page Timers
 
 [Desktop Action Stopwatch]
 Name=Stopwatch
@@ -216,7 +216,7 @@ Name[uk]=Секундомір
 Name[zh_CN]=秒表
 Name[zh_TW]=碼錶
 Icon=chronometer
-Exec=kclock --page Stopwatch
+Exec=@CMAKE_INSTALL_FULL_BINDIR@/kclock --page Stopwatch
 
 [Desktop Action Alarms]
 Name=Alarms
@@ -254,4 +254,4 @@ Name[uk]=Будильники
 Name[zh_CN]=闹钟
 Name[zh_TW]=鬧鐘
 Icon=notifications
-Exec=kclock --page Alarms
+Exec=@CMAKE_INSTALL_FULL_BINDIR@/kclock --page Alarms
