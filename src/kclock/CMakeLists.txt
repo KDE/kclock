@@ -86,6 +86,7 @@ ecm_add_qml_module(kclock URI org.kde.kclock QML_FILES
     qml/components/TimePicker.qml
     qml/components/TimePickerSpinBox.qml
     qml/components/TimePickerSpinBoxButton.qml
+    qml/components/LockscreenAlertView.qml
 
     qml/timer/PresetDurationButton.qml
     qml/timer/TimerComponent.qml
