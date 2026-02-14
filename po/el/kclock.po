@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-20 00:46+0000\n"
+"POT-Creation-Date: 2026-02-14 00:47+0000\n"
 "PO-Revision-Date: 2021-06-12 21:25+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -172,7 +172,8 @@ msgstr "Κουδούνισμα"
 msgid "Default Sound"
 msgstr ""
 
-#: qml/alarm/AlarmFormPage.qml:25 qml/alarm/AlarmRingingPopup.qml:43
+#: qml/alarm/AlarmFormPage.qml:25 qml/alarm/AlarmLockscreenPopup.qml:38
+#: qml/alarm/AlarmRingingPopup.qml:43
 #, kde-format
 msgid "Alarm"
 msgstr "Συναγερμός"
@@ -280,23 +281,18 @@ msgstr "Διαγράφηκε %1"
 msgid "Alarm is ringing"
 msgstr ""
 
-#: qml/alarm/AlarmLockscreenPopup.qml:51
+#: qml/alarm/AlarmLockscreenPopup.qml:38
 #, kde-format
 msgid "Alarm not found"
 msgstr ""
 
-#: qml/alarm/AlarmLockscreenPopup.qml:75 qml/alarm/AlarmRingingPopup.qml:53
+#: qml/alarm/AlarmLockscreenPopup.qml:40 qml/alarm/AlarmRingingPopup.qml:53
 #, kde-format
 msgid "Snooze"
 msgstr "Αναβολή"
 
-#: qml/alarm/AlarmLockscreenPopup.qml:102
-#, fuzzy, kde-format
-#| msgid "Stopwatch"
-msgid "Stop"
-msgstr "Χρονόμετρο"
-
-#: qml/alarm/AlarmRingingPopup.qml:57 qml/timer/TimerRingingPopup.qml:54
+#: qml/alarm/AlarmLockscreenPopup.qml:41 qml/alarm/AlarmRingingPopup.qml:57
+#: qml/timer/TimerRingingPopup.qml:54
 #, kde-format
 msgid "Dismiss"
 msgstr "Αποδέσμευση"
@@ -944,6 +940,11 @@ msgstr "Καθημερινές"
 #, kde-format
 msgid ", "
 msgstr ", "
+
+#, fuzzy
+#~| msgid "Stopwatch"
+#~ msgid "Stop"
+#~ msgstr "Χρονόμετρο"
 
 #, fuzzy
 #~| msgid "%1 minute"

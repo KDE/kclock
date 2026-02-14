@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-20 00:46+0000\n"
+"POT-Creation-Date: 2026-02-14 00:47+0000\n"
 "PO-Revision-Date: 2025-08-19 15:11+0300\n"
 "Last-Translator: Toms Trasūns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -169,7 +169,8 @@ msgstr "Signāla skaņa:"
 msgid "Default Sound"
 msgstr "Iebūvētā skaņa"
 
-#: qml/alarm/AlarmFormPage.qml:25 qml/alarm/AlarmRingingPopup.qml:43
+#: qml/alarm/AlarmFormPage.qml:25 qml/alarm/AlarmLockscreenPopup.qml:38
+#: qml/alarm/AlarmRingingPopup.qml:43
 #, kde-format
 msgid "Alarm"
 msgstr "Signāls"
@@ -277,24 +278,19 @@ msgstr "Izdzēsts %1"
 msgid "Alarm is ringing"
 msgstr "Skan signāls"
 
-#: qml/alarm/AlarmLockscreenPopup.qml:51
+#: qml/alarm/AlarmLockscreenPopup.qml:38
 #, fuzzy, kde-format
 #| msgid "Select Alarm Sound"
 msgid "Alarm not found"
 msgstr "Izvēlēties signāla skaņu"
 
-#: qml/alarm/AlarmLockscreenPopup.qml:75 qml/alarm/AlarmRingingPopup.qml:53
+#: qml/alarm/AlarmLockscreenPopup.qml:40 qml/alarm/AlarmRingingPopup.qml:53
 #, kde-format
 msgid "Snooze"
 msgstr "Atlikt"
 
-#: qml/alarm/AlarmLockscreenPopup.qml:102
-#, fuzzy, kde-format
-#| msgid "Stopwatch"
-msgid "Stop"
-msgstr "Hronometrs"
-
-#: qml/alarm/AlarmRingingPopup.qml:57 qml/timer/TimerRingingPopup.qml:54
+#: qml/alarm/AlarmLockscreenPopup.qml:41 qml/alarm/AlarmRingingPopup.qml:57
+#: qml/timer/TimerRingingPopup.qml:54
 #, kde-format
 msgid "Dismiss"
 msgstr "Noraidīt"
@@ -906,6 +902,11 @@ msgstr "Darbdienās"
 #, kde-format
 msgid ", "
 msgstr ", "
+
+#, fuzzy
+#~| msgid "Stopwatch"
+#~ msgid "Stop"
+#~ msgstr "Hronometrs"
 
 #~ msgid "%1 minutes"
 #~ msgstr "%1 minūtes"

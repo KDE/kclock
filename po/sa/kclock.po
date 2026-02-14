@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-20 00:46+0000\n"
+"POT-Creation-Date: 2026-02-14 00:47+0000\n"
 "PO-Revision-Date: 2024-12-24 20:39+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -169,7 +169,8 @@ msgstr "रिंग ध्वनिः :"
 msgid "Default Sound"
 msgstr "पूर्वनिर्धारित ध्वनि"
 
-#: qml/alarm/AlarmFormPage.qml:25 qml/alarm/AlarmRingingPopup.qml:43
+#: qml/alarm/AlarmFormPage.qml:25 qml/alarm/AlarmLockscreenPopup.qml:38
+#: qml/alarm/AlarmRingingPopup.qml:43
 #, kde-format
 msgid "Alarm"
 msgstr "आपत्सङ्केत"
@@ -275,24 +276,19 @@ msgstr "%1 विलोपितम्"
 msgid "Alarm is ringing"
 msgstr "अलार्मः ध्वनितुं शक्नोति"
 
-#: qml/alarm/AlarmLockscreenPopup.qml:51
+#: qml/alarm/AlarmLockscreenPopup.qml:38
 #, fuzzy, kde-format
 #| msgid "Select Alarm Sound"
 msgid "Alarm not found"
 msgstr "Alarm Sound इति चयनं कुर्वन्तु"
 
-#: qml/alarm/AlarmLockscreenPopup.qml:75 qml/alarm/AlarmRingingPopup.qml:53
+#: qml/alarm/AlarmLockscreenPopup.qml:40 qml/alarm/AlarmRingingPopup.qml:53
 #, kde-format
 msgid "Snooze"
 msgstr "स्नूज"
 
-#: qml/alarm/AlarmLockscreenPopup.qml:102
-#, fuzzy, kde-format
-#| msgid "Stopwatch"
-msgid "Stop"
-msgstr "स्टॉपवॉच"
-
-#: qml/alarm/AlarmRingingPopup.qml:57 qml/timer/TimerRingingPopup.qml:54
+#: qml/alarm/AlarmLockscreenPopup.qml:41 qml/alarm/AlarmRingingPopup.qml:57
+#: qml/timer/TimerRingingPopup.qml:54
 #, kde-format
 msgid "Dismiss"
 msgstr "उत्सृज्"
@@ -921,6 +917,11 @@ msgstr "सप्ताहदिनानि"
 #, kde-format
 msgid ", "
 msgstr ", "
+
+#, fuzzy
+#~| msgid "Stopwatch"
+#~ msgid "Stop"
+#~ msgstr "स्टॉपवॉच"
 
 #~ msgid "%1 minutes"
 #~ msgstr "%1 निमेषाः"

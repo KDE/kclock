@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-20 00:46+0000\n"
+"POT-Creation-Date: 2026-02-14 00:47+0000\n"
 "PO-Revision-Date: 2026-01-13 09:39+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -167,7 +167,8 @@ msgstr "Suoneria:"
 msgid "Default Sound"
 msgstr "Suono predefinito"
 
-#: qml/alarm/AlarmFormPage.qml:25 qml/alarm/AlarmRingingPopup.qml:43
+#: qml/alarm/AlarmFormPage.qml:25 qml/alarm/AlarmLockscreenPopup.qml:38
+#: qml/alarm/AlarmRingingPopup.qml:43
 #, kde-format
 msgid "Alarm"
 msgstr "Sveglia"
@@ -274,22 +275,18 @@ msgstr "%1 eliminata"
 msgid "Alarm is ringing"
 msgstr "La sveglia sta suonando"
 
-#: qml/alarm/AlarmLockscreenPopup.qml:51
+#: qml/alarm/AlarmLockscreenPopup.qml:38
 #, kde-format
 msgid "Alarm not found"
 msgstr "Sveglia non trovata"
 
-#: qml/alarm/AlarmLockscreenPopup.qml:75 qml/alarm/AlarmRingingPopup.qml:53
+#: qml/alarm/AlarmLockscreenPopup.qml:40 qml/alarm/AlarmRingingPopup.qml:53
 #, kde-format
 msgid "Snooze"
 msgstr "Posticipa"
 
-#: qml/alarm/AlarmLockscreenPopup.qml:102
-#, kde-format
-msgid "Stop"
-msgstr "Ferma"
-
-#: qml/alarm/AlarmRingingPopup.qml:57 qml/timer/TimerRingingPopup.qml:54
+#: qml/alarm/AlarmLockscreenPopup.qml:41 qml/alarm/AlarmRingingPopup.qml:57
+#: qml/timer/TimerRingingPopup.qml:54
 #, kde-format
 msgid "Dismiss"
 msgstr "Ignora"
@@ -900,6 +897,9 @@ msgstr "Giorni della settimana"
 #, kde-format
 msgid ", "
 msgstr ", "
+
+#~ msgid "Stop"
+#~ msgstr "Ferma"
 
 #~ msgid "%1 minutes"
 #~ msgstr "%1 minuti"

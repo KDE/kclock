@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-20 00:46+0000\n"
+"POT-Creation-Date: 2026-02-14 00:47+0000\n"
 "PO-Revision-Date: 2023-02-15 16:04+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -164,7 +164,8 @@ msgstr "Som do Toque:"
 msgid "Default Sound"
 msgstr "Som Predefinido"
 
-#: qml/alarm/AlarmFormPage.qml:25 qml/alarm/AlarmRingingPopup.qml:43
+#: qml/alarm/AlarmFormPage.qml:25 qml/alarm/AlarmLockscreenPopup.qml:38
+#: qml/alarm/AlarmRingingPopup.qml:43
 #, kde-format
 msgid "Alarm"
 msgstr "Alarme"
@@ -273,24 +274,19 @@ msgstr "Foi removido o %1"
 msgid "Alarm is ringing"
 msgstr "O alarme está a tocar"
 
-#: qml/alarm/AlarmLockscreenPopup.qml:51
+#: qml/alarm/AlarmLockscreenPopup.qml:38
 #, fuzzy, kde-format
 #| msgid "Select Alarm Sound"
 msgid "Alarm not found"
 msgstr "Seleccionar o Som do Alarme"
 
-#: qml/alarm/AlarmLockscreenPopup.qml:75 qml/alarm/AlarmRingingPopup.qml:53
+#: qml/alarm/AlarmLockscreenPopup.qml:40 qml/alarm/AlarmRingingPopup.qml:53
 #, kde-format
 msgid "Snooze"
 msgstr "Adiar"
 
-#: qml/alarm/AlarmLockscreenPopup.qml:102
-#, fuzzy, kde-format
-#| msgid "Stopwatch"
-msgid "Stop"
-msgstr "Cronómetro"
-
-#: qml/alarm/AlarmRingingPopup.qml:57 qml/timer/TimerRingingPopup.qml:54
+#: qml/alarm/AlarmLockscreenPopup.qml:41 qml/alarm/AlarmRingingPopup.qml:57
+#: qml/timer/TimerRingingPopup.qml:54
 #, kde-format
 msgid "Dismiss"
 msgstr "Esquecer"
@@ -929,6 +925,11 @@ msgstr "Dias da semana"
 #, kde-format
 msgid ", "
 msgstr ", "
+
+#, fuzzy
+#~| msgid "Stopwatch"
+#~ msgid "Stop"
+#~ msgstr "Cronómetro"
 
 #~ msgid "%1 minutes"
 #~ msgstr "%1 minutos"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-20 00:46+0000\n"
+"POT-Creation-Date: 2026-02-14 00:47+0000\n"
 "PO-Revision-Date: 2026-02-04 00:33+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -164,7 +164,8 @@ msgstr "알람 소리:"
 msgid "Default Sound"
 msgstr "기본 소리"
 
-#: qml/alarm/AlarmFormPage.qml:25 qml/alarm/AlarmRingingPopup.qml:43
+#: qml/alarm/AlarmFormPage.qml:25 qml/alarm/AlarmLockscreenPopup.qml:38
+#: qml/alarm/AlarmRingingPopup.qml:43
 #, kde-format
 msgid "Alarm"
 msgstr "알람"
@@ -269,22 +270,18 @@ msgstr "%1 삭제함"
 msgid "Alarm is ringing"
 msgstr "알람이 울리는 중"
 
-#: qml/alarm/AlarmLockscreenPopup.qml:51
+#: qml/alarm/AlarmLockscreenPopup.qml:38
 #, kde-format
 msgid "Alarm not found"
 msgstr "알람을 찾을 수 없음"
 
-#: qml/alarm/AlarmLockscreenPopup.qml:75 qml/alarm/AlarmRingingPopup.qml:53
+#: qml/alarm/AlarmLockscreenPopup.qml:40 qml/alarm/AlarmRingingPopup.qml:53
 #, kde-format
 msgid "Snooze"
 msgstr "지연"
 
-#: qml/alarm/AlarmLockscreenPopup.qml:102
-#, kde-format
-msgid "Stop"
-msgstr "정지"
-
-#: qml/alarm/AlarmRingingPopup.qml:57 qml/timer/TimerRingingPopup.qml:54
+#: qml/alarm/AlarmLockscreenPopup.qml:41 qml/alarm/AlarmRingingPopup.qml:57
+#: qml/timer/TimerRingingPopup.qml:54
 #, kde-format
 msgid "Dismiss"
 msgstr "끄기"
@@ -891,6 +888,9 @@ msgstr "업무일"
 #, kde-format
 msgid ", "
 msgstr ", "
+
+#~ msgid "Stop"
+#~ msgstr "정지"
 
 #~ msgid "%1 minutes"
 #~ msgstr "%1분"

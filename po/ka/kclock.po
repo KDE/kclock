@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-20 00:46+0000\n"
+"POT-Creation-Date: 2026-02-14 00:47+0000\n"
 "PO-Revision-Date: 2026-01-11 06:09+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -166,7 +166,8 @@ msgstr "ზარის ხმა:"
 msgid "Default Sound"
 msgstr "ნაგულისხმევი ხმა"
 
-#: qml/alarm/AlarmFormPage.qml:25 qml/alarm/AlarmRingingPopup.qml:43
+#: qml/alarm/AlarmFormPage.qml:25 qml/alarm/AlarmLockscreenPopup.qml:38
+#: qml/alarm/AlarmRingingPopup.qml:43
 #, kde-format
 msgid "Alarm"
 msgstr "განგაში"
@@ -273,22 +274,18 @@ msgstr "%1 წაშლილია"
 msgid "Alarm is ringing"
 msgstr "მაღვიძარა რეკავს"
 
-#: qml/alarm/AlarmLockscreenPopup.qml:51
+#: qml/alarm/AlarmLockscreenPopup.qml:38
 #, kde-format
 msgid "Alarm not found"
 msgstr "განგაში ვერ ვიპოვე"
 
-#: qml/alarm/AlarmLockscreenPopup.qml:75 qml/alarm/AlarmRingingPopup.qml:53
+#: qml/alarm/AlarmLockscreenPopup.qml:40 qml/alarm/AlarmRingingPopup.qml:53
 #, kde-format
 msgid "Snooze"
 msgstr "ჩაჩუმება"
 
-#: qml/alarm/AlarmLockscreenPopup.qml:102
-#, kde-format
-msgid "Stop"
-msgstr "გაჩერება"
-
-#: qml/alarm/AlarmRingingPopup.qml:57 qml/timer/TimerRingingPopup.qml:54
+#: qml/alarm/AlarmLockscreenPopup.qml:41 qml/alarm/AlarmRingingPopup.qml:57
+#: qml/timer/TimerRingingPopup.qml:54
 #, kde-format
 msgid "Dismiss"
 msgstr "გაუქმება"
@@ -898,6 +895,9 @@ msgstr "სამუშაო დღეებში"
 #, kde-format
 msgid ", "
 msgstr ", "
+
+#~ msgid "Stop"
+#~ msgstr "გაჩერება"
 
 #~ msgid "%1 minutes"
 #~ msgstr "%1 წუთი"

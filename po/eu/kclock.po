@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-20 00:46+0000\n"
+"POT-Creation-Date: 2026-02-14 00:47+0000\n"
 "PO-Revision-Date: 2026-01-24 14:38+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -171,7 +171,8 @@ msgstr "Txirrinaren hotsa:"
 msgid "Default Sound"
 msgstr "Soinu lehenetsia"
 
-#: qml/alarm/AlarmFormPage.qml:25 qml/alarm/AlarmRingingPopup.qml:43
+#: qml/alarm/AlarmFormPage.qml:25 qml/alarm/AlarmLockscreenPopup.qml:38
+#: qml/alarm/AlarmRingingPopup.qml:43
 #, kde-format
 msgid "Alarm"
 msgstr "Alarma"
@@ -278,22 +279,18 @@ msgstr "Ezabatu %1"
 msgid "Alarm is ringing"
 msgstr "Alarma jotzen ari da"
 
-#: qml/alarm/AlarmLockscreenPopup.qml:51
+#: qml/alarm/AlarmLockscreenPopup.qml:38
 #, kde-format
 msgid "Alarm not found"
 msgstr "Alarma ez da aurkitu"
 
-#: qml/alarm/AlarmLockscreenPopup.qml:75 qml/alarm/AlarmRingingPopup.qml:53
+#: qml/alarm/AlarmLockscreenPopup.qml:40 qml/alarm/AlarmRingingPopup.qml:53
 #, kde-format
 msgid "Snooze"
 msgstr "Kuluxka"
 
-#: qml/alarm/AlarmLockscreenPopup.qml:102
-#, kde-format
-msgid "Stop"
-msgstr "Gelditu"
-
-#: qml/alarm/AlarmRingingPopup.qml:57 qml/timer/TimerRingingPopup.qml:54
+#: qml/alarm/AlarmLockscreenPopup.qml:41 qml/alarm/AlarmRingingPopup.qml:57
+#: qml/timer/TimerRingingPopup.qml:54
 #, kde-format
 msgid "Dismiss"
 msgstr "Baztertu"
@@ -904,6 +901,9 @@ msgstr "Astegunetan"
 #, kde-format
 msgid ", "
 msgstr ", "
+
+#~ msgid "Stop"
+#~ msgstr "Gelditu"
 
 #~ msgid "%1 minutes"
 #~ msgstr "%1 minutu"

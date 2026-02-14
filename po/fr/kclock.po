@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-20 00:46+0000\n"
+"POT-Creation-Date: 2026-02-14 00:47+0000\n"
 "PO-Revision-Date: 2026-01-12 10:17+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
@@ -170,7 +170,8 @@ msgstr "Son de sonnerie :"
 msgid "Default Sound"
 msgstr "Son par défaut"
 
-#: qml/alarm/AlarmFormPage.qml:25 qml/alarm/AlarmRingingPopup.qml:43
+#: qml/alarm/AlarmFormPage.qml:25 qml/alarm/AlarmLockscreenPopup.qml:38
+#: qml/alarm/AlarmRingingPopup.qml:43
 #, kde-format
 msgid "Alarm"
 msgstr "Alarme"
@@ -277,22 +278,18 @@ msgstr "%1 supprimé"
 msgid "Alarm is ringing"
 msgstr "Une alarme sonne"
 
-#: qml/alarm/AlarmLockscreenPopup.qml:51
+#: qml/alarm/AlarmLockscreenPopup.qml:38
 #, kde-format
 msgid "Alarm not found"
 msgstr "Alarme non trouvée"
 
-#: qml/alarm/AlarmLockscreenPopup.qml:75 qml/alarm/AlarmRingingPopup.qml:53
+#: qml/alarm/AlarmLockscreenPopup.qml:40 qml/alarm/AlarmRingingPopup.qml:53
 #, kde-format
 msgid "Snooze"
 msgstr "Retarder"
 
-#: qml/alarm/AlarmLockscreenPopup.qml:102
-#, kde-format
-msgid "Stop"
-msgstr "Arrêter"
-
-#: qml/alarm/AlarmRingingPopup.qml:57 qml/timer/TimerRingingPopup.qml:54
+#: qml/alarm/AlarmLockscreenPopup.qml:41 qml/alarm/AlarmRingingPopup.qml:57
+#: qml/timer/TimerRingingPopup.qml:54
 #, kde-format
 msgid "Dismiss"
 msgstr "Rejeter"
@@ -905,6 +902,9 @@ msgstr "Jours ouvrables"
 #, kde-format
 msgid ", "
 msgstr ", "
+
+#~ msgid "Stop"
+#~ msgstr "Arrêter"
 
 #~ msgid "%1 minutes"
 #~ msgstr "%1 minutes"
