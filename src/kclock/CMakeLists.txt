@@ -96,6 +96,7 @@ ecm_add_qml_module(kclock URI org.kde.kclock QML_FILES
     qml/timer/TimerListPage.qml
     qml/timer/TimerPage.qml
     qml/timer/TimerRingingPopup.qml
+    qml/timer/TimerLockscreenPopup.qml
 
     qml/settings/SettingsPage.qml
 

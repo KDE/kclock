@@ -9,6 +9,7 @@
 #include "timer.h"
 #include "alarmplayer.h"
 #include "timermodel.h"
+#include "utils/ScreenSaverUtils.h"
 
 #include <QFile>
 #include <QStandardPaths>
@@ -275,11 +276,33 @@ void Timer::ring()
     // if there were other ring events running, close them
     m_notification->close();
 
-    m_notification->setText(i18n("Your timer %1 has finished!", label()));
+    bool sendNotification = true;
+
+#ifdef KCLOCK_BUILD_SHELL_OVERLAY
+    if (ScreenSaverUtils::getActive()) {
+        QString program = QStringLiteral("kclock");
+        QStringList args;
+        args << QStringLiteral("--timer-lockscreen-popup") << m_uuid.toString();
+        bool ok = QProcess::startDetached(program, args);
+        if (!ok) {
+            qWarning() << "Failed to start kclock";
+        } else {
+            sendNotification = false;
+        }
+    }
+#endif // KCLOCK_BUILD_SHELL_OVERLAY
+
+    if (sendNotification) {
+        m_notification->setText(i18n("Your timer %1 has finished!", label()));
+        m_notification->sendEvent();
+    }
 
     qDebug("Timer finished, sending notification...");
-    m_notification->sendEvent();
 
+    // wake up device
+    Utilities::wakeupNow();
+
+    // pause playing mpris media sources
     Utilities::pauseMprisSources();
 
     AlarmPlayer::instance().setSource(TimerModel::instance()->defaultAudioLocation());

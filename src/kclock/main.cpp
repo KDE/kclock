@@ -70,19 +70,30 @@ int main(int argc, char *argv[])
                                                   QStringLiteral("Open alarm popup on lockscreen using specific alarm id."),
                                                   QStringLiteral("alarm-id"));
     parser.addOption(alarmLockscreenPopupOption);
+    QCommandLineOption timerLockscreenPopupOption(QStringLiteral("timer-lockscreen-popup"),
+                                                  QStringLiteral("Open timer popup on lockscreen using specific timer id."),
+                                                  QStringLiteral("timer-id"));
+    parser.addOption(timerLockscreenPopupOption);
     parser.process(app);
     aboutData.processCommandLine(&parser);
+
     bool isAlarmPopup = parser.isSet(alarmLockscreenPopupOption);
-    QString alarmPopupId;
+    bool isTimerPopup = parser.isSet(timerLockscreenPopupOption);
+    bool isPopupMode = isAlarmPopup || isTimerPopup;
+
+    QString popupId;
 
     if (isAlarmPopup) {
-        alarmPopupId = parser.value(alarmLockscreenPopupOption);
-        qDebug() << "Starting in alarm popup mode with ID:" << alarmPopupId;
+        popupId = parser.value(alarmLockscreenPopupOption);
+        qDebug() << "Starting in alarm popup mode with ID:" << popupId;
+    } else if (isTimerPopup) {
+        popupId = parser.value(timerLockscreenPopupOption);
+        qDebug() << "Starting in timer popup mode with ID:" << popupId;
     }
+
     // ~~~~ DBus setup ~~~~
 
-    const KDBusService::StartupOption serviceOptions =
-        (parser.isSet(newWindowOption) || parser.isSet(alarmLockscreenPopupOption)) ? KDBusService::Multiple : KDBusService::Unique;
+    const KDBusService::StartupOption serviceOptions = (parser.isSet(newWindowOption) || isPopupMode) ? KDBusService::Multiple : KDBusService::Unique;
     KDBusService service(serviceOptions);
 
     // ensure kclockd is up with dbus autostart, any call will do
@@ -110,9 +121,13 @@ int main(int argc, char *argv[])
     const QString initialPage = parser.isSet(pageOption) ? parser.value(pageOption) : QStringLiteral("Time");
 
     if (isAlarmPopup) {
-        qDebug() << alarmPopupId;
+        // load alarm popup ui
         engine.loadFromModule(QStringLiteral("org.kde.kclock"), QStringLiteral("AlarmLockscreenPopup"));
+    } else if (isTimerPopup) {
+        // load timer popup ui
+        engine.loadFromModule(QStringLiteral("org.kde.kclock"), QStringLiteral("TimerLockscreenPopup"));
     } else {
+        // load main ui
         engine.setInitialProperties({{QStringLiteral("initialPage"), initialPage}});
         engine.loadFromModule(QStringLiteral("org.kde.kclock"), QStringLiteral("Main"));
     }
@@ -120,27 +135,36 @@ int main(int argc, char *argv[])
     app.setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.kclock")));
 
     QQuickWindow *mainWindow = nullptr;
-    if (!isAlarmPopup) {
+    if (!isPopupMode) {
         mainWindow = qobject_cast<QQuickWindow *>(engine.rootObjects().first());
         Q_ASSERT(mainWindow);
     }
 
 #ifdef KCLOCK_BUILD_SHELL_OVERLAY
-    if (isAlarmPopup) {
+    if (isPopupMode) {
         QQuickWindow *lockscreenWindow = nullptr;
         for (QObject *obj : engine.rootObjects()) {
             QQuickWindow *window = qobject_cast<QQuickWindow *>(obj);
             if (!window)
                 continue;
-            if (window->objectName() == QStringLiteral("AlarmLockscreenPopup")) {
+
+            // check for alarm popup ui
+            if (isAlarmPopup && window->objectName() == QStringLiteral("AlarmLockscreenPopup")) {
                 lockscreenWindow = window;
-                lockscreenWindow->setProperty("alarmPopupId", QVariant::fromValue(alarmPopupId));
+                lockscreenWindow->setProperty("alarmPopupId", QVariant::fromValue(popupId));
+            }
+            // check for timer popup ui
+            else if (isTimerPopup && window->objectName() == QStringLiteral("TimerLockscreenPopup")) {
+                lockscreenWindow = window;
+                lockscreenWindow->setProperty("timerPopupId", QVariant::fromValue(popupId));
             }
         }
 
-        WaylandAboveLockscreen overlay;
-        allowAboveLockscreen(lockscreenWindow, &overlay);
-        raiseWindow(lockscreenWindow);
+        if (lockscreenWindow) {
+            WaylandAboveLockscreen overlay;
+            allowAboveLockscreen(lockscreenWindow, &overlay);
+            raiseWindow(lockscreenWindow);
+        }
     }
 #endif
     if (mainWindow) {

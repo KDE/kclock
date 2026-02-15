@@ -289,6 +289,11 @@ void Alarm::ring()
         m_originalRingTime = m_nextRingTime;
     }
 
+    // reset snoozed length (if snooze happens, this will get set again)
+    setSnoozedLength(0);
+
+    bool sendNotification = true;
+
 #ifdef KCLOCK_BUILD_SHELL_OVERLAY
     if (ScreenSaverUtils::getActive()) {
         QString program = QStringLiteral("kclock");
@@ -297,15 +302,17 @@ void Alarm::ring()
         bool ok = QProcess::startDetached(program, args);
         if (!ok) {
             qWarning() << "Failed to start kclock";
+        } else {
+            sendNotification = false;
         }
     }
-#endif
-    // reset snoozed length (if snooze happens, this will get set again)
-    setSnoozedLength(0);
+#endif // KCLOCK_BUILD_SHELL_OVERLAY
 
     // send notification
-    m_notification->setText(QLocale::system().toString(QTime::currentTime(), QLocale::ShortFormat));
-    m_notification->sendEvent();
+    if (sendNotification) {
+        m_notification->setText(QLocale::system().toString(QTime::currentTime(), QLocale::ShortFormat));
+        m_notification->sendEvent();
+    }
 
     // wake up device
     Utilities::wakeupNow();

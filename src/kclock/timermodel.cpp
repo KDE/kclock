@@ -171,6 +171,15 @@ void TimerModel::remove(Timer *timer)
     }
 }
 
+Timer *TimerModel::timerByUuid(const QString &uuid) const
+{
+    for (Timer *a : m_timersList) {
+        if (a->uuid().toString() == uuid)
+            return a;
+    }
+    return nullptr;
+}
+
 void TimerModel::addTimer(QString uuid)
 {
     auto *timer = new Timer(uuid.remove(QRegularExpression(QStringLiteral("[{}-]"))));

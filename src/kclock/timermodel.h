@@ -68,6 +68,8 @@ public:
     Q_INVOKABLE void addNew(int length, const QString &label, bool looping, const QString &commandTimeout);
     Q_INVOKABLE void remove(Timer *timer);
 
+    Q_INVOKABLE Timer *timerByUuid(const QString &uuid) const;
+
     QString defaultAudioLocation() const;
     void setDefaultAudioLocation(const QString &location);
 
