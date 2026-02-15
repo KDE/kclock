@@ -885,6 +885,3 @@ msgstr "工作日"
 #, kde-format
 msgid ", "
 msgstr "、"
-
-#~ msgid "Stop"
-#~ msgstr "停止"
