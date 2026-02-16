@@ -499,9 +499,19 @@
       <url>https://plasma-mobile.org/2023/01/30/january-blog-post/</url>
       <description>
         <p>New features and bugfixes in this release:</p>
+        <p xml:lang="ca">Característiques noves i correccions d'errors en aquesta versió:</p>
+        <p xml:lang="es">Nuevas funciones y corrección de fallos de esta versión:</p>
+        <p xml:lang="ka">ახალი ფუნქციები და შეცდომების გასწორება ამ ვერსიაში:</p>
+        <p xml:lang="pt-BR">Novas funcionalidades e correções de bugs nesta versão:</p>
         <ul>
           <li>Fixed timer add one minute button.</li>
+          <li xml:lang="ca">Corregeix el botó d'afegir un minut al temporitzador.</li>
+          <li xml:lang="ka">გასწორდა ტაიმერისთვის ერთი წუთის დამატების ღილაკი.</li>
+          <li xml:lang="pt-BR">Corrigido botão para adicionar um minuto ao temporizador</li>
           <li>Switched to tab bar based sidebar (similar to bottom navigation bar).</li>
+          <li xml:lang="ca">S'ha canviat a una barra lateral basada en la barra de pestanyes (similar a la barra de navegació inferior).</li>
+          <li xml:lang="ka">გადართვა ჩანართებზე ბაზირებულ გვერდით პანელზე (ქვედა ნავიგაციის პანელის მსგავსად).</li>
+          <li xml:lang="pt-BR">Alteração para uma barra lateral baseada em abas (semelhante à barra de navegação inferior).</li>
         </ul>
       </description>
     </release>
@@ -519,7 +529,13 @@
       <description>
         <ul>
           <li>Support for background daemon when using flatpak</li>
+          <li xml:lang="ca">Permet el dimoni en segon pla quan s'utilitza flatpak</li>
+          <li xml:lang="ka">ფონური დემონის მხარდაჭერა flatpak-ის გამოყენებისას</li>
+          <li xml:lang="pt-BR">Suporte para daemon em segundo plano ao usar o Flatpak</li>
           <li>Fix excessive log generation on non-Plasma system</li>
+          <li xml:lang="ca">Corregeix la generació excessiva de registres en un sistema no Plasma</li>
+          <li xml:lang="ka">გასწორდა ზედმეტი ჟურნალის ჩანაწერების გენერაცია არა-Plasma სისტემებზე</li>
+          <li xml:lang="pt-BR">Correção de geração excessiva de logs em sistemas que não sejam Plasma</li>
         </ul>
       </description>
     </release>
@@ -528,23 +544,61 @@
       <description>
         <ul>
           <li>Fix "Clock daemon not found" popup message</li>
+          <li xml:lang="ca">Corregeix el missatge emergent «No s'ha trobat el dimoni del rellotge»</li>
+          <li xml:lang="ka">გასწორდა მხტუნარა შეტყობინება 'საათის დემონი აღმოჩენილი არაა'</li>
+          <li xml:lang="pt-BR">Correção da mensagem pop-up "Daemon do relógio não encontrado"</li>
           <li>Various bugfixes and user interface improvements</li>
+          <li xml:lang="ca">Diverses correccions d'errors i millores de la interfície d'usuari</li>
+          <li xml:lang="ka">მომხმარებლის ინტერფეისის გაუმჯობესება და შეცდომების გამოსწორება</li>
+          <li xml:lang="pt-BR">Diversas correções de bugs e melhorias na interface do usuário</li>
           <li>Add a sound picker component for listing alarm sounds</li>
+          <li xml:lang="ca">Afegeix un component de selector de so per a llistar els sons d'alarma</li>
+          <li xml:lang="ka">დაემატა ხმის არჩევის კომპონენტი განგაშის ხმების ჩამოსათვლელად</li>
+          <li xml:lang="pt-BR">Adicionado um componente de seleção de som para listar sons de alarme</li>
           <li>Start snooze only after button is pressed</li>
+          <li xml:lang="ca">Inicia el posposament només després de prémer el botó</li>
+          <li xml:lang="ka">გადადების დაწყება, მხოლოდ, ღილაკზე დაჭერის შემდეგ</li>
+          <li xml:lang="pt-BR">A função soneca só inicia após o botão ser pressionado</li>
           <li>Fix alarms not working on PinePhone</li>
+          <li xml:lang="ca">Corregeix les alarmes que no funcionen amb el PinePhone</li>
+          <li xml:lang="ka">გასწორდა განგაშების პრობლემა PinePhone-ზე</li>
+          <li xml:lang="pt-BR">Correção de alarmes que não funcionam no PinePhone</li>
         </ul>
       </description>
     </release>
     <release version="21.12" date="2021-12-07">
       <description>
         <p>Changes:</p>
+        <p xml:lang="ca">Canvis:</p>
+        <p xml:lang="es">Cambios:</p>
+        <p xml:lang="he">שינויים:</p>
+        <p xml:lang="ka">ცვლილებები:</p>
+        <p xml:lang="pt-BR">Alterações:</p>
         <ul>
           <li>Kirigami's bottom navigation bar component is now used for mobile</li>
+          <li xml:lang="ca">El component de la barra de navegació inferior del Kirigami ara s'utilitza per al mòbil</li>
+          <li xml:lang="ka">ახლა მობილურისთვის გამოიყენება Kirigami-ის ქვედა ნავიგაციის კომპონენტი</li>
+          <li xml:lang="pt-BR">O componente de barra de navegação inferior do Kirigami agora é usado na versão mobile</li>
           <li>A Plasma style sidebar is now used on desktop</li>
+          <li xml:lang="ca">Ara s'utilitza una barra lateral d'estil Plasma a l'escriptori</li>
+          <li xml:lang="ka">სამუშაო მაგიდაზე ახლა Plasma-ის სტილის გვერდითი პანელი გამოიყენება</li>
+          <li xml:lang="pt-BR">Agora, no desktop, é utilizada uma barra lateral no estilo Plasma</li>
           <li>The system tray item now only shows when alarms are pending</li>
+          <li xml:lang="ca">L'element de la safata del sistema ara es mostra només quan les alarmes estan pendents</li>
+          <li xml:lang="ka">ხატულს სისტემურ საათთან ახლა, მხოლოდ, ნაჩვენებია, თუ განგაშები რიგშია</li>
+          <li xml:lang="pt-BR">O item da bandeja do sistema agora só é exibido quando há alarmes pendentes</li>
           <li>The daemon automatically stops if no alarms and timers are pending</li>
+          <li xml:lang="ca">El dimoni s'atura automàticament si no hi ha alarmes ni temporitzadors pendents</li>
+          <li xml:lang="ka">დემონი ავტომატურად გაჩერდება, თუ განგაშები და ტაიმერები რიგში არაა</li>
+          <li xml:lang="pt-BR">O serviço para automaticamente se não houver alarmes ou temporizadores pendentes</li>
           <li>Action bars are now used on the timer and alarms forms page</li>
+          <li xml:lang="ca">Les barres d'acció ara s'utilitzen a la pàgina del formulari del temporitzador i les alarmes</li>
+          <li xml:lang="ka">ქმედებების პანელები ახლა გამოიყენება ტაიმერისა და განგაშის ფორმების გვერდზე</li>
+          <li xml:lang="pt-BR">Agora, as barras de ação são usadas nas páginas de formulários de temporizador e alarmes</li>
           <li>The settings button has been moved to the top actions bar</li>
+          <li xml:lang="ca">El botó de configuració s'ha mogut a la barra d'accions superior</li>
+          <li xml:lang="ka">მორგების ღილაკი გადატანილია ზედა ქმედებების პანელზე</li>
+          <li xml:lang="pt-BR">O botão de configurações foi movido para a barra de ações superior</li>
         </ul>
       </description>
       <url>https://www.plasma-mobile.org/2021/12/07/plasma-mobile-gear-21-12/</url>
@@ -555,10 +609,24 @@
     <release version="21.07" date="2021-07-20">
       <description>
         <p>Changes:</p>
+        <p xml:lang="ca">Canvis:</p>
+        <p xml:lang="es">Cambios:</p>
+        <p xml:lang="he">שינויים:</p>
+        <p xml:lang="ka">ცვლილებები:</p>
+        <p xml:lang="pt-BR">Alterações:</p>
         <ul>
           <li>Watch DBus for PowerDevil, so wake from suspend always works if PowerDevil is found</li>
+          <li xml:lang="ca">Vigila el DBus del PowerDevil, de manera que despertar de la suspensió sempre funciona si es troba el PowerDevil</li>
+          <li xml:lang="ka">PowerDevil-ის ლოდინი DBus-ზე, ასე რომ, გაღვიძება ყოველთვის მუშაობს, თუ PowerDevil აღმოჩენილია</li>
+          <li xml:lang="pt-BR">Monitora o DBus em busca de PowerDevil, para que a ativação a partir da suspensão sempre funcione se PowerDevil for encontrado</li>
           <li>Use consistent dialog style on the settings page</li>
+          <li xml:lang="ca">Usa un estil de diàleg coherent a la pàgina de configuració</li>
+          <li xml:lang="ka">მუდმივი დიალოგის სტილის გამოყენება მორგების გვერდზე</li>
+          <li xml:lang="pt-BR">Uso de um estilo de diálogo consistente na página de configurações</li>
           <li>After editing an alarm, the alarm now automatically is activated</li>
+          <li xml:lang="ca">Després d'editar una alarma, l'alarma ara s'activa automàticament</li>
+          <li xml:lang="ka">განგაშის ჩასწორების შემდეგ, ახლა, განგაში ავტომატურად გააქტიურდება</li>
+          <li xml:lang="pt-BR">Após editar um alarme, ele agora é ativado automaticamente</li>
         </ul>
       </description>
       <url>https://www.plasma-mobile.org/2021/07/20/plasma-mobile-gear-21-07/</url>
@@ -566,11 +634,27 @@
     <release version="21.06" date="2021-06-10">
       <description>
         <p>New features and bugfixes:</p>
+        <p xml:lang="ca">Característiques noves i correccions d'errors:</p>
+        <p xml:lang="es">Nuevas funciones y corrección de fallos:</p>
+        <p xml:lang="ka">ახალი ფუნქციები და შეცდომების გასწორებები:</p>
+        <p xml:lang="pt-BR">Novas funcionalidades e correções de bugs:</p>
         <ul>
           <li>Added the ability to set timer presets</li>
+          <li xml:lang="ca">S'ha afegit la capacitat d'establir valors predefinits del temporitzador</li>
+          <li xml:lang="ka">დაემატა ტაიმერის პრესეტების დაყენების შესაძლებლობა</li>
+          <li xml:lang="pt-BR">Adicionada a capacidade de definir predefinições de temporizador</li>
           <li>Added ability to increase timer duration by 1m as timer is running</li>
+          <li xml:lang="ca">S'ha afegit la capacitat d'augmentar la durada del temporitzador en 1 m quan s'està executant el temporitzador</li>
+          <li xml:lang="ka">დაემატა ტაიმერის ხანგრძლივობის ერთი წუთით გაზრდის საშუალება, როცა ტაიმერი გაშვებულია</li>
+          <li xml:lang="pt-BR">Adicionada a capacidade de aumentar a duração do temporizador em 1 minuto enquanto ele estiver em execução</li>
           <li>Fixed multiple alarm sounds and notifications being played for one alarm</li>
+          <li xml:lang="ca">Corregits diversos sons d'alarma i notificacions que es reprodueixen per a una alarma</li>
+          <li xml:lang="ka">გასწორდა ერთზე მეტი განგაშისა და შეტყობინების ხმის ერთდროული დაკვრა ერთი განგაშისთვის</li>
+          <li xml:lang="pt-BR">Corrigido o problema de reprodução simultânea de múltiplos sons de alarme e notificações para um mesmo alarme</li>
           <li>Fixed errors that prevented the application from working in a Flatpak</li>
+          <li xml:lang="ca">Corregits els errors que impedien que l'aplicació funcionés en un Flatpak</li>
+          <li xml:lang="ka">გასწორდა შეცდომები, რომლებიც აპლიკაციას Flatpak-ში მუშაობის საშუალებას არ აძლევდა</li>
+          <li xml:lang="pt-BR">Corrigidos erros que impediam o funcionamento do aplicativo em um Flatpak</li>
         </ul>
       </description>
       <url>https://www.plasma-mobile.org/2021/06/10/plasma-mobile-update-june/</url>
