@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-14 00:47+0000\n"
+"POT-Creation-Date: 2026-02-16 00:50+0000\n"
 "PO-Revision-Date: 2026-01-11 08:57+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -671,7 +671,7 @@ msgctxt "@title:window"
 msgid "Create Timer"
 msgstr "Ustvari merilnik časa"
 
-#: qml/timer/TimerFormDialog.qml:53
+#: qml/timer/TimerFormDialog.qml:53 qml/timer/TimerLockscreenPopup.qml:37
 #, kde-format
 msgid "Timer"
 msgstr "Odštevalnik časa"
@@ -772,6 +772,28 @@ msgstr "Ni nastavljenih merilnikov časa"
 #, kde-format
 msgid "Add timer"
 msgstr "Dodaj merilnik časa"
+
+#: qml/timer/TimerLockscreenPopup.qml:21
+#, fuzzy, kde-format
+#| msgid "Alarm is ringing"
+msgid "Timer is ringing"
+msgstr "Alarm zvoni"
+
+#: qml/timer/TimerLockscreenPopup.qml:37
+#, fuzzy, kde-format
+#| msgid "Alarm not found"
+msgid "Timer not found"
+msgstr "Alarm ni bil najden"
+
+#: qml/timer/TimerLockscreenPopup.qml:39
+#, kde-format
+msgid "Stop"
+msgstr "Ustavi"
+
+#: qml/timer/TimerLockscreenPopup.qml:40
+#, kde-format
+msgid "Repeat"
+msgstr ""
 
 #: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:121
 #, kde-format
@@ -905,9 +927,6 @@ msgstr "Delavniki"
 #, kde-format
 msgid ", "
 msgstr ", "
-
-#~ msgid "Stop"
-#~ msgstr "Ustavi"
 
 #~ msgid "%1 minutes"
 #~ msgstr "%1 minut"

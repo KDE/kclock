@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-14 00:47+0000\n"
+"POT-Creation-Date: 2026-02-16 00:50+0000\n"
 "PO-Revision-Date: 2026-01-13 09:39+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -667,7 +667,7 @@ msgctxt "@title:window"
 msgid "Create Timer"
 msgstr "Crea timer"
 
-#: qml/timer/TimerFormDialog.qml:53
+#: qml/timer/TimerFormDialog.qml:53 qml/timer/TimerLockscreenPopup.qml:37
 #, kde-format
 msgid "Timer"
 msgstr "Timer"
@@ -768,6 +768,28 @@ msgstr "Nessun timer configurato"
 #, kde-format
 msgid "Add timer"
 msgstr "Aggiungi timer"
+
+#: qml/timer/TimerLockscreenPopup.qml:21
+#, fuzzy, kde-format
+#| msgid "Alarm is ringing"
+msgid "Timer is ringing"
+msgstr "La sveglia sta suonando"
+
+#: qml/timer/TimerLockscreenPopup.qml:37
+#, fuzzy, kde-format
+#| msgid "Alarm not found"
+msgid "Timer not found"
+msgstr "Sveglia non trovata"
+
+#: qml/timer/TimerLockscreenPopup.qml:39
+#, kde-format
+msgid "Stop"
+msgstr "Ferma"
+
+#: qml/timer/TimerLockscreenPopup.qml:40
+#, kde-format
+msgid "Repeat"
+msgstr ""
 
 #: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:121
 #, kde-format
@@ -897,9 +919,6 @@ msgstr "Giorni della settimana"
 #, kde-format
 msgid ", "
 msgstr ", "
-
-#~ msgid "Stop"
-#~ msgstr "Ferma"
 
 #~ msgid "%1 minutes"
 #~ msgstr "%1 minuti"

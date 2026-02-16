@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-14 00:47+0000\n"
+"POT-Creation-Date: 2026-02-16 00:50+0000\n"
 "PO-Revision-Date: 2024-07-12 22:08+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -683,7 +683,7 @@ msgctxt "@title:window"
 msgid "Create Timer"
 msgstr "Krei tempumilon"
 
-#: qml/timer/TimerFormDialog.qml:53
+#: qml/timer/TimerFormDialog.qml:53 qml/timer/TimerLockscreenPopup.qml:37
 #, kde-format
 msgid "Timer"
 msgstr "Tempigilo"
@@ -787,6 +787,29 @@ msgstr "Neniuj tempigiloj agordis"
 #, kde-format
 msgid "Add timer"
 msgstr "Aldoni tempigilon"
+
+#: qml/timer/TimerLockscreenPopup.qml:21
+#, fuzzy, kde-format
+#| msgid "Alarm is ringing"
+msgid "Timer is ringing"
+msgstr "Alarmo sonoras"
+
+#: qml/timer/TimerLockscreenPopup.qml:37
+#, fuzzy, kde-format
+#| msgid "Select Alarm Sound"
+msgid "Timer not found"
+msgstr "Elekti Alarmsonon"
+
+#: qml/timer/TimerLockscreenPopup.qml:39
+#, fuzzy, kde-format
+#| msgid "Stopwatch"
+msgid "Stop"
+msgstr "Kronohorloĝo"
+
+#: qml/timer/TimerLockscreenPopup.qml:40
+#, kde-format
+msgid "Repeat"
+msgstr ""
 
 #: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:121
 #, kde-format
@@ -920,11 +943,6 @@ msgstr "Labortagoj"
 #, kde-format
 msgid ", "
 msgstr ", "
-
-#, fuzzy
-#~| msgid "Stopwatch"
-#~ msgid "Stop"
-#~ msgstr "Kronohorloĝo"
 
 #~ msgid "%1 minutes"
 #~ msgstr "%1 minutoj"

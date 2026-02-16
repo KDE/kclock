@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-14 00:47+0000\n"
+"POT-Creation-Date: 2026-02-16 00:50+0000\n"
 "PO-Revision-Date: 2026-01-11 20:53+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -667,7 +667,7 @@ msgctxt "@title:window"
 msgid "Create Timer"
 msgstr "יצירת קוצב זמן"
 
-#: qml/timer/TimerFormDialog.qml:53
+#: qml/timer/TimerFormDialog.qml:53 qml/timer/TimerLockscreenPopup.qml:37
 #, kde-format
 msgid "Timer"
 msgstr "קוצב זמן"
@@ -766,6 +766,28 @@ msgstr "לא מוגדרים קוצבי זמן"
 #, kde-format
 msgid "Add timer"
 msgstr "הוספת קוצב זמן"
+
+#: qml/timer/TimerLockscreenPopup.qml:21
+#, fuzzy, kde-format
+#| msgid "Alarm is ringing"
+msgid "Timer is ringing"
+msgstr "ההתראה מצלצלת"
+
+#: qml/timer/TimerLockscreenPopup.qml:37
+#, fuzzy, kde-format
+#| msgid "Alarm not found"
+msgid "Timer not found"
+msgstr "התזכורת לא נמצאה"
+
+#: qml/timer/TimerLockscreenPopup.qml:39
+#, kde-format
+msgid "Stop"
+msgstr "עצירה"
+
+#: qml/timer/TimerLockscreenPopup.qml:40
+#, kde-format
+msgid "Repeat"
+msgstr ""
 
 #: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:121
 #, kde-format
@@ -899,9 +921,6 @@ msgstr "ימי חול"
 #, kde-format
 msgid ", "
 msgstr ", "
-
-#~ msgid "Stop"
-#~ msgstr "עצירה"
 
 #~ msgid "%1 minutes"
 #~ msgstr "%1 דקות"

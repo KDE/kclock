@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-03 00:50+0000\n"
+"POT-Creation-Date: 2026-02-16 00:50+0000\n"
 "PO-Revision-Date: 2025-04-04 18:03+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -32,7 +32,7 @@ msgstr "emir_sari@icloud.com"
 msgid "Alarm"
 msgstr "Çalar Saat"
 
-#: alarm.cpp:79 timer.cpp:68
+#: alarm.cpp:79 timer.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Dismiss"
@@ -175,12 +175,12 @@ msgctxt "Author"
 msgid "Desktop Integration"
 msgstr "Masaüstü tümleştirmesi"
 
-#: timer.cpp:64
+#: timer.cpp:65
 #, kde-format
 msgid "Timer complete"
 msgstr "Sayaç bitti"
 
-#: timer.cpp:278
+#: timer.cpp:296
 #, kde-format
 msgid "Your timer %1 has finished!"
 msgstr "%1 sayacınız bitti!"

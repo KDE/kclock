@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-03 00:50+0000\n"
+"POT-Creation-Date: 2026-02-16 00:50+0000\n"
 "PO-Revision-Date: 2025-08-22 17:50+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -33,7 +33,7 @@ msgstr "kekcuha@gmail.com,translation-team@basealt.ru"
 msgid "Alarm"
 msgstr "Напоминание"
 
-#: alarm.cpp:79 timer.cpp:68
+#: alarm.cpp:79 timer.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Dismiss"
@@ -176,12 +176,12 @@ msgctxt "Author"
 msgid "Desktop Integration"
 msgstr "Интеграция с рабочим столом"
 
-#: timer.cpp:64
+#: timer.cpp:65
 #, kde-format
 msgid "Timer complete"
 msgstr "Отсчёт завершён"
 
-#: timer.cpp:278
+#: timer.cpp:296
 #, kde-format
 msgid "Your timer %1 has finished!"
 msgstr "Отсчёт таймера «%1» завершён!"

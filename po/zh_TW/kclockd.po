@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-03 00:50+0000\n"
+"POT-Creation-Date: 2026-02-16 00:50+0000\n"
 "PO-Revision-Date: 2025-04-19 15:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -32,7 +32,7 @@ msgstr "mail@kisaragi-hiu.com"
 msgid "Alarm"
 msgstr "鬧鐘"
 
-#: alarm.cpp:79 timer.cpp:68
+#: alarm.cpp:79 timer.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Dismiss"
@@ -177,12 +177,12 @@ msgctxt "Author"
 msgid "Desktop Integration"
 msgstr "桌面整合"
 
-#: timer.cpp:64
+#: timer.cpp:65
 #, kde-format
 msgid "Timer complete"
 msgstr "計時器完成"
 
-#: timer.cpp:278
+#: timer.cpp:296
 #, kde-format
 msgid "Your timer %1 has finished!"
 msgstr "您的計時器 %1 已結束！"

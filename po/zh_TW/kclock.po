@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-14 00:47+0000\n"
+"POT-Creation-Date: 2026-02-16 00:50+0000\n"
 "PO-Revision-Date: 2026-01-13 01:35+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -663,7 +663,7 @@ msgctxt "@title:window"
 msgid "Create Timer"
 msgstr "建立計時器"
 
-#: qml/timer/TimerFormDialog.qml:53
+#: qml/timer/TimerFormDialog.qml:53 qml/timer/TimerLockscreenPopup.qml:37
 #, kde-format
 msgid "Timer"
 msgstr "計時器"
@@ -762,6 +762,28 @@ msgstr "未設定計時器"
 #, kde-format
 msgid "Add timer"
 msgstr "新增計時器"
+
+#: qml/timer/TimerLockscreenPopup.qml:21
+#, fuzzy, kde-format
+#| msgid "Alarm is ringing"
+msgid "Timer is ringing"
+msgstr "鬧鐘正在響"
+
+#: qml/timer/TimerLockscreenPopup.qml:37
+#, fuzzy, kde-format
+#| msgid "Alarm not found"
+msgid "Timer not found"
+msgstr "找不到鬧鐘"
+
+#: qml/timer/TimerLockscreenPopup.qml:39
+#, kde-format
+msgid "Stop"
+msgstr "停止"
+
+#: qml/timer/TimerLockscreenPopup.qml:40
+#, kde-format
+msgid "Repeat"
+msgstr ""
 
 #: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:121
 #, kde-format
@@ -889,9 +911,6 @@ msgstr "工作日"
 #, kde-format
 msgid ", "
 msgstr ", "
-
-#~ msgid "Stop"
-#~ msgstr "停止"
 
 #~ msgid "%1 minutes"
 #~ msgstr "%1 分鐘"

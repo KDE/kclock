@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-14 00:47+0000\n"
+"POT-Creation-Date: 2026-02-16 00:50+0000\n"
 "PO-Revision-Date: 2021-06-12 21:25+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -691,7 +691,7 @@ msgctxt "@title:window"
 msgid "Create Timer"
 msgstr "Νέο χρονόμετρο"
 
-#: qml/timer/TimerFormDialog.qml:53
+#: qml/timer/TimerFormDialog.qml:53 qml/timer/TimerLockscreenPopup.qml:37
 #, kde-format
 msgid "Timer"
 msgstr "Χρονόμετρο"
@@ -796,6 +796,29 @@ msgstr "Δεν έχουν διαμορφωθεί συναγερμοί"
 #| msgid "Add a timer"
 msgid "Add timer"
 msgstr "Προσθήκη χρονομέτρου"
+
+#: qml/timer/TimerLockscreenPopup.qml:21
+#, fuzzy, kde-format
+#| msgid "Your timer %1 has finished!"
+msgid "Timer is ringing"
+msgstr "Ο χρονοδιακόπτης %1 δείχνει τέλος χρόνου!"
+
+#: qml/timer/TimerLockscreenPopup.qml:37
+#, fuzzy, kde-format
+#| msgid "Your timer %1 has finished!"
+msgid "Timer not found"
+msgstr "Ο χρονοδιακόπτης %1 δείχνει τέλος χρόνου!"
+
+#: qml/timer/TimerLockscreenPopup.qml:39
+#, fuzzy, kde-format
+#| msgid "Stopwatch"
+msgid "Stop"
+msgstr "Χρονόμετρο"
+
+#: qml/timer/TimerLockscreenPopup.qml:40
+#, kde-format
+msgid "Repeat"
+msgstr ""
 
 #: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:121
 #, kde-format
@@ -940,11 +963,6 @@ msgstr "Καθημερινές"
 #, kde-format
 msgid ", "
 msgstr ", "
-
-#, fuzzy
-#~| msgid "Stopwatch"
-#~ msgid "Stop"
-#~ msgstr "Χρονόμετρο"
 
 #, fuzzy
 #~| msgid "%1 minute"

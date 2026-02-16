@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-03 00:50+0000\n"
+"POT-Creation-Date: 2026-02-16 00:50+0000\n"
 "PO-Revision-Date: 2024-12-24 20:39+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -34,7 +34,7 @@ msgstr "skkalwar999@gmail.com"
 msgid "Alarm"
 msgstr "आपत्सङ्केत"
 
-#: alarm.cpp:79 timer.cpp:68
+#: alarm.cpp:79 timer.cpp:69
 #, fuzzy, kde-format
 #| msgid "Dismiss"
 msgctxt "@action:button"
@@ -181,12 +181,12 @@ msgctxt "Author"
 msgid "Desktop Integration"
 msgstr ""
 
-#: timer.cpp:64
+#: timer.cpp:65
 #, kde-format
 msgid "Timer complete"
 msgstr "समयनिर्धारक सम्पूर्ण"
 
-#: timer.cpp:278
+#: timer.cpp:296
 #, kde-format
 msgid "Your timer %1 has finished!"
 msgstr "भवतः समयनिर्धारकः %1 समाप्तः!"

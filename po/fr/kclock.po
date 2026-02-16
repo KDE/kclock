@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-14 00:47+0000\n"
+"POT-Creation-Date: 2026-02-16 00:50+0000\n"
 "PO-Revision-Date: 2026-01-12 10:17+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
@@ -672,7 +672,7 @@ msgctxt "@title:window"
 msgid "Create Timer"
 msgstr "Créer un nouveau chronomètre"
 
-#: qml/timer/TimerFormDialog.qml:53
+#: qml/timer/TimerFormDialog.qml:53 qml/timer/TimerLockscreenPopup.qml:37
 #, kde-format
 msgid "Timer"
 msgstr "Minuteur"
@@ -773,6 +773,28 @@ msgstr "Aucune alarme configurée"
 #, kde-format
 msgid "Add timer"
 msgstr "Ajouter un chronomètre"
+
+#: qml/timer/TimerLockscreenPopup.qml:21
+#, fuzzy, kde-format
+#| msgid "Alarm is ringing"
+msgid "Timer is ringing"
+msgstr "Une alarme sonne"
+
+#: qml/timer/TimerLockscreenPopup.qml:37
+#, fuzzy, kde-format
+#| msgid "Alarm not found"
+msgid "Timer not found"
+msgstr "Alarme non trouvée"
+
+#: qml/timer/TimerLockscreenPopup.qml:39
+#, kde-format
+msgid "Stop"
+msgstr "Arrêter"
+
+#: qml/timer/TimerLockscreenPopup.qml:40
+#, kde-format
+msgid "Repeat"
+msgstr ""
 
 #: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:121
 #, kde-format
@@ -902,9 +924,6 @@ msgstr "Jours ouvrables"
 #, kde-format
 msgid ", "
 msgstr ", "
-
-#~ msgid "Stop"
-#~ msgstr "Arrêter"
 
 #~ msgid "%1 minutes"
 #~ msgstr "%1 minutes"

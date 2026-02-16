@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-14 00:47+0000\n"
+"POT-Creation-Date: 2026-02-16 00:50+0000\n"
 "PO-Revision-Date: 2024-01-03 14:19-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -679,7 +679,7 @@ msgctxt "@title:window"
 msgid "Create Timer"
 msgstr "ਟਾਈਮਰ ਬਣਾਓ"
 
-#: qml/timer/TimerFormDialog.qml:53
+#: qml/timer/TimerFormDialog.qml:53 qml/timer/TimerLockscreenPopup.qml:37
 #, kde-format
 msgid "Timer"
 msgstr "ਟਾਈਮਰ"
@@ -785,6 +785,29 @@ msgstr "ਕੋਈ ਟਾਈਮਰ ਸੰਰਚਿਤ ਨਹੀਂ ਹੈ"
 #, kde-format
 msgid "Add timer"
 msgstr "ਟਾਈਮਰ ਜੋੜੋ"
+
+#: qml/timer/TimerLockscreenPopup.qml:21
+#, fuzzy, kde-format
+#| msgid "Alarm is ringing"
+msgid "Timer is ringing"
+msgstr "ਅਲਾਰਮ ਵੱਜ ਰਿਹਾ ਹੈ"
+
+#: qml/timer/TimerLockscreenPopup.qml:37
+#, fuzzy, kde-format
+#| msgid "Select Alarm Sound"
+msgid "Timer not found"
+msgstr "ਅਲਾਰਮ ਦੀ ਸਾਊਂਡ ਚੁਣੋ"
+
+#: qml/timer/TimerLockscreenPopup.qml:39
+#, fuzzy, kde-format
+#| msgid "Stopwatch"
+msgid "Stop"
+msgstr "ਸਟਾਪ-ਵਾਚ"
+
+#: qml/timer/TimerLockscreenPopup.qml:40
+#, kde-format
+msgid "Repeat"
+msgstr ""
 
 #: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:121
 #, kde-format
@@ -918,11 +941,6 @@ msgstr "ਹਫ਼ਤੇਵਾਰ"
 #, kde-format
 msgid ", "
 msgstr ", "
-
-#, fuzzy
-#~| msgid "Stopwatch"
-#~ msgid "Stop"
-#~ msgstr "ਸਟਾਪ-ਵਾਚ"
 
 #~ msgid "%1 minutes"
 #~ msgstr "%1 ਮਿੰਟ"

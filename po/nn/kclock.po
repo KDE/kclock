@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-14 00:47+0000\n"
+"POT-Creation-Date: 2026-02-16 00:50+0000\n"
 "PO-Revision-Date: 2025-06-01 14:54+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -667,7 +667,7 @@ msgid "Create Timer"
 msgstr "Lag nedteljing"
 
 # Trur «timer» tel ned (som eit eggeur), mens «stopwatch» tel opp (som ei stoppeklokke).
-#: qml/timer/TimerFormDialog.qml:53
+#: qml/timer/TimerFormDialog.qml:53 qml/timer/TimerLockscreenPopup.qml:37
 #, kde-format
 msgid "Timer"
 msgstr "Nedteljing"
@@ -767,6 +767,29 @@ msgstr "Ingen nedteljingar er definerte"
 #, kde-format
 msgid "Add timer"
 msgstr "Legg til nedteljing"
+
+#: qml/timer/TimerLockscreenPopup.qml:21
+#, fuzzy, kde-format
+#| msgid "Alarm is ringing"
+msgid "Timer is ringing"
+msgstr "Alarm ringjer"
+
+#: qml/timer/TimerLockscreenPopup.qml:37
+#, fuzzy, kde-format
+#| msgid "Select Alarm Sound"
+msgid "Timer not found"
+msgstr "Vel alarmlyd"
+
+#: qml/timer/TimerLockscreenPopup.qml:39
+#, fuzzy, kde-format
+#| msgid "Stopwatch"
+msgid "Stop"
+msgstr "Stoppe­klokke"
+
+#: qml/timer/TimerLockscreenPopup.qml:40
+#, kde-format
+msgid "Repeat"
+msgstr ""
 
 #: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:121
 #, kde-format
@@ -897,8 +920,3 @@ msgstr "Kvardagar"
 #, kde-format
 msgid ", "
 msgstr ", "
-
-#, fuzzy
-#~| msgid "Stopwatch"
-#~ msgid "Stop"
-#~ msgstr "Stoppe­klokke"

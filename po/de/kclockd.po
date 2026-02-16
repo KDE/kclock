@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclockd\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-03 00:50+0000\n"
+"POT-Creation-Date: 2026-02-16 00:50+0000\n"
 "PO-Revision-Date: 2025-09-09 12:52+0200\n"
 "Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -34,7 +34,7 @@ msgstr "kde-i18n-de@kde.org"
 msgid "Alarm"
 msgstr "Wecker"
 
-#: alarm.cpp:79 timer.cpp:68
+#: alarm.cpp:79 timer.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Dismiss"
@@ -177,12 +177,12 @@ msgctxt "Author"
 msgid "Desktop Integration"
 msgstr "Arbeitsflächenintegration"
 
-#: timer.cpp:64
+#: timer.cpp:65
 #, kde-format
 msgid "Timer complete"
 msgstr "Timer abgelaufen"
 
-#: timer.cpp:278
+#: timer.cpp:296
 #, kde-format
 msgid "Your timer %1 has finished!"
 msgstr "Ihr Timer %1 ist abgelaufen."

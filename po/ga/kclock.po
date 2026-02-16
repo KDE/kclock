@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-14 00:47+0000\n"
+"POT-Creation-Date: 2026-02-16 00:50+0000\n"
 "PO-Revision-Date: 2026-01-10 22:36+0000\n"
 "Last-Translator: Charlotte <altronic25@protonmail.com>\n"
 "Language-Team: Irish\n"
@@ -666,7 +666,7 @@ msgctxt "@title:window"
 msgid "Create Timer"
 msgstr "Cruthaigh Uaineadóir"
 
-#: qml/timer/TimerFormDialog.qml:53
+#: qml/timer/TimerFormDialog.qml:53 qml/timer/TimerLockscreenPopup.qml:37
 #, kde-format
 msgid "Timer"
 msgstr "Uaineadóir"
@@ -764,6 +764,28 @@ msgstr ""
 #: qml/timer/TimerListPage.qml:119
 #, kde-format
 msgid "Add timer"
+msgstr ""
+
+#: qml/timer/TimerLockscreenPopup.qml:21
+#, fuzzy, kde-format
+#| msgid "Alarm is ringing"
+msgid "Timer is ringing"
+msgstr "Aláram ag clogadh"
+
+#: qml/timer/TimerLockscreenPopup.qml:37
+#, fuzzy, kde-format
+#| msgid "Select Timer Sound"
+msgid "Timer not found"
+msgstr "Roghnaigh Fuaim Uaineadóra"
+
+#: qml/timer/TimerLockscreenPopup.qml:39
+#, kde-format
+msgid "Stop"
+msgstr "Stad"
+
+#: qml/timer/TimerLockscreenPopup.qml:40
+#, kde-format
+msgid "Repeat"
 msgstr ""
 
 #: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:121
@@ -901,6 +923,3 @@ msgstr "Laethanta i rith na seachtaine"
 #, kde-format
 msgid ", "
 msgstr ", "
-
-#~ msgid "Stop"
-#~ msgstr "Stad"
