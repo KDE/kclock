@@ -504,30 +504,36 @@
         <p xml:lang="ca">Característiques noves i correccions d'errors en aquesta versió:</p>
         <p xml:lang="ca-valencia">Característiques noves i esmenes d'errors en esta versió:</p>
         <p xml:lang="es">Nuevas funciones y corrección de fallos de esta versión:</p>
+        <p xml:lang="ia">Nove characteristicas e correctiones de faltas in iste version:</p>
         <p xml:lang="ka">ახალი ფუნქციები და შეცდომების გასწორება ამ ვერსიაში:</p>
         <p xml:lang="nl">Nieuwe functies en reparaties van bugs in deze uitgave:</p>
         <p xml:lang="pt-BR">Novas funcionalidades e correções de bugs nesta versão:</p>
         <p xml:lang="ru">Новые возможности и исправления ошибок в этом выпуске:</p>
         <p xml:lang="sl">Nove zmožnosti in popravki napak v tej izdaji:</p>
+        <p xml:lang="uk">Нові можливості і виправлення вад у цьому випуску:</p>
         <p xml:lang="zh-CN">此版本中的新功能和程序缺陷修复：</p>
         <ul>
           <li>Fixed timer add one minute button.</li>
           <li xml:lang="ar">إصلاح زر إضافة دقيقة واحدة في المؤقت.</li>
           <li xml:lang="ca">Corregeix el botó d'afegir un minut al temporitzador.</li>
           <li xml:lang="ca-valencia">Corregix el botó d'afegir un minut al temporitzador.</li>
+          <li xml:lang="ia">Corrigite que le chronometro adde button de un minuta.</li>
           <li xml:lang="ka">გასწორდა ტაიმერისთვის ერთი წუთის დამატების ღილაკი.</li>
           <li xml:lang="pt-BR">Corrigido botão para adicionar um minuto ao temporizador</li>
           <li xml:lang="ru">Кнопка добавления одной минуты к таймеру;</li>
           <li xml:lang="sl">Popravljen časovnik gumb za dodaj eno minuto.</li>
+          <li xml:lang="uk">Виправлено кнопку додавання однієї хвилини у таймері.</li>
           <li xml:lang="zh-CN">修复计时器增加一分钟按钮。</li>
           <li>Switched to tab bar based sidebar (similar to bottom navigation bar).</li>
           <li xml:lang="ar">الانتقال إلى شريط جانبي يعتمد على شريط الألسنة (يشبه شريط التنقل السفلي).</li>
           <li xml:lang="ca">S'ha canviat a una barra lateral basada en la barra de pestanyes (similar a la barra de navegació inferior).</li>
           <li xml:lang="ca-valencia">S'ha canviat a una barra lateral basada en la barra de pestanyes (similar a la barra de navegació inferior).</li>
+          <li xml:lang="ia">Comjmutate a barra lateral basate sur barra de scheda (simile al barra de navigation a basso) </li>
           <li xml:lang="ka">გადართვა ჩანართებზე ბაზირებულ გვერდით პანელზე (ქვედა ნავიგაციის პანელის მსგავსად).</li>
           <li xml:lang="pt-BR">Alteração para uma barra lateral baseada em abas (semelhante à barra de navegação inferior).</li>
           <li xml:lang="ru">Переход на боковую панель с вкладками (аналогично нижней панели навигации);</li>
           <li xml:lang="sl">Preklopljeno na stransko vrstico, ki temelji na vrstici z zavihki (podobno kot spodnja navigacijska vrstica).</li>
+          <li xml:lang="uk">Перехід на бічну панель із вкладками (подібну до панелі навігації унизу вікна).</li>
           <li xml:lang="zh-CN">切换到基于标签页栏的侧边栏 (类似于底部导航栏)。</li>
         </ul>
       </description>
@@ -549,19 +555,23 @@
           <li xml:lang="ar">دعم العفريت الخلفي عند استخدام flatpak</li>
           <li xml:lang="ca">Permet el dimoni en segon pla quan s'utilitza flatpak</li>
           <li xml:lang="ca-valencia">Permet el dimoni en segon pla quan s'utilitza flatpak</li>
+          <li xml:lang="ia">Supporto per demone de fundo quando usante flatpak</li>
           <li xml:lang="ka">ფონური დემონის მხარდაჭერა flatpak-ის გამოყენებისას</li>
           <li xml:lang="pt-BR">Suporte para daemon em segundo plano ao usar o Flatpak</li>
           <li xml:lang="ru">Поддержка фоновой службы при использовании flatpak;</li>
           <li xml:lang="sl">Podpora za demon ozadja pri uporabi flatpaka</li>
+          <li xml:lang="uk">Реалізовано підтримку фонової служби при використанні flatpak</li>
           <li xml:lang="zh-CN">使用 flatpak 时支持后台守护进程</li>
           <li>Fix excessive log generation on non-Plasma system</li>
           <li xml:lang="ar">إصلاح توليد السجلات المفرط على الأنظمة غير المعتمدة على بلازما</li>
           <li xml:lang="ca">Corregeix la generació excessiva de registres en un sistema no Plasma</li>
           <li xml:lang="ca-valencia">Corregix la generació excessiva de registres en un sistema no Plasma</li>
+          <li xml:lang="ia">Corrige generation excessive de log (registros) sur systema que non es de Plasma</li>
           <li xml:lang="ka">გასწორდა ზედმეტი ჟურნალის ჩანაწერების გენერაცია არა-Plasma სისტემებზე</li>
           <li xml:lang="pt-BR">Correção de geração excessiva de logs em sistemas que não sejam Plasma</li>
           <li xml:lang="ru">Исправлено избыточное создание журналов в системах без Plasma;</li>
           <li xml:lang="sl">Popravljeno prekomerno ustvarjanje dnevnikov v sistemu, ki ni Plasma</li>
+          <li xml:lang="uk">Виправлено додавання зайвих повідомлень журналу у системах поза Плазмою</li>
           <li xml:lang="zh-CN">修复在非 Plasma 系统下过多的日志生成</li>
         </ul>
       </description>
@@ -574,46 +584,56 @@
           <li xml:lang="ar">إصلاح الرسالة المنبثقة "عفريت الساعة غير موجود"</li>
           <li xml:lang="ca">Corregeix el missatge emergent «No s'ha trobat el dimoni del rellotge»</li>
           <li xml:lang="ca-valencia">Corregix el missatge emergent «No s'ha trobat el dimoni del rellotge»</li>
+          <li xml:lang="ia">Corrige message de popup "Demone de Clock (Horologio) non trovate" </li>
           <li xml:lang="ka">გასწორდა მხტუნარა შეტყობინება 'საათის დემონი აღმოჩენილი არაა'</li>
           <li xml:lang="pt-BR">Correção da mensagem pop-up "Daemon do relógio não encontrado"</li>
           <li xml:lang="ru">Исправлено сообщение «Не найден демон часов»;</li>
           <li xml:lang="sl">Popravljeno pojavno sporočilo "Demon ure ni bil najden"</li>
+          <li xml:lang="uk">Виправлено контекстне повідомлення «Не знайдено фонову службу годинника»</li>
           <li xml:lang="zh-CN">修复“时钟守护进程未找到”弹出消息</li>
           <li>Various bugfixes and user interface improvements</li>
           <li xml:lang="ar">إصلاحات علل متنوعة وتحسينات في واجهة المستخدم</li>
           <li xml:lang="ca">Diverses correccions d'errors i millores de la interfície d'usuari</li>
           <li xml:lang="ca-valencia">Diverses esmenes d'errors i millores de la interfície d'usuari</li>
+          <li xml:lang="ia">Varie correctiones de faltas e melioramentos de interfacie de usator</li>
           <li xml:lang="ka">მომხმარებლის ინტერფეისის გაუმჯობესება და შეცდომების გამოსწორება</li>
           <li xml:lang="pt-BR">Diversas correções de bugs e melhorias na interface do usuário</li>
           <li xml:lang="ru">Исправлены ошибки и улучшен интерфейс;</li>
           <li xml:lang="sl">Različni popravki napak in izboljšave uporabniškega vmesnika</li>
+          <li xml:lang="uk">Різноманітні виправлення вад і удосконалення інтерфейсу користувача</li>
           <li xml:lang="zh-CN">各种程序缺陷修复和用户界面改进</li>
           <li>Add a sound picker component for listing alarm sounds</li>
           <li xml:lang="ar">إضافة مكون منتقي الصوت لسرد أصوات المنبه</li>
           <li xml:lang="ca">Afegeix un component de selector de so per a llistar els sons d'alarma</li>
           <li xml:lang="ca-valencia">Afig un component de selector de so per a llistar els sons d'alarma</li>
+          <li xml:lang="ia">Adde un componente selector de sono per listar sonos de alarma</li>
           <li xml:lang="ka">დაემატა ხმის არჩევის კომპონენტი განგაშის ხმების ჩამოსათვლელად</li>
           <li xml:lang="pt-BR">Adicionado um componente de seleção de som para listar sons de alarme</li>
           <li xml:lang="ru">Добавлен компонент выбора звука для перечисления звуков будильника;</li>
           <li xml:lang="sl">Dodana komponenta za izbiranje zvokov za seznam zvokov alarmov</li>
+          <li xml:lang="uk">Додано компонент вибору звукових даних для показу списку звуків будильника</li>
           <li xml:lang="zh-CN">新增声音选择器组件以列出可用的闹钟声音</li>
           <li>Start snooze only after button is pressed</li>
           <li xml:lang="ar">بدء الغفو فقط بعد ضغط الزر</li>
           <li xml:lang="ca">Inicia el posposament només després de prémer el botó</li>
           <li xml:lang="ca-valencia">Inicia el posposament només després de prémer el botó</li>
+          <li xml:lang="ia">Initia snooze (dormettar) solmente post que le button es pressate</li>
           <li xml:lang="ka">გადადების დაწყება, მხოლოდ, ღილაკზე დაჭერის შემდეგ</li>
           <li xml:lang="pt-BR">A função soneca só inicia após o botão ser pressionado</li>
           <li xml:lang="ru">Запуск отложенного сигнала только после нажатия кнопки;</li>
           <li xml:lang="sl">Zaženi dremež šele po pritisku gumba</li>
+          <li xml:lang="uk">Реалізовано початок відліку відкладення будильника лише після натискання кнопки</li>
           <li xml:lang="zh-CN">仅在按下按钮后才开始贪睡</li>
           <li>Fix alarms not working on PinePhone</li>
           <li xml:lang="ar">إصلاح عدم عمل المنبهات على PinePhone</li>
           <li xml:lang="ca">Corregeix les alarmes que no funcionen amb el PinePhone</li>
           <li xml:lang="ca-valencia">Corregix les alarmes que no funcionen amb PinePhone</li>
+          <li xml:lang="ia">Corrige alarmas non functionante sur PinePhone</li>
           <li xml:lang="ka">გასწორდა განგაშების პრობლემა PinePhone-ზე</li>
           <li xml:lang="pt-BR">Correção de alarmes que não funcionam no PinePhone</li>
           <li xml:lang="ru">Исправлена неработающая сигнализация на PinePhone;</li>
           <li xml:lang="sl">Popravi alarme, ki ne delujejo na PinePhone</li>
+          <li xml:lang="uk">Виправлено непрацездатність будильника на PinePhone</li>
           <li xml:lang="zh-CN">修复闹钟无法在 PinePhone 上工作</li>
         </ul>
       </description>
@@ -631,61 +651,74 @@
         <p xml:lang="pt-BR">Alterações:</p>
         <p xml:lang="ru">Изменения:</p>
         <p xml:lang="sl">Spremembe:</p>
+        <p xml:lang="uk">Зміни:</p>
         <p xml:lang="zh-CN">更改：</p>
         <ul>
           <li>Kirigami's bottom navigation bar component is now used for mobile</li>
           <li xml:lang="ar">استخدام مكون شريط التنقل السفلي الخاص بـ Kirigami للمحمول</li>
           <li xml:lang="ca">El component de la barra de navegació inferior del Kirigami ara s'utilitza per al mòbil</li>
           <li xml:lang="ca-valencia">El component de la barra de navegació inferior de Kirigami ara s'utilitza per al mòbil</li>
+          <li xml:lang="ia">Lecomponente de barra de navigation de basso de Kirigami es nunc usate per mobile</li>
           <li xml:lang="ka">ახლა მობილურისთვის გამოიყენება Kirigami-ის ქვედა ნავიგაციის კომპონენტი</li>
           <li xml:lang="pt-BR">O componente de barra de navegação inferior do Kirigami agora é usado na versão mobile</li>
           <li xml:lang="ru">Для мобильных устройств теперь используется компонент нижней панели навигации Kirigami;</li>
           <li xml:lang="sl">Kirigamijeva komponenta spodnje navigacijske vrstice se zdaj uporablja za mobilne naprave</li>
+          <li xml:lang="uk">Для мобільних систем у новій версії використано компонент нижньої панелі навігації з Kirigami</li>
           <li xml:lang="zh-CN">手机版使用 Kirigami 的底部导航栏组件</li>
           <li>A Plasma style sidebar is now used on desktop</li>
           <li xml:lang="ar">استخدام شريط جانبي بنمط بلازما على سطح المكتب</li>
           <li xml:lang="ca">Ara s'utilitza una barra lateral d'estil Plasma a l'escriptori</li>
           <li xml:lang="ca-valencia">Ara s'utilitza una barra lateral d'estil Plasma a l'escriptori</li>
+          <li xml:lang="ia">Un barra lateral de stilo dePlasmaes nunc usate sur scriptorio</li>
           <li xml:lang="ka">სამუშაო მაგიდაზე ახლა Plasma-ის სტილის გვერდითი პანელი გამოიყენება</li>
           <li xml:lang="pt-BR">Agora, no desktop, é utilizada uma barra lateral no estilo Plasma</li>
           <li xml:lang="ru">На рабочем столе теперь используется боковая панель в стиле Plasma;</li>
           <li xml:lang="sl">Stranska vrstica v slogu Plasme se zdaj uporablja na namizju</li>
+          <li xml:lang="uk">У версії для робочих станцій тепер використано бічну панель у стилі Плазми</li>
           <li xml:lang="zh-CN">桌面版使用 Plasma 样式的侧边栏</li>
           <li>The system tray item now only shows when alarms are pending</li>
           <li xml:lang="ar">إظهار عنصر صينية النظام فقط عند وجود منبهات قيد الانتظار</li>
           <li xml:lang="ca">L'element de la safata del sistema ara es mostra només quan les alarmes estan pendents</li>
           <li xml:lang="ca-valencia">L'element de la safata del sistema ara es mostra només quan les alarmes estan pendents</li>
+          <li xml:lang="ia">Le elemento de tabuliero de systema non solmente monstra quando alarmas es pendente</li>
           <li xml:lang="ka">ხატულს სისტემურ საათთან ახლა, მხოლოდ, ნაჩვენებია, თუ განგაშები რიგშია</li>
           <li xml:lang="pt-BR">O item da bandeja do sistema agora só é exibido quando há alarmes pendentes</li>
           <li xml:lang="ru">Элемент в области уведомлений отображается только при наличии активных будильников;</li>
           <li xml:lang="sl">Element v sistemski vrstici se zdaj prikaže le, ko so alarmi v teku</li>
+          <li xml:lang="uk">У новій версії програма показує пункт системного лотка, лише якщо у черзі є будильники</li>
           <li xml:lang="zh-CN">系统托盘图标现在仅在有待发闹钟时显示</li>
           <li>The daemon automatically stops if no alarms and timers are pending</li>
           <li xml:lang="ar">إيقاف العفريت آلياً في حال عدم وجود منبهات أو مؤقتات معلقة</li>
           <li xml:lang="ca">El dimoni s'atura automàticament si no hi ha alarmes ni temporitzadors pendents</li>
           <li xml:lang="ca-valencia">El dimoni es para automàticament si no hi ha alarmes ni temporitzadors pendents</li>
+          <li xml:lang="ia">Le demoine stoppa automaticamente si necun alarmas e chronometros (timers) es pendente</li>
           <li xml:lang="ka">დემონი ავტომატურად გაჩერდება, თუ განგაშები და ტაიმერები რიგში არაა</li>
           <li xml:lang="pt-BR">O serviço para automaticamente se não houver alarmes ou temporizadores pendentes</li>
           <li xml:lang="ru">Служба автоматически останавливается, если нет активных будильников и таймеров;</li>
           <li xml:lang="sl">Demon se samodejno ustavi, če ni alarmov in časovnikov v teku</li>
+          <li xml:lang="uk">Реалізовано автоматичне зупинення фонової служби, якщо у черзі немає будильників і таймерів</li>
           <li xml:lang="zh-CN">如果没有待发的闹钟和计时器，守护进程会自动停止</li>
           <li>Action bars are now used on the timer and alarms forms page</li>
           <li xml:lang="ar">استخدام أشرطة الإجراءات في صفحة نماذج المؤقت والمنبهات</li>
           <li xml:lang="ca">Les barres d'acció ara s'utilitzen a la pàgina del formulari del temporitzador i les alarmes</li>
           <li xml:lang="ca-valencia">Les barres d'acció ara s'utilitzen a la pàgina del formulari del temporitzador i les alarmes</li>
+          <li xml:lang="ia">Barras de action es nunc usate sur le pagina de formas de chronometro e alarmas </li>
           <li xml:lang="ka">ქმედებების პანელები ახლა გამოიყენება ტაიმერისა და განგაშის ფორმების გვერდზე</li>
           <li xml:lang="pt-BR">Agora, as barras de ação são usadas nas páginas de formulários de temporizador e alarmes</li>
           <li xml:lang="ru">На страницах таймера и будильников теперь используются панели действий;</li>
           <li xml:lang="sl">Vrstice dejanj se zdaj uporabljajo na strani obrazcev za časovnik in alarme</li>
+          <li xml:lang="uk">У новій версії на сторінці таймерів та будильників використано панелі кнопок дій</li>
           <li xml:lang="zh-CN">操作栏现在被用于计时器和闹钟表单页面</li>
           <li>The settings button has been moved to the top actions bar</li>
           <li xml:lang="ar">نقل زر الإعدادات إلى شريط الإجراءات العلوي</li>
           <li xml:lang="ca">El botó de configuració s'ha mogut a la barra d'accions superior</li>
           <li xml:lang="ca-valencia">El botó de configuració s'ha mogut cap a la barra d'accions superior</li>
+          <li xml:lang="ia">Le button de preferentias ha essite movite al barra de actiones de culmine</li>
           <li xml:lang="ka">მორგების ღილაკი გადატანილია ზედა ქმედებების პანელზე</li>
           <li xml:lang="pt-BR">O botão de configurações foi movido para a barra de ações superior</li>
           <li xml:lang="ru">Кнопка настроек перемещена в верхнюю панель действий;</li>
           <li xml:lang="sl">Gumb za nastavitve je bil premaknjen v zgornjo vrstico z dejanji</li>
+          <li xml:lang="uk">Кнопку параметрів пересунуто на верхню панель кнопок дій</li>
           <li xml:lang="zh-CN">设置按钮已被移动到顶部操作栏</li>
         </ul>
       </description>
@@ -707,34 +740,41 @@
         <p xml:lang="pt-BR">Alterações:</p>
         <p xml:lang="ru">Изменения:</p>
         <p xml:lang="sl">Spremembe:</p>
+        <p xml:lang="uk">Зміни:</p>
         <p xml:lang="zh-CN">更改：</p>
         <ul>
           <li>Watch DBus for PowerDevil, so wake from suspend always works if PowerDevil is found</li>
           <li xml:lang="ar">مراقبة DBus لـ PowerDevil، ليعمل الاستيقاظ من التعليق دائماً في حال وُجد PowerDevil</li>
           <li xml:lang="ca">Vigila el DBus del PowerDevil, de manera que despertar de la suspensió sempre funciona si es troba el PowerDevil</li>
           <li xml:lang="ca-valencia">Vigila D-Bus de PowerDevil, de manera que despertar de la suspensió sempre funciona si es troba PowerDevil</li>
+          <li xml:lang="ia">Observa DBus per PowerDevil, assi que evelia ex suspende functiona sempre si PowerDevil es trovate</li>
           <li xml:lang="ka">PowerDevil-ის ლოდინი DBus-ზე, ასე რომ, გაღვიძება ყოველთვის მუშაობს, თუ PowerDevil აღმოჩენილია</li>
           <li xml:lang="pt-BR">Monitora o DBus em busca de PowerDevil, para que a ativação a partir da suspensão sempre funcione se PowerDevil for encontrado</li>
           <li xml:lang="ru">Отслеживание DBus для PowerDevil, чтобы пробуждение из режима приостановки всегда работало при наличии PowerDevil;</li>
           <li xml:lang="sl">Pazite na DBus za PowerDevil, zato prebujanje iz stanja pripravljenosti vedno deluje, če je PowerDevil najden</li>
+          <li xml:lang="uk">Реалізовано спостереження DBus для PowerDevil, отже пробудження від присипляння завжди працюватиме, якщо буде виявлено PowerDevil</li>
           <li xml:lang="zh-CN">监视 DBus 中的 PowerDevil，如果发现 PowerDevil，则从挂起状态中唤醒</li>
           <li>Use consistent dialog style on the settings page</li>
           <li xml:lang="ar">استخدام نمط حوار متسق في صفحة الإعدادات</li>
           <li xml:lang="ca">Usa un estil de diàleg coherent a la pàgina de configuració</li>
           <li xml:lang="ca-valencia">Utilitza un estil de diàleg coherent a la pàgina de configuració</li>
+          <li xml:lang="ia">Usa dialogo de stilo consistente sur le pagina de preferentias</li>
           <li xml:lang="ka">მუდმივი დიალოგის სტილის გამოყენება მორგების გვერდზე</li>
           <li xml:lang="pt-BR">Uso de um estilo de diálogo consistente na página de configurações</li>
           <li xml:lang="ru">Используется единый стиль диалогов на странице настроек;</li>
           <li xml:lang="sl">Uporabi dosleden slog dialoga na strani z nastavitvami</li>
+          <li xml:lang="uk">Реалізовано однорідний стиль вікон на сторінці параметрів</li>
           <li xml:lang="zh-CN">在设置页面使用一致的对话框样式</li>
           <li>After editing an alarm, the alarm now automatically is activated</li>
           <li xml:lang="ar">تنشيط المنبه آلياً بعد تحريره</li>
           <li xml:lang="ca">Després d'editar una alarma, l'alarma ara s'activa automàticament</li>
           <li xml:lang="ca-valencia">Després d'editar una alarma, l'alarma ara s'activa automàticament</li>
+          <li xml:lang="ia">Post modficar un alarma, le alarma es nunc activate automaticamente</li>
           <li xml:lang="ka">განგაშის ჩასწორების შემდეგ, ახლა, განგაში ავტომატურად გააქტიურდება</li>
           <li xml:lang="pt-BR">Após editar um alarme, ele agora é ativado automaticamente</li>
           <li xml:lang="ru">После редактирования будильник автоматически активируется;</li>
           <li xml:lang="sl">Po urejanju alarma je alarm zdaj samodejno aktiviran</li>
+          <li xml:lang="uk">Реалізовано автоматичну активацію будильника після його редагування</li>
           <li xml:lang="zh-CN">在编辑闹钟后自动激活它</li>
         </ul>
       </description>
@@ -747,47 +787,57 @@
         <p xml:lang="ca">Característiques noves i correccions d'errors:</p>
         <p xml:lang="ca-valencia">Característiques noves i esmenes d'errors:</p>
         <p xml:lang="es">Nuevas funciones y corrección de fallos:</p>
+        <p xml:lang="ia">Nove characteristicas e correctiones de faltas:</p>
         <p xml:lang="ka">ახალი ფუნქციები და შეცდომების გასწორებები:</p>
         <p xml:lang="pt-BR">Novas funcionalidades e correções de bugs:</p>
         <p xml:lang="ru">Новые возможности и исправления ошибок:</p>
         <p xml:lang="sl">Nove zmožnosti in popravki napak:</p>
+        <p xml:lang="uk">Нові можливості і виправлення вад:</p>
         <p xml:lang="zh-CN">新功能和程序缺陷修复：</p>
         <ul>
           <li>Added the ability to set timer presets</li>
           <li xml:lang="ar">إضافة القدرة على ضبط مسبقات المؤقت</li>
           <li xml:lang="ca">S'ha afegit la capacitat d'establir valors predefinits del temporitzador</li>
           <li xml:lang="ca-valencia">S'ha afegit la capacitat d'establir valors predefinits del temporitzador</li>
+          <li xml:lang="ia">Addite lehabilitate de assignar preinsimules de chronometro (timer presets)</li>
           <li xml:lang="ka">დაემატა ტაიმერის პრესეტების დაყენების შესაძლებლობა</li>
           <li xml:lang="pt-BR">Adicionada a capacidade de definir predefinições de temporizador</li>
           <li xml:lang="ru">Добавлена возможность настройки предустановок таймера;</li>
           <li xml:lang="sl">Dodana je možnost nastavitve prednastavitev časovnika</li>
+          <li xml:lang="uk">Додано можливість встановлення наборів таймерів</li>
           <li xml:lang="zh-CN">新增设置计时器预设的功能</li>
           <li>Added ability to increase timer duration by 1m as timer is running</li>
           <li xml:lang="ar">إضافة القدرة على زيادة مدة المؤقت بمقدار دقيقة واحدة أثناء تشغيله</li>
           <li xml:lang="ca">S'ha afegit la capacitat d'augmentar la durada del temporitzador en 1 m quan s'està executant el temporitzador</li>
           <li xml:lang="ca-valencia">S'ha afegit la capacitat d'augmentar la duració del temporitzador en 1 m quan s'està executant el temporitzador</li>
+          <li xml:lang="ia">Addite habilitate a augmentar duration de chronometro per 1m durante que le chronometro es executante</li>
           <li xml:lang="ka">დაემატა ტაიმერის ხანგრძლივობის ერთი წუთით გაზრდის საშუალება, როცა ტაიმერი გაშვებულია</li>
           <li xml:lang="pt-BR">Adicionada a capacidade de aumentar a duração do temporizador em 1 minuto enquanto ele estiver em execução</li>
           <li xml:lang="ru">Добавлена возможность увеличивать длительность таймера на 1 минуту во время его работы;</li>
           <li xml:lang="sl">Dodana možnost podaljšanja trajanja časovnika za 1 minuto med delovanjem časovnika</li>
+          <li xml:lang="uk">Додано можливість збільшувати тривалість відліку на 1 хвилину під час роботи таймера</li>
           <li xml:lang="zh-CN">新增了在计时器运行时将其时长增加 1 分钟的功能</li>
           <li>Fixed multiple alarm sounds and notifications being played for one alarm</li>
           <li xml:lang="ar">إصلاح تشغيل أصوات منبه وإشعارات متعددة لمنبه واحد</li>
           <li xml:lang="ca">Corregits diversos sons d'alarma i notificacions que es reprodueixen per a una alarma</li>
           <li xml:lang="ca-valencia">Corregits diversos sons d'alarma i notificacions que es reproduïxen per a una alarma</li>
+          <li xml:lang="ia">Corrigite que multiple notificationes e sonos de alarma es executate perun alarma</li>
           <li xml:lang="ka">გასწორდა ერთზე მეტი განგაშისა და შეტყობინების ხმის ერთდროული დაკვრა ერთი განგაშისთვის</li>
           <li xml:lang="pt-BR">Corrigido o problema de reprodução simultânea de múltiplos sons de alarme e notificações para um mesmo alarme</li>
           <li xml:lang="ru">Исправлено воспроизведение нескольких звуков и уведомлений для одного будильника;</li>
           <li xml:lang="sl">Popravljeno predvajanje več zvokov alarmov in obvestil za en alarm</li>
+          <li xml:lang="uk">Виправлено проблему, пов'язану із тим, що для одного будильника відтворювалося декілька звуків будильника і нагадувань</li>
           <li xml:lang="zh-CN">修复了一个闹钟触发时多次响起提示音和通知的问题</li>
           <li>Fixed errors that prevented the application from working in a Flatpak</li>
           <li xml:lang="ar">إصلاح الأخطاء التي منعت التطبيق من العمل في Flatpak</li>
           <li xml:lang="ca">Corregits els errors que impedien que l'aplicació funcionés en un Flatpak</li>
           <li xml:lang="ca-valencia">Corregits els errors que impedien que l'aplicació funcionara en un Flatpak</li>
+          <li xml:lang="ia">Corrigite errores que preveniva le application ab functionar in un Flatpak</li>
           <li xml:lang="ka">გასწორდა შეცდომები, რომლებიც აპლიკაციას Flatpak-ში მუშაობის საშუალებას არ აძლევდა</li>
           <li xml:lang="pt-BR">Corrigidos erros que impediam o funcionamento do aplicativo em um Flatpak</li>
           <li xml:lang="ru">Исправлены ошибки, препятствовавшие работе приложения в Flatpak;</li>
           <li xml:lang="sl">Popravljene napake, ki so preprečevale delovanje aplikacije v Flatpaku</li>
+          <li xml:lang="uk">Виправлено помилки, які заважали роботі програми у Flatpak</li>
           <li xml:lang="zh-CN">修复了妨碍应用程序在 Flatpak 中工作的错误</li>
         </ul>
       </description>
