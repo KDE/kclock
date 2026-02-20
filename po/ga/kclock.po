@@ -767,16 +767,14 @@ msgid "Add timer"
 msgstr ""
 
 #: qml/timer/TimerLockscreenPopup.qml:21
-#, fuzzy, kde-format
-#| msgid "Alarm is ringing"
+#, kde-format
 msgid "Timer is ringing"
-msgstr "Aláram ag clogadh"
+msgstr ""
 
 #: qml/timer/TimerLockscreenPopup.qml:37
-#, fuzzy, kde-format
-#| msgid "Select Timer Sound"
+#, kde-format
 msgid "Timer not found"
-msgstr "Roghnaigh Fuaim Uaineadóra"
+msgstr ""
 
 #: qml/timer/TimerLockscreenPopup.qml:39
 #, kde-format
@@ -806,10 +804,9 @@ msgid "1 minute"
 msgstr "1 nóiméad"
 
 #: qml/timer/TimerPage.qml:210
-#, fuzzy, kde-format
-#| msgid "This timer is in Picture-in-Picture mode."
+#, kde-format
 msgid "This timer is in Picture-in-Picture mode."
-msgstr "Tá an uaineadóir seo "
+msgstr ""
 
 #: qml/timer/TimerRingingPopup.qml:25
 #, kde-format
