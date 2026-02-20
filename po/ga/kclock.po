@@ -771,10 +771,9 @@ msgid "1 minute"
 msgstr "1 nóiméad"
 
 #: qml/timer/TimerPage.qml:209
-#, fuzzy, kde-format
-#| msgid "This timer is in Picture-in-Picture mode."
+#, kde-format
 msgid "This timer is in Picture-in-Picture mode."
-msgstr "Tá an uaineadóir seo "
+msgstr ""
 
 #: qml/timer/TimerRingingPopup.qml:25
 #, kde-format
