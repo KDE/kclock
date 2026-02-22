@@ -657,6 +657,7 @@
           <li xml:lang="ar">استخدام مكون شريط التنقل السفلي الخاص بـ Kirigami للمحمول</li>
           <li xml:lang="ca">El component de la barra de navegació inferior del Kirigami ara s'utilitza per al mòbil</li>
           <li xml:lang="ca-valencia">El component de la barra de navegació inferior de Kirigami ara s'utilitza per al mòbil</li>
+          <li xml:lang="he">נעשה מעתה שימוש ברכיב סרגל הניווט התחתון לניידים</li>
           <li xml:lang="ia">Lecomponente de barra de navigation de basso de Kirigami es nunc usate per mobile</li>
           <li xml:lang="pt-BR">O componente de barra de navegação inferior do Kirigami agora é usado na versão mobile</li>
           <li xml:lang="ru">Для мобильных устройств теперь используется компонент нижней панели навигации Kirigami;</li>
@@ -667,6 +668,7 @@
           <li xml:lang="ar">استخدام شريط جانبي بنمط بلازما على سطح المكتب</li>
           <li xml:lang="ca">Ara s'utilitza una barra lateral d'estil Plasma a l'escriptori</li>
           <li xml:lang="ca-valencia">Ara s'utilitza una barra lateral d'estil Plasma a l'escriptori</li>
+          <li xml:lang="he">מעתה נעשה שימוש בסרגל צד בסגנון פלזמה בשולחן העבודה</li>
           <li xml:lang="ia">Un barra lateral de stilo dePlasmaes nunc usate sur scriptorio</li>
           <li xml:lang="pt-BR">Agora, no desktop, é utilizada uma barra lateral no estilo Plasma</li>
           <li xml:lang="ru">На рабочем столе теперь используется боковая панель в стиле Plasma;</li>
@@ -677,6 +679,7 @@
           <li xml:lang="ar">إظهار عنصر صينية النظام فقط عند وجود منبهات قيد الانتظار</li>
           <li xml:lang="ca">L'element de la safata del sistema ara es mostra només quan les alarmes estan pendents</li>
           <li xml:lang="ca-valencia">L'element de la safata del sistema ara es mostra només quan les alarmes estan pendents</li>
+          <li xml:lang="he">הפריט בשורת המערכת מופיע מעכשיו רק כשיש התראות ממתינות</li>
           <li xml:lang="ia">Le elemento de tabuliero de systema non solmente monstra quando alarmas es pendente</li>
           <li xml:lang="pt-BR">O item da bandeja do sistema agora só é exibido quando há alarmes pendentes</li>
           <li xml:lang="ru">Элемент в области уведомлений отображается только при наличии активных будильников;</li>
@@ -687,6 +690,7 @@
           <li xml:lang="ar">إيقاف العفريت آلياً في حال عدم وجود منبهات أو مؤقتات معلقة</li>
           <li xml:lang="ca">El dimoni s'atura automàticament si no hi ha alarmes ni temporitzadors pendents</li>
           <li xml:lang="ca-valencia">El dimoni es para automàticament si no hi ha alarmes ni temporitzadors pendents</li>
+          <li xml:lang="he">הסוכן נעצר אוטומטית אם אין התראות וקוצבי זמן ממתינים</li>
           <li xml:lang="ia">Le demoine stoppa automaticamente si necun alarmas e chronometros (timers) es pendente</li>
           <li xml:lang="pt-BR">O serviço para automaticamente se não houver alarmes ou temporizadores pendentes</li>
           <li xml:lang="ru">Служба автоматически останавливается, если нет активных будильников и таймеров;</li>
@@ -697,6 +701,7 @@
           <li xml:lang="ar">استخدام أشرطة الإجراءات في صفحة نماذج المؤقت والمنبهات</li>
           <li xml:lang="ca">Les barres d'acció ara s'utilitzen a la pàgina del formulari del temporitzador i les alarmes</li>
           <li xml:lang="ca-valencia">Les barres d'acció ara s'utilitzen a la pàgina del formulari del temporitzador i les alarmes</li>
+          <li xml:lang="he">סרגלי הפעולות נמצאים בשימוש בעמוד הטפסים של קוצבי הזמן וההתראות</li>
           <li xml:lang="ia">Barras de action es nunc usate sur le pagina de formas de chronometro e alarmas </li>
           <li xml:lang="pt-BR">Agora, as barras de ação são usadas nas páginas de formulários de temporizador e alarmes</li>
           <li xml:lang="ru">На страницах таймера и будильников теперь используются панели действий;</li>
@@ -707,6 +712,7 @@
           <li xml:lang="ar">نقل زر الإعدادات إلى شريط الإجراءات العلوي</li>
           <li xml:lang="ca">El botó de configuració s'ha mogut a la barra d'accions superior</li>
           <li xml:lang="ca-valencia">El botó de configuració s'ha mogut cap a la barra d'accions superior</li>
+          <li xml:lang="he">כפתור ההגדרות עבר לראש סרגל הפעולות העליון</li>
           <li xml:lang="ia">Le button de preferentias ha essite movite al barra de actiones de culmine</li>
           <li xml:lang="pt-BR">O botão de configurações foi movido para a barra de ações superior</li>
           <li xml:lang="ru">Кнопка настроек перемещена в верхнюю панель действий;</li>
@@ -739,6 +745,7 @@
           <li xml:lang="ar">مراقبة DBus لـ PowerDevil، ليعمل الاستيقاظ من التعليق دائماً في حال وُجد PowerDevil</li>
           <li xml:lang="ca">Vigila el DBus del PowerDevil, de manera que despertar de la suspensió sempre funciona si es troba el PowerDevil</li>
           <li xml:lang="ca-valencia">Vigila D-Bus de PowerDevil, de manera que despertar de la suspensió sempre funciona si es troba PowerDevil</li>
+          <li xml:lang="he">להשגיח על PowerDevil דרך D-Bus, כך שהתעוררות מהשהיה תמיד תעבוד אם PowerDevil נמצא</li>
           <li xml:lang="ia">Observa DBus per PowerDevil, assi que evelia ex suspende functiona sempre si PowerDevil es trovate</li>
           <li xml:lang="pt-BR">Monitora o DBus em busca de PowerDevil, para que a ativação a partir da suspensão sempre funcione se PowerDevil for encontrado</li>
           <li xml:lang="ru">Отслеживание DBus для PowerDevil, чтобы пробуждение из режима приостановки всегда работало при наличии PowerDevil;</li>
@@ -749,6 +756,7 @@
           <li xml:lang="ar">استخدام نمط حوار متسق في صفحة الإعدادات</li>
           <li xml:lang="ca">Usa un estil de diàleg coherent a la pàgina de configuració</li>
           <li xml:lang="ca-valencia">Utilitza un estil de diàleg coherent a la pàgina de configuració</li>
+          <li xml:lang="he">שימוש בסגנון חלונית עקבי בעמוד ההגדרות</li>
           <li xml:lang="ia">Usa dialogo de stilo consistente sur le pagina de preferentias</li>
           <li xml:lang="pt-BR">Uso de um estilo de diálogo consistente na página de configurações</li>
           <li xml:lang="ru">Используется единый стиль диалогов на странице настроек;</li>
@@ -759,6 +767,7 @@
           <li xml:lang="ar">تنشيط المنبه آلياً بعد تحريره</li>
           <li xml:lang="ca">Després d'editar una alarma, l'alarma ara s'activa automàticament</li>
           <li xml:lang="ca-valencia">Després d'editar una alarma, l'alarma ara s'activa automàticament</li>
+          <li xml:lang="he">לאחר עריכת התראה, ההתראה מופעלת מעתה אוטומטית</li>
           <li xml:lang="ia">Post modficar un alarma, le alarma es nunc activate automaticamente</li>
           <li xml:lang="pt-BR">Após editar um alarme, ele agora é ativado automaticamente</li>
           <li xml:lang="ru">После редактирования будильник автоматически активируется;</li>
@@ -810,6 +819,7 @@
           <li xml:lang="ar">إصلاح تشغيل أصوات منبه وإشعارات متعددة لمنبه واحد</li>
           <li xml:lang="ca">Corregits diversos sons d'alarma i notificacions que es reprodueixen per a una alarma</li>
           <li xml:lang="ca-valencia">Corregits diversos sons d'alarma i notificacions que es reproduïxen per a una alarma</li>
+          <li xml:lang="he">תוקנה בעיה שמגוון צלילי התראות והודעות הושמעו להתראה אחת</li>
           <li xml:lang="ia">Corrigite que multiple notificationes e sonos de alarma es executate perun alarma</li>
           <li xml:lang="pt-BR">Corrigido o problema de reprodução simultânea de múltiplos sons de alarme e notificações para um mesmo alarme</li>
           <li xml:lang="ru">Исправлено воспроизведение нескольких звуков и уведомлений для одного будильника;</li>
