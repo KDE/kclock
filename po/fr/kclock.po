@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-16 00:50+0000\n"
-"PO-Revision-Date: 2026-01-12 10:17+0100\n"
+"PO-Revision-Date: 2026-02-21 18:23+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 25.12.2\n"
 "X-Text-Markup: kde4\n"
 
 #, kde-format
@@ -775,14 +775,12 @@ msgid "Add timer"
 msgstr "Ajouter un chronomètre"
 
 #: qml/timer/TimerLockscreenPopup.qml:21
-#, fuzzy, kde-format
-#| msgid "Alarm is ringing"
+#, kde-format
 msgid "Timer is ringing"
 msgstr "Une alarme sonne"
 
 #: qml/timer/TimerLockscreenPopup.qml:37
-#, fuzzy, kde-format
-#| msgid "Alarm not found"
+#, kde-format
 msgid "Timer not found"
 msgstr "Alarme non trouvée"
 
@@ -794,7 +792,7 @@ msgstr "Arrêter"
 #: qml/timer/TimerLockscreenPopup.qml:40
 #, kde-format
 msgid "Repeat"
-msgstr ""
+msgstr "Répéter"
 
 #: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:121
 #, kde-format

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-16 00:50+0000\n"
-"PO-Revision-Date: 2026-01-13 09:39+0100\n"
+"PO-Revision-Date: 2026-02-16 18:33+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -770,16 +770,14 @@ msgid "Add timer"
 msgstr "Aggiungi timer"
 
 #: qml/timer/TimerLockscreenPopup.qml:21
-#, fuzzy, kde-format
-#| msgid "Alarm is ringing"
+#, kde-format
 msgid "Timer is ringing"
-msgstr "La sveglia sta suonando"
+msgstr "Il timer sta suonando"
 
 #: qml/timer/TimerLockscreenPopup.qml:37
-#, fuzzy, kde-format
-#| msgid "Alarm not found"
+#, kde-format
 msgid "Timer not found"
-msgstr "Sveglia non trovata"
+msgstr "Timer non trovato"
 
 #: qml/timer/TimerLockscreenPopup.qml:39
 #, kde-format
@@ -789,7 +787,7 @@ msgstr "Ferma"
 #: qml/timer/TimerLockscreenPopup.qml:40
 #, kde-format
 msgid "Repeat"
-msgstr ""
+msgstr "Ripeti"
 
 #: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:121
 #, kde-format
