@@ -645,6 +645,7 @@
         <p xml:lang="ca">Canvis:</p>
         <p xml:lang="ca-valencia">Canvis:</p>
         <p xml:lang="es">Cambios:</p>
+        <p xml:lang="fr">Modifications :</p>
         <p xml:lang="he">שינויים:</p>
         <p xml:lang="ia"> Modificationes:</p>
         <p xml:lang="pt-BR">Alterações:</p>
@@ -733,6 +734,7 @@
         <p xml:lang="ca">Canvis:</p>
         <p xml:lang="ca-valencia">Canvis:</p>
         <p xml:lang="es">Cambios:</p>
+        <p xml:lang="fr">Modifications :</p>
         <p xml:lang="he">שינויים:</p>
         <p xml:lang="ia"> Modificationes:</p>
         <p xml:lang="pt-BR">Alterações:</p>
@@ -785,6 +787,7 @@
         <p xml:lang="ca">Característiques noves i correccions d'errors:</p>
         <p xml:lang="ca-valencia">Característiques noves i esmenes d'errors:</p>
         <p xml:lang="es">Nuevas funciones y corrección de fallos:</p>
+        <p xml:lang="fr">Nouvelles fonctionnalités et corrections de bogues :</p>
         <p xml:lang="he">יכולות חדשות ותיקוני תקלות:</p>
         <p xml:lang="ia">Nove characteristicas e correctiones de faltas:</p>
         <p xml:lang="pt-BR">Novas funcionalidades e correções de bugs:</p>
