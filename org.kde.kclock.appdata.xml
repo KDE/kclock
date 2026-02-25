@@ -504,6 +504,7 @@
         <p xml:lang="ca">Característiques noves i correccions d'errors en aquesta versió:</p>
         <p xml:lang="ca-valencia">Característiques noves i esmenes d'errors en esta versió:</p>
         <p xml:lang="es">Nuevas funciones y corrección de fallos de esta versión:</p>
+        <p xml:lang="fr">Nouvelles fonctionnalités et corrections de bogues dans cette version :</p>
         <p xml:lang="he">יכולות ותיקוני תקלות חדשים במהדורה הזאת:</p>
         <p xml:lang="ia">Nove characteristicas e correctiones de faltas in iste version:</p>
         <p xml:lang="ka">ახალი ფუნქციები და შეცდომების გასწორება ამ ვერსიაში:</p>
@@ -519,6 +520,7 @@
           <li xml:lang="ar">إصلاح زر إضافة دقيقة واحدة في المؤقت.</li>
           <li xml:lang="ca">Corregeix el botó d'afegir un minut al temporitzador.</li>
           <li xml:lang="ca-valencia">Corregix el botó d'afegir un minut al temporitzador.</li>
+          <li xml:lang="fr">Correction du bouton permettant d'ajouter une minute au minuteur fixe.</li>
           <li xml:lang="he">תוקן כפתור הוספת דקה לקוצב הזמן.</li>
           <li xml:lang="ia">Corrigite que le chronometro adde button de un minuta.</li>
           <li xml:lang="ka">გასწორდა ტაიმერისთვის ერთი წუთის დამატების ღილაკი.</li>
@@ -532,6 +534,7 @@
           <li xml:lang="ar">الانتقال إلى شريط جانبي يعتمد على شريط الألسنة (يشبه شريط التنقل السفلي).</li>
           <li xml:lang="ca">S'ha canviat a una barra lateral basada en la barra de pestanyes (similar a la barra de navegació inferior).</li>
           <li xml:lang="ca-valencia">S'ha canviat a una barra lateral basada en la barra de pestanyes (similar a la barra de navegació inferior).</li>
+          <li xml:lang="fr">Basculement vers une barre latérale avec des onglets (Similaire à la barre inférieure de navigation).</li>
           <li xml:lang="he">סרגל הצד מבוסס לשוניות מעתה (בדומה לסרגל ניווט תחתון).</li>
           <li xml:lang="ia">Comjmutate a barra lateral basate sur barra de scheda (simile al barra de navigation a basso) </li>
           <li xml:lang="ka">გადართვა ჩანართებზე ბაზირებულ გვერდით პანელზე (ქვედა ნავიგაციის პანელის მსგავსად).</li>
@@ -561,6 +564,7 @@
           <li xml:lang="ar">دعم العفريت الخلفي عند استخدام flatpak</li>
           <li xml:lang="ca">Permet el dimoni en segon pla quan s'utilitza flatpak</li>
           <li xml:lang="ca-valencia">Permet el dimoni en segon pla quan s'utilitza flatpak</li>
+          <li xml:lang="fr">Prise en charge du démon en arrière-plan lors de l'utilisation de FlatPak</li>
           <li xml:lang="he">תמיכה בפעולה כסוכן רקע בעת שימוש דרך flatpak</li>
           <li xml:lang="ia">Supporto per demone de fundo quando usante flatpak</li>
           <li xml:lang="ka">ფონური დემონის მხარდაჭერა flatpak-ის გამოყენებისას</li>
@@ -574,6 +578,7 @@
           <li xml:lang="ar">إصلاح توليد السجلات المفرط على الأنظمة غير المعتمدة على بلازما</li>
           <li xml:lang="ca">Corregeix la generació excessiva de registres en un sistema no Plasma</li>
           <li xml:lang="ca-valencia">Corregix la generació excessiva de registres en un sistema no Plasma</li>
+          <li xml:lang="fr">Correction de la génération excessive de journaux sur les systèmes non-Plasma</li>
           <li xml:lang="he">תוקנה יצירת רשומות יומן מוגזמות במערכות שאינן פלזמה</li>
           <li xml:lang="ia">Corrige generation excessive de log (registros) sur systema que non es de Plasma</li>
           <li xml:lang="ka">გასწორდა ზედმეტი ჟურნალის ჩანაწერების გენერაცია არა-Plasma სისტემებზე</li>
@@ -594,6 +599,7 @@
           <li xml:lang="ar">إصلاح الرسالة المنبثقة "عفريت الساعة غير موجود"</li>
           <li xml:lang="ca">Corregeix el missatge emergent «No s'ha trobat el dimoni del rellotge»</li>
           <li xml:lang="ca-valencia">Corregix el missatge emergent «No s'ha trobat el dimoni del rellotge»</li>
+          <li xml:lang="fr">Correction du message contextuel « Impossible de trouver le démon de l’horloge »</li>
           <li xml:lang="he">תוקנה ההודעה הקופצת „סוכן השעון לא נמצא”</li>
           <li xml:lang="ia">Corrige message de popup "Demone de Clock (Horologio) non trovate" </li>
           <li xml:lang="ka">გასწორდა მხტუნარა შეტყობინება 'საათის დემონი აღმოჩენილი არაა'</li>
@@ -607,6 +613,7 @@
           <li xml:lang="ar">إصلاحات علل متنوعة وتحسينات في واجهة المستخدم</li>
           <li xml:lang="ca">Diverses correccions d'errors i millores de la interfície d'usuari</li>
           <li xml:lang="ca-valencia">Diverses esmenes d'errors i millores de la interfície d'usuari</li>
+          <li xml:lang="fr">Divers correctifs et améliorations de l'interface utilisateur</li>
           <li xml:lang="he">מגוון תיקוני תקלות ושיפורים בממשק המשתמש</li>
           <li xml:lang="ia">Varie correctiones de faltas e melioramentos de interfacie de usator</li>
           <li xml:lang="ka">მომხმარებლის ინტერფეისის გაუმჯობესება და შეცდომების გამოსწორება</li>
@@ -620,6 +627,7 @@
           <li xml:lang="ar">إضافة مكون منتقي الصوت لسرد أصوات المنبه</li>
           <li xml:lang="ca">Afegeix un component de selector de so per a llistar els sons d'alarma</li>
           <li xml:lang="ca-valencia">Afig un component de selector de so per a llistar els sons d'alarma</li>
+          <li xml:lang="fr">Ajouter un composant de sélection de son pour lister les sons d'alarme</li>
           <li xml:lang="he">נוסף רכיב בורר שמע להצעת צלילי התזכורות</li>
           <li xml:lang="ia">Adde un componente selector de sono per listar sonos de alarma</li>
           <li xml:lang="ka">დაემატა ხმის არჩევის კომპონენტი განგაშის ხმების ჩამოსათვლელად</li>
@@ -633,6 +641,7 @@
           <li xml:lang="ar">بدء الغفو فقط بعد ضغط الزر</li>
           <li xml:lang="ca">Inicia el posposament només després de prémer el botó</li>
           <li xml:lang="ca-valencia">Inicia el posposament només després de prémer el botó</li>
+          <li xml:lang="fr">Démarrer la répétition uniquement après avoir appuyé sur le bouton</li>
           <li xml:lang="he">להתחיל נודניק אחר לאחר לחיצת הכפתור</li>
           <li xml:lang="ia">Initia snooze (dormettar) solmente post que le button es pressate</li>
           <li xml:lang="ka">გადადების დაწყება, მხოლოდ, ღილაკზე დაჭერის შემდეგ</li>
@@ -646,6 +655,7 @@
           <li xml:lang="ar">إصلاح عدم عمل المنبهات على PinePhone</li>
           <li xml:lang="ca">Corregeix les alarmes que no funcionen amb el PinePhone</li>
           <li xml:lang="ca-valencia">Corregix les alarmes que no funcionen amb PinePhone</li>
+          <li xml:lang="fr">Correction des alarmes ne fonctionnant pas sur le PinePhone</li>
           <li xml:lang="he">תוקנו התראות שלא עובדות ב־PinePhone</li>
           <li xml:lang="ia">Corrige alarmas non functionante sur PinePhone</li>
           <li xml:lang="ka">გასწორდა განგაშების პრობლემა PinePhone-ზე</li>
@@ -680,6 +690,7 @@
           <li xml:lang="ar">استخدام مكون شريط التنقل السفلي الخاص بـ Kirigami للمحمول</li>
           <li xml:lang="ca">El component de la barra de navegació inferior del Kirigami ara s'utilitza per al mòbil</li>
           <li xml:lang="ca-valencia">El component de la barra de navegació inferior de Kirigami ara s'utilitza per al mòbil</li>
+          <li xml:lang="fr">Le composant de barre inférieure de navigation de Kirigami est maintenant utilisé pour les périphériques mobiles</li>
           <li xml:lang="he">נעשה מעתה שימוש ברכיב סרגל הניווט התחתון לניידים</li>
           <li xml:lang="ia">Lecomponente de barra de navigation de basso de Kirigami es nunc usate per mobile</li>
           <li xml:lang="ka">ახლა მობილურისთვის გამოიყენება Kirigami-ის ქვედა ნავიგაციის კომპონენტი</li>
@@ -693,6 +704,7 @@
           <li xml:lang="ar">استخدام شريط جانبي بنمط بلازما على سطح المكتب</li>
           <li xml:lang="ca">Ara s'utilitza una barra lateral d'estil Plasma a l'escriptori</li>
           <li xml:lang="ca-valencia">Ara s'utilitza una barra lateral d'estil Plasma a l'escriptori</li>
+          <li xml:lang="fr">Une barre latérale de style pour Plasma est maintenant utilisée sur le bureau.</li>
           <li xml:lang="he">מעתה נעשה שימוש בסרגל צד בסגנון פלזמה בשולחן העבודה</li>
           <li xml:lang="ia">Un barra lateral de stilo dePlasmaes nunc usate sur scriptorio</li>
           <li xml:lang="ka">სამუშაო მაგიდაზე ახლა Plasma-ის სტილის გვერდითი პანელი გამოიყენება</li>
@@ -706,6 +718,7 @@
           <li xml:lang="ar">إظهار عنصر صينية النظام فقط عند وجود منبهات قيد الانتظار</li>
           <li xml:lang="ca">L'element de la safata del sistema ara es mostra només quan les alarmes estan pendents</li>
           <li xml:lang="ca-valencia">L'element de la safata del sistema ara es mostra només quan les alarmes estan pendents</li>
+          <li xml:lang="fr">L’icône de la boîte à miniatures ne s’affiche maintenant que lorsque des alarmes sont en attente</li>
           <li xml:lang="he">הפריט בשורת המערכת מופיע מעכשיו רק כשיש התראות ממתינות</li>
           <li xml:lang="ia">Le elemento de tabuliero de systema non solmente monstra quando alarmas es pendente</li>
           <li xml:lang="ka">ხატულს სისტემურ საათთან ახლა, მხოლოდ, ნაჩვენებია, თუ განგაშები რიგშია</li>
@@ -719,6 +732,7 @@
           <li xml:lang="ar">إيقاف العفريت آلياً في حال عدم وجود منبهات أو مؤقتات معلقة</li>
           <li xml:lang="ca">El dimoni s'atura automàticament si no hi ha alarmes ni temporitzadors pendents</li>
           <li xml:lang="ca-valencia">El dimoni es para automàticament si no hi ha alarmes ni temporitzadors pendents</li>
+          <li xml:lang="fr">Le démon s'arrête automatiquement s'il n'y a aucune alarme ou minuteur en attente</li>
           <li xml:lang="he">הסוכן נעצר אוטומטית אם אין התראות וקוצבי זמן ממתינים</li>
           <li xml:lang="ia">Le demoine stoppa automaticamente si necun alarmas e chronometros (timers) es pendente</li>
           <li xml:lang="ka">დემონი ავტომატურად გაჩერდება, თუ განგაშები და ტაიმერები რიგში არაა</li>
@@ -732,6 +746,7 @@
           <li xml:lang="ar">استخدام أشرطة الإجراءات في صفحة نماذج المؤقت والمنبهات</li>
           <li xml:lang="ca">Les barres d'acció ara s'utilitzen a la pàgina del formulari del temporitzador i les alarmes</li>
           <li xml:lang="ca-valencia">Les barres d'acció ara s'utilitzen a la pàgina del formulari del temporitzador i les alarmes</li>
+          <li xml:lang="fr">Les barres d’action sont désormais utilisées sur la page des formulaires de minuteurs et d’alarmes</li>
           <li xml:lang="he">סרגלי הפעולות נמצאים בשימוש בעמוד הטפסים של קוצבי הזמן וההתראות</li>
           <li xml:lang="ia">Barras de action es nunc usate sur le pagina de formas de chronometro e alarmas </li>
           <li xml:lang="ka">ქმედებების პანელები ახლა გამოიყენება ტაიმერისა და განგაშის ფორმების გვერდზე</li>
@@ -745,6 +760,7 @@
           <li xml:lang="ar">نقل زر الإعدادات إلى شريط الإجراءات العلوي</li>
           <li xml:lang="ca">El botó de configuració s'ha mogut a la barra d'accions superior</li>
           <li xml:lang="ca-valencia">El botó de configuració s'ha mogut cap a la barra d'accions superior</li>
+          <li xml:lang="fr">Le bouton de configuration a été déplacé vers la barre supérieure d'actions</li>
           <li xml:lang="he">כפתור ההגדרות עבר לראש סרגל הפעולות העליון</li>
           <li xml:lang="ia">Le button de preferentias ha essite movite al barra de actiones de culmine</li>
           <li xml:lang="ka">მორგების ღილაკი გადატანილია ზედა ქმედებების პანელზე</li>
@@ -783,6 +799,7 @@
           <li xml:lang="ar">مراقبة DBus لـ PowerDevil، ليعمل الاستيقاظ من التعليق دائماً في حال وُجد PowerDevil</li>
           <li xml:lang="ca">Vigila el DBus del PowerDevil, de manera que despertar de la suspensió sempre funciona si es troba el PowerDevil</li>
           <li xml:lang="ca-valencia">Vigila D-Bus de PowerDevil, de manera que despertar de la suspensió sempre funciona si es troba PowerDevil</li>
+          <li xml:lang="fr">Surveiller DBus pour PowerDevil, afin que le réveil depuis la suspension fonctionne toujours si PowerDevil est présent</li>
           <li xml:lang="he">להשגיח על PowerDevil דרך D-Bus, כך שהתעוררות מהשהיה תמיד תעבוד אם PowerDevil נמצא</li>
           <li xml:lang="ia">Observa DBus per PowerDevil, assi que evelia ex suspende functiona sempre si PowerDevil es trovate</li>
           <li xml:lang="ka">PowerDevil-ის ლოდინი DBus-ზე, ასე რომ, გაღვიძება ყოველთვის მუშაობს, თუ PowerDevil აღმოჩენილია</li>
@@ -796,6 +813,7 @@
           <li xml:lang="ar">استخدام نمط حوار متسق في صفحة الإعدادات</li>
           <li xml:lang="ca">Usa un estil de diàleg coherent a la pàgina de configuració</li>
           <li xml:lang="ca-valencia">Utilitza un estil de diàleg coherent a la pàgina de configuració</li>
+          <li xml:lang="fr">Utilisez un style de dialogue cohérent sur la page de configuration</li>
           <li xml:lang="he">שימוש בסגנון חלונית עקבי בעמוד ההגדרות</li>
           <li xml:lang="ia">Usa dialogo de stilo consistente sur le pagina de preferentias</li>
           <li xml:lang="ka">მუდმივი დიალოგის სტილის გამოყენება მორგების გვერდზე</li>
@@ -809,6 +827,7 @@
           <li xml:lang="ar">تنشيط المنبه آلياً بعد تحريره</li>
           <li xml:lang="ca">Després d'editar una alarma, l'alarma ara s'activa automàticament</li>
           <li xml:lang="ca-valencia">Després d'editar una alarma, l'alarma ara s'activa automàticament</li>
+          <li xml:lang="fr">Après avoir modifié une alarme, celle-ci s'active désormais automatiquement</li>
           <li xml:lang="he">לאחר עריכת התראה, ההתראה מופעלת מעתה אוטומטית</li>
           <li xml:lang="ia">Post modficar un alarma, le alarma es nunc activate automaticamente</li>
           <li xml:lang="ka">განგაშის ჩასწორების შემდეგ, ახლა, განგაში ავტომატურად გააქტიურდება</li>
@@ -844,6 +863,7 @@
           <li xml:lang="ar">إضافة القدرة على ضبط مسبقات المؤقت</li>
           <li xml:lang="ca">S'ha afegit la capacitat d'establir valors predefinits del temporitzador</li>
           <li xml:lang="ca-valencia">S'ha afegit la capacitat d'establir valors predefinits del temporitzador</li>
+          <li xml:lang="fr">Ajout de la possibilité de définir des préréglages de minuteurs</li>
           <li xml:lang="he">נוספה האפשרות להגדיר תצורות קוצב זמן</li>
           <li xml:lang="ia">Addite lehabilitate de assignar preinsimules de chronometro (timer presets)</li>
           <li xml:lang="ka">დაემატა ტაიმერის პრესეტების დაყენების შესაძლებლობა</li>
@@ -857,6 +877,7 @@
           <li xml:lang="ar">إضافة القدرة على زيادة مدة المؤقت بمقدار دقيقة واحدة أثناء تشغيله</li>
           <li xml:lang="ca">S'ha afegit la capacitat d'augmentar la durada del temporitzador en 1 m quan s'està executant el temporitzador</li>
           <li xml:lang="ca-valencia">S'ha afegit la capacitat d'augmentar la duració del temporitzador en 1 m quan s'està executant el temporitzador</li>
+          <li xml:lang="fr">Ajout de la possibilité d'augmenter la durée du minuteur de 1 minute pendant que celui-ci est actif</li>
           <li xml:lang="he">נוספה אפשרות להגדיר את משך קוצב הזמן בדקה בזמן שקוצב הזמן רץ</li>
           <li xml:lang="ia">Addite habilitate a augmentar duration de chronometro per 1m durante que le chronometro es executante</li>
           <li xml:lang="ka">დაემატა ტაიმერის ხანგრძლივობის ერთი წუთით გაზრდის საშუალება, როცა ტაიმერი გაშვებულია</li>
@@ -870,6 +891,7 @@
           <li xml:lang="ar">إصلاح تشغيل أصوات منبه وإشعارات متعددة لمنبه واحد</li>
           <li xml:lang="ca">Corregits diversos sons d'alarma i notificacions que es reprodueixen per a una alarma</li>
           <li xml:lang="ca-valencia">Corregits diversos sons d'alarma i notificacions que es reproduïxen per a una alarma</li>
+          <li xml:lang="fr">Correction de la lecture de plusieurs sons d'alarme et notifications pour une seule alarme</li>
           <li xml:lang="he">תוקנה בעיה שמגוון צלילי התראות והודעות הושמעו להתראה אחת</li>
           <li xml:lang="ia">Corrigite que multiple notificationes e sonos de alarma es executate perun alarma</li>
           <li xml:lang="ka">გასწორდა ერთზე მეტი განგაშისა და შეტყობინების ხმის ერთდროული დაკვრა ერთი განგაშისთვის</li>
@@ -883,6 +905,7 @@
           <li xml:lang="ar">إصلاح الأخطاء التي منعت التطبيق من العمل في Flatpak</li>
           <li xml:lang="ca">Corregits els errors que impedien que l'aplicació funcionés en un Flatpak</li>
           <li xml:lang="ca-valencia">Corregits els errors que impedien que l'aplicació funcionara en un Flatpak</li>
+          <li xml:lang="fr">Correction des erreurs empêchant l'application de fonctionner dans un FlatPak</li>
           <li xml:lang="he">תוקנו שגיאות שמנעו מהיישום לעבוד ב־Flatpak</li>
           <li xml:lang="ia">Corrigite errores que preveniva le application ab functionar in un Flatpak</li>
           <li xml:lang="ka">გასწორდა შეცდომები, რომლებიც აპლიკაციას Flatpak-ში მუშაობის საშუალებას არ აძლევდა</li>
