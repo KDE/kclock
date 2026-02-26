@@ -645,6 +645,7 @@
           <li xml:lang="he">להתחיל נודניק אחר לאחר לחיצת הכפתור</li>
           <li xml:lang="ia">Initia snooze (dormettar) solmente post que le button es pressate</li>
           <li xml:lang="ka">გადადების დაწყება, მხოლოდ, ღილაკზე დაჭერის შემდეგ</li>
+          <li xml:lang="nl">Alleen sluimeren starten nadat er op de knop is gedrukt</li>
           <li xml:lang="pt-BR">A função soneca só inicia após o botão ser pressionado</li>
           <li xml:lang="ru">Запуск отложенного сигнала только после нажатия кнопки;</li>
           <li xml:lang="sl">Zaženi dremež šele po pritisku gumba</li>
@@ -659,6 +660,7 @@
           <li xml:lang="he">תוקנו התראות שלא עובדות ב־PinePhone</li>
           <li xml:lang="ia">Corrige alarmas non functionante sur PinePhone</li>
           <li xml:lang="ka">გასწორდა განგაშების პრობლემა PinePhone-ზე</li>
+          <li xml:lang="nl">Alarmen repareren die niet werken op PinePhone</li>
           <li xml:lang="pt-BR">Correção de alarmes que não funcionam no PinePhone</li>
           <li xml:lang="ru">Исправлена неработающая сигнализация на PinePhone;</li>
           <li xml:lang="sl">Popravi alarme, ki ne delujejo na PinePhone</li>
@@ -679,6 +681,7 @@
         <p xml:lang="he">שינויים:</p>
         <p xml:lang="ia">Modificationes:</p>
         <p xml:lang="ka">ცვლილებები:</p>
+        <p xml:lang="nl">Wijzigingen:</p>
         <p xml:lang="pt-BR">Alterações:</p>
         <p xml:lang="ru">Изменения:</p>
         <p xml:lang="sl">Spremembe:</p>
@@ -788,6 +791,7 @@
         <p xml:lang="he">שינויים:</p>
         <p xml:lang="ia">Modificationes:</p>
         <p xml:lang="ka">ცვლილებები:</p>
+        <p xml:lang="nl">Wijzigingen:</p>
         <p xml:lang="pt-BR">Alterações:</p>
         <p xml:lang="ru">Изменения:</p>
         <p xml:lang="sl">Spremembe:</p>
@@ -852,6 +856,7 @@
         <p xml:lang="he">יכולות חדשות ותיקוני תקלות:</p>
         <p xml:lang="ia">Nove characteristicas e correctiones de faltas:</p>
         <p xml:lang="ka">ახალი ფუნქციები და შეცდომების გასწორებები:</p>
+        <p xml:lang="nl">Nieuwe functies en reparaties van bugs:</p>
         <p xml:lang="pt-BR">Novas funcionalidades e correções de bugs:</p>
         <p xml:lang="ru">Новые возможности и исправления ошибок:</p>
         <p xml:lang="sl">Nove zmožnosti in popravki napak:</p>
