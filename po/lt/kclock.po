@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-20 03:02+0000\n"
-"PO-Revision-Date: 2026-01-24 22:41+0200\n"
+"PO-Revision-Date: 2026-02-25 14:15+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -793,7 +793,7 @@ msgstr "Pasibaigė nustatyto laikmačio laikas"
 #: qml/timer/TimerRingingPopup.qml:44
 #, kde-format
 msgid "%1 has completed."
-msgstr "%1 laikas pasibaigė."
+msgstr "Pasibaigė „%1“ laikas."
 
 #: qml/timer/TimerRingingPopup.qml:44
 #, kde-format
