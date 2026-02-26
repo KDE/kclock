@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-16 00:50+0000\n"
-"PO-Revision-Date: 2026-01-24 22:41+0200\n"
+"PO-Revision-Date: 2026-02-25 14:15+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -777,16 +777,14 @@ msgid "Add timer"
 msgstr "Pridėti laikmatį"
 
 #: qml/timer/TimerLockscreenPopup.qml:21
-#, fuzzy, kde-format
-#| msgid "Alarm is ringing"
+#, kde-format
 msgid "Timer is ringing"
-msgstr "Skambina žadintuvas"
+msgstr "Skambina laikmatis"
 
 #: qml/timer/TimerLockscreenPopup.qml:37
-#, fuzzy, kde-format
-#| msgid "Alarm not found"
+#, kde-format
 msgid "Timer not found"
-msgstr "Žadintuvas nerastas"
+msgstr "Laikmatis nerastas"
 
 #: qml/timer/TimerLockscreenPopup.qml:39
 #, kde-format
@@ -796,7 +794,7 @@ msgstr "Stabdyti"
 #: qml/timer/TimerLockscreenPopup.qml:40
 #, kde-format
 msgid "Repeat"
-msgstr ""
+msgstr "Kartoti"
 
 #: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:121
 #, kde-format
@@ -828,7 +826,7 @@ msgstr "Pasibaigė nustatyto laikmačio laikas"
 #: qml/timer/TimerRingingPopup.qml:44
 #, kde-format
 msgid "%1 has completed."
-msgstr "%1 laikas pasibaigė."
+msgstr "Pasibaigė „%1“ laikas."
 
 #: qml/timer/TimerRingingPopup.qml:44
 #, kde-format
