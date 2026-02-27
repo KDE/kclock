@@ -760,22 +760,19 @@ msgid "Add timer"
 msgstr "添加计时器"
 
 #: qml/timer/TimerLockscreenPopup.qml:21
-#, fuzzy, kde-format
-#| msgid "Alarm is ringing"
+#, kde-format
 msgid "Timer is ringing"
-msgstr "闹钟正在响起"
+msgstr ""
 
 #: qml/timer/TimerLockscreenPopup.qml:37
-#, fuzzy, kde-format
-#| msgid "Alarm not found"
+#, kde-format
 msgid "Timer not found"
-msgstr "找不到闹钟"
+msgstr ""
 
 #: qml/timer/TimerLockscreenPopup.qml:39
-#, fuzzy, kde-format
-#| msgid "Stopwatch"
+#, kde-format
 msgid "Stop"
-msgstr "秒表"
+msgstr ""
 
 #: qml/timer/TimerLockscreenPopup.qml:40
 #, kde-format
