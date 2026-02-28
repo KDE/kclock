@@ -762,22 +762,22 @@ msgstr "添加计时器"
 #: qml/timer/TimerLockscreenPopup.qml:21
 #, kde-format
 msgid "Timer is ringing"
-msgstr ""
+msgstr "计时器正在响铃"
 
 #: qml/timer/TimerLockscreenPopup.qml:37
 #, kde-format
 msgid "Timer not found"
-msgstr ""
+msgstr "计时器没有找到"
 
 #: qml/timer/TimerLockscreenPopup.qml:39
 #, kde-format
 msgid "Stop"
-msgstr ""
+msgstr "停止"
 
 #: qml/timer/TimerLockscreenPopup.qml:40
 #, kde-format
 msgid "Repeat"
-msgstr ""
+msgstr "重复"
 
 #: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:121
 #, kde-format
