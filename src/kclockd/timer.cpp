@@ -319,6 +319,7 @@ void Timer::dismiss()
 
     m_ringing = false;
     Q_EMIT ringingChanged();
+    Utilities::instance().checkForExit();
 }
 
 void Timer::reschedule()

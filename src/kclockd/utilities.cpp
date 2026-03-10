@@ -134,7 +134,7 @@ void Utilities::checkForExit()
         return;
     }
     for (auto *alarm : AlarmModel::instance()->alarmsList()) {
-        if (alarm->enabled() || alarm->ringing()) {
+        if (alarm->enabled()) {
             return;
         }
     }

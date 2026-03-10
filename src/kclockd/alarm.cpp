@@ -349,6 +349,10 @@ void Alarm::dismiss()
     m_ringTimer->stop();
     m_notification->close();
     Q_EMIT rescheduleRequested();
+
+    if (!enabled()) {
+        Utilities::instance().checkForExit();
+    }
 }
 
 void Alarm::snooze()
