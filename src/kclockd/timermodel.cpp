@@ -166,6 +166,8 @@ void TimerModel::remove(int index)
 
     updateIndicators();
     save();
+
+    Utilities::instance().checkForExit();
 }
 
 QString TimerModel::defaultAudioLocation() const

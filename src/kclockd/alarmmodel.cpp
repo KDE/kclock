@@ -118,11 +118,6 @@ void AlarmModel::scheduleAlarm()
         }
     }
 
-    int activeAlarmCount = alarmsToRing.size();
-    while (activeAlarmCount--) {
-        Utilities::instance().incfActiveCount();
-    }
-
     // if there is an alarm that needs to rung
     if (minTime != std::numeric_limits<quint64>::max()) {
         qDebug() << "Scheduled alarm wakeup at" << QDateTime::fromSecsSinceEpoch(minTime).toString() << ".";
@@ -192,6 +187,8 @@ void AlarmModel::removeAlarm(int index)
 
     config->sync();
     scheduleAlarm();
+
+    Utilities::instance().checkForExit();
 }
 
 void AlarmModel::addAlarm(const QString &name, int hours, int minutes, int daysOfWeek, const QString &audioPath, int ringDuration, int snoozeDuration)

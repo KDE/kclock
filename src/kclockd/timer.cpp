@@ -240,8 +240,6 @@ void Timer::setRunning(bool running)
     if (m_running) {
         m_hasElapsed = QDateTime::currentSecsSinceEpoch() - m_startTime;
 
-        Utilities::instance().decfActiveCount();
-
         // clear wakeup
         if (m_cookie > 0) {
             Utilities::instance().clearWakeup(m_cookie);
@@ -257,8 +255,6 @@ void Timer::setRunning(bool running)
         if (m_cookie > 0) {
             Utilities::instance().clearWakeup(m_cookie);
         }
-
-        Utilities::instance().incfActiveCount();
 
         m_startTime = QDateTime::currentSecsSinceEpoch() - m_hasElapsed;
         m_cookie = Utilities::instance().scheduleWakeup(m_startTime + m_length);

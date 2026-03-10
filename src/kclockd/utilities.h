@@ -32,9 +32,7 @@ public:
 
     int scheduleWakeup(quint64 timestamp);
     void clearWakeup(int cookie);
-    void exitAfterTimeout();
-    void incfActiveCount();
-    void decfActiveCount();
+    void checkForExit();
 
     static void wakeupNow();
 
@@ -60,8 +58,7 @@ private:
     QDBusInterface *m_interface = nullptr;
 
     bool m_hasPowerDevil;
-    std::atomic<int> m_activeTimerCount{0};
-    QTimer *m_timer = nullptr;
+    bool m_kclockAlive;
     AbstractWakeupProvider *m_wakeupProvider = nullptr;
 
     // which mpris media sources were paused when the alarm/timer started ringing

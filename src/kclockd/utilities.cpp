@@ -5,7 +5,9 @@
  */
 
 #include "utilities.h"
+#include "alarmmodel.h"
 #include "powerdevilwakeupprovider.h"
+#include "timermodel.h"
 #include "waittimerwakeupprovider.h"
 
 #include <QApplication>
@@ -16,6 +18,8 @@
 #include <QTimer>
 
 #include "generated/systeminterfaces/mprisplayer.h"
+
+#include <timer.h>
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -43,17 +47,9 @@ Utilities::Utilities(QObject *parent)
                                      QDBusConnection::sessionBus(),
                                      this))
     , m_hasPowerDevil(false)
-    , m_timer(new QTimer(this))
+    , m_kclockAlive(false)
     , m_wakeupProvider(nullptr)
 {
-    // TODO: It'd be nice to be able to have the daemon off if no alarms/timers are running.
-    // However, with the current implementation, the client continuously thinks it is off.
-    //     connect(m_timer, &QTimer::timeout, this, [this] {
-    //         if (m_activeTimerCount <= 0) {
-    //             QApplication::exit();
-    //         }
-    //     });
-
     initWakeupProvider();
 
     bool success = QDBusConnection::sessionBus().registerObject(QStringLiteral("/Utility"),
@@ -87,9 +83,6 @@ Utilities::Utilities(QObject *parent)
             Q_EMIT needsReschedule();
         });
     }
-
-    // exit after 1 min if nothing happens
-    m_timer->start(60 * 1000);
 }
 
 void Utilities::initWakeupProvider()
@@ -135,20 +128,22 @@ bool Utilities::hasWakeup()
     return result.isValid() && result.value().indexOf(QStringLiteral("scheduleWakeup")) >= 0;
 }
 
-void Utilities::exitAfterTimeout()
+void Utilities::checkForExit()
 {
-    m_timer->start(30000);
-}
-
-void Utilities::incfActiveCount()
-{
-    m_activeTimerCount++;
-}
-
-void Utilities::decfActiveCount()
-{
-    m_activeTimerCount--;
-    exitAfterTimeout();
+    if (m_kclockAlive) {
+        return;
+    }
+    for (auto *alarm : AlarmModel::instance()->alarmsList()) {
+        if (alarm->enabled() || alarm->ringing()) {
+            return;
+        }
+    }
+    for (auto *timer : TimerModel::instance()->timerList()) {
+        if (timer->running() || timer->ringing()) {
+            return;
+        }
+    }
+    QApplication::exit();
 }
 
 void Utilities::wakeupNow()
@@ -170,15 +165,15 @@ void Utilities::wakeupCallback(int cookie)
     }
 }
 
-// hack, use timer count to keep alive
 void Utilities::keepAlive()
 {
-    incfActiveCount();
+    m_kclockAlive = true;
 }
 
 void Utilities::canExit()
 {
-    decfActiveCount();
+    m_kclockAlive = false;
+    checkForExit();
 }
 
 void Utilities::pauseMprisSources()

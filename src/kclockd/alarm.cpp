@@ -349,8 +349,6 @@ void Alarm::dismiss()
     m_ringTimer->stop();
     m_notification->close();
     Q_EMIT rescheduleRequested();
-
-    Utilities::instance().decfActiveCount();
 }
 
 void Alarm::snooze()
@@ -369,8 +367,6 @@ void Alarm::snooze()
     m_enabled = true; // can't use setEnabled, since it will reset snoozedLength
     Q_EMIT enabledChanged();
     Q_EMIT rescheduleRequested();
-
-    Utilities::instance().decfActiveCount();
 }
 
 void Alarm::calculateNextRingTime()
