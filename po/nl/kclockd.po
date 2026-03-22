@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-16 00:50+0000\n"
+"POT-Creation-Date: 2026-03-22 00:47+0000\n"
 "PO-Revision-Date: 2025-04-14 11:50+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -48,7 +48,7 @@ msgstr "Wegdoen"
 msgid "Snooze"
 msgstr "Indutten "
 
-#: alarmmodel.cpp:255
+#: alarmmodel.cpp:252
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Alarm: <shortcut>%1 %2</shortcut>"
@@ -180,42 +180,42 @@ msgstr "Bureaubladintegratie"
 msgid "Timer complete"
 msgstr "Timer afgelopen"
 
-#: timer.cpp:296
+#: timer.cpp:292
 #, kde-format
 msgid "Your timer %1 has finished!"
 msgstr "Uw timer %1 is geëindigd!"
 
-#: timermodel.cpp:269
+#: timermodel.cpp:271
 #, kde-format
 msgctxt "@action:button Open kclock app"
 msgid "Open Clock"
 msgstr "Klok openen"
 
-#: timermodel.cpp:274
+#: timermodel.cpp:276
 #, kde-format
 msgctxt "@action:button Add minute to timer"
 msgid "+1 Minute"
 msgstr "+1 minuut"
 
-#: timermodel.cpp:277
+#: timermodel.cpp:279
 #, kde-format
 msgctxt "@action:button Reset timer"
 msgid "Reset"
 msgstr "Reset"
 
-#: timermodel.cpp:280 timermodel.cpp:305
+#: timermodel.cpp:282 timermodel.cpp:307
 #, kde-format
 msgctxt "@action:button Pause timer"
 msgid "Pause"
 msgstr "Pauzeren"
 
-#: timermodel.cpp:298
+#: timermodel.cpp:300
 #, kde-format
 msgctxt "@title:notification Timer name (paused)"
 msgid "%1 (Paused)"
 msgstr "%1 [gepauzeerd]"
 
-#: timermodel.cpp:307
+#: timermodel.cpp:309
 #, kde-format
 msgctxt "@action:button Resume timer"
 msgid "Resume"
