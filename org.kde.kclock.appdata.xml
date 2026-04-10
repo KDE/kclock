@@ -613,6 +613,7 @@
           <li xml:lang="tr">Flatpak kullanırken ardalan süreci (daemon) için destek</li>
           <li xml:lang="uk">Реалізовано підтримку фонової служби при використанні flatpak</li>
           <li xml:lang="zh-CN">使用 flatpak 时支持后台守护进程</li>
+          <li xml:lang="zh-TW">在使用 Flatpak 時也支援背景守護程式</li>
           <li>Fix excessive log generation on non-Plasma system</li>
           <li xml:lang="ar">إصلاح توليد السجلات المفرط على الأنظمة غير المعتمدة على بلازما</li>
           <li xml:lang="bg">Коригирано е прекомерното генериране на лог файлове в система, която не е Plasma.</li>
@@ -819,6 +820,7 @@
           <li xml:lang="tr">Masaüstünde artık Plasma biçemi bir kenar çubuğu kullanılıyor</li>
           <li xml:lang="uk">У версії для робочих станцій тепер використано бічну панель у стилі Плазми</li>
           <li xml:lang="zh-CN">桌面版使用 Plasma 样式的侧边栏</li>
+          <li xml:lang="zh-TW">在桌面上使用 Plasma 風的側邊欄</li>
           <li>The system tray item now only shows when alarms are pending</li>
           <li xml:lang="ar">إظهار عنصر صينية النظام فقط عند وجود منبهات قيد الانتظار</li>
           <li xml:lang="bg">Елементът в системната облст вече се показва само когато има чакащи аларми</li>
@@ -840,6 +842,7 @@
           <li xml:lang="tr">Sistem çekmecesi ögesi artık yalnızca bekleyen alarmlar olduğunda gösteriliyor</li>
           <li xml:lang="uk">У новій версії програма показує пункт системного лотка, лише якщо у черзі є будильники</li>
           <li xml:lang="zh-CN">系统托盘图标现在仅在有待发闹钟时显示</li>
+          <li xml:lang="zh-TW">系統匣項目現在只在有鬧鐘時才會顯示</li>
           <li>The daemon automatically stops if no alarms and timers are pending</li>
           <li xml:lang="ar">إيقاف العفريت آلياً في حال عدم وجود منبهات أو مؤقتات معلقة</li>
           <li xml:lang="bg">Демонът спира автоматично, ако няма чакащи аларми и таймери</li>
@@ -861,6 +864,7 @@
           <li xml:lang="tr">Bekleyen alarm veya sayaç yoksa ardalan süreci kendiliğinden durur</li>
           <li xml:lang="uk">Реалізовано автоматичне зупинення фонової служби, якщо у черзі немає будильників і таймерів</li>
           <li xml:lang="zh-CN">如果没有待发的闹钟和计时器，守护进程会自动停止</li>
+          <li xml:lang="zh-TW">沒有鬧鐘或計時器時自動停止守護程式</li>
           <li>Action bars are now used on the timer and alarms forms page</li>
           <li xml:lang="ar">استخدام أشرطة الإجراءات في صفحة نماذج المؤقت والمنبهات</li>
           <li xml:lang="bg">Лентите за действия вече се използват на страницата с формуляри за таймер и аларми</li>
