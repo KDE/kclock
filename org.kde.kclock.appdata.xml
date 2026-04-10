@@ -85,6 +85,7 @@
   <summary xml:lang="ro">Duce evidența timpului și stabilește alarme</summary>
   <summary xml:lang="ru">Просмотр времени и установка напоминаний</summary>
   <summary xml:lang="sa">समयं रक्षन्तु, अलार्मं च सेट् कुर्वन्तु</summary>
+  <summary xml:lang="sk">Sledujte čas a nastavte budíky</summary>
   <summary xml:lang="sl">Upošteva čas in nastavlja alarme</summary>
   <summary xml:lang="sv">Håll tiden och ställ in alarm</summary>
   <summary xml:lang="tr">Zaman Tutucusu ve Alarm Kurucusu</summary>
@@ -125,6 +126,7 @@
     <p xml:lang="ro">Aplicație de ceas universal pentru birou și mobil. Ceasul include un cronometru și ora pe glob, și vă permite să stabiliți multiple alarme și temporizatori.</p>
     <p xml:lang="ru">Универсальные часы для стационарных компьютеров и мобильных устройств. В программе есть секундомер и мировые часы, поддерживается установка напоминаний и таймеров.</p>
     <p xml:lang="sa">डेस्कटॉप् तथा मोबाईल् इत्येतयोः कृते एकः सार्वभौमिकः घण्टा-अनुप्रयोगः । घण्टायां स्टॉपवॉच्, विश्वघटिका च सन्ति, तथा च बहुविधाः अलार्म-समयनिर्धारकाः सेट् कर्तुं शक्नुवन्ति ।</p>
+    <p xml:lang="sk">Univerzálna aplikácia hodín pre počítač aj mobilné zariadenia. Hodiny obsahujú stopky a svetové hodiny a umožňujú vám nastaviť viacero budíkov a časovačov.</p>
     <p xml:lang="sl">Univerzalna aplikacija ure za namizne in mobilne naprave. Ura vključuje štoparico in svetovno uro ter omogoča nastavitev več alarmov in časovnikov.</p>
     <p xml:lang="sv">Ett universellt klockprogram för stationära datorer och mobiler. Klockan innehåller ett stoppur och en världsklocka och låter dig ställa in flera alarm och tidtagare.</p>
     <p xml:lang="tr">Masaüstü ve taşınabilir aygıtlar için evrensel bir saat uygulaması. Saat, bir kronometre ve dünya saati içerir ve birden çok alarm ve sayaç kurmanıza olanak tanır.</p>
@@ -164,6 +166,7 @@
     <p xml:lang="ro">Are funcții de alarmă, cronometru, temporizator și fus orar. Alarmele și cronometrele pot trezi dispozitivul din somn, în Plasma.</p>
     <p xml:lang="ru">Возможности работы с напоминаниями, таймерами, секундомером и часовыми поясами. Напоминания и таймеры позволяют возобновить работу устройства после приостановки в Plasma.</p>
     <p xml:lang="sa">अस्मिन् अलार्म, टाइमर्, स्टॉपवॉच्, टाइम्जोन् कार्यक्षमता च सन्ति । अलार्मः, टाइमर् च प्लाज्मायां निलम्बनात् यन्त्रं जागृतुं समर्थाः सन्ति ।</p>
+    <p xml:lang="sk">Obsahuje funkcie budíka, časovača, stopiek a časových pásiem. Budíky a časovače dokážu prebudiť zariadenie z režimu spánku v prostredí Plasma.</p>
     <p xml:lang="sl">Vsebuje alarm, odštevalnik časa, štoparico in funkcionalnost časovnih pasov. Alarm je sposoben tudi aktivirati napravo iz mirovanja, kadar uporablja Plasmo.</p>
     <p xml:lang="sv">Det innehåller alarm, tidtagning, stoppur och tidszonsfunktioner. Alarm och tidtagare kan också väcka enheten från viloläge när Plasma används.</p>
     <p xml:lang="tr">Alarm, sayaç, kronometre ve zaman dilimi işlevlerini içerir. Alarmlar ve sayaçlar, aygıtı Plasma’da iken uykudan uyandırabilir.</p>
@@ -217,6 +220,7 @@
       <caption xml:lang="ro">Vizualizare mobilă</caption>
       <caption xml:lang="ru">Вид на мобильном устройстве</caption>
       <caption xml:lang="sa">मोबाईल दृश्य</caption>
+      <caption xml:lang="sk">Mobilné zobrazenie</caption>
       <caption xml:lang="sl">Mobilni pogled</caption>
       <caption xml:lang="sv">Mobil vy</caption>
       <caption xml:lang="tr">Taşınabilir görünümü</caption>
@@ -260,6 +264,7 @@
       <caption xml:lang="ro">Vizualizare pentru birou</caption>
       <caption xml:lang="ru">Вид на настольном ПК</caption>
       <caption xml:lang="sa">डेस्कटॉप दृश्यम्</caption>
+      <caption xml:lang="sk">Zobrazenie na počítači</caption>
       <caption xml:lang="sl">Namizni pogled</caption>
       <caption xml:lang="sv">Skrivbordsvy</caption>
       <caption xml:lang="tr">Masaüstü görünümü</caption>
@@ -304,6 +309,7 @@
       <caption xml:lang="ro">Pagina temporizatorilor</caption>
       <caption xml:lang="ru">Страница таймеров</caption>
       <caption xml:lang="sa">टाइमर्स पृष्ठ</caption>
+      <caption xml:lang="sk">Stránka časovačov</caption>
       <caption xml:lang="sl">Stran merilnikov časa</caption>
       <caption xml:lang="sv">Sida med tidtagningar</caption>
       <caption xml:lang="tr">Sayaçlar sayfası</caption>
@@ -348,6 +354,7 @@
       <caption xml:lang="ro">Pagina temporizatorului</caption>
       <caption xml:lang="ru">Страница таймера</caption>
       <caption xml:lang="sa">टाइमर पृष्ठ</caption>
+      <caption xml:lang="sk">Stránka časovača</caption>
       <caption xml:lang="sl">Stran merilnika časa</caption>
       <caption xml:lang="sv">Sida med tidtagning</caption>
       <caption xml:lang="tr">Sayaç sayfası</caption>
@@ -392,6 +399,7 @@
       <caption xml:lang="ro">Pagina cronometrului</caption>
       <caption xml:lang="ru">Страница секундомера</caption>
       <caption xml:lang="sa">स्टॉपवॉच पृष्ठ</caption>
+      <caption xml:lang="sk">Stránka stopiek</caption>
       <caption xml:lang="sl">Stran štoparice</caption>
       <caption xml:lang="sv">Sida med stoppur</caption>
       <caption xml:lang="tr">Kronometre sayfası</caption>
@@ -436,6 +444,7 @@
       <caption xml:lang="ro">Pagina alarmelor</caption>
       <caption xml:lang="ru">Страница напоминаний</caption>
       <caption xml:lang="sa">अलार्म पृष्ठ</caption>
+      <caption xml:lang="sk">Stránka budíkov</caption>
       <caption xml:lang="sl">Stran alarma</caption>
       <caption xml:lang="sv">Sida med alarm</caption>
       <caption xml:lang="tr">Alarmlar sayfası</caption>
@@ -516,6 +525,7 @@
         <p xml:lang="nl">Nieuwe functies en reparaties van bugs in deze uitgave:</p>
         <p xml:lang="pt-BR">Novas funcionalidades e correções de bugs nesta versão:</p>
         <p xml:lang="ru">Новые возможности и исправления ошибок в этом выпуске:</p>
+        <p xml:lang="sk">New features and bugfixes in this release:</p>
         <p xml:lang="sl">Nove zmožnosti in popravki napak v tej izdaji:</p>
         <p xml:lang="tr">Bu yayımdaki yeni özellikler ve hata düzeltmeleri:</p>
         <p xml:lang="uk">Нові можливості і виправлення вад у цьому випуску:</p>
@@ -538,6 +548,7 @@
           <li xml:lang="nl">Gerepareerde timer, voeg één minuut toe met de knop.</li>
           <li xml:lang="pt-BR">Corrigido botão para adicionar um minuto ao temporizador</li>
           <li xml:lang="ru">Кнопка добавления одной минуты к таймеру;</li>
+          <li xml:lang="sk">Opravené tlačidlo pridania jednej minúty na časovači.</li>
           <li xml:lang="sl">Popravljen časovnik gumb za dodaj eno minuto.</li>
           <li xml:lang="tr">Sayaca bir dakika ekleme düğmesi düzeltildi.</li>
           <li xml:lang="uk">Виправлено кнопку додавання однієї хвилини у таймері.</li>
@@ -559,6 +570,7 @@
           <li xml:lang="nl">Overgeschakeld naar een zijbalk op basis van tabbladen (vergelijkbaar met de onderste navigatiebalk).</li>
           <li xml:lang="pt-BR">Alteração para uma barra lateral baseada em abas (semelhante à barra de navegação inferior).</li>
           <li xml:lang="ru">Переход на боковую панель с вкладками (аналогично нижней панели навигации);</li>
+          <li xml:lang="sk">Prepnutie na bočný panel založený na paneli kariet (podobný spodnej navigačnej lište).</li>
           <li xml:lang="sl">Preklopljeno na stransko vrstico, ki temelji na vrstici z zavihki (podobno kot spodnja navigacijska vrstica).</li>
           <li xml:lang="tr">Sekme çubuğu tabanlı kenar çubuğuna geçildi (alt dolaşma çubuğuna benzer).</li>
           <li xml:lang="uk">Перехід на бічну панель із вкладками (подібну до панелі навігації унизу вікна).</li>
@@ -596,10 +608,12 @@
           <li xml:lang="nl">Ondersteuning voor achtergronddaemons bij gebruik van Flatpak</li>
           <li xml:lang="pt-BR">Suporte para daemon em segundo plano ao usar o Flatpak</li>
           <li xml:lang="ru">Поддержка фоновой службы при использовании flatpak;</li>
+          <li xml:lang="sk">Podpora démona na pozadí pri použití flatpaku</li>
           <li xml:lang="sl">Podpora za demon ozadja pri uporabi flatpaka</li>
           <li xml:lang="tr">Flatpak kullanırken ardalan süreci (daemon) için destek</li>
           <li xml:lang="uk">Реалізовано підтримку фонової служби при використанні flatpak</li>
           <li xml:lang="zh-CN">使用 flatpak 时支持后台守护进程</li>
+          <li xml:lang="zh-TW">在使用 Flatpak 時也支援背景守護程式</li>
           <li>Fix excessive log generation on non-Plasma system</li>
           <li xml:lang="ar">إصلاح توليد السجلات المفرط على الأنظمة غير المعتمدة على بلازما</li>
           <li xml:lang="bg">Коригирано е прекомерното генериране на лог файлове в система, която не е Plasma.</li>
@@ -616,6 +630,7 @@
           <li xml:lang="nl">Los het probleem op met overmatige generatie van een log op niet-Plasma-systemen.</li>
           <li xml:lang="pt-BR">Correção de geração excessiva de logs em sistemas que não sejam Plasma</li>
           <li xml:lang="ru">Исправлено избыточное создание журналов в системах без Plasma;</li>
+          <li xml:lang="sk">Oprava nadmerného generovania záznamov v systéme bez prostredia Plasma</li>
           <li xml:lang="sl">Popravljeno prekomerno ustvarjanje dnevnikov v sistemu, ki ni Plasma</li>
           <li xml:lang="tr">Plasma olmayan sistemlerde aşırı günlük üretimini düzelt</li>
           <li xml:lang="uk">Виправлено додавання зайвих повідомлень журналу у системах поза Плазмою</li>
@@ -644,6 +659,7 @@
           <li xml:lang="nl">Los het pop-upbericht "Klokdaemon niet gevonden" op</li>
           <li xml:lang="pt-BR">Correção da mensagem pop-up "Daemon do relógio não encontrado"</li>
           <li xml:lang="ru">Исправлено сообщение «Не найден демон часов»;</li>
+          <li xml:lang="sk">Fix "Clock daemon not found" popup message</li>
           <li xml:lang="sl">Popravljeno pojavno sporočilo "Demon ure ni bil najden"</li>
           <li xml:lang="tr">“Saat ardalan süreci bulunamadı” açılır pencere iletisini düzelt</li>
           <li xml:lang="uk">Виправлено контекстне повідомлення «Не знайдено фонову службу годинника»</li>
@@ -665,6 +681,7 @@
           <li xml:lang="nl">Diverse reparaties van fouten en verbeteringen aan de gebruikersinterface</li>
           <li xml:lang="pt-BR">Diversas correções de bugs e melhorias na interface do usuário</li>
           <li xml:lang="ru">Исправлены ошибки и улучшен интерфейс;</li>
+          <li xml:lang="sk">Rôzne opravy chýb a vylepšenia používateľského rozhrania</li>
           <li xml:lang="sl">Različni popravki napak in izboljšave uporabniškega vmesnika</li>
           <li xml:lang="tr">Çeşitli hata düzeltmeleri ve kullanıcı arayüzü iyileştirmeleri</li>
           <li xml:lang="uk">Різноманітні виправлення вад і удосконалення інтерфейсу користувача</li>
@@ -685,6 +702,7 @@
           <li xml:lang="nl">Voeg een component voor het selecteren van geluiden toe om alarmgeluiden weer te geven</li>
           <li xml:lang="pt-BR">Adicionado um componente de seleção de som para listar sons de alarme</li>
           <li xml:lang="ru">Добавлен компонент выбора звука для перечисления звуков будильника;</li>
+          <li xml:lang="sk">Pridanie komponentu na výber zvuku pre zoznam zvukov budíka</li>
           <li xml:lang="sl">Dodana komponenta za izbiranje zvokov za seznam zvokov alarmov</li>
           <li xml:lang="tr">Alarm seslerini listelemek için bir ses seçicisi bileşeni ekle</li>
           <li xml:lang="uk">Додано компонент вибору звукових даних для показу списку звуків будильника</li>
@@ -705,6 +723,7 @@
           <li xml:lang="nl">Alleen sluimeren starten nadat er op de knop is gedrukt</li>
           <li xml:lang="pt-BR">A função soneca só inicia após o botão ser pressionado</li>
           <li xml:lang="ru">Запуск отложенного сигнала только после нажатия кнопки;</li>
+          <li xml:lang="sk">Spustenie odloženia budíka až po stlačení tlačidla</li>
           <li xml:lang="sl">Zaženi dremež šele po pritisku gumba</li>
           <li xml:lang="tr">Ertelemeyi yalnızca düğmeye basıldıktan sonra başlat</li>
           <li xml:lang="uk">Реалізовано початок відліку відкладення будильника лише після натискання кнопки</li>
@@ -725,6 +744,7 @@
           <li xml:lang="nl">Alarmen repareren die niet werken op PinePhone</li>
           <li xml:lang="pt-BR">Correção de alarmes que não funcionam no PinePhone</li>
           <li xml:lang="ru">Исправлена неработающая сигнализация на PinePhone;</li>
+          <li xml:lang="sk">Oprava nefunkčných budíkov na zariadení PinePhone</li>
           <li xml:lang="sl">Popravi alarme, ki ne delujejo na PinePhone</li>
           <li xml:lang="tr">PinePhone üzerinde çalışmayan alarmları düzelt</li>
           <li xml:lang="uk">Виправлено непрацездатність будильника на PinePhone</li>
@@ -751,6 +771,7 @@
         <p xml:lang="nl">Wijzigingen:</p>
         <p xml:lang="pt-BR">Alterações:</p>
         <p xml:lang="ru">Изменения:</p>
+        <p xml:lang="sk">Zmeny:</p>
         <p xml:lang="sl">Spremembe:</p>
         <p xml:lang="tr">Değişiklikler:</p>
         <p xml:lang="uk">Зміни:</p>
@@ -773,6 +794,7 @@
           <li xml:lang="nl">De component voor de onderste navigatiebalk van Kirigami wordt nu ook voor mobiele apparaten gebruikt</li>
           <li xml:lang="pt-BR">O componente de barra de navegação inferior do Kirigami agora é usado na versão mobile</li>
           <li xml:lang="ru">Для мобильных устройств теперь используется компонент нижней панели навигации Kirigami;</li>
+          <li xml:lang="sk">Komponent spodnej navigačnej lišty Kirigami sa teraz používa pre mobilné zariadenia</li>
           <li xml:lang="sl">Kirigamijeva komponenta spodnje navigacijske vrstice se zdaj uporablja za mobilne naprave</li>
           <li xml:lang="tr">Taşınabilir aygıtlar için artık Kirigami’nin alt dolaşma çubuğu bileşeni kullanılıyor</li>
           <li xml:lang="uk">Для мобільних систем у новій версії використано компонент нижньої панелі навігації з Kirigami</li>
@@ -793,10 +815,12 @@
           <li xml:lang="nl">Op het bureaublad wordt nu een zijbalk in Plasma-stijl gebruikt</li>
           <li xml:lang="pt-BR">Agora, no desktop, é utilizada uma barra lateral no estilo Plasma</li>
           <li xml:lang="ru">На рабочем столе теперь используется боковая панель в стиле Plasma;</li>
+          <li xml:lang="sk">Na pracovnej ploche sa teraz používa bočný panel v štýle Plasma</li>
           <li xml:lang="sl">Stranska vrstica v slogu Plasme se zdaj uporablja na namizju</li>
           <li xml:lang="tr">Masaüstünde artık Plasma biçemi bir kenar çubuğu kullanılıyor</li>
           <li xml:lang="uk">У версії для робочих станцій тепер використано бічну панель у стилі Плазми</li>
           <li xml:lang="zh-CN">桌面版使用 Plasma 样式的侧边栏</li>
+          <li xml:lang="zh-TW">在桌面上使用 Plasma 風的側邊欄</li>
           <li>The system tray item now only shows when alarms are pending</li>
           <li xml:lang="ar">إظهار عنصر صينية النظام فقط عند وجود منبهات قيد الانتظار</li>
           <li xml:lang="bg">Елементът в системната облст вече се показва само когато има чакащи аларми</li>
@@ -813,10 +837,12 @@
           <li xml:lang="nl">Het item in het systeemvak wordt nu alleen nog weergegeven wanneer er alarmen in behandeling zijn</li>
           <li xml:lang="pt-BR">O item da bandeja do sistema agora só é exibido quando há alarmes pendentes</li>
           <li xml:lang="ru">Элемент в области уведомлений отображается только при наличии активных будильников;</li>
+          <li xml:lang="sk">Položka v systémovej lište sa teraz zobrazuje iba vtedy, keď sú čakajúce budíky</li>
           <li xml:lang="sl">Element v sistemski vrstici se zdaj prikaže le, ko so alarmi v teku</li>
           <li xml:lang="tr">Sistem çekmecesi ögesi artık yalnızca bekleyen alarmlar olduğunda gösteriliyor</li>
           <li xml:lang="uk">У новій версії програма показує пункт системного лотка, лише якщо у черзі є будильники</li>
           <li xml:lang="zh-CN">系统托盘图标现在仅在有待发闹钟时显示</li>
+          <li xml:lang="zh-TW">系統匣項目現在只在有鬧鐘時才會顯示</li>
           <li>The daemon automatically stops if no alarms and timers are pending</li>
           <li xml:lang="ar">إيقاف العفريت آلياً في حال عدم وجود منبهات أو مؤقتات معلقة</li>
           <li xml:lang="bg">Демонът спира автоматично, ако няма чакащи аларми и таймери</li>
@@ -833,10 +859,12 @@
           <li xml:lang="nl">De daemon stopt automatisch als er geen alarmen of timers meer actief zijn</li>
           <li xml:lang="pt-BR">O serviço para automaticamente se não houver alarmes ou temporizadores pendentes</li>
           <li xml:lang="ru">Служба автоматически останавливается, если нет активных будильников и таймеров;</li>
+          <li xml:lang="sk">Démon sa automaticky zastaví, ak nie sú čakajúce žiadne budíky ani časovače</li>
           <li xml:lang="sl">Demon se samodejno ustavi, če ni alarmov in časovnikov v teku</li>
           <li xml:lang="tr">Bekleyen alarm veya sayaç yoksa ardalan süreci kendiliğinden durur</li>
           <li xml:lang="uk">Реалізовано автоматичне зупинення фонової служби, якщо у черзі немає будильників і таймерів</li>
           <li xml:lang="zh-CN">如果没有待发的闹钟和计时器，守护进程会自动停止</li>
+          <li xml:lang="zh-TW">沒有鬧鐘或計時器時自動停止守護程式</li>
           <li>Action bars are now used on the timer and alarms forms page</li>
           <li xml:lang="ar">استخدام أشرطة الإجراءات في صفحة نماذج المؤقت والمنبهات</li>
           <li xml:lang="bg">Лентите за действия вече се използват на страницата с формуляри за таймер и аларми</li>
@@ -853,6 +881,7 @@
           <li xml:lang="nl">Actiebalken worden nu gebruikt op de formulierenpagina voor timers en alarmen</li>
           <li xml:lang="pt-BR">Agora, as barras de ação são usadas nas páginas de formulários de temporizador e alarmes</li>
           <li xml:lang="ru">На страницах таймера и будильников теперь используются панели действий;</li>
+          <li xml:lang="sk">Na stránke formulárov časovačov a budíkov sa teraz používajú panely akcií</li>
           <li xml:lang="sl">Vrstice dejanj se zdaj uporabljajo na strani obrazcev za časovnik in alarme</li>
           <li xml:lang="tr">Sayaç ve alarm formları sayfasında artık eylem çubukları kullanılıyor</li>
           <li xml:lang="uk">У новій версії на сторінці таймерів та будильників використано панелі кнопок дій</li>
@@ -873,6 +902,7 @@
           <li xml:lang="nl">De instellingenknop is verplaatst naar de bovenste actiebalk</li>
           <li xml:lang="pt-BR">O botão de configurações foi movido para a barra de ações superior</li>
           <li xml:lang="ru">Кнопка настроек перемещена в верхнюю панель действий;</li>
+          <li xml:lang="sk">Tlačidlo nastavení bolo presunuté do horného panela akcií</li>
           <li xml:lang="sl">Gumb za nastavitve je bil premaknjen v zgornjo vrstico z dejanji</li>
           <li xml:lang="tr">Ayarlar düğmesi üst eylem çubuğuna taşındı</li>
           <li xml:lang="uk">Кнопку параметрів пересунуто на верхню панель кнопок дій</li>
@@ -903,6 +933,7 @@
         <p xml:lang="nl">Wijzigingen:</p>
         <p xml:lang="pt-BR">Alterações:</p>
         <p xml:lang="ru">Изменения:</p>
+        <p xml:lang="sk">Zmeny:</p>
         <p xml:lang="sl">Spremembe:</p>
         <p xml:lang="tr">Değişiklikler:</p>
         <p xml:lang="uk">Зміни:</p>
@@ -925,6 +956,7 @@
           <li xml:lang="nl">Houd DBus in de gaten voor PowerDevil, zodat het ontwaken uit de slaapstand altijd werkt als PowerDevil wordt gevonden</li>
           <li xml:lang="pt-BR">Monitora o DBus em busca de PowerDevil, para que a ativação a partir da suspensão sempre funcione se PowerDevil for encontrado</li>
           <li xml:lang="ru">Отслеживание DBus для PowerDevil, чтобы пробуждение из режима приостановки всегда работало при наличии PowerDevil;</li>
+          <li xml:lang="sk">Sledovanie DBus pre PowerDevil, takže prebudenie z režimu spánku vždy funguje, ak je PowerDevil nájdený</li>
           <li xml:lang="sl">Pazite na DBus za PowerDevil, zato prebujanje iz stanja pripravljenosti vedno deluje, če je PowerDevil najden</li>
           <li xml:lang="tr">PowerDevil için D-Bus’ı izle, böylece PowerDevil bulunursa uykudan uyanma her zaman çalışır</li>
           <li xml:lang="uk">Реалізовано спостереження DBus для PowerDevil, отже пробудження від присипляння завжди працюватиме, якщо буде виявлено PowerDevil</li>
@@ -945,6 +977,7 @@
           <li xml:lang="nl">Gebruik een consistente dialoogstijl op de instellingenpagina</li>
           <li xml:lang="pt-BR">Uso de um estilo de diálogo consistente na página de configurações</li>
           <li xml:lang="ru">Используется единый стиль диалогов на странице настроек;</li>
+          <li xml:lang="sk">Používanie konzistentného štýlu dialógov na stránke nastavení</li>
           <li xml:lang="sl">Uporabi dosleden slog dialoga na strani z nastavitvami</li>
           <li xml:lang="tr">Ayarlar sayfasında tutarlı iletişim kutusu biçemi kullan</li>
           <li xml:lang="uk">Реалізовано однорідний стиль вікон на сторінці параметрів</li>
@@ -966,6 +999,7 @@
           <li xml:lang="nl">Na het bewerken van een alarm wordt het alarm nu automatisch geactiveerd</li>
           <li xml:lang="pt-BR">Após editar um alarme, ele agora é ativado automaticamente</li>
           <li xml:lang="ru">После редактирования будильник автоматически активируется;</li>
+          <li xml:lang="sk">Po úprave budíka sa budík teraz automaticky aktivuje</li>
           <li xml:lang="sl">Po urejanju alarma je alarm zdaj samodejno aktiviran</li>
           <li xml:lang="tr">Bir alarmı düzenledikten sonra alarm kendiliğinden etkinleştirilir</li>
           <li xml:lang="uk">Реалізовано автоматичну активацію будильника після його редагування</li>
@@ -993,6 +1027,7 @@
         <p xml:lang="nl">Nieuwe functies en reparaties van bugs:</p>
         <p xml:lang="pt-BR">Novas funcionalidades e correções de bugs:</p>
         <p xml:lang="ru">Новые возможности и исправления ошибок:</p>
+        <p xml:lang="sk">Nové funkcie a opravy chýb:</p>
         <p xml:lang="sl">Nove zmožnosti in popravki napak:</p>
         <p xml:lang="tr">Yeni özellikler ve hata düzeltmeleri:</p>
         <p xml:lang="uk">Нові можливості і виправлення вад:</p>
@@ -1015,6 +1050,7 @@
           <li xml:lang="nl">De mogelijkheid om voorinstellingen van de timer in te stellen is toegevoegd</li>
           <li xml:lang="pt-BR">Adicionada a capacidade de definir predefinições de temporizador</li>
           <li xml:lang="ru">Добавлена возможность настройки предустановок таймера;</li>
+          <li xml:lang="sk">Pridaná možnosť nastaviť predvoľby časovača</li>
           <li xml:lang="sl">Dodana je možnost nastavitve prednastavitev časovnika</li>
           <li xml:lang="tr">Sayaç önayarları ayarlama yeteneği eklendi</li>
           <li xml:lang="uk">Додано можливість встановлення наборів таймерів</li>
@@ -1036,6 +1072,7 @@
           <li xml:lang="nl">De mogelijkheid is toegevoegd om de timerduur met 1 minuut te verlengen terwijl de timer loopt</li>
           <li xml:lang="pt-BR">Adicionada a capacidade de aumentar a duração do temporizador em 1 minuto enquanto ele estiver em execução</li>
           <li xml:lang="ru">Добавлена возможность увеличивать длительность таймера на 1 минуту во время его работы;</li>
+          <li xml:lang="sk">Pridaná možnosť predĺžiť trvanie časovača o 1 min počas jeho behu</li>
           <li xml:lang="sl">Dodana možnost podaljšanja trajanja časovnika za 1 minuto med delovanjem časovnika</li>
           <li xml:lang="tr">Sayaç çalışırken sayaç süresini 1 dakika artırma yeteneği eklendi</li>
           <li xml:lang="uk">Додано можливість збільшувати тривалість відліку на 1 хвилину під час роботи таймера</li>
@@ -1057,6 +1094,7 @@
           <li xml:lang="nl">Er is een probleem opgelost waarbij meerdere alarmgeluiden en meldingen voor één alarm werden afgespeeld</li>
           <li xml:lang="pt-BR">Corrigido o problema de reprodução simultânea de múltiplos sons de alarme e notificações para um mesmo alarme</li>
           <li xml:lang="ru">Исправлено воспроизведение нескольких звуков и уведомлений для одного будильника;</li>
+          <li xml:lang="sk">Opravené prehrávanie viacerých zvukov budíka a oznámení pre jeden budík</li>
           <li xml:lang="sl">Popravljeno predvajanje več zvokov alarmov in obvestil za en alarm</li>
           <li xml:lang="tr">Tek bir alarm için birden fazla alarm sesinin ve bildiriminin çalınması düzeltildi</li>
           <li xml:lang="uk">Виправлено проблему, пов'язану із тим, що для одного будильника відтворювалося декілька звуків будильника і нагадувань</li>
@@ -1078,6 +1116,7 @@
           <li xml:lang="nl">Fouten verholpen die ervoor zorgden dat de toepassing niet werkte in een Flatpak</li>
           <li xml:lang="pt-BR">Corrigidos erros que impediam o funcionamento do aplicativo em um Flatpak</li>
           <li xml:lang="ru">Исправлены ошибки, препятствовавшие работе приложения в Flatpak;</li>
+          <li xml:lang="sk">Opravené chyby, ktoré bránili fungovaniu aplikácie vo Flatpak</li>
           <li xml:lang="sl">Popravljene napake, ki so preprečevale delovanje aplikacije v Flatpaku</li>
           <li xml:lang="tr">Uygulamanın Flatpak içinde çalışmasını engelleyen hatalar düzeltildi</li>
           <li xml:lang="uk">Виправлено помилки, які заважали роботі програми у Flatpak</li>
