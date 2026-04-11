@@ -34,7 +34,17 @@ slots:
     bus: session
 
 parts:
+  wayland-protocols:
+    source: https://gitlab.freedesktop.org/wayland/wayland-protocols.git
+    source-tag: 1.47
+    plugin: meson
+    build-packages:
+      - libwayland-dev
+      - meson
+      - pkgconf
   libplasma:
+    after:
+      - wayland-protocols
     plugin: cmake
     source: https://invent.kde.org/plasma/libplasma.git
     cmake-parameters:
