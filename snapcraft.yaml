@@ -35,7 +35,7 @@ slots:
 
 parts:
   wayland:
-    source: https://gitlab.freedesktop.org/wayland/wayland
+    source: https://gitlab.freedesktop.org/wayland/wayland.git
     source-branch: 1.23
     plugin: meson
     build-snaps:
