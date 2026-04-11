@@ -34,7 +34,21 @@ slots:
     bus: session
 
 parts:
+  wayland:
+    source: https://gitlab.freedesktop.org/wayland/wayland
+    source-branch: 1.23
+    plugin: meson
+    build-snaps:
+      - kde-qt6-core24-sdk/latest/beta
+      - kf6-core24-sdk/latest/beta
+    build-packages:
+      - meson
+      - pkgconf
+    build-environment:
+      - PKG_CONFIG_PATH: "$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/pkgconfig:/snap/kde-qt6-core24-sdk/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/pkgconfig:/snap/kf6-core24-sdk/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/pkgconfig"
   wayland-protocols:
+    after:
+      - wayland
     source: https://gitlab.freedesktop.org/wayland/wayland-protocols.git
     source-tag: 1.47
     plugin: meson
