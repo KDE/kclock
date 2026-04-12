@@ -44,6 +44,13 @@ parts:
     build-packages:
       - meson
       - pkgconf
+      - xsltproc
+      - xmlto
+      - libexpat1-dev
+      - libffi-dev
+      - libxml2-dev
+      - doxygen
+      - graphviz
     build-environment:
       - PKG_CONFIG_PATH: "$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/pkgconfig:/snap/kde-qt6-core24-sdk/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/pkgconfig:/snap/kf6-core24-sdk/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/pkgconfig"
   wayland-protocols:
@@ -62,52 +69,31 @@ parts:
     build-environment:
       - PKG_CONFIG_PATH: "$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/pkgconfig:/snap/kde-qt6-core24-sdk/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/pkgconfig:/snap/kf6-core24-sdk/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/pkgconfig"
   libplasma:
-    after:
-      - wayland-protocols
-    plugin: cmake
+    after: [wayland-protocols]
     source: https://invent.kde.org/plasma/libplasma.git
-    cmake-parameters:
-      - -DCMAKE_INSTALL_PREFIX=/usr
-      - -DCMAKE_BUILD_TYPE=Release
-      - -DBUILD_DESKTOPTHEMES=OFF
-      - -DBUILD_TESTING=OFF
+    source-branch: Plasma/6.6
+    plugin: cmake
+    build-packages:
+      - libpulse0
+      - rsync
+    stage-packages:
+      - libpulse0
     build-snaps:
       - kde-qt6-core24-sdk/latest/beta
       - kf6-core24-sdk/latest/beta
-    build-packages:
-      - libxcb-composite0-dev
-      - libxcb-damage0-dev
-      - libxcb-shape0-dev
-      - libxcb-glx0-dev
-      - libvulkan-dev
-      - libxkbcommon-dev
-      - libwayland-dev
-      - doxygen
-      - gettext
-      - graphviz
-      - pkg-config
-      - libgl-dev
-      - libgl1-mesa-dev
-      - libgles-dev
-      - libglvnd-dev
-      - libglx-dev
-      - libegl-dev
-      - libsm-dev
-      - docbook
-      - docbook-xml
-      - docbook-xsl
+    cmake-generator: Ninja
+    cmake-parameters:
+      - -DCMAKE_INSTALL_PREFIX=/usr
+      - -DCMAKE_BUILD_TYPE=Release
+      - -DQT_MAJOR_VERSION=6
+      - -DENABLE_QT5=OFF
+      - -DENABLE_QT6=ON
+      - -DBUILD_TESTING=OFF
+    override-build: |
+      craftctl default
+      rsync -a --ignore-existing $CRAFT_PART_INSTALL/ /
     prime:
-      - -usr/lib/*/cmake/*
-      - -usr/include/*
-      - -usr/share/ECM/*
-      - -usr/share/doc/*
-      - -usr/share/man/*
-      - -usr/share/icons/breeze-dark*
-      - -usr/bin/X11
-      - -usr/lib/gcc/$CRAFT_ARCH_TRIPLET_BUILD_FOR
-      - -usr/lib/aspell/*
-      - -usr/share/docs
-      - -usr/share/lintain
+      - -usr/bin/rsync
 
   plasma-mobile-sounds:
     source: https://invent.kde.org/plasma-mobile/plasma-mobile-sounds.git
