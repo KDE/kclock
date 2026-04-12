@@ -74,8 +74,10 @@ parts:
     plugin: cmake
     build-packages:
       - libpulse0
+      - libxkbcommon-dev
       - rsync
     stage-packages:
+      - libxkbcommon0
       - libpulse0
     cmake-generator: Ninja
     cmake-parameters:
