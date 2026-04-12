@@ -38,9 +38,8 @@ parts:
     source: https://gitlab.freedesktop.org/wayland/wayland.git
     source-branch: 1.23
     plugin: meson
-    build-snaps:
-      - kde-qt6-core24-sdk/latest/beta
-      - kf6-core24-sdk/latest/beta
+    meson-parameters:
+      - --prefix=/usr
     build-packages:
       - meson
       - pkgconf
@@ -59,15 +58,15 @@ parts:
     source: https://gitlab.freedesktop.org/wayland/wayland-protocols.git
     source-tag: 1.47
     plugin: meson
-    build-snaps:
-      - kde-qt6-core24-sdk/latest/beta
-      - kf6-core24-sdk/latest/beta
+    meson-parameters:
+      - --prefix=/usr
     build-packages:
       - libwayland-dev
       - meson
       - pkgconf
     build-environment:
       - PKG_CONFIG_PATH: "$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/pkgconfig:/snap/kde-qt6-core24-sdk/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/pkgconfig:/snap/kf6-core24-sdk/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/pkgconfig"
+      - LD_LIBRARY_PATH: "$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:/snap/ffmpeg-2404-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:/snap/kde-qt6-core24-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/libproxy:$LD_LIBRARY_PATH"
   libplasma:
     after: [wayland-protocols]
     source: https://invent.kde.org/plasma/libplasma.git
@@ -78,9 +77,6 @@ parts:
       - rsync
     stage-packages:
       - libpulse0
-    build-snaps:
-      - kde-qt6-core24-sdk/latest/beta
-      - kf6-core24-sdk/latest/beta
     cmake-generator: Ninja
     cmake-parameters:
       - -DCMAKE_INSTALL_PREFIX=/usr
