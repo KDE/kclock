@@ -686,6 +686,7 @@
           <li xml:lang="tr">Çeşitli hata düzeltmeleri ve kullanıcı arayüzü iyileştirmeleri</li>
           <li xml:lang="uk">Різноманітні виправлення вад і удосконалення інтерфейсу користувача</li>
           <li xml:lang="zh-CN">各种程序缺陷修复和用户界面改进</li>
+          <li xml:lang="zh-TW">諸多錯誤修正與使用者介面改進</li>
           <li>Add a sound picker component for listing alarm sounds</li>
           <li xml:lang="ar">إضافة مكون منتقي الصوت لسرد أصوات المنبه</li>
           <li xml:lang="bg">Добавете компонент за избор на звук за изброяване на звуци на аларми</li>
@@ -707,6 +708,7 @@
           <li xml:lang="tr">Alarm seslerini listelemek için bir ses seçicisi bileşeni ekle</li>
           <li xml:lang="uk">Додано компонент вибору звукових даних для показу списку звуків будильника</li>
           <li xml:lang="zh-CN">新增声音选择器组件以列出可用的闹钟声音</li>
+          <li xml:lang="zh-TW">新增用來列出鬧鐘鈴聲的音訊挑選元件</li>
           <li>Start snooze only after button is pressed</li>
           <li xml:lang="ar">بدء الغفو فقط بعد ضغط الزر</li>
           <li xml:lang="bg">Стартиране на дрямката само след натискане на бутон</li>
@@ -728,6 +730,7 @@
           <li xml:lang="tr">Ertelemeyi yalnızca düğmeye basıldıktan sonra başlat</li>
           <li xml:lang="uk">Реалізовано початок відліку відкладення будильника лише після натискання кнопки</li>
           <li xml:lang="zh-CN">仅在按下按钮后才开始贪睡</li>
+          <li xml:lang="zh-TW">按下按鈕之後才開始貪睡</li>
           <li>Fix alarms not working on PinePhone</li>
           <li xml:lang="ar">إصلاح عدم عمل المنبهات على PinePhone</li>
           <li xml:lang="bg">Поправени са алармите, които не работят на PinePhone</li>
@@ -799,6 +802,7 @@
           <li xml:lang="tr">Taşınabilir aygıtlar için artık Kirigami’nin alt dolaşma çubuğu bileşeni kullanılıyor</li>
           <li xml:lang="uk">Для мобільних систем у новій версії використано компонент нижньої панелі навігації з Kirigami</li>
           <li xml:lang="zh-CN">手机版使用 Kirigami 的底部导航栏组件</li>
+          <li xml:lang="zh-TW">在行動版使用 Kirigami 的底部導覽列元件</li>
           <li>A Plasma style sidebar is now used on desktop</li>
           <li xml:lang="ar">استخدام شريط جانبي بنمط بلازما على سطح المكتب</li>
           <li xml:lang="bg">Страничната лента в стил Plasma вече се използва на настолните компютри</li>
@@ -886,6 +890,7 @@
           <li xml:lang="tr">Sayaç ve alarm formları sayfasında artık eylem çubukları kullanılıyor</li>
           <li xml:lang="uk">У новій версії на сторінці таймерів та будильників використано панелі кнопок дій</li>
           <li xml:lang="zh-CN">操作栏现在被用于计时器和闹钟表单页面</li>
+          <li xml:lang="zh-TW">在計時器與鬧鐘表單頁面使用動作列</li>
           <li>The settings button has been moved to the top actions bar</li>
           <li xml:lang="ar">نقل زر الإعدادات إلى شريط الإجراءات العلوي</li>
           <li xml:lang="bg">Бутонът за настройки е преместен в горната лента с действия</li>
@@ -961,6 +966,7 @@
           <li xml:lang="tr">PowerDevil için D-Bus’ı izle, böylece PowerDevil bulunursa uykudan uyanma her zaman çalışır</li>
           <li xml:lang="uk">Реалізовано спостереження DBus для PowerDevil, отже пробудження від присипляння завжди працюватиме, якщо буде виявлено PowerDevil</li>
           <li xml:lang="zh-CN">监视 DBus 中的 PowerDevil，如果发现 PowerDevil，则从挂起状态中唤醒</li>
+          <li xml:lang="zh-TW">透過 DBus 監聽 PowerDevil，確保「從休眠中喚醒」功能只要找得到 PowerDevil 就能正常運作</li>
           <li>Use consistent dialog style on the settings page</li>
           <li xml:lang="ar">استخدام نمط حوار متسق في صفحة الإعدادات</li>
           <li xml:lang="bg">Използване на последователен стил на диалоговия прозорец на страницата с настройки</li>
