@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kclock package.
 #
-# SPDX-FileCopyrightText: 2024, 2025, 2026 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2024-2026 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-16 00:50+0000\n"
-"PO-Revision-Date: 2026-02-19 09:25+0200\n"
+"PO-Revision-Date: 2026-05-19 10:20+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 26.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -178,7 +178,7 @@ msgstr "התראה"
 #, kde-format
 msgctxt "Edit alarm page title"
 msgid "Editing %1"
-msgstr "%1 נערך"
+msgstr "עריכת %1"
 
 #: qml/alarm/AlarmFormPage.qml:26 qml/alarm/AlarmListPage.qml:28
 #, kde-format
@@ -387,7 +387,7 @@ msgstr "שעון 24 שעות"
 #: qml/settings/SettingsPage.qml:58
 #, kde-format
 msgid "Notifications for running timers"
-msgstr "התראות לקובצי זמן פעילים"
+msgstr "התראות לקוצבי זמן פעילים"
 
 #: qml/settings/SettingsPage.qml:60
 #, kde-format
@@ -500,7 +500,7 @@ msgstr "התחלה"
 #: qml/stopwatch/StopwatchPage.qml:273 qml/stopwatch/StopwatchPage.qml:314
 #, kde-format
 msgid "Lap"
-msgstr "סיבוב"
+msgstr "הקפה"
 
 #: qml/stopwatch/StopwatchPage.qml:294
 #, kde-format
@@ -514,7 +514,7 @@ msgstr ""
 #: qml/stopwatch/StopwatchPage.qml:322
 #, kde-format
 msgid "Lap Time"
-msgstr "זמן חזרה"
+msgstr "זמן הקפה"
 
 #: qml/stopwatch/StopwatchPage.qml:329
 #, kde-format
