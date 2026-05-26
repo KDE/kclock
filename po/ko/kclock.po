@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-16 00:50+0000\n"
-"PO-Revision-Date: 2026-02-04 00:33+0100\n"
+"PO-Revision-Date: 2026-05-25 19:12+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -763,16 +763,14 @@ msgid "Add timer"
 msgstr "타이머 추가"
 
 #: qml/timer/TimerLockscreenPopup.qml:21
-#, fuzzy, kde-format
-#| msgid "Alarm is ringing"
+#, kde-format
 msgid "Timer is ringing"
-msgstr "알람이 울리는 중"
+msgstr "타이머가 울리는 중"
 
 #: qml/timer/TimerLockscreenPopup.qml:37
-#, fuzzy, kde-format
-#| msgid "Alarm not found"
+#, kde-format
 msgid "Timer not found"
-msgstr "알람을 찾을 수 없음"
+msgstr "타이머를 찾을 수 없음"
 
 #: qml/timer/TimerLockscreenPopup.qml:39
 #, kde-format
@@ -782,7 +780,7 @@ msgstr "정지"
 #: qml/timer/TimerLockscreenPopup.qml:40
 #, kde-format
 msgid "Repeat"
-msgstr ""
+msgstr "반복"
 
 #: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:121
 #, kde-format
