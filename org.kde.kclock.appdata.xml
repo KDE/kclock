@@ -522,6 +522,7 @@
         <p xml:lang="he">יכולות ותיקוני תקלות חדשים במהדורה הזאת:</p>
         <p xml:lang="ia">Nove characteristicas e correctiones de faltas in iste version:</p>
         <p xml:lang="ka">ახალი ფუნქციები და შეცდომების გასწორება ამ ვერსიაში:</p>
+        <p xml:lang="ko">이 릴리스에 추가된 새 기능과 버그 수정:</p>
         <p xml:lang="lt">Naujos ypatybės ir klaidų ištaisymai šioje laidoje:</p>
         <p xml:lang="nl">Nieuwe functies en reparaties van bugs in deze uitgave:</p>
         <p xml:lang="pt-BR">Novas funcionalidades e correções de bugs nesta versão:</p>
@@ -545,6 +546,7 @@
           <li xml:lang="he">תוקן כפתור הוספת דקה לקוצב הזמן.</li>
           <li xml:lang="ia">Corrigite que le chronometro adde button de un minuta.</li>
           <li xml:lang="ka">გასწორდა ტაიმერისთვის ერთი წუთის დამატების ღილაკი.</li>
+          <li xml:lang="ko">타이머에 1분 추가 단추 동작을 수정했습니다.</li>
           <li xml:lang="lt">Ištaisytas laikmačio vienos minutės pridėjimo mygtukas.</li>
           <li xml:lang="nl">Gerepareerde timer, voeg één minuut toe met de knop.</li>
           <li xml:lang="pt-BR">Corrigido botão para adicionar um minuto ao temporizador</li>
@@ -567,6 +569,7 @@
           <li xml:lang="he">סרגל הצד מבוסס לשוניות מעתה (בדומה לסרגל ניווט תחתון).</li>
           <li xml:lang="ia">Comjmutate a barra lateral basate sur barra de scheda (simile al barra de navigation a basso) </li>
           <li xml:lang="ka">გადართვა ჩანართებზე ბაზირებულ გვერდით პანელზე (ქვედა ნავიგაციის პანელის მსგავსად).</li>
+          <li xml:lang="ko">탭 표시줄 기반 사이드바로 전환했습니다(아래쪽 탐색 표시줄과 유사한 형태).</li>
           <li xml:lang="lt">Perjungta į kortelių juosta pagrįstą šoninę juostą (panašią į apatinę naršymo juostą).</li>
           <li xml:lang="nl">Overgeschakeld naar een zijbalk op basis van tabbladen (vergelijkbaar met de onderste navigatiebalk).</li>
           <li xml:lang="pt-BR">Alteração para uma barra lateral baseada em abas (semelhante à barra de navegação inferior).</li>
@@ -605,6 +608,7 @@
           <li xml:lang="he">תמיכה בפעולה כסוכן רקע בעת שימוש דרך flatpak</li>
           <li xml:lang="ia">Supporto per demone de fundo quando usante flatpak</li>
           <li xml:lang="ka">ფონური დემონის მხარდაჭერა flatpak-ის გამოყენებისას</li>
+          <li xml:lang="ko">Flatpak을 사용할 때 배경 데몬 지원</li>
           <li xml:lang="lt">Foninės tarnybos palaikymas, kai naudojamas Flatpak</li>
           <li xml:lang="nl">Ondersteuning voor achtergronddaemons bij gebruik van Flatpak</li>
           <li xml:lang="pt-BR">Suporte para daemon em segundo plano ao usar o Flatpak</li>
@@ -627,6 +631,7 @@
           <li xml:lang="he">תוקנה יצירת רשומות יומן מוגזמות במערכות שאינן פלזמה</li>
           <li xml:lang="ia">Corrige generation excessive de log (registros) sur systema que non es de Plasma</li>
           <li xml:lang="ka">გასწორდა ზედმეტი ჟურნალის ჩანაწერების გენერაცია არა-Plasma სისტემებზე</li>
+          <li xml:lang="ko">비 Plasma 시스템에서의 과도한 로그 생성 문제 수정</li>
           <li xml:lang="lt">Ištaisytas perteklinis žurnalo generavimas ne Plasma sistemose</li>
           <li xml:lang="nl">Los het probleem op met overmatige generatie van een log op niet-Plasma-systemen.</li>
           <li xml:lang="pt-BR">Correção de geração excessiva de logs em sistemas que não sejam Plasma</li>
@@ -656,6 +661,7 @@
           <li xml:lang="he">תוקנה ההודעה הקופצת „סוכן השעון לא נמצא”</li>
           <li xml:lang="ia">Corrige message de popup "Demone de Clock (Horologio) non trovate" </li>
           <li xml:lang="ka">გასწორდა მხტუნარა შეტყობინება 'საათის დემონი აღმოჩენილი არაა'</li>
+          <li xml:lang="ko">"시계 데몬을 찾을 수 없음" 팝업 메시지 수정</li>
           <li xml:lang="lt">Ištaisytas iškylantysis „Nerasta laikrodžio tarnyba“ pranešimas</li>
           <li xml:lang="nl">Los het pop-upbericht "Klokdaemon niet gevonden" op</li>
           <li xml:lang="pt-BR">Correção da mensagem pop-up "Daemon do relógio não encontrado"</li>
@@ -678,6 +684,7 @@
           <li xml:lang="he">מגוון תיקוני תקלות ושיפורים בממשק המשתמש</li>
           <li xml:lang="ia">Varie correctiones de faltas e melioramentos de interfacie de usator</li>
           <li xml:lang="ka">მომხმარებლის ინტერფეისის გაუმჯობესება და შეცდომების გამოსწორება</li>
+          <li xml:lang="ko">다양한 버그 수정과 사용자 인터페이스 개선</li>
           <li xml:lang="lt">Įvairūs klaidų ištaisymai ir naudotojo sąsajos patobulinimai</li>
           <li xml:lang="nl">Diverse reparaties van fouten en verbeteringen aan de gebruikersinterface</li>
           <li xml:lang="pt-BR">Diversas correções de bugs e melhorias na interface do usuário</li>
@@ -700,6 +707,7 @@
           <li xml:lang="he">נוסף רכיב בורר שמע להצעת צלילי התזכורות</li>
           <li xml:lang="ia">Adde un componente selector de sono per listar sonos de alarma</li>
           <li xml:lang="ka">დაემატა ხმის არჩევის კომპონენტი განგაშის ხმების ჩამოსათვლელად</li>
+          <li xml:lang="ko">알람 소리를 표시하는 소리 선택기 구성 요소 추가</li>
           <li xml:lang="lt">Pridėtas garsų parinkiklio komponentas, skirtas išvardyti žadintuvo garsus</li>
           <li xml:lang="nl">Voeg een component voor het selecteren van geluiden toe om alarmgeluiden weer te geven</li>
           <li xml:lang="pt-BR">Adicionado um componente de seleção de som para listar sons de alarme</li>
@@ -722,6 +730,7 @@
           <li xml:lang="he">להתחיל נודניק אחר לאחר לחיצת הכפתור</li>
           <li xml:lang="ia">Initia snooze (dormettar) solmente post que le button es pressate</li>
           <li xml:lang="ka">გადადების დაწყება, მხოლოდ, ღილაკზე დაჭერის შემდეგ</li>
+          <li xml:lang="ko">단추를 눌렀을 때에만 지연 시작</li>
           <li xml:lang="lt">Snaudimas pradedamas tik paspaudžius mygtuką</li>
           <li xml:lang="nl">Alleen sluimeren starten nadat er op de knop is gedrukt</li>
           <li xml:lang="pt-BR">A função soneca só inicia após o botão ser pressionado</li>
@@ -744,6 +753,7 @@
           <li xml:lang="he">תוקנו התראות שלא עובדות ב־PinePhone</li>
           <li xml:lang="ia">Corrige alarmas non functionante sur PinePhone</li>
           <li xml:lang="ka">გასწორდა განგაშების პრობლემა PinePhone-ზე</li>
+          <li xml:lang="ko">PinePhone에서 알람이 작동하지 않는 문제 수정</li>
           <li xml:lang="lt">Ištaisyti PinePhone telefonuose neveikiantys žadintuvai</li>
           <li xml:lang="nl">Alarmen repareren die niet werken op PinePhone</li>
           <li xml:lang="pt-BR">Correção de alarmes que não funcionam no PinePhone</li>
@@ -771,6 +781,7 @@
         <p xml:lang="he">שינויים:</p>
         <p xml:lang="ia">Modificationes:</p>
         <p xml:lang="ka">ცვლილებები:</p>
+        <p xml:lang="ko">변경 사항:</p>
         <p xml:lang="lt">Pakeitimai:</p>
         <p xml:lang="nl">Wijzigingen:</p>
         <p xml:lang="pt-BR">Alterações:</p>
@@ -794,6 +805,7 @@
           <li xml:lang="he">נעשה מעתה שימוש ברכיב סרגל הניווט התחתון לניידים</li>
           <li xml:lang="ia">Lecomponente de barra de navigation de basso de Kirigami es nunc usate per mobile</li>
           <li xml:lang="ka">ახლა მობილურისთვის გამოიყენება Kirigami-ის ქვედა ნავიგაციის კომპონენტი</li>
+          <li xml:lang="ko">Kirigami의 아래쪽 탐색 표시줄을 모바일 환경에서도 사용함</li>
           <li xml:lang="lt">Dabar mobiliuosiuose įrenginiuose yra naudojamas Kirigami apatinės naršymo juostos komponentas</li>
           <li xml:lang="nl">De component voor de onderste navigatiebalk van Kirigami wordt nu ook voor mobiele apparaten gebruikt</li>
           <li xml:lang="pt-BR">O componente de barra de navegação inferior do Kirigami agora é usado na versão mobile</li>
@@ -816,6 +828,7 @@
           <li xml:lang="he">מעתה נעשה שימוש בסרגל צד בסגנון פלזמה בשולחן העבודה</li>
           <li xml:lang="ia">Un barra lateral de stilo dePlasmaes nunc usate sur scriptorio</li>
           <li xml:lang="ka">სამუშაო მაგიდაზე ახლა Plasma-ის სტილის გვერდითი პანელი გამოიყენება</li>
+          <li xml:lang="ko">데스크톱에서 Plasma 스타일 사이드바를 사용함</li>
           <li xml:lang="lt">Dabar, darbalaukio aplinkoje yra naudojama Plasma stiliaus šoninė juosta</li>
           <li xml:lang="nl">Op het bureaublad wordt nu een zijbalk in Plasma-stijl gebruikt</li>
           <li xml:lang="pt-BR">Agora, no desktop, é utilizada uma barra lateral no estilo Plasma</li>
@@ -838,6 +851,7 @@
           <li xml:lang="he">הפריט בשורת המערכת מופיע מעכשיו רק כשיש התראות ממתינות</li>
           <li xml:lang="ia">Le elemento de tabuliero de systema non solmente monstra quando alarmas es pendente</li>
           <li xml:lang="ka">ხატულს სისტემურ საათთან ახლა, მხოლოდ, ნაჩვენებია, თუ განგაშები რიგშია</li>
+          <li xml:lang="ko">대기 중인 알람이 있을 때에만 시스템 트레이 항목 표시</li>
           <li xml:lang="lt">Dabar, sistemos dėklo elementas rodomas tik tada, kai yra laukiančių žadintuvų</li>
           <li xml:lang="nl">Het item in het systeemvak wordt nu alleen nog weergegeven wanneer er alarmen in behandeling zijn</li>
           <li xml:lang="pt-BR">O item da bandeja do sistema agora só é exibido quando há alarmes pendentes</li>
@@ -860,6 +874,7 @@
           <li xml:lang="he">הסוכן נעצר אוטומטית אם אין התראות וקוצבי זמן ממתינים</li>
           <li xml:lang="ia">Le demoine stoppa automaticamente si necun alarmas e chronometros (timers) es pendente</li>
           <li xml:lang="ka">დემონი ავტომატურად გაჩერდება, თუ განგაშები და ტაიმერები რიგში არაა</li>
+          <li xml:lang="ko">대기 중인 알람과 타이머가 없을 때 자동으로 데몬 정지</li>
           <li xml:lang="lt">Tarnyba automatiškai sustabdoma, jei nėra laukiančių žadintuvų ar laikmačių</li>
           <li xml:lang="nl">De daemon stopt automatisch als er geen alarmen of timers meer actief zijn</li>
           <li xml:lang="pt-BR">O serviço para automaticamente se não houver alarmes ou temporizadores pendentes</li>
@@ -882,6 +897,7 @@
           <li xml:lang="he">סרגלי הפעולות נמצאים בשימוש בעמוד הטפסים של קוצבי הזמן וההתראות</li>
           <li xml:lang="ia">Barras de action es nunc usate sur le pagina de formas de chronometro e alarmas </li>
           <li xml:lang="ka">ქმედებების პანელები ახლა გამოიყენება ტაიმერისა და განგაშის ფორმების გვერდზე</li>
+          <li xml:lang="ko">타이머와 알람 폼 페이지에서 동작 표시줄을 사용함</li>
           <li xml:lang="lt">Dabar, laikmačio ir žadintuvų formos puslapyje yra naudojamos veiksmo juostos</li>
           <li xml:lang="nl">Actiebalken worden nu gebruikt op de formulierenpagina voor timers en alarmen</li>
           <li xml:lang="pt-BR">Agora, as barras de ação são usadas nas páginas de formulários de temporizador e alarmes</li>
@@ -904,6 +920,7 @@
           <li xml:lang="he">כפתור ההגדרות עבר לראש סרגל הפעולות העליון</li>
           <li xml:lang="ia">Le button de preferentias ha essite movite al barra de actiones de culmine</li>
           <li xml:lang="ka">მორგების ღილაკი გადატანილია ზედა ქმედებების პანელზე</li>
+          <li xml:lang="ko">설정 단추를 위쪽 동작 표시줄로 이동함</li>
           <li xml:lang="lt">Nuostatų mygtukas perkeltas į viršutinę veiksmų juostą</li>
           <li xml:lang="nl">De instellingenknop is verplaatst naar de bovenste actiebalk</li>
           <li xml:lang="pt-BR">O botão de configurações foi movido para a barra de ações superior</li>
@@ -935,6 +952,7 @@
         <p xml:lang="he">שינויים:</p>
         <p xml:lang="ia">Modificationes:</p>
         <p xml:lang="ka">ცვლილებები:</p>
+        <p xml:lang="ko">변경 사항:</p>
         <p xml:lang="lt">Pakeitimai:</p>
         <p xml:lang="nl">Wijzigingen:</p>
         <p xml:lang="pt-BR">Alterações:</p>
@@ -958,6 +976,7 @@
           <li xml:lang="he">להשגיח על PowerDevil דרך D-Bus, כך שהתעוררות מהשהיה תמיד תעבוד אם PowerDevil נמצא</li>
           <li xml:lang="ia">Observa DBus per PowerDevil, assi que evelia ex suspende functiona sempre si PowerDevil es trovate</li>
           <li xml:lang="ka">PowerDevil-ის ლოდინი DBus-ზე, ასე რომ, გაღვიძება ყოველთვის მუშაობს, თუ PowerDevil აღმოჩენილია</li>
+          <li xml:lang="ko">DBus에서 PowerDevil의 존재를 감지하여 PowerDevil이 있을 때에 절전 모드에서 깨어나기를 지원함</li>
           <li xml:lang="lt">Stebima, ar DBus yra PowerDevil, kad prikėlimas iš pristabdymo visada veiktų, jei yra randamas PowerDevil</li>
           <li xml:lang="nl">Houd DBus in de gaten voor PowerDevil, zodat het ontwaken uit de slaapstand altijd werkt als PowerDevil wordt gevonden</li>
           <li xml:lang="pt-BR">Monitora o DBus em busca de PowerDevil, para que a ativação a partir da suspensão sempre funcione se PowerDevil for encontrado</li>
@@ -980,6 +999,7 @@
           <li xml:lang="he">שימוש בסגנון חלונית עקבי בעמוד ההגדרות</li>
           <li xml:lang="ia">Usa dialogo de stilo consistente sur le pagina de preferentias</li>
           <li xml:lang="ka">მუდმივი დიალოგის სტილის გამოყენება მორგების გვერდზე</li>
+          <li xml:lang="ko">설정 페이지에서 일관성 있는 대화 상자 스타일 사용</li>
           <li xml:lang="lt">Nuostatų puslapyje naudojamas atitinkamas dialogo stilius</li>
           <li xml:lang="nl">Gebruik een consistente dialoogstijl op de instellingenpagina</li>
           <li xml:lang="pt-BR">Uso de um estilo de diálogo consistente na página de configurações</li>
@@ -1002,6 +1022,7 @@
           <li xml:lang="he">לאחר עריכת התראה, ההתראה מופעלת מעתה אוטומטית</li>
           <li xml:lang="ia">Post modficar un alarma, le alarma es nunc activate automaticamente</li>
           <li xml:lang="ka">განგაშის ჩასწორების შემდეგ, ახლა, განგაში ავტომატურად გააქტიურდება</li>
+          <li xml:lang="ko">알람을 편집한 후 알람을 자동으로 활성화</li>
           <li xml:lang="lt">Dabar, po žadintuvo taisymo, žadintuvas automatiškai aktyvuojamas</li>
           <li xml:lang="nl">Na het bewerken van een alarm wordt het alarm nu automatisch geactiveerd</li>
           <li xml:lang="pt-BR">Após editar um alarme, ele agora é ativado automaticamente</li>
@@ -1030,6 +1051,7 @@
         <p xml:lang="he">יכולות חדשות ותיקוני תקלות:</p>
         <p xml:lang="ia">Nove characteristicas e correctiones de faltas:</p>
         <p xml:lang="ka">ახალი ფუნქციები და შეცდომების გასწორებები:</p>
+        <p xml:lang="ko">새 기능과 버그 수정:</p>
         <p xml:lang="lt">Naujos ypatybės ir klaidų ištaisymai:</p>
         <p xml:lang="nl">Nieuwe functies en reparaties van bugs:</p>
         <p xml:lang="pt-BR">Novas funcionalidades e correções de bugs:</p>
@@ -1053,6 +1075,7 @@
           <li xml:lang="he">נוספה האפשרות להגדיר תצורות קוצב זמן</li>
           <li xml:lang="ia">Addite lehabilitate de assignar preinsimules de chronometro (timer presets)</li>
           <li xml:lang="ka">დაემატა ტაიმერის პრესეტების დაყენების შესაძლებლობა</li>
+          <li xml:lang="ko">타이머 사전 설정 추가</li>
           <li xml:lang="lt">Pridėta galimybė nustatyti išankstines laikmačio parinktis</li>
           <li xml:lang="nl">De mogelijkheid om voorinstellingen van de timer in te stellen is toegevoegd</li>
           <li xml:lang="pt-BR">Adicionada a capacidade de definir predefinições de temporizador</li>
@@ -1075,6 +1098,7 @@
           <li xml:lang="he">נוספה אפשרות להגדיר את משך קוצב הזמן בדקה בזמן שקוצב הזמן רץ</li>
           <li xml:lang="ia">Addite habilitate a augmentar duration de chronometro per 1m durante que le chronometro es executante</li>
           <li xml:lang="ka">დაემატა ტაიმერის ხანგრძლივობის ერთი წუთით გაზრდის საშუალება, როცა ტაიმერი გაშვებულია</li>
+          <li xml:lang="ko">타이머가 실행 중일 때 1분 더 연장하는 기능 추가</li>
           <li xml:lang="lt">Pridėta galimybė didinti laikmačio trukmę po 1 minutę, kol laikmatis veikia</li>
           <li xml:lang="nl">De mogelijkheid is toegevoegd om de timerduur met 1 minuut te verlengen terwijl de timer loopt</li>
           <li xml:lang="pt-BR">Adicionada a capacidade de aumentar a duração do temporizador em 1 minuto enquanto ele estiver em execução</li>
@@ -1097,6 +1121,7 @@
           <li xml:lang="he">תוקנה בעיה שמגוון צלילי התראות והודעות הושמעו להתראה אחת</li>
           <li xml:lang="ia">Corrigite que multiple notificationes e sonos de alarma es executate perun alarma</li>
           <li xml:lang="ka">გასწორდა ერთზე მეტი განგაშისა და შეტყობინების ხმის ერთდროული დაკვრა ერთი განგაშისთვის</li>
+          <li xml:lang="ko">한 알람에서 여러 소리와 알람이 재생될 때의 문제점 수정</li>
           <li xml:lang="lt">Ištaisyta klaida, kai vienam žadintuvui skambėjo daug žadintuvo garsų ir buvo rodoma daug pranešimų</li>
           <li xml:lang="nl">Er is een probleem opgelost waarbij meerdere alarmgeluiden en meldingen voor één alarm werden afgespeeld</li>
           <li xml:lang="pt-BR">Corrigido o problema de reprodução simultânea de múltiplos sons de alarme e notificações para um mesmo alarme</li>
@@ -1119,6 +1144,7 @@
           <li xml:lang="he">תוקנו שגיאות שמנעו מהיישום לעבוד ב־Flatpak</li>
           <li xml:lang="ia">Corrigite errores que preveniva le application ab functionar in un Flatpak</li>
           <li xml:lang="ka">გასწორდა შეცდომები, რომლებიც აპლიკაციას Flatpak-ში მუშაობის საშუალებას არ აძლევდა</li>
+          <li xml:lang="ko">Flatpak으로 앱을 설치했을 때 작동하지 않는 오류 수정</li>
           <li xml:lang="lt">Ištaisytos klaidos, kurios neleido programai veikti Flatpak aplinkoje</li>
           <li xml:lang="nl">Fouten verholpen die ervoor zorgden dat de toepassing niet werkte in een Flatpak</li>
           <li xml:lang="pt-BR">Corrigidos erros que impediam o funcionamento do aplicativo em um Flatpak</li>
