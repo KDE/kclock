@@ -41,6 +41,7 @@
                 "Name[sl]": "HanY",
                 "Name[sv]": "HanY",
                 "Name[tr]": "HanY",
+                "Name[ug]": "HanY",
                 "Name[uk]": "HanY",
                 "Name[zh_CN]": "HanY",
                 "Name[zh_TW]": "HanY"
@@ -77,6 +78,7 @@
         "Description[sl]": "Gradnik KClock",
         "Description[sv]": "Klockkomponent",
         "Description[tr]": "K Saat araç takımı",
+        "Description[ug]": "K سائەت ئەپچە",
         "Description[uk]": "Віджет KClock",
         "Description[zh_CN]": "KClock 时钟小部件",
         "Description[zh_TW]": "KClock 元件",
@@ -119,6 +121,7 @@
         "Name[sl]": "KClock",
         "Name[sv]": "Klocka",
         "Name[tr]": "K Saat",
+        "Name[ug]": "K سائەت",
         "Name[uk]": "KClock",
         "Name[zh_CN]": "KClock 时钟",
         "Name[zh_TW]": "KClock",
