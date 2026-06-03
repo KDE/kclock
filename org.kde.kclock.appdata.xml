@@ -51,6 +51,7 @@
   <name xml:lang="sl">Clock</name>
   <name xml:lang="sv">Klocka</name>
   <name xml:lang="tr">Saat</name>
+  <name xml:lang="ug">سائەت</name>
   <name xml:lang="uk">Годинник</name>
   <name xml:lang="zh-CN">时钟</name>
   <name xml:lang="zh-TW">時鐘</name>
@@ -224,6 +225,7 @@
       <caption xml:lang="sl">Mobilni pogled</caption>
       <caption xml:lang="sv">Mobil vy</caption>
       <caption xml:lang="tr">Taşınabilir görünümü</caption>
+      <caption xml:lang="ug">كۆچمە كۆرۈنۈش</caption>
       <caption xml:lang="uk">Вигляд на мобільному пристрої</caption>
       <caption xml:lang="zh-CN">移动设备视图</caption>
       <caption xml:lang="zh-TW">行動版檢視</caption>
@@ -268,6 +270,7 @@
       <caption xml:lang="sl">Namizni pogled</caption>
       <caption xml:lang="sv">Skrivbordsvy</caption>
       <caption xml:lang="tr">Masaüstü görünümü</caption>
+      <caption xml:lang="ug">ئۈستەلئۈستى كۆرۈنۈش</caption>
       <caption xml:lang="uk">Вигляд на комп'ютері</caption>
       <caption xml:lang="zh-CN">桌面视图</caption>
       <caption xml:lang="zh-TW">桌面版檢視</caption>
@@ -790,6 +793,7 @@
         <p xml:lang="sk">Zmeny:</p>
         <p xml:lang="sl">Spremembe:</p>
         <p xml:lang="tr">Değişiklikler:</p>
+        <p xml:lang="ug">ئۆزگىرىش:</p>
         <p xml:lang="uk">Зміни:</p>
         <p xml:lang="zh-CN">更改：</p>
         <p xml:lang="zh-TW">變更：</p>
@@ -961,6 +965,7 @@
         <p xml:lang="sk">Zmeny:</p>
         <p xml:lang="sl">Spremembe:</p>
         <p xml:lang="tr">Değişiklikler:</p>
+        <p xml:lang="ug">ئۆزگىرىش:</p>
         <p xml:lang="uk">Зміни:</p>
         <p xml:lang="zh-CN">更改：</p>
         <p xml:lang="zh-TW">變更：</p>
