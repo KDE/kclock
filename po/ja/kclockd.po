@@ -1,11 +1,12 @@
+# SPDX-FileCopyrightText: 2026 Mint <5602mint@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-16 00:50+0000\n"
-"PO-Revision-Date: 2020-06-13 17:20-0700\n"
-"Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
-"Language-Team: Japanese <kde-jp@kde.org>\n"
+"PO-Revision-Date: 2026-06-03 19:25+0900\n"
+"Last-Translator: Mint <5602mint@gmail.com>\n"
+"Language-Team: Japanese <kde-i18n-doc@kde.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,213 +14,216 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
+"X-Generator: Lokalize 26.04.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Mint"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "5602mint@gmail.com"
 
 #: alarm.cpp:75 alarm.h:51
 #, kde-format
 msgid "Alarm"
-msgstr ""
+msgstr "アラーム"
 
 #: alarm.cpp:79 timer.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Dismiss"
-msgstr ""
+msgstr "無視"
 
 #: alarm.cpp:82
 #, kde-format
 msgid "Dismiss"
-msgstr ""
+msgstr "無視"
 
 #: alarm.cpp:85
 #, kde-format
 msgid "Snooze"
-msgstr ""
+msgstr "スヌーズ"
 
 #: alarmmodel.cpp:255
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Alarm: <shortcut>%1 %2</shortcut>"
-msgstr ""
+msgstr "アラーム: <shortcut>%1の %2</shortcut>"
 
 #: kclockrunner.cpp:74
 #, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "+1 Minute"
-msgstr ""
+msgstr "一分延長"
 
 #: kclockrunner.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset Timer"
-msgstr ""
+msgstr "リセット"
 
 #: kclockrunner.cpp:82
 #, kde-format
 msgctxt "Note this is a KRunner keyword"
 msgid "timer"
-msgstr ""
+msgstr "タイマー"
 
 #: kclockrunner.cpp:99
 #, kde-format
 msgctxt "Timer running or paused (remaining time)"
 msgid "%1 (%2 Remaining)"
-msgstr ""
+msgstr "%1 (残り時間: %2)"
 
 #: kclockrunner.cpp:101
 #, kde-format
 msgctxt "Timer not running (timer length)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: kclockrunner.cpp:112
 #, kde-format
 msgctxt "KRunner category"
 msgid "Timer"
-msgstr ""
+msgstr "タイマー"
 
 #: kclockrunner.cpp:116
 #, kde-format
 msgctxt "@action"
 msgid "Pause"
-msgstr ""
+msgstr "一時停止"
 
 #: kclockrunner.cpp:118
 #, kde-format
 msgctxt "@action"
 msgid "Resume"
-msgstr ""
+msgstr "再開"
 
 #: kclockrunner.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "Start Timer"
-msgstr ""
+msgstr "タイマーをスタート"
 
 #: kclockrunner.cpp:135
 #, kde-format
 msgctxt "Note this is a KRunner keyword"
 msgid "alarm"
-msgstr ""
+msgstr "alarm"
 
 #: kclockrunner.cpp:157
 #, kde-format
 msgctxt "Alarm name (time)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: kclockrunner.cpp:167
 #, kde-format
 msgctxt "KRunner category"
 msgid "Alarm"
-msgstr ""
+msgstr "アラーム"
 
 #: kclockrunner.cpp:171
 #, kde-format
 msgctxt "@action Dismiss Alarm"
 msgid "Dismiss"
-msgstr ""
+msgstr "無視"
 
 #: kclockrunner.cpp:174
 #, kde-format
 msgctxt "Disable timer (rings in time)"
 msgid "Disable (Rings in %1)"
-msgstr ""
+msgstr "オフにする (次に鳴るまでの残り時間: %1)"
 
 #: kclockrunner.cpp:176
 #, kde-format
 msgctxt "@action Enable Alarm"
 msgid "Enable"
-msgstr ""
+msgstr "オンにする"
 
 #: main.cpp:32
 #, kde-format
 msgid "Don't use PowerDevil for alarms if it is available"
-msgstr ""
+msgstr "PowerDevil が利用可能でもアラームに使用しません"
 
 #: main.cpp:48
 #, kde-format
 msgid "© 2020-2022 KDE Community"
-msgstr ""
+msgstr "© 2020-2022 KDE Community"
 
 #: main.cpp:49
 #, kde-format
 msgid "Devin Lin"
-msgstr ""
+msgstr "Devin Lin"
 
 #: main.cpp:50
 #, kde-format
 msgid "Han Young"
-msgstr ""
+msgstr "Han Young"
 
 #: main.cpp:51
 #, kde-format
 msgid "Kai Uwe Broulik"
-msgstr ""
+msgstr "Kai Uwe Broulik"
 
 #: main.cpp:51
 #, kde-format
 msgctxt "Author"
 msgid "Desktop Integration"
-msgstr ""
+msgstr "デスクトップとの統合"
 
 #: timer.cpp:65
 #, kde-format
 msgid "Timer complete"
-msgstr ""
+msgstr "タイマー終了"
 
 #: timer.cpp:296
 #, kde-format
 msgid "Your timer %1 has finished!"
-msgstr ""
+msgstr "タイマー「%1」終了！"
 
 #: timermodel.cpp:269
 #, kde-format
 msgctxt "@action:button Open kclock app"
 msgid "Open Clock"
-msgstr ""
+msgstr "時計を開く"
 
 #: timermodel.cpp:274
 #, kde-format
 msgctxt "@action:button Add minute to timer"
 msgid "+1 Minute"
-msgstr ""
+msgstr "一分延長"
 
 #: timermodel.cpp:277
 #, kde-format
 msgctxt "@action:button Reset timer"
 msgid "Reset"
-msgstr ""
+msgstr "リセット"
 
 #: timermodel.cpp:280 timermodel.cpp:305
 #, kde-format
 msgctxt "@action:button Pause timer"
 msgid "Pause"
-msgstr ""
+msgstr "一時停止"
 
 #: timermodel.cpp:298
 #, kde-format
 msgctxt "@title:notification Timer name (paused)"
 msgid "%1 (Paused)"
-msgstr ""
+msgstr "%1 (一時停止中)"
 
 #: timermodel.cpp:307
 #, kde-format
 msgctxt "@action:button Resume timer"
 msgid "Resume"
-msgstr ""
+msgstr "再開"
 
 #: xdgportal.cpp:34
 #, kde-format
 msgid ""
 "Allow the clock process to be in the background and launched on startup."
 msgstr ""
+"時計の進行をバックグラウンドで行ったり、スタートアップ時に起動するようにしま"
+"す。"
