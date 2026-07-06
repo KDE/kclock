@@ -49,6 +49,7 @@ ListView {
         anchors.centerIn: parent
         visible: root.count == 0
         text: i18n("No locations found")
+        explanation: i18nc("@info:usagetip", "Check spelling or try the nearest major city")
         icon.name: "globe"
     }
 
