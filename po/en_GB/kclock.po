@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-16 00:50+0000\n"
+"POT-Creation-Date: 2026-07-07 02:41+0000\n"
 "PO-Revision-Date: 2024-08-03 13:01+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -33,8 +33,9 @@ msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr "Set alarms and timers, use a stopwatch, and manage world clocks"
 
 #: main.cpp:55
-#, kde-format
-msgid "© 2020-2024 KDE Community"
+#, fuzzy, kde-format
+#| msgid "© 2020-2024 KDE Community"
+msgid "© 2020-2026 KDE Community"
 msgstr "© 2020-2024 KDE Community"
 
 #: main.cpp:57
@@ -545,6 +546,12 @@ msgstr "#%1"
 #, kde-format
 msgid "No locations found"
 msgstr "No locations found"
+
+#: qml/time/AddLocationListView.qml:52
+#, kde-format
+msgctxt "@info:usagetip"
+msgid "Check spelling or try the nearest major city"
+msgstr ""
 
 #: qml/time/AddLocationPage.qml:13 qml/time/AddLocationWrapper.qml:34
 #, kde-format

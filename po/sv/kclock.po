@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kclock package.
 #
-# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024, 2025, 2026 Stefan Asserhäll <stefan.asserhall@gmail.com>
+# SPDX-FileCopyrightText: 2020-2026 Stefan Asserhäll <stefan.asserhall@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-16 00:50+0000\n"
-"PO-Revision-Date: 2026-01-20 20:47+0100\n"
+"POT-Creation-Date: 2026-07-07 02:41+0000\n"
+"PO-Revision-Date: 2026-07-06 17:50+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -34,8 +34,9 @@ msgstr ""
 "Ställ in alarm och tidtagning, använd ett stoppur och hantera världsklockor"
 
 #: main.cpp:55
-#, kde-format
-msgid "© 2020-2024 KDE Community"
+#, fuzzy, kde-format
+#| msgid "© 2020-2024 KDE Community"
+msgid "© 2020-2026 KDE Community"
 msgstr "© 2020-2024 KDE-gemenskapen"
 
 #: main.cpp:57
@@ -538,6 +539,12 @@ msgstr "Nr. %1"
 msgid "No locations found"
 msgstr "Inga platser hittades"
 
+#: qml/time/AddLocationListView.qml:52
+#, kde-format
+msgctxt "@info:usagetip"
+msgid "Check spelling or try the nearest major city"
+msgstr ""
+
 #: qml/time/AddLocationPage.qml:13 qml/time/AddLocationWrapper.qml:34
 #, kde-format
 msgid "Add Location"
@@ -765,16 +772,14 @@ msgid "Add timer"
 msgstr "Lägg till tidtagare"
 
 #: qml/timer/TimerLockscreenPopup.qml:21
-#, fuzzy, kde-format
-#| msgid "Alarm is ringing"
+#, kde-format
 msgid "Timer is ringing"
-msgstr "Alarmet ringer"
+msgstr "Tidtagare ringer"
 
 #: qml/timer/TimerLockscreenPopup.qml:37
-#, fuzzy, kde-format
-#| msgid "Alarm not found"
+#, kde-format
 msgid "Timer not found"
-msgstr "Alarm hittades inte"
+msgstr "Tidtagare hittades inte"
 
 #: qml/timer/TimerLockscreenPopup.qml:39
 #, kde-format
@@ -784,7 +789,7 @@ msgstr "Stoppa"
 #: qml/timer/TimerLockscreenPopup.qml:40
 #, kde-format
 msgid "Repeat"
-msgstr ""
+msgstr "Upprepa"
 
 #: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:121
 #, kde-format

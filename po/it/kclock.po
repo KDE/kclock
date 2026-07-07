@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-16 00:50+0000\n"
+"POT-Creation-Date: 2026-07-07 02:41+0000\n"
 "PO-Revision-Date: 2026-02-16 18:33+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -35,8 +35,9 @@ msgstr ""
 "Imposta sveglie e timer, usa un cronometro e gestisci gli orologi del mondo"
 
 #: main.cpp:55
-#, kde-format
-msgid "© 2020-2024 KDE Community"
+#, fuzzy, kde-format
+#| msgid "© 2020-2024 KDE Community"
+msgid "© 2020-2026 KDE Community"
 msgstr "© 2020-2024 Comunità KDE"
 
 #: main.cpp:57
@@ -541,6 +542,12 @@ msgstr "#%1"
 #, kde-format
 msgid "No locations found"
 msgstr "Nessuna posizione trovata"
+
+#: qml/time/AddLocationListView.qml:52
+#, kde-format
+msgctxt "@info:usagetip"
+msgid "Check spelling or try the nearest major city"
+msgstr ""
 
 #: qml/time/AddLocationPage.qml:13 qml/time/AddLocationWrapper.qml:34
 #, kde-format

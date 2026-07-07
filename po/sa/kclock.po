@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-16 00:50+0000\n"
+"POT-Creation-Date: 2026-07-07 02:41+0000\n"
 "PO-Revision-Date: 2024-12-24 20:39+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -37,8 +37,9 @@ msgstr ""
 "च"
 
 #: main.cpp:55
-#, kde-format
-msgid "© 2020-2024 KDE Community"
+#, fuzzy, kde-format
+#| msgid "© 2020-2024 KDE Community"
+msgid "© 2020-2026 KDE Community"
 msgstr "© 2020-2024 केडीई समुदाय"
 
 #: main.cpp:57
@@ -547,6 +548,12 @@ msgstr "#%1"
 #, kde-format
 msgid "No locations found"
 msgstr "न स्थानानि प्राप्तानि"
+
+#: qml/time/AddLocationListView.qml:52
+#, kde-format
+msgctxt "@info:usagetip"
+msgid "Check spelling or try the nearest major city"
+msgstr ""
 
 #: qml/time/AddLocationPage.qml:13 qml/time/AddLocationWrapper.qml:34
 #, kde-format
