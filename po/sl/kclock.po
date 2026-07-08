@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-07 02:41+0000\n"
-"PO-Revision-Date: 2026-02-16 06:47+0100\n"
+"PO-Revision-Date: 2026-07-07 07:13+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -35,10 +35,9 @@ msgstr ""
 "Nastavi alarme in časomerilnike, uporabi štoparico in upravljaj svetovne ure"
 
 #: main.cpp:55
-#, fuzzy, kde-format
-#| msgid "© 2020-2024 KDE Community"
+#, kde-format
 msgid "© 2020-2026 KDE Community"
-msgstr "© 2020-2024 skupnost KDE"
+msgstr "© 2020-2026 skupnost KDE"
 
 #: main.cpp:57
 #, kde-format
@@ -551,7 +550,7 @@ msgstr "Ni najdenih lokacij"
 #, kde-format
 msgctxt "@info:usagetip"
 msgid "Check spelling or try the nearest major city"
-msgstr ""
+msgstr "Preverite črkovanje ali poskusite najbližje večje mesto"
 
 #: qml/time/AddLocationPage.qml:13 qml/time/AddLocationWrapper.qml:34
 #, kde-format

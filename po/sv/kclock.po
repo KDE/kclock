@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-07 02:41+0000\n"
-"PO-Revision-Date: 2026-07-06 17:50+0200\n"
+"PO-Revision-Date: 2026-07-07 07:31+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -34,10 +34,9 @@ msgstr ""
 "Ställ in alarm och tidtagning, använd ett stoppur och hantera världsklockor"
 
 #: main.cpp:55
-#, fuzzy, kde-format
-#| msgid "© 2020-2024 KDE Community"
+#, kde-format
 msgid "© 2020-2026 KDE Community"
-msgstr "© 2020-2024 KDE-gemenskapen"
+msgstr "© 2020-2026 KDE-gemenskapen"
 
 #: main.cpp:57
 #, kde-format
@@ -543,7 +542,7 @@ msgstr "Inga platser hittades"
 #, kde-format
 msgctxt "@info:usagetip"
 msgid "Check spelling or try the nearest major city"
-msgstr ""
+msgstr "Kontrollera stavning eller prova närmaste större stad"
 
 #: qml/time/AddLocationPage.qml:13 qml/time/AddLocationWrapper.qml:34
 #, kde-format
