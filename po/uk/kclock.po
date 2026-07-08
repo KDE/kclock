@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-07 00:47+0000\n"
-"PO-Revision-Date: 2026-02-16 08:27+0200\n"
+"PO-Revision-Date: 2026-07-07 08:36+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -38,10 +38,9 @@ msgstr ""
 "показом часу з усього світу"
 
 #: main.cpp:55
-#, fuzzy, kde-format
-#| msgid "© 2020-2024 KDE Community"
+#, kde-format
 msgid "© 2020-2026 KDE Community"
-msgstr "© Спільнота KDE, 2020–2024"
+msgstr "© Спільнота KDE, 2020–2026"
 
 #: main.cpp:57
 #, kde-format
@@ -555,7 +554,7 @@ msgstr "Не знайдено жодного місця"
 #, kde-format
 msgctxt "@info:usagetip"
 msgid "Check spelling or try the nearest major city"
-msgstr ""
+msgstr "Перевірте правильність написання або спробуйте найближче значне місто"
 
 #: qml/time/AddLocationPage.qml:13 qml/time/AddLocationWrapper.qml:34
 #, kde-format

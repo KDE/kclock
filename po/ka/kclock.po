@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-07 00:47+0000\n"
-"PO-Revision-Date: 2026-02-16 02:35+0100\n"
+"PO-Revision-Date: 2026-07-07 06:21+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -34,10 +34,9 @@ msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr "დააყენეთ გაფრთხილებები, წამმზომები და მაღვიძარები, მართეთ საათები"
 
 #: main.cpp:55
-#, fuzzy, kde-format
-#| msgid "© 2020-2024 KDE Community"
+#, kde-format
 msgid "© 2020-2026 KDE Community"
-msgstr "© 2020-2024 KDE-ის საზოგადოება"
+msgstr "© 2020-2026 KDE-ის საზოგადოება"
 
 #: main.cpp:57
 #, kde-format
@@ -546,7 +545,7 @@ msgstr "მდებარეობები ვერ მოიძებნა"
 #, kde-format
 msgctxt "@info:usagetip"
 msgid "Check spelling or try the nearest major city"
-msgstr ""
+msgstr "შეამოწმეთ მართლწერა, ან სცადეთ უახლოესი დიდი ქალაქი"
 
 #: qml/time/AddLocationPage.qml:13 qml/time/AddLocationWrapper.qml:34
 #, kde-format
