@@ -33,10 +33,9 @@ msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr "设置闹钟、倒计时、使用秒表和管理世界时钟"
 
 #: main.cpp:55
-#, fuzzy, kde-format
-#| msgid "© 2020-2024 KDE Community"
+#, kde-format
 msgid "© 2020-2026 KDE Community"
-msgstr "© 2020-2024 KDE Community"
+msgstr ""
 
 #: main.cpp:57
 #, kde-format
