@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/kclock/kclock.pot\n"
-"X-Crowdin-File-ID: 48330\n"
+"X-Crowdin-File: /kf6-stable/messages/kclock/kclock.pot\n"
+"X-Crowdin-File-ID: 52212\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -33,10 +33,9 @@ msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr "设置闹钟、倒计时、使用秒表和管理世界时钟"
 
 #: main.cpp:55
-#, fuzzy, kde-format
-#| msgid "© 2020-2024 KDE Community"
+#, kde-format
 msgid "© 2020-2026 KDE Community"
-msgstr "© 2020-2024 KDE Community"
+msgstr ""
 
 #: main.cpp:57
 #, kde-format
