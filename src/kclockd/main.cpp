@@ -29,7 +29,7 @@
 QCommandLineParser *createParser()
 {
     QCommandLineParser *parser = new QCommandLineParser;
-    parser->addOption(QCommandLineOption(QStringLiteral("no-powerdevil"), i18n("Don't use PowerDevil for alarms if it is available")));
+    parser->addOption(QCommandLineOption(QStringLiteral("no-powerdevil"), i18n("Don’t use PowerDevil for alarms if it is available")));
     parser->addHelpOption();
     return parser;
 }
