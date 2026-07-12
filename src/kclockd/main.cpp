@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
                          QStringLiteral(KCLOCK_VERSION_STRING),
                          QStringLiteral("KClock daemon"),
                          KAboutLicense::GPL,
-                         i18n("© 2020-2022 KDE Community"));
+                         i18n("© 2020–2026 KDE Community"));
     aboutData.addAuthor(i18n("Devin Lin"), QLatin1String(), QStringLiteral("devin@kde.org"));
     aboutData.addAuthor(i18n("Han Young"), QLatin1String(), QStringLiteral("hanyoung@protonmail.com"));
     aboutData.addAuthor(i18n("Kai Uwe Broulik"), i18nc("Author", "Desktop Integration"), QStringLiteral("kde@broulik.de"));
