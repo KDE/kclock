@@ -16,7 +16,7 @@ A convergent clock application for Plasma.
 * Timers
 
 ## Links
-* Project page: https://invent.kde.org/plasma-mobile/kclock
+* Project page: https://invent.kde.org/utilities/kclock
 * File issues: https://bugs.kde.org/describecomponents.cgi?product=KClock
 * Development channel: https://matrix.to/#/#plasmamobile:matrix.org
 
@@ -48,8 +48,8 @@ If PowerDevil is detected, it will use PowerDevil's scheduleWakeup feature to wa
 If you want to disable this behaviour, pass the `--no-powerdevil` option when launching kclockd. Note that while running in `--no-powerdevil` mode, kclockd will fail to keep track of time if the system sleeps, which is quite common for mobile devices.
 
 `kclockd` will automatically start up in `--no-powerdevil` mode and not have suspend waking functionality if:
-* PowerDevil is not running (ex. on GNOME, Phosh, etc.)
-* On BSD system
+* PowerDevil is not running (e.g. on GNOME, Phosh, etc.)
+* On BSD systems
 
 #### `kclockd` D-Bus interface
 After installing, five D-Bus interface XML files are copied to the KDE D-Bus interface directory. 
@@ -72,7 +72,7 @@ QT_QUICK_CONTROLS_MOBILE=true kclock
 ```
 
 ### Plasmoids
-Various plasmoids for kclockd exist, and some also communicate with [KWeather](https://invent.kde.org/plasma-mobile/kweather).
+Various plasmoids for kclockd exist, and some also communicate with [KWeather](https://invent.kde.org/utilities/kweather).
 
 Currently we have two plasmoids, expect more in the future.
 
