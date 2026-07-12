@@ -110,7 +110,7 @@ Kirigami.FormLayout {
     // name field
     TextField {
         id: nameField
-        Kirigami.FormData.label: i18n("Alarm Name (optional):")
+        Kirigami.FormData.label: i18n("Alarm name (optional):")
         placeholderText: i18n("Wake Up")
         text: root.name
     }
@@ -121,7 +121,7 @@ Kirigami.FormLayout {
         implicitWidth: root.width
         Layout.maximumWidth: 540
 
-        Kirigami.FormData.label: i18n("Ring Duration:")
+        Kirigami.FormData.label: i18n("Ring duration:")
         text: root.formRingDuration === -1 ? i18n("None") : i18np("%1 minute", "%1 minutes", root.formRingDuration);
         title: i18n("Select Ring Duration")
         model: [
@@ -159,7 +159,7 @@ Kirigami.FormLayout {
         implicitWidth: root.width
         Layout.maximumWidth: 540
 
-        Kirigami.FormData.label: i18n("Snooze Length:")
+        Kirigami.FormData.label: i18n("Snooze length:")
         title: i18n("Select Snooze Length")
         text: i18np("%1 minute", "%1 minutes", root.formSnoozeDuration)
         model: [
@@ -197,7 +197,7 @@ Kirigami.FormLayout {
         width: root.width
         Layout.maximumWidth: 540
 
-        Kirigami.FormData.label: i18n("Ring Sound:")
+        Kirigami.FormData.label: i18n("Ring sound:")
 
         onClicked: applicationWindow().pageStack.push(Qt.resolvedUrl("../components/SoundPickerPage.qml"), { alarmForm: root });
 

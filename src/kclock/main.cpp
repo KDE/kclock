@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
                          QStringLiteral(KCLOCK_VERSION_STRING),
                          i18n("Set alarms and timers, use a stopwatch, and manage world clocks"),
                          KAboutLicense::GPL,
-                         i18n("© 2020-2026 KDE Community"));
+                         i18n("© 2020–2026 KDE Community"));
     aboutData.setBugAddress("https://bugs.kde.org/describecomponents.cgi?product=KClock");
     aboutData.addAuthor(i18n("Devin Lin"), QString(), QStringLiteral("devin@kde.org"));
     aboutData.addAuthor(i18n("Han Young"), QString(), QStringLiteral("hanyoung@protonmail.com"));
