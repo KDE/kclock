@@ -35,7 +35,7 @@ msgstr "设置闹钟、倒计时、使用秒表和管理世界时钟"
 #: main.cpp:55
 #, kde-format
 msgid "© 2020-2026 KDE Community"
-msgstr ""
+msgstr "© 2020-2026 KDE Community"
 
 #: main.cpp:57
 #, kde-format
@@ -538,7 +538,7 @@ msgstr "未找到位置"
 #, kde-format
 msgctxt "@info:usagetip"
 msgid "Check spelling or try the nearest major city"
-msgstr ""
+msgstr "请检查拼写或尝试邻近的主要城市"
 
 #: qml/time/AddLocationPage.qml:13 qml/time/AddLocationWrapper.qml:34
 #, kde-format
