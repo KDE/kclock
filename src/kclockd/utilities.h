@@ -33,6 +33,8 @@ public:
     int scheduleWakeup(quint64 timestamp);
     void clearWakeup(int cookie);
     void checkForExit();
+    void inhibitExit();
+    void uninhibitExit();
 
     static void wakeupNow();
 
@@ -59,6 +61,8 @@ private:
 
     bool m_hasPowerDevil;
     bool m_kclockAlive;
+    int m_exitInhibitors = 0;
+    bool m_exitPending = false;
     AbstractWakeupProvider *m_wakeupProvider = nullptr;
 
     // which mpris media sources were paused when the alarm/timer started ringing

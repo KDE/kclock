@@ -130,6 +130,7 @@ bool Utilities::hasWakeup()
 
 void Utilities::checkForExit()
 {
+    m_exitPending = false;
     if (m_kclockAlive) {
         return;
     }
@@ -143,7 +144,26 @@ void Utilities::checkForExit()
             return;
         }
     }
+    if (m_exitInhibitors > 0) {
+        m_exitPending = true;
+        return;
+    }
     QApplication::exit();
+}
+
+void Utilities::inhibitExit()
+{
+    ++m_exitInhibitors;
+}
+
+void Utilities::uninhibitExit()
+{
+    Q_ASSERT(m_exitInhibitors > 0);
+    --m_exitInhibitors;
+
+    if (m_exitPending && m_exitInhibitors == 0) {
+        checkForExit();
+    }
 }
 
 void Utilities::wakeupNow()

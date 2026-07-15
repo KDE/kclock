@@ -68,12 +68,6 @@ int main(int argc, char *argv[])
 
     qDebug() << "Starting kclockd" << KCLOCK_VERSION_STRING;
 
-    // call org.freedesktop.portal.Background for autostart in flatpak
-    if (KSandbox::isFlatpak()) {
-        XDGPortal *portalInterface = new XDGPortal();
-        portalInterface->requestBackground();
-    }
-
     // initialize models
     new KClockSettingsAdaptor(KClockSettings::self());
     QDBusConnection::sessionBus().registerObject(QStringLiteral("/Settings"), KClockSettings::self());
@@ -85,8 +79,23 @@ int main(int argc, char *argv[])
     QObject::connect(KClockSettings::self(), &KClockSettings::timerNotificationChanged, KClockSettings::self(), &KClockSettings::save);
 
     // start alarm polling
-    AlarmModel::instance()->configureWakeups();
-    TimerModel::instance();
+    auto *alarmModel = AlarmModel::instance();
+    alarmModel->configureWakeups();
+    auto *timerModel = TimerModel::instance();
+
+    // Only request autostart while there is work that actually needs it
+    if (KSandbox::isFlatpak()) {
+        auto *portalInterface = new XDGPortal(&app);
+        QObject::connect(portalInterface, &XDGPortal::requestStarted, &Utilities::instance(), &Utilities::inhibitExit);
+        QObject::connect(portalInterface, &XDGPortal::requestFinished, &Utilities::instance(), &Utilities::uninhibitExit);
+
+        const auto updateAutostart = [portalInterface, alarmModel, timerModel] {
+            portalInterface->setAutostart(alarmModel->hasEnabledAlarms() || timerModel->hasActiveTimers());
+        };
+        QObject::connect(alarmModel, &AlarmModel::activeStateChanged, &app, updateAutostart);
+        QObject::connect(timerModel, &TimerModel::activeStateChanged, &app, updateAutostart);
+        updateAutostart();
+    }
 
     return app.exec();
 }
