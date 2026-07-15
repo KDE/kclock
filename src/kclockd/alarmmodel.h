@@ -27,6 +27,7 @@ public:
     void configureWakeups(); // needs to be called to start worker thread, or configure powerdevil (called in main)
     QList<Alarm *> alarmsList() const;
     Alarm *alarm(const QString &uuid) const;
+    bool hasEnabledAlarms() const;
 
     Q_SCRIPTABLE void removeAlarm(const QString &uuid);
     Q_SCRIPTABLE void addAlarm(const QString &name, int hours, int minutes, int daysOfWeek, const QString &audioPath, int ringDuration, int snoozeDuration);
@@ -35,6 +36,7 @@ Q_SIGNALS:
     Q_SCRIPTABLE void alarmAdded(const QString &uuid);
     Q_SCRIPTABLE void alarmRemoved(const QString &uuid);
     Q_SCRIPTABLE void nextAlarm(quint64 nextAlarmTimeStamp); // next alarm wakeup timestamp, or 0 if there are none
+    void activeStateChanged();
 
 public Q_SLOTS:
     Q_SCRIPTABLE quint64 getNextAlarm();
@@ -48,6 +50,7 @@ private Q_SLOTS:
 private:
     explicit AlarmModel(QObject *parent = nullptr);
 
+    void connectAlarm(Alarm *alarm);
     void removeAlarm(int index);
     void initNotifierItem();
 

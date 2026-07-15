@@ -21,6 +21,8 @@
 #include <QProcess>
 #include <QStandardPaths>
 
+#include <algorithm>
+
 AlarmModel *AlarmModel::instance()
 {
     static AlarmModel *singleton = new AlarmModel();
@@ -55,6 +57,7 @@ void AlarmModel::load()
         QString json = group.readEntry(key, QString());
         if (!json.isEmpty()) {
             Alarm *alarm = new Alarm(json, this);
+            connectAlarm(alarm);
             m_alarmsList.append(alarm);
         }
     }
@@ -86,6 +89,18 @@ Alarm *AlarmModel::alarm(const QString &uuid) const
         }
     }
     return nullptr;
+}
+
+bool AlarmModel::hasEnabledAlarms() const
+{
+    return std::any_of(m_alarmsList.cbegin(), m_alarmsList.cend(), [](const Alarm *alarm) {
+        return alarm->enabled();
+    });
+}
+
+void AlarmModel::connectAlarm(Alarm *alarm)
+{
+    connect(alarm, &Alarm::enabledChanged, this, &AlarmModel::activeStateChanged);
 }
 
 quint64 AlarmModel::getNextAlarm()
@@ -184,6 +199,7 @@ void AlarmModel::removeAlarm(int index)
     group.deleteEntry(m_alarmsList.at(index)->uuid());
     m_alarmsList.at(index)->deleteLater(); // delete object
     m_alarmsList.removeAt(index);
+    Q_EMIT activeStateChanged();
 
     config->sync();
     scheduleAlarm();
@@ -194,6 +210,7 @@ void AlarmModel::removeAlarm(int index)
 void AlarmModel::addAlarm(const QString &name, int hours, int minutes, int daysOfWeek, const QString &audioPath, int ringDuration, int snoozeDuration)
 {
     Alarm *alarm = new Alarm(name, hours, minutes, daysOfWeek, audioPath, ringDuration, snoozeDuration, this);
+    connectAlarm(alarm);
     alarm->save();
 
     // insert new alarm in order by time of day
@@ -205,6 +222,7 @@ void AlarmModel::addAlarm(const QString &name, int hours, int minutes, int daysO
 
     scheduleAlarm();
     Q_EMIT alarmAdded(alarm->uuid());
+    Q_EMIT activeStateChanged();
 }
 
 void AlarmModel::initNotifierItem()

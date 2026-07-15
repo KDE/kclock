@@ -31,6 +31,7 @@ public:
     void save();
     QList<Timer *> timerList() const;
     Timer *timer(const QString &uuid) const;
+    bool hasActiveTimers() const;
     Q_SCRIPTABLE QStringList timers() const;
     Q_SCRIPTABLE void addTimer(int length, const QString &label, bool looping, const QString &commandTimeout, bool running);
     Q_SCRIPTABLE void removeTimer(const QString &uuid);
@@ -42,6 +43,7 @@ Q_SIGNALS:
     Q_SCRIPTABLE void timerAdded(const QString &);
     Q_SCRIPTABLE void timerRemoved(const QString &);
     Q_SCRIPTABLE void defaultAudioLocationChanged(const QString &);
+    void activeStateChanged();
 
 private:
     void connectTimer(Timer *timer);
