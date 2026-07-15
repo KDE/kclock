@@ -31,6 +31,8 @@
 #include <QtNumeric>
 
 #include <QStringLiteral>
+
+#include <algorithm>
 #include <chrono>
 
 using namespace std::literals::chrono_literals;
@@ -117,6 +119,7 @@ void TimerModel::addTimer(int length, const QString &label, bool looping, const 
     updateIndicators();
 
     Q_EMIT timerAdded(timer->uuid());
+    Q_EMIT activeStateChanged();
 }
 
 void TimerModel::connectTimer(Timer *timer)
@@ -134,7 +137,9 @@ void TimerModel::connectTimer(Timer *timer)
             }
         }
         updateIndicators();
+        Q_EMIT activeStateChanged();
     });
+    connect(timer, &Timer::ringingChanged, this, &TimerModel::activeStateChanged);
     connect(timer, &Timer::lengthChanged, this, &TimerModel::updateIndicators);
 }
 
@@ -163,6 +168,7 @@ void TimerModel::remove(int index)
 
     m_timerList.removeAt(index);
     timer->deleteLater();
+    Q_EMIT activeStateChanged();
 
     updateIndicators();
     save();
@@ -201,6 +207,13 @@ Timer *TimerModel::timer(const QString &uuid) const
         }
     }
     return nullptr;
+}
+
+bool TimerModel::hasActiveTimers() const
+{
+    return std::any_of(m_timerList.cbegin(), m_timerList.cend(), [](const Timer *timer) {
+        return timer->running() || timer->ringing();
+    });
 }
 
 QStringList TimerModel::timers() const
