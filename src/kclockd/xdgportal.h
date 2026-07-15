@@ -6,17 +6,32 @@
 #pragma once
 
 #include <QObject>
+#include <optional>
 
-class XDGPortal : QObject
+class XDGPortal : public QObject
 {
     Q_OBJECT
 
 public:
-    void requestBackground();
+    explicit XDGPortal(QObject *parent = nullptr);
+
+    void setAutostart(bool autostart);
+
+Q_SIGNALS:
+    void requestStarted();
+    void requestFinished();
 
 private Q_SLOTS:
     void requestBackgroundResponse(uint response, const QVariantMap &results);
 
 private:
-    QString m_handleToken = QStringLiteral("u1");
+    void requestBackground();
+    void finishRequest();
+
+    std::optional<bool> m_lastRequestedAutostart;
+    bool m_desiredAutostart = false;
+    bool m_requestAutostart = false;
+    bool m_requestPending = false;
+    uint m_handleToken = 0;
+    QString m_requestPath;
 };
