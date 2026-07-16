@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-22 00:47+0000\n"
+"POT-Creation-Date: 2026-07-16 02:42+0000\n"
 "PO-Revision-Date: 2025-04-15 10:22+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -51,7 +51,7 @@ msgstr "Baztertu"
 msgid "Snooze"
 msgstr "Kuluxka"
 
-#: alarmmodel.cpp:252
+#: alarmmodel.cpp:270
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Alarm: <shortcut>%1 %2</shortcut>"
@@ -188,46 +188,53 @@ msgstr "Denbora bete da"
 msgid "Your timer %1 has finished!"
 msgstr "Zure %1 tenporizadoreak amaitu du!"
 
-#: timermodel.cpp:271
+#: timermodel.cpp:284
 #, kde-format
 msgctxt "@action:button Open kclock app"
 msgid "Open Clock"
 msgstr "Ireki erlojua"
 
-#: timermodel.cpp:276
+#: timermodel.cpp:289
 #, kde-format
 msgctxt "@action:button Add minute to timer"
 msgid "+1 Minute"
 msgstr "+1 minutu"
 
-#: timermodel.cpp:279
+#: timermodel.cpp:292
 #, kde-format
 msgctxt "@action:button Reset timer"
 msgid "Reset"
 msgstr "Berrezarri"
 
-#: timermodel.cpp:282 timermodel.cpp:307
+#: timermodel.cpp:295 timermodel.cpp:320
 #, kde-format
 msgctxt "@action:button Pause timer"
 msgid "Pause"
 msgstr "Etenaldia"
 
-#: timermodel.cpp:300
+#: timermodel.cpp:313
 #, kde-format
 msgctxt "@title:notification Timer name (paused)"
 msgid "%1 (Paused)"
 msgstr "%1 (Etenda)"
 
-#: timermodel.cpp:309
+#: timermodel.cpp:322
 #, kde-format
 msgctxt "@action:button Resume timer"
 msgid "Resume"
 msgstr "Berrekin"
 
-#: xdgportal.cpp:34
+#: xdgportal.cpp:62
 #, kde-format
 msgid ""
 "Allow the clock process to be in the background and launched on startup."
+msgstr "Baimendu erloju prozesua atzeko planoan egoten eta abioan abiaraztea."
+
+#: xdgportal.cpp:63
+#, fuzzy, kde-format
+#| msgid ""
+#| "Allow the clock process to be in the background and launched on startup."
+msgid "Allow the clock process to run in the background."
 msgstr "Baimendu erloju prozesua atzeko planoan egoten eta abioan abiaraztea."
 
 #~ msgid "View"

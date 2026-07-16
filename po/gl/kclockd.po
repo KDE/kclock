@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-22 00:47+0000\n"
+"POT-Creation-Date: 2026-07-16 02:42+0000\n"
 "PO-Revision-Date: 2025-05-17 13:28+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -48,7 +48,7 @@ msgstr "Descartar"
 msgid "Snooze"
 msgstr "Adiar"
 
-#: alarmmodel.cpp:252
+#: alarmmodel.cpp:270
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Alarm: <shortcut>%1 %2</shortcut>"
@@ -185,46 +185,55 @@ msgstr "Rematou o temporizador"
 msgid "Your timer %1 has finished!"
 msgstr "O temporizador %1 rematou."
 
-#: timermodel.cpp:271
+#: timermodel.cpp:284
 #, kde-format
 msgctxt "@action:button Open kclock app"
 msgid "Open Clock"
 msgstr "Abrir o reloxo"
 
-#: timermodel.cpp:276
+#: timermodel.cpp:289
 #, kde-format
 msgctxt "@action:button Add minute to timer"
 msgid "+1 Minute"
 msgstr "+1 minuto"
 
-#: timermodel.cpp:279
+#: timermodel.cpp:292
 #, kde-format
 msgctxt "@action:button Reset timer"
 msgid "Reset"
 msgstr "Restabelecer"
 
-#: timermodel.cpp:282 timermodel.cpp:307
+#: timermodel.cpp:295 timermodel.cpp:320
 #, kde-format
 msgctxt "@action:button Pause timer"
 msgid "Pause"
 msgstr "Pausar"
 
-#: timermodel.cpp:300
+#: timermodel.cpp:313
 #, kde-format
 msgctxt "@title:notification Timer name (paused)"
 msgid "%1 (Paused)"
 msgstr "%1 (en pausa)"
 
-#: timermodel.cpp:309
+#: timermodel.cpp:322
 #, kde-format
 msgctxt "@action:button Resume timer"
 msgid "Resume"
 msgstr "Continuar"
 
-#: xdgportal.cpp:34
+#: xdgportal.cpp:62
 #, kde-format
 msgid ""
 "Allow the clock process to be in the background and launched on startup."
+msgstr ""
+"Permitir que o proceso de reloxo se execute en segundo plano e se inicie co "
+"sistema."
+
+#: xdgportal.cpp:63
+#, fuzzy, kde-format
+#| msgid ""
+#| "Allow the clock process to be in the background and launched on startup."
+msgid "Allow the clock process to run in the background."
 msgstr ""
 "Permitir que o proceso de reloxo se execute en segundo plano e se inicie co "
 "sistema."

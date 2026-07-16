@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclockd\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-22 00:47+0000\n"
+"POT-Creation-Date: 2026-07-16 02:42+0000\n"
 "PO-Revision-Date: 2026-04-28 23:32+0200\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -51,7 +51,7 @@ msgstr "Schließen"
 msgid "Snooze"
 msgstr "Erneut erinnern"
 
-#: alarmmodel.cpp:252
+#: alarmmodel.cpp:270
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Alarm: <shortcut>%1 %2</shortcut>"
@@ -188,46 +188,55 @@ msgstr "Timer abgelaufen"
 msgid "Your timer %1 has finished!"
 msgstr "Ihr Timer %1 ist abgelaufen."
 
-#: timermodel.cpp:271
+#: timermodel.cpp:284
 #, kde-format
 msgctxt "@action:button Open kclock app"
 msgid "Open Clock"
 msgstr "Uhr öffnen"
 
-#: timermodel.cpp:276
+#: timermodel.cpp:289
 #, kde-format
 msgctxt "@action:button Add minute to timer"
 msgid "+1 Minute"
 msgstr "+1 Minute"
 
-#: timermodel.cpp:279
+#: timermodel.cpp:292
 #, kde-format
 msgctxt "@action:button Reset timer"
 msgid "Reset"
 msgstr "Zurücksetzen"
 
-#: timermodel.cpp:282 timermodel.cpp:307
+#: timermodel.cpp:295 timermodel.cpp:320
 #, kde-format
 msgctxt "@action:button Pause timer"
 msgid "Pause"
 msgstr "Pause"
 
-#: timermodel.cpp:300
+#: timermodel.cpp:313
 #, kde-format
 msgctxt "@title:notification Timer name (paused)"
 msgid "%1 (Paused)"
 msgstr "%1 (Angehalten)"
 
-#: timermodel.cpp:309
+#: timermodel.cpp:322
 #, kde-format
 msgctxt "@action:button Resume timer"
 msgid "Resume"
 msgstr "Fortsetzen"
 
-#: xdgportal.cpp:34
+#: xdgportal.cpp:62
 #, kde-format
 msgid ""
 "Allow the clock process to be in the background and launched on startup."
+msgstr ""
+"Dem Uhren-Prozess erlauben, im Hintergrund ausgeführt und beim Systemstart "
+"gestartet zu werden."
+
+#: xdgportal.cpp:63
+#, fuzzy, kde-format
+#| msgid ""
+#| "Allow the clock process to be in the background and launched on startup."
+msgid "Allow the clock process to run in the background."
 msgstr ""
 "Dem Uhren-Prozess erlauben, im Hintergrund ausgeführt und beim Systemstart "
 "gestartet zu werden."
