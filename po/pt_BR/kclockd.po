@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-22 00:47+0000\n"
+"POT-Creation-Date: 2026-07-16 00:48+0000\n"
 "PO-Revision-Date: 2025-08-04 13:41-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -49,7 +49,7 @@ msgstr "Descartar"
 msgid "Snooze"
 msgstr "Soneca"
 
-#: alarmmodel.cpp:252
+#: alarmmodel.cpp:270
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Alarm: <shortcut>%1 %2</shortcut>"
@@ -186,46 +186,55 @@ msgstr "Temporizador concluído"
 msgid "Your timer %1 has finished!"
 msgstr "Seu temporizador %1 terminou!"
 
-#: timermodel.cpp:271
+#: timermodel.cpp:284
 #, kde-format
 msgctxt "@action:button Open kclock app"
 msgid "Open Clock"
 msgstr "Abrir relógio"
 
-#: timermodel.cpp:276
+#: timermodel.cpp:289
 #, kde-format
 msgctxt "@action:button Add minute to timer"
 msgid "+1 Minute"
 msgstr "+1 minuto"
 
-#: timermodel.cpp:279
+#: timermodel.cpp:292
 #, kde-format
 msgctxt "@action:button Reset timer"
 msgid "Reset"
 msgstr "Redefinir"
 
-#: timermodel.cpp:282 timermodel.cpp:307
+#: timermodel.cpp:295 timermodel.cpp:320
 #, kde-format
 msgctxt "@action:button Pause timer"
 msgid "Pause"
 msgstr "Pausar"
 
-#: timermodel.cpp:300
+#: timermodel.cpp:313
 #, kde-format
 msgctxt "@title:notification Timer name (paused)"
 msgid "%1 (Paused)"
 msgstr "%1 (Pausado)"
 
-#: timermodel.cpp:309
+#: timermodel.cpp:322
 #, kde-format
 msgctxt "@action:button Resume timer"
 msgid "Resume"
 msgstr "Continuar"
 
-#: xdgportal.cpp:34
+#: xdgportal.cpp:62
 #, kde-format
 msgid ""
 "Allow the clock process to be in the background and launched on startup."
+msgstr ""
+"Permitir que o processo do relógio fique em segundo plano e seja iniciado na "
+"inicialização."
+
+#: xdgportal.cpp:63
+#, fuzzy, kde-format
+#| msgid ""
+#| "Allow the clock process to be in the background and launched on startup."
+msgid "Allow the clock process to run in the background."
 msgstr ""
 "Permitir que o processo do relógio fique em segundo plano e seja iniciado na "
 "inicialização."

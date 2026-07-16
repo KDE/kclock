@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-22 00:47+0000\n"
+"POT-Creation-Date: 2026-07-16 00:48+0000\n"
 "PO-Revision-Date: 2025-04-17 10:56+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -49,7 +49,7 @@ msgstr "تجاهل"
 msgid "Snooze"
 msgstr "غفوة"
 
-#: alarmmodel.cpp:252
+#: alarmmodel.cpp:270
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Alarm: <shortcut>%1 %2</shortcut>"
@@ -186,46 +186,53 @@ msgstr "اكتمل المؤقت"
 msgid "Your timer %1 has finished!"
 msgstr "مؤقتك %1 انتهى!"
 
-#: timermodel.cpp:271
+#: timermodel.cpp:284
 #, kde-format
 msgctxt "@action:button Open kclock app"
 msgid "Open Clock"
 msgstr "افتح الساعة"
 
-#: timermodel.cpp:276
+#: timermodel.cpp:289
 #, kde-format
 msgctxt "@action:button Add minute to timer"
 msgid "+1 Minute"
 msgstr "+1 دقيقة"
 
-#: timermodel.cpp:279
+#: timermodel.cpp:292
 #, kde-format
 msgctxt "@action:button Reset timer"
 msgid "Reset"
 msgstr "صفّر"
 
-#: timermodel.cpp:282 timermodel.cpp:307
+#: timermodel.cpp:295 timermodel.cpp:320
 #, kde-format
 msgctxt "@action:button Pause timer"
 msgid "Pause"
 msgstr "ألبث"
 
-#: timermodel.cpp:300
+#: timermodel.cpp:313
 #, kde-format
 msgctxt "@title:notification Timer name (paused)"
 msgid "%1 (Paused)"
 msgstr "%1 (مُلبثة)"
 
-#: timermodel.cpp:309
+#: timermodel.cpp:322
 #, kde-format
 msgctxt "@action:button Resume timer"
 msgid "Resume"
 msgstr "استكمل"
 
-#: xdgportal.cpp:34
+#: xdgportal.cpp:62
 #, kde-format
 msgid ""
 "Allow the clock process to be in the background and launched on startup."
+msgstr "اسمح لعملية الساعة أن تكون في الخلفية وأن تبدأ عند التشغيل."
+
+#: xdgportal.cpp:63
+#, fuzzy, kde-format
+#| msgid ""
+#| "Allow the clock process to be in the background and launched on startup."
+msgid "Allow the clock process to run in the background."
 msgstr "اسمح لعملية الساعة أن تكون في الخلفية وأن تبدأ عند التشغيل."
 
 #~ msgid "View"
