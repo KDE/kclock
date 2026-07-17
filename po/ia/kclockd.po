@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the kclock package.
 #
-# SPDX-FileCopyrightText: 2023, 2025 giovanni <g.sora@tiscali.it>
+# SPDX-FileCopyrightText: 2023, 2025, 2026 giovanni <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-16 02:42+0000\n"
-"PO-Revision-Date: 2025-04-15 15:14+0200\n"
+"PO-Revision-Date: 2026-07-16 11:38+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -230,13 +230,10 @@ msgstr ""
 "startar."
 
 #: xdgportal.cpp:63
-#, fuzzy, kde-format
-#| msgid ""
-#| "Allow the clock process to be in the background and launched on startup."
+#, kde-format
 msgid "Allow the clock process to run in the background."
 msgstr ""
-"Permitte al processo de horologio (clock) de esser in fundo e lanceate al "
-"startar."
+"Permitte al processo de horologio (clock) de executar in secunde plano."
 
 #~ msgid "View"
 #~ msgstr "Vista"

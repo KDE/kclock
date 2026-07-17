@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the kclock package.
 #
-# SPDX-FileCopyrightText: 2022, 2025 Stefan Asserhäll <stefan.asserhall@gmail.com>
+# SPDX-FileCopyrightText: 2022, 2025-2026 Stefan Asserhäll <stefan.asserhall@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-16 02:42+0000\n"
-"PO-Revision-Date: 2025-04-17 12:17+0200\n"
+"PO-Revision-Date: 2026-07-16 07:30+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -228,11 +228,9 @@ msgid ""
 msgstr "Tillåt klockprocessen att vara i bakgrunden och aktiveras vid start."
 
 #: xdgportal.cpp:63
-#, fuzzy, kde-format
-#| msgid ""
-#| "Allow the clock process to be in the background and launched on startup."
+#, kde-format
 msgid "Allow the clock process to run in the background."
-msgstr "Tillåt klockprocessen att vara i bakgrunden och aktiveras vid start."
+msgstr "Tillåt klockprocessen att köra i bakgrunden."
 
 #~ msgid "View"
 #~ msgstr "Visa"
