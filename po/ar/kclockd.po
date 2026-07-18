@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the kclock package.
-# SPDX-FileCopyrightText: 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2025, 2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-16 02:42+0000\n"
-"PO-Revision-Date: 2025-04-17 10:56+0400\n"
+"PO-Revision-Date: 2026-07-17 11:24+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -229,11 +229,9 @@ msgid ""
 msgstr "اسمح لعملية الساعة أن تكون في الخلفية وأن تبدأ عند التشغيل."
 
 #: xdgportal.cpp:63
-#, fuzzy, kde-format
-#| msgid ""
-#| "Allow the clock process to be in the background and launched on startup."
+#, kde-format
 msgid "Allow the clock process to run in the background."
-msgstr "اسمح لعملية الساعة أن تكون في الخلفية وأن تبدأ عند التشغيل."
+msgstr "اسمح لعملية الساعة أن تكون في الخلفية."
 
 #~ msgid "View"
 #~ msgstr "عرض"
