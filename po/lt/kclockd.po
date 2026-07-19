@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-16 00:48+0000\n"
-"PO-Revision-Date: 2026-01-23 17:18+0200\n"
+"PO-Revision-Date: 2026-07-18 22:17+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -231,12 +231,9 @@ msgstr ""
 "Leisti laikrodžio procesui išlikti fone ir paleisties metu būti paleistam."
 
 #: xdgportal.cpp:63
-#, fuzzy, kde-format
-#| msgid ""
-#| "Allow the clock process to be in the background and launched on startup."
+#, kde-format
 msgid "Allow the clock process to run in the background."
-msgstr ""
-"Leisti laikrodžio procesui išlikti fone ir paleisties metu būti paleistam."
+msgstr "Leisti laikrodžio procesui veikti fone."
 
 #~ msgid "View"
 #~ msgstr "Rodyti"
