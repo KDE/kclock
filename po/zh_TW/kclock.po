@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-07 00:47+0000\n"
-"PO-Revision-Date: 2026-06-17 12:58+0900\n"
+"PO-Revision-Date: 2026-07-22 01:17+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 26.07.70\n"
+"X-Generator: Lokalize 26.11.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -36,10 +36,9 @@ msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr "設定鬧鐘、計時器，使用碼錶，並管理世界時鐘"
 
 #: main.cpp:55
-#, fuzzy, kde-format
-#| msgid "© 2020-2024 KDE Community"
+#, kde-format
 msgid "© 2020-2026 KDE Community"
-msgstr "© 2020-2024 KDE 社群"
+msgstr "© 2020-2026 KDE 社群"
 
 #: main.cpp:57
 #, kde-format
@@ -543,7 +542,7 @@ msgstr "找不到位置"
 #, kde-format
 msgctxt "@info:usagetip"
 msgid "Check spelling or try the nearest major city"
-msgstr ""
+msgstr "請檢查拼字，或是試試看附近的大都市"
 
 #: qml/time/AddLocationPage.qml:13 qml/time/AddLocationWrapper.qml:34
 #, kde-format
