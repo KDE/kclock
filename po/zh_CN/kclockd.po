@@ -230,4 +230,4 @@ msgstr "允许时钟进程在后台运行并在开机时启动。"
 #: xdgportal.cpp:63
 #, kde-format
 msgid "Allow the clock process to run in the background."
-msgstr ""
+msgstr "允许时钟进程在后台运行。"
