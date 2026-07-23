@@ -130,3 +130,4 @@ ecm_qt_declare_logging_category(kclockd HEADER debug_runner.h
 
 target_include_directories(kclockd PRIVATE ${CMAKE_BINARY_DIR})
 install(TARGETS kclockd ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(FILES kclockdsettings.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR})
