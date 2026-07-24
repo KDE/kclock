@@ -160,6 +160,7 @@ target_link_libraries(kclock PRIVATE
     KF6::Crash
     KF6::I18nQml
     KF6::Svg
+    KirigamiApp
 )
 
 if(KCLOCK_BUILD_SHELL_OVERLAY)
