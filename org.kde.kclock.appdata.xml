@@ -536,6 +536,7 @@
         <p xml:lang="fr">Nouvelles fonctionnalités et corrections de bogues dans cette version :</p>
         <p xml:lang="he">יכולות ותיקוני תקלות חדשים במהדורה הזאת:</p>
         <p xml:lang="ia">Nove characteristicas e correctiones de faltas in iste version:</p>
+        <p xml:lang="it">Nuove funzionalità e correzioni di bug in questa versione:</p>
         <p xml:lang="ja">今回の新機能とバグ修正は以下のとおりです。</p>
         <p xml:lang="ka">ახალი ფუნქციები და შეცდომების გასწორება ამ ვერსიაში:</p>
         <p xml:lang="ko">이 릴리스에 추가된 새 기능과 버그 수정:</p>
@@ -815,6 +816,7 @@
         <p xml:lang="fr">Modifications :</p>
         <p xml:lang="he">שינויים:</p>
         <p xml:lang="ia">Modificationes:</p>
+        <p xml:lang="it">Modifiche:</p>
         <p xml:lang="ja">変更点:</p>
         <p xml:lang="ka">ცვლილებები:</p>
         <p xml:lang="ko">변경 사항:</p>
@@ -1001,6 +1003,7 @@
         <p xml:lang="fr">Modifications :</p>
         <p xml:lang="he">שינויים:</p>
         <p xml:lang="ia">Modificationes:</p>
+        <p xml:lang="it">Modifiche:</p>
         <p xml:lang="ja">変更点:</p>
         <p xml:lang="ka">ცვლილებები:</p>
         <p xml:lang="ko">변경 사항:</p>
@@ -1109,6 +1112,7 @@
         <p xml:lang="fr">Nouvelles fonctionnalités et corrections de bogues :</p>
         <p xml:lang="he">יכולות חדשות ותיקוני תקלות:</p>
         <p xml:lang="ia">Nove characteristicas e correctiones de faltas:</p>
+        <p xml:lang="it">Nuove funzionalità e correzioni di bug:</p>
         <p xml:lang="ja">新機能とバグ修正:</p>
         <p xml:lang="ka">ახალი ფუნქციები და შეცდომების გასწორებები:</p>
         <p xml:lang="ko">새 기능과 버그 수정:</p>
