@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-07 00:47+0000\n"
+"POT-Creation-Date: 2026-07-26 00:47+0000\n"
 "PO-Revision-Date: 2026-07-09 23:48+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -31,45 +31,45 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Ander.elor@gmail.com,xalba@ni.eus"
 
-#: main.cpp:53
+#: main.cpp:45
 #, kde-format
 msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr ""
 "Ezarri alarmak eta tenporizadoreak, erabili kronometroa, eta kudeatu munduko "
 "ordulariak"
 
-#: main.cpp:55
+#: main.cpp:47
 #, kde-format
 msgid "© 2020-2026 KDE Community"
 msgstr "© 2020-2026 KDE Komunitatea"
 
-#: main.cpp:57
+#: main.cpp:49
 #, kde-format
 msgid "Devin Lin"
 msgstr "Devin Lin"
 
-#: main.cpp:58
+#: main.cpp:50
 #, kde-format
 msgid "Han Young"
 msgstr "Han Young"
 
-#: main.cpp:59
+#: main.cpp:51
 #, kde-format
 msgid "Kai Uwe Broulik"
 msgstr "Kai Uwe Broulik"
 
-#: main.cpp:59
+#: main.cpp:51
 #, kde-format
 msgctxt "Author"
 msgid "Desktop Integration"
 msgstr "Mahaigainean bateratzea"
 
-#: main.cpp:65
+#: main.cpp:58
 #, kde-format
 msgid "Select opened page"
 msgstr "Hautatu irekitako orrialdea"
 
-#: main.cpp:67
+#: main.cpp:60
 #, kde-format
 msgid "Explicitly open a new Clock window"
 msgstr "Erloju-leiho berri bat esplizituki ireki"
