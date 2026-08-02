@@ -1,5 +1,6 @@
 # Translation of kclockd to Norwegian Nynorsk
 #
+# Karl Ove Hufthammer <karl@huftis.org>, 2020, 2021, 2022, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
