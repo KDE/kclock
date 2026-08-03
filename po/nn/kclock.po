@@ -1,11 +1,12 @@
 # Translation of kclock to Norwegian Nynorsk
 #
+# Karl Ove Hufthammer <karl@huftis.org>, 2020, 2021, 2022, 2024, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-07 02:41+0000\n"
-"PO-Revision-Date: 2026-04-18 16:28+0200\n"
+"PO-Revision-Date: 2026-08-02 11:10+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@nuug.no>\n"
 "Language: nn\n"
@@ -13,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.11.70\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -34,10 +35,9 @@ msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr "Still inn alarmar og nedteljing, bruk som stoppeklokke eller verdsur"
 
 #: main.cpp:55
-#, fuzzy, kde-format
-#| msgid "© 2020-2024 KDE Community"
+#, kde-format
 msgid "© 2020-2026 KDE Community"
-msgstr "© 2020–2024 KDE-fellesskapet"
+msgstr "© 2020–2026 KDE-fellesskapet"
 
 #: main.cpp:57
 #, kde-format
@@ -274,10 +274,9 @@ msgid "Alarm is ringing"
 msgstr "Alarm ringjer"
 
 #: qml/alarm/AlarmLockscreenPopup.qml:38
-#, fuzzy, kde-format
-#| msgid "Select Alarm Sound"
+#, kde-format
 msgid "Alarm not found"
-msgstr "Vel alarmlyd"
+msgstr "Fann ikkje alarm"
 
 #: qml/alarm/AlarmLockscreenPopup.qml:40 qml/alarm/AlarmRingingPopup.qml:53
 #, kde-format
@@ -314,7 +313,7 @@ msgctxt ""
 "@action:button Close pip and return to the page where the content was popped "
 "out from"
 msgid "Back to app"
-msgstr ""
+msgstr "Tilbake til programmet"
 
 #: qml/components/PipHandler.qml:123
 #, kde-format
@@ -434,13 +433,13 @@ msgstr "Om KDE"
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
-msgstr ""
+msgstr "Gjenopprett"
 
 #: qml/stopwatch/StopwatchPage.qml:54 qml/timer/TimerPage.qml:77
 #, kde-format
 msgctxt "@action"
 msgid "Pop out"
-msgstr ""
+msgstr "Sprett ut"
 
 #: qml/stopwatch/StopwatchPage.qml:107 qml/stopwatch/StopwatchPage.qml:373
 #: qml/timer/TimerPage.qml:175
@@ -463,15 +462,13 @@ msgid "Start"
 msgstr "Start"
 
 #: qml/stopwatch/StopwatchPage.qml:121
-#, fuzzy, kde-format
-#| msgid "Lap"
+#, kde-format
 msgctxt "@action:button"
 msgid "Lap"
 msgstr "Runde"
 
 #: qml/stopwatch/StopwatchPage.qml:121 qml/timer/TimerPage.qml:181
-#, fuzzy, kde-format
-#| msgid "Reset"
+#, kde-format
 msgctxt "@action:button"
 msgid "Reset"
 msgstr "Nullstill"
