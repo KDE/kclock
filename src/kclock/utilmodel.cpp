@@ -60,7 +60,8 @@ QString UtilModel::getDefaultAlarmFileLocation()
 
 QString UtilModel::getCurrentTimeZoneName()
 {
-    return QTimeZone::systemTimeZone().displayName(QTimeZone::GenericTime);
+    QDateTime currentDateTime = QDateTime::currentDateTime();
+    return currentDateTime.timeZone().displayName(currentDateTime, QTimeZone::LongName, QLocale::system());
 }
 
 long long UtilModel::calculateNextRingTime(int hours, int minutes, int daysOfWeek, int snooze)
