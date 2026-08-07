@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-26 00:47+0000\n"
+"POT-Creation-Date: 2026-08-07 00:50+0000\n"
 "PO-Revision-Date: 2024-12-24 20:39+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -103,7 +103,7 @@ msgstr "रिंग अवधिः :"
 msgid "None"
 msgstr "न कश्चित्"
 
-#: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:164 utilmodel.cpp:108
+#: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:164 utilmodel.cpp:109
 #, kde-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -898,52 +898,52 @@ msgstr "%1 घण्टा पृष्ठतः"
 msgid "Local time"
 msgstr "स्थानीय समय"
 
-#: utilmodel.cpp:102
+#: utilmodel.cpp:103
 #, kde-format
 msgid "%1 day"
 msgid_plural "%1 days"
 msgstr[0] "%1 दिवसः"
 msgstr[1] "%1 दिवसाः"
 
-#: utilmodel.cpp:105
+#: utilmodel.cpp:106
 #, kde-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
 msgstr[0] "%1 घण्टा"
 msgstr[1] "%1 घण्टा"
 
-#: utilmodel.cpp:112
+#: utilmodel.cpp:113
 #, kde-format
 msgid "Alarm will ring in under a minute"
 msgstr "एकनिमेषात् न्यूनेन समये अलार्मः ध्वनिः भविष्यति"
 
-#: utilmodel.cpp:114
+#: utilmodel.cpp:115
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "%1 मध्ये अलार्मः ध्वनिं करिष्यति"
 
-#: utilmodel.cpp:166
+#: utilmodel.cpp:167
 #, fuzzy, kde-format
 #| msgid "Only once"
 msgctxt "Repeat"
 msgid "Only once"
 msgstr "एकवारमेव"
 
-#: utilmodel.cpp:169
+#: utilmodel.cpp:170
 #, fuzzy, kde-format
 #| msgid "Everyday"
 msgctxt "Repeat"
 msgid "Everyday"
 msgstr "प्रतिदिनं"
 
-#: utilmodel.cpp:172
+#: utilmodel.cpp:173
 #, fuzzy, kde-format
 #| msgid "Weekdays"
 msgctxt "Repeat"
 msgid "Weekdays"
 msgstr "सप्ताहदिनानि"
 
-#: utilmodel.cpp:193
+#: utilmodel.cpp:194
 #, kde-format
 msgid ", "
 msgstr ", "
