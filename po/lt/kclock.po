@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-07 02:41+0000\n"
+"POT-Creation-Date: 2026-08-07 02:46+0000\n"
 "PO-Revision-Date: 2026-07-08 12:58+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -102,7 +102,7 @@ msgstr "Skambesio trukmė:"
 msgid "None"
 msgstr "Nėra"
 
-#: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:164 utilmodel.cpp:108
+#: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:164 utilmodel.cpp:109
 #, kde-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -884,7 +884,7 @@ msgstr "%1 val. atsilieka"
 msgid "Local time"
 msgstr "Vietinis laikas"
 
-#: utilmodel.cpp:102
+#: utilmodel.cpp:103
 #, kde-format
 msgid "%1 day"
 msgid_plural "%1 days"
@@ -893,7 +893,7 @@ msgstr[1] "%1 dienos"
 msgstr[2] "%1 dienų"
 msgstr[3] "%1 diena"
 
-#: utilmodel.cpp:105
+#: utilmodel.cpp:106
 #, kde-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
@@ -902,35 +902,35 @@ msgstr[1] "%1 valandos"
 msgstr[2] "%1 valandų"
 msgstr[3] "%1 valanda"
 
-#: utilmodel.cpp:112
+#: utilmodel.cpp:113
 #, kde-format
 msgid "Alarm will ring in under a minute"
 msgstr "Žadintuvas skambės po mažiau nei minutės"
 
-#: utilmodel.cpp:114
+#: utilmodel.cpp:115
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "Žadintuvas skambės po %1"
 
-#: utilmodel.cpp:166
+#: utilmodel.cpp:167
 #, kde-format
 msgctxt "Repeat"
 msgid "Only once"
 msgstr "Tik kartą"
 
-#: utilmodel.cpp:169
+#: utilmodel.cpp:170
 #, kde-format
 msgctxt "Repeat"
 msgid "Everyday"
 msgstr "Kasdieną"
 
-#: utilmodel.cpp:172
+#: utilmodel.cpp:173
 #, kde-format
 msgctxt "Repeat"
 msgid "Weekdays"
 msgstr "Šiokiadieniais"
 
-#: utilmodel.cpp:193
+#: utilmodel.cpp:194
 #, kde-format
 msgid ", "
 msgstr ", "

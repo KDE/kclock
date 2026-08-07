@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-07 02:41+0000\n"
+"POT-Creation-Date: 2026-08-07 02:46+0000\n"
 "PO-Revision-Date: 2026-01-02 11:59+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -100,7 +100,7 @@ msgstr "Soiton kesto:"
 msgid "None"
 msgstr "Ei mitään"
 
-#: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:164 utilmodel.cpp:108
+#: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:164 utilmodel.cpp:109
 #, kde-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -879,49 +879,49 @@ msgstr "%1 tuntia jäljessä"
 msgid "Local time"
 msgstr "Paikallinen aika"
 
-#: utilmodel.cpp:102
+#: utilmodel.cpp:103
 #, kde-format
 msgid "%1 day"
 msgid_plural "%1 days"
 msgstr[0] "%1 päivä"
 msgstr[1] "%1 päivää"
 
-#: utilmodel.cpp:105
+#: utilmodel.cpp:106
 #, kde-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
 msgstr[0] "%1 tunti"
 msgstr[1] "%1 tuntia"
 
-#: utilmodel.cpp:112
+#: utilmodel.cpp:113
 #, kde-format
 msgid "Alarm will ring in under a minute"
 msgstr "Hälytys soi minuutin sisään"
 
-#: utilmodel.cpp:114
+#: utilmodel.cpp:115
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "Hälytys soi %1 kuluttua"
 
-#: utilmodel.cpp:166
+#: utilmodel.cpp:167
 #, kde-format
 msgctxt "Repeat"
 msgid "Only once"
 msgstr "Vain kerran"
 
-#: utilmodel.cpp:169
+#: utilmodel.cpp:170
 #, kde-format
 msgctxt "Repeat"
 msgid "Everyday"
 msgstr "Päivittäin"
 
-#: utilmodel.cpp:172
+#: utilmodel.cpp:173
 #, kde-format
 msgctxt "Repeat"
 msgid "Weekdays"
 msgstr "Arkipäivisin"
 
-#: utilmodel.cpp:193
+#: utilmodel.cpp:194
 #, kde-format
 msgid ", "
 msgstr ", "

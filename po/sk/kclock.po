@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-07 02:41+0000\n"
+"POT-Creation-Date: 2026-08-07 02:46+0000\n"
 "PO-Revision-Date: 2022-04-15 19:18+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -99,7 +99,7 @@ msgstr "Trvanie prstenca:"
 msgid "None"
 msgstr "Žiadne"
 
-#: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:164 utilmodel.cpp:108
+#: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:164 utilmodel.cpp:109
 #, kde-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -876,7 +876,7 @@ msgstr "%1 hours behind"
 msgid "Local time"
 msgstr "Miestny čas"
 
-#: utilmodel.cpp:102
+#: utilmodel.cpp:103
 #, kde-format
 msgid "%1 day"
 msgid_plural "%1 days"
@@ -884,7 +884,7 @@ msgstr[0] "%1 deň"
 msgstr[1] "%1 dni"
 msgstr[2] "%1 dní"
 
-#: utilmodel.cpp:105
+#: utilmodel.cpp:106
 #, kde-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
@@ -892,35 +892,35 @@ msgstr[0] "%1 hodina"
 msgstr[1] "%1 hodiny"
 msgstr[2] "%1 hodín"
 
-#: utilmodel.cpp:112
+#: utilmodel.cpp:113
 #, kde-format
 msgid "Alarm will ring in under a minute"
 msgstr "Budík zazvoní do minúty"
 
-#: utilmodel.cpp:114
+#: utilmodel.cpp:115
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "Budík zazvoní po %1"
 
-#: utilmodel.cpp:166
+#: utilmodel.cpp:167
 #, kde-format
 msgctxt "Repeat"
 msgid "Only once"
 msgstr "Iba raz"
 
-#: utilmodel.cpp:169
+#: utilmodel.cpp:170
 #, kde-format
 msgctxt "Repeat"
 msgid "Everyday"
 msgstr "Každý deň"
 
-#: utilmodel.cpp:172
+#: utilmodel.cpp:173
 #, kde-format
 msgctxt "Repeat"
 msgid "Weekdays"
 msgstr "Pracovné dni"
 
-#: utilmodel.cpp:193
+#: utilmodel.cpp:194
 #, kde-format
 msgid ", "
 msgstr ", "

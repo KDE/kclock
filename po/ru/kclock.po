@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-07 02:41+0000\n"
+"POT-Creation-Date: 2026-08-07 02:46+0000\n"
 "PO-Revision-Date: 2026-07-15 11:55+0300\n"
 "Last-Translator: Olesya Gerasimenko <goa@altlinux.org>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -102,7 +102,7 @@ msgstr "Длительность сигнала:"
 msgid "None"
 msgstr "Не выбрана"
 
-#: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:164 utilmodel.cpp:108
+#: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:164 utilmodel.cpp:109
 #, kde-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -885,7 +885,7 @@ msgstr "На %1 ч меньше"
 msgid "Local time"
 msgstr "Местное время:"
 
-#: utilmodel.cpp:102
+#: utilmodel.cpp:103
 #, kde-format
 msgid "%1 day"
 msgid_plural "%1 days"
@@ -894,7 +894,7 @@ msgstr[1] "%1 дней"
 msgstr[2] "%1 дней"
 msgstr[3] "1 день"
 
-#: utilmodel.cpp:105
+#: utilmodel.cpp:106
 #, kde-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
@@ -903,35 +903,35 @@ msgstr[1] "%1 часа"
 msgstr[2] "%1 часов"
 msgstr[3] "1 час"
 
-#: utilmodel.cpp:112
+#: utilmodel.cpp:113
 #, kde-format
 msgid "Alarm will ring in under a minute"
 msgstr "Сигнал напоминания сработает менее чем через минуту"
 
-#: utilmodel.cpp:114
+#: utilmodel.cpp:115
 #, kde-format
 msgid "Alarm will ring in %1"
 msgstr "Сигнал напоминания сработает через %1"
 
-#: utilmodel.cpp:166
+#: utilmodel.cpp:167
 #, kde-format
 msgctxt "Repeat"
 msgid "Only once"
 msgstr "Только один раз"
 
-#: utilmodel.cpp:169
+#: utilmodel.cpp:170
 #, kde-format
 msgctxt "Repeat"
 msgid "Everyday"
 msgstr "Ежедневно"
 
-#: utilmodel.cpp:172
+#: utilmodel.cpp:173
 #, kde-format
 msgctxt "Repeat"
 msgid "Weekdays"
 msgstr "В указанные дни недели"
 
-#: utilmodel.cpp:193
+#: utilmodel.cpp:194
 #, kde-format
 msgid ", "
 msgstr "  , "
