@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-07 00:50+0000\n"
-"PO-Revision-Date: 2026-08-07 23:50+0200\n"
+"PO-Revision-Date: 2026-08-08 12:25+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@nuug.no>\n"
 "Language: nn\n"
@@ -407,17 +407,16 @@ msgstr "Aldri"
 msgid "Lets you pause and resume timers from the notification area."
 msgstr "Lèt deg starta og setja på pause nedteljingar frå systemtrauet."
 
+# Brukt som overskrift når ein trykker på neste tekst, så treng ikkje «for nedteljingar» e.l. på slutten.
 #: qml/settings/SettingsPage.qml:90
-#, fuzzy, kde-format
-#| msgid "Select Alarm Sound"
+#, kde-format
 msgid "Select Timer Sound"
-msgstr "Vel alarmlyd"
+msgstr "Vel ringjelyd"
 
 #: qml/settings/SettingsPage.qml:92
-#, fuzzy, kde-format
-#| msgid "Default Sound"
+#, kde-format
 msgid "Default timer ring sound"
-msgstr "Standardlyd"
+msgstr "Standard ringjelyd for nedteljingar"
 
 #: qml/settings/SettingsPage.qml:102
 #, kde-format
@@ -507,6 +506,9 @@ msgid ""
 "Press Space to start or pause the stopwatch. Delete or Backspace resets it. "
 "Enter adds a lap."
 msgstr ""
+"Trykk mellomromstasten for å starta klokka eller setja ho på pause. Trykk "
+"«Delete» eller «Rettetast» for å nullstilla ho. Trykk «Enter» for å "
+"registrera ein ny runde."
 
 #: qml/stopwatch/StopwatchPage.qml:322
 #, kde-format
@@ -521,13 +523,13 @@ msgstr "Til saman"
 #: qml/stopwatch/StopwatchPage.qml:359
 #, kde-format
 msgid "Stopwatch is in Picture-in-Picture mode."
-msgstr ""
+msgstr "Stoppeklokka er i bilete-i-bilete-modus."
 
 #: qml/stopwatch/StopwatchPage.qml:364 qml/timer/TimerPage.qml:215
 #, kde-format
 msgctxt "@action:button Restore (unminimize) from pip mode"
 msgid "Restore"
-msgstr ""
+msgstr "Gjenopprett"
 
 #: qml/stopwatch/StopwatchPage.qml:437
 #, kde-format
@@ -543,7 +545,7 @@ msgstr "Fann ingen stadar"
 #, kde-format
 msgctxt "@info:usagetip"
 msgid "Check spelling or try the nearest major city"
-msgstr ""
+msgstr "Kontroller at du har skrive rett, eller prøv næraste større by"
 
 #: qml/time/AddLocationPage.qml:13 qml/time/AddLocationWrapper.qml:34
 #, kde-format
@@ -585,7 +587,7 @@ msgstr "Ny nedteljing"
 #: qml/timer/TimerComponent.qml:195
 #, kde-format
 msgid "Click to edit timer name"
-msgstr ""
+msgstr "Trykk for endra namn på nedteljinga"
 
 #: qml/timer/TimerForm.qml:40
 #, kde-format
@@ -754,7 +756,7 @@ msgstr ""
 #: qml/timer/TimerListPage.qml:63
 #, kde-format
 msgid "Failed to load the list of timers: %1"
-msgstr ""
+msgstr "Klarte ikkje lasta inn lister over nedteljingar: %1"
 
 #: qml/timer/TimerListPage.qml:102
 #, kde-format
@@ -773,27 +775,24 @@ msgid "Add timer"
 msgstr "Legg til nedteljing"
 
 #: qml/timer/TimerLockscreenPopup.qml:21
-#, fuzzy, kde-format
-#| msgid "Alarm is ringing"
+#, kde-format
 msgid "Timer is ringing"
-msgstr "Alarm ringjer"
+msgstr "Nedteljaren ringjer"
 
 #: qml/timer/TimerLockscreenPopup.qml:37
-#, fuzzy, kde-format
-#| msgid "Select Alarm Sound"
+#, kde-format
 msgid "Timer not found"
-msgstr "Vel alarmlyd"
+msgstr "Fann ikkje nedteljaren"
 
 #: qml/timer/TimerLockscreenPopup.qml:39
-#, fuzzy, kde-format
-#| msgid "Stopwatch"
+#, kde-format
 msgid "Stop"
-msgstr "Stoppe­klokke"
+msgstr "Stopp"
 
 #: qml/timer/TimerLockscreenPopup.qml:40
 #, kde-format
 msgid "Repeat"
-msgstr ""
+msgstr "Gjenta"
 
 #: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:121
 #, kde-format
@@ -804,11 +803,10 @@ msgstr "Slett"
 #, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "+1:00"
-msgstr ""
+msgstr "+ 1:00"
 
 #: qml/timer/TimerPage.qml:200
-#, fuzzy, kde-format
-#| msgid "1 minute"
+#, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "1 minute"
 msgstr "1 minutt"
@@ -816,7 +814,7 @@ msgstr "1 minutt"
 #: qml/timer/TimerPage.qml:210
 #, kde-format
 msgid "This timer is in Picture-in-Picture mode."
-msgstr ""
+msgstr "Nedteljaren er i bilete-i-bilete-modus."
 
 #: qml/timer/TimerRingingPopup.qml:25
 #, kde-format
