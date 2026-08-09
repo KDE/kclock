@@ -542,6 +542,7 @@
         <p xml:lang="ko">이 릴리스에 추가된 새 기능과 버그 수정:</p>
         <p xml:lang="lt">Naujos ypatybės ir klaidų ištaisymai šioje laidoje:</p>
         <p xml:lang="nl">Nieuwe functies en reparaties van bugs in deze uitgave:</p>
+        <p xml:lang="nn">Nye funksjonar og retta feil i denne utgåva:</p>
         <p xml:lang="pt-BR">Novas funcionalidades e correções de bugs nesta versão:</p>
         <p xml:lang="ru">Новые возможности и исправления ошибок в этом выпуске:</p>
         <p xml:lang="sk">New features and bugfixes in this release:</p>
@@ -800,6 +801,7 @@
           <li xml:lang="ko">PinePhone에서 알람이 작동하지 않는 문제 수정</li>
           <li xml:lang="lt">Ištaisyti PinePhone telefonuose neveikiantys žadintuvai</li>
           <li xml:lang="nl">Alarmen repareren die niet werken op PinePhone</li>
+          <li xml:lang="nn">Retta at alarmar ikkje fungerer på PinePhone</li>
           <li xml:lang="pt-BR">Correção de alarmes que não funcionam no PinePhone</li>
           <li xml:lang="ru">Исправлена неработающая сигнализация на PinePhone;</li>
           <li xml:lang="sk">Oprava nefunkčných budíkov na zariadení PinePhone</li>
@@ -831,6 +833,7 @@
         <p xml:lang="ko">변경 사항:</p>
         <p xml:lang="lt">Pakeitimai:</p>
         <p xml:lang="nl">Wijzigingen:</p>
+        <p xml:lang="nn">Endringar:</p>
         <p xml:lang="pt-BR">Alterações:</p>
         <p xml:lang="ru">Изменения:</p>
         <p xml:lang="sk">Zmeny:</p>
@@ -1024,6 +1027,7 @@
         <p xml:lang="ko">변경 사항:</p>
         <p xml:lang="lt">Pakeitimai:</p>
         <p xml:lang="nl">Wijzigingen:</p>
+        <p xml:lang="nn">Endringar:</p>
         <p xml:lang="pt-BR">Alterações:</p>
         <p xml:lang="ru">Изменения:</p>
         <p xml:lang="sk">Zmeny:</p>
