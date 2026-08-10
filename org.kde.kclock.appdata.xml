@@ -163,7 +163,7 @@
     <p xml:lang="lt">Ją sudaro žadintuvo, laikmačio, chronometro ir laiko juostų funkcionalumai. Plasma aplinkoje žadintuvai ir laikmačiai turi galimybę pažadinti sistemą iš pristabdymo būsenos.</p>
     <p xml:lang="lv">Programmai ir signāla, taimera, hronometra un laika zonu funkcijas. Signāli un taimeri ļauj ierīci ar„Plasma“ pamodināt pēc iesnaudināšanas.</p>
     <p xml:lang="nl">Het bevat de functionaliteiten wekker, timer, stopwatch en tijdzone. Wekkers kunnen het apparaat uit status onderbroken laten ontwaken bij gebruik van Plasma.</p>
-    <p xml:lang="nn">Det inneheld alarmklokke, nedteljing, stoppeklokke og støtte for ulike tidssonar. Alarmar og nedteljing kan vekkja maskina frå kvilemodus på Plasma.</p>
+    <p xml:lang="nn">Programmet inneheld alarmklokke, nedteljing, stoppeklokke og støtte for ulike tidssonar. Alarmar og nedteljing kan òg vekkja maskina frå kvilemodus på Plasma.</p>
     <p xml:lang="pa">ਇਸ ਵਿੱਚ ਅਲਾਰਮ, ਟਾਈਮਰ, ਸਟਾਪ-ਵਾਚ ਅਤੇ ਸਮਾਂ-ਖੇਤਰ ਦੀਆਂ ਸਹੂਲਤਾਂ ਹਨ। ਪਲਾਜ਼ਮਾ ਉੱਤੇ ਅਲਾਰਮ ਤੇ ਟਾਈਮਰ ਸਸਪੈਂਡ ਤੋਂ ਡਿਵਾਈਸ ਨੂੰ ਚਾਲੂ ਕਰ ਸਕਦੇ ਹਨ।</p>
     <p xml:lang="pl">Zawiera alarm, czasomierz, stoper oraz różne strefy czasowe. Alarmy i czasomierze są także w stanie wybudzić urządzenie z uśpienia na Plazmie.</p>
     <p xml:lang="pt">Contém funcionalidades de alarmes, temporizadores, cronómetros e fusos-horários. Os alarmes também conseguirão acordar o dispositivo da suspensão ao usar o Plasma.</p>
@@ -570,6 +570,7 @@
           <li xml:lang="ko">타이머에 1분 추가 단추 동작을 수정했습니다.</li>
           <li xml:lang="lt">Ištaisytas laikmačio vienos minutės pridėjimo mygtukas.</li>
           <li xml:lang="nl">Gerepareerde timer, voeg één minuut toe met de knop.</li>
+          <li xml:lang="nn">Retta «+ 1 minutt»-knappen i nedteljingar</li>
           <li xml:lang="pt-BR">Corrigido botão para adicionar um minuto ao temporizador</li>
           <li xml:lang="ru">Кнопка добавления одной минуты к таймеру;</li>
           <li xml:lang="sk">Opravené tlačidlo pridania jednej minúty na časovači.</li>
@@ -596,6 +597,7 @@
           <li xml:lang="ko">탭 표시줄 기반 사이드바로 전환했습니다(아래쪽 탐색 표시줄과 유사한 형태).</li>
           <li xml:lang="lt">Perjungta į kortelių juosta pagrįstą šoninę juostą (panašią į apatinę naršymo juostą).</li>
           <li xml:lang="nl">Overgeschakeld naar een zijbalk op basis van tabbladen (vergelijkbaar met de onderste navigatiebalk).</li>
+          <li xml:lang="nn">Bytt til fane-basert sidestolpe (liknar som botn-navigeringsfelt)</li>
           <li xml:lang="pt-BR">Alteração para uma barra lateral baseada em abas (semelhante à barra de navegação inferior).</li>
           <li xml:lang="ru">Переход на боковую панель с вкладками (аналогично нижней панели навигации);</li>
           <li xml:lang="sk">Prepnutie na bočný panel založený na paneli kariet (podobný spodnej navigačnej lište).</li>
@@ -638,6 +640,7 @@
           <li xml:lang="ko">Flatpak을 사용할 때 배경 데몬 지원</li>
           <li xml:lang="lt">Foninės tarnybos palaikymas, kai naudojamas Flatpak</li>
           <li xml:lang="nl">Ondersteuning voor achtergronddaemons bij gebruik van Flatpak</li>
+          <li xml:lang="nn">Støtte for bakgrunnsteneste ved bruk av Flatpak-pakke</li>
           <li xml:lang="pt-BR">Suporte para daemon em segundo plano ao usar o Flatpak</li>
           <li xml:lang="ru">Поддержка фоновой службы при использовании flatpak;</li>
           <li xml:lang="sk">Podpora démona na pozadí pri použití flatpaku</li>
@@ -664,6 +667,7 @@
           <li xml:lang="ko">비 Plasma 시스템에서의 과도한 로그 생성 문제 수정</li>
           <li xml:lang="lt">Ištaisytas perteklinis žurnalo generavimas ne Plasma sistemose</li>
           <li xml:lang="nl">Los het probleem op met overmatige generatie van een log op niet-Plasma-systemen.</li>
+          <li xml:lang="nn">Fiksa unødvendig mykje logg-generering på system som ikkje er Plasma</li>
           <li xml:lang="pt-BR">Correção de geração excessiva de logs em sistemas que não sejam Plasma</li>
           <li xml:lang="ru">Исправлено избыточное создание журналов в системах без Plasma;</li>
           <li xml:lang="sk">Oprava nadmerného generovania záznamov v systéme bez prostredia Plasma</li>
@@ -697,6 +701,7 @@
           <li xml:lang="ko">"시계 데몬을 찾을 수 없음" 팝업 메시지 수정</li>
           <li xml:lang="lt">Ištaisytas iškylantysis „Nerasta laikrodžio tarnyba“ pranešimas</li>
           <li xml:lang="nl">Los het pop-upbericht "Klokdaemon niet gevonden" op</li>
+          <li xml:lang="nn">Fiksa «Fann ikkje klokketenesta»-feilmelding</li>
           <li xml:lang="pt-BR">Correção da mensagem pop-up "Daemon do relógio não encontrado"</li>
           <li xml:lang="ru">Исправлено сообщение «Не найден демон часов»;</li>
           <li xml:lang="sk">Fix "Clock daemon not found" popup message</li>
@@ -723,6 +728,7 @@
           <li xml:lang="ko">다양한 버그 수정과 사용자 인터페이스 개선</li>
           <li xml:lang="lt">Įvairūs klaidų ištaisymai ir naudotojo sąsajos patobulinimai</li>
           <li xml:lang="nl">Diverse reparaties van fouten en verbeteringen aan de gebruikersinterface</li>
+          <li xml:lang="nn">Ymse feilfiksar og forbetringar i brukarflata</li>
           <li xml:lang="pt-BR">Diversas correções de bugs e melhorias na interface do usuário</li>
           <li xml:lang="ru">Исправлены ошибки и улучшен интерфейс;</li>
           <li xml:lang="sk">Rôzne opravy chýb a vylepšenia používateľského rozhrania</li>
@@ -749,6 +755,7 @@
           <li xml:lang="ko">알람 소리를 표시하는 소리 선택기 구성 요소 추가</li>
           <li xml:lang="lt">Pridėtas garsų parinkiklio komponentas, skirtas išvardyti žadintuvo garsus</li>
           <li xml:lang="nl">Voeg een component voor het selecteren van geluiden toe om alarmgeluiden weer te geven</li>
+          <li xml:lang="nn">Lagt til lydveljar-komponent i lista over alarmlydar</li>
           <li xml:lang="pt-BR">Adicionado um componente de seleção de som para listar sons de alarme</li>
           <li xml:lang="ru">Добавлен компонент выбора звука для перечисления звуков будильника;</li>
           <li xml:lang="sk">Pridanie komponentu na výber zvuku pre zoznam zvukov budíka</li>
@@ -775,6 +782,7 @@
           <li xml:lang="ko">단추를 눌렀을 때에만 지연 시작</li>
           <li xml:lang="lt">Snaudimas pradedamas tik paspaudžius mygtuką</li>
           <li xml:lang="nl">Alleen sluimeren starten nadat er op de knop is gedrukt</li>
+          <li xml:lang="nn">Start slumring berre etter knapp vert trykt på</li>
           <li xml:lang="pt-BR">A função soneca só inicia após o botão ser pressionado</li>
           <li xml:lang="ru">Запуск отложенного сигнала только после нажатия кнопки;</li>
           <li xml:lang="sk">Spustenie odloženia budíka až po stlačení tlačidla</li>
@@ -862,6 +870,7 @@
           <li xml:lang="ko">Kirigami의 아래쪽 탐색 표시줄을 모바일 환경에서도 사용함</li>
           <li xml:lang="lt">Dabar mobiliuosiuose įrenginiuose yra naudojamas Kirigami apatinės naršymo juostos komponentas</li>
           <li xml:lang="nl">De component voor de onderste navigatiebalk van Kirigami wordt nu ook voor mobiele apparaten gebruikt</li>
+          <li xml:lang="nn">Botn-navigeringsfeltet til Kirigami vert no brukt i mobilmodus</li>
           <li xml:lang="pt-BR">O componente de barra de navegação inferior do Kirigami agora é usado na versão mobile</li>
           <li xml:lang="ru">Для мобильных устройств теперь используется компонент нижней панели навигации Kirigami;</li>
           <li xml:lang="sk">Komponent spodnej navigačnej lišty Kirigami sa teraz používa pre mobilné zariadenia</li>
@@ -888,6 +897,7 @@
           <li xml:lang="ko">데스크톱에서 Plasma 스타일 사이드바를 사용함</li>
           <li xml:lang="lt">Dabar, darbalaukio aplinkoje yra naudojama Plasma stiliaus šoninė juosta</li>
           <li xml:lang="nl">Op het bureaublad wordt nu een zijbalk in Plasma-stijl gebruikt</li>
+          <li xml:lang="nn">Sidestolpe i Plasma-stil vert no brukt i skrivebordsmodus</li>
           <li xml:lang="pt-BR">Agora, no desktop, é utilizada uma barra lateral no estilo Plasma</li>
           <li xml:lang="ru">На рабочем столе теперь используется боковая панель в стиле Plasma;</li>
           <li xml:lang="sk">Na pracovnej ploche sa teraz používa bočný panel v štýle Plasma</li>
@@ -914,6 +924,7 @@
           <li xml:lang="ko">대기 중인 알람이 있을 때에만 시스템 트레이 항목 표시</li>
           <li xml:lang="lt">Dabar, sistemos dėklo elementas rodomas tik tada, kai yra laukiančių žadintuvų</li>
           <li xml:lang="nl">Het item in het systeemvak wordt nu alleen nog weergegeven wanneer er alarmen in behandeling zijn</li>
+          <li xml:lang="nn">Ikonet i systemtrauet er no berre synleg dersom det finst ventande alarmar</li>
           <li xml:lang="pt-BR">O item da bandeja do sistema agora só é exibido quando há alarmes pendentes</li>
           <li xml:lang="ru">Элемент в области уведомлений отображается только при наличии активных будильников;</li>
           <li xml:lang="sk">Položka v systémovej lište sa teraz zobrazuje iba vtedy, keď sú čakajúce budíky</li>
@@ -940,6 +951,7 @@
           <li xml:lang="ko">대기 중인 알람과 타이머가 없을 때 자동으로 데몬 정지</li>
           <li xml:lang="lt">Tarnyba automatiškai sustabdoma, jei nėra laukiančių žadintuvų ar laikmačių</li>
           <li xml:lang="nl">De daemon stopt automatisch als er geen alarmen of timers meer actief zijn</li>
+          <li xml:lang="nn">Bakgrunnstenesta vert automatisk stoppa viss det ikkje finst nokon alarmar eller nedteljingar</li>
           <li xml:lang="pt-BR">O serviço para automaticamente se não houver alarmes ou temporizadores pendentes</li>
           <li xml:lang="ru">Служба автоматически останавливается, если нет активных будильников и таймеров;</li>
           <li xml:lang="sk">Démon sa automaticky zastaví, ak nie sú čakajúce žiadne budíky ani časovače</li>
@@ -966,6 +978,7 @@
           <li xml:lang="ko">타이머와 알람 폼 페이지에서 동작 표시줄을 사용함</li>
           <li xml:lang="lt">Dabar, laikmačio ir žadintuvų formos puslapyje yra naudojamos veiksmo juostos</li>
           <li xml:lang="nl">Actiebalken worden nu gebruikt op de formulierenpagina voor timers en alarmen</li>
+          <li xml:lang="nn">Handlingsfelt vert no brukte på nedteljings- og alarmsidene</li>
           <li xml:lang="pt-BR">Agora, as barras de ação são usadas nas páginas de formulários de temporizador e alarmes</li>
           <li xml:lang="ru">На страницах таймера и будильников теперь используются панели действий;</li>
           <li xml:lang="sk">Na stránke formulárov časovačov a budíkov sa teraz používajú panely akcií</li>
@@ -992,6 +1005,7 @@
           <li xml:lang="ko">설정 단추를 위쪽 동작 표시줄로 이동함</li>
           <li xml:lang="lt">Nuostatų mygtukas perkeltas į viršutinę veiksmų juostą</li>
           <li xml:lang="nl">De instellingenknop is verplaatst naar de bovenste actiebalk</li>
+          <li xml:lang="nn">Innstillingsknappen er flytta til handlingslinja øvst i programmet</li>
           <li xml:lang="pt-BR">O botão de configurações foi movido para a barra de ações superior</li>
           <li xml:lang="ru">Кнопка настроек перемещена в верхнюю панель действий;</li>
           <li xml:lang="sk">Tlačidlo nastavení bolo presunuté do horného panela akcií</li>
@@ -1056,6 +1070,7 @@
           <li xml:lang="ko">DBus에서 PowerDevil의 존재를 감지하여 PowerDevil이 있을 때에 절전 모드에서 깨어나기를 지원함</li>
           <li xml:lang="lt">Stebima, ar DBus yra PowerDevil, kad prikėlimas iš pristabdymo visada veiktų, jei yra randamas PowerDevil</li>
           <li xml:lang="nl">Houd DBus in de gaten voor PowerDevil, zodat het ontwaken uit de slaapstand altijd werkt als PowerDevil wordt gevonden</li>
+          <li xml:lang="nn">Overvakings-DBus for PowerDevil, slik at oppvakning frå kvilemodus alltid fungerer om PowerDevil er installert</li>
           <li xml:lang="pt-BR">Monitora o DBus em busca de PowerDevil, para que a ativação a partir da suspensão sempre funcione se PowerDevil for encontrado</li>
           <li xml:lang="ru">Отслеживание DBus для PowerDevil, чтобы пробуждение из режима приостановки всегда работало при наличии PowerDevil;</li>
           <li xml:lang="sk">Sledovanie DBus pre PowerDevil, takže prebudenie z režimu spánku vždy funguje, ak je PowerDevil nájdený</li>
@@ -1082,6 +1097,7 @@
           <li xml:lang="ko">설정 페이지에서 일관성 있는 대화 상자 스타일 사용</li>
           <li xml:lang="lt">Nuostatų puslapyje naudojamas atitinkamas dialogo stilius</li>
           <li xml:lang="nl">Gebruik een consistente dialoogstijl op de instellingenpagina</li>
+          <li xml:lang="nn">Brukar konsistent dialogstil på innstillingssida</li>
           <li xml:lang="pt-BR">Uso de um estilo de diálogo consistente na página de configurações</li>
           <li xml:lang="ru">Используется единый стиль диалогов на странице настроек;</li>
           <li xml:lang="sk">Používanie konzistentného štýlu dialógov na stránke nastavení</li>
@@ -1108,6 +1124,7 @@
           <li xml:lang="ko">알람을 편집한 후 알람을 자동으로 활성화</li>
           <li xml:lang="lt">Dabar, po žadintuvo taisymo, žadintuvas automatiškai aktyvuojamas</li>
           <li xml:lang="nl">Na het bewerken van een alarm wordt het alarm nu automatisch geactiveerd</li>
+          <li xml:lang="nn">Etter alarmredigering vert alarmen automatisk slått på</li>
           <li xml:lang="pt-BR">Após editar um alarme, ele agora é ativado automaticamente</li>
           <li xml:lang="ru">После редактирования будильник автоматически активируется;</li>
           <li xml:lang="sk">Po úprave budíka sa budík teraz automaticky aktivuje</li>
@@ -1140,6 +1157,7 @@
         <p xml:lang="ko">새 기능과 버그 수정:</p>
         <p xml:lang="lt">Naujos ypatybės ir klaidų ištaisymai:</p>
         <p xml:lang="nl">Nieuwe functies en reparaties van bugs:</p>
+        <p xml:lang="nn">Nye funksjonar og feilrettingar:</p>
         <p xml:lang="pt-BR">Novas funcionalidades e correções de bugs:</p>
         <p xml:lang="ru">Новые возможности и исправления ошибок:</p>
         <p xml:lang="sk">Nové funkcie a opravy chýb:</p>
@@ -1167,6 +1185,7 @@
           <li xml:lang="ko">타이머 사전 설정 추가</li>
           <li xml:lang="lt">Pridėta galimybė nustatyti išankstines laikmačio parinktis</li>
           <li xml:lang="nl">De mogelijkheid om voorinstellingen van de timer in te stellen is toegevoegd</li>
+          <li xml:lang="nn">Gjort det mogleg å bruka førehandsinnstillingar for nedteljingar</li>
           <li xml:lang="pt-BR">Adicionada a capacidade de definir predefinições de temporizador</li>
           <li xml:lang="ru">Добавлена возможность настройки предустановок таймера;</li>
           <li xml:lang="sk">Pridaná možnosť nastaviť predvoľby časovača</li>
@@ -1193,6 +1212,7 @@
           <li xml:lang="ko">타이머가 실행 중일 때 1분 더 연장하는 기능 추가</li>
           <li xml:lang="lt">Pridėta galimybė didinti laikmačio trukmę po 1 minutę, kol laikmatis veikia</li>
           <li xml:lang="nl">De mogelijkheid is toegevoegd om de timerduur met 1 minuut te verlengen terwijl de timer loopt</li>
+          <li xml:lang="nn">Gjort det mogleg å auka nedteljinga med eitt minutt når ho er i gang</li>
           <li xml:lang="pt-BR">Adicionada a capacidade de aumentar a duração do temporizador em 1 minuto enquanto ele estiver em execução</li>
           <li xml:lang="ru">Добавлена возможность увеличивать длительность таймера на 1 минуту во время его работы;</li>
           <li xml:lang="sk">Pridaná možnosť predĺžiť trvanie časovača o 1 min počas jeho behu</li>
@@ -1219,6 +1239,7 @@
           <li xml:lang="ko">한 알람에서 여러 소리와 알람이 재생될 때의 문제점 수정</li>
           <li xml:lang="lt">Ištaisyta klaida, kai vienam žadintuvui skambėjo daug žadintuvo garsų ir buvo rodoma daug pranešimų</li>
           <li xml:lang="nl">Er is een probleem opgelost waarbij meerdere alarmgeluiden en meldingen voor één alarm werden afgespeeld</li>
+          <li xml:lang="nn">Retta problem med at fleire alarmlydar og varslingar vart spelte av for éin og same alarm</li>
           <li xml:lang="pt-BR">Corrigido o problema de reprodução simultânea de múltiplos sons de alarme e notificações para um mesmo alarme</li>
           <li xml:lang="ru">Исправлено воспроизведение нескольких звуков и уведомлений для одного будильника;</li>
           <li xml:lang="sk">Opravené prehrávanie viacerých zvukov budíka a oznámení pre jeden budík</li>
@@ -1245,6 +1266,7 @@
           <li xml:lang="ko">Flatpak으로 앱을 설치했을 때 작동하지 않는 오류 수정</li>
           <li xml:lang="lt">Ištaisytos klaidos, kurios neleido programai veikti Flatpak aplinkoje</li>
           <li xml:lang="nl">Fouten verholpen die ervoor zorgden dat de toepassing niet werkte in een Flatpak</li>
+          <li xml:lang="nn">Retta feil som gjorde at programmet ikkje fungerte i ein Flatpak-pakke</li>
           <li xml:lang="pt-BR">Corrigidos erros que impediam o funcionamento do aplicativo em um Flatpak</li>
           <li xml:lang="ru">Исправлены ошибки, препятствовавшие работе приложения в Flatpak;</li>
           <li xml:lang="sk">Opravené chyby, ktoré bránili fungovaniu aplikácie vo Flatpak</li>
