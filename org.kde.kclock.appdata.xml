@@ -936,7 +936,7 @@
           <li xml:lang="zh-CN">系统托盘图标现在仅在有待发闹钟时显示</li>
           <li xml:lang="zh-TW">系統匣項目現在只在有鬧鐘時才會顯示</li>
           <li>The daemon automatically stops if no alarms and timers are pending</li>
-          <li xml:lang="ar">إيقاف العفريت آلياً في حال عدم وجود منبهات أو مؤقتات معلقة</li>
+          <li xml:lang="ar">إيقاف العفريت آليًا في حال عدم وجود منبهات أو مؤقتات معلقة</li>
           <li xml:lang="bg">Демонът спира автоматично, ако няма чакащи аларми и таймери</li>
           <li xml:lang="ca">El dimoni s'atura automàticament si no hi ha alarmes ni temporitzadors pendents</li>
           <li xml:lang="ca-valencia">El dimoni es para automàticament si no hi ha alarmes ni temporitzadors pendents</li>
@@ -1055,7 +1055,7 @@
         <p xml:lang="zh-TW">變更：</p>
         <ul>
           <li>Watch DBus for PowerDevil, so wake from suspend always works if PowerDevil is found</li>
-          <li xml:lang="ar">مراقبة DBus لـ PowerDevil، ليعمل الاستيقاظ من التعليق دائماً في حال وُجد PowerDevil</li>
+          <li xml:lang="ar">مراقبة DBus لـ PowerDevil، ليعمل الاستيقاظ من التعليق دائمًا في حال وُجد PowerDevil</li>
           <li xml:lang="bg">Следене на DBus за PowerDevil, така че събуждането от режим на задържане винаги работи, ако PowerDevil бъде намерен</li>
           <li xml:lang="ca">Vigila el DBus del PowerDevil, de manera que despertar de la suspensió sempre funciona si es troba el PowerDevil</li>
           <li xml:lang="ca-valencia">Vigila D-Bus de PowerDevil, de manera que despertar de la suspensió sempre funciona si es troba PowerDevil</li>
@@ -1109,7 +1109,7 @@
           <li xml:lang="zh-CN">在设置页面使用一致的对话框样式</li>
           <li xml:lang="zh-TW">在設定頁面使用一致的對話框風格</li>
           <li>After editing an alarm, the alarm now automatically is activated</li>
-          <li xml:lang="ar">تنشيط المنبه آلياً بعد تحريره</li>
+          <li xml:lang="ar">تنشيط المنبه آليًا بعد تحريره</li>
           <li xml:lang="bg">След редактиране на аларма, тя вече се активира автоматично.</li>
           <li xml:lang="ca">Després d'editar una alarma, l'alarma ara s'activa automàticament</li>
           <li xml:lang="ca-valencia">Després d'editar una alarma, l'alarma ara s'activa automàticament</li>
