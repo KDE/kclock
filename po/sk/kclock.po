@@ -33,10 +33,9 @@ msgstr ""
 "Nastavte budíky a časovače, používajte stopky a spravujte svetové hodiny"
 
 #: main.cpp:55
-#, fuzzy, kde-format
-#| msgid "© 2020-2024 KDE Community"
+#, kde-format
 msgid "© 2020-2026 KDE Community"
-msgstr "© 2020-2024 Komunita KDE"
+msgstr "© 2020 – 2026 Komunita KDE"
 
 #: main.cpp:57
 #, kde-format
@@ -545,7 +544,7 @@ msgstr "No locations found"
 #, kde-format
 msgctxt "@info:usagetip"
 msgid "Check spelling or try the nearest major city"
-msgstr ""
+msgstr "Skontrolujte pravopis alebo skúste najbližšie veľké mesto"
 
 #: qml/time/AddLocationPage.qml:13 qml/time/AddLocationWrapper.qml:34
 #, kde-format
