@@ -159,7 +159,7 @@ Kirigami.FormLayout {
         implicitWidth: root.width
         Layout.maximumWidth: 540
 
-        Kirigami.FormData.label: i18n("Snooze length:")
+        Kirigami.FormData.label: i18n("Snooze duration:")
         title: i18n("Select Snooze Length")
         text: i18np("%1 minute", "%1 minutes", root.formSnoozeDuration)
         model: [
