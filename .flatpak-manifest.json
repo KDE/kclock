@@ -4,7 +4,9 @@
     "runtime-version": "6.11",
     "sdk": "org.kde.Sdk",
     "command": "kclock",
-    "tags": ["nightly"],
+    "tags": [
+        "nightly"
+    ],
     "desktop-file-name-suffix": " (Nightly)",
     "finish-args": [
         "--share=ipc",
@@ -18,11 +20,12 @@
         "--own-name=org.kde.kclockd"
     ],
     "separate-locales": false,
-
     "modules": [
         {
             "name": "intltool",
-            "cleanup": [ "*" ],
+            "cleanup": [
+                "*"
+            ],
             "sources": [
                 {
                     "type": "archive",
@@ -55,16 +58,34 @@
         },
         {
             "name": "kirigamiaddons",
-            "config-opts": [ "-DBUILD_TESTING=OFF" ],
+            "config-opts": [
+                "-DBUILD_TESTING=OFF"
+            ],
             "buildsystem": "cmake-ninja",
-            "sources": [ { "type": "git", "url": "https://invent.kde.org/libraries/kirigami-addons.git", "branch": "master" } ]
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/libraries/kirigami-addons.git",
+                    "branch": "master"
+                }
+            ]
         },
         {
             "name": "kclock",
             "buildsystem": "cmake-ninja",
             "builddir": true,
-            "config-opts": [ "-DBUILD_PLASMOID=OFF" ],
-            "sources": [ { "type": "dir", "path": ".", "skip": [".git"] } ]
+            "config-opts": [
+                "-DBUILD_PLASMOID=OFF"
+            ],
+            "sources": [
+                {
+                    "type": "dir",
+                    "path": ".",
+                    "skip": [
+                        ".git"
+                    ]
+                }
+            ]
         }
     ]
 }
