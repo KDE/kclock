@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-07 02:46+0000\n"
-"PO-Revision-Date: 2026-01-02 11:59+0200\n"
+"PO-Revision-Date: 2026-02-25 14:05+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -587,7 +587,7 @@ msgstr "Uusi ajastin"
 #: qml/timer/TimerComponent.qml:195
 #, kde-format
 msgid "Click to edit timer name"
-msgstr ""
+msgstr "Muokkaa ajastimen nimeä napsauttamalla"
 
 #: qml/timer/TimerForm.qml:40
 #, kde-format
@@ -776,16 +776,14 @@ msgid "Add timer"
 msgstr "Lisää ajastin"
 
 #: qml/timer/TimerLockscreenPopup.qml:21
-#, fuzzy, kde-format
-#| msgid "Alarm is ringing"
+#, kde-format
 msgid "Timer is ringing"
-msgstr "Hälytys soi"
+msgstr "Ajastin soi"
 
 #: qml/timer/TimerLockscreenPopup.qml:37
-#, fuzzy, kde-format
-#| msgid "Alarm not found"
+#, kde-format
 msgid "Timer not found"
-msgstr "Hälytystä ei löytynyt"
+msgstr "Ajastinta ei löytynyt"
 
 #: qml/timer/TimerLockscreenPopup.qml:39
 #, kde-format
@@ -795,7 +793,7 @@ msgstr "Pysäytä"
 #: qml/timer/TimerLockscreenPopup.qml:40
 #, kde-format
 msgid "Repeat"
-msgstr ""
+msgstr "Toista"
 
 #: qml/timer/TimerPage.qml:59 qml/timer/TimerPage.qml:121
 #, kde-format
