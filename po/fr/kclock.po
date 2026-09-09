@@ -551,7 +551,7 @@ msgstr "Aucun emplacement trouvé"
 #, kde-format
 msgctxt "@info:usagetip"
 msgid "Check spelling or try the nearest major city"
-msgstr "Vérifiez l’orthographe ou essayez la grande ville la plus proche"
+msgstr "Vérifiez l'orthographe ou essayez la grande ville la plus proche"
 
 #: qml/time/AddLocationPage.qml:13 qml/time/AddLocationWrapper.qml:34
 #, kde-format
