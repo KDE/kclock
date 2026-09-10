@@ -700,7 +700,7 @@
           <li xml:lang="es">Se ha corregido el mensaje emergente «Servicio de reloj no encontrado».</li>
           <li xml:lang="eu">"Erloju daimona ez da aurkitu" mezu gainerakorra konpontzea</li>
           <li xml:lang="fi">korjattu ”Kellopalvelua ei löytynyt” -ponnahdusviesti</li>
-          <li xml:lang="fr">Correction du message contextuel « Impossible de trouver le démon de l’horloge »</li>
+          <li xml:lang="fr">Correction du message contextuel « Impossible de trouver le démon de l'horloge »</li>
           <li xml:lang="he">תוקנה ההודעה הקופצת „סוכן השעון לא נמצא”</li>
           <li xml:lang="ia">Corrige message de popup "Demone de Clock (Horologio) non trovate" </li>
           <li xml:lang="it">È stato corretto il messaggio a comparsa «Demone dell'orologio non trovato»</li>
@@ -931,7 +931,7 @@
           <li xml:lang="es">El elemento de la bandeja del sistema solo se muestra ahora cuando hay alarmas pendientes.</li>
           <li xml:lang="eu">Sistemaren erretiluko elementua orain alarmak zain daudenean bakarrik agertzen da</li>
           <li xml:lang="fi">ilmoitusaluekuvake näkyy nyt vasta, kun on odottavia hälytyksiä</li>
-          <li xml:lang="fr">L’icône de la boite à miniatures ne s’affiche maintenant que lorsque des alarmes sont en attente</li>
+          <li xml:lang="fr">L'icône de la boite à miniatures ne s'affiche maintenant que lorsque des alarmes sont en attente</li>
           <li xml:lang="he">הפריט בשורת המערכת מופיע מעכשיו רק כשיש התראות ממתינות</li>
           <li xml:lang="ia">Le elemento de tabuliero de systema non solmente monstra quando alarmas es pendente</li>
           <li xml:lang="it">La voce del vassoio di sistema viene mostrata solo quando ci sono allarmi in sospeso</li>
@@ -987,7 +987,7 @@
           <li xml:lang="es">La página de formularios de temporizadores y alarmas usa ahora barras de acciones.</li>
           <li xml:lang="eu">Tenporizadore eta alarma inprimaki-orrialdeetan orain ekintza-barrak erabiltzen dira</li>
           <li xml:lang="fi">sekuntikello- ja hälytyssivuilla käytetään nyt toimintopalkkeja</li>
-          <li xml:lang="fr">Les barres d’action sont désormais utilisées sur la page des formulaires de minuteurs et d’alarmes</li>
+          <li xml:lang="fr">Les barres d'action sont désormais utilisées sur la page des formulaires de minuteurs et d'alarmes</li>
           <li xml:lang="he">סרגלי הפעולות נמצאים בשימוש בעמוד הטפסים של קוצבי הזמן וההתראות</li>
           <li xml:lang="ia">Barras de action es nunc usate sur le pagina de formas de chronometro e alarmas </li>
           <li xml:lang="it">Nella pagina dei moduli relativi al timer e alle sveglie sono ora disponibili le barre delle azioni</li>
