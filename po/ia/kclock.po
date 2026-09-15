@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-07 00:50+0000\n"
-"PO-Revision-Date: 2026-07-16 16:44+0200\n"
+"PO-Revision-Date: 2026-09-14 15:54+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -398,7 +398,7 @@ msgstr "Sempre"
 #, kde-format
 msgctxt "When the app is not running"
 msgid "When %1 is not running"
-msgstr "Qyando %1 non es executante"
+msgstr "Quando %1 non es executante"
 
 #: qml/settings/SettingsPage.qml:66
 #, kde-format
