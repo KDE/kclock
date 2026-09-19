@@ -41,9 +41,4 @@ private:
     QMediaPlayer *m_player;
     QAudioOutput *m_audio;
     KConfigWatcher::Ptr m_soundThemeWatcher;
-
-    bool m_userStop = false; // indicate if user asks to stop
-
-private Q_SLOTS:
-    void loopAudio(QMediaPlayer::PlaybackState state);
 };
