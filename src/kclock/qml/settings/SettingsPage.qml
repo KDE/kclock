@@ -37,7 +37,7 @@ FormCard.FormCardPage {
 
         FormCard.FormComboBoxDelegate {
             id: timeFormatDelegate
-            text: i18n("Time Format")
+            text: i18n("Time format")
             model: [
                 {name: i18n("Use System Default"), value: "SystemDefault"},
                 {name: i18n("12 Hour Time"), value: "12Hour"},
