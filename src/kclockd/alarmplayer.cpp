@@ -30,14 +30,7 @@ AlarmPlayer::AlarmPlayer(QObject *parent)
     , m_soundThemeWatcher(KConfigWatcher::create(KSharedConfig::openConfig(QStringLiteral("kdeglobals"))))
 {
     m_player->setAudioOutput(m_audio);
-    connect(m_player, &QMediaPlayer::playbackStateChanged, this, &AlarmPlayer::loopAudio);
-}
-
-void AlarmPlayer::loopAudio(QMediaPlayer::PlaybackState state)
-{
-    if (!m_userStop && state == QMediaPlayer::StoppedState) {
-        m_player->play();
-    }
+    m_player->setLoops(QMediaPlayer::Infinite);
 }
 
 void AlarmPlayer::play()
@@ -46,13 +39,11 @@ void AlarmPlayer::play()
         return;
     }
 
-    m_userStop = false;
     m_player->play();
 }
 
 void AlarmPlayer::stop()
 {
-    m_userStop = true;
     m_player->stop();
 }
 
