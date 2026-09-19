@@ -30,6 +30,19 @@ Item {
     // Whether to make the circle fill the item.
     property bool maximizedCircle: false
 
+    // Radius follows the time row's width. Pin each pair to the painted
+    // width of "88" so a thin "1" does not shrink the circle. advanceWidth
+    // is too narrow and the digits overlap.
+    Label {
+        id: digitPairProbe
+        visible: false
+        font.pointSize: Kirigami.Theme.defaultFont.pointSize * 3
+        font.weight: Font.Light
+        text: "88"
+    }
+
+    readonly property real digitPairWidth: Math.ceil(digitPairProbe.implicitWidth)
+
     function getCircleRadius(): double {
         const totalHeight = heading.implicitHeight + timeLabels.implicitHeight + actionToolBar.implicitHeight
         const maxWidth = Math.max(heading.implicitWidth, timeLabels.implicitWidth, actionToolBar.implicitWidth);
@@ -125,6 +138,9 @@ Item {
             text: root.getHours()
             font.pointSize: Kirigami.Theme.defaultFont.pointSize*3
             font.weight: Font.Light
+            horizontalAlignment: Text.AlignHCenter
+            Layout.preferredWidth: root.digitPairWidth
+            Layout.minimumWidth: root.digitPairWidth
             color: root.timerRunning ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
             visible: text !== "00"
         }
@@ -140,6 +156,9 @@ Item {
             text: root.getMinutes()
             font.pointSize: Kirigami.Theme.defaultFont.pointSize*3
             font.weight: Font.Light
+            horizontalAlignment: Text.AlignHCenter
+            Layout.preferredWidth: root.digitPairWidth
+            Layout.minimumWidth: root.digitPairWidth
             color: root.timerRunning ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
         }
         Label {
@@ -152,6 +171,9 @@ Item {
             text: root.getSeconds()
             font.pointSize: Kirigami.Theme.defaultFont.pointSize*3
             font.weight: Font.Light
+            horizontalAlignment: Text.AlignHCenter
+            Layout.preferredWidth: root.digitPairWidth
+            Layout.minimumWidth: root.digitPairWidth
             color: root.timerRunning ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
         }
     }
