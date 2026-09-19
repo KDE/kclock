@@ -74,9 +74,12 @@ void TimerModel::load()
     auto config = KSharedConfig::openConfig();
     KConfigGroup group = config->group(TIMERS_CFG_GROUP);
 
-    QString audioLocation = group.readEntry(TIMERS_CFG_DEFAULT_AUDIO_KEY);
-    if (!audioLocation.isEmpty()) {
-        m_defaultAudioLocation = QUrl::fromLocalFile(audioLocation);
+    m_defaultAudioLocation = group.readEntry(TIMERS_CFG_DEFAULT_AUDIO_KEY, QUrl());
+
+    // Older versions treated the saved URL as a local path, adding another "file:"
+    // prefix each time the daemon loaded and saved the setting. Fix this here:
+    while (m_defaultAudioLocation.isLocalFile() && m_defaultAudioLocation.toLocalFile().startsWith("file:"_L1)) {
+        m_defaultAudioLocation = QUrl(m_defaultAudioLocation.toLocalFile());
     }
 
     QJsonDocument doc = QJsonDocument::fromJson(group.readEntry(TIMERS_CFG_KEY, "{}").toUtf8());
