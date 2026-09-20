@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-07 00:50+0000\n"
+"POT-Creation-Date: 2026-09-20 00:49+0000\n"
 "PO-Revision-Date: 2026-07-12 11:24+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -35,8 +35,9 @@ msgstr ""
 "Nastavujte budíky a časovače, používejte stopky a spravujte světové hodiny"
 
 #: main.cpp:47
-#, kde-format
-msgid "© 2020-2026 KDE Community"
+#, fuzzy, kde-format
+#| msgid "© 2020-2026 KDE Community"
+msgid "© 2020–2026 KDE Community"
 msgstr "© 2020-2026 Komunita KDE"
 
 #: main.cpp:49
@@ -81,8 +82,9 @@ msgid "Select Days to Repeat"
 msgstr "Vybrat dny opakování"
 
 #: qml/alarm/AlarmForm.qml:113
-#, kde-format
-msgid "Alarm Name (optional):"
+#, fuzzy, kde-format
+#| msgid "Alarm Name (optional):"
+msgid "Alarm name (optional):"
 msgstr "Název budíku (volitelné):"
 
 #: qml/alarm/AlarmForm.qml:114
@@ -91,8 +93,9 @@ msgid "Wake Up"
 msgstr "Probudit"
 
 #: qml/alarm/AlarmForm.qml:124
-#, kde-format
-msgid "Ring Duration:"
+#, fuzzy, kde-format
+#| msgid "Ring Duration:"
+msgid "Ring duration:"
 msgstr "Doba trvání vyzvánění:"
 
 # žádné parametry funkce v inspektoru funkcí
@@ -150,9 +153,10 @@ msgid "1 hour"
 msgstr "1 hodina"
 
 #: qml/alarm/AlarmForm.qml:162
-#, kde-format
-msgid "Snooze Length:"
-msgstr "Délka odložení:"
+#, fuzzy, kde-format
+#| msgid "Ring Duration:"
+msgid "Snooze duration:"
+msgstr "Doba trvání vyzvánění:"
 
 #: qml/alarm/AlarmForm.qml:163
 #, kde-format
@@ -160,8 +164,9 @@ msgid "Select Snooze Length"
 msgstr "Vybrat délku odložení"
 
 #: qml/alarm/AlarmForm.qml:200
-#, kde-format
-msgid "Ring Sound:"
+#, fuzzy, kde-format
+#| msgid "Ring Sound:"
+msgid "Ring sound:"
 msgstr "Zvuk vyzvánění:"
 
 #: qml/alarm/AlarmForm.qml:206
@@ -367,8 +372,9 @@ msgid "PM"
 msgstr "odp."
 
 #: qml/settings/SettingsPage.qml:40
-#, kde-format
-msgid "Time Format"
+#, fuzzy, kde-format
+#| msgid "Time Format"
+msgid "Time format"
 msgstr "Formát času"
 
 #: qml/settings/SettingsPage.qml:42
@@ -581,13 +587,13 @@ msgstr "Zítra"
 msgid "1 m"
 msgstr "1 m"
 
-#: qml/timer/TimerComponent.qml:182 qml/timer/TimerListDelegate.qml:143
+#: qml/timer/TimerComponent.qml:204 qml/timer/TimerListDelegate.qml:143
 #: qml/timer/TimerPage.qml:24
 #, kde-format
 msgid "New timer"
 msgstr "Nový časovač"
 
-#: qml/timer/TimerComponent.qml:195
+#: qml/timer/TimerComponent.qml:217
 #, kde-format
 msgid "Click to edit timer name"
 msgstr "Klikněte pro úpravu názvu časovače"
@@ -927,3 +933,6 @@ msgstr "Pracovní dny"
 #, kde-format
 msgid ", "
 msgstr ", "
+
+#~ msgid "Snooze Length:"
+#~ msgstr "Délka odložení:"

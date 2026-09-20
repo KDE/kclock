@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-07 00:50+0000\n"
+"POT-Creation-Date: 2026-09-20 00:49+0000\n"
 "PO-Revision-Date: 2026-07-08 12:58+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -37,8 +37,9 @@ msgstr ""
 "pasaulio laikrodžius"
 
 #: main.cpp:47
-#, kde-format
-msgid "© 2020-2026 KDE Community"
+#, fuzzy, kde-format
+#| msgid "© 2020-2026 KDE Community"
+msgid "© 2020–2026 KDE Community"
 msgstr "© 2020–2026 KDE bendruomenė"
 
 #: main.cpp:49
@@ -83,8 +84,9 @@ msgid "Select Days to Repeat"
 msgstr "Pažymėkite dienas, kuriomis kartoti"
 
 #: qml/alarm/AlarmForm.qml:113
-#, kde-format
-msgid "Alarm Name (optional):"
+#, fuzzy, kde-format
+#| msgid "Alarm Name (optional):"
+msgid "Alarm name (optional):"
 msgstr "Žadintuvo pavadinimas (nebūtina):"
 
 #: qml/alarm/AlarmForm.qml:114
@@ -93,8 +95,9 @@ msgid "Wake Up"
 msgstr "Keltis"
 
 #: qml/alarm/AlarmForm.qml:124
-#, kde-format
-msgid "Ring Duration:"
+#, fuzzy, kde-format
+#| msgid "Ring Duration:"
+msgid "Ring duration:"
 msgstr "Skambesio trukmė:"
 
 #: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:128
@@ -152,9 +155,10 @@ msgid "1 hour"
 msgstr "1 valanda"
 
 #: qml/alarm/AlarmForm.qml:162
-#, kde-format
-msgid "Snooze Length:"
-msgstr "Snaudimo trukmė:"
+#, fuzzy, kde-format
+#| msgid "Ring Duration:"
+msgid "Snooze duration:"
+msgstr "Skambesio trukmė:"
 
 #: qml/alarm/AlarmForm.qml:163
 #, kde-format
@@ -162,8 +166,9 @@ msgid "Select Snooze Length"
 msgstr "Pasirinkite snaudimo trukmę"
 
 #: qml/alarm/AlarmForm.qml:200
-#, kde-format
-msgid "Ring Sound:"
+#, fuzzy, kde-format
+#| msgid "Ring Sound:"
+msgid "Ring sound:"
 msgstr "Skambesio garsas:"
 
 #: qml/alarm/AlarmForm.qml:206
@@ -371,8 +376,9 @@ msgid "PM"
 msgstr "PM"
 
 #: qml/settings/SettingsPage.qml:40
-#, kde-format
-msgid "Time Format"
+#, fuzzy, kde-format
+#| msgid "Time Format"
+msgid "Time format"
 msgstr "Laiko formatas"
 
 #: qml/settings/SettingsPage.qml:42
@@ -586,13 +592,13 @@ msgstr "Rytoj"
 msgid "1 m"
 msgstr "1 min."
 
-#: qml/timer/TimerComponent.qml:182 qml/timer/TimerListDelegate.qml:143
+#: qml/timer/TimerComponent.qml:204 qml/timer/TimerListDelegate.qml:143
 #: qml/timer/TimerPage.qml:24
 #, kde-format
 msgid "New timer"
 msgstr "Naujas laikmatis"
 
-#: qml/timer/TimerComponent.qml:195
+#: qml/timer/TimerComponent.qml:217
 #, kde-format
 msgid "Click to edit timer name"
 msgstr "Spustelėkite norėdami taisyti laikmačio pavadinimą"
@@ -934,6 +940,9 @@ msgstr "Šiokiadieniais"
 #, kde-format
 msgid ", "
 msgstr ", "
+
+#~ msgid "Snooze Length:"
+#~ msgstr "Snaudimo trukmė:"
 
 #~ msgid "%1 minutes"
 #~ msgstr "%1 min."

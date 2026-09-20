@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-07 00:50+0000\n"
+"POT-Creation-Date: 2026-09-20 00:49+0000\n"
 "PO-Revision-Date: 2026-08-08 12:25+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@nuug.no>\n"
@@ -35,8 +35,9 @@ msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr "Still inn alarmar og nedteljing, bruk som stoppeklokke eller verdsur"
 
 #: main.cpp:47
-#, kde-format
-msgid "© 2020-2026 KDE Community"
+#, fuzzy, kde-format
+#| msgid "© 2020-2026 KDE Community"
+msgid "© 2020–2026 KDE Community"
 msgstr "© 2020–2026 KDE-fellesskapet"
 
 #: main.cpp:49
@@ -81,8 +82,9 @@ msgid "Select Days to Repeat"
 msgstr "Vel dagar å gjenta"
 
 #: qml/alarm/AlarmForm.qml:113
-#, kde-format
-msgid "Alarm Name (optional):"
+#, fuzzy, kde-format
+#| msgid "Alarm Name (optional):"
+msgid "Alarm name (optional):"
 msgstr "Alarmnamn (valfritt):"
 
 #: qml/alarm/AlarmForm.qml:114
@@ -91,8 +93,9 @@ msgid "Wake Up"
 msgstr "Vakna"
 
 #: qml/alarm/AlarmForm.qml:124
-#, kde-format
-msgid "Ring Duration:"
+#, fuzzy, kde-format
+#| msgid "Ring Duration:"
+msgid "Ring duration:"
 msgstr "Ringjetid:"
 
 #: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:128
@@ -148,9 +151,10 @@ msgid "1 hour"
 msgstr "1 time"
 
 #: qml/alarm/AlarmForm.qml:162
-#, kde-format
-msgid "Snooze Length:"
-msgstr "Slumretid:"
+#, fuzzy, kde-format
+#| msgid "Ring Duration:"
+msgid "Snooze duration:"
+msgstr "Ringjetid:"
 
 #: qml/alarm/AlarmForm.qml:163
 #, kde-format
@@ -158,8 +162,9 @@ msgid "Select Snooze Length"
 msgstr "Vel slumretid"
 
 #: qml/alarm/AlarmForm.qml:200
-#, kde-format
-msgid "Ring Sound:"
+#, fuzzy, kde-format
+#| msgid "Ring Sound:"
+msgid "Ring sound:"
 msgstr "Ringjelyd:"
 
 #: qml/alarm/AlarmForm.qml:206
@@ -362,8 +367,9 @@ msgid "PM"
 msgstr "p.m."
 
 #: qml/settings/SettingsPage.qml:40
-#, kde-format
-msgid "Time Format"
+#, fuzzy, kde-format
+#| msgid "Time Format"
+msgid "Time format"
 msgstr "Tidsformat"
 
 #: qml/settings/SettingsPage.qml:42
@@ -578,13 +584,13 @@ msgstr "I morgon"
 msgid "1 m"
 msgstr "1 m"
 
-#: qml/timer/TimerComponent.qml:182 qml/timer/TimerListDelegate.qml:143
+#: qml/timer/TimerComponent.qml:204 qml/timer/TimerListDelegate.qml:143
 #: qml/timer/TimerPage.qml:24
 #, kde-format
 msgid "New timer"
 msgstr "Ny nedteljing"
 
-#: qml/timer/TimerComponent.qml:195
+#: qml/timer/TimerComponent.qml:217
 #, kde-format
 msgid "Click to edit timer name"
 msgstr "Trykk for endra namn på nedteljinga"
@@ -922,3 +928,6 @@ msgstr "Kvardagar"
 #, kde-format
 msgid ", "
 msgstr ", "
+
+#~ msgid "Snooze Length:"
+#~ msgstr "Slumretid:"

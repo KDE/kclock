@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-07 00:50+0000\n"
+"POT-Creation-Date: 2026-09-20 00:49+0000\n"
 "PO-Revision-Date: 2026-02-04 13:06+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -38,7 +38,7 @@ msgstr ""
 #: main.cpp:47
 #, fuzzy, kde-format
 #| msgid "© 2020-2024 KDE Community"
-msgid "© 2020-2026 KDE Community"
+msgid "© 2020–2026 KDE Community"
 msgstr "© 2020-2024 Comunitatea KDE"
 
 #: main.cpp:49
@@ -83,8 +83,9 @@ msgid "Select Days to Repeat"
 msgstr "Alegeți zilele repetării"
 
 #: qml/alarm/AlarmForm.qml:113
-#, kde-format
-msgid "Alarm Name (optional):"
+#, fuzzy, kde-format
+#| msgid "Alarm Name (optional):"
+msgid "Alarm name (optional):"
 msgstr "Denumirea alarmei (opțională):"
 
 #: qml/alarm/AlarmForm.qml:114
@@ -93,8 +94,9 @@ msgid "Wake Up"
 msgstr "Trezire"
 
 #: qml/alarm/AlarmForm.qml:124
-#, kde-format
-msgid "Ring Duration:"
+#, fuzzy, kde-format
+#| msgid "Ring Duration:"
+msgid "Ring duration:"
 msgstr "Durată sunet:"
 
 #: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:128
@@ -151,9 +153,10 @@ msgid "1 hour"
 msgstr "1 oră"
 
 #: qml/alarm/AlarmForm.qml:162
-#, kde-format
-msgid "Snooze Length:"
-msgstr "Durata ațipirii:"
+#, fuzzy, kde-format
+#| msgid "Ring Duration:"
+msgid "Snooze duration:"
+msgstr "Durată sunet:"
 
 #: qml/alarm/AlarmForm.qml:163
 #, kde-format
@@ -161,8 +164,9 @@ msgid "Select Snooze Length"
 msgstr "Alegeți durata ațipirii"
 
 #: qml/alarm/AlarmForm.qml:200
-#, kde-format
-msgid "Ring Sound:"
+#, fuzzy, kde-format
+#| msgid "Ring Sound:"
+msgid "Ring sound:"
 msgstr "Sunetul alarmei:"
 
 #: qml/alarm/AlarmForm.qml:206
@@ -368,8 +372,9 @@ msgid "PM"
 msgstr "seara"
 
 #: qml/settings/SettingsPage.qml:40
-#, kde-format
-msgid "Time Format"
+#, fuzzy, kde-format
+#| msgid "Time Format"
+msgid "Time format"
 msgstr "Formatul orei"
 
 #: qml/settings/SettingsPage.qml:42
@@ -584,13 +589,13 @@ msgstr "Mâine"
 msgid "1 m"
 msgstr "1 m"
 
-#: qml/timer/TimerComponent.qml:182 qml/timer/TimerListDelegate.qml:143
+#: qml/timer/TimerComponent.qml:204 qml/timer/TimerListDelegate.qml:143
 #: qml/timer/TimerPage.qml:24
 #, kde-format
 msgid "New timer"
 msgstr "Cronometru nou"
 
-#: qml/timer/TimerComponent.qml:195
+#: qml/timer/TimerComponent.qml:217
 #, kde-format
 msgid "Click to edit timer name"
 msgstr "Apăsați pentru a redacta denumirea temporizatorului"
@@ -932,6 +937,9 @@ msgstr "Zile de lucru"
 #, kde-format
 msgid ", "
 msgstr ", "
+
+#~ msgid "Snooze Length:"
+#~ msgstr "Durata ațipirii:"
 
 #, fuzzy
 #~| msgid "%1 minute"

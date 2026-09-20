@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-07 00:50+0000\n"
+"POT-Creation-Date: 2026-09-20 00:49+0000\n"
 "PO-Revision-Date: 2026-07-07 08:30+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -34,8 +34,9 @@ msgstr ""
 "Saatler ve sayaçlar kurun, kronometre kullanın ve dünya saatlerini yönetin"
 
 #: main.cpp:47
-#, kde-format
-msgid "© 2020-2026 KDE Community"
+#, fuzzy, kde-format
+#| msgid "© 2020-2026 KDE Community"
+msgid "© 2020–2026 KDE Community"
 msgstr "© 2020–2026 KDE Topluluğu"
 
 #: main.cpp:49
@@ -80,8 +81,9 @@ msgid "Select Days to Repeat"
 msgstr "Yinelenecek Günleri Seç"
 
 #: qml/alarm/AlarmForm.qml:113
-#, kde-format
-msgid "Alarm Name (optional):"
+#, fuzzy, kde-format
+#| msgid "Alarm Name (optional):"
+msgid "Alarm name (optional):"
 msgstr "Çalar saat adı (isteğe bağlı):"
 
 #: qml/alarm/AlarmForm.qml:114
@@ -90,8 +92,9 @@ msgid "Wake Up"
 msgstr "Uyandırma"
 
 #: qml/alarm/AlarmForm.qml:124
-#, kde-format
-msgid "Ring Duration:"
+#, fuzzy, kde-format
+#| msgid "Ring Duration:"
+msgid "Ring duration:"
 msgstr "Çalma süresi:"
 
 #: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:128
@@ -147,9 +150,10 @@ msgid "1 hour"
 msgstr "1 saat"
 
 #: qml/alarm/AlarmForm.qml:162
-#, kde-format
-msgid "Snooze Length:"
-msgstr "Erteleme uzunluğu:"
+#, fuzzy, kde-format
+#| msgid "Ring Duration:"
+msgid "Snooze duration:"
+msgstr "Çalma süresi:"
 
 #: qml/alarm/AlarmForm.qml:163
 #, kde-format
@@ -157,8 +161,9 @@ msgid "Select Snooze Length"
 msgstr "Erteleme Uzunluğunu Seç"
 
 #: qml/alarm/AlarmForm.qml:200
-#, kde-format
-msgid "Ring Sound:"
+#, fuzzy, kde-format
+#| msgid "Ring Sound:"
+msgid "Ring sound:"
 msgstr "Çalma sesi:"
 
 #: qml/alarm/AlarmForm.qml:206
@@ -363,8 +368,9 @@ msgid "PM"
 msgstr "ÖS"
 
 #: qml/settings/SettingsPage.qml:40
-#, kde-format
-msgid "Time Format"
+#, fuzzy, kde-format
+#| msgid "Time Format"
+msgid "Time format"
 msgstr "Zaman Biçimi"
 
 #: qml/settings/SettingsPage.qml:42
@@ -578,13 +584,13 @@ msgstr "Yarın"
 msgid "1 m"
 msgstr "1 dk"
 
-#: qml/timer/TimerComponent.qml:182 qml/timer/TimerListDelegate.qml:143
+#: qml/timer/TimerComponent.qml:204 qml/timer/TimerListDelegate.qml:143
 #: qml/timer/TimerPage.qml:24
 #, kde-format
 msgid "New timer"
 msgstr "Yeni Sayaç"
 
-#: qml/timer/TimerComponent.qml:195
+#: qml/timer/TimerComponent.qml:217
 #, kde-format
 msgid "Click to edit timer name"
 msgstr "Sayaç adını düzenlemek için tıklayın"
@@ -922,6 +928,9 @@ msgstr "Hafta içi"
 #, kde-format
 msgid ", "
 msgstr ", "
+
+#~ msgid "Snooze Length:"
+#~ msgstr "Erteleme uzunluğu:"
 
 #~ msgid "%1 minutes"
 #~ msgstr "%1 dakika"

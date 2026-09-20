@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-07 00:50+0000\n"
+"POT-Creation-Date: 2026-09-20 00:49+0000\n"
 "PO-Revision-Date: 2026-07-07 06:21+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -34,8 +34,9 @@ msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr "დააყენეთ გაფრთხილებები, წამმზომები და მაღვიძარები, მართეთ საათები"
 
 #: main.cpp:47
-#, kde-format
-msgid "© 2020-2026 KDE Community"
+#, fuzzy, kde-format
+#| msgid "© 2020-2026 KDE Community"
+msgid "© 2020–2026 KDE Community"
 msgstr "© 2020-2026 KDE-ის საზოგადოება"
 
 #: main.cpp:49
@@ -80,8 +81,9 @@ msgid "Select Days to Repeat"
 msgstr "აირჩიეთ გასამეორებელი დღეები"
 
 #: qml/alarm/AlarmForm.qml:113
-#, kde-format
-msgid "Alarm Name (optional):"
+#, fuzzy, kde-format
+#| msgid "Alarm Name (optional):"
+msgid "Alarm name (optional):"
 msgstr "მაღვიძარის სახელი (სურვილისამებრ):"
 
 #: qml/alarm/AlarmForm.qml:114
@@ -90,8 +92,9 @@ msgid "Wake Up"
 msgstr "გაღვიძება"
 
 #: qml/alarm/AlarmForm.qml:124
-#, kde-format
-msgid "Ring Duration:"
+#, fuzzy, kde-format
+#| msgid "Ring Duration:"
+msgid "Ring duration:"
 msgstr "ბეჭდის ხანგრძლივობა:"
 
 #: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:128
@@ -147,9 +150,10 @@ msgid "1 hour"
 msgstr "1 საათი"
 
 #: qml/alarm/AlarmForm.qml:162
-#, kde-format
-msgid "Snooze Length:"
-msgstr "ჩაჩუმების ხანგრძლივობა:"
+#, fuzzy, kde-format
+#| msgid "Ring Duration:"
+msgid "Snooze duration:"
+msgstr "ბეჭდის ხანგრძლივობა:"
 
 #: qml/alarm/AlarmForm.qml:163
 #, kde-format
@@ -157,8 +161,9 @@ msgid "Select Snooze Length"
 msgstr "აირჩიეთ ჩაჩუმების ხანგრძლივობა"
 
 #: qml/alarm/AlarmForm.qml:200
-#, kde-format
-msgid "Ring Sound:"
+#, fuzzy, kde-format
+#| msgid "Ring Sound:"
+msgid "Ring sound:"
 msgstr "ზარის ხმა:"
 
 #: qml/alarm/AlarmForm.qml:206
@@ -363,8 +368,9 @@ msgid "PM"
 msgstr "PM"
 
 #: qml/settings/SettingsPage.qml:40
-#, kde-format
-msgid "Time Format"
+#, fuzzy, kde-format
+#| msgid "Time Format"
+msgid "Time format"
 msgstr "დროის ფორმატი"
 
 #: qml/settings/SettingsPage.qml:42
@@ -578,13 +584,13 @@ msgstr "ხვალ"
 msgid "1 m"
 msgstr "1 წთ"
 
-#: qml/timer/TimerComponent.qml:182 qml/timer/TimerListDelegate.qml:143
+#: qml/timer/TimerComponent.qml:204 qml/timer/TimerListDelegate.qml:143
 #: qml/timer/TimerPage.qml:24
 #, kde-format
 msgid "New timer"
 msgstr "ახალი ტაიმერი"
 
-#: qml/timer/TimerComponent.qml:195
+#: qml/timer/TimerComponent.qml:217
 #, kde-format
 msgid "Click to edit timer name"
 msgstr "დააწკაპუნეთ ტაიმერის სახელის ჩასასწორებლად"
@@ -921,6 +927,9 @@ msgstr "სამუშაო დღეებში"
 #, kde-format
 msgid ", "
 msgstr ", "
+
+#~ msgid "Snooze Length:"
+#~ msgstr "ჩაჩუმების ხანგრძლივობა:"
 
 #~ msgid "%1 minutes"
 #~ msgstr "%1 წუთი"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-07 00:50+0000\n"
+"POT-Creation-Date: 2026-09-20 00:49+0000\n"
 "PO-Revision-Date: 2026-07-09 23:48+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -39,8 +39,9 @@ msgstr ""
 "ordulariak"
 
 #: main.cpp:47
-#, kde-format
-msgid "© 2020-2026 KDE Community"
+#, fuzzy, kde-format
+#| msgid "© 2020-2026 KDE Community"
+msgid "© 2020–2026 KDE Community"
 msgstr "© 2020-2026 KDE Komunitatea"
 
 #: main.cpp:49
@@ -85,8 +86,9 @@ msgid "Select Days to Repeat"
 msgstr "Errepikatu beharreko egunak hautatu"
 
 #: qml/alarm/AlarmForm.qml:113
-#, kde-format
-msgid "Alarm Name (optional):"
+#, fuzzy, kde-format
+#| msgid "Alarm Name (optional):"
+msgid "Alarm name (optional):"
 msgstr "Alarmaren izena (aukerakoa)"
 
 #: qml/alarm/AlarmForm.qml:114
@@ -95,8 +97,9 @@ msgid "Wake Up"
 msgstr "Esnatu"
 
 #: qml/alarm/AlarmForm.qml:124
-#, kde-format
-msgid "Ring Duration:"
+#, fuzzy, kde-format
+#| msgid "Ring Duration:"
+msgid "Ring duration:"
 msgstr "Txirrinaren iraupena:"
 
 #: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:128
@@ -152,9 +155,10 @@ msgid "1 hour"
 msgstr "ordu 1"
 
 #: qml/alarm/AlarmForm.qml:162
-#, kde-format
-msgid "Snooze Length:"
-msgstr "Kuluxkaren iraupena:"
+#, fuzzy, kde-format
+#| msgid "Ring Duration:"
+msgid "Snooze duration:"
+msgstr "Txirrinaren iraupena:"
 
 #: qml/alarm/AlarmForm.qml:163
 #, kde-format
@@ -162,8 +166,9 @@ msgid "Select Snooze Length"
 msgstr "Aukeratu kuluxkaren iraupena"
 
 #: qml/alarm/AlarmForm.qml:200
-#, kde-format
-msgid "Ring Sound:"
+#, fuzzy, kde-format
+#| msgid "Ring Sound:"
+msgid "Ring sound:"
 msgstr "Txirrinaren hotsa:"
 
 #: qml/alarm/AlarmForm.qml:206
@@ -368,8 +373,9 @@ msgid "PM"
 msgstr "PM"
 
 #: qml/settings/SettingsPage.qml:40
-#, kde-format
-msgid "Time Format"
+#, fuzzy, kde-format
+#| msgid "Time Format"
+msgid "Time format"
 msgstr "Ordu-formatua"
 
 #: qml/settings/SettingsPage.qml:42
@@ -583,13 +589,13 @@ msgstr "Bihar"
 msgid "1 m"
 msgstr "m 1"
 
-#: qml/timer/TimerComponent.qml:182 qml/timer/TimerListDelegate.qml:143
+#: qml/timer/TimerComponent.qml:204 qml/timer/TimerListDelegate.qml:143
 #: qml/timer/TimerPage.qml:24
 #, kde-format
 msgid "New timer"
 msgstr "Tenporizadore berria"
 
-#: qml/timer/TimerComponent.qml:195
+#: qml/timer/TimerComponent.qml:217
 #, kde-format
 msgid "Click to edit timer name"
 msgstr "Egin klik tenporizadorearen izena editatzeko"
@@ -927,6 +933,9 @@ msgstr "Astegunetan"
 #, kde-format
 msgid ", "
 msgstr ", "
+
+#~ msgid "Snooze Length:"
+#~ msgstr "Kuluxkaren iraupena:"
 
 #~ msgid "%1 minutes"
 #~ msgstr "%1 minutu"

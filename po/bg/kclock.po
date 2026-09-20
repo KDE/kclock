@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-07 00:50+0000\n"
+"POT-Creation-Date: 2026-09-20 00:49+0000\n"
 "PO-Revision-Date: 2026-07-21 23:19+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -35,8 +35,9 @@ msgstr ""
 "часовници"
 
 #: main.cpp:47
-#, kde-format
-msgid "© 2020-2026 KDE Community"
+#, fuzzy, kde-format
+#| msgid "© 2020-2026 KDE Community"
+msgid "© 2020–2026 KDE Community"
 msgstr "© 2020–2026, Общност на KDE"
 
 #: main.cpp:49
@@ -81,8 +82,9 @@ msgid "Select Days to Repeat"
 msgstr "Изберете дни за повторение"
 
 #: qml/alarm/AlarmForm.qml:113
-#, kde-format
-msgid "Alarm Name (optional):"
+#, fuzzy, kde-format
+#| msgid "Alarm Name (optional):"
+msgid "Alarm name (optional):"
 msgstr "Име на алармата (по избор):"
 
 #: qml/alarm/AlarmForm.qml:114
@@ -91,8 +93,9 @@ msgid "Wake Up"
 msgstr "Събуждане"
 
 #: qml/alarm/AlarmForm.qml:124
-#, kde-format
-msgid "Ring Duration:"
+#, fuzzy, kde-format
+#| msgid "Ring Duration:"
+msgid "Ring duration:"
 msgstr "Продължителност на анимацията:"
 
 #: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:128
@@ -148,9 +151,10 @@ msgid "1 hour"
 msgstr "1 час"
 
 #: qml/alarm/AlarmForm.qml:162
-#, kde-format
-msgid "Snooze Length:"
-msgstr "Дължина на отлагането:"
+#, fuzzy, kde-format
+#| msgid "Ring Duration:"
+msgid "Snooze duration:"
+msgstr "Продължителност на анимацията:"
 
 #: qml/alarm/AlarmForm.qml:163
 #, kde-format
@@ -158,8 +162,9 @@ msgid "Select Snooze Length"
 msgstr "Изберете Дължина на дрямката"
 
 #: qml/alarm/AlarmForm.qml:200
-#, kde-format
-msgid "Ring Sound:"
+#, fuzzy, kde-format
+#| msgid "Ring Sound:"
+msgid "Ring sound:"
 msgstr "Звук на звънене:"
 
 #: qml/alarm/AlarmForm.qml:206
@@ -364,8 +369,9 @@ msgid "PM"
 msgstr "PM"
 
 #: qml/settings/SettingsPage.qml:40
-#, kde-format
-msgid "Time Format"
+#, fuzzy, kde-format
+#| msgid "Time Format"
+msgid "Time format"
 msgstr "Формат на времето"
 
 #: qml/settings/SettingsPage.qml:42
@@ -580,13 +586,13 @@ msgstr "Утре"
 msgid "1 m"
 msgstr "1 м"
 
-#: qml/timer/TimerComponent.qml:182 qml/timer/TimerListDelegate.qml:143
+#: qml/timer/TimerComponent.qml:204 qml/timer/TimerListDelegate.qml:143
 #: qml/timer/TimerPage.qml:24
 #, kde-format
 msgid "New timer"
 msgstr "Нов таймер"
 
-#: qml/timer/TimerComponent.qml:195
+#: qml/timer/TimerComponent.qml:217
 #, kde-format
 msgid "Click to edit timer name"
 msgstr "Кликнете за редактиране на името"
@@ -924,3 +930,6 @@ msgstr "Делнични дни"
 #, kde-format
 msgid ", "
 msgstr ","
+
+#~ msgid "Snooze Length:"
+#~ msgstr "Дължина на отлагането:"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-07 00:50+0000\n"
+"POT-Creation-Date: 2026-09-20 00:49+0000\n"
 "PO-Revision-Date: 2025-07-31 21:50+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -37,7 +37,7 @@ msgstr ""
 #: main.cpp:47
 #, fuzzy, kde-format
 #| msgid "© 2020-2024 KDE Community"
-msgid "© 2020-2026 KDE Community"
+msgid "© 2020–2026 KDE Community"
 msgstr "© A KDE közösség, 2020-2024."
 
 #: main.cpp:49
@@ -82,8 +82,9 @@ msgid "Select Days to Repeat"
 msgstr "Válassza ki, hogy mely napokon ismétlődjön"
 
 #: qml/alarm/AlarmForm.qml:113
-#, kde-format
-msgid "Alarm Name (optional):"
+#, fuzzy, kde-format
+#| msgid "Alarm Name (optional):"
+msgid "Alarm name (optional):"
 msgstr "Riasztás neve (opcionális):"
 
 #: qml/alarm/AlarmForm.qml:114
@@ -92,8 +93,9 @@ msgid "Wake Up"
 msgstr "Felébresztés"
 
 #: qml/alarm/AlarmForm.qml:124
-#, kde-format
-msgid "Ring Duration:"
+#, fuzzy, kde-format
+#| msgid "Ring Duration:"
+msgid "Ring duration:"
 msgstr "Csengés időtartama:"
 
 #: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:128
@@ -149,9 +151,10 @@ msgid "1 hour"
 msgstr "1 óra"
 
 #: qml/alarm/AlarmForm.qml:162
-#, kde-format
-msgid "Snooze Length:"
-msgstr "Szundi hossza:"
+#, fuzzy, kde-format
+#| msgid "Ring Duration:"
+msgid "Snooze duration:"
+msgstr "Csengés időtartama:"
 
 #: qml/alarm/AlarmForm.qml:163
 #, kde-format
@@ -159,8 +162,9 @@ msgid "Select Snooze Length"
 msgstr "Válassza ki a szundi hosszát"
 
 #: qml/alarm/AlarmForm.qml:200
-#, kde-format
-msgid "Ring Sound:"
+#, fuzzy, kde-format
+#| msgid "Ring Sound:"
+msgid "Ring sound:"
 msgstr "Csengőhang:"
 
 #: qml/alarm/AlarmForm.qml:206
@@ -366,8 +370,9 @@ msgid "PM"
 msgstr "DU"
 
 #: qml/settings/SettingsPage.qml:40
-#, kde-format
-msgid "Time Format"
+#, fuzzy, kde-format
+#| msgid "Time Format"
+msgid "Time format"
 msgstr "\tIdőformátum"
 
 #: qml/settings/SettingsPage.qml:42
@@ -585,13 +590,13 @@ msgstr "Holnap"
 msgid "1 m"
 msgstr "1 p"
 
-#: qml/timer/TimerComponent.qml:182 qml/timer/TimerListDelegate.qml:143
+#: qml/timer/TimerComponent.qml:204 qml/timer/TimerListDelegate.qml:143
 #: qml/timer/TimerPage.qml:24
 #, kde-format
 msgid "New timer"
 msgstr "Új időzítő"
 
-#: qml/timer/TimerComponent.qml:195
+#: qml/timer/TimerComponent.qml:217
 #, kde-format
 msgid "Click to edit timer name"
 msgstr ""
@@ -932,6 +937,9 @@ msgstr "Hétköznapokon"
 #, kde-format
 msgid ", "
 msgstr ", "
+
+#~ msgid "Snooze Length:"
+#~ msgstr "Szundi hossza:"
 
 #~ msgid "%1 minutes"
 #~ msgstr "%1 perc"

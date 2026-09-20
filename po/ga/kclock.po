@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-07 00:50+0000\n"
+"POT-Creation-Date: 2026-09-20 00:49+0000\n"
 "PO-Revision-Date: 2026-01-10 22:36+0000\n"
 "Last-Translator: Charlotte <altronic25@protonmail.com>\n"
 "Language-Team: Irish\n"
@@ -35,7 +35,7 @@ msgstr ""
 #: main.cpp:47
 #, fuzzy, kde-format
 #| msgid "© 2020-2024 KDE Community"
-msgid "© 2020-2026 KDE Community"
+msgid "© 2020–2026 KDE Community"
 msgstr "© 2020-2024 Pobal KDE"
 
 #: main.cpp:49
@@ -80,8 +80,9 @@ msgid "Select Days to Repeat"
 msgstr ""
 
 #: qml/alarm/AlarmForm.qml:113
-#, kde-format
-msgid "Alarm Name (optional):"
+#, fuzzy, kde-format
+#| msgid "Alarm Name (optional):"
+msgid "Alarm name (optional):"
 msgstr "Ainm Aláraim (roghnach):"
 
 #: qml/alarm/AlarmForm.qml:114
@@ -90,8 +91,9 @@ msgid "Wake Up"
 msgstr ""
 
 #: qml/alarm/AlarmForm.qml:124
-#, kde-format
-msgid "Ring Duration:"
+#, fuzzy, kde-format
+#| msgid "Ring Duration:"
+msgid "Ring duration:"
 msgstr "Achar an Ghlao:"
 
 #: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:128
@@ -150,9 +152,10 @@ msgid "1 hour"
 msgstr "1 uair"
 
 #: qml/alarm/AlarmForm.qml:162
-#, kde-format
-msgid "Snooze Length:"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Ring Duration:"
+msgid "Snooze duration:"
+msgstr "Achar an Ghlao:"
 
 #: qml/alarm/AlarmForm.qml:163
 #, kde-format
@@ -160,9 +163,10 @@ msgid "Select Snooze Length"
 msgstr ""
 
 #: qml/alarm/AlarmForm.qml:200
-#, kde-format
-msgid "Ring Sound:"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Ring Duration:"
+msgid "Ring sound:"
+msgstr "Achar an Ghlao:"
 
 #: qml/alarm/AlarmForm.qml:206
 #, kde-format
@@ -367,9 +371,10 @@ msgid "PM"
 msgstr "IN"
 
 #: qml/settings/SettingsPage.qml:40
-#, kde-format
-msgid "Time Format"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Timer"
+msgid "Time format"
+msgstr "Uaineadóir"
 
 #: qml/settings/SettingsPage.qml:42
 #, kde-format
@@ -579,13 +584,13 @@ msgstr "Amárach"
 msgid "1 m"
 msgstr "1n"
 
-#: qml/timer/TimerComponent.qml:182 qml/timer/TimerListDelegate.qml:143
+#: qml/timer/TimerComponent.qml:204 qml/timer/TimerListDelegate.qml:143
 #: qml/timer/TimerPage.qml:24
 #, kde-format
 msgid "New timer"
 msgstr "Uaineadóir nua"
 
-#: qml/timer/TimerComponent.qml:195
+#: qml/timer/TimerComponent.qml:217
 #, kde-format
 msgid "Click to edit timer name"
 msgstr ""

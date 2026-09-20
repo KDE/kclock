@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-07 00:50+0000\n"
+"POT-Creation-Date: 2026-09-20 00:49+0000\n"
 "PO-Revision-Date: 2026-07-08 08:47+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
@@ -38,8 +38,9 @@ msgstr ""
 "gérer les horloges mondiales"
 
 #: main.cpp:47
-#, kde-format
-msgid "© 2020-2026 KDE Community"
+#, fuzzy, kde-format
+#| msgid "© 2020-2026 KDE Community"
+msgid "© 2020–2026 KDE Community"
 msgstr "© 2020 - 2026 La communauté de KDE"
 
 #: main.cpp:49
@@ -84,8 +85,9 @@ msgid "Select Days to Repeat"
 msgstr "Sélectionner les jours à répéter"
 
 #: qml/alarm/AlarmForm.qml:113
-#, kde-format
-msgid "Alarm Name (optional):"
+#, fuzzy, kde-format
+#| msgid "Alarm Name (optional):"
+msgid "Alarm name (optional):"
 msgstr "Nom de l'alarme (optionnel) :"
 
 #: qml/alarm/AlarmForm.qml:114
@@ -94,8 +96,9 @@ msgid "Wake Up"
 msgstr "Réveil"
 
 #: qml/alarm/AlarmForm.qml:124
-#, kde-format
-msgid "Ring Duration:"
+#, fuzzy, kde-format
+#| msgid "Ring Duration:"
+msgid "Ring duration:"
 msgstr "Durée de sonnerie :"
 
 #: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:128
@@ -151,9 +154,10 @@ msgid "1 hour"
 msgstr "1 heure"
 
 #: qml/alarm/AlarmForm.qml:162
-#, kde-format
-msgid "Snooze Length:"
-msgstr "Durée de l'alarme :"
+#, fuzzy, kde-format
+#| msgid "Ring Duration:"
+msgid "Snooze duration:"
+msgstr "Durée de sonnerie :"
 
 #: qml/alarm/AlarmForm.qml:163
 #, kde-format
@@ -161,8 +165,9 @@ msgid "Select Snooze Length"
 msgstr "Sélectionner la durée de l'alarme"
 
 #: qml/alarm/AlarmForm.qml:200
-#, kde-format
-msgid "Ring Sound:"
+#, fuzzy, kde-format
+#| msgid "Ring Sound:"
+msgid "Ring sound:"
 msgstr "Son de sonnerie :"
 
 #: qml/alarm/AlarmForm.qml:206
@@ -367,8 +372,9 @@ msgid "PM"
 msgstr "PM"
 
 #: qml/settings/SettingsPage.qml:40
-#, kde-format
-msgid "Time Format"
+#, fuzzy, kde-format
+#| msgid "Time Format"
+msgid "Time format"
 msgstr "Format d'heure"
 
 #: qml/settings/SettingsPage.qml:42
@@ -584,13 +590,13 @@ msgstr "Demain"
 msgid "1 m"
 msgstr "1 m"
 
-#: qml/timer/TimerComponent.qml:182 qml/timer/TimerListDelegate.qml:143
+#: qml/timer/TimerComponent.qml:204 qml/timer/TimerListDelegate.qml:143
 #: qml/timer/TimerPage.qml:24
 #, kde-format
 msgid "New timer"
 msgstr "Nouveau chronomètre"
 
-#: qml/timer/TimerComponent.qml:195
+#: qml/timer/TimerComponent.qml:217
 #, kde-format
 msgid "Click to edit timer name"
 msgstr "Cliquez pour modifier le nom du chronomètre"
@@ -928,6 +934,9 @@ msgstr "Jours ouvrables"
 #, kde-format
 msgid ", "
 msgstr ", "
+
+#~ msgid "Snooze Length:"
+#~ msgstr "Durée de l'alarme :"
 
 #~ msgid "%1 minutes"
 #~ msgstr "%1 minutes"

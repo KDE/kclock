@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-07 00:50+0000\n"
+"POT-Creation-Date: 2026-09-20 00:49+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -33,8 +33,9 @@ msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr "设置闹钟、倒计时、使用秒表和管理世界时钟"
 
 #: main.cpp:47
-#, kde-format
-msgid "© 2020-2026 KDE Community"
+#, fuzzy, kde-format
+#| msgid "© 2020-2026 KDE Community"
+msgid "© 2020–2026 KDE Community"
 msgstr "© 2020-2026 KDE Community"
 
 #: main.cpp:49
@@ -79,8 +80,9 @@ msgid "Select Days to Repeat"
 msgstr "选择重复的天数"
 
 #: qml/alarm/AlarmForm.qml:113
-#, kde-format
-msgid "Alarm Name (optional):"
+#, fuzzy, kde-format
+#| msgid "Alarm Name (optional):"
+msgid "Alarm name (optional):"
 msgstr "闹钟名称 (可选)："
 
 #: qml/alarm/AlarmForm.qml:114
@@ -89,8 +91,9 @@ msgid "Wake Up"
 msgstr "唤醒"
 
 #: qml/alarm/AlarmForm.qml:124
-#, kde-format
-msgid "Ring Duration:"
+#, fuzzy, kde-format
+#| msgid "Ring Duration:"
+msgid "Ring duration:"
 msgstr "铃声持续时间："
 
 #: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:128
@@ -145,9 +148,10 @@ msgid "1 hour"
 msgstr "1 小时"
 
 #: qml/alarm/AlarmForm.qml:162
-#, kde-format
-msgid "Snooze Length:"
-msgstr "推迟时间长度："
+#, fuzzy, kde-format
+#| msgid "Ring Duration:"
+msgid "Snooze duration:"
+msgstr "铃声持续时间："
 
 #: qml/alarm/AlarmForm.qml:163
 #, kde-format
@@ -155,8 +159,9 @@ msgid "Select Snooze Length"
 msgstr "选择推迟时间长度"
 
 #: qml/alarm/AlarmForm.qml:200
-#, kde-format
-msgid "Ring Sound:"
+#, fuzzy, kde-format
+#| msgid "Ring Sound:"
+msgid "Ring sound:"
 msgstr "铃声："
 
 #: qml/alarm/AlarmForm.qml:206
@@ -358,8 +363,9 @@ msgid "PM"
 msgstr "下午"
 
 #: qml/settings/SettingsPage.qml:40
-#, kde-format
-msgid "Time Format"
+#, fuzzy, kde-format
+#| msgid "Time Format"
+msgid "Time format"
 msgstr "时间格式"
 
 #: qml/settings/SettingsPage.qml:42
@@ -571,13 +577,13 @@ msgstr "明天"
 msgid "1 m"
 msgstr "1 分钟"
 
-#: qml/timer/TimerComponent.qml:182 qml/timer/TimerListDelegate.qml:143
+#: qml/timer/TimerComponent.qml:204 qml/timer/TimerListDelegate.qml:143
 #: qml/timer/TimerPage.qml:24
 #, kde-format
 msgid "New timer"
 msgstr "新计时器"
 
-#: qml/timer/TimerComponent.qml:195
+#: qml/timer/TimerComponent.qml:217
 #, kde-format
 msgid "Click to edit timer name"
 msgstr "点击以编辑计时器名称"
@@ -911,3 +917,6 @@ msgstr "工作日"
 #, kde-format
 msgid ", "
 msgstr "、"
+
+#~ msgid "Snooze Length:"
+#~ msgstr "推迟时间长度："
