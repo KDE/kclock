@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-07 02:46+0000\n"
+"POT-Creation-Date: 2026-09-20 02:46+0000\n"
 "PO-Revision-Date: 2026-02-25 14:05+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -578,13 +578,13 @@ msgstr "Huomenna"
 msgid "1 m"
 msgstr "1 min"
 
-#: qml/timer/TimerComponent.qml:182 qml/timer/TimerListDelegate.qml:143
+#: qml/timer/TimerComponent.qml:204 qml/timer/TimerListDelegate.qml:143
 #: qml/timer/TimerPage.qml:24
 #, kde-format
 msgid "New timer"
 msgstr "Uusi ajastin"
 
-#: qml/timer/TimerComponent.qml:195
+#: qml/timer/TimerComponent.qml:217
 #, kde-format
 msgid "Click to edit timer name"
 msgstr "Muokkaa ajastimen nimeä napsauttamalla"

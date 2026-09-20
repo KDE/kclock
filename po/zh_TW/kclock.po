@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-07 02:46+0000\n"
+"POT-Creation-Date: 2026-09-20 02:46+0000\n"
 "PO-Revision-Date: 2026-07-22 01:17+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -575,13 +575,13 @@ msgstr "明天"
 msgid "1 m"
 msgstr "1 分"
 
-#: qml/timer/TimerComponent.qml:182 qml/timer/TimerListDelegate.qml:143
+#: qml/timer/TimerComponent.qml:204 qml/timer/TimerListDelegate.qml:143
 #: qml/timer/TimerPage.qml:24
 #, kde-format
 msgid "New timer"
 msgstr "新計時器"
 
-#: qml/timer/TimerComponent.qml:195
+#: qml/timer/TimerComponent.qml:217
 #, kde-format
 msgid "Click to edit timer name"
 msgstr "點擊以編輯計時器名稱"

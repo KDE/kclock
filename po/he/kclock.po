@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-07 02:46+0000\n"
+"POT-Creation-Date: 2026-09-20 02:46+0000\n"
 "PO-Revision-Date: 2026-07-07 09:08+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -579,13 +579,13 @@ msgstr "מחר"
 msgid "1 m"
 msgstr "מטר"
 
-#: qml/timer/TimerComponent.qml:182 qml/timer/TimerListDelegate.qml:143
+#: qml/timer/TimerComponent.qml:204 qml/timer/TimerListDelegate.qml:143
 #: qml/timer/TimerPage.qml:24
 #, kde-format
 msgid "New timer"
 msgstr "קוצב זמן חדש"
 
-#: qml/timer/TimerComponent.qml:195
+#: qml/timer/TimerComponent.qml:217
 #, kde-format
 msgid "Click to edit timer name"
 msgstr "לחיצה לעריכת שם מתזמן"

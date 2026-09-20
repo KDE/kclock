@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-07 02:46+0000\n"
+"POT-Creation-Date: 2026-09-20 02:46+0000\n"
 "PO-Revision-Date: 2026-07-07 08:36+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -587,13 +587,13 @@ msgstr "Завтра"
 msgid "1 m"
 msgstr "1 хв."
 
-#: qml/timer/TimerComponent.qml:182 qml/timer/TimerListDelegate.qml:143
+#: qml/timer/TimerComponent.qml:204 qml/timer/TimerListDelegate.qml:143
 #: qml/timer/TimerPage.qml:24
 #, kde-format
 msgid "New timer"
 msgstr "Новий таймер"
 
-#: qml/timer/TimerComponent.qml:195
+#: qml/timer/TimerComponent.qml:217
 #, kde-format
 msgid "Click to edit timer name"
 msgstr "Натисніть, щоб змінити назву таймера"
