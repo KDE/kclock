@@ -928,6 +928,3 @@ msgstr "Kvardagar"
 #, kde-format
 msgid ", "
 msgstr ", "
-
-#~ msgid "Snooze Length:"
-#~ msgstr "Slumretid:"
