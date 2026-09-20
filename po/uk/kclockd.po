@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-20 00:49+0000\n"
-"PO-Revision-Date: 2026-07-16 18:39+0300\n"
+"PO-Revision-Date: 2026-09-20 14:32+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -146,16 +146,14 @@ msgid "Enable"
 msgstr "Увімкнути"
 
 #: main.cpp:32
-#, fuzzy, kde-format
-#| msgid "Don't use PowerDevil for alarms if it is available"
+#, kde-format
 msgid "Don’t use PowerDevil for alarms if it is available"
 msgstr "Не використовувати PowerDevil для нагадувань, якщо ця система доступна"
 
 #: main.cpp:48
-#, fuzzy, kde-format
-#| msgid "© 2020-2022 KDE Community"
+#, kde-format
 msgid "© 2020–2026 KDE Community"
-msgstr "© Спільнота KDE, 2020–2022"
+msgstr "© Спільнота KDE, 2020–2026"
 
 #: main.cpp:49
 #, kde-format

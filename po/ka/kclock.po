@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-20 00:49+0000\n"
-"PO-Revision-Date: 2026-07-07 06:21+0200\n"
+"PO-Revision-Date: 2026-09-20 03:39+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -34,8 +34,7 @@ msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr "დააყენეთ გაფრთხილებები, წამმზომები და მაღვიძარები, მართეთ საათები"
 
 #: main.cpp:47
-#, fuzzy, kde-format
-#| msgid "© 2020-2026 KDE Community"
+#, kde-format
 msgid "© 2020–2026 KDE Community"
 msgstr "© 2020-2026 KDE-ის საზოგადოება"
 
@@ -81,10 +80,9 @@ msgid "Select Days to Repeat"
 msgstr "აირჩიეთ გასამეორებელი დღეები"
 
 #: qml/alarm/AlarmForm.qml:113
-#, fuzzy, kde-format
-#| msgid "Alarm Name (optional):"
+#, kde-format
 msgid "Alarm name (optional):"
-msgstr "მაღვიძარის სახელი (სურვილისამებრ):"
+msgstr "მაღვიძარას სახელი (არასავალდებულო):"
 
 #: qml/alarm/AlarmForm.qml:114
 #, kde-format
@@ -92,10 +90,9 @@ msgid "Wake Up"
 msgstr "გაღვიძება"
 
 #: qml/alarm/AlarmForm.qml:124
-#, fuzzy, kde-format
-#| msgid "Ring Duration:"
+#, kde-format
 msgid "Ring duration:"
-msgstr "ბეჭდის ხანგრძლივობა:"
+msgstr "ზარის ხანგრძლივობა:"
 
 #: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:128
 #, kde-format
@@ -150,10 +147,9 @@ msgid "1 hour"
 msgstr "1 საათი"
 
 #: qml/alarm/AlarmForm.qml:162
-#, fuzzy, kde-format
-#| msgid "Ring Duration:"
+#, kde-format
 msgid "Snooze duration:"
-msgstr "ბეჭდის ხანგრძლივობა:"
+msgstr "ჩაჩუმების ხანგრძლივობა:"
 
 #: qml/alarm/AlarmForm.qml:163
 #, kde-format
@@ -161,8 +157,7 @@ msgid "Select Snooze Length"
 msgstr "აირჩიეთ ჩაჩუმების ხანგრძლივობა"
 
 #: qml/alarm/AlarmForm.qml:200
-#, fuzzy, kde-format
-#| msgid "Ring Sound:"
+#, kde-format
 msgid "Ring sound:"
 msgstr "ზარის ხმა:"
 
@@ -368,8 +363,7 @@ msgid "PM"
 msgstr "PM"
 
 #: qml/settings/SettingsPage.qml:40
-#, fuzzy, kde-format
-#| msgid "Time Format"
+#, kde-format
 msgid "Time format"
 msgstr "დროის ფორმატი"
 

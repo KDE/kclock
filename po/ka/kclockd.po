@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-20 00:49+0000\n"
-"PO-Revision-Date: 2026-07-16 06:24+0200\n"
+"PO-Revision-Date: 2026-09-20 03:40+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -146,14 +146,12 @@ msgid "Enable"
 msgstr "ჩართვა"
 
 #: main.cpp:32
-#, fuzzy, kde-format
-#| msgid "Don't use PowerDevil for alarms if it is available"
+#, kde-format
 msgid "Don’t use PowerDevil for alarms if it is available"
-msgstr "მაღვიძარისთვის PowerDevil-ის არ გამოყენება, თუ ხელმისაწვდომია"
+msgstr "მაღვიძარასთვის PowerDevil-ის არ გამოყენება, თუ ხელმისაწვდომია"
 
 #: main.cpp:48
-#, fuzzy, kde-format
-#| msgid "© 2020-2022 KDE Community"
+#, kde-format
 msgid "© 2020–2026 KDE Community"
 msgstr "© 2020-2022 KDE-ის საზოგადოება"
 
