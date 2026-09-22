@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-20 00:49+0000\n"
-"PO-Revision-Date: 2026-05-30 17:08-0400\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -34,25 +34,24 @@ msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr ""
 
 #: main.cpp:47
-#, fuzzy, kde-format
-#| msgid "© 2020-2024 KDE Community"
+#, kde-format
 msgid "© 2020–2026 KDE Community"
-msgstr "© 2020-2024 KDE جامائىتى"
+msgstr ""
 
 #: main.cpp:49
 #, kde-format
 msgid "Devin Lin"
-msgstr "Devin Lin"
+msgstr ""
 
 #: main.cpp:50
 #, kde-format
 msgid "Han Young"
-msgstr "Han Young"
+msgstr ""
 
 #: main.cpp:51
 #, kde-format
 msgid "Kai Uwe Broulik"
-msgstr "Kai Uwe Broulik"
+msgstr ""
 
 #: main.cpp:51
 #, kde-format
@@ -91,10 +90,9 @@ msgid "Wake Up"
 msgstr ""
 
 #: qml/alarm/AlarmForm.qml:124
-#, fuzzy, kde-format
-#| msgid "Ring Duration:"
+#, kde-format
 msgid "Ring duration:"
-msgstr "ھالقا مۇددىتى:"
+msgstr ""
 
 #: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:128
 #, kde-format
@@ -148,10 +146,9 @@ msgid "1 hour"
 msgstr "1‎‏ سائەت"
 
 #: qml/alarm/AlarmForm.qml:162
-#, fuzzy, kde-format
-#| msgid "Ring Duration:"
+#, kde-format
 msgid "Snooze duration:"
-msgstr "ھالقا مۇددىتى:"
+msgstr ""
 
 #: qml/alarm/AlarmForm.qml:163
 #, kde-format
@@ -159,10 +156,9 @@ msgid "Select Snooze Length"
 msgstr ""
 
 #: qml/alarm/AlarmForm.qml:200
-#, fuzzy, kde-format
-#| msgid "Ring Duration:"
+#, kde-format
 msgid "Ring sound:"
-msgstr "ھالقا مۇددىتى:"
+msgstr ""
 
 #: qml/alarm/AlarmForm.qml:206
 #, kde-format
@@ -363,15 +359,14 @@ msgid "PM"
 msgstr "چ ك"
 
 #: qml/settings/SettingsPage.qml:40
-#, fuzzy, kde-format
-#| msgid "Timer"
+#, kde-format
 msgid "Time format"
-msgstr "ۋاقىت خاتىرىلىگۈچ"
+msgstr ""
 
 #: qml/settings/SettingsPage.qml:42
 #, kde-format
 msgid "Use System Default"
-msgstr ""
+msgstr "سىستېما كۆڭۈلدىكىنى ئىشلەت"
 
 #: qml/settings/SettingsPage.qml:43
 #, kde-format
@@ -548,7 +543,7 @@ msgstr ""
 #: qml/time/AddLocationPage.qml:13 qml/time/AddLocationWrapper.qml:34
 #, kde-format
 msgid "Add Location"
-msgstr ""
+msgstr "ئورۇن قوش"
 
 #: qml/time/TimePage.qml:51
 #, kde-format
@@ -559,7 +554,7 @@ msgstr "قوش"
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Location"
-msgstr ""
+msgstr "ئورۇن قوش"
 
 #: qml/time/TimePageDelegate.qml:47
 #, kde-format
