@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-20 00:49+0000\n"
-"PO-Revision-Date: 2026-07-22 01:17+0900\n"
+"PO-Revision-Date: 2026-09-22 00:21+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -36,10 +36,9 @@ msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr "設定鬧鐘、計時器，使用碼錶，並管理世界時鐘"
 
 #: main.cpp:47
-#, fuzzy, kde-format
-#| msgid "© 2020-2026 KDE Community"
+#, kde-format
 msgid "© 2020–2026 KDE Community"
-msgstr "© 2020-2026 KDE 社群"
+msgstr "© 2020–2026 KDE 社群"
 
 #: main.cpp:49
 #, kde-format
@@ -83,8 +82,7 @@ msgid "Select Days to Repeat"
 msgstr "選擇要在哪些日子重複"
 
 #: qml/alarm/AlarmForm.qml:113
-#, fuzzy, kde-format
-#| msgid "Alarm Name (optional):"
+#, kde-format
 msgid "Alarm name (optional):"
 msgstr "鬧鐘名稱（可選）："
 
@@ -94,8 +92,7 @@ msgid "Wake Up"
 msgstr "起床"
 
 #: qml/alarm/AlarmForm.qml:124
-#, fuzzy, kde-format
-#| msgid "Ring Duration:"
+#, kde-format
 msgid "Ring duration:"
 msgstr "鬧鈴持續時間："
 
@@ -151,10 +148,9 @@ msgid "1 hour"
 msgstr "1 小時"
 
 #: qml/alarm/AlarmForm.qml:162
-#, fuzzy, kde-format
-#| msgid "Ring Duration:"
+#, kde-format
 msgid "Snooze duration:"
-msgstr "鬧鈴持續時間："
+msgstr "貪睡持續時間："
 
 #: qml/alarm/AlarmForm.qml:163
 #, kde-format
@@ -162,8 +158,7 @@ msgid "Select Snooze Length"
 msgstr "選擇貪睡時間長度"
 
 #: qml/alarm/AlarmForm.qml:200
-#, fuzzy, kde-format
-#| msgid "Ring Sound:"
+#, kde-format
 msgid "Ring sound:"
 msgstr "鬧鈴聲："
 
@@ -366,8 +361,7 @@ msgid "PM"
 msgstr "下午"
 
 #: qml/settings/SettingsPage.qml:40
-#, fuzzy, kde-format
-#| msgid "Time Format"
+#, kde-format
 msgid "Time format"
 msgstr "時間格式"
 

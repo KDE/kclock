@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-20 00:49+0000\n"
-"PO-Revision-Date: 2026-09-14 15:54+0200\n"
+"PO-Revision-Date: 2026-09-21 14:40+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -36,8 +36,7 @@ msgstr ""
 "del mundo"
 
 #: main.cpp:47
-#, fuzzy, kde-format
-#| msgid "© 2020-2026 KDE Community"
+#, kde-format
 msgid "© 2020–2026 KDE Community"
 msgstr "© 2020-2026 Communitate de KDE"
 
@@ -83,8 +82,7 @@ msgid "Select Days to Repeat"
 msgstr "Selige Dies a Repeter"
 
 #: qml/alarm/AlarmForm.qml:113
-#, fuzzy, kde-format
-#| msgid "Alarm Name (optional):"
+#, kde-format
 msgid "Alarm name (optional):"
 msgstr "Nomine de Alarma (Optional)"
 
@@ -94,10 +92,9 @@ msgid "Wake Up"
 msgstr "Evelia"
 
 #: qml/alarm/AlarmForm.qml:124
-#, fuzzy, kde-format
-#| msgid "Ring Duration:"
+#, kde-format
 msgid "Ring duration:"
-msgstr "Duration de circulo:"
+msgstr "Duration del sonito (tintinnar):"
 
 #: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:128
 #, kde-format
@@ -152,10 +149,9 @@ msgid "1 hour"
 msgstr "1 hora"
 
 #: qml/alarm/AlarmForm.qml:162
-#, fuzzy, kde-format
-#| msgid "Ring Duration:"
+#, kde-format
 msgid "Snooze duration:"
-msgstr "Duration de circulo:"
+msgstr "Duration de del repetition (snooze):"
 
 #: qml/alarm/AlarmForm.qml:163
 #, kde-format
@@ -163,10 +159,9 @@ msgid "Select Snooze Length"
 msgstr "Selige Longitude de dormettar"
 
 #: qml/alarm/AlarmForm.qml:200
-#, fuzzy, kde-format
-#| msgid "Ring Sound:"
+#, kde-format
 msgid "Ring sound:"
-msgstr "Sono de tintinnar:"
+msgstr "Sono del tintinnar:"
 
 #: qml/alarm/AlarmForm.qml:206
 #, kde-format
@@ -370,8 +365,7 @@ msgid "PM"
 msgstr "PM"
 
 #: qml/settings/SettingsPage.qml:40
-#, fuzzy, kde-format
-#| msgid "Time Format"
+#, kde-format
 msgid "Time format"
 msgstr "Formato de Tempore"
 

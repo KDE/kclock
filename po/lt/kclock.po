@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-20 00:49+0000\n"
-"PO-Revision-Date: 2026-07-08 12:58+0300\n"
+"PO-Revision-Date: 2026-09-21 21:18+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -37,8 +37,7 @@ msgstr ""
 "pasaulio laikrodžius"
 
 #: main.cpp:47
-#, fuzzy, kde-format
-#| msgid "© 2020-2026 KDE Community"
+#, kde-format
 msgid "© 2020–2026 KDE Community"
 msgstr "© 2020–2026 KDE bendruomenė"
 
@@ -84,10 +83,9 @@ msgid "Select Days to Repeat"
 msgstr "Pažymėkite dienas, kuriomis kartoti"
 
 #: qml/alarm/AlarmForm.qml:113
-#, fuzzy, kde-format
-#| msgid "Alarm Name (optional):"
+#, kde-format
 msgid "Alarm name (optional):"
-msgstr "Žadintuvo pavadinimas (nebūtina):"
+msgstr "Žadintuvo pavadinimas (nebūtinas):"
 
 #: qml/alarm/AlarmForm.qml:114
 #, kde-format
@@ -95,8 +93,7 @@ msgid "Wake Up"
 msgstr "Keltis"
 
 #: qml/alarm/AlarmForm.qml:124
-#, fuzzy, kde-format
-#| msgid "Ring Duration:"
+#, kde-format
 msgid "Ring duration:"
 msgstr "Skambesio trukmė:"
 
@@ -155,10 +152,9 @@ msgid "1 hour"
 msgstr "1 valanda"
 
 #: qml/alarm/AlarmForm.qml:162
-#, fuzzy, kde-format
-#| msgid "Ring Duration:"
+#, kde-format
 msgid "Snooze duration:"
-msgstr "Skambesio trukmė:"
+msgstr "Snaudimo trukmė:"
 
 #: qml/alarm/AlarmForm.qml:163
 #, kde-format
@@ -166,8 +162,7 @@ msgid "Select Snooze Length"
 msgstr "Pasirinkite snaudimo trukmę"
 
 #: qml/alarm/AlarmForm.qml:200
-#, fuzzy, kde-format
-#| msgid "Ring Sound:"
+#, kde-format
 msgid "Ring sound:"
 msgstr "Skambesio garsas:"
 
@@ -376,8 +371,7 @@ msgid "PM"
 msgstr "PM"
 
 #: qml/settings/SettingsPage.qml:40
-#, fuzzy, kde-format
-#| msgid "Time Format"
+#, kde-format
 msgid "Time format"
 msgstr "Laiko formatas"
 

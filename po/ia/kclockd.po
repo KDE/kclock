@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-20 00:49+0000\n"
-"PO-Revision-Date: 2026-07-16 16:44+0200\n"
+"PO-Revision-Date: 2026-09-21 14:55+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -145,16 +145,14 @@ msgid "Enable"
 msgstr "Habilita"
 
 #: main.cpp:32
-#, fuzzy, kde-format
-#| msgid "Don't use PowerDevil for alarms if it is available"
+#, kde-format
 msgid "Don’t use PowerDevil for alarms if it is available"
-msgstr "Non usa PowerDevil per alarmas si ill es disponìbile"
+msgstr "Non usa PowerDevil per alarmas si il es disponìbile"
 
 #: main.cpp:48
-#, fuzzy, kde-format
-#| msgid "© 2020-2022 KDE Community"
+#, kde-format
 msgid "© 2020–2026 KDE Community"
-msgstr "© 2020-2022 Communitate de KDE"
+msgstr "© 2020-2026 Communitate de KDE"
 
 #: main.cpp:49
 #, kde-format
