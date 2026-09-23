@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-20 00:49+0000\n"
-"PO-Revision-Date: 2026-07-07 09:16+0200\n"
+"PO-Revision-Date: 2026-09-20 10:24+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -38,10 +38,9 @@ msgstr ""
 "rellotges mundials"
 
 #: main.cpp:47
-#, fuzzy, kde-format
-#| msgid "© 2020-2026 KDE Community"
+#, kde-format
 msgid "© 2020–2026 KDE Community"
-msgstr "© 2020-2026 La comunitat KDE"
+msgstr "© 2020–2026 La comunitat KDE"
 
 #: main.cpp:49
 #, kde-format
@@ -85,8 +84,7 @@ msgid "Select Days to Repeat"
 msgstr "Trieu els dies que s'han de repetir"
 
 #: qml/alarm/AlarmForm.qml:113
-#, fuzzy, kde-format
-#| msgid "Alarm Name (optional):"
+#, kde-format
 msgid "Alarm name (optional):"
 msgstr "Nom de l'alarma (opcional):"
 
@@ -96,8 +94,7 @@ msgid "Wake Up"
 msgstr "Desperta"
 
 #: qml/alarm/AlarmForm.qml:124
-#, fuzzy, kde-format
-#| msgid "Ring Duration:"
+#, kde-format
 msgid "Ring duration:"
 msgstr "Duració de l'alarma:"
 
@@ -154,21 +151,19 @@ msgid "1 hour"
 msgstr "1 hora"
 
 #: qml/alarm/AlarmForm.qml:162
-#, fuzzy, kde-format
-#| msgid "Ring Duration:"
+#, kde-format
 msgid "Snooze duration:"
-msgstr "Duració de l'alarma:"
+msgstr "Duració del posposament:"
 
 #: qml/alarm/AlarmForm.qml:163
 #, kde-format
 msgid "Select Snooze Length"
-msgstr "Duració del posposament de l'alarma"
+msgstr "Trieu la duració del posposament"
 
 #: qml/alarm/AlarmForm.qml:200
-#, fuzzy, kde-format
-#| msgid "Ring Sound:"
+#, kde-format
 msgid "Ring sound:"
-msgstr "So de la tocada:"
+msgstr "So de tocada:"
 
 #: qml/alarm/AlarmForm.qml:206
 #, kde-format
@@ -372,8 +367,7 @@ msgid "PM"
 msgstr "PM"
 
 #: qml/settings/SettingsPage.qml:40
-#, fuzzy, kde-format
-#| msgid "Time Format"
+#, kde-format
 msgid "Time format"
 msgstr "Format de l'hora"
 
@@ -933,6 +927,3 @@ msgstr "Dies feiners"
 #, kde-format
 msgid ", "
 msgstr ", "
-
-#~ msgid "Snooze Length:"
-#~ msgstr "Duració del posposament:"

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-20 00:49+0000\n"
-"PO-Revision-Date: 2026-07-21 23:20+0200\n"
+"PO-Revision-Date: 2026-09-22 23:31+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.04.2\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -145,16 +145,14 @@ msgid "Enable"
 msgstr "Включване"
 
 #: main.cpp:32
-#, fuzzy, kde-format
-#| msgid "Don't use PowerDevil for alarms if it is available"
+#, kde-format
 msgid "Don’t use PowerDevil for alarms if it is available"
-msgstr "Да не използва PowerDevil за аларми, ако е наличен"
+msgstr "Да не се използва PowerDevil за алармите, ако е наличен"
 
 #: main.cpp:48
-#, fuzzy, kde-format
-#| msgid "© 2020-2022 KDE Community"
+#, kde-format
 msgid "© 2020–2026 KDE Community"
-msgstr "© 2020-2022 Общността на KDE"
+msgstr "© 2020–2026 KDE Community"
 
 #: main.cpp:49
 #, kde-format
