@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-20 00:49+0000\n"
-"PO-Revision-Date: 2026-07-07 18:08+0400\n"
+"PO-Revision-Date: 2026-09-23 17:44+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -35,10 +35,9 @@ msgstr ""
 "اضبط المنبهات والمؤقتات، واستخدم ساعة الإيقاف، وقم بإدارة الساعات العالمية"
 
 #: main.cpp:47
-#, fuzzy, kde-format
-#| msgid "© 2020-2026 KDE Community"
+#, kde-format
 msgid "© 2020–2026 KDE Community"
-msgstr "© 2020-2026 مجتمع كِيدِي"
+msgstr "© 2020–2026 مجتمع كِيدِي"
 
 #: main.cpp:49
 #, kde-format
@@ -82,8 +81,7 @@ msgid "Select Days to Repeat"
 msgstr "اختر أيام للتكرار"
 
 #: qml/alarm/AlarmForm.qml:113
-#, fuzzy, kde-format
-#| msgid "Alarm Name (optional):"
+#, kde-format
 msgid "Alarm name (optional):"
 msgstr "اسم المنبه (اختياري):"
 
@@ -93,8 +91,7 @@ msgid "Wake Up"
 msgstr "استيقظ"
 
 #: qml/alarm/AlarmForm.qml:124
-#, fuzzy, kde-format
-#| msgid "Ring Duration:"
+#, kde-format
 msgid "Ring duration:"
 msgstr "مدّة الرنين:"
 
@@ -155,10 +152,9 @@ msgid "1 hour"
 msgstr "1 ساعة"
 
 #: qml/alarm/AlarmForm.qml:162
-#, fuzzy, kde-format
-#| msgid "Ring Duration:"
+#, kde-format
 msgid "Snooze duration:"
-msgstr "مدّة الرنين:"
+msgstr "مدّة الغفوة:"
 
 #: qml/alarm/AlarmForm.qml:163
 #, kde-format
@@ -166,8 +162,7 @@ msgid "Select Snooze Length"
 msgstr "حدد طول الغفوة"
 
 #: qml/alarm/AlarmForm.qml:200
-#, fuzzy, kde-format
-#| msgid "Ring Sound:"
+#, kde-format
 msgid "Ring sound:"
 msgstr "صوت الرنين:"
 
@@ -377,8 +372,7 @@ msgid "PM"
 msgstr "ب‌ظ"
 
 #: qml/settings/SettingsPage.qml:40
-#, fuzzy, kde-format
-#| msgid "Time Format"
+#, kde-format
 msgid "Time format"
 msgstr "تنسيق الوقت"
 
