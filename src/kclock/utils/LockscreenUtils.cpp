@@ -5,11 +5,13 @@
  */
 #include "wayland/WaylandAboveLockscreen.h"
 
+#ifdef KCLOCK_BUILD_SHELL_OVERLAY
 #include <KWaylandExtras>
 #include <KWindowSystem>
 #include <QFuture>
 #include <QObject>
 #include <QString>
+
 void allowAboveLockscreen(QWindow *window, WaylandAboveLockscreen *overlay)
 {
     if (KWindowSystem::isPlatformWayland()) {
@@ -25,8 +27,6 @@ void allowAboveLockscreen(QWindow *window, WaylandAboveLockscreen *overlay)
 
 void raiseWindow(QWindow *window)
 {
-#ifdef KCLOCK_BUILD_SHELL_OVERLAY
-
     if (KWindowSystem::isPlatformWayland()) {
         window->setVisibility(QWindow::Visibility::FullScreen);
         QFuture<QString> token = KWaylandExtras::xdgActivationToken(window, QStringLiteral("org.kde.kclock.desktop"));
@@ -37,7 +37,5 @@ void raiseWindow(QWindow *window)
     } else {
         qDebug() << Q_FUNC_INFO << "Screen is locked. Alarm shell overlay is supported only for Wayland";
     }
-#else // KCLOCK_BUILD_SHELL_OVERLAY
-    window->raise();
-#endif // KCLOCK_BUILD_SHELL_OVERLAY
 }
+#endif // KCLOCK_BUILD_SHELL_OVERLAY
