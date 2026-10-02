@@ -7,6 +7,7 @@
  */
 
 import QtQuick
+import QtQuick.Controls as QQC2
 
 import org.kde.kirigami as Kirigami
 
@@ -123,9 +124,23 @@ Kirigami.ScrollablePage {
 
         // each alarm
         delegate: AlarmListDelegate {
+            id: delegate
             alarm: modelData
             editMode: root.editMode
             width: alarmsList.width
+
+            QQC2.ContextMenu.menu: QQC2.Menu {
+                QQC2.MenuItem {
+                    icon.name: "edit-entry"
+                    text: i18nc("@action:button", "Edit")
+                    onTriggered: delegate.editClicked()
+                }
+                QQC2.MenuItem {
+                    icon.name: "delete"
+                    text: i18nc("@action:button", "Delete")
+                    onTriggered: delegate.deleteClicked()
+                }
+            }
 
             onEditClicked: {
                 applicationWindow().pageStack.push(Qt.resolvedUrl("AlarmFormPage.qml"), { selectedAlarm: alarm })
