@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-20 00:49+0000\n"
+"POT-Creation-Date: 2026-10-04 00:52+0000\n"
 "PO-Revision-Date: 2023-02-15 16:04+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -180,7 +180,7 @@ msgctxt "Edit alarm page title"
 msgid "Editing %1"
 msgstr "Edição do %1"
 
-#: qml/alarm/AlarmFormPage.qml:26 qml/alarm/AlarmListPage.qml:28
+#: qml/alarm/AlarmFormPage.qml:26 qml/alarm/AlarmListPage.qml:29
 #, kde-format
 msgid "New Alarm"
 msgstr "Novo Alarme"
@@ -202,32 +202,33 @@ msgid_plural "Snoozed %1 minutes"
 msgstr[0] "Adiado por %1 minuto"
 msgstr[1] "Adiado por %1 minutos"
 
-#: qml/alarm/AlarmListDelegate.qml:125 qml/time/TimePageDelegate.qml:68
+#: qml/alarm/AlarmListDelegate.qml:125 qml/alarm/AlarmListPage.qml:140
+#: qml/time/TimePageDelegate.qml:68
 #, fuzzy, kde-format
 #| msgid "Delete"
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "Apagar"
 
-#: qml/alarm/AlarmListPage.qml:22 qml/components/BottomToolbar.qml:118
+#: qml/alarm/AlarmListPage.qml:23 qml/components/BottomToolbar.qml:118
 #: qml/components/Sidebar.qml:101
 #, kde-format
 msgid "Alarms"
 msgstr "Alarmes"
 
-#: qml/alarm/AlarmListPage.qml:35 qml/time/TimePage.qml:38
+#: qml/alarm/AlarmListPage.qml:36 qml/time/TimePage.qml:38
 #, kde-format
 msgid "Edit"
 msgstr "Editar"
 
-#: qml/alarm/AlarmListPage.qml:44 qml/Main.qml:54
+#: qml/alarm/AlarmListPage.qml:45 qml/Main.qml:54
 #: qml/settings/SettingsPage.qml:28 qml/stopwatch/StopwatchPage.qml:69
 #: qml/time/TimePage.qml:61 qml/timer/TimerListPage.qml:36
 #, kde-format
 msgid "Settings"
 msgstr "Configuração"
 
-#: qml/alarm/AlarmListPage.qml:57
+#: qml/alarm/AlarmListPage.qml:58
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have alarm "
@@ -236,27 +237,27 @@ msgstr ""
 "O serviço do relógio não foi encontrado. Por favor, inicie o 'kclockd' para "
 "ter a funcionalidade de alarme."
 
-#: qml/alarm/AlarmListPage.qml:59
+#: qml/alarm/AlarmListPage.qml:60
 #, kde-format
 msgid "Failed to load the list of alarms: %1"
 msgstr ""
 
-#: qml/alarm/AlarmListPage.qml:85
+#: qml/alarm/AlarmListPage.qml:86
 #, kde-format
 msgid "No alarms configured"
 msgstr "Sem alarmes configurados"
 
-#: qml/alarm/AlarmListPage.qml:91
+#: qml/alarm/AlarmListPage.qml:92
 #, kde-format
 msgid "Add alarm"
 msgstr "Adicionar um alarme"
 
-#: qml/alarm/AlarmListPage.qml:102 qml/timer/TimerListPage.qml:130
+#: qml/alarm/AlarmListPage.qml:103 qml/timer/TimerListPage.qml:130
 #, kde-format
 msgid "Loading…"
 msgstr ""
 
-#: qml/alarm/AlarmListPage.qml:117
+#: qml/alarm/AlarmListPage.qml:118
 #, fuzzy, kde-format
 #| msgid "New Alarm"
 msgctxt "@action:button"
@@ -264,11 +265,18 @@ msgid "New Alarm"
 msgstr "Novo Alarme"
 
 #: qml/alarm/AlarmListPage.qml:135
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@action:button"
+msgid "Edit"
+msgstr "Editar"
+
+#: qml/alarm/AlarmListPage.qml:150
 #, kde-format
 msgid "alarm"
 msgstr "alarme"
 
-#: qml/alarm/AlarmListPage.qml:135
+#: qml/alarm/AlarmListPage.qml:150
 #, kde-format
 msgid "Deleted %1"
 msgstr "Foi removido o %1"

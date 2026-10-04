@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-20 00:49+0000\n"
+"POT-Creation-Date: 2026-10-04 00:52+0000\n"
 "PO-Revision-Date: 2024-12-24 20:39+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -186,7 +186,7 @@ msgctxt "Edit alarm page title"
 msgid "Editing %1"
 msgstr "सम्पादनम् %1"
 
-#: qml/alarm/AlarmFormPage.qml:26 qml/alarm/AlarmListPage.qml:28
+#: qml/alarm/AlarmFormPage.qml:26 qml/alarm/AlarmListPage.qml:29
 #, kde-format
 msgid "New Alarm"
 msgstr "नवीन अलार्म"
@@ -208,58 +208,59 @@ msgid_plural "Snoozed %1 minutes"
 msgstr[0] "%1 मिनिट् स्नूज् कृतवान्"
 msgstr[1] "%1 मिनिट् स्नूज् कृतवान्"
 
-#: qml/alarm/AlarmListDelegate.qml:125 qml/time/TimePageDelegate.qml:68
+#: qml/alarm/AlarmListDelegate.qml:125 qml/alarm/AlarmListPage.qml:140
+#: qml/time/TimePageDelegate.qml:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "लुप्"
 
-#: qml/alarm/AlarmListPage.qml:22 qml/components/BottomToolbar.qml:118
+#: qml/alarm/AlarmListPage.qml:23 qml/components/BottomToolbar.qml:118
 #: qml/components/Sidebar.qml:101
 #, kde-format
 msgid "Alarms"
 msgstr "अलार्म"
 
-#: qml/alarm/AlarmListPage.qml:35 qml/time/TimePage.qml:38
+#: qml/alarm/AlarmListPage.qml:36 qml/time/TimePage.qml:38
 #, kde-format
 msgid "Edit"
 msgstr "सम्पादन"
 
-#: qml/alarm/AlarmListPage.qml:44 qml/Main.qml:54
+#: qml/alarm/AlarmListPage.qml:45 qml/Main.qml:54
 #: qml/settings/SettingsPage.qml:28 qml/stopwatch/StopwatchPage.qml:69
 #: qml/time/TimePage.qml:61 qml/timer/TimerListPage.qml:36
 #, kde-format
 msgid "Settings"
 msgstr "सेटिंग्स्"
 
-#: qml/alarm/AlarmListPage.qml:57
+#: qml/alarm/AlarmListPage.qml:58
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have alarm "
 "functionality."
 msgstr "घटिका-दैत्यः न लब्धः । कृपया kclockd आरभत यत् अलार्म कार्यक्षमता भवतु ।"
 
-#: qml/alarm/AlarmListPage.qml:59
+#: qml/alarm/AlarmListPage.qml:60
 #, kde-format
 msgid "Failed to load the list of alarms: %1"
 msgstr ""
 
-#: qml/alarm/AlarmListPage.qml:85
+#: qml/alarm/AlarmListPage.qml:86
 #, kde-format
 msgid "No alarms configured"
 msgstr "न अलार्म विन्यस्तम्"
 
-#: qml/alarm/AlarmListPage.qml:91
+#: qml/alarm/AlarmListPage.qml:92
 #, kde-format
 msgid "Add alarm"
 msgstr "अलार्म योजयन्तु"
 
-#: qml/alarm/AlarmListPage.qml:102 qml/timer/TimerListPage.qml:130
+#: qml/alarm/AlarmListPage.qml:103 qml/timer/TimerListPage.qml:130
 #, kde-format
 msgid "Loading…"
 msgstr ""
 
-#: qml/alarm/AlarmListPage.qml:117
+#: qml/alarm/AlarmListPage.qml:118
 #, fuzzy, kde-format
 #| msgid "New Alarm"
 msgctxt "@action:button"
@@ -267,11 +268,18 @@ msgid "New Alarm"
 msgstr "नवीन अलार्म"
 
 #: qml/alarm/AlarmListPage.qml:135
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@action:button"
+msgid "Edit"
+msgstr "सम्पादन"
+
+#: qml/alarm/AlarmListPage.qml:150
 #, kde-format
 msgid "alarm"
 msgstr "आपत्सङ्केत"
 
-#: qml/alarm/AlarmListPage.qml:135
+#: qml/alarm/AlarmListPage.qml:150
 #, kde-format
 msgid "Deleted %1"
 msgstr "%1 विलोपितम्"

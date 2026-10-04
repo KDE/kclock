@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-20 00:49+0000\n"
+"POT-Creation-Date: 2026-10-04 00:52+0000\n"
 "PO-Revision-Date: 2026-09-21 21:18+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -183,7 +183,7 @@ msgctxt "Edit alarm page title"
 msgid "Editing %1"
 msgstr "Taisomas %1"
 
-#: qml/alarm/AlarmFormPage.qml:26 qml/alarm/AlarmListPage.qml:28
+#: qml/alarm/AlarmFormPage.qml:26 qml/alarm/AlarmListPage.qml:29
 #, kde-format
 msgid "New Alarm"
 msgstr "Naujas žadintuvas"
@@ -207,31 +207,32 @@ msgstr[1] "Nusnausta %1 minutėms"
 msgstr[2] "Nusnausta %1 minučių"
 msgstr[3] "Nusnausta %1 minutei"
 
-#: qml/alarm/AlarmListDelegate.qml:125 qml/time/TimePageDelegate.qml:68
+#: qml/alarm/AlarmListDelegate.qml:125 qml/alarm/AlarmListPage.qml:140
+#: qml/time/TimePageDelegate.qml:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "Ištrinti"
 
-#: qml/alarm/AlarmListPage.qml:22 qml/components/BottomToolbar.qml:118
+#: qml/alarm/AlarmListPage.qml:23 qml/components/BottomToolbar.qml:118
 #: qml/components/Sidebar.qml:101
 #, kde-format
 msgid "Alarms"
 msgstr "Žadintuvai"
 
-#: qml/alarm/AlarmListPage.qml:35 qml/time/TimePage.qml:38
+#: qml/alarm/AlarmListPage.qml:36 qml/time/TimePage.qml:38
 #, kde-format
 msgid "Edit"
 msgstr "Taisyti"
 
-#: qml/alarm/AlarmListPage.qml:44 qml/Main.qml:54
+#: qml/alarm/AlarmListPage.qml:45 qml/Main.qml:54
 #: qml/settings/SettingsPage.qml:28 qml/stopwatch/StopwatchPage.qml:69
 #: qml/time/TimePage.qml:61 qml/timer/TimerListPage.qml:36
 #, kde-format
 msgid "Settings"
 msgstr "Nuostatos"
 
-#: qml/alarm/AlarmListPage.qml:57
+#: qml/alarm/AlarmListPage.qml:58
 #, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have alarm "
@@ -240,38 +241,45 @@ msgstr ""
 "Nerasta laikrodžio tarnybos. Paleiskite kclockd, kad galėtumėte naudotis "
 "žadintuvo funkcionalumu."
 
-#: qml/alarm/AlarmListPage.qml:59
+#: qml/alarm/AlarmListPage.qml:60
 #, kde-format
 msgid "Failed to load the list of alarms: %1"
 msgstr "Nepavyko įkelti žadintuvų sąrašo: %1"
 
-#: qml/alarm/AlarmListPage.qml:85
+#: qml/alarm/AlarmListPage.qml:86
 #, kde-format
 msgid "No alarms configured"
 msgstr "Nėra sukonfigūruotų žadintuvų"
 
-#: qml/alarm/AlarmListPage.qml:91
+#: qml/alarm/AlarmListPage.qml:92
 #, kde-format
 msgid "Add alarm"
 msgstr "Pridėti žadintuvą"
 
-#: qml/alarm/AlarmListPage.qml:102 qml/timer/TimerListPage.qml:130
+#: qml/alarm/AlarmListPage.qml:103 qml/timer/TimerListPage.qml:130
 #, kde-format
 msgid "Loading…"
 msgstr "Įkeliama…"
 
-#: qml/alarm/AlarmListPage.qml:117
+#: qml/alarm/AlarmListPage.qml:118
 #, kde-format
 msgctxt "@action:button"
 msgid "New Alarm"
 msgstr "Naujas žadintuvas"
 
 #: qml/alarm/AlarmListPage.qml:135
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@action:button"
+msgid "Edit"
+msgstr "Taisyti"
+
+#: qml/alarm/AlarmListPage.qml:150
 #, kde-format
 msgid "alarm"
 msgstr "žadintuvas"
 
-#: qml/alarm/AlarmListPage.qml:135
+#: qml/alarm/AlarmListPage.qml:150
 #, kde-format
 msgid "Deleted %1"
 msgstr "Ištrintas %1"
