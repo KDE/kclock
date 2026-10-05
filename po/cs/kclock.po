@@ -265,11 +265,10 @@ msgid "New Alarm"
 msgstr "Nový budík"
 
 #: qml/alarm/AlarmListPage.qml:135
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit"
-msgstr "Upravit"
+msgstr "Úpravy"
 
 #: qml/alarm/AlarmListPage.qml:150
 #, kde-format
