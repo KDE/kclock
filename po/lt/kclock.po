@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-04 00:52+0000\n"
-"PO-Revision-Date: 2026-09-21 21:18+0300\n"
+"PO-Revision-Date: 2026-10-06 23:36+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -268,8 +268,7 @@ msgid "New Alarm"
 msgstr "Naujas žadintuvas"
 
 #: qml/alarm/AlarmListPage.qml:135
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit"
 msgstr "Taisyti"
