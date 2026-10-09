@@ -6,12 +6,24 @@
 #include "stopwatchtimer.h"
 #include "utilmodel.h"
 
+#include <KConfigGroup>
+#include <KSharedConfig>
+
+#include <QDateTime>
 #include <QDebug>
 #include <QQmlEngine>
+
+#include <limits>
 
 #include "wayland/pipshellsurface.h"
 
 const int STOPWATCH_DISPLAY_INTERVAL = 41; // 24fps
+const QString STOPWATCH_CONFIG_GROUP = QStringLiteral("Stopwatch");
+const QString STOPWATCH_ELAPSED_KEY = QStringLiteral("elapsedTime");
+const QString STOPWATCH_REFERENCE_TIME_KEY = QStringLiteral("referenceTime");
+const QString STOPWATCH_STATE_KEY = QStringLiteral("state");
+const QString STOPWATCH_RUNNING_STATE = QStringLiteral("running");
+const QString STOPWATCH_PAUSED_STATE = QStringLiteral("paused");
 
 StopwatchTimer *StopwatchTimer::instance()
 {
@@ -33,6 +45,8 @@ StopwatchTimer::StopwatchTimer(QObject *parent)
 {
     m_reportTimer.setInterval(STOPWATCH_DISPLAY_INTERVAL);
     m_reportTimer.callOnTimeout(this, &StopwatchTimer::timeChanged);
+
+    loadState();
 }
 
 bool StopwatchTimer::paused() const
@@ -53,6 +67,7 @@ void StopwatchTimer::toggle()
         m_elapsedTimer.invalidate();
         Q_EMIT pausedChanged();
         m_reportTimer.stop();
+        saveState();
         Q_EMIT timeChanged();
     } else {
         // start or resume.
@@ -63,6 +78,7 @@ void StopwatchTimer::toggle()
             Q_EMIT stoppedChanged();
         }
         m_reportTimer.start();
+        saveState();
         Q_EMIT timeChanged();
     }
 }
@@ -73,11 +89,58 @@ void StopwatchTimer::reset()
     m_pausedTime.reset();
     m_reportTimer.stop();
 
+    auto config = KSharedConfig::openConfig();
+    config->deleteGroup(STOPWATCH_CONFIG_GROUP);
+    config->sync();
+
     Q_EMIT stoppedChanged();
     Q_EMIT pausedChanged();
     Q_EMIT timeChanged();
 
     Q_EMIT resetTriggered();
+}
+
+void StopwatchTimer::loadState()
+{
+    KConfigGroup group = KSharedConfig::openConfig()->group(STOPWATCH_CONFIG_GROUP);
+    QString state = group.readEntry(STOPWATCH_STATE_KEY);
+    qint64 elapsed = qMax<qint64>(0, group.readEntry(STOPWATCH_ELAPSED_KEY, qint64{0}));
+
+    if (state == STOPWATCH_PAUSED_STATE) {
+        m_pausedTime = elapsed;
+        return;
+    }
+
+    if (state != STOPWATCH_RUNNING_STATE) {
+        return;
+    }
+
+    qint64 currentTime = QDateTime::currentMSecsSinceEpoch();
+    qint64 referenceTime = group.readEntry(STOPWATCH_REFERENCE_TIME_KEY, currentTime);
+    qint64 elapsedWhileClosed = referenceTime >= 0 && referenceTime <= currentTime ? currentTime - referenceTime : 0;
+    if (elapsed <= std::numeric_limits<qint64>::max() - elapsedWhileClosed) {
+        elapsed += elapsedWhileClosed;
+    }
+
+    m_pausedTime = elapsed;
+    m_elapsedTimer.start();
+    m_reportTimer.start();
+}
+
+void StopwatchTimer::saveState()
+{
+    KConfigGroup group = KSharedConfig::openConfig()->group(STOPWATCH_CONFIG_GROUP);
+    group.writeEntry(STOPWATCH_ELAPSED_KEY, elapsedTime());
+
+    if (m_elapsedTimer.isValid()) {
+        group.writeEntry(STOPWATCH_STATE_KEY, STOPWATCH_RUNNING_STATE);
+        group.writeEntry(STOPWATCH_REFERENCE_TIME_KEY, QDateTime::currentMSecsSinceEpoch());
+    } else {
+        group.writeEntry(STOPWATCH_STATE_KEY, STOPWATCH_PAUSED_STATE);
+        group.deleteEntry(STOPWATCH_REFERENCE_TIME_KEY);
+    }
+
+    group.sync();
 }
 
 long long StopwatchTimer::elapsedTime() const

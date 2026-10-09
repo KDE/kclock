@@ -53,6 +53,9 @@ private Q_SLOTS:
 private:
     explicit StopwatchModel(QObject *parent = nullptr);
 
+    void load();
+    void save();
+
     QList<StopwatchLap> m_laps; // sorted from newest to oldest
     qint64 m_mostRecentLapTime = 0;
 

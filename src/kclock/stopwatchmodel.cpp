@@ -4,7 +4,15 @@
 #include "stopwatchmodel.h"
 #include "stopwatchtimer.h"
 
+#include <KConfigGroup>
+#include <KSharedConfig>
+
+#include <QJsonArray>
+#include <QJsonDocument>
 #include <QQmlEngine>
+
+const QString STOPWATCH_MODEL_CONFIG_GROUP = QStringLiteral("Stopwatch");
+const QString STOPWATCH_LAPS_KEY = QStringLiteral("laps");
 
 StopwatchModel *StopwatchModel::instance()
 {
@@ -24,6 +32,8 @@ StopwatchModel *StopwatchModel::create(QQmlEngine *qmlEngine, QJSEngine *jsEngin
 StopwatchModel::StopwatchModel(QObject *parent)
     : QAbstractListModel{parent}
 {
+    load();
+
     // clear model when stopwatch is reset
     connect(StopwatchTimer::instance(), &StopwatchTimer::resetTriggered, this, &StopwatchModel::reset);
 }
@@ -121,6 +131,8 @@ void StopwatchModel::addLap()
         QModelIndex index = createIndex(update, 0);
         Q_EMIT dataChanged(index, index, {IsBest, IsWorst});
     }
+
+    save();
 }
 
 qint64 StopwatchModel::mostRecentLapTime()
@@ -140,6 +152,57 @@ void StopwatchModel::reset()
     Q_EMIT mostRecentLapTimeChanged();
     m_worstLapIndex = -1;
     m_bestLapIndex = -1;
+
+    KConfigGroup group = KSharedConfig::openConfig()->group(STOPWATCH_MODEL_CONFIG_GROUP);
+    group.deleteEntry(STOPWATCH_LAPS_KEY);
+    group.sync();
+}
+
+void StopwatchModel::load()
+{
+    KConfigGroup group = KSharedConfig::openConfig()->group(STOPWATCH_MODEL_CONFIG_GROUP);
+    QJsonArray laps = QJsonDocument::fromJson(group.readEntry(STOPWATCH_LAPS_KEY).toUtf8()).array();
+
+    qint64 previousLapTime = 0;
+    int lapNumber = 1;
+    for (const QJsonValue &value : laps) {
+        if (!value.isDouble()) {
+            continue;
+        }
+
+        qint64 elapsed = value.toInteger(-1);
+        if (elapsed < previousLapTime || elapsed > StopwatchTimer::instance()->elapsedTime()) {
+            continue;
+        }
+
+        StopwatchLap lap{lapNumber, qreal(elapsed - previousLapTime), qreal(elapsed)};
+        m_laps.prepend(lap);
+
+        if (m_worstLapIndex == -1 || lap.lapTime >= m_worstLapTime) {
+            m_worstLapTime = lap.lapTime;
+            m_worstLapIndex = lap.lapNumber;
+        }
+        if (m_bestLapIndex == -1 || lap.lapTime <= m_bestLapTime) {
+            m_bestLapTime = lap.lapTime;
+            m_bestLapIndex = lap.lapNumber;
+        }
+
+        m_mostRecentLapTime = elapsed;
+        previousLapTime = elapsed;
+        ++lapNumber;
+    }
+}
+
+void StopwatchModel::save()
+{
+    QJsonArray laps;
+    for (auto it = m_laps.crbegin(); it != m_laps.crend(); ++it) {
+        laps.append(it->lapTimeSinceBeginning);
+    }
+
+    KConfigGroup group = KSharedConfig::openConfig()->group(STOPWATCH_MODEL_CONFIG_GROUP);
+    group.writeEntry(STOPWATCH_LAPS_KEY, QString::fromUtf8(QJsonDocument(laps).toJson(QJsonDocument::Compact)));
+    group.sync();
 }
 
 #include "moc_stopwatchmodel.cpp"

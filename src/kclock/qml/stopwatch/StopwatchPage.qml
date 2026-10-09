@@ -298,7 +298,7 @@ Kirigami.ScrollablePage {
             visible: !Kirigami.Settings.isMobile && listView.count === 0 && !root.minimizedToPip
         }
 
-        // laps list header 
+        // laps list header
         RowLayout {
             Layout.topMargin: Kirigami.Units.gridUnit
             Layout.bottomMargin: Kirigami.Units.largeSpacing
@@ -443,7 +443,7 @@ Kirigami.ScrollablePage {
                         horizontalAlignment: Text.AlignHCenter
                         text: {
                             if (isNaN(listItem.lapTime)) {
-                                return ""; 
+                                return "";
                             }
 
                             const duration = listItem.lapTime;
@@ -467,7 +467,7 @@ Kirigami.ScrollablePage {
                         color: Kirigami.Theme.focusColor
                         text: {
                             if (isNaN(listItem.lapTimeSinceBeginning)) {
-                                return ""; 
+                                return "";
                             }
 
                             const duration = listItem.lapTimeSinceBeginning;

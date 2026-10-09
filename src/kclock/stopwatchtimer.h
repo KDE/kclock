@@ -64,6 +64,9 @@ Q_SIGNALS:
 private:
     explicit StopwatchTimer(QObject *parent = nullptr);
 
+    void loadState();
+    void saveState();
+
     QElapsedTimer m_elapsedTimer;
 
     std::optional<qint64> m_pausedTime;
