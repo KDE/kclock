@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-04 00:52+0000\n"
-"PO-Revision-Date: 2026-04-28 23:31+0200\n"
+"PO-Revision-Date: 2026-10-12 12:02+0200\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -38,10 +38,9 @@ msgstr ""
 "Alarme und Timer einstellen, Stoppuhr verwenden und Weltzeituhren verwalten"
 
 #: main.cpp:47
-#, fuzzy, kde-format
-#| msgid "© 2020-2024 KDE Community"
+#, kde-format
 msgid "© 2020–2026 KDE Community"
-msgstr "© 2020–2024 KDE-Gemeinschaft"
+msgstr "© 2020–2026 KDE-Gemeinschaft"
 
 #: main.cpp:49
 #, kde-format
@@ -85,8 +84,7 @@ msgid "Select Days to Repeat"
 msgstr "Tage zum Wiederholen auswählen"
 
 #: qml/alarm/AlarmForm.qml:113
-#, fuzzy, kde-format
-#| msgid "Alarm Name (optional):"
+#, kde-format
 msgid "Alarm name (optional):"
 msgstr "Weckername (optional):"
 
@@ -96,8 +94,7 @@ msgid "Wake Up"
 msgstr "Aktivierung"
 
 #: qml/alarm/AlarmForm.qml:124
-#, fuzzy, kde-format
-#| msgid "Ring Duration:"
+#, kde-format
 msgid "Ring duration:"
 msgstr "Klingeldauer:"
 
@@ -154,10 +151,9 @@ msgid "1 hour"
 msgstr "1 Stunde"
 
 #: qml/alarm/AlarmForm.qml:162
-#, fuzzy, kde-format
-#| msgid "Ring Duration:"
+#, kde-format
 msgid "Snooze duration:"
-msgstr "Klingeldauer:"
+msgstr "Schlummerdauer:"
 
 #: qml/alarm/AlarmForm.qml:163
 #, kde-format
@@ -165,8 +161,7 @@ msgid "Select Snooze Length"
 msgstr "Schlummerdauer auswählen"
 
 #: qml/alarm/AlarmForm.qml:200
-#, fuzzy, kde-format
-#| msgid "Ring Sound:"
+#, kde-format
 msgid "Ring sound:"
 msgstr "Klingelton:"
 
@@ -270,8 +265,7 @@ msgid "New Alarm"
 msgstr "Neuer Wecker"
 
 #: qml/alarm/AlarmListPage.qml:135
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit"
 msgstr "Bearbeiten"
@@ -380,8 +374,7 @@ msgid "PM"
 msgstr "PM"
 
 #: qml/settings/SettingsPage.qml:40
-#, fuzzy, kde-format
-#| msgid "Time Format"
+#, kde-format
 msgid "Time format"
 msgstr "Zeitformat"
 
@@ -566,6 +559,8 @@ msgstr "Keine Orte gefunden"
 msgctxt "@info:usagetip"
 msgid "Check spelling or try the nearest major city"
 msgstr ""
+"Prüfen Sie die Rechtschreibung oder versuchen Sie es mit einer nahen, "
+"größeren Stadt"
 
 #: qml/time/AddLocationPage.qml:13 qml/time/AddLocationWrapper.qml:34
 #, kde-format
