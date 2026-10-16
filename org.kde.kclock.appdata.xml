@@ -534,6 +534,7 @@
         <p xml:lang="ca">Característiques noves i correccions d'errors en aquesta versió:</p>
         <p xml:lang="ca-valencia">Característiques noves i esmenes d'errors en esta versió:</p>
         <p xml:lang="cs">Nové funkce a opravy chyb v této verzi:</p>
+        <p xml:lang="de">Neue Funktionen und Fehlerbehebungen in dieser Version:</p>
         <p xml:lang="es">Nuevas funciones y corrección de fallos de esta versión:</p>
         <p xml:lang="eu">Askapen honetako ezaugarri berriak eta akats-zuzenketak:</p>
         <p xml:lang="fi">Tämän julkaisun uusia ominaisuuksia ja virheenkorjauksia:</p>
@@ -635,6 +636,7 @@
           <li xml:lang="ca">Permet el dimoni en segon pla quan s'utilitza flatpak</li>
           <li xml:lang="ca-valencia">Permet el dimoni en segon pla quan s'utilitza flatpak</li>
           <li xml:lang="cs">Podpora pro démon na pozadí při použití flatpaku</li>
+          <li xml:lang="de">Unterstützung für Hintergrunddienst bei der Verwendung von Flatpak</li>
           <li xml:lang="es">Compatibilidad con el servicio en segundo plano cuando se usa flatpak.</li>
           <li xml:lang="eu">Flatpak erabiltzea atzeko planoko daimonaren euskarria</li>
           <li xml:lang="fi">tuki taustapalvelulle Flatpakiä käytettäessä</li>
@@ -663,6 +665,7 @@
           <li xml:lang="ca">Corregeix la generació excessiva de registres en un sistema no Plasma</li>
           <li xml:lang="ca-valencia">Corregix la generació excessiva de registres en un sistema no Plasma</li>
           <li xml:lang="cs">Oprava nadměrného generování protokolů v systémech mimo KDE Plasma</li>
+          <li xml:lang="de">Übermäßige Protokollierung auf Nicht-Plasma-Systemen behoben</li>
           <li xml:lang="es">Se ha corregido la generación excesiva de mensajes de registro en sistemas distintos de Plasma.</li>
           <li xml:lang="eu">Plasma ez diren sistemetan gehiegizko egunkari-sarrera konpontzea</li>
           <li xml:lang="fi">korjattu liiallinen lokikirjaaminen ei-Plasma-järjestelmissä</li>
@@ -726,6 +729,7 @@
           <li xml:lang="ca">Diverses correccions d'errors i millores de la interfície d'usuari</li>
           <li xml:lang="ca-valencia">Diverses esmenes d'errors i millores de la interfície d'usuari</li>
           <li xml:lang="cs">Různé opravy chyb a vylepšení uživatelského rozhraní</li>
+          <li xml:lang="de">Verschiedene Fehlerbehebungen und Verbesserungen der Benutzeroberfläche</li>
           <li xml:lang="es">Diversas correcciones de fallos y mejoras de la interfaz de usuario.</li>
           <li xml:lang="eu">Hainbat akats-zuzenketa eta erabiltzaile-interfazearen hobekuntzak</li>
           <li xml:lang="fi">eri virheenkorjauksia ja käyttöliittymäparannuksia</li>
@@ -782,6 +786,7 @@
           <li xml:lang="ca">Inicia el posposament només després de prémer el botó</li>
           <li xml:lang="ca-valencia">Inicia el posposament només després de prémer el botó</li>
           <li xml:lang="cs">Odložení budíku se spustí až po stisknutí tlačítka</li>
+          <li xml:lang="de">Die Schlummerfunktion erst nach Drücken des Knopfes aktivieren</li>
           <li xml:lang="es">Iniciar la repetición de la alarma solo después de pulsar el botón.</li>
           <li xml:lang="eu">Lozorroa botoia sakatu ondoren bakarrik hastea</li>
           <li xml:lang="fi">aloita torkutus vasta painikkeen painalluksen jälkeen</li>
@@ -843,6 +848,7 @@
         <p xml:lang="ca">Canvis:</p>
         <p xml:lang="ca-valencia">Canvis:</p>
         <p xml:lang="cs">Změny:</p>
+        <p xml:lang="de">Änderungen:</p>
         <p xml:lang="es">Cambios:</p>
         <p xml:lang="eu">Aldaketak:</p>
         <p xml:lang="fi">Muutoksia:</p>
@@ -1050,6 +1056,7 @@
         <p xml:lang="ca">Canvis:</p>
         <p xml:lang="ca-valencia">Canvis:</p>
         <p xml:lang="cs">Změny:</p>
+        <p xml:lang="de">Änderungen:</p>
         <p xml:lang="es">Cambios:</p>
         <p xml:lang="eu">Aldaketak:</p>
         <p xml:lang="fi">Muutoksia:</p>
@@ -1170,6 +1177,7 @@
         <p xml:lang="ca">Característiques noves i correccions d'errors:</p>
         <p xml:lang="ca-valencia">Característiques noves i esmenes d'errors:</p>
         <p xml:lang="cs">Nové funkce a opravy chyb:</p>
+        <p xml:lang="de">Neue Funktionen und Fehlerbehebungen:</p>
         <p xml:lang="es">Nuevas funciones y corrección de fallos:</p>
         <p xml:lang="eu">Ezaugarri berriak eta akats-zuzenketak:</p>
         <p xml:lang="fi">Uusia ominaisuuksia ja viankorjauksia:</p>
