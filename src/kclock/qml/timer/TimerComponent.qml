@@ -24,6 +24,7 @@ Item {
 
     property alias actions: actionToolBar.actions
     property bool actionsVisible: true
+    property bool actionsInsideCircle: false
 
     property bool labelEditable
 
@@ -253,8 +254,8 @@ Item {
 
     Kirigami.ActionToolBar {
         id: actionToolBar
-        anchors.topMargin: Kirigami.Units.largeSpacing
-        anchors.top: timerCircle.bottom
+        anchors.topMargin: root.actionsInsideCircle ? Kirigami.Units.smallSpacing : Kirigami.Units.largeSpacing
+        anchors.top: root.actionsInsideCircle ? timeCompletedBox.bottom : timerCircle.bottom
         anchors.horizontalCenter: parent.horizontalCenter
 
         opacity: root.actionsVisible ? 1 : 0
