@@ -82,7 +82,7 @@ Kirigami.Page {
                 if (root.minimizedToPip) {
                     PipHandler.hide();
                 } else {
-                    PipHandler.show(timerPipComponent, {timer: root.timer});
+                    PipHandler.show(PipHandler.timerComponent, {timer: root.timer});
                 }
             }
         }
@@ -139,53 +139,6 @@ Kirigami.Page {
                 onClicked: toolbar.opened = !toolbar.opened
                 iconSize: Kirigami.Units.iconSizes.small
                 implicitWidth: Kirigami.Units.gridUnit * 2.5
-            }
-        }
-    }
-
-    Component {
-        id: timerPipComponent
-
-        MouseArea {
-            id: pipArea
-            objectName: "TimerPip"
-
-            // property alias doesn't work with required property timer on TimerComponent...
-            required property Timer timer
-
-            onClicked: root.timer.toggleRunning()
-
-            TimerComponent {
-                id: pipTimer
-                timer: pipArea.timer
-                anchors {
-                    fill: parent
-                    margins: Kirigami.Units.largeSpacing
-                }
-
-                maximizedCircle: true
-
-                actions: [
-                    Kirigami.Action {
-                        text: i18nc("@action:button Add 1 minute to timer", "+1:00")
-                        icon.name: "list-add"
-                        displayHint: Kirigami.DisplayHint.IconOnly
-                        onTriggered: root.timer.addMinute()
-                    },
-                    Kirigami.Action {
-                        text: root.running ? i18nc("@action:button", "Pause") : i18nc("@action:button", "Start")
-                        icon.name: root.running ? "chronometer-pause" : "chronometer-start"
-                        displayHint: Kirigami.DisplayHint.IconOnly
-                        onTriggered: root.timer.toggleRunning()
-                    },
-                    Kirigami.Action {
-                        text: i18nc("@action:button", "Reset")
-                        icon.name: "chronometer-reset"
-                        displayHint: Kirigami.DisplayHint.IconOnly
-                        onTriggered: root.timer.reset()
-                    }
-                ]
-                actionsVisible: PipHandler.hovered
             }
         }
     }

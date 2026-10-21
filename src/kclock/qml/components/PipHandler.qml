@@ -28,8 +28,8 @@ QtObject {
 
     readonly property size defaultWindowSize: Qt.size(Kirigami.Units.gridUnit * 15, Kirigami.Units.gridUnit * 15)
 
-    function show(item, args) {
-        stack.replace(item, args);
+    function show(component : Component, args : var) : void {
+        stack.replaceCurrentItem(component, args);
         window.show();
     }
 
@@ -37,6 +37,12 @@ QtObject {
         stack.clear();
         window.hide();
     }
+
+    // NOTE These Components cannot be on the page itself because they
+    // will be destroyed if we leave it, even if the instance was
+    // created and is owned by the StackView! QTBUG-143053
+    property Component timerComponent: KClock.TimerPipComponent {}
+    property Component stopwatchComponent: KClock.StopwatchPipComponent {}
 
     property KClock.PipWindow pipWindow: KClock.PipWindow {
         id: window

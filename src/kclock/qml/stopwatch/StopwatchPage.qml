@@ -59,7 +59,7 @@ Kirigami.ScrollablePage {
                 if (root.minimizedToPip) {
                     PipHandler.hide();
                 } else {
-                    PipHandler.show(pipComponent);
+                    PipHandler.show(PipHandler.stopwatchComponent);
                 }
             }
         },
@@ -71,135 +71,6 @@ Kirigami.ScrollablePage {
             onTriggered: applicationWindow().pageStack.push(applicationWindow().getPage("Settings"))
         }
     ]
-
-    Component {
-        id: pipComponent
-
-        MouseArea {
-            objectName: "StopwatchPip"
-            onClicked: StopwatchTimer.toggle()
-
-            ClockDisplay {
-                width: parent.width
-                anchors.verticalCenter: parent.verticalCenter
-            }
-
-            RowLayout {
-                anchors {
-                    left: parent.left
-                    right: parent.right
-                    bottom: parent.bottom
-                    margins: Kirigami.Units.largeSpacing
-                }
-                opacity: PipHandler.hovered ? 1 : 0
-                visible: opacity > 0
-
-                Behavior on opacity {
-                    NumberAnimation {
-                        duration: Kirigami.Units.longDuration
-                        easing.type: Easing.InOutQuad
-                    }
-                }
-
-                ToolButton {
-                    Layout.alignment: Qt.AlignHCenter
-                    text: {
-                        if (root.running) {
-                            return i18nc("@action:button", "Pause");
-                        } else if (StopwatchTimer.paused) {
-                            return i18nc("@action:button", "Resume");
-                        } else {
-                            return i18nc("@action:button", "Start");
-                        }
-                    }
-                    icon.name: root.running ? "chronometer-pause" : "chronometer-start"
-                    onClicked: StopwatchTimer.toggle()
-                }
-
-                ToolButton {
-                    Layout.alignment: Qt.AlignHCenter
-                    icon.name: root.running ? "chronometer-lap" : "chronometer-reset"
-                    text: root.running ? i18nc("@action:button", "Lap") : i18nc("@action:button", "Reset")
-                    onClicked: {
-                        if (root.running) {
-                            StopwatchModel.addLap();
-                        } else {
-                            StopwatchTimer.reset();
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    component ClockDisplay: Item {
-        implicitHeight: timeLabels.implicitHeight + lapText.implicitHeight
-
-        Column {
-            anchors.horizontalCenter: parent.horizontalCenter
-            y: Math.round((parent.height - height) / 2)
-            Behavior on y {
-                NumberAnimation { duration: Kirigami.Units.longDuration; easing.type: Easing.InOutQuad }
-            }
-
-            // toggle when clicked
-            MouseArea {
-                id: stopwatchArea
-                anchors.horizontalCenter: parent.horizontalCenter
-                width: timeLabels.implicitWidth
-                height: timeLabels.implicitHeight
-                onClicked: StopwatchTimer.toggle()
-
-                Row {
-                    id: timeLabels
-                    spacing: Math.round(Kirigami.Units.smallSpacing / 2)
-
-                    Label {
-                        id: text
-                        text: StopwatchTimer.display + "."
-                        font.features: { "tnum": 1 }
-                        font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 4.75)
-                        font.weight: Font.ExtraLight
-                    }
-                    Label {
-                        id: secondsText
-                        anchors.baseline: text.baseline
-                        text: StopwatchTimer.small
-                        font.features: { "tnum": 1 }
-                        font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 3.75)
-                        font.weight: Font.ExtraLight
-                    }
-                }
-            }
-
-            // elapsed duration for a lap
-            Label {
-                id: lapText
-                anchors.horizontalCenter: parent.horizontalCenter
-                visible: listView.count > 0
-                opacity: 0.8
-
-                font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 1.1)
-                font.weight: Font.Bold
-
-                text: {
-                    const duration = StopwatchTimer.elapsedTime - StopwatchModel.mostRecentLapTime;
-
-                    const hours = UtilModel.displayTwoDigits(UtilModel.msToHoursPart(duration));
-                    const minutes = UtilModel.displayTwoDigits(UtilModel.msToMinutesPart(duration));
-                    const seconds = UtilModel.displayTwoDigits(UtilModel.msToSecondsPart(duration));
-                    const small = UtilModel.displayTwoDigits(UtilModel.msToSmallPart(duration));
-
-                    // only show hours if we have passed an hour
-                    if (hours === '00') {
-                        return "%1:%2.%3".arg(minutes).arg(seconds).arg(small);
-                    } else {
-                        return "%1:%2:%3.%4".arg(hours).arg(minutes).arg(seconds).arg(small);
-                    }
-                }
-            }
-        }
-    }
 
     header: ColumnLayout {
         transform: Translate { y: root.yTranslate }

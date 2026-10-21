@@ -95,12 +95,15 @@ ecm_add_qml_module(kclock URI org.kde.kclock QML_FILES
     qml/timer/TimerListDelegate.qml
     qml/timer/TimerListPage.qml
     qml/timer/TimerPage.qml
+    qml/timer/TimerPipComponent.qml
     qml/timer/TimerRingingPopup.qml
     qml/timer/TimerLockscreenPopup.qml
 
     qml/settings/SettingsPage.qml
 
     qml/stopwatch/StopwatchPage.qml
+    qml/stopwatch/ClockDisplay.qml
+    qml/stopwatch/StopwatchPipComponent.qml
 
     qml/time/AddLocationListView.qml
     qml/time/AddLocationPage.qml
