@@ -24,7 +24,7 @@ Kirigami.ScrollablePage {
     actions: [
         Kirigami.Action {
             icon.name: "list-add"
-            text: i18n("New Timer")
+            text: i18nc("@action:intoolbar", "&New Timer")
             onTriggered: root.addTimer()
             enabled: TimerModel.status === TimerModel.Status.Ready
             visible: !Kirigami.Settings.isMobile

@@ -26,7 +26,7 @@ Kirigami.ScrollablePage {
     actions: [
         Kirigami.Action {
             icon.name: "list-add"
-            text: i18n("New Alarm")
+            text: i18nc("@action:intoolbar", "&New Alarm")
             onTriggered: root.addAlarm()
             enabled: AlarmModel.status === AlarmModel.Status.Ready
             visible: !Kirigami.Settings.isMobile
