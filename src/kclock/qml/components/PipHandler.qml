@@ -24,12 +24,12 @@ QtObject {
     readonly property int radius: 15
 
     // FIXME sometimes this gets stuck when moving the mouse outside the window quickly.
-    readonly property bool hovered: hoverHandler.hovered
+    readonly property bool hovered: hoverHandler.hovered || flashControlsTimer.running
 
     readonly property size defaultWindowSize: Qt.size(Kirigami.Units.gridUnit * 15, Kirigami.Units.gridUnit * 15)
 
     function show(component : Component, args : var) : void {
-        stack.replaceCurrentItem(component, args);
+        stack.replaceCurrentItem(component, args || {}, QQC2.StackView.Immediate);
         window.show();
     }
 
@@ -87,15 +87,26 @@ QtObject {
                 id: hoverHandler
             }
 
+            // Show controls initially when PIP opens to tell the
+            // user that there is something here.
+            Timer {
+                id: flashControlsTimer
+                running: window.visible
+                repeat: false
+                interval: Kirigami.Units.humanMoment
+            }
+
             Item {
                 anchors {
                     fill: parent
                     margins: Kirigami.Units.largeSpacing
                 }
-                opacity: hoverHandler.hovered ? 1 : 0
+                opacity: pipHandler.hovered ? 1 : 0
                 visible: opacity > 0
 
                 Behavior on opacity {
+                    // Skip fade in when it opens.
+                    enabled: window.visible
                     NumberAnimation {
                         duration: Kirigami.Units.longDuration
                         easing.type: Easing.InOutQuad
