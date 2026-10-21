@@ -35,6 +35,7 @@ Kirigami.ScrollablePage {
             StopwatchModel.addLap();
         }
     }
+    Keys.onEnterPressed: Keys.onReturnPressed()
     Keys.onDeletePressed: {
         if (!running) {
             StopwatchTimer.reset();

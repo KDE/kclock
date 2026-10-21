@@ -35,6 +35,7 @@ Kirigami.Page {
     // keyboard controls
     Keys.onSpacePressed: timer.toggleRunning();
     Keys.onReturnPressed: timer.toggleRunning();
+    Keys.onEnterPressed: timer.toggleRunning()
 
     Kirigami.Theme.inherit: false
     Kirigami.Theme.colorSet: Kirigami.Theme.View
