@@ -130,9 +130,9 @@ Kirigami.ApplicationWindow {
         function onRestoreClicked(pipPage) {
             if (!root.visible) {
                 root.show();
+            } else {
+                root.requestActivate();
             }
-            // FIXME Doesn't work, just blinks in taskbar.
-            root.requestActivate();
 
             const currentPage = pageStack.currentItem?.objectName;
 
