@@ -9,6 +9,8 @@
 #include <QtGui/qpa/qwindowsysteminterface.h>
 #include <QtWaylandClient/private/qwaylandinputdevice_p.h>
 
+#include <QGuiApplication>
+
 XdgWmBase::XdgWmBase()
     : QWaylandClientExtensionTemplate<XdgWmBase>(6)
 {
@@ -73,6 +75,7 @@ PipShellSurface::PipShellSurface(::xdg_surface *xdgSurface, ::xx_pip_v1 *xxPip, 
     , QtWayland::xdg_surface(xdgSurface)
     , QtWayland::xx_pip_v1(xxPip)
 {
+    xx_pip_v1::set_app_id(QGuiApplication::desktopFileName());
 }
 
 PipShellSurface::~PipShellSurface()
