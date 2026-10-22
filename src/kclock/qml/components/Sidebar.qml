@@ -34,6 +34,7 @@ Kirigami.OverlayDrawer {
 
         Kirigami.AbstractApplicationHeader {
             Layout.fillWidth: true
+	    visible: Kirigami.Settings.style !== 'Material'
         }
 
         QQC2.ScrollView {
