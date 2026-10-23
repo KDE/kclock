@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-22 00:53+0000\n"
+"POT-Creation-Date: 2026-10-23 00:52+0000\n"
 "PO-Revision-Date: 2021-06-12 21:25+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -215,7 +215,7 @@ msgid "Delete"
 msgstr "Διαγραφή"
 
 #: qml/alarm/AlarmListPage.qml:23 qml/components/BottomToolbar.qml:118
-#: qml/components/Sidebar.qml:101
+#: qml/components/Sidebar.qml:102
 #, kde-format
 msgid "Alarms"
 msgstr "Συναγερμοί"
@@ -312,25 +312,25 @@ msgstr "Αναβολή"
 msgid "Dismiss"
 msgstr "Αποδέσμευση"
 
-#: qml/components/BottomToolbar.qml:82 qml/components/Sidebar.qml:55
+#: qml/components/BottomToolbar.qml:82 qml/components/Sidebar.qml:56
 #: qml/time/TimePage.qml:25
 #, kde-format
 msgid "Time"
 msgstr "Χρόνος"
 
-#: qml/components/BottomToolbar.qml:93 qml/components/Sidebar.qml:68
+#: qml/components/BottomToolbar.qml:93 qml/components/Sidebar.qml:69
 #: qml/timer/TimerListPage.qml:19
 #, kde-format
 msgid "Timers"
 msgstr "Χρονόμετρα"
 
 #: qml/components/BottomToolbar.qml:106 qml/components/BottomToolbar.qml:107
-#: qml/components/Sidebar.qml:84 qml/stopwatch/StopwatchPage.qml:23
+#: qml/components/Sidebar.qml:85 qml/stopwatch/StopwatchPage.qml:23
 #, kde-format
 msgid "Stopwatch"
 msgstr "Χρονόμετρο"
 
-#: qml/components/PipHandler.qml:105
+#: qml/components/PipHandler.qml:122
 #, kde-format
 msgctxt ""
 "@action:button Close pip and return to the page where the content was popped "
@@ -338,7 +338,7 @@ msgctxt ""
 msgid "Back to app"
 msgstr ""
 
-#: qml/components/PipHandler.qml:123
+#: qml/components/PipHandler.qml:140
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
@@ -465,103 +465,107 @@ msgctxt "@action"
 msgid "Pop out"
 msgstr ""
 
-#: qml/stopwatch/StopwatchPage.qml:108 qml/stopwatch/StopwatchPage.qml:374
-#: qml/timer/TimerPage.qml:176
-#, fuzzy, kde-format
-#| msgid "Pause"
-msgctxt "@action:button"
-msgid "Pause"
-msgstr "Παύση"
-
-#: qml/stopwatch/StopwatchPage.qml:110 qml/stopwatch/StopwatchPage.qml:376
-#, kde-format
-msgctxt "@action:button"
-msgid "Resume"
-msgstr ""
-
-#: qml/stopwatch/StopwatchPage.qml:112 qml/stopwatch/StopwatchPage.qml:378
-#: qml/timer/TimerPage.qml:176
-#, fuzzy, kde-format
-#| msgid "Start"
-msgctxt "@action:button"
-msgid "Start"
-msgstr "Έναρξη"
-
-#: qml/stopwatch/StopwatchPage.qml:122
-#, fuzzy, kde-format
-#| msgid "Lap"
-msgctxt "@action:button"
-msgid "Lap"
-msgstr "Γύρος"
-
-#: qml/stopwatch/StopwatchPage.qml:122 qml/timer/TimerPage.qml:182
-#, fuzzy, kde-format
-#| msgid "Reset"
-msgctxt "@action:button"
-msgid "Reset"
-msgstr "Επαναφορά"
-
-#: qml/stopwatch/StopwatchPage.qml:239 qml/stopwatch/StopwatchPage.qml:274
+#: qml/stopwatch/StopwatchPage.qml:110 qml/stopwatch/StopwatchPage.qml:145
 #: qml/timer/TimerPage.qml:54 qml/timer/TimerPage.qml:116
 #, kde-format
 msgid "Reset"
 msgstr "Επαναφορά"
 
-#: qml/stopwatch/StopwatchPage.qml:241 qml/timer/TimerPage.qml:46
+#: qml/stopwatch/StopwatchPage.qml:112 qml/timer/TimerPage.qml:46
 #: qml/timer/TimerPage.qml:110
 #, kde-format
 msgid "Pause"
 msgstr "Παύση"
 
-#: qml/stopwatch/StopwatchPage.qml:243
+#: qml/stopwatch/StopwatchPage.qml:114
 #, kde-format
 msgid "Resume"
 msgstr ""
 
-#: qml/stopwatch/StopwatchPage.qml:245 qml/timer/TimerPage.qml:46
+#: qml/stopwatch/StopwatchPage.qml:116 qml/timer/TimerPage.qml:46
 #: qml/timer/TimerPage.qml:110
 #, kde-format
 msgid "Start"
 msgstr "Έναρξη"
 
-#: qml/stopwatch/StopwatchPage.qml:274 qml/stopwatch/StopwatchPage.qml:315
+#: qml/stopwatch/StopwatchPage.qml:145 qml/stopwatch/StopwatchPage.qml:186
 #, kde-format
 msgid "Lap"
 msgstr "Γύρος"
 
-#: qml/stopwatch/StopwatchPage.qml:295
+#: qml/stopwatch/StopwatchPage.qml:166
 #, kde-format
 msgid ""
 "Press Space to start or pause the stopwatch. Delete or Backspace resets it. "
 "Enter adds a lap."
 msgstr ""
 
-#: qml/stopwatch/StopwatchPage.qml:323
+#: qml/stopwatch/StopwatchPage.qml:194
 #, fuzzy, kde-format
 #| msgid "Timer"
 msgid "Lap Time"
 msgstr "Χρονόμετρο"
 
-#: qml/stopwatch/StopwatchPage.qml:330
+#: qml/stopwatch/StopwatchPage.qml:201
 #, kde-format
 msgid "Total"
 msgstr ""
 
-#: qml/stopwatch/StopwatchPage.qml:360
+#: qml/stopwatch/StopwatchPage.qml:231
 #, kde-format
 msgid "Stopwatch is in Picture-in-Picture mode."
 msgstr ""
 
-#: qml/stopwatch/StopwatchPage.qml:365 qml/timer/TimerPage.qml:216
+#: qml/stopwatch/StopwatchPage.qml:236 qml/timer/TimerPage.qml:169
 #, kde-format
 msgctxt "@action:button Restore (unminimize) from pip mode"
 msgid "Restore"
 msgstr ""
 
-#: qml/stopwatch/StopwatchPage.qml:438
+#: qml/stopwatch/StopwatchPage.qml:245
+#: qml/stopwatch/StopwatchPipComponent.qml:51
+#: qml/timer/TimerPipComponent.qml:44
+#, fuzzy, kde-format
+#| msgid "Pause"
+msgctxt "@action:button"
+msgid "Pause"
+msgstr "Παύση"
+
+#: qml/stopwatch/StopwatchPage.qml:247
+#: qml/stopwatch/StopwatchPipComponent.qml:53
+#, kde-format
+msgctxt "@action:button"
+msgid "Resume"
+msgstr ""
+
+#: qml/stopwatch/StopwatchPage.qml:249
+#: qml/stopwatch/StopwatchPipComponent.qml:55
+#: qml/timer/TimerPipComponent.qml:44
+#, fuzzy, kde-format
+#| msgid "Start"
+msgctxt "@action:button"
+msgid "Start"
+msgstr "Έναρξη"
+
+#: qml/stopwatch/StopwatchPage.qml:309
 #, kde-format
 msgid "#%1"
 msgstr ""
+
+#: qml/stopwatch/StopwatchPipComponent.qml:65
+#, fuzzy, kde-format
+#| msgid "Lap"
+msgctxt "@action:button"
+msgid "Lap"
+msgstr "Γύρος"
+
+#: qml/stopwatch/StopwatchPipComponent.qml:65
+#: qml/timer/TimerPipComponent.qml:50
+#, fuzzy, kde-format
+#| msgid "Reset"
+msgctxt "@action:button"
+msgid "Reset"
+msgstr "Επαναφορά"
 
 #: qml/time/AddLocationListView.qml:51
 #, kde-format
@@ -608,13 +612,13 @@ msgstr ""
 msgid "1 m"
 msgstr "1 ώρα"
 
-#: qml/timer/TimerComponent.qml:204 qml/timer/TimerListDelegate.qml:143
+#: qml/timer/TimerComponent.qml:205 qml/timer/TimerListDelegate.qml:143
 #: qml/timer/TimerPage.qml:24
 #, kde-format
 msgid "New timer"
 msgstr "Νέο χρονόμετρο"
 
-#: qml/timer/TimerComponent.qml:217
+#: qml/timer/TimerComponent.qml:218
 #, kde-format
 msgid "Click to edit timer name"
 msgstr ""
@@ -848,22 +852,22 @@ msgstr ""
 msgid "Delete"
 msgstr "Διαγραφή"
 
-#: qml/timer/TimerPage.qml:170
-#, kde-format
-msgctxt "@action:button Add 1 minute to timer"
-msgid "+1:00"
-msgstr ""
-
-#: qml/timer/TimerPage.qml:201
+#: qml/timer/TimerPage.qml:154
 #, fuzzy, kde-format
 #| msgid "1 minute"
 msgctxt "@action:button Add 1 minute to timer"
 msgid "1 minute"
 msgstr "1 λεπτό"
 
-#: qml/timer/TimerPage.qml:211
+#: qml/timer/TimerPage.qml:164
 #, kde-format
 msgid "This timer is in Picture-in-Picture mode."
+msgstr ""
+
+#: qml/timer/TimerPipComponent.qml:38
+#, kde-format
+msgctxt "@action:button Add 1 minute to timer"
+msgid "+1:00"
 msgstr ""
 
 #: qml/timer/TimerRingingPopup.qml:25
