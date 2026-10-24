@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-22 02:48+0000\n"
-"PO-Revision-Date: 2026-07-25 22:05+0900\n"
+"PO-Revision-Date: 2026-10-18 08:11+0900\n"
 "Last-Translator: Mint <5602mint@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
 "Language: ja\n"
@@ -503,7 +503,7 @@ msgid ""
 "Press Space to start or pause the stopwatch. Delete or Backspace resets it. "
 "Enter adds a lap."
 msgstr ""
-"スペースキーでストップウォッチをスタート&再開、Delete や Backspace でリセッ"
+"スペースキーでストップウォッチをスタート/再開、Delete や Backspace でリセッ"
 "ト、Enter でラップを追加できます。"
 
 #: qml/stopwatch/StopwatchPage.qml:323
@@ -519,7 +519,7 @@ msgstr "合計"
 #: qml/stopwatch/StopwatchPage.qml:360
 #, kde-format
 msgid "Stopwatch is in Picture-in-Picture mode."
-msgstr "ストップウォッチはピクチャインピクチャモード中です。"
+msgstr "ストップウォッチはピクチャーインピクチャーモード中です。"
 
 #: qml/stopwatch/StopwatchPage.qml:365 qml/timer/TimerPage.qml:216
 #, kde-format
@@ -810,7 +810,7 @@ msgstr "一分追加"
 #: qml/timer/TimerPage.qml:211
 #, kde-format
 msgid "This timer is in Picture-in-Picture mode."
-msgstr "このタイマーはピクチャインピクチャモード中です。"
+msgstr "このタイマーはピクチャーインピクチャーモード中です。"
 
 #: qml/timer/TimerRingingPopup.qml:25
 #, kde-format
