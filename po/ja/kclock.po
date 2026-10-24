@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-23 00:52+0000\n"
-"PO-Revision-Date: 2026-07-25 22:05+0900\n"
+"PO-Revision-Date: 2026-10-18 08:11+0900\n"
 "Last-Translator: Mint <5602mint@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
 "Language: ja\n"
@@ -32,10 +32,9 @@ msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr "アラームやタイマー、ストップウォッチを使ったり、世界時計を確認できます"
 
 #: main.cpp:47
-#, fuzzy, kde-format
-#| msgid "© 2020-2026 KDE Community"
+#, kde-format
 msgid "© 2020–2026 KDE Community"
-msgstr "© 2020-2026 KDE Community"
+msgstr "© 2020–2026 KDE Community"
 
 #: main.cpp:49
 #, kde-format
@@ -79,8 +78,7 @@ msgid "Select Days to Repeat"
 msgstr "曜日を選択"
 
 #: qml/alarm/AlarmForm.qml:113
-#, fuzzy, kde-format
-#| msgid "Alarm Name (optional):"
+#, kde-format
 msgid "Alarm name (optional):"
 msgstr "アラーム名 (任意):"
 
@@ -90,8 +88,7 @@ msgid "Wake Up"
 msgstr "起床"
 
 #: qml/alarm/AlarmForm.qml:124
-#, fuzzy, kde-format
-#| msgid "Ring Duration:"
+#, kde-format
 msgid "Ring duration:"
 msgstr "鳴動時間の長さ:"
 
@@ -147,10 +144,9 @@ msgid "1 hour"
 msgstr "1時間"
 
 #: qml/alarm/AlarmForm.qml:162
-#, fuzzy, kde-format
-#| msgid "Ring Duration:"
+#, kde-format
 msgid "Snooze duration:"
-msgstr "鳴動時間の長さ:"
+msgstr "スヌーズ時間の長さ:"
 
 #: qml/alarm/AlarmForm.qml:163
 #, kde-format
@@ -158,8 +154,7 @@ msgid "Select Snooze Length"
 msgstr "スヌーズの長さを選択"
 
 #: qml/alarm/AlarmForm.qml:200
-#, fuzzy, kde-format
-#| msgid "Ring Sound:"
+#, kde-format
 msgid "Ring sound:"
 msgstr "アラームのサウンド:"
 
@@ -269,8 +264,7 @@ msgid "New Alarm"
 msgstr "新しいアラーム"
 
 #: qml/alarm/AlarmListPage.qml:135
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit"
 msgstr "編集"
@@ -380,8 +374,7 @@ msgid "PM"
 msgstr "PM"
 
 #: qml/settings/SettingsPage.qml:40
-#, fuzzy, kde-format
-#| msgid "Time Format"
+#, kde-format
 msgid "Time format"
 msgstr "時刻形式"
 
@@ -492,7 +485,7 @@ msgid ""
 "Press Space to start or pause the stopwatch. Delete or Backspace resets it. "
 "Enter adds a lap."
 msgstr ""
-"スペースキーでストップウォッチをスタート&再開、Delete や Backspace でリセッ"
+"スペースキーでストップウォッチをスタート/再開、Delete や Backspace でリセッ"
 "ト、Enter でラップを追加できます。"
 
 #: qml/stopwatch/StopwatchPage.qml:194
@@ -508,7 +501,7 @@ msgstr "合計"
 #: qml/stopwatch/StopwatchPage.qml:231
 #, kde-format
 msgid "Stopwatch is in Picture-in-Picture mode."
-msgstr "ストップウォッチはピクチャインピクチャモード中です。"
+msgstr "ストップウォッチはピクチャーインピクチャーモード中です。"
 
 #: qml/stopwatch/StopwatchPage.qml:236 qml/timer/TimerPage.qml:169
 #, kde-format
@@ -831,7 +824,7 @@ msgstr "一分追加"
 #: qml/timer/TimerPage.qml:164
 #, kde-format
 msgid "This timer is in Picture-in-Picture mode."
-msgstr "このタイマーはピクチャインピクチャモード中です。"
+msgstr "このタイマーはピクチャーインピクチャーモード中です。"
 
 #: qml/timer/TimerPipComponent.qml:38
 #, kde-format
@@ -943,6 +936,3 @@ msgstr "平日"
 #, kde-format
 msgid ", "
 msgstr ", "
-
-#~ msgid "Snooze Length:"
-#~ msgstr "スヌーズの長さ:"
