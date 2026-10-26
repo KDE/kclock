@@ -1,7 +1,7 @@
 # Translation for kclock.po to Euskara/Basque (eu).
 # Copyright (C) 2020-2026  This file is copyright:
 # This file is distributed under the same license as the kclock package.
-# SPDX-FileCopyrightText: 2023-2026 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023-2026 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
 # Ander Elortondo <ander.elor@gmail.com>, 2020.
@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-23 00:52+0000\n"
-"PO-Revision-Date: 2026-07-09 23:48+0200\n"
+"PO-Revision-Date: 2026-10-25 22:00+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 26.04.2\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -39,10 +39,9 @@ msgstr ""
 "ordulariak"
 
 #: main.cpp:47
-#, fuzzy, kde-format
-#| msgid "© 2020-2026 KDE Community"
+#, kde-format
 msgid "© 2020–2026 KDE Community"
-msgstr "© 2020-2026 KDE Komunitatea"
+msgstr "© 2020-2026 KDE komunitatea"
 
 #: main.cpp:49
 #, kde-format
@@ -86,10 +85,9 @@ msgid "Select Days to Repeat"
 msgstr "Errepikatu beharreko egunak hautatu"
 
 #: qml/alarm/AlarmForm.qml:113
-#, fuzzy, kde-format
-#| msgid "Alarm Name (optional):"
+#, kde-format
 msgid "Alarm name (optional):"
-msgstr "Alarmaren izena (aukerakoa)"
+msgstr "Alarmaren izena (aukerakoa):"
 
 #: qml/alarm/AlarmForm.qml:114
 #, kde-format
@@ -97,8 +95,7 @@ msgid "Wake Up"
 msgstr "Esnatu"
 
 #: qml/alarm/AlarmForm.qml:124
-#, fuzzy, kde-format
-#| msgid "Ring Duration:"
+#, kde-format
 msgid "Ring duration:"
 msgstr "Txirrinaren iraupena:"
 
@@ -155,10 +152,9 @@ msgid "1 hour"
 msgstr "ordu 1"
 
 #: qml/alarm/AlarmForm.qml:162
-#, fuzzy, kde-format
-#| msgid "Ring Duration:"
+#, kde-format
 msgid "Snooze duration:"
-msgstr "Txirrinaren iraupena:"
+msgstr "Kuluxkaren iraupena:"
 
 #: qml/alarm/AlarmForm.qml:163
 #, kde-format
@@ -166,8 +162,7 @@ msgid "Select Snooze Length"
 msgstr "Aukeratu kuluxkaren iraupena"
 
 #: qml/alarm/AlarmForm.qml:200
-#, fuzzy, kde-format
-#| msgid "Ring Sound:"
+#, kde-format
 msgid "Ring sound:"
 msgstr "Txirrinaren hotsa:"
 
@@ -224,11 +219,10 @@ msgid "Alarms"
 msgstr "Alarmak"
 
 #: qml/alarm/AlarmListPage.qml:29
-#, fuzzy, kde-format
-#| msgid "New Alarm"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "&New Alarm"
-msgstr "Alarma berria"
+msgstr "Alarma &berria"
 
 #: qml/alarm/AlarmListPage.qml:36 qml/time/TimePage.qml:38
 #, kde-format
@@ -278,8 +272,7 @@ msgid "New Alarm"
 msgstr "Alarma berria"
 
 #: qml/alarm/AlarmListPage.qml:135
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit"
 msgstr "Editatu"
@@ -388,8 +381,7 @@ msgid "PM"
 msgstr "PM"
 
 #: qml/settings/SettingsPage.qml:40
-#, fuzzy, kde-format
-#| msgid "Time Format"
+#, kde-format
 msgid "Time format"
 msgstr "Ordu-formatua"
 
@@ -770,11 +762,10 @@ msgid "Delete"
 msgstr "Ezabatu"
 
 #: qml/timer/TimerListPage.qml:27
-#, fuzzy, kde-format
-#| msgid "New Timer"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "&New Timer"
-msgstr "Tenporizadore berria"
+msgstr "Tenporizadore &berria"
 
 #: qml/timer/TimerListPage.qml:61
 #, kde-format
