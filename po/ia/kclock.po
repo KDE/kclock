@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-23 00:52+0000\n"
-"PO-Revision-Date: 2026-10-09 12:25+0200\n"
+"PO-Revision-Date: 2026-10-27 16:24+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -216,11 +216,10 @@ msgid "Alarms"
 msgstr "Alarmas"
 
 #: qml/alarm/AlarmListPage.qml:29
-#, fuzzy, kde-format
-#| msgid "New Alarm"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "&New Alarm"
-msgstr "Nove alarma"
+msgstr "&Nove alarma"
 
 #: qml/alarm/AlarmListPage.qml:36 qml/time/TimePage.qml:38
 #, kde-format
@@ -761,11 +760,10 @@ msgid "Delete"
 msgstr "Dele"
 
 #: qml/timer/TimerListPage.qml:27
-#, fuzzy, kde-format
-#| msgid "New Timer"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "&New Timer"
-msgstr "Nove chronometro"
+msgstr "&Nove chronometro"
 
 #: qml/timer/TimerListPage.qml:61
 #, kde-format
