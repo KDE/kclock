@@ -782,8 +782,8 @@
           <li>Start snooze only after button is pressed</li>
           <li xml:lang="ar">بدء الغفو فقط بعد ضغط الزر</li>
           <li xml:lang="bg">Стартиране на дрямката само след натискане на бутон</li>
-          <li xml:lang="ca">Inicia el posposament només després de prémer el botó</li>
-          <li xml:lang="ca-valencia">Inicia el posposament només després de prémer el botó</li>
+          <li xml:lang="ca">Inicia la posposició només després de prémer el botó</li>
+          <li xml:lang="ca-valencia">Inicia la posposició només després de prémer el botó</li>
           <li xml:lang="cs">Odložení budíku se spustí až po stisknutí tlačítka</li>
           <li xml:lang="de">Die Schlummerfunktion erst nach Drücken des Knopfes aktivieren</li>
           <li xml:lang="es">Iniciar la repetición de la alarma solo después de pulsar el botón.</li>
