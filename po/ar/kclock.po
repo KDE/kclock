@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kclock package.
-# SPDX-FileCopyrightText: 2022, 2024, 2025, 2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2022, 2024-2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-23 00:52+0000\n"
-"PO-Revision-Date: 2026-09-23 17:44+0400\n"
+"PO-Revision-Date: 2026-10-31 17:22+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -223,11 +223,10 @@ msgid "Alarms"
 msgstr "المنبّهات"
 
 #: qml/alarm/AlarmListPage.qml:29
-#, fuzzy, kde-format
-#| msgid "New Alarm"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "&New Alarm"
-msgstr "منبّه جديد"
+msgstr "&منبّه جديد"
 
 #: qml/alarm/AlarmListPage.qml:36 qml/time/TimePage.qml:38
 #, kde-format
@@ -277,8 +276,7 @@ msgid "New Alarm"
 msgstr "منبّه جديد"
 
 #: qml/alarm/AlarmListPage.qml:135
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit"
 msgstr "حرّر"
@@ -767,11 +765,10 @@ msgid "Delete"
 msgstr "احذف"
 
 #: qml/timer/TimerListPage.qml:27
-#, fuzzy, kde-format
-#| msgid "New Timer"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "&New Timer"
-msgstr "مؤقت جديد"
+msgstr "&مؤقت جديد"
 
 #: qml/timer/TimerListPage.qml:61
 #, kde-format
