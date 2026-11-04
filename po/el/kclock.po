@@ -17,26 +17,28 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 20.04.2\n"
 
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Stelios"
+msgstr "Stelios, Λευτέρης Τ."
 
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "sstavra@gmail.com"
+msgstr "sstavra@gmail.com, tripoleft@protonmail.com"
 
 #: main.cpp:45
-#, kde-format
+#, fuzzy, kde-format
 msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
 msgstr ""
+"Ορίστε ξυπνητήρια και αντίστροφη μέτρηση, χρησιμοποιήστε χρονόμετρο και "
+"διαχειριστείτε παγκόσμια ρολόγια"
 
 #: main.cpp:47
 #, fuzzy, kde-format
 #| msgid "© 2020 KDE Community"
 msgid "© 2020–2026 KDE Community"
-msgstr "© 2020 Η Κοινότητα του KDE"
+msgstr "© 2020-2026 Η Κοινότητα του KDE"
 
 #: main.cpp:49
 #, kde-format
@@ -49,15 +51,15 @@ msgid "Han Young"
 msgstr "Han Young"
 
 #: main.cpp:51
-#, kde-format
+#, fuzzy, kde-format
 msgid "Kai Uwe Broulik"
-msgstr ""
+msgstr "Kai Uwe Broulik"
 
 #: main.cpp:51
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "Author"
 msgid "Desktop Integration"
-msgstr ""
+msgstr "Ενσωμάτωση σε Επιφάνεια εργασίας"
 
 #: main.cpp:58
 #, kde-format
@@ -65,9 +67,9 @@ msgid "Select opened page"
 msgstr "Επιλέξτε ανοιγμένη σελίδα"
 
 #: main.cpp:60
-#, kde-format
+#, fuzzy, kde-format
 msgid "Explicitly open a new Clock window"
-msgstr ""
+msgstr "Άνοιγμα αποκλειστικά ενός νέου παραθύρου Ρολόι"
 
 #: qml/alarm/AlarmForm.qml:84
 #, kde-format
@@ -78,13 +80,13 @@ msgstr "Ημέρες για επανάληψη:"
 #, fuzzy, kde-format
 #| msgid "Days to Repeat"
 msgid "Select Days to Repeat"
-msgstr "Ημέρες για επανάληψη"
+msgstr "Επιλέξτε ημέρες για επανάληψη"
 
 #: qml/alarm/AlarmForm.qml:113
 #, fuzzy, kde-format
 #| msgid "Alarm Name"
 msgid "Alarm name (optional):"
-msgstr "Όνομα συναγερμού"
+msgstr "Όνομα ξυπνητηριού (προαιρετικό):"
 
 #: qml/alarm/AlarmForm.qml:114
 #, kde-format
@@ -95,12 +97,12 @@ msgstr "Ξύπνημα"
 #, fuzzy, kde-format
 #| msgid "Ringtone"
 msgid "Ring duration:"
-msgstr "Κουδούνισμα"
+msgstr "Διάρκεια κουδουνίσματος:"
 
 #: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:128
-#, kde-format
+#, fuzzy, kde-format
 msgid "None"
-msgstr ""
+msgstr "Κανένα"
 
 #: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:164 utilmodel.cpp:109
 #, kde-format
@@ -110,9 +112,9 @@ msgstr[0] "%1 λεπτό"
 msgstr[1] "%1 λεπτά"
 
 #: qml/alarm/AlarmForm.qml:126
-#, kde-format
+#, fuzzy, kde-format
 msgid "Select Ring Duration"
-msgstr ""
+msgstr "Επιλέξτε διάρκεια κουδουνίσματος"
 
 #: qml/alarm/AlarmForm.qml:129 qml/alarm/AlarmForm.qml:166
 #, kde-format
@@ -153,41 +155,41 @@ msgstr "1 ώρα"
 #, fuzzy, kde-format
 #| msgid "Ringtone"
 msgid "Snooze duration:"
-msgstr "Κουδούνισμα"
+msgstr "Διάρκεια αναβολής:"
 
 #: qml/alarm/AlarmForm.qml:163
 #, fuzzy, kde-format
 #| msgid "Alarm Snooze Length"
 msgid "Select Snooze Length"
-msgstr "Περίοδος αναβολής συναγερμού"
+msgstr "Επιλογή διάρκειας αναβολής"
 
 #: qml/alarm/AlarmForm.qml:200
 #, fuzzy, kde-format
 #| msgid "Ringtone"
 msgid "Ring sound:"
-msgstr "Κουδούνισμα"
+msgstr "Ήχος κουδουνίσματος:"
 
 #: qml/alarm/AlarmForm.qml:206
-#, kde-format
+#, fuzzy, kde-format
 msgid "Default Sound"
-msgstr ""
+msgstr "Προεπιλεγμένος ήχος"
 
 #: qml/alarm/AlarmFormPage.qml:25 qml/alarm/AlarmLockscreenPopup.qml:38
 #: qml/alarm/AlarmRingingPopup.qml:43
-#, kde-format
+#, fuzzy, kde-format
 msgid "Alarm"
-msgstr "Συναγερμός"
+msgstr "Ξυπνητήρι"
 
 #: qml/alarm/AlarmFormPage.qml:25
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "Edit alarm page title"
 msgid "Editing %1"
-msgstr ""
+msgstr "Επεξεργασία %1"
 
 #: qml/alarm/AlarmFormPage.qml:26
-#, kde-format
+#, fuzzy, kde-format
 msgid "New Alarm"
-msgstr "Νέος συναγερμός"
+msgstr "Νέο ξυπνητήρι"
 
 #: qml/alarm/AlarmFormPage.qml:38 qml/alarm/AlarmFormPage.qml:61
 #, kde-format
@@ -195,17 +197,17 @@ msgid "Done"
 msgstr "Έγινε"
 
 #: qml/alarm/AlarmFormPage.qml:67 qml/timer/TimerFormDialog.qml:111
-#, kde-format
+#, fuzzy, kde-format
 msgid "Cancel"
-msgstr ""
+msgstr "Ακύρωση"
 
 #: qml/alarm/AlarmListDelegate.qml:104
 #, fuzzy, kde-format
 #| msgid "Snoozed %1 minutes"
 msgid "Snoozed %1 minute"
 msgid_plural "Snoozed %1 minutes"
-msgstr[0] "Αναβολή %1 λεπτά"
-msgstr[1] "Αναβολή %1 λεπτά"
+msgstr[0] "Αναβλήθηκε %1 λεπτό"
+msgstr[1] "Αναβλήθηκε %1 λεπτά"
 
 #: qml/alarm/AlarmListDelegate.qml:125 qml/alarm/AlarmListPage.qml:140
 #: qml/time/TimePageDelegate.qml:68
@@ -216,16 +218,16 @@ msgstr "Διαγραφή"
 
 #: qml/alarm/AlarmListPage.qml:23 qml/components/BottomToolbar.qml:118
 #: qml/components/Sidebar.qml:102
-#, kde-format
+#, fuzzy, kde-format
 msgid "Alarms"
-msgstr "Συναγερμοί"
+msgstr "Ξυπνητήρια"
 
 #: qml/alarm/AlarmListPage.qml:29
 #, fuzzy, kde-format
 #| msgid "New Alarm"
 msgctxt "@action:intoolbar"
 msgid "&New Alarm"
-msgstr "Νέος συναγερμός"
+msgstr "&Νέο ξυπνητήρι"
 
 #: qml/alarm/AlarmListPage.qml:36 qml/time/TimePage.qml:38
 #, kde-format
@@ -240,39 +242,41 @@ msgid "Settings"
 msgstr "Ρυθμίσεις"
 
 #: qml/alarm/AlarmListPage.qml:58
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have alarm "
 "functionality."
 msgstr ""
+"Ο δαίμονας του ρολογιού δε βρέθηκε. Παρακαλούμε ξεκινήστε το kclockd για να "
+"έχετε την λειτουργικότητα του ξυπνητηριού."
 
 #: qml/alarm/AlarmListPage.qml:60
-#, kde-format
+#, fuzzy, kde-format
 msgid "Failed to load the list of alarms: %1"
-msgstr ""
+msgstr "Αποτυχία φόρτωσης λίστας ξυπνητηριών: %1"
 
 #: qml/alarm/AlarmListPage.qml:86
-#, kde-format
+#, fuzzy, kde-format
 msgid "No alarms configured"
-msgstr "Δεν έχουν διαμορφωθεί συναγερμοί"
+msgstr "Δεν έχουν διαμορφωθεί ξυπνητήρια"
 
 #: qml/alarm/AlarmListPage.qml:92
 #, fuzzy, kde-format
 #| msgid "Alarm"
 msgid "Add alarm"
-msgstr "Συναγερμός"
+msgstr "Προσθήκη ξυπνητηριού"
 
 #: qml/alarm/AlarmListPage.qml:103 qml/timer/TimerListPage.qml:130
-#, kde-format
+#, fuzzy, kde-format
 msgid "Loading…"
-msgstr ""
+msgstr "Φόρτωση..."
 
 #: qml/alarm/AlarmListPage.qml:118
 #, fuzzy, kde-format
 #| msgid "New Alarm"
 msgctxt "@action:button"
 msgid "New Alarm"
-msgstr "Νέος συναγερμός"
+msgstr "Νέο ξυπνητήρι"
 
 #: qml/alarm/AlarmListPage.qml:135
 #, fuzzy, kde-format
@@ -282,9 +286,9 @@ msgid "Edit"
 msgstr "Επεξεργασία"
 
 #: qml/alarm/AlarmListPage.qml:150
-#, kde-format
+#, fuzzy, kde-format
 msgid "alarm"
-msgstr "συναγερμός"
+msgstr "ξυπνητήρι"
 
 #: qml/alarm/AlarmListPage.qml:150
 #, kde-format
@@ -292,14 +296,14 @@ msgid "Deleted %1"
 msgstr "Διαγράφηκε %1"
 
 #: qml/alarm/AlarmLockscreenPopup.qml:22 qml/alarm/AlarmRingingPopup.qml:26
-#, kde-format
+#, fuzzy, kde-format
 msgid "Alarm is ringing"
-msgstr ""
+msgstr "Το ξυπνητήρι χτυπάει"
 
 #: qml/alarm/AlarmLockscreenPopup.qml:38
-#, kde-format
+#, fuzzy, kde-format
 msgid "Alarm not found"
-msgstr ""
+msgstr "Το ξυπνητήρι δε βρέθηκε"
 
 #: qml/alarm/AlarmLockscreenPopup.qml:40 qml/alarm/AlarmRingingPopup.qml:53
 #, kde-format
@@ -308,21 +312,21 @@ msgstr "Αναβολή"
 
 #: qml/alarm/AlarmLockscreenPopup.qml:41 qml/alarm/AlarmRingingPopup.qml:57
 #: qml/timer/TimerRingingPopup.qml:54
-#, kde-format
+#, fuzzy, kde-format
 msgid "Dismiss"
-msgstr "Αποδέσμευση"
+msgstr "Απόρριψη"
 
 #: qml/components/BottomToolbar.qml:82 qml/components/Sidebar.qml:56
 #: qml/time/TimePage.qml:25
-#, kde-format
+#, fuzzy, kde-format
 msgid "Time"
-msgstr "Χρόνος"
+msgstr "Ώρα"
 
 #: qml/components/BottomToolbar.qml:93 qml/components/Sidebar.qml:69
 #: qml/timer/TimerListPage.qml:19
-#, kde-format
+#, fuzzy, kde-format
 msgid "Timers"
-msgstr "Χρονόμετρα"
+msgstr "Αντίστροφες μετρήσεις"
 
 #: qml/components/BottomToolbar.qml:106 qml/components/BottomToolbar.qml:107
 #: qml/components/Sidebar.qml:85 qml/stopwatch/StopwatchPage.qml:23
@@ -331,95 +335,95 @@ msgid "Stopwatch"
 msgstr "Χρονόμετρο"
 
 #: qml/components/PipHandler.qml:122
-#, kde-format
+#, fuzzy, kde-format
 msgctxt ""
 "@action:button Close pip and return to the page where the content was popped "
 "out from"
 msgid "Back to app"
-msgstr ""
+msgstr "Πίσω την εφαρμογή"
 
 #: qml/components/PipHandler.qml:140
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Close"
-msgstr ""
+msgstr "Κλείσιμο"
 
 #: qml/components/SoundPickerPage.qml:24
-#, kde-format
+#, fuzzy, kde-format
 msgid "Select Alarm Sound"
-msgstr ""
+msgstr "Επιλογή ήχου ξυπνητηριού"
 
 #: qml/components/SoundPickerPage.qml:73
-#, kde-format
+#, fuzzy, kde-format
 msgid "Select from files…"
-msgstr ""
+msgstr "Επιλογή από αρχεία…"
 
 #: qml/components/SoundPickerPage.qml:84 qml/settings/SettingsPage.qml:85
-#, kde-format
+#, fuzzy, kde-format
 msgid "Default"
-msgstr ""
+msgstr "Προεπιλογή"
 
 #: qml/components/SoundPickerPage.qml:164
-#, kde-format
+#, fuzzy, kde-format
 msgid "Choose an audio"
-msgstr ""
+msgstr "Επιλέξτε έναν ήχο"
 
 #: qml/components/SoundPickerPage.qml:172
-#, kde-format
+#, fuzzy, kde-format
 msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
-msgstr ""
+msgstr "Αρχεία ήχου (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
 
 #: qml/components/SoundPickerPage.qml:172
-#, kde-format
+#, fuzzy, kde-format
 msgid "All files (*)"
-msgstr ""
+msgstr "Όλα τα αρχεία (*)"
 
 #: qml/components/TimePicker.qml:94
-#, kde-format
+#, fuzzy, kde-format
 msgid "AM"
-msgstr ""
+msgstr "ΠΜ"
 
 #: qml/components/TimePicker.qml:94
-#, kde-format
+#, fuzzy, kde-format
 msgid "PM"
-msgstr ""
+msgstr "ΜΜ"
 
 #: qml/settings/SettingsPage.qml:40
 #, fuzzy, kde-format
 #| msgid "Timer complete"
 msgid "Time format"
-msgstr "Τέλος χρόνου"
+msgstr "Μορφή ώρας"
 
 #: qml/settings/SettingsPage.qml:42
-#, kde-format
+#, fuzzy, kde-format
 msgid "Use System Default"
-msgstr ""
+msgstr "Χρήση Προεπιλογής συστήματος"
 
 #: qml/settings/SettingsPage.qml:43
-#, kde-format
+#, fuzzy, kde-format
 msgid "12 Hour Time"
-msgstr ""
+msgstr "12ωρο"
 
 #: qml/settings/SettingsPage.qml:44
-#, kde-format
+#, fuzzy, kde-format
 msgid "24 Hour Time"
-msgstr ""
+msgstr "24ωρο"
 
 #: qml/settings/SettingsPage.qml:58
-#, kde-format
+#, fuzzy, kde-format
 msgid "Notifications for running timers"
-msgstr ""
+msgstr "Ειδοποιήσεις για εν εξελίξει αντίστροφες μετρήσεις"
 
 #: qml/settings/SettingsPage.qml:60
-#, kde-format
+#, fuzzy, kde-format
 msgid "Always"
-msgstr ""
+msgstr "Πάντα"
 
 #: qml/settings/SettingsPage.qml:63
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "When the app is not running"
 msgid "When %1 is not running"
-msgstr ""
+msgstr "Όταν το %1 δεν εκτελείται"
 
 #: qml/settings/SettingsPage.qml:66
 #, kde-format
@@ -427,43 +431,45 @@ msgid "Never"
 msgstr "Ποτέ"
 
 #: qml/settings/SettingsPage.qml:69
-#, kde-format
+#, fuzzy, kde-format
 msgid "Lets you pause and resume timers from the notification area."
 msgstr ""
+"Σας επιτρέπει να σταματάτε και να ξαναξεκινάτε αντίστροφες μετρήσεις από την "
+"περιοχή ειδοποιήσεων."
 
 #: qml/settings/SettingsPage.qml:90
-#, kde-format
+#, fuzzy, kde-format
 msgid "Select Timer Sound"
-msgstr ""
+msgstr "Επιλογή ήχου αντίστροφης μέτρησης"
 
 #: qml/settings/SettingsPage.qml:92
-#, kde-format
+#, fuzzy, kde-format
 msgid "Default timer ring sound"
-msgstr ""
+msgstr "Προεπιλεγμένος ήχος κουδουνίσματος αντίστροφης μέτρησης"
 
 #: qml/settings/SettingsPage.qml:102
 #, fuzzy, kde-format
 #| msgid "Clock"
 msgid "About Clock"
-msgstr "Ρολόι"
+msgstr "Σχετικό με το Ρολόι"
 
 #: qml/settings/SettingsPage.qml:111
 #, fuzzy, kde-format
 #| msgid "About"
 msgid "About KDE"
-msgstr "Περίγραμμα"
+msgstr "Σχετικά με το KDE"
 
 #: qml/stopwatch/StopwatchPage.qml:55 qml/timer/TimerPage.qml:78
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action"
 msgid "Restore"
-msgstr ""
+msgstr "Επαναφορά"
 
 #: qml/stopwatch/StopwatchPage.qml:55 qml/timer/TimerPage.qml:78
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action"
 msgid "Pop out"
-msgstr ""
+msgstr "Αποκόλληση"
 
 #: qml/stopwatch/StopwatchPage.qml:110 qml/stopwatch/StopwatchPage.qml:145
 #: qml/timer/TimerPage.qml:54 qml/timer/TimerPage.qml:116
@@ -478,9 +484,9 @@ msgid "Pause"
 msgstr "Παύση"
 
 #: qml/stopwatch/StopwatchPage.qml:114
-#, kde-format
+#, fuzzy, kde-format
 msgid "Resume"
-msgstr ""
+msgstr "Συνέχιση"
 
 #: qml/stopwatch/StopwatchPage.qml:116 qml/timer/TimerPage.qml:46
 #: qml/timer/TimerPage.qml:110
@@ -494,33 +500,35 @@ msgid "Lap"
 msgstr "Γύρος"
 
 #: qml/stopwatch/StopwatchPage.qml:166
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "Press Space to start or pause the stopwatch. Delete or Backspace resets it. "
 "Enter adds a lap."
 msgstr ""
+"Πατήστε το Διάστημα για ξεκινήσετε ή να συνεχίσετε ένα χρονόμετρο. Το Delete "
+"ή Backspace το επαναφέρει. Το Enter προσθέτει έναν γύρο."
 
 #: qml/stopwatch/StopwatchPage.qml:194
 #, fuzzy, kde-format
 #| msgid "Timer"
 msgid "Lap Time"
-msgstr "Χρονόμετρο"
+msgstr "Χρόνος γύρου"
 
 #: qml/stopwatch/StopwatchPage.qml:201
-#, kde-format
+#, fuzzy, kde-format
 msgid "Total"
-msgstr ""
+msgstr "Σύνολο"
 
 #: qml/stopwatch/StopwatchPage.qml:231
-#, kde-format
+#, fuzzy, kde-format
 msgid "Stopwatch is in Picture-in-Picture mode."
-msgstr ""
+msgstr "Το χρονόμετρο είναι σε λειτουργία εικόνα-εντός-εικόνας."
 
 #: qml/stopwatch/StopwatchPage.qml:236 qml/timer/TimerPage.qml:169
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action:button Restore (unminimize) from pip mode"
 msgid "Restore"
-msgstr ""
+msgstr "Επαναφορά"
 
 #: qml/stopwatch/StopwatchPage.qml:245
 #: qml/stopwatch/StopwatchPipComponent.qml:51
@@ -533,10 +541,10 @@ msgstr "Παύση"
 
 #: qml/stopwatch/StopwatchPage.qml:247
 #: qml/stopwatch/StopwatchPipComponent.qml:53
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Resume"
-msgstr ""
+msgstr "Συνέχιση"
 
 #: qml/stopwatch/StopwatchPage.qml:249
 #: qml/stopwatch/StopwatchPipComponent.qml:55
@@ -548,9 +556,9 @@ msgid "Start"
 msgstr "Έναρξη"
 
 #: qml/stopwatch/StopwatchPage.qml:309
-#, kde-format
+#, fuzzy, kde-format
 msgid "#%1"
-msgstr ""
+msgstr "#%1"
 
 #: qml/stopwatch/StopwatchPipComponent.qml:65
 #, fuzzy, kde-format
@@ -568,60 +576,60 @@ msgid "Reset"
 msgstr "Επαναφορά"
 
 #: qml/time/AddLocationListView.qml:51
-#, kde-format
+#, fuzzy, kde-format
 msgid "No locations found"
-msgstr ""
+msgstr "Δε βρέθηκαν τοποθεσίες"
 
 #: qml/time/AddLocationListView.qml:52
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info:usagetip"
 msgid "Check spelling or try the nearest major city"
-msgstr ""
+msgstr "Ελέγξτε την ορθογραφία ή δοκιμάστε την κοντινότερη μεγάλη πόλη"
 
 #: qml/time/AddLocationPage.qml:13 qml/time/AddLocationWrapper.qml:34
 #, fuzzy, kde-format
 #| msgid "Add timezone"
 msgid "Add Location"
-msgstr "Προσθήκη ζώνης ώρας"
+msgstr "Προσθήκη τοποθεσίας"
 
 #: qml/time/TimePage.qml:51
-#, kde-format
+#, fuzzy, kde-format
 msgid "Add"
-msgstr ""
+msgstr "Προσθήκη"
 
 #: qml/time/TimePage.qml:167
 #, fuzzy, kde-format
 #| msgid "Add timezone"
 msgctxt "@action:button"
 msgid "Add Location"
-msgstr "Προσθήκη ζώνης ώρας"
+msgstr "Προσθήκη τοποθεσίας"
 
 #: qml/time/TimePageDelegate.qml:47
-#, kde-format
+#, fuzzy, kde-format
 msgid "Yesterday"
-msgstr ""
+msgstr "Χθες"
 
 #: qml/time/TimePageDelegate.qml:49
-#, kde-format
+#, fuzzy, kde-format
 msgid "Tomorrow"
-msgstr ""
+msgstr "Αύριο"
 
 #: qml/timer/PresetDurationButton.qml:22
 #, fuzzy, kde-format
 #| msgid "1 hour"
 msgid "1 m"
-msgstr "1 ώρα"
+msgstr "1 λ"
 
 #: qml/timer/TimerComponent.qml:205 qml/timer/TimerListDelegate.qml:143
 #: qml/timer/TimerPage.qml:24
-#, kde-format
+#, fuzzy, kde-format
 msgid "New timer"
-msgstr "Νέο χρονόμετρο"
+msgstr "Νέα αντίστροφη μέτρηση"
 
 #: qml/timer/TimerComponent.qml:218
-#, kde-format
+#, fuzzy, kde-format
 msgid "Click to edit timer name"
-msgstr ""
+msgstr "Κάντε κλικ για επεξεργασία ονόματος αντίστροφης μέτρησης"
 
 #: qml/timer/TimerForm.qml:40
 #, fuzzy, kde-format
@@ -657,13 +665,13 @@ msgstr "30 λεπτά"
 #, fuzzy, kde-format
 #| msgid "1 hour"
 msgid "1 h"
-msgstr "1 ώρα"
+msgstr "1 ώ"
 
 #: qml/timer/TimerForm.qml:64
 #, fuzzy, kde-format
 #| msgid "Timezones"
 msgid "<b>Duration:</b>"
-msgstr "Ζώνες ώρας"
+msgstr "<b>Διάρκεια:</b>"
 
 #: qml/timer/TimerForm.qml:77
 #, kde-format
@@ -685,68 +693,68 @@ msgstr "δευτερόλεπτα"
 #, fuzzy, kde-format
 #| msgid "Timer"
 msgid "Loop Timer"
-msgstr "Χρονόμετρο"
+msgstr "Βρόχος αντίστροφης μέτρησης"
 
 #: qml/timer/TimerForm.qml:120
-#, kde-format
+#, fuzzy, kde-format
 msgid "<b>Label:</b>"
-msgstr ""
+msgstr "<b>Ετικέτα:</b>"
 
 #: qml/timer/TimerForm.qml:125
-#, kde-format
+#, fuzzy, kde-format
 msgid "<b>Command at timeout:</b>"
-msgstr ""
+msgstr "<b>Εντολή κατά την λήξη χρόνου:</b>"
 
 #: qml/timer/TimerForm.qml:128
-#, kde-format
+#, fuzzy, kde-format
 msgid "optional"
-msgstr ""
+msgstr "προαιρετικό"
 
 #: qml/timer/TimerFormDialog.qml:36
 #, fuzzy, kde-format
 #| msgid "Edit"
 msgctxt "@title:window Edit timer"
 msgid "Edit %1"
-msgstr "Επεξεργασία"
+msgstr "Επεξεργασία %1"
 
 #: qml/timer/TimerFormDialog.qml:36
 #, fuzzy, kde-format
 #| msgid "New timer"
 msgctxt "@title:window"
 msgid "Create Timer"
-msgstr "Νέο χρονόμετρο"
+msgstr "Δημιουργία αντίστροφης μέτρησης"
 
 #: qml/timer/TimerFormDialog.qml:53 qml/timer/TimerLockscreenPopup.qml:37
-#, kde-format
+#, fuzzy, kde-format
 msgid "Timer"
-msgstr "Χρονόμετρο"
+msgstr "Αντίστροφη μέτρηση"
 
 #: qml/timer/TimerFormDialog.qml:71
-#, kde-format
+#, fuzzy, kde-format
 msgid "Hide Presets"
-msgstr ""
+msgstr "Απόκρυψη προρυθμίσεων"
 
 #: qml/timer/TimerFormDialog.qml:71
-#, kde-format
+#, fuzzy, kde-format
 msgid "Show Presets"
-msgstr ""
+msgstr "Εμφάνιση προρυθμίσεων"
 
 #: qml/timer/TimerFormDialog.qml:76
 #, fuzzy, kde-format
 #| msgid "Delete"
 msgid "Toggle Delete"
-msgstr "Διαγραφή"
+msgstr "Εναλλαγή διαγραφής"
 
 #: qml/timer/TimerFormDialog.qml:103
-#, kde-format
+#, fuzzy, kde-format
 msgid "Save As Preset"
-msgstr ""
+msgstr "Αποθήκευση ως προρύθμιση"
 
 #: qml/timer/TimerFormDialog.qml:116
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Save"
-msgstr ""
+msgstr "Αποθήκευση"
 
 #: qml/timer/TimerFormDialog.qml:116
 #, fuzzy, kde-format
@@ -791,61 +799,63 @@ msgstr "Διαγραφή"
 #| msgid "New Timer"
 msgctxt "@action:intoolbar"
 msgid "&New Timer"
-msgstr "Νέο χρονόμετρο"
+msgstr "&Νέα αντίστροφη μέτρηση"
 
 #: qml/timer/TimerListPage.qml:61
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "The clock daemon was not found. Please start kclockd in order to have timer "
 "functionality."
 msgstr ""
+"Ο δαίμονας του ρολογιού δε βρέθηκε. Παρακαλούμε ξεκινήστε το kclockd για να "
+"έχετε την λειτουργικότητα της αντίστροφης μέτρησης."
 
 #: qml/timer/TimerListPage.qml:63
-#, kde-format
+#, fuzzy, kde-format
 msgid "Failed to load the list of timers: %1"
-msgstr ""
+msgstr "Αποτυχία φόρτωσης λίστας αντίστροφων μετρήσεων: %1"
 
 #: qml/timer/TimerListPage.qml:102
 #, fuzzy, kde-format
 #| msgid "New Timer"
 msgctxt "@action:button"
 msgid "New Timer"
-msgstr "Νέο χρονόμετρο"
+msgstr "Νέα αντίστροφη μέτρηση"
 
 #: qml/timer/TimerListPage.qml:113
 #, fuzzy, kde-format
 #| msgid "No alarms configured"
 msgid "No timers configured"
-msgstr "Δεν έχουν διαμορφωθεί συναγερμοί"
+msgstr "Δεν έχουν διαμορφωθεί αντίστροφες μετρήσεις"
 
 #: qml/timer/TimerListPage.qml:119
 #, fuzzy, kde-format
 #| msgid "Add a timer"
 msgid "Add timer"
-msgstr "Προσθήκη χρονομέτρου"
+msgstr "Προσθήκη αντίστροφης μέτρησης"
 
 #: qml/timer/TimerLockscreenPopup.qml:21
 #, fuzzy, kde-format
 #| msgid "Your timer %1 has finished!"
 msgid "Timer is ringing"
-msgstr "Ο χρονοδιακόπτης %1 δείχνει τέλος χρόνου!"
+msgstr "Η αντίστροφη μέτρηση χτυπάει"
 
 #: qml/timer/TimerLockscreenPopup.qml:37
 #, fuzzy, kde-format
 #| msgid "Your timer %1 has finished!"
 msgid "Timer not found"
-msgstr "Ο χρονοδιακόπτης %1 δείχνει τέλος χρόνου!"
+msgstr "Η αντίστροφη μέτρηση δε βρέθηκε"
 
 #: qml/timer/TimerLockscreenPopup.qml:39
 #, fuzzy, kde-format
 #| msgid "Stopwatch"
 msgid "Stop"
-msgstr "Χρονόμετρο"
+msgstr "Διακοπή"
 
 #: qml/timer/TimerLockscreenPopup.qml:40
-#, kde-format
+#, fuzzy, kde-format
 msgid "Repeat"
-msgstr ""
+msgstr "Επανάληψη"
 
 #: qml/timer/TimerPage.qml:60 qml/timer/TimerPage.qml:122
 #, kde-format
@@ -860,79 +870,79 @@ msgid "1 minute"
 msgstr "1 λεπτό"
 
 #: qml/timer/TimerPage.qml:164
-#, kde-format
+#, fuzzy, kde-format
 msgid "This timer is in Picture-in-Picture mode."
-msgstr ""
+msgstr "Αυτή η αντίστροφη μέτρηση είναι σε λειτουργία εικόνα-εντός-εικόνας."
 
 #: qml/timer/TimerPipComponent.qml:38
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action:button Add 1 minute to timer"
 msgid "+1:00"
-msgstr ""
+msgstr "+1:00"
 
 #: qml/timer/TimerRingingPopup.qml:25
 #, fuzzy, kde-format
 #| msgid "Your timer %1 has finished!"
 msgid "Timer has finished"
-msgstr "Ο χρονοδιακόπτης %1 δείχνει τέλος χρόνου!"
+msgstr "Η αντίστροφη μέτρηση έχει ολοκληρωθεί"
 
 #: qml/timer/TimerRingingPopup.qml:44
-#, kde-format
+#, fuzzy, kde-format
 msgid "%1 has completed."
-msgstr ""
+msgstr "%1 ολοκληρώθηκε."
 
 #: qml/timer/TimerRingingPopup.qml:44
 #, fuzzy, kde-format
 #| msgid "Timer complete"
 msgid "The timer has completed."
-msgstr "Τέλος χρόνου"
+msgstr "Η αντίστροφη μέτρηση ολοκληρώθηκε."
 
 #: savedlocationsmodel.cpp:124
 #, fuzzy, kde-format
 #| msgid "%1 and a half hours ahead"
 msgid "%1 hour and 30 minutes ahead"
-msgstr "%1 και μισή ώρες μπροστά"
+msgstr "%1 ώρα και 30 λεπτά μπροστά"
 
 #: savedlocationsmodel.cpp:124
-#, kde-format
+#, fuzzy, kde-format
 msgid "%1 hours and 30 minutes ahead"
-msgstr ""
+msgstr "%1 ώρες και 30 λεπτά μπροστά"
 
 #: savedlocationsmodel.cpp:126
 #, fuzzy, kde-format
 #| msgid "%1 %2 ahead"
 msgid "%1 hour ahead"
-msgstr "%1 %2 μπροστά"
+msgstr "%1 ώρα μπροστά"
 
 #: savedlocationsmodel.cpp:126
 #, fuzzy, kde-format
 #| msgid "%1 %2 ahead"
 msgid "%1 hours ahead"
-msgstr "%1 %2 μπροστά"
+msgstr "%1 ώρες μπροστά"
 
 #: savedlocationsmodel.cpp:131
 #, fuzzy, kde-format
 #| msgid "%1 and a half hours behind"
 msgid "%1 hour and 30 minutes behind"
-msgstr "%1 και μισή ώρες πίσω"
+msgstr "%1 ώρα και 30 λεπτά πίσω"
 
 #: savedlocationsmodel.cpp:131
 #, fuzzy, kde-format
 #| msgid "%1 and a half hours behind"
 msgid "%1 hours and 30 minutes behind"
-msgstr "%1 και μισή ώρες πίσω"
+msgstr "%1 ώρες και 30 λεπτά πίσω"
 
 #: savedlocationsmodel.cpp:133
 #, fuzzy, kde-format
 #| msgid "%1 %2 behind"
 msgid "%1 hour behind"
-msgstr "%1 %2 πίσω"
+msgstr "%1 ώρα πίσω"
 
 #: savedlocationsmodel.cpp:133
 #, fuzzy, kde-format
 #| msgid "%1 %2 behind"
 msgid "%1 hours behind"
-msgstr "%1 %2 πίσω"
+msgstr "%1 ώρες πίσω"
 
 #: savedlocationsmodel.cpp:136
 #, kde-format
@@ -957,13 +967,13 @@ msgstr[1] "%1 ώρες"
 #, fuzzy, kde-format
 #| msgid "Alarm will be rung within a minute"
 msgid "Alarm will ring in under a minute"
-msgstr "Ο συναγερμός θα ηχήσει σε ένα λεπτό"
+msgstr "Το ξυπνητήρι θα ηχήσει σε λιγότερο από ένα λεπτό"
 
 #: utilmodel.cpp:115
 #, fuzzy, kde-format
 #| msgid "Alarm will be rung after %1"
 msgid "Alarm will ring in %1"
-msgstr "Ο συναγερμός θα ηχήσει μετά από %1"
+msgstr "Το ξυπνητήρι θα ηχήσει σε %1"
 
 #: utilmodel.cpp:167
 #, fuzzy, kde-format

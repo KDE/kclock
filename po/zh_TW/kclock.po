@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-23 00:52+0000\n"
-"PO-Revision-Date: 2026-09-22 00:21+0900\n"
+"PO-Revision-Date: 2026-11-03 19:48+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -214,11 +214,10 @@ msgid "Alarms"
 msgstr "鬧鐘"
 
 #: qml/alarm/AlarmListPage.qml:29
-#, fuzzy, kde-format
-#| msgid "New Alarm"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "&New Alarm"
-msgstr "新鬧鐘"
+msgstr "新鬧鐘(&N)"
 
 #: qml/alarm/AlarmListPage.qml:36 qml/time/TimePage.qml:38
 #, kde-format
@@ -266,8 +265,7 @@ msgid "New Alarm"
 msgstr "新鬧鐘"
 
 #: qml/alarm/AlarmListPage.qml:135
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit"
 msgstr "編輯"
@@ -756,11 +754,10 @@ msgid "Delete"
 msgstr "刪除"
 
 #: qml/timer/TimerListPage.qml:27
-#, fuzzy, kde-format
-#| msgid "New Timer"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "&New Timer"
-msgstr "新計時器"
+msgstr "新計時器(&N)"
 
 #: qml/timer/TimerListPage.qml:61
 #, kde-format
