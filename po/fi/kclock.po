@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kclock\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-23 00:52+0000\n"
-"PO-Revision-Date: 2026-08-25 20:12+0300\n"
+"PO-Revision-Date: 2026-10-06 09:40+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -34,10 +34,9 @@ msgstr ""
 "Aseta hälytyksiä ja ajastimia, käytä sekuntikelloa ja hallitse maailmankelloa"
 
 #: main.cpp:47
-#, fuzzy, kde-format
-#| msgid "© 2020-2024 KDE Community"
+#, kde-format
 msgid "© 2020–2026 KDE Community"
-msgstr "© 2020–2024 KDE-yhteisö"
+msgstr "© 2020–2026 KDE-yhteisö"
 
 #: main.cpp:49
 #, kde-format
@@ -81,8 +80,7 @@ msgid "Select Days to Repeat"
 msgstr "Valitse toistopäivät"
 
 #: qml/alarm/AlarmForm.qml:113
-#, fuzzy, kde-format
-#| msgid "Alarm Name (optional):"
+#, kde-format
 msgid "Alarm name (optional):"
 msgstr "Hälytyksen nimi (valinnainen):"
 
@@ -92,8 +90,7 @@ msgid "Wake Up"
 msgstr "Herätys"
 
 #: qml/alarm/AlarmForm.qml:124
-#, fuzzy, kde-format
-#| msgid "Ring Duration:"
+#, kde-format
 msgid "Ring duration:"
 msgstr "Soiton kesto:"
 
@@ -150,10 +147,9 @@ msgid "1 hour"
 msgstr "1 tunnin"
 
 #: qml/alarm/AlarmForm.qml:162
-#, fuzzy, kde-format
-#| msgid "Ring Duration:"
+#, kde-format
 msgid "Snooze duration:"
-msgstr "Soiton kesto:"
+msgstr "Torkutuksen kesto:"
 
 #: qml/alarm/AlarmForm.qml:163
 #, kde-format
@@ -161,8 +157,7 @@ msgid "Select Snooze Length"
 msgstr "Valitse torkutuksen kesto"
 
 #: qml/alarm/AlarmForm.qml:200
-#, fuzzy, kde-format
-#| msgid "Ring Sound:"
+#, kde-format
 msgid "Ring sound:"
 msgstr "Soittoääni:"
 
@@ -383,8 +378,7 @@ msgid "PM"
 msgstr "ip."
 
 #: qml/settings/SettingsPage.qml:40
-#, fuzzy, kde-format
-#| msgid "Time Format"
+#, kde-format
 msgid "Time format"
 msgstr "Ajan muoto"
 
