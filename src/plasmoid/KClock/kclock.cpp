@@ -18,13 +18,6 @@
 KClock::KClock(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args)
     : Plasma::Applet(parent, metaData, args)
 {
-    m_timer = new QTimer(this);
-    connect(m_timer, &QTimer::timeout, this, &KClock::initialTimeUpdate);
-    m_timer->setSingleShot(true);
-
-    // initial interval is milliseconds to next minute
-    m_timer->start((60 - (QTime::currentTime().msecsSinceStartOfDay() / 1000) % 60) * 1000); // seconds to next minute
-
     bool daemonSuccess = QDBusConnection::sessionBus().connect(QStringLiteral("org.kde.kclockd"),
                                                                QStringLiteral("/Alarms"),
                                                                QStringLiteral("org.kde.kclock.AlarmModel"),
@@ -95,25 +88,6 @@ void KClock::openKClock()
     auto *job = new KIO::ApplicationLauncherJob(kclockService);
     job->setUiDelegate(new KNotificationJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled));
     job->start();
-}
-
-void KClock::initialTimeUpdate()
-{
-    Q_EMIT timeChanged();
-    disconnect(m_timer, &QTimer::timeout, this, &KClock::initialTimeUpdate); // disconnect
-    m_timer->setSingleShot(false);
-    connect(m_timer, &QTimer::timeout, this, &KClock::timeChanged);
-    m_timer->start(60000); // update every minute
-}
-
-QString KClock::date() const
-{
-    return m_locale.toString(QDate::currentDate(), QStringLiteral("ddd, MMM d"));
-}
-
-QDateTime KClock::datetime() const
-{
-    return QDateTime::currentDateTime();
 }
 
 KClock::~KClock()
