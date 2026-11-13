@@ -9,12 +9,33 @@ import QtQuick
 import QtQuick.Layouts
 import org.kde.plasma.core as PlasmaCore
 import org.kde.plasma.plasmoid
+import org.kde.plasma.clock
 import org.kde.plasma.components as PlasmaComponents
 import org.kde.kirigami as Kirigami
 
+pragma ComponentBehavior: Bound
+
 PlasmoidItem {
+    id: root
     Plasmoid.status: plasmoid.hasAlarm ? PlasmaCore.Types.ActiveStatus : PlasmaCore.Types.HiddenStatus
     Plasmoid.backgroundHints: "ShadowBackground";
+
+    function onStateChanged () {
+        clock.update()
+    }
+
+    Clock {
+        id: clock
+        trackSeconds: false
+        property string timeString
+        property string dateString
+        onDateTimeChanged: update()
+        function update () {
+            timeString = Qt.formatTime(dateTime, plasmoid.configuration.twelveHourTime ? "h:mm ap" : "h:mm");
+            dateString = Qt.formatDate(dateTime);
+        }
+
+    }
 
     fullRepresentation: Item {
         property int fontSize: Math.round(mainItem.width / 5)
@@ -38,7 +59,7 @@ PlasmoidItem {
             spacing: 0
 
             PlasmaComponents.Label {
-                text: Qt.formatTime(plasmoid.datetime, plasmoid.configuration.twelveHourTime ? "h:mm ap" : "h:mm")
+                text: clock.timeString
                 font.pointSize: fontSize
                 font.weight: Font.ExtraLight
                 color: "white"
@@ -46,7 +67,7 @@ PlasmoidItem {
             }
 
             PlasmaComponents.Label {
-                text: plasmoid.date
+                text: clock.dateString
                 font.pointSize: Math.round(fontSize / 4)
                 color: "white"
                 Layout.alignment: mainItem.layoutAlignment
