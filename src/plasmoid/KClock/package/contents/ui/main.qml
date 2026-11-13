@@ -89,7 +89,6 @@ PlasmoidItem {
                     id: alarmTime
                     text: plasmoid.alarmTime
                     color: "white"
-                    font.pointSize: Math.round(fontSize / 4)
                 }
             }
         }
