@@ -171,7 +171,7 @@ private:
     quint64 m_originalRingTime = 0;
 
     // whether snooze just occurred
-    bool m_justSnoozed;
+    bool m_justSnoozed = false;
 
     KNotification *m_notification = new KNotification{QStringLiteral("alarm"), KNotification::NotificationFlag::Persistent, this};
 
