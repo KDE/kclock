@@ -652,7 +652,7 @@
           <li xml:lang="sk">Podpora démona na pozadí pri použití flatpaku</li>
           <li xml:lang="sl">Podpora za demon ozadja pri uporabi flatpaka</li>
           <li xml:lang="sv">Stöd för bakgrundsdemon när flatpak används</li>
-          <li xml:lang="tr">Flatpak kullanırken ardalan süreci (daemon) için destek</li>
+          <li xml:lang="tr">Flatpak kullanırken art alan süreci (daemon) için destek</li>
           <li xml:lang="uk">Реалізовано підтримку фонової служби при використанні flatpak</li>
           <li xml:lang="zh-CN">使用 flatpak 时支持后台守护进程</li>
           <li xml:lang="zh-TW">在使用 Flatpak 時也支援背景守護程式</li>
@@ -716,7 +716,7 @@
           <li xml:lang="sk">Fix "Clock daemon not found" popup message</li>
           <li xml:lang="sl">Popravljeno pojavno sporočilo "Demon ure ni bil najden"</li>
           <li xml:lang="sv">Rätta meddelanderutan "Klockdemon hittades inte"</li>
-          <li xml:lang="tr">“Saat ardalan süreci bulunamadı” açılır pencere iletisini düzelt</li>
+          <li xml:lang="tr">“Saat art alan süreci bulunamadı” açılır pencere iletisini düzelt</li>
           <li xml:lang="uk">Виправлено контекстне повідомлення «Не знайдено фонову службу годинника»</li>
           <li xml:lang="zh-CN">修复“时钟守护进程未找到”弹出消息</li>
           <li xml:lang="zh-TW">修正「找不到時鐘守護程式」彈出訊息</li>
@@ -978,7 +978,7 @@
           <li xml:lang="sk">Démon sa automaticky zastaví, ak nie sú čakajúce žiadne budíky ani časovače</li>
           <li xml:lang="sl">Demon se samodejno ustavi, če ni alarmov in časovnikov v teku</li>
           <li xml:lang="sv">Demonen stoppar automatiskt om inga alarm och tidtagning väntar</li>
-          <li xml:lang="tr">Bekleyen alarm veya sayaç yoksa ardalan süreci kendiliğinden durur</li>
+          <li xml:lang="tr">Bekleyen alarm veya sayaç yoksa art alan süreci kendiliğinden durur</li>
           <li xml:lang="uk">Реалізовано автоматичне зупинення фонової служби, якщо у черзі немає будильників і таймерів</li>
           <li xml:lang="zh-CN">如果没有待发的闹钟和计时器，守护进程会自动停止</li>
           <li xml:lang="zh-TW">沒有鬧鐘或計時器時自動停止守護程式</li>
