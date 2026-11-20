@@ -1,0 +1,946 @@
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
+msgid ""
+msgstr ""
+"Project-Id-Version: kclock\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-10-23 00:52+0000\n"
+"PO-Revision-Date: 2026-11-19 17:02+0100\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
+"Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
+"Language: sr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+"X-Environment: kde\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Немања Хиршл"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "nemhirsl@gmail.com"
+
+#: main.cpp:45
+#, kde-format
+msgid "Set alarms and timers, use a stopwatch, and manage world clocks"
+msgstr ""
+"Постављајте аларме и одбројаваче, користите штоперицу и управљајте светским "
+"сатовима"
+
+#: main.cpp:47
+#, kde-format
+msgid "© 2020–2026 KDE Community"
+msgstr "© 2020–2026, заједница КДЕ‑а"
+
+#: main.cpp:49
+#, kde-format
+msgid "Devin Lin"
+msgstr "Devin Lin"
+
+#: main.cpp:50
+#, kde-format
+msgid "Han Young"
+msgstr "Han Young"
+
+#: main.cpp:51
+#, kde-format
+msgid "Kai Uwe Broulik"
+msgstr "Каи Уве Броулик"
+
+#: main.cpp:51
+#, kde-format
+msgctxt "Author"
+msgid "Desktop Integration"
+msgstr "Уклапање у површ"
+
+#: main.cpp:58
+#, kde-format
+msgid "Select opened page"
+msgstr "Изабери страницу која се отвара"
+
+#: main.cpp:60
+#, kde-format
+msgid "Explicitly open a new Clock window"
+msgstr "Изричито отвори нови прозор Сата"
+
+#: qml/alarm/AlarmForm.qml:84
+#, kde-format
+msgid "Days to repeat:"
+msgstr "Дани понављања:"
+
+#: qml/alarm/AlarmForm.qml:86
+#, kde-format
+msgid "Select Days to Repeat"
+msgstr "Избор дана понављања"
+
+#: qml/alarm/AlarmForm.qml:113
+#, kde-format
+msgid "Alarm name (optional):"
+msgstr "Име аларма (необавезно):"
+
+#: qml/alarm/AlarmForm.qml:114
+#, kde-format
+msgid "Wake Up"
+msgstr "Буђење"
+
+#: qml/alarm/AlarmForm.qml:124
+#, kde-format
+msgid "Ring duration:"
+msgstr "Трајање звоњења:"
+
+#: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:128
+#, kde-format
+msgid "None"
+msgstr "без ограничења"
+
+#: qml/alarm/AlarmForm.qml:125 qml/alarm/AlarmForm.qml:164 utilmodel.cpp:109
+#, kde-format
+msgid "%1 minute"
+msgid_plural "%1 minutes"
+msgstr[0] "%1 минут"
+msgstr[1] "%1 минута"
+msgstr[2] "%1 минута"
+msgstr[3] "%1 минут"
+
+#: qml/alarm/AlarmForm.qml:126
+#, kde-format
+msgid "Select Ring Duration"
+msgstr "Избор трајања звоњења"
+
+#: qml/alarm/AlarmForm.qml:129 qml/alarm/AlarmForm.qml:166
+#, kde-format
+msgid "1 minute"
+msgstr "1 минут"
+
+#: qml/alarm/AlarmForm.qml:130 qml/alarm/AlarmForm.qml:167
+#, kde-format
+msgid "2 minutes"
+msgstr "2 минута"
+
+#: qml/alarm/AlarmForm.qml:131 qml/alarm/AlarmForm.qml:168
+#, kde-format
+msgid "5 minutes"
+msgstr "5 минута"
+
+#: qml/alarm/AlarmForm.qml:132 qml/alarm/AlarmForm.qml:169
+#, kde-format
+msgid "10 minutes"
+msgstr "10 минута"
+
+#: qml/alarm/AlarmForm.qml:133 qml/alarm/AlarmForm.qml:170
+#, kde-format
+msgid "15 minutes"
+msgstr "15 минута"
+
+#: qml/alarm/AlarmForm.qml:134 qml/alarm/AlarmForm.qml:171
+#, kde-format
+msgid "30 minutes"
+msgstr "30 минута"
+
+#: qml/alarm/AlarmForm.qml:135 qml/alarm/AlarmForm.qml:172
+#, kde-format
+msgid "1 hour"
+msgstr "1 сат"
+
+#: qml/alarm/AlarmForm.qml:162
+#, kde-format
+msgid "Snooze duration:"
+msgstr "Трајање одлагања:"
+
+#: qml/alarm/AlarmForm.qml:163
+#, kde-format
+msgid "Select Snooze Length"
+msgstr "Избор трајања одлагања"
+
+#: qml/alarm/AlarmForm.qml:200
+#, kde-format
+msgid "Ring sound:"
+msgstr "Звук звона:"
+
+#: qml/alarm/AlarmForm.qml:206
+#, kde-format
+msgid "Default Sound"
+msgstr "Подразумевани звук"
+
+#: qml/alarm/AlarmFormPage.qml:25 qml/alarm/AlarmLockscreenPopup.qml:38
+#: qml/alarm/AlarmRingingPopup.qml:43
+#, kde-format
+msgid "Alarm"
+msgstr "Аларм"
+
+#: qml/alarm/AlarmFormPage.qml:25
+#, kde-format
+msgctxt "Edit alarm page title"
+msgid "Editing %1"
+msgstr "Уређивање: %1"
+
+#: qml/alarm/AlarmFormPage.qml:26
+#, kde-format
+msgid "New Alarm"
+msgstr "Нови аларм"
+
+#: qml/alarm/AlarmFormPage.qml:38 qml/alarm/AlarmFormPage.qml:61
+#, kde-format
+msgid "Done"
+msgstr "Готово"
+
+#: qml/alarm/AlarmFormPage.qml:67 qml/timer/TimerFormDialog.qml:111
+#, kde-format
+msgid "Cancel"
+msgstr "Одустани"
+
+#: qml/alarm/AlarmListDelegate.qml:104
+#, kde-format
+msgid "Snoozed %1 minute"
+msgid_plural "Snoozed %1 minutes"
+msgstr[0] "Одложено за %1 минут"
+msgstr[1] "Одложено за %1 минута"
+msgstr[2] "Одложено за %1 минута"
+msgstr[3] "Одложено за %1 минут"
+
+#: qml/alarm/AlarmListDelegate.qml:125 qml/alarm/AlarmListPage.qml:140
+#: qml/time/TimePageDelegate.qml:68
+#, kde-format
+msgctxt "@action:button"
+msgid "Delete"
+msgstr "Обриши"
+
+#: qml/alarm/AlarmListPage.qml:23 qml/components/BottomToolbar.qml:118
+#: qml/components/Sidebar.qml:102
+#, kde-format
+msgid "Alarms"
+msgstr "Аларми"
+
+#: qml/alarm/AlarmListPage.qml:29
+#, kde-format
+msgctxt "@action:intoolbar"
+msgid "&New Alarm"
+msgstr "&Нови аларм"
+
+#: qml/alarm/AlarmListPage.qml:36 qml/time/TimePage.qml:38
+#, kde-format
+msgid "Edit"
+msgstr "Уреди"
+
+#: qml/alarm/AlarmListPage.qml:45 qml/Main.qml:54
+#: qml/settings/SettingsPage.qml:28 qml/stopwatch/StopwatchPage.qml:70
+#: qml/time/TimePage.qml:61 qml/timer/TimerListPage.qml:36
+#, kde-format
+msgid "Settings"
+msgstr "Поставке"
+
+#: qml/alarm/AlarmListPage.qml:58
+#, kde-format
+msgid ""
+"The clock daemon was not found. Please start kclockd in order to have alarm "
+"functionality."
+msgstr "Демон сата није нађен. Покрените kclockd да би аларми радили."
+
+#: qml/alarm/AlarmListPage.qml:60
+#, kde-format
+msgid "Failed to load the list of alarms: %1"
+msgstr "Не могу да учитам списак аларма: %1"
+
+#: qml/alarm/AlarmListPage.qml:86
+#, kde-format
+msgid "No alarms configured"
+msgstr "Нема подешених аларма"
+
+#: qml/alarm/AlarmListPage.qml:92
+#, kde-format
+msgid "Add alarm"
+msgstr "Додај аларм"
+
+#: qml/alarm/AlarmListPage.qml:103 qml/timer/TimerListPage.qml:130
+#, kde-format
+msgid "Loading…"
+msgstr "Учитавам…"
+
+#: qml/alarm/AlarmListPage.qml:118
+#, kde-format
+msgctxt "@action:button"
+msgid "New Alarm"
+msgstr "Нови аларм"
+
+#: qml/alarm/AlarmListPage.qml:135
+#, kde-format
+msgctxt "@action:button"
+msgid "Edit"
+msgstr "Уреди"
+
+#: qml/alarm/AlarmListPage.qml:150
+#, kde-format
+msgid "alarm"
+msgstr "аларм"
+
+#: qml/alarm/AlarmListPage.qml:150
+#, kde-format
+msgid "Deleted %1"
+msgstr "Обрисано: %1"
+
+#: qml/alarm/AlarmLockscreenPopup.qml:22 qml/alarm/AlarmRingingPopup.qml:26
+#, kde-format
+msgid "Alarm is ringing"
+msgstr "Аларм звони"
+
+#: qml/alarm/AlarmLockscreenPopup.qml:38
+#, kde-format
+msgid "Alarm not found"
+msgstr "Аларм није нађен"
+
+#: qml/alarm/AlarmLockscreenPopup.qml:40 qml/alarm/AlarmRingingPopup.qml:53
+#, kde-format
+msgid "Snooze"
+msgstr "Одложи"
+
+#: qml/alarm/AlarmLockscreenPopup.qml:41 qml/alarm/AlarmRingingPopup.qml:57
+#: qml/timer/TimerRingingPopup.qml:54
+#, kde-format
+msgid "Dismiss"
+msgstr "Одбаци"
+
+#: qml/components/BottomToolbar.qml:82 qml/components/Sidebar.qml:56
+#: qml/time/TimePage.qml:25
+#, kde-format
+msgid "Time"
+msgstr "Време"
+
+#: qml/components/BottomToolbar.qml:93 qml/components/Sidebar.qml:69
+#: qml/timer/TimerListPage.qml:19
+#, kde-format
+msgid "Timers"
+msgstr "Одбројавачи"
+
+#: qml/components/BottomToolbar.qml:106 qml/components/BottomToolbar.qml:107
+#: qml/components/Sidebar.qml:85 qml/stopwatch/StopwatchPage.qml:23
+#, kde-format
+msgid "Stopwatch"
+msgstr "Штоперица"
+
+#: qml/components/PipHandler.qml:122
+#, kde-format
+msgctxt ""
+"@action:button Close pip and return to the page where the content was popped "
+"out from"
+msgid "Back to app"
+msgstr "Назад у програм"
+
+#: qml/components/PipHandler.qml:140
+#, kde-format
+msgctxt "@action:button"
+msgid "Close"
+msgstr "Затвори"
+
+#: qml/components/SoundPickerPage.qml:24
+#, kde-format
+msgid "Select Alarm Sound"
+msgstr "Избор звука аларма"
+
+#: qml/components/SoundPickerPage.qml:73
+#, kde-format
+msgid "Select from files…"
+msgstr "Изабери из фајлова…"
+
+#: qml/components/SoundPickerPage.qml:84 qml/settings/SettingsPage.qml:85
+#, kde-format
+msgid "Default"
+msgstr "подразумевани"
+
+#: qml/components/SoundPickerPage.qml:164
+#, kde-format
+msgid "Choose an audio"
+msgstr "Избор звучног фајла"
+
+#: qml/components/SoundPickerPage.qml:172
+#, kde-format
+msgid "Audio files (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
+msgstr "звучни фајлови (*.wav *.mp3 *.ogg *.aac *.flac *.webm *.mka *.opus)"
+
+#: qml/components/SoundPickerPage.qml:172
+#, kde-format
+msgid "All files (*)"
+msgstr "сви фајлови (*)"
+
+#: qml/components/TimePicker.qml:94
+#, kde-format
+msgid "AM"
+msgstr "Преподне"
+
+#: qml/components/TimePicker.qml:94
+#, kde-format
+msgid "PM"
+msgstr "Послеподне"
+
+#: qml/settings/SettingsPage.qml:40
+#, kde-format
+msgid "Time format"
+msgstr "Формат времена"
+
+#: qml/settings/SettingsPage.qml:42
+#, kde-format
+msgid "Use System Default"
+msgstr "подразумевано у систему"
+
+#: qml/settings/SettingsPage.qml:43
+#, kde-format
+msgid "12 Hour Time"
+msgstr "12‑часовно време"
+
+#: qml/settings/SettingsPage.qml:44
+#, kde-format
+msgid "24 Hour Time"
+msgstr "24‑часовно време"
+
+#: qml/settings/SettingsPage.qml:58
+#, kde-format
+msgid "Notifications for running timers"
+msgstr "Обавештења за покренуте одбројаваче"
+
+#: qml/settings/SettingsPage.qml:60
+#, kde-format
+msgid "Always"
+msgstr "увек"
+
+#: qml/settings/SettingsPage.qml:63
+#, kde-format
+msgctxt "When the app is not running"
+msgid "When %1 is not running"
+msgstr "кад програм %1 није покренут"
+
+#: qml/settings/SettingsPage.qml:66
+#, kde-format
+msgid "Never"
+msgstr "никад"
+
+#: qml/settings/SettingsPage.qml:69
+#, kde-format
+msgid "Lets you pause and resume timers from the notification area."
+msgstr "Омогућава паузирање и настављање одбројавача из системске касете."
+
+#: qml/settings/SettingsPage.qml:90
+#, kde-format
+msgid "Select Timer Sound"
+msgstr "Избор звука одбројавача"
+
+#: qml/settings/SettingsPage.qml:92
+#, kde-format
+msgid "Default timer ring sound"
+msgstr "Подразумевани звук звона одбројавача"
+
+#: qml/settings/SettingsPage.qml:102
+#, kde-format
+msgid "About Clock"
+msgstr "О програму Сат"
+
+#: qml/settings/SettingsPage.qml:111
+#, kde-format
+msgid "About KDE"
+msgstr "О КДЕ‑у"
+
+#: qml/stopwatch/StopwatchPage.qml:55 qml/timer/TimerPage.qml:78
+#, kde-format
+msgctxt "@action"
+msgid "Restore"
+msgstr "Врати"
+
+#: qml/stopwatch/StopwatchPage.qml:55 qml/timer/TimerPage.qml:78
+#, kde-format
+msgctxt "@action"
+msgid "Pop out"
+msgstr "Издвоји"
+
+#: qml/stopwatch/StopwatchPage.qml:110 qml/stopwatch/StopwatchPage.qml:145
+#: qml/timer/TimerPage.qml:54 qml/timer/TimerPage.qml:116
+#, kde-format
+msgid "Reset"
+msgstr "Ресетуј"
+
+#: qml/stopwatch/StopwatchPage.qml:112 qml/timer/TimerPage.qml:46
+#: qml/timer/TimerPage.qml:110
+#, kde-format
+msgid "Pause"
+msgstr "Паузирај"
+
+#: qml/stopwatch/StopwatchPage.qml:114
+#, kde-format
+msgid "Resume"
+msgstr "Настави"
+
+#: qml/stopwatch/StopwatchPage.qml:116 qml/timer/TimerPage.qml:46
+#: qml/timer/TimerPage.qml:110
+#, kde-format
+msgid "Start"
+msgstr "Покрени"
+
+#: qml/stopwatch/StopwatchPage.qml:145 qml/stopwatch/StopwatchPage.qml:186
+#, kde-format
+msgid "Lap"
+msgstr "Круг"
+
+#: qml/stopwatch/StopwatchPage.qml:166
+#, kde-format
+msgid ""
+"Press Space to start or pause the stopwatch. Delete or Backspace resets it. "
+"Enter adds a lap."
+msgstr ""
+"Притисните Space да покренете или паузирате штоперицу. Delete или Backspace "
+"је ресетује. Enter додаје круг."
+
+#: qml/stopwatch/StopwatchPage.qml:194
+#, kde-format
+msgid "Lap Time"
+msgstr "Време круга"
+
+#: qml/stopwatch/StopwatchPage.qml:201
+#, kde-format
+msgid "Total"
+msgstr "Укупно"
+
+#: qml/stopwatch/StopwatchPage.qml:231
+#, kde-format
+msgid "Stopwatch is in Picture-in-Picture mode."
+msgstr "Штоперица је у режиму слике у слици."
+
+#: qml/stopwatch/StopwatchPage.qml:236 qml/timer/TimerPage.qml:169
+#, kde-format
+msgctxt "@action:button Restore (unminimize) from pip mode"
+msgid "Restore"
+msgstr "Врати"
+
+#: qml/stopwatch/StopwatchPage.qml:245
+#: qml/stopwatch/StopwatchPipComponent.qml:51
+#: qml/timer/TimerPipComponent.qml:44
+#, kde-format
+msgctxt "@action:button"
+msgid "Pause"
+msgstr "Паузирај"
+
+#: qml/stopwatch/StopwatchPage.qml:247
+#: qml/stopwatch/StopwatchPipComponent.qml:53
+#, kde-format
+msgctxt "@action:button"
+msgid "Resume"
+msgstr "Настави"
+
+#: qml/stopwatch/StopwatchPage.qml:249
+#: qml/stopwatch/StopwatchPipComponent.qml:55
+#: qml/timer/TimerPipComponent.qml:44
+#, kde-format
+msgctxt "@action:button"
+msgid "Start"
+msgstr "Покрени"
+
+#: qml/stopwatch/StopwatchPage.qml:309
+#, kde-format
+msgid "#%1"
+msgstr "#%1"
+
+#: qml/stopwatch/StopwatchPipComponent.qml:65
+#, kde-format
+msgctxt "@action:button"
+msgid "Lap"
+msgstr "Круг"
+
+#: qml/stopwatch/StopwatchPipComponent.qml:65
+#: qml/timer/TimerPipComponent.qml:50
+#, kde-format
+msgctxt "@action:button"
+msgid "Reset"
+msgstr "Ресетуј"
+
+#: qml/time/AddLocationListView.qml:51
+#, kde-format
+msgid "No locations found"
+msgstr "Нема нађених локација"
+
+#: qml/time/AddLocationListView.qml:52
+#, kde-format
+msgctxt "@info:usagetip"
+msgid "Check spelling or try the nearest major city"
+msgstr "Проверите правопис или покушајте са најближим великим градом"
+
+#: qml/time/AddLocationPage.qml:13 qml/time/AddLocationWrapper.qml:34
+#, kde-format
+msgid "Add Location"
+msgstr "Додавање локације"
+
+#: qml/time/TimePage.qml:51
+#, kde-format
+msgid "Add"
+msgstr "Додај"
+
+#: qml/time/TimePage.qml:167
+#, kde-format
+msgctxt "@action:button"
+msgid "Add Location"
+msgstr "Додај локацију"
+
+#: qml/time/TimePageDelegate.qml:47
+#, kde-format
+msgid "Yesterday"
+msgstr "Јуче"
+
+#: qml/time/TimePageDelegate.qml:49
+#, kde-format
+msgid "Tomorrow"
+msgstr "Сутра"
+
+#: qml/timer/PresetDurationButton.qml:22
+#, kde-format
+msgid "1 m"
+msgstr "1 мин."
+
+#: qml/timer/TimerComponent.qml:205 qml/timer/TimerListDelegate.qml:143
+#: qml/timer/TimerPage.qml:24
+#, kde-format
+msgid "New timer"
+msgstr "Нови одбројавач"
+
+#: qml/timer/TimerComponent.qml:218
+#, kde-format
+msgid "Click to edit timer name"
+msgstr "Кликните да уредите име одбројавача"
+
+#: qml/timer/TimerForm.qml:40
+#, kde-format
+msgid "1 min"
+msgstr "1 мин."
+
+#: qml/timer/TimerForm.qml:41
+#, kde-format
+msgid "5 min"
+msgstr "5 мин."
+
+#: qml/timer/TimerForm.qml:42
+#, kde-format
+msgid "10 min"
+msgstr "10 мин."
+
+#: qml/timer/TimerForm.qml:43
+#, kde-format
+msgid "15 min"
+msgstr "15 мин."
+
+#: qml/timer/TimerForm.qml:44
+#, kde-format
+msgid "30 min"
+msgstr "30 мин."
+
+#: qml/timer/TimerForm.qml:45
+#, kde-format
+msgid "1 h"
+msgstr "1 ч"
+
+#: qml/timer/TimerForm.qml:64
+#, kde-format
+msgid "<b>Duration:</b>"
+msgstr "<b>Трајање:</b>"
+
+#: qml/timer/TimerForm.qml:77
+#, kde-format
+msgid "hours"
+msgstr "сати"
+
+#: qml/timer/TimerForm.qml:92
+#, kde-format
+msgid "minutes"
+msgstr "минута"
+
+#: qml/timer/TimerForm.qml:107
+#, kde-format
+msgid "seconds"
+msgstr "секунди"
+
+#: qml/timer/TimerForm.qml:114 qml/timer/TimerListDelegate.qml:125
+#: qml/timer/TimerPage.qml:69 qml/timer/TimerPage.qml:131
+#, kde-format
+msgid "Loop Timer"
+msgstr "Понављај одбројавање"
+
+#: qml/timer/TimerForm.qml:120
+#, kde-format
+msgid "<b>Label:</b>"
+msgstr "<b>Етикета:</b>"
+
+#: qml/timer/TimerForm.qml:125
+#, kde-format
+msgid "<b>Command at timeout:</b>"
+msgstr "<b>Наредба при прековремену:</b>"
+
+#: qml/timer/TimerForm.qml:128
+#, kde-format
+msgid "optional"
+msgstr "необавезно"
+
+#: qml/timer/TimerFormDialog.qml:36
+#, kde-format
+msgctxt "@title:window Edit timer"
+msgid "Edit %1"
+msgstr "Уређивање: %1"
+
+#: qml/timer/TimerFormDialog.qml:36
+#, kde-format
+msgctxt "@title:window"
+msgid "Create Timer"
+msgstr "Стварање одбројавача"
+
+#: qml/timer/TimerFormDialog.qml:53 qml/timer/TimerLockscreenPopup.qml:37
+#, kde-format
+msgid "Timer"
+msgstr "Одбројавач"
+
+#: qml/timer/TimerFormDialog.qml:71
+#, kde-format
+msgid "Hide Presets"
+msgstr "Сакриј претподешавања"
+
+#: qml/timer/TimerFormDialog.qml:71
+#, kde-format
+msgid "Show Presets"
+msgstr "Прикажи претподешавања"
+
+#: qml/timer/TimerFormDialog.qml:76
+#, kde-format
+msgid "Toggle Delete"
+msgstr "Укључи/искључи брисање"
+
+#: qml/timer/TimerFormDialog.qml:103
+#, kde-format
+msgid "Save As Preset"
+msgstr "Сачувај као претподешавање"
+
+#: qml/timer/TimerFormDialog.qml:116
+#, kde-format
+msgctxt "@action:button"
+msgid "Save"
+msgstr "Сачувај"
+
+#: qml/timer/TimerFormDialog.qml:116
+#, kde-format
+msgctxt "@action:button"
+msgid "Done"
+msgstr "Готово"
+
+#: qml/timer/TimerListDelegate.qml:164
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Pause"
+msgstr "Паузирај"
+
+#: qml/timer/TimerListDelegate.qml:164
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Start"
+msgstr "Покрени"
+
+#: qml/timer/TimerListDelegate.qml:174
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Reset"
+msgstr "Ресетуј"
+
+#: qml/timer/TimerListDelegate.qml:184
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Edit"
+msgstr "Уреди"
+
+#: qml/timer/TimerListDelegate.qml:195
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Delete"
+msgstr "Обриши"
+
+#: qml/timer/TimerListPage.qml:27
+#, kde-format
+msgctxt "@action:intoolbar"
+msgid "&New Timer"
+msgstr "&Нови одбројавач"
+
+#: qml/timer/TimerListPage.qml:61
+#, kde-format
+msgid ""
+"The clock daemon was not found. Please start kclockd in order to have timer "
+"functionality."
+msgstr "Демон сата није нађен. Покрените kclockd да би одбројавачи радили."
+
+#: qml/timer/TimerListPage.qml:63
+#, kde-format
+msgid "Failed to load the list of timers: %1"
+msgstr "Не могу да учитам списак одбројавача: %1"
+
+#: qml/timer/TimerListPage.qml:102
+#, kde-format
+msgctxt "@action:button"
+msgid "New Timer"
+msgstr "Нови одбројавач"
+
+#: qml/timer/TimerListPage.qml:113
+#, kde-format
+msgid "No timers configured"
+msgstr "Нема подешених одбројавача"
+
+#: qml/timer/TimerListPage.qml:119
+#, kde-format
+msgid "Add timer"
+msgstr "Додај одбројавач"
+
+#: qml/timer/TimerLockscreenPopup.qml:21
+#, kde-format
+msgid "Timer is ringing"
+msgstr "Одбројавач звони"
+
+#: qml/timer/TimerLockscreenPopup.qml:37
+#, kde-format
+msgid "Timer not found"
+msgstr "Одбројавач није нађен"
+
+#: qml/timer/TimerLockscreenPopup.qml:39
+#, kde-format
+msgid "Stop"
+msgstr "Заустави"
+
+#: qml/timer/TimerLockscreenPopup.qml:40
+#, kde-format
+msgid "Repeat"
+msgstr "Понови"
+
+#: qml/timer/TimerPage.qml:60 qml/timer/TimerPage.qml:122
+#, kde-format
+msgid "Delete"
+msgstr "Обриши"
+
+#: qml/timer/TimerPage.qml:154
+#, kde-format
+msgctxt "@action:button Add 1 minute to timer"
+msgid "1 minute"
+msgstr "1 минут"
+
+#: qml/timer/TimerPage.qml:164
+#, kde-format
+msgid "This timer is in Picture-in-Picture mode."
+msgstr "Овај одбројавач је у режиму слике у слици."
+
+#: qml/timer/TimerPipComponent.qml:38
+#, kde-format
+msgctxt "@action:button Add 1 minute to timer"
+msgid "+1:00"
+msgstr "+1:00"
+
+#: qml/timer/TimerRingingPopup.qml:25
+#, kde-format
+msgid "Timer has finished"
+msgstr "Одбројавање завршено"
+
+#: qml/timer/TimerRingingPopup.qml:44
+#, kde-format
+msgid "%1 has completed."
+msgstr "Завршено: %1."
+
+#: qml/timer/TimerRingingPopup.qml:44
+#, kde-format
+msgid "The timer has completed."
+msgstr "Одбројавање је завршено."
+
+#: savedlocationsmodel.cpp:124
+#, kde-format
+msgid "%1 hour and 30 minutes ahead"
+msgstr "%1 сат и 30 минута касније"
+
+#: savedlocationsmodel.cpp:124
+#, kde-format
+msgid "%1 hours and 30 minutes ahead"
+msgstr "%1 ч и 30 мин. касније"
+
+#: savedlocationsmodel.cpp:126
+#, kde-format
+msgid "%1 hour ahead"
+msgstr "%1 сат касније"
+
+#: savedlocationsmodel.cpp:126
+#, kde-format
+msgid "%1 hours ahead"
+msgstr "%1 ч касније"
+
+#: savedlocationsmodel.cpp:131
+#, kde-format
+msgid "%1 hour and 30 minutes behind"
+msgstr "%1 сат и 30 минута раније"
+
+#: savedlocationsmodel.cpp:131
+#, kde-format
+msgid "%1 hours and 30 minutes behind"
+msgstr "%1 ч и 30 мин. раније"
+
+#: savedlocationsmodel.cpp:133
+#, kde-format
+msgid "%1 hour behind"
+msgstr "%1 сат раније"
+
+#: savedlocationsmodel.cpp:133
+#, kde-format
+msgid "%1 hours behind"
+msgstr "%1 ч раније"
+
+#: savedlocationsmodel.cpp:136
+#, kde-format
+msgid "Local time"
+msgstr "Локално време"
+
+#: utilmodel.cpp:103
+#, kde-format
+msgid "%1 day"
+msgid_plural "%1 days"
+msgstr[0] "%1 дан"
+msgstr[1] "%1 дана"
+msgstr[2] "%1 дана"
+msgstr[3] "%1 дан"
+
+#: utilmodel.cpp:106
+#, kde-format
+msgid "%1 hour"
+msgid_plural "%1 hours"
+msgstr[0] "%1 сат"
+msgstr[1] "%1 сата"
+msgstr[2] "%1 сати"
+msgstr[3] "%1 сат"
+
+#: utilmodel.cpp:113
+#, kde-format
+msgid "Alarm will ring in under a minute"
+msgstr "Аларм ће зазвонити за мање од минута"
+
+#: utilmodel.cpp:115
+#, kde-format
+msgid "Alarm will ring in %1"
+msgstr "Аларм ће зазвонити за %1"
+
+#: utilmodel.cpp:167
+#, kde-format
+msgctxt "Repeat"
+msgid "Only once"
+msgstr "само једном"
+
+#: utilmodel.cpp:170
+#, kde-format
+msgctxt "Repeat"
+msgid "Everyday"
+msgstr "сваки дан"
+
+#: utilmodel.cpp:173
+#, kde-format
+msgctxt "Repeat"
+msgid "Weekdays"
+msgstr "радним данима"
+
+#: utilmodel.cpp:194
+#, kde-format
+msgid ", "
+msgstr ", "
