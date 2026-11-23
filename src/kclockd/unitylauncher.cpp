@@ -8,6 +8,7 @@
 
 #include <QDBusConnection>
 #include <QDBusMessage>
+#include <QVariantMap>
 
 #include <QtNumeric>
 
