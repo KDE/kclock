@@ -160,13 +160,9 @@ Kirigami.AbstractCard {
                     Layout.alignment: Qt.AlignRight
                     ToolButton {
                         icon.name: root.running ? "chronometer-pause" : "chronometer-start"
-                        display: AbstractButton.IconOnly
+                        display: AbstractButton.TextBesideIcon
                         text: root.running ? i18nc("@info:tooltip", "Pause") : i18nc("@info:tooltip", "Start")
                         onClicked: root.timer.toggleRunning()
-                        
-                        ToolTip.visible: hovered && text.length > 0
-                        ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
-                        ToolTip.text: text
                     }
                     ToolButton {
                         icon.name: "chronometer-reset"
