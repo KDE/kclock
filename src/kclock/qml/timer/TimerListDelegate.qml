@@ -65,70 +65,66 @@ Kirigami.AbstractCard {
     }
     
     // timer card contents
-    contentItem: Item {
-        implicitWidth: delegateLayout.implicitWidth
-        implicitHeight: delegateLayout.implicitHeight
-        
-        Column {
-            id: delegateLayout
-            anchors {
-                left: parent.left
-                top: parent.top
-                right: parent.right
-            }
-            spacing: Kirigami.Units.smallSpacing
-            
-            RowLayout {
-                anchors.left: parent.left
-                anchors.right: parent.right
+    contentItem: ColumnLayout {
+        id: delegateLayout
 
-                Kirigami.Heading {
-                    id: label
-                    level: 2
-                    Layout.fillWidth: true
-                    text: root.label || i18n("New timer")
-                    elide: Text.ElideRight
-                    textFormat: Text.PlainText
+        spacing: Kirigami.Units.largeSpacing
 
-                    HoverHandler {
-                        id: labelHoverHandler
-                    }
-                    TapHandler {
-                        id: labelTapHandler
-                    }
+        RowLayout {
+            Layout.fillWidth: true
 
-                    ToolTip.visible: (Kirigami.Settings.tabletMode ? labelTapHandler.pressed : labelHoverHandler.hovered) && ToolTip.text !== ""
-                    ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
-                    ToolTip.text: label.truncated ? label.text : ""
+            Kirigami.Heading {
+                id: label
+                level: 2
+                Layout.fillWidth: true
+                text: root.label || i18n("New timer")
+                elide: Text.ElideRight
+                textFormat: Text.PlainText
+
+                HoverHandler {
+                    id: labelHoverHandler
+                }
+                TapHandler {
+                    id: labelTapHandler
                 }
 
-                Kirigami.Icon {
-                    Layout.preferredWidth: Kirigami.Units.iconSizes.small
-                    Layout.preferredHeight: Kirigami.Units.iconSizes.small
-                    source: "media-repeat-all"
-                    visible: root.timer.looping
-                    Accessible.name: i18n("Loop Timer")
-
-                    HoverHandler {
-                        id: loopingHoverHandler
-                    }
-                    TapHandler {
-                        id: loopingTapHandler
-                    }
-
-                    ToolTip.visible: (Kirigami.Settings.tabletMode ? loopingTapHandler.pressed : loopingHoverHandler.hovered)
-                    ToolTip.delay: Kirigami.Units.toolTipDelay
-                    ToolTip.text: Accessible.name
-                }
+                ToolTip.visible: (Kirigami.Settings.tabletMode ? labelTapHandler.pressed : labelHoverHandler.hovered) && ToolTip.text !== ""
+                ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
+                ToolTip.text: label.truncated ? label.text : ""
             }
+
+            Kirigami.Icon {
+                Layout.preferredWidth: Kirigami.Units.iconSizes.small
+                Layout.preferredHeight: Kirigami.Units.iconSizes.small
+                source: "media-repeat-all"
+                visible: root.timer.looping
+                Accessible.name: i18n("Loop Timer")
+
+                HoverHandler {
+                    id: loopingHoverHandler
+                }
+                TapHandler {
+                    id: loopingTapHandler
+                }
+
+                ToolTip.visible: (Kirigami.Settings.tabletMode ? loopingTapHandler.pressed : loopingHoverHandler.hovered)
+                ToolTip.delay: Kirigami.Units.toolTipDelay
+                ToolTip.text: Accessible.name
+            }
+        }
+
+        ColumnLayout {
+            Layout.fillWidth: true
+            spacing: 0
 
             ProgressBar {
-                anchors.left: parent.left
-                anchors.right: parent.right
                 property real progress: root.elapsed / root.length
+
+                Layout.fillWidth: true
+
                 value: 0
                 Component.onCompleted: value = progress
-                
+
                 onProgressChanged: {
                     progressTransition.to = progress;
                     progressTransition.restart();
@@ -139,93 +135,94 @@ Kirigami.AbstractCard {
                     easing.type: Easing.InOutQuad
                 }
             }
-            
+
             RowLayout {
-                anchors.left: parent.left
-                anchors.right: parent.right
+                Layout.fillWidth: true
+
                 Label {
-                    Layout.alignment: Qt.AlignLeft
                     text: root.remainingPretty
                     color: root.running ? Kirigami.Theme.activeTextColor : Kirigami.Theme.disabledTextColor
                 }
+                Item {
+                    Layout.fillWidth: true
+                }
                 Label {
-                    Layout.alignment: Qt.AlignRight
                     text: root.lengthPretty
                     color: root.running ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
                 }
             }
-            
-            RowLayout {
-                id: buttonLayout
+        }
 
-                anchors.left: parent.left
-                anchors.right: parent.right
+        RowLayout {
+            id: buttonLayout
 
-                spacing: Kirigami.Units.smallSpacing
+            Layout.fillWidth: true
 
-                Button {
-                    icon.name: root.running ? "chronometer-pause" : "chronometer-start"
-                    display: AbstractButton.TextBesideIcon
-                    text: root.running ? i18nc("@info:tooltip", "Pause") : i18nc("@info:tooltip", "Start")
-                    onClicked: root.timer.toggleRunning()
-                }
-                Item {
-                    Layout.fillWidth: true
-                }
-                Button {
-                    icon.name: "chronometer-reset"
-                    display: AbstractButton.IconOnly
-                    text: i18nc("@info:tooltip", "Reset")
-                    onClicked: root.timer.reset();
+            spacing: Kirigami.Units.smallSpacing
 
-                    ToolTip.visible: hovered && text.length > 0
-                    ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
-                    ToolTip.text: text
-                }
-                Button {
-                    icon.name: "edit-entry"
-                    display: AbstractButton.IconOnly
-                    text: i18nc("@info:tooltip", "Edit")
-                    enabled: !root.timer.running
-                    onClicked: root.editClicked()
-
-                    ToolTip.visible: hovered && text.length > 0
-                    ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
-                    ToolTip.text: text
-                }
-                Item {
-                    Layout.preferredWidth: buttonLayout.spacing
-                }
-                Button {
-                    icon.name: "edit-delete-remove-symbolic"
-                    display: AbstractButton.IconOnly
-                    text: i18nc("@info:tooltip", "Delete")
-                    onClicked: TimerModel.remove(root.timer)
-
-                    ToolTip.visible: hovered && text.length > 0
-                    ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
-                    ToolTip.text: text
-                }
+            Button {
+                icon.name: root.running ? "chronometer-pause" : "chronometer-start"
+                display: AbstractButton.TextBesideIcon
+                text: root.running ? i18nc("@info:tooltip", "Pause") : i18nc("@info:tooltip", "Start")
+                onClicked: root.timer.toggleRunning()
             }
-            
-            RowLayout {
-                anchors.left: parent.left
-                anchors.right: parent.right
-                Layout.alignment: Qt.AlignLeft
-                Kirigami.Icon {
-                    source: "dialog-scripts"
-                    visible: root.commandTimeout.length > 0
-                    implicitWidth: Kirigami.Units.iconSizes.sizeForLabels * 1.5
-                    implicitHeight: Kirigami.Units.iconSizes.sizeForLabels * 1.5
-                    color: Kirigami.Theme.disabledTextColor
-                }
-                Label {
-                    visible: root.commandTimeout.length > 0
-                    font.family: "Monospace"
-                    Layout.fillWidth: true
-                    text: root.commandTimeout
-                    color: Kirigami.Theme.disabledTextColor
-                }
+            Item {
+                Layout.fillWidth: true
+            }
+            Button {
+                icon.name: "chronometer-reset"
+                display: AbstractButton.IconOnly
+                text: i18nc("@info:tooltip", "Reset")
+                onClicked: root.timer.reset();
+
+                ToolTip.visible: hovered && text.length > 0
+                ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
+                ToolTip.text: text
+            }
+            Button {
+                icon.name: "edit-entry"
+                display: AbstractButton.IconOnly
+                text: i18nc("@info:tooltip", "Edit")
+                enabled: !root.timer.running
+                onClicked: root.editClicked()
+
+                ToolTip.visible: hovered && text.length > 0
+                ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
+                ToolTip.text: text
+            }
+            Item {
+                Layout.preferredWidth: buttonLayout.spacing
+            }
+            Button {
+                icon.name: "edit-delete-remove-symbolic"
+                display: AbstractButton.IconOnly
+                text: i18nc("@info:tooltip", "Delete")
+                onClicked: TimerModel.remove(root.timer)
+
+                ToolTip.visible: hovered && text.length > 0
+                ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
+                ToolTip.text: text
+            }
+        }
+
+        RowLayout {
+            Layout.fillWidth: true
+
+            visible: visibleChildren.length > 0
+
+            Kirigami.Icon {
+                source: "dialog-scripts"
+                visible: root.commandTimeout.length > 0
+                implicitWidth: Kirigami.Units.iconSizes.sizeForLabels * 1.5
+                implicitHeight: Kirigami.Units.iconSizes.sizeForLabels * 1.5
+                color: Kirigami.Theme.disabledTextColor
+            }
+            Label {
+                visible: root.commandTimeout.length > 0
+                font.family: "Monospace"
+                Layout.fillWidth: true
+                text: root.commandTimeout
+                color: Kirigami.Theme.disabledTextColor
             }
         }
     }
