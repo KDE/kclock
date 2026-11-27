@@ -50,6 +50,7 @@ KClockRunner::KClockRunner(QObject *parent)
 
 void KClockRunner::Teardown()
 {
+    Utilities::instance().checkForExit();
 }
 
 void KClockRunner::openKAlarmPage(const QString &page)
