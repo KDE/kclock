@@ -84,7 +84,7 @@ Kirigami.AbstractCard {
 
                 Kirigami.Heading {
                     id: label
-                    level: 3
+                    level: 2
                     Layout.fillWidth: true
                     text: root.label || i18n("New timer")
                     elide: Text.ElideRight
@@ -143,14 +143,12 @@ Kirigami.AbstractCard {
             RowLayout {
                 anchors.left: parent.left
                 anchors.right: parent.right
-                Kirigami.Heading {
-                    level: 3
+                Label {
                     Layout.alignment: Qt.AlignLeft
                     text: root.remainingPretty
                     color: root.running ? Kirigami.Theme.activeTextColor : Kirigami.Theme.disabledTextColor
                 }
-                Kirigami.Heading {
-                    level: 3
+                Label {
                     Layout.alignment: Qt.AlignRight
                     text: root.lengthPretty
                     color: root.running ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
