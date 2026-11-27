@@ -56,7 +56,7 @@ Kirigami.Page {
             onTriggered: root.timer.reset();
         },
         Kirigami.Action {
-            icon.name: "delete"
+            icon.name: "edit-delete-remove-symbolic"
             text: i18n("Delete")
             visible: !Kirigami.Settings.isMobile
             onTriggered: {
@@ -120,7 +120,7 @@ Kirigami.Page {
             FooterToolBarButton {
                 display: toolbar.opened ? AbstractButton.TextUnderIcon : AbstractButton.TextOnly
                 text: i18n("Delete")
-                icon.name: "delete"
+                icon.name: "edit-delete-remove-symbolic"
                 onClicked: {
                     applicationWindow().pageStack.pop();
                     TimerModel.remove(root.timer);

@@ -72,7 +72,7 @@ Kirigami.Dialog {
                 onClicked: root.showPresets = !root.showPresets
             }
             ToolButton {
-                icon.name: "delete"
+                icon.name: "edit-delete-remove-symbolic"
                 text: i18n("Toggle Delete")
                 onClicked: root.showDelete = !root.showDelete
                 visible: root.showPresets

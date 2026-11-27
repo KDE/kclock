@@ -199,7 +199,7 @@ Kirigami.AbstractCard {
                     Layout.preferredWidth: buttonLayout.spacing
                 }
                 Button {
-                    icon.name: "delete"
+                    icon.name: "edit-delete-remove-symbolic"
                     display: AbstractButton.IconOnly
                     text: i18nc("@info:tooltip", "Delete")
                     onClicked: TimerModel.remove(root.timer)

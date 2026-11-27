@@ -136,7 +136,7 @@ Kirigami.ScrollablePage {
                     onTriggered: delegate.editClicked()
                 }
                 QQC2.MenuItem {
-                    icon.name: "delete"
+                    icon.name: "edit-delete-remove-symbolic"
                     text: i18nc("@action:button", "Delete")
                     onTriggered: delegate.deleteClicked()
                 }

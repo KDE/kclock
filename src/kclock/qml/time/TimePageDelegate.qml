@@ -64,7 +64,7 @@ Control {
         }
 
         Button {
-            icon.name: "delete"
+            icon.name: "edit-delete-remove-symbolic"
             text: i18nc("@action:button", "Delete")
             onClicked: root.deleteRequested()
             visible: root.editMode
