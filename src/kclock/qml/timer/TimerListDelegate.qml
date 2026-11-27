@@ -157,13 +157,22 @@ Kirigami.AbstractCard {
                 }
             }
             
-            Row {
-                Layout.alignment: Qt.AlignRight
+            RowLayout {
+                id: buttonLayout
+
+                anchors.left: parent.left
+                anchors.right: parent.right
+
+                spacing: Kirigami.Units.smallSpacing
+
                 Button {
                     icon.name: root.running ? "chronometer-pause" : "chronometer-start"
                     display: AbstractButton.TextBesideIcon
                     text: root.running ? i18nc("@info:tooltip", "Pause") : i18nc("@info:tooltip", "Start")
                     onClicked: root.timer.toggleRunning()
+                }
+                Item {
+                    Layout.fillWidth: true
                 }
                 Button {
                     icon.name: "chronometer-reset"
@@ -185,6 +194,9 @@ Kirigami.AbstractCard {
                     ToolTip.visible: hovered && text.length > 0
                     ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
                     ToolTip.text: text
+                }
+                Item {
+                    Layout.preferredWidth: buttonLayout.spacing
                 }
                 Button {
                     icon.name: "delete"
