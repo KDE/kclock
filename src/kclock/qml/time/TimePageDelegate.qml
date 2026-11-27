@@ -63,7 +63,7 @@ Control {
             color: Kirigami.Theme.textColor
         }
 
-        ToolButton {
+        Button {
             icon.name: "delete"
             text: i18nc("@action:button", "Delete")
             onClicked: root.deleteRequested()

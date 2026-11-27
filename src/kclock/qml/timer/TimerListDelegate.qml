@@ -158,13 +158,13 @@ Kirigami.AbstractCard {
                 
                 Row {
                     Layout.alignment: Qt.AlignRight
-                    ToolButton {
+                    Button {
                         icon.name: root.running ? "chronometer-pause" : "chronometer-start"
                         display: AbstractButton.TextBesideIcon
                         text: root.running ? i18nc("@info:tooltip", "Pause") : i18nc("@info:tooltip", "Start")
                         onClicked: root.timer.toggleRunning()
                     }
-                    ToolButton {
+                    Button {
                         icon.name: "chronometer-reset"
                         display: AbstractButton.IconOnly
                         text: i18nc("@info:tooltip", "Reset")
@@ -174,7 +174,7 @@ Kirigami.AbstractCard {
                         ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
                         ToolTip.text: text
                     }
-                    ToolButton {
+                    Button {
                         icon.name: "edit-entry"
                         display: AbstractButton.IconOnly
                         text: i18nc("@info:tooltip", "Edit")
@@ -185,7 +185,7 @@ Kirigami.AbstractCard {
                         ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
                         ToolTip.text: text
                     }
-                    ToolButton {
+                    Button {
                         icon.name: "delete"
                         display: AbstractButton.IconOnly
                         text: i18nc("@info:tooltip", "Delete")
