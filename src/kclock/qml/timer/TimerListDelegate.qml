@@ -78,6 +78,50 @@ Kirigami.AbstractCard {
             }
             spacing: Kirigami.Units.smallSpacing
             
+            RowLayout {
+                anchors.left: parent.left
+                anchors.right: parent.right
+
+                Kirigami.Heading {
+                    id: label
+                    level: 3
+                    Layout.fillWidth: true
+                    text: root.label || i18n("New timer")
+                    elide: Text.ElideRight
+                    textFormat: Text.PlainText
+
+                    HoverHandler {
+                        id: labelHoverHandler
+                    }
+                    TapHandler {
+                        id: labelTapHandler
+                    }
+
+                    ToolTip.visible: (Kirigami.Settings.tabletMode ? labelTapHandler.pressed : labelHoverHandler.hovered) && ToolTip.text !== ""
+                    ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
+                    ToolTip.text: label.truncated ? label.text : ""
+                }
+
+                Kirigami.Icon {
+                    Layout.preferredWidth: Kirigami.Units.iconSizes.small
+                    Layout.preferredHeight: Kirigami.Units.iconSizes.small
+                    source: "media-repeat-all"
+                    visible: root.timer.looping
+                    Accessible.name: i18n("Loop Timer")
+
+                    HoverHandler {
+                        id: loopingHoverHandler
+                    }
+                    TapHandler {
+                        id: loopingTapHandler
+                    }
+
+                    ToolTip.visible: (Kirigami.Settings.tabletMode ? loopingTapHandler.pressed : loopingHoverHandler.hovered)
+                    ToolTip.delay: Kirigami.Units.toolTipDelay
+                    ToolTip.text: Accessible.name
+                }
+            }
+
             ProgressBar {
                 anchors.left: parent.left
                 anchors.right: parent.right
@@ -113,88 +157,44 @@ Kirigami.AbstractCard {
                 }
             }
             
-            RowLayout {
-                anchors.left: parent.left
-                anchors.right: parent.right
-
-                Kirigami.Icon {
-                    Layout.preferredWidth: Kirigami.Units.iconSizes.small
-                    Layout.preferredHeight: Kirigami.Units.iconSizes.small
-                    source: "media-repeat-all"
-                    visible: root.timer.looping
-                    Accessible.name: i18n("Loop Timer")
-
-                    HoverHandler {
-                        id: loopingHoverHandler
-                    }
-                    TapHandler {
-                        id: loopingTapHandler
-                    }
-
-                    ToolTip.visible: (Kirigami.Settings.tabletMode ? loopingTapHandler.pressed : loopingHoverHandler.hovered)
-                    ToolTip.delay: Kirigami.Units.toolTipDelay
-                    ToolTip.text: Accessible.name
+            Row {
+                Layout.alignment: Qt.AlignRight
+                Button {
+                    icon.name: root.running ? "chronometer-pause" : "chronometer-start"
+                    display: AbstractButton.TextBesideIcon
+                    text: root.running ? i18nc("@info:tooltip", "Pause") : i18nc("@info:tooltip", "Start")
+                    onClicked: root.timer.toggleRunning()
                 }
+                Button {
+                    icon.name: "chronometer-reset"
+                    display: AbstractButton.IconOnly
+                    text: i18nc("@info:tooltip", "Reset")
+                    onClicked: root.timer.reset();
 
-                Kirigami.Heading {
-                    id: label
-                    level: 4
-                    Layout.fillWidth: true
-                    text: root.label || i18n("New timer")
-                    elide: Text.ElideRight
-                    textFormat: Text.PlainText
-
-                    HoverHandler {
-                        id: labelHoverHandler
-                    }
-                    TapHandler {
-                        id: labelTapHandler
-                    }
-
-                    ToolTip.visible: (Kirigami.Settings.tabletMode ? labelTapHandler.pressed : labelHoverHandler.hovered) && ToolTip.text !== ""
+                    ToolTip.visible: hovered && text.length > 0
                     ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
-                    ToolTip.text: label.truncated ? label.text : ""
+                    ToolTip.text: text
                 }
-                
-                Row {
-                    Layout.alignment: Qt.AlignRight
-                    Button {
-                        icon.name: root.running ? "chronometer-pause" : "chronometer-start"
-                        display: AbstractButton.TextBesideIcon
-                        text: root.running ? i18nc("@info:tooltip", "Pause") : i18nc("@info:tooltip", "Start")
-                        onClicked: root.timer.toggleRunning()
-                    }
-                    Button {
-                        icon.name: "chronometer-reset"
-                        display: AbstractButton.IconOnly
-                        text: i18nc("@info:tooltip", "Reset")
-                        onClicked: root.timer.reset();
-                        
-                        ToolTip.visible: hovered && text.length > 0
-                        ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
-                        ToolTip.text: text
-                    }
-                    Button {
-                        icon.name: "edit-entry"
-                        display: AbstractButton.IconOnly
-                        text: i18nc("@info:tooltip", "Edit")
-                        enabled: !root.timer.running
-                        onClicked: root.editClicked()
+                Button {
+                    icon.name: "edit-entry"
+                    display: AbstractButton.IconOnly
+                    text: i18nc("@info:tooltip", "Edit")
+                    enabled: !root.timer.running
+                    onClicked: root.editClicked()
 
-                        ToolTip.visible: hovered && text.length > 0
-                        ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
-                        ToolTip.text: text
-                    }
-                    Button {
-                        icon.name: "delete"
-                        display: AbstractButton.IconOnly
-                        text: i18nc("@info:tooltip", "Delete")
-                        onClicked: TimerModel.remove(root.timer)
-                        
-                        ToolTip.visible: hovered && text.length > 0
-                        ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
-                        ToolTip.text: text
-                    }
+                    ToolTip.visible: hovered && text.length > 0
+                    ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
+                    ToolTip.text: text
+                }
+                Button {
+                    icon.name: "delete"
+                    display: AbstractButton.IconOnly
+                    text: i18nc("@info:tooltip", "Delete")
+                    onClicked: TimerModel.remove(root.timer)
+
+                    ToolTip.visible: hovered && text.length > 0
+                    ToolTip.delay: Qt.styleHints.mousePressAndHoldInterval
+                    ToolTip.text: text
                 }
             }
             
